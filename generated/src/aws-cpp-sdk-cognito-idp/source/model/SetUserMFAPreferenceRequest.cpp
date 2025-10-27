@@ -12,45 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetUserMFAPreferenceRequest::SerializePayload() const
-{
+Aws::String SetUserMFAPreferenceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sMSMfaSettingsHasBeenSet)
-  {
-   payload.WithObject("SMSMfaSettings", m_sMSMfaSettings.Jsonize());
-
+  if (m_sMSMfaSettingsHasBeenSet) {
+    payload.WithObject("SMSMfaSettings", m_sMSMfaSettings.Jsonize());
   }
 
-  if(m_softwareTokenMfaSettingsHasBeenSet)
-  {
-   payload.WithObject("SoftwareTokenMfaSettings", m_softwareTokenMfaSettings.Jsonize());
-
+  if (m_softwareTokenMfaSettingsHasBeenSet) {
+    payload.WithObject("SoftwareTokenMfaSettings", m_softwareTokenMfaSettings.Jsonize());
   }
 
-  if(m_emailMfaSettingsHasBeenSet)
-  {
-   payload.WithObject("EmailMfaSettings", m_emailMfaSettings.Jsonize());
-
+  if (m_emailMfaSettingsHasBeenSet) {
+    payload.WithObject("EmailMfaSettings", m_emailMfaSettings.Jsonize());
   }
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SetUserMFAPreferenceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SetUserMFAPreferenceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.SetUserMFAPreference"));
   return headers;
-
 }
-
-
-
-

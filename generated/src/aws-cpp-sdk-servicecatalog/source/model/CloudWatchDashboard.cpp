@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/CloudWatchDashboard.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/CloudWatchDashboard.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchDashboard& CloudWatchDashboard::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+CloudWatchDashboard& CloudWatchDashboard::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchDashboard::Jsonize() const
-{
+JsonValue CloudWatchDashboard::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/freetier/FreeTierRequest.h>
 
-namespace Aws
-{
-namespace FreeTier
-{
-} // namespace FreeTier
-} // namespace Aws
+namespace Aws {
+namespace FreeTier {}  // namespace FreeTier
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AutoAcceptSharedAttachmentsValue
-  {
-    NOT_SET,
-    enable,
-    disable
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AutoAcceptSharedAttachmentsValue { NOT_SET, enable, disable };
 
-namespace AutoAcceptSharedAttachmentsValueMapper
-{
+namespace AutoAcceptSharedAttachmentsValueMapper {
 AWS_EC2_API AutoAcceptSharedAttachmentsValue GetAutoAcceptSharedAttachmentsValueForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAutoAcceptSharedAttachmentsValue(AutoAcceptSharedAttachmentsValue value);
-} // namespace AutoAcceptSharedAttachmentsValueMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AutoAcceptSharedAttachmentsValueMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

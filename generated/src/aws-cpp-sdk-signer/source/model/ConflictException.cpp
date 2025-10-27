@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/signer/model/ConflictException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signer/model/ConflictException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace signer
-{
-namespace Model
-{
+namespace Aws {
+namespace signer {
+namespace Model {
 
-ConflictException::ConflictException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConflictException::ConflictException(JsonView jsonValue) { *this = jsonValue; }
 
-ConflictException& ConflictException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ConflictException& ConflictException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConflictException::Jsonize() const
-{
+JsonValue ConflictException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace signer
-} // namespace Aws
+}  // namespace Model
+}  // namespace signer
+}  // namespace Aws

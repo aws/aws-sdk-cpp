@@ -4,82 +4,87 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DynamoDB {
+namespace Model {
 
+/**
+ * <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a
+ * single DynamoDB table. </p> <p>Amazon Web Services-assigned tag names and values
+ * are automatically assigned the <code>aws:</code> prefix, which the user cannot
+ * assign. Amazon Web Services-assigned tag names do not count towards the tag
+ * limit of 50. User-assigned tag names have the prefix <code>user:</code> in the
+ * Cost Allocation Report. You cannot backdate the application of a tag.</p> <p>For
+ * an overview on tagging DynamoDB resources, see <a
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+ * for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Tag">AWS API
+ * Reference</a></p>
+ */
+class Tag {
+ public:
+  AWS_DYNAMODB_API Tag() = default;
+  AWS_DYNAMODB_API Tag(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DYNAMODB_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a
-   * single DynamoDB table. </p> <p>Amazon Web Services-assigned tag names and values
-   * are automatically assigned the <code>aws:</code> prefix, which the user cannot
-   * assign. Amazon Web Services-assigned tag names do not count towards the tag
-   * limit of 50. User-assigned tag names have the prefix <code>user:</code> in the
-   * Cost Allocation Report. You cannot backdate the application of a tag.</p> <p>For
-   * an overview on tagging DynamoDB resources, see <a
-   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
-   * for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Tag">AWS API
-   * Reference</a></p>
+   * <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only
+   * have up to one tag with the same key. If you try to add an existing tag (same
+   * key), the existing tag value will be updated to the new value.</p>
    */
-  class Tag
-  {
-  public:
-    AWS_DYNAMODB_API Tag() = default;
-    AWS_DYNAMODB_API Tag(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DYNAMODB_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetKey() const { return m_key; }
+  inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+  template <typename KeyT = Aws::String>
+  void SetKey(KeyT&& value) {
+    m_keyHasBeenSet = true;
+    m_key = std::forward<KeyT>(value);
+  }
+  template <typename KeyT = Aws::String>
+  Tag& WithKey(KeyT&& value) {
+    SetKey(std::forward<KeyT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  Tag& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_key;
+  bool m_keyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only
-     * have up to one tag with the same key. If you try to add an existing tag (same
-     * key), the existing tag value will be updated to the new value.</p>
-     */
-    inline const Aws::String& GetKey() const { return m_key; }
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    template<typename KeyT = Aws::String>
-    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
-    template<typename KeyT = Aws::String>
-    Tag& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
-    ///@}
+  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
-     */
-    inline const Aws::String& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::String>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::String>
-    Tag& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

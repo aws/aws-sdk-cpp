@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-ManualEvidence::ManualEvidence(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ManualEvidence::ManualEvidence(JsonView jsonValue) { *this = jsonValue; }
 
-ManualEvidence& ManualEvidence::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3ResourcePath"))
-  {
+ManualEvidence& ManualEvidence::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3ResourcePath")) {
     m_s3ResourcePath = jsonValue.GetString("s3ResourcePath");
     m_s3ResourcePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("textResponse"))
-  {
+  if (jsonValue.ValueExists("textResponse")) {
     m_textResponse = jsonValue.GetString("textResponse");
     m_textResponseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("evidenceFileName"))
-  {
+  if (jsonValue.ValueExists("evidenceFileName")) {
     m_evidenceFileName = jsonValue.GetString("evidenceFileName");
     m_evidenceFileNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ManualEvidence::Jsonize() const
-{
+JsonValue ManualEvidence::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ResourcePathHasBeenSet)
-  {
-   payload.WithString("s3ResourcePath", m_s3ResourcePath);
-
+  if (m_s3ResourcePathHasBeenSet) {
+    payload.WithString("s3ResourcePath", m_s3ResourcePath);
   }
 
-  if(m_textResponseHasBeenSet)
-  {
-   payload.WithString("textResponse", m_textResponse);
-
+  if (m_textResponseHasBeenSet) {
+    payload.WithString("textResponse", m_textResponse);
   }
 
-  if(m_evidenceFileNameHasBeenSet)
-  {
-   payload.WithString("evidenceFileName", m_evidenceFileName);
-
+  if (m_evidenceFileNameHasBeenSet) {
+    payload.WithString("evidenceFileName", m_evidenceFileName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

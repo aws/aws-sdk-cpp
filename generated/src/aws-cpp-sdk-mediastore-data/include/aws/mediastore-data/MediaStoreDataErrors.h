@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaStoreData
-{
-enum class MediaStoreDataErrors
-{
-  //From Core//
+namespace Aws {
+namespace MediaStoreData {
+enum class MediaStoreDataErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MediaStoreDataErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class MediaStoreDataErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONTAINER_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONTAINER_NOT_FOUND = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   OBJECT_NOT_FOUND,
   REQUESTED_RANGE_NOT_SATISFIABLE
 };
 
-class AWS_MEDIASTOREDATA_API MediaStoreDataError : public Aws::Client::AWSError<MediaStoreDataErrors>
-{
-public:
+class AWS_MEDIASTOREDATA_API MediaStoreDataError : public Aws::Client::AWSError<MediaStoreDataErrors> {
+ public:
   MediaStoreDataError() {}
   MediaStoreDataError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaStoreDataErrors>(rhs) {}
   MediaStoreDataError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaStoreDataErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace MediaStoreDataErrorMapper
-{
-  AWS_MEDIASTOREDATA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MediaStoreDataErrorMapper {
+AWS_MEDIASTOREDATA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MediaStoreData
-} // namespace Aws
+}  // namespace MediaStoreData
+}  // namespace Aws

@@ -3,68 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DataQuery.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DataQuery.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-DataQuery::DataQuery(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DataQuery::DataQuery(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DataQuery& DataQuery::operator =(const XmlNode& xmlNode)
-{
+DataQuery& DataQuery::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
+    if (!idNode.IsNull()) {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
-    if(!sourceNode.IsNull())
-    {
+    if (!sourceNode.IsNull()) {
       m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
-    if(!destinationNode.IsNull())
-    {
+    if (!destinationNode.IsNull()) {
       m_destination = Aws::Utils::Xml::DecodeEscapedXmlText(destinationNode.GetText());
       m_destinationHasBeenSet = true;
     }
     XmlNode metricNode = resultNode.FirstChild("Metric");
-    if(!metricNode.IsNull())
-    {
-      m_metric = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()));
+    if (!metricNode.IsNull()) {
+      m_metric =
+          MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()));
       m_metricHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
-    if(!statisticNode.IsNull())
-    {
-      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
+    if (!statisticNode.IsNull()) {
+      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
-    if(!periodNode.IsNull())
-    {
-      m_period = PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()));
+    if (!periodNode.IsNull()) {
+      m_period =
+          PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()));
       m_periodHasBeenSet = true;
     }
   }
@@ -72,68 +61,56 @@ DataQuery& DataQuery::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DataQuery::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_idHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+void DataQuery::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_idHasBeenSet) {
+    oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 
-  if(m_sourceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
+  if (m_sourceHasBeenSet) {
+    oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
 
-  if(m_destinationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
+  if (m_destinationHasBeenSet) {
+    oStream << location << index << locationValue << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
   }
 
-  if(m_metricHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
+  if (m_metricHasBeenSet) {
+    oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric))
+            << "&";
   }
 
-  if(m_statisticHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
+  if (m_statisticHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
   }
 
-  if(m_periodHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period)) << "&";
-  }
-
-}
-
-void DataQuery::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_idHasBeenSet)
-  {
-      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
-  if(m_sourceHasBeenSet)
-  {
-      oStream << location << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
-  }
-  if(m_destinationHasBeenSet)
-  {
-      oStream << location << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
-  }
-  if(m_metricHasBeenSet)
-  {
-      oStream << location << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
-  }
-  if(m_statisticHasBeenSet)
-  {
-      oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
-  }
-  if(m_periodHasBeenSet)
-  {
-      oStream << location << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period)) << "&";
+  if (m_periodHasBeenSet) {
+    oStream << location << index << locationValue << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void DataQuery::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_idHasBeenSet) {
+    oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if (m_sourceHasBeenSet) {
+    oStream << location << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
+  }
+  if (m_destinationHasBeenSet) {
+    oStream << location << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
+  }
+  if (m_metricHasBeenSet) {
+    oStream << location << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
+  }
+  if (m_statisticHasBeenSet) {
+    oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
+  }
+  if (m_periodHasBeenSet) {
+    oStream << location << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

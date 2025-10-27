@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-class ResourceGroupsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ResourceGroups {
+class ResourceGroupsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace ResourceGroups
+}  // namespace Aws

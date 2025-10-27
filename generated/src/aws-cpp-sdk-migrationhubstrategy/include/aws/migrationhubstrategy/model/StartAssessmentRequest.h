@@ -4,101 +4,124 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
-#include <aws/migrationhubstrategy/model/AssessmentDataSourceType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/migrationhubstrategy/model/AssessmentDataSourceType.h>
 #include <aws/migrationhubstrategy/model/AssessmentTarget.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
+/**
+ */
+class StartAssessmentRequest : public MigrationHubStrategyRecommendationsRequest {
+ public:
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartAssessmentRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StartAssessment"; }
+
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The data source type of an assessment to be started.</p>
    */
-  class StartAssessmentRequest : public MigrationHubStrategyRecommendationsRequest
-  {
-  public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartAssessmentRequest() = default;
+  inline AssessmentDataSourceType GetAssessmentDataSourceType() const { return m_assessmentDataSourceType; }
+  inline bool AssessmentDataSourceTypeHasBeenSet() const { return m_assessmentDataSourceTypeHasBeenSet; }
+  inline void SetAssessmentDataSourceType(AssessmentDataSourceType value) {
+    m_assessmentDataSourceTypeHasBeenSet = true;
+    m_assessmentDataSourceType = value;
+  }
+  inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType value) {
+    SetAssessmentDataSourceType(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "StartAssessment"; }
+  ///@{
+  /**
+   * <p>List of criteria for assessment.</p>
+   */
+  inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const { return m_assessmentTargets; }
+  inline bool AssessmentTargetsHasBeenSet() const { return m_assessmentTargetsHasBeenSet; }
+  template <typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+  void SetAssessmentTargets(AssessmentTargetsT&& value) {
+    m_assessmentTargetsHasBeenSet = true;
+    m_assessmentTargets = std::forward<AssessmentTargetsT>(value);
+  }
+  template <typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+  StartAssessmentRequest& WithAssessmentTargets(AssessmentTargetsT&& value) {
+    SetAssessmentTargets(std::forward<AssessmentTargetsT>(value));
+    return *this;
+  }
+  template <typename AssessmentTargetsT = AssessmentTarget>
+  StartAssessmentRequest& AddAssessmentTargets(AssessmentTargetsT&& value) {
+    m_assessmentTargetsHasBeenSet = true;
+    m_assessmentTargets.emplace_back(std::forward<AssessmentTargetsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p> The S3 bucket used by the collectors to send analysis data to the service.
+   * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+   */
+  inline const Aws::String& GetS3bucketForAnalysisData() const { return m_s3bucketForAnalysisData; }
+  inline bool S3bucketForAnalysisDataHasBeenSet() const { return m_s3bucketForAnalysisDataHasBeenSet; }
+  template <typename S3bucketForAnalysisDataT = Aws::String>
+  void SetS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) {
+    m_s3bucketForAnalysisDataHasBeenSet = true;
+    m_s3bucketForAnalysisData = std::forward<S3bucketForAnalysisDataT>(value);
+  }
+  template <typename S3bucketForAnalysisDataT = Aws::String>
+  StartAssessmentRequest& WithS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) {
+    SetS3bucketForAnalysisData(std::forward<S3bucketForAnalysisDataT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> The S3 bucket where all the reports generated by the service are stored. The
+   * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+   */
+  inline const Aws::String& GetS3bucketForReportData() const { return m_s3bucketForReportData; }
+  inline bool S3bucketForReportDataHasBeenSet() const { return m_s3bucketForReportDataHasBeenSet; }
+  template <typename S3bucketForReportDataT = Aws::String>
+  void SetS3bucketForReportData(S3bucketForReportDataT&& value) {
+    m_s3bucketForReportDataHasBeenSet = true;
+    m_s3bucketForReportData = std::forward<S3bucketForReportDataT>(value);
+  }
+  template <typename S3bucketForReportDataT = Aws::String>
+  StartAssessmentRequest& WithS3bucketForReportData(S3bucketForReportDataT&& value) {
+    SetS3bucketForReportData(std::forward<S3bucketForReportDataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  AssessmentDataSourceType m_assessmentDataSourceType{AssessmentDataSourceType::NOT_SET};
+  bool m_assessmentDataSourceTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
-    inline AssessmentDataSourceType GetAssessmentDataSourceType() const { return m_assessmentDataSourceType; }
-    inline bool AssessmentDataSourceTypeHasBeenSet() const { return m_assessmentDataSourceTypeHasBeenSet; }
-    inline void SetAssessmentDataSourceType(AssessmentDataSourceType value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = value; }
-    inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType value) { SetAssessmentDataSourceType(value); return *this;}
-    ///@}
+  Aws::Vector<AssessmentTarget> m_assessmentTargets;
+  bool m_assessmentTargetsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
-    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const { return m_assessmentTargets; }
-    inline bool AssessmentTargetsHasBeenSet() const { return m_assessmentTargetsHasBeenSet; }
-    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
-    void SetAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::forward<AssessmentTargetsT>(value); }
-    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
-    StartAssessmentRequest& WithAssessmentTargets(AssessmentTargetsT&& value) { SetAssessmentTargets(std::forward<AssessmentTargetsT>(value)); return *this;}
-    template<typename AssessmentTargetsT = AssessmentTarget>
-    StartAssessmentRequest& AddAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.emplace_back(std::forward<AssessmentTargetsT>(value)); return *this; }
-    ///@}
+  Aws::String m_s3bucketForAnalysisData;
+  bool m_s3bucketForAnalysisDataHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
-    inline const Aws::String& GetS3bucketForAnalysisData() const { return m_s3bucketForAnalysisData; }
-    inline bool S3bucketForAnalysisDataHasBeenSet() const { return m_s3bucketForAnalysisDataHasBeenSet; }
-    template<typename S3bucketForAnalysisDataT = Aws::String>
-    void SetS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = std::forward<S3bucketForAnalysisDataT>(value); }
-    template<typename S3bucketForAnalysisDataT = Aws::String>
-    StartAssessmentRequest& WithS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) { SetS3bucketForAnalysisData(std::forward<S3bucketForAnalysisDataT>(value)); return *this;}
-    ///@}
+  Aws::String m_s3bucketForReportData;
+  bool m_s3bucketForReportDataHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
-    inline const Aws::String& GetS3bucketForReportData() const { return m_s3bucketForReportData; }
-    inline bool S3bucketForReportDataHasBeenSet() const { return m_s3bucketForReportDataHasBeenSet; }
-    template<typename S3bucketForReportDataT = Aws::String>
-    void SetS3bucketForReportData(S3bucketForReportDataT&& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = std::forward<S3bucketForReportDataT>(value); }
-    template<typename S3bucketForReportDataT = Aws::String>
-    StartAssessmentRequest& WithS3bucketForReportData(S3bucketForReportDataT&& value) { SetS3bucketForReportData(std::forward<S3bucketForReportDataT>(value)); return *this;}
-    ///@}
-  private:
-
-    AssessmentDataSourceType m_assessmentDataSourceType{AssessmentDataSourceType::NOT_SET};
-    bool m_assessmentDataSourceTypeHasBeenSet = false;
-
-    Aws::Vector<AssessmentTarget> m_assessmentTargets;
-    bool m_assessmentTargetsHasBeenSet = false;
-
-    Aws::String m_s3bucketForAnalysisData;
-    bool m_s3bucketForAnalysisDataHasBeenSet = false;
-
-    Aws::String m_s3bucketForReportData;
-    bool m_s3bucketForReportDataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

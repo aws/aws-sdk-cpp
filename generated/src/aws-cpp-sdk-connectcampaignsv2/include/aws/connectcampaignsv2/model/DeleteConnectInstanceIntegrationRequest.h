@@ -4,67 +4,74 @@
  */
 
 #pragma once
-#include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/IntegrationIdentifier.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-  /**
-   * <p>The request for DeleteConnectInstanceIntegration API.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteConnectInstanceIntegrationRequest">AWS
-   * API Reference</a></p>
-   */
-  class DeleteConnectInstanceIntegrationRequest : public ConnectCampaignsV2Request
-  {
-  public:
-    AWS_CONNECTCAMPAIGNSV2_API DeleteConnectInstanceIntegrationRequest() = default;
+/**
+ * <p>The request for DeleteConnectInstanceIntegration API.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteConnectInstanceIntegrationRequest">AWS
+ * API Reference</a></p>
+ */
+class DeleteConnectInstanceIntegrationRequest : public ConnectCampaignsV2Request {
+ public:
+  AWS_CONNECTCAMPAIGNSV2_API DeleteConnectInstanceIntegrationRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteConnectInstanceIntegration"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteConnectInstanceIntegration"; }
 
-    AWS_CONNECTCAMPAIGNSV2_API Aws::String SerializePayload() const override;
+  AWS_CONNECTCAMPAIGNSV2_API Aws::String SerializePayload() const override;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
-    inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-    template<typename ConnectInstanceIdT = Aws::String>
-    void SetConnectInstanceId(ConnectInstanceIdT&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::forward<ConnectInstanceIdT>(value); }
-    template<typename ConnectInstanceIdT = Aws::String>
-    DeleteConnectInstanceIntegrationRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) { SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
+  inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
+  template <typename ConnectInstanceIdT = Aws::String>
+  void SetConnectInstanceId(ConnectInstanceIdT&& value) {
+    m_connectInstanceIdHasBeenSet = true;
+    m_connectInstanceId = std::forward<ConnectInstanceIdT>(value);
+  }
+  template <typename ConnectInstanceIdT = Aws::String>
+  DeleteConnectInstanceIntegrationRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) {
+    SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const IntegrationIdentifier& GetIntegrationIdentifier() const { return m_integrationIdentifier; }
-    inline bool IntegrationIdentifierHasBeenSet() const { return m_integrationIdentifierHasBeenSet; }
-    template<typename IntegrationIdentifierT = IntegrationIdentifier>
-    void SetIntegrationIdentifier(IntegrationIdentifierT&& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = std::forward<IntegrationIdentifierT>(value); }
-    template<typename IntegrationIdentifierT = IntegrationIdentifier>
-    DeleteConnectInstanceIntegrationRequest& WithIntegrationIdentifier(IntegrationIdentifierT&& value) { SetIntegrationIdentifier(std::forward<IntegrationIdentifierT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet = false;
+  inline const IntegrationIdentifier& GetIntegrationIdentifier() const { return m_integrationIdentifier; }
+  inline bool IntegrationIdentifierHasBeenSet() const { return m_integrationIdentifierHasBeenSet; }
+  template <typename IntegrationIdentifierT = IntegrationIdentifier>
+  void SetIntegrationIdentifier(IntegrationIdentifierT&& value) {
+    m_integrationIdentifierHasBeenSet = true;
+    m_integrationIdentifier = std::forward<IntegrationIdentifierT>(value);
+  }
+  template <typename IntegrationIdentifierT = IntegrationIdentifier>
+  DeleteConnectInstanceIntegrationRequest& WithIntegrationIdentifier(IntegrationIdentifierT&& value) {
+    SetIntegrationIdentifier(std::forward<IntegrationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_connectInstanceId;
+  bool m_connectInstanceIdHasBeenSet = false;
 
-    IntegrationIdentifier m_integrationIdentifier;
-    bool m_integrationIdentifierHasBeenSet = false;
-  };
+  IntegrationIdentifier m_integrationIdentifier;
+  bool m_integrationIdentifierHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

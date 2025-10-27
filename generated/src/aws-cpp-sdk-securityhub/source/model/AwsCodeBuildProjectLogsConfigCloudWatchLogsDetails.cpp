@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(JsonView jsonValue)
-{
+AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupName"))
-  {
+AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamName"))
-  {
+  if (jsonValue.ValueExists("StreamName")) {
     m_streamName = jsonValue.GetString("StreamName");
     m_streamNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::Jsonize() const
-{
+JsonValue AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

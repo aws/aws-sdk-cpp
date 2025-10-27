@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeServerlessCachesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeServerlessCachesRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeServerlessCachesRequest::SerializePayload() const
-{
+Aws::String DescribeServerlessCachesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeServerlessCaches&";
-  if(m_serverlessCacheNameHasBeenSet)
-  {
+  if (m_serverlessCacheNameHasBeenSet) {
     ss << "ServerlessCacheName=" << StringUtils::URLEncode(m_serverlessCacheName.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeServerlessCachesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeServerlessCachesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeServerlessCachesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

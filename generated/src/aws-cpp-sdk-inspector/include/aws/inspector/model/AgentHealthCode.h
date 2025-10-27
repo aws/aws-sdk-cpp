@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class AgentHealthCode
-  {
-    NOT_SET,
-    IDLE,
-    RUNNING,
-    SHUTDOWN,
-    UNHEALTHY,
-    THROTTLED,
-    UNKNOWN
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class AgentHealthCode { NOT_SET, IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN };
 
-namespace AgentHealthCodeMapper
-{
+namespace AgentHealthCodeMapper {
 AWS_INSPECTOR_API AgentHealthCode GetAgentHealthCodeForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForAgentHealthCode(AgentHealthCode value);
-} // namespace AgentHealthCodeMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace AgentHealthCodeMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

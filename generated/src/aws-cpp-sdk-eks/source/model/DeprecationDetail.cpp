@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/DeprecationDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/DeprecationDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-DeprecationDetail::DeprecationDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeprecationDetail::DeprecationDetail(JsonView jsonValue) { *this = jsonValue; }
 
-DeprecationDetail& DeprecationDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("usage"))
-  {
+DeprecationDetail& DeprecationDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("usage")) {
     m_usage = jsonValue.GetString("usage");
     m_usageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("replacedWith"))
-  {
+  if (jsonValue.ValueExists("replacedWith")) {
     m_replacedWith = jsonValue.GetString("replacedWith");
     m_replacedWithHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stopServingVersion"))
-  {
+  if (jsonValue.ValueExists("stopServingVersion")) {
     m_stopServingVersion = jsonValue.GetString("stopServingVersion");
     m_stopServingVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startServingReplacementVersion"))
-  {
+  if (jsonValue.ValueExists("startServingReplacementVersion")) {
     m_startServingReplacementVersion = jsonValue.GetString("startServingReplacementVersion");
     m_startServingReplacementVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientStats"))
-  {
+  if (jsonValue.ValueExists("clientStats")) {
     Aws::Utils::Array<JsonView> clientStatsJsonList = jsonValue.GetArray("clientStats");
-    for(unsigned clientStatsIndex = 0; clientStatsIndex < clientStatsJsonList.GetLength(); ++clientStatsIndex)
-    {
+    for (unsigned clientStatsIndex = 0; clientStatsIndex < clientStatsJsonList.GetLength(); ++clientStatsIndex) {
       m_clientStats.push_back(clientStatsJsonList[clientStatsIndex].AsObject());
     }
     m_clientStatsHasBeenSet = true;
@@ -57,48 +44,36 @@ DeprecationDetail& DeprecationDetail::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DeprecationDetail::Jsonize() const
-{
+JsonValue DeprecationDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_usageHasBeenSet)
-  {
-   payload.WithString("usage", m_usage);
-
+  if (m_usageHasBeenSet) {
+    payload.WithString("usage", m_usage);
   }
 
-  if(m_replacedWithHasBeenSet)
-  {
-   payload.WithString("replacedWith", m_replacedWith);
-
+  if (m_replacedWithHasBeenSet) {
+    payload.WithString("replacedWith", m_replacedWith);
   }
 
-  if(m_stopServingVersionHasBeenSet)
-  {
-   payload.WithString("stopServingVersion", m_stopServingVersion);
-
+  if (m_stopServingVersionHasBeenSet) {
+    payload.WithString("stopServingVersion", m_stopServingVersion);
   }
 
-  if(m_startServingReplacementVersionHasBeenSet)
-  {
-   payload.WithString("startServingReplacementVersion", m_startServingReplacementVersion);
-
+  if (m_startServingReplacementVersionHasBeenSet) {
+    payload.WithString("startServingReplacementVersion", m_startServingReplacementVersion);
   }
 
-  if(m_clientStatsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> clientStatsJsonList(m_clientStats.size());
-   for(unsigned clientStatsIndex = 0; clientStatsIndex < clientStatsJsonList.GetLength(); ++clientStatsIndex)
-   {
-     clientStatsJsonList[clientStatsIndex].AsObject(m_clientStats[clientStatsIndex].Jsonize());
-   }
-   payload.WithArray("clientStats", std::move(clientStatsJsonList));
-
+  if (m_clientStatsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> clientStatsJsonList(m_clientStats.size());
+    for (unsigned clientStatsIndex = 0; clientStatsIndex < clientStatsJsonList.GetLength(); ++clientStatsIndex) {
+      clientStatsJsonList[clientStatsIndex].AsObject(m_clientStats[clientStatsIndex].Jsonize());
+    }
+    payload.WithArray("clientStats", std::move(clientStatsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/UpdateAccountSendingEnabledRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/UpdateAccountSendingEnabledRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountSendingEnabledRequest::SerializePayload() const
-{
+Aws::String UpdateAccountSendingEnabledRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateAccountSendingEnabled&";
-  if(m_enabledHasBeenSet)
-  {
+  if (m_enabledHasBeenSet) {
     ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String UpdateAccountSendingEnabledRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateAccountSendingEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateAccountSendingEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

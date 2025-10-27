@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/connectparticipant/ConnectParticipantRequest.h>
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-} // namespace ConnectParticipant
-} // namespace Aws
+namespace Aws {
+namespace ConnectParticipant {}  // namespace ConnectParticipant
+}  // namespace Aws

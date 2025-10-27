@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RestoreAddressToClassicRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RestoreAddressToClassicRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RestoreAddressToClassicRequest::SerializePayload() const
-{
+Aws::String RestoreAddressToClassicRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RestoreAddressToClassic&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_publicIpHasBeenSet)
-  {
+  if (m_publicIpHasBeenSet) {
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RestoreAddressToClassicRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RestoreAddressToClassicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RestoreAddressToClassicRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

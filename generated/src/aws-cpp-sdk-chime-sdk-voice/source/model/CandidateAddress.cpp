@@ -11,107 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-CandidateAddress::CandidateAddress(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CandidateAddress::CandidateAddress(JsonView jsonValue) { *this = jsonValue; }
 
-CandidateAddress& CandidateAddress::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streetInfo"))
-  {
+CandidateAddress& CandidateAddress::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streetInfo")) {
     m_streetInfo = jsonValue.GetString("streetInfo");
     m_streetInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streetNumber"))
-  {
+  if (jsonValue.ValueExists("streetNumber")) {
     m_streetNumber = jsonValue.GetString("streetNumber");
     m_streetNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("city"))
-  {
+  if (jsonValue.ValueExists("city")) {
     m_city = jsonValue.GetString("city");
     m_cityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = jsonValue.GetString("state");
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postalCode"))
-  {
+  if (jsonValue.ValueExists("postalCode")) {
     m_postalCode = jsonValue.GetString("postalCode");
     m_postalCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postalCodePlus4"))
-  {
+  if (jsonValue.ValueExists("postalCodePlus4")) {
     m_postalCodePlus4 = jsonValue.GetString("postalCodePlus4");
     m_postalCodePlus4HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("country"))
-  {
+  if (jsonValue.ValueExists("country")) {
     m_country = jsonValue.GetString("country");
     m_countryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CandidateAddress::Jsonize() const
-{
+JsonValue CandidateAddress::Jsonize() const {
   JsonValue payload;
 
-  if(m_streetInfoHasBeenSet)
-  {
-   payload.WithString("streetInfo", m_streetInfo);
-
+  if (m_streetInfoHasBeenSet) {
+    payload.WithString("streetInfo", m_streetInfo);
   }
 
-  if(m_streetNumberHasBeenSet)
-  {
-   payload.WithString("streetNumber", m_streetNumber);
-
+  if (m_streetNumberHasBeenSet) {
+    payload.WithString("streetNumber", m_streetNumber);
   }
 
-  if(m_cityHasBeenSet)
-  {
-   payload.WithString("city", m_city);
-
+  if (m_cityHasBeenSet) {
+    payload.WithString("city", m_city);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", m_state);
-
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", m_state);
   }
 
-  if(m_postalCodeHasBeenSet)
-  {
-   payload.WithString("postalCode", m_postalCode);
-
+  if (m_postalCodeHasBeenSet) {
+    payload.WithString("postalCode", m_postalCode);
   }
 
-  if(m_postalCodePlus4HasBeenSet)
-  {
-   payload.WithString("postalCodePlus4", m_postalCodePlus4);
-
+  if (m_postalCodePlus4HasBeenSet) {
+    payload.WithString("postalCodePlus4", m_postalCodePlus4);
   }
 
-  if(m_countryHasBeenSet)
-  {
-   payload.WithString("country", m_country);
-
+  if (m_countryHasBeenSet) {
+    payload.WithString("country", m_country);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

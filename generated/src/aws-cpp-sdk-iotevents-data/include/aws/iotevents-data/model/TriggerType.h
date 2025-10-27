@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
-  enum class TriggerType
-  {
-    NOT_SET,
-    SNOOZE_TIMEOUT
-  };
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
+enum class TriggerType { NOT_SET, SNOOZE_TIMEOUT };
 
-namespace TriggerTypeMapper
-{
+namespace TriggerTypeMapper {
 AWS_IOTEVENTSDATA_API TriggerType GetTriggerTypeForName(const Aws::String& name);
 
 AWS_IOTEVENTSDATA_API Aws::String GetNameForTriggerType(TriggerType value);
-} // namespace TriggerTypeMapper
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace TriggerTypeMapper
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

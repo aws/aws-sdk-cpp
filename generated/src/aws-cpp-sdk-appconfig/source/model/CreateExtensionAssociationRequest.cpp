@@ -12,53 +12,36 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateExtensionAssociationRequest::SerializePayload() const
-{
+Aws::String CreateExtensionAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_extensionIdentifierHasBeenSet)
-  {
-   payload.WithString("ExtensionIdentifier", m_extensionIdentifier);
-
+  if (m_extensionIdentifierHasBeenSet) {
+    payload.WithString("ExtensionIdentifier", m_extensionIdentifier);
   }
 
-  if(m_extensionVersionNumberHasBeenSet)
-  {
-   payload.WithInteger("ExtensionVersionNumber", m_extensionVersionNumber);
-
+  if (m_extensionVersionNumberHasBeenSet) {
+    payload.WithInteger("ExtensionVersionNumber", m_extensionVersionNumber);
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

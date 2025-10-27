@@ -12,11 +12,4 @@ using namespace Aws::AIOps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteInvestigationGroupPolicyRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteInvestigationGroupPolicyRequest::SerializePayload() const { return {}; }

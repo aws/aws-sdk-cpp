@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexRuntimeV2
-{
-namespace Model
-{
-  enum class DialogActionType
-  {
-    NOT_SET,
-    Close,
-    ConfirmIntent,
-    Delegate,
-    ElicitIntent,
-    ElicitSlot,
-    None
-  };
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace Model {
+enum class DialogActionType { NOT_SET, Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot, None };
 
-namespace DialogActionTypeMapper
-{
+namespace DialogActionTypeMapper {
 AWS_LEXRUNTIMEV2_API DialogActionType GetDialogActionTypeForName(const Aws::String& name);
 
 AWS_LEXRUNTIMEV2_API Aws::String GetNameForDialogActionType(DialogActionType value);
-} // namespace DialogActionTypeMapper
-} // namespace Model
-} // namespace LexRuntimeV2
-} // namespace Aws
+}  // namespace DialogActionTypeMapper
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

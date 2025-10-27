@@ -12,77 +12,55 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExportRDSDatabaseRecommendationsRequest::SerializePayload() const
-{
+Aws::String ExportRDSDatabaseRecommendationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-   {
-     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
-   }
-   payload.WithArray("accountIds", std::move(accountIdsJsonList));
-
+  if (m_accountIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
+      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+    }
+    payload.WithArray("accountIds", std::move(accountIdsJsonList));
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
-
+  if (m_filtersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
+      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    }
+    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
-  if(m_fieldsToExportHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsToExportJsonList(m_fieldsToExport.size());
-   for(unsigned fieldsToExportIndex = 0; fieldsToExportIndex < fieldsToExportJsonList.GetLength(); ++fieldsToExportIndex)
-   {
-     fieldsToExportJsonList[fieldsToExportIndex].AsString(ExportableRDSDBFieldMapper::GetNameForExportableRDSDBField(m_fieldsToExport[fieldsToExportIndex]));
-   }
-   payload.WithArray("fieldsToExport", std::move(fieldsToExportJsonList));
-
+  if (m_fieldsToExportHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsToExportJsonList(m_fieldsToExport.size());
+    for (unsigned fieldsToExportIndex = 0; fieldsToExportIndex < fieldsToExportJsonList.GetLength(); ++fieldsToExportIndex) {
+      fieldsToExportJsonList[fieldsToExportIndex].AsString(
+          ExportableRDSDBFieldMapper::GetNameForExportableRDSDBField(m_fieldsToExport[fieldsToExportIndex]));
+    }
+    payload.WithArray("fieldsToExport", std::move(fieldsToExportJsonList));
   }
 
-  if(m_s3DestinationConfigHasBeenSet)
-  {
-   payload.WithObject("s3DestinationConfig", m_s3DestinationConfig.Jsonize());
-
+  if (m_s3DestinationConfigHasBeenSet) {
+    payload.WithObject("s3DestinationConfig", m_s3DestinationConfig.Jsonize());
   }
 
-  if(m_fileFormatHasBeenSet)
-  {
-   payload.WithString("fileFormat", FileFormatMapper::GetNameForFileFormat(m_fileFormat));
+  if (m_fileFormatHasBeenSet) {
+    payload.WithString("fileFormat", FileFormatMapper::GetNameForFileFormat(m_fileFormat));
   }
 
-  if(m_includeMemberAccountsHasBeenSet)
-  {
-   payload.WithBool("includeMemberAccounts", m_includeMemberAccounts);
-
+  if (m_includeMemberAccountsHasBeenSet) {
+    payload.WithBool("includeMemberAccounts", m_includeMemberAccounts);
   }
 
-  if(m_recommendationPreferencesHasBeenSet)
-  {
-   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
-
+  if (m_recommendationPreferencesHasBeenSet) {
+    payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ExportRDSDatabaseRecommendationsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ExportRDSDatabaseRecommendationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.ExportRDSDatabaseRecommendations"));
   return headers;
-
 }
-
-
-
-

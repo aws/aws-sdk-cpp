@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iot-data/IoTDataPlaneEndpointRules.h>
+#include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTDataPlane
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTDataPlane {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTDataPlaneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTDataPlaneDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTDATAPLANE_API IoTDataPlaneEndpointProvider : public IoTDataPlaneDefaultEpProviderBase
-{
-public:
-    using IoTDataPlaneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTDATAPLANE_API IoTDataPlaneEndpointProvider : public IoTDataPlaneDefaultEpProviderBase {
+ public:
+  using IoTDataPlaneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTDataPlaneEndpointProvider()
-      : IoTDataPlaneDefaultEpProviderBase(Aws::IoTDataPlane::IoTDataPlaneEndpointRules::GetRulesBlob(), Aws::IoTDataPlane::IoTDataPlaneEndpointRules::RulesBlobSize)
-    {}
+  IoTDataPlaneEndpointProvider()
+      : IoTDataPlaneDefaultEpProviderBase(Aws::IoTDataPlane::IoTDataPlaneEndpointRules::GetRulesBlob(),
+                                          Aws::IoTDataPlane::IoTDataPlaneEndpointRules::RulesBlobSize) {}
 
-    ~IoTDataPlaneEndpointProvider()
-    {
-    }
+  ~IoTDataPlaneEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTDataPlane
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTDataPlane
+}  // namespace Aws

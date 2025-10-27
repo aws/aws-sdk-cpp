@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class AdminStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLE_IN_PROGRESS
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class AdminStatus { NOT_SET, ENABLED, DISABLE_IN_PROGRESS };
 
-namespace AdminStatusMapper
-{
+namespace AdminStatusMapper {
 AWS_GUARDDUTY_API AdminStatus GetAdminStatusForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForAdminStatus(AdminStatus value);
-} // namespace AdminStatusMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace AdminStatusMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

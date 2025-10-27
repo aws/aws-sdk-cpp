@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class ChangeAction
-  {
-    NOT_SET,
-    ADD,
-    MODIFY,
-    REMOVE
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class ChangeAction { NOT_SET, ADD, MODIFY, REMOVE };
 
-namespace ChangeActionMapper
-{
+namespace ChangeActionMapper {
 AWS_NETWORKMANAGER_API ChangeAction GetChangeActionForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForChangeAction(ChangeAction value);
-} // namespace ChangeActionMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace ChangeActionMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsResult.h>
 
 #include <utility>
 
@@ -17,42 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAvailableManagedRuleGroupVersionsResult::ListAvailableManagedRuleGroupVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAvailableManagedRuleGroupVersionsResult::ListAvailableManagedRuleGroupVersionsResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListAvailableManagedRuleGroupVersionsResult& ListAvailableManagedRuleGroupVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAvailableManagedRuleGroupVersionsResult& ListAvailableManagedRuleGroupVersionsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextMarker"))
-  {
+  if (jsonValue.ValueExists("NextMarker")) {
     m_nextMarker = jsonValue.GetString("NextMarker");
     m_nextMarkerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Versions"))
-  {
+  if (jsonValue.ValueExists("Versions")) {
     Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
-    for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
-    {
+    for (unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex) {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());
     }
     m_versionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrentDefaultVersion"))
-  {
+  if (jsonValue.ValueExists("CurrentDefaultVersion")) {
     m_currentDefaultVersion = jsonValue.GetString("CurrentDefaultVersion");
     m_currentDefaultVersionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

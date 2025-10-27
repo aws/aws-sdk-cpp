@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/ScalingConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/ScalingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-ScalingConfig::ScalingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScalingConfig::ScalingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ScalingConfig& ScalingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaximumConcurrency"))
-  {
+ScalingConfig& ScalingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaximumConcurrency")) {
     m_maximumConcurrency = jsonValue.GetInteger("MaximumConcurrency");
     m_maximumConcurrencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScalingConfig::Jsonize() const
-{
+JsonValue ScalingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_maximumConcurrencyHasBeenSet)
-  {
-   payload.WithInteger("MaximumConcurrency", m_maximumConcurrency);
-
+  if (m_maximumConcurrencyHasBeenSet) {
+    payload.WithInteger("MaximumConcurrency", m_maximumConcurrency);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

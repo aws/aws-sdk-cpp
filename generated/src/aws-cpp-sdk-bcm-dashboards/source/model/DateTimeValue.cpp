@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
 
-DateTimeValue::DateTimeValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DateTimeValue::DateTimeValue(JsonView jsonValue) { *this = jsonValue; }
 
-DateTimeValue& DateTimeValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+DateTimeValue& DateTimeValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = DateTimeTypeMapper::GetDateTimeTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DateTimeValue::Jsonize() const
-{
+JsonValue DateTimeValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DateTimeTypeMapper::GetNameForDateTimeType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DateTimeTypeMapper::GetNameForDateTimeType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

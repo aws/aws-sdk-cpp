@@ -3,27 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
-#include <aws/core/utils/DNS.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/logging/ErrorMacros.h>
-
 #include <aws/iotthingsgraph/IoTThingsGraphClient.h>
-#include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 #include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
-
+#include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 #include <smithy/tracing/TracingUtils.h>
-
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -35,116 +32,92 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-namespace Aws
-{
-  namespace IoTThingsGraph
-  {
-    const char SERVICE_NAME[] = "iotthingsgraph";
-    const char ALLOCATION_TAG[] = "IoTThingsGraphClient";
-  }
-}
-const char* IoTThingsGraphClient::GetServiceName() {return SERVICE_NAME;}
-const char* IoTThingsGraphClient::GetAllocationTag() {return ALLOCATION_TAG;}
+namespace Aws {
+namespace IoTThingsGraph {
+const char SERVICE_NAME[] = "iotthingsgraph";
+const char ALLOCATION_TAG[] = "IoTThingsGraphClient";
+}  // namespace IoTThingsGraph
+}  // namespace Aws
+const char* IoTThingsGraphClient::GetServiceName() { return SERVICE_NAME; }
+const char* IoTThingsGraphClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 IoTThingsGraphClient::IoTThingsGraphClient(const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration,
-                                           std::shared_ptr<IoTThingsGraphEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+                                           std::shared_ptr<IoTThingsGraphEndpointProviderBase> endpointProvider)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(
+                    ALLOCATION_TAG,
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
+                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
 IoTThingsGraphClient::IoTThingsGraphClient(const AWSCredentials& credentials,
                                            std::shared_ptr<IoTThingsGraphEndpointProviderBase> endpointProvider,
-                                           const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+                                           const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
 IoTThingsGraphClient::IoTThingsGraphClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                            std::shared_ptr<IoTThingsGraphEndpointProviderBase> endpointProvider,
-                                           const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+                                           const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
-    /* Legacy constructors due deprecation */
-  IoTThingsGraphClient::IoTThingsGraphClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+/* Legacy constructors due deprecation */
+IoTThingsGraphClient::IoTThingsGraphClient(const Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(
+                    ALLOCATION_TAG,
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
+                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
-IoTThingsGraphClient::IoTThingsGraphClient(const AWSCredentials& credentials,
-                                           const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+IoTThingsGraphClient::IoTThingsGraphClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
 IoTThingsGraphClient::IoTThingsGraphClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
-{
+                                           const Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
 }
 
-    /* End of legacy constructors due deprecation */
-IoTThingsGraphClient::~IoTThingsGraphClient()
-{
-  ShutdownSdkClient(this, -1);
-}
+/* End of legacy constructors due deprecation */
+IoTThingsGraphClient::~IoTThingsGraphClient() { ShutdownSdkClient(this, -1); }
 
-std::shared_ptr<IoTThingsGraphEndpointProviderBase>& IoTThingsGraphClient::accessEndpointProvider()
-{
-  return m_endpointProvider;
-}
+std::shared_ptr<IoTThingsGraphEndpointProviderBase>& IoTThingsGraphClient::accessEndpointProvider() { return m_endpointProvider; }
 
-void IoTThingsGraphClient::init(const IoTThingsGraph::IoTThingsGraphClientConfiguration& config)
-{
+void IoTThingsGraphClient::init(const IoTThingsGraph::IoTThingsGraphClientConfiguration& config) {
   AWSClient::SetServiceClientName("IoTThingsGraph");
   if (!m_clientConfiguration.executor) {
     if (!m_clientConfiguration.configFactories.executorCreateFn()) {
@@ -158,10 +131,8 @@ void IoTThingsGraphClient::init(const IoTThingsGraph::IoTThingsGraphClientConfig
   m_endpointProvider->InitBuiltInParameters(config);
 }
 
-void IoTThingsGraphClient::OverrideEndpoint(const Aws::String& endpoint)
-{
+void IoTThingsGraphClient::OverrideEndpoint(const Aws::String& endpoint) {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
-

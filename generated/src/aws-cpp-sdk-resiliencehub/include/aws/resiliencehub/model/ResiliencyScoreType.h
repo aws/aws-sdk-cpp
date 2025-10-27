@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ResiliencyScoreType
-  {
-    NOT_SET,
-    Compliance,
-    Test,
-    Alarm,
-    Sop
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ResiliencyScoreType { NOT_SET, Compliance, Test, Alarm, Sop };
 
-namespace ResiliencyScoreTypeMapper
-{
+namespace ResiliencyScoreTypeMapper {
 AWS_RESILIENCEHUB_API ResiliencyScoreType GetResiliencyScoreTypeForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForResiliencyScoreType(ResiliencyScoreType value);
-} // namespace ResiliencyScoreTypeMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ResiliencyScoreTypeMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

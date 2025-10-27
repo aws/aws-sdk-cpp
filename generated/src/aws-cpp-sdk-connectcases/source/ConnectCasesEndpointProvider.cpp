@@ -5,12 +5,8 @@
 
 #include <aws/connectcases/ConnectCasesEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConnectCases
-} // namespace Aws
+namespace Aws {
+namespace ConnectCases {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConnectCases
+}  // namespace Aws

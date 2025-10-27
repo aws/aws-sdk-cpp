@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/devicefarm/DeviceFarmEndpointRules.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DeviceFarm {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DeviceFarmClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DeviceFarmDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DEVICEFARM_API DeviceFarmEndpointProvider : public DeviceFarmDefaultEpProviderBase
-{
-public:
-    using DeviceFarmResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DEVICEFARM_API DeviceFarmEndpointProvider : public DeviceFarmDefaultEpProviderBase {
+ public:
+  using DeviceFarmResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DeviceFarmEndpointProvider()
-      : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::GetRulesBlob(), Aws::DeviceFarm::DeviceFarmEndpointRules::RulesBlobSize)
-    {}
+  DeviceFarmEndpointProvider()
+      : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::GetRulesBlob(),
+                                        Aws::DeviceFarm::DeviceFarmEndpointRules::RulesBlobSize) {}
 
-    ~DeviceFarmEndpointProvider()
-    {
-    }
+  ~DeviceFarmEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DeviceFarm
+}  // namespace Aws

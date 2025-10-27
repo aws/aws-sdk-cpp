@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse(JsonView jsonValue) { *this = jsonValue; }
 
-SuccessfulCampaignStateResponse& SuccessfulCampaignStateResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("campaignId"))
-  {
+SuccessfulCampaignStateResponse& SuccessfulCampaignStateResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("campaignId")) {
     m_campaignId = jsonValue.GetString("campaignId");
     m_campaignIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = CampaignStateMapper::GetCampaignStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuccessfulCampaignStateResponse::Jsonize() const
-{
+JsonValue SuccessfulCampaignStateResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_campaignIdHasBeenSet)
-  {
-   payload.WithString("campaignId", m_campaignId);
-
+  if (m_campaignIdHasBeenSet) {
+    payload.WithString("campaignId", m_campaignId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", CampaignStateMapper::GetNameForCampaignState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", CampaignStateMapper::GetNameForCampaignState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

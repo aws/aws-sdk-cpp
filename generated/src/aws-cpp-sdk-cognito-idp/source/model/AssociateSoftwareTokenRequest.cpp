@@ -12,33 +12,22 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateSoftwareTokenRequest::SerializePayload() const
-{
+Aws::String AssociateSoftwareTokenRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
-  if(m_sessionHasBeenSet)
-  {
-   payload.WithString("Session", m_session);
-
+  if (m_sessionHasBeenSet) {
+    payload.WithString("Session", m_session);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AssociateSoftwareTokenRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AssociateSoftwareTokenRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AssociateSoftwareToken"));
   return headers;
-
 }
-
-
-
-

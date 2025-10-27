@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class SentimentValue
-  {
-    NOT_SET,
-    POSITIVE,
-    NEGATIVE,
-    NEUTRAL,
-    MIXED
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class SentimentValue { NOT_SET, POSITIVE, NEGATIVE, NEUTRAL, MIXED };
 
-namespace SentimentValueMapper
-{
+namespace SentimentValueMapper {
 AWS_TRANSCRIBESERVICE_API SentimentValue GetSentimentValueForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForSentimentValue(SentimentValue value);
-} // namespace SentimentValueMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace SentimentValueMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

@@ -3,68 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/InstanceFleetTimeline.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/InstanceFleetTimeline.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceFleetTimeline& InstanceFleetTimeline::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CreationDateTime"))
-  {
+InstanceFleetTimeline& InstanceFleetTimeline::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CreationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadyDateTime"))
-  {
+  if (jsonValue.ValueExists("ReadyDateTime")) {
     m_readyDateTime = jsonValue.GetDouble("ReadyDateTime");
     m_readyDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndDateTime"))
-  {
+  if (jsonValue.ValueExists("EndDateTime")) {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
     m_endDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceFleetTimeline::Jsonize() const
-{
+JsonValue InstanceFleetTimeline::Jsonize() const {
   JsonValue payload;
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_readyDateTimeHasBeenSet)
-  {
-   payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
+  if (m_readyDateTimeHasBeenSet) {
+    payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_endDateTimeHasBeenSet)
-  {
-   payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
+  if (m_endDateTimeHasBeenSet) {
+    payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

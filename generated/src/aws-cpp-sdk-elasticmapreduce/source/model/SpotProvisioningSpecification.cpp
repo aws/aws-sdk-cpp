@@ -3,80 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/SpotProvisioningSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/SpotProvisioningSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeoutDurationMinutes"))
-  {
+SpotProvisioningSpecification& SpotProvisioningSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeoutDurationMinutes")) {
     m_timeoutDurationMinutes = jsonValue.GetInteger("TimeoutDurationMinutes");
     m_timeoutDurationMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeoutAction"))
-  {
+  if (jsonValue.ValueExists("TimeoutAction")) {
     m_timeoutAction = SpotProvisioningTimeoutActionMapper::GetSpotProvisioningTimeoutActionForName(jsonValue.GetString("TimeoutAction"));
     m_timeoutActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BlockDurationMinutes"))
-  {
+  if (jsonValue.ValueExists("BlockDurationMinutes")) {
     m_blockDurationMinutes = jsonValue.GetInteger("BlockDurationMinutes");
     m_blockDurationMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllocationStrategy"))
-  {
-    m_allocationStrategy = SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
+  if (jsonValue.ValueExists("AllocationStrategy")) {
+    m_allocationStrategy =
+        SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
     m_allocationStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SpotProvisioningSpecification::Jsonize() const
-{
+JsonValue SpotProvisioningSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeoutDurationMinutesHasBeenSet)
-  {
-   payload.WithInteger("TimeoutDurationMinutes", m_timeoutDurationMinutes);
-
+  if (m_timeoutDurationMinutesHasBeenSet) {
+    payload.WithInteger("TimeoutDurationMinutes", m_timeoutDurationMinutes);
   }
 
-  if(m_timeoutActionHasBeenSet)
-  {
-   payload.WithString("TimeoutAction", SpotProvisioningTimeoutActionMapper::GetNameForSpotProvisioningTimeoutAction(m_timeoutAction));
+  if (m_timeoutActionHasBeenSet) {
+    payload.WithString("TimeoutAction", SpotProvisioningTimeoutActionMapper::GetNameForSpotProvisioningTimeoutAction(m_timeoutAction));
   }
 
-  if(m_blockDurationMinutesHasBeenSet)
-  {
-   payload.WithInteger("BlockDurationMinutes", m_blockDurationMinutes);
-
+  if (m_blockDurationMinutesHasBeenSet) {
+    payload.WithInteger("BlockDurationMinutes", m_blockDurationMinutes);
   }
 
-  if(m_allocationStrategyHasBeenSet)
-  {
-   payload.WithString("AllocationStrategy", SpotProvisioningAllocationStrategyMapper::GetNameForSpotProvisioningAllocationStrategy(m_allocationStrategy));
+  if (m_allocationStrategyHasBeenSet) {
+    payload.WithString("AllocationStrategy",
+                       SpotProvisioningAllocationStrategyMapper::GetNameForSpotProvisioningAllocationStrategy(m_allocationStrategy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

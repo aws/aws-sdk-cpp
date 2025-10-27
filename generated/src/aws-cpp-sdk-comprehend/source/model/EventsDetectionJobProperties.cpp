@@ -11,80 +11,60 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EventsDetectionJobProperties::EventsDetectionJobProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventsDetectionJobProperties::EventsDetectionJobProperties(JsonView jsonValue) { *this = jsonValue; }
 
-EventsDetectionJobProperties& EventsDetectionJobProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobId"))
-  {
+EventsDetectionJobProperties& EventsDetectionJobProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobArn"))
-  {
+  if (jsonValue.ValueExists("JobArn")) {
     m_jobArn = jsonValue.GetString("JobArn");
     m_jobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobName"))
-  {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTime"))
-  {
+  if (jsonValue.ValueExists("SubmitTime")) {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
     m_submitTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputDataConfig"))
-  {
+  if (jsonValue.ValueExists("InputDataConfig")) {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
     m_inputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputDataConfig"))
-  {
+  if (jsonValue.ValueExists("OutputDataConfig")) {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
     m_outputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("DataAccessRoleArn")) {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
     m_dataAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetEventTypes"))
-  {
+  if (jsonValue.ValueExists("TargetEventTypes")) {
     Aws::Utils::Array<JsonView> targetEventTypesJsonList = jsonValue.GetArray("TargetEventTypes");
-    for(unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex)
-    {
+    for (unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex) {
       m_targetEventTypes.push_back(targetEventTypesJsonList[targetEventTypesIndex].AsString());
     }
     m_targetEventTypesHasBeenSet = true;
@@ -92,86 +72,64 @@ EventsDetectionJobProperties& EventsDetectionJobProperties::operator =(JsonView 
   return *this;
 }
 
-JsonValue EventsDetectionJobProperties::Jsonize() const
-{
+JsonValue EventsDetectionJobProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
-  if(m_jobArnHasBeenSet)
-  {
-   payload.WithString("JobArn", m_jobArn);
-
+  if (m_jobArnHasBeenSet) {
+    payload.WithString("JobArn", m_jobArn);
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_submitTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
+  if (m_submitTimeHasBeenSet) {
+    payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_inputDataConfigHasBeenSet)
-  {
-   payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
-
+  if (m_inputDataConfigHasBeenSet) {
+    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
   }
 
-  if(m_outputDataConfigHasBeenSet)
-  {
-   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
-
+  if (m_outputDataConfigHasBeenSet) {
+    payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_targetEventTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
-   for(unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex)
-   {
-     targetEventTypesJsonList[targetEventTypesIndex].AsString(m_targetEventTypes[targetEventTypesIndex]);
-   }
-   payload.WithArray("TargetEventTypes", std::move(targetEventTypesJsonList));
-
+  if (m_targetEventTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
+    for (unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex) {
+      targetEventTypesJsonList[targetEventTypesIndex].AsString(m_targetEventTypes[targetEventTypesIndex]);
+    }
+    payload.WithArray("TargetEventTypes", std::move(targetEventTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

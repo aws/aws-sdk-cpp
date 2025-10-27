@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-enum class MainframeModernizationErrors
-{
-  //From Core//
+namespace Aws {
+namespace MainframeModernization {
+enum class MainframeModernizationErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MainframeModernizationErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,29 +44,31 @@ enum class MainframeModernizationErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   EXECUTION_TIMEOUT,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationError : public Aws::Client::AWSError<MainframeModernizationErrors>
-{
-public:
+class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationError : public Aws::Client::AWSError<MainframeModernizationErrors> {
+ public:
   MainframeModernizationError() {}
-  MainframeModernizationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
-  MainframeModernizationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
-  MainframeModernizationError(const Aws::Client::AWSError<MainframeModernizationErrors>& rhs) : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
-  MainframeModernizationError(Aws::Client::AWSError<MainframeModernizationErrors>&& rhs) : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
+  MainframeModernizationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
+  MainframeModernizationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
+  MainframeModernizationError(const Aws::Client::AWSError<MainframeModernizationErrors>& rhs)
+      : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
+  MainframeModernizationError(Aws::Client::AWSError<MainframeModernizationErrors>&& rhs)
+      : Aws::Client::AWSError<MainframeModernizationErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MainframeModernizationErrorMapper
-{
-  AWS_MAINFRAMEMODERNIZATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MainframeModernizationErrorMapper {
+AWS_MAINFRAMEMODERNIZATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace MainframeModernization
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListTagsForCertificateRequest::SerializePayload() const
-{
+Aws::String ListTagsForCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("CertificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("CertificateArn", m_certificateArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListTagsForCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListTagsForCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ListTagsForCertificate"));
   return headers;
-
 }
-
-
-
-

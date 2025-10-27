@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::FinSpaceData;
 
-AWSError<CoreErrors> FinSpaceDataErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> FinSpaceDataErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = FinSpaceDataErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

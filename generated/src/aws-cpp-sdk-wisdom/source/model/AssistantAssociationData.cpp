@@ -3,63 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/AssistantAssociationData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/AssistantAssociationData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-AssistantAssociationData::AssistantAssociationData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssistantAssociationData::AssistantAssociationData(JsonView jsonValue) { *this = jsonValue; }
 
-AssistantAssociationData& AssistantAssociationData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("assistantArn"))
-  {
+AssistantAssociationData& AssistantAssociationData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("assistantArn")) {
     m_assistantArn = jsonValue.GetString("assistantArn");
     m_assistantArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantAssociationArn"))
-  {
+  if (jsonValue.ValueExists("assistantAssociationArn")) {
     m_assistantAssociationArn = jsonValue.GetString("assistantAssociationArn");
     m_assistantAssociationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantAssociationId"))
-  {
+  if (jsonValue.ValueExists("assistantAssociationId")) {
     m_assistantAssociationId = jsonValue.GetString("assistantAssociationId");
     m_assistantAssociationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantId"))
-  {
+  if (jsonValue.ValueExists("assistantId")) {
     m_assistantId = jsonValue.GetString("assistantId");
     m_assistantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationData"))
-  {
+  if (jsonValue.ValueExists("associationData")) {
     m_associationData = jsonValue.GetObject("associationData");
     m_associationDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationType"))
-  {
+  if (jsonValue.ValueExists("associationType")) {
     m_associationType = AssociationTypeMapper::GetAssociationTypeForName(jsonValue.GetString("associationType"));
     m_associationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -67,59 +52,44 @@ AssistantAssociationData& AssistantAssociationData::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue AssistantAssociationData::Jsonize() const
-{
+JsonValue AssistantAssociationData::Jsonize() const {
   JsonValue payload;
 
-  if(m_assistantArnHasBeenSet)
-  {
-   payload.WithString("assistantArn", m_assistantArn);
-
+  if (m_assistantArnHasBeenSet) {
+    payload.WithString("assistantArn", m_assistantArn);
   }
 
-  if(m_assistantAssociationArnHasBeenSet)
-  {
-   payload.WithString("assistantAssociationArn", m_assistantAssociationArn);
-
+  if (m_assistantAssociationArnHasBeenSet) {
+    payload.WithString("assistantAssociationArn", m_assistantAssociationArn);
   }
 
-  if(m_assistantAssociationIdHasBeenSet)
-  {
-   payload.WithString("assistantAssociationId", m_assistantAssociationId);
-
+  if (m_assistantAssociationIdHasBeenSet) {
+    payload.WithString("assistantAssociationId", m_assistantAssociationId);
   }
 
-  if(m_assistantIdHasBeenSet)
-  {
-   payload.WithString("assistantId", m_assistantId);
-
+  if (m_assistantIdHasBeenSet) {
+    payload.WithString("assistantId", m_assistantId);
   }
 
-  if(m_associationDataHasBeenSet)
-  {
-   payload.WithObject("associationData", m_associationData.Jsonize());
-
+  if (m_associationDataHasBeenSet) {
+    payload.WithObject("associationData", m_associationData.Jsonize());
   }
 
-  if(m_associationTypeHasBeenSet)
-  {
-   payload.WithString("associationType", AssociationTypeMapper::GetNameForAssociationType(m_associationType));
+  if (m_associationTypeHasBeenSet) {
+    payload.WithString("associationType", AssociationTypeMapper::GetNameForAssociationType(m_associationType));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

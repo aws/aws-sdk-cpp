@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/ListServersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/migrationhubstrategy/model/ListServersResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServersResult::ListServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListServersResult::ListServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListServersResult& ListServersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListServersResult& ListServersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serverInfos"))
-  {
+  if (jsonValue.ValueExists("serverInfos")) {
     Aws::Utils::Array<JsonView> serverInfosJsonList = jsonValue.GetArray("serverInfos");
-    for(unsigned serverInfosIndex = 0; serverInfosIndex < serverInfosJsonList.GetLength(); ++serverInfosIndex)
-    {
+    for (unsigned serverInfosIndex = 0; serverInfosIndex < serverInfosJsonList.GetLength(); ++serverInfosIndex) {
       m_serverInfos.push_back(serverInfosJsonList[serverInfosIndex].AsObject());
     }
     m_serverInfosHasBeenSet = true;
@@ -42,12 +35,10 @@ ListServersResult& ListServersResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

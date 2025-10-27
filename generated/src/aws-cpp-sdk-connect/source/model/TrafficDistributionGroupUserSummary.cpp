@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TrafficDistributionGroupUserSummary& TrafficDistributionGroupUserSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserId"))
-  {
+TrafficDistributionGroupUserSummary& TrafficDistributionGroupUserSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrafficDistributionGroupUserSummary::Jsonize() const
-{
+JsonValue TrafficDistributionGroupUserSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

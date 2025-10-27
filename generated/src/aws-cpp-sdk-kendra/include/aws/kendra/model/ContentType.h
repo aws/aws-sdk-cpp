@@ -4,38 +4,19 @@
  */
 
 #pragma once
-#include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/Kendra_EXPORTS.h>
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
-  enum class ContentType
-  {
-    NOT_SET,
-    PDF,
-    HTML,
-    MS_WORD,
-    PLAIN_TEXT,
-    PPT,
-    RTF,
-    XML,
-    XSLT,
-    MS_EXCEL,
-    CSV,
-    JSON,
-    MD
-  };
+namespace Aws {
+namespace kendra {
+namespace Model {
+enum class ContentType { NOT_SET, PDF, HTML, MS_WORD, PLAIN_TEXT, PPT, RTF, XML, XSLT, MS_EXCEL, CSV, JSON, MD };
 
-namespace ContentTypeMapper
-{
+namespace ContentTypeMapper {
 AWS_KENDRA_API ContentType GetContentTypeForName(const Aws::String& name);
 
 AWS_KENDRA_API Aws::String GetNameForContentType(ContentType value);
-} // namespace ContentTypeMapper
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace ContentTypeMapper
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Model
-{
-  enum class TileAdditionalFeature
-  {
-    NOT_SET,
-    ContourLines,
-    Hillshade,
-    Logistics,
-    Transit
-  };
+namespace Aws {
+namespace GeoMaps {
+namespace Model {
+enum class TileAdditionalFeature { NOT_SET, ContourLines, Hillshade, Logistics, Transit };
 
-namespace TileAdditionalFeatureMapper
-{
+namespace TileAdditionalFeatureMapper {
 AWS_GEOMAPS_API TileAdditionalFeature GetTileAdditionalFeatureForName(const Aws::String& name);
 
 AWS_GEOMAPS_API Aws::String GetNameForTileAdditionalFeature(TileAdditionalFeature value);
-} // namespace TileAdditionalFeatureMapper
-} // namespace Model
-} // namespace GeoMaps
-} // namespace Aws
+}  // namespace TileAdditionalFeatureMapper
+}  // namespace Model
+}  // namespace GeoMaps
+}  // namespace Aws

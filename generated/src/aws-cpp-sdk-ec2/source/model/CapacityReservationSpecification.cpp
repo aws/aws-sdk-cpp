@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CapacityReservationSpecification.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CapacityReservationSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-CapacityReservationSpecification::CapacityReservationSpecification(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CapacityReservationSpecification::CapacityReservationSpecification(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CapacityReservationSpecification& CapacityReservationSpecification::operator =(const XmlNode& xmlNode)
-{
+CapacityReservationSpecification& CapacityReservationSpecification::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode capacityReservationPreferenceNode = resultNode.FirstChild("CapacityReservationPreference");
-    if(!capacityReservationPreferenceNode.IsNull())
-    {
-      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()));
+    if (!capacityReservationPreferenceNode.IsNull()) {
+      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()));
       m_capacityReservationPreferenceHasBeenSet = true;
     }
     XmlNode capacityReservationTargetNode = resultNode.FirstChild("CapacityReservationTarget");
-    if(!capacityReservationTargetNode.IsNull())
-    {
+    if (!capacityReservationTargetNode.IsNull()) {
       m_capacityReservationTarget = capacityReservationTargetNode;
       m_capacityReservationTargetHasBeenSet = true;
     }
@@ -48,36 +39,36 @@ CapacityReservationSpecification& CapacityReservationSpecification::operator =(c
   return *this;
 }
 
-void CapacityReservationSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_capacityReservationPreferenceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CapacityReservationPreference=" << StringUtils::URLEncode(CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference)) << "&";
+void CapacityReservationSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_capacityReservationPreferenceHasBeenSet) {
+    oStream << location << index << locationValue << ".CapacityReservationPreference="
+            << StringUtils::URLEncode(
+                   CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference))
+            << "&";
   }
 
-  if(m_capacityReservationTargetHasBeenSet)
-  {
-      Aws::StringStream capacityReservationTargetLocationAndMemberSs;
-      capacityReservationTargetLocationAndMemberSs << location << index << locationValue << ".CapacityReservationTarget";
-      m_capacityReservationTarget.OutputToStream(oStream, capacityReservationTargetLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void CapacityReservationSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_capacityReservationPreferenceHasBeenSet)
-  {
-      oStream << location << ".CapacityReservationPreference=" << StringUtils::URLEncode(CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference)) << "&";
-  }
-  if(m_capacityReservationTargetHasBeenSet)
-  {
-      Aws::String capacityReservationTargetLocationAndMember(location);
-      capacityReservationTargetLocationAndMember += ".CapacityReservationTarget";
-      m_capacityReservationTarget.OutputToStream(oStream, capacityReservationTargetLocationAndMember.c_str());
+  if (m_capacityReservationTargetHasBeenSet) {
+    Aws::StringStream capacityReservationTargetLocationAndMemberSs;
+    capacityReservationTargetLocationAndMemberSs << location << index << locationValue << ".CapacityReservationTarget";
+    m_capacityReservationTarget.OutputToStream(oStream, capacityReservationTargetLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void CapacityReservationSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_capacityReservationPreferenceHasBeenSet) {
+    oStream << location << ".CapacityReservationPreference="
+            << StringUtils::URLEncode(
+                   CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference))
+            << "&";
+  }
+  if (m_capacityReservationTargetHasBeenSet) {
+    Aws::String capacityReservationTargetLocationAndMember(location);
+    capacityReservationTargetLocationAndMember += ".CapacityReservationTarget";
+    m_capacityReservationTarget.OutputToStream(oStream, capacityReservationTargetLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

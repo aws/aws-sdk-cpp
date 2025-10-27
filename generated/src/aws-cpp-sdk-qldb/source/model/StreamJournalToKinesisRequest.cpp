@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb/model/StreamJournalToKinesisRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb/model/StreamJournalToKinesisRequest.h>
 
 #include <utility>
 
@@ -12,52 +12,36 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StreamJournalToKinesisRequest::SerializePayload() const
-{
+Aws::String StreamJournalToKinesisRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_inclusiveStartTimeHasBeenSet)
-  {
-   payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
+  if (m_inclusiveStartTimeHasBeenSet) {
+    payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_exclusiveEndTimeHasBeenSet)
-  {
-   payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
+  if (m_exclusiveEndTimeHasBeenSet) {
+    payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_kinesisConfigurationHasBeenSet)
-  {
-   payload.WithObject("KinesisConfiguration", m_kinesisConfiguration.Jsonize());
-
+  if (m_kinesisConfigurationHasBeenSet) {
+    payload.WithObject("KinesisConfiguration", m_kinesisConfiguration.Jsonize());
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

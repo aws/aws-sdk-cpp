@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ReservedCapacityDetails::ReservedCapacityDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservedCapacityDetails::ReservedCapacityDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ReservedCapacityDetails& ReservedCapacityDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DynamoDBCapacityDetails"))
-  {
+ReservedCapacityDetails& ReservedCapacityDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DynamoDBCapacityDetails")) {
     m_dynamoDBCapacityDetails = jsonValue.GetObject("DynamoDBCapacityDetails");
     m_dynamoDBCapacityDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservedCapacityDetails::Jsonize() const
-{
+JsonValue ReservedCapacityDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_dynamoDBCapacityDetailsHasBeenSet)
-  {
-   payload.WithObject("DynamoDBCapacityDetails", m_dynamoDBCapacityDetails.Jsonize());
-
+  if (m_dynamoDBCapacityDetailsHasBeenSet) {
+    payload.WithObject("DynamoDBCapacityDetails", m_dynamoDBCapacityDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

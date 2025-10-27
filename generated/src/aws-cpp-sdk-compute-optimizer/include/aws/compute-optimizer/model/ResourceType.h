@@ -7,33 +7,28 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    Ec2Instance,
-    AutoScalingGroup,
-    EbsVolume,
-    LambdaFunction,
-    NotApplicable,
-    EcsService,
-    License,
-    RdsDBInstance,
-    AuroraDBClusterStorage,
-    Idle
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class ResourceType {
+  NOT_SET,
+  Ec2Instance,
+  AutoScalingGroup,
+  EbsVolume,
+  LambdaFunction,
+  NotApplicable,
+  EcsService,
+  License,
+  RdsDBInstance,
+  AuroraDBClusterStorage,
+  Idle
+};
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_COMPUTEOPTIMIZER_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

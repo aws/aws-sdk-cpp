@@ -12,33 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAggregateResourceConfigRequest::SerializePayload() const
-{
+Aws::String GetAggregateResourceConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationAggregatorNameHasBeenSet)
-  {
-   payload.WithString("ConfigurationAggregatorName", m_configurationAggregatorName);
-
+  if (m_configurationAggregatorNameHasBeenSet) {
+    payload.WithString("ConfigurationAggregatorName", m_configurationAggregatorName);
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithObject("ResourceIdentifier", m_resourceIdentifier.Jsonize());
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithObject("ResourceIdentifier", m_resourceIdentifier.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAggregateResourceConfigRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAggregateResourceConfigRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.GetAggregateResourceConfig"));
   return headers;
-
 }
-
-
-
-

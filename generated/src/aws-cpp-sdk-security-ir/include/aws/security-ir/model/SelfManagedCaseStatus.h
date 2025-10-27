@@ -4,30 +4,25 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Model
-{
-  enum class SelfManagedCaseStatus
-  {
-    NOT_SET,
-    Submitted,
-    Detection_and_Analysis,
-    Containment_COMMA_Eradication_and_Recovery,
-    Post_incident_Activities
-  };
+namespace Aws {
+namespace SecurityIR {
+namespace Model {
+enum class SelfManagedCaseStatus {
+  NOT_SET,
+  Submitted,
+  Detection_and_Analysis,
+  Containment_COMMA_Eradication_and_Recovery,
+  Post_incident_Activities
+};
 
-namespace SelfManagedCaseStatusMapper
-{
+namespace SelfManagedCaseStatusMapper {
 AWS_SECURITYIR_API SelfManagedCaseStatus GetSelfManagedCaseStatusForName(const Aws::String& name);
 
 AWS_SECURITYIR_API Aws::String GetNameForSelfManagedCaseStatus(SelfManagedCaseStatus value);
-} // namespace SelfManagedCaseStatusMapper
-} // namespace Model
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace SelfManagedCaseStatusMapper
+}  // namespace Model
+}  // namespace SecurityIR
+}  // namespace Aws

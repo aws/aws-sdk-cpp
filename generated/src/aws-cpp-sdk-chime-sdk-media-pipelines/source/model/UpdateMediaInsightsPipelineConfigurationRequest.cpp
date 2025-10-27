@@ -12,36 +12,24 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateMediaInsightsPipelineConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateMediaInsightsPipelineConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("ResourceAccessRoleArn", m_resourceAccessRoleArn);
-
+  if (m_resourceAccessRoleArnHasBeenSet) {
+    payload.WithString("ResourceAccessRoleArn", m_resourceAccessRoleArn);
   }
 
-  if(m_realTimeAlertConfigurationHasBeenSet)
-  {
-   payload.WithObject("RealTimeAlertConfiguration", m_realTimeAlertConfiguration.Jsonize());
-
+  if (m_realTimeAlertConfigurationHasBeenSet) {
+    payload.WithObject("RealTimeAlertConfiguration", m_realTimeAlertConfiguration.Jsonize());
   }
 
-  if(m_elementsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> elementsJsonList(m_elements.size());
-   for(unsigned elementsIndex = 0; elementsIndex < elementsJsonList.GetLength(); ++elementsIndex)
-   {
-     elementsJsonList[elementsIndex].AsObject(m_elements[elementsIndex].Jsonize());
-   }
-   payload.WithArray("Elements", std::move(elementsJsonList));
-
+  if (m_elementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> elementsJsonList(m_elements.size());
+    for (unsigned elementsIndex = 0; elementsIndex < elementsJsonList.GetLength(); ++elementsIndex) {
+      elementsJsonList[elementsIndex].AsObject(m_elements[elementsIndex].Jsonize());
+    }
+    payload.WithArray("Elements", std::move(elementsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,30 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
-{
+Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetHostReservationPurchasePreview&";
-  if(m_hostIdSetHasBeenSet)
-  {
+  if (m_hostIdSetHasBeenSet) {
     unsigned hostIdSetCount = 1;
-    for(auto& item : m_hostIdSet)
-    {
-      ss << "HostIdSet." << hostIdSetCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_hostIdSet) {
+      ss << "HostIdSet." << hostIdSetCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdSetCount++;
     }
   }
 
-  if(m_offeringIdHasBeenSet)
-  {
+  if (m_offeringIdHasBeenSet) {
     ss << "OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
   }
 
@@ -34,8 +29,4 @@ Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetHostReservationPurchasePreviewRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetHostReservationPurchasePreviewRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

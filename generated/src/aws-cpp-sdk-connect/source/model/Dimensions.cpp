@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Dimensions::Dimensions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Dimensions::Dimensions(JsonView jsonValue) { *this = jsonValue; }
 
-Dimensions& Dimensions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Queue"))
-  {
+Dimensions& Dimensions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Queue")) {
     m_queue = jsonValue.GetObject("Queue");
     m_queueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Channel"))
-  {
+  if (jsonValue.ValueExists("Channel")) {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
     m_channelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoutingProfile"))
-  {
+  if (jsonValue.ValueExists("RoutingProfile")) {
     m_routingProfile = jsonValue.GetObject("RoutingProfile");
     m_routingProfileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoutingStepExpression"))
-  {
+  if (jsonValue.ValueExists("RoutingStepExpression")) {
     m_routingStepExpression = jsonValue.GetString("RoutingStepExpression");
     m_routingStepExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AgentStatus"))
-  {
+  if (jsonValue.ValueExists("AgentStatus")) {
     m_agentStatus = jsonValue.GetObject("AgentStatus");
     m_agentStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Dimensions::Jsonize() const
-{
+JsonValue Dimensions::Jsonize() const {
   JsonValue payload;
 
-  if(m_queueHasBeenSet)
-  {
-   payload.WithObject("Queue", m_queue.Jsonize());
-
+  if (m_queueHasBeenSet) {
+    payload.WithObject("Queue", m_queue.Jsonize());
   }
 
-  if(m_channelHasBeenSet)
-  {
-   payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
+  if (m_channelHasBeenSet) {
+    payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
   }
 
-  if(m_routingProfileHasBeenSet)
-  {
-   payload.WithObject("RoutingProfile", m_routingProfile.Jsonize());
-
+  if (m_routingProfileHasBeenSet) {
+    payload.WithObject("RoutingProfile", m_routingProfile.Jsonize());
   }
 
-  if(m_routingStepExpressionHasBeenSet)
-  {
-   payload.WithString("RoutingStepExpression", m_routingStepExpression);
-
+  if (m_routingStepExpressionHasBeenSet) {
+    payload.WithString("RoutingStepExpression", m_routingStepExpression);
   }
 
-  if(m_agentStatusHasBeenSet)
-  {
-   payload.WithObject("AgentStatus", m_agentStatus.Jsonize());
-
+  if (m_agentStatusHasBeenSet) {
+    payload.WithObject("AgentStatus", m_agentStatus.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

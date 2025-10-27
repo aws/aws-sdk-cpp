@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-namespace Model
-{
-  enum class SoftwareSetUpdateSchedule
-  {
-    NOT_SET,
-    USE_MAINTENANCE_WINDOW,
-    APPLY_IMMEDIATELY
-  };
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Model {
+enum class SoftwareSetUpdateSchedule { NOT_SET, USE_MAINTENANCE_WINDOW, APPLY_IMMEDIATELY };
 
-namespace SoftwareSetUpdateScheduleMapper
-{
+namespace SoftwareSetUpdateScheduleMapper {
 AWS_WORKSPACESTHINCLIENT_API SoftwareSetUpdateSchedule GetSoftwareSetUpdateScheduleForName(const Aws::String& name);
 
 AWS_WORKSPACESTHINCLIENT_API Aws::String GetNameForSoftwareSetUpdateSchedule(SoftwareSetUpdateSchedule value);
-} // namespace SoftwareSetUpdateScheduleMapper
-} // namespace Model
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+}  // namespace SoftwareSetUpdateScheduleMapper
+}  // namespace Model
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

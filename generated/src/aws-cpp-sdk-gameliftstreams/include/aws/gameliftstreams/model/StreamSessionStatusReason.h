@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLiftStreams
-{
-namespace Model
-{
-  enum class StreamSessionStatusReason
-  {
-    NOT_SET,
-    internalError,
-    invalidSignalRequest,
-    placementTimeout,
-    applicationLogS3DestinationError,
-    applicationExit,
-    connectionTimeout,
-    reconnectionTimeout,
-    maxSessionLengthTimeout,
-    idleTimeout,
-    apiTerminated
-  };
+namespace Aws {
+namespace GameLiftStreams {
+namespace Model {
+enum class StreamSessionStatusReason {
+  NOT_SET,
+  internalError,
+  invalidSignalRequest,
+  placementTimeout,
+  applicationLogS3DestinationError,
+  applicationExit,
+  connectionTimeout,
+  reconnectionTimeout,
+  maxSessionLengthTimeout,
+  idleTimeout,
+  apiTerminated
+};
 
-namespace StreamSessionStatusReasonMapper
-{
+namespace StreamSessionStatusReasonMapper {
 AWS_GAMELIFTSTREAMS_API StreamSessionStatusReason GetStreamSessionStatusReasonForName(const Aws::String& name);
 
 AWS_GAMELIFTSTREAMS_API Aws::String GetNameForStreamSessionStatusReason(StreamSessionStatusReason value);
-} // namespace StreamSessionStatusReasonMapper
-} // namespace Model
-} // namespace GameLiftStreams
-} // namespace Aws
+}  // namespace StreamSessionStatusReasonMapper
+}  // namespace Model
+}  // namespace GameLiftStreams
+}  // namespace Aws

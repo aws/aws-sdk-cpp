@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-SeedUrl::SeedUrl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SeedUrl::SeedUrl(JsonView jsonValue) { *this = jsonValue; }
 
-SeedUrl& SeedUrl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("url"))
-  {
+SeedUrl& SeedUrl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SeedUrl::Jsonize() const
-{
+JsonValue SeedUrl::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

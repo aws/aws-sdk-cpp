@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/awstransfer/Transfer_EXPORTS.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-enum class TransferErrors
-{
-  //From Core//
+namespace Aws {
+namespace Transfer {
+enum class TransferErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class TransferErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class TransferErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
   INVALID_REQUEST,
   RESOURCE_EXISTS
 };
 
-class AWS_TRANSFER_API TransferError : public Aws::Client::AWSError<TransferErrors>
-{
-public:
+class AWS_TRANSFER_API TransferError : public Aws::Client::AWSError<TransferErrors> {
+ public:
   TransferError() {}
   TransferError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TransferErrors>(rhs) {}
   TransferError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TransferErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace TransferErrorMapper
-{
-  AWS_TRANSFER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace TransferErrorMapper {
+AWS_TRANSFER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Transfer
+}  // namespace Aws

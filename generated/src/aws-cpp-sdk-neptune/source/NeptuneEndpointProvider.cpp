@@ -5,12 +5,8 @@
 
 #include <aws/neptune/NeptuneEndpointProvider.h>
 
-namespace Aws
-{
-namespace Neptune
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Neptune
-} // namespace Aws
+namespace Aws {
+namespace Neptune {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Neptune
+}  // namespace Aws

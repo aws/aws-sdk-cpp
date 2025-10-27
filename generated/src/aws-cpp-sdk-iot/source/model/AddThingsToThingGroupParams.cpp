@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AddThingsToThingGroupParams.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/AddThingsToThingGroupParams.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-AddThingsToThingGroupParams::AddThingsToThingGroupParams(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AddThingsToThingGroupParams::AddThingsToThingGroupParams(JsonView jsonValue) { *this = jsonValue; }
 
-AddThingsToThingGroupParams& AddThingsToThingGroupParams::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("thingGroupNames"))
-  {
+AddThingsToThingGroupParams& AddThingsToThingGroupParams::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("thingGroupNames")) {
     Aws::Utils::Array<JsonView> thingGroupNamesJsonList = jsonValue.GetArray("thingGroupNames");
-    for(unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex)
-    {
+    for (unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex) {
       m_thingGroupNames.push_back(thingGroupNamesJsonList[thingGroupNamesIndex].AsString());
     }
     m_thingGroupNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("overrideDynamicGroups"))
-  {
+  if (jsonValue.ValueExists("overrideDynamicGroups")) {
     m_overrideDynamicGroups = jsonValue.GetBool("overrideDynamicGroups");
     m_overrideDynamicGroupsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AddThingsToThingGroupParams::Jsonize() const
-{
+JsonValue AddThingsToThingGroupParams::Jsonize() const {
   JsonValue payload;
 
-  if(m_thingGroupNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> thingGroupNamesJsonList(m_thingGroupNames.size());
-   for(unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex)
-   {
-     thingGroupNamesJsonList[thingGroupNamesIndex].AsString(m_thingGroupNames[thingGroupNamesIndex]);
-   }
-   payload.WithArray("thingGroupNames", std::move(thingGroupNamesJsonList));
-
+  if (m_thingGroupNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> thingGroupNamesJsonList(m_thingGroupNames.size());
+    for (unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex) {
+      thingGroupNamesJsonList[thingGroupNamesIndex].AsString(m_thingGroupNames[thingGroupNamesIndex]);
+    }
+    payload.WithArray("thingGroupNames", std::move(thingGroupNamesJsonList));
   }
 
-  if(m_overrideDynamicGroupsHasBeenSet)
-  {
-   payload.WithBool("overrideDynamicGroups", m_overrideDynamicGroups);
-
+  if (m_overrideDynamicGroupsHasBeenSet) {
+    payload.WithBool("overrideDynamicGroups", m_overrideDynamicGroups);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

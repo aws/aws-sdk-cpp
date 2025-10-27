@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/ModifyReplicationConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/ModifyReplicationConfigRequest.h>
 
 #include <utility>
 
@@ -12,74 +12,50 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ModifyReplicationConfigRequest::SerializePayload() const
-{
+Aws::String ModifyReplicationConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationConfigArnHasBeenSet)
-  {
-   payload.WithString("ReplicationConfigArn", m_replicationConfigArn);
-
+  if (m_replicationConfigArnHasBeenSet) {
+    payload.WithString("ReplicationConfigArn", m_replicationConfigArn);
   }
 
-  if(m_replicationConfigIdentifierHasBeenSet)
-  {
-   payload.WithString("ReplicationConfigIdentifier", m_replicationConfigIdentifier);
-
+  if (m_replicationConfigIdentifierHasBeenSet) {
+    payload.WithString("ReplicationConfigIdentifier", m_replicationConfigIdentifier);
   }
 
-  if(m_replicationTypeHasBeenSet)
-  {
-   payload.WithString("ReplicationType", MigrationTypeValueMapper::GetNameForMigrationTypeValue(m_replicationType));
+  if (m_replicationTypeHasBeenSet) {
+    payload.WithString("ReplicationType", MigrationTypeValueMapper::GetNameForMigrationTypeValue(m_replicationType));
   }
 
-  if(m_tableMappingsHasBeenSet)
-  {
-   payload.WithString("TableMappings", m_tableMappings);
-
+  if (m_tableMappingsHasBeenSet) {
+    payload.WithString("TableMappings", m_tableMappings);
   }
 
-  if(m_replicationSettingsHasBeenSet)
-  {
-   payload.WithString("ReplicationSettings", m_replicationSettings);
-
+  if (m_replicationSettingsHasBeenSet) {
+    payload.WithString("ReplicationSettings", m_replicationSettings);
   }
 
-  if(m_supplementalSettingsHasBeenSet)
-  {
-   payload.WithString("SupplementalSettings", m_supplementalSettings);
-
+  if (m_supplementalSettingsHasBeenSet) {
+    payload.WithString("SupplementalSettings", m_supplementalSettings);
   }
 
-  if(m_computeConfigHasBeenSet)
-  {
-   payload.WithObject("ComputeConfig", m_computeConfig.Jsonize());
-
+  if (m_computeConfigHasBeenSet) {
+    payload.WithObject("ComputeConfig", m_computeConfig.Jsonize());
   }
 
-  if(m_sourceEndpointArnHasBeenSet)
-  {
-   payload.WithString("SourceEndpointArn", m_sourceEndpointArn);
-
+  if (m_sourceEndpointArnHasBeenSet) {
+    payload.WithString("SourceEndpointArn", m_sourceEndpointArn);
   }
 
-  if(m_targetEndpointArnHasBeenSet)
-  {
-   payload.WithString("TargetEndpointArn", m_targetEndpointArn);
-
+  if (m_targetEndpointArnHasBeenSet) {
+    payload.WithString("TargetEndpointArn", m_targetEndpointArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ModifyReplicationConfigRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ModifyReplicationConfigRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonDMSv20160101.ModifyReplicationConfig"));
   return headers;
-
 }
-
-
-
-

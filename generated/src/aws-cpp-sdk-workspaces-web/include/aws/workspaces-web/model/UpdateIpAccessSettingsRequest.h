@@ -4,121 +4,150 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/model/IpRule.h>
+
 #include <utility>
-#include <aws/core/utils/UUID.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
 
+/**
+ */
+class UpdateIpAccessSettingsRequest : public WorkSpacesWebRequest {
+ public:
+  AWS_WORKSPACESWEB_API UpdateIpAccessSettingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateIpAccessSettings"; }
+
+  AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ARN of the IP access settings.</p>
    */
-  class UpdateIpAccessSettingsRequest : public WorkSpacesWebRequest
-  {
-  public:
-    AWS_WORKSPACESWEB_API UpdateIpAccessSettingsRequest() = default;
+  inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
+  inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
+  template <typename IpAccessSettingsArnT = Aws::String>
+  void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) {
+    m_ipAccessSettingsArnHasBeenSet = true;
+    m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value);
+  }
+  template <typename IpAccessSettingsArnT = Aws::String>
+  UpdateIpAccessSettingsRequest& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) {
+    SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateIpAccessSettings"; }
+  ///@{
+  /**
+   * <p>The display name of the IP access settings.</p>
+   */
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
+  }
+  template <typename DisplayNameT = Aws::String>
+  UpdateIpAccessSettingsRequest& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The description of the IP access settings.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateIpAccessSettingsRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The updated IP rules of the IP access settings.</p>
+   */
+  inline const Aws::Vector<IpRule>& GetIpRules() const { return m_ipRules; }
+  inline bool IpRulesHasBeenSet() const { return m_ipRulesHasBeenSet; }
+  template <typename IpRulesT = Aws::Vector<IpRule>>
+  void SetIpRules(IpRulesT&& value) {
+    m_ipRulesHasBeenSet = true;
+    m_ipRules = std::forward<IpRulesT>(value);
+  }
+  template <typename IpRulesT = Aws::Vector<IpRule>>
+  UpdateIpAccessSettingsRequest& WithIpRules(IpRulesT&& value) {
+    SetIpRules(std::forward<IpRulesT>(value));
+    return *this;
+  }
+  template <typename IpRulesT = IpRule>
+  UpdateIpAccessSettingsRequest& AddIpRules(IpRulesT&& value) {
+    m_ipRulesHasBeenSet = true;
+    m_ipRules.emplace_back(std::forward<IpRulesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
-    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
-    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    UpdateIpAccessSettingsRequest& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request. Idempotency ensures that an API request completes
+   * only once. With an idempotent request, if the original request completes
+   * successfully, subsequent retries with the same client token return the result
+   * from the original successful request. </p> <p>If you do not specify a client
+   * token, one is automatically generated by the Amazon Web Services SDK.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateIpAccessSettingsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_ipAccessSettingsArn;
+  bool m_ipAccessSettingsArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The display name of the IP access settings.</p>
-     */
-    inline const Aws::String& GetDisplayName() const { return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    template<typename DisplayNameT = Aws::String>
-    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
-    template<typename DisplayNameT = Aws::String>
-    UpdateIpAccessSettingsRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_displayName;
+  bool m_displayNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The description of the IP access settings.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateIpAccessSettingsRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The updated IP rules of the IP access settings.</p>
-     */
-    inline const Aws::Vector<IpRule>& GetIpRules() const { return m_ipRules; }
-    inline bool IpRulesHasBeenSet() const { return m_ipRulesHasBeenSet; }
-    template<typename IpRulesT = Aws::Vector<IpRule>>
-    void SetIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules = std::forward<IpRulesT>(value); }
-    template<typename IpRulesT = Aws::Vector<IpRule>>
-    UpdateIpAccessSettingsRequest& WithIpRules(IpRulesT&& value) { SetIpRules(std::forward<IpRulesT>(value)); return *this;}
-    template<typename IpRulesT = IpRule>
-    UpdateIpAccessSettingsRequest& AddIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules.emplace_back(std::forward<IpRulesT>(value)); return *this; }
-    ///@}
+  Aws::Vector<IpRule> m_ipRules;
+  bool m_ipRulesHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. Idempotency ensures that an API request completes
-     * only once. With an idempotent request, if the original request completes
-     * successfully, subsequent retries with the same client token return the result
-     * from the original successful request. </p> <p>If you do not specify a client
-     * token, one is automatically generated by the Amazon Web Services SDK.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateIpAccessSettingsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+};
 
-    Aws::String m_ipAccessSettingsArn;
-    bool m_ipAccessSettingsArnHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<IpRule> m_ipRules;
-    bool m_ipRulesHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

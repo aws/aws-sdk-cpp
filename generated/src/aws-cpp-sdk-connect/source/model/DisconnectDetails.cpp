@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-DisconnectDetails::DisconnectDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DisconnectDetails::DisconnectDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DisconnectDetails& DisconnectDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PotentialDisconnectIssue"))
-  {
+DisconnectDetails& DisconnectDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PotentialDisconnectIssue")) {
     m_potentialDisconnectIssue = jsonValue.GetString("PotentialDisconnectIssue");
     m_potentialDisconnectIssueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DisconnectDetails::Jsonize() const
-{
+JsonValue DisconnectDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_potentialDisconnectIssueHasBeenSet)
-  {
-   payload.WithString("PotentialDisconnectIssue", m_potentialDisconnectIssue);
-
+  if (m_potentialDisconnectIssueHasBeenSet) {
+    payload.WithString("PotentialDisconnectIssue", m_potentialDisconnectIssue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

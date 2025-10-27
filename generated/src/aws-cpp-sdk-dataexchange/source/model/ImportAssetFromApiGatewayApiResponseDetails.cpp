@@ -3,157 +3,119 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/ImportAssetFromApiGatewayApiResponseDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/ImportAssetFromApiGatewayApiResponseDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-ImportAssetFromApiGatewayApiResponseDetails::ImportAssetFromApiGatewayApiResponseDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImportAssetFromApiGatewayApiResponseDetails::ImportAssetFromApiGatewayApiResponseDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ImportAssetFromApiGatewayApiResponseDetails& ImportAssetFromApiGatewayApiResponseDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApiDescription"))
-  {
+ImportAssetFromApiGatewayApiResponseDetails& ImportAssetFromApiGatewayApiResponseDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApiDescription")) {
     m_apiDescription = jsonValue.GetString("ApiDescription");
     m_apiDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiId"))
-  {
+  if (jsonValue.ValueExists("ApiId")) {
     m_apiId = jsonValue.GetString("ApiId");
     m_apiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiKey"))
-  {
+  if (jsonValue.ValueExists("ApiKey")) {
     m_apiKey = jsonValue.GetString("ApiKey");
     m_apiKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiName"))
-  {
+  if (jsonValue.ValueExists("ApiName")) {
     m_apiName = jsonValue.GetString("ApiName");
     m_apiNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiSpecificationMd5Hash"))
-  {
+  if (jsonValue.ValueExists("ApiSpecificationMd5Hash")) {
     m_apiSpecificationMd5Hash = jsonValue.GetString("ApiSpecificationMd5Hash");
     m_apiSpecificationMd5HashHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiSpecificationUploadUrl"))
-  {
+  if (jsonValue.ValueExists("ApiSpecificationUploadUrl")) {
     m_apiSpecificationUploadUrl = jsonValue.GetString("ApiSpecificationUploadUrl");
     m_apiSpecificationUploadUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApiSpecificationUploadUrlExpiresAt"))
-  {
+  if (jsonValue.ValueExists("ApiSpecificationUploadUrlExpiresAt")) {
     m_apiSpecificationUploadUrlExpiresAt = jsonValue.GetString("ApiSpecificationUploadUrlExpiresAt");
     m_apiSpecificationUploadUrlExpiresAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataSetId"))
-  {
+  if (jsonValue.ValueExists("DataSetId")) {
     m_dataSetId = jsonValue.GetString("DataSetId");
     m_dataSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProtocolType"))
-  {
+  if (jsonValue.ValueExists("ProtocolType")) {
     m_protocolType = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("ProtocolType"));
     m_protocolTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RevisionId"))
-  {
+  if (jsonValue.ValueExists("RevisionId")) {
     m_revisionId = jsonValue.GetString("RevisionId");
     m_revisionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Stage"))
-  {
+  if (jsonValue.ValueExists("Stage")) {
     m_stage = jsonValue.GetString("Stage");
     m_stageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImportAssetFromApiGatewayApiResponseDetails::Jsonize() const
-{
+JsonValue ImportAssetFromApiGatewayApiResponseDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiDescriptionHasBeenSet)
-  {
-   payload.WithString("ApiDescription", m_apiDescription);
-
+  if (m_apiDescriptionHasBeenSet) {
+    payload.WithString("ApiDescription", m_apiDescription);
   }
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("ApiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("ApiId", m_apiId);
   }
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("ApiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("ApiKey", m_apiKey);
   }
 
-  if(m_apiNameHasBeenSet)
-  {
-   payload.WithString("ApiName", m_apiName);
-
+  if (m_apiNameHasBeenSet) {
+    payload.WithString("ApiName", m_apiName);
   }
 
-  if(m_apiSpecificationMd5HashHasBeenSet)
-  {
-   payload.WithString("ApiSpecificationMd5Hash", m_apiSpecificationMd5Hash);
-
+  if (m_apiSpecificationMd5HashHasBeenSet) {
+    payload.WithString("ApiSpecificationMd5Hash", m_apiSpecificationMd5Hash);
   }
 
-  if(m_apiSpecificationUploadUrlHasBeenSet)
-  {
-   payload.WithString("ApiSpecificationUploadUrl", m_apiSpecificationUploadUrl);
-
+  if (m_apiSpecificationUploadUrlHasBeenSet) {
+    payload.WithString("ApiSpecificationUploadUrl", m_apiSpecificationUploadUrl);
   }
 
-  if(m_apiSpecificationUploadUrlExpiresAtHasBeenSet)
-  {
-   payload.WithString("ApiSpecificationUploadUrlExpiresAt", m_apiSpecificationUploadUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_apiSpecificationUploadUrlExpiresAtHasBeenSet) {
+    payload.WithString("ApiSpecificationUploadUrlExpiresAt",
+                       m_apiSpecificationUploadUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_dataSetIdHasBeenSet)
-  {
-   payload.WithString("DataSetId", m_dataSetId);
-
+  if (m_dataSetIdHasBeenSet) {
+    payload.WithString("DataSetId", m_dataSetId);
   }
 
-  if(m_protocolTypeHasBeenSet)
-  {
-   payload.WithString("ProtocolType", ProtocolTypeMapper::GetNameForProtocolType(m_protocolType));
+  if (m_protocolTypeHasBeenSet) {
+    payload.WithString("ProtocolType", ProtocolTypeMapper::GetNameForProtocolType(m_protocolType));
   }
 
-  if(m_revisionIdHasBeenSet)
-  {
-   payload.WithString("RevisionId", m_revisionId);
-
+  if (m_revisionIdHasBeenSet) {
+    payload.WithString("RevisionId", m_revisionId);
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("Stage", m_stage);
-
+  if (m_stageHasBeenSet) {
+    payload.WithString("Stage", m_stage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

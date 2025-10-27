@@ -11,161 +11,118 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-UserAccessResultItem::UserAccessResultItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserAccessResultItem::UserAccessResultItem(JsonView jsonValue) { *this = jsonValue; }
 
-UserAccessResultItem& UserAccessResultItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("app"))
-  {
+UserAccessResultItem& UserAccessResultItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("app")) {
     m_app = jsonValue.GetString("app");
     m_appHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tenantId"))
-  {
+  if (jsonValue.ValueExists("tenantId")) {
     m_tenantId = jsonValue.GetString("tenantId");
     m_tenantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tenantDisplayName"))
-  {
+  if (jsonValue.ValueExists("tenantDisplayName")) {
     m_tenantDisplayName = jsonValue.GetString("tenantDisplayName");
     m_tenantDisplayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskId"))
-  {
+  if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");
     m_taskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resultStatus"))
-  {
+  if (jsonValue.ValueExists("resultStatus")) {
     m_resultStatus = ResultStatusMapper::GetResultStatusForName(jsonValue.GetString("resultStatus"));
     m_resultStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("email"))
-  {
+  if (jsonValue.ValueExists("email")) {
     m_email = jsonValue.GetString("email");
     m_emailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userId"))
-  {
+  if (jsonValue.ValueExists("userId")) {
     m_userId = jsonValue.GetString("userId");
     m_userIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userFullName"))
-  {
+  if (jsonValue.ValueExists("userFullName")) {
     m_userFullName = jsonValue.GetString("userFullName");
     m_userFullNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userFirstName"))
-  {
+  if (jsonValue.ValueExists("userFirstName")) {
     m_userFirstName = jsonValue.GetString("userFirstName");
     m_userFirstNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userLastName"))
-  {
+  if (jsonValue.ValueExists("userLastName")) {
     m_userLastName = jsonValue.GetString("userLastName");
     m_userLastNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userStatus"))
-  {
+  if (jsonValue.ValueExists("userStatus")) {
     m_userStatus = jsonValue.GetString("userStatus");
     m_userStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskError"))
-  {
+  if (jsonValue.ValueExists("taskError")) {
     m_taskError = jsonValue.GetObject("taskError");
     m_taskErrorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserAccessResultItem::Jsonize() const
-{
+JsonValue UserAccessResultItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_appHasBeenSet)
-  {
-   payload.WithString("app", m_app);
-
+  if (m_appHasBeenSet) {
+    payload.WithString("app", m_app);
   }
 
-  if(m_tenantIdHasBeenSet)
-  {
-   payload.WithString("tenantId", m_tenantId);
-
+  if (m_tenantIdHasBeenSet) {
+    payload.WithString("tenantId", m_tenantId);
   }
 
-  if(m_tenantDisplayNameHasBeenSet)
-  {
-   payload.WithString("tenantDisplayName", m_tenantDisplayName);
-
+  if (m_tenantDisplayNameHasBeenSet) {
+    payload.WithString("tenantDisplayName", m_tenantDisplayName);
   }
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("taskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("taskId", m_taskId);
   }
 
-  if(m_resultStatusHasBeenSet)
-  {
-   payload.WithString("resultStatus", ResultStatusMapper::GetNameForResultStatus(m_resultStatus));
+  if (m_resultStatusHasBeenSet) {
+    payload.WithString("resultStatus", ResultStatusMapper::GetNameForResultStatus(m_resultStatus));
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("email", m_email);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("userId", m_userId);
   }
 
-  if(m_userFullNameHasBeenSet)
-  {
-   payload.WithString("userFullName", m_userFullName);
-
+  if (m_userFullNameHasBeenSet) {
+    payload.WithString("userFullName", m_userFullName);
   }
 
-  if(m_userFirstNameHasBeenSet)
-  {
-   payload.WithString("userFirstName", m_userFirstName);
-
+  if (m_userFirstNameHasBeenSet) {
+    payload.WithString("userFirstName", m_userFirstName);
   }
 
-  if(m_userLastNameHasBeenSet)
-  {
-   payload.WithString("userLastName", m_userLastName);
-
+  if (m_userLastNameHasBeenSet) {
+    payload.WithString("userLastName", m_userLastName);
   }
 
-  if(m_userStatusHasBeenSet)
-  {
-   payload.WithString("userStatus", m_userStatus);
-
+  if (m_userStatusHasBeenSet) {
+    payload.WithString("userStatus", m_userStatus);
   }
 
-  if(m_taskErrorHasBeenSet)
-  {
-   payload.WithObject("taskError", m_taskError.Jsonize());
-
+  if (m_taskErrorHasBeenSet) {
+    payload.WithObject("taskError", m_taskError.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

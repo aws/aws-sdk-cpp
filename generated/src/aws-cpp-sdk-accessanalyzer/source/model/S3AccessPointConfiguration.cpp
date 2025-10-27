@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3AccessPointConfiguration& S3AccessPointConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accessPointPolicy"))
-  {
+S3AccessPointConfiguration& S3AccessPointConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accessPointPolicy")) {
     m_accessPointPolicy = jsonValue.GetString("accessPointPolicy");
     m_accessPointPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("publicAccessBlock"))
-  {
+  if (jsonValue.ValueExists("publicAccessBlock")) {
     m_publicAccessBlock = jsonValue.GetObject("publicAccessBlock");
     m_publicAccessBlockHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkOrigin"))
-  {
+  if (jsonValue.ValueExists("networkOrigin")) {
     m_networkOrigin = jsonValue.GetObject("networkOrigin");
     m_networkOriginHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3AccessPointConfiguration::Jsonize() const
-{
+JsonValue S3AccessPointConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessPointPolicyHasBeenSet)
-  {
-   payload.WithString("accessPointPolicy", m_accessPointPolicy);
-
+  if (m_accessPointPolicyHasBeenSet) {
+    payload.WithString("accessPointPolicy", m_accessPointPolicy);
   }
 
-  if(m_publicAccessBlockHasBeenSet)
-  {
-   payload.WithObject("publicAccessBlock", m_publicAccessBlock.Jsonize());
-
+  if (m_publicAccessBlockHasBeenSet) {
+    payload.WithObject("publicAccessBlock", m_publicAccessBlock.Jsonize());
   }
 
-  if(m_networkOriginHasBeenSet)
-  {
-   payload.WithObject("networkOrigin", m_networkOrigin.Jsonize());
-
+  if (m_networkOriginHasBeenSet) {
+    payload.WithObject("networkOrigin", m_networkOrigin.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

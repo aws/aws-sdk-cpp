@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MultiplexProgramChannelDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MultiplexProgramChannelDestinationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MultiplexProgramChannelDestinationSettings& MultiplexProgramChannelDestinationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("multiplexId"))
-  {
+MultiplexProgramChannelDestinationSettings& MultiplexProgramChannelDestinationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("multiplexId")) {
     m_multiplexId = jsonValue.GetString("multiplexId");
     m_multiplexIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programName"))
-  {
+  if (jsonValue.ValueExists("programName")) {
     m_programName = jsonValue.GetString("programName");
     m_programNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiplexProgramChannelDestinationSettings::Jsonize() const
-{
+JsonValue MultiplexProgramChannelDestinationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_multiplexIdHasBeenSet)
-  {
-   payload.WithString("multiplexId", m_multiplexId);
-
+  if (m_multiplexIdHasBeenSet) {
+    payload.WithString("multiplexId", m_multiplexId);
   }
 
-  if(m_programNameHasBeenSet)
-  {
-   payload.WithString("programName", m_programName);
-
+  if (m_programNameHasBeenSet) {
+    payload.WithString("programName", m_programName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

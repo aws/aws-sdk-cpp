@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/CoversBodyPart.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/CoversBodyPart.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-CoversBodyPart::CoversBodyPart(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoversBodyPart::CoversBodyPart(JsonView jsonValue) { *this = jsonValue; }
 
-CoversBodyPart& CoversBodyPart::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Confidence"))
-  {
+CoversBodyPart& CoversBodyPart::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Confidence")) {
     m_confidence = jsonValue.GetDouble("Confidence");
     m_confidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetBool("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoversBodyPart::Jsonize() const
-{
+JsonValue CoversBodyPart::Jsonize() const {
   JsonValue payload;
 
-  if(m_confidenceHasBeenSet)
-  {
-   payload.WithDouble("Confidence", m_confidence);
-
+  if (m_confidenceHasBeenSet) {
+    payload.WithDouble("Confidence", m_confidence);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithBool("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithBool("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

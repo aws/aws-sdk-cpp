@@ -5,12 +5,8 @@
 
 #include <aws/savingsplans/SavingsPlansEndpointProvider.h>
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SavingsPlans
-} // namespace Aws
+namespace Aws {
+namespace SavingsPlans {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SavingsPlans
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-maps/model/GetGlyphsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-maps/model/GetGlyphsRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::GeoMaps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetGlyphsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetGlyphsRequest::SerializePayload() const { return {}; }

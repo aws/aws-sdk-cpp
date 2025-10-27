@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/OptOutListInformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/OptOutListInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
 
-OptOutListInformation::OptOutListInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OptOutListInformation::OptOutListInformation(JsonView jsonValue) { *this = jsonValue; }
 
-OptOutListInformation& OptOutListInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OptOutListArn"))
-  {
+OptOutListInformation& OptOutListInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OptOutListArn")) {
     m_optOutListArn = jsonValue.GetString("OptOutListArn");
     m_optOutListArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OptOutListName"))
-  {
+  if (jsonValue.ValueExists("OptOutListName")) {
     m_optOutListName = jsonValue.GetString("OptOutListName");
     m_optOutListNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OptOutListInformation::Jsonize() const
-{
+JsonValue OptOutListInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_optOutListArnHasBeenSet)
-  {
-   payload.WithString("OptOutListArn", m_optOutListArn);
-
+  if (m_optOutListArnHasBeenSet) {
+    payload.WithString("OptOutListArn", m_optOutListArn);
   }
 
-  if(m_optOutListNameHasBeenSet)
-  {
-   payload.WithString("OptOutListName", m_optOutListName);
-
+  if (m_optOutListNameHasBeenSet) {
+    payload.WithString("OptOutListName", m_optOutListName);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

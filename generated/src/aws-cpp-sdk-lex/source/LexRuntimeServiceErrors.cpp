@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::LexRuntimeService;
 using namespace Aws::LexRuntimeService::Model;
 
-namespace Aws
-{
-namespace LexRuntimeService
-{
-template<> AWS_LEXRUNTIMESERVICE_API LimitExceededException LexRuntimeServiceError::GetModeledError()
-{
+namespace Aws {
+namespace LexRuntimeService {
+template <>
+AWS_LEXRUNTIMESERVICE_API LimitExceededException LexRuntimeServiceError::GetModeledError() {
   assert(this->GetErrorType() == LexRuntimeServiceErrors::LIMIT_EXCEEDED);
   return LimitExceededException(this->GetJsonPayload().View());
 }
 
-namespace LexRuntimeServiceErrorMapper
-{
+namespace LexRuntimeServiceErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
@@ -36,50 +33,31 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int NOT_ACCEPTABLE_HASH = HashingUtils::HashString("NotAcceptableException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_GATEWAY_HASH)
-  {
+  } else if (hashCode == BAD_GATEWAY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::BAD_GATEWAY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::UNSUPPORTED_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LOOP_DETECTED_HASH)
-  {
+  } else if (hashCode == LOOP_DETECTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::LOOP_DETECTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPENDENCY_FAILED_HASH)
-  {
+  } else if (hashCode == DEPENDENCY_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::DEPENDENCY_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == NOT_ACCEPTABLE_HASH)
-  {
+  } else if (hashCode == NOT_ACCEPTABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::NOT_ACCEPTABLE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace LexRuntimeServiceErrorMapper
-} // namespace LexRuntimeService
-} // namespace Aws
+}  // namespace LexRuntimeServiceErrorMapper
+}  // namespace LexRuntimeService
+}  // namespace Aws

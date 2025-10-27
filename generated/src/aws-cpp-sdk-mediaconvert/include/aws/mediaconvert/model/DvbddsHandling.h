@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DvbddsHandling
-  {
-    NOT_SET,
-    NONE,
-    SPECIFIED,
-    NO_DISPLAY_WINDOW,
-    SPECIFIED_OPTIMAL
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DvbddsHandling { NOT_SET, NONE, SPECIFIED, NO_DISPLAY_WINDOW, SPECIFIED_OPTIMAL };
 
-namespace DvbddsHandlingMapper
-{
+namespace DvbddsHandlingMapper {
 AWS_MEDIACONVERT_API DvbddsHandling GetDvbddsHandlingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDvbddsHandling(DvbddsHandling value);
-} // namespace DvbddsHandlingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DvbddsHandlingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

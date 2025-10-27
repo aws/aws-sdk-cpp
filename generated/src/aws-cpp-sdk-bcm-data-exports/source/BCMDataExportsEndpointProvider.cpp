@@ -5,12 +5,8 @@
 
 #include <aws/bcm-data-exports/BCMDataExportsEndpointProvider.h>
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BCMDataExports
-} // namespace Aws
+namespace Aws {
+namespace BCMDataExports {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BCMDataExports
+}  // namespace Aws

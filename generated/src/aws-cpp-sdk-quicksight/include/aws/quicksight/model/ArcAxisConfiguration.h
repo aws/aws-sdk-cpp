@@ -6,68 +6,73 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/ArcAxisDisplayRange.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ArcAxisConfiguration">AWS
+ * API Reference</a></p>
+ */
+class ArcAxisConfiguration {
+ public:
+  AWS_QUICKSIGHT_API ArcAxisConfiguration() = default;
+  AWS_QUICKSIGHT_API ArcAxisConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API ArcAxisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ArcAxisConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
    */
-  class ArcAxisConfiguration
-  {
-  public:
-    AWS_QUICKSIGHT_API ArcAxisConfiguration() = default;
-    AWS_QUICKSIGHT_API ArcAxisConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API ArcAxisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const ArcAxisDisplayRange& GetRange() const { return m_range; }
+  inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
+  template <typename RangeT = ArcAxisDisplayRange>
+  void SetRange(RangeT&& value) {
+    m_rangeHasBeenSet = true;
+    m_range = std::forward<RangeT>(value);
+  }
+  template <typename RangeT = ArcAxisDisplayRange>
+  ArcAxisConfiguration& WithRange(RangeT&& value) {
+    SetRange(std::forward<RangeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The reserved range of the arc axis.</p>
+   */
+  inline int GetReserveRange() const { return m_reserveRange; }
+  inline bool ReserveRangeHasBeenSet() const { return m_reserveRangeHasBeenSet; }
+  inline void SetReserveRange(int value) {
+    m_reserveRangeHasBeenSet = true;
+    m_reserveRange = value;
+  }
+  inline ArcAxisConfiguration& WithReserveRange(int value) {
+    SetReserveRange(value);
+    return *this;
+  }
+  ///@}
+ private:
+  ArcAxisDisplayRange m_range;
+  bool m_rangeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-     */
-    inline const ArcAxisDisplayRange& GetRange() const { return m_range; }
-    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    template<typename RangeT = ArcAxisDisplayRange>
-    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
-    template<typename RangeT = ArcAxisDisplayRange>
-    ArcAxisConfiguration& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
-    ///@}
+  int m_reserveRange{0};
+  bool m_reserveRangeHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The reserved range of the arc axis.</p>
-     */
-    inline int GetReserveRange() const { return m_reserveRange; }
-    inline bool ReserveRangeHasBeenSet() const { return m_reserveRangeHasBeenSet; }
-    inline void SetReserveRange(int value) { m_reserveRangeHasBeenSet = true; m_reserveRange = value; }
-    inline ArcAxisConfiguration& WithReserveRange(int value) { SetReserveRange(value); return *this;}
-    ///@}
-  private:
-
-    ArcAxisDisplayRange m_range;
-    bool m_rangeHasBeenSet = false;
-
-    int m_reserveRange{0};
-    bool m_reserveRangeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

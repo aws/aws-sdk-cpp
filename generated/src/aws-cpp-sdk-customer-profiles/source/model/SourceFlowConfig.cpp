@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/SourceFlowConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/SourceFlowConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-SourceFlowConfig::SourceFlowConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceFlowConfig::SourceFlowConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SourceFlowConfig& SourceFlowConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectorProfileName"))
-  {
+SourceFlowConfig& SourceFlowConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectorProfileName")) {
     m_connectorProfileName = jsonValue.GetString("ConnectorProfileName");
     m_connectorProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorType"))
-  {
+  if (jsonValue.ValueExists("ConnectorType")) {
     m_connectorType = SourceConnectorTypeMapper::GetSourceConnectorTypeForName(jsonValue.GetString("ConnectorType"));
     m_connectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncrementalPullConfig"))
-  {
+  if (jsonValue.ValueExists("IncrementalPullConfig")) {
     m_incrementalPullConfig = jsonValue.GetObject("IncrementalPullConfig");
     m_incrementalPullConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceConnectorProperties"))
-  {
+  if (jsonValue.ValueExists("SourceConnectorProperties")) {
     m_sourceConnectorProperties = jsonValue.GetObject("SourceConnectorProperties");
     m_sourceConnectorPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceFlowConfig::Jsonize() const
-{
+JsonValue SourceFlowConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectorProfileNameHasBeenSet)
-  {
-   payload.WithString("ConnectorProfileName", m_connectorProfileName);
-
+  if (m_connectorProfileNameHasBeenSet) {
+    payload.WithString("ConnectorProfileName", m_connectorProfileName);
   }
 
-  if(m_connectorTypeHasBeenSet)
-  {
-   payload.WithString("ConnectorType", SourceConnectorTypeMapper::GetNameForSourceConnectorType(m_connectorType));
+  if (m_connectorTypeHasBeenSet) {
+    payload.WithString("ConnectorType", SourceConnectorTypeMapper::GetNameForSourceConnectorType(m_connectorType));
   }
 
-  if(m_incrementalPullConfigHasBeenSet)
-  {
-   payload.WithObject("IncrementalPullConfig", m_incrementalPullConfig.Jsonize());
-
+  if (m_incrementalPullConfigHasBeenSet) {
+    payload.WithObject("IncrementalPullConfig", m_incrementalPullConfig.Jsonize());
   }
 
-  if(m_sourceConnectorPropertiesHasBeenSet)
-  {
-   payload.WithObject("SourceConnectorProperties", m_sourceConnectorProperties.Jsonize());
-
+  if (m_sourceConnectorPropertiesHasBeenSet) {
+    payload.WithObject("SourceConnectorProperties", m_sourceConnectorProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

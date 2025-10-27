@@ -7,25 +7,16 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
-  enum class ImageSharedWithOthers
-  {
-    NOT_SET,
-    TRUE,
-    FALSE
-  };
+namespace Aws {
+namespace AppStream {
+namespace Model {
+enum class ImageSharedWithOthers { NOT_SET, TRUE, FALSE };
 
-namespace ImageSharedWithOthersMapper
-{
+namespace ImageSharedWithOthersMapper {
 AWS_APPSTREAM_API ImageSharedWithOthers GetImageSharedWithOthersForName(const Aws::String& name);
 
 AWS_APPSTREAM_API Aws::String GetNameForImageSharedWithOthers(ImageSharedWithOthers value);
-} // namespace ImageSharedWithOthersMapper
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace ImageSharedWithOthersMapper
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

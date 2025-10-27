@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class RebootMigrationSupport
-  {
-    NOT_SET,
-    unsupported,
-    supported
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class RebootMigrationSupport { NOT_SET, unsupported, supported };
 
-namespace RebootMigrationSupportMapper
-{
+namespace RebootMigrationSupportMapper {
 AWS_EC2_API RebootMigrationSupport GetRebootMigrationSupportForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForRebootMigrationSupport(RebootMigrationSupport value);
-} // namespace RebootMigrationSupportMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace RebootMigrationSupportMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -3,101 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/BehaviorModelTrainingSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/BehaviorModelTrainingSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-BehaviorModelTrainingSummary::BehaviorModelTrainingSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BehaviorModelTrainingSummary::BehaviorModelTrainingSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BehaviorModelTrainingSummary& BehaviorModelTrainingSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("securityProfileName"))
-  {
+BehaviorModelTrainingSummary& BehaviorModelTrainingSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("securityProfileName")) {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
     m_securityProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("behaviorName"))
-  {
+  if (jsonValue.ValueExists("behaviorName")) {
     m_behaviorName = jsonValue.GetString("behaviorName");
     m_behaviorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingDataCollectionStartDate"))
-  {
+  if (jsonValue.ValueExists("trainingDataCollectionStartDate")) {
     m_trainingDataCollectionStartDate = jsonValue.GetDouble("trainingDataCollectionStartDate");
     m_trainingDataCollectionStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelStatus"))
-  {
+  if (jsonValue.ValueExists("modelStatus")) {
     m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("modelStatus"));
     m_modelStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datapointsCollectionPercentage"))
-  {
+  if (jsonValue.ValueExists("datapointsCollectionPercentage")) {
     m_datapointsCollectionPercentage = jsonValue.GetDouble("datapointsCollectionPercentage");
     m_datapointsCollectionPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModelRefreshDate"))
-  {
+  if (jsonValue.ValueExists("lastModelRefreshDate")) {
     m_lastModelRefreshDate = jsonValue.GetDouble("lastModelRefreshDate");
     m_lastModelRefreshDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BehaviorModelTrainingSummary::Jsonize() const
-{
+JsonValue BehaviorModelTrainingSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_securityProfileNameHasBeenSet)
-  {
-   payload.WithString("securityProfileName", m_securityProfileName);
-
+  if (m_securityProfileNameHasBeenSet) {
+    payload.WithString("securityProfileName", m_securityProfileName);
   }
 
-  if(m_behaviorNameHasBeenSet)
-  {
-   payload.WithString("behaviorName", m_behaviorName);
-
+  if (m_behaviorNameHasBeenSet) {
+    payload.WithString("behaviorName", m_behaviorName);
   }
 
-  if(m_trainingDataCollectionStartDateHasBeenSet)
-  {
-   payload.WithDouble("trainingDataCollectionStartDate", m_trainingDataCollectionStartDate.SecondsWithMSPrecision());
+  if (m_trainingDataCollectionStartDateHasBeenSet) {
+    payload.WithDouble("trainingDataCollectionStartDate", m_trainingDataCollectionStartDate.SecondsWithMSPrecision());
   }
 
-  if(m_modelStatusHasBeenSet)
-  {
-   payload.WithString("modelStatus", ModelStatusMapper::GetNameForModelStatus(m_modelStatus));
+  if (m_modelStatusHasBeenSet) {
+    payload.WithString("modelStatus", ModelStatusMapper::GetNameForModelStatus(m_modelStatus));
   }
 
-  if(m_datapointsCollectionPercentageHasBeenSet)
-  {
-   payload.WithDouble("datapointsCollectionPercentage", m_datapointsCollectionPercentage);
-
+  if (m_datapointsCollectionPercentageHasBeenSet) {
+    payload.WithDouble("datapointsCollectionPercentage", m_datapointsCollectionPercentage);
   }
 
-  if(m_lastModelRefreshDateHasBeenSet)
-  {
-   payload.WithDouble("lastModelRefreshDate", m_lastModelRefreshDate.SecondsWithMSPrecision());
+  if (m_lastModelRefreshDateHasBeenSet) {
+    payload.WithDouble("lastModelRefreshDate", m_lastModelRefreshDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

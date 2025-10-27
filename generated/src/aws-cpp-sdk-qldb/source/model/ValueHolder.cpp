@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb/model/ValueHolder.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb/model/ValueHolder.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QLDB
-{
-namespace Model
-{
+namespace Aws {
+namespace QLDB {
+namespace Model {
 
-ValueHolder::ValueHolder(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValueHolder::ValueHolder(JsonView jsonValue) { *this = jsonValue; }
 
-ValueHolder& ValueHolder::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IonText"))
-  {
+ValueHolder& ValueHolder::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IonText")) {
     m_ionText = jsonValue.GetString("IonText");
     m_ionTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValueHolder::Jsonize() const
-{
+JsonValue ValueHolder::Jsonize() const {
   JsonValue payload;
 
-  if(m_ionTextHasBeenSet)
-  {
-   payload.WithString("IonText", m_ionText);
-
+  if (m_ionTextHasBeenSet) {
+    payload.WithString("IonText", m_ionText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QLDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace QLDB
+}  // namespace Aws

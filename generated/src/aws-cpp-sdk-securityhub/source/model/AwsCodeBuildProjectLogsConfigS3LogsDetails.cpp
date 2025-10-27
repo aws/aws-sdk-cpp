@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCodeBuildProjectLogsConfigS3LogsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectLogsConfigS3LogsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCodeBuildProjectLogsConfigS3LogsDetails& AwsCodeBuildProjectLogsConfigS3LogsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EncryptionDisabled"))
-  {
+AwsCodeBuildProjectLogsConfigS3LogsDetails& AwsCodeBuildProjectLogsConfigS3LogsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EncryptionDisabled")) {
     m_encryptionDisabled = jsonValue.GetBool("EncryptionDisabled");
     m_encryptionDisabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Location"))
-  {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCodeBuildProjectLogsConfigS3LogsDetails::Jsonize() const
-{
+JsonValue AwsCodeBuildProjectLogsConfigS3LogsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionDisabledHasBeenSet)
-  {
-   payload.WithBool("EncryptionDisabled", m_encryptionDisabled);
-
+  if (m_encryptionDisabledHasBeenSet) {
+    payload.WithBool("EncryptionDisabled", m_encryptionDisabled);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

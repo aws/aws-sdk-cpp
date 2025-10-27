@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    Opportunity
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class ResourceType { NOT_SET, Opportunity };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_PARTNERCENTRALSELLING_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

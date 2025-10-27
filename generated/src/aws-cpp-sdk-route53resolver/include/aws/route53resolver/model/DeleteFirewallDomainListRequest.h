@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
-#include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53ResolverRequest.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
 
+/**
+ */
+class DeleteFirewallDomainListRequest : public Route53ResolverRequest {
+ public:
+  AWS_ROUTE53RESOLVER_API DeleteFirewallDomainListRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteFirewallDomainList"; }
+
+  AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
+
+  AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the domain list that you want to delete. </p>
    */
-  class DeleteFirewallDomainListRequest : public Route53ResolverRequest
-  {
-  public:
-    AWS_ROUTE53RESOLVER_API DeleteFirewallDomainListRequest() = default;
+  inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
+  inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
+  template <typename FirewallDomainListIdT = Aws::String>
+  void SetFirewallDomainListId(FirewallDomainListIdT&& value) {
+    m_firewallDomainListIdHasBeenSet = true;
+    m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value);
+  }
+  template <typename FirewallDomainListIdT = Aws::String>
+  DeleteFirewallDomainListRequest& WithFirewallDomainListId(FirewallDomainListIdT&& value) {
+    SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_firewallDomainListId;
+  bool m_firewallDomainListIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteFirewallDomainList"; }
-
-    AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
-
-    AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the domain list that you want to delete. </p>
-     */
-    inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
-    inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-    template<typename FirewallDomainListIdT = Aws::String>
-    void SetFirewallDomainListId(FirewallDomainListIdT&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value); }
-    template<typename FirewallDomainListIdT = Aws::String>
-    DeleteFirewallDomainListRequest& WithFirewallDomainListId(FirewallDomainListIdT&& value) { SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

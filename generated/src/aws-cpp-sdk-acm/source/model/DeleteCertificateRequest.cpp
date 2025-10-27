@@ -12,27 +12,18 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCertificateRequest::SerializePayload() const
-{
+Aws::String DeleteCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("CertificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("CertificateArn", m_certificateArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.DeleteCertificate"));
   return headers;
-
 }
-
-
-
-

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyArn"))
-  {
+ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerSideEncryptionConfiguration::Jsonize() const
-{
+JsonValue ServerSideEncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("KmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

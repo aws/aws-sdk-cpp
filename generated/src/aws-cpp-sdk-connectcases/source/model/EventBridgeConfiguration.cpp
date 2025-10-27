@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EventBridgeConfiguration& EventBridgeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+EventBridgeConfiguration& EventBridgeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includedData"))
-  {
+  if (jsonValue.ValueExists("includedData")) {
     m_includedData = jsonValue.GetObject("includedData");
     m_includedDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventBridgeConfiguration::Jsonize() const
-{
+JsonValue EventBridgeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_includedDataHasBeenSet)
-  {
-   payload.WithObject("includedData", m_includedData.Jsonize());
-
+  if (m_includedDataHasBeenSet) {
+    payload.WithObject("includedData", m_includedData.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

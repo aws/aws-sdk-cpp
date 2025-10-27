@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RemovePrefixListEntry.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/RemovePrefixListEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-RemovePrefixListEntry::RemovePrefixListEntry(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RemovePrefixListEntry::RemovePrefixListEntry(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RemovePrefixListEntry& RemovePrefixListEntry::operator =(const XmlNode& xmlNode)
-{
+RemovePrefixListEntry& RemovePrefixListEntry::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
-    if(!cidrNode.IsNull())
-    {
+    if (!cidrNode.IsNull()) {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ RemovePrefixListEntry& RemovePrefixListEntry::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void RemovePrefixListEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_cidrHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
-  }
-
-}
-
-void RemovePrefixListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_cidrHasBeenSet)
-  {
-      oStream << location << ".Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
+void RemovePrefixListEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_cidrHasBeenSet) {
+    oStream << location << index << locationValue << ".Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void RemovePrefixListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_cidrHasBeenSet) {
+    oStream << location << ".Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

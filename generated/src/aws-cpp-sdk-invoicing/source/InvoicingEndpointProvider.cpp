@@ -5,12 +5,8 @@
 
 #include <aws/invoicing/InvoicingEndpointProvider.h>
 
-namespace Aws
-{
-namespace Invoicing
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Invoicing
-} // namespace Aws
+namespace Aws {
+namespace Invoicing {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Invoicing
+}  // namespace Aws

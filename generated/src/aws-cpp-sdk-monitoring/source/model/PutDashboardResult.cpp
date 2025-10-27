@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/PutDashboardResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/PutDashboardResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDashboardResult::PutDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+PutDashboardResult::PutDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-PutDashboardResult& PutDashboardResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+PutDashboardResult& PutDashboardResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "PutDashboardResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "PutDashboardResult")) {
     resultNode = rootNode.FirstChild("PutDashboardResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dashboardValidationMessagesNode = resultNode.FirstChild("DashboardValidationMessages");
-    if(!dashboardValidationMessagesNode.IsNull())
-    {
+    if (!dashboardValidationMessagesNode.IsNull()) {
       XmlNode dashboardValidationMessagesMember = dashboardValidationMessagesNode.FirstChild("member");
       m_dashboardValidationMessagesHasBeenSet = !dashboardValidationMessagesMember.IsNull();
-      while(!dashboardValidationMessagesMember.IsNull())
-      {
+      while (!dashboardValidationMessagesMember.IsNull()) {
         m_dashboardValidationMessages.push_back(dashboardValidationMessagesMember);
         dashboardValidationMessagesMember = dashboardValidationMessagesMember.NextNode("member");
       }
@@ -53,7 +45,7 @@ PutDashboardResult& PutDashboardResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutDashboardResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutDashboardResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

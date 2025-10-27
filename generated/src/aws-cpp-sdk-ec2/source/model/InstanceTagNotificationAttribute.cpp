@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/InstanceTagNotificationAttribute.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/InstanceTagNotificationAttribute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-InstanceTagNotificationAttribute::InstanceTagNotificationAttribute(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceTagNotificationAttribute::InstanceTagNotificationAttribute(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceTagNotificationAttribute& InstanceTagNotificationAttribute::operator =(const XmlNode& xmlNode)
-{
+InstanceTagNotificationAttribute& InstanceTagNotificationAttribute::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceTagKeysNode = resultNode.FirstChild("instanceTagKeySet");
-    if(!instanceTagKeysNode.IsNull())
-    {
+    if (!instanceTagKeysNode.IsNull()) {
       XmlNode instanceTagKeysMember = instanceTagKeysNode.FirstChild("item");
       m_instanceTagKeysHasBeenSet = !instanceTagKeysMember.IsNull();
-      while(!instanceTagKeysMember.IsNull())
-      {
+      while (!instanceTagKeysMember.IsNull()) {
         m_instanceTagKeys.push_back(instanceTagKeysMember.GetText());
         instanceTagKeysMember = instanceTagKeysMember.NextNode("item");
       }
@@ -45,9 +35,9 @@ InstanceTagNotificationAttribute& InstanceTagNotificationAttribute::operator =(c
       m_instanceTagKeysHasBeenSet = true;
     }
     XmlNode includeAllTagsOfInstanceNode = resultNode.FirstChild("includeAllTagsOfInstance");
-    if(!includeAllTagsOfInstanceNode.IsNull())
-    {
-      m_includeAllTagsOfInstance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeAllTagsOfInstanceNode.GetText()).c_str()).c_str());
+    if (!includeAllTagsOfInstanceNode.IsNull()) {
+      m_includeAllTagsOfInstance = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeAllTagsOfInstanceNode.GetText()).c_str()).c_str());
       m_includeAllTagsOfInstanceHasBeenSet = true;
     }
   }
@@ -55,40 +45,33 @@ InstanceTagNotificationAttribute& InstanceTagNotificationAttribute::operator =(c
   return *this;
 }
 
-void InstanceTagNotificationAttribute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instanceTagKeysHasBeenSet)
-  {
-      unsigned instanceTagKeysIdx = 1;
-      for(auto& item : m_instanceTagKeys)
-      {
-        oStream << location << index << locationValue << ".InstanceTagKeySet." << instanceTagKeysIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+void InstanceTagNotificationAttribute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_instanceTagKeysHasBeenSet) {
+    unsigned instanceTagKeysIdx = 1;
+    for (auto& item : m_instanceTagKeys) {
+      oStream << location << index << locationValue << ".InstanceTagKeySet." << instanceTagKeysIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_includeAllTagsOfInstanceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IncludeAllTagsOfInstance=" << std::boolalpha << m_includeAllTagsOfInstance << "&";
-  }
-
-}
-
-void InstanceTagNotificationAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instanceTagKeysHasBeenSet)
-  {
-      unsigned instanceTagKeysIdx = 1;
-      for(auto& item : m_instanceTagKeys)
-      {
-        oStream << location << ".InstanceTagKeySet." << instanceTagKeysIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_includeAllTagsOfInstanceHasBeenSet)
-  {
-      oStream << location << ".IncludeAllTagsOfInstance=" << std::boolalpha << m_includeAllTagsOfInstance << "&";
+  if (m_includeAllTagsOfInstanceHasBeenSet) {
+    oStream << location << index << locationValue << ".IncludeAllTagsOfInstance=" << std::boolalpha << m_includeAllTagsOfInstance << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void InstanceTagNotificationAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instanceTagKeysHasBeenSet) {
+    unsigned instanceTagKeysIdx = 1;
+    for (auto& item : m_instanceTagKeys) {
+      oStream << location << ".InstanceTagKeySet." << instanceTagKeysIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_includeAllTagsOfInstanceHasBeenSet) {
+    oStream << location << ".IncludeAllTagsOfInstance=" << std::boolalpha << m_includeAllTagsOfInstance << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

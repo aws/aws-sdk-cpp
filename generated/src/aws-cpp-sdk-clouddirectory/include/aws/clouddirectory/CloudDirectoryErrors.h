@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-enum class CloudDirectoryErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudDirectory {
+enum class CloudDirectoryErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudDirectoryErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudDirectoryErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_WRITE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_WRITE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANNOT_LIST_PARENT_OF_ROOT,
   DIRECTORY_ALREADY_EXISTS,
   DIRECTORY_DELETED,
@@ -81,9 +78,8 @@ enum class CloudDirectoryErrors
   UNSUPPORTED_INDEX_TYPE
 };
 
-class AWS_CLOUDDIRECTORY_API CloudDirectoryError : public Aws::Client::AWSError<CloudDirectoryErrors>
-{
-public:
+class AWS_CLOUDDIRECTORY_API CloudDirectoryError : public Aws::Client::AWSError<CloudDirectoryErrors> {
+ public:
   CloudDirectoryError() {}
   CloudDirectoryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudDirectoryErrors>(rhs) {}
   CloudDirectoryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudDirectoryErrors>(rhs) {}
@@ -94,10 +90,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudDirectoryErrorMapper
-{
-  AWS_CLOUDDIRECTORY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudDirectoryErrorMapper {
+AWS_CLOUDDIRECTORY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace CloudDirectory
+}  // namespace Aws

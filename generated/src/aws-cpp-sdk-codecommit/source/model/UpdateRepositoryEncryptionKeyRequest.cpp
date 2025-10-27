@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRepositoryEncryptionKeyRequest::SerializePayload() const
-{
+Aws::String UpdateRepositoryEncryptionKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateRepositoryEncryptionKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateRepositoryEncryptionKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.UpdateRepositoryEncryptionKey"));
   return headers;
-
 }
-
-
-
-

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/health/model/EventAggregate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/health/model/EventAggregate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Health
-{
-namespace Model
-{
+namespace Aws {
+namespace Health {
+namespace Model {
 
-EventAggregate::EventAggregate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventAggregate::EventAggregate(JsonView jsonValue) { *this = jsonValue; }
 
-EventAggregate& EventAggregate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aggregateValue"))
-  {
+EventAggregate& EventAggregate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aggregateValue")) {
     m_aggregateValue = jsonValue.GetString("aggregateValue");
     m_aggregateValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventAggregate::Jsonize() const
-{
+JsonValue EventAggregate::Jsonize() const {
   JsonValue payload;
 
-  if(m_aggregateValueHasBeenSet)
-  {
-   payload.WithString("aggregateValue", m_aggregateValue);
-
+  if (m_aggregateValueHasBeenSet) {
+    payload.WithString("aggregateValue", m_aggregateValue);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Health
-} // namespace Aws
+}  // namespace Model
+}  // namespace Health
+}  // namespace Aws

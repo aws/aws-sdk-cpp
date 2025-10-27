@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/FirewallSubnetMissingVPCEndpointViolation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/FirewallSubnetMissingVPCEndpointViolation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation(JsonView jsonValue) { *this = jsonValue; }
 
-FirewallSubnetMissingVPCEndpointViolation& FirewallSubnetMissingVPCEndpointViolation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirewallSubnetId"))
-  {
+FirewallSubnetMissingVPCEndpointViolation& FirewallSubnetMissingVPCEndpointViolation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirewallSubnetId")) {
     m_firewallSubnetId = jsonValue.GetString("FirewallSubnetId");
     m_firewallSubnetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetAvailabilityZone"))
-  {
+  if (jsonValue.ValueExists("SubnetAvailabilityZone")) {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetAvailabilityZoneId"))
-  {
+  if (jsonValue.ValueExists("SubnetAvailabilityZoneId")) {
     m_subnetAvailabilityZoneId = jsonValue.GetString("SubnetAvailabilityZoneId");
     m_subnetAvailabilityZoneIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FirewallSubnetMissingVPCEndpointViolation::Jsonize() const
-{
+JsonValue FirewallSubnetMissingVPCEndpointViolation::Jsonize() const {
   JsonValue payload;
 
-  if(m_firewallSubnetIdHasBeenSet)
-  {
-   payload.WithString("FirewallSubnetId", m_firewallSubnetId);
-
+  if (m_firewallSubnetIdHasBeenSet) {
+    payload.WithString("FirewallSubnetId", m_firewallSubnetId);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_subnetAvailabilityZoneHasBeenSet)
-  {
-   payload.WithString("SubnetAvailabilityZone", m_subnetAvailabilityZone);
-
+  if (m_subnetAvailabilityZoneHasBeenSet) {
+    payload.WithString("SubnetAvailabilityZone", m_subnetAvailabilityZone);
   }
 
-  if(m_subnetAvailabilityZoneIdHasBeenSet)
-  {
-   payload.WithString("SubnetAvailabilityZoneId", m_subnetAvailabilityZoneId);
-
+  if (m_subnetAvailabilityZoneIdHasBeenSet) {
+    payload.WithString("SubnetAvailabilityZoneId", m_subnetAvailabilityZoneId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

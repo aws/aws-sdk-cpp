@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-OrchestrationTrace::OrchestrationTrace(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrchestrationTrace::OrchestrationTrace(JsonView jsonValue) { *this = jsonValue; }
 
-OrchestrationTrace& OrchestrationTrace::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rationale"))
-  {
+OrchestrationTrace& OrchestrationTrace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rationale")) {
     m_rationale = jsonValue.GetObject("rationale");
     m_rationaleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("invocationInput"))
-  {
+  if (jsonValue.ValueExists("invocationInput")) {
     m_invocationInput = jsonValue.GetObject("invocationInput");
     m_invocationInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("observation"))
-  {
+  if (jsonValue.ValueExists("observation")) {
     m_observation = jsonValue.GetObject("observation");
     m_observationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelInvocationInput"))
-  {
+  if (jsonValue.ValueExists("modelInvocationInput")) {
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
     m_modelInvocationInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelInvocationOutput"))
-  {
+  if (jsonValue.ValueExists("modelInvocationOutput")) {
     m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
     m_modelInvocationOutputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrchestrationTrace::Jsonize() const
-{
+JsonValue OrchestrationTrace::Jsonize() const {
   JsonValue payload;
 
-  if(m_rationaleHasBeenSet)
-  {
-   payload.WithObject("rationale", m_rationale.Jsonize());
-
+  if (m_rationaleHasBeenSet) {
+    payload.WithObject("rationale", m_rationale.Jsonize());
   }
 
-  if(m_invocationInputHasBeenSet)
-  {
-   payload.WithObject("invocationInput", m_invocationInput.Jsonize());
-
+  if (m_invocationInputHasBeenSet) {
+    payload.WithObject("invocationInput", m_invocationInput.Jsonize());
   }
 
-  if(m_observationHasBeenSet)
-  {
-   payload.WithObject("observation", m_observation.Jsonize());
-
+  if (m_observationHasBeenSet) {
+    payload.WithObject("observation", m_observation.Jsonize());
   }
 
-  if(m_modelInvocationInputHasBeenSet)
-  {
-   payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
-
+  if (m_modelInvocationInputHasBeenSet) {
+    payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
   }
 
-  if(m_modelInvocationOutputHasBeenSet)
-  {
-   payload.WithObject("modelInvocationOutput", m_modelInvocationOutput.Jsonize());
-
+  if (m_modelInvocationOutputHasBeenSet) {
+    payload.WithObject("modelInvocationOutput", m_modelInvocationOutput.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

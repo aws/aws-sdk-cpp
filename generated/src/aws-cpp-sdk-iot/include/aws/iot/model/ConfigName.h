@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class ConfigName
-  {
-    NOT_SET,
-    CERT_AGE_THRESHOLD_IN_DAYS,
-    CERT_EXPIRATION_THRESHOLD_IN_DAYS
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class ConfigName { NOT_SET, CERT_AGE_THRESHOLD_IN_DAYS, CERT_EXPIRATION_THRESHOLD_IN_DAYS };
 
-namespace ConfigNameMapper
-{
+namespace ConfigNameMapper {
 AWS_IOT_API ConfigName GetConfigNameForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForConfigName(ConfigName value);
-} // namespace ConfigNameMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace ConfigNameMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

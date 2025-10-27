@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/IAMConnectionMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/IAMConnectionMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-IAMConnectionMetadata::IAMConnectionMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IAMConnectionMetadata::IAMConnectionMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-IAMConnectionMetadata& IAMConnectionMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+IAMConnectionMetadata& IAMConnectionMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IAMConnectionMetadata::Jsonize() const
-{
+JsonValue IAMConnectionMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

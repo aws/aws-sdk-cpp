@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class GameServerProtectionPolicy
-  {
-    NOT_SET,
-    NO_PROTECTION,
-    FULL_PROTECTION
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class GameServerProtectionPolicy { NOT_SET, NO_PROTECTION, FULL_PROTECTION };
 
-namespace GameServerProtectionPolicyMapper
-{
+namespace GameServerProtectionPolicyMapper {
 AWS_GAMELIFT_API GameServerProtectionPolicy GetGameServerProtectionPolicyForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForGameServerProtectionPolicy(GameServerProtectionPolicy value);
-} // namespace GameServerProtectionPolicyMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace GameServerProtectionPolicyMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

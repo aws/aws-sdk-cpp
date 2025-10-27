@@ -11,82 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RemediationExecutionStep::RemediationExecutionStep(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RemediationExecutionStep::RemediationExecutionStep(JsonView jsonValue) { *this = jsonValue; }
 
-RemediationExecutionStep& RemediationExecutionStep::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+RemediationExecutionStep& RemediationExecutionStep::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = RemediationExecutionStepStateMapper::GetRemediationExecutionStepStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTime"))
-  {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetDouble("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StopTime"))
-  {
+  if (jsonValue.ValueExists("StopTime")) {
     m_stopTime = jsonValue.GetDouble("StopTime");
     m_stopTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RemediationExecutionStep::Jsonize() const
-{
+JsonValue RemediationExecutionStep::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", RemediationExecutionStepStateMapper::GetNameForRemediationExecutionStepState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", RemediationExecutionStepStateMapper::GetNameForRemediationExecutionStepState(m_state));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_stopTimeHasBeenSet)
-  {
-   payload.WithDouble("StopTime", m_stopTime.SecondsWithMSPrecision());
+  if (m_stopTimeHasBeenSet) {
+    payload.WithDouble("StopTime", m_stopTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -11,184 +11,134 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Configuration::Configuration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Configuration::Configuration(JsonView jsonValue) { *this = jsonValue; }
 
-Configuration& Configuration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ebsSnapshot"))
-  {
+Configuration& Configuration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ebsSnapshot")) {
     m_ebsSnapshot = jsonValue.GetObject("ebsSnapshot");
     m_ebsSnapshotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecrRepository"))
-  {
+  if (jsonValue.ValueExists("ecrRepository")) {
     m_ecrRepository = jsonValue.GetObject("ecrRepository");
     m_ecrRepositoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iamRole"))
-  {
+  if (jsonValue.ValueExists("iamRole")) {
     m_iamRole = jsonValue.GetObject("iamRole");
     m_iamRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("efsFileSystem"))
-  {
+  if (jsonValue.ValueExists("efsFileSystem")) {
     m_efsFileSystem = jsonValue.GetObject("efsFileSystem");
     m_efsFileSystemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKey"))
-  {
+  if (jsonValue.ValueExists("kmsKey")) {
     m_kmsKey = jsonValue.GetObject("kmsKey");
     m_kmsKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rdsDbClusterSnapshot"))
-  {
+  if (jsonValue.ValueExists("rdsDbClusterSnapshot")) {
     m_rdsDbClusterSnapshot = jsonValue.GetObject("rdsDbClusterSnapshot");
     m_rdsDbClusterSnapshotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rdsDbSnapshot"))
-  {
+  if (jsonValue.ValueExists("rdsDbSnapshot")) {
     m_rdsDbSnapshot = jsonValue.GetObject("rdsDbSnapshot");
     m_rdsDbSnapshotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretsManagerSecret"))
-  {
+  if (jsonValue.ValueExists("secretsManagerSecret")) {
     m_secretsManagerSecret = jsonValue.GetObject("secretsManagerSecret");
     m_secretsManagerSecretHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Bucket"))
-  {
+  if (jsonValue.ValueExists("s3Bucket")) {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snsTopic"))
-  {
+  if (jsonValue.ValueExists("snsTopic")) {
     m_snsTopic = jsonValue.GetObject("snsTopic");
     m_snsTopicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sqsQueue"))
-  {
+  if (jsonValue.ValueExists("sqsQueue")) {
     m_sqsQueue = jsonValue.GetObject("sqsQueue");
     m_sqsQueueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3ExpressDirectoryBucket"))
-  {
+  if (jsonValue.ValueExists("s3ExpressDirectoryBucket")) {
     m_s3ExpressDirectoryBucket = jsonValue.GetObject("s3ExpressDirectoryBucket");
     m_s3ExpressDirectoryBucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dynamodbStream"))
-  {
+  if (jsonValue.ValueExists("dynamodbStream")) {
     m_dynamodbStream = jsonValue.GetObject("dynamodbStream");
     m_dynamodbStreamHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dynamodbTable"))
-  {
+  if (jsonValue.ValueExists("dynamodbTable")) {
     m_dynamodbTable = jsonValue.GetObject("dynamodbTable");
     m_dynamodbTableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Configuration::Jsonize() const
-{
+JsonValue Configuration::Jsonize() const {
   JsonValue payload;
 
-  if(m_ebsSnapshotHasBeenSet)
-  {
-   payload.WithObject("ebsSnapshot", m_ebsSnapshot.Jsonize());
-
+  if (m_ebsSnapshotHasBeenSet) {
+    payload.WithObject("ebsSnapshot", m_ebsSnapshot.Jsonize());
   }
 
-  if(m_ecrRepositoryHasBeenSet)
-  {
-   payload.WithObject("ecrRepository", m_ecrRepository.Jsonize());
-
+  if (m_ecrRepositoryHasBeenSet) {
+    payload.WithObject("ecrRepository", m_ecrRepository.Jsonize());
   }
 
-  if(m_iamRoleHasBeenSet)
-  {
-   payload.WithObject("iamRole", m_iamRole.Jsonize());
-
+  if (m_iamRoleHasBeenSet) {
+    payload.WithObject("iamRole", m_iamRole.Jsonize());
   }
 
-  if(m_efsFileSystemHasBeenSet)
-  {
-   payload.WithObject("efsFileSystem", m_efsFileSystem.Jsonize());
-
+  if (m_efsFileSystemHasBeenSet) {
+    payload.WithObject("efsFileSystem", m_efsFileSystem.Jsonize());
   }
 
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithObject("kmsKey", m_kmsKey.Jsonize());
-
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithObject("kmsKey", m_kmsKey.Jsonize());
   }
 
-  if(m_rdsDbClusterSnapshotHasBeenSet)
-  {
-   payload.WithObject("rdsDbClusterSnapshot", m_rdsDbClusterSnapshot.Jsonize());
-
+  if (m_rdsDbClusterSnapshotHasBeenSet) {
+    payload.WithObject("rdsDbClusterSnapshot", m_rdsDbClusterSnapshot.Jsonize());
   }
 
-  if(m_rdsDbSnapshotHasBeenSet)
-  {
-   payload.WithObject("rdsDbSnapshot", m_rdsDbSnapshot.Jsonize());
-
+  if (m_rdsDbSnapshotHasBeenSet) {
+    payload.WithObject("rdsDbSnapshot", m_rdsDbSnapshot.Jsonize());
   }
 
-  if(m_secretsManagerSecretHasBeenSet)
-  {
-   payload.WithObject("secretsManagerSecret", m_secretsManagerSecret.Jsonize());
-
+  if (m_secretsManagerSecretHasBeenSet) {
+    payload.WithObject("secretsManagerSecret", m_secretsManagerSecret.Jsonize());
   }
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
   }
 
-  if(m_snsTopicHasBeenSet)
-  {
-   payload.WithObject("snsTopic", m_snsTopic.Jsonize());
-
+  if (m_snsTopicHasBeenSet) {
+    payload.WithObject("snsTopic", m_snsTopic.Jsonize());
   }
 
-  if(m_sqsQueueHasBeenSet)
-  {
-   payload.WithObject("sqsQueue", m_sqsQueue.Jsonize());
-
+  if (m_sqsQueueHasBeenSet) {
+    payload.WithObject("sqsQueue", m_sqsQueue.Jsonize());
   }
 
-  if(m_s3ExpressDirectoryBucketHasBeenSet)
-  {
-   payload.WithObject("s3ExpressDirectoryBucket", m_s3ExpressDirectoryBucket.Jsonize());
-
+  if (m_s3ExpressDirectoryBucketHasBeenSet) {
+    payload.WithObject("s3ExpressDirectoryBucket", m_s3ExpressDirectoryBucket.Jsonize());
   }
 
-  if(m_dynamodbStreamHasBeenSet)
-  {
-   payload.WithObject("dynamodbStream", m_dynamodbStream.Jsonize());
-
+  if (m_dynamodbStreamHasBeenSet) {
+    payload.WithObject("dynamodbStream", m_dynamodbStream.Jsonize());
   }
 
-  if(m_dynamodbTableHasBeenSet)
-  {
-   payload.WithObject("dynamodbTable", m_dynamodbTable.Jsonize());
-
+  if (m_dynamodbTableHasBeenSet) {
+    payload.WithObject("dynamodbTable", m_dynamodbTable.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

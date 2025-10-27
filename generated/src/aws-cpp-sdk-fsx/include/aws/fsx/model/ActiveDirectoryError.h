@@ -4,83 +4,94 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/ActiveDirectoryErrorType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace FSx {
+namespace Model {
 
+/**
+ * <p>An Active Directory error.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ActiveDirectoryError">AWS
+ * API Reference</a></p>
+ */
+class ActiveDirectoryError {
+ public:
+  AWS_FSX_API ActiveDirectoryError() = default;
+  AWS_FSX_API ActiveDirectoryError(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FSX_API ActiveDirectoryError& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An Active Directory error.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ActiveDirectoryError">AWS
-   * API Reference</a></p>
+   * <p>The directory ID of the directory that an error pertains to.</p>
    */
-  class ActiveDirectoryError
-  {
-  public:
-    AWS_FSX_API ActiveDirectoryError() = default;
-    AWS_FSX_API ActiveDirectoryError(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FSX_API ActiveDirectoryError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetActiveDirectoryId() const { return m_activeDirectoryId; }
+  inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
+  template <typename ActiveDirectoryIdT = Aws::String>
+  void SetActiveDirectoryId(ActiveDirectoryIdT&& value) {
+    m_activeDirectoryIdHasBeenSet = true;
+    m_activeDirectoryId = std::forward<ActiveDirectoryIdT>(value);
+  }
+  template <typename ActiveDirectoryIdT = Aws::String>
+  ActiveDirectoryError& WithActiveDirectoryId(ActiveDirectoryIdT&& value) {
+    SetActiveDirectoryId(std::forward<ActiveDirectoryIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The type of Active Directory error.</p>
+   */
+  inline ActiveDirectoryErrorType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ActiveDirectoryErrorType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ActiveDirectoryError& WithType(ActiveDirectoryErrorType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The directory ID of the directory that an error pertains to.</p>
-     */
-    inline const Aws::String& GetActiveDirectoryId() const { return m_activeDirectoryId; }
-    inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
-    template<typename ActiveDirectoryIdT = Aws::String>
-    void SetActiveDirectoryId(ActiveDirectoryIdT&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::forward<ActiveDirectoryIdT>(value); }
-    template<typename ActiveDirectoryIdT = Aws::String>
-    ActiveDirectoryError& WithActiveDirectoryId(ActiveDirectoryIdT&& value) { SetActiveDirectoryId(std::forward<ActiveDirectoryIdT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>The type of Active Directory error.</p>
-     */
-    inline ActiveDirectoryErrorType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ActiveDirectoryErrorType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ActiveDirectoryError& WithType(ActiveDirectoryErrorType value) { SetType(value); return *this;}
-    ///@}
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ActiveDirectoryError& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_activeDirectoryId;
+  bool m_activeDirectoryIdHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    ActiveDirectoryError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-  private:
+  ActiveDirectoryErrorType m_type{ActiveDirectoryErrorType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
-    Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet = false;
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
+};
 
-    ActiveDirectoryErrorType m_type{ActiveDirectoryErrorType::NOT_SET};
-    bool m_typeHasBeenSet = false;
-
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

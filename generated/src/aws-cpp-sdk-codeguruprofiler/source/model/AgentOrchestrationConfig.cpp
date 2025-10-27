@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-AgentOrchestrationConfig::AgentOrchestrationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentOrchestrationConfig::AgentOrchestrationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AgentOrchestrationConfig& AgentOrchestrationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("profilingEnabled"))
-  {
+AgentOrchestrationConfig& AgentOrchestrationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("profilingEnabled")) {
     m_profilingEnabled = jsonValue.GetBool("profilingEnabled");
     m_profilingEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentOrchestrationConfig::Jsonize() const
-{
+JsonValue AgentOrchestrationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_profilingEnabledHasBeenSet)
-  {
-   payload.WithBool("profilingEnabled", m_profilingEnabled);
-
+  if (m_profilingEnabledHasBeenSet) {
+    payload.WithBool("profilingEnabled", m_profilingEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

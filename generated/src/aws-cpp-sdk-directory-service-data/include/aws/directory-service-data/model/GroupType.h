@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryServiceData
-{
-namespace Model
-{
-  enum class GroupType
-  {
-    NOT_SET,
-    Distribution,
-    Security
-  };
+namespace Aws {
+namespace DirectoryServiceData {
+namespace Model {
+enum class GroupType { NOT_SET, Distribution, Security };
 
-namespace GroupTypeMapper
-{
+namespace GroupTypeMapper {
 AWS_DIRECTORYSERVICEDATA_API GroupType GetGroupTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICEDATA_API Aws::String GetNameForGroupType(GroupType value);
-} // namespace GroupTypeMapper
-} // namespace Model
-} // namespace DirectoryServiceData
-} // namespace Aws
+}  // namespace GroupTypeMapper
+}  // namespace Model
+}  // namespace DirectoryServiceData
+}  // namespace Aws

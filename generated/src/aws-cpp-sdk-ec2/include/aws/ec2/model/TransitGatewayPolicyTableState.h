@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class TransitGatewayPolicyTableState
-  {
-    NOT_SET,
-    pending,
-    available,
-    deleting,
-    deleted
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class TransitGatewayPolicyTableState { NOT_SET, pending, available, deleting, deleted };
 
-namespace TransitGatewayPolicyTableStateMapper
-{
+namespace TransitGatewayPolicyTableStateMapper {
 AWS_EC2_API TransitGatewayPolicyTableState GetTransitGatewayPolicyTableStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTransitGatewayPolicyTableState(TransitGatewayPolicyTableState value);
-} // namespace TransitGatewayPolicyTableStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TransitGatewayPolicyTableStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/m2/MainframeModernization_EXPORTS.h>
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Model
-{
-  enum class DeploymentLifecycle
-  {
-    NOT_SET,
-    Deploying,
-    Succeeded,
-    Failed,
-    Updating_Deployment
-  };
+namespace Aws {
+namespace MainframeModernization {
+namespace Model {
+enum class DeploymentLifecycle { NOT_SET, Deploying, Succeeded, Failed, Updating_Deployment };
 
-namespace DeploymentLifecycleMapper
-{
+namespace DeploymentLifecycleMapper {
 AWS_MAINFRAMEMODERNIZATION_API DeploymentLifecycle GetDeploymentLifecycleForName(const Aws::String& name);
 
 AWS_MAINFRAMEMODERNIZATION_API Aws::String GetNameForDeploymentLifecycle(DeploymentLifecycle value);
-} // namespace DeploymentLifecycleMapper
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace DeploymentLifecycleMapper
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

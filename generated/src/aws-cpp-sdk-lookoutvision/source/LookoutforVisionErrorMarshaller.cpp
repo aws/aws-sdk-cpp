@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LookoutforVision;
 
-AWSError<CoreErrors> LookoutforVisionErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LookoutforVisionErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LookoutforVisionErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/ChannelStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/ChannelStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-ChannelStatistics::ChannelStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelStatistics::ChannelStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelStatistics& ChannelStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("size"))
-  {
+ChannelStatistics& ChannelStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("size")) {
     m_size = jsonValue.GetObject("size");
     m_sizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelStatistics::Jsonize() const
-{
+JsonValue ChannelStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithObject("size", m_size.Jsonize());
-
+  if (m_sizeHasBeenSet) {
+    payload.WithObject("size", m_size.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

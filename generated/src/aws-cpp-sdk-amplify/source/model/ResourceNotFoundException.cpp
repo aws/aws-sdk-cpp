@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceNotFoundException::Jsonize() const
-{
+JsonValue ResourceNotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

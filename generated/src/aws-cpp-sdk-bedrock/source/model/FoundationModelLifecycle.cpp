@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-FoundationModelLifecycle::FoundationModelLifecycle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FoundationModelLifecycle::FoundationModelLifecycle(JsonView jsonValue) { *this = jsonValue; }
 
-FoundationModelLifecycle& FoundationModelLifecycle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+FoundationModelLifecycle& FoundationModelLifecycle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = FoundationModelLifecycleStatusMapper::GetFoundationModelLifecycleStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FoundationModelLifecycle::Jsonize() const
-{
+JsonValue FoundationModelLifecycle::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FoundationModelLifecycleStatusMapper::GetNameForFoundationModelLifecycleStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", FoundationModelLifecycleStatusMapper::GetNameForFoundationModelLifecycleStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

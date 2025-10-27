@@ -5,12 +5,8 @@
 
 #include <aws/appsync/AppSyncEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppSync
-} // namespace Aws
+namespace Aws {
+namespace AppSync {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppSync
+}  // namespace Aws

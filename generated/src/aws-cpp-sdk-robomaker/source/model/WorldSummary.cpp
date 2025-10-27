@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/WorldSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/WorldSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-WorldSummary::WorldSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorldSummary::WorldSummary(JsonView jsonValue) { *this = jsonValue; }
 
-WorldSummary& WorldSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+WorldSummary& WorldSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("generationJob"))
-  {
+  if (jsonValue.ValueExists("generationJob")) {
     m_generationJob = jsonValue.GetString("generationJob");
     m_generationJobHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("template"))
-  {
+  if (jsonValue.ValueExists("template")) {
     m_template = jsonValue.GetString("template");
     m_templateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorldSummary::Jsonize() const
-{
+JsonValue WorldSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_generationJobHasBeenSet)
-  {
-   payload.WithString("generationJob", m_generationJob);
-
+  if (m_generationJobHasBeenSet) {
+    payload.WithString("generationJob", m_generationJob);
   }
 
-  if(m_templateHasBeenSet)
-  {
-   payload.WithString("template", m_template);
-
+  if (m_templateHasBeenSet) {
+    payload.WithString("template", m_template);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

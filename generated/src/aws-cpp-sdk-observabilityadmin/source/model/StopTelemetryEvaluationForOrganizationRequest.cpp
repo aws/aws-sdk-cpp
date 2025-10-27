@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ObservabilityAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopTelemetryEvaluationForOrganizationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StopTelemetryEvaluationForOrganizationRequest::SerializePayload() const { return {}; }

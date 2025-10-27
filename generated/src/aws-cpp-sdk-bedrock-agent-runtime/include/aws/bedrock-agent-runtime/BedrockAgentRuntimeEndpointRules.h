@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-class BedrockAgentRuntimeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BedrockAgentRuntime {
+class BedrockAgentRuntimeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

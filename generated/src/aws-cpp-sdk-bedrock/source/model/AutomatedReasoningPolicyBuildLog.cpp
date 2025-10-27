@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyBuildLog::AutomatedReasoningPolicyBuildLog(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyBuildLog::AutomatedReasoningPolicyBuildLog(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyBuildLog& AutomatedReasoningPolicyBuildLog::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entries"))
-  {
+AutomatedReasoningPolicyBuildLog& AutomatedReasoningPolicyBuildLog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entries")) {
     Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("entries");
-    for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
-    {
+    for (unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex) {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
     m_entriesHasBeenSet = true;
@@ -37,24 +28,20 @@ AutomatedReasoningPolicyBuildLog& AutomatedReasoningPolicyBuildLog::operator =(J
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyBuildLog::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyBuildLog::Jsonize() const {
   JsonValue payload;
 
-  if(m_entriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
-   for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
-   {
-     entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
-   }
-   payload.WithArray("entries", std::move(entriesJsonList));
-
+  if (m_entriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
+    for (unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex) {
+      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
+    }
+    payload.WithArray("entries", std::move(entriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/CloudWatchMetrics.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/CloudWatchMetrics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-CloudWatchMetrics::CloudWatchMetrics(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CloudWatchMetrics::CloudWatchMetrics(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CloudWatchMetrics& CloudWatchMetrics::operator =(const XmlNode& xmlNode)
-{
+CloudWatchMetrics& CloudWatchMetrics::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
-    if(!isEnabledNode.IsNull())
-    {
-      m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
+    if (!isEnabledNode.IsNull()) {
+      m_isEnabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
     }
   }
@@ -42,19 +34,16 @@ CloudWatchMetrics& CloudWatchMetrics::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CloudWatchMetrics::AddToNode(XmlNode& parentNode) const
-{
+void CloudWatchMetrics::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_isEnabledHasBeenSet)
-  {
-   XmlNode isEnabledNode = parentNode.CreateChildElement("IsEnabled");
-   ss << std::boolalpha << m_isEnabled;
-   isEnabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_isEnabledHasBeenSet) {
+    XmlNode isEnabledNode = parentNode.CreateChildElement("IsEnabled");
+    ss << std::boolalpha << m_isEnabled;
+    isEnabledNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningCheckRule::AutomatedReasoningCheckRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningCheckRule::AutomatedReasoningCheckRule(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningCheckRule& AutomatedReasoningCheckRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+AutomatedReasoningCheckRule& AutomatedReasoningCheckRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policyVersionArn"))
-  {
+  if (jsonValue.ValueExists("policyVersionArn")) {
     m_policyVersionArn = jsonValue.GetString("policyVersionArn");
     m_policyVersionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningCheckRule::Jsonize() const
-{
+JsonValue AutomatedReasoningCheckRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_policyVersionArnHasBeenSet)
-  {
-   payload.WithString("policyVersionArn", m_policyVersionArn);
-
+  if (m_policyVersionArnHasBeenSet) {
+    payload.WithString("policyVersionArn", m_policyVersionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

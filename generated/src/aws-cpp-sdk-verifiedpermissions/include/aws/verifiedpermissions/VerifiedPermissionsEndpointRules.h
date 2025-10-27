@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-class VerifiedPermissionsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace VerifiedPermissions {
+class VerifiedPermissionsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace VerifiedPermissions
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetTokenVaultRequest::SerializePayload() const
-{
+Aws::String GetTokenVaultRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tokenVaultIdHasBeenSet)
-  {
-   payload.WithString("tokenVaultId", m_tokenVaultId);
-
+  if (m_tokenVaultIdHasBeenSet) {
+    payload.WithString("tokenVaultId", m_tokenVaultId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

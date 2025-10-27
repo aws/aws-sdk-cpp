@@ -4,29 +4,21 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
-  enum class DirectConnectGatewayAssociationProposalState
-  {
-    NOT_SET,
-    requested,
-    accepted,
-    deleted
-  };
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
+enum class DirectConnectGatewayAssociationProposalState { NOT_SET, requested, accepted, deleted };
 
-namespace DirectConnectGatewayAssociationProposalStateMapper
-{
-AWS_DIRECTCONNECT_API DirectConnectGatewayAssociationProposalState GetDirectConnectGatewayAssociationProposalStateForName(const Aws::String& name);
+namespace DirectConnectGatewayAssociationProposalStateMapper {
+AWS_DIRECTCONNECT_API DirectConnectGatewayAssociationProposalState
+GetDirectConnectGatewayAssociationProposalStateForName(const Aws::String& name);
 
-AWS_DIRECTCONNECT_API Aws::String GetNameForDirectConnectGatewayAssociationProposalState(DirectConnectGatewayAssociationProposalState value);
-} // namespace DirectConnectGatewayAssociationProposalStateMapper
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+AWS_DIRECTCONNECT_API Aws::String GetNameForDirectConnectGatewayAssociationProposalState(
+    DirectConnectGatewayAssociationProposalState value);
+}  // namespace DirectConnectGatewayAssociationProposalStateMapper
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

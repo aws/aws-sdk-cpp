@@ -3,67 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/HostedZone.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/HostedZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-HostedZone::HostedZone(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+HostedZone::HostedZone(const XmlNode& xmlNode) { *this = xmlNode; }
 
-HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
-{
+HostedZone& HostedZone::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
+    if (!idNode.IsNull()) {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    if(!callerReferenceNode.IsNull())
-    {
+    if (!callerReferenceNode.IsNull()) {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode configNode = resultNode.FirstChild("Config");
-    if(!configNode.IsNull())
-    {
+    if (!configNode.IsNull()) {
       m_config = configNode;
       m_configHasBeenSet = true;
     }
     XmlNode resourceRecordSetCountNode = resultNode.FirstChild("ResourceRecordSetCount");
-    if(!resourceRecordSetCountNode.IsNull())
-    {
-      m_resourceRecordSetCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceRecordSetCountNode.GetText()).c_str()).c_str());
+    if (!resourceRecordSetCountNode.IsNull()) {
+      m_resourceRecordSetCount = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceRecordSetCountNode.GetText()).c_str()).c_str());
       m_resourceRecordSetCountHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
-    if(!linkedServiceNode.IsNull())
-    {
+    if (!linkedServiceNode.IsNull()) {
       m_linkedService = linkedServiceNode;
       m_linkedServiceHasBeenSet = true;
     }
@@ -72,49 +59,41 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void HostedZone::AddToNode(XmlNode& parentNode) const
-{
+void HostedZone::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_idHasBeenSet)
-  {
-   XmlNode idNode = parentNode.CreateChildElement("Id");
-   idNode.SetText(m_id);
+  if (m_idHasBeenSet) {
+    XmlNode idNode = parentNode.CreateChildElement("Id");
+    idNode.SetText(m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_callerReferenceHasBeenSet)
-  {
-   XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
-   callerReferenceNode.SetText(m_callerReference);
+  if (m_callerReferenceHasBeenSet) {
+    XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+    callerReferenceNode.SetText(m_callerReference);
   }
 
-  if(m_configHasBeenSet)
-  {
-   XmlNode configNode = parentNode.CreateChildElement("Config");
-   m_config.AddToNode(configNode);
+  if (m_configHasBeenSet) {
+    XmlNode configNode = parentNode.CreateChildElement("Config");
+    m_config.AddToNode(configNode);
   }
 
-  if(m_resourceRecordSetCountHasBeenSet)
-  {
-   XmlNode resourceRecordSetCountNode = parentNode.CreateChildElement("ResourceRecordSetCount");
-   ss << m_resourceRecordSetCount;
-   resourceRecordSetCountNode.SetText(ss.str());
-   ss.str("");
+  if (m_resourceRecordSetCountHasBeenSet) {
+    XmlNode resourceRecordSetCountNode = parentNode.CreateChildElement("ResourceRecordSetCount");
+    ss << m_resourceRecordSetCount;
+    resourceRecordSetCountNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_linkedServiceHasBeenSet)
-  {
-   XmlNode linkedServiceNode = parentNode.CreateChildElement("LinkedService");
-   m_linkedService.AddToNode(linkedServiceNode);
+  if (m_linkedServiceHasBeenSet) {
+    XmlNode linkedServiceNode = parentNode.CreateChildElement("LinkedService");
+    m_linkedService.AddToNode(linkedServiceNode);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/DeleteRecommendationTemplateResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/resiliencehub/model/DeleteRecommendationTemplateResult.h>
 
 #include <utility>
 
@@ -17,33 +17,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DeleteRecommendationTemplateResult& DeleteRecommendationTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteRecommendationTemplateResult& DeleteRecommendationTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("recommendationTemplateArn"))
-  {
+  if (jsonValue.ValueExists("recommendationTemplateArn")) {
     m_recommendationTemplateArn = jsonValue.GetString("recommendationTemplateArn");
     m_recommendationTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = RecommendationTemplateStatusMapper::GetRecommendationTemplateStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -12,27 +12,18 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteApprovalRuleTemplateRequest::SerializePayload() const
-{
+Aws::String DeleteApprovalRuleTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_approvalRuleTemplateNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
-
+  if (m_approvalRuleTemplateNameHasBeenSet) {
+    payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteApprovalRuleTemplateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteApprovalRuleTemplateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.DeleteApprovalRuleTemplate"));
   return headers;
-
 }
-
-
-
-

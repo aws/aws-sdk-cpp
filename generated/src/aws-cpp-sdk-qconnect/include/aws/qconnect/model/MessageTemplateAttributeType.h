@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class MessageTemplateAttributeType
-  {
-    NOT_SET,
-    SYSTEM,
-    AGENT,
-    CUSTOMER_PROFILE,
-    CUSTOM
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class MessageTemplateAttributeType { NOT_SET, SYSTEM, AGENT, CUSTOMER_PROFILE, CUSTOM };
 
-namespace MessageTemplateAttributeTypeMapper
-{
+namespace MessageTemplateAttributeTypeMapper {
 AWS_QCONNECT_API MessageTemplateAttributeType GetMessageTemplateAttributeTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForMessageTemplateAttributeType(MessageTemplateAttributeType value);
-} // namespace MessageTemplateAttributeTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace MessageTemplateAttributeTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

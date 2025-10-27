@@ -3,118 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/TitleAggregation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/TitleAggregation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-TitleAggregation::TitleAggregation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TitleAggregation::TitleAggregation(JsonView jsonValue) { *this = jsonValue; }
 
-TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("titles"))
-  {
+TitleAggregation& TitleAggregation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("titles")) {
     Aws::Utils::Array<JsonView> titlesJsonList = jsonValue.GetArray("titles");
-    for(unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex)
-    {
+    for (unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex) {
       m_titles.push_back(titlesJsonList[titlesIndex].AsObject());
     }
     m_titlesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vulnerabilityIds"))
-  {
+  if (jsonValue.ValueExists("vulnerabilityIds")) {
     Aws::Utils::Array<JsonView> vulnerabilityIdsJsonList = jsonValue.GetArray("vulnerabilityIds");
-    for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
-    {
+    for (unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex) {
       m_vulnerabilityIds.push_back(vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsObject());
     }
     m_vulnerabilityIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
-  {
+  if (jsonValue.ValueExists("sortBy")) {
     m_sortBy = TitleSortByMapper::GetTitleSortByForName(jsonValue.GetString("sortBy"));
     m_sortByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingType"))
-  {
+  if (jsonValue.ValueExists("findingType")) {
     m_findingType = AggregationFindingTypeMapper::GetAggregationFindingTypeForName(jsonValue.GetString("findingType"));
     m_findingTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TitleAggregation::Jsonize() const
-{
+JsonValue TitleAggregation::Jsonize() const {
   JsonValue payload;
 
-  if(m_titlesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> titlesJsonList(m_titles.size());
-   for(unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex)
-   {
-     titlesJsonList[titlesIndex].AsObject(m_titles[titlesIndex].Jsonize());
-   }
-   payload.WithArray("titles", std::move(titlesJsonList));
-
+  if (m_titlesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> titlesJsonList(m_titles.size());
+    for (unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex) {
+      titlesJsonList[titlesIndex].AsObject(m_titles[titlesIndex].Jsonize());
+    }
+    payload.WithArray("titles", std::move(titlesJsonList));
   }
 
-  if(m_vulnerabilityIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
-   for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
-   {
-     vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsObject(m_vulnerabilityIds[vulnerabilityIdsIndex].Jsonize());
-   }
-   payload.WithArray("vulnerabilityIds", std::move(vulnerabilityIdsJsonList));
-
+  if (m_vulnerabilityIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
+    for (unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex) {
+      vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsObject(m_vulnerabilityIds[vulnerabilityIdsIndex].Jsonize());
+    }
+    payload.WithArray("vulnerabilityIds", std::move(vulnerabilityIdsJsonList));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", AggregationResourceTypeMapper::GetNameForAggregationResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", AggregationResourceTypeMapper::GetNameForAggregationResourceType(m_resourceType));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", TitleSortByMapper::GetNameForTitleSortBy(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", TitleSortByMapper::GetNameForTitleSortBy(m_sortBy));
   }
 
-  if(m_findingTypeHasBeenSet)
-  {
-   payload.WithString("findingType", AggregationFindingTypeMapper::GetNameForAggregationFindingType(m_findingType));
+  if (m_findingTypeHasBeenSet) {
+    payload.WithString("findingType", AggregationFindingTypeMapper::GetNameForAggregationFindingType(m_findingType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

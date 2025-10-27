@@ -5,12 +5,8 @@
 
 #include <aws/cognito-idp/CognitoIdentityProviderEndpointProvider.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

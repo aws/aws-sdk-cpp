@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/EC2CreateRouteTableAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/EC2CreateRouteTableAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-EC2CreateRouteTableAction::EC2CreateRouteTableAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EC2CreateRouteTableAction::EC2CreateRouteTableAction(JsonView jsonValue) { *this = jsonValue; }
 
-EC2CreateRouteTableAction& EC2CreateRouteTableAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+EC2CreateRouteTableAction& EC2CreateRouteTableAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetObject("VpcId");
     m_vpcIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EC2CreateRouteTableAction::Jsonize() const
-{
+JsonValue EC2CreateRouteTableAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithObject("VpcId", m_vpcId.Jsonize());
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithObject("VpcId", m_vpcId.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

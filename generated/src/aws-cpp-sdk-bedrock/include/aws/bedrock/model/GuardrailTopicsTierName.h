@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class GuardrailTopicsTierName
-  {
-    NOT_SET,
-    CLASSIC,
-    STANDARD
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class GuardrailTopicsTierName { NOT_SET, CLASSIC, STANDARD };
 
-namespace GuardrailTopicsTierNameMapper
-{
+namespace GuardrailTopicsTierNameMapper {
 AWS_BEDROCK_API GuardrailTopicsTierName GetGuardrailTopicsTierNameForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForGuardrailTopicsTierName(GuardrailTopicsTierName value);
-} // namespace GuardrailTopicsTierNameMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace GuardrailTopicsTierNameMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

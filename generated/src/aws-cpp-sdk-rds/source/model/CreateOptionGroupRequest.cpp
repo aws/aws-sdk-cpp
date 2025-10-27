@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateOptionGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/CreateOptionGroupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateOptionGroupRequest::SerializePayload() const
-{
+Aws::String CreateOptionGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateOptionGroup&";
-  if(m_optionGroupNameHasBeenSet)
-  {
+  if (m_optionGroupNameHasBeenSet) {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
 
-  if(m_engineNameHasBeenSet)
-  {
+  if (m_engineNameHasBeenSet) {
     ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
   }
 
-  if(m_majorEngineVersionHasBeenSet)
-  {
+  if (m_majorEngineVersionHasBeenSet) {
     ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
 
-  if(m_optionGroupDescriptionHasBeenSet)
-  {
+  if (m_optionGroupDescriptionHasBeenSet) {
     ss << "OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -55,8 +45,4 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateOptionGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateOptionGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

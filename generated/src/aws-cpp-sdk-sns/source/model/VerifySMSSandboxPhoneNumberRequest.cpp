@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/VerifySMSSandboxPhoneNumberRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/VerifySMSSandboxPhoneNumberRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String VerifySMSSandboxPhoneNumberRequest::SerializePayload() const
-{
+Aws::String VerifySMSSandboxPhoneNumberRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=VerifySMSSandboxPhoneNumber&";
-  if(m_phoneNumberHasBeenSet)
-  {
+  if (m_phoneNumberHasBeenSet) {
     ss << "PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
   }
 
-  if(m_oneTimePasswordHasBeenSet)
-  {
+  if (m_oneTimePasswordHasBeenSet) {
     ss << "OneTimePassword=" << StringUtils::URLEncode(m_oneTimePassword.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String VerifySMSSandboxPhoneNumberRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  VerifySMSSandboxPhoneNumberRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void VerifySMSSandboxPhoneNumberRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

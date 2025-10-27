@@ -5,12 +5,8 @@
 
 #include <aws/snowball/SnowballEndpointProvider.h>
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Snowball
-} // namespace Aws
+namespace Aws {
+namespace Snowball {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Snowball
+}  // namespace Aws

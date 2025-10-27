@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/SnoozeAlarmActionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/SnoozeAlarmActionRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-SnoozeAlarmActionRequest::SnoozeAlarmActionRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnoozeAlarmActionRequest::SnoozeAlarmActionRequest(JsonView jsonValue) { *this = jsonValue; }
 
-SnoozeAlarmActionRequest& SnoozeAlarmActionRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("requestId"))
-  {
+SnoozeAlarmActionRequest& SnoozeAlarmActionRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("alarmModelName"))
-  {
+  if (jsonValue.ValueExists("alarmModelName")) {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
     m_alarmModelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyValue"))
-  {
+  if (jsonValue.ValueExists("keyValue")) {
     m_keyValue = jsonValue.GetString("keyValue");
     m_keyValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("note"))
-  {
+  if (jsonValue.ValueExists("note")) {
     m_note = jsonValue.GetString("note");
     m_noteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snoozeDuration"))
-  {
+  if (jsonValue.ValueExists("snoozeDuration")) {
     m_snoozeDuration = jsonValue.GetInteger("snoozeDuration");
     m_snoozeDurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnoozeAlarmActionRequest::Jsonize() const
-{
+JsonValue SnoozeAlarmActionRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("requestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("requestId", m_requestId);
   }
 
-  if(m_alarmModelNameHasBeenSet)
-  {
-   payload.WithString("alarmModelName", m_alarmModelName);
-
+  if (m_alarmModelNameHasBeenSet) {
+    payload.WithString("alarmModelName", m_alarmModelName);
   }
 
-  if(m_keyValueHasBeenSet)
-  {
-   payload.WithString("keyValue", m_keyValue);
-
+  if (m_keyValueHasBeenSet) {
+    payload.WithString("keyValue", m_keyValue);
   }
 
-  if(m_noteHasBeenSet)
-  {
-   payload.WithString("note", m_note);
-
+  if (m_noteHasBeenSet) {
+    payload.WithString("note", m_note);
   }
 
-  if(m_snoozeDurationHasBeenSet)
-  {
-   payload.WithInteger("snoozeDuration", m_snoozeDuration);
-
+  if (m_snoozeDurationHasBeenSet) {
+    payload.WithInteger("snoozeDuration", m_snoozeDuration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

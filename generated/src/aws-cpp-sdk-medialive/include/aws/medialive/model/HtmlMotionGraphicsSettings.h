@@ -6,36 +6,29 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaLive {
+namespace Model {
 
-  /**
-   * Html Motion Graphics Settings<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HtmlMotionGraphicsSettings">AWS
-   * API Reference</a></p>
-   */
-  class HtmlMotionGraphicsSettings
-  {
-  public:
-    AWS_MEDIALIVE_API HtmlMotionGraphicsSettings() = default;
-    AWS_MEDIALIVE_API HtmlMotionGraphicsSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API HtmlMotionGraphicsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+/**
+ * Html Motion Graphics Settings<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HtmlMotionGraphicsSettings">AWS
+ * API Reference</a></p>
+ */
+class HtmlMotionGraphicsSettings {
+ public:
+  AWS_MEDIALIVE_API HtmlMotionGraphicsSettings() = default;
+  AWS_MEDIALIVE_API HtmlMotionGraphicsSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API HtmlMotionGraphicsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+};
 
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

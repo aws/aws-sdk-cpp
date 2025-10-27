@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class Scope
-  {
-    NOT_SET,
-    ALL
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class Scope { NOT_SET, ALL };
 
-namespace ScopeMapper
-{
+namespace ScopeMapper {
 AWS_CLOUDWATCHLOGS_API Scope GetScopeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForScope(Scope value);
-} // namespace ScopeMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace ScopeMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

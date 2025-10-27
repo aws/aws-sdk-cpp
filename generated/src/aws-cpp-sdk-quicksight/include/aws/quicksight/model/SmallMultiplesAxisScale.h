@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class SmallMultiplesAxisScale
-  {
-    NOT_SET,
-    SHARED,
-    INDEPENDENT
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class SmallMultiplesAxisScale { NOT_SET, SHARED, INDEPENDENT };
 
-namespace SmallMultiplesAxisScaleMapper
-{
+namespace SmallMultiplesAxisScaleMapper {
 AWS_QUICKSIGHT_API SmallMultiplesAxisScale GetSmallMultiplesAxisScaleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForSmallMultiplesAxisScale(SmallMultiplesAxisScale value);
-} // namespace SmallMultiplesAxisScaleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace SmallMultiplesAxisScaleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

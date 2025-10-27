@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/CopySnapshotResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/CopySnapshotResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopySnapshotResult::CopySnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CopySnapshotResult::CopySnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CopySnapshotResult& CopySnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CopySnapshotResult& CopySnapshotResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CopySnapshotResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CopySnapshotResult")) {
     resultNode = rootNode.FirstChild("CopySnapshotResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(!snapshotNode.IsNull())
-    {
+    if (!snapshotNode.IsNull()) {
       m_snapshot = snapshotNode;
       m_snapshotHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ CopySnapshotResult& CopySnapshotResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CopySnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CopySnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

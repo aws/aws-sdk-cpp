@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateDefaultVocabularyRequest::SerializePayload() const
-{
+Aws::String AssociateDefaultVocabularyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vocabularyIdHasBeenSet)
-  {
-   payload.WithString("VocabularyId", m_vocabularyId);
-
+  if (m_vocabularyIdHasBeenSet) {
+    payload.WithString("VocabularyId", m_vocabularyId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

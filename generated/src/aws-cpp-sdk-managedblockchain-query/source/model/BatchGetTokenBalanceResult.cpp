@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain-query/model/BatchGetTokenBalanceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/managedblockchain-query/model/BatchGetTokenBalanceResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetTokenBalanceResult::BatchGetTokenBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetTokenBalanceResult::BatchGetTokenBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetTokenBalanceResult& BatchGetTokenBalanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetTokenBalanceResult& BatchGetTokenBalanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("tokenBalances"))
-  {
+  if (jsonValue.ValueExists("tokenBalances")) {
     Aws::Utils::Array<JsonView> tokenBalancesJsonList = jsonValue.GetArray("tokenBalances");
-    for(unsigned tokenBalancesIndex = 0; tokenBalancesIndex < tokenBalancesJsonList.GetLength(); ++tokenBalancesIndex)
-    {
+    for (unsigned tokenBalancesIndex = 0; tokenBalancesIndex < tokenBalancesJsonList.GetLength(); ++tokenBalancesIndex) {
       m_tokenBalances.push_back(tokenBalancesJsonList[tokenBalancesIndex].AsObject());
     }
     m_tokenBalancesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errors"))
-  {
+  if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
@@ -46,12 +38,10 @@ BatchGetTokenBalanceResult& BatchGetTokenBalanceResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

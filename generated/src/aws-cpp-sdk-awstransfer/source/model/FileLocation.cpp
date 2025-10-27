@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-FileLocation::FileLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileLocation::FileLocation(JsonView jsonValue) { *this = jsonValue; }
 
-FileLocation& FileLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3FileLocation"))
-  {
+FileLocation& FileLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3FileLocation")) {
     m_s3FileLocation = jsonValue.GetObject("S3FileLocation");
     m_s3FileLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EfsFileLocation"))
-  {
+  if (jsonValue.ValueExists("EfsFileLocation")) {
     m_efsFileLocation = jsonValue.GetObject("EfsFileLocation");
     m_efsFileLocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileLocation::Jsonize() const
-{
+JsonValue FileLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3FileLocationHasBeenSet)
-  {
-   payload.WithObject("S3FileLocation", m_s3FileLocation.Jsonize());
-
+  if (m_s3FileLocationHasBeenSet) {
+    payload.WithObject("S3FileLocation", m_s3FileLocation.Jsonize());
   }
 
-  if(m_efsFileLocationHasBeenSet)
-  {
-   payload.WithObject("EfsFileLocation", m_efsFileLocation.Jsonize());
-
+  if (m_efsFileLocationHasBeenSet) {
+    payload.WithObject("EfsFileLocation", m_efsFileLocation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

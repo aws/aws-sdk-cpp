@@ -5,12 +5,8 @@
 
 #include <aws/resource-groups/ResourceGroupsEndpointProvider.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ResourceGroups
-} // namespace Aws
+namespace Aws {
+namespace ResourceGroups {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ResourceGroups
+}  // namespace Aws

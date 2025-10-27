@@ -5,12 +5,8 @@
 
 #include <aws/dms/DatabaseMigrationServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DatabaseMigrationService
-} // namespace Aws
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

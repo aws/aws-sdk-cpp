@@ -6,58 +6,57 @@
 #pragma once
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/AdMarkerDash.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace mediapackagev2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace mediapackagev2 {
+namespace Model {
 
+/**
+ * <p>The SCTE configuration.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ScteDash">AWS
+ * API Reference</a></p>
+ */
+class ScteDash {
+ public:
+  AWS_MEDIAPACKAGEV2_API ScteDash() = default;
+  AWS_MEDIAPACKAGEV2_API ScteDash(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIAPACKAGEV2_API ScteDash& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The SCTE configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ScteDash">AWS
-   * API Reference</a></p>
+   * <p>Choose how ad markers are included in the packaged content. If you include ad
+   * markers in the content stream in your upstream encoders, then you need to inform
+   * MediaPackage what to do with the ad markers in the output.</p> <p>Value
+   * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
+   * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
+   * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
+   * </ul>
    */
-  class ScteDash
-  {
-  public:
-    AWS_MEDIAPACKAGEV2_API ScteDash() = default;
-    AWS_MEDIAPACKAGEV2_API ScteDash(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIAPACKAGEV2_API ScteDash& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline AdMarkerDash GetAdMarkerDash() const { return m_adMarkerDash; }
+  inline bool AdMarkerDashHasBeenSet() const { return m_adMarkerDashHasBeenSet; }
+  inline void SetAdMarkerDash(AdMarkerDash value) {
+    m_adMarkerDashHasBeenSet = true;
+    m_adMarkerDash = value;
+  }
+  inline ScteDash& WithAdMarkerDash(AdMarkerDash value) {
+    SetAdMarkerDash(value);
+    return *this;
+  }
+  ///@}
+ private:
+  AdMarkerDash m_adMarkerDash{AdMarkerDash::NOT_SET};
+  bool m_adMarkerDashHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
-    inline AdMarkerDash GetAdMarkerDash() const { return m_adMarkerDash; }
-    inline bool AdMarkerDashHasBeenSet() const { return m_adMarkerDashHasBeenSet; }
-    inline void SetAdMarkerDash(AdMarkerDash value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = value; }
-    inline ScteDash& WithAdMarkerDash(AdMarkerDash value) { SetAdMarkerDash(value); return *this;}
-    ///@}
-  private:
-
-    AdMarkerDash m_adMarkerDash{AdMarkerDash::NOT_SET};
-    bool m_adMarkerDashHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace mediapackagev2
-} // namespace Aws
+}  // namespace Model
+}  // namespace mediapackagev2
+}  // namespace Aws

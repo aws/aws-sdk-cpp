@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datapipeline/model/InstanceIdentity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datapipeline/model/InstanceIdentity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataPipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace DataPipeline {
+namespace Model {
 
-InstanceIdentity::InstanceIdentity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceIdentity::InstanceIdentity(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceIdentity& InstanceIdentity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("document"))
-  {
+InstanceIdentity& InstanceIdentity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("document")) {
     m_document = jsonValue.GetString("document");
     m_documentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signature"))
-  {
+  if (jsonValue.ValueExists("signature")) {
     m_signature = jsonValue.GetString("signature");
     m_signatureHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceIdentity::Jsonize() const
-{
+JsonValue InstanceIdentity::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentHasBeenSet)
-  {
-   payload.WithString("document", m_document);
-
+  if (m_documentHasBeenSet) {
+    payload.WithString("document", m_document);
   }
 
-  if(m_signatureHasBeenSet)
-  {
-   payload.WithString("signature", m_signature);
-
+  if (m_signatureHasBeenSet) {
+    payload.WithString("signature", m_signature);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataPipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataPipeline
+}  // namespace Aws

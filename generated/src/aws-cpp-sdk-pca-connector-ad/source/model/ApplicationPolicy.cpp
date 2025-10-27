@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pca-connector-ad/model/ApplicationPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pca-connector-ad/model/ApplicationPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Model
-{
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Model {
 
-ApplicationPolicy::ApplicationPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationPolicy::ApplicationPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationPolicy& ApplicationPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyObjectIdentifier"))
-  {
+ApplicationPolicy& ApplicationPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyObjectIdentifier")) {
     m_policyObjectIdentifier = jsonValue.GetString("PolicyObjectIdentifier");
     m_policyObjectIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyType"))
-  {
+  if (jsonValue.ValueExists("PolicyType")) {
     m_policyType = ApplicationPolicyTypeMapper::GetApplicationPolicyTypeForName(jsonValue.GetString("PolicyType"));
     m_policyTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationPolicy::Jsonize() const
-{
+JsonValue ApplicationPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyObjectIdentifierHasBeenSet)
-  {
-   payload.WithString("PolicyObjectIdentifier", m_policyObjectIdentifier);
-
+  if (m_policyObjectIdentifierHasBeenSet) {
+    payload.WithString("PolicyObjectIdentifier", m_policyObjectIdentifier);
   }
 
-  if(m_policyTypeHasBeenSet)
-  {
-   payload.WithString("PolicyType", ApplicationPolicyTypeMapper::GetNameForApplicationPolicyType(m_policyType));
+  if (m_policyTypeHasBeenSet) {
+    payload.WithString("PolicyType", ApplicationPolicyTypeMapper::GetNameForApplicationPolicyType(m_policyType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace Model
+}  // namespace PcaConnectorAd
+}  // namespace Aws

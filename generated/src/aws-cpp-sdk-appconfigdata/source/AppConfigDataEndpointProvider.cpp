@@ -5,12 +5,8 @@
 
 #include <aws/appconfigdata/AppConfigDataEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppConfigData
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppConfigData
-} // namespace Aws
+namespace Aws {
+namespace AppConfigData {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppConfigData
+}  // namespace Aws

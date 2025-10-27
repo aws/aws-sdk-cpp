@@ -4,60 +4,47 @@
  */
 
 #include <aws/cloudfront/model/OriginRequestPolicyConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-OriginRequestPolicyConfig::OriginRequestPolicyConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OriginRequestPolicyConfig::OriginRequestPolicyConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OriginRequestPolicyConfig& OriginRequestPolicyConfig::operator =(const XmlNode& xmlNode)
-{
+OriginRequestPolicyConfig& OriginRequestPolicyConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(!commentNode.IsNull())
-    {
+    if (!commentNode.IsNull()) {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode headersConfigNode = resultNode.FirstChild("HeadersConfig");
-    if(!headersConfigNode.IsNull())
-    {
+    if (!headersConfigNode.IsNull()) {
       m_headersConfig = headersConfigNode;
       m_headersConfigHasBeenSet = true;
     }
     XmlNode cookiesConfigNode = resultNode.FirstChild("CookiesConfig");
-    if(!cookiesConfigNode.IsNull())
-    {
+    if (!cookiesConfigNode.IsNull()) {
       m_cookiesConfig = cookiesConfigNode;
       m_cookiesConfigHasBeenSet = true;
     }
     XmlNode queryStringsConfigNode = resultNode.FirstChild("QueryStringsConfig");
-    if(!queryStringsConfigNode.IsNull())
-    {
+    if (!queryStringsConfigNode.IsNull()) {
       m_queryStringsConfig = queryStringsConfigNode;
       m_queryStringsConfigHasBeenSet = true;
     }
@@ -66,41 +53,34 @@ OriginRequestPolicyConfig& OriginRequestPolicyConfig::operator =(const XmlNode& 
   return *this;
 }
 
-void OriginRequestPolicyConfig::AddToNode(XmlNode& parentNode) const
-{
+void OriginRequestPolicyConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_commentHasBeenSet)
-  {
-   XmlNode commentNode = parentNode.CreateChildElement("Comment");
-   commentNode.SetText(m_comment);
+  if (m_commentHasBeenSet) {
+    XmlNode commentNode = parentNode.CreateChildElement("Comment");
+    commentNode.SetText(m_comment);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_headersConfigHasBeenSet)
-  {
-   XmlNode headersConfigNode = parentNode.CreateChildElement("HeadersConfig");
-   m_headersConfig.AddToNode(headersConfigNode);
+  if (m_headersConfigHasBeenSet) {
+    XmlNode headersConfigNode = parentNode.CreateChildElement("HeadersConfig");
+    m_headersConfig.AddToNode(headersConfigNode);
   }
 
-  if(m_cookiesConfigHasBeenSet)
-  {
-   XmlNode cookiesConfigNode = parentNode.CreateChildElement("CookiesConfig");
-   m_cookiesConfig.AddToNode(cookiesConfigNode);
+  if (m_cookiesConfigHasBeenSet) {
+    XmlNode cookiesConfigNode = parentNode.CreateChildElement("CookiesConfig");
+    m_cookiesConfig.AddToNode(cookiesConfigNode);
   }
 
-  if(m_queryStringsConfigHasBeenSet)
-  {
-   XmlNode queryStringsConfigNode = parentNode.CreateChildElement("QueryStringsConfig");
-   m_queryStringsConfig.AddToNode(queryStringsConfigNode);
+  if (m_queryStringsConfigHasBeenSet) {
+    XmlNode queryStringsConfigNode = parentNode.CreateChildElement("QueryStringsConfig");
+    m_queryStringsConfig.AddToNode(queryStringsConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

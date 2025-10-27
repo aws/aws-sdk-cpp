@@ -12,44 +12,31 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateScalingPlanRequest::SerializePayload() const
-{
+Aws::String CreateScalingPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scalingPlanNameHasBeenSet)
-  {
-   payload.WithString("ScalingPlanName", m_scalingPlanName);
-
+  if (m_scalingPlanNameHasBeenSet) {
+    payload.WithString("ScalingPlanName", m_scalingPlanName);
   }
 
-  if(m_applicationSourceHasBeenSet)
-  {
-   payload.WithObject("ApplicationSource", m_applicationSource.Jsonize());
-
+  if (m_applicationSourceHasBeenSet) {
+    payload.WithObject("ApplicationSource", m_applicationSource.Jsonize());
   }
 
-  if(m_scalingInstructionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
-   for(unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength(); ++scalingInstructionsIndex)
-   {
-     scalingInstructionsJsonList[scalingInstructionsIndex].AsObject(m_scalingInstructions[scalingInstructionsIndex].Jsonize());
-   }
-   payload.WithArray("ScalingInstructions", std::move(scalingInstructionsJsonList));
-
+  if (m_scalingInstructionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
+    for (unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength();
+         ++scalingInstructionsIndex) {
+      scalingInstructionsJsonList[scalingInstructionsIndex].AsObject(m_scalingInstructions[scalingInstructionsIndex].Jsonize());
+    }
+    payload.WithArray("ScalingInstructions", std::move(scalingInstructionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateScalingPlanRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateScalingPlanRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AnyScaleScalingPlannerFrontendService.CreateScalingPlan"));
   return headers;
-
 }
-
-
-
-

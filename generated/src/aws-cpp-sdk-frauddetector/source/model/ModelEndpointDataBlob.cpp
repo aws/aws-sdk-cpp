@@ -3,60 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/ModelEndpointDataBlob.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/ModelEndpointDataBlob.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-ModelEndpointDataBlob::ModelEndpointDataBlob(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelEndpointDataBlob::ModelEndpointDataBlob(JsonView jsonValue) { *this = jsonValue; }
 
-ModelEndpointDataBlob& ModelEndpointDataBlob::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("byteBuffer"))
-  {
+ModelEndpointDataBlob& ModelEndpointDataBlob::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("byteBuffer")) {
     m_byteBuffer = HashingUtils::Base64Decode(jsonValue.GetString("byteBuffer"));
     m_byteBufferHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = jsonValue.GetString("contentType");
     m_contentTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelEndpointDataBlob::Jsonize() const
-{
+JsonValue ModelEndpointDataBlob::Jsonize() const {
   JsonValue payload;
 
-  if(m_byteBufferHasBeenSet)
-  {
-   payload.WithString("byteBuffer", HashingUtils::Base64Encode(m_byteBuffer));
+  if (m_byteBufferHasBeenSet) {
+    payload.WithString("byteBuffer", HashingUtils::Base64Encode(m_byteBuffer));
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

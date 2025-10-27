@@ -5,76 +5,88 @@
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace AppStream
-{
-namespace Model
-{
-  class CreateAppBlockBuilderStreamingURLResult
-  {
-  public:
-    AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult() = default;
-    AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppStream {
+namespace Model {
+class CreateAppBlockBuilderStreamingURLResult {
+ public:
+  AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult() = default;
+  AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The URL to start the streaming session.</p>
+   */
+  inline const Aws::String& GetStreamingURL() const { return m_streamingURL; }
+  template <typename StreamingURLT = Aws::String>
+  void SetStreamingURL(StreamingURLT&& value) {
+    m_streamingURLHasBeenSet = true;
+    m_streamingURL = std::forward<StreamingURLT>(value);
+  }
+  template <typename StreamingURLT = Aws::String>
+  CreateAppBlockBuilderStreamingURLResult& WithStreamingURL(StreamingURLT&& value) {
+    SetStreamingURL(std::forward<StreamingURLT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The URL to start the streaming session.</p>
-     */
-    inline const Aws::String& GetStreamingURL() const { return m_streamingURL; }
-    template<typename StreamingURLT = Aws::String>
-    void SetStreamingURL(StreamingURLT&& value) { m_streamingURLHasBeenSet = true; m_streamingURL = std::forward<StreamingURLT>(value); }
-    template<typename StreamingURLT = Aws::String>
-    CreateAppBlockBuilderStreamingURLResult& WithStreamingURL(StreamingURLT&& value) { SetStreamingURL(std::forward<StreamingURLT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
+  template <typename ExpiresT = Aws::Utils::DateTime>
+  void SetExpires(ExpiresT&& value) {
+    m_expiresHasBeenSet = true;
+    m_expires = std::forward<ExpiresT>(value);
+  }
+  template <typename ExpiresT = Aws::Utils::DateTime>
+  CreateAppBlockBuilderStreamingURLResult& WithExpires(ExpiresT&& value) {
+    SetExpires(std::forward<ExpiresT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-     */
-    inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
-    template<typename ExpiresT = Aws::Utils::DateTime>
-    void SetExpires(ExpiresT&& value) { m_expiresHasBeenSet = true; m_expires = std::forward<ExpiresT>(value); }
-    template<typename ExpiresT = Aws::Utils::DateTime>
-    CreateAppBlockBuilderStreamingURLResult& WithExpires(ExpiresT&& value) { SetExpires(std::forward<ExpiresT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateAppBlockBuilderStreamingURLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateAppBlockBuilderStreamingURLResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_streamingURL;
+  bool m_streamingURLHasBeenSet = false;
 
-    Aws::String m_streamingURL;
-    bool m_streamingURLHasBeenSet = false;
+  Aws::Utils::DateTime m_expires{};
+  bool m_expiresHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expires{};
-    bool m_expiresHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

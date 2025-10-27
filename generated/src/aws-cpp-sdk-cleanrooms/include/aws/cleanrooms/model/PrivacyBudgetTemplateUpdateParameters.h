@@ -5,74 +5,79 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
-#include <aws/cleanrooms/model/DifferentialPrivacyTemplateUpdateParameters.h>
 #include <aws/cleanrooms/model/AccessBudgetsPrivacyTemplateUpdateParameters.h>
+#include <aws/cleanrooms/model/DifferentialPrivacyTemplateUpdateParameters.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CleanRooms {
+namespace Model {
 
+/**
+ * <p>The epsilon and noise parameters that you want to update in the privacy
+ * budget template.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PrivacyBudgetTemplateUpdateParameters">AWS
+ * API Reference</a></p>
+ */
+class PrivacyBudgetTemplateUpdateParameters {
+ public:
+  AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters() = default;
+  AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The epsilon and noise parameters that you want to update in the privacy
-   * budget template.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PrivacyBudgetTemplateUpdateParameters">AWS
-   * API Reference</a></p>
+   * <p>An object that specifies the new values for the epsilon and noise
+   * parameters.</p>
    */
-  class PrivacyBudgetTemplateUpdateParameters
-  {
-  public:
-    AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters() = default;
-    AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CLEANROOMS_API PrivacyBudgetTemplateUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const DifferentialPrivacyTemplateUpdateParameters& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
+  inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
+  template <typename DifferentialPrivacyT = DifferentialPrivacyTemplateUpdateParameters>
+  void SetDifferentialPrivacy(DifferentialPrivacyT&& value) {
+    m_differentialPrivacyHasBeenSet = true;
+    m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value);
+  }
+  template <typename DifferentialPrivacyT = DifferentialPrivacyTemplateUpdateParameters>
+  PrivacyBudgetTemplateUpdateParameters& WithDifferentialPrivacy(DifferentialPrivacyT&& value) {
+    SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> The new access budget configuration that completely replaces the existing
+   * access budget settings in the privacy budget template.</p>
+   */
+  inline const AccessBudgetsPrivacyTemplateUpdateParameters& GetAccessBudget() const { return m_accessBudget; }
+  inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
+  template <typename AccessBudgetT = AccessBudgetsPrivacyTemplateUpdateParameters>
+  void SetAccessBudget(AccessBudgetT&& value) {
+    m_accessBudgetHasBeenSet = true;
+    m_accessBudget = std::forward<AccessBudgetT>(value);
+  }
+  template <typename AccessBudgetT = AccessBudgetsPrivacyTemplateUpdateParameters>
+  PrivacyBudgetTemplateUpdateParameters& WithAccessBudget(AccessBudgetT&& value) {
+    SetAccessBudget(std::forward<AccessBudgetT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DifferentialPrivacyTemplateUpdateParameters m_differentialPrivacy;
+  bool m_differentialPrivacyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An object that specifies the new values for the epsilon and noise
-     * parameters.</p>
-     */
-    inline const DifferentialPrivacyTemplateUpdateParameters& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
-    inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    template<typename DifferentialPrivacyT = DifferentialPrivacyTemplateUpdateParameters>
-    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
-    template<typename DifferentialPrivacyT = DifferentialPrivacyTemplateUpdateParameters>
-    PrivacyBudgetTemplateUpdateParameters& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
-    ///@}
+  AccessBudgetsPrivacyTemplateUpdateParameters m_accessBudget;
+  bool m_accessBudgetHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p> The new access budget configuration that completely replaces the existing
-     * access budget settings in the privacy budget template.</p>
-     */
-    inline const AccessBudgetsPrivacyTemplateUpdateParameters& GetAccessBudget() const { return m_accessBudget; }
-    inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
-    template<typename AccessBudgetT = AccessBudgetsPrivacyTemplateUpdateParameters>
-    void SetAccessBudget(AccessBudgetT&& value) { m_accessBudgetHasBeenSet = true; m_accessBudget = std::forward<AccessBudgetT>(value); }
-    template<typename AccessBudgetT = AccessBudgetsPrivacyTemplateUpdateParameters>
-    PrivacyBudgetTemplateUpdateParameters& WithAccessBudget(AccessBudgetT&& value) { SetAccessBudget(std::forward<AccessBudgetT>(value)); return *this;}
-    ///@}
-  private:
-
-    DifferentialPrivacyTemplateUpdateParameters m_differentialPrivacy;
-    bool m_differentialPrivacyHasBeenSet = false;
-
-    AccessBudgetsPrivacyTemplateUpdateParameters m_accessBudget;
-    bool m_accessBudgetHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

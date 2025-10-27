@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/DashConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-DashConfiguration::DashConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DashConfiguration::DashConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DashConfiguration& DashConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ManifestEndpointPrefix"))
-  {
+DashConfiguration& DashConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ManifestEndpointPrefix")) {
     m_manifestEndpointPrefix = jsonValue.GetString("ManifestEndpointPrefix");
     m_manifestEndpointPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MpdLocation"))
-  {
+  if (jsonValue.ValueExists("MpdLocation")) {
     m_mpdLocation = jsonValue.GetString("MpdLocation");
     m_mpdLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OriginManifestType"))
-  {
+  if (jsonValue.ValueExists("OriginManifestType")) {
     m_originManifestType = OriginManifestTypeMapper::GetOriginManifestTypeForName(jsonValue.GetString("OriginManifestType"));
     m_originManifestTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DashConfiguration::Jsonize() const
-{
+JsonValue DashConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_manifestEndpointPrefixHasBeenSet)
-  {
-   payload.WithString("ManifestEndpointPrefix", m_manifestEndpointPrefix);
-
+  if (m_manifestEndpointPrefixHasBeenSet) {
+    payload.WithString("ManifestEndpointPrefix", m_manifestEndpointPrefix);
   }
 
-  if(m_mpdLocationHasBeenSet)
-  {
-   payload.WithString("MpdLocation", m_mpdLocation);
-
+  if (m_mpdLocationHasBeenSet) {
+    payload.WithString("MpdLocation", m_mpdLocation);
   }
 
-  if(m_originManifestTypeHasBeenSet)
-  {
-   payload.WithString("OriginManifestType", OriginManifestTypeMapper::GetNameForOriginManifestType(m_originManifestType));
+  if (m_originManifestTypeHasBeenSet) {
+    payload.WithString("OriginManifestType", OriginManifestTypeMapper::GetNameForOriginManifestType(m_originManifestType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

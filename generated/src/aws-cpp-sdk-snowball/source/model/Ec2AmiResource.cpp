@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snowball/model/Ec2AmiResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/model/Ec2AmiResource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Model
-{
+namespace Aws {
+namespace Snowball {
+namespace Model {
 
-Ec2AmiResource::Ec2AmiResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ec2AmiResource::Ec2AmiResource(JsonView jsonValue) { *this = jsonValue; }
 
-Ec2AmiResource& Ec2AmiResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AmiId"))
-  {
+Ec2AmiResource& Ec2AmiResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AmiId")) {
     m_amiId = jsonValue.GetString("AmiId");
     m_amiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnowballAmiId"))
-  {
+  if (jsonValue.ValueExists("SnowballAmiId")) {
     m_snowballAmiId = jsonValue.GetString("SnowballAmiId");
     m_snowballAmiIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ec2AmiResource::Jsonize() const
-{
+JsonValue Ec2AmiResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_amiIdHasBeenSet)
-  {
-   payload.WithString("AmiId", m_amiId);
-
+  if (m_amiIdHasBeenSet) {
+    payload.WithString("AmiId", m_amiId);
   }
 
-  if(m_snowballAmiIdHasBeenSet)
-  {
-   payload.WithString("SnowballAmiId", m_snowballAmiId);
-
+  if (m_snowballAmiIdHasBeenSet) {
+    payload.WithString("SnowballAmiId", m_snowballAmiId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Model
+}  // namespace Snowball
+}  // namespace Aws

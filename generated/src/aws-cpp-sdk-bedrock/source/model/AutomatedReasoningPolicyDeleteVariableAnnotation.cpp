@@ -11,41 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyDeleteVariableAnnotation::AutomatedReasoningPolicyDeleteVariableAnnotation(JsonView jsonValue)
-{
+AutomatedReasoningPolicyDeleteVariableAnnotation::AutomatedReasoningPolicyDeleteVariableAnnotation(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AutomatedReasoningPolicyDeleteVariableAnnotation& AutomatedReasoningPolicyDeleteVariableAnnotation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+AutomatedReasoningPolicyDeleteVariableAnnotation& AutomatedReasoningPolicyDeleteVariableAnnotation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyDeleteVariableAnnotation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyDeleteVariableAnnotation::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

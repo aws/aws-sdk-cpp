@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/AssociateFileSystemAliasesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/fsx/model/AssociateFileSystemAliasesResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateFileSystemAliasesResult::AssociateFileSystemAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+AssociateFileSystemAliasesResult::AssociateFileSystemAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-AssociateFileSystemAliasesResult& AssociateFileSystemAliasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AssociateFileSystemAliasesResult& AssociateFileSystemAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Aliases"))
-  {
+  if (jsonValue.ValueExists("Aliases")) {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
-    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
-    {
+    for (unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex) {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
     }
     m_aliasesHasBeenSet = true;
@@ -37,12 +31,10 @@ AssociateFileSystemAliasesResult& AssociateFileSystemAliasesResult::operator =(c
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

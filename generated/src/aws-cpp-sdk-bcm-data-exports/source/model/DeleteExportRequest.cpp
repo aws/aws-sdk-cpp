@@ -12,27 +12,18 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteExportRequest::SerializePayload() const
-{
+Aws::String DeleteExportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_exportArnHasBeenSet)
-  {
-   payload.WithString("ExportArn", m_exportArn);
-
+  if (m_exportArnHasBeenSet) {
+    payload.WithString("ExportArn", m_exportArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteExportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteExportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBillingAndCostManagementDataExports.DeleteExport"));
   return headers;
-
 }
-
-
-
-

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/InsightResourceDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/InsightResourceDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-InsightResourceDetail::InsightResourceDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InsightResourceDetail::InsightResourceDetail(JsonView jsonValue) { *this = jsonValue; }
 
-InsightResourceDetail& InsightResourceDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("insightStatus"))
-  {
+InsightResourceDetail& InsightResourceDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("insightStatus")) {
     m_insightStatus = jsonValue.GetObject("insightStatus");
     m_insightStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kubernetesResourceUri"))
-  {
+  if (jsonValue.ValueExists("kubernetesResourceUri")) {
     m_kubernetesResourceUri = jsonValue.GetString("kubernetesResourceUri");
     m_kubernetesResourceUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InsightResourceDetail::Jsonize() const
-{
+JsonValue InsightResourceDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_insightStatusHasBeenSet)
-  {
-   payload.WithObject("insightStatus", m_insightStatus.Jsonize());
-
+  if (m_insightStatusHasBeenSet) {
+    payload.WithObject("insightStatus", m_insightStatus.Jsonize());
   }
 
-  if(m_kubernetesResourceUriHasBeenSet)
-  {
-   payload.WithString("kubernetesResourceUri", m_kubernetesResourceUri);
-
+  if (m_kubernetesResourceUriHasBeenSet) {
+    payload.WithString("kubernetesResourceUri", m_kubernetesResourceUri);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

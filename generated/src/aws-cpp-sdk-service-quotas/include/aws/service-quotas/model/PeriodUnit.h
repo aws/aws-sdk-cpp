@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceQuotas
-{
-namespace Model
-{
-  enum class PeriodUnit
-  {
-    NOT_SET,
-    MICROSECOND,
-    MILLISECOND,
-    SECOND,
-    MINUTE,
-    HOUR,
-    DAY,
-    WEEK
-  };
+namespace Aws {
+namespace ServiceQuotas {
+namespace Model {
+enum class PeriodUnit { NOT_SET, MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK };
 
-namespace PeriodUnitMapper
-{
+namespace PeriodUnitMapper {
 AWS_SERVICEQUOTAS_API PeriodUnit GetPeriodUnitForName(const Aws::String& name);
 
 AWS_SERVICEQUOTAS_API Aws::String GetNameForPeriodUnit(PeriodUnit value);
-} // namespace PeriodUnitMapper
-} // namespace Model
-} // namespace ServiceQuotas
-} // namespace Aws
+}  // namespace PeriodUnitMapper
+}  // namespace Model
+}  // namespace ServiceQuotas
+}  // namespace Aws

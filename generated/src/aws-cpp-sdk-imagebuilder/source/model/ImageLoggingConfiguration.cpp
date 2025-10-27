@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-ImageLoggingConfiguration::ImageLoggingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageLoggingConfiguration::ImageLoggingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ImageLoggingConfiguration& ImageLoggingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("logGroupName"))
-  {
+ImageLoggingConfiguration& ImageLoggingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logGroupName")) {
     m_logGroupName = jsonValue.GetString("logGroupName");
     m_logGroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageLoggingConfiguration::Jsonize() const
-{
+JsonValue ImageLoggingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_logGroupNameHasBeenSet)
-  {
-   payload.WithString("logGroupName", m_logGroupName);
-
+  if (m_logGroupNameHasBeenSet) {
+    payload.WithString("logGroupName", m_logGroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

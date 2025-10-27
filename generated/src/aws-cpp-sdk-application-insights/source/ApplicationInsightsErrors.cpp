@@ -3,28 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/application-insights/ApplicationInsightsErrors.h>
 #include <aws/application-insights/model/TooManyTagsException.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ApplicationInsights;
 using namespace Aws::ApplicationInsights::Model;
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-template<> AWS_APPLICATIONINSIGHTS_API TooManyTagsException ApplicationInsightsError::GetModeledError()
-{
+namespace Aws {
+namespace ApplicationInsights {
+template <>
+AWS_APPLICATIONINSIGHTS_API TooManyTagsException ApplicationInsightsError::GetModeledError() {
   assert(this->GetErrorType() == ApplicationInsightsErrors::TOO_MANY_TAGS);
   return TooManyTagsException(this->GetJsonPayload().View());
 }
 
-namespace ApplicationInsightsErrorMapper
-{
+namespace ApplicationInsightsErrorMapper {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int TAGS_ALREADY_EXIST_HASH = HashingUtils::HashString("TagsAlreadyExistException");
@@ -32,34 +29,23 @@ static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsExcep
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationInsightsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAGS_ALREADY_EXIST_HASH)
-  {
+  } else if (hashCode == TAGS_ALREADY_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationInsightsErrors::TAGS_ALREADY_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationInsightsErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationInsightsErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationInsightsErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ApplicationInsightsErrorMapper
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace ApplicationInsightsErrorMapper
+}  // namespace ApplicationInsights
+}  // namespace Aws

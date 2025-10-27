@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteSnapshotScheduleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteSnapshotScheduleRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteSnapshotScheduleRequest::SerializePayload() const
-{
+Aws::String DeleteSnapshotScheduleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteSnapshotSchedule&";
-  if(m_scheduleIdentifierHasBeenSet)
-  {
+  if (m_scheduleIdentifierHasBeenSet) {
     ss << "ScheduleIdentifier=" << StringUtils::URLEncode(m_scheduleIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteSnapshotScheduleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteSnapshotScheduleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteSnapshotScheduleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

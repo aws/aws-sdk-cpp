@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class CandidateStepType
-  {
-    NOT_SET,
-    AWS_SageMaker_TrainingJob,
-    AWS_SageMaker_TransformJob,
-    AWS_SageMaker_ProcessingJob
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class CandidateStepType { NOT_SET, AWS_SageMaker_TrainingJob, AWS_SageMaker_TransformJob, AWS_SageMaker_ProcessingJob };
 
-namespace CandidateStepTypeMapper
-{
+namespace CandidateStepTypeMapper {
 AWS_SAGEMAKER_API CandidateStepType GetCandidateStepTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForCandidateStepType(CandidateStepType value);
-} // namespace CandidateStepTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace CandidateStepTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

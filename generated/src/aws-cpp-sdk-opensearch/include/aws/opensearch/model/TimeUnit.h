@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class TimeUnit
-  {
-    NOT_SET,
-    HOURS
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class TimeUnit { NOT_SET, HOURS };
 
-namespace TimeUnitMapper
-{
+namespace TimeUnitMapper {
 AWS_OPENSEARCHSERVICE_API TimeUnit GetTimeUnitForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForTimeUnit(TimeUnit value);
-} // namespace TimeUnitMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/cognito-idp/model/SignUpResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,43 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-SignUpResult& SignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+SignUpResult& SignUpResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("UserConfirmed"))
-  {
+  if (jsonValue.ValueExists("UserConfirmed")) {
     m_userConfirmed = jsonValue.GetBool("UserConfirmed");
     m_userConfirmedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeDeliveryDetails"))
-  {
+  if (jsonValue.ValueExists("CodeDeliveryDetails")) {
     m_codeDeliveryDetails = jsonValue.GetObject("CodeDeliveryDetails");
     m_codeDeliveryDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserSub"))
-  {
+  if (jsonValue.ValueExists("UserSub")) {
     m_userSub = jsonValue.GetString("UserSub");
     m_userSubHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Session"))
-  {
+  if (jsonValue.ValueExists("Session")) {
     m_session = jsonValue.GetString("Session");
     m_sessionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

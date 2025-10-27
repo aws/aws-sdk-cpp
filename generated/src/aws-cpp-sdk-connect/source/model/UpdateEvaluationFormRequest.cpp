@@ -12,60 +12,40 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateEvaluationFormRequest::SerializePayload() const
-{
+Aws::String UpdateEvaluationFormRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_evaluationFormVersionHasBeenSet)
-  {
-   payload.WithInteger("EvaluationFormVersion", m_evaluationFormVersion);
-
+  if (m_evaluationFormVersionHasBeenSet) {
+    payload.WithInteger("EvaluationFormVersion", m_evaluationFormVersion);
   }
 
-  if(m_createNewVersionHasBeenSet)
-  {
-   payload.WithBool("CreateNewVersion", m_createNewVersion);
-
+  if (m_createNewVersionHasBeenSet) {
+    payload.WithBool("CreateNewVersion", m_createNewVersion);
   }
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
-   for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-   {
-     itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
-   }
-   payload.WithArray("Items", std::move(itemsJsonList));
-
+  if (m_itemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
+      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
+    }
+    payload.WithArray("Items", std::move(itemsJsonList));
   }
 
-  if(m_scoringStrategyHasBeenSet)
-  {
-   payload.WithObject("ScoringStrategy", m_scoringStrategy.Jsonize());
-
+  if (m_scoringStrategyHasBeenSet) {
+    payload.WithObject("ScoringStrategy", m_scoringStrategy.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

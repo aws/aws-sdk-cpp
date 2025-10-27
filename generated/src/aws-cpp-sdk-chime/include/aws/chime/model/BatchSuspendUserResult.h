@@ -5,67 +5,76 @@
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime/model/UserError.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Chime
-{
-namespace Model
-{
-  class BatchSuspendUserResult
-  {
-  public:
-    AWS_CHIME_API BatchSuspendUserResult() = default;
-    AWS_CHIME_API BatchSuspendUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CHIME_API BatchSuspendUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Chime {
+namespace Model {
+class BatchSuspendUserResult {
+ public:
+  AWS_CHIME_API BatchSuspendUserResult() = default;
+  AWS_CHIME_API BatchSuspendUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIME_API BatchSuspendUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs
+   * in the request, a list of the user IDs is returned, along with error codes and
+   * error messages.</p>
+   */
+  inline const Aws::Vector<UserError>& GetUserErrors() const { return m_userErrors; }
+  template <typename UserErrorsT = Aws::Vector<UserError>>
+  void SetUserErrors(UserErrorsT&& value) {
+    m_userErrorsHasBeenSet = true;
+    m_userErrors = std::forward<UserErrorsT>(value);
+  }
+  template <typename UserErrorsT = Aws::Vector<UserError>>
+  BatchSuspendUserResult& WithUserErrors(UserErrorsT&& value) {
+    SetUserErrors(std::forward<UserErrorsT>(value));
+    return *this;
+  }
+  template <typename UserErrorsT = UserError>
+  BatchSuspendUserResult& AddUserErrors(UserErrorsT&& value) {
+    m_userErrorsHasBeenSet = true;
+    m_userErrors.emplace_back(std::forward<UserErrorsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs
-     * in the request, a list of the user IDs is returned, along with error codes and
-     * error messages.</p>
-     */
-    inline const Aws::Vector<UserError>& GetUserErrors() const { return m_userErrors; }
-    template<typename UserErrorsT = Aws::Vector<UserError>>
-    void SetUserErrors(UserErrorsT&& value) { m_userErrorsHasBeenSet = true; m_userErrors = std::forward<UserErrorsT>(value); }
-    template<typename UserErrorsT = Aws::Vector<UserError>>
-    BatchSuspendUserResult& WithUserErrors(UserErrorsT&& value) { SetUserErrors(std::forward<UserErrorsT>(value)); return *this;}
-    template<typename UserErrorsT = UserError>
-    BatchSuspendUserResult& AddUserErrors(UserErrorsT&& value) { m_userErrorsHasBeenSet = true; m_userErrors.emplace_back(std::forward<UserErrorsT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    BatchSuspendUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  BatchSuspendUserResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<UserError> m_userErrors;
+  bool m_userErrorsHasBeenSet = false;
 
-    Aws::Vector<UserError> m_userErrors;
-    bool m_userErrorsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

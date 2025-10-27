@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EMRServerless;
 
-AWSError<CoreErrors> EMRServerlessErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EMRServerlessErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EMRServerlessErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

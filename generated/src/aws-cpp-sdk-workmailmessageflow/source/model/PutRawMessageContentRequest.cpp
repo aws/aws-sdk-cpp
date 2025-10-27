@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRawMessageContentRequest::SerializePayload() const
-{
+Aws::String PutRawMessageContentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kinesis
-{
-enum class KinesisErrors
-{
-  //From Core//
+namespace Aws {
+namespace Kinesis {
+enum class KinesisErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KinesisErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class KinesisErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_ITERATOR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_ITERATOR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   EXPIRED_NEXT_TOKEN,
   INVALID_ARGUMENT,
   K_M_S_ACCESS_DENIED,
@@ -61,9 +58,8 @@ enum class KinesisErrors
   RESOURCE_IN_USE
 };
 
-class AWS_KINESIS_API KinesisError : public Aws::Client::AWSError<KinesisErrors>
-{
-public:
+class AWS_KINESIS_API KinesisError : public Aws::Client::AWSError<KinesisErrors> {
+ public:
   KinesisError() {}
   KinesisError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
   KinesisError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
@@ -74,10 +70,9 @@ public:
   T GetModeledError();
 };
 
-namespace KinesisErrorMapper
-{
-  AWS_KINESIS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KinesisErrorMapper {
+AWS_KINESIS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Kinesis
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PollForThirdPartyJobsRequest::SerializePayload() const
-{
+Aws::String PollForThirdPartyJobsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_actionTypeIdHasBeenSet)
-  {
-   payload.WithObject("actionTypeId", m_actionTypeId.Jsonize());
-
+  if (m_actionTypeIdHasBeenSet) {
+    payload.WithObject("actionTypeId", m_actionTypeId.Jsonize());
   }
 
-  if(m_maxBatchSizeHasBeenSet)
-  {
-   payload.WithInteger("maxBatchSize", m_maxBatchSize);
-
+  if (m_maxBatchSizeHasBeenSet) {
+    payload.WithInteger("maxBatchSize", m_maxBatchSize);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PollForThirdPartyJobsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PollForThirdPartyJobsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PollForThirdPartyJobs"));
   return headers;
-
 }
-
-
-
-

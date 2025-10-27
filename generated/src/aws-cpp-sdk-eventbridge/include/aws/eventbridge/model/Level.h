@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
-  enum class Level
-  {
-    NOT_SET,
-    OFF,
-    ERROR_,
-    INFO,
-    TRACE
-  };
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+enum class Level { NOT_SET, OFF, ERROR_, INFO, TRACE };
 
-namespace LevelMapper
-{
+namespace LevelMapper {
 AWS_EVENTBRIDGE_API Level GetLevelForName(const Aws::String& name);
 
 AWS_EVENTBRIDGE_API Aws::String GetNameForLevel(Level value);
-} // namespace LevelMapper
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace LevelMapper
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

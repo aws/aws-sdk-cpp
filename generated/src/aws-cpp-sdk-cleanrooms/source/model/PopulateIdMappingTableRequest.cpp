@@ -12,18 +12,12 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PopulateIdMappingTableRequest::SerializePayload() const
-{
+Aws::String PopulateIdMappingTableRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobTypeHasBeenSet)
-  {
-   payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  if (m_jobTypeHasBeenSet) {
+    payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

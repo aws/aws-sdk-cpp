@@ -11,40 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Artifact
-{
-namespace Model
-{
+namespace Aws {
+namespace Artifact {
+namespace Model {
 
-AccountSettings::AccountSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountSettings::AccountSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AccountSettings& AccountSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("notificationSubscriptionStatus"))
-  {
-    m_notificationSubscriptionStatus = NotificationSubscriptionStatusMapper::GetNotificationSubscriptionStatusForName(jsonValue.GetString("notificationSubscriptionStatus"));
+AccountSettings& AccountSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("notificationSubscriptionStatus")) {
+    m_notificationSubscriptionStatus = NotificationSubscriptionStatusMapper::GetNotificationSubscriptionStatusForName(
+        jsonValue.GetString("notificationSubscriptionStatus"));
     m_notificationSubscriptionStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountSettings::Jsonize() const
-{
+JsonValue AccountSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_notificationSubscriptionStatusHasBeenSet)
-  {
-   payload.WithString("notificationSubscriptionStatus", NotificationSubscriptionStatusMapper::GetNameForNotificationSubscriptionStatus(m_notificationSubscriptionStatus));
+  if (m_notificationSubscriptionStatusHasBeenSet) {
+    payload.WithString("notificationSubscriptionStatus",
+                       NotificationSubscriptionStatusMapper::GetNameForNotificationSubscriptionStatus(m_notificationSubscriptionStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Artifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace Artifact
+}  // namespace Aws

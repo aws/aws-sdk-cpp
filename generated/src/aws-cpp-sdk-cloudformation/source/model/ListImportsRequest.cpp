@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListImportsRequest::SerializePayload() const
-{
+Aws::String ListImportsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListImports&";
-  if(m_exportNameHasBeenSet)
-  {
+  if (m_exportNameHasBeenSet) {
     ss << "ExportName=" << StringUtils::URLEncode(m_exportName.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListImportsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListImportsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListImportsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

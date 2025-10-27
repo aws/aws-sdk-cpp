@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class CallAnalyticsFeature
-  {
-    NOT_SET,
-    GENERATIVE_SUMMARIZATION
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class CallAnalyticsFeature { NOT_SET, GENERATIVE_SUMMARIZATION };
 
-namespace CallAnalyticsFeatureMapper
-{
+namespace CallAnalyticsFeatureMapper {
 AWS_TRANSCRIBESERVICE_API CallAnalyticsFeature GetCallAnalyticsFeatureForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForCallAnalyticsFeature(CallAnalyticsFeature value);
-} // namespace CallAnalyticsFeatureMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace CallAnalyticsFeatureMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

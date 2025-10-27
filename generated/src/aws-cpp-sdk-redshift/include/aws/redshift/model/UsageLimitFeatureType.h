@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class UsageLimitFeatureType
-  {
-    NOT_SET,
-    spectrum,
-    concurrency_scaling,
-    cross_region_datasharing
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class UsageLimitFeatureType { NOT_SET, spectrum, concurrency_scaling, cross_region_datasharing };
 
-namespace UsageLimitFeatureTypeMapper
-{
+namespace UsageLimitFeatureTypeMapper {
 AWS_REDSHIFT_API UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForUsageLimitFeatureType(UsageLimitFeatureType value);
-} // namespace UsageLimitFeatureTypeMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace UsageLimitFeatureTypeMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

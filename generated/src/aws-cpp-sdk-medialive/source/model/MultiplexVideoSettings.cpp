@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MultiplexVideoSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MultiplexVideoSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MultiplexVideoSettings::MultiplexVideoSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiplexVideoSettings::MultiplexVideoSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MultiplexVideoSettings& MultiplexVideoSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("constantBitrate"))
-  {
+MultiplexVideoSettings& MultiplexVideoSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("constantBitrate")) {
     m_constantBitrate = jsonValue.GetInteger("constantBitrate");
     m_constantBitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statmuxSettings"))
-  {
+  if (jsonValue.ValueExists("statmuxSettings")) {
     m_statmuxSettings = jsonValue.GetObject("statmuxSettings");
     m_statmuxSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiplexVideoSettings::Jsonize() const
-{
+JsonValue MultiplexVideoSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_constantBitrateHasBeenSet)
-  {
-   payload.WithInteger("constantBitrate", m_constantBitrate);
-
+  if (m_constantBitrateHasBeenSet) {
+    payload.WithInteger("constantBitrate", m_constantBitrate);
   }
 
-  if(m_statmuxSettingsHasBeenSet)
-  {
-   payload.WithObject("statmuxSettings", m_statmuxSettings.Jsonize());
-
+  if (m_statmuxSettingsHasBeenSet) {
+    payload.WithObject("statmuxSettings", m_statmuxSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-MergeHunk::MergeHunk(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MergeHunk::MergeHunk(JsonView jsonValue) { *this = jsonValue; }
 
-MergeHunk& MergeHunk::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isConflict"))
-  {
+MergeHunk& MergeHunk::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isConflict")) {
     m_isConflict = jsonValue.GetBool("isConflict");
     m_isConflictHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetObject("destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("base"))
-  {
+  if (jsonValue.ValueExists("base")) {
     m_base = jsonValue.GetObject("base");
     m_baseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MergeHunk::Jsonize() const
-{
+JsonValue MergeHunk::Jsonize() const {
   JsonValue payload;
 
-  if(m_isConflictHasBeenSet)
-  {
-   payload.WithBool("isConflict", m_isConflict);
-
+  if (m_isConflictHasBeenSet) {
+    payload.WithBool("isConflict", m_isConflict);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithObject("destination", m_destination.Jsonize());
-
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("destination", m_destination.Jsonize());
   }
 
-  if(m_baseHasBeenSet)
-  {
-   payload.WithObject("base", m_base.Jsonize());
-
+  if (m_baseHasBeenSet) {
+    payload.WithObject("base", m_base.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

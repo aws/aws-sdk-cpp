@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsWebdavSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/HlsWebdavSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-HlsWebdavSettings::HlsWebdavSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HlsWebdavSettings::HlsWebdavSettings(JsonView jsonValue) { *this = jsonValue; }
 
-HlsWebdavSettings& HlsWebdavSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectionRetryInterval"))
-  {
+HlsWebdavSettings& HlsWebdavSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectionRetryInterval")) {
     m_connectionRetryInterval = jsonValue.GetInteger("connectionRetryInterval");
     m_connectionRetryIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filecacheDuration"))
-  {
+  if (jsonValue.ValueExists("filecacheDuration")) {
     m_filecacheDuration = jsonValue.GetInteger("filecacheDuration");
     m_filecacheDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("httpTransferMode"))
-  {
+  if (jsonValue.ValueExists("httpTransferMode")) {
     m_httpTransferMode = HlsWebdavHttpTransferModeMapper::GetHlsWebdavHttpTransferModeForName(jsonValue.GetString("httpTransferMode"));
     m_httpTransferModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numRetries"))
-  {
+  if (jsonValue.ValueExists("numRetries")) {
     m_numRetries = jsonValue.GetInteger("numRetries");
     m_numRetriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restartDelay"))
-  {
+  if (jsonValue.ValueExists("restartDelay")) {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
     m_restartDelayHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HlsWebdavSettings::Jsonize() const
-{
+JsonValue HlsWebdavSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionRetryIntervalHasBeenSet)
-  {
-   payload.WithInteger("connectionRetryInterval", m_connectionRetryInterval);
-
+  if (m_connectionRetryIntervalHasBeenSet) {
+    payload.WithInteger("connectionRetryInterval", m_connectionRetryInterval);
   }
 
-  if(m_filecacheDurationHasBeenSet)
-  {
-   payload.WithInteger("filecacheDuration", m_filecacheDuration);
-
+  if (m_filecacheDurationHasBeenSet) {
+    payload.WithInteger("filecacheDuration", m_filecacheDuration);
   }
 
-  if(m_httpTransferModeHasBeenSet)
-  {
-   payload.WithString("httpTransferMode", HlsWebdavHttpTransferModeMapper::GetNameForHlsWebdavHttpTransferMode(m_httpTransferMode));
+  if (m_httpTransferModeHasBeenSet) {
+    payload.WithString("httpTransferMode", HlsWebdavHttpTransferModeMapper::GetNameForHlsWebdavHttpTransferMode(m_httpTransferMode));
   }
 
-  if(m_numRetriesHasBeenSet)
-  {
-   payload.WithInteger("numRetries", m_numRetries);
-
+  if (m_numRetriesHasBeenSet) {
+    payload.WithInteger("numRetries", m_numRetries);
   }
 
-  if(m_restartDelayHasBeenSet)
-  {
-   payload.WithInteger("restartDelay", m_restartDelay);
-
+  if (m_restartDelayHasBeenSet) {
+    payload.WithInteger("restartDelay", m_restartDelay);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

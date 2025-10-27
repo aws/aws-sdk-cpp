@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,26 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListManagedRuleSetsRequest::SerializePayload() const
-{
+Aws::String ListManagedRuleSetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithString("Scope", ScopeMapper::GetNameForScope(m_scope));
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", ScopeMapper::GetNameForScope(m_scope));
   }
 
-  if(m_nextMarkerHasBeenSet)
-  {
-   payload.WithString("NextMarker", m_nextMarker);
-
+  if (m_nextMarkerHasBeenSet) {
+    payload.WithString("NextMarker", m_nextMarker);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListManagedRuleSetsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListManagedRuleSetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSWAF_20190729.ListManagedRuleSets"));
   return headers;
-
 }
-
-
-
-

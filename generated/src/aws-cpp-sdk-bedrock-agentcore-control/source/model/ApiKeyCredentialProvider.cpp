@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-ApiKeyCredentialProvider::ApiKeyCredentialProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiKeyCredentialProvider::ApiKeyCredentialProvider(JsonView jsonValue) { *this = jsonValue; }
 
-ApiKeyCredentialProvider& ApiKeyCredentialProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("providerArn"))
-  {
+ApiKeyCredentialProvider& ApiKeyCredentialProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("providerArn")) {
     m_providerArn = jsonValue.GetString("providerArn");
     m_providerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialParameterName"))
-  {
+  if (jsonValue.ValueExists("credentialParameterName")) {
     m_credentialParameterName = jsonValue.GetString("credentialParameterName");
     m_credentialParameterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialPrefix"))
-  {
+  if (jsonValue.ValueExists("credentialPrefix")) {
     m_credentialPrefix = jsonValue.GetString("credentialPrefix");
     m_credentialPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialLocation"))
-  {
+  if (jsonValue.ValueExists("credentialLocation")) {
     m_credentialLocation = ApiKeyCredentialLocationMapper::GetApiKeyCredentialLocationForName(jsonValue.GetString("credentialLocation"));
     m_credentialLocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiKeyCredentialProvider::Jsonize() const
-{
+JsonValue ApiKeyCredentialProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerArnHasBeenSet)
-  {
-   payload.WithString("providerArn", m_providerArn);
-
+  if (m_providerArnHasBeenSet) {
+    payload.WithString("providerArn", m_providerArn);
   }
 
-  if(m_credentialParameterNameHasBeenSet)
-  {
-   payload.WithString("credentialParameterName", m_credentialParameterName);
-
+  if (m_credentialParameterNameHasBeenSet) {
+    payload.WithString("credentialParameterName", m_credentialParameterName);
   }
 
-  if(m_credentialPrefixHasBeenSet)
-  {
-   payload.WithString("credentialPrefix", m_credentialPrefix);
-
+  if (m_credentialPrefixHasBeenSet) {
+    payload.WithString("credentialPrefix", m_credentialPrefix);
   }
 
-  if(m_credentialLocationHasBeenSet)
-  {
-   payload.WithString("credentialLocation", ApiKeyCredentialLocationMapper::GetNameForApiKeyCredentialLocation(m_credentialLocation));
+  if (m_credentialLocationHasBeenSet) {
+    payload.WithString("credentialLocation", ApiKeyCredentialLocationMapper::GetNameForApiKeyCredentialLocation(m_credentialLocation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

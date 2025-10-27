@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ExperimentConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ExperimentConfig::ExperimentConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentConfig::ExperimentConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentConfig& ExperimentConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExperimentName"))
-  {
+ExperimentConfig& ExperimentConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExperimentName")) {
     m_experimentName = jsonValue.GetString("ExperimentName");
     m_experimentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrialName"))
-  {
+  if (jsonValue.ValueExists("TrialName")) {
     m_trialName = jsonValue.GetString("TrialName");
     m_trialNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrialComponentDisplayName"))
-  {
+  if (jsonValue.ValueExists("TrialComponentDisplayName")) {
     m_trialComponentDisplayName = jsonValue.GetString("TrialComponentDisplayName");
     m_trialComponentDisplayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RunName"))
-  {
+  if (jsonValue.ValueExists("RunName")) {
     m_runName = jsonValue.GetString("RunName");
     m_runNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentConfig::Jsonize() const
-{
+JsonValue ExperimentConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_experimentNameHasBeenSet)
-  {
-   payload.WithString("ExperimentName", m_experimentName);
-
+  if (m_experimentNameHasBeenSet) {
+    payload.WithString("ExperimentName", m_experimentName);
   }
 
-  if(m_trialNameHasBeenSet)
-  {
-   payload.WithString("TrialName", m_trialName);
-
+  if (m_trialNameHasBeenSet) {
+    payload.WithString("TrialName", m_trialName);
   }
 
-  if(m_trialComponentDisplayNameHasBeenSet)
-  {
-   payload.WithString("TrialComponentDisplayName", m_trialComponentDisplayName);
-
+  if (m_trialComponentDisplayNameHasBeenSet) {
+    payload.WithString("TrialComponentDisplayName", m_trialComponentDisplayName);
   }
 
-  if(m_runNameHasBeenSet)
-  {
-   payload.WithString("RunName", m_runName);
-
+  if (m_runNameHasBeenSet) {
+    payload.WithString("RunName", m_runName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

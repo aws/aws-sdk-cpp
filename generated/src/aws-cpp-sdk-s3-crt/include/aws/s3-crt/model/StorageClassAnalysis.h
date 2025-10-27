@@ -6,57 +6,56 @@
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/model/StorageClassAnalysisDataExport.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3Crt {
+namespace Model {
 
+/**
+ * <p>Specifies data related to access patterns to be collected and made available
+ * to analyze the tradeoffs between different storage classes for an Amazon S3
+ * bucket.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/StorageClassAnalysis">AWS
+ * API Reference</a></p>
+ */
+class StorageClassAnalysis {
+ public:
+  AWS_S3CRT_API StorageClassAnalysis() = default;
+  AWS_S3CRT_API StorageClassAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_S3CRT_API StorageClassAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>Specifies data related to access patterns to be collected and made available
-   * to analyze the tradeoffs between different storage classes for an Amazon S3
-   * bucket.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/StorageClassAnalysis">AWS
-   * API Reference</a></p>
+   * <p>Specifies how data related to the storage class analysis for an Amazon S3
+   * bucket should be exported.</p>
    */
-  class StorageClassAnalysis
-  {
-  public:
-    AWS_S3CRT_API StorageClassAnalysis() = default;
-    AWS_S3CRT_API StorageClassAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_S3CRT_API StorageClassAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const StorageClassAnalysisDataExport& GetDataExport() const { return m_dataExport; }
+  inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
+  template <typename DataExportT = StorageClassAnalysisDataExport>
+  void SetDataExport(DataExportT&& value) {
+    m_dataExportHasBeenSet = true;
+    m_dataExport = std::forward<DataExportT>(value);
+  }
+  template <typename DataExportT = StorageClassAnalysisDataExport>
+  StorageClassAnalysis& WithDataExport(DataExportT&& value) {
+    SetDataExport(std::forward<DataExportT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  StorageClassAnalysisDataExport m_dataExport;
+  bool m_dataExportHasBeenSet = false;
+};
 
-    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
-
-
-    ///@{
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
-    inline const StorageClassAnalysisDataExport& GetDataExport() const { return m_dataExport; }
-    inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
-    template<typename DataExportT = StorageClassAnalysisDataExport>
-    void SetDataExport(DataExportT&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::forward<DataExportT>(value); }
-    template<typename DataExportT = StorageClassAnalysisDataExport>
-    StorageClassAnalysis& WithDataExport(DataExportT&& value) { SetDataExport(std::forward<DataExportT>(value)); return *this;}
-    ///@}
-  private:
-
-    StorageClassAnalysisDataExport m_dataExport;
-    bool m_dataExportHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

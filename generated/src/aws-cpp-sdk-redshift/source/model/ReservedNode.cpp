@@ -3,107 +3,91 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ReservedNode.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/ReservedNode.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-ReservedNode::ReservedNode(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReservedNode::ReservedNode(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
-{
+ReservedNode& ReservedNode::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode reservedNodeIdNode = resultNode.FirstChild("ReservedNodeId");
-    if(!reservedNodeIdNode.IsNull())
-    {
+    if (!reservedNodeIdNode.IsNull()) {
       m_reservedNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeIdNode.GetText());
       m_reservedNodeIdHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
-    if(!reservedNodeOfferingIdNode.IsNull())
-    {
+    if (!reservedNodeOfferingIdNode.IsNull()) {
       m_reservedNodeOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingIdNode.GetText());
       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
-    if(!nodeTypeNode.IsNull())
-    {
+    if (!nodeTypeNode.IsNull()) {
       m_nodeType = Aws::Utils::Xml::DecodeEscapedXmlText(nodeTypeNode.GetText());
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
-    if(!startTimeNode.IsNull())
-    {
-      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!startTimeNode.IsNull()) {
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
-    if(!durationNode.IsNull())
-    {
-      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
+    if (!durationNode.IsNull()) {
+      m_duration =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
-    if(!fixedPriceNode.IsNull())
-    {
-      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
+    if (!fixedPriceNode.IsNull()) {
+      m_fixedPrice =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
-    if(!usagePriceNode.IsNull())
-    {
-      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
+    if (!usagePriceNode.IsNull()) {
+      m_usagePrice =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
-    if(!currencyCodeNode.IsNull())
-    {
+    if (!currencyCodeNode.IsNull()) {
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode nodeCountNode = resultNode.FirstChild("NodeCount");
-    if(!nodeCountNode.IsNull())
-    {
-      m_nodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeCountNode.GetText()).c_str()).c_str());
+    if (!nodeCountNode.IsNull()) {
+      m_nodeCount =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeCountNode.GetText()).c_str()).c_str());
       m_nodeCountHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
-    if(!stateNode.IsNull())
-    {
+    if (!stateNode.IsNull()) {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
-    if(!offeringTypeNode.IsNull())
-    {
+    if (!offeringTypeNode.IsNull()) {
       m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
-    if(!recurringChargesNode.IsNull())
-    {
+    if (!recurringChargesNode.IsNull()) {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
       m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
-      while(!recurringChargesMember.IsNull())
-      {
+      while (!recurringChargesMember.IsNull()) {
         m_recurringCharges.push_back(recurringChargesMember);
         recurringChargesMember = recurringChargesMember.NextNode("RecurringCharge");
       }
@@ -111,9 +95,9 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
       m_recurringChargesHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingTypeNode = resultNode.FirstChild("ReservedNodeOfferingType");
-    if(!reservedNodeOfferingTypeNode.IsNull())
-    {
-      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()));
+    if (!reservedNodeOfferingTypeNode.IsNull()) {
+      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()));
       m_reservedNodeOfferingTypeHasBeenSet = true;
     }
   }
@@ -121,143 +105,119 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_reservedNodeIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_reservedNodeIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
   }
 
-  if(m_reservedNodeOfferingIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
+  if (m_reservedNodeOfferingIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str())
+            << "&";
   }
 
-  if(m_nodeTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
+  if (m_nodeTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_startTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
+  if (m_durationHasBeenSet) {
+    oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
   }
 
-  if(m_fixedPriceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
+  if (m_fixedPriceHasBeenSet) {
+    oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
 
-  if(m_usagePriceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
+  if (m_usagePriceHasBeenSet) {
+    oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
 
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
+  if (m_currencyCodeHasBeenSet) {
+    oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
   }
 
-  if(m_nodeCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeCount=" << m_nodeCount << "&";
+  if (m_nodeCountHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeCount=" << m_nodeCount << "&";
   }
 
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
 
-  if(m_offeringTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
+  if (m_offeringTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
   }
 
-  if(m_recurringChargesHasBeenSet)
-  {
-      unsigned recurringChargesIdx = 1;
-      for(auto& item : m_recurringCharges)
-      {
-        Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
-        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
-      }
+  if (m_recurringChargesHasBeenSet) {
+    unsigned recurringChargesIdx = 1;
+    for (auto& item : m_recurringCharges) {
+      Aws::StringStream recurringChargesSs;
+      recurringChargesSs << location << index << locationValue << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
+      item.OutputToStream(oStream, recurringChargesSs.str().c_str());
+    }
   }
 
-  if(m_reservedNodeOfferingTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedNodeOfferingType=" << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType)) << "&";
-  }
-
-}
-
-void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_reservedNodeIdHasBeenSet)
-  {
-      oStream << location << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
-  }
-  if(m_reservedNodeOfferingIdHasBeenSet)
-  {
-      oStream << location << ".ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
-  }
-  if(m_nodeTypeHasBeenSet)
-  {
-      oStream << location << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
-  }
-  if(m_startTimeHasBeenSet)
-  {
-      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << ".Duration=" << m_duration << "&";
-  }
-  if(m_fixedPriceHasBeenSet)
-  {
-      oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
-  }
-  if(m_usagePriceHasBeenSet)
-  {
-      oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
-  }
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
-  }
-  if(m_nodeCountHasBeenSet)
-  {
-      oStream << location << ".NodeCount=" << m_nodeCount << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
-  }
-  if(m_offeringTypeHasBeenSet)
-  {
-      oStream << location << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
-  }
-  if(m_recurringChargesHasBeenSet)
-  {
-      unsigned recurringChargesIdx = 1;
-      for(auto& item : m_recurringCharges)
-      {
-        Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
-        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
-      }
-  }
-  if(m_reservedNodeOfferingTypeHasBeenSet)
-  {
-      oStream << location << ".ReservedNodeOfferingType=" << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType)) << "&";
+  if (m_reservedNodeOfferingTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ReservedNodeOfferingType="
+            << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_reservedNodeIdHasBeenSet) {
+    oStream << location << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+  }
+  if (m_reservedNodeOfferingIdHasBeenSet) {
+    oStream << location << ".ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
+  }
+  if (m_nodeTypeHasBeenSet) {
+    oStream << location << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
+  }
+  if (m_startTimeHasBeenSet) {
+    oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_durationHasBeenSet) {
+    oStream << location << ".Duration=" << m_duration << "&";
+  }
+  if (m_fixedPriceHasBeenSet) {
+    oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
+  }
+  if (m_usagePriceHasBeenSet) {
+    oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
+  }
+  if (m_currencyCodeHasBeenSet) {
+    oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
+  }
+  if (m_nodeCountHasBeenSet) {
+    oStream << location << ".NodeCount=" << m_nodeCount << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+  if (m_offeringTypeHasBeenSet) {
+    oStream << location << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
+  }
+  if (m_recurringChargesHasBeenSet) {
+    unsigned recurringChargesIdx = 1;
+    for (auto& item : m_recurringCharges) {
+      Aws::StringStream recurringChargesSs;
+      recurringChargesSs << location << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
+      item.OutputToStream(oStream, recurringChargesSs.str().c_str());
+    }
+  }
+  if (m_reservedNodeOfferingTypeHasBeenSet) {
+    oStream << location << ".ReservedNodeOfferingType="
+            << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

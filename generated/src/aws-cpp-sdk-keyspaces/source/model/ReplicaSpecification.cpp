@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspaces/model/ReplicaSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Keyspaces {
+namespace Model {
 
-ReplicaSpecification::ReplicaSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplicaSpecification::ReplicaSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicaSpecification& ReplicaSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("region"))
-  {
+ReplicaSpecification& ReplicaSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("readCapacityUnits"))
-  {
+  if (jsonValue.ValueExists("readCapacityUnits")) {
     m_readCapacityUnits = jsonValue.GetInt64("readCapacityUnits");
     m_readCapacityUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("readCapacityAutoScaling"))
-  {
+  if (jsonValue.ValueExists("readCapacityAutoScaling")) {
     m_readCapacityAutoScaling = jsonValue.GetObject("readCapacityAutoScaling");
     m_readCapacityAutoScalingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicaSpecification::Jsonize() const
-{
+JsonValue ReplicaSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
-  if(m_readCapacityUnitsHasBeenSet)
-  {
-   payload.WithInt64("readCapacityUnits", m_readCapacityUnits);
-
+  if (m_readCapacityUnitsHasBeenSet) {
+    payload.WithInt64("readCapacityUnits", m_readCapacityUnits);
   }
 
-  if(m_readCapacityAutoScalingHasBeenSet)
-  {
-   payload.WithObject("readCapacityAutoScaling", m_readCapacityAutoScaling.Jsonize());
-
+  if (m_readCapacityAutoScalingHasBeenSet) {
+    payload.WithObject("readCapacityAutoScaling", m_readCapacityAutoScaling.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

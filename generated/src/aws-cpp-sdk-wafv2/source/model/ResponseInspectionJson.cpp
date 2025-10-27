@@ -3,47 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ResponseInspectionJson.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/ResponseInspectionJson.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-ResponseInspectionJson::ResponseInspectionJson(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResponseInspectionJson::ResponseInspectionJson(JsonView jsonValue) { *this = jsonValue; }
 
-ResponseInspectionJson& ResponseInspectionJson::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Identifier"))
-  {
+ResponseInspectionJson& ResponseInspectionJson::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");
     m_identifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SuccessValues"))
-  {
+  if (jsonValue.ValueExists("SuccessValues")) {
     Aws::Utils::Array<JsonView> successValuesJsonList = jsonValue.GetArray("SuccessValues");
-    for(unsigned successValuesIndex = 0; successValuesIndex < successValuesJsonList.GetLength(); ++successValuesIndex)
-    {
+    for (unsigned successValuesIndex = 0; successValuesIndex < successValuesJsonList.GetLength(); ++successValuesIndex) {
       m_successValues.push_back(successValuesJsonList[successValuesIndex].AsString());
     }
     m_successValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureValues"))
-  {
+  if (jsonValue.ValueExists("FailureValues")) {
     Aws::Utils::Array<JsonView> failureValuesJsonList = jsonValue.GetArray("FailureValues");
-    for(unsigned failureValuesIndex = 0; failureValuesIndex < failureValuesJsonList.GetLength(); ++failureValuesIndex)
-    {
+    for (unsigned failureValuesIndex = 0; failureValuesIndex < failureValuesJsonList.GetLength(); ++failureValuesIndex) {
       m_failureValues.push_back(failureValuesJsonList[failureValuesIndex].AsString());
     }
     m_failureValuesHasBeenSet = true;
@@ -51,41 +39,32 @@ ResponseInspectionJson& ResponseInspectionJson::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ResponseInspectionJson::Jsonize() const
-{
+JsonValue ResponseInspectionJson::Jsonize() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
-  if(m_successValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> successValuesJsonList(m_successValues.size());
-   for(unsigned successValuesIndex = 0; successValuesIndex < successValuesJsonList.GetLength(); ++successValuesIndex)
-   {
-     successValuesJsonList[successValuesIndex].AsString(m_successValues[successValuesIndex]);
-   }
-   payload.WithArray("SuccessValues", std::move(successValuesJsonList));
-
+  if (m_successValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> successValuesJsonList(m_successValues.size());
+    for (unsigned successValuesIndex = 0; successValuesIndex < successValuesJsonList.GetLength(); ++successValuesIndex) {
+      successValuesJsonList[successValuesIndex].AsString(m_successValues[successValuesIndex]);
+    }
+    payload.WithArray("SuccessValues", std::move(successValuesJsonList));
   }
 
-  if(m_failureValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> failureValuesJsonList(m_failureValues.size());
-   for(unsigned failureValuesIndex = 0; failureValuesIndex < failureValuesJsonList.GetLength(); ++failureValuesIndex)
-   {
-     failureValuesJsonList[failureValuesIndex].AsString(m_failureValues[failureValuesIndex]);
-   }
-   payload.WithArray("FailureValues", std::move(failureValuesJsonList));
-
+  if (m_failureValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> failureValuesJsonList(m_failureValues.size());
+    for (unsigned failureValuesIndex = 0; failureValuesIndex < failureValuesJsonList.GetLength(); ++failureValuesIndex) {
+      failureValuesJsonList[failureValuesIndex].AsString(m_failureValues[failureValuesIndex]);
+    }
+    payload.WithArray("FailureValues", std::move(failureValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

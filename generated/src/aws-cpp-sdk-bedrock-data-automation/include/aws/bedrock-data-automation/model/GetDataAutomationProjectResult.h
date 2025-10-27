@@ -7,63 +7,69 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProject.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace BedrockDataAutomation
-{
-namespace Model
-{
-  /**
-   * <p>Get DataAutomationProject Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProjectResponse">AWS
-   * API Reference</a></p>
-   */
-  class GetDataAutomationProjectResult
-  {
-  public:
-    AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult() = default;
-    AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockDataAutomation {
+namespace Model {
+/**
+ * <p>Get DataAutomationProject Response</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProjectResponse">AWS
+ * API Reference</a></p>
+ */
+class GetDataAutomationProjectResult {
+ public:
+  AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult() = default;
+  AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const DataAutomationProject& GetProject() const { return m_project; }
-    template<typename ProjectT = DataAutomationProject>
-    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
-    template<typename ProjectT = DataAutomationProject>
-    GetDataAutomationProjectResult& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
-    ///@}
+  inline const DataAutomationProject& GetProject() const { return m_project; }
+  template <typename ProjectT = DataAutomationProject>
+  void SetProject(ProjectT&& value) {
+    m_projectHasBeenSet = true;
+    m_project = std::forward<ProjectT>(value);
+  }
+  template <typename ProjectT = DataAutomationProject>
+  GetDataAutomationProjectResult& WithProject(ProjectT&& value) {
+    SetProject(std::forward<ProjectT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetDataAutomationProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    DataAutomationProject m_project;
-    bool m_projectHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetDataAutomationProjectResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DataAutomationProject m_project;
+  bool m_projectHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

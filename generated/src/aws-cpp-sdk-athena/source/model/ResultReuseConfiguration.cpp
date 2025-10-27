@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-ResultReuseConfiguration::ResultReuseConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultReuseConfiguration::ResultReuseConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ResultReuseConfiguration& ResultReuseConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResultReuseByAgeConfiguration"))
-  {
+ResultReuseConfiguration& ResultReuseConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResultReuseByAgeConfiguration")) {
     m_resultReuseByAgeConfiguration = jsonValue.GetObject("ResultReuseByAgeConfiguration");
     m_resultReuseByAgeConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultReuseConfiguration::Jsonize() const
-{
+JsonValue ResultReuseConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultReuseByAgeConfigurationHasBeenSet)
-  {
-   payload.WithObject("ResultReuseByAgeConfiguration", m_resultReuseByAgeConfiguration.Jsonize());
-
+  if (m_resultReuseByAgeConfigurationHasBeenSet) {
+    payload.WithObject("ResultReuseByAgeConfiguration", m_resultReuseByAgeConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

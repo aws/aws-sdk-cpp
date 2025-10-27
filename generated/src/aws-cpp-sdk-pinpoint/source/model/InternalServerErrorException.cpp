@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/InternalServerErrorException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/InternalServerErrorException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-InternalServerErrorException::InternalServerErrorException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalServerErrorException::InternalServerErrorException(JsonView jsonValue) { *this = jsonValue; }
 
-InternalServerErrorException& InternalServerErrorException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+InternalServerErrorException& InternalServerErrorException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestID"))
-  {
+  if (jsonValue.ValueExists("RequestID")) {
     m_requestID = jsonValue.GetString("RequestID");
     m_requestIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InternalServerErrorException::Jsonize() const
-{
+JsonValue InternalServerErrorException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_requestIDHasBeenSet)
-  {
-   payload.WithString("RequestID", m_requestID);
-
+  if (m_requestIDHasBeenSet) {
+    payload.WithString("RequestID", m_requestID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/AppRegistryConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog-appregistry/model/AppRegistryConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
 
-AppRegistryConfiguration::AppRegistryConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppRegistryConfiguration::AppRegistryConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AppRegistryConfiguration& AppRegistryConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tagQueryConfiguration"))
-  {
+AppRegistryConfiguration& AppRegistryConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tagQueryConfiguration")) {
     m_tagQueryConfiguration = jsonValue.GetObject("tagQueryConfiguration");
     m_tagQueryConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppRegistryConfiguration::Jsonize() const
-{
+JsonValue AppRegistryConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagQueryConfigurationHasBeenSet)
-  {
-   payload.WithObject("tagQueryConfiguration", m_tagQueryConfiguration.Jsonize());
-
+  if (m_tagQueryConfigurationHasBeenSet) {
+    payload.WithObject("tagQueryConfiguration", m_tagQueryConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

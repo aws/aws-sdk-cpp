@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-PatchOperation::PatchOperation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PatchOperation::PatchOperation(JsonView jsonValue) { *this = jsonValue; }
 
-PatchOperation& PatchOperation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("op"))
-  {
+PatchOperation& PatchOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("op")) {
     m_op = OpMapper::GetOpForName(jsonValue.GetString("op"));
     m_opHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("from"))
-  {
+  if (jsonValue.ValueExists("from")) {
     m_from = jsonValue.GetString("from");
     m_fromHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PatchOperation::Jsonize() const
-{
+JsonValue PatchOperation::Jsonize() const {
   JsonValue payload;
 
-  if(m_opHasBeenSet)
-  {
-   payload.WithString("op", OpMapper::GetNameForOp(m_op));
+  if (m_opHasBeenSet) {
+    payload.WithString("op", OpMapper::GetNameForOp(m_op));
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_fromHasBeenSet)
-  {
-   payload.WithString("from", m_from);
-
+  if (m_fromHasBeenSet) {
+    payload.WithString("from", m_from);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

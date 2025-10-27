@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/ResultData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/ResultData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-ResultData::ResultData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultData::ResultData(JsonView jsonValue) { *this = jsonValue; }
 
-ResultData& ResultData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("document"))
-  {
+ResultData& ResultData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("document")) {
     m_document = jsonValue.GetObject("document");
     m_documentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relevanceScore"))
-  {
+  if (jsonValue.ValueExists("relevanceScore")) {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resultId"))
-  {
+  if (jsonValue.ValueExists("resultId")) {
     m_resultId = jsonValue.GetString("resultId");
     m_resultIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultData::Jsonize() const
-{
+JsonValue ResultData::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentHasBeenSet)
-  {
-   payload.WithObject("document", m_document.Jsonize());
-
+  if (m_documentHasBeenSet) {
+    payload.WithObject("document", m_document.Jsonize());
   }
 
-  if(m_relevanceScoreHasBeenSet)
-  {
-   payload.WithDouble("relevanceScore", m_relevanceScore);
-
+  if (m_relevanceScoreHasBeenSet) {
+    payload.WithDouble("relevanceScore", m_relevanceScore);
   }
 
-  if(m_resultIdHasBeenSet)
-  {
-   payload.WithString("resultId", m_resultId);
-
+  if (m_resultIdHasBeenSet) {
+    payload.WithString("resultId", m_resultId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

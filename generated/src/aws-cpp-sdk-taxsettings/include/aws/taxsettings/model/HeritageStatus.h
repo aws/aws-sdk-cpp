@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class HeritageStatus
-  {
-    NOT_SET,
-    OptIn,
-    OptOut
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class HeritageStatus { NOT_SET, OptIn, OptOut };
 
-namespace HeritageStatusMapper
-{
+namespace HeritageStatusMapper {
 AWS_TAXSETTINGS_API HeritageStatus GetHeritageStatusForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForHeritageStatus(HeritageStatus value);
-} // namespace HeritageStatusMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace HeritageStatusMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

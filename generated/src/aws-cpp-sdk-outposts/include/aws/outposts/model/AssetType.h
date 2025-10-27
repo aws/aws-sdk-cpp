@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class AssetType
-  {
-    NOT_SET,
-    COMPUTE
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class AssetType { NOT_SET, COMPUTE };
 
-namespace AssetTypeMapper
-{
+namespace AssetTypeMapper {
 AWS_OUTPOSTS_API AssetType GetAssetTypeForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForAssetType(AssetType value);
-} // namespace AssetTypeMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace AssetTypeMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

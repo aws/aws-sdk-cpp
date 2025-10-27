@@ -4,8 +4,8 @@
  */
 
 #include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,37 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetAgentCardRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String GetAgentCardRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection GetAgentCardRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAgentCardRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_runtimeSessionIdHasBeenSet)
-  {
+  if (m_runtimeSessionIdHasBeenSet) {
     ss << m_runtimeSessionId;
-    headers.emplace("x-amzn-bedrock-agentcore-runtime-session-id",  ss.str());
+    headers.emplace("x-amzn-bedrock-agentcore-runtime-session-id", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-void GetAgentCardRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_qualifierHasBeenSet)
-    {
-      ss << m_qualifier;
-      uri.AddQueryStringParameter("qualifier", ss.str());
-      ss.str("");
-    }
-
+void GetAgentCardRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_qualifierHasBeenSet) {
+    ss << m_qualifier;
+    uri.AddQueryStringParameter("qualifier", ss.str());
+    ss.str("");
+  }
 }
-
-
-

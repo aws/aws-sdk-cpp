@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
 
+/**
+ * <p>Configuration settings for creating and managing pre-provisioned snapshots
+ * for a fast-launch enabled Windows AMI.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchSnapshotConfiguration">AWS
+ * API Reference</a></p>
+ */
+class FastLaunchSnapshotConfiguration {
+ public:
+  AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration() = default;
+  AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configuration settings for creating and managing pre-provisioned snapshots
-   * for a fast-launch enabled Windows AMI.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchSnapshotConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
+   * enabled Windows AMI.</p>
    */
-  class FastLaunchSnapshotConfiguration
-  {
-  public:
-    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration() = default;
-    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetTargetResourceCount() const { return m_targetResourceCount; }
+  inline bool TargetResourceCountHasBeenSet() const { return m_targetResourceCountHasBeenSet; }
+  inline void SetTargetResourceCount(int value) {
+    m_targetResourceCountHasBeenSet = true;
+    m_targetResourceCount = value;
+  }
+  inline FastLaunchSnapshotConfiguration& WithTargetResourceCount(int value) {
+    SetTargetResourceCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_targetResourceCount{0};
+  bool m_targetResourceCountHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
-     */
-    inline int GetTargetResourceCount() const { return m_targetResourceCount; }
-    inline bool TargetResourceCountHasBeenSet() const { return m_targetResourceCountHasBeenSet; }
-    inline void SetTargetResourceCount(int value) { m_targetResourceCountHasBeenSet = true; m_targetResourceCount = value; }
-    inline FastLaunchSnapshotConfiguration& WithTargetResourceCount(int value) { SetTargetResourceCount(value); return *this;}
-    ///@}
-  private:
-
-    int m_targetResourceCount{0};
-    bool m_targetResourceCountHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

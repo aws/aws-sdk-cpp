@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/ManagedAgentName.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ecs/model/ManagedAgentName.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ECS {
+namespace Model {
+namespace ManagedAgentNameMapper {
 
-namespace Aws
-{
-  namespace ECS
-  {
-    namespace Model
-    {
-      namespace ManagedAgentNameMapper
-      {
+static const int ExecuteCommandAgent_HASH = HashingUtils::HashString("ExecuteCommandAgent");
 
-        static const int ExecuteCommandAgent_HASH = HashingUtils::HashString("ExecuteCommandAgent");
+ManagedAgentName GetManagedAgentNameForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ExecuteCommandAgent_HASH) {
+    return ManagedAgentName::ExecuteCommandAgent;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ManagedAgentName>(hashCode);
+  }
 
+  return ManagedAgentName::NOT_SET;
+}
 
-        ManagedAgentName GetManagedAgentNameForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ExecuteCommandAgent_HASH)
-          {
-            return ManagedAgentName::ExecuteCommandAgent;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ManagedAgentName>(hashCode);
-          }
+Aws::String GetNameForManagedAgentName(ManagedAgentName enumValue) {
+  switch (enumValue) {
+    case ManagedAgentName::NOT_SET:
+      return {};
+    case ManagedAgentName::ExecuteCommandAgent:
+      return "ExecuteCommandAgent";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ManagedAgentName::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForManagedAgentName(ManagedAgentName enumValue)
-        {
-          switch(enumValue)
-          {
-          case ManagedAgentName::NOT_SET:
-            return {};
-          case ManagedAgentName::ExecuteCommandAgent:
-            return "ExecuteCommandAgent";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ManagedAgentNameMapper
-    } // namespace Model
-  } // namespace ECS
-} // namespace Aws
+}  // namespace ManagedAgentNameMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

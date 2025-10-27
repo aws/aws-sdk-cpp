@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-QueryStatistics::QueryStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryStatistics::QueryStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-QueryStatistics& QueryStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResultsCount"))
-  {
+QueryStatistics& QueryStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResultsCount")) {
     m_resultsCount = jsonValue.GetInteger("ResultsCount");
     m_resultsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalResultsCount"))
-  {
+  if (jsonValue.ValueExists("TotalResultsCount")) {
     m_totalResultsCount = jsonValue.GetInteger("TotalResultsCount");
     m_totalResultsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BytesScanned"))
-  {
+  if (jsonValue.ValueExists("BytesScanned")) {
     m_bytesScanned = jsonValue.GetInt64("BytesScanned");
     m_bytesScannedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryStatistics::Jsonize() const
-{
+JsonValue QueryStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultsCountHasBeenSet)
-  {
-   payload.WithInteger("ResultsCount", m_resultsCount);
-
+  if (m_resultsCountHasBeenSet) {
+    payload.WithInteger("ResultsCount", m_resultsCount);
   }
 
-  if(m_totalResultsCountHasBeenSet)
-  {
-   payload.WithInteger("TotalResultsCount", m_totalResultsCount);
-
+  if (m_totalResultsCountHasBeenSet) {
+    payload.WithInteger("TotalResultsCount", m_totalResultsCount);
   }
 
-  if(m_bytesScannedHasBeenSet)
-  {
-   payload.WithInt64("BytesScanned", m_bytesScanned);
-
+  if (m_bytesScannedHasBeenSet) {
+    payload.WithInt64("BytesScanned", m_bytesScanned);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

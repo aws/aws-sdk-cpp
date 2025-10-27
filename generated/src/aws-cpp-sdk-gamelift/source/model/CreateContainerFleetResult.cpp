@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/CreateContainerFleetResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/gamelift/model/CreateContainerFleetResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateContainerFleetResult::CreateContainerFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateContainerFleetResult::CreateContainerFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateContainerFleetResult& CreateContainerFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateContainerFleetResult& CreateContainerFleetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ContainerFleet"))
-  {
+  if (jsonValue.ValueExists("ContainerFleet")) {
     m_containerFleet = jsonValue.GetObject("ContainerFleet");
     m_containerFleetHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -12,30 +12,21 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchPutContactRequest::SerializePayload() const
-{
+Aws::String BatchPutContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_contactDataRequestListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contactDataRequestListJsonList(m_contactDataRequestList.size());
-   for(unsigned contactDataRequestListIndex = 0; contactDataRequestListIndex < contactDataRequestListJsonList.GetLength(); ++contactDataRequestListIndex)
-   {
-     contactDataRequestListJsonList[contactDataRequestListIndex].AsObject(m_contactDataRequestList[contactDataRequestListIndex].Jsonize());
-   }
-   payload.WithArray("ContactDataRequestList", std::move(contactDataRequestListJsonList));
-
+  if (m_contactDataRequestListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contactDataRequestListJsonList(m_contactDataRequestList.size());
+    for (unsigned contactDataRequestListIndex = 0; contactDataRequestListIndex < contactDataRequestListJsonList.GetLength();
+         ++contactDataRequestListIndex) {
+      contactDataRequestListJsonList[contactDataRequestListIndex].AsObject(m_contactDataRequestList[contactDataRequestListIndex].Jsonize());
+    }
+    payload.WithArray("ContactDataRequestList", std::move(contactDataRequestListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

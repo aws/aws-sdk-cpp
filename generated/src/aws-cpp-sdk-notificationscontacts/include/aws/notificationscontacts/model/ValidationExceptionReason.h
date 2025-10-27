@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 
-namespace Aws
-{
-namespace NotificationsContacts
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    fieldValidationFailed,
-    other
-  };
+namespace Aws {
+namespace NotificationsContacts {
+namespace Model {
+enum class ValidationExceptionReason { NOT_SET, fieldValidationFailed, other };
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_NOTIFICATIONSCONTACTS_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_NOTIFICATIONSCONTACTS_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace NotificationsContacts
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace NotificationsContacts
+}  // namespace Aws

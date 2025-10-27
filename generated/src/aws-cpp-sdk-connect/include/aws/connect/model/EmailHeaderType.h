@@ -7,28 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class EmailHeaderType
-  {
-    NOT_SET,
-    REFERENCES,
-    MESSAGE_ID,
-    IN_REPLY_TO,
-    X_SES_SPAM_VERDICT,
-    X_SES_VIRUS_VERDICT
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class EmailHeaderType { NOT_SET, REFERENCES, MESSAGE_ID, IN_REPLY_TO, X_SES_SPAM_VERDICT, X_SES_VIRUS_VERDICT };
 
-namespace EmailHeaderTypeMapper
-{
+namespace EmailHeaderTypeMapper {
 AWS_CONNECT_API EmailHeaderType GetEmailHeaderTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForEmailHeaderType(EmailHeaderType value);
-} // namespace EmailHeaderTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace EmailHeaderTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

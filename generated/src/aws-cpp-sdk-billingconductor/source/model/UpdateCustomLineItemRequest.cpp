@@ -12,43 +12,28 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCustomLineItemRequest::SerializePayload() const
-{
+Aws::String UpdateCustomLineItemRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_chargeDetailsHasBeenSet)
-  {
-   payload.WithObject("ChargeDetails", m_chargeDetails.Jsonize());
-
+  if (m_chargeDetailsHasBeenSet) {
+    payload.WithObject("ChargeDetails", m_chargeDetails.Jsonize());
   }
 
-  if(m_billingPeriodRangeHasBeenSet)
-  {
-   payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
-
+  if (m_billingPeriodRangeHasBeenSet) {
+    payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,92 +11,68 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FieldValidationConfiguration& FieldValidationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FieldValidationConfiguration& FieldValidationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("strValues"))
-  {
+  if (jsonValue.ValueExists("strValues")) {
     Aws::Utils::Array<JsonView> strValuesJsonList = jsonValue.GetArray("strValues");
-    for(unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex)
-    {
+    for (unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex) {
       m_strValues.push_back(strValuesJsonList[strValuesIndex].AsString());
     }
     m_strValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numValues"))
-  {
+  if (jsonValue.ValueExists("numValues")) {
     Aws::Utils::Array<JsonView> numValuesJsonList = jsonValue.GetArray("numValues");
-    for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
-    {
+    for (unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex) {
       m_numValues.push_back(numValuesJsonList[numValuesIndex].AsInteger());
     }
     m_numValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validationMessage"))
-  {
+  if (jsonValue.ValueExists("validationMessage")) {
     m_validationMessage = jsonValue.GetString("validationMessage");
     m_validationMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldValidationConfiguration::Jsonize() const
-{
+JsonValue FieldValidationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_strValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> strValuesJsonList(m_strValues.size());
-   for(unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex)
-   {
-     strValuesJsonList[strValuesIndex].AsString(m_strValues[strValuesIndex]);
-   }
-   payload.WithArray("strValues", std::move(strValuesJsonList));
-
+  if (m_strValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> strValuesJsonList(m_strValues.size());
+    for (unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex) {
+      strValuesJsonList[strValuesIndex].AsString(m_strValues[strValuesIndex]);
+    }
+    payload.WithArray("strValues", std::move(strValuesJsonList));
   }
 
-  if(m_numValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> numValuesJsonList(m_numValues.size());
-   for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
-   {
-     numValuesJsonList[numValuesIndex].AsInteger(m_numValues[numValuesIndex]);
-   }
-   payload.WithArray("numValues", std::move(numValuesJsonList));
-
+  if (m_numValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> numValuesJsonList(m_numValues.size());
+    for (unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex) {
+      numValuesJsonList[numValuesIndex].AsInteger(m_numValues[numValuesIndex]);
+    }
+    payload.WithArray("numValues", std::move(numValuesJsonList));
   }
 
-  if(m_validationMessageHasBeenSet)
-  {
-   payload.WithString("validationMessage", m_validationMessage);
-
+  if (m_validationMessageHasBeenSet) {
+    payload.WithString("validationMessage", m_validationMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

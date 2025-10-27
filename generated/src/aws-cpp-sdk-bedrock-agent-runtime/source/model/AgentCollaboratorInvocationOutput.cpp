@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-AgentCollaboratorInvocationOutput::AgentCollaboratorInvocationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentCollaboratorInvocationOutput::AgentCollaboratorInvocationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-AgentCollaboratorInvocationOutput& AgentCollaboratorInvocationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentCollaboratorName"))
-  {
+AgentCollaboratorInvocationOutput& AgentCollaboratorInvocationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentCollaboratorName")) {
     m_agentCollaboratorName = jsonValue.GetString("agentCollaboratorName");
     m_agentCollaboratorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentCollaboratorAliasArn"))
-  {
+  if (jsonValue.ValueExists("agentCollaboratorAliasArn")) {
     m_agentCollaboratorAliasArn = jsonValue.GetString("agentCollaboratorAliasArn");
     m_agentCollaboratorAliasArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("output"))
-  {
+  if (jsonValue.ValueExists("output")) {
     m_output = jsonValue.GetObject("output");
     m_outputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadata"))
-  {
+  if (jsonValue.ValueExists("metadata")) {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentCollaboratorInvocationOutput::Jsonize() const
-{
+JsonValue AgentCollaboratorInvocationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentCollaboratorNameHasBeenSet)
-  {
-   payload.WithString("agentCollaboratorName", m_agentCollaboratorName);
-
+  if (m_agentCollaboratorNameHasBeenSet) {
+    payload.WithString("agentCollaboratorName", m_agentCollaboratorName);
   }
 
-  if(m_agentCollaboratorAliasArnHasBeenSet)
-  {
-   payload.WithString("agentCollaboratorAliasArn", m_agentCollaboratorAliasArn);
-
+  if (m_agentCollaboratorAliasArnHasBeenSet) {
+    payload.WithString("agentCollaboratorAliasArn", m_agentCollaboratorAliasArn);
   }
 
-  if(m_outputHasBeenSet)
-  {
-   payload.WithObject("output", m_output.Jsonize());
-
+  if (m_outputHasBeenSet) {
+    payload.WithObject("output", m_output.Jsonize());
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
-
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

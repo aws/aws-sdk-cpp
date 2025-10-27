@@ -3,59 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/RecipientInfo.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/model/RecipientInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
+namespace Aws {
+namespace KMS {
+namespace Model {
 
-RecipientInfo::RecipientInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecipientInfo::RecipientInfo(JsonView jsonValue) { *this = jsonValue; }
 
-RecipientInfo& RecipientInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyEncryptionAlgorithm"))
-  {
-    m_keyEncryptionAlgorithm = KeyEncryptionMechanismMapper::GetKeyEncryptionMechanismForName(jsonValue.GetString("KeyEncryptionAlgorithm"));
+RecipientInfo& RecipientInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyEncryptionAlgorithm")) {
+    m_keyEncryptionAlgorithm =
+        KeyEncryptionMechanismMapper::GetKeyEncryptionMechanismForName(jsonValue.GetString("KeyEncryptionAlgorithm"));
     m_keyEncryptionAlgorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttestationDocument"))
-  {
+  if (jsonValue.ValueExists("AttestationDocument")) {
     m_attestationDocument = HashingUtils::Base64Decode(jsonValue.GetString("AttestationDocument"));
     m_attestationDocumentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecipientInfo::Jsonize() const
-{
+JsonValue RecipientInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyEncryptionAlgorithmHasBeenSet)
-  {
-   payload.WithString("KeyEncryptionAlgorithm", KeyEncryptionMechanismMapper::GetNameForKeyEncryptionMechanism(m_keyEncryptionAlgorithm));
+  if (m_keyEncryptionAlgorithmHasBeenSet) {
+    payload.WithString("KeyEncryptionAlgorithm", KeyEncryptionMechanismMapper::GetNameForKeyEncryptionMechanism(m_keyEncryptionAlgorithm));
   }
 
-  if(m_attestationDocumentHasBeenSet)
-  {
-   payload.WithString("AttestationDocument", HashingUtils::Base64Encode(m_attestationDocument));
+  if (m_attestationDocumentHasBeenSet) {
+    payload.WithString("AttestationDocument", HashingUtils::Base64Encode(m_attestationDocument));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

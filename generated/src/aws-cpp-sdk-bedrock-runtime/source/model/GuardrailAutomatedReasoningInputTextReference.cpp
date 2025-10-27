@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailAutomatedReasoningInputTextReference::GuardrailAutomatedReasoningInputTextReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailAutomatedReasoningInputTextReference::GuardrailAutomatedReasoningInputTextReference(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailAutomatedReasoningInputTextReference& GuardrailAutomatedReasoningInputTextReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+GuardrailAutomatedReasoningInputTextReference& GuardrailAutomatedReasoningInputTextReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailAutomatedReasoningInputTextReference::Jsonize() const
-{
+JsonValue GuardrailAutomatedReasoningInputTextReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

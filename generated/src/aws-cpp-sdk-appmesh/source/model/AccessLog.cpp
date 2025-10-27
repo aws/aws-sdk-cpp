@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-AccessLog::AccessLog(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessLog::AccessLog(JsonView jsonValue) { *this = jsonValue; }
 
-AccessLog& AccessLog::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("file"))
-  {
+AccessLog& AccessLog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("file")) {
     m_file = jsonValue.GetObject("file");
     m_fileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessLog::Jsonize() const
-{
+JsonValue AccessLog::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileHasBeenSet)
-  {
-   payload.WithObject("file", m_file.Jsonize());
-
+  if (m_fileHasBeenSet) {
+    payload.WithObject("file", m_file.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/simspaceweaver/SimSpaceWeaverEndpointRules.h>
+#include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SimSpaceWeaver
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SimSpaceWeaver {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SimSpaceWeaverClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SimSpaceWeaverDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SIMSPACEWEAVER_API SimSpaceWeaverEndpointProvider : public SimSpaceWeaverDefaultEpProviderBase
-{
-public:
-    using SimSpaceWeaverResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SIMSPACEWEAVER_API SimSpaceWeaverEndpointProvider : public SimSpaceWeaverDefaultEpProviderBase {
+ public:
+  using SimSpaceWeaverResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SimSpaceWeaverEndpointProvider()
-      : SimSpaceWeaverDefaultEpProviderBase(Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::GetRulesBlob(), Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::RulesBlobSize)
-    {}
+  SimSpaceWeaverEndpointProvider()
+      : SimSpaceWeaverDefaultEpProviderBase(Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::GetRulesBlob(),
+                                            Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::RulesBlobSize) {}
 
-    ~SimSpaceWeaverEndpointProvider()
-    {
-    }
+  ~SimSpaceWeaverEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SimSpaceWeaver
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SimSpaceWeaver
+}  // namespace Aws

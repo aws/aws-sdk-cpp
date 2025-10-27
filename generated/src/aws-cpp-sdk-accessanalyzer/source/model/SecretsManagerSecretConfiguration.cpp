@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-SecretsManagerSecretConfiguration::SecretsManagerSecretConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecretsManagerSecretConfiguration::SecretsManagerSecretConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SecretsManagerSecretConfiguration& SecretsManagerSecretConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+SecretsManagerSecretConfiguration& SecretsManagerSecretConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretPolicy"))
-  {
+  if (jsonValue.ValueExists("secretPolicy")) {
     m_secretPolicy = jsonValue.GetString("secretPolicy");
     m_secretPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecretsManagerSecretConfiguration::Jsonize() const
-{
+JsonValue SecretsManagerSecretConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_secretPolicyHasBeenSet)
-  {
-   payload.WithString("secretPolicy", m_secretPolicy);
-
+  if (m_secretPolicyHasBeenSet) {
+    payload.WithString("secretPolicy", m_secretPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

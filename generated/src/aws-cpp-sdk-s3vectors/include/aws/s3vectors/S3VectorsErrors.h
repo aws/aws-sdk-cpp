@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Vectors
-{
-enum class S3VectorsErrors
-{
-  //From Core//
+namespace Aws {
+namespace S3Vectors {
+enum class S3VectorsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class S3VectorsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class S3VectorsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   KMS_DISABLED,
   KMS_INVALID_KEY_USAGE,
@@ -58,9 +55,8 @@ enum class S3VectorsErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_S3VECTORS_API S3VectorsError : public Aws::Client::AWSError<S3VectorsErrors>
-{
-public:
+class AWS_S3VECTORS_API S3VectorsError : public Aws::Client::AWSError<S3VectorsErrors> {
+ public:
   S3VectorsError() {}
   S3VectorsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3VectorsErrors>(rhs) {}
   S3VectorsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3VectorsErrors>(rhs) {}
@@ -71,10 +67,9 @@ public:
   T GetModeledError();
 };
 
-namespace S3VectorsErrorMapper
-{
-  AWS_S3VECTORS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace S3VectorsErrorMapper {
+AWS_S3VECTORS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace S3Vectors
-} // namespace Aws
+}  // namespace S3Vectors
+}  // namespace Aws

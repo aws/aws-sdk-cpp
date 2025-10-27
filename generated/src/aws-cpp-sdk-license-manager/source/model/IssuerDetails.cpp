@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/IssuerDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/IssuerDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-IssuerDetails::IssuerDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IssuerDetails::IssuerDetails(JsonView jsonValue) { *this = jsonValue; }
 
-IssuerDetails& IssuerDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+IssuerDetails& IssuerDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SignKey"))
-  {
+  if (jsonValue.ValueExists("SignKey")) {
     m_signKey = jsonValue.GetString("SignKey");
     m_signKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyFingerprint"))
-  {
+  if (jsonValue.ValueExists("KeyFingerprint")) {
     m_keyFingerprint = jsonValue.GetString("KeyFingerprint");
     m_keyFingerprintHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IssuerDetails::Jsonize() const
-{
+JsonValue IssuerDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_signKeyHasBeenSet)
-  {
-   payload.WithString("SignKey", m_signKey);
-
+  if (m_signKeyHasBeenSet) {
+    payload.WithString("SignKey", m_signKey);
   }
 
-  if(m_keyFingerprintHasBeenSet)
-  {
-   payload.WithString("KeyFingerprint", m_keyFingerprint);
-
+  if (m_keyFingerprintHasBeenSet) {
+    payload.WithString("KeyFingerprint", m_keyFingerprint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

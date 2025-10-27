@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
-  enum class SortOrder
-  {
-    NOT_SET,
-    ASCENDING,
-    DESCENDING
-  };
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
+enum class SortOrder { NOT_SET, ASCENDING, DESCENDING };
 
-namespace SortOrderMapper
-{
+namespace SortOrderMapper {
 AWS_ROUTE53RESOLVER_API SortOrder GetSortOrderForName(const Aws::String& name);
 
 AWS_ROUTE53RESOLVER_API Aws::String GetNameForSortOrder(SortOrder value);
-} // namespace SortOrderMapper
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace SortOrderMapper
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

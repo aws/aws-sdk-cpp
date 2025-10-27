@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RecordingStrategy::RecordingStrategy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordingStrategy::RecordingStrategy(JsonView jsonValue) { *this = jsonValue; }
 
-RecordingStrategy& RecordingStrategy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("useOnly"))
-  {
+RecordingStrategy& RecordingStrategy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("useOnly")) {
     m_useOnly = RecordingStrategyTypeMapper::GetRecordingStrategyTypeForName(jsonValue.GetString("useOnly"));
     m_useOnlyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordingStrategy::Jsonize() const
-{
+JsonValue RecordingStrategy::Jsonize() const {
   JsonValue payload;
 
-  if(m_useOnlyHasBeenSet)
-  {
-   payload.WithString("useOnly", RecordingStrategyTypeMapper::GetNameForRecordingStrategyType(m_useOnly));
+  if (m_useOnlyHasBeenSet) {
+    payload.WithString("useOnly", RecordingStrategyTypeMapper::GetNameForRecordingStrategyType(m_useOnly));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

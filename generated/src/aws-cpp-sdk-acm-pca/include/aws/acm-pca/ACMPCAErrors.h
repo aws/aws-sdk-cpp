@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/acm-pca/ACMPCA_EXPORTS.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-enum class ACMPCAErrors
-{
-  //From Core//
+namespace Aws {
+namespace ACMPCA {
+enum class ACMPCAErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ACMPCAErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ACMPCAErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CERTIFICATE_MISMATCH= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CERTIFICATE_MISMATCH = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   INVALID_ARGS,
   INVALID_ARN,
@@ -67,9 +64,8 @@ enum class ACMPCAErrors
   TOO_MANY_TAGS
 };
 
-class AWS_ACMPCA_API ACMPCAError : public Aws::Client::AWSError<ACMPCAErrors>
-{
-public:
+class AWS_ACMPCA_API ACMPCAError : public Aws::Client::AWSError<ACMPCAErrors> {
+ public:
   ACMPCAError() {}
   ACMPCAError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ACMPCAErrors>(rhs) {}
   ACMPCAError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ACMPCAErrors>(rhs) {}
@@ -80,10 +76,9 @@ public:
   T GetModeledError();
 };
 
-namespace ACMPCAErrorMapper
-{
-  AWS_ACMPCA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ACMPCAErrorMapper {
+AWS_ACMPCA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace ACMPCA
+}  // namespace Aws

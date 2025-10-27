@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ListTopicReviewedAnswersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/ListTopicReviewedAnswersResult.h>
 
 #include <utility>
 
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTopicReviewedAnswersResult::ListTopicReviewedAnswersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListTopicReviewedAnswersResult::ListTopicReviewedAnswersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListTopicReviewedAnswersResult& ListTopicReviewedAnswersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTopicReviewedAnswersResult& ListTopicReviewedAnswersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TopicId"))
-  {
+  if (jsonValue.ValueExists("TopicId")) {
     m_topicId = jsonValue.GetString("TopicId");
     m_topicIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TopicArn"))
-  {
+  if (jsonValue.ValueExists("TopicArn")) {
     m_topicArn = jsonValue.GetString("TopicArn");
     m_topicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Answers"))
-  {
+  if (jsonValue.ValueExists("Answers")) {
     Aws::Utils::Array<JsonView> answersJsonList = jsonValue.GetArray("Answers");
-    for(unsigned answersIndex = 0; answersIndex < answersJsonList.GetLength(); ++answersIndex)
-    {
+    for (unsigned answersIndex = 0; answersIndex < answersJsonList.GetLength(); ++answersIndex) {
       m_answers.push_back(answersJsonList[answersIndex].AsObject());
     }
     m_answersHasBeenSet = true;
@@ -47,12 +39,10 @@ ListTopicReviewedAnswersResult& ListTopicReviewedAnswersResult::operator =(const
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_status = static_cast<int>(result.GetResponseCode());
   m_statusHasBeenSet = true;

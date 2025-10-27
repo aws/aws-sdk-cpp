@@ -12,154 +12,108 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserPoolRequest::SerializePayload() const
-{
+Aws::String UpdateUserPoolRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_policiesHasBeenSet)
-  {
-   payload.WithObject("Policies", m_policies.Jsonize());
-
+  if (m_policiesHasBeenSet) {
+    payload.WithObject("Policies", m_policies.Jsonize());
   }
 
-  if(m_deletionProtectionHasBeenSet)
-  {
-   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
   }
 
-  if(m_lambdaConfigHasBeenSet)
-  {
-   payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
-
+  if (m_lambdaConfigHasBeenSet) {
+    payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
   }
 
-  if(m_autoVerifiedAttributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
-   for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
-   {
-     autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));
-   }
-   payload.WithArray("AutoVerifiedAttributes", std::move(autoVerifiedAttributesJsonList));
-
+  if (m_autoVerifiedAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+    for (unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength();
+         ++autoVerifiedAttributesIndex) {
+      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(
+          VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));
+    }
+    payload.WithArray("AutoVerifiedAttributes", std::move(autoVerifiedAttributesJsonList));
   }
 
-  if(m_smsVerificationMessageHasBeenSet)
-  {
-   payload.WithString("SmsVerificationMessage", m_smsVerificationMessage);
-
+  if (m_smsVerificationMessageHasBeenSet) {
+    payload.WithString("SmsVerificationMessage", m_smsVerificationMessage);
   }
 
-  if(m_emailVerificationMessageHasBeenSet)
-  {
-   payload.WithString("EmailVerificationMessage", m_emailVerificationMessage);
-
+  if (m_emailVerificationMessageHasBeenSet) {
+    payload.WithString("EmailVerificationMessage", m_emailVerificationMessage);
   }
 
-  if(m_emailVerificationSubjectHasBeenSet)
-  {
-   payload.WithString("EmailVerificationSubject", m_emailVerificationSubject);
-
+  if (m_emailVerificationSubjectHasBeenSet) {
+    payload.WithString("EmailVerificationSubject", m_emailVerificationSubject);
   }
 
-  if(m_verificationMessageTemplateHasBeenSet)
-  {
-   payload.WithObject("VerificationMessageTemplate", m_verificationMessageTemplate.Jsonize());
-
+  if (m_verificationMessageTemplateHasBeenSet) {
+    payload.WithObject("VerificationMessageTemplate", m_verificationMessageTemplate.Jsonize());
   }
 
-  if(m_smsAuthenticationMessageHasBeenSet)
-  {
-   payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
-
+  if (m_smsAuthenticationMessageHasBeenSet) {
+    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
   }
 
-  if(m_userAttributeUpdateSettingsHasBeenSet)
-  {
-   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
-
+  if (m_userAttributeUpdateSettingsHasBeenSet) {
+    payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
   }
 
-  if(m_mfaConfigurationHasBeenSet)
-  {
-   payload.WithString("MfaConfiguration", UserPoolMfaTypeMapper::GetNameForUserPoolMfaType(m_mfaConfiguration));
+  if (m_mfaConfigurationHasBeenSet) {
+    payload.WithString("MfaConfiguration", UserPoolMfaTypeMapper::GetNameForUserPoolMfaType(m_mfaConfiguration));
   }
 
-  if(m_deviceConfigurationHasBeenSet)
-  {
-   payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
-
+  if (m_deviceConfigurationHasBeenSet) {
+    payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
   }
 
-  if(m_emailConfigurationHasBeenSet)
-  {
-   payload.WithObject("EmailConfiguration", m_emailConfiguration.Jsonize());
-
+  if (m_emailConfigurationHasBeenSet) {
+    payload.WithObject("EmailConfiguration", m_emailConfiguration.Jsonize());
   }
 
-  if(m_smsConfigurationHasBeenSet)
-  {
-   payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
-
+  if (m_smsConfigurationHasBeenSet) {
+    payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
   }
 
-  if(m_userPoolTagsHasBeenSet)
-  {
-   JsonValue userPoolTagsJsonMap;
-   for(auto& userPoolTagsItem : m_userPoolTags)
-   {
-     userPoolTagsJsonMap.WithString(userPoolTagsItem.first, userPoolTagsItem.second);
-   }
-   payload.WithObject("UserPoolTags", std::move(userPoolTagsJsonMap));
-
+  if (m_userPoolTagsHasBeenSet) {
+    JsonValue userPoolTagsJsonMap;
+    for (auto& userPoolTagsItem : m_userPoolTags) {
+      userPoolTagsJsonMap.WithString(userPoolTagsItem.first, userPoolTagsItem.second);
+    }
+    payload.WithObject("UserPoolTags", std::move(userPoolTagsJsonMap));
   }
 
-  if(m_adminCreateUserConfigHasBeenSet)
-  {
-   payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
-
+  if (m_adminCreateUserConfigHasBeenSet) {
+    payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
   }
 
-  if(m_userPoolAddOnsHasBeenSet)
-  {
-   payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
-
+  if (m_userPoolAddOnsHasBeenSet) {
+    payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
   }
 
-  if(m_accountRecoverySettingHasBeenSet)
-  {
-   payload.WithObject("AccountRecoverySetting", m_accountRecoverySetting.Jsonize());
-
+  if (m_accountRecoverySettingHasBeenSet) {
+    payload.WithObject("AccountRecoverySetting", m_accountRecoverySetting.Jsonize());
   }
 
-  if(m_poolNameHasBeenSet)
-  {
-   payload.WithString("PoolName", m_poolName);
-
+  if (m_poolNameHasBeenSet) {
+    payload.WithString("PoolName", m_poolName);
   }
 
-  if(m_userPoolTierHasBeenSet)
-  {
-   payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
+  if (m_userPoolTierHasBeenSet) {
+    payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateUserPoolRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateUserPoolRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.UpdateUserPool"));
   return headers;
-
 }
-
-
-
-

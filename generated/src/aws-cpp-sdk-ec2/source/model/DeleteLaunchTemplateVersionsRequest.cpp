@@ -3,39 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLaunchTemplateVersionsRequest::SerializePayload() const
-{
+Aws::String DeleteLaunchTemplateVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLaunchTemplateVersions&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_launchTemplateIdHasBeenSet)
-  {
+  if (m_launchTemplateIdHasBeenSet) {
     ss << "LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
   }
 
-  if(m_launchTemplateNameHasBeenSet)
-  {
+  if (m_launchTemplateNameHasBeenSet) {
     ss << "LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
   }
 
-  if(m_versionsHasBeenSet)
-  {
+  if (m_versionsHasBeenSet) {
     unsigned versionsCount = 1;
-    for(auto& item : m_versions)
-    {
-      ss << "LaunchTemplateVersion." << versionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_versions) {
+      ss << "LaunchTemplateVersion." << versionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       versionsCount++;
     }
   }
@@ -44,8 +37,4 @@ Aws::String DeleteLaunchTemplateVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLaunchTemplateVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLaunchTemplateVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

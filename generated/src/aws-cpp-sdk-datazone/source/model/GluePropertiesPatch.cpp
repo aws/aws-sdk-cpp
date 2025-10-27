@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/GluePropertiesPatch.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-GluePropertiesPatch::GluePropertiesPatch(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GluePropertiesPatch::GluePropertiesPatch(JsonView jsonValue) { *this = jsonValue; }
 
-GluePropertiesPatch& GluePropertiesPatch::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("glueConnectionInput"))
-  {
+GluePropertiesPatch& GluePropertiesPatch::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("glueConnectionInput")) {
     m_glueConnectionInput = jsonValue.GetObject("glueConnectionInput");
     m_glueConnectionInputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GluePropertiesPatch::Jsonize() const
-{
+JsonValue GluePropertiesPatch::Jsonize() const {
   JsonValue payload;
 
-  if(m_glueConnectionInputHasBeenSet)
-  {
-   payload.WithObject("glueConnectionInput", m_glueConnectionInput.Jsonize());
-
+  if (m_glueConnectionInputHasBeenSet) {
+    payload.WithObject("glueConnectionInput", m_glueConnectionInput.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

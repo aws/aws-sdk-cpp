@@ -12,27 +12,18 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetChannelRequest::SerializePayload() const
-{
+Aws::String GetChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_channelHasBeenSet)
-  {
-   payload.WithString("Channel", m_channel);
-
+  if (m_channelHasBeenSet) {
+    payload.WithString("Channel", m_channel);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetChannelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetChannelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetChannel"));
   return headers;
-
 }
-
-
-
-

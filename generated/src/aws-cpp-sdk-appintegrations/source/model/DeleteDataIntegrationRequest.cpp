@@ -12,11 +12,4 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDataIntegrationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteDataIntegrationRequest::SerializePayload() const { return {}; }

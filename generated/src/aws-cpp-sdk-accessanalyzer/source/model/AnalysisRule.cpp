@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-AnalysisRule::AnalysisRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisRule::AnalysisRule(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisRule& AnalysisRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exclusions"))
-  {
+AnalysisRule& AnalysisRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exclusions")) {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("exclusions");
-    for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
-    {
+    for (unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex) {
       m_exclusions.push_back(exclusionsJsonList[exclusionsIndex].AsObject());
     }
     m_exclusionsHasBeenSet = true;
@@ -37,24 +28,20 @@ AnalysisRule& AnalysisRule::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AnalysisRule::Jsonize() const
-{
+JsonValue AnalysisRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_exclusionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> exclusionsJsonList(m_exclusions.size());
-   for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
-   {
-     exclusionsJsonList[exclusionsIndex].AsObject(m_exclusions[exclusionsIndex].Jsonize());
-   }
-   payload.WithArray("exclusions", std::move(exclusionsJsonList));
-
+  if (m_exclusionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> exclusionsJsonList(m_exclusions.size());
+    for (unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex) {
+      exclusionsJsonList[exclusionsIndex].AsObject(m_exclusions[exclusionsIndex].Jsonize());
+    }
+    payload.WithArray("exclusions", std::move(exclusionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

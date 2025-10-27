@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
-  enum class Unit
-  {
-    NOT_SET,
-    BITS,
-    BYTES,
-    PACKETS,
-    REQUESTS
-  };
+namespace Aws {
+namespace Shield {
+namespace Model {
+enum class Unit { NOT_SET, BITS, BYTES, PACKETS, REQUESTS };
 
-namespace UnitMapper
-{
+namespace UnitMapper {
 AWS_SHIELD_API Unit GetUnitForName(const Aws::String& name);
 
 AWS_SHIELD_API Aws::String GetNameForUnit(Unit value);
-} // namespace UnitMapper
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace UnitMapper
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

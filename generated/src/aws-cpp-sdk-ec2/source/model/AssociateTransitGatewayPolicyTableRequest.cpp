@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AssociateTransitGatewayPolicyTableRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AssociateTransitGatewayPolicyTableRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AssociateTransitGatewayPolicyTableRequest::SerializePayload() const
-{
+Aws::String AssociateTransitGatewayPolicyTableRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssociateTransitGatewayPolicyTable&";
-  if(m_transitGatewayPolicyTableIdHasBeenSet)
-  {
+  if (m_transitGatewayPolicyTableIdHasBeenSet) {
     ss << "TransitGatewayPolicyTableId=" << StringUtils::URLEncode(m_transitGatewayPolicyTableId.c_str()) << "&";
   }
 
-  if(m_transitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
     ss << "TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AssociateTransitGatewayPolicyTableRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AssociateTransitGatewayPolicyTableRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssociateTransitGatewayPolicyTableRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

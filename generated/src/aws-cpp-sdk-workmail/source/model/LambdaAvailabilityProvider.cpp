@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/LambdaAvailabilityProvider.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/LambdaAvailabilityProvider.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
-LambdaAvailabilityProvider::LambdaAvailabilityProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaAvailabilityProvider::LambdaAvailabilityProvider(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaAvailabilityProvider& LambdaAvailabilityProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LambdaArn"))
-  {
+LambdaAvailabilityProvider& LambdaAvailabilityProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LambdaArn")) {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
     m_lambdaArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaAvailabilityProvider::Jsonize() const
-{
+JsonValue LambdaAvailabilityProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaArnHasBeenSet)
-  {
-   payload.WithString("LambdaArn", m_lambdaArn);
-
+  if (m_lambdaArnHasBeenSet) {
+    payload.WithString("LambdaArn", m_lambdaArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

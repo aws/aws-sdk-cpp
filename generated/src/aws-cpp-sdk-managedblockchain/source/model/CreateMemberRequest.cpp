@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/CreateMemberRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/CreateMemberRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMemberRequest::SerializePayload() const
-{
+Aws::String CreateMemberRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_invitationIdHasBeenSet)
-  {
-   payload.WithString("InvitationId", m_invitationId);
-
+  if (m_invitationIdHasBeenSet) {
+    payload.WithString("InvitationId", m_invitationId);
   }
 
-  if(m_memberConfigurationHasBeenSet)
-  {
-   payload.WithObject("MemberConfiguration", m_memberConfiguration.Jsonize());
-
+  if (m_memberConfigurationHasBeenSet) {
+    payload.WithObject("MemberConfiguration", m_memberConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

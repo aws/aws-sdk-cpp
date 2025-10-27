@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-S3ConfigurationType::S3ConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ConfigurationType::S3ConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-S3ConfigurationType& S3ConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketArn"))
-  {
+S3ConfigurationType& S3ConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketArn")) {
     m_bucketArn = jsonValue.GetString("BucketArn");
     m_bucketArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ConfigurationType::Jsonize() const
-{
+JsonValue S3ConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketArnHasBeenSet)
-  {
-   payload.WithString("BucketArn", m_bucketArn);
-
+  if (m_bucketArnHasBeenSet) {
+    payload.WithString("BucketArn", m_bucketArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

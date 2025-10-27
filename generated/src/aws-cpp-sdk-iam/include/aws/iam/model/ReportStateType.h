@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
-  enum class ReportStateType
-  {
-    NOT_SET,
-    STARTED,
-    INPROGRESS,
-    COMPLETE
-  };
+namespace Aws {
+namespace IAM {
+namespace Model {
+enum class ReportStateType { NOT_SET, STARTED, INPROGRESS, COMPLETE };
 
-namespace ReportStateTypeMapper
-{
+namespace ReportStateTypeMapper {
 AWS_IAM_API ReportStateType GetReportStateTypeForName(const Aws::String& name);
 
 AWS_IAM_API Aws::String GetNameForReportStateType(ReportStateType value);
-} // namespace ReportStateTypeMapper
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace ReportStateTypeMapper
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

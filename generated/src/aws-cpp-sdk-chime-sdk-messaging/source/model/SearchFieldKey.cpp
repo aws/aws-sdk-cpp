@@ -4,62 +4,50 @@
  */
 
 #include <aws/chime-sdk-messaging/model/SearchFieldKey.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
+namespace SearchFieldKeyMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMessaging
-  {
-    namespace Model
-    {
-      namespace SearchFieldKeyMapper
-      {
+static const int MEMBERS_HASH = HashingUtils::HashString("MEMBERS");
 
-        static const int MEMBERS_HASH = HashingUtils::HashString("MEMBERS");
+SearchFieldKey GetSearchFieldKeyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == MEMBERS_HASH) {
+    return SearchFieldKey::MEMBERS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SearchFieldKey>(hashCode);
+  }
 
+  return SearchFieldKey::NOT_SET;
+}
 
-        SearchFieldKey GetSearchFieldKeyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == MEMBERS_HASH)
-          {
-            return SearchFieldKey::MEMBERS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SearchFieldKey>(hashCode);
-          }
+Aws::String GetNameForSearchFieldKey(SearchFieldKey enumValue) {
+  switch (enumValue) {
+    case SearchFieldKey::NOT_SET:
+      return {};
+    case SearchFieldKey::MEMBERS:
+      return "MEMBERS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SearchFieldKey::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSearchFieldKey(SearchFieldKey enumValue)
-        {
-          switch(enumValue)
-          {
-          case SearchFieldKey::NOT_SET:
-            return {};
-          case SearchFieldKey::MEMBERS:
-            return "MEMBERS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SearchFieldKeyMapper
-    } // namespace Model
-  } // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace SearchFieldKeyMapper
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

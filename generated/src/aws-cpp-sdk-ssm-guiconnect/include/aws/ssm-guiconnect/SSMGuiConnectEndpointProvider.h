@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/ssm-guiconnect/SSMGuiConnectEndpointRules.h>
+#include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SSMGuiConnect
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SSMGuiConnect {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SSMGuiConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SSMGuiConnectDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SSMGUICONNECT_API SSMGuiConnectEndpointProvider : public SSMGuiConnectDefaultEpProviderBase
-{
-public:
-    using SSMGuiConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SSMGUICONNECT_API SSMGuiConnectEndpointProvider : public SSMGuiConnectDefaultEpProviderBase {
+ public:
+  using SSMGuiConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SSMGuiConnectEndpointProvider()
-      : SSMGuiConnectDefaultEpProviderBase(Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::GetRulesBlob(), Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::RulesBlobSize)
-    {}
+  SSMGuiConnectEndpointProvider()
+      : SSMGuiConnectDefaultEpProviderBase(Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::GetRulesBlob(),
+                                           Aws::SSMGuiConnect::SSMGuiConnectEndpointRules::RulesBlobSize) {}
 
-    ~SSMGuiConnectEndpointProvider()
-    {
-    }
+  ~SSMGuiConnectEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SSMGuiConnect
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SSMGuiConnect
+}  // namespace Aws

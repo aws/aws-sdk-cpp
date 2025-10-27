@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-DynatraceMetadata::DynatraceMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DynatraceMetadata::DynatraceMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DynatraceMetadata& DynatraceMetadata::operator =(JsonView jsonValue)
-{
+DynatraceMetadata& DynatraceMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue DynatraceMetadata::Jsonize() const
-{
+JsonValue DynatraceMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

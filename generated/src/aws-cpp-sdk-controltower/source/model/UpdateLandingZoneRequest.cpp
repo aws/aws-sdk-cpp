@@ -12,33 +12,22 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateLandingZoneRequest::SerializePayload() const
-{
+Aws::String UpdateLandingZoneRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_landingZoneIdentifierHasBeenSet)
-  {
-   payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
-
+  if (m_landingZoneIdentifierHasBeenSet) {
+    payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
   }
 
-  if(m_manifestHasBeenSet)
-  {
-    if(!m_manifest.View().IsNull())
-    {
-       payload.WithObject("manifest", JsonValue(m_manifest.View()));
+  if (m_manifestHasBeenSet) {
+    if (!m_manifest.View().IsNull()) {
+      payload.WithObject("manifest", JsonValue(m_manifest.View()));
     }
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

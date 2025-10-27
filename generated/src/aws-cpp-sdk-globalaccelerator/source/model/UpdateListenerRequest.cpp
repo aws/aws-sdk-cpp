@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/UpdateListenerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/UpdateListenerRequest.h>
 
 #include <utility>
 
@@ -12,48 +12,34 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateListenerRequest::SerializePayload() const
-{
+Aws::String UpdateListenerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_listenerArnHasBeenSet)
-  {
-   payload.WithString("ListenerArn", m_listenerArn);
-
+  if (m_listenerArnHasBeenSet) {
+    payload.WithString("ListenerArn", m_listenerArn);
   }
 
-  if(m_portRangesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
-   for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
-   {
-     portRangesJsonList[portRangesIndex].AsObject(m_portRanges[portRangesIndex].Jsonize());
-   }
-   payload.WithArray("PortRanges", std::move(portRangesJsonList));
-
+  if (m_portRangesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
+    for (unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex) {
+      portRangesJsonList[portRangesIndex].AsObject(m_portRanges[portRangesIndex].Jsonize());
+    }
+    payload.WithArray("PortRanges", std::move(portRangesJsonList));
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
-  if(m_clientAffinityHasBeenSet)
-  {
-   payload.WithString("ClientAffinity", ClientAffinityMapper::GetNameForClientAffinity(m_clientAffinity));
+  if (m_clientAffinityHasBeenSet) {
+    payload.WithString("ClientAffinity", ClientAffinityMapper::GetNameForClientAffinity(m_clientAffinity));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateListenerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateListenerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GlobalAccelerator_V20180706.UpdateListener"));
   return headers;
-
 }
-
-
-
-

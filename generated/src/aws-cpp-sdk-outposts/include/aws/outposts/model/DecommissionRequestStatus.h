@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class DecommissionRequestStatus
-  {
-    NOT_SET,
-    SKIPPED,
-    BLOCKED,
-    REQUESTED
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class DecommissionRequestStatus { NOT_SET, SKIPPED, BLOCKED, REQUESTED };
 
-namespace DecommissionRequestStatusMapper
-{
+namespace DecommissionRequestStatusMapper {
 AWS_OUTPOSTS_API DecommissionRequestStatus GetDecommissionRequestStatusForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForDecommissionRequestStatus(DecommissionRequestStatus value);
-} // namespace DecommissionRequestStatusMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace DecommissionRequestStatusMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EgressConfiguration"))
-  {
+NetworkConfiguration& NetworkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EgressConfiguration")) {
     m_egressConfiguration = jsonValue.GetObject("EgressConfiguration");
     m_egressConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IngressConfiguration"))
-  {
+  if (jsonValue.ValueExists("IngressConfiguration")) {
     m_ingressConfiguration = jsonValue.GetObject("IngressConfiguration");
     m_ingressConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpAddressType"))
-  {
+  if (jsonValue.ValueExists("IpAddressType")) {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkConfiguration::Jsonize() const
-{
+JsonValue NetworkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_egressConfigurationHasBeenSet)
-  {
-   payload.WithObject("EgressConfiguration", m_egressConfiguration.Jsonize());
-
+  if (m_egressConfigurationHasBeenSet) {
+    payload.WithObject("EgressConfiguration", m_egressConfiguration.Jsonize());
   }
 
-  if(m_ingressConfigurationHasBeenSet)
-  {
-   payload.WithObject("IngressConfiguration", m_ingressConfiguration.Jsonize());
-
+  if (m_ingressConfigurationHasBeenSet) {
+    payload.WithObject("IngressConfiguration", m_ingressConfiguration.Jsonize());
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
-   payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

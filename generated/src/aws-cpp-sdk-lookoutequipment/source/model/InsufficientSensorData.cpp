@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/InsufficientSensorData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/InsufficientSensorData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
-InsufficientSensorData::InsufficientSensorData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InsufficientSensorData::InsufficientSensorData(JsonView jsonValue) { *this = jsonValue; }
 
-InsufficientSensorData& InsufficientSensorData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MissingCompleteSensorData"))
-  {
+InsufficientSensorData& InsufficientSensorData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MissingCompleteSensorData")) {
     m_missingCompleteSensorData = jsonValue.GetObject("MissingCompleteSensorData");
     m_missingCompleteSensorDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SensorsWithShortDateRange"))
-  {
+  if (jsonValue.ValueExists("SensorsWithShortDateRange")) {
     m_sensorsWithShortDateRange = jsonValue.GetObject("SensorsWithShortDateRange");
     m_sensorsWithShortDateRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InsufficientSensorData::Jsonize() const
-{
+JsonValue InsufficientSensorData::Jsonize() const {
   JsonValue payload;
 
-  if(m_missingCompleteSensorDataHasBeenSet)
-  {
-   payload.WithObject("MissingCompleteSensorData", m_missingCompleteSensorData.Jsonize());
-
+  if (m_missingCompleteSensorDataHasBeenSet) {
+    payload.WithObject("MissingCompleteSensorData", m_missingCompleteSensorData.Jsonize());
   }
 
-  if(m_sensorsWithShortDateRangeHasBeenSet)
-  {
-   payload.WithObject("SensorsWithShortDateRange", m_sensorsWithShortDateRange.Jsonize());
-
+  if (m_sensorsWithShortDateRangeHasBeenSet) {
+    payload.WithObject("SensorsWithShortDateRange", m_sensorsWithShortDateRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

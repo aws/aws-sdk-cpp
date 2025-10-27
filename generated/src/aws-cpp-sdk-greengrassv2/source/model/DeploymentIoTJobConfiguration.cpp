@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/DeploymentIoTJobConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/DeploymentIoTJobConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentIoTJobConfiguration& DeploymentIoTJobConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobExecutionsRolloutConfig"))
-  {
+DeploymentIoTJobConfiguration& DeploymentIoTJobConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobExecutionsRolloutConfig")) {
     m_jobExecutionsRolloutConfig = jsonValue.GetObject("jobExecutionsRolloutConfig");
     m_jobExecutionsRolloutConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("abortConfig"))
-  {
+  if (jsonValue.ValueExists("abortConfig")) {
     m_abortConfig = jsonValue.GetObject("abortConfig");
     m_abortConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeoutConfig"))
-  {
+  if (jsonValue.ValueExists("timeoutConfig")) {
     m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
     m_timeoutConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentIoTJobConfiguration::Jsonize() const
-{
+JsonValue DeploymentIoTJobConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobExecutionsRolloutConfigHasBeenSet)
-  {
-   payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
-
+  if (m_jobExecutionsRolloutConfigHasBeenSet) {
+    payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
   }
 
-  if(m_abortConfigHasBeenSet)
-  {
-   payload.WithObject("abortConfig", m_abortConfig.Jsonize());
-
+  if (m_abortConfigHasBeenSet) {
+    payload.WithObject("abortConfig", m_abortConfig.Jsonize());
   }
 
-  if(m_timeoutConfigHasBeenSet)
-  {
-   payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
-
+  if (m_timeoutConfigHasBeenSet) {
+    payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

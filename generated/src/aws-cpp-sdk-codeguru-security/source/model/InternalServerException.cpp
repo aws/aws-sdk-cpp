@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
-InternalServerException::InternalServerException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalServerException::InternalServerException(JsonView jsonValue) { *this = jsonValue; }
 
-InternalServerException& InternalServerException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("error"))
-  {
+InternalServerException& InternalServerException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("error")) {
     m_error = jsonValue.GetString("error");
     m_errorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InternalServerException::Jsonize() const
-{
+JsonValue InternalServerException::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
-
+  if (m_errorHasBeenSet) {
+    payload.WithString("error", m_error);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/neptune/NeptuneEndpointRules.h>
+#include <aws/neptune/Neptune_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Neptune
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Neptune {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NeptuneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using NeptuneDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NEPTUNE_API NeptuneEndpointProvider : public NeptuneDefaultEpProviderBase
-{
-public:
-    using NeptuneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NEPTUNE_API NeptuneEndpointProvider : public NeptuneDefaultEpProviderBase {
+ public:
+  using NeptuneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NeptuneEndpointProvider()
-      : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::GetRulesBlob(), Aws::Neptune::NeptuneEndpointRules::RulesBlobSize)
-    {}
+  NeptuneEndpointProvider()
+      : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::GetRulesBlob(),
+                                     Aws::Neptune::NeptuneEndpointRules::RulesBlobSize) {}
 
-    ~NeptuneEndpointProvider()
-    {
-    }
+  ~NeptuneEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Neptune
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Neptune
+}  // namespace Aws

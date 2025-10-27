@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ArcThicknessOptions
-  {
-    NOT_SET,
-    SMALL,
-    MEDIUM,
-    LARGE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ArcThicknessOptions { NOT_SET, SMALL, MEDIUM, LARGE };
 
-namespace ArcThicknessOptionsMapper
-{
+namespace ArcThicknessOptionsMapper {
 AWS_QUICKSIGHT_API ArcThicknessOptions GetArcThicknessOptionsForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForArcThicknessOptions(ArcThicknessOptions value);
-} // namespace ArcThicknessOptionsMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ArcThicknessOptionsMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

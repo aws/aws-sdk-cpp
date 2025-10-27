@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AsyncInferenceClientConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AsyncInferenceClientConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AsyncInferenceClientConfig::AsyncInferenceClientConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AsyncInferenceClientConfig::AsyncInferenceClientConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AsyncInferenceClientConfig& AsyncInferenceClientConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxConcurrentInvocationsPerInstance"))
-  {
+AsyncInferenceClientConfig& AsyncInferenceClientConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxConcurrentInvocationsPerInstance")) {
     m_maxConcurrentInvocationsPerInstance = jsonValue.GetInteger("MaxConcurrentInvocationsPerInstance");
     m_maxConcurrentInvocationsPerInstanceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AsyncInferenceClientConfig::Jsonize() const
-{
+JsonValue AsyncInferenceClientConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxConcurrentInvocationsPerInstanceHasBeenSet)
-  {
-   payload.WithInteger("MaxConcurrentInvocationsPerInstance", m_maxConcurrentInvocationsPerInstance);
-
+  if (m_maxConcurrentInvocationsPerInstanceHasBeenSet) {
+    payload.WithInteger("MaxConcurrentInvocationsPerInstance", m_maxConcurrentInvocationsPerInstance);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -4,52 +4,53 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvertRequest.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public MediaConvertRequest {
+ public:
+  AWS_MEDIACONVERT_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * The Amazon Resource Name (ARN) of the resource that you want to list tags for.
+   * To get the ARN, send a GET request with the resource name.
    */
-  class ListTagsForResourceRequest : public MediaConvertRequest
-  {
-  public:
-    AWS_MEDIACONVERT_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  ListTagsForResourceRequest& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_arn;
+  bool m_arnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
-
-    AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * The Amazon Resource Name (ARN) of the resource that you want to list tags for.
-     * To get the ARN, send a GET request with the resource name.
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    ListTagsForResourceRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

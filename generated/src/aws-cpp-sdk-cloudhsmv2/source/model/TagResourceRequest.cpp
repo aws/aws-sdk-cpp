@@ -12,38 +12,26 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TagResourceRequest::SerializePayload() const
-{
+Aws::String TagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_tagListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
-   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-   {
-     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
-   }
-   payload.WithArray("TagList", std::move(tagListJsonList));
-
+  if (m_tagListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
+      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+    }
+    payload.WithArray("TagList", std::move(tagListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.TagResource"));
   return headers;
-
 }
-
-
-
-

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LakeFormation;
 
-AWSError<CoreErrors> LakeFormationErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LakeFormationErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LakeFormationErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

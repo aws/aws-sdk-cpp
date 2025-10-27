@@ -4,10 +4,10 @@
  */
 
 #include <aws/connect/model/ListQueueQuickConnectsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,47 +17,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQueueQuickConnectsResult::ListQueueQuickConnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListQueueQuickConnectsResult::ListQueueQuickConnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListQueueQuickConnectsResult& ListQueueQuickConnectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListQueueQuickConnectsResult& ListQueueQuickConnectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuickConnectSummaryList"))
-  {
+  if (jsonValue.ValueExists("QuickConnectSummaryList")) {
     Aws::Utils::Array<JsonView> quickConnectSummaryListJsonList = jsonValue.GetArray("QuickConnectSummaryList");
-    for(unsigned quickConnectSummaryListIndex = 0; quickConnectSummaryListIndex < quickConnectSummaryListJsonList.GetLength(); ++quickConnectSummaryListIndex)
-    {
+    for (unsigned quickConnectSummaryListIndex = 0; quickConnectSummaryListIndex < quickConnectSummaryListJsonList.GetLength();
+         ++quickConnectSummaryListIndex) {
       m_quickConnectSummaryList.push_back(quickConnectSummaryListJsonList[quickConnectSummaryListIndex].AsObject());
     }
     m_quickConnectSummaryListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedRegion"))
-  {
+  if (jsonValue.ValueExists("LastModifiedRegion")) {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
     m_lastModifiedRegionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

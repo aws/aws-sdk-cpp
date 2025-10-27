@@ -5,12 +5,8 @@
 
 #include <aws/mpa/MPAEndpointProvider.h>
 
-namespace Aws
-{
-namespace MPA
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MPA
-} // namespace Aws
+namespace Aws {
+namespace MPA {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MPA
+}  // namespace Aws

@@ -3,42 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/awstransfer/TransferErrors.h>
 #include <aws/awstransfer/model/ResourceExistsException.h>
-#include <aws/awstransfer/model/ThrottlingException.h>
 #include <aws/awstransfer/model/ResourceNotFoundException.h>
+#include <aws/awstransfer/model/ThrottlingException.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Transfer;
 using namespace Aws::Transfer::Model;
 
-namespace Aws
-{
-namespace Transfer
-{
-template<> AWS_TRANSFER_API ResourceExistsException TransferError::GetModeledError()
-{
+namespace Aws {
+namespace Transfer {
+template <>
+AWS_TRANSFER_API ResourceExistsException TransferError::GetModeledError() {
   assert(this->GetErrorType() == TransferErrors::RESOURCE_EXISTS);
   return ResourceExistsException(this->GetJsonPayload().View());
 }
 
-template<> AWS_TRANSFER_API ThrottlingException TransferError::GetModeledError()
-{
+template <>
+AWS_TRANSFER_API ThrottlingException TransferError::GetModeledError() {
   assert(this->GetErrorType() == TransferErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
-template<> AWS_TRANSFER_API ResourceNotFoundException TransferError::GetModeledError()
-{
+template <>
+AWS_TRANSFER_API ResourceNotFoundException TransferError::GetModeledError() {
   assert(this->GetErrorType() == TransferErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-namespace TransferErrorMapper
-{
+namespace TransferErrorMapper {
 
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
@@ -46,34 +43,23 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_EXISTS_HASH)
-  {
+  if (hashCode == RESOURCE_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TransferErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
-  {
+  } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TransferErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TransferErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TransferErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TransferErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace TransferErrorMapper
-} // namespace Transfer
-} // namespace Aws
+}  // namespace TransferErrorMapper
+}  // namespace Transfer
+}  // namespace Aws

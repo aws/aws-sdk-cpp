@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/SuppressionPeriod.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/SuppressionPeriod.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-SuppressionPeriod::SuppressionPeriod(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuppressionPeriod::SuppressionPeriod(JsonView jsonValue) { *this = jsonValue; }
 
-SuppressionPeriod& SuppressionPeriod::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+SuppressionPeriod& SuppressionPeriod::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetInteger("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suppressionUnit"))
-  {
+  if (jsonValue.ValueExists("suppressionUnit")) {
     m_suppressionUnit = SuppressionUnitMapper::GetSuppressionUnitForName(jsonValue.GetString("suppressionUnit"));
     m_suppressionUnitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuppressionPeriod::Jsonize() const
-{
+JsonValue SuppressionPeriod::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithInteger("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithInteger("value", m_value);
   }
 
-  if(m_suppressionUnitHasBeenSet)
-  {
-   payload.WithString("suppressionUnit", SuppressionUnitMapper::GetNameForSuppressionUnit(m_suppressionUnit));
+  if (m_suppressionUnitHasBeenSet) {
+    payload.WithString("suppressionUnit", SuppressionUnitMapper::GetNameForSuppressionUnit(m_suppressionUnit));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

@@ -6,54 +6,53 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/FoundationModelLifecycleStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Bedrock {
+namespace Model {
 
+/**
+ * <p>Details about whether a model version is available or
+ * deprecated.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/FoundationModelLifecycle">AWS
+ * API Reference</a></p>
+ */
+class FoundationModelLifecycle {
+ public:
+  AWS_BEDROCK_API FoundationModelLifecycle() = default;
+  AWS_BEDROCK_API FoundationModelLifecycle(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API FoundationModelLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Details about whether a model version is available or
-   * deprecated.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/FoundationModelLifecycle">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
+   * deprecated (<code>LEGACY</code>.</p>
    */
-  class FoundationModelLifecycle
-  {
-  public:
-    AWS_BEDROCK_API FoundationModelLifecycle() = default;
-    AWS_BEDROCK_API FoundationModelLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API FoundationModelLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline FoundationModelLifecycleStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(FoundationModelLifecycleStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline FoundationModelLifecycle& WithStatus(FoundationModelLifecycleStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  FoundationModelLifecycleStatus m_status{FoundationModelLifecycleStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
-    inline FoundationModelLifecycleStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(FoundationModelLifecycleStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline FoundationModelLifecycle& WithStatus(FoundationModelLifecycleStatus value) { SetStatus(value); return *this;}
-    ///@}
-  private:
-
-    FoundationModelLifecycleStatus m_status{FoundationModelLifecycleStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

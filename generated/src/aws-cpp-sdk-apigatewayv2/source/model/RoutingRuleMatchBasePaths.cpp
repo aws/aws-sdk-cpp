@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-RoutingRuleMatchBasePaths::RoutingRuleMatchBasePaths(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingRuleMatchBasePaths::RoutingRuleMatchBasePaths(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingRuleMatchBasePaths& RoutingRuleMatchBasePaths::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("anyOf"))
-  {
+RoutingRuleMatchBasePaths& RoutingRuleMatchBasePaths::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("anyOf")) {
     Aws::Utils::Array<JsonView> anyOfJsonList = jsonValue.GetArray("anyOf");
-    for(unsigned anyOfIndex = 0; anyOfIndex < anyOfJsonList.GetLength(); ++anyOfIndex)
-    {
+    for (unsigned anyOfIndex = 0; anyOfIndex < anyOfJsonList.GetLength(); ++anyOfIndex) {
       m_anyOf.push_back(anyOfJsonList[anyOfIndex].AsString());
     }
     m_anyOfHasBeenSet = true;
@@ -37,24 +28,20 @@ RoutingRuleMatchBasePaths& RoutingRuleMatchBasePaths::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue RoutingRuleMatchBasePaths::Jsonize() const
-{
+JsonValue RoutingRuleMatchBasePaths::Jsonize() const {
   JsonValue payload;
 
-  if(m_anyOfHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> anyOfJsonList(m_anyOf.size());
-   for(unsigned anyOfIndex = 0; anyOfIndex < anyOfJsonList.GetLength(); ++anyOfIndex)
-   {
-     anyOfJsonList[anyOfIndex].AsString(m_anyOf[anyOfIndex]);
-   }
-   payload.WithArray("anyOf", std::move(anyOfJsonList));
-
+  if (m_anyOfHasBeenSet) {
+    Aws::Utils::Array<JsonValue> anyOfJsonList(m_anyOf.size());
+    for (unsigned anyOfIndex = 0; anyOfIndex < anyOfJsonList.GetLength(); ++anyOfIndex) {
+      anyOfJsonList[anyOfIndex].AsString(m_anyOf[anyOfIndex]);
+    }
+    payload.WithArray("anyOf", std::move(anyOfJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

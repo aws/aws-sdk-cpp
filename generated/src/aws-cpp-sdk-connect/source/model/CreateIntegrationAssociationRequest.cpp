@@ -12,52 +12,36 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateIntegrationAssociationRequest::SerializePayload() const
-{
+Aws::String CreateIntegrationAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_integrationTypeHasBeenSet)
-  {
-   payload.WithString("IntegrationType", IntegrationTypeMapper::GetNameForIntegrationType(m_integrationType));
+  if (m_integrationTypeHasBeenSet) {
+    payload.WithString("IntegrationType", IntegrationTypeMapper::GetNameForIntegrationType(m_integrationType));
   }
 
-  if(m_integrationArnHasBeenSet)
-  {
-   payload.WithString("IntegrationArn", m_integrationArn);
-
+  if (m_integrationArnHasBeenSet) {
+    payload.WithString("IntegrationArn", m_integrationArn);
   }
 
-  if(m_sourceApplicationUrlHasBeenSet)
-  {
-   payload.WithString("SourceApplicationUrl", m_sourceApplicationUrl);
-
+  if (m_sourceApplicationUrlHasBeenSet) {
+    payload.WithString("SourceApplicationUrl", m_sourceApplicationUrl);
   }
 
-  if(m_sourceApplicationNameHasBeenSet)
-  {
-   payload.WithString("SourceApplicationName", m_sourceApplicationName);
-
+  if (m_sourceApplicationNameHasBeenSet) {
+    payload.WithString("SourceApplicationName", m_sourceApplicationName);
   }
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

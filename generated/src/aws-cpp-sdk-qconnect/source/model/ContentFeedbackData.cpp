@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/ContentFeedbackData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/ContentFeedbackData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-ContentFeedbackData::ContentFeedbackData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentFeedbackData::ContentFeedbackData(JsonView jsonValue) { *this = jsonValue; }
 
-ContentFeedbackData& ContentFeedbackData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("generativeContentFeedbackData"))
-  {
+ContentFeedbackData& ContentFeedbackData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("generativeContentFeedbackData")) {
     m_generativeContentFeedbackData = jsonValue.GetObject("generativeContentFeedbackData");
     m_generativeContentFeedbackDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentFeedbackData::Jsonize() const
-{
+JsonValue ContentFeedbackData::Jsonize() const {
   JsonValue payload;
 
-  if(m_generativeContentFeedbackDataHasBeenSet)
-  {
-   payload.WithObject("generativeContentFeedbackData", m_generativeContentFeedbackData.Jsonize());
-
+  if (m_generativeContentFeedbackDataHasBeenSet) {
+    payload.WithObject("generativeContentFeedbackData", m_generativeContentFeedbackData.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

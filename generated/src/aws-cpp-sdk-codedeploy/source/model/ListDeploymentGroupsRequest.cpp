@@ -12,33 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDeploymentGroupsRequest::SerializePayload() const
-{
+Aws::String ListDeploymentGroupsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListDeploymentGroupsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListDeploymentGroupsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListDeploymentGroups"));
   return headers;
-
 }
-
-
-
-

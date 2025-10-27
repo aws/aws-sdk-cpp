@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-class CodeDeployEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeDeploy {
+class CodeDeployEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace CodeDeploy
+}  // namespace Aws

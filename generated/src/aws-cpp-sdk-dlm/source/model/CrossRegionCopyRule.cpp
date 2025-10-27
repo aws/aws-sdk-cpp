@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dlm/model/CrossRegionCopyRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dlm/model/CrossRegionCopyRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
+namespace Aws {
+namespace DLM {
+namespace Model {
 
-CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue) { *this = jsonValue; }
 
-CrossRegionCopyRule& CrossRegionCopyRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetRegion"))
-  {
+CrossRegionCopyRule& CrossRegionCopyRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetRegion")) {
     m_targetRegion = jsonValue.GetString("TargetRegion");
     m_targetRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Target"))
-  {
+  if (jsonValue.ValueExists("Target")) {
     m_target = jsonValue.GetString("Target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Encrypted"))
-  {
+  if (jsonValue.ValueExists("Encrypted")) {
     m_encrypted = jsonValue.GetBool("Encrypted");
     m_encryptedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CmkArn"))
-  {
+  if (jsonValue.ValueExists("CmkArn")) {
     m_cmkArn = jsonValue.GetString("CmkArn");
     m_cmkArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CopyTags"))
-  {
+  if (jsonValue.ValueExists("CopyTags")) {
     m_copyTags = jsonValue.GetBool("CopyTags");
     m_copyTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetainRule"))
-  {
+  if (jsonValue.ValueExists("RetainRule")) {
     m_retainRule = jsonValue.GetObject("RetainRule");
     m_retainRuleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeprecateRule"))
-  {
+  if (jsonValue.ValueExists("DeprecateRule")) {
     m_deprecateRule = jsonValue.GetObject("DeprecateRule");
     m_deprecateRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrossRegionCopyRule::Jsonize() const
-{
+JsonValue CrossRegionCopyRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetRegionHasBeenSet)
-  {
-   payload.WithString("TargetRegion", m_targetRegion);
-
+  if (m_targetRegionHasBeenSet) {
+    payload.WithString("TargetRegion", m_targetRegion);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("Target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("Target", m_target);
   }
 
-  if(m_encryptedHasBeenSet)
-  {
-   payload.WithBool("Encrypted", m_encrypted);
-
+  if (m_encryptedHasBeenSet) {
+    payload.WithBool("Encrypted", m_encrypted);
   }
 
-  if(m_cmkArnHasBeenSet)
-  {
-   payload.WithString("CmkArn", m_cmkArn);
-
+  if (m_cmkArnHasBeenSet) {
+    payload.WithString("CmkArn", m_cmkArn);
   }
 
-  if(m_copyTagsHasBeenSet)
-  {
-   payload.WithBool("CopyTags", m_copyTags);
-
+  if (m_copyTagsHasBeenSet) {
+    payload.WithBool("CopyTags", m_copyTags);
   }
 
-  if(m_retainRuleHasBeenSet)
-  {
-   payload.WithObject("RetainRule", m_retainRule.Jsonize());
-
+  if (m_retainRuleHasBeenSet) {
+    payload.WithObject("RetainRule", m_retainRule.Jsonize());
   }
 
-  if(m_deprecateRuleHasBeenSet)
-  {
-   payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
-
+  if (m_deprecateRuleHasBeenSet) {
+    payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

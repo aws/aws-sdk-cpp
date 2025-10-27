@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/CreateCloudFormationStackRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/CreateCloudFormationStackRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateCloudFormationStackRequest::SerializePayload() const
-{
+Aws::String CreateCloudFormationStackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instancesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
-   for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
-   {
-     instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
-   }
-   payload.WithArray("instances", std::move(instancesJsonList));
-
+  if (m_instancesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
+    for (unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex) {
+      instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
+    }
+    payload.WithArray("instances", std::move(instancesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateCloudFormationStackRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateCloudFormationStackRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.CreateCloudFormationStack"));
   return headers;
-
 }
-
-
-
-

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-ImageInput::ImageInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageInput::ImageInput(JsonView jsonValue) { *this = jsonValue; }
 
-ImageInput& ImageInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("format"))
-  {
+ImageInput& ImageInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("format")) {
     m_format = ImageInputFormatMapper::GetImageInputFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageInput::Jsonize() const
-{
+JsonValue ImageInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", ImageInputFormatMapper::GetNameForImageInputFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", ImageInputFormatMapper::GetNameForImageInputFormat(m_format));
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

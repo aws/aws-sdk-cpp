@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SheetControlLayout.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SheetControlLayout.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SheetControlLayout::SheetControlLayout(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SheetControlLayout::SheetControlLayout(JsonView jsonValue) { *this = jsonValue; }
 
-SheetControlLayout& SheetControlLayout::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Configuration"))
-  {
+SheetControlLayout& SheetControlLayout::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Configuration")) {
     m_configuration = jsonValue.GetObject("Configuration");
     m_configurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SheetControlLayout::Jsonize() const
-{
+JsonValue SheetControlLayout::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("Configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("Configuration", m_configuration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

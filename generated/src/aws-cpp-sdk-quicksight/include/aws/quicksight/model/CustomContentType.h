@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class CustomContentType
-  {
-    NOT_SET,
-    IMAGE,
-    OTHER_EMBEDDED_CONTENT
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class CustomContentType { NOT_SET, IMAGE, OTHER_EMBEDDED_CONTENT };
 
-namespace CustomContentTypeMapper
-{
+namespace CustomContentTypeMapper {
 AWS_QUICKSIGHT_API CustomContentType GetCustomContentTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForCustomContentType(CustomContentType value);
-} // namespace CustomContentTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace CustomContentTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

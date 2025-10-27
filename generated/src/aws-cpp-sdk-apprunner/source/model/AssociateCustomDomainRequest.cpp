@@ -12,39 +12,26 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateCustomDomainRequest::SerializePayload() const
-{
+Aws::String AssociateCustomDomainRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("ServiceArn", m_serviceArn);
-
+  if (m_serviceArnHasBeenSet) {
+    payload.WithString("ServiceArn", m_serviceArn);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_enableWWWSubdomainHasBeenSet)
-  {
-   payload.WithBool("EnableWWWSubdomain", m_enableWWWSubdomain);
-
+  if (m_enableWWWSubdomainHasBeenSet) {
+    payload.WithBool("EnableWWWSubdomain", m_enableWWWSubdomain);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AssociateCustomDomainRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AssociateCustomDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.AssociateCustomDomain"));
   return headers;
-
 }
-
-
-
-

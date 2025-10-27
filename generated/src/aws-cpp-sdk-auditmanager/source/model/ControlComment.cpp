@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-ControlComment::ControlComment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ControlComment::ControlComment(JsonView jsonValue) { *this = jsonValue; }
 
-ControlComment& ControlComment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authorName"))
-  {
+ControlComment& ControlComment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorName")) {
     m_authorName = jsonValue.GetString("authorName");
     m_authorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commentBody"))
-  {
+  if (jsonValue.ValueExists("commentBody")) {
     m_commentBody = jsonValue.GetString("commentBody");
     m_commentBodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postedDate"))
-  {
+  if (jsonValue.ValueExists("postedDate")) {
     m_postedDate = jsonValue.GetDouble("postedDate");
     m_postedDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ControlComment::Jsonize() const
-{
+JsonValue ControlComment::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorNameHasBeenSet)
-  {
-   payload.WithString("authorName", m_authorName);
-
+  if (m_authorNameHasBeenSet) {
+    payload.WithString("authorName", m_authorName);
   }
 
-  if(m_commentBodyHasBeenSet)
-  {
-   payload.WithString("commentBody", m_commentBody);
-
+  if (m_commentBodyHasBeenSet) {
+    payload.WithString("commentBody", m_commentBody);
   }
 
-  if(m_postedDateHasBeenSet)
-  {
-   payload.WithDouble("postedDate", m_postedDate.SecondsWithMSPrecision());
+  if (m_postedDateHasBeenSet) {
+    payload.WithDouble("postedDate", m_postedDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

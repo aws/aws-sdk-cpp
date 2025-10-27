@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-Usage::Usage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Usage::Usage(JsonView jsonValue) { *this = jsonValue; }
 
-Usage& Usage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inputTokens"))
-  {
+Usage& Usage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputTokens")) {
     m_inputTokens = jsonValue.GetInteger("inputTokens");
     m_inputTokensHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputTokens"))
-  {
+  if (jsonValue.ValueExists("outputTokens")) {
     m_outputTokens = jsonValue.GetInteger("outputTokens");
     m_outputTokensHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Usage::Jsonize() const
-{
+JsonValue Usage::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputTokensHasBeenSet)
-  {
-   payload.WithInteger("inputTokens", m_inputTokens);
-
+  if (m_inputTokensHasBeenSet) {
+    payload.WithInteger("inputTokens", m_inputTokens);
   }
 
-  if(m_outputTokensHasBeenSet)
-  {
-   payload.WithInteger("outputTokens", m_outputTokens);
-
+  if (m_outputTokensHasBeenSet) {
+    payload.WithInteger("outputTokens", m_outputTokens);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

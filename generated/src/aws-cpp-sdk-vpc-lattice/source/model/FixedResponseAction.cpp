@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/FixedResponseAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/FixedResponseAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-FixedResponseAction::FixedResponseAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FixedResponseAction::FixedResponseAction(JsonView jsonValue) { *this = jsonValue; }
 
-FixedResponseAction& FixedResponseAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+FixedResponseAction& FixedResponseAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = jsonValue.GetInteger("statusCode");
     m_statusCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FixedResponseAction::Jsonize() const
-{
+JsonValue FixedResponseAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithInteger("statusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithInteger("statusCode", m_statusCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

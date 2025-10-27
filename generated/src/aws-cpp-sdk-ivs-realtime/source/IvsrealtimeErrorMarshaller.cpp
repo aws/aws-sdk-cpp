@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ivsrealtime;
 
-AWSError<CoreErrors> IvsrealtimeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IvsrealtimeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IvsrealtimeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

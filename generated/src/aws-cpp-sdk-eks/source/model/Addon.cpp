@@ -3,229 +3,174 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/Addon.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/Addon.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-Addon::Addon(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Addon::Addon(JsonView jsonValue) { *this = jsonValue; }
 
-Addon& Addon::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("addonName"))
-  {
+Addon& Addon::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("addonName")) {
     m_addonName = jsonValue.GetString("addonName");
     m_addonNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clusterName"))
-  {
+  if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = AddonStatusMapper::GetAddonStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("addonVersion"))
-  {
+  if (jsonValue.ValueExists("addonVersion")) {
     m_addonVersion = jsonValue.GetString("addonVersion");
     m_addonVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("health"))
-  {
+  if (jsonValue.ValueExists("health")) {
     m_health = jsonValue.GetObject("health");
     m_healthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("addonArn"))
-  {
+  if (jsonValue.ValueExists("addonArn")) {
     m_addonArn = jsonValue.GetString("addonArn");
     m_addonArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
+  if (jsonValue.ValueExists("modifiedAt")) {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceAccountRoleArn"))
-  {
+  if (jsonValue.ValueExists("serviceAccountRoleArn")) {
     m_serviceAccountRoleArn = jsonValue.GetString("serviceAccountRoleArn");
     m_serviceAccountRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("publisher"))
-  {
+  if (jsonValue.ValueExists("publisher")) {
     m_publisher = jsonValue.GetString("publisher");
     m_publisherHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("owner"))
-  {
+  if (jsonValue.ValueExists("owner")) {
     m_owner = jsonValue.GetString("owner");
     m_ownerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("marketplaceInformation"))
-  {
+  if (jsonValue.ValueExists("marketplaceInformation")) {
     m_marketplaceInformation = jsonValue.GetObject("marketplaceInformation");
     m_marketplaceInformationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configurationValues"))
-  {
+  if (jsonValue.ValueExists("configurationValues")) {
     m_configurationValues = jsonValue.GetString("configurationValues");
     m_configurationValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("podIdentityAssociations"))
-  {
+  if (jsonValue.ValueExists("podIdentityAssociations")) {
     Aws::Utils::Array<JsonView> podIdentityAssociationsJsonList = jsonValue.GetArray("podIdentityAssociations");
-    for(unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength(); ++podIdentityAssociationsIndex)
-    {
+    for (unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength();
+         ++podIdentityAssociationsIndex) {
       m_podIdentityAssociations.push_back(podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString());
     }
     m_podIdentityAssociationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceConfig"))
-  {
+  if (jsonValue.ValueExists("namespaceConfig")) {
     m_namespaceConfig = jsonValue.GetObject("namespaceConfig");
     m_namespaceConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Addon::Jsonize() const
-{
+JsonValue Addon::Jsonize() const {
   JsonValue payload;
 
-  if(m_addonNameHasBeenSet)
-  {
-   payload.WithString("addonName", m_addonName);
-
+  if (m_addonNameHasBeenSet) {
+    payload.WithString("addonName", m_addonName);
   }
 
-  if(m_clusterNameHasBeenSet)
-  {
-   payload.WithString("clusterName", m_clusterName);
-
+  if (m_clusterNameHasBeenSet) {
+    payload.WithString("clusterName", m_clusterName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AddonStatusMapper::GetNameForAddonStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AddonStatusMapper::GetNameForAddonStatus(m_status));
   }
 
-  if(m_addonVersionHasBeenSet)
-  {
-   payload.WithString("addonVersion", m_addonVersion);
-
+  if (m_addonVersionHasBeenSet) {
+    payload.WithString("addonVersion", m_addonVersion);
   }
 
-  if(m_healthHasBeenSet)
-  {
-   payload.WithObject("health", m_health.Jsonize());
-
+  if (m_healthHasBeenSet) {
+    payload.WithObject("health", m_health.Jsonize());
   }
 
-  if(m_addonArnHasBeenSet)
-  {
-   payload.WithString("addonArn", m_addonArn);
-
+  if (m_addonArnHasBeenSet) {
+    payload.WithString("addonArn", m_addonArn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
+  if (m_modifiedAtHasBeenSet) {
+    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
-  if(m_serviceAccountRoleArnHasBeenSet)
-  {
-   payload.WithString("serviceAccountRoleArn", m_serviceAccountRoleArn);
-
+  if (m_serviceAccountRoleArnHasBeenSet) {
+    payload.WithString("serviceAccountRoleArn", m_serviceAccountRoleArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_publisherHasBeenSet)
-  {
-   payload.WithString("publisher", m_publisher);
-
+  if (m_publisherHasBeenSet) {
+    payload.WithString("publisher", m_publisher);
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("owner", m_owner);
-
+  if (m_ownerHasBeenSet) {
+    payload.WithString("owner", m_owner);
   }
 
-  if(m_marketplaceInformationHasBeenSet)
-  {
-   payload.WithObject("marketplaceInformation", m_marketplaceInformation.Jsonize());
-
+  if (m_marketplaceInformationHasBeenSet) {
+    payload.WithObject("marketplaceInformation", m_marketplaceInformation.Jsonize());
   }
 
-  if(m_configurationValuesHasBeenSet)
-  {
-   payload.WithString("configurationValues", m_configurationValues);
-
+  if (m_configurationValuesHasBeenSet) {
+    payload.WithString("configurationValues", m_configurationValues);
   }
 
-  if(m_podIdentityAssociationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> podIdentityAssociationsJsonList(m_podIdentityAssociations.size());
-   for(unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength(); ++podIdentityAssociationsIndex)
-   {
-     podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString(m_podIdentityAssociations[podIdentityAssociationsIndex]);
-   }
-   payload.WithArray("podIdentityAssociations", std::move(podIdentityAssociationsJsonList));
-
+  if (m_podIdentityAssociationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> podIdentityAssociationsJsonList(m_podIdentityAssociations.size());
+    for (unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength();
+         ++podIdentityAssociationsIndex) {
+      podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString(m_podIdentityAssociations[podIdentityAssociationsIndex]);
+    }
+    payload.WithArray("podIdentityAssociations", std::move(podIdentityAssociationsJsonList));
   }
 
-  if(m_namespaceConfigHasBeenSet)
-  {
-   payload.WithObject("namespaceConfig", m_namespaceConfig.Jsonize());
-
+  if (m_namespaceConfigHasBeenSet) {
+    payload.WithObject("namespaceConfig", m_namespaceConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/controltower/ControlTowerEndpointProvider.h>
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ControlTower
-} // namespace Aws
+namespace Aws {
+namespace ControlTower {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ControlTower
+}  // namespace Aws

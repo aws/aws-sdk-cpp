@@ -5,12 +5,8 @@
 
 #include <aws/networkmanager/NetworkManagerEndpointProvider.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace NetworkManager
-} // namespace Aws
+namespace Aws {
+namespace NetworkManager {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace NetworkManager
+}  // namespace Aws

@@ -7,29 +7,16 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
-  enum class BudgetType
-  {
-    NOT_SET,
-    USAGE,
-    COST,
-    RI_UTILIZATION,
-    RI_COVERAGE,
-    SAVINGS_PLANS_UTILIZATION,
-    SAVINGS_PLANS_COVERAGE
-  };
+namespace Aws {
+namespace Budgets {
+namespace Model {
+enum class BudgetType { NOT_SET, USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE };
 
-namespace BudgetTypeMapper
-{
+namespace BudgetTypeMapper {
 AWS_BUDGETS_API BudgetType GetBudgetTypeForName(const Aws::String& name);
 
 AWS_BUDGETS_API Aws::String GetNameForBudgetType(BudgetType value);
-} // namespace BudgetTypeMapper
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace BudgetTypeMapper
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisAttachment& RealTimeContactAnalysisAttachment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttachmentName"))
-  {
+RealTimeContactAnalysisAttachment& RealTimeContactAnalysisAttachment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttachmentName")) {
     m_attachmentName = jsonValue.GetString("AttachmentName");
     m_attachmentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentType"))
-  {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttachmentId"))
-  {
+  if (jsonValue.ValueExists("AttachmentId")) {
     m_attachmentId = jsonValue.GetString("AttachmentId");
     m_attachmentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ArtifactStatusMapper::GetArtifactStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisAttachment::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisAttachment::Jsonize() const {
   JsonValue payload;
 
-  if(m_attachmentNameHasBeenSet)
-  {
-   payload.WithString("AttachmentName", m_attachmentName);
-
+  if (m_attachmentNameHasBeenSet) {
+    payload.WithString("AttachmentName", m_attachmentName);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_attachmentIdHasBeenSet)
-  {
-   payload.WithString("AttachmentId", m_attachmentId);
-
+  if (m_attachmentIdHasBeenSet) {
+    payload.WithString("AttachmentId", m_attachmentId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ArtifactStatusMapper::GetNameForArtifactStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ArtifactStatusMapper::GetNameForArtifactStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

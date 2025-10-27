@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class NodeOptionsNodeType
-  {
-    NOT_SET,
-    coordinator
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class NodeOptionsNodeType { NOT_SET, coordinator };
 
-namespace NodeOptionsNodeTypeMapper
-{
+namespace NodeOptionsNodeTypeMapper {
 AWS_OPENSEARCHSERVICE_API NodeOptionsNodeType GetNodeOptionsNodeTypeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForNodeOptionsNodeType(NodeOptionsNodeType value);
-} // namespace NodeOptionsNodeTypeMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace NodeOptionsNodeTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAppBlockBuilderStreamingURLRequest::SerializePayload() const
-{
+Aws::String CreateAppBlockBuilderStreamingURLRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appBlockBuilderNameHasBeenSet)
-  {
-   payload.WithString("AppBlockBuilderName", m_appBlockBuilderName);
-
+  if (m_appBlockBuilderNameHasBeenSet) {
+    payload.WithString("AppBlockBuilderName", m_appBlockBuilderName);
   }
 
-  if(m_validityHasBeenSet)
-  {
-   payload.WithInt64("Validity", m_validity);
-
+  if (m_validityHasBeenSet) {
+    payload.WithInt64("Validity", m_validity);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateAppBlockBuilderStreamingURLRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateAppBlockBuilderStreamingURLRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateAppBlockBuilderStreamingURL"));
   return headers;
-
 }
-
-
-
-

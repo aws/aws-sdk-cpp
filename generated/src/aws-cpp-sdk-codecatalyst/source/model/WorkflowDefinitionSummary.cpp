@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-WorkflowDefinitionSummary::WorkflowDefinitionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkflowDefinitionSummary::WorkflowDefinitionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-WorkflowDefinitionSummary& WorkflowDefinitionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("path"))
-  {
+WorkflowDefinitionSummary& WorkflowDefinitionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkflowDefinitionSummary::Jsonize() const
-{
+JsonValue WorkflowDefinitionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

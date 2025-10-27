@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecretsManager
-{
-namespace Model
-{
-  enum class StatusType
-  {
-    NOT_SET,
-    InSync,
-    Failed,
-    InProgress
-  };
+namespace Aws {
+namespace SecretsManager {
+namespace Model {
+enum class StatusType { NOT_SET, InSync, Failed, InProgress };
 
-namespace StatusTypeMapper
-{
+namespace StatusTypeMapper {
 AWS_SECRETSMANAGER_API StatusType GetStatusTypeForName(const Aws::String& name);
 
 AWS_SECRETSMANAGER_API Aws::String GetNameForStatusType(StatusType value);
-} // namespace StatusTypeMapper
-} // namespace Model
-} // namespace SecretsManager
-} // namespace Aws
+}  // namespace StatusTypeMapper
+}  // namespace Model
+}  // namespace SecretsManager
+}  // namespace Aws

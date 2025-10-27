@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-EmptyOperandValue::EmptyOperandValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmptyOperandValue::EmptyOperandValue(JsonView jsonValue) { *this = jsonValue; }
 
-EmptyOperandValue& EmptyOperandValue::operator =(JsonView jsonValue)
-{
+EmptyOperandValue& EmptyOperandValue::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue EmptyOperandValue::Jsonize() const
-{
+JsonValue EmptyOperandValue::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

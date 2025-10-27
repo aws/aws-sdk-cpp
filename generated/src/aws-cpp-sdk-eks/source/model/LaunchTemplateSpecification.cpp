@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/LaunchTemplateSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+LaunchTemplateSpecification& LaunchTemplateSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LaunchTemplateSpecification::Jsonize() const
-{
+JsonValue LaunchTemplateSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

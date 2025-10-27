@@ -10,37 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String RegisterTypeRequest::SerializePayload() const
-{
+Aws::String RegisterTypeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RegisterType&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_schemaHandlerPackageHasBeenSet)
-  {
+  if (m_schemaHandlerPackageHasBeenSet) {
     ss << "SchemaHandlerPackage=" << StringUtils::URLEncode(m_schemaHandlerPackage.c_str()) << "&";
   }
 
-  if(m_loggingConfigHasBeenSet)
-  {
+  if (m_loggingConfigHasBeenSet) {
     m_loggingConfig.OutputToStream(ss, "LoggingConfig");
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
+  if (m_executionRoleArnHasBeenSet) {
     ss << "ExecutionRoleArn=" << StringUtils::URLEncode(m_executionRoleArn.c_str()) << "&";
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
+  if (m_clientRequestTokenHasBeenSet) {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String RegisterTypeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RegisterTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RegisterTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

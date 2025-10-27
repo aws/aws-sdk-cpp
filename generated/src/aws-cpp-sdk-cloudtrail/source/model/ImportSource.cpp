@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-ImportSource::ImportSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImportSource::ImportSource(JsonView jsonValue) { *this = jsonValue; }
 
-ImportSource& ImportSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3"))
-  {
+ImportSource& ImportSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3")) {
     m_s3 = jsonValue.GetObject("S3");
     m_s3HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImportSource::Jsonize() const
-{
+JsonValue ImportSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("S3", m_s3.Jsonize());
-
+  if (m_s3HasBeenSet) {
+    payload.WithObject("S3", m_s3.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

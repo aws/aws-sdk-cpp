@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/groundstation/model/OEMEphemeris.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/OEMEphemeris.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
+namespace Aws {
+namespace GroundStation {
+namespace Model {
 
-OEMEphemeris::OEMEphemeris(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OEMEphemeris::OEMEphemeris(JsonView jsonValue) { *this = jsonValue; }
 
-OEMEphemeris& OEMEphemeris::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oemData"))
-  {
+OEMEphemeris& OEMEphemeris::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oemData")) {
     m_oemData = jsonValue.GetString("oemData");
     m_oemDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Object"))
-  {
+  if (jsonValue.ValueExists("s3Object")) {
     m_s3Object = jsonValue.GetObject("s3Object");
     m_s3ObjectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OEMEphemeris::Jsonize() const
-{
+JsonValue OEMEphemeris::Jsonize() const {
   JsonValue payload;
 
-  if(m_oemDataHasBeenSet)
-  {
-   payload.WithString("oemData", m_oemData);
-
+  if (m_oemDataHasBeenSet) {
+    payload.WithString("oemData", m_oemData);
   }
 
-  if(m_s3ObjectHasBeenSet)
-  {
-   payload.WithObject("s3Object", m_s3Object.Jsonize());
-
+  if (m_s3ObjectHasBeenSet) {
+    payload.WithObject("s3Object", m_s3Object.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

@@ -3,46 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String IncreaseReplicaCountRequest::SerializePayload() const
-{
+Aws::String IncreaseReplicaCountRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=IncreaseReplicaCount&";
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_newReplicaCountHasBeenSet)
-  {
+  if (m_newReplicaCountHasBeenSet) {
     ss << "NewReplicaCount=" << m_newReplicaCount << "&";
   }
 
-  if(m_replicaConfigurationHasBeenSet)
-  {
-    if (m_replicaConfiguration.empty())
-    {
+  if (m_replicaConfigurationHasBeenSet) {
+    if (m_replicaConfiguration.empty()) {
       ss << "ReplicaConfiguration=&";
-    }
-    else
-    {
+    } else {
       unsigned replicaConfigurationCount = 1;
-      for(auto& item : m_replicaConfiguration)
-      {
+      for (auto& item : m_replicaConfiguration) {
         item.OutputToStream(ss, "ReplicaConfiguration.ConfigureShard.", replicaConfigurationCount, "");
         replicaConfigurationCount++;
       }
     }
   }
 
-  if(m_applyImmediatelyHasBeenSet)
-  {
+  if (m_applyImmediatelyHasBeenSet) {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
@@ -50,8 +41,4 @@ Aws::String IncreaseReplicaCountRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  IncreaseReplicaCountRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void IncreaseReplicaCountRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

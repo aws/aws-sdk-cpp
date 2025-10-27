@@ -11,40 +11,34 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ServiceQuotaExceededExceptionReason::ServiceQuotaExceededExceptionReason(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceQuotaExceededExceptionReason::ServiceQuotaExceededExceptionReason(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceQuotaExceededExceptionReason& ServiceQuotaExceededExceptionReason::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttachedFileServiceQuotaExceededExceptionReason"))
-  {
-    m_attachedFileServiceQuotaExceededExceptionReason = AttachedFileServiceQuotaExceededExceptionReasonMapper::GetAttachedFileServiceQuotaExceededExceptionReasonForName(jsonValue.GetString("AttachedFileServiceQuotaExceededExceptionReason"));
+ServiceQuotaExceededExceptionReason& ServiceQuotaExceededExceptionReason::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttachedFileServiceQuotaExceededExceptionReason")) {
+    m_attachedFileServiceQuotaExceededExceptionReason =
+        AttachedFileServiceQuotaExceededExceptionReasonMapper::GetAttachedFileServiceQuotaExceededExceptionReasonForName(
+            jsonValue.GetString("AttachedFileServiceQuotaExceededExceptionReason"));
     m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceQuotaExceededExceptionReason::Jsonize() const
-{
+JsonValue ServiceQuotaExceededExceptionReason::Jsonize() const {
   JsonValue payload;
 
-  if(m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet)
-  {
-   payload.WithString("AttachedFileServiceQuotaExceededExceptionReason", AttachedFileServiceQuotaExceededExceptionReasonMapper::GetNameForAttachedFileServiceQuotaExceededExceptionReason(m_attachedFileServiceQuotaExceededExceptionReason));
+  if (m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet) {
+    payload.WithString("AttachedFileServiceQuotaExceededExceptionReason",
+                       AttachedFileServiceQuotaExceededExceptionReasonMapper::GetNameForAttachedFileServiceQuotaExceededExceptionReason(
+                           m_attachedFileServiceQuotaExceededExceptionReason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

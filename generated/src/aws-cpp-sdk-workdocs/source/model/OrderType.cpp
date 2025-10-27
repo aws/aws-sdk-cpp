@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/OrderType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/workdocs/model/OrderType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+namespace OrderTypeMapper {
 
-namespace Aws
-{
-  namespace WorkDocs
-  {
-    namespace Model
-    {
-      namespace OrderTypeMapper
-      {
+static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
+static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
 
-        static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
-        static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
+OrderType GetOrderTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASCENDING_HASH) {
+    return OrderType::ASCENDING;
+  } else if (hashCode == DESCENDING_HASH) {
+    return OrderType::DESCENDING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<OrderType>(hashCode);
+  }
 
+  return OrderType::NOT_SET;
+}
 
-        OrderType GetOrderTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ASCENDING_HASH)
-          {
-            return OrderType::ASCENDING;
-          }
-          else if (hashCode == DESCENDING_HASH)
-          {
-            return OrderType::DESCENDING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<OrderType>(hashCode);
-          }
+Aws::String GetNameForOrderType(OrderType enumValue) {
+  switch (enumValue) {
+    case OrderType::NOT_SET:
+      return {};
+    case OrderType::ASCENDING:
+      return "ASCENDING";
+    case OrderType::DESCENDING:
+      return "DESCENDING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return OrderType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForOrderType(OrderType enumValue)
-        {
-          switch(enumValue)
-          {
-          case OrderType::NOT_SET:
-            return {};
-          case OrderType::ASCENDING:
-            return "ASCENDING";
-          case OrderType::DESCENDING:
-            return "DESCENDING";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace OrderTypeMapper
-    } // namespace Model
-  } // namespace WorkDocs
-} // namespace Aws
+}  // namespace OrderTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

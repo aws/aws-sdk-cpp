@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QApps_EXPORTS.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Model
-{
-  enum class LibraryItemStatus
-  {
-    NOT_SET,
-    PUBLISHED,
-    DISABLED
-  };
+namespace Aws {
+namespace QApps {
+namespace Model {
+enum class LibraryItemStatus { NOT_SET, PUBLISHED, DISABLED };
 
-namespace LibraryItemStatusMapper
-{
+namespace LibraryItemStatusMapper {
 AWS_QAPPS_API LibraryItemStatus GetLibraryItemStatusForName(const Aws::String& name);
 
 AWS_QAPPS_API Aws::String GetNameForLibraryItemStatus(LibraryItemStatus value);
-} // namespace LibraryItemStatusMapper
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace LibraryItemStatusMapper
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

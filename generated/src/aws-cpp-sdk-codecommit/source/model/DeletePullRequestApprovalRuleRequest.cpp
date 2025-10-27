@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePullRequestApprovalRuleRequest::SerializePayload() const
-{
+Aws::String DeletePullRequestApprovalRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pullRequestIdHasBeenSet)
-  {
-   payload.WithString("pullRequestId", m_pullRequestId);
-
+  if (m_pullRequestIdHasBeenSet) {
+    payload.WithString("pullRequestId", m_pullRequestId);
   }
 
-  if(m_approvalRuleNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleName", m_approvalRuleName);
-
+  if (m_approvalRuleNameHasBeenSet) {
+    payload.WithString("approvalRuleName", m_approvalRuleName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeletePullRequestApprovalRuleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeletePullRequestApprovalRuleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.DeletePullRequestApprovalRule"));
   return headers;
-
 }
-
-
-
-

@@ -7,26 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class MpaSessionStatus
-  {
-    NOT_SET,
-    PENDING,
-    APPROVED,
-    FAILED
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class MpaSessionStatus { NOT_SET, PENDING, APPROVED, FAILED };
 
-namespace MpaSessionStatusMapper
-{
+namespace MpaSessionStatusMapper {
 AWS_BACKUP_API MpaSessionStatus GetMpaSessionStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForMpaSessionStatus(MpaSessionStatus value);
-} // namespace MpaSessionStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace MpaSessionStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/ImportSource.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ImportSource::ImportSource(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ImportSource::ImportSource(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ImportSource& ImportSource::operator =(const XmlNode& xmlNode)
-{
+ImportSource& ImportSource::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
-    if(!sourceTypeNode.IsNull())
-    {
-      m_sourceType = ImportSourceTypeMapper::GetImportSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()));
+    if (!sourceTypeNode.IsNull()) {
+      m_sourceType = ImportSourceTypeMapper::GetImportSourceTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()));
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode sourceARNNode = resultNode.FirstChild("SourceARN");
-    if(!sourceARNNode.IsNull())
-    {
+    if (!sourceARNNode.IsNull()) {
       m_sourceARN = Aws::Utils::Xml::DecodeEscapedXmlText(sourceARNNode.GetText());
       m_sourceARNHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ ImportSource& ImportSource::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ImportSource::AddToNode(XmlNode& parentNode) const
-{
+void ImportSource::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_sourceTypeHasBeenSet)
-  {
-   XmlNode sourceTypeNode = parentNode.CreateChildElement("SourceType");
-   sourceTypeNode.SetText(ImportSourceTypeMapper::GetNameForImportSourceType(m_sourceType));
+  if (m_sourceTypeHasBeenSet) {
+    XmlNode sourceTypeNode = parentNode.CreateChildElement("SourceType");
+    sourceTypeNode.SetText(ImportSourceTypeMapper::GetNameForImportSourceType(m_sourceType));
   }
 
-  if(m_sourceARNHasBeenSet)
-  {
-   XmlNode sourceARNNode = parentNode.CreateChildElement("SourceARN");
-   sourceARNNode.SetText(m_sourceARN);
+  if (m_sourceARNHasBeenSet) {
+    XmlNode sourceARNNode = parentNode.CreateChildElement("SourceARN");
+    sourceARNNode.SetText(m_sourceARN);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

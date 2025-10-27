@@ -12,209 +12,155 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-RestApi::RestApi(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RestApi::RestApi(JsonView jsonValue) { *this = jsonValue; }
 
-RestApi& RestApi::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+RestApi& RestApi::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdDate"))
-  {
+  if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetDouble("createdDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("warnings"))
-  {
+  if (jsonValue.ValueExists("warnings")) {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
-    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-    {
+    for (unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex) {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
     m_warningsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("binaryMediaTypes"))
-  {
+  if (jsonValue.ValueExists("binaryMediaTypes")) {
     Aws::Utils::Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
-    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
-    {
+    for (unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex) {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
     }
     m_binaryMediaTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimumCompressionSize"))
-  {
+  if (jsonValue.ValueExists("minimumCompressionSize")) {
     m_minimumCompressionSize = jsonValue.GetInteger("minimumCompressionSize");
     m_minimumCompressionSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiKeySource"))
-  {
+  if (jsonValue.ValueExists("apiKeySource")) {
     m_apiKeySource = ApiKeySourceTypeMapper::GetApiKeySourceTypeForName(jsonValue.GetString("apiKeySource"));
     m_apiKeySourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpointConfiguration"))
-  {
+  if (jsonValue.ValueExists("endpointConfiguration")) {
     m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
     m_endpointConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policy"))
-  {
+  if (jsonValue.ValueExists("policy")) {
     m_policy = jsonValue.GetString("policy");
     m_policyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
-  {
+  if (jsonValue.ValueExists("disableExecuteApiEndpoint")) {
     m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
     m_disableExecuteApiEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rootResourceId"))
-  {
+  if (jsonValue.ValueExists("rootResourceId")) {
     m_rootResourceId = jsonValue.GetString("rootResourceId");
     m_rootResourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RestApi::Jsonize() const
-{
+JsonValue RestApi::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
+  if (m_createdDateHasBeenSet) {
+    payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
-  if(m_warningsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
-   for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-   {
-     warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
-   }
-   payload.WithArray("warnings", std::move(warningsJsonList));
-
+  if (m_warningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
+    for (unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex) {
+      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
+    }
+    payload.WithArray("warnings", std::move(warningsJsonList));
   }
 
-  if(m_binaryMediaTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
-   for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
-   {
-     binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
-   }
-   payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
-
+  if (m_binaryMediaTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+    for (unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex) {
+      binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
+    }
+    payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
   }
 
-  if(m_minimumCompressionSizeHasBeenSet)
-  {
-   payload.WithInteger("minimumCompressionSize", m_minimumCompressionSize);
-
+  if (m_minimumCompressionSizeHasBeenSet) {
+    payload.WithInteger("minimumCompressionSize", m_minimumCompressionSize);
   }
 
-  if(m_apiKeySourceHasBeenSet)
-  {
-   payload.WithString("apiKeySource", ApiKeySourceTypeMapper::GetNameForApiKeySourceType(m_apiKeySource));
+  if (m_apiKeySourceHasBeenSet) {
+    payload.WithString("apiKeySource", ApiKeySourceTypeMapper::GetNameForApiKeySourceType(m_apiKeySource));
   }
 
-  if(m_endpointConfigurationHasBeenSet)
-  {
-   payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
-
+  if (m_endpointConfigurationHasBeenSet) {
+    payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_disableExecuteApiEndpointHasBeenSet)
-  {
-   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
-
+  if (m_disableExecuteApiEndpointHasBeenSet) {
+    payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
   }
 
-  if(m_rootResourceIdHasBeenSet)
-  {
-   payload.WithString("rootResourceId", m_rootResourceId);
-
+  if (m_rootResourceIdHasBeenSet) {
+    payload.WithString("rootResourceId", m_rootResourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

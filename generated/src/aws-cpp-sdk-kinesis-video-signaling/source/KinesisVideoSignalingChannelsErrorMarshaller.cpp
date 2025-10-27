@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::KinesisVideoSignalingChannels;
 
-AWSError<CoreErrors> KinesisVideoSignalingChannelsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KinesisVideoSignalingChannelsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KinesisVideoSignalingChannelsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,67 +4,74 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
-#include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarmRequest.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
 
+/**
+ */
+class CreateTestGridUrlRequest : public DeviceFarmRequest {
+ public:
+  AWS_DEVICEFARM_API CreateTestGridUrlRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateTestGridUrl"; }
+
+  AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
+
+  AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to
+   * associate with the short-term URL. </p>
    */
-  class CreateTestGridUrlRequest : public DeviceFarmRequest
-  {
-  public:
-    AWS_DEVICEFARM_API CreateTestGridUrlRequest() = default;
+  inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+  inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+  template <typename ProjectArnT = Aws::String>
+  void SetProjectArn(ProjectArnT&& value) {
+    m_projectArnHasBeenSet = true;
+    m_projectArn = std::forward<ProjectArnT>(value);
+  }
+  template <typename ProjectArnT = Aws::String>
+  CreateTestGridUrlRequest& WithProjectArn(ProjectArnT&& value) {
+    SetProjectArn(std::forward<ProjectArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateTestGridUrl"; }
+  ///@{
+  /**
+   * <p>Lifetime, in seconds, of the URL.</p>
+   */
+  inline int GetExpiresInSeconds() const { return m_expiresInSeconds; }
+  inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
+  inline void SetExpiresInSeconds(int value) {
+    m_expiresInSecondsHasBeenSet = true;
+    m_expiresInSeconds = value;
+  }
+  inline CreateTestGridUrlRequest& WithExpiresInSeconds(int value) {
+    SetExpiresInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_projectArn;
+  bool m_projectArnHasBeenSet = false;
 
-    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
+  int m_expiresInSeconds{0};
+  bool m_expiresInSecondsHasBeenSet = false;
+};
 
-    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to
-     * associate with the short-term URL. </p>
-     */
-    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
-    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    template<typename ProjectArnT = Aws::String>
-    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
-    template<typename ProjectArnT = Aws::String>
-    CreateTestGridUrlRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Lifetime, in seconds, of the URL.</p>
-     */
-    inline int GetExpiresInSeconds() const { return m_expiresInSeconds; }
-    inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
-    inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
-    inline CreateTestGridUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet = false;
-
-    int m_expiresInSeconds{0};
-    bool m_expiresInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

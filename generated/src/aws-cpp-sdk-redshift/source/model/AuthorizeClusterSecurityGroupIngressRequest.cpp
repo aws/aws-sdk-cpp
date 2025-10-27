@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() const
-{
+Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AuthorizeClusterSecurityGroupIngress&";
-  if(m_clusterSecurityGroupNameHasBeenSet)
-  {
+  if (m_clusterSecurityGroupNameHasBeenSet) {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_cIDRIPHasBeenSet)
-  {
+  if (m_cIDRIPHasBeenSet) {
     ss << "CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
 
-  if(m_eC2SecurityGroupNameHasBeenSet)
-  {
+  if (m_eC2SecurityGroupNameHasBeenSet) {
     ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
   }
 
-  if(m_eC2SecurityGroupOwnerIdHasBeenSet)
-  {
+  if (m_eC2SecurityGroupOwnerIdHasBeenSet) {
     ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() cons
   return ss.str();
 }
 
-
-void  AuthorizeClusterSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AuthorizeClusterSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

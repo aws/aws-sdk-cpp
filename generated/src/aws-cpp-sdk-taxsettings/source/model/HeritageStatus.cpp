@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/taxsettings/model/HeritageStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/taxsettings/model/HeritageStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+namespace HeritageStatusMapper {
 
-namespace Aws
-{
-  namespace TaxSettings
-  {
-    namespace Model
-    {
-      namespace HeritageStatusMapper
-      {
+static const int OptIn_HASH = HashingUtils::HashString("OptIn");
+static const int OptOut_HASH = HashingUtils::HashString("OptOut");
 
-        static const int OptIn_HASH = HashingUtils::HashString("OptIn");
-        static const int OptOut_HASH = HashingUtils::HashString("OptOut");
+HeritageStatus GetHeritageStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OptIn_HASH) {
+    return HeritageStatus::OptIn;
+  } else if (hashCode == OptOut_HASH) {
+    return HeritageStatus::OptOut;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<HeritageStatus>(hashCode);
+  }
 
+  return HeritageStatus::NOT_SET;
+}
 
-        HeritageStatus GetHeritageStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OptIn_HASH)
-          {
-            return HeritageStatus::OptIn;
-          }
-          else if (hashCode == OptOut_HASH)
-          {
-            return HeritageStatus::OptOut;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<HeritageStatus>(hashCode);
-          }
+Aws::String GetNameForHeritageStatus(HeritageStatus enumValue) {
+  switch (enumValue) {
+    case HeritageStatus::NOT_SET:
+      return {};
+    case HeritageStatus::OptIn:
+      return "OptIn";
+    case HeritageStatus::OptOut:
+      return "OptOut";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return HeritageStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForHeritageStatus(HeritageStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case HeritageStatus::NOT_SET:
-            return {};
-          case HeritageStatus::OptIn:
-            return "OptIn";
-          case HeritageStatus::OptOut:
-            return "OptOut";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace HeritageStatusMapper
-    } // namespace Model
-  } // namespace TaxSettings
-} // namespace Aws
+}  // namespace HeritageStatusMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

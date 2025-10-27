@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EmailAttachment::EmailAttachment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailAttachment::EmailAttachment(JsonView jsonValue) { *this = jsonValue; }
 
-EmailAttachment& EmailAttachment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FileName"))
-  {
+EmailAttachment& EmailAttachment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FileName")) {
     m_fileName = jsonValue.GetString("FileName");
     m_fileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Url"))
-  {
+  if (jsonValue.ValueExists("S3Url")) {
     m_s3Url = jsonValue.GetString("S3Url");
     m_s3UrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmailAttachment::Jsonize() const
-{
+JsonValue EmailAttachment::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileNameHasBeenSet)
-  {
-   payload.WithString("FileName", m_fileName);
-
+  if (m_fileNameHasBeenSet) {
+    payload.WithString("FileName", m_fileName);
   }
 
-  if(m_s3UrlHasBeenSet)
-  {
-   payload.WithString("S3Url", m_s3Url);
-
+  if (m_s3UrlHasBeenSet) {
+    payload.WithString("S3Url", m_s3Url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

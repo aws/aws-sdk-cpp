@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/VolumeType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/finspace/model/VolumeType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace finspace {
+namespace Model {
+namespace VolumeTypeMapper {
 
-namespace Aws
-{
-  namespace finspace
-  {
-    namespace Model
-    {
-      namespace VolumeTypeMapper
-      {
+static const int NAS_1_HASH = HashingUtils::HashString("NAS_1");
 
-        static const int NAS_1_HASH = HashingUtils::HashString("NAS_1");
+VolumeType GetVolumeTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == NAS_1_HASH) {
+    return VolumeType::NAS_1;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VolumeType>(hashCode);
+  }
 
+  return VolumeType::NOT_SET;
+}
 
-        VolumeType GetVolumeTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NAS_1_HASH)
-          {
-            return VolumeType::NAS_1;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VolumeType>(hashCode);
-          }
+Aws::String GetNameForVolumeType(VolumeType enumValue) {
+  switch (enumValue) {
+    case VolumeType::NOT_SET:
+      return {};
+    case VolumeType::NAS_1:
+      return "NAS_1";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VolumeType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVolumeType(VolumeType enumValue)
-        {
-          switch(enumValue)
-          {
-          case VolumeType::NOT_SET:
-            return {};
-          case VolumeType::NAS_1:
-            return "NAS_1";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VolumeTypeMapper
-    } // namespace Model
-  } // namespace finspace
-} // namespace Aws
+}  // namespace VolumeTypeMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

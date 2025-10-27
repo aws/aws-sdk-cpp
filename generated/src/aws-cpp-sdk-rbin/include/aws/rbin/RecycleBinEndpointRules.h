@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-class RecycleBinEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace RecycleBin {
+class RecycleBinEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace RecycleBin
+}  // namespace Aws

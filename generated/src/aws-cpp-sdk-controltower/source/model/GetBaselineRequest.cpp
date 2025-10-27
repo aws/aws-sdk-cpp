@@ -12,19 +12,12 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBaselineRequest::SerializePayload() const
-{
+Aws::String GetBaselineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_baselineIdentifierHasBeenSet)
-  {
-   payload.WithString("baselineIdentifier", m_baselineIdentifier);
-
+  if (m_baselineIdentifierHasBeenSet) {
+    payload.WithString("baselineIdentifier", m_baselineIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

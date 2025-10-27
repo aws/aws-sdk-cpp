@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-RestoreJobCreator::RestoreJobCreator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RestoreJobCreator::RestoreJobCreator(JsonView jsonValue) { *this = jsonValue; }
 
-RestoreJobCreator& RestoreJobCreator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RestoreTestingPlanArn"))
-  {
+RestoreJobCreator& RestoreJobCreator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RestoreTestingPlanArn")) {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
     m_restoreTestingPlanArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RestoreJobCreator::Jsonize() const
-{
+JsonValue RestoreJobCreator::Jsonize() const {
   JsonValue payload;
 
-  if(m_restoreTestingPlanArnHasBeenSet)
-  {
-   payload.WithString("RestoreTestingPlanArn", m_restoreTestingPlanArn);
-
+  if (m_restoreTestingPlanArnHasBeenSet) {
+    payload.WithString("RestoreTestingPlanArn", m_restoreTestingPlanArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

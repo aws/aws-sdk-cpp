@@ -12,45 +12,30 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourceRequest::SerializePayload() const
-{
+Aws::String GetResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeNameHasBeenSet)
-  {
-   payload.WithString("TypeName", m_typeName);
-
+  if (m_typeNameHasBeenSet) {
+    payload.WithString("TypeName", m_typeName);
   }
 
-  if(m_typeVersionIdHasBeenSet)
-  {
-   payload.WithString("TypeVersionId", m_typeVersionId);
-
+  if (m_typeVersionIdHasBeenSet) {
+    payload.WithString("TypeVersionId", m_typeVersionId);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CloudApiService.GetResource"));
   return headers;
-
 }
-
-
-
-

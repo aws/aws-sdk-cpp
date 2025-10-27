@@ -12,32 +12,23 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchAssociateUserStackRequest::SerializePayload() const
-{
+Aws::String BatchAssociateUserStackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userStackAssociationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userStackAssociationsJsonList(m_userStackAssociations.size());
-   for(unsigned userStackAssociationsIndex = 0; userStackAssociationsIndex < userStackAssociationsJsonList.GetLength(); ++userStackAssociationsIndex)
-   {
-     userStackAssociationsJsonList[userStackAssociationsIndex].AsObject(m_userStackAssociations[userStackAssociationsIndex].Jsonize());
-   }
-   payload.WithArray("UserStackAssociations", std::move(userStackAssociationsJsonList));
-
+  if (m_userStackAssociationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userStackAssociationsJsonList(m_userStackAssociations.size());
+    for (unsigned userStackAssociationsIndex = 0; userStackAssociationsIndex < userStackAssociationsJsonList.GetLength();
+         ++userStackAssociationsIndex) {
+      userStackAssociationsJsonList[userStackAssociationsIndex].AsObject(m_userStackAssociations[userStackAssociationsIndex].Jsonize());
+    }
+    payload.WithArray("UserStackAssociations", std::move(userStackAssociationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchAssociateUserStackRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchAssociateUserStackRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.BatchAssociateUserStack"));
   return headers;
-
 }
-
-
-
-

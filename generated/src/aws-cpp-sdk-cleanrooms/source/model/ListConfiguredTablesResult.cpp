@@ -4,10 +4,10 @@
  */
 
 #include <aws/cleanrooms/model/ListConfiguredTablesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListConfiguredTablesResult::ListConfiguredTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListConfiguredTablesResult::ListConfiguredTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListConfiguredTablesResult& ListConfiguredTablesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListConfiguredTablesResult& ListConfiguredTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("configuredTableSummaries"))
-  {
+  if (jsonValue.ValueExists("configuredTableSummaries")) {
     Aws::Utils::Array<JsonView> configuredTableSummariesJsonList = jsonValue.GetArray("configuredTableSummaries");
-    for(unsigned configuredTableSummariesIndex = 0; configuredTableSummariesIndex < configuredTableSummariesJsonList.GetLength(); ++configuredTableSummariesIndex)
-    {
+    for (unsigned configuredTableSummariesIndex = 0; configuredTableSummariesIndex < configuredTableSummariesJsonList.GetLength();
+         ++configuredTableSummariesIndex) {
       m_configuredTableSummaries.push_back(configuredTableSummariesJsonList[configuredTableSummariesIndex].AsObject());
     }
     m_configuredTableSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

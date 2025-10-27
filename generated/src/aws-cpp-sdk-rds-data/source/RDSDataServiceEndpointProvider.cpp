@@ -5,12 +5,8 @@
 
 #include <aws/rds-data/RDSDataServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace RDSDataService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RDSDataService
-} // namespace Aws
+namespace Aws {
+namespace RDSDataService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RDSDataService
+}  // namespace Aws

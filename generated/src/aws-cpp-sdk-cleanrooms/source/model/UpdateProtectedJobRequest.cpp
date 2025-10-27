@@ -12,18 +12,12 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProtectedJobRequest::SerializePayload() const
-{
+Aws::String UpdateProtectedJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetStatusHasBeenSet)
-  {
-   payload.WithString("targetStatus", TargetProtectedJobStatusMapper::GetNameForTargetProtectedJobStatus(m_targetStatus));
+  if (m_targetStatusHasBeenSet) {
+    payload.WithString("targetStatus", TargetProtectedJobStatusMapper::GetNameForTargetProtectedJobStatus(m_targetStatus));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -7,25 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class ResourceOwner
-  {
-    NOT_SET,
-    SELF,
-    OTHER_ACCOUNTS
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class ResourceOwner { NOT_SET, SELF, OTHER_ACCOUNTS };
 
-namespace ResourceOwnerMapper
-{
+namespace ResourceOwnerMapper {
 AWS_ACMPCA_API ResourceOwner GetResourceOwnerForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForResourceOwner(ResourceOwner value);
-} // namespace ResourceOwnerMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace ResourceOwnerMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

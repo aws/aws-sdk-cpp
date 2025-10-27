@@ -7,52 +7,47 @@
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
-  enum class MetricType
-  {
-    NOT_SET,
-    DynamoDBReadCapacityUtilization,
-    DynamoDBWriteCapacityUtilization,
-    ALBRequestCountPerTarget,
-    RDSReaderAverageCPUUtilization,
-    RDSReaderAverageDatabaseConnections,
-    EC2SpotFleetRequestAverageCPUUtilization,
-    EC2SpotFleetRequestAverageNetworkIn,
-    EC2SpotFleetRequestAverageNetworkOut,
-    SageMakerVariantInvocationsPerInstance,
-    ECSServiceAverageCPUUtilization,
-    ECSServiceAverageMemoryUtilization,
-    AppStreamAverageCapacityUtilization,
-    ComprehendInferenceUtilization,
-    LambdaProvisionedConcurrencyUtilization,
-    CassandraReadCapacityUtilization,
-    CassandraWriteCapacityUtilization,
-    KafkaBrokerStorageUtilization,
-    ElastiCacheEngineCPUUtilization,
-    ElastiCacheDatabaseMemoryUsagePercentage,
-    ElastiCachePrimaryEngineCPUUtilization,
-    ElastiCacheReplicaEngineCPUUtilization,
-    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
-    NeptuneReaderAverageCPUUtilization,
-    SageMakerVariantProvisionedConcurrencyUtilization,
-    ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
-    SageMakerInferenceComponentInvocationsPerCopy,
-    WorkSpacesAverageUserSessionsCapacityUtilization,
-    SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
-    SageMakerVariantConcurrentRequestsPerModelHighResolution
-  };
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
+enum class MetricType {
+  NOT_SET,
+  DynamoDBReadCapacityUtilization,
+  DynamoDBWriteCapacityUtilization,
+  ALBRequestCountPerTarget,
+  RDSReaderAverageCPUUtilization,
+  RDSReaderAverageDatabaseConnections,
+  EC2SpotFleetRequestAverageCPUUtilization,
+  EC2SpotFleetRequestAverageNetworkIn,
+  EC2SpotFleetRequestAverageNetworkOut,
+  SageMakerVariantInvocationsPerInstance,
+  ECSServiceAverageCPUUtilization,
+  ECSServiceAverageMemoryUtilization,
+  AppStreamAverageCapacityUtilization,
+  ComprehendInferenceUtilization,
+  LambdaProvisionedConcurrencyUtilization,
+  CassandraReadCapacityUtilization,
+  CassandraWriteCapacityUtilization,
+  KafkaBrokerStorageUtilization,
+  ElastiCacheEngineCPUUtilization,
+  ElastiCacheDatabaseMemoryUsagePercentage,
+  ElastiCachePrimaryEngineCPUUtilization,
+  ElastiCacheReplicaEngineCPUUtilization,
+  ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+  NeptuneReaderAverageCPUUtilization,
+  SageMakerVariantProvisionedConcurrencyUtilization,
+  ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
+  SageMakerInferenceComponentInvocationsPerCopy,
+  WorkSpacesAverageUserSessionsCapacityUtilization,
+  SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
+  SageMakerVariantConcurrentRequestsPerModelHighResolution
+};
 
-namespace MetricTypeMapper
-{
+namespace MetricTypeMapper {
 AWS_APPLICATIONAUTOSCALING_API MetricType GetMetricTypeForName(const Aws::String& name);
 
 AWS_APPLICATIONAUTOSCALING_API Aws::String GetNameForMetricType(MetricType value);
-} // namespace MetricTypeMapper
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace MetricTypeMapper
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

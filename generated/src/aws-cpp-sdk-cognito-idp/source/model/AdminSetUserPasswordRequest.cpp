@@ -12,45 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminSetUserPasswordRequest::SerializePayload() const
-{
+Aws::String AdminSetUserPasswordRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("Password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
-  if(m_permanentHasBeenSet)
-  {
-   payload.WithBool("Permanent", m_permanent);
-
+  if (m_permanentHasBeenSet) {
+    payload.WithBool("Permanent", m_permanent);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminSetUserPasswordRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminSetUserPasswordRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminSetUserPassword"));
   return headers;
-
 }
-
-
-
-

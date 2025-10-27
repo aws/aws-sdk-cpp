@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/ComponentRunWith.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/ComponentRunWith.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-ComponentRunWith::ComponentRunWith(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComponentRunWith::ComponentRunWith(JsonView jsonValue) { *this = jsonValue; }
 
-ComponentRunWith& ComponentRunWith::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("posixUser"))
-  {
+ComponentRunWith& ComponentRunWith::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("posixUser")) {
     m_posixUser = jsonValue.GetString("posixUser");
     m_posixUserHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("systemResourceLimits"))
-  {
+  if (jsonValue.ValueExists("systemResourceLimits")) {
     m_systemResourceLimits = jsonValue.GetObject("systemResourceLimits");
     m_systemResourceLimitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("windowsUser"))
-  {
+  if (jsonValue.ValueExists("windowsUser")) {
     m_windowsUser = jsonValue.GetString("windowsUser");
     m_windowsUserHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComponentRunWith::Jsonize() const
-{
+JsonValue ComponentRunWith::Jsonize() const {
   JsonValue payload;
 
-  if(m_posixUserHasBeenSet)
-  {
-   payload.WithString("posixUser", m_posixUser);
-
+  if (m_posixUserHasBeenSet) {
+    payload.WithString("posixUser", m_posixUser);
   }
 
-  if(m_systemResourceLimitsHasBeenSet)
-  {
-   payload.WithObject("systemResourceLimits", m_systemResourceLimits.Jsonize());
-
+  if (m_systemResourceLimitsHasBeenSet) {
+    payload.WithObject("systemResourceLimits", m_systemResourceLimits.Jsonize());
   }
 
-  if(m_windowsUserHasBeenSet)
-  {
-   payload.WithString("windowsUser", m_windowsUser);
-
+  if (m_windowsUserHasBeenSet) {
+    payload.WithString("windowsUser", m_windowsUser);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

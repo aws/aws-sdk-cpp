@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/AvailabilityZone.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/AvailabilityZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
-{
+AvailabilityZone& AvailabilityZone::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode supportedPlatformsNode = resultNode.FirstChild("SupportedPlatforms");
-    if(!supportedPlatformsNode.IsNull())
-    {
+    if (!supportedPlatformsNode.IsNull()) {
       XmlNode supportedPlatformsMember = supportedPlatformsNode.FirstChild("SupportedPlatform");
       m_supportedPlatformsHasBeenSet = !supportedPlatformsMember.IsNull();
-      while(!supportedPlatformsMember.IsNull())
-      {
+      while (!supportedPlatformsMember.IsNull()) {
         m_supportedPlatforms.push_back(supportedPlatformsMember);
         supportedPlatformsMember = supportedPlatformsMember.NextNode("SupportedPlatform");
       }
@@ -55,44 +44,35 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_supportedPlatformsHasBeenSet)
-  {
-      unsigned supportedPlatformsIdx = 1;
-      for(auto& item : m_supportedPlatforms)
-      {
-        Aws::StringStream supportedPlatformsSs;
-        supportedPlatformsSs << location << index << locationValue << ".SupportedPlatforms.SupportedPlatform." << supportedPlatformsIdx++;
-        item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
-      }
-  }
-
-}
-
-void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-  if(m_supportedPlatformsHasBeenSet)
-  {
-      unsigned supportedPlatformsIdx = 1;
-      for(auto& item : m_supportedPlatforms)
-      {
-        Aws::StringStream supportedPlatformsSs;
-        supportedPlatformsSs << location << ".SupportedPlatforms.SupportedPlatform." << supportedPlatformsIdx++;
-        item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
-      }
+  if (m_supportedPlatformsHasBeenSet) {
+    unsigned supportedPlatformsIdx = 1;
+    for (auto& item : m_supportedPlatforms) {
+      Aws::StringStream supportedPlatformsSs;
+      supportedPlatformsSs << location << index << locationValue << ".SupportedPlatforms.SupportedPlatform." << supportedPlatformsIdx++;
+      item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if (m_supportedPlatformsHasBeenSet) {
+    unsigned supportedPlatformsIdx = 1;
+    for (auto& item : m_supportedPlatforms) {
+      Aws::StringStream supportedPlatformsSs;
+      supportedPlatformsSs << location << ".SupportedPlatforms.SupportedPlatform." << supportedPlatformsIdx++;
+      item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

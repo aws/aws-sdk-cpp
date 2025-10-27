@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/apprunner/AppRunner_EXPORTS.h>
 
-namespace Aws
-{
-namespace AppRunner
-{
-enum class AppRunnerErrors
-{
-  //From Core//
+namespace Aws {
+namespace AppRunner {
+enum class AppRunnerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AppRunnerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class AppRunnerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVICE_ERROR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
   INVALID_STATE,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_APPRUNNER_API AppRunnerError : public Aws::Client::AWSError<AppRunnerErrors>
-{
-public:
+class AWS_APPRUNNER_API AppRunnerError : public Aws::Client::AWSError<AppRunnerErrors> {
+ public:
   AppRunnerError() {}
   AppRunnerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AppRunnerErrors>(rhs) {}
   AppRunnerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AppRunnerErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace AppRunnerErrorMapper
-{
-  AWS_APPRUNNER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AppRunnerErrorMapper {
+AWS_APPRUNNER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace AppRunner
+}  // namespace Aws

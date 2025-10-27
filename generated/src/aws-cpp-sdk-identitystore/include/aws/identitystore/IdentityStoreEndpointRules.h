@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
-namespace Aws
-{
-namespace IdentityStore
-{
-class IdentityStoreEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IdentityStore {
+class IdentityStoreEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IdentityStore
-} // namespace Aws
+}  // namespace IdentityStore
+}  // namespace Aws

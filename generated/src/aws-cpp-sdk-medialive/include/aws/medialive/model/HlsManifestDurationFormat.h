@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsManifestDurationFormat
-  {
-    NOT_SET,
-    FLOATING_POINT,
-    INTEGER
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsManifestDurationFormat { NOT_SET, FLOATING_POINT, INTEGER };
 
-namespace HlsManifestDurationFormatMapper
-{
+namespace HlsManifestDurationFormatMapper {
 AWS_MEDIALIVE_API HlsManifestDurationFormat GetHlsManifestDurationFormatForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsManifestDurationFormat(HlsManifestDurationFormat value);
-} // namespace HlsManifestDurationFormatMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsManifestDurationFormatMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

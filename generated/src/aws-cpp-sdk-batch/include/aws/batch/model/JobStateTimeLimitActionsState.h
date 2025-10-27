@@ -7,24 +7,16 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
-  enum class JobStateTimeLimitActionsState
-  {
-    NOT_SET,
-    RUNNABLE
-  };
+namespace Aws {
+namespace Batch {
+namespace Model {
+enum class JobStateTimeLimitActionsState { NOT_SET, RUNNABLE };
 
-namespace JobStateTimeLimitActionsStateMapper
-{
+namespace JobStateTimeLimitActionsStateMapper {
 AWS_BATCH_API JobStateTimeLimitActionsState GetJobStateTimeLimitActionsStateForName(const Aws::String& name);
 
 AWS_BATCH_API Aws::String GetNameForJobStateTimeLimitActionsState(JobStateTimeLimitActionsState value);
-} // namespace JobStateTimeLimitActionsStateMapper
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace JobStateTimeLimitActionsStateMapper
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

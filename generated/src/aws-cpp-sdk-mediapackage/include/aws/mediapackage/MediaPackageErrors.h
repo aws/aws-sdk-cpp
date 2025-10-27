@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-enum class MediaPackageErrors
-{
-  //From Core//
+namespace Aws {
+namespace MediaPackage {
+enum class MediaPackageErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MediaPackageErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class MediaPackageErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  FORBIDDEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  FORBIDDEN = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER_ERROR,
   NOT_FOUND,
   TOO_MANY_REQUESTS,
   UNPROCESSABLE_ENTITY
 };
 
-class AWS_MEDIAPACKAGE_API MediaPackageError : public Aws::Client::AWSError<MediaPackageErrors>
-{
-public:
+class AWS_MEDIAPACKAGE_API MediaPackageError : public Aws::Client::AWSError<MediaPackageErrors> {
+ public:
   MediaPackageError() {}
   MediaPackageError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
   MediaPackageError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace MediaPackageErrorMapper
-{
-  AWS_MEDIAPACKAGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MediaPackageErrorMapper {
+AWS_MEDIAPACKAGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MediaPackage
-} // namespace Aws
+}  // namespace MediaPackage
+}  // namespace Aws

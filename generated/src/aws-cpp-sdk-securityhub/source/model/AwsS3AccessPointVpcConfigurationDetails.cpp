@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsS3AccessPointVpcConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsS3AccessPointVpcConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsS3AccessPointVpcConfigurationDetails& AwsS3AccessPointVpcConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcId"))
-  {
+AwsS3AccessPointVpcConfigurationDetails& AwsS3AccessPointVpcConfigurationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsS3AccessPointVpcConfigurationDetails::Jsonize() const
-{
+JsonValue AwsS3AccessPointVpcConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

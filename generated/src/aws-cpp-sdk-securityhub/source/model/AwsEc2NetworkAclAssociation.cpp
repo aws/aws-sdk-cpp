@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2NetworkAclAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2NetworkAclAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEc2NetworkAclAssociation& AwsEc2NetworkAclAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NetworkAclAssociationId"))
-  {
+AwsEc2NetworkAclAssociation& AwsEc2NetworkAclAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NetworkAclAssociationId")) {
     m_networkAclAssociationId = jsonValue.GetString("NetworkAclAssociationId");
     m_networkAclAssociationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkAclId"))
-  {
+  if (jsonValue.ValueExists("NetworkAclId")) {
     m_networkAclId = jsonValue.GetString("NetworkAclId");
     m_networkAclIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetId"))
-  {
+  if (jsonValue.ValueExists("SubnetId")) {
     m_subnetId = jsonValue.GetString("SubnetId");
     m_subnetIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2NetworkAclAssociation::Jsonize() const
-{
+JsonValue AwsEc2NetworkAclAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkAclAssociationIdHasBeenSet)
-  {
-   payload.WithString("NetworkAclAssociationId", m_networkAclAssociationId);
-
+  if (m_networkAclAssociationIdHasBeenSet) {
+    payload.WithString("NetworkAclAssociationId", m_networkAclAssociationId);
   }
 
-  if(m_networkAclIdHasBeenSet)
-  {
-   payload.WithString("NetworkAclId", m_networkAclId);
-
+  if (m_networkAclIdHasBeenSet) {
+    payload.WithString("NetworkAclId", m_networkAclId);
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithString("SubnetId", m_subnetId);
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithString("SubnetId", m_subnetId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

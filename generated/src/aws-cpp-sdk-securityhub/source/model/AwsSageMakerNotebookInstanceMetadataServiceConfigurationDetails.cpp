@@ -3,49 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(JsonView jsonValue)
-{
+AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinimumInstanceMetadataServiceVersion"))
-  {
+AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinimumInstanceMetadataServiceVersion")) {
     m_minimumInstanceMetadataServiceVersion = jsonValue.GetString("MinimumInstanceMetadataServiceVersion");
     m_minimumInstanceMetadataServiceVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::Jsonize() const
-{
+JsonValue AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_minimumInstanceMetadataServiceVersionHasBeenSet)
-  {
-   payload.WithString("MinimumInstanceMetadataServiceVersion", m_minimumInstanceMetadataServiceVersion);
-
+  if (m_minimumInstanceMetadataServiceVersionHasBeenSet) {
+    payload.WithString("MinimumInstanceMetadataServiceVersion", m_minimumInstanceMetadataServiceVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

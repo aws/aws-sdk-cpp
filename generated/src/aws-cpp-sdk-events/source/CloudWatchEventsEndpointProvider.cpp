@@ -5,12 +5,8 @@
 
 #include <aws/events/CloudWatchEventsEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudWatchEvents
-} // namespace Aws
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudWatchEvents
+}  // namespace Aws

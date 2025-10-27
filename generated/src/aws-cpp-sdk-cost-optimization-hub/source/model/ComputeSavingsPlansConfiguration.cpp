@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/ComputeSavingsPlansConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/ComputeSavingsPlansConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ComputeSavingsPlansConfiguration& ComputeSavingsPlansConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountScope"))
-  {
+ComputeSavingsPlansConfiguration& ComputeSavingsPlansConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountScope")) {
     m_accountScope = jsonValue.GetString("accountScope");
     m_accountScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("term"))
-  {
+  if (jsonValue.ValueExists("term")) {
     m_term = jsonValue.GetString("term");
     m_termHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paymentOption"))
-  {
+  if (jsonValue.ValueExists("paymentOption")) {
     m_paymentOption = jsonValue.GetString("paymentOption");
     m_paymentOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hourlyCommitment"))
-  {
+  if (jsonValue.ValueExists("hourlyCommitment")) {
     m_hourlyCommitment = jsonValue.GetString("hourlyCommitment");
     m_hourlyCommitmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComputeSavingsPlansConfiguration::Jsonize() const
-{
+JsonValue ComputeSavingsPlansConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountScopeHasBeenSet)
-  {
-   payload.WithString("accountScope", m_accountScope);
-
+  if (m_accountScopeHasBeenSet) {
+    payload.WithString("accountScope", m_accountScope);
   }
 
-  if(m_termHasBeenSet)
-  {
-   payload.WithString("term", m_term);
-
+  if (m_termHasBeenSet) {
+    payload.WithString("term", m_term);
   }
 
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("paymentOption", m_paymentOption);
-
+  if (m_paymentOptionHasBeenSet) {
+    payload.WithString("paymentOption", m_paymentOption);
   }
 
-  if(m_hourlyCommitmentHasBeenSet)
-  {
-   payload.WithString("hourlyCommitment", m_hourlyCommitment);
-
+  if (m_hourlyCommitmentHasBeenSet) {
+    payload.WithString("hourlyCommitment", m_hourlyCommitment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-RefreshCadence::RefreshCadence(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RefreshCadence::RefreshCadence(JsonView jsonValue) { *this = jsonValue; }
 
-RefreshCadence& RefreshCadence::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Frequency"))
-  {
+RefreshCadence& RefreshCadence::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Frequency")) {
     m_frequency = FrequencyOptionMapper::GetFrequencyOptionForName(jsonValue.GetString("Frequency"));
     m_frequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RefreshCadence::Jsonize() const
-{
+JsonValue RefreshCadence::Jsonize() const {
   JsonValue payload;
 
-  if(m_frequencyHasBeenSet)
-  {
-   payload.WithString("Frequency", FrequencyOptionMapper::GetNameForFrequencyOption(m_frequency));
+  if (m_frequencyHasBeenSet) {
+    payload.WithString("Frequency", FrequencyOptionMapper::GetNameForFrequencyOption(m_frequency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

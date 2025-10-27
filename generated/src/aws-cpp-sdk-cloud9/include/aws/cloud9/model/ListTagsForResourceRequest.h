@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/Cloud9Request.h>
+#include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Cloud9
-{
-namespace Model
-{
+namespace Aws {
+namespace Cloud9 {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public Cloud9Request {
+ public:
+  AWS_CLOUD9_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_CLOUD9_API Aws::String SerializePayload() const override;
+
+  AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get
+   * the tags for.</p>
    */
-  class ListTagsForResourceRequest : public Cloud9Request
-  {
-  public:
-    AWS_CLOUD9_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+  inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+  template <typename ResourceARNT = Aws::String>
+  void SetResourceARN(ResourceARNT&& value) {
+    m_resourceARNHasBeenSet = true;
+    m_resourceARN = std::forward<ResourceARNT>(value);
+  }
+  template <typename ResourceARNT = Aws::String>
+  ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) {
+    SetResourceARN(std::forward<ResourceARNT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceARN;
+  bool m_resourceARNHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
-
-    AWS_CLOUD9_API Aws::String SerializePayload() const override;
-
-    AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get
-     * the tags for.</p>
-     */
-    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
-    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    template<typename ResourceARNT = Aws::String>
-    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
-    template<typename ResourceARNT = Aws::String>
-    ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Cloud9
-} // namespace Aws
+}  // namespace Model
+}  // namespace Cloud9
+}  // namespace Aws

@@ -3,177 +3,134 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/UpdateFileSystemOntapConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/UpdateFileSystemOntapConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
-  {
+UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutomaticBackupRetentionDays")) {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
-  {
+  if (jsonValue.ValueExists("DailyAutomaticBackupStartTime")) {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FsxAdminPassword"))
-  {
+  if (jsonValue.ValueExists("FsxAdminPassword")) {
     m_fsxAdminPassword = jsonValue.GetString("FsxAdminPassword");
     m_fsxAdminPasswordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
-  {
+  if (jsonValue.ValueExists("WeeklyMaintenanceStartTime")) {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DiskIopsConfiguration"))
-  {
+  if (jsonValue.ValueExists("DiskIopsConfiguration")) {
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
     m_diskIopsConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ThroughputCapacity"))
-  {
+  if (jsonValue.ValueExists("ThroughputCapacity")) {
     m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
     m_throughputCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddRouteTableIds"))
-  {
+  if (jsonValue.ValueExists("AddRouteTableIds")) {
     Aws::Utils::Array<JsonView> addRouteTableIdsJsonList = jsonValue.GetArray("AddRouteTableIds");
-    for(unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex)
-    {
+    for (unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex) {
       m_addRouteTableIds.push_back(addRouteTableIdsJsonList[addRouteTableIdsIndex].AsString());
     }
     m_addRouteTableIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RemoveRouteTableIds"))
-  {
+  if (jsonValue.ValueExists("RemoveRouteTableIds")) {
     Aws::Utils::Array<JsonView> removeRouteTableIdsJsonList = jsonValue.GetArray("RemoveRouteTableIds");
-    for(unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength(); ++removeRouteTableIdsIndex)
-    {
+    for (unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength();
+         ++removeRouteTableIdsIndex) {
       m_removeRouteTableIds.push_back(removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString());
     }
     m_removeRouteTableIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ThroughputCapacityPerHAPair"))
-  {
+  if (jsonValue.ValueExists("ThroughputCapacityPerHAPair")) {
     m_throughputCapacityPerHAPair = jsonValue.GetInteger("ThroughputCapacityPerHAPair");
     m_throughputCapacityPerHAPairHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HAPairs"))
-  {
+  if (jsonValue.ValueExists("HAPairs")) {
     m_hAPairs = jsonValue.GetInteger("HAPairs");
     m_hAPairsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointIpv6AddressRange"))
-  {
+  if (jsonValue.ValueExists("EndpointIpv6AddressRange")) {
     m_endpointIpv6AddressRange = jsonValue.GetString("EndpointIpv6AddressRange");
     m_endpointIpv6AddressRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
-{
+JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_automaticBackupRetentionDaysHasBeenSet)
-  {
-   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
-
+  if (m_automaticBackupRetentionDaysHasBeenSet) {
+    payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
   }
 
-  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
-  {
-   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
-
+  if (m_dailyAutomaticBackupStartTimeHasBeenSet) {
+    payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
   }
 
-  if(m_fsxAdminPasswordHasBeenSet)
-  {
-   payload.WithString("FsxAdminPassword", m_fsxAdminPassword);
-
+  if (m_fsxAdminPasswordHasBeenSet) {
+    payload.WithString("FsxAdminPassword", m_fsxAdminPassword);
   }
 
-  if(m_weeklyMaintenanceStartTimeHasBeenSet)
-  {
-   payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
-
+  if (m_weeklyMaintenanceStartTimeHasBeenSet) {
+    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
   }
 
-  if(m_diskIopsConfigurationHasBeenSet)
-  {
-   payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
-
+  if (m_diskIopsConfigurationHasBeenSet) {
+    payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
   }
 
-  if(m_throughputCapacityHasBeenSet)
-  {
-   payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
-
+  if (m_throughputCapacityHasBeenSet) {
+    payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
   }
 
-  if(m_addRouteTableIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> addRouteTableIdsJsonList(m_addRouteTableIds.size());
-   for(unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex)
-   {
-     addRouteTableIdsJsonList[addRouteTableIdsIndex].AsString(m_addRouteTableIds[addRouteTableIdsIndex]);
-   }
-   payload.WithArray("AddRouteTableIds", std::move(addRouteTableIdsJsonList));
-
+  if (m_addRouteTableIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> addRouteTableIdsJsonList(m_addRouteTableIds.size());
+    for (unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex) {
+      addRouteTableIdsJsonList[addRouteTableIdsIndex].AsString(m_addRouteTableIds[addRouteTableIdsIndex]);
+    }
+    payload.WithArray("AddRouteTableIds", std::move(addRouteTableIdsJsonList));
   }
 
-  if(m_removeRouteTableIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> removeRouteTableIdsJsonList(m_removeRouteTableIds.size());
-   for(unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength(); ++removeRouteTableIdsIndex)
-   {
-     removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString(m_removeRouteTableIds[removeRouteTableIdsIndex]);
-   }
-   payload.WithArray("RemoveRouteTableIds", std::move(removeRouteTableIdsJsonList));
-
+  if (m_removeRouteTableIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> removeRouteTableIdsJsonList(m_removeRouteTableIds.size());
+    for (unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength();
+         ++removeRouteTableIdsIndex) {
+      removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString(m_removeRouteTableIds[removeRouteTableIdsIndex]);
+    }
+    payload.WithArray("RemoveRouteTableIds", std::move(removeRouteTableIdsJsonList));
   }
 
-  if(m_throughputCapacityPerHAPairHasBeenSet)
-  {
-   payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
-
+  if (m_throughputCapacityPerHAPairHasBeenSet) {
+    payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
   }
 
-  if(m_hAPairsHasBeenSet)
-  {
-   payload.WithInteger("HAPairs", m_hAPairs);
-
+  if (m_hAPairsHasBeenSet) {
+    payload.WithInteger("HAPairs", m_hAPairs);
   }
 
-  if(m_endpointIpv6AddressRangeHasBeenSet)
-  {
-   payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
-
+  if (m_endpointIpv6AddressRangeHasBeenSet) {
+    payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

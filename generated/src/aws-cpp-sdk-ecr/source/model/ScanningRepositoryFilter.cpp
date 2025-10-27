@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/ScanningRepositoryFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/model/ScanningRepositoryFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace ECR {
+namespace Model {
 
-ScanningRepositoryFilter::ScanningRepositoryFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScanningRepositoryFilter::ScanningRepositoryFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ScanningRepositoryFilter& ScanningRepositoryFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filter"))
-  {
+ScanningRepositoryFilter& ScanningRepositoryFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filter")) {
     m_filter = jsonValue.GetString("filter");
     m_filterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterType"))
-  {
+  if (jsonValue.ValueExists("filterType")) {
     m_filterType = ScanningRepositoryFilterTypeMapper::GetScanningRepositoryFilterTypeForName(jsonValue.GetString("filterType"));
     m_filterTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScanningRepositoryFilter::Jsonize() const
-{
+JsonValue ScanningRepositoryFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithString("filter", m_filter);
-
+  if (m_filterHasBeenSet) {
+    payload.WithString("filter", m_filter);
   }
 
-  if(m_filterTypeHasBeenSet)
-  {
-   payload.WithString("filterType", ScanningRepositoryFilterTypeMapper::GetNameForScanningRepositoryFilterType(m_filterType));
+  if (m_filterTypeHasBeenSet) {
+    payload.WithString("filterType", ScanningRepositoryFilterTypeMapper::GetNameForScanningRepositoryFilterType(m_filterType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

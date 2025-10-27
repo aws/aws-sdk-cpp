@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/AssociatedFace.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/AssociatedFace.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-AssociatedFace::AssociatedFace(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociatedFace::AssociatedFace(JsonView jsonValue) { *this = jsonValue; }
 
-AssociatedFace& AssociatedFace::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FaceId"))
-  {
+AssociatedFace& AssociatedFace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FaceId")) {
     m_faceId = jsonValue.GetString("FaceId");
     m_faceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociatedFace::Jsonize() const
-{
+JsonValue AssociatedFace::Jsonize() const {
   JsonValue payload;
 
-  if(m_faceIdHasBeenSet)
-  {
-   payload.WithString("FaceId", m_faceId);
-
+  if (m_faceIdHasBeenSet) {
+    payload.WithString("FaceId", m_faceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

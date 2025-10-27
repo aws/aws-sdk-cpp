@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class TaskDefinitionFamilyStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    ALL
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class TaskDefinitionFamilyStatus { NOT_SET, ACTIVE, INACTIVE, ALL };
 
-namespace TaskDefinitionFamilyStatusMapper
-{
+namespace TaskDefinitionFamilyStatusMapper {
 AWS_ECS_API TaskDefinitionFamilyStatus GetTaskDefinitionFamilyStatusForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForTaskDefinitionFamilyStatus(TaskDefinitionFamilyStatus value);
-} // namespace TaskDefinitionFamilyStatusMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace TaskDefinitionFamilyStatusMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

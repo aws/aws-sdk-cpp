@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/AudioLogSetting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/AudioLogSetting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-AudioLogSetting::AudioLogSetting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioLogSetting::AudioLogSetting(JsonView jsonValue) { *this = jsonValue; }
 
-AudioLogSetting& AudioLogSetting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+AudioLogSetting& AudioLogSetting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetObject("destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("selectiveLoggingEnabled"))
-  {
+  if (jsonValue.ValueExists("selectiveLoggingEnabled")) {
     m_selectiveLoggingEnabled = jsonValue.GetBool("selectiveLoggingEnabled");
     m_selectiveLoggingEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioLogSetting::Jsonize() const
-{
+JsonValue AudioLogSetting::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithObject("destination", m_destination.Jsonize());
-
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("destination", m_destination.Jsonize());
   }
 
-  if(m_selectiveLoggingEnabledHasBeenSet)
-  {
-   payload.WithBool("selectiveLoggingEnabled", m_selectiveLoggingEnabled);
-
+  if (m_selectiveLoggingEnabledHasBeenSet) {
+    payload.WithBool("selectiveLoggingEnabled", m_selectiveLoggingEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

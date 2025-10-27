@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteTollVehicleCategory
-  {
-    NOT_SET,
-    Minibus
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteTollVehicleCategory { NOT_SET, Minibus };
 
-namespace RouteTollVehicleCategoryMapper
-{
+namespace RouteTollVehicleCategoryMapper {
 AWS_GEOROUTES_API RouteTollVehicleCategory GetRouteTollVehicleCategoryForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteTollVehicleCategory(RouteTollVehicleCategory value);
-} // namespace RouteTollVehicleCategoryMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteTollVehicleCategoryMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

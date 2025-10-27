@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SipMediaApplicationAlexaSkillConfiguration& SipMediaApplicationAlexaSkillConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AlexaSkillStatus"))
-  {
+SipMediaApplicationAlexaSkillConfiguration& SipMediaApplicationAlexaSkillConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AlexaSkillStatus")) {
     m_alexaSkillStatus = AlexaSkillStatusMapper::GetAlexaSkillStatusForName(jsonValue.GetString("AlexaSkillStatus"));
     m_alexaSkillStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AlexaSkillIds"))
-  {
+  if (jsonValue.ValueExists("AlexaSkillIds")) {
     Aws::Utils::Array<JsonView> alexaSkillIdsJsonList = jsonValue.GetArray("AlexaSkillIds");
-    for(unsigned alexaSkillIdsIndex = 0; alexaSkillIdsIndex < alexaSkillIdsJsonList.GetLength(); ++alexaSkillIdsIndex)
-    {
+    for (unsigned alexaSkillIdsIndex = 0; alexaSkillIdsIndex < alexaSkillIdsJsonList.GetLength(); ++alexaSkillIdsIndex) {
       m_alexaSkillIds.push_back(alexaSkillIdsJsonList[alexaSkillIdsIndex].AsString());
     }
     m_alexaSkillIdsHasBeenSet = true;
@@ -42,29 +32,24 @@ SipMediaApplicationAlexaSkillConfiguration& SipMediaApplicationAlexaSkillConfigu
   return *this;
 }
 
-JsonValue SipMediaApplicationAlexaSkillConfiguration::Jsonize() const
-{
+JsonValue SipMediaApplicationAlexaSkillConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_alexaSkillStatusHasBeenSet)
-  {
-   payload.WithString("AlexaSkillStatus", AlexaSkillStatusMapper::GetNameForAlexaSkillStatus(m_alexaSkillStatus));
+  if (m_alexaSkillStatusHasBeenSet) {
+    payload.WithString("AlexaSkillStatus", AlexaSkillStatusMapper::GetNameForAlexaSkillStatus(m_alexaSkillStatus));
   }
 
-  if(m_alexaSkillIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> alexaSkillIdsJsonList(m_alexaSkillIds.size());
-   for(unsigned alexaSkillIdsIndex = 0; alexaSkillIdsIndex < alexaSkillIdsJsonList.GetLength(); ++alexaSkillIdsIndex)
-   {
-     alexaSkillIdsJsonList[alexaSkillIdsIndex].AsString(m_alexaSkillIds[alexaSkillIdsIndex]);
-   }
-   payload.WithArray("AlexaSkillIds", std::move(alexaSkillIdsJsonList));
-
+  if (m_alexaSkillIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> alexaSkillIdsJsonList(m_alexaSkillIds.size());
+    for (unsigned alexaSkillIdsIndex = 0; alexaSkillIdsIndex < alexaSkillIdsJsonList.GetLength(); ++alexaSkillIdsIndex) {
+      alexaSkillIdsJsonList[alexaSkillIdsIndex].AsString(m_alexaSkillIds[alexaSkillIdsIndex]);
+    }
+    payload.WithArray("AlexaSkillIds", std::move(alexaSkillIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

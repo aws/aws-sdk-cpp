@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeletePolicyRequest::SerializePayload() const
-{
+Aws::String DeletePolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeletePolicy&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_policyNameHasBeenSet)
-  {
+  if (m_policyNameHasBeenSet) {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeletePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeletePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeletePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

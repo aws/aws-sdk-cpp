@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kafkaconnect/KafkaConnectEndpointRules.h>
+#include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KafkaConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using KafkaConnectDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KAFKACONNECT_API KafkaConnectEndpointProvider : public KafkaConnectDefaultEpProviderBase
-{
-public:
-    using KafkaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KAFKACONNECT_API KafkaConnectEndpointProvider : public KafkaConnectDefaultEpProviderBase {
+ public:
+  using KafkaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KafkaConnectEndpointProvider()
-      : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::GetRulesBlob(), Aws::KafkaConnect::KafkaConnectEndpointRules::RulesBlobSize)
-    {}
+  KafkaConnectEndpointProvider()
+      : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::GetRulesBlob(),
+                                          Aws::KafkaConnect::KafkaConnectEndpointRules::RulesBlobSize) {}
 
-    ~KafkaConnectEndpointProvider()
-    {
-    }
+  ~KafkaConnectEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace KafkaConnect
+}  // namespace Aws

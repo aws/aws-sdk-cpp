@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class HorizontalTilePosition
-  {
-    NOT_SET,
-    Top,
-    Bottom
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class HorizontalTilePosition { NOT_SET, Top, Bottom };
 
-namespace HorizontalTilePositionMapper
-{
+namespace HorizontalTilePositionMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API HorizontalTilePosition GetHorizontalTilePositionForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForHorizontalTilePosition(HorizontalTilePosition value);
-} // namespace HorizontalTilePositionMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace HorizontalTilePositionMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

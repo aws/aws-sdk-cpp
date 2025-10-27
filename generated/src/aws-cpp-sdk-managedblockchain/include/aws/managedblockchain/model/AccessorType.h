@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
-  enum class AccessorType
-  {
-    NOT_SET,
-    BILLING_TOKEN
-  };
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
+enum class AccessorType { NOT_SET, BILLING_TOKEN };
 
-namespace AccessorTypeMapper
-{
+namespace AccessorTypeMapper {
 AWS_MANAGEDBLOCKCHAIN_API AccessorType GetAccessorTypeForName(const Aws::String& name);
 
 AWS_MANAGEDBLOCKCHAIN_API Aws::String GetNameForAccessorType(AccessorType value);
-} // namespace AccessorTypeMapper
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace AccessorTypeMapper
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/ListBackupsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dynamodb/model/ListBackupsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBackupsResult::ListBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListBackupsResult::ListBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListBackupsResult& ListBackupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListBackupsResult& ListBackupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("BackupSummaries"))
-  {
+  if (jsonValue.ValueExists("BackupSummaries")) {
     Aws::Utils::Array<JsonView> backupSummariesJsonList = jsonValue.GetArray("BackupSummaries");
-    for(unsigned backupSummariesIndex = 0; backupSummariesIndex < backupSummariesJsonList.GetLength(); ++backupSummariesIndex)
-    {
+    for (unsigned backupSummariesIndex = 0; backupSummariesIndex < backupSummariesJsonList.GetLength(); ++backupSummariesIndex) {
       m_backupSummaries.push_back(backupSummariesJsonList[backupSummariesIndex].AsObject());
     }
     m_backupSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastEvaluatedBackupArn"))
-  {
+  if (jsonValue.ValueExists("LastEvaluatedBackupArn")) {
     m_lastEvaluatedBackupArn = jsonValue.GetString("LastEvaluatedBackupArn");
     m_lastEvaluatedBackupArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

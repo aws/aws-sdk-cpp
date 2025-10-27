@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutSipMediaApplicationLoggingConfigurationRequest::SerializePayload() const
-{
+Aws::String PutSipMediaApplicationLoggingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sipMediaApplicationLoggingConfigurationHasBeenSet)
-  {
-   payload.WithObject("SipMediaApplicationLoggingConfiguration", m_sipMediaApplicationLoggingConfiguration.Jsonize());
-
+  if (m_sipMediaApplicationLoggingConfigurationHasBeenSet) {
+    payload.WithObject("SipMediaApplicationLoggingConfiguration", m_sipMediaApplicationLoggingConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

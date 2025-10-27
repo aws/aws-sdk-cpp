@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/EventSubscription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/EventSubscription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
 
-EventSubscription::EventSubscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventSubscription::EventSubscription(JsonView jsonValue) { *this = jsonValue; }
 
-EventSubscription& EventSubscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventType"))
-  {
+EventSubscription& EventSubscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventType")) {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("eventType"));
     m_eventTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snsTopicArn"))
-  {
+  if (jsonValue.ValueExists("snsTopicArn")) {
     m_snsTopicArn = jsonValue.GetString("snsTopicArn");
     m_snsTopicArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventSubscription::Jsonize() const
-{
+JsonValue EventSubscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventTypeHasBeenSet)
-  {
-   payload.WithString("eventType", EventTypeMapper::GetNameForEventType(m_eventType));
+  if (m_eventTypeHasBeenSet) {
+    payload.WithString("eventType", EventTypeMapper::GetNameForEventType(m_eventType));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_snsTopicArnHasBeenSet)
-  {
-   payload.WithString("snsTopicArn", m_snsTopicArn);
-
+  if (m_snsTopicArnHasBeenSet) {
+    payload.WithString("snsTopicArn", m_snsTopicArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

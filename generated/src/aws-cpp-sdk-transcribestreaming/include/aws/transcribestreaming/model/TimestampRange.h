@@ -6,66 +6,70 @@
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace TranscribeStreamingService {
+namespace Model {
 
+/**
+ * <p>Contains the timestamp range (start time through end time) of a matched
+ * category.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/TimestampRange">AWS
+ * API Reference</a></p>
+ */
+class TimestampRange {
+ public:
+  AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange() = default;
+  AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains the timestamp range (start time through end time) of a matched
-   * category.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/TimestampRange">AWS
-   * API Reference</a></p>
+   * <p>The time, in milliseconds, from the beginning of the audio stream to the
+   * start of the category match.</p>
    */
-  class TimestampRange
-  {
-  public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange() = default;
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetBeginOffsetMillis() const { return m_beginOffsetMillis; }
+  inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
+  inline void SetBeginOffsetMillis(long long value) {
+    m_beginOffsetMillisHasBeenSet = true;
+    m_beginOffsetMillis = value;
+  }
+  inline TimestampRange& WithBeginOffsetMillis(long long value) {
+    SetBeginOffsetMillis(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The time, in milliseconds, from the beginning of the audio stream to the end
+   * of the category match.</p>
+   */
+  inline long long GetEndOffsetMillis() const { return m_endOffsetMillis; }
+  inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
+  inline void SetEndOffsetMillis(long long value) {
+    m_endOffsetMillisHasBeenSet = true;
+    m_endOffsetMillis = value;
+  }
+  inline TimestampRange& WithEndOffsetMillis(long long value) {
+    SetEndOffsetMillis(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_beginOffsetMillis{0};
+  bool m_beginOffsetMillisHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the
-     * start of the category match.</p>
-     */
-    inline long long GetBeginOffsetMillis() const { return m_beginOffsetMillis; }
-    inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
-    inline void SetBeginOffsetMillis(long long value) { m_beginOffsetMillisHasBeenSet = true; m_beginOffsetMillis = value; }
-    inline TimestampRange& WithBeginOffsetMillis(long long value) { SetBeginOffsetMillis(value); return *this;}
-    ///@}
+  long long m_endOffsetMillis{0};
+  bool m_endOffsetMillisHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the end
-     * of the category match.</p>
-     */
-    inline long long GetEndOffsetMillis() const { return m_endOffsetMillis; }
-    inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
-    inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
-    inline TimestampRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
-    ///@}
-  private:
-
-    long long m_beginOffsetMillis{0};
-    bool m_beginOffsetMillisHasBeenSet = false;
-
-    long long m_endOffsetMillis{0};
-    bool m_endOffsetMillisHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

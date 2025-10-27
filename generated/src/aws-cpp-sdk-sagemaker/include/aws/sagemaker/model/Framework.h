@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class Framework
-  {
-    NOT_SET,
-    TENSORFLOW,
-    KERAS,
-    MXNET,
-    ONNX,
-    PYTORCH,
-    XGBOOST,
-    TFLITE,
-    DARKNET,
-    SKLEARN
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class Framework { NOT_SET, TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE, DARKNET, SKLEARN };
 
-namespace FrameworkMapper
-{
+namespace FrameworkMapper {
 AWS_SAGEMAKER_API Framework GetFrameworkForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForFramework(Framework value);
-} // namespace FrameworkMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace FrameworkMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

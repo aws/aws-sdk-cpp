@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/synthetics/SyntheticsEndpointRules.h>
+#include <aws/synthetics/Synthetics_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Synthetics
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Synthetics {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SyntheticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SyntheticsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SYNTHETICS_API SyntheticsEndpointProvider : public SyntheticsDefaultEpProviderBase
-{
-public:
-    using SyntheticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SYNTHETICS_API SyntheticsEndpointProvider : public SyntheticsDefaultEpProviderBase {
+ public:
+  using SyntheticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SyntheticsEndpointProvider()
-      : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::GetRulesBlob(), Aws::Synthetics::SyntheticsEndpointRules::RulesBlobSize)
-    {}
+  SyntheticsEndpointProvider()
+      : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::GetRulesBlob(),
+                                        Aws::Synthetics::SyntheticsEndpointRules::RulesBlobSize) {}
 
-    ~SyntheticsEndpointProvider()
-    {
-    }
+  ~SyntheticsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Synthetics
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Synthetics
+}  // namespace Aws

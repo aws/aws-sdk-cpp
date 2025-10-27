@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/SMSChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/SMSChannelRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-SMSChannelRequest::SMSChannelRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SMSChannelRequest::SMSChannelRequest(JsonView jsonValue) { *this = jsonValue; }
 
-SMSChannelRequest& SMSChannelRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+SMSChannelRequest& SMSChannelRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SenderId"))
-  {
+  if (jsonValue.ValueExists("SenderId")) {
     m_senderId = jsonValue.GetString("SenderId");
     m_senderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShortCode"))
-  {
+  if (jsonValue.ValueExists("ShortCode")) {
     m_shortCode = jsonValue.GetString("ShortCode");
     m_shortCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SMSChannelRequest::Jsonize() const
-{
+JsonValue SMSChannelRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_senderIdHasBeenSet)
-  {
-   payload.WithString("SenderId", m_senderId);
-
+  if (m_senderIdHasBeenSet) {
+    payload.WithString("SenderId", m_senderId);
   }
 
-  if(m_shortCodeHasBeenSet)
-  {
-   payload.WithString("ShortCode", m_shortCode);
-
+  if (m_shortCodeHasBeenSet) {
+    payload.WithString("ShortCode", m_shortCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

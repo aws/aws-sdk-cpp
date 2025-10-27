@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/Metadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/Metadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-Metadata::Metadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Metadata::Metadata(JsonView jsonValue) { *this = jsonValue; }
 
-Metadata& Metadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+Metadata& Metadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Metadata::Jsonize() const
-{
+JsonValue Metadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

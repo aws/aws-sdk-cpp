@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class Relevance
-  {
-    NOT_SET,
-    HELPFUL,
-    NOT_HELPFUL
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class Relevance { NOT_SET, HELPFUL, NOT_HELPFUL };
 
-namespace RelevanceMapper
-{
+namespace RelevanceMapper {
 AWS_QCONNECT_API Relevance GetRelevanceForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForRelevance(Relevance value);
-} // namespace RelevanceMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace RelevanceMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

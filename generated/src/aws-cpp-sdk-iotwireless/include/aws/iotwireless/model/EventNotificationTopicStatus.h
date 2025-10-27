@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class EventNotificationTopicStatus
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class EventNotificationTopicStatus { NOT_SET, Enabled, Disabled };
 
-namespace EventNotificationTopicStatusMapper
-{
+namespace EventNotificationTopicStatusMapper {
 AWS_IOTWIRELESS_API EventNotificationTopicStatus GetEventNotificationTopicStatusForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForEventNotificationTopicStatus(EventNotificationTopicStatus value);
-} // namespace EventNotificationTopicStatusMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace EventNotificationTopicStatusMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

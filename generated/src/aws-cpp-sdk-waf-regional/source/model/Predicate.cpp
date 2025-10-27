@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/Predicate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/model/Predicate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-Predicate::Predicate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Predicate::Predicate(JsonView jsonValue) { *this = jsonValue; }
 
-Predicate& Predicate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Negated"))
-  {
+Predicate& Predicate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Negated")) {
     m_negated = jsonValue.GetBool("Negated");
     m_negatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = PredicateTypeMapper::GetPredicateTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataId"))
-  {
+  if (jsonValue.ValueExists("DataId")) {
     m_dataId = jsonValue.GetString("DataId");
     m_dataIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Predicate::Jsonize() const
-{
+JsonValue Predicate::Jsonize() const {
   JsonValue payload;
 
-  if(m_negatedHasBeenSet)
-  {
-   payload.WithBool("Negated", m_negated);
-
+  if (m_negatedHasBeenSet) {
+    payload.WithBool("Negated", m_negated);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", PredicateTypeMapper::GetNameForPredicateType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", PredicateTypeMapper::GetNameForPredicateType(m_type));
   }
 
-  if(m_dataIdHasBeenSet)
-  {
-   payload.WithString("DataId", m_dataId);
-
+  if (m_dataIdHasBeenSet) {
+    payload.WithString("DataId", m_dataId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

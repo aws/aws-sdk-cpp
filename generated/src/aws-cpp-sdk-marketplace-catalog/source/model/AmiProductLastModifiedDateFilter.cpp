@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-AmiProductLastModifiedDateFilter::AmiProductLastModifiedDateFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmiProductLastModifiedDateFilter::AmiProductLastModifiedDateFilter(JsonView jsonValue) { *this = jsonValue; }
 
-AmiProductLastModifiedDateFilter& AmiProductLastModifiedDateFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DateRange"))
-  {
+AmiProductLastModifiedDateFilter& AmiProductLastModifiedDateFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DateRange")) {
     m_dateRange = jsonValue.GetObject("DateRange");
     m_dateRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AmiProductLastModifiedDateFilter::Jsonize() const
-{
+JsonValue AmiProductLastModifiedDateFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_dateRangeHasBeenSet)
-  {
-   payload.WithObject("DateRange", m_dateRange.Jsonize());
-
+  if (m_dateRangeHasBeenSet) {
+    payload.WithObject("DateRange", m_dateRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/TestSetDiscrepancyReportResourceTarget.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/TestSetDiscrepancyReportResourceTarget.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget(JsonView jsonValue) { *this = jsonValue; }
 
-TestSetDiscrepancyReportResourceTarget& TestSetDiscrepancyReportResourceTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("botAliasTarget"))
-  {
+TestSetDiscrepancyReportResourceTarget& TestSetDiscrepancyReportResourceTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("botAliasTarget")) {
     m_botAliasTarget = jsonValue.GetObject("botAliasTarget");
     m_botAliasTargetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestSetDiscrepancyReportResourceTarget::Jsonize() const
-{
+JsonValue TestSetDiscrepancyReportResourceTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_botAliasTargetHasBeenSet)
-  {
-   payload.WithObject("botAliasTarget", m_botAliasTarget.Jsonize());
-
+  if (m_botAliasTargetHasBeenSet) {
+    payload.WithObject("botAliasTarget", m_botAliasTarget.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

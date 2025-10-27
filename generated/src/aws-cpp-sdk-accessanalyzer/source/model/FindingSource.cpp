@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-FindingSource::FindingSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FindingSource::FindingSource(JsonView jsonValue) { *this = jsonValue; }
 
-FindingSource& FindingSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FindingSource& FindingSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = FindingSourceTypeMapper::GetFindingSourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detail"))
-  {
+  if (jsonValue.ValueExists("detail")) {
     m_detail = jsonValue.GetObject("detail");
     m_detailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FindingSource::Jsonize() const
-{
+JsonValue FindingSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FindingSourceTypeMapper::GetNameForFindingSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FindingSourceTypeMapper::GetNameForFindingSourceType(m_type));
   }
 
-  if(m_detailHasBeenSet)
-  {
-   payload.WithObject("detail", m_detail.Jsonize());
-
+  if (m_detailHasBeenSet) {
+    payload.WithObject("detail", m_detail.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

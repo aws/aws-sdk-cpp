@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/PerformanceInsightsMetricDimensionGroup.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/PerformanceInsightsMetricDimensionGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PerformanceInsightsMetricDimensionGroup& PerformanceInsightsMetricDimensionGroup::operator =(const XmlNode& xmlNode)
-{
+PerformanceInsightsMetricDimensionGroup& PerformanceInsightsMetricDimensionGroup::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
-    if(!dimensionsNode.IsNull())
-    {
+    if (!dimensionsNode.IsNull()) {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
       m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
-      while(!dimensionsMember.IsNull())
-      {
+      while (!dimensionsMember.IsNull()) {
         m_dimensions.push_back(dimensionsMember.GetText());
         dimensionsMember = dimensionsMember.NextNode("member");
       }
@@ -45,14 +35,12 @@ PerformanceInsightsMetricDimensionGroup& PerformanceInsightsMetricDimensionGroup
       m_dimensionsHasBeenSet = true;
     }
     XmlNode groupNode = resultNode.FirstChild("Group");
-    if(!groupNode.IsNull())
-    {
+    if (!groupNode.IsNull()) {
       m_group = Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText());
       m_groupHasBeenSet = true;
     }
     XmlNode limitNode = resultNode.FirstChild("Limit");
-    if(!limitNode.IsNull())
-    {
+    if (!limitNode.IsNull()) {
       m_limit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(limitNode.GetText()).c_str()).c_str());
       m_limitHasBeenSet = true;
     }
@@ -61,49 +49,40 @@ PerformanceInsightsMetricDimensionGroup& PerformanceInsightsMetricDimensionGroup
   return *this;
 }
 
-void PerformanceInsightsMetricDimensionGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        oStream << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+void PerformanceInsightsMetricDimensionGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                             const char* locationValue) const {
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      oStream << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_groupHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Group=" << StringUtils::URLEncode(m_group.c_str()) << "&";
+  if (m_groupHasBeenSet) {
+    oStream << location << index << locationValue << ".Group=" << StringUtils::URLEncode(m_group.c_str()) << "&";
   }
 
-  if(m_limitHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Limit=" << m_limit << "&";
-  }
-
-}
-
-void PerformanceInsightsMetricDimensionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        oStream << location << ".Dimensions.member." << dimensionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_groupHasBeenSet)
-  {
-      oStream << location << ".Group=" << StringUtils::URLEncode(m_group.c_str()) << "&";
-  }
-  if(m_limitHasBeenSet)
-  {
-      oStream << location << ".Limit=" << m_limit << "&";
+  if (m_limitHasBeenSet) {
+    oStream << location << index << locationValue << ".Limit=" << m_limit << "&";
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void PerformanceInsightsMetricDimensionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      oStream << location << ".Dimensions.member." << dimensionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_groupHasBeenSet) {
+    oStream << location << ".Group=" << StringUtils::URLEncode(m_group.c_str()) << "&";
+  }
+  if (m_limitHasBeenSet) {
+    oStream << location << ".Limit=" << m_limit << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

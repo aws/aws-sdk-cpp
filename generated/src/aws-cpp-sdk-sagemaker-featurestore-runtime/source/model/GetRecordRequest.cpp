@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-featurestore-runtime/model/GetRecordRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker-featurestore-runtime/model/GetRecordRequest.h>
 
 #include <utility>
 
@@ -15,39 +15,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetRecordRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String GetRecordRequest::SerializePayload() const { return {}; }
 
-void GetRecordRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_recordIdentifierValueAsStringHasBeenSet)
-    {
-      ss << m_recordIdentifierValueAsString;
-      uri.AddQueryStringParameter("RecordIdentifierValueAsString", ss.str());
+void GetRecordRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_recordIdentifierValueAsStringHasBeenSet) {
+    ss << m_recordIdentifierValueAsString;
+    uri.AddQueryStringParameter("RecordIdentifierValueAsString", ss.str());
+    ss.str("");
+  }
+
+  if (m_featureNamesHasBeenSet) {
+    for (const auto& item : m_featureNames) {
+      ss << item;
+      uri.AddQueryStringParameter("FeatureName", ss.str());
       ss.str("");
     }
+  }
 
-    if(m_featureNamesHasBeenSet)
-    {
-      for(const auto& item : m_featureNames)
-      {
-        ss << item;
-        uri.AddQueryStringParameter("FeatureName", ss.str());
-        ss.str("");
-      }
-    }
-
-    if(m_expirationTimeResponseHasBeenSet)
-    {
-      ss << ExpirationTimeResponseMapper::GetNameForExpirationTimeResponse(m_expirationTimeResponse);
-      uri.AddQueryStringParameter("ExpirationTimeResponse", ss.str());
-      ss.str("");
-    }
-
+  if (m_expirationTimeResponseHasBeenSet) {
+    ss << ExpirationTimeResponseMapper::GetNameForExpirationTimeResponse(m_expirationTimeResponse);
+    uri.AddQueryStringParameter("ExpirationTimeResponse", ss.str());
+    ss.str("");
+  }
 }
-
-
-

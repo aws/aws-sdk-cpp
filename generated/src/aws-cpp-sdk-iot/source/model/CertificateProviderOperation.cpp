@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CertificateProviderOperation.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/iot/model/CertificateProviderOperation.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace IoT {
+namespace Model {
+namespace CertificateProviderOperationMapper {
 
-namespace Aws
-{
-  namespace IoT
-  {
-    namespace Model
-    {
-      namespace CertificateProviderOperationMapper
-      {
+static const int CreateCertificateFromCsr_HASH = HashingUtils::HashString("CreateCertificateFromCsr");
 
-        static const int CreateCertificateFromCsr_HASH = HashingUtils::HashString("CreateCertificateFromCsr");
+CertificateProviderOperation GetCertificateProviderOperationForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CreateCertificateFromCsr_HASH) {
+    return CertificateProviderOperation::CreateCertificateFromCsr;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CertificateProviderOperation>(hashCode);
+  }
 
+  return CertificateProviderOperation::NOT_SET;
+}
 
-        CertificateProviderOperation GetCertificateProviderOperationForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CreateCertificateFromCsr_HASH)
-          {
-            return CertificateProviderOperation::CreateCertificateFromCsr;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CertificateProviderOperation>(hashCode);
-          }
+Aws::String GetNameForCertificateProviderOperation(CertificateProviderOperation enumValue) {
+  switch (enumValue) {
+    case CertificateProviderOperation::NOT_SET:
+      return {};
+    case CertificateProviderOperation::CreateCertificateFromCsr:
+      return "CreateCertificateFromCsr";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CertificateProviderOperation::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCertificateProviderOperation(CertificateProviderOperation enumValue)
-        {
-          switch(enumValue)
-          {
-          case CertificateProviderOperation::NOT_SET:
-            return {};
-          case CertificateProviderOperation::CreateCertificateFromCsr:
-            return "CreateCertificateFromCsr";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CertificateProviderOperationMapper
-    } // namespace Model
-  } // namespace IoT
-} // namespace Aws
+}  // namespace CertificateProviderOperationMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

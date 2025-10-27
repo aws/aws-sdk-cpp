@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class AudioOnlyHlsSegmentType
-  {
-    NOT_SET,
-    AAC,
-    FMP4
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class AudioOnlyHlsSegmentType { NOT_SET, AAC, FMP4 };
 
-namespace AudioOnlyHlsSegmentTypeMapper
-{
+namespace AudioOnlyHlsSegmentTypeMapper {
 AWS_MEDIALIVE_API AudioOnlyHlsSegmentType GetAudioOnlyHlsSegmentTypeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForAudioOnlyHlsSegmentType(AudioOnlyHlsSegmentType value);
-} // namespace AudioOnlyHlsSegmentTypeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace AudioOnlyHlsSegmentTypeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

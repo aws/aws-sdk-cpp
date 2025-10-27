@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/UpdateTargetGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/UpdateTargetGroupRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTargetGroupRequest::SerializePayload() const
-{
+Aws::String UpdateTargetGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_healthCheckHasBeenSet)
-  {
-   payload.WithObject("healthCheck", m_healthCheck.Jsonize());
-
+  if (m_healthCheckHasBeenSet) {
+    payload.WithObject("healthCheck", m_healthCheck.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

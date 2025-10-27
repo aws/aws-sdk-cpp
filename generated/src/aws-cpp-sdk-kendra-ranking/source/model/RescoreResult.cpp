@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra-ranking/model/RescoreResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kendra-ranking/model/RescoreResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RescoreResult::RescoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RescoreResult::RescoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RescoreResult& RescoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RescoreResult& RescoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RescoreId"))
-  {
+  if (jsonValue.ValueExists("RescoreId")) {
     m_rescoreId = jsonValue.GetString("RescoreId");
     m_rescoreIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultItems"))
-  {
+  if (jsonValue.ValueExists("ResultItems")) {
     Aws::Utils::Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");
-    for(unsigned resultItemsIndex = 0; resultItemsIndex < resultItemsJsonList.GetLength(); ++resultItemsIndex)
-    {
+    for (unsigned resultItemsIndex = 0; resultItemsIndex < resultItemsJsonList.GetLength(); ++resultItemsIndex) {
       m_resultItems.push_back(resultItemsJsonList[resultItemsIndex].AsObject());
     }
     m_resultItemsHasBeenSet = true;
@@ -42,12 +35,10 @@ RescoreResult& RescoreResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

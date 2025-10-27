@@ -4,73 +4,63 @@
  */
 
 #include <aws/cloudformation/model/ResourceScanSummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-ResourceScanSummary::ResourceScanSummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ResourceScanSummary::ResourceScanSummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResourceScanSummary& ResourceScanSummary::operator =(const XmlNode& xmlNode)
-{
+ResourceScanSummary& ResourceScanSummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode resourceScanIdNode = resultNode.FirstChild("ResourceScanId");
-    if(!resourceScanIdNode.IsNull())
-    {
+    if (!resourceScanIdNode.IsNull()) {
       m_resourceScanId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceScanIdNode.GetText());
       m_resourceScanIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = ResourceScanStatusMapper::GetResourceScanStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status = ResourceScanStatusMapper::GetResourceScanStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
-    if(!statusReasonNode.IsNull())
-    {
+    if (!statusReasonNode.IsNull()) {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
-    if(!startTimeNode.IsNull())
-    {
-      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!startTimeNode.IsNull()) {
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
-    if(!endTimeNode.IsNull())
-    {
-      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!endTimeNode.IsNull()) {
+      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(),
+                           Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode percentageCompletedNode = resultNode.FirstChild("PercentageCompleted");
-    if(!percentageCompletedNode.IsNull())
-    {
-      m_percentageCompleted = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompletedNode.GetText()).c_str()).c_str());
+    if (!percentageCompletedNode.IsNull()) {
+      m_percentageCompleted = StringUtils::ConvertToDouble(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompletedNode.GetText()).c_str()).c_str());
       m_percentageCompletedHasBeenSet = true;
     }
     XmlNode scanTypeNode = resultNode.FirstChild("ScanType");
-    if(!scanTypeNode.IsNull())
-    {
-      m_scanType = ScanTypeMapper::GetScanTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scanTypeNode.GetText()).c_str()));
+    if (!scanTypeNode.IsNull()) {
+      m_scanType =
+          ScanTypeMapper::GetScanTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scanTypeNode.GetText()).c_str()));
       m_scanTypeHasBeenSet = true;
     }
   }
@@ -78,77 +68,65 @@ ResourceScanSummary& ResourceScanSummary::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_resourceScanIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
+void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_resourceScanIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  if (m_statusReasonHasBeenSet) {
+    oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_startTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_endTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_percentageCompletedHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
+  if (m_percentageCompletedHasBeenSet) {
+    oStream << location << index << locationValue << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
   }
 
-  if(m_scanTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType)) << "&";
-  }
-
-}
-
-void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_resourceScanIdHasBeenSet)
-  {
-      oStream << location << ".ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
-  }
-  if(m_statusReasonHasBeenSet)
-  {
-      oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
-  }
-  if(m_startTimeHasBeenSet)
-  {
-      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_endTimeHasBeenSet)
-  {
-      oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_percentageCompletedHasBeenSet)
-  {
-      oStream << location << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
-  }
-  if(m_scanTypeHasBeenSet)
-  {
-      oStream << location << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType)) << "&";
+  if (m_scanTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_resourceScanIdHasBeenSet) {
+    oStream << location << ".ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
+  }
+  if (m_statusReasonHasBeenSet) {
+    oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+  if (m_startTimeHasBeenSet) {
+    oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_endTimeHasBeenSet) {
+    oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_percentageCompletedHasBeenSet) {
+    oStream << location << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
+  }
+  if (m_scanTypeHasBeenSet) {
+    oStream << location << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

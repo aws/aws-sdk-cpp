@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/SpellCorrectedQuery.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/SpellCorrectedQuery.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-SpellCorrectedQuery::SpellCorrectedQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpellCorrectedQuery::SpellCorrectedQuery(JsonView jsonValue) { *this = jsonValue; }
 
-SpellCorrectedQuery& SpellCorrectedQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SuggestedQueryText"))
-  {
+SpellCorrectedQuery& SpellCorrectedQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SuggestedQueryText")) {
     m_suggestedQueryText = jsonValue.GetString("SuggestedQueryText");
     m_suggestedQueryTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Corrections"))
-  {
+  if (jsonValue.ValueExists("Corrections")) {
     Aws::Utils::Array<JsonView> correctionsJsonList = jsonValue.GetArray("Corrections");
-    for(unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex)
-    {
+    for (unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex) {
       m_corrections.push_back(correctionsJsonList[correctionsIndex].AsObject());
     }
     m_correctionsHasBeenSet = true;
@@ -42,30 +32,24 @@ SpellCorrectedQuery& SpellCorrectedQuery::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SpellCorrectedQuery::Jsonize() const
-{
+JsonValue SpellCorrectedQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_suggestedQueryTextHasBeenSet)
-  {
-   payload.WithString("SuggestedQueryText", m_suggestedQueryText);
-
+  if (m_suggestedQueryTextHasBeenSet) {
+    payload.WithString("SuggestedQueryText", m_suggestedQueryText);
   }
 
-  if(m_correctionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> correctionsJsonList(m_corrections.size());
-   for(unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex)
-   {
-     correctionsJsonList[correctionsIndex].AsObject(m_corrections[correctionsIndex].Jsonize());
-   }
-   payload.WithArray("Corrections", std::move(correctionsJsonList));
-
+  if (m_correctionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> correctionsJsonList(m_corrections.size());
+    for (unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex) {
+      correctionsJsonList[correctionsIndex].AsObject(m_corrections[correctionsIndex].Jsonize());
+    }
+    payload.WithArray("Corrections", std::move(correctionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-SpeakerSearchDetails::SpeakerSearchDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpeakerSearchDetails::SpeakerSearchDetails(JsonView jsonValue) { *this = jsonValue; }
 
-SpeakerSearchDetails& SpeakerSearchDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Results"))
-  {
+SpeakerSearchDetails& SpeakerSearchDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Results")) {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
-    for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
-    {
+    for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
     m_resultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceprintGenerationStatus"))
-  {
+  if (jsonValue.ValueExists("VoiceprintGenerationStatus")) {
     m_voiceprintGenerationStatus = jsonValue.GetString("VoiceprintGenerationStatus");
     m_voiceprintGenerationStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SpeakerSearchDetails::Jsonize() const
-{
+JsonValue SpeakerSearchDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resultsJsonList(m_results.size());
-   for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
-   {
-     resultsJsonList[resultsIndex].AsObject(m_results[resultsIndex].Jsonize());
-   }
-   payload.WithArray("Results", std::move(resultsJsonList));
-
+  if (m_resultsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resultsJsonList(m_results.size());
+    for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
+      resultsJsonList[resultsIndex].AsObject(m_results[resultsIndex].Jsonize());
+    }
+    payload.WithArray("Results", std::move(resultsJsonList));
   }
 
-  if(m_voiceprintGenerationStatusHasBeenSet)
-  {
-   payload.WithString("VoiceprintGenerationStatus", m_voiceprintGenerationStatus);
-
+  if (m_voiceprintGenerationStatusHasBeenSet) {
+    payload.WithString("VoiceprintGenerationStatus", m_voiceprintGenerationStatus);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

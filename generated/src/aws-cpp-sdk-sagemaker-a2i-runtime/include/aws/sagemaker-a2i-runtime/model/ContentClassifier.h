@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace AugmentedAIRuntime
-{
-namespace Model
-{
-  enum class ContentClassifier
-  {
-    NOT_SET,
-    FreeOfPersonallyIdentifiableInformation,
-    FreeOfAdultContent
-  };
+namespace Aws {
+namespace AugmentedAIRuntime {
+namespace Model {
+enum class ContentClassifier { NOT_SET, FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent };
 
-namespace ContentClassifierMapper
-{
+namespace ContentClassifierMapper {
 AWS_AUGMENTEDAIRUNTIME_API ContentClassifier GetContentClassifierForName(const Aws::String& name);
 
 AWS_AUGMENTEDAIRUNTIME_API Aws::String GetNameForContentClassifier(ContentClassifier value);
-} // namespace ContentClassifierMapper
-} // namespace Model
-} // namespace AugmentedAIRuntime
-} // namespace Aws
+}  // namespace ContentClassifierMapper
+}  // namespace Model
+}  // namespace AugmentedAIRuntime
+}  // namespace Aws

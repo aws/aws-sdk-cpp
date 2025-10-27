@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/CloudWatchEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
-  enum class PlacementStrategyType
-  {
-    NOT_SET,
-    random,
-    spread,
-    binpack
-  };
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
+enum class PlacementStrategyType { NOT_SET, random, spread, binpack };
 
-namespace PlacementStrategyTypeMapper
-{
+namespace PlacementStrategyTypeMapper {
 AWS_CLOUDWATCHEVENTS_API PlacementStrategyType GetPlacementStrategyTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVENTS_API Aws::String GetNameForPlacementStrategyType(PlacementStrategyType value);
-} // namespace PlacementStrategyTypeMapper
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace PlacementStrategyTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

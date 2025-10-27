@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/MemberIdArnPair.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/MemberIdArnPair.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-MemberIdArnPair::MemberIdArnPair(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberIdArnPair::MemberIdArnPair(JsonView jsonValue) { *this = jsonValue; }
 
-MemberIdArnPair& MemberIdArnPair::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MemberId"))
-  {
+MemberIdArnPair& MemberIdArnPair::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MemberId")) {
     m_memberId = jsonValue.GetString("MemberId");
     m_memberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MemberArn"))
-  {
+  if (jsonValue.ValueExists("MemberArn")) {
     m_memberArn = jsonValue.GetString("MemberArn");
     m_memberArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberIdArnPair::Jsonize() const
-{
+JsonValue MemberIdArnPair::Jsonize() const {
   JsonValue payload;
 
-  if(m_memberIdHasBeenSet)
-  {
-   payload.WithString("MemberId", m_memberId);
-
+  if (m_memberIdHasBeenSet) {
+    payload.WithString("MemberId", m_memberId);
   }
 
-  if(m_memberArnHasBeenSet)
-  {
-   payload.WithString("MemberArn", m_memberArn);
-
+  if (m_memberArnHasBeenSet) {
+    payload.WithString("MemberArn", m_memberArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

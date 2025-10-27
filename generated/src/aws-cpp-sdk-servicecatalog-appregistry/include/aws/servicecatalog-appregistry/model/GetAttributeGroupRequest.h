@@ -4,52 +4,53 @@
  */
 
 #pragma once
-#include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
-#include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
+#include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
 
+/**
+ */
+class GetAttributeGroupRequest : public AppRegistryRequest {
+ public:
+  AWS_APPREGISTRY_API GetAttributeGroupRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetAttributeGroup"; }
+
+  AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p> The name, ID, or ARN of the attribute group that holds the attributes to
+   * describe the application. </p>
    */
-  class GetAttributeGroupRequest : public AppRegistryRequest
-  {
-  public:
-    AWS_APPREGISTRY_API GetAttributeGroupRequest() = default;
+  inline const Aws::String& GetAttributeGroup() const { return m_attributeGroup; }
+  inline bool AttributeGroupHasBeenSet() const { return m_attributeGroupHasBeenSet; }
+  template <typename AttributeGroupT = Aws::String>
+  void SetAttributeGroup(AttributeGroupT&& value) {
+    m_attributeGroupHasBeenSet = true;
+    m_attributeGroup = std::forward<AttributeGroupT>(value);
+  }
+  template <typename AttributeGroupT = Aws::String>
+  GetAttributeGroupRequest& WithAttributeGroup(AttributeGroupT&& value) {
+    SetAttributeGroup(std::forward<AttributeGroupT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_attributeGroup;
+  bool m_attributeGroupHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetAttributeGroup"; }
-
-    AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
-    inline const Aws::String& GetAttributeGroup() const { return m_attributeGroup; }
-    inline bool AttributeGroupHasBeenSet() const { return m_attributeGroupHasBeenSet; }
-    template<typename AttributeGroupT = Aws::String>
-    void SetAttributeGroup(AttributeGroupT&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::forward<AttributeGroupT>(value); }
-    template<typename AttributeGroupT = Aws::String>
-    GetAttributeGroupRequest& WithAttributeGroup(AttributeGroupT&& value) { SetAttributeGroup(std::forward<AttributeGroupT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_attributeGroup;
-    bool m_attributeGroupHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

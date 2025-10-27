@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class DataOperation
-  {
-    NOT_SET,
-    READ,
-    WRITE
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class DataOperation { NOT_SET, READ, WRITE };
 
-namespace DataOperationMapper
-{
+namespace DataOperationMapper {
 AWS_GLUE_API DataOperation GetDataOperationForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForDataOperation(DataOperation value);
-} // namespace DataOperationMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace DataOperationMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

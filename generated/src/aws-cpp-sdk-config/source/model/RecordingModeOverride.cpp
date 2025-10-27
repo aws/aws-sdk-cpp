@@ -11,71 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RecordingModeOverride::RecordingModeOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordingModeOverride::RecordingModeOverride(JsonView jsonValue) { *this = jsonValue; }
 
-RecordingModeOverride& RecordingModeOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+RecordingModeOverride& RecordingModeOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceTypes"))
-  {
+  if (jsonValue.ValueExists("resourceTypes")) {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
-    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
-    {
+    for (unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex) {
       m_resourceTypes.push_back(ResourceTypeMapper::GetResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
     }
     m_resourceTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recordingFrequency"))
-  {
+  if (jsonValue.ValueExists("recordingFrequency")) {
     m_recordingFrequency = RecordingFrequencyMapper::GetRecordingFrequencyForName(jsonValue.GetString("recordingFrequency"));
     m_recordingFrequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordingModeOverride::Jsonize() const
-{
+JsonValue RecordingModeOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_resourceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
-   for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
-   {
-     resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
-   }
-   payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
-
+  if (m_resourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+    for (unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex) {
+      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
+    }
+    payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
   }
 
-  if(m_recordingFrequencyHasBeenSet)
-  {
-   payload.WithString("recordingFrequency", RecordingFrequencyMapper::GetNameForRecordingFrequency(m_recordingFrequency));
+  if (m_recordingFrequencyHasBeenSet) {
+    payload.WithString("recordingFrequency", RecordingFrequencyMapper::GetNameForRecordingFrequency(m_recordingFrequency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

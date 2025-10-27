@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/ServerSideEncryptionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/ServerSideEncryptionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerSideEncryptionConfiguration::Jsonize() const
-{
+JsonValue ServerSideEncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

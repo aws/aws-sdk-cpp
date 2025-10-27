@@ -5,12 +5,8 @@
 
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

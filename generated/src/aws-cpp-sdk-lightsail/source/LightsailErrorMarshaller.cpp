@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Lightsail;
 
-AWSError<CoreErrors> LightsailErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LightsailErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LightsailErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

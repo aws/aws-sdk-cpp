@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/ColumnDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspaces/model/ColumnDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Keyspaces {
+namespace Model {
 
-ColumnDefinition::ColumnDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnDefinition::ColumnDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnDefinition& ColumnDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ColumnDefinition& ColumnDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnDefinition::Jsonize() const
-{
+JsonValue ColumnDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

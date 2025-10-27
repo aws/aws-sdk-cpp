@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-UserProficiency::UserProficiency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserProficiency::UserProficiency(JsonView jsonValue) { *this = jsonValue; }
 
-UserProficiency& UserProficiency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+UserProficiency& UserProficiency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeValue"))
-  {
+  if (jsonValue.ValueExists("AttributeValue")) {
     m_attributeValue = jsonValue.GetString("AttributeValue");
     m_attributeValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Level"))
-  {
+  if (jsonValue.ValueExists("Level")) {
     m_level = jsonValue.GetDouble("Level");
     m_levelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserProficiency::Jsonize() const
-{
+JsonValue UserProficiency::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_attributeValueHasBeenSet)
-  {
-   payload.WithString("AttributeValue", m_attributeValue);
-
+  if (m_attributeValueHasBeenSet) {
+    payload.WithString("AttributeValue", m_attributeValue);
   }
 
-  if(m_levelHasBeenSet)
-  {
-   payload.WithDouble("Level", m_level);
-
+  if (m_levelHasBeenSet) {
+    payload.WithDouble("Level", m_level);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

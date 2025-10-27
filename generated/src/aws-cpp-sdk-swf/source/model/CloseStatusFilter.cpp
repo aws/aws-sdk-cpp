@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/CloseStatusFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/CloseStatusFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-CloseStatusFilter::CloseStatusFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloseStatusFilter::CloseStatusFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CloseStatusFilter& CloseStatusFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+CloseStatusFilter& CloseStatusFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = CloseStatusMapper::GetCloseStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloseStatusFilter::Jsonize() const
-{
+JsonValue CloseStatusFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", CloseStatusMapper::GetNameForCloseStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", CloseStatusMapper::GetNameForCloseStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

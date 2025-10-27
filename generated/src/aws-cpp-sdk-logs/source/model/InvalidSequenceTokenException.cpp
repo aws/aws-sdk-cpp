@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/InvalidSequenceTokenException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/InvalidSequenceTokenException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-InvalidSequenceTokenException::InvalidSequenceTokenException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidSequenceTokenException::InvalidSequenceTokenException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidSequenceTokenException& InvalidSequenceTokenException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("expectedSequenceToken"))
-  {
+InvalidSequenceTokenException& InvalidSequenceTokenException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expectedSequenceToken")) {
     m_expectedSequenceToken = jsonValue.GetString("expectedSequenceToken");
     m_expectedSequenceTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidSequenceTokenException::Jsonize() const
-{
+JsonValue InvalidSequenceTokenException::Jsonize() const {
   JsonValue payload;
 
-  if(m_expectedSequenceTokenHasBeenSet)
-  {
-   payload.WithString("expectedSequenceToken", m_expectedSequenceToken);
-
+  if (m_expectedSequenceTokenHasBeenSet) {
+    payload.WithString("expectedSequenceToken", m_expectedSequenceToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

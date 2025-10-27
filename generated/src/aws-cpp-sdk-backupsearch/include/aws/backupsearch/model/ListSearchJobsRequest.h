@@ -4,87 +4,99 @@
  */
 
 #pragma once
-#include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/backupsearch/BackupSearchRequest.h>
+#include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/backupsearch/model/SearchJobState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace BackupSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace BackupSearch {
+namespace Model {
 
+/**
+ */
+class ListSearchJobsRequest : public BackupSearchRequest {
+ public:
+  AWS_BACKUPSEARCH_API ListSearchJobsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListSearchJobs"; }
+
+  AWS_BACKUPSEARCH_API Aws::String SerializePayload() const override;
+
+  AWS_BACKUPSEARCH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>Include this parameter to filter list by search job status.</p>
    */
-  class ListSearchJobsRequest : public BackupSearchRequest
-  {
-  public:
-    AWS_BACKUPSEARCH_API ListSearchJobsRequest() = default;
+  inline SearchJobState GetByStatus() const { return m_byStatus; }
+  inline bool ByStatusHasBeenSet() const { return m_byStatusHasBeenSet; }
+  inline void SetByStatus(SearchJobState value) {
+    m_byStatusHasBeenSet = true;
+    m_byStatus = value;
+  }
+  inline ListSearchJobsRequest& WithByStatus(SearchJobState value) {
+    SetByStatus(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListSearchJobs"; }
+  ///@{
+  /**
+   * <p>The next item following a partial list of returned search jobs.</p> <p>For
+   * example, if a request is made to return <code>MaxResults</code> number of
+   * backups, <code>NextToken</code> allows you to return more items in your list
+   * starting at the location pointed to by the next token.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListSearchJobsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_BACKUPSEARCH_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The maximum number of resource list items to be returned.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListSearchJobsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  SearchJobState m_byStatus{SearchJobState::NOT_SET};
+  bool m_byStatusHasBeenSet = false;
 
-    AWS_BACKUPSEARCH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Include this parameter to filter list by search job status.</p>
-     */
-    inline SearchJobState GetByStatus() const { return m_byStatus; }
-    inline bool ByStatusHasBeenSet() const { return m_byStatusHasBeenSet; }
-    inline void SetByStatus(SearchJobState value) { m_byStatusHasBeenSet = true; m_byStatus = value; }
-    inline ListSearchJobsRequest& WithByStatus(SearchJobState value) { SetByStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The next item following a partial list of returned search jobs.</p> <p>For
-     * example, if a request is made to return <code>MaxResults</code> number of
-     * backups, <code>NextToken</code> allows you to return more items in your list
-     * starting at the location pointed to by the next token.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListSearchJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of resource list items to be returned.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSearchJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    SearchJobState m_byStatus{SearchJobState::NOT_SET};
-    bool m_byStatusHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupSearch
+}  // namespace Aws

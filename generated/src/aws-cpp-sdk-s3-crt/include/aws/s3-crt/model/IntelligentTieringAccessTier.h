@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class IntelligentTieringAccessTier
-  {
-    NOT_SET,
-    ARCHIVE_ACCESS,
-    DEEP_ARCHIVE_ACCESS
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class IntelligentTieringAccessTier { NOT_SET, ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS };
 
-namespace IntelligentTieringAccessTierMapper
-{
+namespace IntelligentTieringAccessTierMapper {
 AWS_S3CRT_API IntelligentTieringAccessTier GetIntelligentTieringAccessTierForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForIntelligentTieringAccessTier(IntelligentTieringAccessTier value);
-} // namespace IntelligentTieringAccessTierMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace IntelligentTieringAccessTierMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

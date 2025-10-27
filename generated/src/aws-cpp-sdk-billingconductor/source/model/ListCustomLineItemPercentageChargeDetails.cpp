@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-ListCustomLineItemPercentageChargeDetails::ListCustomLineItemPercentageChargeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListCustomLineItemPercentageChargeDetails::ListCustomLineItemPercentageChargeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ListCustomLineItemPercentageChargeDetails& ListCustomLineItemPercentageChargeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PercentageValue"))
-  {
+ListCustomLineItemPercentageChargeDetails& ListCustomLineItemPercentageChargeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PercentageValue")) {
     m_percentageValue = jsonValue.GetDouble("PercentageValue");
     m_percentageValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListCustomLineItemPercentageChargeDetails::Jsonize() const
-{
+JsonValue ListCustomLineItemPercentageChargeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_percentageValueHasBeenSet)
-  {
-   payload.WithDouble("PercentageValue", m_percentageValue);
-
+  if (m_percentageValueHasBeenSet) {
+    payload.WithDouble("PercentageValue", m_percentageValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

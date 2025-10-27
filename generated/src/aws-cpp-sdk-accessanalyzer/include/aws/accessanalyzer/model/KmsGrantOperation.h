@@ -7,37 +7,32 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class KmsGrantOperation
-  {
-    NOT_SET,
-    CreateGrant,
-    Decrypt,
-    DescribeKey,
-    Encrypt,
-    GenerateDataKey,
-    GenerateDataKeyPair,
-    GenerateDataKeyPairWithoutPlaintext,
-    GenerateDataKeyWithoutPlaintext,
-    GetPublicKey,
-    ReEncryptFrom,
-    ReEncryptTo,
-    RetireGrant,
-    Sign,
-    Verify
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class KmsGrantOperation {
+  NOT_SET,
+  CreateGrant,
+  Decrypt,
+  DescribeKey,
+  Encrypt,
+  GenerateDataKey,
+  GenerateDataKeyPair,
+  GenerateDataKeyPairWithoutPlaintext,
+  GenerateDataKeyWithoutPlaintext,
+  GetPublicKey,
+  ReEncryptFrom,
+  ReEncryptTo,
+  RetireGrant,
+  Sign,
+  Verify
+};
 
-namespace KmsGrantOperationMapper
-{
+namespace KmsGrantOperationMapper {
 AWS_ACCESSANALYZER_API KmsGrantOperation GetKmsGrantOperationForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForKmsGrantOperation(KmsGrantOperation value);
-} // namespace KmsGrantOperationMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace KmsGrantOperationMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

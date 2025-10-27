@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class QueryStatus
-  {
-    NOT_SET,
-    Scheduled,
-    Running,
-    Complete,
-    Failed,
-    Cancelled,
-    Timeout,
-    Unknown
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class QueryStatus { NOT_SET, Scheduled, Running, Complete, Failed, Cancelled, Timeout, Unknown };
 
-namespace QueryStatusMapper
-{
+namespace QueryStatusMapper {
 AWS_CLOUDWATCHLOGS_API QueryStatus GetQueryStatusForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForQueryStatus(QueryStatus value);
-} // namespace QueryStatusMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace QueryStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

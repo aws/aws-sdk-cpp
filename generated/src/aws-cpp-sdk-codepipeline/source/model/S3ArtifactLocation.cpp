@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-S3ArtifactLocation::S3ArtifactLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ArtifactLocation::S3ArtifactLocation(JsonView jsonValue) { *this = jsonValue; }
 
-S3ArtifactLocation& S3ArtifactLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketName"))
-  {
+S3ArtifactLocation& S3ArtifactLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("objectKey"))
-  {
+  if (jsonValue.ValueExists("objectKey")) {
     m_objectKey = jsonValue.GetString("objectKey");
     m_objectKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ArtifactLocation::Jsonize() const
-{
+JsonValue S3ArtifactLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
-  if(m_objectKeyHasBeenSet)
-  {
-   payload.WithString("objectKey", m_objectKey);
-
+  if (m_objectKeyHasBeenSet) {
+    payload.WithString("objectKey", m_objectKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

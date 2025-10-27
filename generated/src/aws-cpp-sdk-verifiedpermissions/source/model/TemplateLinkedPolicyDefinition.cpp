@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-TemplateLinkedPolicyDefinition::TemplateLinkedPolicyDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateLinkedPolicyDefinition::TemplateLinkedPolicyDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateLinkedPolicyDefinition& TemplateLinkedPolicyDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("policyTemplateId"))
-  {
+TemplateLinkedPolicyDefinition& TemplateLinkedPolicyDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("policyTemplateId")) {
     m_policyTemplateId = jsonValue.GetString("policyTemplateId");
     m_policyTemplateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("principal"))
-  {
+  if (jsonValue.ValueExists("principal")) {
     m_principal = jsonValue.GetObject("principal");
     m_principalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resource"))
-  {
+  if (jsonValue.ValueExists("resource")) {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateLinkedPolicyDefinition::Jsonize() const
-{
+JsonValue TemplateLinkedPolicyDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyTemplateIdHasBeenSet)
-  {
-   payload.WithString("policyTemplateId", m_policyTemplateId);
-
+  if (m_policyTemplateIdHasBeenSet) {
+    payload.WithString("policyTemplateId", m_policyTemplateId);
   }
 
-  if(m_principalHasBeenSet)
-  {
-   payload.WithObject("principal", m_principal.Jsonize());
-
+  if (m_principalHasBeenSet) {
+    payload.WithObject("principal", m_principal.Jsonize());
   }
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithObject("resource", m_resource.Jsonize());
-
+  if (m_resourceHasBeenSet) {
+    payload.WithObject("resource", m_resource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

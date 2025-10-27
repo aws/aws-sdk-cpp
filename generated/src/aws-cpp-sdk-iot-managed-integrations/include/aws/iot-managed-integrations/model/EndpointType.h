@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class EndpointType
-  {
-    NOT_SET,
-    LAMBDA
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class EndpointType { NOT_SET, LAMBDA };
 
-namespace EndpointTypeMapper
-{
+namespace EndpointTypeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API EndpointType GetEndpointTypeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForEndpointType(EndpointType value);
-} // namespace EndpointTypeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace EndpointTypeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

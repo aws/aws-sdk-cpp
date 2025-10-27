@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/ResourceAccessPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/ResourceAccessPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceAccessPolicy& ResourceAccessPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Permission"))
-  {
+ResourceAccessPolicy& ResourceAccessPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Permission")) {
     m_permission = PermissionMapper::GetPermissionForName(jsonValue.GetString("Permission"));
     m_permissionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceAccessPolicy::Jsonize() const
-{
+JsonValue ResourceAccessPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionHasBeenSet)
-  {
-   payload.WithString("Permission", PermissionMapper::GetNameForPermission(m_permission));
+  if (m_permissionHasBeenSet) {
+    payload.WithString("Permission", PermissionMapper::GetNameForPermission(m_permission));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

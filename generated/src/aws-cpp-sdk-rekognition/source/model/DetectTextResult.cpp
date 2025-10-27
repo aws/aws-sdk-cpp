@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/DetectTextResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rekognition/model/DetectTextResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DetectTextResult& DetectTextResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TextDetections"))
-  {
+  if (jsonValue.ValueExists("TextDetections")) {
     Aws::Utils::Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
-    for(unsigned textDetectionsIndex = 0; textDetectionsIndex < textDetectionsJsonList.GetLength(); ++textDetectionsIndex)
-    {
+    for (unsigned textDetectionsIndex = 0; textDetectionsIndex < textDetectionsJsonList.GetLength(); ++textDetectionsIndex) {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());
     }
     m_textDetectionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextModelVersion"))
-  {
+  if (jsonValue.ValueExists("TextModelVersion")) {
     m_textModelVersion = jsonValue.GetString("TextModelVersion");
     m_textModelVersionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

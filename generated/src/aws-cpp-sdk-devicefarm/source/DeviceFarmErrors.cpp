@@ -6,39 +6,36 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/devicefarm/DeviceFarmErrors.h>
-#include <aws/devicefarm/model/TooManyTagsException.h>
 #include <aws/devicefarm/model/TagOperationException.h>
 #include <aws/devicefarm/model/TagPolicyException.h>
+#include <aws/devicefarm/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::DeviceFarm;
 using namespace Aws::DeviceFarm::Model;
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-template<> AWS_DEVICEFARM_API TooManyTagsException DeviceFarmError::GetModeledError()
-{
+namespace Aws {
+namespace DeviceFarm {
+template <>
+AWS_DEVICEFARM_API TooManyTagsException DeviceFarmError::GetModeledError() {
   assert(this->GetErrorType() == DeviceFarmErrors::TOO_MANY_TAGS);
   return TooManyTagsException(this->GetJsonPayload().View());
 }
 
-template<> AWS_DEVICEFARM_API TagOperationException DeviceFarmError::GetModeledError()
-{
+template <>
+AWS_DEVICEFARM_API TagOperationException DeviceFarmError::GetModeledError() {
   assert(this->GetErrorType() == DeviceFarmErrors::TAG_OPERATION);
   return TagOperationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_DEVICEFARM_API TagPolicyException DeviceFarmError::GetModeledError()
-{
+template <>
+AWS_DEVICEFARM_API TagPolicyException DeviceFarmError::GetModeledError() {
   assert(this->GetErrorType() == DeviceFarmErrors::TAG_POLICY);
   return TagPolicyException(this->GetJsonPayload().View());
 }
 
-namespace DeviceFarmErrorMapper
-{
+namespace DeviceFarmErrorMapper {
 
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
@@ -53,62 +50,37 @@ static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDeleteExce
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == IDEMPOTENCY_HASH)
-  {
+  if (hashCode == IDEMPOTENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ARGUMENT_HASH)
-  {
+  } else if (hashCode == ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == SERVICE_ACCOUNT_HASH)
-  {
+  } else if (hashCode == SERVICE_ACCOUNT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_OPERATION_HASH)
-  {
+  } else if (hashCode == TAG_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_POLICY_HASH)
-  {
+  } else if (hashCode == TAG_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CANNOT_DELETE_HASH)
-  {
+  } else if (hashCode == CANNOT_DELETE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::CANNOT_DELETE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OPERATION_HASH)
-  {
+  } else if (hashCode == INVALID_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_ELIGIBLE_HASH)
-  {
+  } else if (hashCode == NOT_ELIGIBLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace DeviceFarmErrorMapper
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace DeviceFarmErrorMapper
+}  // namespace DeviceFarm
+}  // namespace Aws

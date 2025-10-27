@@ -11,81 +11,63 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailContentFilter& GuardrailContentFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+GuardrailContentFilter& GuardrailContentFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("confidence"))
-  {
+  if (jsonValue.ValueExists("confidence")) {
     m_confidence = GuardrailContentFilterConfidenceMapper::GetGuardrailContentFilterConfidenceForName(jsonValue.GetString("confidence"));
     m_confidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterStrength"))
-  {
-    m_filterStrength = GuardrailContentFilterStrengthMapper::GetGuardrailContentFilterStrengthForName(jsonValue.GetString("filterStrength"));
+  if (jsonValue.ValueExists("filterStrength")) {
+    m_filterStrength =
+        GuardrailContentFilterStrengthMapper::GetGuardrailContentFilterStrengthForName(jsonValue.GetString("filterStrength"));
     m_filterStrengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("action"))
-  {
+  if (jsonValue.ValueExists("action")) {
     m_action = GuardrailContentPolicyActionMapper::GetGuardrailContentPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detected"))
-  {
+  if (jsonValue.ValueExists("detected")) {
     m_detected = jsonValue.GetBool("detected");
     m_detectedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailContentFilter::Jsonize() const
-{
+JsonValue GuardrailContentFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
   }
 
-  if(m_confidenceHasBeenSet)
-  {
-   payload.WithString("confidence", GuardrailContentFilterConfidenceMapper::GetNameForGuardrailContentFilterConfidence(m_confidence));
+  if (m_confidenceHasBeenSet) {
+    payload.WithString("confidence", GuardrailContentFilterConfidenceMapper::GetNameForGuardrailContentFilterConfidence(m_confidence));
   }
 
-  if(m_filterStrengthHasBeenSet)
-  {
-   payload.WithString("filterStrength", GuardrailContentFilterStrengthMapper::GetNameForGuardrailContentFilterStrength(m_filterStrength));
+  if (m_filterStrengthHasBeenSet) {
+    payload.WithString("filterStrength", GuardrailContentFilterStrengthMapper::GetNameForGuardrailContentFilterStrength(m_filterStrength));
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuardrailContentPolicyActionMapper::GetNameForGuardrailContentPolicyAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GuardrailContentPolicyActionMapper::GetNameForGuardrailContentPolicyAction(m_action));
   }
 
-  if(m_detectedHasBeenSet)
-  {
-   payload.WithBool("detected", m_detected);
-
+  if (m_detectedHasBeenSet) {
+    payload.WithBool("detected", m_detected);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

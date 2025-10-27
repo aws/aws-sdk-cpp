@@ -3,62 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TargetCapacitySpecification.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TargetCapacitySpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-TargetCapacitySpecification::TargetCapacitySpecification(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TargetCapacitySpecification::TargetCapacitySpecification(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TargetCapacitySpecification& TargetCapacitySpecification::operator =(const XmlNode& xmlNode)
-{
+TargetCapacitySpecification& TargetCapacitySpecification::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode totalTargetCapacityNode = resultNode.FirstChild("totalTargetCapacity");
-    if(!totalTargetCapacityNode.IsNull())
-    {
-      m_totalTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalTargetCapacityNode.GetText()).c_str()).c_str());
+    if (!totalTargetCapacityNode.IsNull()) {
+      m_totalTargetCapacity = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalTargetCapacityNode.GetText()).c_str()).c_str());
       m_totalTargetCapacityHasBeenSet = true;
     }
     XmlNode onDemandTargetCapacityNode = resultNode.FirstChild("onDemandTargetCapacity");
-    if(!onDemandTargetCapacityNode.IsNull())
-    {
-      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandTargetCapacityNode.GetText()).c_str()).c_str());
+    if (!onDemandTargetCapacityNode.IsNull()) {
+      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandTargetCapacityNode.GetText()).c_str()).c_str());
       m_onDemandTargetCapacityHasBeenSet = true;
     }
     XmlNode spotTargetCapacityNode = resultNode.FirstChild("spotTargetCapacity");
-    if(!spotTargetCapacityNode.IsNull())
-    {
-      m_spotTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotTargetCapacityNode.GetText()).c_str()).c_str());
+    if (!spotTargetCapacityNode.IsNull()) {
+      m_spotTargetCapacity = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotTargetCapacityNode.GetText()).c_str()).c_str());
       m_spotTargetCapacityHasBeenSet = true;
     }
     XmlNode defaultTargetCapacityTypeNode = resultNode.FirstChild("defaultTargetCapacityType");
-    if(!defaultTargetCapacityTypeNode.IsNull())
-    {
-      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTargetCapacityTypeNode.GetText()).c_str()));
+    if (!defaultTargetCapacityTypeNode.IsNull()) {
+      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTargetCapacityTypeNode.GetText()).c_str()));
       m_defaultTargetCapacityTypeHasBeenSet = true;
     }
     XmlNode targetCapacityUnitTypeNode = resultNode.FirstChild("targetCapacityUnitType");
-    if(!targetCapacityUnitTypeNode.IsNull())
-    {
-      m_targetCapacityUnitType = TargetCapacityUnitTypeMapper::GetTargetCapacityUnitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityUnitTypeNode.GetText()).c_str()));
+    if (!targetCapacityUnitTypeNode.IsNull()) {
+      m_targetCapacityUnitType = TargetCapacityUnitTypeMapper::GetTargetCapacityUnitTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityUnitTypeNode.GetText()).c_str()));
       m_targetCapacityUnitTypeHasBeenSet = true;
     }
   }
@@ -66,59 +58,53 @@ TargetCapacitySpecification& TargetCapacitySpecification::operator =(const XmlNo
   return *this;
 }
 
-void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_totalTargetCapacityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TotalTargetCapacity=" << m_totalTargetCapacity << "&";
+void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_totalTargetCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".TotalTargetCapacity=" << m_totalTargetCapacity << "&";
   }
 
-  if(m_onDemandTargetCapacityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
+  if (m_onDemandTargetCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
   }
 
-  if(m_spotTargetCapacityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SpotTargetCapacity=" << m_spotTargetCapacity << "&";
+  if (m_spotTargetCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".SpotTargetCapacity=" << m_spotTargetCapacity << "&";
   }
 
-  if(m_defaultTargetCapacityTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultTargetCapacityType=" << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType)) << "&";
+  if (m_defaultTargetCapacityTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultTargetCapacityType="
+            << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType))
+            << "&";
   }
 
-  if(m_targetCapacityUnitTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
-  }
-
-}
-
-void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_totalTargetCapacityHasBeenSet)
-  {
-      oStream << location << ".TotalTargetCapacity=" << m_totalTargetCapacity << "&";
-  }
-  if(m_onDemandTargetCapacityHasBeenSet)
-  {
-      oStream << location << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
-  }
-  if(m_spotTargetCapacityHasBeenSet)
-  {
-      oStream << location << ".SpotTargetCapacity=" << m_spotTargetCapacity << "&";
-  }
-  if(m_defaultTargetCapacityTypeHasBeenSet)
-  {
-      oStream << location << ".DefaultTargetCapacityType=" << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType)) << "&";
-  }
-  if(m_targetCapacityUnitTypeHasBeenSet)
-  {
-      oStream << location << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
+  if (m_targetCapacityUnitTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".TargetCapacityUnitType="
+            << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_totalTargetCapacityHasBeenSet) {
+    oStream << location << ".TotalTargetCapacity=" << m_totalTargetCapacity << "&";
+  }
+  if (m_onDemandTargetCapacityHasBeenSet) {
+    oStream << location << ".OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
+  }
+  if (m_spotTargetCapacityHasBeenSet) {
+    oStream << location << ".SpotTargetCapacity=" << m_spotTargetCapacity << "&";
+  }
+  if (m_defaultTargetCapacityTypeHasBeenSet) {
+    oStream << location << ".DefaultTargetCapacityType="
+            << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType))
+            << "&";
+  }
+  if (m_targetCapacityUnitTypeHasBeenSet) {
+    oStream << location << ".TargetCapacityUnitType="
+            << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

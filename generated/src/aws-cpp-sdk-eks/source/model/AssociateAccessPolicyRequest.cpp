@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AssociateAccessPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AssociateAccessPolicyRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateAccessPolicyRequest::SerializePayload() const
-{
+Aws::String AssociateAccessPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyArnHasBeenSet)
-  {
-   payload.WithString("policyArn", m_policyArn);
-
+  if (m_policyArnHasBeenSet) {
+    payload.WithString("policyArn", m_policyArn);
   }
 
-  if(m_accessScopeHasBeenSet)
-  {
-   payload.WithObject("accessScope", m_accessScope.Jsonize());
-
+  if (m_accessScopeHasBeenSet) {
+    payload.WithObject("accessScope", m_accessScope.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

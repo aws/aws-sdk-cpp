@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-FailedRequest::FailedRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailedRequest::FailedRequest(JsonView jsonValue) { *this = jsonValue; }
 
-FailedRequest& FailedRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientToken"))
-  {
+FailedRequest& FailedRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientToken")) {
     m_clientToken = jsonValue.GetString("clientToken");
     m_clientTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureCode"))
-  {
+  if (jsonValue.ValueExists("failureCode")) {
     m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("failureCode"));
     m_failureCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailedRequest::Jsonize() const
-{
+JsonValue FailedRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
+  if (m_failureCodeHasBeenSet) {
+    payload.WithString("failureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

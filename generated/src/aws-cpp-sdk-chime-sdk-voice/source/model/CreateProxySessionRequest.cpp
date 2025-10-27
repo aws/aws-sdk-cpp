@@ -12,63 +12,46 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateProxySessionRequest::SerializePayload() const
-{
+Aws::String CreateProxySessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_participantPhoneNumbersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> participantPhoneNumbersJsonList(m_participantPhoneNumbers.size());
-   for(unsigned participantPhoneNumbersIndex = 0; participantPhoneNumbersIndex < participantPhoneNumbersJsonList.GetLength(); ++participantPhoneNumbersIndex)
-   {
-     participantPhoneNumbersJsonList[participantPhoneNumbersIndex].AsString(m_participantPhoneNumbers[participantPhoneNumbersIndex]);
-   }
-   payload.WithArray("ParticipantPhoneNumbers", std::move(participantPhoneNumbersJsonList));
-
+  if (m_participantPhoneNumbersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> participantPhoneNumbersJsonList(m_participantPhoneNumbers.size());
+    for (unsigned participantPhoneNumbersIndex = 0; participantPhoneNumbersIndex < participantPhoneNumbersJsonList.GetLength();
+         ++participantPhoneNumbersIndex) {
+      participantPhoneNumbersJsonList[participantPhoneNumbersIndex].AsString(m_participantPhoneNumbers[participantPhoneNumbersIndex]);
+    }
+    payload.WithArray("ParticipantPhoneNumbers", std::move(participantPhoneNumbersJsonList));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_expiryMinutesHasBeenSet)
-  {
-   payload.WithInteger("ExpiryMinutes", m_expiryMinutes);
-
+  if (m_expiryMinutesHasBeenSet) {
+    payload.WithInteger("ExpiryMinutes", m_expiryMinutes);
   }
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
-   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
-   {
-     capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));
-   }
-   payload.WithArray("Capabilities", std::move(capabilitiesJsonList));
-
+  if (m_capabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+    for (unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex) {
+      capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));
+    }
+    payload.WithArray("Capabilities", std::move(capabilitiesJsonList));
   }
 
-  if(m_numberSelectionBehaviorHasBeenSet)
-  {
-   payload.WithString("NumberSelectionBehavior", NumberSelectionBehaviorMapper::GetNameForNumberSelectionBehavior(m_numberSelectionBehavior));
+  if (m_numberSelectionBehaviorHasBeenSet) {
+    payload.WithString("NumberSelectionBehavior",
+                       NumberSelectionBehaviorMapper::GetNameForNumberSelectionBehavior(m_numberSelectionBehavior));
   }
 
-  if(m_geoMatchLevelHasBeenSet)
-  {
-   payload.WithString("GeoMatchLevel", GeoMatchLevelMapper::GetNameForGeoMatchLevel(m_geoMatchLevel));
+  if (m_geoMatchLevelHasBeenSet) {
+    payload.WithString("GeoMatchLevel", GeoMatchLevelMapper::GetNameForGeoMatchLevel(m_geoMatchLevel));
   }
 
-  if(m_geoMatchParamsHasBeenSet)
-  {
-   payload.WithObject("GeoMatchParams", m_geoMatchParams.Jsonize());
-
+  if (m_geoMatchParamsHasBeenSet) {
+    payload.WithObject("GeoMatchParams", m_geoMatchParams.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

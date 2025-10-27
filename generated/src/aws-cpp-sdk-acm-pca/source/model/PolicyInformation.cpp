@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-PolicyInformation::PolicyInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PolicyInformation::PolicyInformation(JsonView jsonValue) { *this = jsonValue; }
 
-PolicyInformation& PolicyInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CertPolicyId"))
-  {
+PolicyInformation& PolicyInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CertPolicyId")) {
     m_certPolicyId = jsonValue.GetString("CertPolicyId");
     m_certPolicyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyQualifiers"))
-  {
+  if (jsonValue.ValueExists("PolicyQualifiers")) {
     Aws::Utils::Array<JsonView> policyQualifiersJsonList = jsonValue.GetArray("PolicyQualifiers");
-    for(unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex)
-    {
+    for (unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex) {
       m_policyQualifiers.push_back(policyQualifiersJsonList[policyQualifiersIndex].AsObject());
     }
     m_policyQualifiersHasBeenSet = true;
@@ -42,30 +32,24 @@ PolicyInformation& PolicyInformation::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PolicyInformation::Jsonize() const
-{
+JsonValue PolicyInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_certPolicyIdHasBeenSet)
-  {
-   payload.WithString("CertPolicyId", m_certPolicyId);
-
+  if (m_certPolicyIdHasBeenSet) {
+    payload.WithString("CertPolicyId", m_certPolicyId);
   }
 
-  if(m_policyQualifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policyQualifiersJsonList(m_policyQualifiers.size());
-   for(unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex)
-   {
-     policyQualifiersJsonList[policyQualifiersIndex].AsObject(m_policyQualifiers[policyQualifiersIndex].Jsonize());
-   }
-   payload.WithArray("PolicyQualifiers", std::move(policyQualifiersJsonList));
-
+  if (m_policyQualifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policyQualifiersJsonList(m_policyQualifiers.size());
+    for (unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex) {
+      policyQualifiersJsonList[policyQualifiersIndex].AsObject(m_policyQualifiers[policyQualifiersIndex].Jsonize());
+    }
+    payload.WithArray("PolicyQualifiers", std::move(policyQualifiersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

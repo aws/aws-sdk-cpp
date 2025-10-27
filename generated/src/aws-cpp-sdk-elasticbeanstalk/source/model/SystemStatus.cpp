@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/SystemStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/model/SystemStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
 
-SystemStatus::SystemStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SystemStatus::SystemStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
-{
+SystemStatus& SystemStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cPUUtilizationNode = resultNode.FirstChild("CPUUtilization");
-    if(!cPUUtilizationNode.IsNull())
-    {
+    if (!cPUUtilizationNode.IsNull()) {
       m_cPUUtilization = cPUUtilizationNode;
       m_cPUUtilizationHasBeenSet = true;
     }
     XmlNode loadAverageNode = resultNode.FirstChild("LoadAverage");
-    if(!loadAverageNode.IsNull())
-    {
+    if (!loadAverageNode.IsNull()) {
       XmlNode loadAverageMember = loadAverageNode.FirstChild("member");
       m_loadAverageHasBeenSet = !loadAverageMember.IsNull();
-      while(!loadAverageMember.IsNull())
-      {
+      while (!loadAverageMember.IsNull()) {
         m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageMember.GetText().c_str()).c_str()));
         loadAverageMember = loadAverageMember.NextNode("member");
       }
@@ -55,44 +44,36 @@ SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_cPUUtilizationHasBeenSet)
-  {
-      Aws::StringStream cPUUtilizationLocationAndMemberSs;
-      cPUUtilizationLocationAndMemberSs << location << index << locationValue << ".CPUUtilization";
-      m_cPUUtilization.OutputToStream(oStream, cPUUtilizationLocationAndMemberSs.str().c_str());
+void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_cPUUtilizationHasBeenSet) {
+    Aws::StringStream cPUUtilizationLocationAndMemberSs;
+    cPUUtilizationLocationAndMemberSs << location << index << locationValue << ".CPUUtilization";
+    m_cPUUtilization.OutputToStream(oStream, cPUUtilizationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_loadAverageHasBeenSet)
-  {
-      unsigned loadAverageIdx = 1;
-      for(auto& item : m_loadAverage)
-      {
-        oStream << location << index << locationValue << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
-  }
-
-}
-
-void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_cPUUtilizationHasBeenSet)
-  {
-      Aws::String cPUUtilizationLocationAndMember(location);
-      cPUUtilizationLocationAndMember += ".CPUUtilization";
-      m_cPUUtilization.OutputToStream(oStream, cPUUtilizationLocationAndMember.c_str());
-  }
-  if(m_loadAverageHasBeenSet)
-  {
-      unsigned loadAverageIdx = 1;
-      for(auto& item : m_loadAverage)
-      {
-        oStream << location << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
+  if (m_loadAverageHasBeenSet) {
+    unsigned loadAverageIdx = 1;
+    for (auto& item : m_loadAverage) {
+      oStream << location << index << locationValue << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item)
+              << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_cPUUtilizationHasBeenSet) {
+    Aws::String cPUUtilizationLocationAndMember(location);
+    cPUUtilizationLocationAndMember += ".CPUUtilization";
+    m_cPUUtilization.OutputToStream(oStream, cPUUtilizationLocationAndMember.c_str());
+  }
+  if (m_loadAverageHasBeenSet) {
+    unsigned loadAverageIdx = 1;
+    for (auto& item : m_loadAverage) {
+      oStream << location << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::AIOps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutInvestigationGroupPolicyRequest::SerializePayload() const
-{
+Aws::String PutInvestigationGroupPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

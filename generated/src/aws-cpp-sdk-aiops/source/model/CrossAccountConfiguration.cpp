@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AIOps
-{
-namespace Model
-{
+namespace Aws {
+namespace AIOps {
+namespace Model {
 
-CrossAccountConfiguration::CrossAccountConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrossAccountConfiguration::CrossAccountConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CrossAccountConfiguration& CrossAccountConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceRoleArn"))
-  {
+CrossAccountConfiguration& CrossAccountConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceRoleArn")) {
     m_sourceRoleArn = jsonValue.GetString("sourceRoleArn");
     m_sourceRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrossAccountConfiguration::Jsonize() const
-{
+JsonValue CrossAccountConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceRoleArnHasBeenSet)
-  {
-   payload.WithString("sourceRoleArn", m_sourceRoleArn);
-
+  if (m_sourceRoleArnHasBeenSet) {
+    payload.WithString("sourceRoleArn", m_sourceRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AIOps
-} // namespace Aws
+}  // namespace Model
+}  // namespace AIOps
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/DeleteProjectPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/DeleteProjectPolicyRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProjectPolicyRequest::SerializePayload() const
-{
+Aws::String DeleteProjectPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_projectArnHasBeenSet)
-  {
-   payload.WithString("ProjectArn", m_projectArn);
-
+  if (m_projectArnHasBeenSet) {
+    payload.WithString("ProjectArn", m_projectArn);
   }
 
-  if(m_policyNameHasBeenSet)
-  {
-   payload.WithString("PolicyName", m_policyName);
-
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
   }
 
-  if(m_policyRevisionIdHasBeenSet)
-  {
-   payload.WithString("PolicyRevisionId", m_policyRevisionId);
-
+  if (m_policyRevisionIdHasBeenSet) {
+    payload.WithString("PolicyRevisionId", m_policyRevisionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteProjectPolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteProjectPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.DeleteProjectPolicy"));
   return headers;
-
 }
-
-
-
-

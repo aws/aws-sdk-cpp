@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sms-voice/model/CallInstructionsMessageType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sms-voice/model/CallInstructionsMessageType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointSMSVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointSMSVoice {
+namespace Model {
 
-CallInstructionsMessageType::CallInstructionsMessageType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CallInstructionsMessageType::CallInstructionsMessageType(JsonView jsonValue) { *this = jsonValue; }
 
-CallInstructionsMessageType& CallInstructionsMessageType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Text"))
-  {
+CallInstructionsMessageType& CallInstructionsMessageType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Text")) {
     m_text = jsonValue.GetString("Text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CallInstructionsMessageType::Jsonize() const
-{
+JsonValue CallInstructionsMessageType::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointSMSVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointSMSVoice
+}  // namespace Aws

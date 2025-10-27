@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransit.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransit.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit(JsonView jsonValue) { *this = jsonValue; }
 
-KafkaClusterEncryptionInTransit& KafkaClusterEncryptionInTransit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("encryptionType"))
-  {
-    m_encryptionType = KafkaClusterEncryptionInTransitTypeMapper::GetKafkaClusterEncryptionInTransitTypeForName(jsonValue.GetString("encryptionType"));
+KafkaClusterEncryptionInTransit& KafkaClusterEncryptionInTransit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("encryptionType")) {
+    m_encryptionType =
+        KafkaClusterEncryptionInTransitTypeMapper::GetKafkaClusterEncryptionInTransitTypeForName(jsonValue.GetString("encryptionType"));
     m_encryptionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KafkaClusterEncryptionInTransit::Jsonize() const
-{
+JsonValue KafkaClusterEncryptionInTransit::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("encryptionType", KafkaClusterEncryptionInTransitTypeMapper::GetNameForKafkaClusterEncryptionInTransitType(m_encryptionType));
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("encryptionType",
+                       KafkaClusterEncryptionInTransitTypeMapper::GetNameForKafkaClusterEncryptionInTransitType(m_encryptionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

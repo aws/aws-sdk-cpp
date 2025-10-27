@@ -10,28 +10,20 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String ResumeProcessesRequest::SerializePayload() const
-{
+Aws::String ResumeProcessesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ResumeProcesses&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_scalingProcessesHasBeenSet)
-  {
-    if (m_scalingProcesses.empty())
-    {
+  if (m_scalingProcessesHasBeenSet) {
+    if (m_scalingProcesses.empty()) {
       ss << "ScalingProcesses=&";
-    }
-    else
-    {
+    } else {
       unsigned scalingProcessesCount = 1;
-      for(auto& item : m_scalingProcesses)
-      {
-        ss << "ScalingProcesses.member." << scalingProcessesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_scalingProcesses) {
+        ss << "ScalingProcesses.member." << scalingProcessesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         scalingProcessesCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ResumeProcessesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ResumeProcessesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class EventSource
-  {
-    NOT_SET,
-    CloudTrail,
-    Route53Resolver,
-    VPCFlow,
-    EKSAudit,
-    AWSWAF
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class EventSource { NOT_SET, CloudTrail, Route53Resolver, VPCFlow, EKSAudit, AWSWAF };
 
-namespace EventSourceMapper
-{
+namespace EventSourceMapper {
 AWS_CLOUDWATCHLOGS_API EventSource GetEventSourceForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForEventSource(EventSource value);
-} // namespace EventSourceMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace EventSourceMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

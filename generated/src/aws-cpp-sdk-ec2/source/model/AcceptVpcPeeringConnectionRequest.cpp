@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AcceptVpcPeeringConnectionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AcceptVpcPeeringConnectionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AcceptVpcPeeringConnectionRequest::SerializePayload() const
-{
+Aws::String AcceptVpcPeeringConnectionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AcceptVpcPeeringConnection&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_vpcPeeringConnectionIdHasBeenSet)
-  {
+  if (m_vpcPeeringConnectionIdHasBeenSet) {
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AcceptVpcPeeringConnectionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AcceptVpcPeeringConnectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AcceptVpcPeeringConnectionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

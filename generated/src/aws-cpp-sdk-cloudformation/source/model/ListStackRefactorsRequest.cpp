@@ -10,35 +10,27 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListStackRefactorsRequest::SerializePayload() const
-{
+Aws::String ListStackRefactorsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListStackRefactors&";
-  if(m_executionStatusFilterHasBeenSet)
-  {
-    if (m_executionStatusFilter.empty())
-    {
+  if (m_executionStatusFilterHasBeenSet) {
+    if (m_executionStatusFilter.empty()) {
       ss << "ExecutionStatusFilter=&";
-    }
-    else
-    {
+    } else {
       unsigned executionStatusFilterCount = 1;
-      for(auto& item : m_executionStatusFilter)
-      {
+      for (auto& item : m_executionStatusFilter) {
         ss << "ExecutionStatusFilter.member." << executionStatusFilterCount << "="
-            << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(item)) << "&";
+           << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(item)) << "&";
         executionStatusFilterCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -46,8 +38,4 @@ Aws::String ListStackRefactorsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListStackRefactorsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListStackRefactorsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

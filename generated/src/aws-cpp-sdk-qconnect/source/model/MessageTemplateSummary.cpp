@@ -3,88 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/MessageTemplateSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/MessageTemplateSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-MessageTemplateSummary::MessageTemplateSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MessageTemplateSummary::MessageTemplateSummary(JsonView jsonValue) { *this = jsonValue; }
 
-MessageTemplateSummary& MessageTemplateSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messageTemplateArn"))
-  {
+MessageTemplateSummary& MessageTemplateSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messageTemplateArn")) {
     m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
     m_messageTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateId"))
-  {
+  if (jsonValue.ValueExists("messageTemplateId")) {
     m_messageTemplateId = jsonValue.GetString("messageTemplateId");
     m_messageTemplateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseArn"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseArn")) {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("channelSubtype"))
-  {
+  if (jsonValue.ValueExists("channelSubtype")) {
     m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
     m_channelSubtypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdTime"))
-  {
+  if (jsonValue.ValueExists("createdTime")) {
     m_createdTime = jsonValue.GetString("createdTime");
     m_createdTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedBy"))
-  {
+  if (jsonValue.ValueExists("lastModifiedBy")) {
     m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("activeVersionNumber"))
-  {
+  if (jsonValue.ValueExists("activeVersionNumber")) {
     m_activeVersionNumber = jsonValue.GetInt64("activeVersionNumber");
     m_activeVersionNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -92,87 +72,64 @@ MessageTemplateSummary& MessageTemplateSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MessageTemplateSummary::Jsonize() const
-{
+JsonValue MessageTemplateSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageTemplateArnHasBeenSet)
-  {
-   payload.WithString("messageTemplateArn", m_messageTemplateArn);
-
+  if (m_messageTemplateArnHasBeenSet) {
+    payload.WithString("messageTemplateArn", m_messageTemplateArn);
   }
 
-  if(m_messageTemplateIdHasBeenSet)
-  {
-   payload.WithString("messageTemplateId", m_messageTemplateId);
-
+  if (m_messageTemplateIdHasBeenSet) {
+    payload.WithString("messageTemplateId", m_messageTemplateId);
   }
 
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
+  if (m_knowledgeBaseArnHasBeenSet) {
+    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_channelSubtypeHasBeenSet)
-  {
-   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+  if (m_channelSubtypeHasBeenSet) {
+    payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimeHasBeenSet) {
+    payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedByHasBeenSet)
-  {
-   payload.WithString("lastModifiedBy", m_lastModifiedBy);
-
+  if (m_lastModifiedByHasBeenSet) {
+    payload.WithString("lastModifiedBy", m_lastModifiedBy);
   }
 
-  if(m_activeVersionNumberHasBeenSet)
-  {
-   payload.WithInt64("activeVersionNumber", m_activeVersionNumber);
-
+  if (m_activeVersionNumberHasBeenSet) {
+    payload.WithInt64("activeVersionNumber", m_activeVersionNumber);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

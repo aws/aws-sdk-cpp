@@ -11,60 +11,44 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-JobSummary::JobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobSummary::JobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-JobSummary& JobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+JobSummary& JobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = JobPrimaryStatusMapper::GetJobPrimaryStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobArn"))
-  {
+  if (jsonValue.ValueExists("jobArn")) {
     m_jobArn = jsonValue.GetString("jobArn");
     m_jobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobName"))
-  {
+  if (jsonValue.ValueExists("jobName")) {
     m_jobName = jsonValue.GetString("jobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("device"))
-  {
+  if (jsonValue.ValueExists("device")) {
     m_device = jsonValue.GetString("device");
     m_deviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endedAt"))
-  {
+  if (jsonValue.ValueExists("endedAt")) {
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -72,62 +56,48 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue JobSummary::Jsonize() const
-{
+JsonValue JobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", JobPrimaryStatusMapper::GetNameForJobPrimaryStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", JobPrimaryStatusMapper::GetNameForJobPrimaryStatus(m_status));
   }
 
-  if(m_jobArnHasBeenSet)
-  {
-   payload.WithString("jobArn", m_jobArn);
-
+  if (m_jobArnHasBeenSet) {
+    payload.WithString("jobArn", m_jobArn);
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("jobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("jobName", m_jobName);
   }
 
-  if(m_deviceHasBeenSet)
-  {
-   payload.WithString("device", m_device);
-
+  if (m_deviceHasBeenSet) {
+    payload.WithString("device", m_device);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startedAtHasBeenSet) {
+    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_endedAtHasBeenSet)
-  {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_endedAtHasBeenSet) {
+    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

@@ -12,30 +12,20 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartAutomatedReasoningPolicyTestWorkflowRequest::SerializePayload() const
-{
+Aws::String StartAutomatedReasoningPolicyTestWorkflowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_testCaseIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> testCaseIdsJsonList(m_testCaseIds.size());
-   for(unsigned testCaseIdsIndex = 0; testCaseIdsIndex < testCaseIdsJsonList.GetLength(); ++testCaseIdsIndex)
-   {
-     testCaseIdsJsonList[testCaseIdsIndex].AsString(m_testCaseIds[testCaseIdsIndex]);
-   }
-   payload.WithArray("testCaseIds", std::move(testCaseIdsJsonList));
-
+  if (m_testCaseIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> testCaseIdsJsonList(m_testCaseIds.size());
+    for (unsigned testCaseIdsIndex = 0; testCaseIdsIndex < testCaseIdsJsonList.GetLength(); ++testCaseIdsIndex) {
+      testCaseIdsJsonList[testCaseIdsIndex].AsString(m_testCaseIds[testCaseIdsIndex]);
+    }
+    payload.WithArray("testCaseIds", std::move(testCaseIdsJsonList));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

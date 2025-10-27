@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class AutoRegistrationStatus
-  {
-    NOT_SET,
-    ENABLE,
-    DISABLE
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class AutoRegistrationStatus { NOT_SET, ENABLE, DISABLE };
 
-namespace AutoRegistrationStatusMapper
-{
+namespace AutoRegistrationStatusMapper {
 AWS_IOT_API AutoRegistrationStatus GetAutoRegistrationStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForAutoRegistrationStatus(AutoRegistrationStatus value);
-} // namespace AutoRegistrationStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace AutoRegistrationStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

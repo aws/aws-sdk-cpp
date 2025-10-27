@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/SetIdentityHeadersInNotificationsEnabledRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/SetIdentityHeadersInNotificationsEnabledRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() const
-{
+Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetIdentityHeadersInNotificationsEnabled&";
-  if(m_identityHasBeenSet)
-  {
+  if (m_identityHasBeenSet) {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
 
-  if(m_notificationTypeHasBeenSet)
-  {
+  if (m_notificationTypeHasBeenSet) {
     ss << "NotificationType=" << StringUtils::URLEncode(NotificationTypeMapper::GetNameForNotificationType(m_notificationType)) << "&";
   }
 
-  if(m_enabledHasBeenSet)
-  {
+  if (m_enabledHasBeenSet) {
     ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() 
   return ss.str();
 }
 
-
-void  SetIdentityHeadersInNotificationsEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetIdentityHeadersInNotificationsEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

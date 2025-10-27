@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/IamRegistrationResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/IamRegistrationResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-IamRegistrationResponse::IamRegistrationResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IamRegistrationResponse::IamRegistrationResponse(JsonView jsonValue) { *this = jsonValue; }
 
-IamRegistrationResponse& IamRegistrationResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleArn"))
-  {
+IamRegistrationResponse& IamRegistrationResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registrationStatus"))
-  {
+  if (jsonValue.ValueExists("registrationStatus")) {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
     m_registrationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IamRegistrationResponse::Jsonize() const
-{
+JsonValue IamRegistrationResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_registrationStatusHasBeenSet)
-  {
-   payload.WithString("registrationStatus", RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatus));
+  if (m_registrationStatusHasBeenSet) {
+    payload.WithString("registrationStatus", RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatus));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

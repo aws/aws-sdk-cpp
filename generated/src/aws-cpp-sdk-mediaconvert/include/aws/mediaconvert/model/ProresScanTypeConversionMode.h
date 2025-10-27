@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ProresScanTypeConversionMode
-  {
-    NOT_SET,
-    INTERLACED,
-    INTERLACED_OPTIMIZE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ProresScanTypeConversionMode { NOT_SET, INTERLACED, INTERLACED_OPTIMIZE };
 
-namespace ProresScanTypeConversionModeMapper
-{
+namespace ProresScanTypeConversionModeMapper {
 AWS_MEDIACONVERT_API ProresScanTypeConversionMode GetProresScanTypeConversionModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForProresScanTypeConversionMode(ProresScanTypeConversionMode value);
-} // namespace ProresScanTypeConversionModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ProresScanTypeConversionModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

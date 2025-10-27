@@ -4,81 +4,96 @@
  */
 
 #pragma once
-#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/model/EncoderConfigurationSummary.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ivsrealtime
-{
-namespace Model
-{
-  class ListEncoderConfigurationsResult
-  {
-  public:
-    AWS_IVSREALTIME_API ListEncoderConfigurationsResult() = default;
-    AWS_IVSREALTIME_API ListEncoderConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_IVSREALTIME_API ListEncoderConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ivsrealtime {
+namespace Model {
+class ListEncoderConfigurationsResult {
+ public:
+  AWS_IVSREALTIME_API ListEncoderConfigurationsResult() = default;
+  AWS_IVSREALTIME_API ListEncoderConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IVSREALTIME_API ListEncoderConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>List of the matching EncoderConfigurations (summary information only).</p>
+   */
+  inline const Aws::Vector<EncoderConfigurationSummary>& GetEncoderConfigurations() const { return m_encoderConfigurations; }
+  template <typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
+  void SetEncoderConfigurations(EncoderConfigurationsT&& value) {
+    m_encoderConfigurationsHasBeenSet = true;
+    m_encoderConfigurations = std::forward<EncoderConfigurationsT>(value);
+  }
+  template <typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
+  ListEncoderConfigurationsResult& WithEncoderConfigurations(EncoderConfigurationsT&& value) {
+    SetEncoderConfigurations(std::forward<EncoderConfigurationsT>(value));
+    return *this;
+  }
+  template <typename EncoderConfigurationsT = EncoderConfigurationSummary>
+  ListEncoderConfigurationsResult& AddEncoderConfigurations(EncoderConfigurationsT&& value) {
+    m_encoderConfigurationsHasBeenSet = true;
+    m_encoderConfigurations.emplace_back(std::forward<EncoderConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>List of the matching EncoderConfigurations (summary information only).</p>
-     */
-    inline const Aws::Vector<EncoderConfigurationSummary>& GetEncoderConfigurations() const { return m_encoderConfigurations; }
-    template<typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
-    void SetEncoderConfigurations(EncoderConfigurationsT&& value) { m_encoderConfigurationsHasBeenSet = true; m_encoderConfigurations = std::forward<EncoderConfigurationsT>(value); }
-    template<typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
-    ListEncoderConfigurationsResult& WithEncoderConfigurations(EncoderConfigurationsT&& value) { SetEncoderConfigurations(std::forward<EncoderConfigurationsT>(value)); return *this;}
-    template<typename EncoderConfigurationsT = EncoderConfigurationSummary>
-    ListEncoderConfigurationsResult& AddEncoderConfigurations(EncoderConfigurationsT&& value) { m_encoderConfigurationsHasBeenSet = true; m_encoderConfigurations.emplace_back(std::forward<EncoderConfigurationsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>If there are more encoder configurations than <code>maxResults</code>, use
+   * <code>nextToken</code> in the request to get the next set.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListEncoderConfigurationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If there are more encoder configurations than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListEncoderConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListEncoderConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListEncoderConfigurationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<EncoderConfigurationSummary> m_encoderConfigurations;
+  bool m_encoderConfigurationsHasBeenSet = false;
 
-    Aws::Vector<EncoderConfigurationSummary> m_encoderConfigurations;
-    bool m_encoderConfigurationsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ivsrealtime
-} // namespace Aws
+}  // namespace Model
+}  // namespace ivsrealtime
+}  // namespace Aws

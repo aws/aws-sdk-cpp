@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetPolicyVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetPolicyVersionRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetPolicyVersionRequest::SerializePayload() const
-{
+Aws::String GetPolicyVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetPolicyVersion&";
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
-  if(m_versionIdHasBeenSet)
-  {
+  if (m_versionIdHasBeenSet) {
     ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetPolicyVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetPolicyVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetPolicyVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

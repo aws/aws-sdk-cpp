@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-ServiceLevelObjectiveEntity::ServiceLevelObjectiveEntity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceLevelObjectiveEntity::ServiceLevelObjectiveEntity(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceLevelObjectiveEntity& ServiceLevelObjectiveEntity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SloName"))
-  {
+ServiceLevelObjectiveEntity& ServiceLevelObjectiveEntity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SloName")) {
     m_sloName = jsonValue.GetString("SloName");
     m_sloNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SloArn"))
-  {
+  if (jsonValue.ValueExists("SloArn")) {
     m_sloArn = jsonValue.GetString("SloArn");
     m_sloArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceLevelObjectiveEntity::Jsonize() const
-{
+JsonValue ServiceLevelObjectiveEntity::Jsonize() const {
   JsonValue payload;
 
-  if(m_sloNameHasBeenSet)
-  {
-   payload.WithString("SloName", m_sloName);
-
+  if (m_sloNameHasBeenSet) {
+    payload.WithString("SloName", m_sloName);
   }
 
-  if(m_sloArnHasBeenSet)
-  {
-   payload.WithString("SloArn", m_sloArn);
-
+  if (m_sloArnHasBeenSet) {
+    payload.WithString("SloArn", m_sloArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

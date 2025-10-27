@@ -4,28 +4,21 @@
  */
 
 #pragma once
-#include <aws/supplychain/SupplyChain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/supplychain/SupplyChain_EXPORTS.h>
 
-namespace Aws
-{
-namespace SupplyChain
-{
-namespace Model
-{
-  enum class DataIntegrationFlowFieldPriorityDedupeSortOrder
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace SupplyChain {
+namespace Model {
+enum class DataIntegrationFlowFieldPriorityDedupeSortOrder { NOT_SET, ASC, DESC };
 
-namespace DataIntegrationFlowFieldPriorityDedupeSortOrderMapper
-{
-AWS_SUPPLYCHAIN_API DataIntegrationFlowFieldPriorityDedupeSortOrder GetDataIntegrationFlowFieldPriorityDedupeSortOrderForName(const Aws::String& name);
+namespace DataIntegrationFlowFieldPriorityDedupeSortOrderMapper {
+AWS_SUPPLYCHAIN_API DataIntegrationFlowFieldPriorityDedupeSortOrder
+GetDataIntegrationFlowFieldPriorityDedupeSortOrderForName(const Aws::String& name);
 
-AWS_SUPPLYCHAIN_API Aws::String GetNameForDataIntegrationFlowFieldPriorityDedupeSortOrder(DataIntegrationFlowFieldPriorityDedupeSortOrder value);
-} // namespace DataIntegrationFlowFieldPriorityDedupeSortOrderMapper
-} // namespace Model
-} // namespace SupplyChain
-} // namespace Aws
+AWS_SUPPLYCHAIN_API Aws::String GetNameForDataIntegrationFlowFieldPriorityDedupeSortOrder(
+    DataIntegrationFlowFieldPriorityDedupeSortOrder value);
+}  // namespace DataIntegrationFlowFieldPriorityDedupeSortOrderMapper
+}  // namespace Model
+}  // namespace SupplyChain
+}  // namespace Aws

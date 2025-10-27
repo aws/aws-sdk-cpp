@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecommendationId"))
-  {
+ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecommendationId")) {
     m_recommendationId = jsonValue.GetString("RecommendationId");
     m_recommendationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GenerationTimestamp"))
-  {
+  if (jsonValue.ValueExists("GenerationTimestamp")) {
     m_generationTimestamp = jsonValue.GetString("GenerationTimestamp");
     m_generationTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdditionalMetadata"))
-  {
+  if (jsonValue.ValueExists("AdditionalMetadata")) {
     m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
     m_additionalMetadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservationPurchaseRecommendationMetadata::Jsonize() const
-{
+JsonValue ReservationPurchaseRecommendationMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("RecommendationId", m_recommendationId);
-
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("RecommendationId", m_recommendationId);
   }
 
-  if(m_generationTimestampHasBeenSet)
-  {
-   payload.WithString("GenerationTimestamp", m_generationTimestamp);
-
+  if (m_generationTimestampHasBeenSet) {
+    payload.WithString("GenerationTimestamp", m_generationTimestamp);
   }
 
-  if(m_additionalMetadataHasBeenSet)
-  {
-   payload.WithString("AdditionalMetadata", m_additionalMetadata);
-
+  if (m_additionalMetadataHasBeenSet) {
+    payload.WithString("AdditionalMetadata", m_additionalMetadata);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

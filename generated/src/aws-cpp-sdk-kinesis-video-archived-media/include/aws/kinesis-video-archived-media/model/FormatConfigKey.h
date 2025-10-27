@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
-  enum class FormatConfigKey
-  {
-    NOT_SET,
-    JPEGQuality
-  };
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
+enum class FormatConfigKey { NOT_SET, JPEGQuality };
 
-namespace FormatConfigKeyMapper
-{
+namespace FormatConfigKeyMapper {
 AWS_KINESISVIDEOARCHIVEDMEDIA_API FormatConfigKey GetFormatConfigKeyForName(const Aws::String& name);
 
 AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForFormatConfigKey(FormatConfigKey value);
-} // namespace FormatConfigKeyMapper
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace FormatConfigKeyMapper
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

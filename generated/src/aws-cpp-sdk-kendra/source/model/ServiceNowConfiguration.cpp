@@ -3,102 +3,82 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ServiceNowConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ServiceNowConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceNowConfiguration& ServiceNowConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HostUrl"))
-  {
+ServiceNowConfiguration& ServiceNowConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HostUrl")) {
     m_hostUrl = jsonValue.GetString("HostUrl");
     m_hostUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretArn"))
-  {
+  if (jsonValue.ValueExists("SecretArn")) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceNowBuildVersion"))
-  {
-    m_serviceNowBuildVersion = ServiceNowBuildVersionTypeMapper::GetServiceNowBuildVersionTypeForName(jsonValue.GetString("ServiceNowBuildVersion"));
+  if (jsonValue.ValueExists("ServiceNowBuildVersion")) {
+    m_serviceNowBuildVersion =
+        ServiceNowBuildVersionTypeMapper::GetServiceNowBuildVersionTypeForName(jsonValue.GetString("ServiceNowBuildVersion"));
     m_serviceNowBuildVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KnowledgeArticleConfiguration"))
-  {
+  if (jsonValue.ValueExists("KnowledgeArticleConfiguration")) {
     m_knowledgeArticleConfiguration = jsonValue.GetObject("KnowledgeArticleConfiguration");
     m_knowledgeArticleConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCatalogConfiguration"))
-  {
+  if (jsonValue.ValueExists("ServiceCatalogConfiguration")) {
     m_serviceCatalogConfiguration = jsonValue.GetObject("ServiceCatalogConfiguration");
     m_serviceCatalogConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthenticationType"))
-  {
-    m_authenticationType = ServiceNowAuthenticationTypeMapper::GetServiceNowAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+  if (jsonValue.ValueExists("AuthenticationType")) {
+    m_authenticationType =
+        ServiceNowAuthenticationTypeMapper::GetServiceNowAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceNowConfiguration::Jsonize() const
-{
+JsonValue ServiceNowConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostUrlHasBeenSet)
-  {
-   payload.WithString("HostUrl", m_hostUrl);
-
+  if (m_hostUrlHasBeenSet) {
+    payload.WithString("HostUrl", m_hostUrl);
   }
 
-  if(m_secretArnHasBeenSet)
-  {
-   payload.WithString("SecretArn", m_secretArn);
-
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
-  if(m_serviceNowBuildVersionHasBeenSet)
-  {
-   payload.WithString("ServiceNowBuildVersion", ServiceNowBuildVersionTypeMapper::GetNameForServiceNowBuildVersionType(m_serviceNowBuildVersion));
+  if (m_serviceNowBuildVersionHasBeenSet) {
+    payload.WithString("ServiceNowBuildVersion",
+                       ServiceNowBuildVersionTypeMapper::GetNameForServiceNowBuildVersionType(m_serviceNowBuildVersion));
   }
 
-  if(m_knowledgeArticleConfigurationHasBeenSet)
-  {
-   payload.WithObject("KnowledgeArticleConfiguration", m_knowledgeArticleConfiguration.Jsonize());
-
+  if (m_knowledgeArticleConfigurationHasBeenSet) {
+    payload.WithObject("KnowledgeArticleConfiguration", m_knowledgeArticleConfiguration.Jsonize());
   }
 
-  if(m_serviceCatalogConfigurationHasBeenSet)
-  {
-   payload.WithObject("ServiceCatalogConfiguration", m_serviceCatalogConfiguration.Jsonize());
-
+  if (m_serviceCatalogConfigurationHasBeenSet) {
+    payload.WithObject("ServiceCatalogConfiguration", m_serviceCatalogConfiguration.Jsonize());
   }
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("AuthenticationType", ServiceNowAuthenticationTypeMapper::GetNameForServiceNowAuthenticationType(m_authenticationType));
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("AuthenticationType",
+                       ServiceNowAuthenticationTypeMapper::GetNameForServiceNowAuthenticationType(m_authenticationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

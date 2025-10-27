@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class ListServiceInstancesSortBy
-  {
-    NOT_SET,
-    name,
-    deploymentStatus,
-    templateName,
-    serviceName,
-    environmentName,
-    lastDeploymentAttemptedAt,
-    createdAt
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class ListServiceInstancesSortBy {
+  NOT_SET,
+  name,
+  deploymentStatus,
+  templateName,
+  serviceName,
+  environmentName,
+  lastDeploymentAttemptedAt,
+  createdAt
+};
 
-namespace ListServiceInstancesSortByMapper
-{
+namespace ListServiceInstancesSortByMapper {
 AWS_PROTON_API ListServiceInstancesSortBy GetListServiceInstancesSortByForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForListServiceInstancesSortBy(ListServiceInstancesSortBy value);
-} // namespace ListServiceInstancesSortByMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace ListServiceInstancesSortByMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

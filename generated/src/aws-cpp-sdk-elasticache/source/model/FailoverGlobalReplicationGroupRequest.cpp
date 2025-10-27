@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/FailoverGlobalReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/FailoverGlobalReplicationGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String FailoverGlobalReplicationGroupRequest::SerializePayload() const
-{
+Aws::String FailoverGlobalReplicationGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=FailoverGlobalReplicationGroup&";
-  if(m_globalReplicationGroupIdHasBeenSet)
-  {
+  if (m_globalReplicationGroupIdHasBeenSet) {
     ss << "GlobalReplicationGroupId=" << StringUtils::URLEncode(m_globalReplicationGroupId.c_str()) << "&";
   }
 
-  if(m_primaryRegionHasBeenSet)
-  {
+  if (m_primaryRegionHasBeenSet) {
     ss << "PrimaryRegion=" << StringUtils::URLEncode(m_primaryRegion.c_str()) << "&";
   }
 
-  if(m_primaryReplicationGroupIdHasBeenSet)
-  {
+  if (m_primaryReplicationGroupIdHasBeenSet) {
     ss << "PrimaryReplicationGroupId=" << StringUtils::URLEncode(m_primaryReplicationGroupId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String FailoverGlobalReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  FailoverGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void FailoverGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

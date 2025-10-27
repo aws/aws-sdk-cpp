@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/DvbSubtitleTeletextSpacing.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/DvbSubtitleTeletextSpacing.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace DvbSubtitleTeletextSpacingMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace DvbSubtitleTeletextSpacingMapper
-      {
+static const int FIXED_GRID_HASH = HashingUtils::HashString("FIXED_GRID");
+static const int PROPORTIONAL_HASH = HashingUtils::HashString("PROPORTIONAL");
+static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
-        static const int FIXED_GRID_HASH = HashingUtils::HashString("FIXED_GRID");
-        static const int PROPORTIONAL_HASH = HashingUtils::HashString("PROPORTIONAL");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+DvbSubtitleTeletextSpacing GetDvbSubtitleTeletextSpacingForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == FIXED_GRID_HASH) {
+    return DvbSubtitleTeletextSpacing::FIXED_GRID;
+  } else if (hashCode == PROPORTIONAL_HASH) {
+    return DvbSubtitleTeletextSpacing::PROPORTIONAL;
+  } else if (hashCode == AUTO_HASH) {
+    return DvbSubtitleTeletextSpacing::AUTO;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DvbSubtitleTeletextSpacing>(hashCode);
+  }
 
+  return DvbSubtitleTeletextSpacing::NOT_SET;
+}
 
-        DvbSubtitleTeletextSpacing GetDvbSubtitleTeletextSpacingForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FIXED_GRID_HASH)
-          {
-            return DvbSubtitleTeletextSpacing::FIXED_GRID;
-          }
-          else if (hashCode == PROPORTIONAL_HASH)
-          {
-            return DvbSubtitleTeletextSpacing::PROPORTIONAL;
-          }
-          else if (hashCode == AUTO_HASH)
-          {
-            return DvbSubtitleTeletextSpacing::AUTO;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DvbSubtitleTeletextSpacing>(hashCode);
-          }
+Aws::String GetNameForDvbSubtitleTeletextSpacing(DvbSubtitleTeletextSpacing enumValue) {
+  switch (enumValue) {
+    case DvbSubtitleTeletextSpacing::NOT_SET:
+      return {};
+    case DvbSubtitleTeletextSpacing::FIXED_GRID:
+      return "FIXED_GRID";
+    case DvbSubtitleTeletextSpacing::PROPORTIONAL:
+      return "PROPORTIONAL";
+    case DvbSubtitleTeletextSpacing::AUTO:
+      return "AUTO";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return DvbSubtitleTeletextSpacing::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForDvbSubtitleTeletextSpacing(DvbSubtitleTeletextSpacing enumValue)
-        {
-          switch(enumValue)
-          {
-          case DvbSubtitleTeletextSpacing::NOT_SET:
-            return {};
-          case DvbSubtitleTeletextSpacing::FIXED_GRID:
-            return "FIXED_GRID";
-          case DvbSubtitleTeletextSpacing::PROPORTIONAL:
-            return "PROPORTIONAL";
-          case DvbSubtitleTeletextSpacing::AUTO:
-            return "AUTO";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace DvbSubtitleTeletextSpacingMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace DvbSubtitleTeletextSpacingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

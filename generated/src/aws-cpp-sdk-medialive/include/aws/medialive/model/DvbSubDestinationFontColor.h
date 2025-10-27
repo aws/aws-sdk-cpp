@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class DvbSubDestinationFontColor
-  {
-    NOT_SET,
-    BLACK,
-    BLUE,
-    GREEN,
-    RED,
-    WHITE,
-    YELLOW
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class DvbSubDestinationFontColor { NOT_SET, BLACK, BLUE, GREEN, RED, WHITE, YELLOW };
 
-namespace DvbSubDestinationFontColorMapper
-{
+namespace DvbSubDestinationFontColorMapper {
 AWS_MEDIALIVE_API DvbSubDestinationFontColor GetDvbSubDestinationFontColorForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForDvbSubDestinationFontColor(DvbSubDestinationFontColor value);
-} // namespace DvbSubDestinationFontColorMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace DvbSubDestinationFontColorMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

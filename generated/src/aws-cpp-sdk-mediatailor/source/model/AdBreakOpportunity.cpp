@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/AdBreakOpportunity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/AdBreakOpportunity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-AdBreakOpportunity::AdBreakOpportunity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdBreakOpportunity::AdBreakOpportunity(JsonView jsonValue) { *this = jsonValue; }
 
-AdBreakOpportunity& AdBreakOpportunity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OffsetMillis"))
-  {
+AdBreakOpportunity& AdBreakOpportunity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OffsetMillis")) {
     m_offsetMillis = jsonValue.GetInt64("OffsetMillis");
     m_offsetMillisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdBreakOpportunity::Jsonize() const
-{
+JsonValue AdBreakOpportunity::Jsonize() const {
   JsonValue payload;
 
-  if(m_offsetMillisHasBeenSet)
-  {
-   payload.WithInt64("OffsetMillis", m_offsetMillis);
-
+  if (m_offsetMillisHasBeenSet) {
+    payload.WithInt64("OffsetMillis", m_offsetMillis);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

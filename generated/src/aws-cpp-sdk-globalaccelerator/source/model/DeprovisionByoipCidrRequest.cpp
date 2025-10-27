@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/DeprovisionByoipCidrRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/DeprovisionByoipCidrRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeprovisionByoipCidrRequest::SerializePayload() const
-{
+Aws::String DeprovisionByoipCidrRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cidrHasBeenSet)
-  {
-   payload.WithString("Cidr", m_cidr);
-
+  if (m_cidrHasBeenSet) {
+    payload.WithString("Cidr", m_cidr);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeprovisionByoipCidrRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeprovisionByoipCidrRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GlobalAccelerator_V20180706.DeprovisionByoipCidr"));
   return headers;
-
 }
-
-
-
-

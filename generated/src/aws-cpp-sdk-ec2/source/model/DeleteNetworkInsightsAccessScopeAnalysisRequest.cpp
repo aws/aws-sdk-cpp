@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteNetworkInsightsAccessScopeAnalysisRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteNetworkInsightsAccessScopeAnalysisRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteNetworkInsightsAccessScopeAnalysisRequest::SerializePayload() const
-{
+Aws::String DeleteNetworkInsightsAccessScopeAnalysisRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteNetworkInsightsAccessScopeAnalysis&";
-  if(m_networkInsightsAccessScopeAnalysisIdHasBeenSet)
-  {
+  if (m_networkInsightsAccessScopeAnalysisIdHasBeenSet) {
     ss << "NetworkInsightsAccessScopeAnalysisId=" << StringUtils::URLEncode(m_networkInsightsAccessScopeAnalysisId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteNetworkInsightsAccessScopeAnalysisRequest::SerializePayload() 
   return ss.str();
 }
 
-
-void  DeleteNetworkInsightsAccessScopeAnalysisRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteNetworkInsightsAccessScopeAnalysisRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

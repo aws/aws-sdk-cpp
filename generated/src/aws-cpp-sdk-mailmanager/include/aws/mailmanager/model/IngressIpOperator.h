@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressIpOperator
-  {
-    NOT_SET,
-    CIDR_MATCHES,
-    NOT_CIDR_MATCHES
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressIpOperator { NOT_SET, CIDR_MATCHES, NOT_CIDR_MATCHES };
 
-namespace IngressIpOperatorMapper
-{
+namespace IngressIpOperatorMapper {
 AWS_MAILMANAGER_API IngressIpOperator GetIngressIpOperatorForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressIpOperator(IngressIpOperator value);
-} // namespace IngressIpOperatorMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressIpOperatorMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

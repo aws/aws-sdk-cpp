@@ -3,98 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/AlgorithmSpec.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/kms/model/AlgorithmSpec.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace KMS {
+namespace Model {
+namespace AlgorithmSpecMapper {
 
-namespace Aws
-{
-  namespace KMS
-  {
-    namespace Model
-    {
-      namespace AlgorithmSpecMapper
-      {
+static const int RSAES_PKCS1_V1_5_HASH = HashingUtils::HashString("RSAES_PKCS1_V1_5");
+static const int RSAES_OAEP_SHA_1_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_1");
+static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
+static const int RSA_AES_KEY_WRAP_SHA_1_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_1");
+static const int RSA_AES_KEY_WRAP_SHA_256_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_256");
+static const int SM2PKE_HASH = HashingUtils::HashString("SM2PKE");
 
-        static const int RSAES_PKCS1_V1_5_HASH = HashingUtils::HashString("RSAES_PKCS1_V1_5");
-        static const int RSAES_OAEP_SHA_1_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_1");
-        static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
-        static const int RSA_AES_KEY_WRAP_SHA_1_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_1");
-        static const int RSA_AES_KEY_WRAP_SHA_256_HASH = HashingUtils::HashString("RSA_AES_KEY_WRAP_SHA_256");
-        static const int SM2PKE_HASH = HashingUtils::HashString("SM2PKE");
+AlgorithmSpec GetAlgorithmSpecForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == RSAES_PKCS1_V1_5_HASH) {
+    return AlgorithmSpec::RSAES_PKCS1_V1_5;
+  } else if (hashCode == RSAES_OAEP_SHA_1_HASH) {
+    return AlgorithmSpec::RSAES_OAEP_SHA_1;
+  } else if (hashCode == RSAES_OAEP_SHA_256_HASH) {
+    return AlgorithmSpec::RSAES_OAEP_SHA_256;
+  } else if (hashCode == RSA_AES_KEY_WRAP_SHA_1_HASH) {
+    return AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_1;
+  } else if (hashCode == RSA_AES_KEY_WRAP_SHA_256_HASH) {
+    return AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_256;
+  } else if (hashCode == SM2PKE_HASH) {
+    return AlgorithmSpec::SM2PKE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AlgorithmSpec>(hashCode);
+  }
 
+  return AlgorithmSpec::NOT_SET;
+}
 
-        AlgorithmSpec GetAlgorithmSpecForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RSAES_PKCS1_V1_5_HASH)
-          {
-            return AlgorithmSpec::RSAES_PKCS1_V1_5;
-          }
-          else if (hashCode == RSAES_OAEP_SHA_1_HASH)
-          {
-            return AlgorithmSpec::RSAES_OAEP_SHA_1;
-          }
-          else if (hashCode == RSAES_OAEP_SHA_256_HASH)
-          {
-            return AlgorithmSpec::RSAES_OAEP_SHA_256;
-          }
-          else if (hashCode == RSA_AES_KEY_WRAP_SHA_1_HASH)
-          {
-            return AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_1;
-          }
-          else if (hashCode == RSA_AES_KEY_WRAP_SHA_256_HASH)
-          {
-            return AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_256;
-          }
-          else if (hashCode == SM2PKE_HASH)
-          {
-            return AlgorithmSpec::SM2PKE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AlgorithmSpec>(hashCode);
-          }
+Aws::String GetNameForAlgorithmSpec(AlgorithmSpec enumValue) {
+  switch (enumValue) {
+    case AlgorithmSpec::NOT_SET:
+      return {};
+    case AlgorithmSpec::RSAES_PKCS1_V1_5:
+      return "RSAES_PKCS1_V1_5";
+    case AlgorithmSpec::RSAES_OAEP_SHA_1:
+      return "RSAES_OAEP_SHA_1";
+    case AlgorithmSpec::RSAES_OAEP_SHA_256:
+      return "RSAES_OAEP_SHA_256";
+    case AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_1:
+      return "RSA_AES_KEY_WRAP_SHA_1";
+    case AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_256:
+      return "RSA_AES_KEY_WRAP_SHA_256";
+    case AlgorithmSpec::SM2PKE:
+      return "SM2PKE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AlgorithmSpec::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAlgorithmSpec(AlgorithmSpec enumValue)
-        {
-          switch(enumValue)
-          {
-          case AlgorithmSpec::NOT_SET:
-            return {};
-          case AlgorithmSpec::RSAES_PKCS1_V1_5:
-            return "RSAES_PKCS1_V1_5";
-          case AlgorithmSpec::RSAES_OAEP_SHA_1:
-            return "RSAES_OAEP_SHA_1";
-          case AlgorithmSpec::RSAES_OAEP_SHA_256:
-            return "RSAES_OAEP_SHA_256";
-          case AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_1:
-            return "RSA_AES_KEY_WRAP_SHA_1";
-          case AlgorithmSpec::RSA_AES_KEY_WRAP_SHA_256:
-            return "RSA_AES_KEY_WRAP_SHA_256";
-          case AlgorithmSpec::SM2PKE:
-            return "SM2PKE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AlgorithmSpecMapper
-    } // namespace Model
-  } // namespace KMS
-} // namespace Aws
+}  // namespace AlgorithmSpecMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/RecordOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/RecordOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-RecordOutput::RecordOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordOutput::RecordOutput(JsonView jsonValue) { *this = jsonValue; }
 
-RecordOutput& RecordOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OutputKey"))
-  {
+RecordOutput& RecordOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OutputKey")) {
     m_outputKey = jsonValue.GetString("OutputKey");
     m_outputKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputValue"))
-  {
+  if (jsonValue.ValueExists("OutputValue")) {
     m_outputValue = jsonValue.GetString("OutputValue");
     m_outputValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordOutput::Jsonize() const
-{
+JsonValue RecordOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputKeyHasBeenSet)
-  {
-   payload.WithString("OutputKey", m_outputKey);
-
+  if (m_outputKeyHasBeenSet) {
+    payload.WithString("OutputKey", m_outputKey);
   }
 
-  if(m_outputValueHasBeenSet)
-  {
-   payload.WithString("OutputValue", m_outputValue);
-
+  if (m_outputValueHasBeenSet) {
+    payload.WithString("OutputValue", m_outputValue);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

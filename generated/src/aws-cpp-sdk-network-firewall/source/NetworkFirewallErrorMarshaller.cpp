@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::NetworkFirewall;
 
-AWSError<CoreErrors> NetworkFirewallErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> NetworkFirewallErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = NetworkFirewallErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,184 +4,231 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
-#include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/DirectoryServiceRequest.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/DirectorySize.h>
 #include <aws/ds/model/DirectoryVpcSettings.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/NetworkType.h>
 #include <aws/ds/model/Tag.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
+/**
+ * <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectoryRequest">AWS
+ * API Reference</a></p>
+ */
+class CreateDirectoryRequest : public DirectoryServiceRequest {
+ public:
+  AWS_DIRECTORYSERVICE_API CreateDirectoryRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateDirectory"; }
+
+  AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
-   * <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectoryRequest">AWS
-   * API Reference</a></p>
+   * <p>The fully qualified name for the directory, such as
+   * <code>corp.example.com</code>.</p>
    */
-  class CreateDirectoryRequest : public DirectoryServiceRequest
-  {
-  public:
-    AWS_DIRECTORYSERVICE_API CreateDirectoryRequest() = default;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateDirectoryRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateDirectory"; }
+  ///@{
+  /**
+   * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
+   */
+  inline const Aws::String& GetShortName() const { return m_shortName; }
+  inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
+  template <typename ShortNameT = Aws::String>
+  void SetShortName(ShortNameT&& value) {
+    m_shortNameHasBeenSet = true;
+    m_shortName = std::forward<ShortNameT>(value);
+  }
+  template <typename ShortNameT = Aws::String>
+  CreateDirectoryRequest& WithShortName(ShortNameT&& value) {
+    SetShortName(std::forward<ShortNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The password for the directory administrator. The directory creation process
+   * creates a directory administrator account with the user name
+   * <code>Administrator</code> and this password.</p> <p>If you need to change the
+   * password for the administrator account, you can use the <a>ResetUserPassword</a>
+   * API call.</p> <p>The regex pattern for this string is made up of the following
+   * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+   * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+   * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+   * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+   * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+   * <p>Special characters and upper case and lower case
+   * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+   * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+   * </ul> <p>For additional information about how Active Directory passwords are
+   * enforced, see <a
+   * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+   * must meet complexity requirements</a> on the Microsoft website.</p>
+   */
+  inline const Aws::String& GetPassword() const { return m_password; }
+  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+  template <typename PasswordT = Aws::String>
+  void SetPassword(PasswordT&& value) {
+    m_passwordHasBeenSet = true;
+    m_password = std::forward<PasswordT>(value);
+  }
+  template <typename PasswordT = Aws::String>
+  CreateDirectoryRequest& WithPassword(PasswordT&& value) {
+    SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>A description for the directory.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateDirectoryRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The size of the directory.</p>
+   */
+  inline DirectorySize GetSize() const { return m_size; }
+  inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+  inline void SetSize(DirectorySize value) {
+    m_sizeHasBeenSet = true;
+    m_size = value;
+  }
+  inline CreateDirectoryRequest& WithSize(DirectorySize value) {
+    SetSize(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The fully qualified name for the directory, such as
-     * <code>corp.example.com</code>.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateDirectoryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
+   * the operation.</p>
+   */
+  inline const DirectoryVpcSettings& GetVpcSettings() const { return m_vpcSettings; }
+  inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
+  template <typename VpcSettingsT = DirectoryVpcSettings>
+  void SetVpcSettings(VpcSettingsT&& value) {
+    m_vpcSettingsHasBeenSet = true;
+    m_vpcSettings = std::forward<VpcSettingsT>(value);
+  }
+  template <typename VpcSettingsT = DirectoryVpcSettings>
+  CreateDirectoryRequest& WithVpcSettings(VpcSettingsT&& value) {
+    SetVpcSettings(std::forward<VpcSettingsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
-     */
-    inline const Aws::String& GetShortName() const { return m_shortName; }
-    inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
-    template<typename ShortNameT = Aws::String>
-    void SetShortName(ShortNameT&& value) { m_shortNameHasBeenSet = true; m_shortName = std::forward<ShortNameT>(value); }
-    template<typename ShortNameT = Aws::String>
-    CreateDirectoryRequest& WithShortName(ShortNameT&& value) { SetShortName(std::forward<ShortNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The tags to be assigned to the Simple AD directory.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateDirectoryRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateDirectoryRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p> <p>If you need to change the
-     * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p> <p>The regex pattern for this string is made up of the following
-     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
-     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
-     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
-     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
-     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
-     * <p>Special characters and upper case and lower case
-     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
-     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
-     * </ul> <p>For additional information about how Active Directory passwords are
-     * enforced, see <a
-     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
-     * must meet complexity requirements</a> on the Microsoft website.</p>
-     */
-    inline const Aws::String& GetPassword() const { return m_password; }
-    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    template<typename PasswordT = Aws::String>
-    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
-    template<typename PasswordT = Aws::String>
-    CreateDirectoryRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack
+   * only.</p>
+   */
+  inline NetworkType GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  inline void SetNetworkType(NetworkType value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = value;
+  }
+  inline CreateDirectoryRequest& WithNetworkType(NetworkType value) {
+    SetNetworkType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A description for the directory.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateDirectoryRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  Aws::String m_shortName;
+  bool m_shortNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The size of the directory.</p>
-     */
-    inline DirectorySize GetSize() const { return m_size; }
-    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(DirectorySize value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline CreateDirectoryRequest& WithSize(DirectorySize value) { SetSize(value); return *this;}
-    ///@}
+  Aws::String m_password;
+  bool m_passwordHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
-     * the operation.</p>
-     */
-    inline const DirectoryVpcSettings& GetVpcSettings() const { return m_vpcSettings; }
-    inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
-    template<typename VpcSettingsT = DirectoryVpcSettings>
-    void SetVpcSettings(VpcSettingsT&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::forward<VpcSettingsT>(value); }
-    template<typename VpcSettingsT = DirectoryVpcSettings>
-    CreateDirectoryRequest& WithVpcSettings(VpcSettingsT&& value) { SetVpcSettings(std::forward<VpcSettingsT>(value)); return *this;}
-    ///@}
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The tags to be assigned to the Simple AD directory.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    CreateDirectoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    CreateDirectoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
+  DirectorySize m_size{DirectorySize::NOT_SET};
+  bool m_sizeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack
-     * only.</p>
-     */
-    inline NetworkType GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline CreateDirectoryRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
-    ///@}
-  private:
+  DirectoryVpcSettings m_vpcSettings;
+  bool m_vpcSettingsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
 
-    Aws::String m_shortName;
-    bool m_shortNameHasBeenSet = false;
+  NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_networkTypeHasBeenSet = false;
+};
 
-    Aws::String m_password;
-    bool m_passwordHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    DirectorySize m_size{DirectorySize::NOT_SET};
-    bool m_sizeHasBeenSet = false;
-
-    DirectoryVpcSettings m_vpcSettings;
-    bool m_vpcSettingsHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
-
-    NetworkType m_networkType{NetworkType::NOT_SET};
-    bool m_networkTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

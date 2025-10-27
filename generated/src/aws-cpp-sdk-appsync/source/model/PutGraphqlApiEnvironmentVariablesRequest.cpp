@@ -12,24 +12,16 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutGraphqlApiEnvironmentVariablesRequest::SerializePayload() const
-{
+Aws::String PutGraphqlApiEnvironmentVariablesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_environmentVariablesHasBeenSet)
-  {
-   JsonValue environmentVariablesJsonMap;
-   for(auto& environmentVariablesItem : m_environmentVariables)
-   {
-     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
-   }
-   payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
-
+  if (m_environmentVariablesHasBeenSet) {
+    JsonValue environmentVariablesJsonMap;
+    for (auto& environmentVariablesItem : m_environmentVariables) {
+      environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+    }
+    payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/cognito-idp/model/ListResourceServersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourceServersResult::ListResourceServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListResourceServersResult::ListResourceServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListResourceServersResult& ListResourceServersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListResourceServersResult& ListResourceServersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ResourceServers"))
-  {
+  if (jsonValue.ValueExists("ResourceServers")) {
     Aws::Utils::Array<JsonView> resourceServersJsonList = jsonValue.GetArray("ResourceServers");
-    for(unsigned resourceServersIndex = 0; resourceServersIndex < resourceServersJsonList.GetLength(); ++resourceServersIndex)
-    {
+    for (unsigned resourceServersIndex = 0; resourceServersIndex < resourceServersJsonList.GetLength(); ++resourceServersIndex) {
       m_resourceServers.push_back(resourceServersJsonList[resourceServersIndex].AsObject());
     }
     m_resourceServersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

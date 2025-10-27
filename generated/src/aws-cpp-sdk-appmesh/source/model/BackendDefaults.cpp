@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-BackendDefaults::BackendDefaults(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackendDefaults::BackendDefaults(JsonView jsonValue) { *this = jsonValue; }
 
-BackendDefaults& BackendDefaults::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientPolicy"))
-  {
+BackendDefaults& BackendDefaults::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientPolicy")) {
     m_clientPolicy = jsonValue.GetObject("clientPolicy");
     m_clientPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackendDefaults::Jsonize() const
-{
+JsonValue BackendDefaults::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientPolicyHasBeenSet)
-  {
-   payload.WithObject("clientPolicy", m_clientPolicy.Jsonize());
-
+  if (m_clientPolicyHasBeenSet) {
+    payload.WithObject("clientPolicy", m_clientPolicy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

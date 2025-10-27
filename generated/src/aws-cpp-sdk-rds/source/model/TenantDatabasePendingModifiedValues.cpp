@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/TenantDatabasePendingModifiedValues.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/TenantDatabasePendingModifiedValues.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TenantDatabasePendingModifiedValues& TenantDatabasePendingModifiedValues::operator =(const XmlNode& xmlNode)
-{
+TenantDatabasePendingModifiedValues& TenantDatabasePendingModifiedValues::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
-    if(!masterUserPasswordNode.IsNull())
-    {
+    if (!masterUserPasswordNode.IsNull()) {
       m_masterUserPassword = Aws::Utils::Xml::DecodeEscapedXmlText(masterUserPasswordNode.GetText());
       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode tenantDBNameNode = resultNode.FirstChild("TenantDBName");
-    if(!tenantDBNameNode.IsNull())
-    {
+    if (!tenantDBNameNode.IsNull()) {
       m_tenantDBName = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDBNameNode.GetText());
       m_tenantDBNameHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ TenantDatabasePendingModifiedValues& TenantDatabasePendingModifiedValues::operat
   return *this;
 }
 
-void TenantDatabasePendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_masterUserPasswordHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+void TenantDatabasePendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                         const char* locationValue) const {
+  if (m_masterUserPasswordHasBeenSet) {
+    oStream << location << index << locationValue << ".MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
   }
 
-  if(m_tenantDBNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TenantDBName=" << StringUtils::URLEncode(m_tenantDBName.c_str()) << "&";
-  }
-
-}
-
-void TenantDatabasePendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_masterUserPasswordHasBeenSet)
-  {
-      oStream << location << ".MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
-  }
-  if(m_tenantDBNameHasBeenSet)
-  {
-      oStream << location << ".TenantDBName=" << StringUtils::URLEncode(m_tenantDBName.c_str()) << "&";
+  if (m_tenantDBNameHasBeenSet) {
+    oStream << location << index << locationValue << ".TenantDBName=" << StringUtils::URLEncode(m_tenantDBName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void TenantDatabasePendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_masterUserPasswordHasBeenSet) {
+    oStream << location << ".MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
+  }
+  if (m_tenantDBNameHasBeenSet) {
+    oStream << location << ".TenantDBName=" << StringUtils::URLEncode(m_tenantDBName.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

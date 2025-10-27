@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/health/model/AccountEntityAggregate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/health/model/AccountEntityAggregate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Health
-{
-namespace Model
-{
+namespace Aws {
+namespace Health {
+namespace Model {
 
-AccountEntityAggregate::AccountEntityAggregate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountEntityAggregate::AccountEntityAggregate(JsonView jsonValue) { *this = jsonValue; }
 
-AccountEntityAggregate& AccountEntityAggregate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+AccountEntityAggregate& AccountEntityAggregate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statuses"))
-  {
+  if (jsonValue.ValueExists("statuses")) {
     Aws::Map<Aws::String, JsonView> statusesJsonMap = jsonValue.GetObject("statuses").GetAllObjects();
-    for(auto& statusesItem : statusesJsonMap)
-    {
+    for (auto& statusesItem : statusesJsonMap) {
       m_statuses[EntityStatusCodeMapper::GetEntityStatusCodeForName(statusesItem.first)] = statusesItem.second.AsInteger();
     }
     m_statusesHasBeenSet = true;
@@ -47,36 +36,28 @@ AccountEntityAggregate& AccountEntityAggregate::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AccountEntityAggregate::Jsonize() const
-{
+JsonValue AccountEntityAggregate::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("count", m_count);
   }
 
-  if(m_statusesHasBeenSet)
-  {
-   JsonValue statusesJsonMap;
-   for(auto& statusesItem : m_statuses)
-   {
-     statusesJsonMap.WithInteger(EntityStatusCodeMapper::GetNameForEntityStatusCode(statusesItem.first), statusesItem.second);
-   }
-   payload.WithObject("statuses", std::move(statusesJsonMap));
-
+  if (m_statusesHasBeenSet) {
+    JsonValue statusesJsonMap;
+    for (auto& statusesItem : m_statuses) {
+      statusesJsonMap.WithInteger(EntityStatusCodeMapper::GetNameForEntityStatusCode(statusesItem.first), statusesItem.second);
+    }
+    payload.WithObject("statuses", std::move(statusesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Health
-} // namespace Aws
+}  // namespace Model
+}  // namespace Health
+}  // namespace Aws

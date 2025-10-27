@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-CrawlFilterConfiguration::CrawlFilterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrawlFilterConfiguration::CrawlFilterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CrawlFilterConfiguration& CrawlFilterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+CrawlFilterConfiguration& CrawlFilterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = CrawlFilterConfigurationTypeMapper::GetCrawlFilterConfigurationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("patternObjectFilter"))
-  {
+  if (jsonValue.ValueExists("patternObjectFilter")) {
     m_patternObjectFilter = jsonValue.GetObject("patternObjectFilter");
     m_patternObjectFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrawlFilterConfiguration::Jsonize() const
-{
+JsonValue CrawlFilterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CrawlFilterConfigurationTypeMapper::GetNameForCrawlFilterConfigurationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CrawlFilterConfigurationTypeMapper::GetNameForCrawlFilterConfigurationType(m_type));
   }
 
-  if(m_patternObjectFilterHasBeenSet)
-  {
-   payload.WithObject("patternObjectFilter", m_patternObjectFilter.Jsonize());
-
+  if (m_patternObjectFilterHasBeenSet) {
+    payload.WithObject("patternObjectFilter", m_patternObjectFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

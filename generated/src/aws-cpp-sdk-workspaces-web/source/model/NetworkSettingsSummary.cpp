@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/NetworkSettingsSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/NetworkSettingsSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
 
-NetworkSettingsSummary::NetworkSettingsSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkSettingsSummary::NetworkSettingsSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkSettingsSummary& NetworkSettingsSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("networkSettingsArn"))
-  {
+NetworkSettingsSummary& NetworkSettingsSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("networkSettingsArn")) {
     m_networkSettingsArn = jsonValue.GetString("networkSettingsArn");
     m_networkSettingsArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcId"))
-  {
+  if (jsonValue.ValueExists("vpcId")) {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkSettingsSummary::Jsonize() const
-{
+JsonValue NetworkSettingsSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkSettingsArnHasBeenSet)
-  {
-   payload.WithString("networkSettingsArn", m_networkSettingsArn);
-
+  if (m_networkSettingsArnHasBeenSet) {
+    payload.WithString("networkSettingsArn", m_networkSettingsArn);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("vpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("vpcId", m_vpcId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

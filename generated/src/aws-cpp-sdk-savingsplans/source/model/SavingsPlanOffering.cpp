@@ -3,87 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/savingsplans/model/SavingsPlanOffering.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/savingsplans/model/SavingsPlanOffering.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace SavingsPlans {
+namespace Model {
 
-SavingsPlanOffering::SavingsPlanOffering(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlanOffering::SavingsPlanOffering(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("offeringId"))
-  {
+SavingsPlanOffering& SavingsPlanOffering::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("offeringId")) {
     m_offeringId = jsonValue.GetString("offeringId");
     m_offeringIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("productTypes"))
-  {
+  if (jsonValue.ValueExists("productTypes")) {
     Aws::Utils::Array<JsonView> productTypesJsonList = jsonValue.GetArray("productTypes");
-    for(unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex)
-    {
-      m_productTypes.push_back(SavingsPlanProductTypeMapper::GetSavingsPlanProductTypeForName(productTypesJsonList[productTypesIndex].AsString()));
+    for (unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex) {
+      m_productTypes.push_back(
+          SavingsPlanProductTypeMapper::GetSavingsPlanProductTypeForName(productTypesJsonList[productTypesIndex].AsString()));
     }
     m_productTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("planType"))
-  {
+  if (jsonValue.ValueExists("planType")) {
     m_planType = SavingsPlanTypeMapper::GetSavingsPlanTypeForName(jsonValue.GetString("planType"));
     m_planTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paymentOption"))
-  {
+  if (jsonValue.ValueExists("paymentOption")) {
     m_paymentOption = SavingsPlanPaymentOptionMapper::GetSavingsPlanPaymentOptionForName(jsonValue.GetString("paymentOption"));
     m_paymentOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("durationSeconds"))
-  {
+  if (jsonValue.ValueExists("durationSeconds")) {
     m_durationSeconds = jsonValue.GetInt64("durationSeconds");
     m_durationSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currency"))
-  {
+  if (jsonValue.ValueExists("currency")) {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
     m_currencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceCode"))
-  {
+  if (jsonValue.ValueExists("serviceCode")) {
     m_serviceCode = jsonValue.GetString("serviceCode");
     m_serviceCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("usageType"))
-  {
+  if (jsonValue.ValueExists("usageType")) {
     m_usageType = jsonValue.GetString("usageType");
     m_usageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operation"))
-  {
+  if (jsonValue.ValueExists("operation")) {
     m_operation = jsonValue.GetString("operation");
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("properties"))
-  {
+  if (jsonValue.ValueExists("properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
-    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-    {
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
       m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
     }
     m_propertiesHasBeenSet = true;
@@ -91,86 +72,65 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SavingsPlanOffering::Jsonize() const
-{
+JsonValue SavingsPlanOffering::Jsonize() const {
   JsonValue payload;
 
-  if(m_offeringIdHasBeenSet)
-  {
-   payload.WithString("offeringId", m_offeringId);
-
+  if (m_offeringIdHasBeenSet) {
+    payload.WithString("offeringId", m_offeringId);
   }
 
-  if(m_productTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> productTypesJsonList(m_productTypes.size());
-   for(unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex)
-   {
-     productTypesJsonList[productTypesIndex].AsString(SavingsPlanProductTypeMapper::GetNameForSavingsPlanProductType(m_productTypes[productTypesIndex]));
-   }
-   payload.WithArray("productTypes", std::move(productTypesJsonList));
-
+  if (m_productTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> productTypesJsonList(m_productTypes.size());
+    for (unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex) {
+      productTypesJsonList[productTypesIndex].AsString(
+          SavingsPlanProductTypeMapper::GetNameForSavingsPlanProductType(m_productTypes[productTypesIndex]));
+    }
+    payload.WithArray("productTypes", std::move(productTypesJsonList));
   }
 
-  if(m_planTypeHasBeenSet)
-  {
-   payload.WithString("planType", SavingsPlanTypeMapper::GetNameForSavingsPlanType(m_planType));
+  if (m_planTypeHasBeenSet) {
+    payload.WithString("planType", SavingsPlanTypeMapper::GetNameForSavingsPlanType(m_planType));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("paymentOption", SavingsPlanPaymentOptionMapper::GetNameForSavingsPlanPaymentOption(m_paymentOption));
+  if (m_paymentOptionHasBeenSet) {
+    payload.WithString("paymentOption", SavingsPlanPaymentOptionMapper::GetNameForSavingsPlanPaymentOption(m_paymentOption));
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
-   payload.WithInt64("durationSeconds", m_durationSeconds);
-
+  if (m_durationSecondsHasBeenSet) {
+    payload.WithInt64("durationSeconds", m_durationSeconds);
   }
 
-  if(m_currencyHasBeenSet)
-  {
-   payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
+  if (m_currencyHasBeenSet) {
+    payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
   }
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("serviceCode", m_serviceCode);
-
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("serviceCode", m_serviceCode);
   }
 
-  if(m_usageTypeHasBeenSet)
-  {
-   payload.WithString("usageType", m_usageType);
-
+  if (m_usageTypeHasBeenSet) {
+    payload.WithString("usageType", m_usageType);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("operation", m_operation);
   }
 
-  if(m_propertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
-   for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-   {
-     propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
-   }
-   payload.WithArray("properties", std::move(propertiesJsonList));
-
+  if (m_propertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
+      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
+    }
+    payload.WithArray("properties", std::move(propertiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SavingsPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace SavingsPlans
+}  // namespace Aws

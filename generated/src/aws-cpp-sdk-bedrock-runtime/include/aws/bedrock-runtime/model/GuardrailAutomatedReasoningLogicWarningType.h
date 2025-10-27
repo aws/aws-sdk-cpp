@@ -7,25 +7,17 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class GuardrailAutomatedReasoningLogicWarningType
-  {
-    NOT_SET,
-    ALWAYS_FALSE,
-    ALWAYS_TRUE
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class GuardrailAutomatedReasoningLogicWarningType { NOT_SET, ALWAYS_FALSE, ALWAYS_TRUE };
 
-namespace GuardrailAutomatedReasoningLogicWarningTypeMapper
-{
-AWS_BEDROCKRUNTIME_API GuardrailAutomatedReasoningLogicWarningType GetGuardrailAutomatedReasoningLogicWarningTypeForName(const Aws::String& name);
+namespace GuardrailAutomatedReasoningLogicWarningTypeMapper {
+AWS_BEDROCKRUNTIME_API GuardrailAutomatedReasoningLogicWarningType
+GetGuardrailAutomatedReasoningLogicWarningTypeForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForGuardrailAutomatedReasoningLogicWarningType(GuardrailAutomatedReasoningLogicWarningType value);
-} // namespace GuardrailAutomatedReasoningLogicWarningTypeMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace GuardrailAutomatedReasoningLogicWarningTypeMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

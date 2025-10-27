@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-AppInstanceBotSummary::AppInstanceBotSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppInstanceBotSummary::AppInstanceBotSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AppInstanceBotSummary& AppInstanceBotSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AppInstanceBotArn"))
-  {
+AppInstanceBotSummary& AppInstanceBotSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AppInstanceBotArn")) {
     m_appInstanceBotArn = jsonValue.GetString("AppInstanceBotArn");
     m_appInstanceBotArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metadata"))
-  {
+  if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetString("Metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppInstanceBotSummary::Jsonize() const
-{
+JsonValue AppInstanceBotSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_appInstanceBotArnHasBeenSet)
-  {
-   payload.WithString("AppInstanceBotArn", m_appInstanceBotArn);
-
+  if (m_appInstanceBotArnHasBeenSet) {
+    payload.WithString("AppInstanceBotArn", m_appInstanceBotArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

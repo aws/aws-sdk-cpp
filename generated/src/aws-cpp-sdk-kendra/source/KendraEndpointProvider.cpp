@@ -5,12 +5,8 @@
 
 #include <aws/kendra/KendraEndpointProvider.h>
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace kendra
-} // namespace Aws
+namespace Aws {
+namespace kendra {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace kendra
+}  // namespace Aws

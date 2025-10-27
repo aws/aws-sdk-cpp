@@ -7,30 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class RecoveryPointStatus
-  {
-    NOT_SET,
-    COMPLETED,
-    PARTIAL,
-    DELETING,
-    EXPIRED,
-    AVAILABLE,
-    STOPPED,
-    CREATING
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class RecoveryPointStatus { NOT_SET, COMPLETED, PARTIAL, DELETING, EXPIRED, AVAILABLE, STOPPED, CREATING };
 
-namespace RecoveryPointStatusMapper
-{
+namespace RecoveryPointStatusMapper {
 AWS_BACKUP_API RecoveryPointStatus GetRecoveryPointStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForRecoveryPointStatus(RecoveryPointStatus value);
-} // namespace RecoveryPointStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace RecoveryPointStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

@@ -10,40 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ContinueUpdateRollbackRequest::SerializePayload() const
-{
+Aws::String ContinueUpdateRollbackRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ContinueUpdateRollback&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_roleARNHasBeenSet)
-  {
+  if (m_roleARNHasBeenSet) {
     ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
 
-  if(m_resourcesToSkipHasBeenSet)
-  {
-    if (m_resourcesToSkip.empty())
-    {
+  if (m_resourcesToSkipHasBeenSet) {
+    if (m_resourcesToSkip.empty()) {
       ss << "ResourcesToSkip=&";
-    }
-    else
-    {
+    } else {
       unsigned resourcesToSkipCount = 1;
-      for(auto& item : m_resourcesToSkip)
-      {
-        ss << "ResourcesToSkip.member." << resourcesToSkipCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_resourcesToSkip) {
+        ss << "ResourcesToSkip.member." << resourcesToSkipCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         resourcesToSkipCount++;
       }
     }
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
+  if (m_clientRequestTokenHasBeenSet) {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
@@ -51,8 +41,4 @@ Aws::String ContinueUpdateRollbackRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ContinueUpdateRollbackRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ContinueUpdateRollbackRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

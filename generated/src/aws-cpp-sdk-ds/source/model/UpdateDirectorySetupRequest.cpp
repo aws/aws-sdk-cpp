@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/UpdateDirectorySetupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/UpdateDirectorySetupRequest.h>
 
 #include <utility>
 
@@ -12,56 +12,38 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateDirectorySetupRequest::SerializePayload() const
-{
+Aws::String UpdateDirectorySetupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_directoryIdHasBeenSet)
-  {
-   payload.WithString("DirectoryId", m_directoryId);
-
+  if (m_directoryIdHasBeenSet) {
+    payload.WithString("DirectoryId", m_directoryId);
   }
 
-  if(m_updateTypeHasBeenSet)
-  {
-   payload.WithString("UpdateType", UpdateTypeMapper::GetNameForUpdateType(m_updateType));
+  if (m_updateTypeHasBeenSet) {
+    payload.WithString("UpdateType", UpdateTypeMapper::GetNameForUpdateType(m_updateType));
   }
 
-  if(m_oSUpdateSettingsHasBeenSet)
-  {
-   payload.WithObject("OSUpdateSettings", m_oSUpdateSettings.Jsonize());
-
+  if (m_oSUpdateSettingsHasBeenSet) {
+    payload.WithObject("OSUpdateSettings", m_oSUpdateSettings.Jsonize());
   }
 
-  if(m_directorySizeUpdateSettingsHasBeenSet)
-  {
-   payload.WithObject("DirectorySizeUpdateSettings", m_directorySizeUpdateSettings.Jsonize());
-
+  if (m_directorySizeUpdateSettingsHasBeenSet) {
+    payload.WithObject("DirectorySizeUpdateSettings", m_directorySizeUpdateSettings.Jsonize());
   }
 
-  if(m_networkUpdateSettingsHasBeenSet)
-  {
-   payload.WithObject("NetworkUpdateSettings", m_networkUpdateSettings.Jsonize());
-
+  if (m_networkUpdateSettingsHasBeenSet) {
+    payload.WithObject("NetworkUpdateSettings", m_networkUpdateSettings.Jsonize());
   }
 
-  if(m_createSnapshotBeforeUpdateHasBeenSet)
-  {
-   payload.WithBool("CreateSnapshotBeforeUpdate", m_createSnapshotBeforeUpdate);
-
+  if (m_createSnapshotBeforeUpdateHasBeenSet) {
+    payload.WithBool("CreateSnapshotBeforeUpdate", m_createSnapshotBeforeUpdate);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateDirectorySetupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateDirectorySetupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.UpdateDirectorySetup"));
   return headers;
-
 }
-
-
-
-

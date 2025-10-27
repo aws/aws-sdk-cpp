@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/DescribeAssessmentTemplatesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/inspector/model/DescribeAssessmentTemplatesResult.h>
 
 #include <utility>
 
@@ -17,28 +17,23 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("assessmentTemplates"))
-  {
+  if (jsonValue.ValueExists("assessmentTemplates")) {
     Aws::Utils::Array<JsonView> assessmentTemplatesJsonList = jsonValue.GetArray("assessmentTemplates");
-    for(unsigned assessmentTemplatesIndex = 0; assessmentTemplatesIndex < assessmentTemplatesJsonList.GetLength(); ++assessmentTemplatesIndex)
-    {
+    for (unsigned assessmentTemplatesIndex = 0; assessmentTemplatesIndex < assessmentTemplatesJsonList.GetLength();
+         ++assessmentTemplatesIndex) {
       m_assessmentTemplates.push_back(assessmentTemplatesJsonList[assessmentTemplatesIndex].AsObject());
     }
     m_assessmentTemplatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failedItems"))
-  {
+  if (jsonValue.ValueExists("failedItems")) {
     Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
-    for(auto& failedItemsItem : failedItemsJsonMap)
-    {
+    for (auto& failedItemsItem : failedItemsJsonMap) {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();
     }
     m_failedItemsHasBeenSet = true;
@@ -46,12 +41,10 @@ DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

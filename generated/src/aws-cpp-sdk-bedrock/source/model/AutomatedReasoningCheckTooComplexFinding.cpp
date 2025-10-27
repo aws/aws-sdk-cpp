@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningCheckTooComplexFinding::AutomatedReasoningCheckTooComplexFinding(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningCheckTooComplexFinding::AutomatedReasoningCheckTooComplexFinding(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningCheckTooComplexFinding& AutomatedReasoningCheckTooComplexFinding::operator =(JsonView jsonValue)
-{
+AutomatedReasoningCheckTooComplexFinding& AutomatedReasoningCheckTooComplexFinding::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue AutomatedReasoningCheckTooComplexFinding::Jsonize() const
-{
+JsonValue AutomatedReasoningCheckTooComplexFinding::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

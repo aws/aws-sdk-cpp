@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class AssetType
-  {
-    NOT_SET,
-    ec2_instance
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class AssetType { NOT_SET, ec2_instance };
 
-namespace AssetTypeMapper
-{
+namespace AssetTypeMapper {
 AWS_INSPECTOR_API AssetType GetAssetTypeForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForAssetType(AssetType value);
-} // namespace AssetTypeMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace AssetTypeMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::AugmentedAIRuntime;
 
-AWSError<CoreErrors> AugmentedAIRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> AugmentedAIRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = AugmentedAIRuntimeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    ManagedInstance,
-    EC2Instance
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class ResourceType { NOT_SET, ManagedInstance, EC2Instance };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_SSM_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

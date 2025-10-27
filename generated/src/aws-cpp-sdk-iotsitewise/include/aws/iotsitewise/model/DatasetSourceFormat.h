@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class DatasetSourceFormat
-  {
-    NOT_SET,
-    KNOWLEDGE_BASE
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class DatasetSourceFormat { NOT_SET, KNOWLEDGE_BASE };
 
-namespace DatasetSourceFormatMapper
-{
+namespace DatasetSourceFormatMapper {
 AWS_IOTSITEWISE_API DatasetSourceFormat GetDatasetSourceFormatForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForDatasetSourceFormat(DatasetSourceFormat value);
-} // namespace DatasetSourceFormatMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace DatasetSourceFormatMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

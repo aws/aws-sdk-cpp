@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
-  enum class GraphSummaryType
-  {
-    NOT_SET,
-    basic,
-    detailed
-  };
+namespace Aws {
+namespace neptunedata {
+namespace Model {
+enum class GraphSummaryType { NOT_SET, basic, detailed };
 
-namespace GraphSummaryTypeMapper
-{
+namespace GraphSummaryTypeMapper {
 AWS_NEPTUNEDATA_API GraphSummaryType GetGraphSummaryTypeForName(const Aws::String& name);
 
 AWS_NEPTUNEDATA_API Aws::String GetNameForGraphSummaryType(GraphSummaryType value);
-} // namespace GraphSummaryTypeMapper
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace GraphSummaryTypeMapper
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

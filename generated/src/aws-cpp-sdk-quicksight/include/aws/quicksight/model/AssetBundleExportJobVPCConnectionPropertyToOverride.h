@@ -4,29 +4,21 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class AssetBundleExportJobVPCConnectionPropertyToOverride
-  {
-    NOT_SET,
-    Name,
-    DnsResolvers,
-    RoleArn
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class AssetBundleExportJobVPCConnectionPropertyToOverride { NOT_SET, Name, DnsResolvers, RoleArn };
 
-namespace AssetBundleExportJobVPCConnectionPropertyToOverrideMapper
-{
-AWS_QUICKSIGHT_API AssetBundleExportJobVPCConnectionPropertyToOverride GetAssetBundleExportJobVPCConnectionPropertyToOverrideForName(const Aws::String& name);
+namespace AssetBundleExportJobVPCConnectionPropertyToOverrideMapper {
+AWS_QUICKSIGHT_API AssetBundleExportJobVPCConnectionPropertyToOverride
+GetAssetBundleExportJobVPCConnectionPropertyToOverrideForName(const Aws::String& name);
 
-AWS_QUICKSIGHT_API Aws::String GetNameForAssetBundleExportJobVPCConnectionPropertyToOverride(AssetBundleExportJobVPCConnectionPropertyToOverride value);
-} // namespace AssetBundleExportJobVPCConnectionPropertyToOverrideMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+AWS_QUICKSIGHT_API Aws::String GetNameForAssetBundleExportJobVPCConnectionPropertyToOverride(
+    AssetBundleExportJobVPCConnectionPropertyToOverride value);
+}  // namespace AssetBundleExportJobVPCConnectionPropertyToOverrideMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

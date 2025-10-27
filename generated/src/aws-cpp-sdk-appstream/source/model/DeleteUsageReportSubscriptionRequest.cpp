@@ -12,19 +12,10 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteUsageReportSubscriptionRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String DeleteUsageReportSubscriptionRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection DeleteUsageReportSubscriptionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteUsageReportSubscriptionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DeleteUsageReportSubscription"));
   return headers;
-
 }
-
-
-
-

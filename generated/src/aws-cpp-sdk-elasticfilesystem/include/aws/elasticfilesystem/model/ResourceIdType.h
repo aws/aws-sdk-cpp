@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
-  enum class ResourceIdType
-  {
-    NOT_SET,
-    LONG_ID,
-    SHORT_ID
-  };
+namespace Aws {
+namespace EFS {
+namespace Model {
+enum class ResourceIdType { NOT_SET, LONG_ID, SHORT_ID };
 
-namespace ResourceIdTypeMapper
-{
+namespace ResourceIdTypeMapper {
 AWS_EFS_API ResourceIdType GetResourceIdTypeForName(const Aws::String& name);
 
 AWS_EFS_API Aws::String GetNameForResourceIdType(ResourceIdType value);
-} // namespace ResourceIdTypeMapper
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace ResourceIdTypeMapper
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

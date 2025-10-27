@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
-namespace Aws
-{
-namespace Snowball
-{
-class SnowballEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Snowball {
+class SnowballEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Snowball
+}  // namespace Aws

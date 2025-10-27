@@ -12,24 +12,16 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAppInstanceUserEndpointRequest::SerializePayload() const
-{
+Aws::String UpdateAppInstanceUserEndpointRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_allowMessagesHasBeenSet)
-  {
-   payload.WithString("AllowMessages", AllowMessagesMapper::GetNameForAllowMessages(m_allowMessages));
+  if (m_allowMessagesHasBeenSet) {
+    payload.WithString("AllowMessages", AllowMessagesMapper::GetNameForAllowMessages(m_allowMessages));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

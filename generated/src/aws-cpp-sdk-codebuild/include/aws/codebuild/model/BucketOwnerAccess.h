@@ -7,26 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class BucketOwnerAccess
-  {
-    NOT_SET,
-    NONE,
-    READ_ONLY,
-    FULL
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class BucketOwnerAccess { NOT_SET, NONE, READ_ONLY, FULL };
 
-namespace BucketOwnerAccessMapper
-{
+namespace BucketOwnerAccessMapper {
 AWS_CODEBUILD_API BucketOwnerAccess GetBucketOwnerAccessForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForBucketOwnerAccess(BucketOwnerAccess value);
-} // namespace BucketOwnerAccessMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace BucketOwnerAccessMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

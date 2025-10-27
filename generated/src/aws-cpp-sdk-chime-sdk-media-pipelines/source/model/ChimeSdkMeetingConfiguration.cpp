@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ChimeSdkMeetingConfiguration& ChimeSdkMeetingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceConfiguration"))
-  {
+ChimeSdkMeetingConfiguration& ChimeSdkMeetingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceConfiguration")) {
     m_sourceConfiguration = jsonValue.GetObject("SourceConfiguration");
     m_sourceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArtifactsConfiguration"))
-  {
+  if (jsonValue.ValueExists("ArtifactsConfiguration")) {
     m_artifactsConfiguration = jsonValue.GetObject("ArtifactsConfiguration");
     m_artifactsConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChimeSdkMeetingConfiguration::Jsonize() const
-{
+JsonValue ChimeSdkMeetingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("SourceConfiguration", m_sourceConfiguration.Jsonize());
-
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("SourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
-  if(m_artifactsConfigurationHasBeenSet)
-  {
-   payload.WithObject("ArtifactsConfiguration", m_artifactsConfiguration.Jsonize());
-
+  if (m_artifactsConfigurationHasBeenSet) {
+    payload.WithObject("ArtifactsConfiguration", m_artifactsConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

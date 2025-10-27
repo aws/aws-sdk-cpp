@@ -4,34 +4,29 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class UpstreamRegistry
-  {
-    NOT_SET,
-    ecr,
-    ecr_public,
-    quay,
-    k8s,
-    docker_hub,
-    github_container_registry,
-    azure_container_registry,
-    gitlab_container_registry
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class UpstreamRegistry {
+  NOT_SET,
+  ecr,
+  ecr_public,
+  quay,
+  k8s,
+  docker_hub,
+  github_container_registry,
+  azure_container_registry,
+  gitlab_container_registry
+};
 
-namespace UpstreamRegistryMapper
-{
+namespace UpstreamRegistryMapper {
 AWS_ECR_API UpstreamRegistry GetUpstreamRegistryForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForUpstreamRegistry(UpstreamRegistry value);
-} // namespace UpstreamRegistryMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace UpstreamRegistryMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

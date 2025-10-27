@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/UpdateWorkloadRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/UpdateWorkloadRequest.h>
 
 #include <utility>
 
@@ -12,138 +12,96 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWorkloadRequest::SerializePayload() const
-{
+Aws::String UpdateWorkloadRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workloadNameHasBeenSet)
-  {
-   payload.WithString("WorkloadName", m_workloadName);
-
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("WorkloadName", m_workloadName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_environmentHasBeenSet)
-  {
-   payload.WithString("Environment", WorkloadEnvironmentMapper::GetNameForWorkloadEnvironment(m_environment));
+  if (m_environmentHasBeenSet) {
+    payload.WithString("Environment", WorkloadEnvironmentMapper::GetNameForWorkloadEnvironment(m_environment));
   }
 
-  if(m_accountIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-   {
-     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
-   }
-   payload.WithArray("AccountIds", std::move(accountIdsJsonList));
-
+  if (m_accountIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
+      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+    }
+    payload.WithArray("AccountIds", std::move(accountIdsJsonList));
   }
 
-  if(m_awsRegionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
-   for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
-   {
-     awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
-   }
-   payload.WithArray("AwsRegions", std::move(awsRegionsJsonList));
-
+  if (m_awsRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+    for (unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex) {
+      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
+    }
+    payload.WithArray("AwsRegions", std::move(awsRegionsJsonList));
   }
 
-  if(m_nonAwsRegionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
-   for(unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex)
-   {
-     nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString(m_nonAwsRegions[nonAwsRegionsIndex]);
-   }
-   payload.WithArray("NonAwsRegions", std::move(nonAwsRegionsJsonList));
-
+  if (m_nonAwsRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
+    for (unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex) {
+      nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString(m_nonAwsRegions[nonAwsRegionsIndex]);
+    }
+    payload.WithArray("NonAwsRegions", std::move(nonAwsRegionsJsonList));
   }
 
-  if(m_pillarPrioritiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
-   for(unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex)
-   {
-     pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString(m_pillarPriorities[pillarPrioritiesIndex]);
-   }
-   payload.WithArray("PillarPriorities", std::move(pillarPrioritiesJsonList));
-
+  if (m_pillarPrioritiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
+    for (unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex) {
+      pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString(m_pillarPriorities[pillarPrioritiesIndex]);
+    }
+    payload.WithArray("PillarPriorities", std::move(pillarPrioritiesJsonList));
   }
 
-  if(m_architecturalDesignHasBeenSet)
-  {
-   payload.WithString("ArchitecturalDesign", m_architecturalDesign);
-
+  if (m_architecturalDesignHasBeenSet) {
+    payload.WithString("ArchitecturalDesign", m_architecturalDesign);
   }
 
-  if(m_reviewOwnerHasBeenSet)
-  {
-   payload.WithString("ReviewOwner", m_reviewOwner);
-
+  if (m_reviewOwnerHasBeenSet) {
+    payload.WithString("ReviewOwner", m_reviewOwner);
   }
 
-  if(m_isReviewOwnerUpdateAcknowledgedHasBeenSet)
-  {
-   payload.WithBool("IsReviewOwnerUpdateAcknowledged", m_isReviewOwnerUpdateAcknowledged);
-
+  if (m_isReviewOwnerUpdateAcknowledgedHasBeenSet) {
+    payload.WithBool("IsReviewOwnerUpdateAcknowledged", m_isReviewOwnerUpdateAcknowledged);
   }
 
-  if(m_industryTypeHasBeenSet)
-  {
-   payload.WithString("IndustryType", m_industryType);
-
+  if (m_industryTypeHasBeenSet) {
+    payload.WithString("IndustryType", m_industryType);
   }
 
-  if(m_industryHasBeenSet)
-  {
-   payload.WithString("Industry", m_industry);
-
+  if (m_industryHasBeenSet) {
+    payload.WithString("Industry", m_industry);
   }
 
-  if(m_notesHasBeenSet)
-  {
-   payload.WithString("Notes", m_notes);
-
+  if (m_notesHasBeenSet) {
+    payload.WithString("Notes", m_notes);
   }
 
-  if(m_improvementStatusHasBeenSet)
-  {
-   payload.WithString("ImprovementStatus", WorkloadImprovementStatusMapper::GetNameForWorkloadImprovementStatus(m_improvementStatus));
+  if (m_improvementStatusHasBeenSet) {
+    payload.WithString("ImprovementStatus", WorkloadImprovementStatusMapper::GetNameForWorkloadImprovementStatus(m_improvementStatus));
   }
 
-  if(m_discoveryConfigHasBeenSet)
-  {
-   payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
-
+  if (m_discoveryConfigHasBeenSet) {
+    payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
   }
 
-  if(m_applicationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
-   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
-   {
-     applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
-   }
-   payload.WithArray("Applications", std::move(applicationsJsonList));
-
+  if (m_applicationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+    for (unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex) {
+      applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
+    }
+    payload.WithArray("Applications", std::move(applicationsJsonList));
   }
 
-  if(m_jiraConfigurationHasBeenSet)
-  {
-   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
-
+  if (m_jiraConfigurationHasBeenSet) {
+    payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

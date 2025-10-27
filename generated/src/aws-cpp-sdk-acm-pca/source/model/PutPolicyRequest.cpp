@@ -12,33 +12,22 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutPolicyRequest::SerializePayload() const
-{
+Aws::String PutPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("Policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("Policy", m_policy);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutPolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.PutPolicy"));
   return headers;
-
 }
-
-
-
-

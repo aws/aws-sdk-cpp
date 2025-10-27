@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace RoboMaker
-{
-enum class RoboMakerErrors
-{
-  //From Core//
+namespace Aws {
+namespace RoboMaker {
+enum class RoboMakerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RoboMakerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class RoboMakerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  IDEMPOTENT_PARAMETER_MISMATCH= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IDEMPOTENT_PARAMETER_MISMATCH = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_PARAMETER,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_ROBOMAKER_API RoboMakerError : public Aws::Client::AWSError<RoboMakerErrors>
-{
-public:
+class AWS_ROBOMAKER_API RoboMakerError : public Aws::Client::AWSError<RoboMakerErrors> {
+ public:
   RoboMakerError() {}
   RoboMakerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
   RoboMakerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace RoboMakerErrorMapper
-{
-  AWS_ROBOMAKER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RoboMakerErrorMapper {
+AWS_ROBOMAKER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace RoboMaker
+}  // namespace Aws

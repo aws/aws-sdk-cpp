@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class AutoTuneDesiredState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class AutoTuneDesiredState { NOT_SET, ENABLED, DISABLED };
 
-namespace AutoTuneDesiredStateMapper
-{
+namespace AutoTuneDesiredStateMapper {
 AWS_OPENSEARCHSERVICE_API AutoTuneDesiredState GetAutoTuneDesiredStateForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForAutoTuneDesiredState(AutoTuneDesiredState value);
-} // namespace AutoTuneDesiredStateMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace AutoTuneDesiredStateMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

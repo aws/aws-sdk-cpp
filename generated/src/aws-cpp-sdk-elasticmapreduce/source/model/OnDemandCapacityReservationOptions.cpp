@@ -3,69 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView jsonValue) { *this = jsonValue; }
 
-OnDemandCapacityReservationOptions& OnDemandCapacityReservationOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UsageStrategy"))
-  {
-    m_usageStrategy = OnDemandCapacityReservationUsageStrategyMapper::GetOnDemandCapacityReservationUsageStrategyForName(jsonValue.GetString("UsageStrategy"));
+OnDemandCapacityReservationOptions& OnDemandCapacityReservationOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UsageStrategy")) {
+    m_usageStrategy = OnDemandCapacityReservationUsageStrategyMapper::GetOnDemandCapacityReservationUsageStrategyForName(
+        jsonValue.GetString("UsageStrategy"));
     m_usageStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CapacityReservationPreference"))
-  {
-    m_capacityReservationPreference = OnDemandCapacityReservationPreferenceMapper::GetOnDemandCapacityReservationPreferenceForName(jsonValue.GetString("CapacityReservationPreference"));
+  if (jsonValue.ValueExists("CapacityReservationPreference")) {
+    m_capacityReservationPreference = OnDemandCapacityReservationPreferenceMapper::GetOnDemandCapacityReservationPreferenceForName(
+        jsonValue.GetString("CapacityReservationPreference"));
     m_capacityReservationPreferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CapacityReservationResourceGroupArn"))
-  {
+  if (jsonValue.ValueExists("CapacityReservationResourceGroupArn")) {
     m_capacityReservationResourceGroupArn = jsonValue.GetString("CapacityReservationResourceGroupArn");
     m_capacityReservationResourceGroupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OnDemandCapacityReservationOptions::Jsonize() const
-{
+JsonValue OnDemandCapacityReservationOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_usageStrategyHasBeenSet)
-  {
-   payload.WithString("UsageStrategy", OnDemandCapacityReservationUsageStrategyMapper::GetNameForOnDemandCapacityReservationUsageStrategy(m_usageStrategy));
+  if (m_usageStrategyHasBeenSet) {
+    payload.WithString("UsageStrategy",
+                       OnDemandCapacityReservationUsageStrategyMapper::GetNameForOnDemandCapacityReservationUsageStrategy(m_usageStrategy));
   }
 
-  if(m_capacityReservationPreferenceHasBeenSet)
-  {
-   payload.WithString("CapacityReservationPreference", OnDemandCapacityReservationPreferenceMapper::GetNameForOnDemandCapacityReservationPreference(m_capacityReservationPreference));
+  if (m_capacityReservationPreferenceHasBeenSet) {
+    payload.WithString(
+        "CapacityReservationPreference",
+        OnDemandCapacityReservationPreferenceMapper::GetNameForOnDemandCapacityReservationPreference(m_capacityReservationPreference));
   }
 
-  if(m_capacityReservationResourceGroupArnHasBeenSet)
-  {
-   payload.WithString("CapacityReservationResourceGroupArn", m_capacityReservationResourceGroupArn);
-
+  if (m_capacityReservationResourceGroupArnHasBeenSet) {
+    payload.WithString("CapacityReservationResourceGroupArn", m_capacityReservationResourceGroupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

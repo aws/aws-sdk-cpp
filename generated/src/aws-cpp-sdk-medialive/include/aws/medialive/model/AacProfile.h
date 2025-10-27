@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class AacProfile
-  {
-    NOT_SET,
-    HEV1,
-    HEV2,
-    LC
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class AacProfile { NOT_SET, HEV1, HEV2, LC };
 
-namespace AacProfileMapper
-{
+namespace AacProfileMapper {
 AWS_MEDIALIVE_API AacProfile GetAacProfileForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForAacProfile(AacProfile value);
-} // namespace AacProfileMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace AacProfileMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

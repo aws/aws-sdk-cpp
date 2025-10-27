@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    index
-  };
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+enum class ResourceType { NOT_SET, index };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_OPENSEARCHSERVERLESS_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVERLESS_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

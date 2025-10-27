@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-FirehoseStream::FirehoseStream(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FirehoseStream::FirehoseStream(JsonView jsonValue) { *this = jsonValue; }
 
-FirehoseStream& FirehoseStream::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamName"))
-  {
+FirehoseStream& FirehoseStream::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamName")) {
     m_streamName = jsonValue.GetString("streamName");
     m_streamNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FirehoseStream::Jsonize() const
-{
+JsonValue FirehoseStream::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("streamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("streamName", m_streamName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

@@ -12,32 +12,23 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteIdentitiesRequest::SerializePayload() const
-{
+Aws::String DeleteIdentitiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityIdsToDeleteHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> identityIdsToDeleteJsonList(m_identityIdsToDelete.size());
-   for(unsigned identityIdsToDeleteIndex = 0; identityIdsToDeleteIndex < identityIdsToDeleteJsonList.GetLength(); ++identityIdsToDeleteIndex)
-   {
-     identityIdsToDeleteJsonList[identityIdsToDeleteIndex].AsString(m_identityIdsToDelete[identityIdsToDeleteIndex]);
-   }
-   payload.WithArray("IdentityIdsToDelete", std::move(identityIdsToDeleteJsonList));
-
+  if (m_identityIdsToDeleteHasBeenSet) {
+    Aws::Utils::Array<JsonValue> identityIdsToDeleteJsonList(m_identityIdsToDelete.size());
+    for (unsigned identityIdsToDeleteIndex = 0; identityIdsToDeleteIndex < identityIdsToDeleteJsonList.GetLength();
+         ++identityIdsToDeleteIndex) {
+      identityIdsToDeleteJsonList[identityIdsToDeleteIndex].AsString(m_identityIdsToDelete[identityIdsToDeleteIndex]);
+    }
+    payload.WithArray("IdentityIdsToDelete", std::move(identityIdsToDeleteJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteIdentitiesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteIdentitiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.DeleteIdentities"));
   return headers;
-
 }
-
-
-
-

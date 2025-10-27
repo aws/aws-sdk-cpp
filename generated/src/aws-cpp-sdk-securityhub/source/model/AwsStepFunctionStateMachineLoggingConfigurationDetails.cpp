@@ -3,80 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsStepFunctionStateMachineLoggingConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsStepFunctionStateMachineLoggingConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails(JsonView jsonValue)
-{
+AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsStepFunctionStateMachineLoggingConfigurationDetails& AwsStepFunctionStateMachineLoggingConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Destinations"))
-  {
+AwsStepFunctionStateMachineLoggingConfigurationDetails& AwsStepFunctionStateMachineLoggingConfigurationDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Destinations")) {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
-    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-    {
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
     m_destinationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeExecutionData"))
-  {
+  if (jsonValue.ValueExists("IncludeExecutionData")) {
     m_includeExecutionData = jsonValue.GetBool("IncludeExecutionData");
     m_includeExecutionDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Level"))
-  {
+  if (jsonValue.ValueExists("Level")) {
     m_level = jsonValue.GetString("Level");
     m_levelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsStepFunctionStateMachineLoggingConfigurationDetails::Jsonize() const
-{
+JsonValue AwsStepFunctionStateMachineLoggingConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
-   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-   {
-     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
-   }
-   payload.WithArray("Destinations", std::move(destinationsJsonList));
-
+  if (m_destinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
+      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+    }
+    payload.WithArray("Destinations", std::move(destinationsJsonList));
   }
 
-  if(m_includeExecutionDataHasBeenSet)
-  {
-   payload.WithBool("IncludeExecutionData", m_includeExecutionData);
-
+  if (m_includeExecutionDataHasBeenSet) {
+    payload.WithBool("IncludeExecutionData", m_includeExecutionData);
   }
 
-  if(m_levelHasBeenSet)
-  {
-   payload.WithString("Level", m_level);
-
+  if (m_levelHasBeenSet) {
+    payload.WithString("Level", m_level);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

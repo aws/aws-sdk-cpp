@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoWebRTCStorage
-{
-enum class KinesisVideoWebRTCStorageErrors
-{
-  //From Core//
+namespace Aws {
+namespace KinesisVideoWebRTCStorage {
+enum class KinesisVideoWebRTCStorageErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KinesisVideoWebRTCStorageErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class KinesisVideoWebRTCStorageErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLIENT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLIENT_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ARGUMENT
 };
 
-class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageError : public Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>
-{
-public:
+class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageError : public Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors> {
+ public:
   KinesisVideoWebRTCStorageError() {}
-  KinesisVideoWebRTCStorageError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
-  KinesisVideoWebRTCStorageError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
-  KinesisVideoWebRTCStorageError(const Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>& rhs) : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
-  KinesisVideoWebRTCStorageError(Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
+  KinesisVideoWebRTCStorageError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
+  KinesisVideoWebRTCStorageError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
+  KinesisVideoWebRTCStorageError(const Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>& rhs)
+      : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
+  KinesisVideoWebRTCStorageError(Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>&& rhs)
+      : Aws::Client::AWSError<KinesisVideoWebRTCStorageErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace KinesisVideoWebRTCStorageErrorMapper
-{
-  AWS_KINESISVIDEOWEBRTCSTORAGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KinesisVideoWebRTCStorageErrorMapper {
+AWS_KINESISVIDEOWEBRTCSTORAGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace KinesisVideoWebRTCStorage
-} // namespace Aws
+}  // namespace KinesisVideoWebRTCStorage
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryAnalysis& RepositoryAnalysis::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RepositoryHead"))
-  {
+RepositoryAnalysis& RepositoryAnalysis::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RepositoryHead")) {
     m_repositoryHead = jsonValue.GetObject("RepositoryHead");
     m_repositoryHeadHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceCodeType"))
-  {
+  if (jsonValue.ValueExists("SourceCodeType")) {
     m_sourceCodeType = jsonValue.GetObject("SourceCodeType");
     m_sourceCodeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryAnalysis::Jsonize() const
-{
+JsonValue RepositoryAnalysis::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryHeadHasBeenSet)
-  {
-   payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
-
+  if (m_repositoryHeadHasBeenSet) {
+    payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
   }
 
-  if(m_sourceCodeTypeHasBeenSet)
-  {
-   payload.WithObject("SourceCodeType", m_sourceCodeType.Jsonize());
-
+  if (m_sourceCodeTypeHasBeenSet) {
+    payload.WithObject("SourceCodeType", m_sourceCodeType.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

@@ -11,50 +11,42 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-VoiceAnalyticsProcessorConfiguration& VoiceAnalyticsProcessorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SpeakerSearchStatus"))
-  {
-    m_speakerSearchStatus = VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(jsonValue.GetString("SpeakerSearchStatus"));
+VoiceAnalyticsProcessorConfiguration& VoiceAnalyticsProcessorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SpeakerSearchStatus")) {
+    m_speakerSearchStatus =
+        VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(jsonValue.GetString("SpeakerSearchStatus"));
     m_speakerSearchStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceToneAnalysisStatus"))
-  {
-    m_voiceToneAnalysisStatus = VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(jsonValue.GetString("VoiceToneAnalysisStatus"));
+  if (jsonValue.ValueExists("VoiceToneAnalysisStatus")) {
+    m_voiceToneAnalysisStatus = VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(
+        jsonValue.GetString("VoiceToneAnalysisStatus"));
     m_voiceToneAnalysisStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VoiceAnalyticsProcessorConfiguration::Jsonize() const
-{
+JsonValue VoiceAnalyticsProcessorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_speakerSearchStatusHasBeenSet)
-  {
-   payload.WithString("SpeakerSearchStatus", VoiceAnalyticsConfigurationStatusMapper::GetNameForVoiceAnalyticsConfigurationStatus(m_speakerSearchStatus));
+  if (m_speakerSearchStatusHasBeenSet) {
+    payload.WithString("SpeakerSearchStatus",
+                       VoiceAnalyticsConfigurationStatusMapper::GetNameForVoiceAnalyticsConfigurationStatus(m_speakerSearchStatus));
   }
 
-  if(m_voiceToneAnalysisStatusHasBeenSet)
-  {
-   payload.WithString("VoiceToneAnalysisStatus", VoiceAnalyticsConfigurationStatusMapper::GetNameForVoiceAnalyticsConfigurationStatus(m_voiceToneAnalysisStatus));
+  if (m_voiceToneAnalysisStatusHasBeenSet) {
+    payload.WithString("VoiceToneAnalysisStatus",
+                       VoiceAnalyticsConfigurationStatusMapper::GetNameForVoiceAnalyticsConfigurationStatus(m_voiceToneAnalysisStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

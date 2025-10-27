@@ -7,25 +7,16 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
-  enum class KeyType
-  {
-    NOT_SET,
-    CustomerManagedKey,
-    ServiceManagedKey
-  };
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
+enum class KeyType { NOT_SET, CustomerManagedKey, ServiceManagedKey };
 
-namespace KeyTypeMapper
-{
+namespace KeyTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API KeyType GetKeyTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTCORECONTROL_API Aws::String GetNameForKeyType(KeyType value);
-} // namespace KeyTypeMapper
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace KeyTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

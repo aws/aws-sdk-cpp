@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pipes/Pipes_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
-  enum class PlacementStrategyType
-  {
-    NOT_SET,
-    random,
-    spread,
-    binpack
-  };
+namespace Aws {
+namespace Pipes {
+namespace Model {
+enum class PlacementStrategyType { NOT_SET, random, spread, binpack };
 
-namespace PlacementStrategyTypeMapper
-{
+namespace PlacementStrategyTypeMapper {
 AWS_PIPES_API PlacementStrategyType GetPlacementStrategyTypeForName(const Aws::String& name);
 
 AWS_PIPES_API Aws::String GetNameForPlacementStrategyType(PlacementStrategyType value);
-} // namespace PlacementStrategyTypeMapper
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace PlacementStrategyTypeMapper
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

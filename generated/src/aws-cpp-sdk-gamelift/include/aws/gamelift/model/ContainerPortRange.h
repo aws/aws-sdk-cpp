@@ -6,83 +6,94 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/IpProtocol.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
 
+/**
+ * <p>A set of one or more port numbers that can be opened on the container, and
+ * the supported network protocol. </p> <p> <b>Part of:</b> <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerPortConfiguration.html">ContainerPortConfiguration</a>
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortRange">AWS
+ * API Reference</a></p>
+ */
+class ContainerPortRange {
+ public:
+  AWS_GAMELIFT_API ContainerPortRange() = default;
+  AWS_GAMELIFT_API ContainerPortRange(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GAMELIFT_API ContainerPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A set of one or more port numbers that can be opened on the container, and
-   * the supported network protocol. </p> <p> <b>Part of:</b> <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerPortConfiguration.html">ContainerPortConfiguration</a>
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortRange">AWS
-   * API Reference</a></p>
+   * <p>A starting value for the range of allowed port numbers.</p>
    */
-  class ContainerPortRange
-  {
-  public:
-    AWS_GAMELIFT_API ContainerPortRange() = default;
-    AWS_GAMELIFT_API ContainerPortRange(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GAMELIFT_API ContainerPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetFromPort() const { return m_fromPort; }
+  inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+  inline void SetFromPort(int value) {
+    m_fromPortHasBeenSet = true;
+    m_fromPort = value;
+  }
+  inline ContainerPortRange& WithFromPort(int value) {
+    SetFromPort(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>An ending value for the range of allowed port numbers. Port numbers are
+   * end-inclusive. This value must be equal to or greater than
+   * <code>FromPort</code>.</p>
+   */
+  inline int GetToPort() const { return m_toPort; }
+  inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+  inline void SetToPort(int value) {
+    m_toPortHasBeenSet = true;
+    m_toPort = value;
+  }
+  inline ContainerPortRange& WithToPort(int value) {
+    SetToPort(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A starting value for the range of allowed port numbers.</p>
-     */
-    inline int GetFromPort() const { return m_fromPort; }
-    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-    inline ContainerPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The network protocol that these ports support. </p>
+   */
+  inline IpProtocol GetProtocol() const { return m_protocol; }
+  inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+  inline void SetProtocol(IpProtocol value) {
+    m_protocolHasBeenSet = true;
+    m_protocol = value;
+  }
+  inline ContainerPortRange& WithProtocol(IpProtocol value) {
+    SetProtocol(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_fromPort{0};
+  bool m_fromPortHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An ending value for the range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be equal to or greater than
-     * <code>FromPort</code>.</p>
-     */
-    inline int GetToPort() const { return m_toPort; }
-    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-    inline ContainerPortRange& WithToPort(int value) { SetToPort(value); return *this;}
-    ///@}
+  int m_toPort{0};
+  bool m_toPortHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The network protocol that these ports support. </p>
-     */
-    inline IpProtocol GetProtocol() const { return m_protocol; }
-    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(IpProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline ContainerPortRange& WithProtocol(IpProtocol value) { SetProtocol(value); return *this;}
-    ///@}
-  private:
+  IpProtocol m_protocol{IpProtocol::NOT_SET};
+  bool m_protocolHasBeenSet = false;
+};
 
-    int m_fromPort{0};
-    bool m_fromPortHasBeenSet = false;
-
-    int m_toPort{0};
-    bool m_toPortHasBeenSet = false;
-
-    IpProtocol m_protocol{IpProtocol::NOT_SET};
-    bool m_protocolHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/simspaceweaver/model/DescribeAppResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/simspaceweaver/model/DescribeAppResult.h>
 
 #include <utility>
 
@@ -17,63 +17,49 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAppResult::DescribeAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeAppResult::DescribeAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeAppResult& DescribeAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Domain"))
-  {
+  if (jsonValue.ValueExists("Domain")) {
     m_domain = jsonValue.GetString("Domain");
     m_domainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointInfo"))
-  {
+  if (jsonValue.ValueExists("EndpointInfo")) {
     m_endpointInfo = jsonValue.GetObject("EndpointInfo");
     m_endpointInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LaunchOverrides"))
-  {
+  if (jsonValue.ValueExists("LaunchOverrides")) {
     m_launchOverrides = jsonValue.GetObject("LaunchOverrides");
     m_launchOverridesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Simulation"))
-  {
+  if (jsonValue.ValueExists("Simulation")) {
     m_simulation = jsonValue.GetString("Simulation");
     m_simulationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = SimulationAppStatusMapper::GetSimulationAppStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetStatus"))
-  {
+  if (jsonValue.ValueExists("TargetStatus")) {
     m_targetStatus = SimulationAppTargetStatusMapper::GetSimulationAppTargetStatusForName(jsonValue.GetString("TargetStatus"));
     m_targetStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

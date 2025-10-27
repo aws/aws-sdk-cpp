@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class ChunkingStrategy
-  {
-    NOT_SET,
-    FIXED_SIZE,
-    NONE,
-    HIERARCHICAL,
-    SEMANTIC
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class ChunkingStrategy { NOT_SET, FIXED_SIZE, NONE, HIERARCHICAL, SEMANTIC };
 
-namespace ChunkingStrategyMapper
-{
+namespace ChunkingStrategyMapper {
 AWS_QCONNECT_API ChunkingStrategy GetChunkingStrategyForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForChunkingStrategy(ChunkingStrategy value);
-} // namespace ChunkingStrategyMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace ChunkingStrategyMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

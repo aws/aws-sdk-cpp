@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-EcrRepositoryConfiguration::EcrRepositoryConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcrRepositoryConfiguration::EcrRepositoryConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EcrRepositoryConfiguration& EcrRepositoryConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryPolicy"))
-  {
+EcrRepositoryConfiguration& EcrRepositoryConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryPolicy")) {
     m_repositoryPolicy = jsonValue.GetString("repositoryPolicy");
     m_repositoryPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EcrRepositoryConfiguration::Jsonize() const
-{
+JsonValue EcrRepositoryConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryPolicyHasBeenSet)
-  {
-   payload.WithString("repositoryPolicy", m_repositoryPolicy);
-
+  if (m_repositoryPolicyHasBeenSet) {
+    payload.WithString("repositoryPolicy", m_repositoryPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

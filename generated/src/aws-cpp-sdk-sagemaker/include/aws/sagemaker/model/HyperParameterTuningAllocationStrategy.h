@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class HyperParameterTuningAllocationStrategy
-  {
-    NOT_SET,
-    Prioritized
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class HyperParameterTuningAllocationStrategy { NOT_SET, Prioritized };
 
-namespace HyperParameterTuningAllocationStrategyMapper
-{
+namespace HyperParameterTuningAllocationStrategyMapper {
 AWS_SAGEMAKER_API HyperParameterTuningAllocationStrategy GetHyperParameterTuningAllocationStrategyForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForHyperParameterTuningAllocationStrategy(HyperParameterTuningAllocationStrategy value);
-} // namespace HyperParameterTuningAllocationStrategyMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace HyperParameterTuningAllocationStrategyMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

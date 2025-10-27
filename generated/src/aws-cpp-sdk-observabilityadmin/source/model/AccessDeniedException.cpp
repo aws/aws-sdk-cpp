@@ -3,50 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/observabilityadmin/model/AccessDeniedException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/observabilityadmin/model/AccessDeniedException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
 
-AccessDeniedException::AccessDeniedException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessDeniedException::AccessDeniedException(JsonView jsonValue) { *this = jsonValue; }
 
-AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+AccessDeniedException& AccessDeniedException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessDeniedException::Jsonize() const
-{
+JsonValue AccessDeniedException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/DeleteTopicRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/DeleteTopicRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTopicRequest::SerializePayload() const
-{
+Aws::String DeleteTopicRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTopic&";
-  if(m_topicArnHasBeenSet)
-  {
+  if (m_topicArnHasBeenSet) {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteTopicRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

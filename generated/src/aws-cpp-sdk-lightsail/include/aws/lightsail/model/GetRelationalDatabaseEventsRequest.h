@@ -4,87 +4,100 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
-#include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/LightsailRequest.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
+/**
+ */
+class GetRelationalDatabaseEventsRequest : public LightsailRequest {
+ public:
+  AWS_LIGHTSAIL_API GetRelationalDatabaseEventsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetRelationalDatabaseEvents"; }
+
+  AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
+
+  AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the database from which to get events.</p>
    */
-  class GetRelationalDatabaseEventsRequest : public LightsailRequest
-  {
-  public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseEventsRequest() = default;
+  inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
+  inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+  template <typename RelationalDatabaseNameT = Aws::String>
+  void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) {
+    m_relationalDatabaseNameHasBeenSet = true;
+    m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value);
+  }
+  template <typename RelationalDatabaseNameT = Aws::String>
+  GetRelationalDatabaseEventsRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) {
+    SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetRelationalDatabaseEvents"; }
+  ///@{
+  /**
+   * <p>The number of minutes in the past from which to retrieve events. For example,
+   * to get all events from the past 2 hours, enter 120.</p> <p>Default:
+   * <code>60</code> </p> <p>The minimum is 1 and the maximum is 14 days (20160
+   * minutes).</p>
+   */
+  inline int GetDurationInMinutes() const { return m_durationInMinutes; }
+  inline bool DurationInMinutesHasBeenSet() const { return m_durationInMinutesHasBeenSet; }
+  inline void SetDurationInMinutes(int value) {
+    m_durationInMinutesHasBeenSet = true;
+    m_durationInMinutes = value;
+  }
+  inline GetRelationalDatabaseEventsRequest& WithDurationInMinutes(int value) {
+    SetDurationInMinutes(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The token to advance to the next page of results from your request.</p> <p>To
+   * get a page token, perform an initial <code>GetRelationalDatabaseEvents</code>
+   * request. If your results are paginated, the response will return a next page
+   * token that you can specify as the page token in a subsequent request.</p>
+   */
+  inline const Aws::String& GetPageToken() const { return m_pageToken; }
+  inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
+  template <typename PageTokenT = Aws::String>
+  void SetPageToken(PageTokenT&& value) {
+    m_pageTokenHasBeenSet = true;
+    m_pageToken = std::forward<PageTokenT>(value);
+  }
+  template <typename PageTokenT = Aws::String>
+  GetRelationalDatabaseEventsRequest& WithPageToken(PageTokenT&& value) {
+    SetPageToken(std::forward<PageTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_relationalDatabaseName;
+  bool m_relationalDatabaseNameHasBeenSet = false;
 
-    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  int m_durationInMinutes{0};
+  bool m_durationInMinutesHasBeenSet = false;
 
+  Aws::String m_pageToken;
+  bool m_pageTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The name of the database from which to get events.</p>
-     */
-    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
-    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    template<typename RelationalDatabaseNameT = Aws::String>
-    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
-    template<typename RelationalDatabaseNameT = Aws::String>
-    GetRelationalDatabaseEventsRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of minutes in the past from which to retrieve events. For example,
-     * to get all events from the past 2 hours, enter 120.</p> <p>Default:
-     * <code>60</code> </p> <p>The minimum is 1 and the maximum is 14 days (20160
-     * minutes).</p>
-     */
-    inline int GetDurationInMinutes() const { return m_durationInMinutes; }
-    inline bool DurationInMinutesHasBeenSet() const { return m_durationInMinutesHasBeenSet; }
-    inline void SetDurationInMinutes(int value) { m_durationInMinutesHasBeenSet = true; m_durationInMinutes = value; }
-    inline GetRelationalDatabaseEventsRequest& WithDurationInMinutes(int value) { SetDurationInMinutes(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetRelationalDatabaseEvents</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
-    inline const Aws::String& GetPageToken() const { return m_pageToken; }
-    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    template<typename PageTokenT = Aws::String>
-    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
-    template<typename PageTokenT = Aws::String>
-    GetRelationalDatabaseEventsRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet = false;
-
-    int m_durationInMinutes{0};
-    bool m_durationInMinutesHasBeenSet = false;
-
-    Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

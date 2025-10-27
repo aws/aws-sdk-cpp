@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/ContentTypeProfileConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ContentTypeProfileConfig::ContentTypeProfileConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ContentTypeProfileConfig::ContentTypeProfileConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ContentTypeProfileConfig& ContentTypeProfileConfig::operator =(const XmlNode& xmlNode)
-{
+ContentTypeProfileConfig& ContentTypeProfileConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode forwardWhenContentTypeIsUnknownNode = resultNode.FirstChild("ForwardWhenContentTypeIsUnknown");
-    if(!forwardWhenContentTypeIsUnknownNode.IsNull())
-    {
-      m_forwardWhenContentTypeIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenContentTypeIsUnknownNode.GetText()).c_str()).c_str());
+    if (!forwardWhenContentTypeIsUnknownNode.IsNull()) {
+      m_forwardWhenContentTypeIsUnknown = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenContentTypeIsUnknownNode.GetText()).c_str()).c_str());
       m_forwardWhenContentTypeIsUnknownHasBeenSet = true;
     }
     XmlNode contentTypeProfilesNode = resultNode.FirstChild("ContentTypeProfiles");
-    if(!contentTypeProfilesNode.IsNull())
-    {
+    if (!contentTypeProfilesNode.IsNull()) {
       m_contentTypeProfiles = contentTypeProfilesNode;
       m_contentTypeProfilesHasBeenSet = true;
     }
@@ -48,25 +39,21 @@ ContentTypeProfileConfig& ContentTypeProfileConfig::operator =(const XmlNode& xm
   return *this;
 }
 
-void ContentTypeProfileConfig::AddToNode(XmlNode& parentNode) const
-{
+void ContentTypeProfileConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_forwardWhenContentTypeIsUnknownHasBeenSet)
-  {
-   XmlNode forwardWhenContentTypeIsUnknownNode = parentNode.CreateChildElement("ForwardWhenContentTypeIsUnknown");
-   ss << std::boolalpha << m_forwardWhenContentTypeIsUnknown;
-   forwardWhenContentTypeIsUnknownNode.SetText(ss.str());
-   ss.str("");
+  if (m_forwardWhenContentTypeIsUnknownHasBeenSet) {
+    XmlNode forwardWhenContentTypeIsUnknownNode = parentNode.CreateChildElement("ForwardWhenContentTypeIsUnknown");
+    ss << std::boolalpha << m_forwardWhenContentTypeIsUnknown;
+    forwardWhenContentTypeIsUnknownNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_contentTypeProfilesHasBeenSet)
-  {
-   XmlNode contentTypeProfilesNode = parentNode.CreateChildElement("ContentTypeProfiles");
-   m_contentTypeProfiles.AddToNode(contentTypeProfilesNode);
+  if (m_contentTypeProfilesHasBeenSet) {
+    XmlNode contentTypeProfilesNode = parentNode.CreateChildElement("ContentTypeProfiles");
+    m_contentTypeProfiles.AddToNode(contentTypeProfilesNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

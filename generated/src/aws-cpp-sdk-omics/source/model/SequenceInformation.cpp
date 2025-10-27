@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/SequenceInformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/SequenceInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-SequenceInformation::SequenceInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SequenceInformation::SequenceInformation(JsonView jsonValue) { *this = jsonValue; }
 
-SequenceInformation& SequenceInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("totalReadCount"))
-  {
+SequenceInformation& SequenceInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("totalReadCount")) {
     m_totalReadCount = jsonValue.GetInt64("totalReadCount");
     m_totalReadCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalBaseCount"))
-  {
+  if (jsonValue.ValueExists("totalBaseCount")) {
     m_totalBaseCount = jsonValue.GetInt64("totalBaseCount");
     m_totalBaseCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("generatedFrom"))
-  {
+  if (jsonValue.ValueExists("generatedFrom")) {
     m_generatedFrom = jsonValue.GetString("generatedFrom");
     m_generatedFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("alignment"))
-  {
+  if (jsonValue.ValueExists("alignment")) {
     m_alignment = jsonValue.GetString("alignment");
     m_alignmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SequenceInformation::Jsonize() const
-{
+JsonValue SequenceInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalReadCountHasBeenSet)
-  {
-   payload.WithInt64("totalReadCount", m_totalReadCount);
-
+  if (m_totalReadCountHasBeenSet) {
+    payload.WithInt64("totalReadCount", m_totalReadCount);
   }
 
-  if(m_totalBaseCountHasBeenSet)
-  {
-   payload.WithInt64("totalBaseCount", m_totalBaseCount);
-
+  if (m_totalBaseCountHasBeenSet) {
+    payload.WithInt64("totalBaseCount", m_totalBaseCount);
   }
 
-  if(m_generatedFromHasBeenSet)
-  {
-   payload.WithString("generatedFrom", m_generatedFrom);
-
+  if (m_generatedFromHasBeenSet) {
+    payload.WithString("generatedFrom", m_generatedFrom);
   }
 
-  if(m_alignmentHasBeenSet)
-  {
-   payload.WithString("alignment", m_alignment);
-
+  if (m_alignmentHasBeenSet) {
+    payload.WithString("alignment", m_alignment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

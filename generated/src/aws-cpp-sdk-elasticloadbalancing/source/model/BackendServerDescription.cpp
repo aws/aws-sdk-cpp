@@ -3,47 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/BackendServerDescription.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancing/model/BackendServerDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancing {
+namespace Model {
 
-BackendServerDescription::BackendServerDescription(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+BackendServerDescription::BackendServerDescription(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xmlNode)
-{
+BackendServerDescription& BackendServerDescription::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
-    if(!instancePortNode.IsNull())
-    {
-      m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
+    if (!instancePortNode.IsNull()) {
+      m_instancePort =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
       m_instancePortHasBeenSet = true;
     }
     XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
-    if(!policyNamesNode.IsNull())
-    {
+    if (!policyNamesNode.IsNull()) {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
       m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
-      while(!policyNamesMember.IsNull())
-      {
+      while (!policyNamesMember.IsNull()) {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
@@ -55,40 +45,33 @@ BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xm
   return *this;
 }
 
-void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instancePortHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
+void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                              const char* locationValue) const {
+  if (m_instancePortHasBeenSet) {
+    oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
   }
 
-  if(m_policyNamesHasBeenSet)
-  {
-      unsigned policyNamesIdx = 1;
-      for(auto& item : m_policyNames)
-      {
-        oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instancePortHasBeenSet)
-  {
-      oStream << location << ".InstancePort=" << m_instancePort << "&";
-  }
-  if(m_policyNamesHasBeenSet)
-  {
-      unsigned policyNamesIdx = 1;
-      for(auto& item : m_policyNames)
-      {
-        oStream << location << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_policyNamesHasBeenSet) {
+    unsigned policyNamesIdx = 1;
+    for (auto& item : m_policyNames) {
+      oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instancePortHasBeenSet) {
+    oStream << location << ".InstancePort=" << m_instancePort << "&";
+  }
+  if (m_policyNamesHasBeenSet) {
+    unsigned policyNamesIdx = 1;
+    for (auto& item : m_policyNames) {
+      oStream << location << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

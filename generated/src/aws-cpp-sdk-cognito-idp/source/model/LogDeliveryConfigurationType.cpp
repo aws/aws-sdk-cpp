@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-LogDeliveryConfigurationType::LogDeliveryConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogDeliveryConfigurationType::LogDeliveryConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-LogDeliveryConfigurationType& LogDeliveryConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserPoolId"))
-  {
+LogDeliveryConfigurationType& LogDeliveryConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserPoolId")) {
     m_userPoolId = jsonValue.GetString("UserPoolId");
     m_userPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogConfigurations"))
-  {
+  if (jsonValue.ValueExists("LogConfigurations")) {
     Aws::Utils::Array<JsonView> logConfigurationsJsonList = jsonValue.GetArray("LogConfigurations");
-    for(unsigned logConfigurationsIndex = 0; logConfigurationsIndex < logConfigurationsJsonList.GetLength(); ++logConfigurationsIndex)
-    {
+    for (unsigned logConfigurationsIndex = 0; logConfigurationsIndex < logConfigurationsJsonList.GetLength(); ++logConfigurationsIndex) {
       m_logConfigurations.push_back(logConfigurationsJsonList[logConfigurationsIndex].AsObject());
     }
     m_logConfigurationsHasBeenSet = true;
@@ -42,30 +32,24 @@ LogDeliveryConfigurationType& LogDeliveryConfigurationType::operator =(JsonView 
   return *this;
 }
 
-JsonValue LogDeliveryConfigurationType::Jsonize() const
-{
+JsonValue LogDeliveryConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_logConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> logConfigurationsJsonList(m_logConfigurations.size());
-   for(unsigned logConfigurationsIndex = 0; logConfigurationsIndex < logConfigurationsJsonList.GetLength(); ++logConfigurationsIndex)
-   {
-     logConfigurationsJsonList[logConfigurationsIndex].AsObject(m_logConfigurations[logConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("LogConfigurations", std::move(logConfigurationsJsonList));
-
+  if (m_logConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> logConfigurationsJsonList(m_logConfigurations.size());
+    for (unsigned logConfigurationsIndex = 0; logConfigurationsIndex < logConfigurationsJsonList.GetLength(); ++logConfigurationsIndex) {
+      logConfigurationsJsonList[logConfigurationsIndex].AsObject(m_logConfigurations[logConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("LogConfigurations", std::move(logConfigurationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

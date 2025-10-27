@@ -3,100 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/DatasetSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/DatasetSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-DatasetSummary::DatasetSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetSummary::DatasetSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DatasetArn"))
-  {
+DatasetSummary& DatasetSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DatasetArn")) {
     m_datasetArn = jsonValue.GetString("DatasetArn");
     m_datasetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatasetName"))
-  {
+  if (jsonValue.ValueExists("DatasetName")) {
     m_datasetName = jsonValue.GetString("DatasetName");
     m_datasetNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatasetType"))
-  {
+  if (jsonValue.ValueExists("DatasetType")) {
     m_datasetType = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("DatasetType"));
     m_datasetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Domain"))
-  {
+  if (jsonValue.ValueExists("Domain")) {
     m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
     m_domainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModificationTime"))
-  {
+  if (jsonValue.ValueExists("LastModificationTime")) {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
     m_lastModificationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetSummary::Jsonize() const
-{
+JsonValue DatasetSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_datasetArnHasBeenSet)
-  {
-   payload.WithString("DatasetArn", m_datasetArn);
-
+  if (m_datasetArnHasBeenSet) {
+    payload.WithString("DatasetArn", m_datasetArn);
   }
 
-  if(m_datasetNameHasBeenSet)
-  {
-   payload.WithString("DatasetName", m_datasetName);
-
+  if (m_datasetNameHasBeenSet) {
+    payload.WithString("DatasetName", m_datasetName);
   }
 
-  if(m_datasetTypeHasBeenSet)
-  {
-   payload.WithString("DatasetType", DatasetTypeMapper::GetNameForDatasetType(m_datasetType));
+  if (m_datasetTypeHasBeenSet) {
+    payload.WithString("DatasetType", DatasetTypeMapper::GetNameForDatasetType(m_datasetType));
   }
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
+  if (m_domainHasBeenSet) {
+    payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModificationTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
+  if (m_lastModificationTimeHasBeenSet) {
+    payload.WithDouble("LastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

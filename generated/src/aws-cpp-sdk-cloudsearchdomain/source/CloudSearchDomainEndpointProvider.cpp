@@ -5,12 +5,8 @@
 
 #include <aws/cloudsearchdomain/CloudSearchDomainEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudSearchDomain
-} // namespace Aws
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudSearchDomain
+}  // namespace Aws

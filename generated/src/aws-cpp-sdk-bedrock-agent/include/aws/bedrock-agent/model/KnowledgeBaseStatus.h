@@ -7,29 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class KnowledgeBaseStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    DELETING,
-    UPDATING,
-    FAILED,
-    DELETE_UNSUCCESSFUL
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class KnowledgeBaseStatus { NOT_SET, CREATING, ACTIVE, DELETING, UPDATING, FAILED, DELETE_UNSUCCESSFUL };
 
-namespace KnowledgeBaseStatusMapper
-{
+namespace KnowledgeBaseStatusMapper {
 AWS_BEDROCKAGENT_API KnowledgeBaseStatus GetKnowledgeBaseStatusForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForKnowledgeBaseStatus(KnowledgeBaseStatus value);
-} // namespace KnowledgeBaseStatusMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace KnowledgeBaseStatusMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
-#include <aws/omics/OmicsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/OmicsRequest.h>
+#include <aws/omics/Omics_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
+/**
+ */
+class GetShareRequest : public OmicsRequest {
+ public:
+  AWS_OMICS_API GetShareRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetShare"; }
+
+  AWS_OMICS_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ID of the share.</p>
    */
-  class GetShareRequest : public OmicsRequest
-  {
-  public:
-    AWS_OMICS_API GetShareRequest() = default;
+  inline const Aws::String& GetShareId() const { return m_shareId; }
+  inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
+  template <typename ShareIdT = Aws::String>
+  void SetShareId(ShareIdT&& value) {
+    m_shareIdHasBeenSet = true;
+    m_shareId = std::forward<ShareIdT>(value);
+  }
+  template <typename ShareIdT = Aws::String>
+  GetShareRequest& WithShareId(ShareIdT&& value) {
+    SetShareId(std::forward<ShareIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_shareId;
+  bool m_shareIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetShare"; }
-
-    AWS_OMICS_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the share.</p>
-     */
-    inline const Aws::String& GetShareId() const { return m_shareId; }
-    inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-    template<typename ShareIdT = Aws::String>
-    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
-    template<typename ShareIdT = Aws::String>
-    GetShareRequest& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_shareId;
-    bool m_shareIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

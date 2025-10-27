@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-TlsConfig::TlsConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TlsConfig::TlsConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TlsConfig& TlsConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("insecureSkipVerification"))
-  {
+TlsConfig& TlsConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("insecureSkipVerification")) {
     m_insecureSkipVerification = jsonValue.GetBool("insecureSkipVerification");
     m_insecureSkipVerificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TlsConfig::Jsonize() const
-{
+JsonValue TlsConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_insecureSkipVerificationHasBeenSet)
-  {
-   payload.WithBool("insecureSkipVerification", m_insecureSkipVerification);
-
+  if (m_insecureSkipVerificationHasBeenSet) {
+    payload.WithBool("insecureSkipVerification", m_insecureSkipVerification);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

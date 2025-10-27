@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeDBSnapshotAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DescribeDBSnapshotAttributesRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeDBSnapshotAttributesRequest::SerializePayload() const
-{
+Aws::String DescribeDBSnapshotAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeDBSnapshotAttributes&";
-  if(m_dBSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBSnapshotIdentifierHasBeenSet) {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeDBSnapshotAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeDBSnapshotAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeDBSnapshotAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,72 +4,77 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p>A processor feature.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbProcessorFeature">AWS
+ * API Reference</a></p>
+ */
+class AwsRdsDbProcessorFeature {
+ public:
+  AWS_SECURITYHUB_API AwsRdsDbProcessorFeature() = default;
+  AWS_SECURITYHUB_API AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A processor feature.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbProcessorFeature">AWS
-   * API Reference</a></p>
+   * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+   * <code>threadsPerCore</code>.</p>
    */
-  class AwsRdsDbProcessorFeature
-  {
-  public:
-    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature() = default;
-    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  AwsRdsDbProcessorFeature& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The value of the processor feature.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  AwsRdsDbProcessorFeature& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
-     * <code>threadsPerCore</code>.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    AwsRdsDbProcessorFeature& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The value of the processor feature.</p>
-     */
-    inline const Aws::String& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::String>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::String>
-    AwsRdsDbProcessorFeature& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

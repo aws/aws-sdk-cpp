@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class ContainerType
-  {
-    NOT_SET,
-    DOCKER
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class ContainerType { NOT_SET, DOCKER };
 
-namespace ContainerTypeMapper
-{
+namespace ContainerTypeMapper {
 AWS_IMAGEBUILDER_API ContainerType GetContainerTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace ContainerTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

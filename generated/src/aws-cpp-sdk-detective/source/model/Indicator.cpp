@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/Indicator.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/Indicator.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
+namespace Aws {
+namespace Detective {
+namespace Model {
 
-Indicator::Indicator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Indicator::Indicator(JsonView jsonValue) { *this = jsonValue; }
 
-Indicator& Indicator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IndicatorType"))
-  {
+Indicator& Indicator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IndicatorType")) {
     m_indicatorType = IndicatorTypeMapper::GetIndicatorTypeForName(jsonValue.GetString("IndicatorType"));
     m_indicatorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IndicatorDetail"))
-  {
+  if (jsonValue.ValueExists("IndicatorDetail")) {
     m_indicatorDetail = jsonValue.GetObject("IndicatorDetail");
     m_indicatorDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Indicator::Jsonize() const
-{
+JsonValue Indicator::Jsonize() const {
   JsonValue payload;
 
-  if(m_indicatorTypeHasBeenSet)
-  {
-   payload.WithString("IndicatorType", IndicatorTypeMapper::GetNameForIndicatorType(m_indicatorType));
+  if (m_indicatorTypeHasBeenSet) {
+    payload.WithString("IndicatorType", IndicatorTypeMapper::GetNameForIndicatorType(m_indicatorType));
   }
 
-  if(m_indicatorDetailHasBeenSet)
-  {
-   payload.WithObject("IndicatorDetail", m_indicatorDetail.Jsonize());
-
+  if (m_indicatorDetailHasBeenSet) {
+    payload.WithObject("IndicatorDetail", m_indicatorDetail.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

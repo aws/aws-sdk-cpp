@@ -6,81 +6,92 @@
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/pipes/model/MQBrokerAccessCredentials.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Pipes
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Pipes {
+namespace Model {
 
+/**
+ * <p>The parameters for using a Rabbit MQ broker as a source.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipeSourceRabbitMQBrokerParameters">AWS
+ * API Reference</a></p>
+ */
+class UpdatePipeSourceRabbitMQBrokerParameters {
+ public:
+  AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters() = default;
+  AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The parameters for using a Rabbit MQ broker as a source.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipeSourceRabbitMQBrokerParameters">AWS
-   * API Reference</a></p>
+   * <p>The credentials needed to access the resource.</p>
    */
-  class UpdatePipeSourceRabbitMQBrokerParameters
-  {
-  public:
-    AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters() = default;
-    AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PIPES_API UpdatePipeSourceRabbitMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const MQBrokerAccessCredentials& GetCredentials() const { return m_credentials; }
+  inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
+  template <typename CredentialsT = MQBrokerAccessCredentials>
+  void SetCredentials(CredentialsT&& value) {
+    m_credentialsHasBeenSet = true;
+    m_credentials = std::forward<CredentialsT>(value);
+  }
+  template <typename CredentialsT = MQBrokerAccessCredentials>
+  UpdatePipeSourceRabbitMQBrokerParameters& WithCredentials(CredentialsT&& value) {
+    SetCredentials(std::forward<CredentialsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum number of records to include in each batch.</p>
+   */
+  inline int GetBatchSize() const { return m_batchSize; }
+  inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
+  inline void SetBatchSize(int value) {
+    m_batchSizeHasBeenSet = true;
+    m_batchSize = value;
+  }
+  inline UpdatePipeSourceRabbitMQBrokerParameters& WithBatchSize(int value) {
+    SetBatchSize(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The credentials needed to access the resource.</p>
-     */
-    inline const MQBrokerAccessCredentials& GetCredentials() const { return m_credentials; }
-    inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-    template<typename CredentialsT = MQBrokerAccessCredentials>
-    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
-    template<typename CredentialsT = MQBrokerAccessCredentials>
-    UpdatePipeSourceRabbitMQBrokerParameters& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The maximum length of a time to wait for events.</p>
+   */
+  inline int GetMaximumBatchingWindowInSeconds() const { return m_maximumBatchingWindowInSeconds; }
+  inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
+  inline void SetMaximumBatchingWindowInSeconds(int value) {
+    m_maximumBatchingWindowInSecondsHasBeenSet = true;
+    m_maximumBatchingWindowInSeconds = value;
+  }
+  inline UpdatePipeSourceRabbitMQBrokerParameters& WithMaximumBatchingWindowInSeconds(int value) {
+    SetMaximumBatchingWindowInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  MQBrokerAccessCredentials m_credentials;
+  bool m_credentialsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of records to include in each batch.</p>
-     */
-    inline int GetBatchSize() const { return m_batchSize; }
-    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
-    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
-    inline UpdatePipeSourceRabbitMQBrokerParameters& WithBatchSize(int value) { SetBatchSize(value); return *this;}
-    ///@}
+  int m_batchSize{0};
+  bool m_batchSizeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline int GetMaximumBatchingWindowInSeconds() const { return m_maximumBatchingWindowInSeconds; }
-    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
-    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
-    inline UpdatePipeSourceRabbitMQBrokerParameters& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
-    ///@}
-  private:
+  int m_maximumBatchingWindowInSeconds{0};
+  bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+};
 
-    MQBrokerAccessCredentials m_credentials;
-    bool m_credentialsHasBeenSet = false;
-
-    int m_batchSize{0};
-    bool m_batchSizeHasBeenSet = false;
-
-    int m_maximumBatchingWindowInSeconds{0};
-    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

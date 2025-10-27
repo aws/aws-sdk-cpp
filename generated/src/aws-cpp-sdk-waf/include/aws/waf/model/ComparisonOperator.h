@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
-  enum class ComparisonOperator
-  {
-    NOT_SET,
-    EQ,
-    NE,
-    LE,
-    LT,
-    GE,
-    GT
-  };
+namespace Aws {
+namespace WAF {
+namespace Model {
+enum class ComparisonOperator { NOT_SET, EQ, NE, LE, LT, GE, GT };
 
-namespace ComparisonOperatorMapper
-{
+namespace ComparisonOperatorMapper {
 AWS_WAF_API ComparisonOperator GetComparisonOperatorForName(const Aws::String& name);
 
 AWS_WAF_API Aws::String GetNameForComparisonOperator(ComparisonOperator value);
-} // namespace ComparisonOperatorMapper
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace ComparisonOperatorMapper
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-CustomExtension::CustomExtension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomExtension::CustomExtension(JsonView jsonValue) { *this = jsonValue; }
 
-CustomExtension& CustomExtension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectIdentifier"))
-  {
+CustomExtension& CustomExtension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectIdentifier")) {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
     m_objectIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Critical"))
-  {
+  if (jsonValue.ValueExists("Critical")) {
     m_critical = jsonValue.GetBool("Critical");
     m_criticalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomExtension::Jsonize() const
-{
+JsonValue CustomExtension::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectIdentifierHasBeenSet)
-  {
-   payload.WithString("ObjectIdentifier", m_objectIdentifier);
-
+  if (m_objectIdentifierHasBeenSet) {
+    payload.WithString("ObjectIdentifier", m_objectIdentifier);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_criticalHasBeenSet)
-  {
-   payload.WithBool("Critical", m_critical);
-
+  if (m_criticalHasBeenSet) {
+    payload.WithBool("Critical", m_critical);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

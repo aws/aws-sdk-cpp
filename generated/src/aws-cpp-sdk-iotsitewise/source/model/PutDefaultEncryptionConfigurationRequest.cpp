@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutDefaultEncryptionConfigurationRequest::SerializePayload() const
-{
+Aws::String PutDefaultEncryptionConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("encryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("encryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

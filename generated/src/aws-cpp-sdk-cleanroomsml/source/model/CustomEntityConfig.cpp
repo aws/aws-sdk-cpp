@@ -11,25 +11,17 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-CustomEntityConfig::CustomEntityConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomEntityConfig::CustomEntityConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CustomEntityConfig& CustomEntityConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customDataIdentifiers"))
-  {
+CustomEntityConfig& CustomEntityConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customDataIdentifiers")) {
     Aws::Utils::Array<JsonView> customDataIdentifiersJsonList = jsonValue.GetArray("customDataIdentifiers");
-    for(unsigned customDataIdentifiersIndex = 0; customDataIdentifiersIndex < customDataIdentifiersJsonList.GetLength(); ++customDataIdentifiersIndex)
-    {
+    for (unsigned customDataIdentifiersIndex = 0; customDataIdentifiersIndex < customDataIdentifiersJsonList.GetLength();
+         ++customDataIdentifiersIndex) {
       m_customDataIdentifiers.push_back(customDataIdentifiersJsonList[customDataIdentifiersIndex].AsString());
     }
     m_customDataIdentifiersHasBeenSet = true;
@@ -37,24 +29,21 @@ CustomEntityConfig& CustomEntityConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CustomEntityConfig::Jsonize() const
-{
+JsonValue CustomEntityConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_customDataIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customDataIdentifiersJsonList(m_customDataIdentifiers.size());
-   for(unsigned customDataIdentifiersIndex = 0; customDataIdentifiersIndex < customDataIdentifiersJsonList.GetLength(); ++customDataIdentifiersIndex)
-   {
-     customDataIdentifiersJsonList[customDataIdentifiersIndex].AsString(m_customDataIdentifiers[customDataIdentifiersIndex]);
-   }
-   payload.WithArray("customDataIdentifiers", std::move(customDataIdentifiersJsonList));
-
+  if (m_customDataIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customDataIdentifiersJsonList(m_customDataIdentifiers.size());
+    for (unsigned customDataIdentifiersIndex = 0; customDataIdentifiersIndex < customDataIdentifiersJsonList.GetLength();
+         ++customDataIdentifiersIndex) {
+      customDataIdentifiersJsonList[customDataIdentifiersIndex].AsString(m_customDataIdentifiers[customDataIdentifiersIndex]);
+    }
+    payload.WithArray("customDataIdentifiers", std::move(customDataIdentifiersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -12,71 +12,48 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMemoryRequest::SerializePayload() const
-{
+Aws::String CreateMemoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_encryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
-
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
-  if(m_memoryExecutionRoleArnHasBeenSet)
-  {
-   payload.WithString("memoryExecutionRoleArn", m_memoryExecutionRoleArn);
-
+  if (m_memoryExecutionRoleArnHasBeenSet) {
+    payload.WithString("memoryExecutionRoleArn", m_memoryExecutionRoleArn);
   }
 
-  if(m_eventExpiryDurationHasBeenSet)
-  {
-   payload.WithInteger("eventExpiryDuration", m_eventExpiryDuration);
-
+  if (m_eventExpiryDurationHasBeenSet) {
+    payload.WithInteger("eventExpiryDuration", m_eventExpiryDuration);
   }
 
-  if(m_memoryStrategiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memoryStrategiesJsonList(m_memoryStrategies.size());
-   for(unsigned memoryStrategiesIndex = 0; memoryStrategiesIndex < memoryStrategiesJsonList.GetLength(); ++memoryStrategiesIndex)
-   {
-     memoryStrategiesJsonList[memoryStrategiesIndex].AsObject(m_memoryStrategies[memoryStrategiesIndex].Jsonize());
-   }
-   payload.WithArray("memoryStrategies", std::move(memoryStrategiesJsonList));
-
+  if (m_memoryStrategiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memoryStrategiesJsonList(m_memoryStrategies.size());
+    for (unsigned memoryStrategiesIndex = 0; memoryStrategiesIndex < memoryStrategiesJsonList.GetLength(); ++memoryStrategiesIndex) {
+      memoryStrategiesJsonList[memoryStrategiesIndex].AsObject(m_memoryStrategies[memoryStrategiesIndex].Jsonize());
+    }
+    payload.WithArray("memoryStrategies", std::move(memoryStrategiesJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

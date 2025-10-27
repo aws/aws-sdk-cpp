@@ -12,24 +12,16 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchDeletePhoneNumberRequest::SerializePayload() const
-{
+Aws::String BatchDeletePhoneNumberRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_phoneNumberIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
-   for(unsigned phoneNumberIdsIndex = 0; phoneNumberIdsIndex < phoneNumberIdsJsonList.GetLength(); ++phoneNumberIdsIndex)
-   {
-     phoneNumberIdsJsonList[phoneNumberIdsIndex].AsString(m_phoneNumberIds[phoneNumberIdsIndex]);
-   }
-   payload.WithArray("PhoneNumberIds", std::move(phoneNumberIdsJsonList));
-
+  if (m_phoneNumberIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
+    for (unsigned phoneNumberIdsIndex = 0; phoneNumberIdsIndex < phoneNumberIdsJsonList.GetLength(); ++phoneNumberIdsIndex) {
+      phoneNumberIdsJsonList[phoneNumberIdsIndex].AsString(m_phoneNumberIds[phoneNumberIdsIndex]);
+    }
+    payload.WithArray("PhoneNumberIds", std::move(phoneNumberIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

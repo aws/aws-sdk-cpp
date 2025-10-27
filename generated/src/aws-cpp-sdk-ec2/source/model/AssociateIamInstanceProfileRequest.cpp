@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AssociateIamInstanceProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AssociateIamInstanceProfileRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AssociateIamInstanceProfileRequest::SerializePayload() const
-{
+Aws::String AssociateIamInstanceProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssociateIamInstanceProfile&";
-  if(m_iamInstanceProfileHasBeenSet)
-  {
+  if (m_iamInstanceProfileHasBeenSet) {
     m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AssociateIamInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AssociateIamInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssociateIamInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

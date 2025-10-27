@@ -3,33 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/InAppMessagesResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/InAppMessagesResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-InAppMessagesResponse::InAppMessagesResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InAppMessagesResponse::InAppMessagesResponse(JsonView jsonValue) { *this = jsonValue; }
 
-InAppMessagesResponse& InAppMessagesResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InAppMessageCampaigns"))
-  {
+InAppMessagesResponse& InAppMessagesResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InAppMessageCampaigns")) {
     Aws::Utils::Array<JsonView> inAppMessageCampaignsJsonList = jsonValue.GetArray("InAppMessageCampaigns");
-    for(unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength(); ++inAppMessageCampaignsIndex)
-    {
+    for (unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength();
+         ++inAppMessageCampaignsIndex) {
       m_inAppMessageCampaigns.push_back(inAppMessageCampaignsJsonList[inAppMessageCampaignsIndex].AsObject());
     }
     m_inAppMessageCampaignsHasBeenSet = true;
@@ -37,24 +29,21 @@ InAppMessagesResponse& InAppMessagesResponse::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue InAppMessagesResponse::Jsonize() const
-{
+JsonValue InAppMessagesResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_inAppMessageCampaignsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inAppMessageCampaignsJsonList(m_inAppMessageCampaigns.size());
-   for(unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength(); ++inAppMessageCampaignsIndex)
-   {
-     inAppMessageCampaignsJsonList[inAppMessageCampaignsIndex].AsObject(m_inAppMessageCampaigns[inAppMessageCampaignsIndex].Jsonize());
-   }
-   payload.WithArray("InAppMessageCampaigns", std::move(inAppMessageCampaignsJsonList));
-
+  if (m_inAppMessageCampaignsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inAppMessageCampaignsJsonList(m_inAppMessageCampaigns.size());
+    for (unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength();
+         ++inAppMessageCampaignsIndex) {
+      inAppMessageCampaignsJsonList[inAppMessageCampaignsIndex].AsObject(m_inAppMessageCampaigns[inAppMessageCampaignsIndex].Jsonize());
+    }
+    payload.WithArray("InAppMessageCampaigns", std::move(inAppMessageCampaignsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

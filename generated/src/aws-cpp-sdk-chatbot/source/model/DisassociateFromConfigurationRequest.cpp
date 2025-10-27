@@ -12,25 +12,16 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateFromConfigurationRequest::SerializePayload() const
-{
+Aws::String DisassociateFromConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithString("Resource", m_resource);
-
+  if (m_resourceHasBeenSet) {
+    payload.WithString("Resource", m_resource);
   }
 
-  if(m_chatConfigurationHasBeenSet)
-  {
-   payload.WithString("ChatConfiguration", m_chatConfiguration);
-
+  if (m_chatConfigurationHasBeenSet) {
+    payload.WithString("ChatConfiguration", m_chatConfiguration);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

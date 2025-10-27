@@ -4,213 +4,280 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/wellarchitected/model/ReviewTemplateUpdateStatus.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/Question.h>
+#include <aws/wellarchitected/model/ReviewTemplateUpdateStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WellArchitected {
+namespace Model {
 
+/**
+ * <p>A review template.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ReviewTemplate">AWS
+ * API Reference</a></p>
+ */
+class ReviewTemplate {
+ public:
+  AWS_WELLARCHITECTED_API ReviewTemplate() = default;
+  AWS_WELLARCHITECTED_API ReviewTemplate(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API ReviewTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A review template.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ReviewTemplate">AWS
-   * API Reference</a></p>
+   * <p>The review template description.</p>
    */
-  class ReviewTemplate
-  {
-  public:
-    AWS_WELLARCHITECTED_API ReviewTemplate() = default;
-    AWS_WELLARCHITECTED_API ReviewTemplate(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WELLARCHITECTED_API ReviewTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  ReviewTemplate& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The lenses applied to the review template.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLenses() const { return m_lenses; }
+  inline bool LensesHasBeenSet() const { return m_lensesHasBeenSet; }
+  template <typename LensesT = Aws::Vector<Aws::String>>
+  void SetLenses(LensesT&& value) {
+    m_lensesHasBeenSet = true;
+    m_lenses = std::forward<LensesT>(value);
+  }
+  template <typename LensesT = Aws::Vector<Aws::String>>
+  ReviewTemplate& WithLenses(LensesT&& value) {
+    SetLenses(std::forward<LensesT>(value));
+    return *this;
+  }
+  template <typename LensesT = Aws::String>
+  ReviewTemplate& AddLenses(LensesT&& value) {
+    m_lensesHasBeenSet = true;
+    m_lenses.emplace_back(std::forward<LensesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The review template description.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    ReviewTemplate& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>The lenses applied to the review template.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetLenses() const { return m_lenses; }
-    inline bool LensesHasBeenSet() const { return m_lensesHasBeenSet; }
-    template<typename LensesT = Aws::Vector<Aws::String>>
-    void SetLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses = std::forward<LensesT>(value); }
-    template<typename LensesT = Aws::Vector<Aws::String>>
-    ReviewTemplate& WithLenses(LensesT&& value) { SetLenses(std::forward<LensesT>(value)); return *this;}
-    template<typename LensesT = Aws::String>
-    ReviewTemplate& AddLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses.emplace_back(std::forward<LensesT>(value)); return *this; }
-    ///@}
+  inline const Aws::String& GetNotes() const { return m_notes; }
+  inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
+  template <typename NotesT = Aws::String>
+  void SetNotes(NotesT&& value) {
+    m_notesHasBeenSet = true;
+    m_notes = std::forward<NotesT>(value);
+  }
+  template <typename NotesT = Aws::String>
+  ReviewTemplate& WithNotes(NotesT&& value) {
+    SetNotes(std::forward<NotesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetNotes() const { return m_notes; }
-    inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    template<typename NotesT = Aws::String>
-    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
-    template<typename NotesT = Aws::String>
-    ReviewTemplate& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A count of how many total questions are answered and unanswered in the review
+   * template.</p>
+   */
+  inline const Aws::Map<Question, int>& GetQuestionCounts() const { return m_questionCounts; }
+  inline bool QuestionCountsHasBeenSet() const { return m_questionCountsHasBeenSet; }
+  template <typename QuestionCountsT = Aws::Map<Question, int>>
+  void SetQuestionCounts(QuestionCountsT&& value) {
+    m_questionCountsHasBeenSet = true;
+    m_questionCounts = std::forward<QuestionCountsT>(value);
+  }
+  template <typename QuestionCountsT = Aws::Map<Question, int>>
+  ReviewTemplate& WithQuestionCounts(QuestionCountsT&& value) {
+    SetQuestionCounts(std::forward<QuestionCountsT>(value));
+    return *this;
+  }
+  inline ReviewTemplate& AddQuestionCounts(Question key, int value) {
+    m_questionCountsHasBeenSet = true;
+    m_questionCounts.emplace(key, value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A count of how many total questions are answered and unanswered in the review
-     * template.</p>
-     */
-    inline const Aws::Map<Question, int>& GetQuestionCounts() const { return m_questionCounts; }
-    inline bool QuestionCountsHasBeenSet() const { return m_questionCountsHasBeenSet; }
-    template<typename QuestionCountsT = Aws::Map<Question, int>>
-    void SetQuestionCounts(QuestionCountsT&& value) { m_questionCountsHasBeenSet = true; m_questionCounts = std::forward<QuestionCountsT>(value); }
-    template<typename QuestionCountsT = Aws::Map<Question, int>>
-    ReviewTemplate& WithQuestionCounts(QuestionCountsT&& value) { SetQuestionCounts(std::forward<QuestionCountsT>(value)); return *this;}
-    inline ReviewTemplate& AddQuestionCounts(Question key, int value) {
-      m_questionCountsHasBeenSet = true; m_questionCounts.emplace(key, value); return *this;
-    }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetOwner() const { return m_owner; }
-    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    template<typename OwnerT = Aws::String>
-    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
-    template<typename OwnerT = Aws::String>
-    ReviewTemplate& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetOwner() const { return m_owner; }
+  inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+  template <typename OwnerT = Aws::String>
+  void SetOwner(OwnerT&& value) {
+    m_ownerHasBeenSet = true;
+    m_owner = std::forward<OwnerT>(value);
+  }
+  template <typename OwnerT = Aws::String>
+  ReviewTemplate& WithOwner(OwnerT&& value) {
+    SetOwner(std::forward<OwnerT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    ReviewTemplate& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>The review template ARN.</p>
-     */
-    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
-    inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    template<typename TemplateArnT = Aws::String>
-    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
-    template<typename TemplateArnT = Aws::String>
-    ReviewTemplate& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
-    ///@}
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  ReviewTemplate& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the review template.</p>
-     */
-    inline const Aws::String& GetTemplateName() const { return m_templateName; }
-    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    template<typename TemplateNameT = Aws::String>
-    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
-    template<typename TemplateNameT = Aws::String>
-    ReviewTemplate& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The review template ARN.</p>
+   */
+  inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+  inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
+  template <typename TemplateArnT = Aws::String>
+  void SetTemplateArn(TemplateArnT&& value) {
+    m_templateArnHasBeenSet = true;
+    m_templateArn = std::forward<TemplateArnT>(value);
+  }
+  template <typename TemplateArnT = Aws::String>
+  ReviewTemplate& WithTemplateArn(TemplateArnT&& value) {
+    SetTemplateArn(std::forward<TemplateArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The tags assigned to the review template.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    ReviewTemplate& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    ReviewTemplate& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the review template.</p>
+   */
+  inline const Aws::String& GetTemplateName() const { return m_templateName; }
+  inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+  template <typename TemplateNameT = Aws::String>
+  void SetTemplateName(TemplateNameT&& value) {
+    m_templateNameHasBeenSet = true;
+    m_templateName = std::forward<TemplateNameT>(value);
+  }
+  template <typename TemplateNameT = Aws::String>
+  ReviewTemplate& WithTemplateName(TemplateNameT&& value) {
+    SetTemplateName(std::forward<TemplateNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The latest status of a review template.</p>
-     */
-    inline ReviewTemplateUpdateStatus GetUpdateStatus() const { return m_updateStatus; }
-    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(ReviewTemplateUpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline ReviewTemplate& WithUpdateStatus(ReviewTemplateUpdateStatus value) { SetUpdateStatus(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The tags assigned to the review template.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  ReviewTemplate& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  ReviewTemplate& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ID assigned to the template share invitation.</p>
-     */
-    inline const Aws::String& GetShareInvitationId() const { return m_shareInvitationId; }
-    inline bool ShareInvitationIdHasBeenSet() const { return m_shareInvitationIdHasBeenSet; }
-    template<typename ShareInvitationIdT = Aws::String>
-    void SetShareInvitationId(ShareInvitationIdT&& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = std::forward<ShareInvitationIdT>(value); }
-    template<typename ShareInvitationIdT = Aws::String>
-    ReviewTemplate& WithShareInvitationId(ShareInvitationIdT&& value) { SetShareInvitationId(std::forward<ShareInvitationIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
+  /**
+   * <p>The latest status of a review template.</p>
+   */
+  inline ReviewTemplateUpdateStatus GetUpdateStatus() const { return m_updateStatus; }
+  inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+  inline void SetUpdateStatus(ReviewTemplateUpdateStatus value) {
+    m_updateStatusHasBeenSet = true;
+    m_updateStatus = value;
+  }
+  inline ReviewTemplate& WithUpdateStatus(ReviewTemplateUpdateStatus value) {
+    SetUpdateStatus(value);
+    return *this;
+  }
+  ///@}
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+  ///@{
+  /**
+   * <p>The ID assigned to the template share invitation.</p>
+   */
+  inline const Aws::String& GetShareInvitationId() const { return m_shareInvitationId; }
+  inline bool ShareInvitationIdHasBeenSet() const { return m_shareInvitationIdHasBeenSet; }
+  template <typename ShareInvitationIdT = Aws::String>
+  void SetShareInvitationId(ShareInvitationIdT&& value) {
+    m_shareInvitationIdHasBeenSet = true;
+    m_shareInvitationId = std::forward<ShareInvitationIdT>(value);
+  }
+  template <typename ShareInvitationIdT = Aws::String>
+  ReviewTemplate& WithShareInvitationId(ShareInvitationIdT&& value) {
+    SetShareInvitationId(std::forward<ShareInvitationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_lenses;
-    bool m_lensesHasBeenSet = false;
+  Aws::Vector<Aws::String> m_lenses;
+  bool m_lensesHasBeenSet = false;
 
-    Aws::String m_notes;
-    bool m_notesHasBeenSet = false;
+  Aws::String m_notes;
+  bool m_notesHasBeenSet = false;
 
-    Aws::Map<Question, int> m_questionCounts;
-    bool m_questionCountsHasBeenSet = false;
+  Aws::Map<Question, int> m_questionCounts;
+  bool m_questionCountsHasBeenSet = false;
 
-    Aws::String m_owner;
-    bool m_ownerHasBeenSet = false;
+  Aws::String m_owner;
+  bool m_ownerHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt{};
-    bool m_updatedAtHasBeenSet = false;
+  Aws::Utils::DateTime m_updatedAt{};
+  bool m_updatedAtHasBeenSet = false;
 
-    Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet = false;
+  Aws::String m_templateArn;
+  bool m_templateArnHasBeenSet = false;
 
-    Aws::String m_templateName;
-    bool m_templateNameHasBeenSet = false;
+  Aws::String m_templateName;
+  bool m_templateNameHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 
-    ReviewTemplateUpdateStatus m_updateStatus{ReviewTemplateUpdateStatus::NOT_SET};
-    bool m_updateStatusHasBeenSet = false;
+  ReviewTemplateUpdateStatus m_updateStatus{ReviewTemplateUpdateStatus::NOT_SET};
+  bool m_updateStatusHasBeenSet = false;
 
-    Aws::String m_shareInvitationId;
-    bool m_shareInvitationIdHasBeenSet = false;
-  };
+  Aws::String m_shareInvitationId;
+  bool m_shareInvitationIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

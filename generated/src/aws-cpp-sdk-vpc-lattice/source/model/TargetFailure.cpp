@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/TargetFailure.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/TargetFailure.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-TargetFailure::TargetFailure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetFailure::TargetFailure(JsonView jsonValue) { *this = jsonValue; }
 
-TargetFailure& TargetFailure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+TargetFailure& TargetFailure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("port"))
-  {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureCode"))
-  {
+  if (jsonValue.ValueExists("failureCode")) {
     m_failureCode = jsonValue.GetString("failureCode");
     m_failureCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureMessage"))
-  {
+  if (jsonValue.ValueExists("failureMessage")) {
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetFailure::Jsonize() const
-{
+JsonValue TargetFailure::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", m_failureCode);
-
+  if (m_failureCodeHasBeenSet) {
+    payload.WithString("failureCode", m_failureCode);
   }
 
-  if(m_failureMessageHasBeenSet)
-  {
-   payload.WithString("failureMessage", m_failureMessage);
-
+  if (m_failureMessageHasBeenSet) {
+    payload.WithString("failureMessage", m_failureMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

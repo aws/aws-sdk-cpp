@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sdb/model/ListDomainsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sdb/model/ListDomainsRequest.h>
 
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-Aws::String ListDomainsRequest::SerializePayload() const
-{
+Aws::String ListDomainsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListDomains&";
-  if(m_maxNumberOfDomainsHasBeenSet)
-  {
+  if (m_maxNumberOfDomainsHasBeenSet) {
     ss << "MaxNumberOfDomains=" << m_maxNumberOfDomains << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListDomainsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListDomainsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListDomainsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/scheduler/Scheduler_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/scheduler/Scheduler_EXPORTS.h>
 
-namespace Aws
-{
-namespace Scheduler
-{
-namespace Model
-{
-  enum class PlacementStrategyType
-  {
-    NOT_SET,
-    random,
-    spread,
-    binpack
-  };
+namespace Aws {
+namespace Scheduler {
+namespace Model {
+enum class PlacementStrategyType { NOT_SET, random, spread, binpack };
 
-namespace PlacementStrategyTypeMapper
-{
+namespace PlacementStrategyTypeMapper {
 AWS_SCHEDULER_API PlacementStrategyType GetPlacementStrategyTypeForName(const Aws::String& name);
 
 AWS_SCHEDULER_API Aws::String GetNameForPlacementStrategyType(PlacementStrategyType value);
-} // namespace PlacementStrategyTypeMapper
-} // namespace Model
-} // namespace Scheduler
-} // namespace Aws
+}  // namespace PlacementStrategyTypeMapper
+}  // namespace Model
+}  // namespace Scheduler
+}  // namespace Aws

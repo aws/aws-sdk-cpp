@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class LambdaFunctionSortBy
-  {
-    NOT_SET,
-    CRITICAL,
-    HIGH,
-    ALL
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class LambdaFunctionSortBy { NOT_SET, CRITICAL, HIGH, ALL };
 
-namespace LambdaFunctionSortByMapper
-{
+namespace LambdaFunctionSortByMapper {
 AWS_INSPECTOR2_API LambdaFunctionSortBy GetLambdaFunctionSortByForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForLambdaFunctionSortBy(LambdaFunctionSortBy value);
-} // namespace LambdaFunctionSortByMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace LambdaFunctionSortByMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

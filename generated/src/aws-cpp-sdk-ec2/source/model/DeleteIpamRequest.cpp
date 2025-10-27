@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteIpamRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteIpamRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIpamRequest::SerializePayload() const
-{
+Aws::String DeleteIpamRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIpam&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamIdHasBeenSet)
-  {
+  if (m_ipamIdHasBeenSet) {
     ss << "IpamId=" << StringUtils::URLEncode(m_ipamId.c_str()) << "&";
   }
 
-  if(m_cascadeHasBeenSet)
-  {
+  if (m_cascadeHasBeenSet) {
     ss << "Cascade=" << std::boolalpha << m_cascade << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteIpamRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteIpamRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteIpamRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

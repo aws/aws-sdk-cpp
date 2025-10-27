@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-InferenceContainerConfig::InferenceContainerConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceContainerConfig::InferenceContainerConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceContainerConfig& InferenceContainerConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("imageUri"))
-  {
+InferenceContainerConfig& InferenceContainerConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("imageUri")) {
     m_imageUri = jsonValue.GetString("imageUri");
     m_imageUriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferenceContainerConfig::Jsonize() const
-{
+JsonValue InferenceContainerConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_imageUriHasBeenSet)
-  {
-   payload.WithString("imageUri", m_imageUri);
-
+  if (m_imageUriHasBeenSet) {
+    payload.WithString("imageUri", m_imageUri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

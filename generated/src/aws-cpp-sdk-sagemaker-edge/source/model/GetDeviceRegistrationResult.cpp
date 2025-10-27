@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-edge/model/GetDeviceRegistrationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker-edge/model/GetDeviceRegistrationResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeviceRegistrationResult::GetDeviceRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetDeviceRegistrationResult::GetDeviceRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetDeviceRegistrationResult& GetDeviceRegistrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetDeviceRegistrationResult& GetDeviceRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DeviceRegistration"))
-  {
+  if (jsonValue.ValueExists("DeviceRegistration")) {
     m_deviceRegistration = jsonValue.GetString("DeviceRegistration");
     m_deviceRegistrationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CacheTTL"))
-  {
+  if (jsonValue.ValueExists("CacheTTL")) {
     m_cacheTTL = jsonValue.GetString("CacheTTL");
     m_cacheTTLHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

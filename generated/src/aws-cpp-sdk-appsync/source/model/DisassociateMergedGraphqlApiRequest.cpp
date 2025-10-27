@@ -12,11 +12,4 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateMergedGraphqlApiRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DisassociateMergedGraphqlApiRequest::SerializePayload() const { return {}; }

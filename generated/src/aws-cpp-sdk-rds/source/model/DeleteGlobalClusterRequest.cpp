@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteGlobalClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DeleteGlobalClusterRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteGlobalClusterRequest::SerializePayload() const
-{
+Aws::String DeleteGlobalClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteGlobalCluster&";
-  if(m_globalClusterIdentifierHasBeenSet)
-  {
+  if (m_globalClusterIdentifierHasBeenSet) {
     ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteGlobalClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteGlobalClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteGlobalClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,60 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DecimalNumber.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DecimalNumber.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-DecimalNumber::DecimalNumber(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DecimalNumber::DecimalNumber(JsonView jsonValue) { *this = jsonValue; }
 
-DecimalNumber& DecimalNumber::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UnscaledValue"))
-  {
+DecimalNumber& DecimalNumber::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UnscaledValue")) {
     m_unscaledValue = HashingUtils::Base64Decode(jsonValue.GetString("UnscaledValue"));
     m_unscaledValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Scale"))
-  {
+  if (jsonValue.ValueExists("Scale")) {
     m_scale = jsonValue.GetInteger("Scale");
     m_scaleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DecimalNumber::Jsonize() const
-{
+JsonValue DecimalNumber::Jsonize() const {
   JsonValue payload;
 
-  if(m_unscaledValueHasBeenSet)
-  {
-   payload.WithString("UnscaledValue", HashingUtils::Base64Encode(m_unscaledValue));
+  if (m_unscaledValueHasBeenSet) {
+    payload.WithString("UnscaledValue", HashingUtils::Base64Encode(m_unscaledValue));
   }
 
-  if(m_scaleHasBeenSet)
-  {
-   payload.WithInteger("Scale", m_scale);
-
+  if (m_scaleHasBeenSet) {
+    payload.WithInteger("Scale", m_scale);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

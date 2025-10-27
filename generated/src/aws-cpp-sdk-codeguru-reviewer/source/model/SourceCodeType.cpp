@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-SourceCodeType::SourceCodeType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceCodeType::SourceCodeType(JsonView jsonValue) { *this = jsonValue; }
 
-SourceCodeType& SourceCodeType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CommitDiff"))
-  {
+SourceCodeType& SourceCodeType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CommitDiff")) {
     m_commitDiff = jsonValue.GetObject("CommitDiff");
     m_commitDiffHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RepositoryHead"))
-  {
+  if (jsonValue.ValueExists("RepositoryHead")) {
     m_repositoryHead = jsonValue.GetObject("RepositoryHead");
     m_repositoryHeadHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BranchDiff"))
-  {
+  if (jsonValue.ValueExists("BranchDiff")) {
     m_branchDiff = jsonValue.GetObject("BranchDiff");
     m_branchDiffHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketRepository"))
-  {
+  if (jsonValue.ValueExists("S3BucketRepository")) {
     m_s3BucketRepository = jsonValue.GetObject("S3BucketRepository");
     m_s3BucketRepositoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestMetadata"))
-  {
+  if (jsonValue.ValueExists("RequestMetadata")) {
     m_requestMetadata = jsonValue.GetObject("RequestMetadata");
     m_requestMetadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceCodeType::Jsonize() const
-{
+JsonValue SourceCodeType::Jsonize() const {
   JsonValue payload;
 
-  if(m_commitDiffHasBeenSet)
-  {
-   payload.WithObject("CommitDiff", m_commitDiff.Jsonize());
-
+  if (m_commitDiffHasBeenSet) {
+    payload.WithObject("CommitDiff", m_commitDiff.Jsonize());
   }
 
-  if(m_repositoryHeadHasBeenSet)
-  {
-   payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
-
+  if (m_repositoryHeadHasBeenSet) {
+    payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
   }
 
-  if(m_branchDiffHasBeenSet)
-  {
-   payload.WithObject("BranchDiff", m_branchDiff.Jsonize());
-
+  if (m_branchDiffHasBeenSet) {
+    payload.WithObject("BranchDiff", m_branchDiff.Jsonize());
   }
 
-  if(m_s3BucketRepositoryHasBeenSet)
-  {
-   payload.WithObject("S3BucketRepository", m_s3BucketRepository.Jsonize());
-
+  if (m_s3BucketRepositoryHasBeenSet) {
+    payload.WithObject("S3BucketRepository", m_s3BucketRepository.Jsonize());
   }
 
-  if(m_requestMetadataHasBeenSet)
-  {
-   payload.WithObject("RequestMetadata", m_requestMetadata.Jsonize());
-
+  if (m_requestMetadataHasBeenSet) {
+    payload.WithObject("RequestMetadata", m_requestMetadata.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

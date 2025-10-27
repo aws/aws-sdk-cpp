@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/ListSuiteRunsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotdeviceadvisor/model/ListSuiteRunsRequest.h>
 
 #include <utility>
 
@@ -15,43 +15,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListSuiteRunsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListSuiteRunsRequest::SerializePayload() const { return {}; }
+
+void ListSuiteRunsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_suiteDefinitionIdHasBeenSet) {
+    ss << m_suiteDefinitionId;
+    uri.AddQueryStringParameter("suiteDefinitionId", ss.str());
+    ss.str("");
+  }
+
+  if (m_suiteDefinitionVersionHasBeenSet) {
+    ss << m_suiteDefinitionVersion;
+    uri.AddQueryStringParameter("suiteDefinitionVersion", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
 }
-
-void ListSuiteRunsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_suiteDefinitionIdHasBeenSet)
-    {
-      ss << m_suiteDefinitionId;
-      uri.AddQueryStringParameter("suiteDefinitionId", ss.str());
-      ss.str("");
-    }
-
-    if(m_suiteDefinitionVersionHasBeenSet)
-    {
-      ss << m_suiteDefinitionVersion;
-      uri.AddQueryStringParameter("suiteDefinitionVersion", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

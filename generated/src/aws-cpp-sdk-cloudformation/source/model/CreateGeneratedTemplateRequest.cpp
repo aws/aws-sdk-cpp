@@ -10,39 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateGeneratedTemplateRequest::SerializePayload() const
-{
+Aws::String CreateGeneratedTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateGeneratedTemplate&";
-  if(m_resourcesHasBeenSet)
-  {
-    if (m_resources.empty())
-    {
+  if (m_resourcesHasBeenSet) {
+    if (m_resources.empty()) {
       ss << "Resources=&";
-    }
-    else
-    {
+    } else {
       unsigned resourcesCount = 1;
-      for(auto& item : m_resources)
-      {
+      for (auto& item : m_resources) {
         item.OutputToStream(ss, "Resources.member.", resourcesCount, "");
         resourcesCount++;
       }
     }
   }
 
-  if(m_generatedTemplateNameHasBeenSet)
-  {
+  if (m_generatedTemplateNameHasBeenSet) {
     ss << "GeneratedTemplateName=" << StringUtils::URLEncode(m_generatedTemplateName.c_str()) << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_templateConfigurationHasBeenSet)
-  {
+  if (m_templateConfigurationHasBeenSet) {
     m_templateConfiguration.OutputToStream(ss, "TemplateConfiguration");
   }
 
@@ -50,8 +41,4 @@ Aws::String CreateGeneratedTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

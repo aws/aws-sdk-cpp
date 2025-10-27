@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/ColorConversion3DLUTSetting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/ColorConversion3DLUTSetting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-ColorConversion3DLUTSetting::ColorConversion3DLUTSetting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColorConversion3DLUTSetting::ColorConversion3DLUTSetting(JsonView jsonValue) { *this = jsonValue; }
 
-ColorConversion3DLUTSetting& ColorConversion3DLUTSetting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileInput"))
-  {
+ColorConversion3DLUTSetting& ColorConversion3DLUTSetting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileInput")) {
     m_fileInput = jsonValue.GetString("fileInput");
     m_fileInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputColorSpace"))
-  {
+  if (jsonValue.ValueExists("inputColorSpace")) {
     m_inputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("inputColorSpace"));
     m_inputColorSpaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputMasteringLuminance"))
-  {
+  if (jsonValue.ValueExists("inputMasteringLuminance")) {
     m_inputMasteringLuminance = jsonValue.GetInteger("inputMasteringLuminance");
     m_inputMasteringLuminanceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputColorSpace"))
-  {
+  if (jsonValue.ValueExists("outputColorSpace")) {
     m_outputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("outputColorSpace"));
     m_outputColorSpaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputMasteringLuminance"))
-  {
+  if (jsonValue.ValueExists("outputMasteringLuminance")) {
     m_outputMasteringLuminance = jsonValue.GetInteger("outputMasteringLuminance");
     m_outputMasteringLuminanceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColorConversion3DLUTSetting::Jsonize() const
-{
+JsonValue ColorConversion3DLUTSetting::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileInputHasBeenSet)
-  {
-   payload.WithString("fileInput", m_fileInput);
-
+  if (m_fileInputHasBeenSet) {
+    payload.WithString("fileInput", m_fileInput);
   }
 
-  if(m_inputColorSpaceHasBeenSet)
-  {
-   payload.WithString("inputColorSpace", ColorSpaceMapper::GetNameForColorSpace(m_inputColorSpace));
+  if (m_inputColorSpaceHasBeenSet) {
+    payload.WithString("inputColorSpace", ColorSpaceMapper::GetNameForColorSpace(m_inputColorSpace));
   }
 
-  if(m_inputMasteringLuminanceHasBeenSet)
-  {
-   payload.WithInteger("inputMasteringLuminance", m_inputMasteringLuminance);
-
+  if (m_inputMasteringLuminanceHasBeenSet) {
+    payload.WithInteger("inputMasteringLuminance", m_inputMasteringLuminance);
   }
 
-  if(m_outputColorSpaceHasBeenSet)
-  {
-   payload.WithString("outputColorSpace", ColorSpaceMapper::GetNameForColorSpace(m_outputColorSpace));
+  if (m_outputColorSpaceHasBeenSet) {
+    payload.WithString("outputColorSpace", ColorSpaceMapper::GetNameForColorSpace(m_outputColorSpace));
   }
 
-  if(m_outputMasteringLuminanceHasBeenSet)
-  {
-   payload.WithInteger("outputMasteringLuminance", m_outputMasteringLuminance);
-
+  if (m_outputMasteringLuminanceHasBeenSet) {
+    payload.WithInteger("outputMasteringLuminance", m_outputMasteringLuminance);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

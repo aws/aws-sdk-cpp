@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AudioNormalizationPeakCalculation
-  {
-    NOT_SET,
-    TRUE_PEAK,
-    NONE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AudioNormalizationPeakCalculation { NOT_SET, TRUE_PEAK, NONE };
 
-namespace AudioNormalizationPeakCalculationMapper
-{
+namespace AudioNormalizationPeakCalculationMapper {
 AWS_MEDIACONVERT_API AudioNormalizationPeakCalculation GetAudioNormalizationPeakCalculationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAudioNormalizationPeakCalculation(AudioNormalizationPeakCalculation value);
-} // namespace AudioNormalizationPeakCalculationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AudioNormalizationPeakCalculationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

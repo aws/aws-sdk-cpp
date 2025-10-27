@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/networkflowmonitor/NetworkFlowMonitorEndpointRules.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NetworkFlowMonitorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using NetworkFlowMonitorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using NetworkFlowMonitorEndpointProviderBase =
-    EndpointProviderBase<NetworkFlowMonitorClientConfiguration, NetworkFlowMonitorBuiltInParameters, NetworkFlowMonitorClientContextParameters>;
+    EndpointProviderBase<NetworkFlowMonitorClientConfiguration, NetworkFlowMonitorBuiltInParameters,
+                         NetworkFlowMonitorClientContextParameters>;
 
 using NetworkFlowMonitorDefaultEpProviderBase =
-    DefaultEndpointProvider<NetworkFlowMonitorClientConfiguration, NetworkFlowMonitorBuiltInParameters, NetworkFlowMonitorClientContextParameters>;
+    DefaultEndpointProvider<NetworkFlowMonitorClientConfiguration, NetworkFlowMonitorBuiltInParameters,
+                            NetworkFlowMonitorClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorEndpointProvider : public NetworkFlowMonitorDefaultEpProviderBase
-{
-public:
-    using NetworkFlowMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorEndpointProvider : public NetworkFlowMonitorDefaultEpProviderBase {
+ public:
+  using NetworkFlowMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NetworkFlowMonitorEndpointProvider()
-      : NetworkFlowMonitorDefaultEpProviderBase(Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::GetRulesBlob(), Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::RulesBlobSize)
-    {}
+  NetworkFlowMonitorEndpointProvider()
+      : NetworkFlowMonitorDefaultEpProviderBase(Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::GetRulesBlob(),
+                                                Aws::NetworkFlowMonitor::NetworkFlowMonitorEndpointRules::RulesBlobSize) {}
 
-    ~NetworkFlowMonitorEndpointProvider()
-    {
-    }
+  ~NetworkFlowMonitorEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

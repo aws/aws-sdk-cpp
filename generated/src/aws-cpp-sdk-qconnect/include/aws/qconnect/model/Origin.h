@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class Origin
-  {
-    NOT_SET,
-    SYSTEM,
-    CUSTOMER
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class Origin { NOT_SET, SYSTEM, CUSTOMER };
 
-namespace OriginMapper
-{
+namespace OriginMapper {
 AWS_QCONNECT_API Origin GetOriginForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForOrigin(Origin value);
-} // namespace OriginMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace OriginMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

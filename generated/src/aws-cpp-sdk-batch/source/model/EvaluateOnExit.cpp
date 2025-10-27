@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-EvaluateOnExit::EvaluateOnExit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluateOnExit::EvaluateOnExit(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluateOnExit& EvaluateOnExit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("onStatusReason"))
-  {
+EvaluateOnExit& EvaluateOnExit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("onStatusReason")) {
     m_onStatusReason = jsonValue.GetString("onStatusReason");
     m_onStatusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("onReason"))
-  {
+  if (jsonValue.ValueExists("onReason")) {
     m_onReason = jsonValue.GetString("onReason");
     m_onReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("onExitCode"))
-  {
+  if (jsonValue.ValueExists("onExitCode")) {
     m_onExitCode = jsonValue.GetString("onExitCode");
     m_onExitCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("action"))
-  {
+  if (jsonValue.ValueExists("action")) {
     m_action = RetryActionMapper::GetRetryActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluateOnExit::Jsonize() const
-{
+JsonValue EvaluateOnExit::Jsonize() const {
   JsonValue payload;
 
-  if(m_onStatusReasonHasBeenSet)
-  {
-   payload.WithString("onStatusReason", m_onStatusReason);
-
+  if (m_onStatusReasonHasBeenSet) {
+    payload.WithString("onStatusReason", m_onStatusReason);
   }
 
-  if(m_onReasonHasBeenSet)
-  {
-   payload.WithString("onReason", m_onReason);
-
+  if (m_onReasonHasBeenSet) {
+    payload.WithString("onReason", m_onReason);
   }
 
-  if(m_onExitCodeHasBeenSet)
-  {
-   payload.WithString("onExitCode", m_onExitCode);
-
+  if (m_onExitCodeHasBeenSet) {
+    payload.WithString("onExitCode", m_onExitCode);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", RetryActionMapper::GetNameForRetryAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", RetryActionMapper::GetNameForRetryAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

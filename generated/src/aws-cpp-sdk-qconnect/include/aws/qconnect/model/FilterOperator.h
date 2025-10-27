@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class FilterOperator
-  {
-    NOT_SET,
-    EQUALS
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class FilterOperator { NOT_SET, EQUALS };
 
-namespace FilterOperatorMapper
-{
+namespace FilterOperatorMapper {
 AWS_QCONNECT_API FilterOperator GetFilterOperatorForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForFilterOperator(FilterOperator value);
-} // namespace FilterOperatorMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace FilterOperatorMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

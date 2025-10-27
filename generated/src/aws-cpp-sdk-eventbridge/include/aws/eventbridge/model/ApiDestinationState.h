@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
-  enum class ApiDestinationState
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+enum class ApiDestinationState { NOT_SET, ACTIVE, INACTIVE };
 
-namespace ApiDestinationStateMapper
-{
+namespace ApiDestinationStateMapper {
 AWS_EVENTBRIDGE_API ApiDestinationState GetApiDestinationStateForName(const Aws::String& name);
 
 AWS_EVENTBRIDGE_API Aws::String GetNameForApiDestinationState(ApiDestinationState value);
-} // namespace ApiDestinationStateMapper
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace ApiDestinationStateMapper
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

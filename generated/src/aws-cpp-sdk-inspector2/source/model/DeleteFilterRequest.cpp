@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/DeleteFilterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/DeleteFilterRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFilterRequest::SerializePayload() const
-{
+Aws::String DeleteFilterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

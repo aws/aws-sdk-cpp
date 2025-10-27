@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CisScanResultsAggregatedByChecksSortBy
-  {
-    NOT_SET,
-    CHECK_ID,
-    TITLE,
-    PLATFORM,
-    FAILED_COUNTS,
-    SECURITY_LEVEL
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CisScanResultsAggregatedByChecksSortBy { NOT_SET, CHECK_ID, TITLE, PLATFORM, FAILED_COUNTS, SECURITY_LEVEL };
 
-namespace CisScanResultsAggregatedByChecksSortByMapper
-{
+namespace CisScanResultsAggregatedByChecksSortByMapper {
 AWS_INSPECTOR2_API CisScanResultsAggregatedByChecksSortBy GetCisScanResultsAggregatedByChecksSortByForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCisScanResultsAggregatedByChecksSortBy(CisScanResultsAggregatedByChecksSortBy value);
-} // namespace CisScanResultsAggregatedByChecksSortByMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CisScanResultsAggregatedByChecksSortByMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

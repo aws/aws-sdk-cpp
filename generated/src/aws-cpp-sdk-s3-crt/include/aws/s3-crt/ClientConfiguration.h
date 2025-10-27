@@ -7,11 +7,9 @@
 
 #include <aws/s3-crt/S3CrtClientConfiguration.h>
 
-namespace Aws
-{
-    namespace S3Crt
-    {
-        /* Backward compatibility, please use just S3CrtClientConfiguration */
-        using ClientConfiguration = Aws::S3Crt::S3CrtClientConfiguration;
-    }
-}
+namespace Aws {
+namespace S3Crt {
+/* Backward compatibility, please use just S3CrtClientConfiguration */
+using ClientConfiguration = Aws::S3Crt::S3CrtClientConfiguration;
+}  // namespace S3Crt
+}  // namespace Aws

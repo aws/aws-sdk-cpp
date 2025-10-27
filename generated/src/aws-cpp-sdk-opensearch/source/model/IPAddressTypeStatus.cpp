@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/IPAddressTypeStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/IPAddressTypeStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-IPAddressTypeStatus::IPAddressTypeStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IPAddressTypeStatus::IPAddressTypeStatus(JsonView jsonValue) { *this = jsonValue; }
 
-IPAddressTypeStatus& IPAddressTypeStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Options"))
-  {
+IPAddressTypeStatus& IPAddressTypeStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Options")) {
     m_options = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("Options"));
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IPAddressTypeStatus::Jsonize() const
-{
+JsonValue IPAddressTypeStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_optionsHasBeenSet)
-  {
-   payload.WithString("Options", IPAddressTypeMapper::GetNameForIPAddressType(m_options));
+  if (m_optionsHasBeenSet) {
+    payload.WithString("Options", IPAddressTypeMapper::GetNameForIPAddressType(m_options));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("Status", m_status.Jsonize());
-
+  if (m_statusHasBeenSet) {
+    payload.WithObject("Status", m_status.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

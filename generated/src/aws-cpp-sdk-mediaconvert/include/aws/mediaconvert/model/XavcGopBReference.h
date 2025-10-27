@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class XavcGopBReference
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class XavcGopBReference { NOT_SET, DISABLED, ENABLED };
 
-namespace XavcGopBReferenceMapper
-{
+namespace XavcGopBReferenceMapper {
 AWS_MEDIACONVERT_API XavcGopBReference GetXavcGopBReferenceForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForXavcGopBReference(XavcGopBReference value);
-} // namespace XavcGopBReferenceMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace XavcGopBReferenceMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

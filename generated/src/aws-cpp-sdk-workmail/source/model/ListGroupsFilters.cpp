@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/ListGroupsFilters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/ListGroupsFilters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
-ListGroupsFilters::ListGroupsFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListGroupsFilters::ListGroupsFilters(JsonView jsonValue) { *this = jsonValue; }
 
-ListGroupsFilters& ListGroupsFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NamePrefix"))
-  {
+ListGroupsFilters& ListGroupsFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NamePrefix")) {
     m_namePrefix = jsonValue.GetString("NamePrefix");
     m_namePrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrimaryEmailPrefix"))
-  {
+  if (jsonValue.ValueExists("PrimaryEmailPrefix")) {
     m_primaryEmailPrefix = jsonValue.GetString("PrimaryEmailPrefix");
     m_primaryEmailPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = EntityStateMapper::GetEntityStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListGroupsFilters::Jsonize() const
-{
+JsonValue ListGroupsFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_namePrefixHasBeenSet)
-  {
-   payload.WithString("NamePrefix", m_namePrefix);
-
+  if (m_namePrefixHasBeenSet) {
+    payload.WithString("NamePrefix", m_namePrefix);
   }
 
-  if(m_primaryEmailPrefixHasBeenSet)
-  {
-   payload.WithString("PrimaryEmailPrefix", m_primaryEmailPrefix);
-
+  if (m_primaryEmailPrefixHasBeenSet) {
+    payload.WithString("PrimaryEmailPrefix", m_primaryEmailPrefix);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", EntityStateMapper::GetNameForEntityState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", EntityStateMapper::GetNameForEntityState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

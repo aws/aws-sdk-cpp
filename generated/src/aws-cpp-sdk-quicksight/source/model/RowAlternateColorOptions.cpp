@@ -3,78 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RowAlternateColorOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RowAlternateColorOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RowAlternateColorOptions::RowAlternateColorOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RowAlternateColorOptions::RowAlternateColorOptions(JsonView jsonValue) { *this = jsonValue; }
 
-RowAlternateColorOptions& RowAlternateColorOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+RowAlternateColorOptions& RowAlternateColorOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowAlternateColors"))
-  {
+  if (jsonValue.ValueExists("RowAlternateColors")) {
     Aws::Utils::Array<JsonView> rowAlternateColorsJsonList = jsonValue.GetArray("RowAlternateColors");
-    for(unsigned rowAlternateColorsIndex = 0; rowAlternateColorsIndex < rowAlternateColorsJsonList.GetLength(); ++rowAlternateColorsIndex)
-    {
+    for (unsigned rowAlternateColorsIndex = 0; rowAlternateColorsIndex < rowAlternateColorsJsonList.GetLength();
+         ++rowAlternateColorsIndex) {
       m_rowAlternateColors.push_back(rowAlternateColorsJsonList[rowAlternateColorsIndex].AsString());
     }
     m_rowAlternateColorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UsePrimaryBackgroundColor"))
-  {
+  if (jsonValue.ValueExists("UsePrimaryBackgroundColor")) {
     m_usePrimaryBackgroundColor = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("UsePrimaryBackgroundColor"));
     m_usePrimaryBackgroundColorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RowAlternateColorOptions::Jsonize() const
-{
+JsonValue RowAlternateColorOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", WidgetStatusMapper::GetNameForWidgetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", WidgetStatusMapper::GetNameForWidgetStatus(m_status));
   }
 
-  if(m_rowAlternateColorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rowAlternateColorsJsonList(m_rowAlternateColors.size());
-   for(unsigned rowAlternateColorsIndex = 0; rowAlternateColorsIndex < rowAlternateColorsJsonList.GetLength(); ++rowAlternateColorsIndex)
-   {
-     rowAlternateColorsJsonList[rowAlternateColorsIndex].AsString(m_rowAlternateColors[rowAlternateColorsIndex]);
-   }
-   payload.WithArray("RowAlternateColors", std::move(rowAlternateColorsJsonList));
-
+  if (m_rowAlternateColorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rowAlternateColorsJsonList(m_rowAlternateColors.size());
+    for (unsigned rowAlternateColorsIndex = 0; rowAlternateColorsIndex < rowAlternateColorsJsonList.GetLength();
+         ++rowAlternateColorsIndex) {
+      rowAlternateColorsJsonList[rowAlternateColorsIndex].AsString(m_rowAlternateColors[rowAlternateColorsIndex]);
+    }
+    payload.WithArray("RowAlternateColors", std::move(rowAlternateColorsJsonList));
   }
 
-  if(m_usePrimaryBackgroundColorHasBeenSet)
-  {
-   payload.WithString("UsePrimaryBackgroundColor", WidgetStatusMapper::GetNameForWidgetStatus(m_usePrimaryBackgroundColor));
+  if (m_usePrimaryBackgroundColorHasBeenSet) {
+    payload.WithString("UsePrimaryBackgroundColor", WidgetStatusMapper::GetNameForWidgetStatus(m_usePrimaryBackgroundColor));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

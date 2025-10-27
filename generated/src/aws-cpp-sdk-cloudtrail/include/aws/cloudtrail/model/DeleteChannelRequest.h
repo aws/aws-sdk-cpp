@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
+#include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
+/**
+ */
+class DeleteChannelRequest : public CloudTrailRequest {
+ public:
+  AWS_CLOUDTRAIL_API DeleteChannelRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteChannel"; }
+
+  AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
+
+  AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ARN or the <code>UUID</code> value of the channel that you want to
+   * delete.</p>
    */
-  class DeleteChannelRequest : public CloudTrailRequest
-  {
-  public:
-    AWS_CLOUDTRAIL_API DeleteChannelRequest() = default;
+  inline const Aws::String& GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  template <typename ChannelT = Aws::String>
+  void SetChannel(ChannelT&& value) {
+    m_channelHasBeenSet = true;
+    m_channel = std::forward<ChannelT>(value);
+  }
+  template <typename ChannelT = Aws::String>
+  DeleteChannelRequest& WithChannel(ChannelT&& value) {
+    SetChannel(std::forward<ChannelT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_channel;
+  bool m_channelHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteChannel"; }
-
-    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
-
-    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ARN or the <code>UUID</code> value of the channel that you want to
-     * delete.</p>
-     */
-    inline const Aws::String& GetChannel() const { return m_channel; }
-    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    template<typename ChannelT = Aws::String>
-    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
-    template<typename ChannelT = Aws::String>
-    DeleteChannelRequest& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_channel;
-    bool m_channelHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

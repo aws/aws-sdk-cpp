@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::CostOptimizationHub;
 
-AWSError<CoreErrors> CostOptimizationHubErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> CostOptimizationHubErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = CostOptimizationHubErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

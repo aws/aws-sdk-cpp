@@ -7,24 +7,16 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
-  enum class ChangeEventType
-  {
-    NOT_SET,
-    DEPLOYMENT
-  };
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
+enum class ChangeEventType { NOT_SET, DEPLOYMENT };
 
-namespace ChangeEventTypeMapper
-{
+namespace ChangeEventTypeMapper {
 AWS_APPLICATIONSIGNALS_API ChangeEventType GetChangeEventTypeForName(const Aws::String& name);
 
 AWS_APPLICATIONSIGNALS_API Aws::String GetNameForChangeEventType(ChangeEventType value);
-} // namespace ChangeEventTypeMapper
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace ChangeEventTypeMapper
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

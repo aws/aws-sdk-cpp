@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Account
-{
-namespace Model
-{
+namespace Aws {
+namespace Account {
+namespace Model {
 
-ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationExceptionField::ValidationExceptionField(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ValidationExceptionField& ValidationExceptionField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationExceptionField::Jsonize() const
-{
+JsonValue ValidationExceptionField::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Account
-} // namespace Aws
+}  // namespace Model
+}  // namespace Account
+}  // namespace Aws

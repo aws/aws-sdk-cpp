@@ -12,24 +12,16 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutOutboundRequestBatchRequest::SerializePayload() const
-{
+Aws::String PutOutboundRequestBatchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_outboundRequestsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outboundRequestsJsonList(m_outboundRequests.size());
-   for(unsigned outboundRequestsIndex = 0; outboundRequestsIndex < outboundRequestsJsonList.GetLength(); ++outboundRequestsIndex)
-   {
-     outboundRequestsJsonList[outboundRequestsIndex].AsObject(m_outboundRequests[outboundRequestsIndex].Jsonize());
-   }
-   payload.WithArray("outboundRequests", std::move(outboundRequestsJsonList));
-
+  if (m_outboundRequestsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outboundRequestsJsonList(m_outboundRequests.size());
+    for (unsigned outboundRequestsIndex = 0; outboundRequestsIndex < outboundRequestsJsonList.GetLength(); ++outboundRequestsIndex) {
+      outboundRequestsJsonList[outboundRequestsIndex].AsObject(m_outboundRequests[outboundRequestsIndex].Jsonize());
+    }
+    payload.WithArray("outboundRequests", std::move(outboundRequestsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

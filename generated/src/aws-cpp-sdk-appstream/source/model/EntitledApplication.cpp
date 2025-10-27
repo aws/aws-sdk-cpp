@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-EntitledApplication::EntitledApplication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntitledApplication::EntitledApplication(JsonView jsonValue) { *this = jsonValue; }
 
-EntitledApplication& EntitledApplication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationIdentifier"))
-  {
+EntitledApplication& EntitledApplication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationIdentifier")) {
     m_applicationIdentifier = jsonValue.GetString("ApplicationIdentifier");
     m_applicationIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntitledApplication::Jsonize() const
-{
+JsonValue EntitledApplication::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdentifierHasBeenSet)
-  {
-   payload.WithString("ApplicationIdentifier", m_applicationIdentifier);
-
+  if (m_applicationIdentifierHasBeenSet) {
+    payload.WithString("ApplicationIdentifier", m_applicationIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

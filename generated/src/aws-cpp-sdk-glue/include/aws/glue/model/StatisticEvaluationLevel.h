@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class StatisticEvaluationLevel
-  {
-    NOT_SET,
-    Dataset,
-    Column,
-    Multicolumn
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class StatisticEvaluationLevel { NOT_SET, Dataset, Column, Multicolumn };
 
-namespace StatisticEvaluationLevelMapper
-{
+namespace StatisticEvaluationLevelMapper {
 AWS_GLUE_API StatisticEvaluationLevel GetStatisticEvaluationLevelForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForStatisticEvaluationLevel(StatisticEvaluationLevel value);
-} // namespace StatisticEvaluationLevelMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace StatisticEvaluationLevelMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

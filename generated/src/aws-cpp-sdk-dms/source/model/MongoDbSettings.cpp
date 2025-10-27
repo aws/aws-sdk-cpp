@@ -3,211 +3,158 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/MongoDbSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/MongoDbSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-MongoDbSettings::MongoDbSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MongoDbSettings::MongoDbSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MongoDbSettings& MongoDbSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Username"))
-  {
+MongoDbSettings& MongoDbSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Username")) {
     m_username = jsonValue.GetString("Username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Password"))
-  {
+  if (jsonValue.ValueExists("Password")) {
     m_password = jsonValue.GetString("Password");
     m_passwordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerName"))
-  {
+  if (jsonValue.ValueExists("ServerName")) {
     m_serverName = jsonValue.GetString("ServerName");
     m_serverNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatabaseName"))
-  {
+  if (jsonValue.ValueExists("DatabaseName")) {
     m_databaseName = jsonValue.GetString("DatabaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthType"))
-  {
+  if (jsonValue.ValueExists("AuthType")) {
     m_authType = AuthTypeValueMapper::GetAuthTypeValueForName(jsonValue.GetString("AuthType"));
     m_authTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthMechanism"))
-  {
+  if (jsonValue.ValueExists("AuthMechanism")) {
     m_authMechanism = AuthMechanismValueMapper::GetAuthMechanismValueForName(jsonValue.GetString("AuthMechanism"));
     m_authMechanismHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NestingLevel"))
-  {
+  if (jsonValue.ValueExists("NestingLevel")) {
     m_nestingLevel = NestingLevelValueMapper::GetNestingLevelValueForName(jsonValue.GetString("NestingLevel"));
     m_nestingLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExtractDocId"))
-  {
+  if (jsonValue.ValueExists("ExtractDocId")) {
     m_extractDocId = jsonValue.GetString("ExtractDocId");
     m_extractDocIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocsToInvestigate"))
-  {
+  if (jsonValue.ValueExists("DocsToInvestigate")) {
     m_docsToInvestigate = jsonValue.GetString("DocsToInvestigate");
     m_docsToInvestigateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthSource"))
-  {
+  if (jsonValue.ValueExists("AuthSource")) {
     m_authSource = jsonValue.GetString("AuthSource");
     m_authSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("SecretsManagerAccessRoleArn")) {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretsManagerSecretId"))
-  {
+  if (jsonValue.ValueExists("SecretsManagerSecretId")) {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UseUpdateLookUp"))
-  {
+  if (jsonValue.ValueExists("UseUpdateLookUp")) {
     m_useUpdateLookUp = jsonValue.GetBool("UseUpdateLookUp");
     m_useUpdateLookUpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicateShardCollections"))
-  {
+  if (jsonValue.ValueExists("ReplicateShardCollections")) {
     m_replicateShardCollections = jsonValue.GetBool("ReplicateShardCollections");
     m_replicateShardCollectionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MongoDbSettings::Jsonize() const
-{
+JsonValue MongoDbSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("Password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
-  if(m_serverNameHasBeenSet)
-  {
-   payload.WithString("ServerName", m_serverName);
-
+  if (m_serverNameHasBeenSet) {
+    payload.WithString("ServerName", m_serverName);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_authTypeHasBeenSet)
-  {
-   payload.WithString("AuthType", AuthTypeValueMapper::GetNameForAuthTypeValue(m_authType));
+  if (m_authTypeHasBeenSet) {
+    payload.WithString("AuthType", AuthTypeValueMapper::GetNameForAuthTypeValue(m_authType));
   }
 
-  if(m_authMechanismHasBeenSet)
-  {
-   payload.WithString("AuthMechanism", AuthMechanismValueMapper::GetNameForAuthMechanismValue(m_authMechanism));
+  if (m_authMechanismHasBeenSet) {
+    payload.WithString("AuthMechanism", AuthMechanismValueMapper::GetNameForAuthMechanismValue(m_authMechanism));
   }
 
-  if(m_nestingLevelHasBeenSet)
-  {
-   payload.WithString("NestingLevel", NestingLevelValueMapper::GetNameForNestingLevelValue(m_nestingLevel));
+  if (m_nestingLevelHasBeenSet) {
+    payload.WithString("NestingLevel", NestingLevelValueMapper::GetNameForNestingLevelValue(m_nestingLevel));
   }
 
-  if(m_extractDocIdHasBeenSet)
-  {
-   payload.WithString("ExtractDocId", m_extractDocId);
-
+  if (m_extractDocIdHasBeenSet) {
+    payload.WithString("ExtractDocId", m_extractDocId);
   }
 
-  if(m_docsToInvestigateHasBeenSet)
-  {
-   payload.WithString("DocsToInvestigate", m_docsToInvestigate);
-
+  if (m_docsToInvestigateHasBeenSet) {
+    payload.WithString("DocsToInvestigate", m_docsToInvestigate);
   }
 
-  if(m_authSourceHasBeenSet)
-  {
-   payload.WithString("AuthSource", m_authSource);
-
+  if (m_authSourceHasBeenSet) {
+    payload.WithString("AuthSource", m_authSource);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_secretsManagerAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
-
+  if (m_secretsManagerAccessRoleArnHasBeenSet) {
+    payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
   }
 
-  if(m_secretsManagerSecretIdHasBeenSet)
-  {
-   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
-
+  if (m_secretsManagerSecretIdHasBeenSet) {
+    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
   }
 
-  if(m_useUpdateLookUpHasBeenSet)
-  {
-   payload.WithBool("UseUpdateLookUp", m_useUpdateLookUp);
-
+  if (m_useUpdateLookUpHasBeenSet) {
+    payload.WithBool("UseUpdateLookUp", m_useUpdateLookUp);
   }
 
-  if(m_replicateShardCollectionsHasBeenSet)
-  {
-   payload.WithBool("ReplicateShardCollections", m_replicateShardCollections);
-
+  if (m_replicateShardCollectionsHasBeenSet) {
+    payload.WithBool("ReplicateShardCollections", m_replicateShardCollections);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

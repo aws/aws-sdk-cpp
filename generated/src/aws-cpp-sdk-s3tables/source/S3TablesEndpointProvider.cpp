@@ -5,12 +5,8 @@
 
 #include <aws/s3tables/S3TablesEndpointProvider.h>
 
-namespace Aws
-{
-namespace S3Tables
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace S3Tables
-} // namespace Aws
+namespace Aws {
+namespace S3Tables {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace S3Tables
+}  // namespace Aws

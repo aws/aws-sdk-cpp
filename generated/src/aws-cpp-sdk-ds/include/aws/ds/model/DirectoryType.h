@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class DirectoryType
-  {
-    NOT_SET,
-    SimpleAD,
-    ADConnector,
-    MicrosoftAD,
-    SharedMicrosoftAD
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class DirectoryType { NOT_SET, SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD };
 
-namespace DirectoryTypeMapper
-{
+namespace DirectoryTypeMapper {
 AWS_DIRECTORYSERVICE_API DirectoryType GetDirectoryTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForDirectoryType(DirectoryType value);
-} // namespace DirectoryTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace DirectoryTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

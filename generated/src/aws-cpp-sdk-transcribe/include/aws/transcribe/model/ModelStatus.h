@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class ModelStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    FAILED,
-    COMPLETED
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class ModelStatus { NOT_SET, IN_PROGRESS, FAILED, COMPLETED };
 
-namespace ModelStatusMapper
-{
+namespace ModelStatusMapper {
 AWS_TRANSCRIBESERVICE_API ModelStatus GetModelStatusForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForModelStatus(ModelStatus value);
-} // namespace ModelStatusMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace ModelStatusMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

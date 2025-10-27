@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-ExternalUrlConfig::ExternalUrlConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExternalUrlConfig::ExternalUrlConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ExternalUrlConfig& ExternalUrlConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccessUrl"))
-  {
+ExternalUrlConfig& ExternalUrlConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccessUrl")) {
     m_accessUrl = jsonValue.GetString("AccessUrl");
     m_accessUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApprovedOrigins"))
-  {
+  if (jsonValue.ValueExists("ApprovedOrigins")) {
     Aws::Utils::Array<JsonView> approvedOriginsJsonList = jsonValue.GetArray("ApprovedOrigins");
-    for(unsigned approvedOriginsIndex = 0; approvedOriginsIndex < approvedOriginsJsonList.GetLength(); ++approvedOriginsIndex)
-    {
+    for (unsigned approvedOriginsIndex = 0; approvedOriginsIndex < approvedOriginsJsonList.GetLength(); ++approvedOriginsIndex) {
       m_approvedOrigins.push_back(approvedOriginsJsonList[approvedOriginsIndex].AsString());
     }
     m_approvedOriginsHasBeenSet = true;
@@ -42,30 +32,24 @@ ExternalUrlConfig& ExternalUrlConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ExternalUrlConfig::Jsonize() const
-{
+JsonValue ExternalUrlConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessUrlHasBeenSet)
-  {
-   payload.WithString("AccessUrl", m_accessUrl);
-
+  if (m_accessUrlHasBeenSet) {
+    payload.WithString("AccessUrl", m_accessUrl);
   }
 
-  if(m_approvedOriginsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> approvedOriginsJsonList(m_approvedOrigins.size());
-   for(unsigned approvedOriginsIndex = 0; approvedOriginsIndex < approvedOriginsJsonList.GetLength(); ++approvedOriginsIndex)
-   {
-     approvedOriginsJsonList[approvedOriginsIndex].AsString(m_approvedOrigins[approvedOriginsIndex]);
-   }
-   payload.WithArray("ApprovedOrigins", std::move(approvedOriginsJsonList));
-
+  if (m_approvedOriginsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> approvedOriginsJsonList(m_approvedOrigins.size());
+    for (unsigned approvedOriginsIndex = 0; approvedOriginsIndex < approvedOriginsJsonList.GetLength(); ++approvedOriginsIndex) {
+      approvedOriginsJsonList[approvedOriginsIndex].AsString(m_approvedOrigins[approvedOriginsIndex]);
+    }
+    payload.WithArray("ApprovedOrigins", std::move(approvedOriginsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

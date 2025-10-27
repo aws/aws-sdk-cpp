@@ -4,8 +4,8 @@
  */
 
 #include <aws/codeartifact/model/DescribePackageGroupRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DescribePackageGroupRequest::SerializePayload() const
-{
-  return {};
+Aws::String DescribePackageGroupRequest::SerializePayload() const { return {}; }
+
+void DescribePackageGroupRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_domainHasBeenSet) {
+    ss << m_domain;
+    uri.AddQueryStringParameter("domain", ss.str());
+    ss.str("");
+  }
+
+  if (m_domainOwnerHasBeenSet) {
+    ss << m_domainOwner;
+    uri.AddQueryStringParameter("domain-owner", ss.str());
+    ss.str("");
+  }
+
+  if (m_packageGroupHasBeenSet) {
+    ss << m_packageGroup;
+    uri.AddQueryStringParameter("package-group", ss.str());
+    ss.str("");
+  }
 }
-
-void DescribePackageGroupRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_domainHasBeenSet)
-    {
-      ss << m_domain;
-      uri.AddQueryStringParameter("domain", ss.str());
-      ss.str("");
-    }
-
-    if(m_domainOwnerHasBeenSet)
-    {
-      ss << m_domainOwner;
-      uri.AddQueryStringParameter("domain-owner", ss.str());
-      ss.str("");
-    }
-
-    if(m_packageGroupHasBeenSet)
-    {
-      ss << m_packageGroup;
-      uri.AddQueryStringParameter("package-group", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -3,48 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/LineageConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/LineageConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-LineageConfiguration::LineageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LineageConfiguration::LineageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LineageConfiguration& LineageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CrawlerLineageSettings"))
-  {
-    m_crawlerLineageSettings = CrawlerLineageSettingsMapper::GetCrawlerLineageSettingsForName(jsonValue.GetString("CrawlerLineageSettings"));
+LineageConfiguration& LineageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CrawlerLineageSettings")) {
+    m_crawlerLineageSettings =
+        CrawlerLineageSettingsMapper::GetCrawlerLineageSettingsForName(jsonValue.GetString("CrawlerLineageSettings"));
     m_crawlerLineageSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LineageConfiguration::Jsonize() const
-{
+JsonValue LineageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_crawlerLineageSettingsHasBeenSet)
-  {
-   payload.WithString("CrawlerLineageSettings", CrawlerLineageSettingsMapper::GetNameForCrawlerLineageSettings(m_crawlerLineageSettings));
+  if (m_crawlerLineageSettingsHasBeenSet) {
+    payload.WithString("CrawlerLineageSettings", CrawlerLineageSettingsMapper::GetNameForCrawlerLineageSettings(m_crawlerLineageSettings));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

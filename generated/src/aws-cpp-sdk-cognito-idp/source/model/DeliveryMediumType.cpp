@@ -4,69 +4,55 @@
  */
 
 #include <aws/cognito-idp/model/DeliveryMediumType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+namespace DeliveryMediumTypeMapper {
 
-namespace Aws
-{
-  namespace CognitoIdentityProvider
-  {
-    namespace Model
-    {
-      namespace DeliveryMediumTypeMapper
-      {
+static const int SMS_HASH = HashingUtils::HashString("SMS");
+static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
 
-        static const int SMS_HASH = HashingUtils::HashString("SMS");
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+DeliveryMediumType GetDeliveryMediumTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SMS_HASH) {
+    return DeliveryMediumType::SMS;
+  } else if (hashCode == EMAIL_HASH) {
+    return DeliveryMediumType::EMAIL;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DeliveryMediumType>(hashCode);
+  }
 
+  return DeliveryMediumType::NOT_SET;
+}
 
-        DeliveryMediumType GetDeliveryMediumTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SMS_HASH)
-          {
-            return DeliveryMediumType::SMS;
-          }
-          else if (hashCode == EMAIL_HASH)
-          {
-            return DeliveryMediumType::EMAIL;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DeliveryMediumType>(hashCode);
-          }
+Aws::String GetNameForDeliveryMediumType(DeliveryMediumType enumValue) {
+  switch (enumValue) {
+    case DeliveryMediumType::NOT_SET:
+      return {};
+    case DeliveryMediumType::SMS:
+      return "SMS";
+    case DeliveryMediumType::EMAIL:
+      return "EMAIL";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return DeliveryMediumType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForDeliveryMediumType(DeliveryMediumType enumValue)
-        {
-          switch(enumValue)
-          {
-          case DeliveryMediumType::NOT_SET:
-            return {};
-          case DeliveryMediumType::SMS:
-            return "SMS";
-          case DeliveryMediumType::EMAIL:
-            return "EMAIL";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace DeliveryMediumTypeMapper
-    } // namespace Model
-  } // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace DeliveryMediumTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

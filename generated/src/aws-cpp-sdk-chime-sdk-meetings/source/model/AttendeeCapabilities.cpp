@@ -11,60 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-AttendeeCapabilities::AttendeeCapabilities(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttendeeCapabilities::AttendeeCapabilities(JsonView jsonValue) { *this = jsonValue; }
 
-AttendeeCapabilities& AttendeeCapabilities::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Audio"))
-  {
+AttendeeCapabilities& AttendeeCapabilities::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Audio")) {
     m_audio = MediaCapabilitiesMapper::GetMediaCapabilitiesForName(jsonValue.GetString("Audio"));
     m_audioHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Video"))
-  {
+  if (jsonValue.ValueExists("Video")) {
     m_video = MediaCapabilitiesMapper::GetMediaCapabilitiesForName(jsonValue.GetString("Video"));
     m_videoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = MediaCapabilitiesMapper::GetMediaCapabilitiesForName(jsonValue.GetString("Content"));
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttendeeCapabilities::Jsonize() const
-{
+JsonValue AttendeeCapabilities::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioHasBeenSet)
-  {
-   payload.WithString("Audio", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_audio));
+  if (m_audioHasBeenSet) {
+    payload.WithString("Audio", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_audio));
   }
 
-  if(m_videoHasBeenSet)
-  {
-   payload.WithString("Video", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_video));
+  if (m_videoHasBeenSet) {
+    payload.WithString("Video", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_video));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_content));
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", MediaCapabilitiesMapper::GetNameForMediaCapabilities(m_content));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

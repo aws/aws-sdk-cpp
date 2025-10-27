@@ -3,72 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivschat/model/RoomSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivschat/model/RoomSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ivschat
-{
-namespace Model
-{
+namespace Aws {
+namespace ivschat {
+namespace Model {
 
-RoomSummary::RoomSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoomSummary::RoomSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RoomSummary& RoomSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+RoomSummary& RoomSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageReviewHandler"))
-  {
+  if (jsonValue.ValueExists("messageReviewHandler")) {
     m_messageReviewHandler = jsonValue.GetObject("messageReviewHandler");
     m_messageReviewHandlerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetString("updateTime");
     m_updateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
-  {
+  if (jsonValue.ValueExists("loggingConfigurationIdentifiers")) {
     Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
-    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-    {
+    for (unsigned loggingConfigurationIdentifiersIndex = 0;
+         loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength();
+         ++loggingConfigurationIdentifiersIndex) {
       m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
     }
     m_loggingConfigurationIdentifiersHasBeenSet = true;
@@ -76,69 +61,55 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RoomSummary::Jsonize() const
-{
+JsonValue RoomSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_messageReviewHandlerHasBeenSet)
-  {
-   payload.WithObject("messageReviewHandler", m_messageReviewHandler.Jsonize());
-
+  if (m_messageReviewHandlerHasBeenSet) {
+    payload.WithObject("messageReviewHandler", m_messageReviewHandler.Jsonize());
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createTimeHasBeenSet) {
+    payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updateTimeHasBeenSet) {
+    payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_loggingConfigurationIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
-   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-   {
-     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
-   }
-   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
-
+  if (m_loggingConfigurationIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
+    for (unsigned loggingConfigurationIdentifiersIndex = 0;
+         loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength();
+         ++loggingConfigurationIdentifiersIndex) {
+      loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(
+          m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
+    }
+    payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ivschat
-} // namespace Aws
+}  // namespace Model
+}  // namespace ivschat
+}  // namespace Aws

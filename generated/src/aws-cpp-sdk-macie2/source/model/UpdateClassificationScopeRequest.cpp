@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/UpdateClassificationScopeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/UpdateClassificationScopeRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateClassificationScopeRequest::SerializePayload() const
-{
+Aws::String UpdateClassificationScopeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("s3", m_s3.Jsonize());
-
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

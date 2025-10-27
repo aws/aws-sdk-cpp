@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/SetAlarmStateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/SetAlarmStateRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String SetAlarmStateRequest::SerializePayload() const
-{
+Aws::String SetAlarmStateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetAlarmState&";
-  if(m_alarmNameHasBeenSet)
-  {
+  if (m_alarmNameHasBeenSet) {
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
 
-  if(m_stateValueHasBeenSet)
-  {
+  if (m_stateValueHasBeenSet) {
     ss << "StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
-  if(m_stateReasonHasBeenSet)
-  {
+  if (m_stateReasonHasBeenSet) {
     ss << "StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
 
-  if(m_stateReasonDataHasBeenSet)
-  {
+  if (m_stateReasonDataHasBeenSet) {
     ss << "StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String SetAlarmStateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetAlarmStateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetAlarmStateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

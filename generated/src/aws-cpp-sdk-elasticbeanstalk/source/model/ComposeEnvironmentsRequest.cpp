@@ -3,40 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String ComposeEnvironmentsRequest::SerializePayload() const
-{
+Aws::String ComposeEnvironmentsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ComposeEnvironments&";
-  if(m_applicationNameHasBeenSet)
-  {
+  if (m_applicationNameHasBeenSet) {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
 
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_versionLabelsHasBeenSet)
-  {
-    if (m_versionLabels.empty())
-    {
+  if (m_versionLabelsHasBeenSet) {
+    if (m_versionLabels.empty()) {
       ss << "VersionLabels=&";
-    }
-    else
-    {
+    } else {
       unsigned versionLabelsCount = 1;
-      for(auto& item : m_versionLabels)
-      {
-        ss << "VersionLabels.member." << versionLabelsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_versionLabels) {
+        ss << "VersionLabels.member." << versionLabelsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         versionLabelsCount++;
       }
     }
@@ -46,8 +37,4 @@ Aws::String ComposeEnvironmentsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ComposeEnvironmentsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ComposeEnvironmentsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhuborchestrator/model/UpdateWorkflowStepRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhuborchestrator/model/UpdateWorkflowStepRequest.h>
 
 #include <utility>
 
@@ -12,97 +12,68 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWorkflowStepRequest::SerializePayload() const
-{
+Aws::String UpdateWorkflowStepRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stepGroupIdHasBeenSet)
-  {
-   payload.WithString("stepGroupId", m_stepGroupId);
-
+  if (m_stepGroupIdHasBeenSet) {
+    payload.WithString("stepGroupId", m_stepGroupId);
   }
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_stepActionTypeHasBeenSet)
-  {
-   payload.WithString("stepActionType", StepActionTypeMapper::GetNameForStepActionType(m_stepActionType));
+  if (m_stepActionTypeHasBeenSet) {
+    payload.WithString("stepActionType", StepActionTypeMapper::GetNameForStepActionType(m_stepActionType));
   }
 
-  if(m_workflowStepAutomationConfigurationHasBeenSet)
-  {
-   payload.WithObject("workflowStepAutomationConfiguration", m_workflowStepAutomationConfiguration.Jsonize());
-
+  if (m_workflowStepAutomationConfigurationHasBeenSet) {
+    payload.WithObject("workflowStepAutomationConfiguration", m_workflowStepAutomationConfiguration.Jsonize());
   }
 
-  if(m_stepTargetHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stepTargetJsonList(m_stepTarget.size());
-   for(unsigned stepTargetIndex = 0; stepTargetIndex < stepTargetJsonList.GetLength(); ++stepTargetIndex)
-   {
-     stepTargetJsonList[stepTargetIndex].AsString(m_stepTarget[stepTargetIndex]);
-   }
-   payload.WithArray("stepTarget", std::move(stepTargetJsonList));
-
+  if (m_stepTargetHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepTargetJsonList(m_stepTarget.size());
+    for (unsigned stepTargetIndex = 0; stepTargetIndex < stepTargetJsonList.GetLength(); ++stepTargetIndex) {
+      stepTargetJsonList[stepTargetIndex].AsString(m_stepTarget[stepTargetIndex]);
+    }
+    payload.WithArray("stepTarget", std::move(stepTargetJsonList));
   }
 
-  if(m_outputsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
-   for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
-   {
-     outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
-   }
-   payload.WithArray("outputs", std::move(outputsJsonList));
-
+  if (m_outputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
+    for (unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex) {
+      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
+    }
+    payload.WithArray("outputs", std::move(outputsJsonList));
   }
 
-  if(m_previousHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> previousJsonList(m_previous.size());
-   for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
-   {
-     previousJsonList[previousIndex].AsString(m_previous[previousIndex]);
-   }
-   payload.WithArray("previous", std::move(previousJsonList));
-
+  if (m_previousHasBeenSet) {
+    Aws::Utils::Array<JsonValue> previousJsonList(m_previous.size());
+    for (unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex) {
+      previousJsonList[previousIndex].AsString(m_previous[previousIndex]);
+    }
+    payload.WithArray("previous", std::move(previousJsonList));
   }
 
-  if(m_nextHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nextJsonList(m_next.size());
-   for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
-   {
-     nextJsonList[nextIndex].AsString(m_next[nextIndex]);
-   }
-   payload.WithArray("next", std::move(nextJsonList));
-
+  if (m_nextHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nextJsonList(m_next.size());
+    for (unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex) {
+      nextJsonList[nextIndex].AsString(m_next[nextIndex]);
+    }
+    payload.WithArray("next", std::move(nextJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StepStatusMapper::GetNameForStepStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StepStatusMapper::GetNameForStepStatus(m_status));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

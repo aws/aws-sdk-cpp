@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-ResourceConfig::ResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceConfig::ResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
-{
+ResourceConfig& ResourceConfig::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue ResourceConfig::Jsonize() const
-{
+JsonValue ResourceConfig::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

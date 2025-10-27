@@ -4,8 +4,8 @@
  */
 
 #include <aws/bedrock-agent-runtime/model/DeleteAgentMemoryRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,29 +15,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteAgentMemoryRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteAgentMemoryRequest::SerializePayload() const { return {}; }
+
+void DeleteAgentMemoryRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_memoryIdHasBeenSet) {
+    ss << m_memoryId;
+    uri.AddQueryStringParameter("memoryId", ss.str());
+    ss.str("");
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    ss << m_sessionId;
+    uri.AddQueryStringParameter("sessionId", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteAgentMemoryRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_memoryIdHasBeenSet)
-    {
-      ss << m_memoryId;
-      uri.AddQueryStringParameter("memoryId", ss.str());
-      ss.str("");
-    }
-
-    if(m_sessionIdHasBeenSet)
-    {
-      ss << m_sessionId;
-      uri.AddQueryStringParameter("sessionId", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

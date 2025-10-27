@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class UpgradeStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    SUCCEEDED,
-    SUCCEEDED_WITH_ISSUES,
-    FAILED
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class UpgradeStatus { NOT_SET, IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED };
 
-namespace UpgradeStatusMapper
-{
+namespace UpgradeStatusMapper {
 AWS_OPENSEARCHSERVICE_API UpgradeStatus GetUpgradeStatusForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForUpgradeStatus(UpgradeStatus value);
-} // namespace UpgradeStatusMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace UpgradeStatusMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

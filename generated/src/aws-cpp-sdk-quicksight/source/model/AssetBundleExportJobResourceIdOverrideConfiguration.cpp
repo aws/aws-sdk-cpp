@@ -3,49 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AssetBundleExportJobResourceIdOverrideConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AssetBundleExportJobResourceIdOverrideConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AssetBundleExportJobResourceIdOverrideConfiguration::AssetBundleExportJobResourceIdOverrideConfiguration(JsonView jsonValue)
-{
+AssetBundleExportJobResourceIdOverrideConfiguration::AssetBundleExportJobResourceIdOverrideConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AssetBundleExportJobResourceIdOverrideConfiguration& AssetBundleExportJobResourceIdOverrideConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PrefixForAllResources"))
-  {
+AssetBundleExportJobResourceIdOverrideConfiguration& AssetBundleExportJobResourceIdOverrideConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PrefixForAllResources")) {
     m_prefixForAllResources = jsonValue.GetBool("PrefixForAllResources");
     m_prefixForAllResourcesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetBundleExportJobResourceIdOverrideConfiguration::Jsonize() const
-{
+JsonValue AssetBundleExportJobResourceIdOverrideConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_prefixForAllResourcesHasBeenSet)
-  {
-   payload.WithBool("PrefixForAllResources", m_prefixForAllResources);
-
+  if (m_prefixForAllResourcesHasBeenSet) {
+    payload.WithBool("PrefixForAllResources", m_prefixForAllResources);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

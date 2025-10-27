@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class AWSServiceName
-  {
-    NOT_SET,
-    AWS,
-    EC2,
-    ELASTICACHE,
-    ELB,
-    RDS,
-    ROUTE53
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class AWSServiceName { NOT_SET, AWS, EC2, ELASTICACHE, ELB, RDS, ROUTE53 };
 
-namespace AWSServiceNameMapper
-{
+namespace AWSServiceNameMapper {
 AWS_OUTPOSTS_API AWSServiceName GetAWSServiceNameForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForAWSServiceName(AWSServiceName value);
-} // namespace AWSServiceNameMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace AWSServiceNameMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

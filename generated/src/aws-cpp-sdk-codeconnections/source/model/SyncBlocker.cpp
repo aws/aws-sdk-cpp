@@ -11,123 +11,93 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeConnections
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeConnections {
+namespace Model {
 
-SyncBlocker::SyncBlocker(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SyncBlocker::SyncBlocker(JsonView jsonValue) { *this = jsonValue; }
 
-SyncBlocker& SyncBlocker::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+SyncBlocker& SyncBlocker::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = BlockerTypeMapper::GetBlockerTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = BlockerStatusMapper::GetBlockerStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedReason"))
-  {
+  if (jsonValue.ValueExists("CreatedReason")) {
     m_createdReason = jsonValue.GetString("CreatedReason");
     m_createdReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Contexts"))
-  {
+  if (jsonValue.ValueExists("Contexts")) {
     Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
-    for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
-    {
+    for (unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex) {
       m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());
     }
     m_contextsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResolvedReason"))
-  {
+  if (jsonValue.ValueExists("ResolvedReason")) {
     m_resolvedReason = jsonValue.GetString("ResolvedReason");
     m_resolvedReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResolvedAt"))
-  {
+  if (jsonValue.ValueExists("ResolvedAt")) {
     m_resolvedAt = jsonValue.GetDouble("ResolvedAt");
     m_resolvedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SyncBlocker::Jsonize() const
-{
+JsonValue SyncBlocker::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", BlockerTypeMapper::GetNameForBlockerType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", BlockerTypeMapper::GetNameForBlockerType(m_type));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", BlockerStatusMapper::GetNameForBlockerStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", BlockerStatusMapper::GetNameForBlockerStatus(m_status));
   }
 
-  if(m_createdReasonHasBeenSet)
-  {
-   payload.WithString("CreatedReason", m_createdReason);
-
+  if (m_createdReasonHasBeenSet) {
+    payload.WithString("CreatedReason", m_createdReason);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_contextsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contextsJsonList(m_contexts.size());
-   for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
-   {
-     contextsJsonList[contextsIndex].AsObject(m_contexts[contextsIndex].Jsonize());
-   }
-   payload.WithArray("Contexts", std::move(contextsJsonList));
-
+  if (m_contextsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contextsJsonList(m_contexts.size());
+    for (unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex) {
+      contextsJsonList[contextsIndex].AsObject(m_contexts[contextsIndex].Jsonize());
+    }
+    payload.WithArray("Contexts", std::move(contextsJsonList));
   }
 
-  if(m_resolvedReasonHasBeenSet)
-  {
-   payload.WithString("ResolvedReason", m_resolvedReason);
-
+  if (m_resolvedReasonHasBeenSet) {
+    payload.WithString("ResolvedReason", m_resolvedReason);
   }
 
-  if(m_resolvedAtHasBeenSet)
-  {
-   payload.WithDouble("ResolvedAt", m_resolvedAt.SecondsWithMSPrecision());
+  if (m_resolvedAtHasBeenSet) {
+    payload.WithDouble("ResolvedAt", m_resolvedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeConnections
+}  // namespace Aws

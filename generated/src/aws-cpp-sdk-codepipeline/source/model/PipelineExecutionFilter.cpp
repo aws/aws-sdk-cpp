@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-PipelineExecutionFilter::PipelineExecutionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PipelineExecutionFilter::PipelineExecutionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-PipelineExecutionFilter& PipelineExecutionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("succeededInStage"))
-  {
+PipelineExecutionFilter& PipelineExecutionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("succeededInStage")) {
     m_succeededInStage = jsonValue.GetObject("succeededInStage");
     m_succeededInStageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PipelineExecutionFilter::Jsonize() const
-{
+JsonValue PipelineExecutionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_succeededInStageHasBeenSet)
-  {
-   payload.WithObject("succeededInStage", m_succeededInStage.Jsonize());
-
+  if (m_succeededInStageHasBeenSet) {
+    payload.WithObject("succeededInStage", m_succeededInStage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

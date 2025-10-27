@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/EndPoint.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-EndPoint::EndPoint(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+EndPoint::EndPoint(const XmlNode& xmlNode) { *this = xmlNode; }
 
-EndPoint& EndPoint::operator =(const XmlNode& xmlNode)
-{
+EndPoint& EndPoint::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode streamTypeNode = resultNode.FirstChild("StreamType");
-    if(!streamTypeNode.IsNull())
-    {
+    if (!streamTypeNode.IsNull()) {
       m_streamType = Aws::Utils::Xml::DecodeEscapedXmlText(streamTypeNode.GetText());
       m_streamTypeHasBeenSet = true;
     }
     XmlNode kinesisStreamConfigNode = resultNode.FirstChild("KinesisStreamConfig");
-    if(!kinesisStreamConfigNode.IsNull())
-    {
+    if (!kinesisStreamConfigNode.IsNull()) {
       m_kinesisStreamConfig = kinesisStreamConfigNode;
       m_kinesisStreamConfigHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ EndPoint& EndPoint::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void EndPoint::AddToNode(XmlNode& parentNode) const
-{
+void EndPoint::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_streamTypeHasBeenSet)
-  {
-   XmlNode streamTypeNode = parentNode.CreateChildElement("StreamType");
-   streamTypeNode.SetText(m_streamType);
+  if (m_streamTypeHasBeenSet) {
+    XmlNode streamTypeNode = parentNode.CreateChildElement("StreamType");
+    streamTypeNode.SetText(m_streamType);
   }
 
-  if(m_kinesisStreamConfigHasBeenSet)
-  {
-   XmlNode kinesisStreamConfigNode = parentNode.CreateChildElement("KinesisStreamConfig");
-   m_kinesisStreamConfig.AddToNode(kinesisStreamConfigNode);
+  if (m_kinesisStreamConfigHasBeenSet) {
+    XmlNode kinesisStreamConfigNode = parentNode.CreateChildElement("KinesisStreamConfig");
+    m_kinesisStreamConfig.AddToNode(kinesisStreamConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-HierarchicalChunkingLevelConfiguration::HierarchicalChunkingLevelConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HierarchicalChunkingLevelConfiguration::HierarchicalChunkingLevelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HierarchicalChunkingLevelConfiguration& HierarchicalChunkingLevelConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxTokens"))
-  {
+HierarchicalChunkingLevelConfiguration& HierarchicalChunkingLevelConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxTokens")) {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
     m_maxTokensHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HierarchicalChunkingLevelConfiguration::Jsonize() const
-{
+JsonValue HierarchicalChunkingLevelConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxTokensHasBeenSet)
-  {
-   payload.WithInteger("maxTokens", m_maxTokens);
-
+  if (m_maxTokensHasBeenSet) {
+    payload.WithInteger("maxTokens", m_maxTokens);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

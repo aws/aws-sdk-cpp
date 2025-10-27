@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class HyperParameterTuningJobWarmStartType
-  {
-    NOT_SET,
-    IdenticalDataAndAlgorithm,
-    TransferLearning
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class HyperParameterTuningJobWarmStartType { NOT_SET, IdenticalDataAndAlgorithm, TransferLearning };
 
-namespace HyperParameterTuningJobWarmStartTypeMapper
-{
+namespace HyperParameterTuningJobWarmStartTypeMapper {
 AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartType GetHyperParameterTuningJobWarmStartTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForHyperParameterTuningJobWarmStartType(HyperParameterTuningJobWarmStartType value);
-} // namespace HyperParameterTuningJobWarmStartTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace HyperParameterTuningJobWarmStartTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

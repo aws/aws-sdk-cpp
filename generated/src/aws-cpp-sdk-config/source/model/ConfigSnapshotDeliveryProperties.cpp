@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(JsonView jsonValue) { *this = jsonValue; }
 
-ConfigSnapshotDeliveryProperties& ConfigSnapshotDeliveryProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deliveryFrequency"))
-  {
+ConfigSnapshotDeliveryProperties& ConfigSnapshotDeliveryProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deliveryFrequency")) {
     m_deliveryFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("deliveryFrequency"));
     m_deliveryFrequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfigSnapshotDeliveryProperties::Jsonize() const
-{
+JsonValue ConfigSnapshotDeliveryProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_deliveryFrequencyHasBeenSet)
-  {
-   payload.WithString("deliveryFrequency", MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_deliveryFrequency));
+  if (m_deliveryFrequencyHasBeenSet) {
+    payload.WithString("deliveryFrequency", MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_deliveryFrequency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

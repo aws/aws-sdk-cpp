@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-class ARCRegionswitchEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ARCRegionswitch {
+class ARCRegionswitchEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace ARCRegionswitch
+}  // namespace Aws

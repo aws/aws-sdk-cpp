@@ -12,11 +12,4 @@ using namespace Aws::AIOps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetInvestigationGroupRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetInvestigationGroupRequest::SerializePayload() const { return {}; }

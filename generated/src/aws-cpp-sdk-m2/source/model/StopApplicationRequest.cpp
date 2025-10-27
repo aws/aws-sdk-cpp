@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/StopApplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/StopApplicationRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopApplicationRequest::SerializePayload() const
-{
+Aws::String StopApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_forceStopHasBeenSet)
-  {
-   payload.WithBool("forceStop", m_forceStop);
-
+  if (m_forceStopHasBeenSet) {
+    payload.WithBool("forceStop", m_forceStop);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

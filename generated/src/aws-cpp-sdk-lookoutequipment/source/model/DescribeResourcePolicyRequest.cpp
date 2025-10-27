@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/DescribeResourcePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/DescribeResourcePolicyRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeResourcePolicyRequest::SerializePayload() const
-{
+Aws::String DescribeResourcePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeResourcePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeResourcePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLookoutEquipmentFrontendService.DescribeResourcePolicy"));
   return headers;
-
 }
-
-
-
-

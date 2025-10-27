@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class MessageType
-  {
-    NOT_SET,
-    TEXT
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class MessageType { NOT_SET, TEXT };
 
-namespace MessageTypeMapper
-{
+namespace MessageTypeMapper {
 AWS_QCONNECT_API MessageType GetMessageTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForMessageType(MessageType value);
-} // namespace MessageTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace MessageTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

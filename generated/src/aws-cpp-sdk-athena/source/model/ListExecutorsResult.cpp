@@ -4,10 +4,10 @@
  */
 
 #include <aws/athena/model/ListExecutorsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListExecutorsResult::ListExecutorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListExecutorsResult::ListExecutorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListExecutorsResult& ListExecutorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListExecutorsResult& ListExecutorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SessionId"))
-  {
+  if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutorsSummary"))
-  {
+  if (jsonValue.ValueExists("ExecutorsSummary")) {
     Aws::Utils::Array<JsonView> executorsSummaryJsonList = jsonValue.GetArray("ExecutorsSummary");
-    for(unsigned executorsSummaryIndex = 0; executorsSummaryIndex < executorsSummaryJsonList.GetLength(); ++executorsSummaryIndex)
-    {
+    for (unsigned executorsSummaryIndex = 0; executorsSummaryIndex < executorsSummaryJsonList.GetLength(); ++executorsSummaryIndex) {
       m_executorsSummary.push_back(executorsSummaryJsonList[executorsSummaryIndex].AsObject());
     }
     m_executorsSummaryHasBeenSet = true;
@@ -47,12 +39,10 @@ ListExecutorsResult& ListExecutorsResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

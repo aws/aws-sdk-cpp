@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
-  enum class DASHPlaybackMode
-  {
-    NOT_SET,
-    LIVE,
-    LIVE_REPLAY,
-    ON_DEMAND
-  };
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
+enum class DASHPlaybackMode { NOT_SET, LIVE, LIVE_REPLAY, ON_DEMAND };
 
-namespace DASHPlaybackModeMapper
-{
+namespace DASHPlaybackModeMapper {
 AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHPlaybackMode GetDASHPlaybackModeForName(const Aws::String& name);
 
 AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForDASHPlaybackMode(DASHPlaybackMode value);
-} // namespace DASHPlaybackModeMapper
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace DASHPlaybackModeMapper
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

@@ -10,16 +10,11 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeMetricCollectionTypesRequest::SerializePayload() const
-{
+Aws::String DescribeMetricCollectionTypesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeMetricCollectionTypes&";
   ss << "Version=2011-01-01";
   return ss.str();
 }
 
-
-void  DescribeMetricCollectionTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeMetricCollectionTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

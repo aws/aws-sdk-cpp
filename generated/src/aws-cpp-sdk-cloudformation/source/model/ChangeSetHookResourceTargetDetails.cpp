@@ -4,49 +4,39 @@
  */
 
 #include <aws/cloudformation/model/ChangeSetHookResourceTargetDetails.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ChangeSetHookResourceTargetDetails& ChangeSetHookResourceTargetDetails::operator =(const XmlNode& xmlNode)
-{
+ChangeSetHookResourceTargetDetails& ChangeSetHookResourceTargetDetails::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
-    if(!logicalResourceIdNode.IsNull())
-    {
+    if (!logicalResourceIdNode.IsNull()) {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
-    if(!resourceTypeNode.IsNull())
-    {
+    if (!resourceTypeNode.IsNull()) {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceActionNode = resultNode.FirstChild("ResourceAction");
-    if(!resourceActionNode.IsNull())
-    {
-      m_resourceAction = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()));
+    if (!resourceActionNode.IsNull()) {
+      m_resourceAction = ChangeActionMapper::GetChangeActionForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()));
       m_resourceActionHasBeenSet = true;
     }
   }
@@ -54,41 +44,35 @@ ChangeSetHookResourceTargetDetails& ChangeSetHookResourceTargetDetails::operator
   return *this;
 }
 
-void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_logicalResourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                        const char* locationValue) const {
+  if (m_logicalResourceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
 
-  if(m_resourceActionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction)) << "&";
-  }
-
-}
-
-void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_logicalResourceIdHasBeenSet)
-  {
-      oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
-  }
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
-  }
-  if(m_resourceActionHasBeenSet)
-  {
-      oStream << location << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction)) << "&";
+  if (m_resourceActionHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_logicalResourceIdHasBeenSet) {
+    oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+  }
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  }
+  if (m_resourceActionHasBeenSet) {
+    oStream << location << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

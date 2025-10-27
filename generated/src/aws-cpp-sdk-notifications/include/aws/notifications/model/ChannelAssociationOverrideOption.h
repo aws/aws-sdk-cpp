@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class ChannelAssociationOverrideOption
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class ChannelAssociationOverrideOption { NOT_SET, ENABLED, DISABLED };
 
-namespace ChannelAssociationOverrideOptionMapper
-{
+namespace ChannelAssociationOverrideOptionMapper {
 AWS_NOTIFICATIONS_API ChannelAssociationOverrideOption GetChannelAssociationOverrideOptionForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForChannelAssociationOverrideOption(ChannelAssociationOverrideOption value);
-} // namespace ChannelAssociationOverrideOptionMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace ChannelAssociationOverrideOptionMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

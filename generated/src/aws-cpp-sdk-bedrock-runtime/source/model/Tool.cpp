@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-Tool::Tool(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Tool::Tool(JsonView jsonValue) { *this = jsonValue; }
 
-Tool& Tool::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("toolSpec"))
-  {
+Tool& Tool::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("toolSpec")) {
     m_toolSpec = jsonValue.GetObject("toolSpec");
     m_toolSpecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cachePoint"))
-  {
+  if (jsonValue.ValueExists("cachePoint")) {
     m_cachePoint = jsonValue.GetObject("cachePoint");
     m_cachePointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Tool::Jsonize() const
-{
+JsonValue Tool::Jsonize() const {
   JsonValue payload;
 
-  if(m_toolSpecHasBeenSet)
-  {
-   payload.WithObject("toolSpec", m_toolSpec.Jsonize());
-
+  if (m_toolSpecHasBeenSet) {
+    payload.WithObject("toolSpec", m_toolSpec.Jsonize());
   }
 
-  if(m_cachePointHasBeenSet)
-  {
-   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
-
+  if (m_cachePointHasBeenSet) {
+    payload.WithObject("cachePoint", m_cachePoint.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

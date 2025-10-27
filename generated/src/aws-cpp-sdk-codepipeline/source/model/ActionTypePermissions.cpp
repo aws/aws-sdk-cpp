@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ActionTypePermissions::ActionTypePermissions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionTypePermissions::ActionTypePermissions(JsonView jsonValue) { *this = jsonValue; }
 
-ActionTypePermissions& ActionTypePermissions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowedAccounts"))
-  {
+ActionTypePermissions& ActionTypePermissions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowedAccounts")) {
     Aws::Utils::Array<JsonView> allowedAccountsJsonList = jsonValue.GetArray("allowedAccounts");
-    for(unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex)
-    {
+    for (unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex) {
       m_allowedAccounts.push_back(allowedAccountsJsonList[allowedAccountsIndex].AsString());
     }
     m_allowedAccountsHasBeenSet = true;
@@ -37,24 +28,20 @@ ActionTypePermissions& ActionTypePermissions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ActionTypePermissions::Jsonize() const
-{
+JsonValue ActionTypePermissions::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedAccountsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedAccountsJsonList(m_allowedAccounts.size());
-   for(unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex)
-   {
-     allowedAccountsJsonList[allowedAccountsIndex].AsString(m_allowedAccounts[allowedAccountsIndex]);
-   }
-   payload.WithArray("allowedAccounts", std::move(allowedAccountsJsonList));
-
+  if (m_allowedAccountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedAccountsJsonList(m_allowedAccounts.size());
+    for (unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex) {
+      allowedAccountsJsonList[allowedAccountsIndex].AsString(m_allowedAccounts[allowedAccountsIndex]);
+    }
+    payload.WithArray("allowedAccounts", std::move(allowedAccountsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

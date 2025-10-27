@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/ssm-contacts/SSMContactsEndpointRules.h>
+#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SSMContacts {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SSMContactsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SSMContactsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SSMCONTACTS_API SSMContactsEndpointProvider : public SSMContactsDefaultEpProviderBase
-{
-public:
-    using SSMContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SSMCONTACTS_API SSMContactsEndpointProvider : public SSMContactsDefaultEpProviderBase {
+ public:
+  using SSMContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SSMContactsEndpointProvider()
-      : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::GetRulesBlob(), Aws::SSMContacts::SSMContactsEndpointRules::RulesBlobSize)
-    {}
+  SSMContactsEndpointProvider()
+      : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::GetRulesBlob(),
+                                         Aws::SSMContacts::SSMContactsEndpointRules::RulesBlobSize) {}
 
-    ~SSMContactsEndpointProvider()
-    {
-    }
+  ~SSMContactsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SSMContacts
+}  // namespace Aws

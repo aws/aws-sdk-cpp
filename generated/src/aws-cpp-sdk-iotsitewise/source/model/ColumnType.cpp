@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/ColumnType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/ColumnType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-ColumnType::ColumnType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnType::ColumnType(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnType& ColumnType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scalarType"))
-  {
+ColumnType& ColumnType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scalarType")) {
     m_scalarType = ScalarTypeMapper::GetScalarTypeForName(jsonValue.GetString("scalarType"));
     m_scalarTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnType::Jsonize() const
-{
+JsonValue ColumnType::Jsonize() const {
   JsonValue payload;
 
-  if(m_scalarTypeHasBeenSet)
-  {
-   payload.WithString("scalarType", ScalarTypeMapper::GetNameForScalarType(m_scalarType));
+  if (m_scalarTypeHasBeenSet) {
+    payload.WithString("scalarType", ScalarTypeMapper::GetNameForScalarType(m_scalarType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

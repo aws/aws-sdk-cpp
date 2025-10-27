@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class ListUpdateMode
-  {
-    NOT_SET,
-    REPLACE,
-    APPEND,
-    REMOVE
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class ListUpdateMode { NOT_SET, REPLACE, APPEND, REMOVE };
 
-namespace ListUpdateModeMapper
-{
+namespace ListUpdateModeMapper {
 AWS_FRAUDDETECTOR_API ListUpdateMode GetListUpdateModeForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForListUpdateMode(ListUpdateMode value);
-} // namespace ListUpdateModeMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace ListUpdateModeMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

@@ -7,67 +7,71 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace AutoScaling {
+namespace Model {
 
+/**
+ * <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code>
+ * object when you specify <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+ * for an Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AcceleratorCountRequest">AWS
+ * API Reference</a></p>
+ */
+class AcceleratorCountRequest {
+ public:
+  AWS_AUTOSCALING_API AcceleratorCountRequest() = default;
+  AWS_AUTOSCALING_API AcceleratorCountRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_AUTOSCALING_API AcceleratorCountRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code>
-   * object when you specify <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
-   * for an Auto Scaling group.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AcceleratorCountRequest">AWS
-   * API Reference</a></p>
+   * <p>The minimum value.</p>
    */
-  class AcceleratorCountRequest
-  {
-  public:
-    AWS_AUTOSCALING_API AcceleratorCountRequest() = default;
-    AWS_AUTOSCALING_API AcceleratorCountRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_AUTOSCALING_API AcceleratorCountRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline int GetMin() const { return m_min; }
+  inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+  inline void SetMin(int value) {
+    m_minHasBeenSet = true;
+    m_min = value;
+  }
+  inline AcceleratorCountRequest& WithMin(int value) {
+    SetMin(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The maximum value.</p>
+   */
+  inline int GetMax() const { return m_max; }
+  inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+  inline void SetMax(int value) {
+    m_maxHasBeenSet = true;
+    m_max = value;
+  }
+  inline AcceleratorCountRequest& WithMax(int value) {
+    SetMax(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_min{0};
+  bool m_minHasBeenSet = false;
 
+  int m_max{0};
+  bool m_maxHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The minimum value.</p>
-     */
-    inline int GetMin() const { return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-    inline AcceleratorCountRequest& WithMin(int value) { SetMin(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum value.</p>
-     */
-    inline int GetMax() const { return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-    inline AcceleratorCountRequest& WithMax(int value) { SetMax(value); return *this;}
-    ///@}
-  private:
-
-    int m_min{0};
-    bool m_minHasBeenSet = false;
-
-    int m_max{0};
-    bool m_maxHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class TrainingPlanSortBy
-  {
-    NOT_SET,
-    TrainingPlanName,
-    StartTime,
-    Status
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class TrainingPlanSortBy { NOT_SET, TrainingPlanName, StartTime, Status };
 
-namespace TrainingPlanSortByMapper
-{
+namespace TrainingPlanSortByMapper {
 AWS_SAGEMAKER_API TrainingPlanSortBy GetTrainingPlanSortByForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForTrainingPlanSortBy(TrainingPlanSortBy value);
-} // namespace TrainingPlanSortByMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace TrainingPlanSortByMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

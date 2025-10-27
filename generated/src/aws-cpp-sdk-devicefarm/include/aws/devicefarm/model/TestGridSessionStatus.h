@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
-  enum class TestGridSessionStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    CLOSED,
-    ERRORED
-  };
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+enum class TestGridSessionStatus { NOT_SET, ACTIVE, CLOSED, ERRORED };
 
-namespace TestGridSessionStatusMapper
-{
+namespace TestGridSessionStatusMapper {
 AWS_DEVICEFARM_API TestGridSessionStatus GetTestGridSessionStatusForName(const Aws::String& name);
 
 AWS_DEVICEFARM_API Aws::String GetNameForTestGridSessionStatus(TestGridSessionStatus value);
-} // namespace TestGridSessionStatusMapper
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace TestGridSessionStatusMapper
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

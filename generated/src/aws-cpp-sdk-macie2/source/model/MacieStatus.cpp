@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/MacieStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/macie2/model/MacieStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+namespace MacieStatusMapper {
 
-namespace Aws
-{
-  namespace Macie2
-  {
-    namespace Model
-    {
-      namespace MacieStatusMapper
-      {
+static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
-        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+MacieStatus GetMacieStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PAUSED_HASH) {
+    return MacieStatus::PAUSED;
+  } else if (hashCode == ENABLED_HASH) {
+    return MacieStatus::ENABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MacieStatus>(hashCode);
+  }
 
+  return MacieStatus::NOT_SET;
+}
 
-        MacieStatus GetMacieStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PAUSED_HASH)
-          {
-            return MacieStatus::PAUSED;
-          }
-          else if (hashCode == ENABLED_HASH)
-          {
-            return MacieStatus::ENABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MacieStatus>(hashCode);
-          }
+Aws::String GetNameForMacieStatus(MacieStatus enumValue) {
+  switch (enumValue) {
+    case MacieStatus::NOT_SET:
+      return {};
+    case MacieStatus::PAUSED:
+      return "PAUSED";
+    case MacieStatus::ENABLED:
+      return "ENABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MacieStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMacieStatus(MacieStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case MacieStatus::NOT_SET:
-            return {};
-          case MacieStatus::PAUSED:
-            return "PAUSED";
-          case MacieStatus::ENABLED:
-            return "ENABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MacieStatusMapper
-    } // namespace Model
-  } // namespace Macie2
-} // namespace Aws
+}  // namespace MacieStatusMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

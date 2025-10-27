@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/datapipeline/DataPipelineEndpointRules.h>
+#include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DataPipeline
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DataPipeline {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DataPipelineClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DataPipelineDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DATAPIPELINE_API DataPipelineEndpointProvider : public DataPipelineDefaultEpProviderBase
-{
-public:
-    using DataPipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DATAPIPELINE_API DataPipelineEndpointProvider : public DataPipelineDefaultEpProviderBase {
+ public:
+  using DataPipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DataPipelineEndpointProvider()
-      : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::GetRulesBlob(), Aws::DataPipeline::DataPipelineEndpointRules::RulesBlobSize)
-    {}
+  DataPipelineEndpointProvider()
+      : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::GetRulesBlob(),
+                                          Aws::DataPipeline::DataPipelineEndpointRules::RulesBlobSize) {}
 
-    ~DataPipelineEndpointProvider()
-    {
-    }
+  ~DataPipelineEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DataPipeline
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DataPipeline
+}  // namespace Aws

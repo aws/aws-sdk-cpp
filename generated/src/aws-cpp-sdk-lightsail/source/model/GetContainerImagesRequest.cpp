@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetContainerImagesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/GetContainerImagesRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetContainerImagesRequest::SerializePayload() const
-{
+Aws::String GetContainerImagesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetContainerImagesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetContainerImagesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.GetContainerImages"));
   return headers;
-
 }
-
-
-
-

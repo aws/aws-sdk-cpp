@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBlobRequest::SerializePayload() const
-{
+Aws::String GetBlobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_blobIdHasBeenSet)
-  {
-   payload.WithString("blobId", m_blobId);
-
+  if (m_blobIdHasBeenSet) {
+    payload.WithString("blobId", m_blobId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetBlobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetBlobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetBlob"));
   return headers;
-
 }
-
-
-
-

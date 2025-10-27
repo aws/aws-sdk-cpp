@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/ModelVersionEvaluation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/ModelVersionEvaluation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-ModelVersionEvaluation::ModelVersionEvaluation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelVersionEvaluation::ModelVersionEvaluation(JsonView jsonValue) { *this = jsonValue; }
 
-ModelVersionEvaluation& ModelVersionEvaluation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("outputVariableName"))
-  {
+ModelVersionEvaluation& ModelVersionEvaluation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("outputVariableName")) {
     m_outputVariableName = jsonValue.GetString("outputVariableName");
     m_outputVariableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("evaluationScore"))
-  {
+  if (jsonValue.ValueExists("evaluationScore")) {
     m_evaluationScore = jsonValue.GetString("evaluationScore");
     m_evaluationScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("predictionExplanations"))
-  {
+  if (jsonValue.ValueExists("predictionExplanations")) {
     m_predictionExplanations = jsonValue.GetObject("predictionExplanations");
     m_predictionExplanationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelVersionEvaluation::Jsonize() const
-{
+JsonValue ModelVersionEvaluation::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputVariableNameHasBeenSet)
-  {
-   payload.WithString("outputVariableName", m_outputVariableName);
-
+  if (m_outputVariableNameHasBeenSet) {
+    payload.WithString("outputVariableName", m_outputVariableName);
   }
 
-  if(m_evaluationScoreHasBeenSet)
-  {
-   payload.WithString("evaluationScore", m_evaluationScore);
-
+  if (m_evaluationScoreHasBeenSet) {
+    payload.WithString("evaluationScore", m_evaluationScore);
   }
 
-  if(m_predictionExplanationsHasBeenSet)
-  {
-   payload.WithObject("predictionExplanations", m_predictionExplanations.Jsonize());
-
+  if (m_predictionExplanationsHasBeenSet) {
+    payload.WithObject("predictionExplanations", m_predictionExplanations.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

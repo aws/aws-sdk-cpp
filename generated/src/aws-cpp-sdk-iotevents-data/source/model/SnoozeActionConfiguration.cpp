@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/SnoozeActionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/SnoozeActionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-SnoozeActionConfiguration::SnoozeActionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnoozeActionConfiguration::SnoozeActionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SnoozeActionConfiguration& SnoozeActionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("snoozeDuration"))
-  {
+SnoozeActionConfiguration& SnoozeActionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("snoozeDuration")) {
     m_snoozeDuration = jsonValue.GetInteger("snoozeDuration");
     m_snoozeDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("note"))
-  {
+  if (jsonValue.ValueExists("note")) {
     m_note = jsonValue.GetString("note");
     m_noteHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnoozeActionConfiguration::Jsonize() const
-{
+JsonValue SnoozeActionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_snoozeDurationHasBeenSet)
-  {
-   payload.WithInteger("snoozeDuration", m_snoozeDuration);
-
+  if (m_snoozeDurationHasBeenSet) {
+    payload.WithInteger("snoozeDuration", m_snoozeDuration);
   }
 
-  if(m_noteHasBeenSet)
-  {
-   payload.WithString("note", m_note);
-
+  if (m_noteHasBeenSet) {
+    payload.WithString("note", m_note);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

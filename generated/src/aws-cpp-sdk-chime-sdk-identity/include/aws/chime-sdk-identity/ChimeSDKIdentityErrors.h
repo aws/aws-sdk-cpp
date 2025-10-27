@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-enum class ChimeSDKIdentityErrors
-{
-  //From Core//
+namespace Aws {
+namespace ChimeSDKIdentity {
+enum class ChimeSDKIdentityErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ChimeSDKIdentityErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ChimeSDKIdentityErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   NOT_FOUND,
@@ -57,9 +54,8 @@ enum class ChimeSDKIdentityErrors
   UNAUTHORIZED_CLIENT
 };
 
-class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityError : public Aws::Client::AWSError<ChimeSDKIdentityErrors>
-{
-public:
+class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityError : public Aws::Client::AWSError<ChimeSDKIdentityErrors> {
+ public:
   ChimeSDKIdentityError() {}
   ChimeSDKIdentityError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ChimeSDKIdentityErrors>(rhs) {}
   ChimeSDKIdentityError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ChimeSDKIdentityErrors>(rhs) {}
@@ -70,10 +66,9 @@ public:
   T GetModeledError();
 };
 
-namespace ChimeSDKIdentityErrorMapper
-{
-  AWS_CHIMESDKIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ChimeSDKIdentityErrorMapper {
+AWS_CHIMESDKIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

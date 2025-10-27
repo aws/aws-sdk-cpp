@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-LoopControllerFlowNodeConfiguration::LoopControllerFlowNodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoopControllerFlowNodeConfiguration::LoopControllerFlowNodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LoopControllerFlowNodeConfiguration& LoopControllerFlowNodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("continueCondition"))
-  {
+LoopControllerFlowNodeConfiguration& LoopControllerFlowNodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("continueCondition")) {
     m_continueCondition = jsonValue.GetObject("continueCondition");
     m_continueConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxIterations"))
-  {
+  if (jsonValue.ValueExists("maxIterations")) {
     m_maxIterations = jsonValue.GetInteger("maxIterations");
     m_maxIterationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoopControllerFlowNodeConfiguration::Jsonize() const
-{
+JsonValue LoopControllerFlowNodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_continueConditionHasBeenSet)
-  {
-   payload.WithObject("continueCondition", m_continueCondition.Jsonize());
-
+  if (m_continueConditionHasBeenSet) {
+    payload.WithObject("continueCondition", m_continueCondition.Jsonize());
   }
 
-  if(m_maxIterationsHasBeenSet)
-  {
-   payload.WithInteger("maxIterations", m_maxIterations);
-
+  if (m_maxIterationsHasBeenSet) {
+    payload.WithInteger("maxIterations", m_maxIterations);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

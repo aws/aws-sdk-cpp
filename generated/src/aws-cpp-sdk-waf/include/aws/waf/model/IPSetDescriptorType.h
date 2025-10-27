@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
-  enum class IPSetDescriptorType
-  {
-    NOT_SET,
-    IPV4,
-    IPV6
-  };
+namespace Aws {
+namespace WAF {
+namespace Model {
+enum class IPSetDescriptorType { NOT_SET, IPV4, IPV6 };
 
-namespace IPSetDescriptorTypeMapper
-{
+namespace IPSetDescriptorTypeMapper {
 AWS_WAF_API IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name);
 
 AWS_WAF_API Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType value);
-} // namespace IPSetDescriptorTypeMapper
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace IPSetDescriptorTypeMapper
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace Model
-{
-  enum class DatasetKind
-  {
-    NOT_SET,
-    TABULAR,
-    NON_TABULAR
-  };
+namespace Aws {
+namespace FinSpaceData {
+namespace Model {
+enum class DatasetKind { NOT_SET, TABULAR, NON_TABULAR };
 
-namespace DatasetKindMapper
-{
+namespace DatasetKindMapper {
 AWS_FINSPACEDATA_API DatasetKind GetDatasetKindForName(const Aws::String& name);
 
 AWS_FINSPACEDATA_API Aws::String GetNameForDatasetKind(DatasetKind value);
-} // namespace DatasetKindMapper
-} // namespace Model
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace DatasetKindMapper
+}  // namespace Model
+}  // namespace FinSpaceData
+}  // namespace Aws

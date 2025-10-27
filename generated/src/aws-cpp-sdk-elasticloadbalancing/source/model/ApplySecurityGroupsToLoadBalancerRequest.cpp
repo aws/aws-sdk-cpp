@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/ApplySecurityGroupsToLoadBalancerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/ApplySecurityGroupsToLoadBalancerRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
-{
+Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ApplySecurityGroupsToLoadBalancer&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_securityGroupsHasBeenSet)
-  {
-    if (m_securityGroups.empty())
-    {
+  if (m_securityGroupsHasBeenSet) {
+    if (m_securityGroups.empty()) {
       ss << "SecurityGroups=&";
-    }
-    else
-    {
+    } else {
       unsigned securityGroupsCount = 1;
-      for(auto& item : m_securityGroups)
-      {
-        ss << "SecurityGroups.member." << securityGroupsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_securityGroups) {
+        ss << "SecurityGroups.member." << securityGroupsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ApplySecurityGroupsToLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ApplySecurityGroupsToLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

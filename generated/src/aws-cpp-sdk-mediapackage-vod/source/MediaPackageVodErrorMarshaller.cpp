@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MediaPackageVod;
 
-AWSError<CoreErrors> MediaPackageVodErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MediaPackageVodErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MediaPackageVodErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class MedicalScribeParticipantRole
-  {
-    NOT_SET,
-    PATIENT,
-    CLINICIAN
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class MedicalScribeParticipantRole { NOT_SET, PATIENT, CLINICIAN };
 
-namespace MedicalScribeParticipantRoleMapper
-{
+namespace MedicalScribeParticipantRoleMapper {
 AWS_TRANSCRIBESERVICE_API MedicalScribeParticipantRole GetMedicalScribeParticipantRoleForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForMedicalScribeParticipantRole(MedicalScribeParticipantRole value);
-} // namespace MedicalScribeParticipantRoleMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace MedicalScribeParticipantRoleMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

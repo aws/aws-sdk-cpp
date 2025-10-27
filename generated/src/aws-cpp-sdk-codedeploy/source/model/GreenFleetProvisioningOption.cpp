@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-GreenFleetProvisioningOption::GreenFleetProvisioningOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GreenFleetProvisioningOption::GreenFleetProvisioningOption(JsonView jsonValue) { *this = jsonValue; }
 
-GreenFleetProvisioningOption& GreenFleetProvisioningOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("action"))
-  {
+GreenFleetProvisioningOption& GreenFleetProvisioningOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
     m_action = GreenFleetProvisioningActionMapper::GetGreenFleetProvisioningActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GreenFleetProvisioningOption::Jsonize() const
-{
+JsonValue GreenFleetProvisioningOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GreenFleetProvisioningActionMapper::GetNameForGreenFleetProvisioningAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GreenFleetProvisioningActionMapper::GetNameForGreenFleetProvisioningAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-ScriptModeConfig::ScriptModeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScriptModeConfig::ScriptModeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ScriptModeConfig& ScriptModeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entryPoint"))
-  {
+ScriptModeConfig& ScriptModeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entryPoint")) {
     m_entryPoint = jsonValue.GetString("entryPoint");
     m_entryPointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Uri"))
-  {
+  if (jsonValue.ValueExists("s3Uri")) {
     m_s3Uri = jsonValue.GetString("s3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("compressionType"))
-  {
+  if (jsonValue.ValueExists("compressionType")) {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("compressionType"));
     m_compressionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScriptModeConfig::Jsonize() const
-{
+JsonValue ScriptModeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_entryPointHasBeenSet)
-  {
-   payload.WithString("entryPoint", m_entryPoint);
-
+  if (m_entryPointHasBeenSet) {
+    payload.WithString("entryPoint", m_entryPoint);
   }
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("s3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("s3Uri", m_s3Uri);
   }
 
-  if(m_compressionTypeHasBeenSet)
-  {
-   payload.WithString("compressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
+  if (m_compressionTypeHasBeenSet) {
+    payload.WithString("compressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

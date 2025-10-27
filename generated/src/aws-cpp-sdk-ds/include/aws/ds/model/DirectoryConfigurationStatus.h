@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class DirectoryConfigurationStatus
-  {
-    NOT_SET,
-    Requested,
-    Updating,
-    Updated,
-    Failed,
-    Default
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class DirectoryConfigurationStatus { NOT_SET, Requested, Updating, Updated, Failed, Default };
 
-namespace DirectoryConfigurationStatusMapper
-{
+namespace DirectoryConfigurationStatusMapper {
 AWS_DIRECTORYSERVICE_API DirectoryConfigurationStatus GetDirectoryConfigurationStatusForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForDirectoryConfigurationStatus(DirectoryConfigurationStatus value);
-} // namespace DirectoryConfigurationStatusMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace DirectoryConfigurationStatusMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

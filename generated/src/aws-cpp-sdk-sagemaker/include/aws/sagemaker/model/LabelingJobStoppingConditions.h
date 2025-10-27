@@ -6,66 +6,70 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>A set of conditions for stopping a labeling job. If any of the conditions are
+ * met, the job is automatically stopped. You can use these conditions to control
+ * the cost of data labeling.</p>  <p>Labeling jobs fail after 30 days with
+ * an appropriate client error message.</p> <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobStoppingConditions">AWS
+ * API Reference</a></p>
+ */
+class LabelingJobStoppingConditions {
+ public:
+  AWS_SAGEMAKER_API LabelingJobStoppingConditions() = default;
+  AWS_SAGEMAKER_API LabelingJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API LabelingJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A set of conditions for stopping a labeling job. If any of the conditions are
-   * met, the job is automatically stopped. You can use these conditions to control
-   * the cost of data labeling.</p>  <p>Labeling jobs fail after 30 days with
-   * an appropriate client error message.</p> <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobStoppingConditions">AWS
-   * API Reference</a></p>
+   * <p>The maximum number of objects that can be labeled by human workers.</p>
    */
-  class LabelingJobStoppingConditions
-  {
-  public:
-    AWS_SAGEMAKER_API LabelingJobStoppingConditions() = default;
-    AWS_SAGEMAKER_API LabelingJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API LabelingJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMaxHumanLabeledObjectCount() const { return m_maxHumanLabeledObjectCount; }
+  inline bool MaxHumanLabeledObjectCountHasBeenSet() const { return m_maxHumanLabeledObjectCountHasBeenSet; }
+  inline void SetMaxHumanLabeledObjectCount(int value) {
+    m_maxHumanLabeledObjectCountHasBeenSet = true;
+    m_maxHumanLabeledObjectCount = value;
+  }
+  inline LabelingJobStoppingConditions& WithMaxHumanLabeledObjectCount(int value) {
+    SetMaxHumanLabeledObjectCount(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum number of input data objects that should be labeled.</p>
+   */
+  inline int GetMaxPercentageOfInputDatasetLabeled() const { return m_maxPercentageOfInputDatasetLabeled; }
+  inline bool MaxPercentageOfInputDatasetLabeledHasBeenSet() const { return m_maxPercentageOfInputDatasetLabeledHasBeenSet; }
+  inline void SetMaxPercentageOfInputDatasetLabeled(int value) {
+    m_maxPercentageOfInputDatasetLabeledHasBeenSet = true;
+    m_maxPercentageOfInputDatasetLabeled = value;
+  }
+  inline LabelingJobStoppingConditions& WithMaxPercentageOfInputDatasetLabeled(int value) {
+    SetMaxPercentageOfInputDatasetLabeled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxHumanLabeledObjectCount{0};
+  bool m_maxHumanLabeledObjectCountHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of objects that can be labeled by human workers.</p>
-     */
-    inline int GetMaxHumanLabeledObjectCount() const { return m_maxHumanLabeledObjectCount; }
-    inline bool MaxHumanLabeledObjectCountHasBeenSet() const { return m_maxHumanLabeledObjectCountHasBeenSet; }
-    inline void SetMaxHumanLabeledObjectCount(int value) { m_maxHumanLabeledObjectCountHasBeenSet = true; m_maxHumanLabeledObjectCount = value; }
-    inline LabelingJobStoppingConditions& WithMaxHumanLabeledObjectCount(int value) { SetMaxHumanLabeledObjectCount(value); return *this;}
-    ///@}
+  int m_maxPercentageOfInputDatasetLabeled{0};
+  bool m_maxPercentageOfInputDatasetLabeledHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of input data objects that should be labeled.</p>
-     */
-    inline int GetMaxPercentageOfInputDatasetLabeled() const { return m_maxPercentageOfInputDatasetLabeled; }
-    inline bool MaxPercentageOfInputDatasetLabeledHasBeenSet() const { return m_maxPercentageOfInputDatasetLabeledHasBeenSet; }
-    inline void SetMaxPercentageOfInputDatasetLabeled(int value) { m_maxPercentageOfInputDatasetLabeledHasBeenSet = true; m_maxPercentageOfInputDatasetLabeled = value; }
-    inline LabelingJobStoppingConditions& WithMaxPercentageOfInputDatasetLabeled(int value) { SetMaxPercentageOfInputDatasetLabeled(value); return *this;}
-    ///@}
-  private:
-
-    int m_maxHumanLabeledObjectCount{0};
-    bool m_maxHumanLabeledObjectCountHasBeenSet = false;
-
-    int m_maxPercentageOfInputDatasetLabeled{0};
-    bool m_maxPercentageOfInputDatasetLabeledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

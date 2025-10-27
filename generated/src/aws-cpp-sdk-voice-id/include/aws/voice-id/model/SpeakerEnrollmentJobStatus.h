@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/voice-id/VoiceID_EXPORTS.h>
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
-  enum class SpeakerEnrollmentJobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    IN_PROGRESS,
-    COMPLETED,
-    COMPLETED_WITH_ERRORS,
-    FAILED
-  };
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+enum class SpeakerEnrollmentJobStatus { NOT_SET, SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, FAILED };
 
-namespace SpeakerEnrollmentJobStatusMapper
-{
+namespace SpeakerEnrollmentJobStatusMapper {
 AWS_VOICEID_API SpeakerEnrollmentJobStatus GetSpeakerEnrollmentJobStatusForName(const Aws::String& name);
 
 AWS_VOICEID_API Aws::String GetNameForSpeakerEnrollmentJobStatus(SpeakerEnrollmentJobStatus value);
-} // namespace SpeakerEnrollmentJobStatusMapper
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace SpeakerEnrollmentJobStatusMapper
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

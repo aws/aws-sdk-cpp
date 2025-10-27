@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-class FraudDetectorEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace FraudDetector {
+class FraudDetectorEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace FraudDetector
+}  // namespace Aws

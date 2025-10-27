@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class ReleaseStatusValues
-  {
-    NOT_SET,
-    beta,
-    prod
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class ReleaseStatusValues { NOT_SET, beta, prod };
 
-namespace ReleaseStatusValuesMapper
-{
+namespace ReleaseStatusValuesMapper {
 AWS_DATABASEMIGRATIONSERVICE_API ReleaseStatusValues GetReleaseStatusValuesForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForReleaseStatusValues(ReleaseStatusValues value);
-} // namespace ReleaseStatusValuesMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace ReleaseStatusValuesMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

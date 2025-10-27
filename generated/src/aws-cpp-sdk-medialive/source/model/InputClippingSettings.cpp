@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/InputClippingSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/InputClippingSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-InputClippingSettings::InputClippingSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputClippingSettings::InputClippingSettings(JsonView jsonValue) { *this = jsonValue; }
 
-InputClippingSettings& InputClippingSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inputTimecodeSource"))
-  {
+InputClippingSettings& InputClippingSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputTimecodeSource")) {
     m_inputTimecodeSource = InputTimecodeSourceMapper::GetInputTimecodeSourceForName(jsonValue.GetString("inputTimecodeSource"));
     m_inputTimecodeSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimecode"))
-  {
+  if (jsonValue.ValueExists("startTimecode")) {
     m_startTimecode = jsonValue.GetObject("startTimecode");
     m_startTimecodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stopTimecode"))
-  {
+  if (jsonValue.ValueExists("stopTimecode")) {
     m_stopTimecode = jsonValue.GetObject("stopTimecode");
     m_stopTimecodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputClippingSettings::Jsonize() const
-{
+JsonValue InputClippingSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputTimecodeSourceHasBeenSet)
-  {
-   payload.WithString("inputTimecodeSource", InputTimecodeSourceMapper::GetNameForInputTimecodeSource(m_inputTimecodeSource));
+  if (m_inputTimecodeSourceHasBeenSet) {
+    payload.WithString("inputTimecodeSource", InputTimecodeSourceMapper::GetNameForInputTimecodeSource(m_inputTimecodeSource));
   }
 
-  if(m_startTimecodeHasBeenSet)
-  {
-   payload.WithObject("startTimecode", m_startTimecode.Jsonize());
-
+  if (m_startTimecodeHasBeenSet) {
+    payload.WithObject("startTimecode", m_startTimecode.Jsonize());
   }
 
-  if(m_stopTimecodeHasBeenSet)
-  {
-   payload.WithObject("stopTimecode", m_stopTimecode.Jsonize());
-
+  if (m_stopTimecodeHasBeenSet) {
+    payload.WithObject("stopTimecode", m_stopTimecode.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

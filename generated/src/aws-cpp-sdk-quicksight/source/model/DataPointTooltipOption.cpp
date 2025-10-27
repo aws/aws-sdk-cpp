@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DataPointTooltipOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DataPointTooltipOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DataPointTooltipOption::DataPointTooltipOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataPointTooltipOption::DataPointTooltipOption(JsonView jsonValue) { *this = jsonValue; }
 
-DataPointTooltipOption& DataPointTooltipOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityStatus"))
-  {
+DataPointTooltipOption& DataPointTooltipOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityStatus")) {
     m_availabilityStatus = DashboardBehaviorMapper::GetDashboardBehaviorForName(jsonValue.GetString("AvailabilityStatus"));
     m_availabilityStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataPointTooltipOption::Jsonize() const
-{
+JsonValue DataPointTooltipOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityStatusHasBeenSet)
-  {
-   payload.WithString("AvailabilityStatus", DashboardBehaviorMapper::GetNameForDashboardBehavior(m_availabilityStatus));
+  if (m_availabilityStatusHasBeenSet) {
+    payload.WithString("AvailabilityStatus", DashboardBehaviorMapper::GetNameForDashboardBehavior(m_availabilityStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

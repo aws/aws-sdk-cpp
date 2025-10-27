@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 
-namespace Aws
-{
-namespace NotificationsContacts
-{
-class NotificationsContactsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace NotificationsContacts {
+class NotificationsContactsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace NotificationsContacts
-} // namespace Aws
+}  // namespace NotificationsContacts
+}  // namespace Aws

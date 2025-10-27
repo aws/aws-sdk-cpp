@@ -4,100 +4,123 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
-#include <aws/workspaces/WorkSpacesRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/WorkSpacesRequest.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
+/**
+ */
+class DescribeConnectionAliasesRequest : public WorkSpacesRequest {
+ public:
+  AWS_WORKSPACES_API DescribeConnectionAliasesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeConnectionAliases"; }
+
+  AWS_WORKSPACES_API Aws::String SerializePayload() const override;
+
+  AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The identifiers of the connection aliases to describe.</p>
    */
-  class DescribeConnectionAliasesRequest : public WorkSpacesRequest
-  {
-  public:
-    AWS_WORKSPACES_API DescribeConnectionAliasesRequest() = default;
+  inline const Aws::Vector<Aws::String>& GetAliasIds() const { return m_aliasIds; }
+  inline bool AliasIdsHasBeenSet() const { return m_aliasIdsHasBeenSet; }
+  template <typename AliasIdsT = Aws::Vector<Aws::String>>
+  void SetAliasIds(AliasIdsT&& value) {
+    m_aliasIdsHasBeenSet = true;
+    m_aliasIds = std::forward<AliasIdsT>(value);
+  }
+  template <typename AliasIdsT = Aws::Vector<Aws::String>>
+  DescribeConnectionAliasesRequest& WithAliasIds(AliasIdsT&& value) {
+    SetAliasIds(std::forward<AliasIdsT>(value));
+    return *this;
+  }
+  template <typename AliasIdsT = Aws::String>
+  DescribeConnectionAliasesRequest& AddAliasIds(AliasIdsT&& value) {
+    m_aliasIdsHasBeenSet = true;
+    m_aliasIds.emplace_back(std::forward<AliasIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeConnectionAliases"; }
+  ///@{
+  /**
+   * <p>The identifier of the directory associated with the connection alias.</p>
+   */
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  DescribeConnectionAliasesRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The maximum number of connection aliases to return.</p>
+   */
+  inline int GetLimit() const { return m_limit; }
+  inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+  inline void SetLimit(int value) {
+    m_limitHasBeenSet = true;
+    m_limit = value;
+  }
+  inline DescribeConnectionAliasesRequest& WithLimit(int value) {
+    SetLimit(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>If you received a <code>NextToken</code> from a previous call that was
+   * paginated, provide this token to receive the next set of results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeConnectionAliasesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_aliasIds;
+  bool m_aliasIdsHasBeenSet = false;
 
+  Aws::String m_resourceId;
+  bool m_resourceIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The identifiers of the connection aliases to describe.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAliasIds() const { return m_aliasIds; }
-    inline bool AliasIdsHasBeenSet() const { return m_aliasIdsHasBeenSet; }
-    template<typename AliasIdsT = Aws::Vector<Aws::String>>
-    void SetAliasIds(AliasIdsT&& value) { m_aliasIdsHasBeenSet = true; m_aliasIds = std::forward<AliasIdsT>(value); }
-    template<typename AliasIdsT = Aws::Vector<Aws::String>>
-    DescribeConnectionAliasesRequest& WithAliasIds(AliasIdsT&& value) { SetAliasIds(std::forward<AliasIdsT>(value)); return *this;}
-    template<typename AliasIdsT = Aws::String>
-    DescribeConnectionAliasesRequest& AddAliasIds(AliasIdsT&& value) { m_aliasIdsHasBeenSet = true; m_aliasIds.emplace_back(std::forward<AliasIdsT>(value)); return *this; }
-    ///@}
+  int m_limit{0};
+  bool m_limitHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The identifier of the directory associated with the connection alias.</p>
-     */
-    inline const Aws::String& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::String>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::String>
-    DescribeConnectionAliasesRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of connection aliases to return.</p>
-     */
-    inline int GetLimit() const { return m_limit; }
-    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline DescribeConnectionAliasesRequest& WithLimit(int value) { SetLimit(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeConnectionAliasesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::Vector<Aws::String> m_aliasIds;
-    bool m_aliasIdsHasBeenSet = false;
-
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
-
-    int m_limit{0};
-    bool m_limitHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

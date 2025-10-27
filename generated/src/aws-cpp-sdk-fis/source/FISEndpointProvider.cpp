@@ -5,12 +5,8 @@
 
 #include <aws/fis/FISEndpointProvider.h>
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace FIS
-} // namespace Aws
+namespace Aws {
+namespace FIS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace FIS
+}  // namespace Aws

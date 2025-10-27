@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class ClientVpnEndpointAttributeStatusCode
-  {
-    NOT_SET,
-    applying,
-    applied
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class ClientVpnEndpointAttributeStatusCode { NOT_SET, applying, applied };
 
-namespace ClientVpnEndpointAttributeStatusCodeMapper
-{
+namespace ClientVpnEndpointAttributeStatusCodeMapper {
 AWS_EC2_API ClientVpnEndpointAttributeStatusCode GetClientVpnEndpointAttributeStatusCodeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForClientVpnEndpointAttributeStatusCode(ClientVpnEndpointAttributeStatusCode value);
-} // namespace ClientVpnEndpointAttributeStatusCodeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace ClientVpnEndpointAttributeStatusCodeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

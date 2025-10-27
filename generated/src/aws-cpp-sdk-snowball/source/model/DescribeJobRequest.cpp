@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snowball/model/DescribeJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/model/DescribeJobRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeJobRequest::SerializePayload() const
-{
+Aws::String DescribeJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSIESnowballJobManagementService.DescribeJob"));
   return headers;
-
 }
-
-
-
-

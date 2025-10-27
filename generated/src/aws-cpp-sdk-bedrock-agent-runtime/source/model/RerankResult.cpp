@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RerankResult::RerankResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RerankResult::RerankResult(JsonView jsonValue) { *this = jsonValue; }
 
-RerankResult& RerankResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("index"))
-  {
+RerankResult& RerankResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("index")) {
     m_index = jsonValue.GetInteger("index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relevanceScore"))
-  {
+  if (jsonValue.ValueExists("relevanceScore")) {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("document"))
-  {
+  if (jsonValue.ValueExists("document")) {
     m_document = jsonValue.GetObject("document");
     m_documentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RerankResult::Jsonize() const
-{
+JsonValue RerankResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("index", m_index);
   }
 
-  if(m_relevanceScoreHasBeenSet)
-  {
-   payload.WithDouble("relevanceScore", m_relevanceScore);
-
+  if (m_relevanceScoreHasBeenSet) {
+    payload.WithDouble("relevanceScore", m_relevanceScore);
   }
 
-  if(m_documentHasBeenSet)
-  {
-   payload.WithObject("document", m_document.Jsonize());
-
+  if (m_documentHasBeenSet) {
+    payload.WithObject("document", m_document.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

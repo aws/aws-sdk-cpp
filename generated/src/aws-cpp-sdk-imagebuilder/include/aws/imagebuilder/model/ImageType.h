@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class ImageType
-  {
-    NOT_SET,
-    AMI,
-    DOCKER
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class ImageType { NOT_SET, AMI, DOCKER };
 
-namespace ImageTypeMapper
-{
+namespace ImageTypeMapper {
 AWS_IMAGEBUILDER_API ImageType GetImageTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForImageType(ImageType value);
-} // namespace ImageTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace ImageTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

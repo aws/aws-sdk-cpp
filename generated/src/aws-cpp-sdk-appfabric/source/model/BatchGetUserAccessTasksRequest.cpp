@@ -12,30 +12,20 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetUserAccessTasksRequest::SerializePayload() const
-{
+Aws::String BatchGetUserAccessTasksRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appBundleIdentifierHasBeenSet)
-  {
-   payload.WithString("appBundleIdentifier", m_appBundleIdentifier);
-
+  if (m_appBundleIdentifierHasBeenSet) {
+    payload.WithString("appBundleIdentifier", m_appBundleIdentifier);
   }
 
-  if(m_taskIdListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> taskIdListJsonList(m_taskIdList.size());
-   for(unsigned taskIdListIndex = 0; taskIdListIndex < taskIdListJsonList.GetLength(); ++taskIdListIndex)
-   {
-     taskIdListJsonList[taskIdListIndex].AsString(m_taskIdList[taskIdListIndex]);
-   }
-   payload.WithArray("taskIdList", std::move(taskIdListJsonList));
-
+  if (m_taskIdListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> taskIdListJsonList(m_taskIdList.size());
+    for (unsigned taskIdListIndex = 0; taskIdListIndex < taskIdListJsonList.GetLength(); ++taskIdListIndex) {
+      taskIdListJsonList[taskIdListIndex].AsString(m_taskIdList[taskIdListIndex]);
+    }
+    payload.WithArray("taskIdList", std::move(taskIdListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

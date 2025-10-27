@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DvbSubtitleStylePassthrough
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DvbSubtitleStylePassthrough { NOT_SET, ENABLED, DISABLED };
 
-namespace DvbSubtitleStylePassthroughMapper
-{
+namespace DvbSubtitleStylePassthroughMapper {
 AWS_MEDIACONVERT_API DvbSubtitleStylePassthrough GetDvbSubtitleStylePassthroughForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDvbSubtitleStylePassthrough(DvbSubtitleStylePassthrough value);
-} // namespace DvbSubtitleStylePassthroughMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DvbSubtitleStylePassthroughMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

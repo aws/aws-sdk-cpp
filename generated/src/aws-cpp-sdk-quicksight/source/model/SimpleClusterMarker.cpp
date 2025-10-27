@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SimpleClusterMarker.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SimpleClusterMarker.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SimpleClusterMarker::SimpleClusterMarker(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SimpleClusterMarker::SimpleClusterMarker(JsonView jsonValue) { *this = jsonValue; }
 
-SimpleClusterMarker& SimpleClusterMarker::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Color"))
-  {
+SimpleClusterMarker& SimpleClusterMarker::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Color")) {
     m_color = jsonValue.GetString("Color");
     m_colorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SimpleClusterMarker::Jsonize() const
-{
+JsonValue SimpleClusterMarker::Jsonize() const {
   JsonValue payload;
 
-  if(m_colorHasBeenSet)
-  {
-   payload.WithString("Color", m_color);
-
+  if (m_colorHasBeenSet) {
+    payload.WithString("Color", m_color);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

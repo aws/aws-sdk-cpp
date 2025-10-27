@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/DeleteGlobalSecondaryIndexAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/DeleteGlobalSecondaryIndexAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IndexName"))
-  {
+DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IndexName")) {
     m_indexName = jsonValue.GetString("IndexName");
     m_indexNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeleteGlobalSecondaryIndexAction::Jsonize() const
-{
+JsonValue DeleteGlobalSecondaryIndexAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexNameHasBeenSet)
-  {
-   payload.WithString("IndexName", m_indexName);
-
+  if (m_indexNameHasBeenSet) {
+    payload.WithString("IndexName", m_indexName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

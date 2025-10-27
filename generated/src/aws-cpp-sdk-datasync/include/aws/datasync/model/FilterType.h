@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class FilterType
-  {
-    NOT_SET,
-    SIMPLE_PATTERN
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class FilterType { NOT_SET, SIMPLE_PATTERN };
 
-namespace FilterTypeMapper
-{
+namespace FilterTypeMapper {
 AWS_DATASYNC_API FilterType GetFilterTypeForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForFilterType(FilterType value);
-} // namespace FilterTypeMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace FilterTypeMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
-  enum class DsnAction
-  {
-    NOT_SET,
-    failed,
-    delayed,
-    delivered,
-    relayed,
-    expanded
-  };
+namespace Aws {
+namespace SES {
+namespace Model {
+enum class DsnAction { NOT_SET, failed, delayed, delivered, relayed, expanded };
 
-namespace DsnActionMapper
-{
+namespace DsnActionMapper {
 AWS_SES_API DsnAction GetDsnActionForName(const Aws::String& name);
 
 AWS_SES_API Aws::String GetNameForDsnAction(DsnAction value);
-} // namespace DsnActionMapper
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace DsnActionMapper
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

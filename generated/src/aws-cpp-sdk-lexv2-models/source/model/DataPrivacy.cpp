@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/DataPrivacy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/DataPrivacy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-DataPrivacy::DataPrivacy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataPrivacy::DataPrivacy(JsonView jsonValue) { *this = jsonValue; }
 
-DataPrivacy& DataPrivacy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("childDirected"))
-  {
+DataPrivacy& DataPrivacy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("childDirected")) {
     m_childDirected = jsonValue.GetBool("childDirected");
     m_childDirectedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataPrivacy::Jsonize() const
-{
+JsonValue DataPrivacy::Jsonize() const {
   JsonValue payload;
 
-  if(m_childDirectedHasBeenSet)
-  {
-   payload.WithBool("childDirected", m_childDirected);
-
+  if (m_childDirectedHasBeenSet) {
+    payload.WithBool("childDirected", m_childDirected);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

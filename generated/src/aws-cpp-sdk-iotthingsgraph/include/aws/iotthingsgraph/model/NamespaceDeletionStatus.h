@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Model
-{
-  enum class NamespaceDeletionStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Model {
+enum class NamespaceDeletionStatus { NOT_SET, IN_PROGRESS, SUCCEEDED, FAILED };
 
-namespace NamespaceDeletionStatusMapper
-{
+namespace NamespaceDeletionStatusMapper {
 AWS_IOTTHINGSGRAPH_API NamespaceDeletionStatus GetNamespaceDeletionStatusForName(const Aws::String& name);
 
 AWS_IOTTHINGSGRAPH_API Aws::String GetNameForNamespaceDeletionStatus(NamespaceDeletionStatus value);
-} // namespace NamespaceDeletionStatusMapper
-} // namespace Model
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace NamespaceDeletionStatusMapper
+}  // namespace Model
+}  // namespace IoTThingsGraph
+}  // namespace Aws

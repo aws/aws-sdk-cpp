@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class NumericSeparatorSymbol
-  {
-    NOT_SET,
-    COMMA,
-    DOT,
-    SPACE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class NumericSeparatorSymbol { NOT_SET, COMMA, DOT, SPACE };
 
-namespace NumericSeparatorSymbolMapper
-{
+namespace NumericSeparatorSymbolMapper {
 AWS_QUICKSIGHT_API NumericSeparatorSymbol GetNumericSeparatorSymbolForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForNumericSeparatorSymbol(NumericSeparatorSymbol value);
-} // namespace NumericSeparatorSymbolMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace NumericSeparatorSymbolMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

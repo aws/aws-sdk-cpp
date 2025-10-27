@@ -3,58 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/RecoveryInstanceDataReplicationInitiationStep.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/RecoveryInstanceDataReplicationInitiationStep.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep(JsonView jsonValue) { *this = jsonValue; }
 
-RecoveryInstanceDataReplicationInitiationStep& RecoveryInstanceDataReplicationInitiationStep::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = RecoveryInstanceDataReplicationInitiationStepNameMapper::GetRecoveryInstanceDataReplicationInitiationStepNameForName(jsonValue.GetString("name"));
+RecoveryInstanceDataReplicationInitiationStep& RecoveryInstanceDataReplicationInitiationStep::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
+    m_name = RecoveryInstanceDataReplicationInitiationStepNameMapper::GetRecoveryInstanceDataReplicationInitiationStepNameForName(
+        jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = RecoveryInstanceDataReplicationInitiationStepStatusMapper::GetRecoveryInstanceDataReplicationInitiationStepStatusForName(jsonValue.GetString("status"));
+  if (jsonValue.ValueExists("status")) {
+    m_status = RecoveryInstanceDataReplicationInitiationStepStatusMapper::GetRecoveryInstanceDataReplicationInitiationStepStatusForName(
+        jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecoveryInstanceDataReplicationInitiationStep::Jsonize() const
-{
+JsonValue RecoveryInstanceDataReplicationInitiationStep::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", RecoveryInstanceDataReplicationInitiationStepNameMapper::GetNameForRecoveryInstanceDataReplicationInitiationStepName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString(
+        "name",
+        RecoveryInstanceDataReplicationInitiationStepNameMapper::GetNameForRecoveryInstanceDataReplicationInitiationStepName(m_name));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", RecoveryInstanceDataReplicationInitiationStepStatusMapper::GetNameForRecoveryInstanceDataReplicationInitiationStepStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString(
+        "status",
+        RecoveryInstanceDataReplicationInitiationStepStatusMapper::GetNameForRecoveryInstanceDataReplicationInitiationStepStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

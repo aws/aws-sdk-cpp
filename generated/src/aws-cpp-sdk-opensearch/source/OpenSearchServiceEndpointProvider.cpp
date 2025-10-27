@@ -5,12 +5,8 @@
 
 #include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace OpenSearchService
-} // namespace Aws
+namespace Aws {
+namespace OpenSearchService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -3,53 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
+  if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
     m_createdTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisioningArtifactMetadata"))
-  {
-    Aws::Map<Aws::String, JsonView> provisioningArtifactMetadataJsonMap = jsonValue.GetObject("ProvisioningArtifactMetadata").GetAllObjects();
-    for(auto& provisioningArtifactMetadataItem : provisioningArtifactMetadataJsonMap)
-    {
+  if (jsonValue.ValueExists("ProvisioningArtifactMetadata")) {
+    Aws::Map<Aws::String, JsonView> provisioningArtifactMetadataJsonMap =
+        jsonValue.GetObject("ProvisioningArtifactMetadata").GetAllObjects();
+    for (auto& provisioningArtifactMetadataItem : provisioningArtifactMetadataJsonMap) {
       m_provisioningArtifactMetadata[provisioningArtifactMetadataItem.first] = provisioningArtifactMetadataItem.second.AsString();
     }
     m_provisioningArtifactMetadataHasBeenSet = true;
@@ -57,47 +45,36 @@ ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(JsonView js
   return *this;
 }
 
-JsonValue ProvisioningArtifactSummary::Jsonize() const
-{
+JsonValue ProvisioningArtifactSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  if (m_createdTimeHasBeenSet) {
+    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
-  if(m_provisioningArtifactMetadataHasBeenSet)
-  {
-   JsonValue provisioningArtifactMetadataJsonMap;
-   for(auto& provisioningArtifactMetadataItem : m_provisioningArtifactMetadata)
-   {
-     provisioningArtifactMetadataJsonMap.WithString(provisioningArtifactMetadataItem.first, provisioningArtifactMetadataItem.second);
-   }
-   payload.WithObject("ProvisioningArtifactMetadata", std::move(provisioningArtifactMetadataJsonMap));
-
+  if (m_provisioningArtifactMetadataHasBeenSet) {
+    JsonValue provisioningArtifactMetadataJsonMap;
+    for (auto& provisioningArtifactMetadataItem : m_provisioningArtifactMetadata) {
+      provisioningArtifactMetadataJsonMap.WithString(provisioningArtifactMetadataItem.first, provisioningArtifactMetadataItem.second);
+    }
+    payload.WithObject("ProvisioningArtifactMetadata", std::move(provisioningArtifactMetadataJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

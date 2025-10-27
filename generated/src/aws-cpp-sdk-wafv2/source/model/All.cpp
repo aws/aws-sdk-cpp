@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/All.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/All.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-All::All(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+All::All(JsonView jsonValue) { *this = jsonValue; }
 
-All& All::operator =(JsonView jsonValue)
-{
+All& All::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue All::Jsonize() const
-{
+JsonValue All::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

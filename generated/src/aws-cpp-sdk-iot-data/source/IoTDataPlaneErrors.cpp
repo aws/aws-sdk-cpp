@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::IoTDataPlane;
 
-namespace Aws
-{
-namespace IoTDataPlane
-{
-namespace IoTDataPlaneErrorMapper
-{
+namespace Aws {
+namespace IoTDataPlane {
+namespace IoTDataPlaneErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
@@ -26,42 +23,27 @@ static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAl
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestEntityTooLargeException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == FORBIDDEN_HASH)
-  {
+  } else if (hashCode == FORBIDDEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNAUTHORIZED_HASH)
-  {
+  } else if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_DOCUMENT_ENCODING_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_DOCUMENT_ENCODING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNSUPPORTED_DOCUMENT_ENCODING), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == METHOD_NOT_ALLOWED_HASH)
-  {
+  } else if (hashCode == METHOD_NOT_ALLOWED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::METHOD_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == REQUEST_ENTITY_TOO_LARGE_HASH)
-  {
+  } else if (hashCode == REQUEST_ENTITY_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTDataPlaneErrorMapper
-} // namespace IoTDataPlane
-} // namespace Aws
+}  // namespace IoTDataPlaneErrorMapper
+}  // namespace IoTDataPlane
+}  // namespace Aws

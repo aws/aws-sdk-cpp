@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-CreateCloudFormationStepOutput::CreateCloudFormationStepOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateCloudFormationStepOutput::CreateCloudFormationStepOutput(JsonView jsonValue) { *this = jsonValue; }
 
-CreateCloudFormationStepOutput& CreateCloudFormationStepOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stackId"))
-  {
+CreateCloudFormationStepOutput& CreateCloudFormationStepOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stackId")) {
     m_stackId = jsonValue.GetString("stackId");
     m_stackIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exports"))
-  {
+  if (jsonValue.ValueExists("exports")) {
     Aws::Map<Aws::String, JsonView> exportsJsonMap = jsonValue.GetObject("exports").GetAllObjects();
-    for(auto& exportsItem : exportsJsonMap)
-    {
+    for (auto& exportsItem : exportsJsonMap) {
       m_exports[exportsItem.first] = exportsItem.second.AsString();
     }
     m_exportsHasBeenSet = true;
@@ -42,30 +32,24 @@ CreateCloudFormationStepOutput& CreateCloudFormationStepOutput::operator =(JsonV
   return *this;
 }
 
-JsonValue CreateCloudFormationStepOutput::Jsonize() const
-{
+JsonValue CreateCloudFormationStepOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_stackIdHasBeenSet)
-  {
-   payload.WithString("stackId", m_stackId);
-
+  if (m_stackIdHasBeenSet) {
+    payload.WithString("stackId", m_stackId);
   }
 
-  if(m_exportsHasBeenSet)
-  {
-   JsonValue exportsJsonMap;
-   for(auto& exportsItem : m_exports)
-   {
-     exportsJsonMap.WithString(exportsItem.first, exportsItem.second);
-   }
-   payload.WithObject("exports", std::move(exportsJsonMap));
-
+  if (m_exportsHasBeenSet) {
+    JsonValue exportsJsonMap;
+    for (auto& exportsItem : m_exports) {
+      exportsJsonMap.WithString(exportsItem.first, exportsItem.second);
+    }
+    payload.WithObject("exports", std::move(exportsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

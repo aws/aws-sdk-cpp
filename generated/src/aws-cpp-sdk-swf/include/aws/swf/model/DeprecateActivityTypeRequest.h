@@ -4,69 +4,76 @@
  */
 
 #pragma once
-#include <aws/swf/SWF_EXPORTS.h>
-#include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/swf/SWFRequest.h>
+#include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/ActivityType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
+/**
+ */
+class DeprecateActivityTypeRequest : public SWFRequest {
+ public:
+  AWS_SWF_API DeprecateActivityTypeRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeprecateActivityType"; }
+
+  AWS_SWF_API Aws::String SerializePayload() const override;
+
+  AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the domain in which the activity type is registered.</p>
    */
-  class DeprecateActivityTypeRequest : public SWFRequest
-  {
-  public:
-    AWS_SWF_API DeprecateActivityTypeRequest() = default;
+  inline const Aws::String& GetDomain() const { return m_domain; }
+  inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+  template <typename DomainT = Aws::String>
+  void SetDomain(DomainT&& value) {
+    m_domainHasBeenSet = true;
+    m_domain = std::forward<DomainT>(value);
+  }
+  template <typename DomainT = Aws::String>
+  DeprecateActivityTypeRequest& WithDomain(DomainT&& value) {
+    SetDomain(std::forward<DomainT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeprecateActivityType"; }
+  ///@{
+  /**
+   * <p>The activity type to deprecate.</p>
+   */
+  inline const ActivityType& GetActivityType() const { return m_activityType; }
+  inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
+  template <typename ActivityTypeT = ActivityType>
+  void SetActivityType(ActivityTypeT&& value) {
+    m_activityTypeHasBeenSet = true;
+    m_activityType = std::forward<ActivityTypeT>(value);
+  }
+  template <typename ActivityTypeT = ActivityType>
+  DeprecateActivityTypeRequest& WithActivityType(ActivityTypeT&& value) {
+    SetActivityType(std::forward<ActivityTypeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domain;
+  bool m_domainHasBeenSet = false;
 
-    AWS_SWF_API Aws::String SerializePayload() const override;
+  ActivityType m_activityType;
+  bool m_activityTypeHasBeenSet = false;
+};
 
-    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the domain in which the activity type is registered.</p>
-     */
-    inline const Aws::String& GetDomain() const { return m_domain; }
-    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    template<typename DomainT = Aws::String>
-    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
-    template<typename DomainT = Aws::String>
-    DeprecateActivityTypeRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The activity type to deprecate.</p>
-     */
-    inline const ActivityType& GetActivityType() const { return m_activityType; }
-    inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
-    template<typename ActivityTypeT = ActivityType>
-    void SetActivityType(ActivityTypeT&& value) { m_activityTypeHasBeenSet = true; m_activityType = std::forward<ActivityTypeT>(value); }
-    template<typename ActivityTypeT = ActivityType>
-    DeprecateActivityTypeRequest& WithActivityType(ActivityTypeT&& value) { SetActivityType(std::forward<ActivityTypeT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domain;
-    bool m_domainHasBeenSet = false;
-
-    ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

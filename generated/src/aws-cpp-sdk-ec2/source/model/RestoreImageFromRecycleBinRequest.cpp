@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RestoreImageFromRecycleBinRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RestoreImageFromRecycleBinRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RestoreImageFromRecycleBinRequest::SerializePayload() const
-{
+Aws::String RestoreImageFromRecycleBinRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RestoreImageFromRecycleBin&";
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RestoreImageFromRecycleBinRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RestoreImageFromRecycleBinRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RestoreImageFromRecycleBinRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

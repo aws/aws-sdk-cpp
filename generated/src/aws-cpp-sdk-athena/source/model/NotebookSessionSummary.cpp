@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-NotebookSessionSummary::NotebookSessionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotebookSessionSummary::NotebookSessionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NotebookSessionSummary& NotebookSessionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SessionId"))
-  {
+NotebookSessionSummary& NotebookSessionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotebookSessionSummary::Jsonize() const
-{
+JsonValue NotebookSessionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("SessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

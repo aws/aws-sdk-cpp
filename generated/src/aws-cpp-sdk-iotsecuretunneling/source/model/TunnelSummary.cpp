@@ -3,101 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsecuretunneling/model/TunnelSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsecuretunneling/model/TunnelSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSecureTunneling {
+namespace Model {
 
-TunnelSummary::TunnelSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TunnelSummary::TunnelSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TunnelSummary& TunnelSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tunnelId"))
-  {
+TunnelSummary& TunnelSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tunnelId")) {
     m_tunnelId = jsonValue.GetString("tunnelId");
     m_tunnelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tunnelArn"))
-  {
+  if (jsonValue.ValueExists("tunnelArn")) {
     m_tunnelArn = jsonValue.GetString("tunnelArn");
     m_tunnelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TunnelStatusMapper::GetTunnelStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TunnelSummary::Jsonize() const
-{
+JsonValue TunnelSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_tunnelIdHasBeenSet)
-  {
-   payload.WithString("tunnelId", m_tunnelId);
-
+  if (m_tunnelIdHasBeenSet) {
+    payload.WithString("tunnelId", m_tunnelId);
   }
 
-  if(m_tunnelArnHasBeenSet)
-  {
-   payload.WithString("tunnelArn", m_tunnelArn);
-
+  if (m_tunnelArnHasBeenSet) {
+    payload.WithString("tunnelArn", m_tunnelArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TunnelStatusMapper::GetNameForTunnelStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TunnelStatusMapper::GetNameForTunnelStatus(m_status));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSecureTunneling
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSecureTunneling
+}  // namespace Aws

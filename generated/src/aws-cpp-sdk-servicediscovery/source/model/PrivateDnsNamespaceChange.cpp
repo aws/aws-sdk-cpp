@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/PrivateDnsNamespaceChange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/PrivateDnsNamespaceChange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-PrivateDnsNamespaceChange::PrivateDnsNamespaceChange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrivateDnsNamespaceChange::PrivateDnsNamespaceChange(JsonView jsonValue) { *this = jsonValue; }
 
-PrivateDnsNamespaceChange& PrivateDnsNamespaceChange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+PrivateDnsNamespaceChange& PrivateDnsNamespaceChange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Properties"))
-  {
+  if (jsonValue.ValueExists("Properties")) {
     m_properties = jsonValue.GetObject("Properties");
     m_propertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrivateDnsNamespaceChange::Jsonize() const
-{
+JsonValue PrivateDnsNamespaceChange::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_propertiesHasBeenSet)
-  {
-   payload.WithObject("Properties", m_properties.Jsonize());
-
+  if (m_propertiesHasBeenSet) {
+    payload.WithObject("Properties", m_properties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

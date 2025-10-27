@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/BatchGetTracesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/xray/model/BatchGetTracesResult.h>
 
 #include <utility>
 
@@ -17,46 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetTracesResult::BatchGetTracesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetTracesResult::BatchGetTracesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetTracesResult& BatchGetTracesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetTracesResult& BatchGetTracesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Traces"))
-  {
+  if (jsonValue.ValueExists("Traces")) {
     Aws::Utils::Array<JsonView> tracesJsonList = jsonValue.GetArray("Traces");
-    for(unsigned tracesIndex = 0; tracesIndex < tracesJsonList.GetLength(); ++tracesIndex)
-    {
+    for (unsigned tracesIndex = 0; tracesIndex < tracesJsonList.GetLength(); ++tracesIndex) {
       m_traces.push_back(tracesJsonList[tracesIndex].AsObject());
     }
     m_tracesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnprocessedTraceIds"))
-  {
+  if (jsonValue.ValueExists("UnprocessedTraceIds")) {
     Aws::Utils::Array<JsonView> unprocessedTraceIdsJsonList = jsonValue.GetArray("UnprocessedTraceIds");
-    for(unsigned unprocessedTraceIdsIndex = 0; unprocessedTraceIdsIndex < unprocessedTraceIdsJsonList.GetLength(); ++unprocessedTraceIdsIndex)
-    {
+    for (unsigned unprocessedTraceIdsIndex = 0; unprocessedTraceIdsIndex < unprocessedTraceIdsJsonList.GetLength();
+         ++unprocessedTraceIdsIndex) {
       m_unprocessedTraceIds.push_back(unprocessedTraceIdsJsonList[unprocessedTraceIdsIndex].AsString());
     }
     m_unprocessedTraceIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

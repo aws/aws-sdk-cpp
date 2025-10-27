@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rbin/RecycleBin_EXPORTS.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Model
-{
-  enum class LockState
-  {
-    NOT_SET,
-    locked,
-    pending_unlock,
-    unlocked
-  };
+namespace Aws {
+namespace RecycleBin {
+namespace Model {
+enum class LockState { NOT_SET, locked, pending_unlock, unlocked };
 
-namespace LockStateMapper
-{
+namespace LockStateMapper {
 AWS_RECYCLEBIN_API LockState GetLockStateForName(const Aws::String& name);
 
 AWS_RECYCLEBIN_API Aws::String GetNameForLockState(LockState value);
-} // namespace LockStateMapper
-} // namespace Model
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace LockStateMapper
+}  // namespace Model
+}  // namespace RecycleBin
+}  // namespace Aws

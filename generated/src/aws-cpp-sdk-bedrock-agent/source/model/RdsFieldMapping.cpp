@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RdsFieldMapping::RdsFieldMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RdsFieldMapping::RdsFieldMapping(JsonView jsonValue) { *this = jsonValue; }
 
-RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("primaryKeyField"))
-  {
+RdsFieldMapping& RdsFieldMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("primaryKeyField")) {
     m_primaryKeyField = jsonValue.GetString("primaryKeyField");
     m_primaryKeyFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorField"))
-  {
+  if (jsonValue.ValueExists("vectorField")) {
     m_vectorField = jsonValue.GetString("vectorField");
     m_vectorFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("textField"))
-  {
+  if (jsonValue.ValueExists("textField")) {
     m_textField = jsonValue.GetString("textField");
     m_textFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadataField"))
-  {
+  if (jsonValue.ValueExists("metadataField")) {
     m_metadataField = jsonValue.GetString("metadataField");
     m_metadataFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customMetadataField"))
-  {
+  if (jsonValue.ValueExists("customMetadataField")) {
     m_customMetadataField = jsonValue.GetString("customMetadataField");
     m_customMetadataFieldHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RdsFieldMapping::Jsonize() const
-{
+JsonValue RdsFieldMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_primaryKeyFieldHasBeenSet)
-  {
-   payload.WithString("primaryKeyField", m_primaryKeyField);
-
+  if (m_primaryKeyFieldHasBeenSet) {
+    payload.WithString("primaryKeyField", m_primaryKeyField);
   }
 
-  if(m_vectorFieldHasBeenSet)
-  {
-   payload.WithString("vectorField", m_vectorField);
-
+  if (m_vectorFieldHasBeenSet) {
+    payload.WithString("vectorField", m_vectorField);
   }
 
-  if(m_textFieldHasBeenSet)
-  {
-   payload.WithString("textField", m_textField);
-
+  if (m_textFieldHasBeenSet) {
+    payload.WithString("textField", m_textField);
   }
 
-  if(m_metadataFieldHasBeenSet)
-  {
-   payload.WithString("metadataField", m_metadataField);
-
+  if (m_metadataFieldHasBeenSet) {
+    payload.WithString("metadataField", m_metadataField);
   }
 
-  if(m_customMetadataFieldHasBeenSet)
-  {
-   payload.WithString("customMetadataField", m_customMetadataField);
-
+  if (m_customMetadataFieldHasBeenSet) {
+    payload.WithString("customMetadataField", m_customMetadataField);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class WorkSpaceApplicationState
-  {
-    NOT_SET,
-    PENDING,
-    ERROR_,
-    AVAILABLE,
-    UNINSTALL_ONLY
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class WorkSpaceApplicationState { NOT_SET, PENDING, ERROR_, AVAILABLE, UNINSTALL_ONLY };
 
-namespace WorkSpaceApplicationStateMapper
-{
+namespace WorkSpaceApplicationStateMapper {
 AWS_WORKSPACES_API WorkSpaceApplicationState GetWorkSpaceApplicationStateForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForWorkSpaceApplicationState(WorkSpaceApplicationState value);
-} // namespace WorkSpaceApplicationStateMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace WorkSpaceApplicationStateMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

@@ -12,35 +12,24 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateServiceEnvironmentRequest::SerializePayload() const
-{
+Aws::String UpdateServiceEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceEnvironmentHasBeenSet)
-  {
-   payload.WithString("serviceEnvironment", m_serviceEnvironment);
-
+  if (m_serviceEnvironmentHasBeenSet) {
+    payload.WithString("serviceEnvironment", m_serviceEnvironment);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", ServiceEnvironmentStateMapper::GetNameForServiceEnvironmentState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", ServiceEnvironmentStateMapper::GetNameForServiceEnvironmentState(m_state));
   }
 
-  if(m_capacityLimitsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capacityLimitsJsonList(m_capacityLimits.size());
-   for(unsigned capacityLimitsIndex = 0; capacityLimitsIndex < capacityLimitsJsonList.GetLength(); ++capacityLimitsIndex)
-   {
-     capacityLimitsJsonList[capacityLimitsIndex].AsObject(m_capacityLimits[capacityLimitsIndex].Jsonize());
-   }
-   payload.WithArray("capacityLimits", std::move(capacityLimitsJsonList));
-
+  if (m_capacityLimitsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capacityLimitsJsonList(m_capacityLimits.size());
+    for (unsigned capacityLimitsIndex = 0; capacityLimitsIndex < capacityLimitsJsonList.GetLength(); ++capacityLimitsIndex) {
+      capacityLimitsJsonList[capacityLimitsIndex].AsObject(m_capacityLimits[capacityLimitsIndex].Jsonize());
+    }
+    payload.WithArray("capacityLimits", std::move(capacityLimitsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

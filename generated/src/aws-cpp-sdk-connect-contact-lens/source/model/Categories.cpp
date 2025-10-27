@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectContactLens
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectContactLens {
+namespace Model {
 
-Categories::Categories(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Categories::Categories(JsonView jsonValue) { *this = jsonValue; }
 
-Categories& Categories::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MatchedCategories"))
-  {
+Categories& Categories::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MatchedCategories")) {
     Aws::Utils::Array<JsonView> matchedCategoriesJsonList = jsonValue.GetArray("MatchedCategories");
-    for(unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex)
-    {
+    for (unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex) {
       m_matchedCategories.push_back(matchedCategoriesJsonList[matchedCategoriesIndex].AsString());
     }
     m_matchedCategoriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchedDetails"))
-  {
+  if (jsonValue.ValueExists("MatchedDetails")) {
     Aws::Map<Aws::String, JsonView> matchedDetailsJsonMap = jsonValue.GetObject("MatchedDetails").GetAllObjects();
-    for(auto& matchedDetailsItem : matchedDetailsJsonMap)
-    {
+    for (auto& matchedDetailsItem : matchedDetailsJsonMap) {
       m_matchedDetails[matchedDetailsItem.first] = matchedDetailsItem.second.AsObject();
     }
     m_matchedDetailsHasBeenSet = true;
@@ -46,35 +35,28 @@ Categories& Categories::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Categories::Jsonize() const
-{
+JsonValue Categories::Jsonize() const {
   JsonValue payload;
 
-  if(m_matchedCategoriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> matchedCategoriesJsonList(m_matchedCategories.size());
-   for(unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex)
-   {
-     matchedCategoriesJsonList[matchedCategoriesIndex].AsString(m_matchedCategories[matchedCategoriesIndex]);
-   }
-   payload.WithArray("MatchedCategories", std::move(matchedCategoriesJsonList));
-
+  if (m_matchedCategoriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchedCategoriesJsonList(m_matchedCategories.size());
+    for (unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex) {
+      matchedCategoriesJsonList[matchedCategoriesIndex].AsString(m_matchedCategories[matchedCategoriesIndex]);
+    }
+    payload.WithArray("MatchedCategories", std::move(matchedCategoriesJsonList));
   }
 
-  if(m_matchedDetailsHasBeenSet)
-  {
-   JsonValue matchedDetailsJsonMap;
-   for(auto& matchedDetailsItem : m_matchedDetails)
-   {
-     matchedDetailsJsonMap.WithObject(matchedDetailsItem.first, matchedDetailsItem.second.Jsonize());
-   }
-   payload.WithObject("MatchedDetails", std::move(matchedDetailsJsonMap));
-
+  if (m_matchedDetailsHasBeenSet) {
+    JsonValue matchedDetailsJsonMap;
+    for (auto& matchedDetailsItem : m_matchedDetails) {
+      matchedDetailsJsonMap.WithObject(matchedDetailsItem.first, matchedDetailsItem.second.Jsonize());
+    }
+    payload.WithObject("MatchedDetails", std::move(matchedDetailsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectContactLens
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectContactLens
+}  // namespace Aws

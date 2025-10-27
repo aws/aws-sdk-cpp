@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class InputFormat
-  {
-    NOT_SET,
-    DYNAMODB_JSON,
-    ION,
-    CSV
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class InputFormat { NOT_SET, DYNAMODB_JSON, ION, CSV };
 
-namespace InputFormatMapper
-{
+namespace InputFormatMapper {
 AWS_DYNAMODB_API InputFormat GetInputFormatForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForInputFormat(InputFormat value);
-} // namespace InputFormatMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace InputFormatMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

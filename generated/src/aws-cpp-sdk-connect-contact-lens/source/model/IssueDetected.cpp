@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectContactLens
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectContactLens {
+namespace Model {
 
-IssueDetected::IssueDetected(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IssueDetected::IssueDetected(JsonView jsonValue) { *this = jsonValue; }
 
-IssueDetected& IssueDetected::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CharacterOffsets"))
-  {
+IssueDetected& IssueDetected::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CharacterOffsets")) {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
     m_characterOffsetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IssueDetected::Jsonize() const
-{
+JsonValue IssueDetected::Jsonize() const {
   JsonValue payload;
 
-  if(m_characterOffsetsHasBeenSet)
-  {
-   payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
-
+  if (m_characterOffsetsHasBeenSet) {
+    payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectContactLens
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectContactLens
+}  // namespace Aws

@@ -4,41 +4,36 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class NodeFilterKey
-  {
-    NOT_SET,
-    AgentType,
-    AgentVersion,
-    ComputerName,
-    InstanceId,
-    InstanceStatus,
-    IpAddress,
-    ManagedStatus,
-    PlatformName,
-    PlatformType,
-    PlatformVersion,
-    ResourceType,
-    OrganizationalUnitId,
-    OrganizationalUnitPath,
-    Region,
-    AccountId
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class NodeFilterKey {
+  NOT_SET,
+  AgentType,
+  AgentVersion,
+  ComputerName,
+  InstanceId,
+  InstanceStatus,
+  IpAddress,
+  ManagedStatus,
+  PlatformName,
+  PlatformType,
+  PlatformVersion,
+  ResourceType,
+  OrganizationalUnitId,
+  OrganizationalUnitPath,
+  Region,
+  AccountId
+};
 
-namespace NodeFilterKeyMapper
-{
+namespace NodeFilterKeyMapper {
 AWS_SSM_API NodeFilterKey GetNodeFilterKeyForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForNodeFilterKey(NodeFilterKey value);
-} // namespace NodeFilterKeyMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace NodeFilterKeyMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

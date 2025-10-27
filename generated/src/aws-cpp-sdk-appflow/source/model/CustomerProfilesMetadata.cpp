@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-CustomerProfilesMetadata::CustomerProfilesMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomerProfilesMetadata::CustomerProfilesMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-CustomerProfilesMetadata& CustomerProfilesMetadata::operator =(JsonView jsonValue)
-{
+CustomerProfilesMetadata& CustomerProfilesMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue CustomerProfilesMetadata::Jsonize() const
-{
+JsonValue CustomerProfilesMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

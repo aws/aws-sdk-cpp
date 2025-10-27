@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography/model/GetPublicKeyCertificateResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/payment-cryptography/model/GetPublicKeyCertificateResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPublicKeyCertificateResult::GetPublicKeyCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetPublicKeyCertificateResult::GetPublicKeyCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetPublicKeyCertificateResult& GetPublicKeyCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetPublicKeyCertificateResult& GetPublicKeyCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("KeyCertificate"))
-  {
+  if (jsonValue.ValueExists("KeyCertificate")) {
     m_keyCertificate = jsonValue.GetString("KeyCertificate");
     m_keyCertificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyCertificateChain"))
-  {
+  if (jsonValue.ValueExists("KeyCertificateChain")) {
     m_keyCertificateChain = jsonValue.GetString("KeyCertificateChain");
     m_keyCertificateChainHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/PutManagedInsightRulesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/PutManagedInsightRulesResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutManagedInsightRulesResult::PutManagedInsightRulesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+PutManagedInsightRulesResult::PutManagedInsightRulesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-PutManagedInsightRulesResult& PutManagedInsightRulesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+PutManagedInsightRulesResult& PutManagedInsightRulesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "PutManagedInsightRulesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "PutManagedInsightRulesResult")) {
     resultNode = rootNode.FirstChild("PutManagedInsightRulesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode failuresNode = resultNode.FirstChild("Failures");
-    if(!failuresNode.IsNull())
-    {
+    if (!failuresNode.IsNull()) {
       XmlNode failuresMember = failuresNode.FirstChild("member");
       m_failuresHasBeenSet = !failuresMember.IsNull();
-      while(!failuresMember.IsNull())
-      {
+      while (!failuresMember.IsNull()) {
         m_failures.push_back(failuresMember);
         failuresMember = failuresMember.NextNode("member");
       }
@@ -53,7 +45,7 @@ PutManagedInsightRulesResult& PutManagedInsightRulesResult::operator =(const Aws
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutManagedInsightRulesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutManagedInsightRulesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

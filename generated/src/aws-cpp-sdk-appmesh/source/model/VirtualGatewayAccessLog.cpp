@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayAccessLog::VirtualGatewayAccessLog(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayAccessLog::VirtualGatewayAccessLog(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayAccessLog& VirtualGatewayAccessLog::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("file"))
-  {
+VirtualGatewayAccessLog& VirtualGatewayAccessLog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("file")) {
     m_file = jsonValue.GetObject("file");
     m_fileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayAccessLog::Jsonize() const
-{
+JsonValue VirtualGatewayAccessLog::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileHasBeenSet)
-  {
-   payload.WithObject("file", m_file.Jsonize());
-
+  if (m_fileHasBeenSet) {
+    payload.WithObject("file", m_file.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

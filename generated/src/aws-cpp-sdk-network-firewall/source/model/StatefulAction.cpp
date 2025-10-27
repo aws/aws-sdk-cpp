@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/StatefulAction.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/network-firewall/model/StatefulAction.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+namespace StatefulActionMapper {
 
-namespace Aws
-{
-  namespace NetworkFirewall
-  {
-    namespace Model
-    {
-      namespace StatefulActionMapper
-      {
+static const int PASS_HASH = HashingUtils::HashString("PASS");
+static const int DROP_HASH = HashingUtils::HashString("DROP");
+static const int ALERT_HASH = HashingUtils::HashString("ALERT");
+static const int REJECT_HASH = HashingUtils::HashString("REJECT");
 
-        static const int PASS_HASH = HashingUtils::HashString("PASS");
-        static const int DROP_HASH = HashingUtils::HashString("DROP");
-        static const int ALERT_HASH = HashingUtils::HashString("ALERT");
-        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
+StatefulAction GetStatefulActionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PASS_HASH) {
+    return StatefulAction::PASS;
+  } else if (hashCode == DROP_HASH) {
+    return StatefulAction::DROP;
+  } else if (hashCode == ALERT_HASH) {
+    return StatefulAction::ALERT;
+  } else if (hashCode == REJECT_HASH) {
+    return StatefulAction::REJECT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<StatefulAction>(hashCode);
+  }
 
+  return StatefulAction::NOT_SET;
+}
 
-        StatefulAction GetStatefulActionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PASS_HASH)
-          {
-            return StatefulAction::PASS;
-          }
-          else if (hashCode == DROP_HASH)
-          {
-            return StatefulAction::DROP;
-          }
-          else if (hashCode == ALERT_HASH)
-          {
-            return StatefulAction::ALERT;
-          }
-          else if (hashCode == REJECT_HASH)
-          {
-            return StatefulAction::REJECT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StatefulAction>(hashCode);
-          }
+Aws::String GetNameForStatefulAction(StatefulAction enumValue) {
+  switch (enumValue) {
+    case StatefulAction::NOT_SET:
+      return {};
+    case StatefulAction::PASS:
+      return "PASS";
+    case StatefulAction::DROP:
+      return "DROP";
+    case StatefulAction::ALERT:
+      return "ALERT";
+    case StatefulAction::REJECT:
+      return "REJECT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return StatefulAction::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForStatefulAction(StatefulAction enumValue)
-        {
-          switch(enumValue)
-          {
-          case StatefulAction::NOT_SET:
-            return {};
-          case StatefulAction::PASS:
-            return "PASS";
-          case StatefulAction::DROP:
-            return "DROP";
-          case StatefulAction::ALERT:
-            return "ALERT";
-          case StatefulAction::REJECT:
-            return "REJECT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace StatefulActionMapper
-    } // namespace Model
-  } // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace StatefulActionMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/UpdateRoleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/UpdateRoleRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateRoleRequest::SerializePayload() const
-{
+Aws::String UpdateRoleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateRole&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_maxSessionDurationHasBeenSet)
-  {
+  if (m_maxSessionDurationHasBeenSet) {
     ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String UpdateRoleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,186 +3,144 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/StorageVirtualMachine.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/StorageVirtualMachine.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-StorageVirtualMachine::StorageVirtualMachine(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StorageVirtualMachine::StorageVirtualMachine(JsonView jsonValue) { *this = jsonValue; }
 
-StorageVirtualMachine& StorageVirtualMachine::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActiveDirectoryConfiguration"))
-  {
+StorageVirtualMachine& StorageVirtualMachine::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActiveDirectoryConfiguration")) {
     m_activeDirectoryConfiguration = jsonValue.GetObject("ActiveDirectoryConfiguration");
     m_activeDirectoryConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Endpoints"))
-  {
+  if (jsonValue.ValueExists("Endpoints")) {
     m_endpoints = jsonValue.GetObject("Endpoints");
     m_endpointsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileSystemId"))
-  {
+  if (jsonValue.ValueExists("FileSystemId")) {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
     m_fileSystemIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Lifecycle"))
-  {
+  if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = StorageVirtualMachineLifecycleMapper::GetStorageVirtualMachineLifecycleForName(jsonValue.GetString("Lifecycle"));
     m_lifecycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceARN"))
-  {
+  if (jsonValue.ValueExists("ResourceARN")) {
     m_resourceARN = jsonValue.GetString("ResourceARN");
     m_resourceARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StorageVirtualMachineId"))
-  {
+  if (jsonValue.ValueExists("StorageVirtualMachineId")) {
     m_storageVirtualMachineId = jsonValue.GetString("StorageVirtualMachineId");
     m_storageVirtualMachineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subtype"))
-  {
+  if (jsonValue.ValueExists("Subtype")) {
     m_subtype = StorageVirtualMachineSubtypeMapper::GetStorageVirtualMachineSubtypeForName(jsonValue.GetString("Subtype"));
     m_subtypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UUID"))
-  {
+  if (jsonValue.ValueExists("UUID")) {
     m_uUID = jsonValue.GetString("UUID");
     m_uUIDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LifecycleTransitionReason"))
-  {
+  if (jsonValue.ValueExists("LifecycleTransitionReason")) {
     m_lifecycleTransitionReason = jsonValue.GetObject("LifecycleTransitionReason");
     m_lifecycleTransitionReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RootVolumeSecurityStyle"))
-  {
-    m_rootVolumeSecurityStyle = StorageVirtualMachineRootVolumeSecurityStyleMapper::GetStorageVirtualMachineRootVolumeSecurityStyleForName(jsonValue.GetString("RootVolumeSecurityStyle"));
+  if (jsonValue.ValueExists("RootVolumeSecurityStyle")) {
+    m_rootVolumeSecurityStyle = StorageVirtualMachineRootVolumeSecurityStyleMapper::GetStorageVirtualMachineRootVolumeSecurityStyleForName(
+        jsonValue.GetString("RootVolumeSecurityStyle"));
     m_rootVolumeSecurityStyleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StorageVirtualMachine::Jsonize() const
-{
+JsonValue StorageVirtualMachine::Jsonize() const {
   JsonValue payload;
 
-  if(m_activeDirectoryConfigurationHasBeenSet)
-  {
-   payload.WithObject("ActiveDirectoryConfiguration", m_activeDirectoryConfiguration.Jsonize());
-
+  if (m_activeDirectoryConfigurationHasBeenSet) {
+    payload.WithObject("ActiveDirectoryConfiguration", m_activeDirectoryConfiguration.Jsonize());
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_endpointsHasBeenSet)
-  {
-   payload.WithObject("Endpoints", m_endpoints.Jsonize());
-
+  if (m_endpointsHasBeenSet) {
+    payload.WithObject("Endpoints", m_endpoints.Jsonize());
   }
 
-  if(m_fileSystemIdHasBeenSet)
-  {
-   payload.WithString("FileSystemId", m_fileSystemId);
-
+  if (m_fileSystemIdHasBeenSet) {
+    payload.WithString("FileSystemId", m_fileSystemId);
   }
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithString("Lifecycle", StorageVirtualMachineLifecycleMapper::GetNameForStorageVirtualMachineLifecycle(m_lifecycle));
+  if (m_lifecycleHasBeenSet) {
+    payload.WithString("Lifecycle", StorageVirtualMachineLifecycleMapper::GetNameForStorageVirtualMachineLifecycle(m_lifecycle));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("ResourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("ResourceARN", m_resourceARN);
   }
 
-  if(m_storageVirtualMachineIdHasBeenSet)
-  {
-   payload.WithString("StorageVirtualMachineId", m_storageVirtualMachineId);
-
+  if (m_storageVirtualMachineIdHasBeenSet) {
+    payload.WithString("StorageVirtualMachineId", m_storageVirtualMachineId);
   }
 
-  if(m_subtypeHasBeenSet)
-  {
-   payload.WithString("Subtype", StorageVirtualMachineSubtypeMapper::GetNameForStorageVirtualMachineSubtype(m_subtype));
+  if (m_subtypeHasBeenSet) {
+    payload.WithString("Subtype", StorageVirtualMachineSubtypeMapper::GetNameForStorageVirtualMachineSubtype(m_subtype));
   }
 
-  if(m_uUIDHasBeenSet)
-  {
-   payload.WithString("UUID", m_uUID);
-
+  if (m_uUIDHasBeenSet) {
+    payload.WithString("UUID", m_uUID);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_lifecycleTransitionReasonHasBeenSet)
-  {
-   payload.WithObject("LifecycleTransitionReason", m_lifecycleTransitionReason.Jsonize());
-
+  if (m_lifecycleTransitionReasonHasBeenSet) {
+    payload.WithObject("LifecycleTransitionReason", m_lifecycleTransitionReason.Jsonize());
   }
 
-  if(m_rootVolumeSecurityStyleHasBeenSet)
-  {
-   payload.WithString("RootVolumeSecurityStyle", StorageVirtualMachineRootVolumeSecurityStyleMapper::GetNameForStorageVirtualMachineRootVolumeSecurityStyle(m_rootVolumeSecurityStyle));
+  if (m_rootVolumeSecurityStyleHasBeenSet) {
+    payload.WithString("RootVolumeSecurityStyle",
+                       StorageVirtualMachineRootVolumeSecurityStyleMapper::GetNameForStorageVirtualMachineRootVolumeSecurityStyle(
+                           m_rootVolumeSecurityStyle));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

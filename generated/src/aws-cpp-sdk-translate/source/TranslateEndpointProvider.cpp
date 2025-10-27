@@ -5,12 +5,8 @@
 
 #include <aws/translate/TranslateEndpointProvider.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Translate
-} // namespace Aws
+namespace Aws {
+namespace Translate {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Translate
+}  // namespace Aws

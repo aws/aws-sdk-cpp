@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace PaymentCryptographyData {
+namespace Model {
 
+/**
+ * <p>Parameters that are required to generate or verify Visa PIN.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VisaPin">AWS
+ * API Reference</a></p>
+ */
+class VisaPin {
+ public:
+  AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin() = default;
+  AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Parameters that are required to generate or verify Visa PIN.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VisaPin">AWS
-   * API Reference</a></p>
+   * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
+   * calculate the PVV (PIN Verification Value).</p>
    */
-  class VisaPin
-  {
-  public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin() = default;
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetPinVerificationKeyIndex() const { return m_pinVerificationKeyIndex; }
+  inline bool PinVerificationKeyIndexHasBeenSet() const { return m_pinVerificationKeyIndexHasBeenSet; }
+  inline void SetPinVerificationKeyIndex(int value) {
+    m_pinVerificationKeyIndexHasBeenSet = true;
+    m_pinVerificationKeyIndex = value;
+  }
+  inline VisaPin& WithPinVerificationKeyIndex(int value) {
+    SetPinVerificationKeyIndex(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_pinVerificationKeyIndex{0};
+  bool m_pinVerificationKeyIndexHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
-     * calculate the PVV (PIN Verification Value).</p>
-     */
-    inline int GetPinVerificationKeyIndex() const { return m_pinVerificationKeyIndex; }
-    inline bool PinVerificationKeyIndexHasBeenSet() const { return m_pinVerificationKeyIndexHasBeenSet; }
-    inline void SetPinVerificationKeyIndex(int value) { m_pinVerificationKeyIndexHasBeenSet = true; m_pinVerificationKeyIndex = value; }
-    inline VisaPin& WithPinVerificationKeyIndex(int value) { SetPinVerificationKeyIndex(value); return *this;}
-    ///@}
-  private:
-
-    int m_pinVerificationKeyIndex{0};
-    bool m_pinVerificationKeyIndexHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

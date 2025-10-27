@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/AnomalyGroupStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/AnomalyGroupStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-AnomalyGroupStatistics::AnomalyGroupStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnomalyGroupStatistics::AnomalyGroupStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-AnomalyGroupStatistics& AnomalyGroupStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationStartDate"))
-  {
+AnomalyGroupStatistics& AnomalyGroupStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationStartDate")) {
     m_evaluationStartDate = jsonValue.GetString("EvaluationStartDate");
     m_evaluationStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalCount"))
-  {
+  if (jsonValue.ValueExists("TotalCount")) {
     m_totalCount = jsonValue.GetInteger("TotalCount");
     m_totalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ItemizedMetricStatsList"))
-  {
+  if (jsonValue.ValueExists("ItemizedMetricStatsList")) {
     Aws::Utils::Array<JsonView> itemizedMetricStatsListJsonList = jsonValue.GetArray("ItemizedMetricStatsList");
-    for(unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength(); ++itemizedMetricStatsListIndex)
-    {
+    for (unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength();
+         ++itemizedMetricStatsListIndex) {
       m_itemizedMetricStatsList.push_back(itemizedMetricStatsListJsonList[itemizedMetricStatsListIndex].AsObject());
     }
     m_itemizedMetricStatsListHasBeenSet = true;
@@ -47,36 +37,30 @@ AnomalyGroupStatistics& AnomalyGroupStatistics::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AnomalyGroupStatistics::Jsonize() const
-{
+JsonValue AnomalyGroupStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationStartDateHasBeenSet)
-  {
-   payload.WithString("EvaluationStartDate", m_evaluationStartDate);
-
+  if (m_evaluationStartDateHasBeenSet) {
+    payload.WithString("EvaluationStartDate", m_evaluationStartDate);
   }
 
-  if(m_totalCountHasBeenSet)
-  {
-   payload.WithInteger("TotalCount", m_totalCount);
-
+  if (m_totalCountHasBeenSet) {
+    payload.WithInteger("TotalCount", m_totalCount);
   }
 
-  if(m_itemizedMetricStatsListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> itemizedMetricStatsListJsonList(m_itemizedMetricStatsList.size());
-   for(unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength(); ++itemizedMetricStatsListIndex)
-   {
-     itemizedMetricStatsListJsonList[itemizedMetricStatsListIndex].AsObject(m_itemizedMetricStatsList[itemizedMetricStatsListIndex].Jsonize());
-   }
-   payload.WithArray("ItemizedMetricStatsList", std::move(itemizedMetricStatsListJsonList));
-
+  if (m_itemizedMetricStatsListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> itemizedMetricStatsListJsonList(m_itemizedMetricStatsList.size());
+    for (unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength();
+         ++itemizedMetricStatsListIndex) {
+      itemizedMetricStatsListJsonList[itemizedMetricStatsListIndex].AsObject(
+          m_itemizedMetricStatsList[itemizedMetricStatsListIndex].Jsonize());
+    }
+    payload.WithArray("ItemizedMetricStatsList", std::move(itemizedMetricStatsListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

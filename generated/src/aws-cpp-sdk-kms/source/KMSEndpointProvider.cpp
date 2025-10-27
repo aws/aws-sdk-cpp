@@ -5,12 +5,8 @@
 
 #include <aws/kms/KMSEndpointProvider.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KMS
-} // namespace Aws
+namespace Aws {
+namespace KMS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KMS
+}  // namespace Aws

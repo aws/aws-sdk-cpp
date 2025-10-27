@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/WarmTierRetentionPeriod.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/WarmTierRetentionPeriod.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-WarmTierRetentionPeriod::WarmTierRetentionPeriod(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WarmTierRetentionPeriod::WarmTierRetentionPeriod(JsonView jsonValue) { *this = jsonValue; }
 
-WarmTierRetentionPeriod& WarmTierRetentionPeriod::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfDays"))
-  {
+WarmTierRetentionPeriod& WarmTierRetentionPeriod::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfDays")) {
     m_numberOfDays = jsonValue.GetInteger("numberOfDays");
     m_numberOfDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unlimited"))
-  {
+  if (jsonValue.ValueExists("unlimited")) {
     m_unlimited = jsonValue.GetBool("unlimited");
     m_unlimitedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WarmTierRetentionPeriod::Jsonize() const
-{
+JsonValue WarmTierRetentionPeriod::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfDaysHasBeenSet)
-  {
-   payload.WithInteger("numberOfDays", m_numberOfDays);
-
+  if (m_numberOfDaysHasBeenSet) {
+    payload.WithInteger("numberOfDays", m_numberOfDays);
   }
 
-  if(m_unlimitedHasBeenSet)
-  {
-   payload.WithBool("unlimited", m_unlimited);
-
+  if (m_unlimitedHasBeenSet) {
+    payload.WithBool("unlimited", m_unlimited);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

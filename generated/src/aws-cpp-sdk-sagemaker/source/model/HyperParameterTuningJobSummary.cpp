@@ -3,143 +3,112 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/HyperParameterTuningJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-HyperParameterTuningJobSummary& HyperParameterTuningJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HyperParameterTuningJobName"))
-  {
+HyperParameterTuningJobSummary& HyperParameterTuningJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HyperParameterTuningJobName")) {
     m_hyperParameterTuningJobName = jsonValue.GetString("HyperParameterTuningJobName");
     m_hyperParameterTuningJobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HyperParameterTuningJobArn"))
-  {
+  if (jsonValue.ValueExists("HyperParameterTuningJobArn")) {
     m_hyperParameterTuningJobArn = jsonValue.GetString("HyperParameterTuningJobArn");
     m_hyperParameterTuningJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HyperParameterTuningJobStatus"))
-  {
-    m_hyperParameterTuningJobStatus = HyperParameterTuningJobStatusMapper::GetHyperParameterTuningJobStatusForName(jsonValue.GetString("HyperParameterTuningJobStatus"));
+  if (jsonValue.ValueExists("HyperParameterTuningJobStatus")) {
+    m_hyperParameterTuningJobStatus =
+        HyperParameterTuningJobStatusMapper::GetHyperParameterTuningJobStatusForName(jsonValue.GetString("HyperParameterTuningJobStatus"));
     m_hyperParameterTuningJobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Strategy"))
-  {
+  if (jsonValue.ValueExists("Strategy")) {
     m_strategy = HyperParameterTuningJobStrategyTypeMapper::GetHyperParameterTuningJobStrategyTypeForName(jsonValue.GetString("Strategy"));
     m_strategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HyperParameterTuningEndTime"))
-  {
+  if (jsonValue.ValueExists("HyperParameterTuningEndTime")) {
     m_hyperParameterTuningEndTime = jsonValue.GetDouble("HyperParameterTuningEndTime");
     m_hyperParameterTuningEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainingJobStatusCounters"))
-  {
+  if (jsonValue.ValueExists("TrainingJobStatusCounters")) {
     m_trainingJobStatusCounters = jsonValue.GetObject("TrainingJobStatusCounters");
     m_trainingJobStatusCountersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectiveStatusCounters"))
-  {
+  if (jsonValue.ValueExists("ObjectiveStatusCounters")) {
     m_objectiveStatusCounters = jsonValue.GetObject("ObjectiveStatusCounters");
     m_objectiveStatusCountersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceLimits"))
-  {
+  if (jsonValue.ValueExists("ResourceLimits")) {
     m_resourceLimits = jsonValue.GetObject("ResourceLimits");
     m_resourceLimitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HyperParameterTuningJobSummary::Jsonize() const
-{
+JsonValue HyperParameterTuningJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_hyperParameterTuningJobNameHasBeenSet)
-  {
-   payload.WithString("HyperParameterTuningJobName", m_hyperParameterTuningJobName);
-
+  if (m_hyperParameterTuningJobNameHasBeenSet) {
+    payload.WithString("HyperParameterTuningJobName", m_hyperParameterTuningJobName);
   }
 
-  if(m_hyperParameterTuningJobArnHasBeenSet)
-  {
-   payload.WithString("HyperParameterTuningJobArn", m_hyperParameterTuningJobArn);
-
+  if (m_hyperParameterTuningJobArnHasBeenSet) {
+    payload.WithString("HyperParameterTuningJobArn", m_hyperParameterTuningJobArn);
   }
 
-  if(m_hyperParameterTuningJobStatusHasBeenSet)
-  {
-   payload.WithString("HyperParameterTuningJobStatus", HyperParameterTuningJobStatusMapper::GetNameForHyperParameterTuningJobStatus(m_hyperParameterTuningJobStatus));
+  if (m_hyperParameterTuningJobStatusHasBeenSet) {
+    payload.WithString("HyperParameterTuningJobStatus",
+                       HyperParameterTuningJobStatusMapper::GetNameForHyperParameterTuningJobStatus(m_hyperParameterTuningJobStatus));
   }
 
-  if(m_strategyHasBeenSet)
-  {
-   payload.WithString("Strategy", HyperParameterTuningJobStrategyTypeMapper::GetNameForHyperParameterTuningJobStrategyType(m_strategy));
+  if (m_strategyHasBeenSet) {
+    payload.WithString("Strategy", HyperParameterTuningJobStrategyTypeMapper::GetNameForHyperParameterTuningJobStrategyType(m_strategy));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_hyperParameterTuningEndTimeHasBeenSet)
-  {
-   payload.WithDouble("HyperParameterTuningEndTime", m_hyperParameterTuningEndTime.SecondsWithMSPrecision());
+  if (m_hyperParameterTuningEndTimeHasBeenSet) {
+    payload.WithDouble("HyperParameterTuningEndTime", m_hyperParameterTuningEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_trainingJobStatusCountersHasBeenSet)
-  {
-   payload.WithObject("TrainingJobStatusCounters", m_trainingJobStatusCounters.Jsonize());
-
+  if (m_trainingJobStatusCountersHasBeenSet) {
+    payload.WithObject("TrainingJobStatusCounters", m_trainingJobStatusCounters.Jsonize());
   }
 
-  if(m_objectiveStatusCountersHasBeenSet)
-  {
-   payload.WithObject("ObjectiveStatusCounters", m_objectiveStatusCounters.Jsonize());
-
+  if (m_objectiveStatusCountersHasBeenSet) {
+    payload.WithObject("ObjectiveStatusCounters", m_objectiveStatusCounters.Jsonize());
   }
 
-  if(m_resourceLimitsHasBeenSet)
-  {
-   payload.WithObject("ResourceLimits", m_resourceLimits.Jsonize());
-
+  if (m_resourceLimitsHasBeenSet) {
+    payload.WithObject("ResourceLimits", m_resourceLimits.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

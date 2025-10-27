@@ -12,80 +12,54 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ConfirmSignUpRequest::SerializePayload() const
-{
+Aws::String ConfirmSignUpRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_secretHashHasBeenSet)
-  {
-   payload.WithString("SecretHash", m_secretHash);
-
+  if (m_secretHashHasBeenSet) {
+    payload.WithString("SecretHash", m_secretHash);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_confirmationCodeHasBeenSet)
-  {
-   payload.WithString("ConfirmationCode", m_confirmationCode);
-
+  if (m_confirmationCodeHasBeenSet) {
+    payload.WithString("ConfirmationCode", m_confirmationCode);
   }
 
-  if(m_forceAliasCreationHasBeenSet)
-  {
-   payload.WithBool("ForceAliasCreation", m_forceAliasCreation);
-
+  if (m_forceAliasCreationHasBeenSet) {
+    payload.WithBool("ForceAliasCreation", m_forceAliasCreation);
   }
 
-  if(m_analyticsMetadataHasBeenSet)
-  {
-   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
-
+  if (m_analyticsMetadataHasBeenSet) {
+    payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
   }
 
-  if(m_userContextDataHasBeenSet)
-  {
-   payload.WithObject("UserContextData", m_userContextData.Jsonize());
-
+  if (m_userContextDataHasBeenSet) {
+    payload.WithObject("UserContextData", m_userContextData.Jsonize());
   }
 
-  if(m_clientMetadataHasBeenSet)
-  {
-   JsonValue clientMetadataJsonMap;
-   for(auto& clientMetadataItem : m_clientMetadata)
-   {
-     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
-   }
-   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
-
+  if (m_clientMetadataHasBeenSet) {
+    JsonValue clientMetadataJsonMap;
+    for (auto& clientMetadataItem : m_clientMetadata) {
+      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+    }
+    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
   }
 
-  if(m_sessionHasBeenSet)
-  {
-   payload.WithString("Session", m_session);
-
+  if (m_sessionHasBeenSet) {
+    payload.WithString("Session", m_session);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ConfirmSignUpRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ConfirmSignUpRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.ConfirmSignUp"));
   return headers;
-
 }
-
-
-
-

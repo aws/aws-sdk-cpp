@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class TrustDirection
-  {
-    NOT_SET,
-    One_Way_Outgoing,
-    One_Way_Incoming,
-    Two_Way
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class TrustDirection { NOT_SET, One_Way_Outgoing, One_Way_Incoming, Two_Way };
 
-namespace TrustDirectionMapper
-{
+namespace TrustDirectionMapper {
 AWS_DIRECTORYSERVICE_API TrustDirection GetTrustDirectionForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForTrustDirection(TrustDirection value);
-} // namespace TrustDirectionMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace TrustDirectionMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

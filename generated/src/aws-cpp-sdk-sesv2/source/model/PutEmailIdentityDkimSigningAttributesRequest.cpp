@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,17 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutEmailIdentityDkimSigningAttributesRequest::SerializePayload() const
-{
+Aws::String PutEmailIdentityDkimSigningAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_signingAttributesOriginHasBeenSet)
-  {
-   payload.WithString("SigningAttributesOrigin", DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
+  if (m_signingAttributesOriginHasBeenSet) {
+    payload.WithString("SigningAttributesOrigin",
+                       DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
   }
 
-  if(m_signingAttributesHasBeenSet)
-  {
-   payload.WithObject("SigningAttributes", m_signingAttributes.Jsonize());
-
+  if (m_signingAttributesHasBeenSet) {
+    payload.WithObject("SigningAttributes", m_signingAttributes.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -10,22 +10,18 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String SetStackPolicyRequest::SerializePayload() const
-{
+Aws::String SetStackPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetStackPolicy&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_stackPolicyBodyHasBeenSet)
-  {
+  if (m_stackPolicyBodyHasBeenSet) {
     ss << "StackPolicyBody=" << StringUtils::URLEncode(m_stackPolicyBody.c_str()) << "&";
   }
 
-  if(m_stackPolicyURLHasBeenSet)
-  {
+  if (m_stackPolicyURLHasBeenSet) {
     ss << "StackPolicyURL=" << StringUtils::URLEncode(m_stackPolicyURL.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SetStackPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetStackPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetStackPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

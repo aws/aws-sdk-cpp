@@ -4,40 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ContainerType
-  {
-    NOT_SET,
-    F4V,
-    GIF,
-    ISMV,
-    M2TS,
-    M3U8,
-    CMFC,
-    MOV,
-    MP4,
-    MPD,
-    MXF,
-    OGG,
-    WEBM,
-    RAW,
-    Y4M
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ContainerType { NOT_SET, F4V, GIF, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, OGG, WEBM, RAW, Y4M };
 
-namespace ContainerTypeMapper
-{
+namespace ContainerTypeMapper {
 AWS_MEDIACONVERT_API ContainerType GetContainerTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ContainerTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 
-namespace Aws
-{
-namespace SnowDeviceManagement
-{
-namespace Model
-{
-  enum class AttachmentStatus
-  {
-    NOT_SET,
-    ATTACHING,
-    ATTACHED,
-    DETACHING,
-    DETACHED
-  };
+namespace Aws {
+namespace SnowDeviceManagement {
+namespace Model {
+enum class AttachmentStatus { NOT_SET, ATTACHING, ATTACHED, DETACHING, DETACHED };
 
-namespace AttachmentStatusMapper
-{
+namespace AttachmentStatusMapper {
 AWS_SNOWDEVICEMANAGEMENT_API AttachmentStatus GetAttachmentStatusForName(const Aws::String& name);
 
 AWS_SNOWDEVICEMANAGEMENT_API Aws::String GetNameForAttachmentStatus(AttachmentStatus value);
-} // namespace AttachmentStatusMapper
-} // namespace Model
-} // namespace SnowDeviceManagement
-} // namespace Aws
+}  // namespace AttachmentStatusMapper
+}  // namespace Model
+}  // namespace SnowDeviceManagement
+}  // namespace Aws

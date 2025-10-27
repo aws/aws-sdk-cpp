@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class ErrorCode
-  {
-    NOT_SET,
-    ClientError,
-    InternalError
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class ErrorCode { NOT_SET, ClientError, InternalError };
 
-namespace ErrorCodeMapper
-{
+namespace ErrorCodeMapper {
 AWS_MACIE2_API ErrorCode GetErrorCodeForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForErrorCode(ErrorCode value);
-} // namespace ErrorCodeMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace ErrorCodeMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

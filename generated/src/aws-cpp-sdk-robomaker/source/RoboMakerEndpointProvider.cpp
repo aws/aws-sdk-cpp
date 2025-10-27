@@ -5,12 +5,8 @@
 
 #include <aws/robomaker/RoboMakerEndpointProvider.h>
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RoboMaker
-} // namespace Aws
+namespace Aws {
+namespace RoboMaker {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RoboMaker
+}  // namespace Aws

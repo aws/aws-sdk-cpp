@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/SearchLocalGatewayRoutesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/SearchLocalGatewayRoutesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,24 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchLocalGatewayRoutesResponse::SearchLocalGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+SearchLocalGatewayRoutesResponse::SearchLocalGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "SearchLocalGatewayRoutesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "SearchLocalGatewayRoutesResponse")) {
     resultNode = rootNode.FirstChild("SearchLocalGatewayRoutesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode routesNode = resultNode.FirstChild("routeSet");
-    if(!routesNode.IsNull())
-    {
+    if (!routesNode.IsNull()) {
       XmlNode routesMember = routesNode.FirstChild("item");
       m_routesHasBeenSet = !routesMember.IsNull();
-      while(!routesMember.IsNull())
-      {
+      while (!routesMember.IsNull()) {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
@@ -48,8 +42,7 @@ SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator =(c
       m_routesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +50,11 @@ SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator =(c
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchLocalGatewayRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchLocalGatewayRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

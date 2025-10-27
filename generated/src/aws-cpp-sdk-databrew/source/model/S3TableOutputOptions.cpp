@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/S3TableOutputOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/S3TableOutputOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-S3TableOutputOptions::S3TableOutputOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3TableOutputOptions::S3TableOutputOptions(JsonView jsonValue) { *this = jsonValue; }
 
-S3TableOutputOptions& S3TableOutputOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Location"))
-  {
+S3TableOutputOptions& S3TableOutputOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetObject("Location");
     m_locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3TableOutputOptions::Jsonize() const
-{
+JsonValue S3TableOutputOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("Location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("Location", m_location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

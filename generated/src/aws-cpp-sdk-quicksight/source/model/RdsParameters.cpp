@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RdsParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RdsParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RdsParameters::RdsParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RdsParameters::RdsParameters(JsonView jsonValue) { *this = jsonValue; }
 
-RdsParameters& RdsParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+RdsParameters& RdsParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Database"))
-  {
+  if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RdsParameters::Jsonize() const
-{
+JsonValue RdsParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("Database", m_database);
-
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

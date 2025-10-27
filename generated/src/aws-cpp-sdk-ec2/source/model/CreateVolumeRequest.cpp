@@ -3,99 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateVolumeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateVolumeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateVolumeRequest::SerializePayload() const
-{
+Aws::String CreateVolumeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateVolume&";
-  if(m_availabilityZoneHasBeenSet)
-  {
+  if (m_availabilityZoneHasBeenSet) {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_availabilityZoneIdHasBeenSet)
-  {
+  if (m_availabilityZoneIdHasBeenSet) {
     ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
-  if(m_encryptedHasBeenSet)
-  {
+  if (m_encryptedHasBeenSet) {
     ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
-  if(m_iopsHasBeenSet)
-  {
+  if (m_iopsHasBeenSet) {
     ss << "Iops=" << m_iops << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_outpostArnHasBeenSet)
-  {
+  if (m_outpostArnHasBeenSet) {
     ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
-  if(m_sizeHasBeenSet)
-  {
+  if (m_sizeHasBeenSet) {
     ss << "Size=" << m_size << "&";
   }
 
-  if(m_snapshotIdHasBeenSet)
-  {
+  if (m_snapshotIdHasBeenSet) {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  if(m_volumeTypeHasBeenSet)
-  {
+  if (m_volumeTypeHasBeenSet) {
     ss << "VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_multiAttachEnabledHasBeenSet)
-  {
+  if (m_multiAttachEnabledHasBeenSet) {
     ss << "MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
 
-  if(m_throughputHasBeenSet)
-  {
+  if (m_throughputHasBeenSet) {
     ss << "Throughput=" << m_throughput << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_volumeInitializationRateHasBeenSet)
-  {
+  if (m_volumeInitializationRateHasBeenSet) {
     ss << "VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
 
-  if(m_operatorHasBeenSet)
-  {
+  if (m_operatorHasBeenSet) {
     m_operator.OutputToStream(ss, "Operator");
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -103,8 +85,4 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateVolumeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateVolumeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

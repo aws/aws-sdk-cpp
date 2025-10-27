@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-namespace Model
-{
-  enum class EncryptionMethod
-  {
-    NOT_SET,
-    AES_128,
-    SAMPLE_AES
-  };
+namespace Aws {
+namespace MediaPackage {
+namespace Model {
+enum class EncryptionMethod { NOT_SET, AES_128, SAMPLE_AES };
 
-namespace EncryptionMethodMapper
-{
+namespace EncryptionMethodMapper {
 AWS_MEDIAPACKAGE_API EncryptionMethod GetEncryptionMethodForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGE_API Aws::String GetNameForEncryptionMethod(EncryptionMethod value);
-} // namespace EncryptionMethodMapper
-} // namespace Model
-} // namespace MediaPackage
-} // namespace Aws
+}  // namespace EncryptionMethodMapper
+}  // namespace Model
+}  // namespace MediaPackage
+}  // namespace Aws

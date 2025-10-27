@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/SnaplockRetentionPeriod.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/SnaplockRetentionPeriod.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-SnaplockRetentionPeriod::SnaplockRetentionPeriod(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnaplockRetentionPeriod::SnaplockRetentionPeriod(JsonView jsonValue) { *this = jsonValue; }
 
-SnaplockRetentionPeriod& SnaplockRetentionPeriod::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultRetention"))
-  {
+SnaplockRetentionPeriod& SnaplockRetentionPeriod::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultRetention")) {
     m_defaultRetention = jsonValue.GetObject("DefaultRetention");
     m_defaultRetentionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinimumRetention"))
-  {
+  if (jsonValue.ValueExists("MinimumRetention")) {
     m_minimumRetention = jsonValue.GetObject("MinimumRetention");
     m_minimumRetentionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumRetention"))
-  {
+  if (jsonValue.ValueExists("MaximumRetention")) {
     m_maximumRetention = jsonValue.GetObject("MaximumRetention");
     m_maximumRetentionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnaplockRetentionPeriod::Jsonize() const
-{
+JsonValue SnaplockRetentionPeriod::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultRetentionHasBeenSet)
-  {
-   payload.WithObject("DefaultRetention", m_defaultRetention.Jsonize());
-
+  if (m_defaultRetentionHasBeenSet) {
+    payload.WithObject("DefaultRetention", m_defaultRetention.Jsonize());
   }
 
-  if(m_minimumRetentionHasBeenSet)
-  {
-   payload.WithObject("MinimumRetention", m_minimumRetention.Jsonize());
-
+  if (m_minimumRetentionHasBeenSet) {
+    payload.WithObject("MinimumRetention", m_minimumRetention.Jsonize());
   }
 
-  if(m_maximumRetentionHasBeenSet)
-  {
-   payload.WithObject("MaximumRetention", m_maximumRetention.Jsonize());
-
+  if (m_maximumRetentionHasBeenSet) {
+    payload.WithObject("MaximumRetention", m_maximumRetention.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

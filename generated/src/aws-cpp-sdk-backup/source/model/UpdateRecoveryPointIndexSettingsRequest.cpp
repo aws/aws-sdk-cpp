@@ -12,24 +12,16 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRecoveryPointIndexSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateRecoveryPointIndexSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithString("Index", IndexMapper::GetNameForIndex(m_index));
+  if (m_indexHasBeenSet) {
+    payload.WithString("Index", IndexMapper::GetNameForIndex(m_index));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

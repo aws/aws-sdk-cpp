@@ -12,65 +12,44 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAssessmentRequest::SerializePayload() const
-{
+Aws::String CreateAssessmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_assessmentReportsDestinationHasBeenSet)
-  {
-   payload.WithObject("assessmentReportsDestination", m_assessmentReportsDestination.Jsonize());
-
+  if (m_assessmentReportsDestinationHasBeenSet) {
+    payload.WithObject("assessmentReportsDestination", m_assessmentReportsDestination.Jsonize());
   }
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithObject("scope", m_scope.Jsonize());
-
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("scope", m_scope.Jsonize());
   }
 
-  if(m_rolesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
-   for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
-   {
-     rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
-   }
-   payload.WithArray("roles", std::move(rolesJsonList));
-
+  if (m_rolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
+    }
+    payload.WithArray("roles", std::move(rolesJsonList));
   }
 
-  if(m_frameworkIdHasBeenSet)
-  {
-   payload.WithString("frameworkId", m_frameworkId);
-
+  if (m_frameworkIdHasBeenSet) {
+    payload.WithString("frameworkId", m_frameworkId);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/comprehend/ComprehendEndpointProvider.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Comprehend
-} // namespace Aws
+namespace Aws {
+namespace Comprehend {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Comprehend
+}  // namespace Aws

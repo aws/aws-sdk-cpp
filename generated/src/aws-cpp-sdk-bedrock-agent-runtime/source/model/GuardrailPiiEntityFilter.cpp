@@ -11,61 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailPiiEntityFilter& GuardrailPiiEntityFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+GuardrailPiiEntityFilter& GuardrailPiiEntityFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("match"))
-  {
+  if (jsonValue.ValueExists("match")) {
     m_match = jsonValue.GetString("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("action"))
-  {
-    m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
+  if (jsonValue.ValueExists("action")) {
+    m_action =
+        GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailPiiEntityFilter::Jsonize() const
-{
+JsonValue GuardrailPiiEntityFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GuardrailPiiEntityTypeMapper::GetNameForGuardrailPiiEntityType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", GuardrailPiiEntityTypeMapper::GetNameForGuardrailPiiEntityType(m_type));
   }
 
-  if(m_matchHasBeenSet)
-  {
-   payload.WithString("match", m_match);
-
+  if (m_matchHasBeenSet) {
+    payload.WithString("match", m_match);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action",
+                       GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

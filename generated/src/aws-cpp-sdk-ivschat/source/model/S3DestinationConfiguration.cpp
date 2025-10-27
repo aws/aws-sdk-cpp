@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivschat/model/S3DestinationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivschat/model/S3DestinationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ivschat
-{
-namespace Model
-{
+namespace Aws {
+namespace ivschat {
+namespace Model {
 
-S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketName"))
-  {
+S3DestinationConfiguration& S3DestinationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3DestinationConfiguration::Jsonize() const
-{
+JsonValue S3DestinationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ivschat
-} // namespace Aws
+}  // namespace Model
+}  // namespace ivschat
+}  // namespace Aws

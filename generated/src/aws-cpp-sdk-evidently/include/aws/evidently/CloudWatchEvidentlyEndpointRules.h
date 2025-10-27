@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-class CloudWatchEvidentlyEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudWatchEvidently {
+class CloudWatchEvidentlyEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class DocumentVersionStatus
-  {
-    NOT_SET,
-    ACTIVE
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class DocumentVersionStatus { NOT_SET, ACTIVE };
 
-namespace DocumentVersionStatusMapper
-{
+namespace DocumentVersionStatusMapper {
 AWS_WORKDOCS_API DocumentVersionStatus GetDocumentVersionStatusForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForDocumentVersionStatus(DocumentVersionStatus value);
-} // namespace DocumentVersionStatusMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace DocumentVersionStatusMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

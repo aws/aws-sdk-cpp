@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-class BedrockAgentEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BedrockAgent {
+class BedrockAgentEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -12,102 +12,76 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-GatewayResponse::GatewayResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayResponse::GatewayResponse(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayResponse& GatewayResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("responseType"))
-  {
+GatewayResponse& GatewayResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("responseType")) {
     m_responseType = GatewayResponseTypeMapper::GetGatewayResponseTypeForName(jsonValue.GetString("responseType"));
     m_responseTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusCode"))
-  {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = jsonValue.GetString("statusCode");
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseParameters"))
-  {
+  if (jsonValue.ValueExists("responseParameters")) {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
-    for(auto& responseParametersItem : responseParametersJsonMap)
-    {
+    for (auto& responseParametersItem : responseParametersJsonMap) {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
     }
     m_responseParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseTemplates"))
-  {
+  if (jsonValue.ValueExists("responseTemplates")) {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
-    for(auto& responseTemplatesItem : responseTemplatesJsonMap)
-    {
+    for (auto& responseTemplatesItem : responseTemplatesJsonMap) {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();
     }
     m_responseTemplatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultResponse"))
-  {
+  if (jsonValue.ValueExists("defaultResponse")) {
     m_defaultResponse = jsonValue.GetBool("defaultResponse");
     m_defaultResponseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayResponse::Jsonize() const
-{
+JsonValue GatewayResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_responseTypeHasBeenSet)
-  {
-   payload.WithString("responseType", GatewayResponseTypeMapper::GetNameForGatewayResponseType(m_responseType));
+  if (m_responseTypeHasBeenSet) {
+    payload.WithString("responseType", GatewayResponseTypeMapper::GetNameForGatewayResponseType(m_responseType));
   }
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", m_statusCode);
   }
 
-  if(m_responseParametersHasBeenSet)
-  {
-   JsonValue responseParametersJsonMap;
-   for(auto& responseParametersItem : m_responseParameters)
-   {
-     responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
-   }
-   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
-
+  if (m_responseParametersHasBeenSet) {
+    JsonValue responseParametersJsonMap;
+    for (auto& responseParametersItem : m_responseParameters) {
+      responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
+    }
+    payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
   }
 
-  if(m_responseTemplatesHasBeenSet)
-  {
-   JsonValue responseTemplatesJsonMap;
-   for(auto& responseTemplatesItem : m_responseTemplates)
-   {
-     responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
-   }
-   payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
-
+  if (m_responseTemplatesHasBeenSet) {
+    JsonValue responseTemplatesJsonMap;
+    for (auto& responseTemplatesItem : m_responseTemplates) {
+      responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
+    }
+    payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
   }
 
-  if(m_defaultResponseHasBeenSet)
-  {
-   payload.WithBool("defaultResponse", m_defaultResponse);
-
+  if (m_defaultResponseHasBeenSet) {
+    payload.WithBool("defaultResponse", m_defaultResponse);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

@@ -12,45 +12,33 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-DomainNameAccessAssociation::DomainNameAccessAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainNameAccessAssociation::DomainNameAccessAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-DomainNameAccessAssociation& DomainNameAccessAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainNameAccessAssociationArn"))
-  {
+DomainNameAccessAssociation& DomainNameAccessAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainNameAccessAssociationArn")) {
     m_domainNameAccessAssociationArn = jsonValue.GetString("domainNameAccessAssociationArn");
     m_domainNameAccessAssociationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainNameArn"))
-  {
+  if (jsonValue.ValueExists("domainNameArn")) {
     m_domainNameArn = jsonValue.GetString("domainNameArn");
     m_domainNameArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessAssociationSourceType"))
-  {
-    m_accessAssociationSourceType = AccessAssociationSourceTypeMapper::GetAccessAssociationSourceTypeForName(jsonValue.GetString("accessAssociationSourceType"));
+  if (jsonValue.ValueExists("accessAssociationSourceType")) {
+    m_accessAssociationSourceType =
+        AccessAssociationSourceTypeMapper::GetAccessAssociationSourceTypeForName(jsonValue.GetString("accessAssociationSourceType"));
     m_accessAssociationSourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessAssociationSource"))
-  {
+  if (jsonValue.ValueExists("accessAssociationSource")) {
     m_accessAssociationSource = jsonValue.GetString("accessAssociationSource");
     m_accessAssociationSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -58,47 +46,37 @@ DomainNameAccessAssociation& DomainNameAccessAssociation::operator =(JsonView js
   return *this;
 }
 
-JsonValue DomainNameAccessAssociation::Jsonize() const
-{
+JsonValue DomainNameAccessAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameAccessAssociationArnHasBeenSet)
-  {
-   payload.WithString("domainNameAccessAssociationArn", m_domainNameAccessAssociationArn);
-
+  if (m_domainNameAccessAssociationArnHasBeenSet) {
+    payload.WithString("domainNameAccessAssociationArn", m_domainNameAccessAssociationArn);
   }
 
-  if(m_domainNameArnHasBeenSet)
-  {
-   payload.WithString("domainNameArn", m_domainNameArn);
-
+  if (m_domainNameArnHasBeenSet) {
+    payload.WithString("domainNameArn", m_domainNameArn);
   }
 
-  if(m_accessAssociationSourceTypeHasBeenSet)
-  {
-   payload.WithString("accessAssociationSourceType", AccessAssociationSourceTypeMapper::GetNameForAccessAssociationSourceType(m_accessAssociationSourceType));
+  if (m_accessAssociationSourceTypeHasBeenSet) {
+    payload.WithString("accessAssociationSourceType",
+                       AccessAssociationSourceTypeMapper::GetNameForAccessAssociationSourceType(m_accessAssociationSourceType));
   }
 
-  if(m_accessAssociationSourceHasBeenSet)
-  {
-   payload.WithString("accessAssociationSource", m_accessAssociationSource);
-
+  if (m_accessAssociationSourceHasBeenSet) {
+    payload.WithString("accessAssociationSource", m_accessAssociationSource);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

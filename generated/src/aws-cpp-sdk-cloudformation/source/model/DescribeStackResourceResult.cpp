@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/DescribeStackResourceResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStackResourceResult::DescribeStackResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeStackResourceResult::DescribeStackResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeStackResourceResult& DescribeStackResourceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeStackResourceResult& DescribeStackResourceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeStackResourceResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeStackResourceResult")) {
     resultNode = rootNode.FirstChild("DescribeStackResourceResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stackResourceDetailNode = resultNode.FirstChild("StackResourceDetail");
-    if(!stackResourceDetailNode.IsNull())
-    {
+    if (!stackResourceDetailNode.IsNull()) {
       m_stackResourceDetail = stackResourceDetailNode;
       m_stackResourceDetailHasBeenSet = true;
     }
@@ -46,7 +39,8 @@ DescribeStackResourceResult& DescribeStackResourceResult::operator =(const Aws::
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackResourceResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

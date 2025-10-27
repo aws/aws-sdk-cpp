@@ -5,12 +5,8 @@
 
 #include <aws/rtbfabric/RTBFabricEndpointProvider.h>
 
-namespace Aws
-{
-namespace RTBFabric
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RTBFabric
-} // namespace Aws
+namespace Aws {
+namespace RTBFabric {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RTBFabric
+}  // namespace Aws

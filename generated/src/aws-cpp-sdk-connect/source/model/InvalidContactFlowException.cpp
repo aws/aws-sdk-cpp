@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-InvalidContactFlowException::InvalidContactFlowException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidContactFlowException::InvalidContactFlowException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidContactFlowException& InvalidContactFlowException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("problems"))
-  {
+InvalidContactFlowException& InvalidContactFlowException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("problems")) {
     Aws::Utils::Array<JsonView> problemsJsonList = jsonValue.GetArray("problems");
-    for(unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex)
-    {
+    for (unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex) {
       m_problems.push_back(problemsJsonList[problemsIndex].AsObject());
     }
     m_problemsHasBeenSet = true;
@@ -37,24 +28,20 @@ InvalidContactFlowException& InvalidContactFlowException::operator =(JsonView js
   return *this;
 }
 
-JsonValue InvalidContactFlowException::Jsonize() const
-{
+JsonValue InvalidContactFlowException::Jsonize() const {
   JsonValue payload;
 
-  if(m_problemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> problemsJsonList(m_problems.size());
-   for(unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex)
-   {
-     problemsJsonList[problemsIndex].AsObject(m_problems[problemsIndex].Jsonize());
-   }
-   payload.WithArray("problems", std::move(problemsJsonList));
-
+  if (m_problemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> problemsJsonList(m_problems.size());
+    for (unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex) {
+      problemsJsonList[problemsIndex].AsObject(m_problems[problemsIndex].Jsonize());
+    }
+    payload.WithArray("problems", std::move(problemsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LookoutEquipment;
 
-AWSError<CoreErrors> LookoutEquipmentErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LookoutEquipmentErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LookoutEquipmentErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

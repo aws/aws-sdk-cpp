@@ -11,138 +11,101 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ActionParameters::ActionParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionParameters::ActionParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ActionParameters& ActionParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ActionParameters& ActionParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetObject("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("url"))
-  {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetObject("url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("anchor"))
-  {
+  if (jsonValue.ValueExists("anchor")) {
     m_anchor = jsonValue.GetObject("anchor");
     m_anchorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetObject("target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("global"))
-  {
+  if (jsonValue.ValueExists("global")) {
     m_global = jsonValue.GetObject("global");
     m_globalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("model"))
-  {
+  if (jsonValue.ValueExists("model")) {
     m_model = jsonValue.GetString("model");
     m_modelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetObject("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fields"))
-  {
+  if (jsonValue.ValueExists("fields")) {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
-    for(auto& fieldsItem : fieldsJsonMap)
-    {
+    for (auto& fieldsItem : fieldsJsonMap) {
       m_fields[fieldsItem.first] = fieldsItem.second.AsObject();
     }
     m_fieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = jsonValue.GetObject("state");
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionParameters::Jsonize() const
-{
+JsonValue ActionParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("type", m_type.Jsonize());
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithObject("url", m_url.Jsonize());
-
+  if (m_urlHasBeenSet) {
+    payload.WithObject("url", m_url.Jsonize());
   }
 
-  if(m_anchorHasBeenSet)
-  {
-   payload.WithObject("anchor", m_anchor.Jsonize());
-
+  if (m_anchorHasBeenSet) {
+    payload.WithObject("anchor", m_anchor.Jsonize());
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("target", m_target.Jsonize());
   }
 
-  if(m_globalHasBeenSet)
-  {
-   payload.WithObject("global", m_global.Jsonize());
-
+  if (m_globalHasBeenSet) {
+    payload.WithObject("global", m_global.Jsonize());
   }
 
-  if(m_modelHasBeenSet)
-  {
-   payload.WithString("model", m_model);
-
+  if (m_modelHasBeenSet) {
+    payload.WithString("model", m_model);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithObject("id", m_id.Jsonize());
-
+  if (m_idHasBeenSet) {
+    payload.WithObject("id", m_id.Jsonize());
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   JsonValue fieldsJsonMap;
-   for(auto& fieldsItem : m_fields)
-   {
-     fieldsJsonMap.WithObject(fieldsItem.first, fieldsItem.second.Jsonize());
-   }
-   payload.WithObject("fields", std::move(fieldsJsonMap));
-
+  if (m_fieldsHasBeenSet) {
+    JsonValue fieldsJsonMap;
+    for (auto& fieldsItem : m_fields) {
+      fieldsJsonMap.WithObject(fieldsItem.first, fieldsItem.second.Jsonize());
+    }
+    payload.WithObject("fields", std::move(fieldsJsonMap));
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithObject("state", m_state.Jsonize());
-
+  if (m_stateHasBeenSet) {
+    payload.WithObject("state", m_state.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

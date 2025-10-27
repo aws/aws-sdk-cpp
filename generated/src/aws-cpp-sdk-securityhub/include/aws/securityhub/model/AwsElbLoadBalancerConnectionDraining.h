@@ -6,65 +6,69 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p>Contains information about the connection draining configuration for the load
+ * balancer.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerConnectionDraining">AWS
+ * API Reference</a></p>
+ */
+class AwsElbLoadBalancerConnectionDraining {
+ public:
+  AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining() = default;
+  AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains information about the connection draining configuration for the load
-   * balancer.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerConnectionDraining">AWS
-   * API Reference</a></p>
+   * <p>Indicates whether connection draining is enabled for the load balancer.</p>
    */
-  class AwsElbLoadBalancerConnectionDraining
-  {
-  public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining() = default;
-    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline AwsElbLoadBalancerConnectionDraining& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum time, in seconds, to keep the existing connections open before
+   * deregistering the instances.</p>
+   */
+  inline int GetTimeout() const { return m_timeout; }
+  inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+  inline void SetTimeout(int value) {
+    m_timeoutHasBeenSet = true;
+    m_timeout = value;
+  }
+  inline AwsElbLoadBalancerConnectionDraining& WithTimeout(int value) {
+    SetTimeout(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Indicates whether connection draining is enabled for the load balancer.</p>
-     */
-    inline bool GetEnabled() const { return m_enabled; }
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-    inline AwsElbLoadBalancerConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
-    ///@}
+  int m_timeout{0};
+  bool m_timeoutHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum time, in seconds, to keep the existing connections open before
-     * deregistering the instances.</p>
-     */
-    inline int GetTimeout() const { return m_timeout; }
-    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline AwsElbLoadBalancerConnectionDraining& WithTimeout(int value) { SetTimeout(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enabled{false};
-    bool m_enabledHasBeenSet = false;
-
-    int m_timeout{0};
-    bool m_timeoutHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

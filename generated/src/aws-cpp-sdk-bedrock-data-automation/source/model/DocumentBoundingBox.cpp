@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-DocumentBoundingBox::DocumentBoundingBox(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentBoundingBox::DocumentBoundingBox(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentBoundingBox& DocumentBoundingBox::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("state"))
-  {
+DocumentBoundingBox& DocumentBoundingBox::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("state")) {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentBoundingBox::Jsonize() const
-{
+JsonValue DocumentBoundingBox::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", StateMapper::GetNameForState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", StateMapper::GetNameForState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

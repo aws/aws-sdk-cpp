@@ -12,27 +12,18 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCostCategoryDefinitionRequest::SerializePayload() const
-{
+Aws::String DeleteCostCategoryDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_costCategoryArnHasBeenSet)
-  {
-   payload.WithString("CostCategoryArn", m_costCategoryArn);
-
+  if (m_costCategoryArnHasBeenSet) {
+    payload.WithString("CostCategoryArn", m_costCategoryArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.DeleteCostCategoryDefinition"));
   return headers;
-
 }
-
-
-
-

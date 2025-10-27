@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MxfAfdSignaling
-  {
-    NOT_SET,
-    NO_COPY,
-    COPY_FROM_VIDEO
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MxfAfdSignaling { NOT_SET, NO_COPY, COPY_FROM_VIDEO };
 
-namespace MxfAfdSignalingMapper
-{
+namespace MxfAfdSignalingMapper {
 AWS_MEDIACONVERT_API MxfAfdSignaling GetMxfAfdSignalingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMxfAfdSignaling(MxfAfdSignaling value);
-} // namespace MxfAfdSignalingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MxfAfdSignalingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

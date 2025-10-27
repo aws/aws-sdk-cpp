@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String PutAnomalyDetectorRequest::SerializePayload() const
-{
+Aws::String PutAnomalyDetectorRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PutAnomalyDetector&";
-  if(m_configurationHasBeenSet)
-  {
+  if (m_configurationHasBeenSet) {
     m_configuration.OutputToStream(ss, "Configuration");
   }
 
-  if(m_metricCharacteristicsHasBeenSet)
-  {
+  if (m_metricCharacteristicsHasBeenSet) {
     m_metricCharacteristics.OutputToStream(ss, "MetricCharacteristics");
   }
 
-  if(m_singleMetricAnomalyDetectorHasBeenSet)
-  {
+  if (m_singleMetricAnomalyDetectorHasBeenSet) {
     m_singleMetricAnomalyDetector.OutputToStream(ss, "SingleMetricAnomalyDetector");
   }
 
-  if(m_metricMathAnomalyDetectorHasBeenSet)
-  {
+  if (m_metricMathAnomalyDetectorHasBeenSet) {
     m_metricMathAnomalyDetector.OutputToStream(ss, "MetricMathAnomalyDetector");
   }
 
@@ -38,8 +33,4 @@ Aws::String PutAnomalyDetectorRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PutAnomalyDetectorRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PutAnomalyDetectorRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ExperienceEndpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ExperienceEndpoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ExperienceEndpoint::ExperienceEndpoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperienceEndpoint::ExperienceEndpoint(JsonView jsonValue) { *this = jsonValue; }
 
-ExperienceEndpoint& ExperienceEndpoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointType"))
-  {
+ExperienceEndpoint& ExperienceEndpoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointType")) {
     m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
     m_endpointTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Endpoint"))
-  {
+  if (jsonValue.ValueExists("Endpoint")) {
     m_endpoint = jsonValue.GetString("Endpoint");
     m_endpointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperienceEndpoint::Jsonize() const
-{
+JsonValue ExperienceEndpoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointTypeHasBeenSet)
-  {
-   payload.WithString("EndpointType", EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
+  if (m_endpointTypeHasBeenSet) {
+    payload.WithString("EndpointType", EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
   }
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("Endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("Endpoint", m_endpoint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

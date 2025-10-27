@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribePlacementGroupsRequest::SerializePayload() const
-{
+Aws::String DescribePlacementGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribePlacementGroups&";
-  if(m_groupIdsHasBeenSet)
-  {
+  if (m_groupIdsHasBeenSet) {
     unsigned groupIdsCount = 1;
-    for(auto& item : m_groupIds)
-    {
-      ss << "GroupId." << groupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_groupIds) {
+      ss << "GroupId." << groupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       groupIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_groupNamesHasBeenSet)
-  {
+  if (m_groupNamesHasBeenSet) {
     unsigned groupNamesCount = 1;
-    for(auto& item : m_groupNames)
-    {
-      ss << "GroupName." << groupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_groupNames) {
+      ss << "GroupName." << groupNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
     }
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
@@ -55,8 +45,4 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribePlacementGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribePlacementGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

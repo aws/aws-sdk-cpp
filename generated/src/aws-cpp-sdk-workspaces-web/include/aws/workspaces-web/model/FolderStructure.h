@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
-  enum class FolderStructure
-  {
-    NOT_SET,
-    Flat,
-    NestedByDate
-  };
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+enum class FolderStructure { NOT_SET, Flat, NestedByDate };
 
-namespace FolderStructureMapper
-{
+namespace FolderStructureMapper {
 AWS_WORKSPACESWEB_API FolderStructure GetFolderStructureForName(const Aws::String& name);
 
 AWS_WORKSPACESWEB_API Aws::String GetNameForFolderStructure(FolderStructure value);
-} // namespace FolderStructureMapper
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace FolderStructureMapper
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

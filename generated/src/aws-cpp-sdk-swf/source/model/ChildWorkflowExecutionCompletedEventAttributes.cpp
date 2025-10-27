@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/ChildWorkflowExecutionCompletedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/ChildWorkflowExecutionCompletedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-ChildWorkflowExecutionCompletedEventAttributes::ChildWorkflowExecutionCompletedEventAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChildWorkflowExecutionCompletedEventAttributes::ChildWorkflowExecutionCompletedEventAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-ChildWorkflowExecutionCompletedEventAttributes& ChildWorkflowExecutionCompletedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowExecution"))
-  {
+ChildWorkflowExecutionCompletedEventAttributes& ChildWorkflowExecutionCompletedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowExecution")) {
     m_workflowExecution = jsonValue.GetObject("workflowExecution");
     m_workflowExecutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workflowType"))
-  {
+  if (jsonValue.ValueExists("workflowType")) {
     m_workflowType = jsonValue.GetObject("workflowType");
     m_workflowTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("result"))
-  {
+  if (jsonValue.ValueExists("result")) {
     m_result = jsonValue.GetString("result");
     m_resultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("initiatedEventId"))
-  {
+  if (jsonValue.ValueExists("initiatedEventId")) {
     m_initiatedEventId = jsonValue.GetInt64("initiatedEventId");
     m_initiatedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedEventId"))
-  {
+  if (jsonValue.ValueExists("startedEventId")) {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
     m_startedEventIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChildWorkflowExecutionCompletedEventAttributes::Jsonize() const
-{
+JsonValue ChildWorkflowExecutionCompletedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowExecutionHasBeenSet)
-  {
-   payload.WithObject("workflowExecution", m_workflowExecution.Jsonize());
-
+  if (m_workflowExecutionHasBeenSet) {
+    payload.WithObject("workflowExecution", m_workflowExecution.Jsonize());
   }
 
-  if(m_workflowTypeHasBeenSet)
-  {
-   payload.WithObject("workflowType", m_workflowType.Jsonize());
-
+  if (m_workflowTypeHasBeenSet) {
+    payload.WithObject("workflowType", m_workflowType.Jsonize());
   }
 
-  if(m_resultHasBeenSet)
-  {
-   payload.WithString("result", m_result);
-
+  if (m_resultHasBeenSet) {
+    payload.WithString("result", m_result);
   }
 
-  if(m_initiatedEventIdHasBeenSet)
-  {
-   payload.WithInt64("initiatedEventId", m_initiatedEventId);
-
+  if (m_initiatedEventIdHasBeenSet) {
+    payload.WithInt64("initiatedEventId", m_initiatedEventId);
   }
 
-  if(m_startedEventIdHasBeenSet)
-  {
-   payload.WithInt64("startedEventId", m_startedEventId);
-
+  if (m_startedEventIdHasBeenSet) {
+    payload.WithInt64("startedEventId", m_startedEventId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

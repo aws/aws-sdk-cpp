@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/InputConfigOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/InputConfigOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-InputConfigOutput::InputConfigOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputConfigOutput::InputConfigOutput(JsonView jsonValue) { *this = jsonValue; }
 
-InputConfigOutput& InputConfigOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PreviousEarthObservationJobArn"))
-  {
+InputConfigOutput& InputConfigOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PreviousEarthObservationJobArn")) {
     m_previousEarthObservationJobArn = jsonValue.GetString("PreviousEarthObservationJobArn");
     m_previousEarthObservationJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RasterDataCollectionQuery"))
-  {
+  if (jsonValue.ValueExists("RasterDataCollectionQuery")) {
     m_rasterDataCollectionQuery = jsonValue.GetObject("RasterDataCollectionQuery");
     m_rasterDataCollectionQueryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputConfigOutput::Jsonize() const
-{
+JsonValue InputConfigOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_previousEarthObservationJobArnHasBeenSet)
-  {
-   payload.WithString("PreviousEarthObservationJobArn", m_previousEarthObservationJobArn);
-
+  if (m_previousEarthObservationJobArnHasBeenSet) {
+    payload.WithString("PreviousEarthObservationJobArn", m_previousEarthObservationJobArn);
   }
 
-  if(m_rasterDataCollectionQueryHasBeenSet)
-  {
-   payload.WithObject("RasterDataCollectionQuery", m_rasterDataCollectionQuery.Jsonize());
-
+  if (m_rasterDataCollectionQueryHasBeenSet) {
+    payload.WithObject("RasterDataCollectionQuery", m_rasterDataCollectionQuery.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

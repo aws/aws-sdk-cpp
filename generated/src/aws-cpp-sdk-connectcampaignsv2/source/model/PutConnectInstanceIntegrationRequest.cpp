@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutConnectInstanceIntegrationRequest::SerializePayload() const
-{
+Aws::String PutConnectInstanceIntegrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_integrationConfigHasBeenSet)
-  {
-   payload.WithObject("integrationConfig", m_integrationConfig.Jsonize());
-
+  if (m_integrationConfigHasBeenSet) {
+    payload.WithObject("integrationConfig", m_integrationConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

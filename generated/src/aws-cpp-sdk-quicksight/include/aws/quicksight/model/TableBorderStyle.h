@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TableBorderStyle
-  {
-    NOT_SET,
-    NONE,
-    SOLID
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TableBorderStyle { NOT_SET, NONE, SOLID };
 
-namespace TableBorderStyleMapper
-{
+namespace TableBorderStyleMapper {
 AWS_QUICKSIGHT_API TableBorderStyle GetTableBorderStyleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTableBorderStyle(TableBorderStyle value);
-} // namespace TableBorderStyleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TableBorderStyleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

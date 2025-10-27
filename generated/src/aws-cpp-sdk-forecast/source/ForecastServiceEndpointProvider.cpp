@@ -5,12 +5,8 @@
 
 #include <aws/forecast/ForecastServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ForecastService
-} // namespace Aws
+namespace Aws {
+namespace ForecastService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ForecastService
+}  // namespace Aws

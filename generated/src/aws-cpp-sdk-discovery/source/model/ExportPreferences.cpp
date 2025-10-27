@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/ExportPreferences.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/model/ExportPreferences.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
 
-ExportPreferences::ExportPreferences(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportPreferences::ExportPreferences(JsonView jsonValue) { *this = jsonValue; }
 
-ExportPreferences& ExportPreferences::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ec2RecommendationsPreferences"))
-  {
+ExportPreferences& ExportPreferences::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ec2RecommendationsPreferences")) {
     m_ec2RecommendationsPreferences = jsonValue.GetObject("ec2RecommendationsPreferences");
     m_ec2RecommendationsPreferencesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportPreferences::Jsonize() const
-{
+JsonValue ExportPreferences::Jsonize() const {
   JsonValue payload;
 
-  if(m_ec2RecommendationsPreferencesHasBeenSet)
-  {
-   payload.WithObject("ec2RecommendationsPreferences", m_ec2RecommendationsPreferences.Jsonize());
-
+  if (m_ec2RecommendationsPreferencesHasBeenSet) {
+    payload.WithObject("ec2RecommendationsPreferences", m_ec2RecommendationsPreferences.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

@@ -4,62 +4,67 @@
  */
 
 #pragma once
-#include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mturk-requester/MTurk_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace MTurk
-{
-namespace Model
-{
-  class CreateHITTypeResult
-  {
-  public:
-    AWS_MTURK_API CreateHITTypeResult() = default;
-    AWS_MTURK_API CreateHITTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MTURK_API CreateHITTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MTurk {
+namespace Model {
+class CreateHITTypeResult {
+ public:
+  AWS_MTURK_API CreateHITTypeResult() = default;
+  AWS_MTURK_API CreateHITTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MTURK_API CreateHITTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p> The ID of the newly registered HIT type.</p>
+   */
+  inline const Aws::String& GetHITTypeId() const { return m_hITTypeId; }
+  template <typename HITTypeIdT = Aws::String>
+  void SetHITTypeId(HITTypeIdT&& value) {
+    m_hITTypeIdHasBeenSet = true;
+    m_hITTypeId = std::forward<HITTypeIdT>(value);
+  }
+  template <typename HITTypeIdT = Aws::String>
+  CreateHITTypeResult& WithHITTypeId(HITTypeIdT&& value) {
+    SetHITTypeId(std::forward<HITTypeIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The ID of the newly registered HIT type.</p>
-     */
-    inline const Aws::String& GetHITTypeId() const { return m_hITTypeId; }
-    template<typename HITTypeIdT = Aws::String>
-    void SetHITTypeId(HITTypeIdT&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::forward<HITTypeIdT>(value); }
-    template<typename HITTypeIdT = Aws::String>
-    CreateHITTypeResult& WithHITTypeId(HITTypeIdT&& value) { SetHITTypeId(std::forward<HITTypeIdT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateHITTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateHITTypeResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_hITTypeId;
+  bool m_hITTypeIdHasBeenSet = false;
 
-    Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

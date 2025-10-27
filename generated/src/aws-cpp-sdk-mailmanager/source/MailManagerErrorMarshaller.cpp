@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MailManager;
 
-AWSError<CoreErrors> MailManagerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MailManagerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MailManagerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

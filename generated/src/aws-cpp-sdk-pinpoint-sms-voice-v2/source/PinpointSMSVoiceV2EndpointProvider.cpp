@@ -5,12 +5,8 @@
 
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

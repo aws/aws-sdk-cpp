@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class BehaviorType
-  {
-    NOT_SET,
-    ROUTE_CURRENT_CHANNEL_ONLY,
-    ROUTE_ANY_CHANNEL
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class BehaviorType { NOT_SET, ROUTE_CURRENT_CHANNEL_ONLY, ROUTE_ANY_CHANNEL };
 
-namespace BehaviorTypeMapper
-{
+namespace BehaviorTypeMapper {
 AWS_CONNECT_API BehaviorType GetBehaviorTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForBehaviorType(BehaviorType value);
-} // namespace BehaviorTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace BehaviorTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

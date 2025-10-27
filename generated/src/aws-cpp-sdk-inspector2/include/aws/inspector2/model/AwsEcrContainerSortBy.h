@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class AwsEcrContainerSortBy
-  {
-    NOT_SET,
-    CRITICAL,
-    HIGH,
-    ALL
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class AwsEcrContainerSortBy { NOT_SET, CRITICAL, HIGH, ALL };
 
-namespace AwsEcrContainerSortByMapper
-{
+namespace AwsEcrContainerSortByMapper {
 AWS_INSPECTOR2_API AwsEcrContainerSortBy GetAwsEcrContainerSortByForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForAwsEcrContainerSortBy(AwsEcrContainerSortBy value);
-} // namespace AwsEcrContainerSortByMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace AwsEcrContainerSortByMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

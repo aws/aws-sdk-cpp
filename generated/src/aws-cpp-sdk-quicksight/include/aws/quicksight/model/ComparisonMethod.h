@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ComparisonMethod
-  {
-    NOT_SET,
-    DIFFERENCE,
-    PERCENT_DIFFERENCE,
-    PERCENT
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ComparisonMethod { NOT_SET, DIFFERENCE, PERCENT_DIFFERENCE, PERCENT };
 
-namespace ComparisonMethodMapper
-{
+namespace ComparisonMethodMapper {
 AWS_QUICKSIGHT_API ComparisonMethod GetComparisonMethodForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForComparisonMethod(ComparisonMethod value);
-} // namespace ComparisonMethodMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ComparisonMethodMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/ProgressDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/ProgressDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-ProgressDetail::ProgressDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProgressDetail::ProgressDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ProgressDetail& ProgressDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("currentProgress"))
-  {
+ProgressDetail& ProgressDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("currentProgress")) {
     m_currentProgress = RobotDeploymentStepMapper::GetRobotDeploymentStepForName(jsonValue.GetString("currentProgress"));
     m_currentProgressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("percentDone"))
-  {
+  if (jsonValue.ValueExists("percentDone")) {
     m_percentDone = jsonValue.GetDouble("percentDone");
     m_percentDoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("estimatedTimeRemainingSeconds"))
-  {
+  if (jsonValue.ValueExists("estimatedTimeRemainingSeconds")) {
     m_estimatedTimeRemainingSeconds = jsonValue.GetInteger("estimatedTimeRemainingSeconds");
     m_estimatedTimeRemainingSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetResource"))
-  {
+  if (jsonValue.ValueExists("targetResource")) {
     m_targetResource = jsonValue.GetString("targetResource");
     m_targetResourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProgressDetail::Jsonize() const
-{
+JsonValue ProgressDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_currentProgressHasBeenSet)
-  {
-   payload.WithString("currentProgress", RobotDeploymentStepMapper::GetNameForRobotDeploymentStep(m_currentProgress));
+  if (m_currentProgressHasBeenSet) {
+    payload.WithString("currentProgress", RobotDeploymentStepMapper::GetNameForRobotDeploymentStep(m_currentProgress));
   }
 
-  if(m_percentDoneHasBeenSet)
-  {
-   payload.WithDouble("percentDone", m_percentDone);
-
+  if (m_percentDoneHasBeenSet) {
+    payload.WithDouble("percentDone", m_percentDone);
   }
 
-  if(m_estimatedTimeRemainingSecondsHasBeenSet)
-  {
-   payload.WithInteger("estimatedTimeRemainingSeconds", m_estimatedTimeRemainingSeconds);
-
+  if (m_estimatedTimeRemainingSecondsHasBeenSet) {
+    payload.WithInteger("estimatedTimeRemainingSeconds", m_estimatedTimeRemainingSeconds);
   }
 
-  if(m_targetResourceHasBeenSet)
-  {
-   payload.WithString("targetResource", m_targetResource);
-
+  if (m_targetResourceHasBeenSet) {
+    payload.WithString("targetResource", m_targetResource);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

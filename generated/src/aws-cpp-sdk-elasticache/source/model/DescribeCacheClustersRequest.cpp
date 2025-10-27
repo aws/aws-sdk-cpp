@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeCacheClustersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeCacheClustersRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeCacheClustersRequest::SerializePayload() const
-{
+Aws::String DescribeCacheClustersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeCacheClusters&";
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_showCacheNodeInfoHasBeenSet)
-  {
+  if (m_showCacheNodeInfoHasBeenSet) {
     ss << "ShowCacheNodeInfo=" << std::boolalpha << m_showCacheNodeInfo << "&";
   }
 
-  if(m_showCacheClustersNotInReplicationGroupsHasBeenSet)
-  {
+  if (m_showCacheClustersNotInReplicationGroupsHasBeenSet) {
     ss << "ShowCacheClustersNotInReplicationGroups=" << std::boolalpha << m_showCacheClustersNotInReplicationGroups << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String DescribeCacheClustersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeCacheClustersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeCacheClustersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

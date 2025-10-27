@@ -12,19 +12,12 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateAssessmentReportEvidenceFolderRequest::SerializePayload() const
-{
+Aws::String AssociateAssessmentReportEvidenceFolderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_evidenceFolderIdHasBeenSet)
-  {
-   payload.WithString("evidenceFolderId", m_evidenceFolderId);
-
+  if (m_evidenceFolderIdHasBeenSet) {
+    payload.WithString("evidenceFolderId", m_evidenceFolderId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-S3Location::S3Location(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Location::S3Location(JsonView jsonValue) { *this = jsonValue; }
 
-S3Location& S3Location::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+S3Location& S3Location::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("prefix"))
-  {
+  if (jsonValue.ValueExists("prefix")) {
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Location::Jsonize() const
-{
+JsonValue S3Location::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("prefix", m_prefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

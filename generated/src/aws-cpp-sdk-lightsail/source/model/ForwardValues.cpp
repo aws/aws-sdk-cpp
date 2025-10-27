@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/ForwardValues.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/lightsail/model/ForwardValues.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+namespace ForwardValuesMapper {
 
-namespace Aws
-{
-  namespace Lightsail
-  {
-    namespace Model
-    {
-      namespace ForwardValuesMapper
-      {
+static const int none_HASH = HashingUtils::HashString("none");
+static const int allow_list_HASH = HashingUtils::HashString("allow-list");
+static const int all_HASH = HashingUtils::HashString("all");
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int allow_list_HASH = HashingUtils::HashString("allow-list");
-        static const int all_HASH = HashingUtils::HashString("all");
+ForwardValues GetForwardValuesForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == none_HASH) {
+    return ForwardValues::none;
+  } else if (hashCode == allow_list_HASH) {
+    return ForwardValues::allow_list;
+  } else if (hashCode == all_HASH) {
+    return ForwardValues::all;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ForwardValues>(hashCode);
+  }
 
+  return ForwardValues::NOT_SET;
+}
 
-        ForwardValues GetForwardValuesForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == none_HASH)
-          {
-            return ForwardValues::none;
-          }
-          else if (hashCode == allow_list_HASH)
-          {
-            return ForwardValues::allow_list;
-          }
-          else if (hashCode == all_HASH)
-          {
-            return ForwardValues::all;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ForwardValues>(hashCode);
-          }
+Aws::String GetNameForForwardValues(ForwardValues enumValue) {
+  switch (enumValue) {
+    case ForwardValues::NOT_SET:
+      return {};
+    case ForwardValues::none:
+      return "none";
+    case ForwardValues::allow_list:
+      return "allow-list";
+    case ForwardValues::all:
+      return "all";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ForwardValues::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForForwardValues(ForwardValues enumValue)
-        {
-          switch(enumValue)
-          {
-          case ForwardValues::NOT_SET:
-            return {};
-          case ForwardValues::none:
-            return "none";
-          case ForwardValues::allow_list:
-            return "allow-list";
-          case ForwardValues::all:
-            return "all";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ForwardValuesMapper
-    } // namespace Model
-  } // namespace Lightsail
-} // namespace Aws
+}  // namespace ForwardValuesMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

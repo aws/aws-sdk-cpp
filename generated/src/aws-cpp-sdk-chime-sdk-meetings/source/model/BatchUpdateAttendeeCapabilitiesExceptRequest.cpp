@@ -12,30 +12,21 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchUpdateAttendeeCapabilitiesExceptRequest::SerializePayload() const
-{
+Aws::String BatchUpdateAttendeeCapabilitiesExceptRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_excludedAttendeeIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> excludedAttendeeIdsJsonList(m_excludedAttendeeIds.size());
-   for(unsigned excludedAttendeeIdsIndex = 0; excludedAttendeeIdsIndex < excludedAttendeeIdsJsonList.GetLength(); ++excludedAttendeeIdsIndex)
-   {
-     excludedAttendeeIdsJsonList[excludedAttendeeIdsIndex].AsObject(m_excludedAttendeeIds[excludedAttendeeIdsIndex].Jsonize());
-   }
-   payload.WithArray("ExcludedAttendeeIds", std::move(excludedAttendeeIdsJsonList));
-
+  if (m_excludedAttendeeIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> excludedAttendeeIdsJsonList(m_excludedAttendeeIds.size());
+    for (unsigned excludedAttendeeIdsIndex = 0; excludedAttendeeIdsIndex < excludedAttendeeIdsJsonList.GetLength();
+         ++excludedAttendeeIdsIndex) {
+      excludedAttendeeIdsJsonList[excludedAttendeeIdsIndex].AsObject(m_excludedAttendeeIds[excludedAttendeeIdsIndex].Jsonize());
+    }
+    payload.WithArray("ExcludedAttendeeIds", std::move(excludedAttendeeIdsJsonList));
   }
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   payload.WithObject("Capabilities", m_capabilities.Jsonize());
-
+  if (m_capabilitiesHasBeenSet) {
+    payload.WithObject("Capabilities", m_capabilities.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

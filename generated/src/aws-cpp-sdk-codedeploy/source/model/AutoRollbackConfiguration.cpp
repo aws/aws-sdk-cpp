@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+AutoRollbackConfiguration& AutoRollbackConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("events"))
-  {
+  if (jsonValue.ValueExists("events")) {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
-    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-    {
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
       m_events.push_back(AutoRollbackEventMapper::GetAutoRollbackEventForName(eventsJsonList[eventsIndex].AsString()));
     }
     m_eventsHasBeenSet = true;
@@ -42,30 +32,24 @@ AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue AutoRollbackConfiguration::Jsonize() const
-{
+JsonValue AutoRollbackConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_eventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
-   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-   {
-     eventsJsonList[eventsIndex].AsString(AutoRollbackEventMapper::GetNameForAutoRollbackEvent(m_events[eventsIndex]));
-   }
-   payload.WithArray("events", std::move(eventsJsonList));
-
+  if (m_eventsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
+      eventsJsonList[eventsIndex].AsString(AutoRollbackEventMapper::GetNameForAutoRollbackEvent(m_events[eventsIndex]));
+    }
+    payload.WithArray("events", std::move(eventsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

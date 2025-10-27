@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
-  enum class MergeStrategy
-  {
-    NOT_SET,
-    OVERWRITE
-  };
+namespace Aws {
+namespace Translate {
+namespace Model {
+enum class MergeStrategy { NOT_SET, OVERWRITE };
 
-namespace MergeStrategyMapper
-{
+namespace MergeStrategyMapper {
 AWS_TRANSLATE_API MergeStrategy GetMergeStrategyForName(const Aws::String& name);
 
 AWS_TRANSLATE_API Aws::String GetNameForMergeStrategy(MergeStrategy value);
-} // namespace MergeStrategyMapper
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace MergeStrategyMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

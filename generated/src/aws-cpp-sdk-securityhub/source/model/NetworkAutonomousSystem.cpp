@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/NetworkAutonomousSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/NetworkAutonomousSystem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-NetworkAutonomousSystem::NetworkAutonomousSystem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkAutonomousSystem::NetworkAutonomousSystem(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkAutonomousSystem& NetworkAutonomousSystem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+NetworkAutonomousSystem& NetworkAutonomousSystem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Number"))
-  {
+  if (jsonValue.ValueExists("Number")) {
     m_number = jsonValue.GetInteger("Number");
     m_numberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkAutonomousSystem::Jsonize() const
-{
+JsonValue NetworkAutonomousSystem::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_numberHasBeenSet)
-  {
-   payload.WithInteger("Number", m_number);
-
+  if (m_numberHasBeenSet) {
+    payload.WithInteger("Number", m_number);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

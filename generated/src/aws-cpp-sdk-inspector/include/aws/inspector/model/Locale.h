@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class Locale
-  {
-    NOT_SET,
-    EN_US
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class Locale { NOT_SET, EN_US };
 
-namespace LocaleMapper
-{
+namespace LocaleMapper {
 AWS_INSPECTOR_API Locale GetLocaleForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForLocale(Locale value);
-} // namespace LocaleMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace LocaleMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

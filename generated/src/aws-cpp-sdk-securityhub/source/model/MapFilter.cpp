@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/MapFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/MapFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-MapFilter::MapFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MapFilter::MapFilter(JsonView jsonValue) { *this = jsonValue; }
 
-MapFilter& MapFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+MapFilter& MapFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Comparison"))
-  {
+  if (jsonValue.ValueExists("Comparison")) {
     m_comparison = MapFilterComparisonMapper::GetMapFilterComparisonForName(jsonValue.GetString("Comparison"));
     m_comparisonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MapFilter::Jsonize() const
-{
+JsonValue MapFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_comparisonHasBeenSet)
-  {
-   payload.WithString("Comparison", MapFilterComparisonMapper::GetNameForMapFilterComparison(m_comparison));
+  if (m_comparisonHasBeenSet) {
+    payload.WithString("Comparison", MapFilterComparisonMapper::GetNameForMapFilterComparison(m_comparison));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

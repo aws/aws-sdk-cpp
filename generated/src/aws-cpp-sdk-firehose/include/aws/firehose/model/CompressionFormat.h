@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class CompressionFormat
-  {
-    NOT_SET,
-    UNCOMPRESSED,
-    GZIP,
-    ZIP,
-    Snappy,
-    HADOOP_SNAPPY
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class CompressionFormat { NOT_SET, UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY };
 
-namespace CompressionFormatMapper
-{
+namespace CompressionFormatMapper {
 AWS_FIREHOSE_API CompressionFormat GetCompressionFormatForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForCompressionFormat(CompressionFormat value);
-} // namespace CompressionFormatMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace CompressionFormatMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

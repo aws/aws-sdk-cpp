@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/DocumentAcl.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/DocumentAcl.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-DocumentAcl::DocumentAcl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentAcl::DocumentAcl(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentAcl& DocumentAcl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowlist"))
-  {
+DocumentAcl& DocumentAcl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowlist")) {
     m_allowlist = jsonValue.GetObject("allowlist");
     m_allowlistHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("denyList"))
-  {
+  if (jsonValue.ValueExists("denyList")) {
     m_denyList = jsonValue.GetObject("denyList");
     m_denyListHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentAcl::Jsonize() const
-{
+JsonValue DocumentAcl::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowlistHasBeenSet)
-  {
-   payload.WithObject("allowlist", m_allowlist.Jsonize());
-
+  if (m_allowlistHasBeenSet) {
+    payload.WithObject("allowlist", m_allowlist.Jsonize());
   }
 
-  if(m_denyListHasBeenSet)
-  {
-   payload.WithObject("denyList", m_denyList.Jsonize());
-
+  if (m_denyListHasBeenSet) {
+    payload.WithObject("denyList", m_denyList.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

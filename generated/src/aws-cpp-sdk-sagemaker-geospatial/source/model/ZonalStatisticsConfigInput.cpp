@@ -3,100 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/ZonalStatisticsConfigInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/ZonalStatisticsConfigInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-ZonalStatisticsConfigInput::ZonalStatisticsConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ZonalStatisticsConfigInput::ZonalStatisticsConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-ZonalStatisticsConfigInput& ZonalStatisticsConfigInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Statistics"))
-  {
+ZonalStatisticsConfigInput& ZonalStatisticsConfigInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Statistics")) {
     Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("Statistics");
-    for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
-    {
+    for (unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex) {
       m_statistics.push_back(ZonalStatisticsMapper::GetZonalStatisticsForName(statisticsJsonList[statisticsIndex].AsString()));
     }
     m_statisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetBands"))
-  {
+  if (jsonValue.ValueExists("TargetBands")) {
     Aws::Utils::Array<JsonView> targetBandsJsonList = jsonValue.GetArray("TargetBands");
-    for(unsigned targetBandsIndex = 0; targetBandsIndex < targetBandsJsonList.GetLength(); ++targetBandsIndex)
-    {
+    for (unsigned targetBandsIndex = 0; targetBandsIndex < targetBandsJsonList.GetLength(); ++targetBandsIndex) {
       m_targetBands.push_back(targetBandsJsonList[targetBandsIndex].AsString());
     }
     m_targetBandsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ZoneS3Path"))
-  {
+  if (jsonValue.ValueExists("ZoneS3Path")) {
     m_zoneS3Path = jsonValue.GetString("ZoneS3Path");
     m_zoneS3PathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ZoneS3PathKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("ZoneS3PathKmsKeyId")) {
     m_zoneS3PathKmsKeyId = jsonValue.GetString("ZoneS3PathKmsKeyId");
     m_zoneS3PathKmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ZonalStatisticsConfigInput::Jsonize() const
-{
+JsonValue ZonalStatisticsConfigInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_statisticsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
-   for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
-   {
-     statisticsJsonList[statisticsIndex].AsString(ZonalStatisticsMapper::GetNameForZonalStatistics(m_statistics[statisticsIndex]));
-   }
-   payload.WithArray("Statistics", std::move(statisticsJsonList));
-
+  if (m_statisticsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
+    for (unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex) {
+      statisticsJsonList[statisticsIndex].AsString(ZonalStatisticsMapper::GetNameForZonalStatistics(m_statistics[statisticsIndex]));
+    }
+    payload.WithArray("Statistics", std::move(statisticsJsonList));
   }
 
-  if(m_targetBandsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetBandsJsonList(m_targetBands.size());
-   for(unsigned targetBandsIndex = 0; targetBandsIndex < targetBandsJsonList.GetLength(); ++targetBandsIndex)
-   {
-     targetBandsJsonList[targetBandsIndex].AsString(m_targetBands[targetBandsIndex]);
-   }
-   payload.WithArray("TargetBands", std::move(targetBandsJsonList));
-
+  if (m_targetBandsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetBandsJsonList(m_targetBands.size());
+    for (unsigned targetBandsIndex = 0; targetBandsIndex < targetBandsJsonList.GetLength(); ++targetBandsIndex) {
+      targetBandsJsonList[targetBandsIndex].AsString(m_targetBands[targetBandsIndex]);
+    }
+    payload.WithArray("TargetBands", std::move(targetBandsJsonList));
   }
 
-  if(m_zoneS3PathHasBeenSet)
-  {
-   payload.WithString("ZoneS3Path", m_zoneS3Path);
-
+  if (m_zoneS3PathHasBeenSet) {
+    payload.WithString("ZoneS3Path", m_zoneS3Path);
   }
 
-  if(m_zoneS3PathKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("ZoneS3PathKmsKeyId", m_zoneS3PathKmsKeyId);
-
+  if (m_zoneS3PathKmsKeyIdHasBeenSet) {
+    payload.WithString("ZoneS3PathKmsKeyId", m_zoneS3PathKmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

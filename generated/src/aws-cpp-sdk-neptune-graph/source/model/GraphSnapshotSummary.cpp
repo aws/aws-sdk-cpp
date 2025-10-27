@@ -3,113 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune-graph/model/GraphSnapshotSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptune-graph/model/GraphSnapshotSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
 
-GraphSnapshotSummary::GraphSnapshotSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GraphSnapshotSummary::GraphSnapshotSummary(JsonView jsonValue) { *this = jsonValue; }
 
-GraphSnapshotSummary& GraphSnapshotSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+GraphSnapshotSummary& GraphSnapshotSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceGraphId"))
-  {
+  if (jsonValue.ValueExists("sourceGraphId")) {
     m_sourceGraphId = jsonValue.GetString("sourceGraphId");
     m_sourceGraphIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotCreateTime"))
-  {
+  if (jsonValue.ValueExists("snapshotCreateTime")) {
     m_snapshotCreateTime = jsonValue.GetDouble("snapshotCreateTime");
     m_snapshotCreateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = SnapshotStatusMapper::GetSnapshotStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyIdentifier"))
-  {
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
     m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
     m_kmsKeyIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GraphSnapshotSummary::Jsonize() const
-{
+JsonValue GraphSnapshotSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_sourceGraphIdHasBeenSet)
-  {
-   payload.WithString("sourceGraphId", m_sourceGraphId);
-
+  if (m_sourceGraphIdHasBeenSet) {
+    payload.WithString("sourceGraphId", m_sourceGraphId);
   }
 
-  if(m_snapshotCreateTimeHasBeenSet)
-  {
-   payload.WithDouble("snapshotCreateTime", m_snapshotCreateTime.SecondsWithMSPrecision());
+  if (m_snapshotCreateTimeHasBeenSet) {
+    payload.WithDouble("snapshotCreateTime", m_snapshotCreateTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", SnapshotStatusMapper::GetNameForSnapshotStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", SnapshotStatusMapper::GetNameForSnapshotStatus(m_status));
   }
 
-  if(m_kmsKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("kmsKeyIdentifier", m_kmsKeyIdentifier);
-
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("kmsKeyIdentifier", m_kmsKeyIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

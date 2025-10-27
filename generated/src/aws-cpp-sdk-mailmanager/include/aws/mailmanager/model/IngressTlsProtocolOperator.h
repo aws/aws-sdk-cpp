@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressTlsProtocolOperator
-  {
-    NOT_SET,
-    MINIMUM_TLS_VERSION,
-    IS
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressTlsProtocolOperator { NOT_SET, MINIMUM_TLS_VERSION, IS };
 
-namespace IngressTlsProtocolOperatorMapper
-{
+namespace IngressTlsProtocolOperatorMapper {
 AWS_MAILMANAGER_API IngressTlsProtocolOperator GetIngressTlsProtocolOperatorForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressTlsProtocolOperator(IngressTlsProtocolOperator value);
-} // namespace IngressTlsProtocolOperatorMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressTlsProtocolOperatorMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

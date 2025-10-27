@@ -5,12 +5,8 @@
 
 #include <aws/machinelearning/MachineLearningEndpointProvider.h>
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MachineLearning
-} // namespace Aws
+namespace Aws {
+namespace MachineLearning {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MachineLearning
+}  // namespace Aws

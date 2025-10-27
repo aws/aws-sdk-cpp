@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class CrawlState
-  {
-    NOT_SET,
-    RUNNING,
-    CANCELLING,
-    CANCELLED,
-    SUCCEEDED,
-    FAILED,
-    ERROR_
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class CrawlState { NOT_SET, RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED, ERROR_ };
 
-namespace CrawlStateMapper
-{
+namespace CrawlStateMapper {
 AWS_GLUE_API CrawlState GetCrawlStateForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForCrawlState(CrawlState value);
-} // namespace CrawlStateMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace CrawlStateMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

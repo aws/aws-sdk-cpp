@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribePendingMaintenanceActionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribePendingMaintenanceActionsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribePendingMaintenanceActionsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribePendingMaintenanceActionsResult")) {
     resultNode = rootNode.FirstChild("DescribePendingMaintenanceActionsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode pendingMaintenanceActionsNode = resultNode.FirstChild("PendingMaintenanceActions");
-    if(!pendingMaintenanceActionsNode.IsNull())
-    {
+    if (!pendingMaintenanceActionsNode.IsNull()) {
       XmlNode pendingMaintenanceActionsMember = pendingMaintenanceActionsNode.FirstChild("ResourcePendingMaintenanceActions");
       m_pendingMaintenanceActionsHasBeenSet = !pendingMaintenanceActionsMember.IsNull();
-      while(!pendingMaintenanceActionsMember.IsNull())
-      {
+      while (!pendingMaintenanceActionsMember.IsNull()) {
         m_pendingMaintenanceActions.push_back(pendingMaintenanceActionsMember);
         pendingMaintenanceActionsMember = pendingMaintenanceActionsMember.NextNode("ResourcePendingMaintenanceActions");
       }
@@ -48,8 +43,7 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
       m_pendingMaintenanceActionsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -59,7 +53,8 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribePendingMaintenanceActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribePendingMaintenanceActionsResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

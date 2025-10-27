@@ -5,12 +5,8 @@
 
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointProvider.h>
 
-namespace Aws
-{
-namespace ServerlessApplicationRepository
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ServerlessApplicationRepository
-} // namespace Aws
+namespace Aws {
+namespace ServerlessApplicationRepository {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ServerlessApplicationRepository
+}  // namespace Aws

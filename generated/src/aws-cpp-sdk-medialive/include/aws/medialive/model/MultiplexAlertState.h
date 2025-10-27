@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class MultiplexAlertState
-  {
-    NOT_SET,
-    SET,
-    CLEARED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class MultiplexAlertState { NOT_SET, SET, CLEARED };
 
-namespace MultiplexAlertStateMapper
-{
+namespace MultiplexAlertStateMapper {
 AWS_MEDIALIVE_API MultiplexAlertState GetMultiplexAlertStateForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForMultiplexAlertState(MultiplexAlertState value);
-} // namespace MultiplexAlertStateMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace MultiplexAlertStateMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisableFastLaunchRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisableFastLaunchRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableFastLaunchRequest::SerializePayload() const
-{
+Aws::String DisableFastLaunchRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableFastLaunch&";
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_forceHasBeenSet)
-  {
+  if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DisableFastLaunchRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableFastLaunchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableFastLaunchRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-class IoTSecureTunnelingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IoTSecureTunneling {
+class IoTSecureTunnelingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IoTSecureTunneling
-} // namespace Aws
+}  // namespace IoTSecureTunneling
+}  // namespace Aws

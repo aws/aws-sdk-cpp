@@ -4,11 +4,11 @@
  */
 
 #include <aws/codecommit/model/GetBlobResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -18,28 +18,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBlobResult::GetBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetBlobResult::GetBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetBlobResult& GetBlobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetBlobResult& GetBlobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("content"))
-  {
+  if (jsonValue.ValueExists("content")) {
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("content"));
     m_contentHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

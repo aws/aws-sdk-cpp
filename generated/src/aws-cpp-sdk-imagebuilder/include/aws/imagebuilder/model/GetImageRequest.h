@@ -4,57 +4,57 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
-#include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/ImagebuilderRequest.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace imagebuilder {
+namespace Model {
 
+/**
+ */
+class GetImageRequest : public ImagebuilderRequest {
+ public:
+  AWS_IMAGEBUILDER_API GetImageRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetImage"; }
+
+  AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
+
+  AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
    */
-  class GetImageRequest : public ImagebuilderRequest
-  {
-  public:
-    AWS_IMAGEBUILDER_API GetImageRequest() = default;
+  inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
+  inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
+  template <typename ImageBuildVersionArnT = Aws::String>
+  void SetImageBuildVersionArn(ImageBuildVersionArnT&& value) {
+    m_imageBuildVersionArnHasBeenSet = true;
+    m_imageBuildVersionArn = std::forward<ImageBuildVersionArnT>(value);
+  }
+  template <typename ImageBuildVersionArnT = Aws::String>
+  GetImageRequest& WithImageBuildVersionArn(ImageBuildVersionArnT&& value) {
+    SetImageBuildVersionArn(std::forward<ImageBuildVersionArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_imageBuildVersionArn;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetImage"; }
-
-    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
-
-    AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-     */
-    inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
-    inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
-    template<typename ImageBuildVersionArnT = Aws::String>
-    void SetImageBuildVersionArn(ImageBuildVersionArnT&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::forward<ImageBuildVersionArnT>(value); }
-    template<typename ImageBuildVersionArnT = Aws::String>
-    GetImageRequest& WithImageBuildVersionArn(ImageBuildVersionArnT&& value) { SetImageBuildVersionArn(std::forward<ImageBuildVersionArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_imageBuildVersionArn;
-    bool m_imageBuildVersionArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

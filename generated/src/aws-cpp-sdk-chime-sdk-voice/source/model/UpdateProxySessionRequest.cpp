@@ -12,30 +12,20 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProxySessionRequest::SerializePayload() const
-{
+Aws::String UpdateProxySessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
-   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
-   {
-     capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));
-   }
-   payload.WithArray("Capabilities", std::move(capabilitiesJsonList));
-
+  if (m_capabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+    for (unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex) {
+      capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));
+    }
+    payload.WithArray("Capabilities", std::move(capabilitiesJsonList));
   }
 
-  if(m_expiryMinutesHasBeenSet)
-  {
-   payload.WithInteger("ExpiryMinutes", m_expiryMinutes);
-
+  if (m_expiryMinutesHasBeenSet) {
+    payload.WithInteger("ExpiryMinutes", m_expiryMinutes);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

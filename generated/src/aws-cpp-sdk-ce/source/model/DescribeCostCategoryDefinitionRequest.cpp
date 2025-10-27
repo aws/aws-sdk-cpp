@@ -12,33 +12,22 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeCostCategoryDefinitionRequest::SerializePayload() const
-{
+Aws::String DescribeCostCategoryDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_costCategoryArnHasBeenSet)
-  {
-   payload.WithString("CostCategoryArn", m_costCategoryArn);
-
+  if (m_costCategoryArnHasBeenSet) {
+    payload.WithString("CostCategoryArn", m_costCategoryArn);
   }
 
-  if(m_effectiveOnHasBeenSet)
-  {
-   payload.WithString("EffectiveOn", m_effectiveOn);
-
+  if (m_effectiveOnHasBeenSet) {
+    payload.WithString("EffectiveOn", m_effectiveOn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.DescribeCostCategoryDefinition"));
   return headers;
-
 }
-
-
-
-

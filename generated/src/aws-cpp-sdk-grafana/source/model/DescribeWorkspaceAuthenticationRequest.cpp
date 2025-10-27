@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/grafana/model/DescribeWorkspaceAuthenticationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/grafana/model/DescribeWorkspaceAuthenticationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWorkspaceAuthenticationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeWorkspaceAuthenticationRequest::SerializePayload() const { return {}; }

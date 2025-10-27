@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/securitylake/SecurityLakeRequest.h>
 
-namespace Aws
-{
-namespace SecurityLake
-{
-} // namespace SecurityLake
-} // namespace Aws
+namespace Aws {
+namespace SecurityLake {}  // namespace SecurityLake
+}  // namespace Aws

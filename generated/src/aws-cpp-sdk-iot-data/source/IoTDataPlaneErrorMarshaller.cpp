@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTDataPlane;
 
-AWSError<CoreErrors> IoTDataPlaneErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTDataPlaneErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTDataPlaneErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

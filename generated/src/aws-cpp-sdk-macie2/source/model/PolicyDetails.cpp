@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/PolicyDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/PolicyDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-PolicyDetails::PolicyDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PolicyDetails::PolicyDetails(JsonView jsonValue) { *this = jsonValue; }
 
-PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("action"))
-  {
+PolicyDetails& PolicyDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
     m_action = jsonValue.GetObject("action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actor"))
-  {
+  if (jsonValue.ValueExists("actor")) {
     m_actor = jsonValue.GetObject("actor");
     m_actorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PolicyDetails::Jsonize() const
-{
+JsonValue PolicyDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("action", m_action.Jsonize());
   }
 
-  if(m_actorHasBeenSet)
-  {
-   payload.WithObject("actor", m_actor.Jsonize());
-
+  if (m_actorHasBeenSet) {
+    payload.WithObject("actor", m_actor.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

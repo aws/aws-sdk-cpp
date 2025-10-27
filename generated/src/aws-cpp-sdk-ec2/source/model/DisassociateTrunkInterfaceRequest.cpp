@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateTrunkInterfaceRequest::SerializePayload() const
-{
+Aws::String DisassociateTrunkInterfaceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateTrunkInterface&";
-  if(m_associationIdHasBeenSet)
-  {
+  if (m_associationIdHasBeenSet) {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DisassociateTrunkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateTrunkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateTrunkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

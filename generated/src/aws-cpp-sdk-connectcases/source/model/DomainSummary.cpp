@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-DomainSummary::DomainSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainSummary::DomainSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DomainSummary& DomainSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainId"))
-  {
+DomainSummary& DomainSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainArn"))
-  {
+  if (jsonValue.ValueExists("domainArn")) {
     m_domainArn = jsonValue.GetString("domainArn");
     m_domainArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainSummary::Jsonize() const
-{
+JsonValue DomainSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainIdHasBeenSet)
-  {
-   payload.WithString("domainId", m_domainId);
-
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("domainId", m_domainId);
   }
 
-  if(m_domainArnHasBeenSet)
-  {
-   payload.WithString("domainArn", m_domainArn);
-
+  if (m_domainArnHasBeenSet) {
+    payload.WithString("domainArn", m_domainArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

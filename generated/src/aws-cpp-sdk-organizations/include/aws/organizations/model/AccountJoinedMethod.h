@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
-  enum class AccountJoinedMethod
-  {
-    NOT_SET,
-    INVITED,
-    CREATED
-  };
+namespace Aws {
+namespace Organizations {
+namespace Model {
+enum class AccountJoinedMethod { NOT_SET, INVITED, CREATED };
 
-namespace AccountJoinedMethodMapper
-{
+namespace AccountJoinedMethodMapper {
 AWS_ORGANIZATIONS_API AccountJoinedMethod GetAccountJoinedMethodForName(const Aws::String& name);
 
 AWS_ORGANIZATIONS_API Aws::String GetNameForAccountJoinedMethod(AccountJoinedMethod value);
-} // namespace AccountJoinedMethodMapper
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace AccountJoinedMethodMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class WebvttAccessibilitySubs
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class WebvttAccessibilitySubs { NOT_SET, DISABLED, ENABLED };
 
-namespace WebvttAccessibilitySubsMapper
-{
+namespace WebvttAccessibilitySubsMapper {
 AWS_MEDIACONVERT_API WebvttAccessibilitySubs GetWebvttAccessibilitySubsForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForWebvttAccessibilitySubs(WebvttAccessibilitySubs value);
-} // namespace WebvttAccessibilitySubsMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace WebvttAccessibilitySubsMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

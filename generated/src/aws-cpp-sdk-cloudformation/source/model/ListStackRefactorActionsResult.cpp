@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/ListStackRefactorActionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStackRefactorActionsResult::ListStackRefactorActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListStackRefactorActionsResult::ListStackRefactorActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListStackRefactorActionsResult& ListStackRefactorActionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListStackRefactorActionsResult& ListStackRefactorActionsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListStackRefactorActionsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListStackRefactorActionsResult")) {
     resultNode = rootNode.FirstChild("ListStackRefactorActionsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stackRefactorActionsNode = resultNode.FirstChild("StackRefactorActions");
-    if(!stackRefactorActionsNode.IsNull())
-    {
+    if (!stackRefactorActionsNode.IsNull()) {
       XmlNode stackRefactorActionsMember = stackRefactorActionsNode.FirstChild("member");
       m_stackRefactorActionsHasBeenSet = !stackRefactorActionsMember.IsNull();
-      while(!stackRefactorActionsMember.IsNull())
-      {
+      while (!stackRefactorActionsMember.IsNull()) {
         m_stackRefactorActions.push_back(stackRefactorActionsMember);
         stackRefactorActionsMember = stackRefactorActionsMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ ListStackRefactorActionsResult& ListStackRefactorActionsResult::operator =(const
       m_stackRefactorActionsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -59,7 +50,8 @@ ListStackRefactorActionsResult& ListStackRefactorActionsResult::operator =(const
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListStackRefactorActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListStackRefactorActionsResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

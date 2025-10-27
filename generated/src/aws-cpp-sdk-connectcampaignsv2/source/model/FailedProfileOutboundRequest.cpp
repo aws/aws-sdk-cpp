@@ -11,62 +11,47 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-FailedProfileOutboundRequest::FailedProfileOutboundRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailedProfileOutboundRequest::FailedProfileOutboundRequest(JsonView jsonValue) { *this = jsonValue; }
 
-FailedProfileOutboundRequest& FailedProfileOutboundRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientToken"))
-  {
+FailedProfileOutboundRequest& FailedProfileOutboundRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientToken")) {
     m_clientToken = jsonValue.GetString("clientToken");
     m_clientTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureCode"))
-  {
-    m_failureCode = ProfileOutboundRequestFailureCodeMapper::GetProfileOutboundRequestFailureCodeForName(jsonValue.GetString("failureCode"));
+  if (jsonValue.ValueExists("failureCode")) {
+    m_failureCode =
+        ProfileOutboundRequestFailureCodeMapper::GetProfileOutboundRequestFailureCodeForName(jsonValue.GetString("failureCode"));
     m_failureCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailedProfileOutboundRequest::Jsonize() const
-{
+JsonValue FailedProfileOutboundRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", ProfileOutboundRequestFailureCodeMapper::GetNameForProfileOutboundRequestFailureCode(m_failureCode));
+  if (m_failureCodeHasBeenSet) {
+    payload.WithString("failureCode", ProfileOutboundRequestFailureCodeMapper::GetNameForProfileOutboundRequestFailureCode(m_failureCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

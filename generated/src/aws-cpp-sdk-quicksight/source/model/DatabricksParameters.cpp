@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DatabricksParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DatabricksParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DatabricksParameters::DatabricksParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatabricksParameters::DatabricksParameters(JsonView jsonValue) { *this = jsonValue; }
 
-DatabricksParameters& DatabricksParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Host"))
-  {
+DatabricksParameters& DatabricksParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Host")) {
     m_host = jsonValue.GetString("Host");
     m_hostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SqlEndpointPath"))
-  {
+  if (jsonValue.ValueExists("SqlEndpointPath")) {
     m_sqlEndpointPath = jsonValue.GetString("SqlEndpointPath");
     m_sqlEndpointPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatabricksParameters::Jsonize() const
-{
+JsonValue DatabricksParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostHasBeenSet)
-  {
-   payload.WithString("Host", m_host);
-
+  if (m_hostHasBeenSet) {
+    payload.WithString("Host", m_host);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_sqlEndpointPathHasBeenSet)
-  {
-   payload.WithString("SqlEndpointPath", m_sqlEndpointPath);
-
+  if (m_sqlEndpointPathHasBeenSet) {
+    payload.WithString("SqlEndpointPath", m_sqlEndpointPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

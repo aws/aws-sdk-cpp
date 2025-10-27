@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace KafkaConnect {
+namespace Model {
 
+/**
+ * <p>An update to the connector's scale-out policy.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ScaleOutPolicyUpdate">AWS
+ * API Reference</a></p>
+ */
+class ScaleOutPolicyUpdate {
+ public:
+  AWS_KAFKACONNECT_API ScaleOutPolicyUpdate() = default;
+  AWS_KAFKACONNECT_API ScaleOutPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKACONNECT_API ScaleOutPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An update to the connector's scale-out policy.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ScaleOutPolicyUpdate">AWS
-   * API Reference</a></p>
+   * <p>The target CPU utilization percentage threshold at which you want connector
+   * scale out to be triggered.</p>
    */
-  class ScaleOutPolicyUpdate
-  {
-  public:
-    AWS_KAFKACONNECT_API ScaleOutPolicyUpdate() = default;
-    AWS_KAFKACONNECT_API ScaleOutPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKACONNECT_API ScaleOutPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetCpuUtilizationPercentage() const { return m_cpuUtilizationPercentage; }
+  inline bool CpuUtilizationPercentageHasBeenSet() const { return m_cpuUtilizationPercentageHasBeenSet; }
+  inline void SetCpuUtilizationPercentage(int value) {
+    m_cpuUtilizationPercentageHasBeenSet = true;
+    m_cpuUtilizationPercentage = value;
+  }
+  inline ScaleOutPolicyUpdate& WithCpuUtilizationPercentage(int value) {
+    SetCpuUtilizationPercentage(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_cpuUtilizationPercentage{0};
+  bool m_cpuUtilizationPercentageHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The target CPU utilization percentage threshold at which you want connector
-     * scale out to be triggered.</p>
-     */
-    inline int GetCpuUtilizationPercentage() const { return m_cpuUtilizationPercentage; }
-    inline bool CpuUtilizationPercentageHasBeenSet() const { return m_cpuUtilizationPercentageHasBeenSet; }
-    inline void SetCpuUtilizationPercentage(int value) { m_cpuUtilizationPercentageHasBeenSet = true; m_cpuUtilizationPercentage = value; }
-    inline ScaleOutPolicyUpdate& WithCpuUtilizationPercentage(int value) { SetCpuUtilizationPercentage(value); return *this;}
-    ///@}
-  private:
-
-    int m_cpuUtilizationPercentage{0};
-    bool m_cpuUtilizationPercentageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

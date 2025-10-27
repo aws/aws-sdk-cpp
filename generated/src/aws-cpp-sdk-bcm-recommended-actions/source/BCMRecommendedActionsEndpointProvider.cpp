@@ -5,12 +5,8 @@
 
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointProvider.h>
 
-namespace Aws
-{
-namespace BCMRecommendedActions
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BCMRecommendedActions
-} // namespace Aws
+namespace Aws {
+namespace BCMRecommendedActions {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BCMRecommendedActions
+}  // namespace Aws

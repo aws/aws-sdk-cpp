@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-DescribedConnectorEgressConfig::DescribedConnectorEgressConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DescribedConnectorEgressConfig::DescribedConnectorEgressConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DescribedConnectorEgressConfig& DescribedConnectorEgressConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcLattice"))
-  {
+DescribedConnectorEgressConfig& DescribedConnectorEgressConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcLattice")) {
     m_vpcLattice = jsonValue.GetObject("VpcLattice");
     m_vpcLatticeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DescribedConnectorEgressConfig::Jsonize() const
-{
+JsonValue DescribedConnectorEgressConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcLatticeHasBeenSet)
-  {
-   payload.WithObject("VpcLattice", m_vpcLattice.Jsonize());
-
+  if (m_vpcLatticeHasBeenSet) {
+    payload.WithObject("VpcLattice", m_vpcLattice.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

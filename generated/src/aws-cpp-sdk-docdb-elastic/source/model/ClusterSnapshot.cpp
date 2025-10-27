@@ -3,87 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb-elastic/model/ClusterSnapshot.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/docdb-elastic/model/ClusterSnapshot.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDBElastic {
+namespace Model {
 
-ClusterSnapshot::ClusterSnapshot(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterSnapshot::ClusterSnapshot(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("adminUserName"))
-  {
+ClusterSnapshot& ClusterSnapshot::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("adminUserName")) {
     m_adminUserName = jsonValue.GetString("adminUserName");
     m_adminUserNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clusterArn"))
-  {
+  if (jsonValue.ValueExists("clusterArn")) {
     m_clusterArn = jsonValue.GetString("clusterArn");
     m_clusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clusterCreationTime"))
-  {
+  if (jsonValue.ValueExists("clusterCreationTime")) {
     m_clusterCreationTime = jsonValue.GetString("clusterCreationTime");
     m_clusterCreationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotArn"))
-  {
+  if (jsonValue.ValueExists("snapshotArn")) {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
     m_snapshotArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotCreationTime"))
-  {
+  if (jsonValue.ValueExists("snapshotCreationTime")) {
     m_snapshotCreationTime = jsonValue.GetString("snapshotCreationTime");
     m_snapshotCreationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotName"))
-  {
+  if (jsonValue.ValueExists("snapshotName")) {
     m_snapshotName = jsonValue.GetString("snapshotName");
     m_snapshotNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotType"))
-  {
+  if (jsonValue.ValueExists("snapshotType")) {
     m_snapshotType = SnapshotTypeMapper::GetSnapshotTypeForName(jsonValue.GetString("snapshotType"));
     m_snapshotTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subnetIds"))
-  {
+  if (jsonValue.ValueExists("subnetIds")) {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
-    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-    {
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcSecurityGroupIds"))
-  {
+  if (jsonValue.ValueExists("vpcSecurityGroupIds")) {
     Aws::Utils::Array<JsonView> vpcSecurityGroupIdsJsonList = jsonValue.GetArray("vpcSecurityGroupIds");
-    for(unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength(); ++vpcSecurityGroupIdsIndex)
-    {
+    for (unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength();
+         ++vpcSecurityGroupIdsIndex) {
       m_vpcSecurityGroupIds.push_back(vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString());
     }
     m_vpcSecurityGroupIdsHasBeenSet = true;
@@ -91,87 +72,65 @@ ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ClusterSnapshot::Jsonize() const
-{
+JsonValue ClusterSnapshot::Jsonize() const {
   JsonValue payload;
 
-  if(m_adminUserNameHasBeenSet)
-  {
-   payload.WithString("adminUserName", m_adminUserName);
-
+  if (m_adminUserNameHasBeenSet) {
+    payload.WithString("adminUserName", m_adminUserName);
   }
 
-  if(m_clusterArnHasBeenSet)
-  {
-   payload.WithString("clusterArn", m_clusterArn);
-
+  if (m_clusterArnHasBeenSet) {
+    payload.WithString("clusterArn", m_clusterArn);
   }
 
-  if(m_clusterCreationTimeHasBeenSet)
-  {
-   payload.WithString("clusterCreationTime", m_clusterCreationTime);
-
+  if (m_clusterCreationTimeHasBeenSet) {
+    payload.WithString("clusterCreationTime", m_clusterCreationTime);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_snapshotArnHasBeenSet)
-  {
-   payload.WithString("snapshotArn", m_snapshotArn);
-
+  if (m_snapshotArnHasBeenSet) {
+    payload.WithString("snapshotArn", m_snapshotArn);
   }
 
-  if(m_snapshotCreationTimeHasBeenSet)
-  {
-   payload.WithString("snapshotCreationTime", m_snapshotCreationTime);
-
+  if (m_snapshotCreationTimeHasBeenSet) {
+    payload.WithString("snapshotCreationTime", m_snapshotCreationTime);
   }
 
-  if(m_snapshotNameHasBeenSet)
-  {
-   payload.WithString("snapshotName", m_snapshotName);
-
+  if (m_snapshotNameHasBeenSet) {
+    payload.WithString("snapshotName", m_snapshotName);
   }
 
-  if(m_snapshotTypeHasBeenSet)
-  {
-   payload.WithString("snapshotType", SnapshotTypeMapper::GetNameForSnapshotType(m_snapshotType));
+  if (m_snapshotTypeHasBeenSet) {
+    payload.WithString("snapshotType", SnapshotTypeMapper::GetNameForSnapshotType(m_snapshotType));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
-
+  if (m_subnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+    }
+    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
   }
 
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
-   for(unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength(); ++vpcSecurityGroupIdsIndex)
-   {
-     vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString(m_vpcSecurityGroupIds[vpcSecurityGroupIdsIndex]);
-   }
-   payload.WithArray("vpcSecurityGroupIds", std::move(vpcSecurityGroupIdsJsonList));
-
+  if (m_vpcSecurityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
+    for (unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength();
+         ++vpcSecurityGroupIdsIndex) {
+      vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString(m_vpcSecurityGroupIds[vpcSecurityGroupIdsIndex]);
+    }
+    payload.WithArray("vpcSecurityGroupIds", std::move(vpcSecurityGroupIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDBElastic
+}  // namespace Aws

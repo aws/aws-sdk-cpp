@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codestar-notifications/CodeStarNotificationsEndpointRules.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/codestar-notifications/CodeStarNotificationsEndpointRules.h>
-
-
-namespace Aws
-{
-namespace CodeStarNotifications
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace CodeStarNotifications {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using CodeStarNotificationsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using CodeStarNotificationsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using CodeStarNotificationsEndpointProviderBase =
-    EndpointProviderBase<CodeStarNotificationsClientConfiguration, CodeStarNotificationsBuiltInParameters, CodeStarNotificationsClientContextParameters>;
+    EndpointProviderBase<CodeStarNotificationsClientConfiguration, CodeStarNotificationsBuiltInParameters,
+                         CodeStarNotificationsClientContextParameters>;
 
 using CodeStarNotificationsDefaultEpProviderBase =
-    DefaultEndpointProvider<CodeStarNotificationsClientConfiguration, CodeStarNotificationsBuiltInParameters, CodeStarNotificationsClientContextParameters>;
+    DefaultEndpointProvider<CodeStarNotificationsClientConfiguration, CodeStarNotificationsBuiltInParameters,
+                            CodeStarNotificationsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsEndpointProvider : public CodeStarNotificationsDefaultEpProviderBase
-{
-public:
-    using CodeStarNotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsEndpointProvider : public CodeStarNotificationsDefaultEpProviderBase {
+ public:
+  using CodeStarNotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    CodeStarNotificationsEndpointProvider()
-      : CodeStarNotificationsDefaultEpProviderBase(Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::GetRulesBlob(), Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::RulesBlobSize)
-    {}
+  CodeStarNotificationsEndpointProvider()
+      : CodeStarNotificationsDefaultEpProviderBase(Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::GetRulesBlob(),
+                                                   Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::RulesBlobSize) {}
 
-    ~CodeStarNotificationsEndpointProvider()
-    {
-    }
+  ~CodeStarNotificationsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace CodeStarNotifications
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace CodeStarNotifications
+}  // namespace Aws

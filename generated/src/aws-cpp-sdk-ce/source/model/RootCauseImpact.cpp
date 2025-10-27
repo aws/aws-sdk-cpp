@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-RootCauseImpact::RootCauseImpact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RootCauseImpact::RootCauseImpact(JsonView jsonValue) { *this = jsonValue; }
 
-RootCauseImpact& RootCauseImpact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Contribution"))
-  {
+RootCauseImpact& RootCauseImpact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Contribution")) {
     m_contribution = jsonValue.GetDouble("Contribution");
     m_contributionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RootCauseImpact::Jsonize() const
-{
+JsonValue RootCauseImpact::Jsonize() const {
   JsonValue payload;
 
-  if(m_contributionHasBeenSet)
-  {
-   payload.WithDouble("Contribution", m_contribution);
-
+  if (m_contributionHasBeenSet) {
+    payload.WithDouble("Contribution", m_contribution);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

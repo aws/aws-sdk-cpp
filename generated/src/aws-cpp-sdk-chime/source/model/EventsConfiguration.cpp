@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-EventsConfiguration::EventsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventsConfiguration::EventsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EventsConfiguration& EventsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BotId"))
-  {
+EventsConfiguration& EventsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BotId")) {
     m_botId = jsonValue.GetString("BotId");
     m_botIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutboundEventsHTTPSEndpoint"))
-  {
+  if (jsonValue.ValueExists("OutboundEventsHTTPSEndpoint")) {
     m_outboundEventsHTTPSEndpoint = jsonValue.GetString("OutboundEventsHTTPSEndpoint");
     m_outboundEventsHTTPSEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LambdaFunctionArn"))
-  {
+  if (jsonValue.ValueExists("LambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("LambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventsConfiguration::Jsonize() const
-{
+JsonValue EventsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_botIdHasBeenSet)
-  {
-   payload.WithString("BotId", m_botId);
-
+  if (m_botIdHasBeenSet) {
+    payload.WithString("BotId", m_botId);
   }
 
-  if(m_outboundEventsHTTPSEndpointHasBeenSet)
-  {
-   payload.WithString("OutboundEventsHTTPSEndpoint", m_outboundEventsHTTPSEndpoint);
-
+  if (m_outboundEventsHTTPSEndpointHasBeenSet) {
+    payload.WithString("OutboundEventsHTTPSEndpoint", m_outboundEventsHTTPSEndpoint);
   }
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

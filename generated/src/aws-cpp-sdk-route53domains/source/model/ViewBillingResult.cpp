@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/ViewBillingResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/route53domains/model/ViewBillingResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ViewBillingResult& ViewBillingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextPageMarker"))
-  {
+  if (jsonValue.ValueExists("NextPageMarker")) {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");
     m_nextPageMarkerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillingRecords"))
-  {
+  if (jsonValue.ValueExists("BillingRecords")) {
     Aws::Utils::Array<JsonView> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
-    for(unsigned billingRecordsIndex = 0; billingRecordsIndex < billingRecordsJsonList.GetLength(); ++billingRecordsIndex)
-    {
+    for (unsigned billingRecordsIndex = 0; billingRecordsIndex < billingRecordsJsonList.GetLength(); ++billingRecordsIndex) {
       m_billingRecords.push_back(billingRecordsJsonList[billingRecordsIndex].AsObject());
     }
     m_billingRecordsHasBeenSet = true;
@@ -42,12 +35,10 @@ ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

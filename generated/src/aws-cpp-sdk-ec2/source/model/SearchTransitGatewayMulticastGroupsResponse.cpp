@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTransitGatewayMulticastGroupsResponse::SearchTransitGatewayMulticastGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+SearchTransitGatewayMulticastGroupsResponse::SearchTransitGatewayMulticastGroupsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroupsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroupsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "SearchTransitGatewayMulticastGroupsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "SearchTransitGatewayMulticastGroupsResponse")) {
     resultNode = rootNode.FirstChild("SearchTransitGatewayMulticastGroupsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode multicastGroupsNode = resultNode.FirstChild("multicastGroups");
-    if(!multicastGroupsNode.IsNull())
-    {
+    if (!multicastGroupsNode.IsNull()) {
       XmlNode multicastGroupsMember = multicastGroupsNode.FirstChild("item");
       m_multicastGroupsHasBeenSet = !multicastGroupsMember.IsNull();
-      while(!multicastGroupsMember.IsNull())
-      {
+      while (!multicastGroupsMember.IsNull()) {
         m_multicastGroups.push_back(multicastGroupsMember);
         multicastGroupsMember = multicastGroupsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroups
       m_multicastGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroups
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchTransitGatewayMulticastGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchTransitGatewayMulticastGroupsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

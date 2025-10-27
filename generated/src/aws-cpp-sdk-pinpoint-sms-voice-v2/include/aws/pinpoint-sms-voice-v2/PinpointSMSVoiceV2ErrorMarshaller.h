@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2ErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2ErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

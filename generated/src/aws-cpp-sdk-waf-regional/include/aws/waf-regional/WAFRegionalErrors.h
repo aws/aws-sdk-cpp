@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-enum class WAFRegionalErrors
-{
-  //From Core//
+namespace Aws {
+namespace WAFRegional {
+enum class WAFRegionalErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WAFRegionalErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class WAFRegionalErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  W_A_F_BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  W_A_F_BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   W_A_F_DISALLOWED_NAME,
   W_A_F_ENTITY_MIGRATION,
   W_A_F_INTERNAL_ERROR,
@@ -69,9 +66,8 @@ enum class WAFRegionalErrors
   W_A_F_UNAVAILABLE_ENTITY
 };
 
-class AWS_WAFREGIONAL_API WAFRegionalError : public Aws::Client::AWSError<WAFRegionalErrors>
-{
-public:
+class AWS_WAFREGIONAL_API WAFRegionalError : public Aws::Client::AWSError<WAFRegionalErrors> {
+ public:
   WAFRegionalError() {}
   WAFRegionalError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
   WAFRegionalError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
@@ -82,10 +78,9 @@ public:
   T GetModeledError();
 };
 
-namespace WAFRegionalErrorMapper
-{
-  AWS_WAFREGIONAL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WAFRegionalErrorMapper {
+AWS_WAFREGIONAL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace WAFRegional
+}  // namespace Aws

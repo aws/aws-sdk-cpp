@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class GovernedEntityType
-  {
-    NOT_SET,
-    ASSET
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class GovernedEntityType { NOT_SET, ASSET };
 
-namespace GovernedEntityTypeMapper
-{
+namespace GovernedEntityTypeMapper {
 AWS_DATAZONE_API GovernedEntityType GetGovernedEntityTypeForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForGovernedEntityType(GovernedEntityType value);
-} // namespace GovernedEntityTypeMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace GovernedEntityTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/appconfig/AppConfigEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppConfig
-} // namespace Aws
+namespace Aws {
+namespace AppConfig {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppConfig
+}  // namespace Aws

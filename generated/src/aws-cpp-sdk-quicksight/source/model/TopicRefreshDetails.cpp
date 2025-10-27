@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TopicRefreshDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TopicRefreshDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TopicRefreshDetails::TopicRefreshDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TopicRefreshDetails::TopicRefreshDetails(JsonView jsonValue) { *this = jsonValue; }
 
-TopicRefreshDetails& TopicRefreshDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RefreshArn"))
-  {
+TopicRefreshDetails& TopicRefreshDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RefreshArn")) {
     m_refreshArn = jsonValue.GetString("RefreshArn");
     m_refreshArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshId"))
-  {
+  if (jsonValue.ValueExists("RefreshId")) {
     m_refreshId = jsonValue.GetString("RefreshId");
     m_refreshIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshStatus"))
-  {
+  if (jsonValue.ValueExists("RefreshStatus")) {
     m_refreshStatus = TopicRefreshStatusMapper::GetTopicRefreshStatusForName(jsonValue.GetString("RefreshStatus"));
     m_refreshStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TopicRefreshDetails::Jsonize() const
-{
+JsonValue TopicRefreshDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_refreshArnHasBeenSet)
-  {
-   payload.WithString("RefreshArn", m_refreshArn);
-
+  if (m_refreshArnHasBeenSet) {
+    payload.WithString("RefreshArn", m_refreshArn);
   }
 
-  if(m_refreshIdHasBeenSet)
-  {
-   payload.WithString("RefreshId", m_refreshId);
-
+  if (m_refreshIdHasBeenSet) {
+    payload.WithString("RefreshId", m_refreshId);
   }
 
-  if(m_refreshStatusHasBeenSet)
-  {
-   payload.WithString("RefreshStatus", TopicRefreshStatusMapper::GetNameForTopicRefreshStatus(m_refreshStatus));
+  if (m_refreshStatusHasBeenSet) {
+    payload.WithString("RefreshStatus", TopicRefreshStatusMapper::GetNameForTopicRefreshStatus(m_refreshStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/ContainerInstanceDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/ContainerInstanceDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-ContainerInstanceDetails::ContainerInstanceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerInstanceDetails::ContainerInstanceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerInstanceDetails& ContainerInstanceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("coveredContainerInstances"))
-  {
+ContainerInstanceDetails& ContainerInstanceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("coveredContainerInstances")) {
     m_coveredContainerInstances = jsonValue.GetInt64("coveredContainerInstances");
     m_coveredContainerInstancesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("compatibleContainerInstances"))
-  {
+  if (jsonValue.ValueExists("compatibleContainerInstances")) {
     m_compatibleContainerInstances = jsonValue.GetInt64("compatibleContainerInstances");
     m_compatibleContainerInstancesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerInstanceDetails::Jsonize() const
-{
+JsonValue ContainerInstanceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_coveredContainerInstancesHasBeenSet)
-  {
-   payload.WithInt64("coveredContainerInstances", m_coveredContainerInstances);
-
+  if (m_coveredContainerInstancesHasBeenSet) {
+    payload.WithInt64("coveredContainerInstances", m_coveredContainerInstances);
   }
 
-  if(m_compatibleContainerInstancesHasBeenSet)
-  {
-   payload.WithInt64("compatibleContainerInstances", m_compatibleContainerInstances);
-
+  if (m_compatibleContainerInstancesHasBeenSet) {
+    payload.WithInt64("compatibleContainerInstances", m_compatibleContainerInstances);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

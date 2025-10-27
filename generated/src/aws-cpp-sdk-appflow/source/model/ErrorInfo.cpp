@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ErrorInfo::ErrorInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorInfo::ErrorInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("putFailuresCount"))
-  {
+ErrorInfo& ErrorInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("putFailuresCount")) {
     m_putFailuresCount = jsonValue.GetInt64("putFailuresCount");
     m_putFailuresCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionMessage"))
-  {
+  if (jsonValue.ValueExists("executionMessage")) {
     m_executionMessage = jsonValue.GetString("executionMessage");
     m_executionMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorInfo::Jsonize() const
-{
+JsonValue ErrorInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_putFailuresCountHasBeenSet)
-  {
-   payload.WithInt64("putFailuresCount", m_putFailuresCount);
-
+  if (m_putFailuresCountHasBeenSet) {
+    payload.WithInt64("putFailuresCount", m_putFailuresCount);
   }
 
-  if(m_executionMessageHasBeenSet)
-  {
-   payload.WithString("executionMessage", m_executionMessage);
-
+  if (m_executionMessageHasBeenSet) {
+    payload.WithString("executionMessage", m_executionMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

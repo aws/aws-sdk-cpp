@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/GetSendQuotaRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/GetSendQuotaRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String GetSendQuotaRequest::SerializePayload() const
-{
+Aws::String GetSendQuotaRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetSendQuota&";
   ss << "Version=2010-12-01";
   return ss.str();
 }
 
-
-void  GetSendQuotaRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetSendQuotaRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

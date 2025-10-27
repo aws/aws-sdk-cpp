@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/detective/DetectiveRequest.h>
 
-namespace Aws
-{
-namespace Detective
-{
-} // namespace Detective
-} // namespace Aws
+namespace Aws {
+namespace Detective {}  // namespace Detective
+}  // namespace Aws

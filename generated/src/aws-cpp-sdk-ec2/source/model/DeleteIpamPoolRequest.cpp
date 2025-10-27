@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteIpamPoolRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteIpamPoolRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIpamPoolRequest::SerializePayload() const
-{
+Aws::String DeleteIpamPoolRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIpamPool&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamPoolIdHasBeenSet)
-  {
+  if (m_ipamPoolIdHasBeenSet) {
     ss << "IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 
-  if(m_cascadeHasBeenSet)
-  {
+  if (m_cascadeHasBeenSet) {
     ss << "Cascade=" << std::boolalpha << m_cascade << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteIpamPoolRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteIpamPoolRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteIpamPoolRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

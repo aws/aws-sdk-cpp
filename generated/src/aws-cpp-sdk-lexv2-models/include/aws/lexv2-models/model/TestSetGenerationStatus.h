@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class TestSetGenerationStatus
-  {
-    NOT_SET,
-    Generating,
-    Ready,
-    Failed,
-    Pending
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class TestSetGenerationStatus { NOT_SET, Generating, Ready, Failed, Pending };
 
-namespace TestSetGenerationStatusMapper
-{
+namespace TestSetGenerationStatusMapper {
 AWS_LEXMODELSV2_API TestSetGenerationStatus GetTestSetGenerationStatusForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForTestSetGenerationStatus(TestSetGenerationStatus value);
-} // namespace TestSetGenerationStatusMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace TestSetGenerationStatusMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

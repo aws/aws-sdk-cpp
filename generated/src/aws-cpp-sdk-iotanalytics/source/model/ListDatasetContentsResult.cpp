@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/ListDatasetContentsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotanalytics/model/ListDatasetContentsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDatasetContentsResult::ListDatasetContentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListDatasetContentsResult::ListDatasetContentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListDatasetContentsResult& ListDatasetContentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDatasetContentsResult& ListDatasetContentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("datasetContentSummaries"))
-  {
+  if (jsonValue.ValueExists("datasetContentSummaries")) {
     Aws::Utils::Array<JsonView> datasetContentSummariesJsonList = jsonValue.GetArray("datasetContentSummaries");
-    for(unsigned datasetContentSummariesIndex = 0; datasetContentSummariesIndex < datasetContentSummariesJsonList.GetLength(); ++datasetContentSummariesIndex)
-    {
+    for (unsigned datasetContentSummariesIndex = 0; datasetContentSummariesIndex < datasetContentSummariesJsonList.GetLength();
+         ++datasetContentSummariesIndex) {
       m_datasetContentSummaries.push_back(datasetContentSummariesJsonList[datasetContentSummariesIndex].AsObject());
     }
     m_datasetContentSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

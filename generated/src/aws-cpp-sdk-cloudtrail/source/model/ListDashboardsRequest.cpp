@@ -12,44 +12,30 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDashboardsRequest::SerializePayload() const
-{
+Aws::String ListDashboardsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_namePrefixHasBeenSet)
-  {
-   payload.WithString("NamePrefix", m_namePrefix);
-
+  if (m_namePrefixHasBeenSet) {
+    payload.WithString("NamePrefix", m_namePrefix);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DashboardTypeMapper::GetNameForDashboardType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DashboardTypeMapper::GetNameForDashboardType(m_type));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListDashboardsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListDashboardsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListDashboards"));
   return headers;
-
 }
-
-
-
-

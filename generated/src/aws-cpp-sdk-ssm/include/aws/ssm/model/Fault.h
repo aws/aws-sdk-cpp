@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class Fault
-  {
-    NOT_SET,
-    Client,
-    Server,
-    Unknown
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class Fault { NOT_SET, Client, Server, Unknown };
 
-namespace FaultMapper
-{
+namespace FaultMapper {
 AWS_SSM_API Fault GetFaultForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForFault(Fault value);
-} // namespace FaultMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace FaultMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

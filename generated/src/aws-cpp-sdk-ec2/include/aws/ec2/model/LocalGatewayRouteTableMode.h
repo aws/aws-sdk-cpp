@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class LocalGatewayRouteTableMode
-  {
-    NOT_SET,
-    direct_vpc_routing,
-    coip
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class LocalGatewayRouteTableMode { NOT_SET, direct_vpc_routing, coip };
 
-namespace LocalGatewayRouteTableModeMapper
-{
+namespace LocalGatewayRouteTableModeMapper {
 AWS_EC2_API LocalGatewayRouteTableMode GetLocalGatewayRouteTableModeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForLocalGatewayRouteTableMode(LocalGatewayRouteTableMode value);
-} // namespace LocalGatewayRouteTableModeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace LocalGatewayRouteTableModeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

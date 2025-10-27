@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/UpdateGroupCertificateConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/UpdateGroupCertificateConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateGroupCertificateConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateGroupCertificateConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateExpiryInMillisecondsHasBeenSet)
-  {
-   payload.WithString("CertificateExpiryInMilliseconds", m_certificateExpiryInMilliseconds);
-
+  if (m_certificateExpiryInMillisecondsHasBeenSet) {
+    payload.WithString("CertificateExpiryInMilliseconds", m_certificateExpiryInMilliseconds);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

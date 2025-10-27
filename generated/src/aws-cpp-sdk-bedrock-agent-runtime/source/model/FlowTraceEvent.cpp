@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-FlowTraceEvent::FlowTraceEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowTraceEvent::FlowTraceEvent(JsonView jsonValue) { *this = jsonValue; }
 
-FlowTraceEvent& FlowTraceEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("trace"))
-  {
+FlowTraceEvent& FlowTraceEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("trace")) {
     m_trace = jsonValue.GetObject("trace");
     m_traceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowTraceEvent::Jsonize() const
-{
+JsonValue FlowTraceEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_traceHasBeenSet)
-  {
-   payload.WithObject("trace", m_trace.Jsonize());
-
+  if (m_traceHasBeenSet) {
+    payload.WithObject("trace", m_trace.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

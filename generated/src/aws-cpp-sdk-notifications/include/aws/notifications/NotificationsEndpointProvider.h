@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/notifications/NotificationsEndpointRules.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Notifications
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Notifications {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NotificationsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using NotificationsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NOTIFICATIONS_API NotificationsEndpointProvider : public NotificationsDefaultEpProviderBase
-{
-public:
-    using NotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NOTIFICATIONS_API NotificationsEndpointProvider : public NotificationsDefaultEpProviderBase {
+ public:
+  using NotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NotificationsEndpointProvider()
-      : NotificationsDefaultEpProviderBase(Aws::Notifications::NotificationsEndpointRules::GetRulesBlob(), Aws::Notifications::NotificationsEndpointRules::RulesBlobSize)
-    {}
+  NotificationsEndpointProvider()
+      : NotificationsDefaultEpProviderBase(Aws::Notifications::NotificationsEndpointRules::GetRulesBlob(),
+                                           Aws::Notifications::NotificationsEndpointRules::RulesBlobSize) {}
 
-    ~NotificationsEndpointProvider()
-    {
-    }
+  ~NotificationsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Notifications
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Notifications
+}  // namespace Aws

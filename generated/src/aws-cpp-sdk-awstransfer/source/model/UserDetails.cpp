@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-UserDetails::UserDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserDetails::UserDetails(JsonView jsonValue) { *this = jsonValue; }
 
-UserDetails& UserDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserName"))
-  {
+UserDetails& UserDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerId"))
-  {
+  if (jsonValue.ValueExists("ServerId")) {
     m_serverId = jsonValue.GetString("ServerId");
     m_serverIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SessionId"))
-  {
+  if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserDetails::Jsonize() const
-{
+JsonValue UserDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("SessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

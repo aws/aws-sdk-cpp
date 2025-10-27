@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/UpdateTableRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/UpdateTableRequest.h>
 
 #include <utility>
 
@@ -12,51 +12,34 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTableRequest::SerializePayload() const
-{
+Aws::String UpdateTableRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_retentionPropertiesHasBeenSet)
-  {
-   payload.WithObject("RetentionProperties", m_retentionProperties.Jsonize());
-
+  if (m_retentionPropertiesHasBeenSet) {
+    payload.WithObject("RetentionProperties", m_retentionProperties.Jsonize());
   }
 
-  if(m_magneticStoreWritePropertiesHasBeenSet)
-  {
-   payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
-
+  if (m_magneticStoreWritePropertiesHasBeenSet) {
+    payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithObject("Schema", m_schema.Jsonize());
-
+  if (m_schemaHasBeenSet) {
+    payload.WithObject("Schema", m_schema.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateTableRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateTableRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Timestream_20181101.UpdateTable"));
   return headers;
-
 }
-
-
-
-

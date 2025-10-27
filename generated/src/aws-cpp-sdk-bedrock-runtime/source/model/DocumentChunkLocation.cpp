@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-DocumentChunkLocation::DocumentChunkLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentChunkLocation::DocumentChunkLocation(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentChunkLocation& DocumentChunkLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("documentIndex"))
-  {
+DocumentChunkLocation& DocumentChunkLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("documentIndex")) {
     m_documentIndex = jsonValue.GetInteger("documentIndex");
     m_documentIndexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("start"))
-  {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetInteger("start");
     m_startHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("end"))
-  {
+  if (jsonValue.ValueExists("end")) {
     m_end = jsonValue.GetInteger("end");
     m_endHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentChunkLocation::Jsonize() const
-{
+JsonValue DocumentChunkLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentIndexHasBeenSet)
-  {
-   payload.WithInteger("documentIndex", m_documentIndex);
-
+  if (m_documentIndexHasBeenSet) {
+    payload.WithInteger("documentIndex", m_documentIndex);
   }
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithInteger("start", m_start);
-
+  if (m_startHasBeenSet) {
+    payload.WithInteger("start", m_start);
   }
 
-  if(m_endHasBeenSet)
-  {
-   payload.WithInteger("end", m_end);
-
+  if (m_endHasBeenSet) {
+    payload.WithInteger("end", m_end);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

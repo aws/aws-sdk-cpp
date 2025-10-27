@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/DeleteImportJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/DeleteImportJobRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteImportJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteImportJobRequest::SerializePayload() const { return {}; }

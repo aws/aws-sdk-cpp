@@ -5,12 +5,8 @@
 
 #include <aws/codeconnections/CodeConnectionsEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeConnections
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeConnections
-} // namespace Aws
+namespace Aws {
+namespace CodeConnections {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeConnections
+}  // namespace Aws

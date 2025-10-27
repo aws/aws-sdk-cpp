@@ -4,66 +4,77 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/LoadBalancerAttribute.h>
+#include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  class DescribeLoadBalancerAttributesResult
-  {
-  public:
-    AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult() = default;
-    AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+class DescribeLoadBalancerAttributesResult {
+ public:
+  AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult() = default;
+  AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancerAttributesResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>Information about the load balancer attributes.</p>
+   */
+  inline const Aws::Vector<LoadBalancerAttribute>& GetAttributes() const { return m_attributes; }
+  template <typename AttributesT = Aws::Vector<LoadBalancerAttribute>>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = Aws::Vector<LoadBalancerAttribute>>
+  DescribeLoadBalancerAttributesResult& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  template <typename AttributesT = LoadBalancerAttribute>
+  DescribeLoadBalancerAttributesResult& AddAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes.emplace_back(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the load balancer attributes.</p>
-     */
-    inline const Aws::Vector<LoadBalancerAttribute>& GetAttributes() const { return m_attributes; }
-    template<typename AttributesT = Aws::Vector<LoadBalancerAttribute>>
-    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
-    template<typename AttributesT = Aws::Vector<LoadBalancerAttribute>>
-    DescribeLoadBalancerAttributesResult& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
-    template<typename AttributesT = LoadBalancerAttribute>
-    DescribeLoadBalancerAttributesResult& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<LoadBalancerAttribute> m_attributes;
+  bool m_attributesHasBeenSet = false;
 
-    Aws::Vector<LoadBalancerAttribute> m_attributes;
-    bool m_attributesHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

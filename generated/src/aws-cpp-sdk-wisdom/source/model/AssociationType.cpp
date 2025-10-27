@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/AssociationType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/wisdom/model/AssociationType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
+namespace AssociationTypeMapper {
 
-namespace Aws
-{
-  namespace ConnectWisdomService
-  {
-    namespace Model
-    {
-      namespace AssociationTypeMapper
-      {
+static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
 
-        static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+AssociationType GetAssociationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == KNOWLEDGE_BASE_HASH) {
+    return AssociationType::KNOWLEDGE_BASE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AssociationType>(hashCode);
+  }
 
+  return AssociationType::NOT_SET;
+}
 
-        AssociationType GetAssociationTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == KNOWLEDGE_BASE_HASH)
-          {
-            return AssociationType::KNOWLEDGE_BASE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AssociationType>(hashCode);
-          }
+Aws::String GetNameForAssociationType(AssociationType enumValue) {
+  switch (enumValue) {
+    case AssociationType::NOT_SET:
+      return {};
+    case AssociationType::KNOWLEDGE_BASE:
+      return "KNOWLEDGE_BASE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AssociationType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAssociationType(AssociationType enumValue)
-        {
-          switch(enumValue)
-          {
-          case AssociationType::NOT_SET:
-            return {};
-          case AssociationType::KNOWLEDGE_BASE:
-            return "KNOWLEDGE_BASE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AssociationTypeMapper
-    } // namespace Model
-  } // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace AssociationTypeMapper
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

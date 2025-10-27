@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-HttpRedirect::HttpRedirect(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpRedirect::HttpRedirect(JsonView jsonValue) { *this = jsonValue; }
 
-HttpRedirect& HttpRedirect::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RedirectFrom"))
-  {
+HttpRedirect& HttpRedirect::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RedirectFrom")) {
     m_redirectFrom = jsonValue.GetString("RedirectFrom");
     m_redirectFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RedirectTo"))
-  {
+  if (jsonValue.ValueExists("RedirectTo")) {
     m_redirectTo = jsonValue.GetString("RedirectTo");
     m_redirectToHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpRedirect::Jsonize() const
-{
+JsonValue HttpRedirect::Jsonize() const {
   JsonValue payload;
 
-  if(m_redirectFromHasBeenSet)
-  {
-   payload.WithString("RedirectFrom", m_redirectFrom);
-
+  if (m_redirectFromHasBeenSet) {
+    payload.WithString("RedirectFrom", m_redirectFrom);
   }
 
-  if(m_redirectToHasBeenSet)
-  {
-   payload.WithString("RedirectTo", m_redirectTo);
-
+  if (m_redirectToHasBeenSet) {
+    payload.WithString("RedirectTo", m_redirectTo);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

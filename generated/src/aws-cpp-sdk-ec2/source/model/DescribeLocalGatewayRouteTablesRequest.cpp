@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeLocalGatewayRouteTablesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTablesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeLocalGatewayRouteTablesRequest::SerializePayload() const
-{
+Aws::String DescribeLocalGatewayRouteTablesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeLocalGatewayRouteTables&";
-  if(m_localGatewayRouteTableIdsHasBeenSet)
-  {
+  if (m_localGatewayRouteTableIdsHasBeenSet) {
     unsigned localGatewayRouteTableIdsCount = 1;
-    for(auto& item : m_localGatewayRouteTableIds)
-    {
-      ss << "LocalGatewayRouteTableId." << localGatewayRouteTableIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_localGatewayRouteTableIds) {
+      ss << "LocalGatewayRouteTableId." << localGatewayRouteTableIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       localGatewayRouteTableIdsCount++;
     }
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -54,8 +45,4 @@ Aws::String DescribeLocalGatewayRouteTablesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeLocalGatewayRouteTablesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeLocalGatewayRouteTablesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

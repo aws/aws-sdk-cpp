@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/DeploymentLaunchConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/DeploymentLaunchConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-DeploymentLaunchConfig::DeploymentLaunchConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentLaunchConfig::DeploymentLaunchConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentLaunchConfig& DeploymentLaunchConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("packageName"))
-  {
+DeploymentLaunchConfig& DeploymentLaunchConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("packageName")) {
     m_packageName = jsonValue.GetString("packageName");
     m_packageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preLaunchFile"))
-  {
+  if (jsonValue.ValueExists("preLaunchFile")) {
     m_preLaunchFile = jsonValue.GetString("preLaunchFile");
     m_preLaunchFileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("launchFile"))
-  {
+  if (jsonValue.ValueExists("launchFile")) {
     m_launchFile = jsonValue.GetString("launchFile");
     m_launchFileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postLaunchFile"))
-  {
+  if (jsonValue.ValueExists("postLaunchFile")) {
     m_postLaunchFile = jsonValue.GetString("postLaunchFile");
     m_postLaunchFileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("environmentVariables"))
-  {
+  if (jsonValue.ValueExists("environmentVariables")) {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
-    for(auto& environmentVariablesItem : environmentVariablesJsonMap)
-    {
+    for (auto& environmentVariablesItem : environmentVariablesJsonMap) {
       m_environmentVariables[environmentVariablesItem.first] = environmentVariablesItem.second.AsString();
     }
     m_environmentVariablesHasBeenSet = true;
@@ -57,48 +44,36 @@ DeploymentLaunchConfig& DeploymentLaunchConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DeploymentLaunchConfig::Jsonize() const
-{
+JsonValue DeploymentLaunchConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_packageNameHasBeenSet)
-  {
-   payload.WithString("packageName", m_packageName);
-
+  if (m_packageNameHasBeenSet) {
+    payload.WithString("packageName", m_packageName);
   }
 
-  if(m_preLaunchFileHasBeenSet)
-  {
-   payload.WithString("preLaunchFile", m_preLaunchFile);
-
+  if (m_preLaunchFileHasBeenSet) {
+    payload.WithString("preLaunchFile", m_preLaunchFile);
   }
 
-  if(m_launchFileHasBeenSet)
-  {
-   payload.WithString("launchFile", m_launchFile);
-
+  if (m_launchFileHasBeenSet) {
+    payload.WithString("launchFile", m_launchFile);
   }
 
-  if(m_postLaunchFileHasBeenSet)
-  {
-   payload.WithString("postLaunchFile", m_postLaunchFile);
-
+  if (m_postLaunchFileHasBeenSet) {
+    payload.WithString("postLaunchFile", m_postLaunchFile);
   }
 
-  if(m_environmentVariablesHasBeenSet)
-  {
-   JsonValue environmentVariablesJsonMap;
-   for(auto& environmentVariablesItem : m_environmentVariables)
-   {
-     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
-   }
-   payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
-
+  if (m_environmentVariablesHasBeenSet) {
+    JsonValue environmentVariablesJsonMap;
+    for (auto& environmentVariablesItem : m_environmentVariables) {
+      environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+    }
+    payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

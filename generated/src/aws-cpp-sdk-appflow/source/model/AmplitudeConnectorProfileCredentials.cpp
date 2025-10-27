@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-AmplitudeConnectorProfileCredentials& AmplitudeConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiKey"))
-  {
+AmplitudeConnectorProfileCredentials& AmplitudeConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiKey")) {
     m_apiKey = jsonValue.GetString("apiKey");
     m_apiKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretKey"))
-  {
+  if (jsonValue.ValueExists("secretKey")) {
     m_secretKey = jsonValue.GetString("secretKey");
     m_secretKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AmplitudeConnectorProfileCredentials::Jsonize() const
-{
+JsonValue AmplitudeConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("apiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("apiKey", m_apiKey);
   }
 
-  if(m_secretKeyHasBeenSet)
-  {
-   payload.WithString("secretKey", m_secretKey);
-
+  if (m_secretKeyHasBeenSet) {
+    payload.WithString("secretKey", m_secretKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

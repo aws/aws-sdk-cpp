@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-SectionalElement::SectionalElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SectionalElement::SectionalElement(JsonView jsonValue) { *this = jsonValue; }
 
-SectionalElement& SectionalElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+SectionalElement& SectionalElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("position"))
-  {
+  if (jsonValue.ValueExists("position")) {
     m_position = jsonValue.GetObject("position");
     m_positionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("level"))
-  {
+  if (jsonValue.ValueExists("level")) {
     m_level = jsonValue.GetInteger("level");
     m_levelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("orientation"))
-  {
+  if (jsonValue.ValueExists("orientation")) {
     m_orientation = jsonValue.GetString("orientation");
     m_orientationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("excluded"))
-  {
+  if (jsonValue.ValueExists("excluded")) {
     m_excluded = jsonValue.GetBool("excluded");
     m_excludedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SectionalElement::Jsonize() const
-{
+JsonValue SectionalElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_positionHasBeenSet)
-  {
-   payload.WithObject("position", m_position.Jsonize());
-
+  if (m_positionHasBeenSet) {
+    payload.WithObject("position", m_position.Jsonize());
   }
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_levelHasBeenSet)
-  {
-   payload.WithInteger("level", m_level);
-
+  if (m_levelHasBeenSet) {
+    payload.WithInteger("level", m_level);
   }
 
-  if(m_orientationHasBeenSet)
-  {
-   payload.WithString("orientation", m_orientation);
-
+  if (m_orientationHasBeenSet) {
+    payload.WithString("orientation", m_orientation);
   }
 
-  if(m_excludedHasBeenSet)
-  {
-   payload.WithBool("excluded", m_excluded);
-
+  if (m_excludedHasBeenSet) {
+    payload.WithBool("excluded", m_excluded);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

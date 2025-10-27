@@ -12,11 +12,4 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeAppInstanceUserEndpointRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeAppInstanceUserEndpointRequest::SerializePayload() const { return {}; }

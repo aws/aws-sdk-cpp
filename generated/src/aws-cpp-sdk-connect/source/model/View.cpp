@@ -11,178 +11,133 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-View::View(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+View::View(JsonView jsonValue) { *this = jsonValue; }
 
-View& View::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+View& View::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ViewStatusMapper::GetViewStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ViewTypeMapper::GetViewTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetInteger("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionDescription"))
-  {
+  if (jsonValue.ValueExists("VersionDescription")) {
     m_versionDescription = jsonValue.GetString("VersionDescription");
     m_versionDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetObject("Content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
+  if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
     m_createdTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViewContentSha256"))
-  {
+  if (jsonValue.ValueExists("ViewContentSha256")) {
     m_viewContentSha256 = jsonValue.GetString("ViewContentSha256");
     m_viewContentSha256HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue View::Jsonize() const
-{
+JsonValue View::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ViewStatusMapper::GetNameForViewStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ViewStatusMapper::GetNameForViewStatus(m_status));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ViewTypeMapper::GetNameForViewType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ViewTypeMapper::GetNameForViewType(m_type));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInteger("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithInteger("Version", m_version);
   }
 
-  if(m_versionDescriptionHasBeenSet)
-  {
-   payload.WithString("VersionDescription", m_versionDescription);
-
+  if (m_versionDescriptionHasBeenSet) {
+    payload.WithString("VersionDescription", m_versionDescription);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("Content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("Content", m_content.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  if (m_createdTimeHasBeenSet) {
+    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_viewContentSha256HasBeenSet)
-  {
-   payload.WithString("ViewContentSha256", m_viewContentSha256);
-
+  if (m_viewContentSha256HasBeenSet) {
+    payload.WithString("ViewContentSha256", m_viewContentSha256);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

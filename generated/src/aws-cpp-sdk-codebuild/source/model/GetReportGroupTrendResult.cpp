@@ -4,10 +4,10 @@
  */
 
 #include <aws/codebuild/model/GetReportGroupTrendResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReportGroupTrendResult::GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetReportGroupTrendResult::GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetReportGroupTrendResult& GetReportGroupTrendResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetReportGroupTrendResult& GetReportGroupTrendResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("stats"))
-  {
+  if (jsonValue.ValueExists("stats")) {
     m_stats = jsonValue.GetObject("stats");
     m_statsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rawData"))
-  {
+  if (jsonValue.ValueExists("rawData")) {
     Aws::Utils::Array<JsonView> rawDataJsonList = jsonValue.GetArray("rawData");
-    for(unsigned rawDataIndex = 0; rawDataIndex < rawDataJsonList.GetLength(); ++rawDataIndex)
-    {
+    for (unsigned rawDataIndex = 0; rawDataIndex < rawDataJsonList.GetLength(); ++rawDataIndex) {
       m_rawData.push_back(rawDataJsonList[rawDataIndex].AsObject());
     }
     m_rawDataHasBeenSet = true;
@@ -42,12 +35,10 @@ GetReportGroupTrendResult& GetReportGroupTrendResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

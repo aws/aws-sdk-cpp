@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class Condition
-  {
-    NOT_SET,
-    EQUALS,
-    NOT_EQUALS,
-    CONTAINS,
-    NOT_CONTAINS
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class Condition { NOT_SET, EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS };
 
-namespace ConditionMapper
-{
+namespace ConditionMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Condition GetConditionForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForCondition(Condition value);
-} // namespace ConditionMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace ConditionMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

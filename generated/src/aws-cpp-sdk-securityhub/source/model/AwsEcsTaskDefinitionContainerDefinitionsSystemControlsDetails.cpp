@@ -3,60 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails& AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Namespace"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails& AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Namespace")) {
     m_namespace = jsonValue.GetString("Namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("Namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("Namespace", m_namespace);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

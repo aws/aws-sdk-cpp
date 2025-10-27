@@ -7,24 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class TrainingDatasetStatus
-  {
-    NOT_SET,
-    ACTIVE
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class TrainingDatasetStatus { NOT_SET, ACTIVE };
 
-namespace TrainingDatasetStatusMapper
-{
+namespace TrainingDatasetStatusMapper {
 AWS_CLEANROOMSML_API TrainingDatasetStatus GetTrainingDatasetStatusForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForTrainingDatasetStatus(TrainingDatasetStatus value);
-} // namespace TrainingDatasetStatusMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace TrainingDatasetStatusMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoTRequest.h>
+#include <aws/iot/IoT_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
+/**
+ */
+class DescribeMitigationActionRequest : public IoTRequest {
+ public:
+  AWS_IOT_API DescribeMitigationActionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeMitigationAction"; }
+
+  AWS_IOT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The friendly name that uniquely identifies the mitigation action.</p>
    */
-  class DescribeMitigationActionRequest : public IoTRequest
-  {
-  public:
-    AWS_IOT_API DescribeMitigationActionRequest() = default;
+  inline const Aws::String& GetActionName() const { return m_actionName; }
+  inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+  template <typename ActionNameT = Aws::String>
+  void SetActionName(ActionNameT&& value) {
+    m_actionNameHasBeenSet = true;
+    m_actionName = std::forward<ActionNameT>(value);
+  }
+  template <typename ActionNameT = Aws::String>
+  DescribeMitigationActionRequest& WithActionName(ActionNameT&& value) {
+    SetActionName(std::forward<ActionNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_actionName;
+  bool m_actionNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeMitigationAction"; }
-
-    AWS_IOT_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
-    inline const Aws::String& GetActionName() const { return m_actionName; }
-    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    template<typename ActionNameT = Aws::String>
-    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
-    template<typename ActionNameT = Aws::String>
-    DescribeMitigationActionRequest& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_actionName;
-    bool m_actionNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

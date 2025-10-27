@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationAnswerOutput::EvaluationAnswerOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationAnswerOutput::EvaluationAnswerOutput(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationAnswerOutput& EvaluationAnswerOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+EvaluationAnswerOutput& EvaluationAnswerOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetObject("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SystemSuggestedValue"))
-  {
+  if (jsonValue.ValueExists("SystemSuggestedValue")) {
     m_systemSuggestedValue = jsonValue.GetObject("SystemSuggestedValue");
     m_systemSuggestedValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationAnswerOutput::Jsonize() const
-{
+JsonValue EvaluationAnswerOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("Value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("Value", m_value.Jsonize());
   }
 
-  if(m_systemSuggestedValueHasBeenSet)
-  {
-   payload.WithObject("SystemSuggestedValue", m_systemSuggestedValue.Jsonize());
-
+  if (m_systemSuggestedValueHasBeenSet) {
+    payload.WithObject("SystemSuggestedValue", m_systemSuggestedValue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

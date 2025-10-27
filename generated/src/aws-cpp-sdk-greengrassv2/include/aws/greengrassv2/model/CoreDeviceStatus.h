@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
-  enum class CoreDeviceStatus
-  {
-    NOT_SET,
-    HEALTHY,
-    UNHEALTHY
-  };
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
+enum class CoreDeviceStatus { NOT_SET, HEALTHY, UNHEALTHY };
 
-namespace CoreDeviceStatusMapper
-{
+namespace CoreDeviceStatusMapper {
 AWS_GREENGRASSV2_API CoreDeviceStatus GetCoreDeviceStatusForName(const Aws::String& name);
 
 AWS_GREENGRASSV2_API Aws::String GetNameForCoreDeviceStatus(CoreDeviceStatus value);
-} // namespace CoreDeviceStatusMapper
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace CoreDeviceStatusMapper
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

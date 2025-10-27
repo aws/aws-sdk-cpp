@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/CanaryLastRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/synthetics/model/CanaryLastRun.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Synthetics
-{
-namespace Model
-{
+namespace Aws {
+namespace Synthetics {
+namespace Model {
 
-CanaryLastRun::CanaryLastRun(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CanaryLastRun::CanaryLastRun(JsonView jsonValue) { *this = jsonValue; }
 
-CanaryLastRun& CanaryLastRun::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CanaryName"))
-  {
+CanaryLastRun& CanaryLastRun::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CanaryName")) {
     m_canaryName = jsonValue.GetString("CanaryName");
     m_canaryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastRun"))
-  {
+  if (jsonValue.ValueExists("LastRun")) {
     m_lastRun = jsonValue.GetObject("LastRun");
     m_lastRunHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CanaryLastRun::Jsonize() const
-{
+JsonValue CanaryLastRun::Jsonize() const {
   JsonValue payload;
 
-  if(m_canaryNameHasBeenSet)
-  {
-   payload.WithString("CanaryName", m_canaryName);
-
+  if (m_canaryNameHasBeenSet) {
+    payload.WithString("CanaryName", m_canaryName);
   }
 
-  if(m_lastRunHasBeenSet)
-  {
-   payload.WithObject("LastRun", m_lastRun.Jsonize());
-
+  if (m_lastRunHasBeenSet) {
+    payload.WithObject("LastRun", m_lastRun.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Synthetics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Synthetics
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class GraphQLApiIntrospectionConfig
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class GraphQLApiIntrospectionConfig { NOT_SET, ENABLED, DISABLED };
 
-namespace GraphQLApiIntrospectionConfigMapper
-{
+namespace GraphQLApiIntrospectionConfigMapper {
 AWS_APPSYNC_API GraphQLApiIntrospectionConfig GetGraphQLApiIntrospectionConfigForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForGraphQLApiIntrospectionConfig(GraphQLApiIntrospectionConfig value);
-} // namespace GraphQLApiIntrospectionConfigMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace GraphQLApiIntrospectionConfigMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

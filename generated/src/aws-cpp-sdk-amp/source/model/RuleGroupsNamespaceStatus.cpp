@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-RuleGroupsNamespaceStatus::RuleGroupsNamespaceStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleGroupsNamespaceStatus::RuleGroupsNamespaceStatus(JsonView jsonValue) { *this = jsonValue; }
 
-RuleGroupsNamespaceStatus& RuleGroupsNamespaceStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+RuleGroupsNamespaceStatus& RuleGroupsNamespaceStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = RuleGroupsNamespaceStatusCodeMapper::GetRuleGroupsNamespaceStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleGroupsNamespaceStatus::Jsonize() const
-{
+JsonValue RuleGroupsNamespaceStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", RuleGroupsNamespaceStatusCodeMapper::GetNameForRuleGroupsNamespaceStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", RuleGroupsNamespaceStatusCodeMapper::GetNameForRuleGroupsNamespaceStatusCode(m_statusCode));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("statusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

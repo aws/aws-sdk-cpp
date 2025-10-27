@@ -3,63 +3,60 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/connect/ConnectErrors.h>
+#include <aws/connect/model/InvalidContactFlowException.h>
+#include <aws/connect/model/InvalidContactFlowModuleException.h>
+#include <aws/connect/model/InvalidRequestException.h>
+#include <aws/connect/model/PropertyValidationException.h>
+#include <aws/connect/model/ResourceInUseException.h>
+#include <aws/connect/model/ServiceQuotaExceededException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/connect/ConnectErrors.h>
-#include <aws/connect/model/PropertyValidationException.h>
-#include <aws/connect/model/InvalidContactFlowException.h>
-#include <aws/connect/model/ServiceQuotaExceededException.h>
-#include <aws/connect/model/ResourceInUseException.h>
-#include <aws/connect/model/InvalidRequestException.h>
-#include <aws/connect/model/InvalidContactFlowModuleException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Connect;
 using namespace Aws::Connect::Model;
 
-namespace Aws
-{
-namespace Connect
-{
-template<> AWS_CONNECT_API PropertyValidationException ConnectError::GetModeledError()
-{
+namespace Aws {
+namespace Connect {
+template <>
+AWS_CONNECT_API PropertyValidationException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::PROPERTY_VALIDATION);
   return PropertyValidationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledError()
-{
+template <>
+AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::INVALID_CONTACT_FLOW);
   return InvalidContactFlowException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CONNECT_API ServiceQuotaExceededException ConnectError::GetModeledError()
-{
+template <>
+AWS_CONNECT_API ServiceQuotaExceededException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::SERVICE_QUOTA_EXCEEDED);
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError()
-{
+template <>
+AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::RESOURCE_IN_USE);
   return ResourceInUseException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CONNECT_API InvalidRequestException ConnectError::GetModeledError()
-{
+template <>
+AWS_CONNECT_API InvalidRequestException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::INVALID_REQUEST);
   return InvalidRequestException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CONNECT_API InvalidContactFlowModuleException ConnectError::GetModeledError()
-{
+template <>
+AWS_CONNECT_API InvalidContactFlowModuleException ConnectError::GetModeledError() {
   assert(this->GetErrorType() == ConnectErrors::INVALID_CONTACT_FLOW_MODULE);
   return InvalidContactFlowModuleException(this->GetJsonPayload().View());
 }
 
-namespace ConnectErrorMapper
-{
+namespace ConnectErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
@@ -85,106 +82,59 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 static const int OUTPUT_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("OutputTypeNotFoundException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_NOT_READY_HASH)
-  {
+  } else if (hashCode == RESOURCE_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IDEMPOTENCY_HASH)
-  {
+  } else if (hashCode == IDEMPOTENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::IDEMPOTENCY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MAXIMUM_RESULT_RETURNED_HASH)
-  {
+  } else if (hashCode == MAXIMUM_RESULT_RETURNED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::MAXIMUM_RESULT_RETURNED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PROPERTY_VALIDATION_HASH)
-  {
+  } else if (hashCode == PROPERTY_VALIDATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::PROPERTY_VALIDATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_CONTACT_FLOW_HASH)
-  {
+  } else if (hashCode == INVALID_CONTACT_FLOW_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_CONTACT_FLOW), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == USER_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == USER_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::USER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_RESOURCE_HASH)
-  {
+  } else if (hashCode == DUPLICATE_RESOURCE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::DUPLICATE_RESOURCE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DESTINATION_NOT_ALLOWED_HASH)
-  {
+  } else if (hashCode == DESTINATION_NOT_ALLOWED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::DESTINATION_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONTACT_FLOW_NOT_PUBLISHED_HASH)
-  {
+  } else if (hashCode == CONTACT_FLOW_NOT_PUBLISHED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_FLOW_NOT_PUBLISHED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INTERNAL_SERVICE), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_CONTACT_FLOW_MODULE_HASH)
-  {
+  } else if (hashCode == INVALID_CONTACT_FLOW_MODULE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_CONTACT_FLOW_MODULE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
-  {
+  } else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::OUTBOUND_CONTACT_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONDITIONAL_OPERATION_FAILED_HASH)
-  {
+  } else if (hashCode == CONDITIONAL_OPERATION_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONDITIONAL_OPERATION_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONTACT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == CONTACT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_CONFLICT_HASH)
-  {
+  } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OUTPUT_TYPE_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == OUTPUT_TYPE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::OUTPUT_TYPE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ConnectErrorMapper
-} // namespace Connect
-} // namespace Aws
+}  // namespace ConnectErrorMapper
+}  // namespace Connect
+}  // namespace Aws

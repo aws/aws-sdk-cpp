@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::KinesisVideoArchivedMedia;
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace KinesisVideoArchivedMediaErrorMapper
-{
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace KinesisVideoArchivedMediaErrorMapper {
 
 static const int INVALID_CODEC_PRIVATE_DATA_HASH = HashingUtils::HashString("InvalidCodecPrivateDataException");
 static const int NO_DATA_RETENTION_HASH = HashingUtils::HashString("NoDataRetentionException");
@@ -27,46 +24,34 @@ static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgume
 static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
 static const int INVALID_MEDIA_FRAME_HASH = HashingUtils::HashString("InvalidMediaFrameException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_CODEC_PRIVATE_DATA_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_CODEC_PRIVATE_DATA), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NO_DATA_RETENTION_HASH)
-  {
+  if (hashCode == INVALID_CODEC_PRIVATE_DATA_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_CODEC_PRIVATE_DATA),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NO_DATA_RETENTION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NO_DATA_RETENTION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MISSING_CODEC_PRIVATE_DATA_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::MISSING_CODEC_PRIVATE_DATA), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_AUTHORIZED_HASH)
-  {
+  } else if (hashCode == MISSING_CODEC_PRIVATE_DATA_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::MISSING_CODEC_PRIVATE_DATA),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NOT_AUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_STREAM_MEDIA_TYPE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::UNSUPPORTED_STREAM_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_STREAM_MEDIA_TYPE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::UNSUPPORTED_STREAM_MEDIA_TYPE),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_MEDIA_FRAME_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_MEDIA_FRAME), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::CLIENT_LIMIT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_MEDIA_FRAME_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_MEDIA_FRAME),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace KinesisVideoArchivedMediaErrorMapper
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace KinesisVideoArchivedMediaErrorMapper
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

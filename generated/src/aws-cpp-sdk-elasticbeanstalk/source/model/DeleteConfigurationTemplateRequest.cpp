@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DeleteConfigurationTemplateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DeleteConfigurationTemplateRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteConfigurationTemplateRequest::SerializePayload() const
-{
+Aws::String DeleteConfigurationTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteConfigurationTemplate&";
-  if(m_applicationNameHasBeenSet)
-  {
+  if (m_applicationNameHasBeenSet) {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
 
-  if(m_templateNameHasBeenSet)
-  {
+  if (m_templateNameHasBeenSet) {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteConfigurationTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteConfigurationTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteConfigurationTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

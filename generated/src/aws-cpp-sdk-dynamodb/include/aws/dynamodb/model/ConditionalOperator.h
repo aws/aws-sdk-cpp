@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ConditionalOperator
-  {
-    NOT_SET,
-    AND,
-    OR
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ConditionalOperator { NOT_SET, AND, OR };
 
-namespace ConditionalOperatorMapper
-{
+namespace ConditionalOperatorMapper {
 AWS_DYNAMODB_API ConditionalOperator GetConditionalOperatorForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForConditionalOperator(ConditionalOperator value);
-} // namespace ConditionalOperatorMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ConditionalOperatorMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

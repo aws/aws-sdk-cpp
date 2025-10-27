@@ -7,29 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class Type
-  {
-    NOT_SET,
-    ACTION_GROUP,
-    AGENT_COLLABORATOR,
-    KNOWLEDGE_BASE,
-    FINISH,
-    ASK_USER,
-    REPROMPT
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class Type { NOT_SET, ACTION_GROUP, AGENT_COLLABORATOR, KNOWLEDGE_BASE, FINISH, ASK_USER, REPROMPT };
 
-namespace TypeMapper
-{
+namespace TypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API Type GetTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace TypeMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

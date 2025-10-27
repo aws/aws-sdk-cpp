@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class RegistrationStatus
-  {
-    NOT_SET,
-    CREATED,
-    SUBMITTED,
-    REVIEWING,
-    REQUIRES_AUTHENTICATION,
-    PROVISIONING,
-    COMPLETE,
-    REQUIRES_UPDATES,
-    CLOSED,
-    DELETED
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class RegistrationStatus {
+  NOT_SET,
+  CREATED,
+  SUBMITTED,
+  REVIEWING,
+  REQUIRES_AUTHENTICATION,
+  PROVISIONING,
+  COMPLETE,
+  REQUIRES_UPDATES,
+  CLOSED,
+  DELETED
+};
 
-namespace RegistrationStatusMapper
-{
+namespace RegistrationStatusMapper {
 AWS_PINPOINTSMSVOICEV2_API RegistrationStatus GetRegistrationStatusForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForRegistrationStatus(RegistrationStatus value);
-} // namespace RegistrationStatusMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace RegistrationStatusMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

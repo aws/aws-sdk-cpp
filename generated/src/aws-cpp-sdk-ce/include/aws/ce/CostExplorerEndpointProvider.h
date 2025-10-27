@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/ce/CostExplorerEndpointRules.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/ce/CostExplorerEndpointRules.h>
-
-
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using CostExplorerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using CostExplorerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_COSTEXPLORER_API CostExplorerEndpointProvider : public CostExplorerDefaultEpProviderBase
-{
-public:
-    using CostExplorerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_COSTEXPLORER_API CostExplorerEndpointProvider : public CostExplorerDefaultEpProviderBase {
+ public:
+  using CostExplorerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    CostExplorerEndpointProvider()
-      : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::GetRulesBlob(), Aws::CostExplorer::CostExplorerEndpointRules::RulesBlobSize)
-    {}
+  CostExplorerEndpointProvider()
+      : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::GetRulesBlob(),
+                                          Aws::CostExplorer::CostExplorerEndpointRules::RulesBlobSize) {}
 
-    ~CostExplorerEndpointProvider()
-    {
-    }
+  ~CostExplorerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace CostExplorer
+}  // namespace Aws

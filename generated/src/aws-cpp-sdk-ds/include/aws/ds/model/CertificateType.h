@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class CertificateType
-  {
-    NOT_SET,
-    ClientCertAuth,
-    ClientLDAPS
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class CertificateType { NOT_SET, ClientCertAuth, ClientLDAPS };
 
-namespace CertificateTypeMapper
-{
+namespace CertificateTypeMapper {
 AWS_DIRECTORYSERVICE_API CertificateType GetCertificateTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForCertificateType(CertificateType value);
-} // namespace CertificateTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace CertificateTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

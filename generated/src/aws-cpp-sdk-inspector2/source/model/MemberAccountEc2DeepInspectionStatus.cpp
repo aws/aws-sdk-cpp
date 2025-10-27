@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/MemberAccountEc2DeepInspectionStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/MemberAccountEc2DeepInspectionStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-MemberAccountEc2DeepInspectionStatus::MemberAccountEc2DeepInspectionStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberAccountEc2DeepInspectionStatus::MemberAccountEc2DeepInspectionStatus(JsonView jsonValue) { *this = jsonValue; }
 
-MemberAccountEc2DeepInspectionStatus& MemberAccountEc2DeepInspectionStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+MemberAccountEc2DeepInspectionStatus& MemberAccountEc2DeepInspectionStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("activateDeepInspection"))
-  {
+  if (jsonValue.ValueExists("activateDeepInspection")) {
     m_activateDeepInspection = jsonValue.GetBool("activateDeepInspection");
     m_activateDeepInspectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberAccountEc2DeepInspectionStatus::Jsonize() const
-{
+JsonValue MemberAccountEc2DeepInspectionStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_activateDeepInspectionHasBeenSet)
-  {
-   payload.WithBool("activateDeepInspection", m_activateDeepInspection);
-
+  if (m_activateDeepInspectionHasBeenSet) {
+    payload.WithBool("activateDeepInspection", m_activateDeepInspection);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class Tenancy
-  {
-    NOT_SET,
-    default_,
-    dedicated,
-    host
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class Tenancy { NOT_SET, default_, dedicated, host };
 
-namespace TenancyMapper
-{
+namespace TenancyMapper {
 AWS_EC2_API Tenancy GetTenancyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTenancy(Tenancy value);
-} // namespace TenancyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TenancyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

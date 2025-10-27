@@ -6,10 +6,10 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/organizations/OrganizationsErrors.h>
+#include <aws/organizations/model/AccessDeniedForDependencyException.h>
 #include <aws/organizations/model/ConstraintViolationException.h>
 #include <aws/organizations/model/HandshakeConstraintViolationException.h>
 #include <aws/organizations/model/InvalidInputException.h>
-#include <aws/organizations/model/AccessDeniedForDependencyException.h>
 #include <aws/organizations/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
@@ -17,46 +17,44 @@ using namespace Aws::Utils;
 using namespace Aws::Organizations;
 using namespace Aws::Organizations::Model;
 
-namespace Aws
-{
-namespace Organizations
-{
-template<> AWS_ORGANIZATIONS_API ConstraintViolationException OrganizationsError::GetModeledError()
-{
+namespace Aws {
+namespace Organizations {
+template <>
+AWS_ORGANIZATIONS_API ConstraintViolationException OrganizationsError::GetModeledError() {
   assert(this->GetErrorType() == OrganizationsErrors::CONSTRAINT_VIOLATION);
   return ConstraintViolationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ORGANIZATIONS_API HandshakeConstraintViolationException OrganizationsError::GetModeledError()
-{
+template <>
+AWS_ORGANIZATIONS_API HandshakeConstraintViolationException OrganizationsError::GetModeledError() {
   assert(this->GetErrorType() == OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION);
   return HandshakeConstraintViolationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ORGANIZATIONS_API InvalidInputException OrganizationsError::GetModeledError()
-{
+template <>
+AWS_ORGANIZATIONS_API InvalidInputException OrganizationsError::GetModeledError() {
   assert(this->GetErrorType() == OrganizationsErrors::INVALID_INPUT);
   return InvalidInputException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ORGANIZATIONS_API AccessDeniedForDependencyException OrganizationsError::GetModeledError()
-{
+template <>
+AWS_ORGANIZATIONS_API AccessDeniedForDependencyException OrganizationsError::GetModeledError() {
   assert(this->GetErrorType() == OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY);
   return AccessDeniedForDependencyException(this->GetJsonPayload().View());
 }
 
-template<> AWS_ORGANIZATIONS_API TooManyRequestsException OrganizationsError::GetModeledError()
-{
+template <>
+AWS_ORGANIZATIONS_API TooManyRequestsException OrganizationsError::GetModeledError() {
   assert(this->GetErrorType() == OrganizationsErrors::TOO_MANY_REQUESTS);
   return TooManyRequestsException(this->GetJsonPayload().View());
 }
 
-namespace OrganizationsErrorMapper
-{
+namespace OrganizationsErrorMapper {
 
 static const int UNSUPPORTED_A_P_I_ENDPOINT_HASH = HashingUtils::HashString("UnsupportedAPIEndpointException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH = HashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
+static const int POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH =
+    HashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
 static const int A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString("AWSOrganizationsNotInUseException");
 static const int DUPLICATE_POLICY_ATTACHMENT_HASH = HashingUtils::HashString("DuplicatePolicyAttachmentException");
 static const int FINALIZING_ORGANIZATION_HASH = HashingUtils::HashString("FinalizingOrganizationException");
@@ -101,198 +99,108 @@ static const int ACCOUNT_ALREADY_CLOSED_HASH = HashingUtils::HashString("Account
 static const int ALREADY_IN_ORGANIZATION_HASH = HashingUtils::HashString("AlreadyInOrganizationException");
 static const int ACCOUNT_OWNER_NOT_VERIFIED_HASH = HashingUtils::HashString("AccountOwnerNotVerifiedException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH)
-  {
+  if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::UNSUPPORTED_A_P_I_ENDPOINT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
-  {
+  } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH)
-  {
+  } else if (hashCode == POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::A_W_S_ORGANIZATIONS_NOT_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_POLICY_ATTACHMENT_HASH)
-  {
+  } else if (hashCode == DUPLICATE_POLICY_ATTACHMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY_ATTACHMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == FINALIZING_ORGANIZATION_HASH)
-  {
+  } else if (hashCode == FINALIZING_ORGANIZATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::FINALIZING_ORGANIZATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DESTINATION_PARENT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == DESTINATION_PARENT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DESTINATION_PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_CHANGES_IN_PROGRESS_HASH)
-  {
+  } else if (hashCode == POLICY_CHANGES_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_CHANGES_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MASTER_CANNOT_LEAVE_ORGANIZATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MASTER_CANNOT_LEAVE_ORGANIZATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_ACCOUNT_HASH)
-  {
+  } else if (hashCode == MASTER_CANNOT_LEAVE_ORGANIZATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MASTER_CANNOT_LEAVE_ORGANIZATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DUPLICATE_ACCOUNT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ACCOUNT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == HANDSHAKE_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == HANDSHAKE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PARENT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == PARENT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
-  {
+  } else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CHILD_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == CHILD_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CHILD_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == HANDSHAKE_ALREADY_IN_STATE_HASH)
-  {
+  } else if (hashCode == HANDSHAKE_ALREADY_IN_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_ALREADY_IN_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_TYPE_NOT_ENABLED_HASH)
-  {
+  } else if (hashCode == POLICY_TYPE_NOT_ENABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ROOT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == ROOT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ROOT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONSTRAINT_VIOLATION_HASH)
-  {
+  } else if (hashCode == CONSTRAINT_VIOLATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONSTRAINT_VIOLATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ORGANIZATIONAL_UNIT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == ORGANIZATIONAL_UNIT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == HANDSHAKE_CONSTRAINT_VIOLATION_HASH)
-  {
+  } else if (hashCode == HANDSHAKE_CONSTRAINT_VIOLATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == ACCOUNT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH)
-  {
+  } else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::RESOURCE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_TYPE_ALREADY_ENABLED_HASH)
-  {
+  } else if (hashCode == POLICY_TYPE_ALREADY_ENABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_ALREADY_ENABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_HANDSHAKE_HASH)
-  {
+  } else if (hashCode == DUPLICATE_HANDSHAKE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_HANDSHAKE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TARGET_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == TARGET_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TARGET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH)
-  {
+  } else if (hashCode == ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_HANDSHAKE_TRANSITION_HASH)
-  {
+  } else if (hashCode == INVALID_HANDSHAKE_TRANSITION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_HANDSHAKE_TRANSITION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
+  } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ORGANIZATION_NOT_EMPTY_HASH)
-  {
+  } else if (hashCode == ORGANIZATION_NOT_EMPTY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATION_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
-  {
+  } else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_ALREADY_REGISTERED_HASH)
-  {
+  } else if (hashCode == ACCOUNT_ALREADY_REGISTERED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == POLICY_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CREATE_ACCOUNT_STATUS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EFFECTIVE_POLICY_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CREATE_ACCOUNT_STATUS_NOT_FOUND),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EFFECTIVE_POLICY_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::EFFECTIVE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SOURCE_PARENT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == SOURCE_PARENT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SOURCE_PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH)
-  {
+  } else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DUPLICATE_POLICY_HASH)
-  {
+  } else if (hashCode == DUPLICATE_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_HASH)
-  {
+  } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_IN_USE_HASH)
-  {
+  } else if (hashCode == POLICY_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_NOT_ATTACHED_HASH)
-  {
+  } else if (hashCode == POLICY_NOT_ATTACHED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_ATTACHED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_ALREADY_CLOSED_HASH)
-  {
+  } else if (hashCode == ACCOUNT_ALREADY_CLOSED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_CLOSED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ALREADY_IN_ORGANIZATION_HASH)
-  {
+  } else if (hashCode == ALREADY_IN_ORGANIZATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ALREADY_IN_ORGANIZATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_OWNER_NOT_VERIFIED_HASH)
-  {
+  } else if (hashCode == ACCOUNT_OWNER_NOT_VERIFIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_OWNER_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace OrganizationsErrorMapper
-} // namespace Organizations
-} // namespace Aws
+}  // namespace OrganizationsErrorMapper
+}  // namespace Organizations
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mturk-requester/MTurk_EXPORTS.h>
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Model
-{
-  enum class ReviewableHITStatus
-  {
-    NOT_SET,
-    Reviewable,
-    Reviewing
-  };
+namespace Aws {
+namespace MTurk {
+namespace Model {
+enum class ReviewableHITStatus { NOT_SET, Reviewable, Reviewing };
 
-namespace ReviewableHITStatusMapper
-{
+namespace ReviewableHITStatusMapper {
 AWS_MTURK_API ReviewableHITStatus GetReviewableHITStatusForName(const Aws::String& name);
 
 AWS_MTURK_API Aws::String GetNameForReviewableHITStatus(ReviewableHITStatus value);
-} // namespace ReviewableHITStatusMapper
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace ReviewableHITStatusMapper
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

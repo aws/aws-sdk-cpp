@@ -4,62 +4,50 @@
  */
 
 #include <aws/ce/model/MonitorDimension.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
+namespace MonitorDimensionMapper {
 
-namespace Aws
-{
-  namespace CostExplorer
-  {
-    namespace Model
-    {
-      namespace MonitorDimensionMapper
-      {
+static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
 
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+MonitorDimension GetMonitorDimensionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SERVICE_HASH) {
+    return MonitorDimension::SERVICE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MonitorDimension>(hashCode);
+  }
 
+  return MonitorDimension::NOT_SET;
+}
 
-        MonitorDimension GetMonitorDimensionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SERVICE_HASH)
-          {
-            return MonitorDimension::SERVICE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MonitorDimension>(hashCode);
-          }
+Aws::String GetNameForMonitorDimension(MonitorDimension enumValue) {
+  switch (enumValue) {
+    case MonitorDimension::NOT_SET:
+      return {};
+    case MonitorDimension::SERVICE:
+      return "SERVICE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MonitorDimension::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMonitorDimension(MonitorDimension enumValue)
-        {
-          switch(enumValue)
-          {
-          case MonitorDimension::NOT_SET:
-            return {};
-          case MonitorDimension::SERVICE:
-            return "SERVICE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MonitorDimensionMapper
-    } // namespace Model
-  } // namespace CostExplorer
-} // namespace Aws
+}  // namespace MonitorDimensionMapper
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

@@ -12,36 +12,24 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartProtectedQueryRequest::SerializePayload() const
-{
+Aws::String StartProtectedQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ProtectedQueryTypeMapper::GetNameForProtectedQueryType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ProtectedQueryTypeMapper::GetNameForProtectedQueryType(m_type));
   }
 
-  if(m_sqlParametersHasBeenSet)
-  {
-   payload.WithObject("sqlParameters", m_sqlParameters.Jsonize());
-
+  if (m_sqlParametersHasBeenSet) {
+    payload.WithObject("sqlParameters", m_sqlParameters.Jsonize());
   }
 
-  if(m_resultConfigurationHasBeenSet)
-  {
-   payload.WithObject("resultConfiguration", m_resultConfiguration.Jsonize());
-
+  if (m_resultConfigurationHasBeenSet) {
+    payload.WithObject("resultConfiguration", m_resultConfiguration.Jsonize());
   }
 
-  if(m_computeConfigurationHasBeenSet)
-  {
-   payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
-
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

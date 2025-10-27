@@ -3,67 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/LiveSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/LiveSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-LiveSource::LiveSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveSource::LiveSource(JsonView jsonValue) { *this = jsonValue; }
 
-LiveSource& LiveSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+LiveSource& LiveSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HttpPackageConfigurations"))
-  {
+  if (jsonValue.ValueExists("HttpPackageConfigurations")) {
     Aws::Utils::Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
-    for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
-    {
+    for (unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength();
+         ++httpPackageConfigurationsIndex) {
       m_httpPackageConfigurations.push_back(httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject());
     }
     m_httpPackageConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LiveSourceName"))
-  {
+  if (jsonValue.ValueExists("LiveSourceName")) {
     m_liveSourceName = jsonValue.GetString("LiveSourceName");
     m_liveSourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceLocationName"))
-  {
+  if (jsonValue.ValueExists("SourceLocationName")) {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
     m_sourceLocationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -71,63 +56,50 @@ LiveSource& LiveSource::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue LiveSource::Jsonize() const
-{
+JsonValue LiveSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_httpPackageConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
-   for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
-   {
-     httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject(m_httpPackageConfigurations[httpPackageConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("HttpPackageConfigurations", std::move(httpPackageConfigurationsJsonList));
-
+  if (m_httpPackageConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
+    for (unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength();
+         ++httpPackageConfigurationsIndex) {
+      httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject(
+          m_httpPackageConfigurations[httpPackageConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("HttpPackageConfigurations", std::move(httpPackageConfigurationsJsonList));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_liveSourceNameHasBeenSet)
-  {
-   payload.WithString("LiveSourceName", m_liveSourceName);
-
+  if (m_liveSourceNameHasBeenSet) {
+    payload.WithString("LiveSourceName", m_liveSourceName);
   }
 
-  if(m_sourceLocationNameHasBeenSet)
-  {
-   payload.WithString("SourceLocationName", m_sourceLocationName);
-
+  if (m_sourceLocationNameHasBeenSet) {
+    payload.WithString("SourceLocationName", m_sourceLocationName);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

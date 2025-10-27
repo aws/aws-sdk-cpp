@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ConnectorOAuthRequest::ConnectorOAuthRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectorOAuthRequest::ConnectorOAuthRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectorOAuthRequest& ConnectorOAuthRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authCode"))
-  {
+ConnectorOAuthRequest& ConnectorOAuthRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authCode")) {
     m_authCode = jsonValue.GetString("authCode");
     m_authCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redirectUri"))
-  {
+  if (jsonValue.ValueExists("redirectUri")) {
     m_redirectUri = jsonValue.GetString("redirectUri");
     m_redirectUriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectorOAuthRequest::Jsonize() const
-{
+JsonValue ConnectorOAuthRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_authCodeHasBeenSet)
-  {
-   payload.WithString("authCode", m_authCode);
-
+  if (m_authCodeHasBeenSet) {
+    payload.WithString("authCode", m_authCode);
   }
 
-  if(m_redirectUriHasBeenSet)
-  {
-   payload.WithString("redirectUri", m_redirectUri);
-
+  if (m_redirectUriHasBeenSet) {
+    payload.WithString("redirectUri", m_redirectUri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

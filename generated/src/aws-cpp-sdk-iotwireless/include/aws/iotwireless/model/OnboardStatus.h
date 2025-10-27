@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class OnboardStatus
-  {
-    NOT_SET,
-    INITIALIZED,
-    PENDING,
-    ONBOARDED,
-    FAILED
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class OnboardStatus { NOT_SET, INITIALIZED, PENDING, ONBOARDED, FAILED };
 
-namespace OnboardStatusMapper
-{
+namespace OnboardStatusMapper {
 AWS_IOTWIRELESS_API OnboardStatus GetOnboardStatusForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForOnboardStatus(OnboardStatus value);
-} // namespace OnboardStatusMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace OnboardStatusMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/IamIdentity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/IamIdentity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-IamIdentity::IamIdentity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IamIdentity::IamIdentity(JsonView jsonValue) { *this = jsonValue; }
 
-IamIdentity& IamIdentity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+IamIdentity& IamIdentity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrincipalId"))
-  {
+  if (jsonValue.ValueExists("PrincipalId")) {
     m_principalId = jsonValue.GetString("PrincipalId");
     m_principalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceIdentity"))
-  {
+  if (jsonValue.ValueExists("SourceIdentity")) {
     m_sourceIdentity = jsonValue.GetString("SourceIdentity");
     m_sourceIdentityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IamIdentity::Jsonize() const
-{
+JsonValue IamIdentity::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("PrincipalId", m_principalId);
-
+  if (m_principalIdHasBeenSet) {
+    payload.WithString("PrincipalId", m_principalId);
   }
 
-  if(m_sourceIdentityHasBeenSet)
-  {
-   payload.WithString("SourceIdentity", m_sourceIdentity);
-
+  if (m_sourceIdentityHasBeenSet) {
+    payload.WithString("SourceIdentity", m_sourceIdentity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

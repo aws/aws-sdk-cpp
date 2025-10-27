@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/Signer.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-Signer::Signer(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Signer::Signer(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Signer& Signer::operator =(const XmlNode& xmlNode)
-{
+Signer& Signer::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode awsAccountNumberNode = resultNode.FirstChild("AwsAccountNumber");
-    if(!awsAccountNumberNode.IsNull())
-    {
+    if (!awsAccountNumberNode.IsNull()) {
       m_awsAccountNumber = Aws::Utils::Xml::DecodeEscapedXmlText(awsAccountNumberNode.GetText());
       m_awsAccountNumberHasBeenSet = true;
     }
     XmlNode keyPairIdsNode = resultNode.FirstChild("KeyPairIds");
-    if(!keyPairIdsNode.IsNull())
-    {
+    if (!keyPairIdsNode.IsNull()) {
       m_keyPairIds = keyPairIdsNode;
       m_keyPairIdsHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ Signer& Signer::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Signer::AddToNode(XmlNode& parentNode) const
-{
+void Signer::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_awsAccountNumberHasBeenSet)
-  {
-   XmlNode awsAccountNumberNode = parentNode.CreateChildElement("AwsAccountNumber");
-   awsAccountNumberNode.SetText(m_awsAccountNumber);
+  if (m_awsAccountNumberHasBeenSet) {
+    XmlNode awsAccountNumberNode = parentNode.CreateChildElement("AwsAccountNumber");
+    awsAccountNumberNode.SetText(m_awsAccountNumber);
   }
 
-  if(m_keyPairIdsHasBeenSet)
-  {
-   XmlNode keyPairIdsNode = parentNode.CreateChildElement("KeyPairIds");
-   m_keyPairIds.AddToNode(keyPairIdsNode);
+  if (m_keyPairIdsHasBeenSet) {
+    XmlNode keyPairIdsNode = parentNode.CreateChildElement("KeyPairIds");
+    m_keyPairIds.AddToNode(keyPairIdsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

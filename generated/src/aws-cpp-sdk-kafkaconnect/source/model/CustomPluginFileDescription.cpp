@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/CustomPluginFileDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/CustomPluginFileDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-CustomPluginFileDescription::CustomPluginFileDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomPluginFileDescription::CustomPluginFileDescription(JsonView jsonValue) { *this = jsonValue; }
 
-CustomPluginFileDescription& CustomPluginFileDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileMd5"))
-  {
+CustomPluginFileDescription& CustomPluginFileDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileMd5")) {
     m_fileMd5 = jsonValue.GetString("fileMd5");
     m_fileMd5HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileSize"))
-  {
+  if (jsonValue.ValueExists("fileSize")) {
     m_fileSize = jsonValue.GetInt64("fileSize");
     m_fileSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomPluginFileDescription::Jsonize() const
-{
+JsonValue CustomPluginFileDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileMd5HasBeenSet)
-  {
-   payload.WithString("fileMd5", m_fileMd5);
-
+  if (m_fileMd5HasBeenSet) {
+    payload.WithString("fileMd5", m_fileMd5);
   }
 
-  if(m_fileSizeHasBeenSet)
-  {
-   payload.WithInt64("fileSize", m_fileSize);
-
+  if (m_fileSizeHasBeenSet) {
+    payload.WithInt64("fileSize", m_fileSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

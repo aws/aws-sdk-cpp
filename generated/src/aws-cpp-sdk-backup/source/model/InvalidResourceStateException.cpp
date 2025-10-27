@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-InvalidResourceStateException::InvalidResourceStateException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidResourceStateException::InvalidResourceStateException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidResourceStateException& InvalidResourceStateException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+InvalidResourceStateException& InvalidResourceStateException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Context"))
-  {
+  if (jsonValue.ValueExists("Context")) {
     m_context = jsonValue.GetString("Context");
     m_contextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidResourceStateException::Jsonize() const
-{
+JsonValue InvalidResourceStateException::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithString("Context", m_context);
-
+  if (m_contextHasBeenSet) {
+    payload.WithString("Context", m_context);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

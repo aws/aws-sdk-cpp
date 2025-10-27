@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/ParentType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/organizations/model/ParentType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Organizations {
+namespace Model {
+namespace ParentTypeMapper {
 
-namespace Aws
-{
-  namespace Organizations
-  {
-    namespace Model
-    {
-      namespace ParentTypeMapper
-      {
+static const int ROOT_HASH = HashingUtils::HashString("ROOT");
+static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
 
-        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
-        static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
+ParentType GetParentTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ROOT_HASH) {
+    return ParentType::ROOT;
+  } else if (hashCode == ORGANIZATIONAL_UNIT_HASH) {
+    return ParentType::ORGANIZATIONAL_UNIT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ParentType>(hashCode);
+  }
 
+  return ParentType::NOT_SET;
+}
 
-        ParentType GetParentTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ROOT_HASH)
-          {
-            return ParentType::ROOT;
-          }
-          else if (hashCode == ORGANIZATIONAL_UNIT_HASH)
-          {
-            return ParentType::ORGANIZATIONAL_UNIT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ParentType>(hashCode);
-          }
+Aws::String GetNameForParentType(ParentType enumValue) {
+  switch (enumValue) {
+    case ParentType::NOT_SET:
+      return {};
+    case ParentType::ROOT:
+      return "ROOT";
+    case ParentType::ORGANIZATIONAL_UNIT:
+      return "ORGANIZATIONAL_UNIT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ParentType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForParentType(ParentType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ParentType::NOT_SET:
-            return {};
-          case ParentType::ROOT:
-            return "ROOT";
-          case ParentType::ORGANIZATIONAL_UNIT:
-            return "ORGANIZATIONAL_UNIT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ParentTypeMapper
-    } // namespace Model
-  } // namespace Organizations
-} // namespace Aws
+}  // namespace ParentTypeMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

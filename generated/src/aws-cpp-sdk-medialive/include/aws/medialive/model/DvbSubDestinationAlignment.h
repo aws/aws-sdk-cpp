@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class DvbSubDestinationAlignment
-  {
-    NOT_SET,
-    CENTERED,
-    LEFT,
-    SMART
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class DvbSubDestinationAlignment { NOT_SET, CENTERED, LEFT, SMART };
 
-namespace DvbSubDestinationAlignmentMapper
-{
+namespace DvbSubDestinationAlignmentMapper {
 AWS_MEDIALIVE_API DvbSubDestinationAlignment GetDvbSubDestinationAlignmentForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForDvbSubDestinationAlignment(DvbSubDestinationAlignment value);
-} // namespace DvbSubDestinationAlignmentMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace DvbSubDestinationAlignmentMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

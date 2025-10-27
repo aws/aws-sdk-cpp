@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-CuratedQuery::CuratedQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CuratedQuery::CuratedQuery(JsonView jsonValue) { *this = jsonValue; }
 
-CuratedQuery& CuratedQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("naturalLanguage"))
-  {
+CuratedQuery& CuratedQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("naturalLanguage")) {
     m_naturalLanguage = jsonValue.GetString("naturalLanguage");
     m_naturalLanguageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sql"))
-  {
+  if (jsonValue.ValueExists("sql")) {
     m_sql = jsonValue.GetString("sql");
     m_sqlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CuratedQuery::Jsonize() const
-{
+JsonValue CuratedQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_naturalLanguageHasBeenSet)
-  {
-   payload.WithString("naturalLanguage", m_naturalLanguage);
-
+  if (m_naturalLanguageHasBeenSet) {
+    payload.WithString("naturalLanguage", m_naturalLanguage);
   }
 
-  if(m_sqlHasBeenSet)
-  {
-   payload.WithString("sql", m_sql);
-
+  if (m_sqlHasBeenSet) {
+    payload.WithString("sql", m_sql);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

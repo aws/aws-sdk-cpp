@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
-  enum class PropagateTags
-  {
-    NOT_SET,
-    TASK_DEFINITION
-  };
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+enum class PropagateTags { NOT_SET, TASK_DEFINITION };
 
-namespace PropagateTagsMapper
-{
+namespace PropagateTagsMapper {
 AWS_EVENTBRIDGE_API PropagateTags GetPropagateTagsForName(const Aws::String& name);
 
 AWS_EVENTBRIDGE_API Aws::String GetNameForPropagateTags(PropagateTags value);
-} // namespace PropagateTagsMapper
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace PropagateTagsMapper
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

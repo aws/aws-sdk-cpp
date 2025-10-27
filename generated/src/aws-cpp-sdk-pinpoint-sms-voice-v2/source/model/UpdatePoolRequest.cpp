@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/UpdatePoolRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/UpdatePoolRequest.h>
 
 #include <utility>
 
@@ -12,69 +12,46 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePoolRequest::SerializePayload() const
-{
+Aws::String UpdatePoolRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_poolIdHasBeenSet)
-  {
-   payload.WithString("PoolId", m_poolId);
-
+  if (m_poolIdHasBeenSet) {
+    payload.WithString("PoolId", m_poolId);
   }
 
-  if(m_twoWayEnabledHasBeenSet)
-  {
-   payload.WithBool("TwoWayEnabled", m_twoWayEnabled);
-
+  if (m_twoWayEnabledHasBeenSet) {
+    payload.WithBool("TwoWayEnabled", m_twoWayEnabled);
   }
 
-  if(m_twoWayChannelArnHasBeenSet)
-  {
-   payload.WithString("TwoWayChannelArn", m_twoWayChannelArn);
-
+  if (m_twoWayChannelArnHasBeenSet) {
+    payload.WithString("TwoWayChannelArn", m_twoWayChannelArn);
   }
 
-  if(m_twoWayChannelRoleHasBeenSet)
-  {
-   payload.WithString("TwoWayChannelRole", m_twoWayChannelRole);
-
+  if (m_twoWayChannelRoleHasBeenSet) {
+    payload.WithString("TwoWayChannelRole", m_twoWayChannelRole);
   }
 
-  if(m_selfManagedOptOutsEnabledHasBeenSet)
-  {
-   payload.WithBool("SelfManagedOptOutsEnabled", m_selfManagedOptOutsEnabled);
-
+  if (m_selfManagedOptOutsEnabledHasBeenSet) {
+    payload.WithBool("SelfManagedOptOutsEnabled", m_selfManagedOptOutsEnabled);
   }
 
-  if(m_optOutListNameHasBeenSet)
-  {
-   payload.WithString("OptOutListName", m_optOutListName);
-
+  if (m_optOutListNameHasBeenSet) {
+    payload.WithString("OptOutListName", m_optOutListName);
   }
 
-  if(m_sharedRoutesEnabledHasBeenSet)
-  {
-   payload.WithBool("SharedRoutesEnabled", m_sharedRoutesEnabled);
-
+  if (m_sharedRoutesEnabledHasBeenSet) {
+    payload.WithBool("SharedRoutesEnabled", m_sharedRoutesEnabled);
   }
 
-  if(m_deletionProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
-
+  if (m_deletionProtectionEnabledHasBeenSet) {
+    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdatePoolRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdatePoolRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PinpointSMSVoiceV2.UpdatePool"));
   return headers;
-
 }
-
-
-
-

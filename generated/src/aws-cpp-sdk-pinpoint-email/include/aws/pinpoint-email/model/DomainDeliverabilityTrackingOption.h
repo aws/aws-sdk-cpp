@@ -4,95 +4,106 @@
  */
 
 #pragma once
-#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/model/InboxPlacementTrackingOption.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace PinpointEmail {
+namespace Model {
 
+/**
+ * <p>An object that contains information about the Deliverability dashboard
+ * subscription for a verified domain that you use to send email and currently has
+ * an active Deliverability dashboard subscription. If a Deliverability dashboard
+ * subscription is active for a domain, you gain access to reputation, inbox
+ * placement, and other metrics for the domain.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainDeliverabilityTrackingOption">AWS
+ * API Reference</a></p>
+ */
+class DomainDeliverabilityTrackingOption {
+ public:
+  AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption() = default;
+  AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object that contains information about the Deliverability dashboard
-   * subscription for a verified domain that you use to send email and currently has
-   * an active Deliverability dashboard subscription. If a Deliverability dashboard
-   * subscription is active for a domain, you gain access to reputation, inbox
-   * placement, and other metrics for the domain.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainDeliverabilityTrackingOption">AWS
-   * API Reference</a></p>
+   * <p>A verified domain that’s associated with your AWS account and currently has
+   * an active Deliverability dashboard subscription.</p>
    */
-  class DomainDeliverabilityTrackingOption
-  {
-  public:
-    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption() = default;
-    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetDomain() const { return m_domain; }
+  inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+  template <typename DomainT = Aws::String>
+  void SetDomain(DomainT&& value) {
+    m_domainHasBeenSet = true;
+    m_domain = std::forward<DomainT>(value);
+  }
+  template <typename DomainT = Aws::String>
+  DomainDeliverabilityTrackingOption& WithDomain(DomainT&& value) {
+    SetDomain(std::forward<DomainT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
+   * for the domain.</p>
+   */
+  inline const Aws::Utils::DateTime& GetSubscriptionStartDate() const { return m_subscriptionStartDate; }
+  inline bool SubscriptionStartDateHasBeenSet() const { return m_subscriptionStartDateHasBeenSet; }
+  template <typename SubscriptionStartDateT = Aws::Utils::DateTime>
+  void SetSubscriptionStartDate(SubscriptionStartDateT&& value) {
+    m_subscriptionStartDateHasBeenSet = true;
+    m_subscriptionStartDate = std::forward<SubscriptionStartDateT>(value);
+  }
+  template <typename SubscriptionStartDateT = Aws::Utils::DateTime>
+  DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(SubscriptionStartDateT&& value) {
+    SetSubscriptionStartDate(std::forward<SubscriptionStartDateT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A verified domain that’s associated with your AWS account and currently has
-     * an active Deliverability dashboard subscription.</p>
-     */
-    inline const Aws::String& GetDomain() const { return m_domain; }
-    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    template<typename DomainT = Aws::String>
-    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
-    template<typename DomainT = Aws::String>
-    DomainDeliverabilityTrackingOption& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>An object that contains information about the inbox placement data settings
+   * for the domain.</p>
+   */
+  inline const InboxPlacementTrackingOption& GetInboxPlacementTrackingOption() const { return m_inboxPlacementTrackingOption; }
+  inline bool InboxPlacementTrackingOptionHasBeenSet() const { return m_inboxPlacementTrackingOptionHasBeenSet; }
+  template <typename InboxPlacementTrackingOptionT = InboxPlacementTrackingOption>
+  void SetInboxPlacementTrackingOption(InboxPlacementTrackingOptionT&& value) {
+    m_inboxPlacementTrackingOptionHasBeenSet = true;
+    m_inboxPlacementTrackingOption = std::forward<InboxPlacementTrackingOptionT>(value);
+  }
+  template <typename InboxPlacementTrackingOptionT = InboxPlacementTrackingOption>
+  DomainDeliverabilityTrackingOption& WithInboxPlacementTrackingOption(InboxPlacementTrackingOptionT&& value) {
+    SetInboxPlacementTrackingOption(std::forward<InboxPlacementTrackingOptionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domain;
+  bool m_domainHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
-     */
-    inline const Aws::Utils::DateTime& GetSubscriptionStartDate() const { return m_subscriptionStartDate; }
-    inline bool SubscriptionStartDateHasBeenSet() const { return m_subscriptionStartDateHasBeenSet; }
-    template<typename SubscriptionStartDateT = Aws::Utils::DateTime>
-    void SetSubscriptionStartDate(SubscriptionStartDateT&& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = std::forward<SubscriptionStartDateT>(value); }
-    template<typename SubscriptionStartDateT = Aws::Utils::DateTime>
-    DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(SubscriptionStartDateT&& value) { SetSubscriptionStartDate(std::forward<SubscriptionStartDateT>(value)); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_subscriptionStartDate{};
+  bool m_subscriptionStartDateHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An object that contains information about the inbox placement data settings
-     * for the domain.</p>
-     */
-    inline const InboxPlacementTrackingOption& GetInboxPlacementTrackingOption() const { return m_inboxPlacementTrackingOption; }
-    inline bool InboxPlacementTrackingOptionHasBeenSet() const { return m_inboxPlacementTrackingOptionHasBeenSet; }
-    template<typename InboxPlacementTrackingOptionT = InboxPlacementTrackingOption>
-    void SetInboxPlacementTrackingOption(InboxPlacementTrackingOptionT&& value) { m_inboxPlacementTrackingOptionHasBeenSet = true; m_inboxPlacementTrackingOption = std::forward<InboxPlacementTrackingOptionT>(value); }
-    template<typename InboxPlacementTrackingOptionT = InboxPlacementTrackingOption>
-    DomainDeliverabilityTrackingOption& WithInboxPlacementTrackingOption(InboxPlacementTrackingOptionT&& value) { SetInboxPlacementTrackingOption(std::forward<InboxPlacementTrackingOptionT>(value)); return *this;}
-    ///@}
-  private:
+  InboxPlacementTrackingOption m_inboxPlacementTrackingOption;
+  bool m_inboxPlacementTrackingOptionHasBeenSet = false;
+};
 
-    Aws::String m_domain;
-    bool m_domainHasBeenSet = false;
-
-    Aws::Utils::DateTime m_subscriptionStartDate{};
-    bool m_subscriptionStartDateHasBeenSet = false;
-
-    InboxPlacementTrackingOption m_inboxPlacementTrackingOption;
-    bool m_inboxPlacementTrackingOptionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

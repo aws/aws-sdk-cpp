@@ -5,12 +5,8 @@
 
 #include <aws/apprunner/AppRunnerEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppRunner
-} // namespace Aws
+namespace Aws {
+namespace AppRunner {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppRunner
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ThemeFooterLink::ThemeFooterLink(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThemeFooterLink::ThemeFooterLink(JsonView jsonValue) { *this = jsonValue; }
 
-ThemeFooterLink& ThemeFooterLink::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+ThemeFooterLink& ThemeFooterLink::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FooterLinkURL"))
-  {
+  if (jsonValue.ValueExists("FooterLinkURL")) {
     m_footerLinkURL = jsonValue.GetString("FooterLinkURL");
     m_footerLinkURLHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThemeFooterLink::Jsonize() const
-{
+JsonValue ThemeFooterLink::Jsonize() const {
   JsonValue payload;
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_footerLinkURLHasBeenSet)
-  {
-   payload.WithString("FooterLinkURL", m_footerLinkURL);
-
+  if (m_footerLinkURLHasBeenSet) {
+    payload.WithString("FooterLinkURL", m_footerLinkURL);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

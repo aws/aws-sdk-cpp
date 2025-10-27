@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
-  enum class IamIdentityCenterGroupAttribute
-  {
-    NOT_SET,
-    GroupId,
-    GroupName
-  };
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+enum class IamIdentityCenterGroupAttribute { NOT_SET, GroupId, GroupName };
 
-namespace IamIdentityCenterGroupAttributeMapper
-{
+namespace IamIdentityCenterGroupAttributeMapper {
 AWS_OPENSEARCHSERVERLESS_API IamIdentityCenterGroupAttribute GetIamIdentityCenterGroupAttributeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVERLESS_API Aws::String GetNameForIamIdentityCenterGroupAttribute(IamIdentityCenterGroupAttribute value);
-} // namespace IamIdentityCenterGroupAttributeMapper
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace IamIdentityCenterGroupAttributeMapper
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

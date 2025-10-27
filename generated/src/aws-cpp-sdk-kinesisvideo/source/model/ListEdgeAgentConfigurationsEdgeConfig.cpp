@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsEdgeConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsEdgeConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ListEdgeAgentConfigurationsEdgeConfig& ListEdgeAgentConfigurationsEdgeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamName"))
-  {
+ListEdgeAgentConfigurationsEdgeConfig& ListEdgeAgentConfigurationsEdgeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamName")) {
     m_streamName = jsonValue.GetString("StreamName");
     m_streamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamARN"))
-  {
+  if (jsonValue.ValueExists("StreamARN")) {
     m_streamARN = jsonValue.GetString("StreamARN");
     m_streamARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SyncStatus"))
-  {
+  if (jsonValue.ValueExists("SyncStatus")) {
     m_syncStatus = SyncStatusMapper::GetSyncStatusForName(jsonValue.GetString("SyncStatus"));
     m_syncStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailedStatusDetails"))
-  {
+  if (jsonValue.ValueExists("FailedStatusDetails")) {
     m_failedStatusDetails = jsonValue.GetString("FailedStatusDetails");
     m_failedStatusDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EdgeConfig"))
-  {
+  if (jsonValue.ValueExists("EdgeConfig")) {
     m_edgeConfig = jsonValue.GetObject("EdgeConfig");
     m_edgeConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListEdgeAgentConfigurationsEdgeConfig::Jsonize() const
-{
+JsonValue ListEdgeAgentConfigurationsEdgeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
-  if(m_streamARNHasBeenSet)
-  {
-   payload.WithString("StreamARN", m_streamARN);
-
+  if (m_streamARNHasBeenSet) {
+    payload.WithString("StreamARN", m_streamARN);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
-  if(m_syncStatusHasBeenSet)
-  {
-   payload.WithString("SyncStatus", SyncStatusMapper::GetNameForSyncStatus(m_syncStatus));
+  if (m_syncStatusHasBeenSet) {
+    payload.WithString("SyncStatus", SyncStatusMapper::GetNameForSyncStatus(m_syncStatus));
   }
 
-  if(m_failedStatusDetailsHasBeenSet)
-  {
-   payload.WithString("FailedStatusDetails", m_failedStatusDetails);
-
+  if (m_failedStatusDetailsHasBeenSet) {
+    payload.WithString("FailedStatusDetails", m_failedStatusDetails);
   }
 
-  if(m_edgeConfigHasBeenSet)
-  {
-   payload.WithObject("EdgeConfig", m_edgeConfig.Jsonize());
-
+  if (m_edgeConfigHasBeenSet) {
+    payload.WithObject("EdgeConfig", m_edgeConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

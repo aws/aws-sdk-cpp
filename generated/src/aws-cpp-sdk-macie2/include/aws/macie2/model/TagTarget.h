@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class TagTarget
-  {
-    NOT_SET,
-    S3_OBJECT
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class TagTarget { NOT_SET, S3_OBJECT };
 
-namespace TagTargetMapper
-{
+namespace TagTargetMapper {
 AWS_MACIE2_API TagTarget GetTagTargetForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForTagTarget(TagTarget value);
-} // namespace TagTargetMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace TagTargetMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

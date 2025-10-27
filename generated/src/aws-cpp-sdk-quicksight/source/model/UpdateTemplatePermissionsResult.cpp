@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
 
 #include <utility>
 
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTemplatePermissionsResult::UpdateTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateTemplatePermissionsResult::UpdateTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateTemplatePermissionsResult& UpdateTemplatePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateTemplatePermissionsResult& UpdateTemplatePermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TemplateId"))
-  {
+  if (jsonValue.ValueExists("TemplateId")) {
     m_templateId = jsonValue.GetString("TemplateId");
     m_templateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateArn"))
-  {
+  if (jsonValue.ValueExists("TemplateArn")) {
     m_templateArn = jsonValue.GetString("TemplateArn");
     m_templateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Permissions"))
-  {
+  if (jsonValue.ValueExists("Permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
-    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-    {
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
     m_permissionsHasBeenSet = true;
@@ -47,12 +39,10 @@ UpdateTemplatePermissionsResult& UpdateTemplatePermissionsResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_status = static_cast<int>(result.GetResponseCode());
   m_statusHasBeenSet = true;

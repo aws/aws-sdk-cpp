@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/groundstation/model/ConfigDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/ConfigDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
+namespace Aws {
+namespace GroundStation {
+namespace Model {
 
-ConfigDetails::ConfigDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfigDetails::ConfigDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ConfigDetails& ConfigDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("antennaDemodDecodeDetails"))
-  {
+ConfigDetails& ConfigDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("antennaDemodDecodeDetails")) {
     m_antennaDemodDecodeDetails = jsonValue.GetObject("antennaDemodDecodeDetails");
     m_antennaDemodDecodeDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpointDetails"))
-  {
+  if (jsonValue.ValueExists("endpointDetails")) {
     m_endpointDetails = jsonValue.GetObject("endpointDetails");
     m_endpointDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3RecordingDetails"))
-  {
+  if (jsonValue.ValueExists("s3RecordingDetails")) {
     m_s3RecordingDetails = jsonValue.GetObject("s3RecordingDetails");
     m_s3RecordingDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfigDetails::Jsonize() const
-{
+JsonValue ConfigDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_antennaDemodDecodeDetailsHasBeenSet)
-  {
-   payload.WithObject("antennaDemodDecodeDetails", m_antennaDemodDecodeDetails.Jsonize());
-
+  if (m_antennaDemodDecodeDetailsHasBeenSet) {
+    payload.WithObject("antennaDemodDecodeDetails", m_antennaDemodDecodeDetails.Jsonize());
   }
 
-  if(m_endpointDetailsHasBeenSet)
-  {
-   payload.WithObject("endpointDetails", m_endpointDetails.Jsonize());
-
+  if (m_endpointDetailsHasBeenSet) {
+    payload.WithObject("endpointDetails", m_endpointDetails.Jsonize());
   }
 
-  if(m_s3RecordingDetailsHasBeenSet)
-  {
-   payload.WithObject("s3RecordingDetails", m_s3RecordingDetails.Jsonize());
-
+  if (m_s3RecordingDetailsHasBeenSet) {
+    payload.WithObject("s3RecordingDetails", m_s3RecordingDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

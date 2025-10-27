@@ -12,48 +12,32 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAssessmentRequest::SerializePayload() const
-{
+Aws::String UpdateAssessmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assessmentNameHasBeenSet)
-  {
-   payload.WithString("assessmentName", m_assessmentName);
-
+  if (m_assessmentNameHasBeenSet) {
+    payload.WithString("assessmentName", m_assessmentName);
   }
 
-  if(m_assessmentDescriptionHasBeenSet)
-  {
-   payload.WithString("assessmentDescription", m_assessmentDescription);
-
+  if (m_assessmentDescriptionHasBeenSet) {
+    payload.WithString("assessmentDescription", m_assessmentDescription);
   }
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithObject("scope", m_scope.Jsonize());
-
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("scope", m_scope.Jsonize());
   }
 
-  if(m_assessmentReportsDestinationHasBeenSet)
-  {
-   payload.WithObject("assessmentReportsDestination", m_assessmentReportsDestination.Jsonize());
-
+  if (m_assessmentReportsDestinationHasBeenSet) {
+    payload.WithObject("assessmentReportsDestination", m_assessmentReportsDestination.Jsonize());
   }
 
-  if(m_rolesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
-   for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
-   {
-     rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
-   }
-   payload.WithArray("roles", std::move(rolesJsonList));
-
+  if (m_rolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
+    }
+    payload.WithArray("roles", std::move(rolesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

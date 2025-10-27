@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-HomeDirectoryMapEntry::HomeDirectoryMapEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HomeDirectoryMapEntry::HomeDirectoryMapEntry(JsonView jsonValue) { *this = jsonValue; }
 
-HomeDirectoryMapEntry& HomeDirectoryMapEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Entry"))
-  {
+HomeDirectoryMapEntry& HomeDirectoryMapEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Entry")) {
     m_entry = jsonValue.GetString("Entry");
     m_entryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Target"))
-  {
+  if (jsonValue.ValueExists("Target")) {
     m_target = jsonValue.GetString("Target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = MapTypeMapper::GetMapTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HomeDirectoryMapEntry::Jsonize() const
-{
+JsonValue HomeDirectoryMapEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_entryHasBeenSet)
-  {
-   payload.WithString("Entry", m_entry);
-
+  if (m_entryHasBeenSet) {
+    payload.WithString("Entry", m_entry);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("Target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("Target", m_target);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", MapTypeMapper::GetNameForMapType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", MapTypeMapper::GetNameForMapType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

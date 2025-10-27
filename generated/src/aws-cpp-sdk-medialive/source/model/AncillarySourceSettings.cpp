@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/AncillarySourceSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/AncillarySourceSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AncillarySourceSettings& AncillarySourceSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceAncillaryChannelNumber"))
-  {
+AncillarySourceSettings& AncillarySourceSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceAncillaryChannelNumber")) {
     m_sourceAncillaryChannelNumber = jsonValue.GetInteger("sourceAncillaryChannelNumber");
     m_sourceAncillaryChannelNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AncillarySourceSettings::Jsonize() const
-{
+JsonValue AncillarySourceSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceAncillaryChannelNumberHasBeenSet)
-  {
-   payload.WithInteger("sourceAncillaryChannelNumber", m_sourceAncillaryChannelNumber);
-
+  if (m_sourceAncillaryChannelNumberHasBeenSet) {
+    payload.WithInteger("sourceAncillaryChannelNumber", m_sourceAncillaryChannelNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

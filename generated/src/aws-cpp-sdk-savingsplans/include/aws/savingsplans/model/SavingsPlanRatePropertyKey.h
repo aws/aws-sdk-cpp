@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Model
-{
-  enum class SavingsPlanRatePropertyKey
-  {
-    NOT_SET,
-    region,
-    instanceType,
-    instanceFamily,
-    productDescription,
-    tenancy
-  };
+namespace Aws {
+namespace SavingsPlans {
+namespace Model {
+enum class SavingsPlanRatePropertyKey { NOT_SET, region, instanceType, instanceFamily, productDescription, tenancy };
 
-namespace SavingsPlanRatePropertyKeyMapper
-{
+namespace SavingsPlanRatePropertyKeyMapper {
 AWS_SAVINGSPLANS_API SavingsPlanRatePropertyKey GetSavingsPlanRatePropertyKeyForName(const Aws::String& name);
 
 AWS_SAVINGSPLANS_API Aws::String GetNameForSavingsPlanRatePropertyKey(SavingsPlanRatePropertyKey value);
-} // namespace SavingsPlanRatePropertyKeyMapper
-} // namespace Model
-} // namespace SavingsPlans
-} // namespace Aws
+}  // namespace SavingsPlanRatePropertyKeyMapper
+}  // namespace Model
+}  // namespace SavingsPlans
+}  // namespace Aws

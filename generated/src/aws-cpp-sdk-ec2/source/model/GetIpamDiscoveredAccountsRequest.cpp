@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetIpamDiscoveredAccountsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetIpamDiscoveredAccountsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetIpamDiscoveredAccountsRequest::SerializePayload() const
-{
+Aws::String GetIpamDiscoveredAccountsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetIpamDiscoveredAccounts&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamResourceDiscoveryIdHasBeenSet)
-  {
+  if (m_ipamResourceDiscoveryIdHasBeenSet) {
     ss << "IpamResourceDiscoveryId=" << StringUtils::URLEncode(m_ipamResourceDiscoveryId.c_str()) << "&";
   }
 
-  if(m_discoveryRegionHasBeenSet)
-  {
+  if (m_discoveryRegionHasBeenSet) {
     ss << "DiscoveryRegion=" << StringUtils::URLEncode(m_discoveryRegion.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String GetIpamDiscoveredAccountsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetIpamDiscoveredAccountsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetIpamDiscoveredAccountsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

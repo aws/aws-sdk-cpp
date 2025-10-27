@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kinesisanalytics/KinesisAnalyticsEndpointRules.h>
+#include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace KinesisAnalytics {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KinesisAnalyticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using KinesisAnalyticsEndpointProviderBase =
     EndpointProviderBase<KinesisAnalyticsClientConfiguration, KinesisAnalyticsBuiltInParameters, KinesisAnalyticsClientContextParameters>;
 
 using KinesisAnalyticsDefaultEpProviderBase =
-    DefaultEndpointProvider<KinesisAnalyticsClientConfiguration, KinesisAnalyticsBuiltInParameters, KinesisAnalyticsClientContextParameters>;
+    DefaultEndpointProvider<KinesisAnalyticsClientConfiguration, KinesisAnalyticsBuiltInParameters,
+                            KinesisAnalyticsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KINESISANALYTICS_API KinesisAnalyticsEndpointProvider : public KinesisAnalyticsDefaultEpProviderBase
-{
-public:
-    using KinesisAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KINESISANALYTICS_API KinesisAnalyticsEndpointProvider : public KinesisAnalyticsDefaultEpProviderBase {
+ public:
+  using KinesisAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KinesisAnalyticsEndpointProvider()
-      : KinesisAnalyticsDefaultEpProviderBase(Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::GetRulesBlob(), Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::RulesBlobSize)
-    {}
+  KinesisAnalyticsEndpointProvider()
+      : KinesisAnalyticsDefaultEpProviderBase(Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::GetRulesBlob(),
+                                              Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::RulesBlobSize) {}
 
-    ~KinesisAnalyticsEndpointProvider()
-    {
-    }
+  ~KinesisAnalyticsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace KinesisAnalytics
+}  // namespace Aws

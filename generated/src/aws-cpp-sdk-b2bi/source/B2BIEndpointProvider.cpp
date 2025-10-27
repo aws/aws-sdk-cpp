@@ -5,12 +5,8 @@
 
 #include <aws/b2bi/B2BIEndpointProvider.h>
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace B2BI
-} // namespace Aws
+namespace Aws {
+namespace B2BI {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace B2BI
+}  // namespace Aws

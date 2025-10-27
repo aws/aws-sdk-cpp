@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/MetricBasedObservation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/MetricBasedObservation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-MetricBasedObservation::MetricBasedObservation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricBasedObservation::MetricBasedObservation(JsonView jsonValue) { *this = jsonValue; }
 
-MetricBasedObservation& MetricBasedObservation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricName"))
-  {
+MetricBasedObservation& MetricBasedObservation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatisticId"))
-  {
+  if (jsonValue.ValueExists("StatisticId")) {
     m_statisticId = jsonValue.GetString("StatisticId");
     m_statisticIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricValues"))
-  {
+  if (jsonValue.ValueExists("MetricValues")) {
     m_metricValues = jsonValue.GetObject("MetricValues");
     m_metricValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NewRules"))
-  {
+  if (jsonValue.ValueExists("NewRules")) {
     Aws::Utils::Array<JsonView> newRulesJsonList = jsonValue.GetArray("NewRules");
-    for(unsigned newRulesIndex = 0; newRulesIndex < newRulesJsonList.GetLength(); ++newRulesIndex)
-    {
+    for (unsigned newRulesIndex = 0; newRulesIndex < newRulesJsonList.GetLength(); ++newRulesIndex) {
       m_newRules.push_back(newRulesJsonList[newRulesIndex].AsString());
     }
     m_newRulesHasBeenSet = true;
@@ -52,42 +40,32 @@ MetricBasedObservation& MetricBasedObservation::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MetricBasedObservation::Jsonize() const
-{
+JsonValue MetricBasedObservation::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_statisticIdHasBeenSet)
-  {
-   payload.WithString("StatisticId", m_statisticId);
-
+  if (m_statisticIdHasBeenSet) {
+    payload.WithString("StatisticId", m_statisticId);
   }
 
-  if(m_metricValuesHasBeenSet)
-  {
-   payload.WithObject("MetricValues", m_metricValues.Jsonize());
-
+  if (m_metricValuesHasBeenSet) {
+    payload.WithObject("MetricValues", m_metricValues.Jsonize());
   }
 
-  if(m_newRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> newRulesJsonList(m_newRules.size());
-   for(unsigned newRulesIndex = 0; newRulesIndex < newRulesJsonList.GetLength(); ++newRulesIndex)
-   {
-     newRulesJsonList[newRulesIndex].AsString(m_newRules[newRulesIndex]);
-   }
-   payload.WithArray("NewRules", std::move(newRulesJsonList));
-
+  if (m_newRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> newRulesJsonList(m_newRules.size());
+    for (unsigned newRulesIndex = 0; newRulesIndex < newRulesJsonList.GetLength(); ++newRulesIndex) {
+      newRulesJsonList[newRulesIndex].AsString(m_newRules[newRulesIndex]);
+    }
+    payload.WithArray("NewRules", std::move(newRulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

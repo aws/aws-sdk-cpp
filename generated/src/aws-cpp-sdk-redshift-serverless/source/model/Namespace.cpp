@@ -3,197 +3,148 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/Namespace.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/Namespace.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-Namespace::Namespace(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Namespace::Namespace(JsonView jsonValue) { *this = jsonValue; }
 
-Namespace& Namespace::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("adminPasswordSecretArn"))
-  {
+Namespace& Namespace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("adminPasswordSecretArn")) {
     m_adminPasswordSecretArn = jsonValue.GetString("adminPasswordSecretArn");
     m_adminPasswordSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("adminPasswordSecretKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("adminPasswordSecretKmsKeyId")) {
     m_adminPasswordSecretKmsKeyId = jsonValue.GetString("adminPasswordSecretKmsKeyId");
     m_adminPasswordSecretKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("adminUsername"))
-  {
+  if (jsonValue.ValueExists("adminUsername")) {
     m_adminUsername = jsonValue.GetString("adminUsername");
     m_adminUsernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDate"))
-  {
+  if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetString("creationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dbName"))
-  {
+  if (jsonValue.ValueExists("dbName")) {
     m_dbName = jsonValue.GetString("dbName");
     m_dbNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultIamRoleArn"))
-  {
+  if (jsonValue.ValueExists("defaultIamRoleArn")) {
     m_defaultIamRoleArn = jsonValue.GetString("defaultIamRoleArn");
     m_defaultIamRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iamRoles"))
-  {
+  if (jsonValue.ValueExists("iamRoles")) {
     Aws::Utils::Array<JsonView> iamRolesJsonList = jsonValue.GetArray("iamRoles");
-    for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
-    {
+    for (unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex) {
       m_iamRoles.push_back(iamRolesJsonList[iamRolesIndex].AsString());
     }
     m_iamRolesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logExports"))
-  {
+  if (jsonValue.ValueExists("logExports")) {
     Aws::Utils::Array<JsonView> logExportsJsonList = jsonValue.GetArray("logExports");
-    for(unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex)
-    {
+    for (unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex) {
       m_logExports.push_back(LogExportMapper::GetLogExportForName(logExportsJsonList[logExportsIndex].AsString()));
     }
     m_logExportsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceArn"))
-  {
+  if (jsonValue.ValueExists("namespaceArn")) {
     m_namespaceArn = jsonValue.GetString("namespaceArn");
     m_namespaceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceId"))
-  {
+  if (jsonValue.ValueExists("namespaceId")) {
     m_namespaceId = jsonValue.GetString("namespaceId");
     m_namespaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceName"))
-  {
+  if (jsonValue.ValueExists("namespaceName")) {
     m_namespaceName = jsonValue.GetString("namespaceName");
     m_namespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = NamespaceStatusMapper::GetNamespaceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Namespace::Jsonize() const
-{
+JsonValue Namespace::Jsonize() const {
   JsonValue payload;
 
-  if(m_adminPasswordSecretArnHasBeenSet)
-  {
-   payload.WithString("adminPasswordSecretArn", m_adminPasswordSecretArn);
-
+  if (m_adminPasswordSecretArnHasBeenSet) {
+    payload.WithString("adminPasswordSecretArn", m_adminPasswordSecretArn);
   }
 
-  if(m_adminPasswordSecretKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
-
+  if (m_adminPasswordSecretKmsKeyIdHasBeenSet) {
+    payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
   }
 
-  if(m_adminUsernameHasBeenSet)
-  {
-   payload.WithString("adminUsername", m_adminUsername);
-
+  if (m_adminUsernameHasBeenSet) {
+    payload.WithString("adminUsername", m_adminUsername);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationDateHasBeenSet) {
+    payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_dbNameHasBeenSet)
-  {
-   payload.WithString("dbName", m_dbName);
-
+  if (m_dbNameHasBeenSet) {
+    payload.WithString("dbName", m_dbName);
   }
 
-  if(m_defaultIamRoleArnHasBeenSet)
-  {
-   payload.WithString("defaultIamRoleArn", m_defaultIamRoleArn);
-
+  if (m_defaultIamRoleArnHasBeenSet) {
+    payload.WithString("defaultIamRoleArn", m_defaultIamRoleArn);
   }
 
-  if(m_iamRolesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
-   for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
-   {
-     iamRolesJsonList[iamRolesIndex].AsString(m_iamRoles[iamRolesIndex]);
-   }
-   payload.WithArray("iamRoles", std::move(iamRolesJsonList));
-
+  if (m_iamRolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
+    for (unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex) {
+      iamRolesJsonList[iamRolesIndex].AsString(m_iamRoles[iamRolesIndex]);
+    }
+    payload.WithArray("iamRoles", std::move(iamRolesJsonList));
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_logExportsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> logExportsJsonList(m_logExports.size());
-   for(unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex)
-   {
-     logExportsJsonList[logExportsIndex].AsString(LogExportMapper::GetNameForLogExport(m_logExports[logExportsIndex]));
-   }
-   payload.WithArray("logExports", std::move(logExportsJsonList));
-
+  if (m_logExportsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> logExportsJsonList(m_logExports.size());
+    for (unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex) {
+      logExportsJsonList[logExportsIndex].AsString(LogExportMapper::GetNameForLogExport(m_logExports[logExportsIndex]));
+    }
+    payload.WithArray("logExports", std::move(logExportsJsonList));
   }
 
-  if(m_namespaceArnHasBeenSet)
-  {
-   payload.WithString("namespaceArn", m_namespaceArn);
-
+  if (m_namespaceArnHasBeenSet) {
+    payload.WithString("namespaceArn", m_namespaceArn);
   }
 
-  if(m_namespaceIdHasBeenSet)
-  {
-   payload.WithString("namespaceId", m_namespaceId);
-
+  if (m_namespaceIdHasBeenSet) {
+    payload.WithString("namespaceId", m_namespaceId);
   }
 
-  if(m_namespaceNameHasBeenSet)
-  {
-   payload.WithString("namespaceName", m_namespaceName);
-
+  if (m_namespaceNameHasBeenSet) {
+    payload.WithString("namespaceName", m_namespaceName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", NamespaceStatusMapper::GetNameForNamespaceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", NamespaceStatusMapper::GetNameForNamespaceStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

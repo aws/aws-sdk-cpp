@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetProfileObjectTypeTemplateRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetProfileObjectTypeTemplateRequest::SerializePayload() const { return {}; }

@@ -5,12 +5,8 @@
 
 #include <aws/odb/OdbEndpointProvider.h>
 
-namespace Aws
-{
-namespace odb
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace odb
-} // namespace Aws
+namespace Aws {
+namespace odb {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace odb
+}  // namespace Aws

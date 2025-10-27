@@ -3,113 +3,88 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/EventDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/EventDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
 
-EventDestination::EventDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventDestination::EventDestination(JsonView jsonValue) { *this = jsonValue; }
 
-EventDestination& EventDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventDestinationName"))
-  {
+EventDestination& EventDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventDestinationName")) {
     m_eventDestinationName = jsonValue.GetString("EventDestinationName");
     m_eventDestinationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Enabled"))
-  {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchingEventTypes"))
-  {
+  if (jsonValue.ValueExists("MatchingEventTypes")) {
     Aws::Utils::Array<JsonView> matchingEventTypesJsonList = jsonValue.GetArray("MatchingEventTypes");
-    for(unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength(); ++matchingEventTypesIndex)
-    {
+    for (unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength();
+         ++matchingEventTypesIndex) {
       m_matchingEventTypes.push_back(EventTypeMapper::GetEventTypeForName(matchingEventTypesJsonList[matchingEventTypesIndex].AsString()));
     }
     m_matchingEventTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CloudWatchLogsDestination"))
-  {
+  if (jsonValue.ValueExists("CloudWatchLogsDestination")) {
     m_cloudWatchLogsDestination = jsonValue.GetObject("CloudWatchLogsDestination");
     m_cloudWatchLogsDestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KinesisFirehoseDestination"))
-  {
+  if (jsonValue.ValueExists("KinesisFirehoseDestination")) {
     m_kinesisFirehoseDestination = jsonValue.GetObject("KinesisFirehoseDestination");
     m_kinesisFirehoseDestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnsDestination"))
-  {
+  if (jsonValue.ValueExists("SnsDestination")) {
     m_snsDestination = jsonValue.GetObject("SnsDestination");
     m_snsDestinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventDestination::Jsonize() const
-{
+JsonValue EventDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventDestinationNameHasBeenSet)
-  {
-   payload.WithString("EventDestinationName", m_eventDestinationName);
-
+  if (m_eventDestinationNameHasBeenSet) {
+    payload.WithString("EventDestinationName", m_eventDestinationName);
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_matchingEventTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
-   for(unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength(); ++matchingEventTypesIndex)
-   {
-     matchingEventTypesJsonList[matchingEventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_matchingEventTypes[matchingEventTypesIndex]));
-   }
-   payload.WithArray("MatchingEventTypes", std::move(matchingEventTypesJsonList));
-
+  if (m_matchingEventTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
+    for (unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength();
+         ++matchingEventTypesIndex) {
+      matchingEventTypesJsonList[matchingEventTypesIndex].AsString(
+          EventTypeMapper::GetNameForEventType(m_matchingEventTypes[matchingEventTypesIndex]));
+    }
+    payload.WithArray("MatchingEventTypes", std::move(matchingEventTypesJsonList));
   }
 
-  if(m_cloudWatchLogsDestinationHasBeenSet)
-  {
-   payload.WithObject("CloudWatchLogsDestination", m_cloudWatchLogsDestination.Jsonize());
-
+  if (m_cloudWatchLogsDestinationHasBeenSet) {
+    payload.WithObject("CloudWatchLogsDestination", m_cloudWatchLogsDestination.Jsonize());
   }
 
-  if(m_kinesisFirehoseDestinationHasBeenSet)
-  {
-   payload.WithObject("KinesisFirehoseDestination", m_kinesisFirehoseDestination.Jsonize());
-
+  if (m_kinesisFirehoseDestinationHasBeenSet) {
+    payload.WithObject("KinesisFirehoseDestination", m_kinesisFirehoseDestination.Jsonize());
   }
 
-  if(m_snsDestinationHasBeenSet)
-  {
-   payload.WithObject("SnsDestination", m_snsDestination.Jsonize());
-
+  if (m_snsDestinationHasBeenSet) {
+    payload.WithObject("SnsDestination", m_snsDestination.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

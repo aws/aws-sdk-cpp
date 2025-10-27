@@ -5,12 +5,8 @@
 
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorEndpointProvider.h>
 
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

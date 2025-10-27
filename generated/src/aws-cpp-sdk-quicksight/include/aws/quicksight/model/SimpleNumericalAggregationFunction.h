@@ -4,37 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class SimpleNumericalAggregationFunction
-  {
-    NOT_SET,
-    SUM,
-    AVERAGE,
-    MIN,
-    MAX,
-    COUNT,
-    DISTINCT_COUNT,
-    VAR,
-    VARP,
-    STDEV,
-    STDEVP,
-    MEDIAN
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class SimpleNumericalAggregationFunction { NOT_SET, SUM, AVERAGE, MIN, MAX, COUNT, DISTINCT_COUNT, VAR, VARP, STDEV, STDEVP, MEDIAN };
 
-namespace SimpleNumericalAggregationFunctionMapper
-{
+namespace SimpleNumericalAggregationFunctionMapper {
 AWS_QUICKSIGHT_API SimpleNumericalAggregationFunction GetSimpleNumericalAggregationFunctionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForSimpleNumericalAggregationFunction(SimpleNumericalAggregationFunction value);
-} // namespace SimpleNumericalAggregationFunctionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace SimpleNumericalAggregationFunctionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

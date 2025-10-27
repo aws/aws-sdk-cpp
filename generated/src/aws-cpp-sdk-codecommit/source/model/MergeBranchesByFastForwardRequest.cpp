@@ -12,45 +12,30 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String MergeBranchesByFastForwardRequest::SerializePayload() const
-{
+Aws::String MergeBranchesByFastForwardRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_sourceCommitSpecifierHasBeenSet)
-  {
-   payload.WithString("sourceCommitSpecifier", m_sourceCommitSpecifier);
-
+  if (m_sourceCommitSpecifierHasBeenSet) {
+    payload.WithString("sourceCommitSpecifier", m_sourceCommitSpecifier);
   }
 
-  if(m_destinationCommitSpecifierHasBeenSet)
-  {
-   payload.WithString("destinationCommitSpecifier", m_destinationCommitSpecifier);
-
+  if (m_destinationCommitSpecifierHasBeenSet) {
+    payload.WithString("destinationCommitSpecifier", m_destinationCommitSpecifier);
   }
 
-  if(m_targetBranchHasBeenSet)
-  {
-   payload.WithString("targetBranch", m_targetBranch);
-
+  if (m_targetBranchHasBeenSet) {
+    payload.WithString("targetBranch", m_targetBranch);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection MergeBranchesByFastForwardRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection MergeBranchesByFastForwardRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.MergeBranchesByFastForward"));
   return headers;
-
 }
-
-
-
-

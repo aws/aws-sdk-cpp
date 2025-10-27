@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EC2InstanceConnect;
 
-AWSError<CoreErrors> EC2InstanceConnectErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EC2InstanceConnectErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EC2InstanceConnectErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

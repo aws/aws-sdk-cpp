@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CostCategorySplitChargeRule::CostCategorySplitChargeRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CostCategorySplitChargeRule::CostCategorySplitChargeRule(JsonView jsonValue) { *this = jsonValue; }
 
-CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Source"))
-  {
+CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Source")) {
     m_source = jsonValue.GetString("Source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Targets"))
-  {
+  if (jsonValue.ValueExists("Targets")) {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
-    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
-    {
+    for (unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex) {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
     }
     m_targetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Method"))
-  {
+  if (jsonValue.ValueExists("Method")) {
     m_method = CostCategorySplitChargeMethodMapper::GetCostCategorySplitChargeMethodForName(jsonValue.GetString("Method"));
     m_methodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
-    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-    {
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
     m_parametersHasBeenSet = true;
@@ -56,46 +43,36 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
   return *this;
 }
 
-JsonValue CostCategorySplitChargeRule::Jsonize() const
-{
+JsonValue CostCategorySplitChargeRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("Source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("Source", m_source);
   }
 
-  if(m_targetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
-   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
-   {
-     targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
-   }
-   payload.WithArray("Targets", std::move(targetsJsonList));
-
+  if (m_targetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
+    for (unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex) {
+      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
+    }
+    payload.WithArray("Targets", std::move(targetsJsonList));
   }
 
-  if(m_methodHasBeenSet)
-  {
-   payload.WithString("Method", CostCategorySplitChargeMethodMapper::GetNameForCostCategorySplitChargeMethod(m_method));
+  if (m_methodHasBeenSet) {
+    payload.WithString("Method", CostCategorySplitChargeMethodMapper::GetNameForCostCategorySplitChargeMethod(m_method));
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-   {
-     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-   }
-   payload.WithArray("Parameters", std::move(parametersJsonList));
-
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("Parameters", std::move(parametersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

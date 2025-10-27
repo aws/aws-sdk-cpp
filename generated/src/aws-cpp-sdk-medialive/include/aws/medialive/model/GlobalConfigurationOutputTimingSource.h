@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class GlobalConfigurationOutputTimingSource
-  {
-    NOT_SET,
-    INPUT_CLOCK,
-    SYSTEM_CLOCK
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class GlobalConfigurationOutputTimingSource { NOT_SET, INPUT_CLOCK, SYSTEM_CLOCK };
 
-namespace GlobalConfigurationOutputTimingSourceMapper
-{
+namespace GlobalConfigurationOutputTimingSourceMapper {
 AWS_MEDIALIVE_API GlobalConfigurationOutputTimingSource GetGlobalConfigurationOutputTimingSourceForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForGlobalConfigurationOutputTimingSource(GlobalConfigurationOutputTimingSource value);
-} // namespace GlobalConfigurationOutputTimingSourceMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace GlobalConfigurationOutputTimingSourceMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

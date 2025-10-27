@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/DescribeReservedInstanceOfferingsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/opensearch/model/DescribeReservedInstanceOfferingsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedInstanceOfferingsResult::DescribeReservedInstanceOfferingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeReservedInstanceOfferingsResult::DescribeReservedInstanceOfferingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeReservedInstanceOfferingsResult& DescribeReservedInstanceOfferingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeReservedInstanceOfferingsResult& DescribeReservedInstanceOfferingsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReservedInstanceOfferings"))
-  {
+  if (jsonValue.ValueExists("ReservedInstanceOfferings")) {
     Aws::Utils::Array<JsonView> reservedInstanceOfferingsJsonList = jsonValue.GetArray("ReservedInstanceOfferings");
-    for(unsigned reservedInstanceOfferingsIndex = 0; reservedInstanceOfferingsIndex < reservedInstanceOfferingsJsonList.GetLength(); ++reservedInstanceOfferingsIndex)
-    {
+    for (unsigned reservedInstanceOfferingsIndex = 0; reservedInstanceOfferingsIndex < reservedInstanceOfferingsJsonList.GetLength();
+         ++reservedInstanceOfferingsIndex) {
       m_reservedInstanceOfferings.push_back(reservedInstanceOfferingsJsonList[reservedInstanceOfferingsIndex].AsObject());
     }
     m_reservedInstanceOfferingsHasBeenSet = true;
@@ -42,12 +39,10 @@ DescribeReservedInstanceOfferingsResult& DescribeReservedInstanceOfferingsResult
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

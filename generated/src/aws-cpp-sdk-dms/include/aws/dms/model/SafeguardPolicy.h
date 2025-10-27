@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class SafeguardPolicy
-  {
-    NOT_SET,
-    rely_on_sql_server_replication_agent,
-    exclusive_automatic_truncation,
-    shared_automatic_truncation
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class SafeguardPolicy { NOT_SET, rely_on_sql_server_replication_agent, exclusive_automatic_truncation, shared_automatic_truncation };
 
-namespace SafeguardPolicyMapper
-{
+namespace SafeguardPolicyMapper {
 AWS_DATABASEMIGRATIONSERVICE_API SafeguardPolicy GetSafeguardPolicyForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForSafeguardPolicy(SafeguardPolicy value);
-} // namespace SafeguardPolicyMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace SafeguardPolicyMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue) { *this = jsonValue; }
 
-ComplianceSummaryByResourceType& ComplianceSummaryByResourceType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+ComplianceSummaryByResourceType& ComplianceSummaryByResourceType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceSummary"))
-  {
+  if (jsonValue.ValueExists("ComplianceSummary")) {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
     m_complianceSummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComplianceSummaryByResourceType::Jsonize() const
-{
+JsonValue ComplianceSummaryByResourceType::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_complianceSummaryHasBeenSet)
-  {
-   payload.WithObject("ComplianceSummary", m_complianceSummary.Jsonize());
-
+  if (m_complianceSummaryHasBeenSet) {
+    payload.WithObject("ComplianceSummary", m_complianceSummary.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

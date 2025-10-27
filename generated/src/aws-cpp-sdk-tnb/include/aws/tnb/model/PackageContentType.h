@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/tnb/Tnb_EXPORTS.h>
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
-  enum class PackageContentType
-  {
-    NOT_SET,
-    application_zip
-  };
+namespace Aws {
+namespace tnb {
+namespace Model {
+enum class PackageContentType { NOT_SET, application_zip };
 
-namespace PackageContentTypeMapper
-{
+namespace PackageContentTypeMapper {
 AWS_TNB_API PackageContentType GetPackageContentTypeForName(const Aws::String& name);
 
 AWS_TNB_API Aws::String GetNameForPackageContentType(PackageContentType value);
-} // namespace PackageContentTypeMapper
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace PackageContentTypeMapper
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

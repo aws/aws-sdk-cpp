@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/KinesisStreamConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-KinesisStreamConfig::KinesisStreamConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+KinesisStreamConfig::KinesisStreamConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-KinesisStreamConfig& KinesisStreamConfig::operator =(const XmlNode& xmlNode)
-{
+KinesisStreamConfig& KinesisStreamConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
-    if(!roleARNNode.IsNull())
-    {
+    if (!roleARNNode.IsNull()) {
       m_roleARN = Aws::Utils::Xml::DecodeEscapedXmlText(roleARNNode.GetText());
       m_roleARNHasBeenSet = true;
     }
     XmlNode streamARNNode = resultNode.FirstChild("StreamARN");
-    if(!streamARNNode.IsNull())
-    {
+    if (!streamARNNode.IsNull()) {
       m_streamARN = Aws::Utils::Xml::DecodeEscapedXmlText(streamARNNode.GetText());
       m_streamARNHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ KinesisStreamConfig& KinesisStreamConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void KinesisStreamConfig::AddToNode(XmlNode& parentNode) const
-{
+void KinesisStreamConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_roleARNHasBeenSet)
-  {
-   XmlNode roleARNNode = parentNode.CreateChildElement("RoleARN");
-   roleARNNode.SetText(m_roleARN);
+  if (m_roleARNHasBeenSet) {
+    XmlNode roleARNNode = parentNode.CreateChildElement("RoleARN");
+    roleARNNode.SetText(m_roleARN);
   }
 
-  if(m_streamARNHasBeenSet)
-  {
-   XmlNode streamARNNode = parentNode.CreateChildElement("StreamARN");
-   streamARNNode.SetText(m_streamARN);
+  if (m_streamARNHasBeenSet) {
+    XmlNode streamARNNode = parentNode.CreateChildElement("StreamARN");
+    streamARNNode.SetText(m_streamARN);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

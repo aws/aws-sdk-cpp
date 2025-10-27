@@ -5,12 +5,8 @@
 
 #include <aws/controlcatalog/ControlCatalogEndpointProvider.h>
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ControlCatalog
-} // namespace Aws
+namespace Aws {
+namespace ControlCatalog {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ControlCatalog
+}  // namespace Aws

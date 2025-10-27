@@ -4,62 +4,50 @@
  */
 
 #include <aws/codepipeline/model/ArtifactStoreType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+namespace ArtifactStoreTypeMapper {
 
-namespace Aws
-{
-  namespace CodePipeline
-  {
-    namespace Model
-    {
-      namespace ArtifactStoreTypeMapper
-      {
+static const int S3_HASH = HashingUtils::HashString("S3");
 
-        static const int S3_HASH = HashingUtils::HashString("S3");
+ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == S3_HASH) {
+    return ArtifactStoreType::S3;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ArtifactStoreType>(hashCode);
+  }
 
+  return ArtifactStoreType::NOT_SET;
+}
 
-        ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == S3_HASH)
-          {
-            return ArtifactStoreType::S3;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ArtifactStoreType>(hashCode);
-          }
+Aws::String GetNameForArtifactStoreType(ArtifactStoreType enumValue) {
+  switch (enumValue) {
+    case ArtifactStoreType::NOT_SET:
+      return {};
+    case ArtifactStoreType::S3:
+      return "S3";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ArtifactStoreType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForArtifactStoreType(ArtifactStoreType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ArtifactStoreType::NOT_SET:
-            return {};
-          case ArtifactStoreType::S3:
-            return "S3";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ArtifactStoreTypeMapper
-    } // namespace Model
-  } // namespace CodePipeline
-} // namespace Aws
+}  // namespace ArtifactStoreTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

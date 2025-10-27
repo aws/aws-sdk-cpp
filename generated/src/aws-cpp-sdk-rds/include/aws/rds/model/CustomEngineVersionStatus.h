@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class CustomEngineVersionStatus
-  {
-    NOT_SET,
-    available,
-    inactive,
-    inactive_except_restore
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class CustomEngineVersionStatus { NOT_SET, available, inactive, inactive_except_restore };
 
-namespace CustomEngineVersionStatusMapper
-{
+namespace CustomEngineVersionStatusMapper {
 AWS_RDS_API CustomEngineVersionStatus GetCustomEngineVersionStatusForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForCustomEngineVersionStatus(CustomEngineVersionStatus value);
-} // namespace CustomEngineVersionStatusMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace CustomEngineVersionStatusMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

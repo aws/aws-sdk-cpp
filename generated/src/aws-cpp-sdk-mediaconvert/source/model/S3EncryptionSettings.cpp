@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/S3EncryptionSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/S3EncryptionSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-S3EncryptionSettings::S3EncryptionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3EncryptionSettings::S3EncryptionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-S3EncryptionSettings& S3EncryptionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("encryptionType"))
-  {
+S3EncryptionSettings& S3EncryptionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("encryptionType")) {
     m_encryptionType = S3ServerSideEncryptionTypeMapper::GetS3ServerSideEncryptionTypeForName(jsonValue.GetString("encryptionType"));
     m_encryptionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsEncryptionContext"))
-  {
+  if (jsonValue.ValueExists("kmsEncryptionContext")) {
     m_kmsEncryptionContext = jsonValue.GetString("kmsEncryptionContext");
     m_kmsEncryptionContextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3EncryptionSettings::Jsonize() const
-{
+JsonValue S3EncryptionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("encryptionType", S3ServerSideEncryptionTypeMapper::GetNameForS3ServerSideEncryptionType(m_encryptionType));
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("encryptionType", S3ServerSideEncryptionTypeMapper::GetNameForS3ServerSideEncryptionType(m_encryptionType));
   }
 
-  if(m_kmsEncryptionContextHasBeenSet)
-  {
-   payload.WithString("kmsEncryptionContext", m_kmsEncryptionContext);
-
+  if (m_kmsEncryptionContextHasBeenSet) {
+    payload.WithString("kmsEncryptionContext", m_kmsEncryptionContext);
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

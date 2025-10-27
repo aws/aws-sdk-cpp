@@ -4,279 +4,384 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/geo-places/model/PlaceType.h>
-#include <aws/geo-places/model/Address.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/geo-places/model/TimeZone.h>
-#include <aws/geo-places/model/PhonemeDetails.h>
-#include <aws/geo-places/model/Category.h>
-#include <aws/geo-places/model/FoodType.h>
-#include <aws/geo-places/model/BusinessChain.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/geo-places/model/AccessPoint.h>
 #include <aws/geo-places/model/AccessRestriction.h>
+#include <aws/geo-places/model/Address.h>
+#include <aws/geo-places/model/BusinessChain.h>
+#include <aws/geo-places/model/Category.h>
+#include <aws/geo-places/model/FoodType.h>
+#include <aws/geo-places/model/PhonemeDetails.h>
+#include <aws/geo-places/model/PlaceType.h>
+#include <aws/geo-places/model/TimeZone.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GeoPlaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GeoPlaces {
+namespace Model {
 
+/**
+ * <p>The suggested place results.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SuggestPlaceResult">AWS
+ * API Reference</a></p>
+ */
+class SuggestPlaceResult {
+ public:
+  AWS_GEOPLACES_API SuggestPlaceResult() = default;
+  AWS_GEOPLACES_API SuggestPlaceResult(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOPLACES_API SuggestPlaceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The suggested place results.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SuggestPlaceResult">AWS
-   * API Reference</a></p>
+   * <p>The <code>PlaceId</code> of the place you wish to receive the information
+   * for.</p>
    */
-  class SuggestPlaceResult
-  {
-  public:
-    AWS_GEOPLACES_API SuggestPlaceResult() = default;
-    AWS_GEOPLACES_API SuggestPlaceResult(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOPLACES_API SuggestPlaceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetPlaceId() const { return m_placeId; }
+  inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
+  template <typename PlaceIdT = Aws::String>
+  void SetPlaceId(PlaceIdT&& value) {
+    m_placeIdHasBeenSet = true;
+    m_placeId = std::forward<PlaceIdT>(value);
+  }
+  template <typename PlaceIdT = Aws::String>
+  SuggestPlaceResult& WithPlaceId(PlaceIdT&& value) {
+    SetPlaceId(std::forward<PlaceIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A <code>PlaceType</code> is a category that the result place must belong
+   * to.</p>
+   */
+  inline PlaceType GetPlaceType() const { return m_placeType; }
+  inline bool PlaceTypeHasBeenSet() const { return m_placeTypeHasBeenSet; }
+  inline void SetPlaceType(PlaceType value) {
+    m_placeTypeHasBeenSet = true;
+    m_placeType = value;
+  }
+  inline SuggestPlaceResult& WithPlaceType(PlaceType value) {
+    SetPlaceType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <code>PlaceId</code> of the place you wish to receive the information
-     * for.</p>
-     */
-    inline const Aws::String& GetPlaceId() const { return m_placeId; }
-    inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
-    template<typename PlaceIdT = Aws::String>
-    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
-    template<typename PlaceIdT = Aws::String>
-    SuggestPlaceResult& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The place's address.</p>
+   */
+  inline const Address& GetAddress() const { return m_address; }
+  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+  template <typename AddressT = Address>
+  void SetAddress(AddressT&& value) {
+    m_addressHasBeenSet = true;
+    m_address = std::forward<AddressT>(value);
+  }
+  template <typename AddressT = Address>
+  SuggestPlaceResult& WithAddress(AddressT&& value) {
+    SetAddress(std::forward<AddressT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A <code>PlaceType</code> is a category that the result place must belong
-     * to.</p>
-     */
-    inline PlaceType GetPlaceType() const { return m_placeType; }
-    inline bool PlaceTypeHasBeenSet() const { return m_placeTypeHasBeenSet; }
-    inline void SetPlaceType(PlaceType value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
-    inline SuggestPlaceResult& WithPlaceType(PlaceType value) { SetPlaceType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The position, in longitude and latitude.</p>
+   */
+  inline const Aws::Vector<double>& GetPosition() const { return m_position; }
+  inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+  template <typename PositionT = Aws::Vector<double>>
+  void SetPosition(PositionT&& value) {
+    m_positionHasBeenSet = true;
+    m_position = std::forward<PositionT>(value);
+  }
+  template <typename PositionT = Aws::Vector<double>>
+  SuggestPlaceResult& WithPosition(PositionT&& value) {
+    SetPosition(std::forward<PositionT>(value));
+    return *this;
+  }
+  inline SuggestPlaceResult& AddPosition(double value) {
+    m_positionHasBeenSet = true;
+    m_position.push_back(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The place's address.</p>
-     */
-    inline const Address& GetAddress() const { return m_address; }
-    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    template<typename AddressT = Address>
-    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
-    template<typename AddressT = Address>
-    SuggestPlaceResult& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The distance in meters from the QueryPosition.</p>
+   */
+  inline long long GetDistance() const { return m_distance; }
+  inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
+  inline void SetDistance(long long value) {
+    m_distanceHasBeenSet = true;
+    m_distance = value;
+  }
+  inline SuggestPlaceResult& WithDistance(long long value) {
+    SetDistance(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The position, in longitude and latitude.</p>
-     */
-    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
-    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    template<typename PositionT = Aws::Vector<double>>
-    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
-    template<typename PositionT = Aws::Vector<double>>
-    SuggestPlaceResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
-    inline SuggestPlaceResult& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The bounding box enclosing the geometric shape (area or line) that an
+   * individual result covers.</p> <p>The bounding box formed is defined as a set 4
+   * coordinates: <code>[{westward lng}, {southern lat}, {eastward lng}, {northern
+   * lat}]</code> </p>
+   */
+  inline const Aws::Vector<double>& GetMapView() const { return m_mapView; }
+  inline bool MapViewHasBeenSet() const { return m_mapViewHasBeenSet; }
+  template <typename MapViewT = Aws::Vector<double>>
+  void SetMapView(MapViewT&& value) {
+    m_mapViewHasBeenSet = true;
+    m_mapView = std::forward<MapViewT>(value);
+  }
+  template <typename MapViewT = Aws::Vector<double>>
+  SuggestPlaceResult& WithMapView(MapViewT&& value) {
+    SetMapView(std::forward<MapViewT>(value));
+    return *this;
+  }
+  inline SuggestPlaceResult& AddMapView(double value) {
+    m_mapViewHasBeenSet = true;
+    m_mapView.push_back(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The distance in meters from the QueryPosition.</p>
-     */
-    inline long long GetDistance() const { return m_distance; }
-    inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
-    inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
-    inline SuggestPlaceResult& WithDistance(long long value) { SetDistance(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Categories of results that results must belong to.</p>
+   */
+  inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
+  inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
+  template <typename CategoriesT = Aws::Vector<Category>>
+  void SetCategories(CategoriesT&& value) {
+    m_categoriesHasBeenSet = true;
+    m_categories = std::forward<CategoriesT>(value);
+  }
+  template <typename CategoriesT = Aws::Vector<Category>>
+  SuggestPlaceResult& WithCategories(CategoriesT&& value) {
+    SetCategories(std::forward<CategoriesT>(value));
+    return *this;
+  }
+  template <typename CategoriesT = Category>
+  SuggestPlaceResult& AddCategories(CategoriesT&& value) {
+    m_categoriesHasBeenSet = true;
+    m_categories.emplace_back(std::forward<CategoriesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The bounding box enclosing the geometric shape (area or line) that an
-     * individual result covers.</p> <p>The bounding box formed is defined as a set 4
-     * coordinates: <code>[{westward lng}, {southern lat}, {eastward lng}, {northern
-     * lat}]</code> </p>
-     */
-    inline const Aws::Vector<double>& GetMapView() const { return m_mapView; }
-    inline bool MapViewHasBeenSet() const { return m_mapViewHasBeenSet; }
-    template<typename MapViewT = Aws::Vector<double>>
-    void SetMapView(MapViewT&& value) { m_mapViewHasBeenSet = true; m_mapView = std::forward<MapViewT>(value); }
-    template<typename MapViewT = Aws::Vector<double>>
-    SuggestPlaceResult& WithMapView(MapViewT&& value) { SetMapView(std::forward<MapViewT>(value)); return *this;}
-    inline SuggestPlaceResult& AddMapView(double value) { m_mapViewHasBeenSet = true; m_mapView.push_back(value); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>List of food types offered by this result.</p>
+   */
+  inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
+  inline bool FoodTypesHasBeenSet() const { return m_foodTypesHasBeenSet; }
+  template <typename FoodTypesT = Aws::Vector<FoodType>>
+  void SetFoodTypes(FoodTypesT&& value) {
+    m_foodTypesHasBeenSet = true;
+    m_foodTypes = std::forward<FoodTypesT>(value);
+  }
+  template <typename FoodTypesT = Aws::Vector<FoodType>>
+  SuggestPlaceResult& WithFoodTypes(FoodTypesT&& value) {
+    SetFoodTypes(std::forward<FoodTypesT>(value));
+    return *this;
+  }
+  template <typename FoodTypesT = FoodType>
+  SuggestPlaceResult& AddFoodTypes(FoodTypesT&& value) {
+    m_foodTypesHasBeenSet = true;
+    m_foodTypes.emplace_back(std::forward<FoodTypesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Categories of results that results must belong to.</p>
-     */
-    inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
-    inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    template<typename CategoriesT = Aws::Vector<Category>>
-    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
-    template<typename CategoriesT = Aws::Vector<Category>>
-    SuggestPlaceResult& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
-    template<typename CategoriesT = Category>
-    SuggestPlaceResult& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The Business Chains associated with the place.</p>
+   */
+  inline const Aws::Vector<BusinessChain>& GetBusinessChains() const { return m_businessChains; }
+  inline bool BusinessChainsHasBeenSet() const { return m_businessChainsHasBeenSet; }
+  template <typename BusinessChainsT = Aws::Vector<BusinessChain>>
+  void SetBusinessChains(BusinessChainsT&& value) {
+    m_businessChainsHasBeenSet = true;
+    m_businessChains = std::forward<BusinessChainsT>(value);
+  }
+  template <typename BusinessChainsT = Aws::Vector<BusinessChain>>
+  SuggestPlaceResult& WithBusinessChains(BusinessChainsT&& value) {
+    SetBusinessChains(std::forward<BusinessChainsT>(value));
+    return *this;
+  }
+  template <typename BusinessChainsT = BusinessChain>
+  SuggestPlaceResult& AddBusinessChains(BusinessChainsT&& value) {
+    m_businessChainsHasBeenSet = true;
+    m_businessChains.emplace_back(std::forward<BusinessChainsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>List of food types offered by this result.</p>
-     */
-    inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
-    inline bool FoodTypesHasBeenSet() const { return m_foodTypesHasBeenSet; }
-    template<typename FoodTypesT = Aws::Vector<FoodType>>
-    void SetFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes = std::forward<FoodTypesT>(value); }
-    template<typename FoodTypesT = Aws::Vector<FoodType>>
-    SuggestPlaceResult& WithFoodTypes(FoodTypesT&& value) { SetFoodTypes(std::forward<FoodTypesT>(value)); return *this;}
-    template<typename FoodTypesT = FoodType>
-    SuggestPlaceResult& AddFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes.emplace_back(std::forward<FoodTypesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>Position of the access point represent by longitude and latitude.</p>
+   */
+  inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
+  inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
+  template <typename AccessPointsT = Aws::Vector<AccessPoint>>
+  void SetAccessPoints(AccessPointsT&& value) {
+    m_accessPointsHasBeenSet = true;
+    m_accessPoints = std::forward<AccessPointsT>(value);
+  }
+  template <typename AccessPointsT = Aws::Vector<AccessPoint>>
+  SuggestPlaceResult& WithAccessPoints(AccessPointsT&& value) {
+    SetAccessPoints(std::forward<AccessPointsT>(value));
+    return *this;
+  }
+  template <typename AccessPointsT = AccessPoint>
+  SuggestPlaceResult& AddAccessPoints(AccessPointsT&& value) {
+    m_accessPointsHasBeenSet = true;
+    m_accessPoints.emplace_back(std::forward<AccessPointsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Business Chains associated with the place.</p>
-     */
-    inline const Aws::Vector<BusinessChain>& GetBusinessChains() const { return m_businessChains; }
-    inline bool BusinessChainsHasBeenSet() const { return m_businessChainsHasBeenSet; }
-    template<typename BusinessChainsT = Aws::Vector<BusinessChain>>
-    void SetBusinessChains(BusinessChainsT&& value) { m_businessChainsHasBeenSet = true; m_businessChains = std::forward<BusinessChainsT>(value); }
-    template<typename BusinessChainsT = Aws::Vector<BusinessChain>>
-    SuggestPlaceResult& WithBusinessChains(BusinessChainsT&& value) { SetBusinessChains(std::forward<BusinessChainsT>(value)); return *this;}
-    template<typename BusinessChainsT = BusinessChain>
-    SuggestPlaceResult& AddBusinessChains(BusinessChainsT&& value) { m_businessChainsHasBeenSet = true; m_businessChains.emplace_back(std::forward<BusinessChainsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>Indicates known access restrictions on a vehicle access point. The index
+   * correlates to an access point and indicates if access through this point has
+   * some form of restriction.</p>
+   */
+  inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const { return m_accessRestrictions; }
+  inline bool AccessRestrictionsHasBeenSet() const { return m_accessRestrictionsHasBeenSet; }
+  template <typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
+  void SetAccessRestrictions(AccessRestrictionsT&& value) {
+    m_accessRestrictionsHasBeenSet = true;
+    m_accessRestrictions = std::forward<AccessRestrictionsT>(value);
+  }
+  template <typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
+  SuggestPlaceResult& WithAccessRestrictions(AccessRestrictionsT&& value) {
+    SetAccessRestrictions(std::forward<AccessRestrictionsT>(value));
+    return *this;
+  }
+  template <typename AccessRestrictionsT = AccessRestriction>
+  SuggestPlaceResult& AddAccessRestrictions(AccessRestrictionsT&& value) {
+    m_accessRestrictionsHasBeenSet = true;
+    m_accessRestrictions.emplace_back(std::forward<AccessRestrictionsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Position of the access point represent by longitude and latitude.</p>
-     */
-    inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
-    inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
-    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
-    void SetAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::forward<AccessPointsT>(value); }
-    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
-    SuggestPlaceResult& WithAccessPoints(AccessPointsT&& value) { SetAccessPoints(std::forward<AccessPointsT>(value)); return *this;}
-    template<typename AccessPointsT = AccessPoint>
-    SuggestPlaceResult& AddAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace_back(std::forward<AccessPointsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The time zone in which the place is located.</p>
+   */
+  inline const TimeZone& GetTimeZone() const { return m_timeZone; }
+  inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+  template <typename TimeZoneT = TimeZone>
+  void SetTimeZone(TimeZoneT&& value) {
+    m_timeZoneHasBeenSet = true;
+    m_timeZone = std::forward<TimeZoneT>(value);
+  }
+  template <typename TimeZoneT = TimeZone>
+  SuggestPlaceResult& WithTimeZone(TimeZoneT&& value) {
+    SetTimeZone(std::forward<TimeZoneT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Indicates known access restrictions on a vehicle access point. The index
-     * correlates to an access point and indicates if access through this point has
-     * some form of restriction.</p>
-     */
-    inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const { return m_accessRestrictions; }
-    inline bool AccessRestrictionsHasBeenSet() const { return m_accessRestrictionsHasBeenSet; }
-    template<typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
-    void SetAccessRestrictions(AccessRestrictionsT&& value) { m_accessRestrictionsHasBeenSet = true; m_accessRestrictions = std::forward<AccessRestrictionsT>(value); }
-    template<typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
-    SuggestPlaceResult& WithAccessRestrictions(AccessRestrictionsT&& value) { SetAccessRestrictions(std::forward<AccessRestrictionsT>(value)); return *this;}
-    template<typename AccessRestrictionsT = AccessRestriction>
-    SuggestPlaceResult& AddAccessRestrictions(AccessRestrictionsT&& value) { m_accessRestrictionsHasBeenSet = true; m_accessRestrictions.emplace_back(std::forward<AccessRestrictionsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The alpha-2 or alpha-3 character code for the political view of a country.
+   * The political view applies to the results of the request to represent unresolved
+   * territorial claims through the point of view of the specified country.</p>
+   */
+  inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
+  inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
+  template <typename PoliticalViewT = Aws::String>
+  void SetPoliticalView(PoliticalViewT&& value) {
+    m_politicalViewHasBeenSet = true;
+    m_politicalView = std::forward<PoliticalViewT>(value);
+  }
+  template <typename PoliticalViewT = Aws::String>
+  SuggestPlaceResult& WithPoliticalView(PoliticalViewT&& value) {
+    SetPoliticalView(std::forward<PoliticalViewT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time zone in which the place is located.</p>
-     */
-    inline const TimeZone& GetTimeZone() const { return m_timeZone; }
-    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    template<typename TimeZoneT = TimeZone>
-    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
-    template<typename TimeZoneT = TimeZone>
-    SuggestPlaceResult& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>How the various components of the result's address are pronounced in various
+   * languages.</p>
+   */
+  inline const PhonemeDetails& GetPhonemes() const { return m_phonemes; }
+  inline bool PhonemesHasBeenSet() const { return m_phonemesHasBeenSet; }
+  template <typename PhonemesT = PhonemeDetails>
+  void SetPhonemes(PhonemesT&& value) {
+    m_phonemesHasBeenSet = true;
+    m_phonemes = std::forward<PhonemesT>(value);
+  }
+  template <typename PhonemesT = PhonemeDetails>
+  SuggestPlaceResult& WithPhonemes(PhonemesT&& value) {
+    SetPhonemes(std::forward<PhonemesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_placeId;
+  bool m_placeIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The alpha-2 or alpha-3 character code for the political view of a country.
-     * The political view applies to the results of the request to represent unresolved
-     * territorial claims through the point of view of the specified country.</p>
-     */
-    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
-    inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    template<typename PoliticalViewT = Aws::String>
-    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
-    template<typename PoliticalViewT = Aws::String>
-    SuggestPlaceResult& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
-    ///@}
+  PlaceType m_placeType{PlaceType::NOT_SET};
+  bool m_placeTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>How the various components of the result's address are pronounced in various
-     * languages.</p>
-     */
-    inline const PhonemeDetails& GetPhonemes() const { return m_phonemes; }
-    inline bool PhonemesHasBeenSet() const { return m_phonemesHasBeenSet; }
-    template<typename PhonemesT = PhonemeDetails>
-    void SetPhonemes(PhonemesT&& value) { m_phonemesHasBeenSet = true; m_phonemes = std::forward<PhonemesT>(value); }
-    template<typename PhonemesT = PhonemeDetails>
-    SuggestPlaceResult& WithPhonemes(PhonemesT&& value) { SetPhonemes(std::forward<PhonemesT>(value)); return *this;}
-    ///@}
-  private:
+  Address m_address;
+  bool m_addressHasBeenSet = false;
 
-    Aws::String m_placeId;
-    bool m_placeIdHasBeenSet = false;
+  Aws::Vector<double> m_position;
+  bool m_positionHasBeenSet = false;
 
-    PlaceType m_placeType{PlaceType::NOT_SET};
-    bool m_placeTypeHasBeenSet = false;
+  long long m_distance{0};
+  bool m_distanceHasBeenSet = false;
 
-    Address m_address;
-    bool m_addressHasBeenSet = false;
+  Aws::Vector<double> m_mapView;
+  bool m_mapViewHasBeenSet = false;
 
-    Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet = false;
+  Aws::Vector<Category> m_categories;
+  bool m_categoriesHasBeenSet = false;
 
-    long long m_distance{0};
-    bool m_distanceHasBeenSet = false;
+  Aws::Vector<FoodType> m_foodTypes;
+  bool m_foodTypesHasBeenSet = false;
 
-    Aws::Vector<double> m_mapView;
-    bool m_mapViewHasBeenSet = false;
+  Aws::Vector<BusinessChain> m_businessChains;
+  bool m_businessChainsHasBeenSet = false;
 
-    Aws::Vector<Category> m_categories;
-    bool m_categoriesHasBeenSet = false;
+  Aws::Vector<AccessPoint> m_accessPoints;
+  bool m_accessPointsHasBeenSet = false;
 
-    Aws::Vector<FoodType> m_foodTypes;
-    bool m_foodTypesHasBeenSet = false;
+  Aws::Vector<AccessRestriction> m_accessRestrictions;
+  bool m_accessRestrictionsHasBeenSet = false;
 
-    Aws::Vector<BusinessChain> m_businessChains;
-    bool m_businessChainsHasBeenSet = false;
+  TimeZone m_timeZone;
+  bool m_timeZoneHasBeenSet = false;
 
-    Aws::Vector<AccessPoint> m_accessPoints;
-    bool m_accessPointsHasBeenSet = false;
+  Aws::String m_politicalView;
+  bool m_politicalViewHasBeenSet = false;
 
-    Aws::Vector<AccessRestriction> m_accessRestrictions;
-    bool m_accessRestrictionsHasBeenSet = false;
+  PhonemeDetails m_phonemes;
+  bool m_phonemesHasBeenSet = false;
+};
 
-    TimeZone m_timeZone;
-    bool m_timeZoneHasBeenSet = false;
-
-    Aws::String m_politicalView;
-    bool m_politicalViewHasBeenSet = false;
-
-    PhonemeDetails m_phonemes;
-    bool m_phonemesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

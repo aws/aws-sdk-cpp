@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 
-namespace Aws
-{
-namespace SocialMessaging
-{
-enum class SocialMessagingErrors
-{
-  //From Core//
+namespace Aws {
+namespace SocialMessaging {
+enum class SocialMessagingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SocialMessagingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SocialMessagingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_DENIED_BY_META= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_BY_META = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY,
   INTERNAL_SERVICE,
   INVALID_PARAMETERS,
@@ -55,9 +52,8 @@ enum class SocialMessagingErrors
   THROTTLED_REQUEST
 };
 
-class AWS_SOCIALMESSAGING_API SocialMessagingError : public Aws::Client::AWSError<SocialMessagingErrors>
-{
-public:
+class AWS_SOCIALMESSAGING_API SocialMessagingError : public Aws::Client::AWSError<SocialMessagingErrors> {
+ public:
   SocialMessagingError() {}
   SocialMessagingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SocialMessagingErrors>(rhs) {}
   SocialMessagingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SocialMessagingErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace SocialMessagingErrorMapper
-{
-  AWS_SOCIALMESSAGING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SocialMessagingErrorMapper {
+AWS_SOCIALMESSAGING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SocialMessaging
-} // namespace Aws
+}  // namespace SocialMessaging
+}  // namespace Aws

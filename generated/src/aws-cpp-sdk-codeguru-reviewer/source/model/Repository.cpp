@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-Repository::Repository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Repository::Repository(JsonView jsonValue) { *this = jsonValue; }
 
-Repository& Repository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CodeCommit"))
-  {
+Repository& Repository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CodeCommit")) {
     m_codeCommit = jsonValue.GetObject("CodeCommit");
     m_codeCommitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Bitbucket"))
-  {
+  if (jsonValue.ValueExists("Bitbucket")) {
     m_bitbucket = jsonValue.GetObject("Bitbucket");
     m_bitbucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GitHubEnterpriseServer"))
-  {
+  if (jsonValue.ValueExists("GitHubEnterpriseServer")) {
     m_gitHubEnterpriseServer = jsonValue.GetObject("GitHubEnterpriseServer");
     m_gitHubEnterpriseServerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Bucket"))
-  {
+  if (jsonValue.ValueExists("S3Bucket")) {
     m_s3Bucket = jsonValue.GetObject("S3Bucket");
     m_s3BucketHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Repository::Jsonize() const
-{
+JsonValue Repository::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeCommitHasBeenSet)
-  {
-   payload.WithObject("CodeCommit", m_codeCommit.Jsonize());
-
+  if (m_codeCommitHasBeenSet) {
+    payload.WithObject("CodeCommit", m_codeCommit.Jsonize());
   }
 
-  if(m_bitbucketHasBeenSet)
-  {
-   payload.WithObject("Bitbucket", m_bitbucket.Jsonize());
-
+  if (m_bitbucketHasBeenSet) {
+    payload.WithObject("Bitbucket", m_bitbucket.Jsonize());
   }
 
-  if(m_gitHubEnterpriseServerHasBeenSet)
-  {
-   payload.WithObject("GitHubEnterpriseServer", m_gitHubEnterpriseServer.Jsonize());
-
+  if (m_gitHubEnterpriseServerHasBeenSet) {
+    payload.WithObject("GitHubEnterpriseServer", m_gitHubEnterpriseServer.Jsonize());
   }
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithObject("S3Bucket", m_s3Bucket.Jsonize());
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithObject("S3Bucket", m_s3Bucket.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

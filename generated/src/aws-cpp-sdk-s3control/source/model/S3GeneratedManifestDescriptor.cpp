@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/S3GeneratedManifestDescriptor.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/S3GeneratedManifestDescriptor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor(const XmlNode& xmlNode) { *this = xmlNode; }
 
-S3GeneratedManifestDescriptor& S3GeneratedManifestDescriptor::operator =(const XmlNode& xmlNode)
-{
+S3GeneratedManifestDescriptor& S3GeneratedManifestDescriptor::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode formatNode = resultNode.FirstChild("Format");
-    if(!formatNode.IsNull())
-    {
-      m_format = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
+    if (!formatNode.IsNull()) {
+      m_format = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("Location");
-    if(!locationNode.IsNull())
-    {
+    if (!locationNode.IsNull()) {
       m_location = locationNode;
       m_locationHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ S3GeneratedManifestDescriptor& S3GeneratedManifestDescriptor::operator =(const X
   return *this;
 }
 
-void S3GeneratedManifestDescriptor::AddToNode(XmlNode& parentNode) const
-{
+void S3GeneratedManifestDescriptor::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_formatHasBeenSet)
-  {
-   XmlNode formatNode = parentNode.CreateChildElement("Format");
-   formatNode.SetText(GeneratedManifestFormatMapper::GetNameForGeneratedManifestFormat(m_format));
+  if (m_formatHasBeenSet) {
+    XmlNode formatNode = parentNode.CreateChildElement("Format");
+    formatNode.SetText(GeneratedManifestFormatMapper::GetNameForGeneratedManifestFormat(m_format));
   }
 
-  if(m_locationHasBeenSet)
-  {
-   XmlNode locationNode = parentNode.CreateChildElement("Location");
-   m_location.AddToNode(locationNode);
+  if (m_locationHasBeenSet) {
+    XmlNode locationNode = parentNode.CreateChildElement("Location");
+    m_location.AddToNode(locationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

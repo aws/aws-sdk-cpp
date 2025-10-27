@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/CreateServiceNetworkServiceAssociationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/vpc-lattice/model/CreateServiceNetworkServiceAssociationResult.h>
 
 #include <utility>
 
@@ -17,53 +17,46 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-CreateServiceNetworkServiceAssociationResult& CreateServiceNetworkServiceAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateServiceNetworkServiceAssociationResult& CreateServiceNetworkServiceAssociationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
+  if (jsonValue.ValueExists("status")) {
+    m_status =
+        ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBy"))
-  {
+  if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customDomainName"))
-  {
+  if (jsonValue.ValueExists("customDomainName")) {
     m_customDomainName = jsonValue.GetString("customDomainName");
     m_customDomainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dnsEntry"))
-  {
+  if (jsonValue.ValueExists("dnsEntry")) {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

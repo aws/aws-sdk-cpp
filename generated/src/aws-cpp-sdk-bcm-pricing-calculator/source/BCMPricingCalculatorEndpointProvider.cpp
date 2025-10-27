@@ -5,12 +5,8 @@
 
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorEndpointProvider.h>
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BCMPricingCalculator
-} // namespace Aws
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

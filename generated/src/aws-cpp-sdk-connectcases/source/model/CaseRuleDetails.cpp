@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-CaseRuleDetails::CaseRuleDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CaseRuleDetails::CaseRuleDetails(JsonView jsonValue) { *this = jsonValue; }
 
-CaseRuleDetails& CaseRuleDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("required"))
-  {
+CaseRuleDetails& CaseRuleDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("required")) {
     m_required = jsonValue.GetObject("required");
     m_requiredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CaseRuleDetails::Jsonize() const
-{
+JsonValue CaseRuleDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_requiredHasBeenSet)
-  {
-   payload.WithObject("required", m_required.Jsonize());
-
+  if (m_requiredHasBeenSet) {
+    payload.WithObject("required", m_required.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

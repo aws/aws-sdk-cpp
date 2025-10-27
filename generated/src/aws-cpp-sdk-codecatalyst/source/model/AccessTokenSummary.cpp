@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-AccessTokenSummary::AccessTokenSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessTokenSummary::AccessTokenSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AccessTokenSummary& AccessTokenSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+AccessTokenSummary& AccessTokenSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expiresTime"))
-  {
+  if (jsonValue.ValueExists("expiresTime")) {
     m_expiresTime = jsonValue.GetString("expiresTime");
     m_expiresTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessTokenSummary::Jsonize() const
-{
+JsonValue AccessTokenSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_expiresTimeHasBeenSet)
-  {
-   payload.WithString("expiresTime", m_expiresTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_expiresTimeHasBeenSet) {
+    payload.WithString("expiresTime", m_expiresTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

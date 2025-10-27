@@ -3,58 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SelectedSheetsFilterScopeConfiguration& SelectedSheetsFilterScopeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SheetVisualScopingConfigurations"))
-  {
+SelectedSheetsFilterScopeConfiguration& SelectedSheetsFilterScopeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SheetVisualScopingConfigurations")) {
     Aws::Utils::Array<JsonView> sheetVisualScopingConfigurationsJsonList = jsonValue.GetArray("SheetVisualScopingConfigurations");
-    for(unsigned sheetVisualScopingConfigurationsIndex = 0; sheetVisualScopingConfigurationsIndex < sheetVisualScopingConfigurationsJsonList.GetLength(); ++sheetVisualScopingConfigurationsIndex)
-    {
-      m_sheetVisualScopingConfigurations.push_back(sheetVisualScopingConfigurationsJsonList[sheetVisualScopingConfigurationsIndex].AsObject());
+    for (unsigned sheetVisualScopingConfigurationsIndex = 0;
+         sheetVisualScopingConfigurationsIndex < sheetVisualScopingConfigurationsJsonList.GetLength();
+         ++sheetVisualScopingConfigurationsIndex) {
+      m_sheetVisualScopingConfigurations.push_back(
+          sheetVisualScopingConfigurationsJsonList[sheetVisualScopingConfigurationsIndex].AsObject());
     }
     m_sheetVisualScopingConfigurationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SelectedSheetsFilterScopeConfiguration::Jsonize() const
-{
+JsonValue SelectedSheetsFilterScopeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sheetVisualScopingConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sheetVisualScopingConfigurationsJsonList(m_sheetVisualScopingConfigurations.size());
-   for(unsigned sheetVisualScopingConfigurationsIndex = 0; sheetVisualScopingConfigurationsIndex < sheetVisualScopingConfigurationsJsonList.GetLength(); ++sheetVisualScopingConfigurationsIndex)
-   {
-     sheetVisualScopingConfigurationsJsonList[sheetVisualScopingConfigurationsIndex].AsObject(m_sheetVisualScopingConfigurations[sheetVisualScopingConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("SheetVisualScopingConfigurations", std::move(sheetVisualScopingConfigurationsJsonList));
-
+  if (m_sheetVisualScopingConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sheetVisualScopingConfigurationsJsonList(m_sheetVisualScopingConfigurations.size());
+    for (unsigned sheetVisualScopingConfigurationsIndex = 0;
+         sheetVisualScopingConfigurationsIndex < sheetVisualScopingConfigurationsJsonList.GetLength();
+         ++sheetVisualScopingConfigurationsIndex) {
+      sheetVisualScopingConfigurationsJsonList[sheetVisualScopingConfigurationsIndex].AsObject(
+          m_sheetVisualScopingConfigurations[sheetVisualScopingConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("SheetVisualScopingConfigurations", std::move(sheetVisualScopingConfigurationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

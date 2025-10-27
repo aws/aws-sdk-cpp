@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class AssignmentStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DRAFT,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class AssignmentStatus { NOT_SET, ENABLED, DRAFT, DISABLED };
 
-namespace AssignmentStatusMapper
-{
+namespace AssignmentStatusMapper {
 AWS_QUICKSIGHT_API AssignmentStatus GetAssignmentStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForAssignmentStatus(AssignmentStatus value);
-} // namespace AssignmentStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace AssignmentStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

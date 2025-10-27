@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
-  enum class KeyState
-  {
-    NOT_SET,
-    Creating,
-    Enabled,
-    Disabled,
-    PendingDeletion,
-    PendingImport,
-    PendingReplicaDeletion,
-    Unavailable,
-    Updating
-  };
+namespace Aws {
+namespace KMS {
+namespace Model {
+enum class KeyState { NOT_SET, Creating, Enabled, Disabled, PendingDeletion, PendingImport, PendingReplicaDeletion, Unavailable, Updating };
 
-namespace KeyStateMapper
-{
+namespace KeyStateMapper {
 AWS_KMS_API KeyState GetKeyStateForName(const Aws::String& name);
 
 AWS_KMS_API Aws::String GetNameForKeyState(KeyState value);
-} // namespace KeyStateMapper
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace KeyStateMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

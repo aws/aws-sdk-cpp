@@ -10,57 +10,46 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ActivateTypeRequest::SerializePayload() const
-{
+Aws::String ActivateTypeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ActivateType&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
-  if(m_publicTypeArnHasBeenSet)
-  {
+  if (m_publicTypeArnHasBeenSet) {
     ss << "PublicTypeArn=" << StringUtils::URLEncode(m_publicTypeArn.c_str()) << "&";
   }
 
-  if(m_publisherIdHasBeenSet)
-  {
+  if (m_publisherIdHasBeenSet) {
     ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_typeNameAliasHasBeenSet)
-  {
+  if (m_typeNameAliasHasBeenSet) {
     ss << "TypeNameAlias=" << StringUtils::URLEncode(m_typeNameAlias.c_str()) << "&";
   }
 
-  if(m_autoUpdateHasBeenSet)
-  {
+  if (m_autoUpdateHasBeenSet) {
     ss << "AutoUpdate=" << std::boolalpha << m_autoUpdate << "&";
   }
 
-  if(m_loggingConfigHasBeenSet)
-  {
+  if (m_loggingConfigHasBeenSet) {
     m_loggingConfig.OutputToStream(ss, "LoggingConfig");
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
+  if (m_executionRoleArnHasBeenSet) {
     ss << "ExecutionRoleArn=" << StringUtils::URLEncode(m_executionRoleArn.c_str()) << "&";
   }
 
-  if(m_versionBumpHasBeenSet)
-  {
+  if (m_versionBumpHasBeenSet) {
     ss << "VersionBump=" << StringUtils::URLEncode(VersionBumpMapper::GetNameForVersionBump(m_versionBump)) << "&";
   }
 
-  if(m_majorVersionHasBeenSet)
-  {
+  if (m_majorVersionHasBeenSet) {
     ss << "MajorVersion=" << m_majorVersion << "&";
   }
 
@@ -68,8 +57,4 @@ Aws::String ActivateTypeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ActivateTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ActivateTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-DateInterval::DateInterval(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DateInterval::DateInterval(JsonView jsonValue) { *this = jsonValue; }
 
-DateInterval& DateInterval::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Start"))
-  {
+DateInterval& DateInterval::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Start")) {
     m_start = jsonValue.GetString("Start");
     m_startHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("End"))
-  {
+  if (jsonValue.ValueExists("End")) {
     m_end = jsonValue.GetString("End");
     m_endHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DateInterval::Jsonize() const
-{
+JsonValue DateInterval::Jsonize() const {
   JsonValue payload;
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithString("Start", m_start);
-
+  if (m_startHasBeenSet) {
+    payload.WithString("Start", m_start);
   }
 
-  if(m_endHasBeenSet)
-  {
-   payload.WithString("End", m_end);
-
+  if (m_endHasBeenSet) {
+    payload.WithString("End", m_end);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

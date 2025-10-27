@@ -3,279 +3,213 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/ContainerInstance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/ContainerInstance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-ContainerInstance::ContainerInstance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerInstance::ContainerInstance(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("containerInstanceArn"))
-  {
+ContainerInstance& ContainerInstance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("containerInstanceArn")) {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
     m_containerInstanceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ec2InstanceId"))
-  {
+  if (jsonValue.ValueExists("ec2InstanceId")) {
     m_ec2InstanceId = jsonValue.GetString("ec2InstanceId");
     m_ec2InstanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("capacityProviderName"))
-  {
+  if (jsonValue.ValueExists("capacityProviderName")) {
     m_capacityProviderName = jsonValue.GetString("capacityProviderName");
     m_capacityProviderNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetInt64("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionInfo"))
-  {
+  if (jsonValue.ValueExists("versionInfo")) {
     m_versionInfo = jsonValue.GetObject("versionInfo");
     m_versionInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remainingResources"))
-  {
+  if (jsonValue.ValueExists("remainingResources")) {
     Aws::Utils::Array<JsonView> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
-    for(unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength(); ++remainingResourcesIndex)
-    {
+    for (unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength();
+         ++remainingResourcesIndex) {
       m_remainingResources.push_back(remainingResourcesJsonList[remainingResourcesIndex].AsObject());
     }
     m_remainingResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registeredResources"))
-  {
+  if (jsonValue.ValueExists("registeredResources")) {
     Aws::Utils::Array<JsonView> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
-    for(unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength(); ++registeredResourcesIndex)
-    {
+    for (unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength();
+         ++registeredResourcesIndex) {
       m_registeredResources.push_back(registeredResourcesJsonList[registeredResourcesIndex].AsObject());
     }
     m_registeredResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentConnected"))
-  {
+  if (jsonValue.ValueExists("agentConnected")) {
     m_agentConnected = jsonValue.GetBool("agentConnected");
     m_agentConnectedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runningTasksCount"))
-  {
+  if (jsonValue.ValueExists("runningTasksCount")) {
     m_runningTasksCount = jsonValue.GetInteger("runningTasksCount");
     m_runningTasksCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pendingTasksCount"))
-  {
+  if (jsonValue.ValueExists("pendingTasksCount")) {
     m_pendingTasksCount = jsonValue.GetInteger("pendingTasksCount");
     m_pendingTasksCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentUpdateStatus"))
-  {
+  if (jsonValue.ValueExists("agentUpdateStatus")) {
     m_agentUpdateStatus = AgentUpdateStatusMapper::GetAgentUpdateStatusForName(jsonValue.GetString("agentUpdateStatus"));
     m_agentUpdateStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attributes"))
-  {
+  if (jsonValue.ValueExists("attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registeredAt"))
-  {
+  if (jsonValue.ValueExists("registeredAt")) {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
     m_registeredAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attachments"))
-  {
+  if (jsonValue.ValueExists("attachments")) {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
-    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
-    {
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
     }
     m_attachmentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthStatus"))
-  {
+  if (jsonValue.ValueExists("healthStatus")) {
     m_healthStatus = jsonValue.GetObject("healthStatus");
     m_healthStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerInstance::Jsonize() const
-{
+JsonValue ContainerInstance::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerInstanceArnHasBeenSet)
-  {
-   payload.WithString("containerInstanceArn", m_containerInstanceArn);
-
+  if (m_containerInstanceArnHasBeenSet) {
+    payload.WithString("containerInstanceArn", m_containerInstanceArn);
   }
 
-  if(m_ec2InstanceIdHasBeenSet)
-  {
-   payload.WithString("ec2InstanceId", m_ec2InstanceId);
-
+  if (m_ec2InstanceIdHasBeenSet) {
+    payload.WithString("ec2InstanceId", m_ec2InstanceId);
   }
 
-  if(m_capacityProviderNameHasBeenSet)
-  {
-   payload.WithString("capacityProviderName", m_capacityProviderName);
-
+  if (m_capacityProviderNameHasBeenSet) {
+    payload.WithString("capacityProviderName", m_capacityProviderName);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInt64("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithInt64("version", m_version);
   }
 
-  if(m_versionInfoHasBeenSet)
-  {
-   payload.WithObject("versionInfo", m_versionInfo.Jsonize());
-
+  if (m_versionInfoHasBeenSet) {
+    payload.WithObject("versionInfo", m_versionInfo.Jsonize());
   }
 
-  if(m_remainingResourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> remainingResourcesJsonList(m_remainingResources.size());
-   for(unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength(); ++remainingResourcesIndex)
-   {
-     remainingResourcesJsonList[remainingResourcesIndex].AsObject(m_remainingResources[remainingResourcesIndex].Jsonize());
-   }
-   payload.WithArray("remainingResources", std::move(remainingResourcesJsonList));
-
+  if (m_remainingResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remainingResourcesJsonList(m_remainingResources.size());
+    for (unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength();
+         ++remainingResourcesIndex) {
+      remainingResourcesJsonList[remainingResourcesIndex].AsObject(m_remainingResources[remainingResourcesIndex].Jsonize());
+    }
+    payload.WithArray("remainingResources", std::move(remainingResourcesJsonList));
   }
 
-  if(m_registeredResourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> registeredResourcesJsonList(m_registeredResources.size());
-   for(unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength(); ++registeredResourcesIndex)
-   {
-     registeredResourcesJsonList[registeredResourcesIndex].AsObject(m_registeredResources[registeredResourcesIndex].Jsonize());
-   }
-   payload.WithArray("registeredResources", std::move(registeredResourcesJsonList));
-
+  if (m_registeredResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> registeredResourcesJsonList(m_registeredResources.size());
+    for (unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength();
+         ++registeredResourcesIndex) {
+      registeredResourcesJsonList[registeredResourcesIndex].AsObject(m_registeredResources[registeredResourcesIndex].Jsonize());
+    }
+    payload.WithArray("registeredResources", std::move(registeredResourcesJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("statusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
-  if(m_agentConnectedHasBeenSet)
-  {
-   payload.WithBool("agentConnected", m_agentConnected);
-
+  if (m_agentConnectedHasBeenSet) {
+    payload.WithBool("agentConnected", m_agentConnected);
   }
 
-  if(m_runningTasksCountHasBeenSet)
-  {
-   payload.WithInteger("runningTasksCount", m_runningTasksCount);
-
+  if (m_runningTasksCountHasBeenSet) {
+    payload.WithInteger("runningTasksCount", m_runningTasksCount);
   }
 
-  if(m_pendingTasksCountHasBeenSet)
-  {
-   payload.WithInteger("pendingTasksCount", m_pendingTasksCount);
-
+  if (m_pendingTasksCountHasBeenSet) {
+    payload.WithInteger("pendingTasksCount", m_pendingTasksCount);
   }
 
-  if(m_agentUpdateStatusHasBeenSet)
-  {
-   payload.WithString("agentUpdateStatus", AgentUpdateStatusMapper::GetNameForAgentUpdateStatus(m_agentUpdateStatus));
+  if (m_agentUpdateStatusHasBeenSet) {
+    payload.WithString("agentUpdateStatus", AgentUpdateStatusMapper::GetNameForAgentUpdateStatus(m_agentUpdateStatus));
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
-   }
-   payload.WithArray("attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+    }
+    payload.WithArray("attributes", std::move(attributesJsonList));
   }
 
-  if(m_registeredAtHasBeenSet)
-  {
-   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  if (m_registeredAtHasBeenSet) {
+    payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
   }
 
-  if(m_attachmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
-   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
-   {
-     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
-   }
-   payload.WithArray("attachments", std::move(attachmentsJsonList));
-
+  if (m_attachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+    }
+    payload.WithArray("attachments", std::move(attachmentsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
-  if(m_healthStatusHasBeenSet)
-  {
-   payload.WithObject("healthStatus", m_healthStatus.Jsonize());
-
+  if (m_healthStatusHasBeenSet) {
+    payload.WithObject("healthStatus", m_healthStatus.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

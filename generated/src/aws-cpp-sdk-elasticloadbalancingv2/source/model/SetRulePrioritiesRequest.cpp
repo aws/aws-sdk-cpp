@@ -3,28 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/SetRulePrioritiesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/SetRulePrioritiesRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String SetRulePrioritiesRequest::SerializePayload() const
-{
+Aws::String SetRulePrioritiesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetRulePriorities&";
-  if(m_rulePrioritiesHasBeenSet)
-  {
-    if (m_rulePriorities.empty())
-    {
+  if (m_rulePrioritiesHasBeenSet) {
+    if (m_rulePriorities.empty()) {
       ss << "RulePriorities=&";
-    }
-    else
-    {
+    } else {
       unsigned rulePrioritiesCount = 1;
-      for(auto& item : m_rulePriorities)
-      {
+      for (auto& item : m_rulePriorities) {
         item.OutputToStream(ss, "RulePriorities.member.", rulePrioritiesCount, "");
         rulePrioritiesCount++;
       }
@@ -35,8 +29,4 @@ Aws::String SetRulePrioritiesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetRulePrioritiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetRulePrioritiesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

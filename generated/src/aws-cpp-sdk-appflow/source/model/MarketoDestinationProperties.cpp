@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-MarketoDestinationProperties::MarketoDestinationProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MarketoDestinationProperties::MarketoDestinationProperties(JsonView jsonValue) { *this = jsonValue; }
 
-MarketoDestinationProperties& MarketoDestinationProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("object"))
-  {
+MarketoDestinationProperties& MarketoDestinationProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("object")) {
     m_object = jsonValue.GetString("object");
     m_objectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorHandlingConfig"))
-  {
+  if (jsonValue.ValueExists("errorHandlingConfig")) {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
     m_errorHandlingConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MarketoDestinationProperties::Jsonize() const
-{
+JsonValue MarketoDestinationProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectHasBeenSet)
-  {
-   payload.WithString("object", m_object);
-
+  if (m_objectHasBeenSet) {
+    payload.WithString("object", m_object);
   }
 
-  if(m_errorHandlingConfigHasBeenSet)
-  {
-   payload.WithObject("errorHandlingConfig", m_errorHandlingConfig.Jsonize());
-
+  if (m_errorHandlingConfigHasBeenSet) {
+    payload.WithObject("errorHandlingConfig", m_errorHandlingConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

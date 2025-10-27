@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/NormalizedValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/NormalizedValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-NormalizedValue::NormalizedValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NormalizedValue::NormalizedValue(JsonView jsonValue) { *this = jsonValue; }
 
-NormalizedValue& NormalizedValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+NormalizedValue& NormalizedValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValueType"))
-  {
+  if (jsonValue.ValueExists("ValueType")) {
     m_valueType = ValueTypeMapper::GetValueTypeForName(jsonValue.GetString("ValueType"));
     m_valueTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NormalizedValue::Jsonize() const
-{
+JsonValue NormalizedValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_valueTypeHasBeenSet)
-  {
-   payload.WithString("ValueType", ValueTypeMapper::GetNameForValueType(m_valueType));
+  if (m_valueTypeHasBeenSet) {
+    payload.WithString("ValueType", ValueTypeMapper::GetNameForValueType(m_valueType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

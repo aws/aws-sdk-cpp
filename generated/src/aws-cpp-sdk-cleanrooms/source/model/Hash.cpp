@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-Hash::Hash(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Hash::Hash(JsonView jsonValue) { *this = jsonValue; }
 
-Hash& Hash::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sha256"))
-  {
+Hash& Hash::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sha256")) {
     m_sha256 = jsonValue.GetString("sha256");
     m_sha256HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Hash::Jsonize() const
-{
+JsonValue Hash::Jsonize() const {
   JsonValue payload;
 
-  if(m_sha256HasBeenSet)
-  {
-   payload.WithString("sha256", m_sha256);
-
+  if (m_sha256HasBeenSet) {
+    payload.WithString("sha256", m_sha256);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -11,25 +11,17 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-BadRequestDetails::BadRequestDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BadRequestDetails::BadRequestDetails(JsonView jsonValue) { *this = jsonValue; }
 
-BadRequestDetails& BadRequestDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InvalidConfiguration"))
-  {
+BadRequestDetails& BadRequestDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InvalidConfiguration")) {
     Aws::Utils::Array<JsonView> invalidConfigurationJsonList = jsonValue.GetArray("InvalidConfiguration");
-    for(unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength(); ++invalidConfigurationIndex)
-    {
+    for (unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength();
+         ++invalidConfigurationIndex) {
       m_invalidConfiguration.push_back(invalidConfigurationJsonList[invalidConfigurationIndex].AsObject());
     }
     m_invalidConfigurationHasBeenSet = true;
@@ -37,24 +29,21 @@ BadRequestDetails& BadRequestDetails::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BadRequestDetails::Jsonize() const
-{
+JsonValue BadRequestDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_invalidConfigurationHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> invalidConfigurationJsonList(m_invalidConfiguration.size());
-   for(unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength(); ++invalidConfigurationIndex)
-   {
-     invalidConfigurationJsonList[invalidConfigurationIndex].AsObject(m_invalidConfiguration[invalidConfigurationIndex].Jsonize());
-   }
-   payload.WithArray("InvalidConfiguration", std::move(invalidConfigurationJsonList));
-
+  if (m_invalidConfigurationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> invalidConfigurationJsonList(m_invalidConfiguration.size());
+    for (unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength();
+         ++invalidConfigurationIndex) {
+      invalidConfigurationJsonList[invalidConfigurationIndex].AsObject(m_invalidConfiguration[invalidConfigurationIndex].Jsonize());
+    }
+    payload.WithArray("InvalidConfiguration", std::move(invalidConfigurationJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/CancelWorldExportJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/CancelWorldExportJobRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelWorldExportJobRequest::SerializePayload() const
-{
+Aws::String CancelWorldExportJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobHasBeenSet)
-  {
-   payload.WithString("job", m_job);
-
+  if (m_jobHasBeenSet) {
+    payload.WithString("job", m_job);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

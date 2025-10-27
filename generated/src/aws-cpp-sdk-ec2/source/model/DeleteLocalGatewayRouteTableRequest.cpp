@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLocalGatewayRouteTableRequest::SerializePayload() const
-{
+Aws::String DeleteLocalGatewayRouteTableRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLocalGatewayRouteTable&";
-  if(m_localGatewayRouteTableIdHasBeenSet)
-  {
+  if (m_localGatewayRouteTableIdHasBeenSet) {
     ss << "LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteLocalGatewayRouteTableRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLocalGatewayRouteTableRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLocalGatewayRouteTableRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

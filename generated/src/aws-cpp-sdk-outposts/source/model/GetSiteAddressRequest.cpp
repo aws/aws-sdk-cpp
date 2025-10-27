@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/GetSiteAddressRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/outposts/model/GetSiteAddressRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetSiteAddressRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetSiteAddressRequest::SerializePayload() const { return {}; }
+
+void GetSiteAddressRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_addressTypeHasBeenSet) {
+    ss << AddressTypeMapper::GetNameForAddressType(m_addressType);
+    uri.AddQueryStringParameter("AddressType", ss.str());
+    ss.str("");
+  }
 }
-
-void GetSiteAddressRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_addressTypeHasBeenSet)
-    {
-      ss << AddressTypeMapper::GetNameForAddressType(m_addressType);
-      uri.AddQueryStringParameter("AddressType", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

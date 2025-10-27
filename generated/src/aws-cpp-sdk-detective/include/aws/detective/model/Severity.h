@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/detective/Detective_EXPORTS.h>
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
-  enum class Severity
-  {
-    NOT_SET,
-    INFORMATIONAL,
-    LOW,
-    MEDIUM,
-    HIGH,
-    CRITICAL
-  };
+namespace Aws {
+namespace Detective {
+namespace Model {
+enum class Severity { NOT_SET, INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL };
 
-namespace SeverityMapper
-{
+namespace SeverityMapper {
 AWS_DETECTIVE_API Severity GetSeverityForName(const Aws::String& name);
 
 AWS_DETECTIVE_API Aws::String GetNameForSeverity(Severity value);
-} // namespace SeverityMapper
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace SeverityMapper
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

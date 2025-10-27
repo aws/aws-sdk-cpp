@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/RateLimitLabelNamespace.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/RateLimitLabelNamespace.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-RateLimitLabelNamespace::RateLimitLabelNamespace(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RateLimitLabelNamespace::RateLimitLabelNamespace(JsonView jsonValue) { *this = jsonValue; }
 
-RateLimitLabelNamespace& RateLimitLabelNamespace::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Namespace"))
-  {
+RateLimitLabelNamespace& RateLimitLabelNamespace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Namespace")) {
     m_namespace = jsonValue.GetString("Namespace");
     m_namespaceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RateLimitLabelNamespace::Jsonize() const
-{
+JsonValue RateLimitLabelNamespace::Jsonize() const {
   JsonValue payload;
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("Namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("Namespace", m_namespace);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

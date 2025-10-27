@@ -12,11 +12,4 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetFederationTokenRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetFederationTokenRequest::SerializePayload() const { return {}; }

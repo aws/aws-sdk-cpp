@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
-  enum class RecordMatchingModel
-  {
-    NOT_SET,
-    ONE_SOURCE_TO_ONE_TARGET,
-    MANY_SOURCE_TO_ONE_TARGET
-  };
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
+enum class RecordMatchingModel { NOT_SET, ONE_SOURCE_TO_ONE_TARGET, MANY_SOURCE_TO_ONE_TARGET };
 
-namespace RecordMatchingModelMapper
-{
+namespace RecordMatchingModelMapper {
 AWS_ENTITYRESOLUTION_API RecordMatchingModel GetRecordMatchingModelForName(const Aws::String& name);
 
 AWS_ENTITYRESOLUTION_API Aws::String GetNameForRecordMatchingModel(RecordMatchingModel value);
-} // namespace RecordMatchingModelMapper
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace RecordMatchingModelMapper
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

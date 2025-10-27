@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::VPCLattice;
 
-AWSError<CoreErrors> VPCLatticeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> VPCLatticeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = VPCLatticeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

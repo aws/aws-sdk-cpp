@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pcs/model/AccountingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pcs/model/AccountingRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PCS
-{
-namespace Model
-{
+namespace Aws {
+namespace PCS {
+namespace Model {
 
-AccountingRequest::AccountingRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountingRequest::AccountingRequest(JsonView jsonValue) { *this = jsonValue; }
 
-AccountingRequest& AccountingRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("defaultPurgeTimeInDays"))
-  {
+AccountingRequest& AccountingRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("defaultPurgeTimeInDays")) {
     m_defaultPurgeTimeInDays = jsonValue.GetInteger("defaultPurgeTimeInDays");
     m_defaultPurgeTimeInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mode"))
-  {
+  if (jsonValue.ValueExists("mode")) {
     m_mode = AccountingModeMapper::GetAccountingModeForName(jsonValue.GetString("mode"));
     m_modeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountingRequest::Jsonize() const
-{
+JsonValue AccountingRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultPurgeTimeInDaysHasBeenSet)
-  {
-   payload.WithInteger("defaultPurgeTimeInDays", m_defaultPurgeTimeInDays);
-
+  if (m_defaultPurgeTimeInDaysHasBeenSet) {
+    payload.WithInteger("defaultPurgeTimeInDays", m_defaultPurgeTimeInDays);
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", AccountingModeMapper::GetNameForAccountingMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("mode", AccountingModeMapper::GetNameForAccountingMode(m_mode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PCS
-} // namespace Aws
+}  // namespace Model
+}  // namespace PCS
+}  // namespace Aws

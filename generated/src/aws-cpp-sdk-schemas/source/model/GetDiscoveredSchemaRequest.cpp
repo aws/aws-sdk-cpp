@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/schemas/model/GetDiscoveredSchemaRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/schemas/model/GetDiscoveredSchemaRequest.h>
 
 #include <utility>
 
@@ -12,29 +12,20 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDiscoveredSchemaRequest::SerializePayload() const
-{
+Aws::String GetDiscoveredSchemaRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
-   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-   {
-     eventsJsonList[eventsIndex].AsString(m_events[eventsIndex]);
-   }
-   payload.WithArray("Events", std::move(eventsJsonList));
-
+  if (m_eventsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
+      eventsJsonList[eventsIndex].AsString(m_events[eventsIndex]);
+    }
+    payload.WithArray("Events", std::move(eventsJsonList));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

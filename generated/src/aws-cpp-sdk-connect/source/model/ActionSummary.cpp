@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ActionSummary::ActionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionSummary::ActionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ActionSummary& ActionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActionType"))
-  {
+ActionSummary& ActionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActionType")) {
     m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("ActionType"));
     m_actionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionSummary::Jsonize() const
-{
+JsonValue ActionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionTypeHasBeenSet)
-  {
-   payload.WithString("ActionType", ActionTypeMapper::GetNameForActionType(m_actionType));
+  if (m_actionTypeHasBeenSet) {
+    payload.WithString("ActionType", ActionTypeMapper::GetNameForActionType(m_actionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

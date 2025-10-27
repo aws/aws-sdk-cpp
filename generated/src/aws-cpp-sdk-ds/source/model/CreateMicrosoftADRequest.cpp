@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/CreateMicrosoftADRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/CreateMicrosoftADRequest.h>
 
 #include <utility>
 
@@ -12,72 +12,50 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMicrosoftADRequest::SerializePayload() const
-{
+Aws::String CreateMicrosoftADRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_shortNameHasBeenSet)
-  {
-   payload.WithString("ShortName", m_shortName);
-
+  if (m_shortNameHasBeenSet) {
+    payload.WithString("ShortName", m_shortName);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("Password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_vpcSettingsHasBeenSet)
-  {
-   payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
-
+  if (m_vpcSettingsHasBeenSet) {
+    payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
   }
 
-  if(m_editionHasBeenSet)
-  {
-   payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
+  if (m_editionHasBeenSet) {
+    payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
-   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateMicrosoftADRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateMicrosoftADRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.CreateMicrosoftAD"));
   return headers;
-
 }
-
-
-
-

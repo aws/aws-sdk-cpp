@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class PointInTimeRecoveryStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class PointInTimeRecoveryStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace PointInTimeRecoveryStatusMapper
-{
+namespace PointInTimeRecoveryStatusMapper {
 AWS_DYNAMODB_API PointInTimeRecoveryStatus GetPointInTimeRecoveryStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForPointInTimeRecoveryStatus(PointInTimeRecoveryStatus value);
-} // namespace PointInTimeRecoveryStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace PointInTimeRecoveryStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

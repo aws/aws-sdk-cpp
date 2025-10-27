@@ -12,45 +12,30 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueryResultsRequest::SerializePayload() const
-{
+Aws::String GetQueryResultsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryIdHasBeenSet)
-  {
-   payload.WithString("QueryId", m_queryId);
-
+  if (m_queryIdHasBeenSet) {
+    payload.WithString("QueryId", m_queryId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxQueryResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxQueryResults", m_maxQueryResults);
-
+  if (m_maxQueryResultsHasBeenSet) {
+    payload.WithInteger("MaxQueryResults", m_maxQueryResults);
   }
 
-  if(m_eventDataStoreOwnerAccountIdHasBeenSet)
-  {
-   payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
-
+  if (m_eventDataStoreOwnerAccountIdHasBeenSet) {
+    payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetQueryResultsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetQueryResultsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetQueryResults"));
   return headers;
-
 }
-
-
-
-

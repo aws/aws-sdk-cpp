@@ -11,30 +11,21 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentMetadata::DocumentMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentMetadata::DocumentMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Pages"))
-  {
+DocumentMetadata& DocumentMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Pages")) {
     m_pages = jsonValue.GetInteger("Pages");
     m_pagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExtractedCharacters"))
-  {
+  if (jsonValue.ValueExists("ExtractedCharacters")) {
     Aws::Utils::Array<JsonView> extractedCharactersJsonList = jsonValue.GetArray("ExtractedCharacters");
-    for(unsigned extractedCharactersIndex = 0; extractedCharactersIndex < extractedCharactersJsonList.GetLength(); ++extractedCharactersIndex)
-    {
+    for (unsigned extractedCharactersIndex = 0; extractedCharactersIndex < extractedCharactersJsonList.GetLength();
+         ++extractedCharactersIndex) {
       m_extractedCharacters.push_back(extractedCharactersJsonList[extractedCharactersIndex].AsObject());
     }
     m_extractedCharactersHasBeenSet = true;
@@ -42,30 +33,25 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DocumentMetadata::Jsonize() const
-{
+JsonValue DocumentMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_pagesHasBeenSet)
-  {
-   payload.WithInteger("Pages", m_pages);
-
+  if (m_pagesHasBeenSet) {
+    payload.WithInteger("Pages", m_pages);
   }
 
-  if(m_extractedCharactersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> extractedCharactersJsonList(m_extractedCharacters.size());
-   for(unsigned extractedCharactersIndex = 0; extractedCharactersIndex < extractedCharactersJsonList.GetLength(); ++extractedCharactersIndex)
-   {
-     extractedCharactersJsonList[extractedCharactersIndex].AsObject(m_extractedCharacters[extractedCharactersIndex].Jsonize());
-   }
-   payload.WithArray("ExtractedCharacters", std::move(extractedCharactersJsonList));
-
+  if (m_extractedCharactersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extractedCharactersJsonList(m_extractedCharacters.size());
+    for (unsigned extractedCharactersIndex = 0; extractedCharactersIndex < extractedCharactersJsonList.GetLength();
+         ++extractedCharactersIndex) {
+      extractedCharactersJsonList[extractedCharactersIndex].AsObject(m_extractedCharacters[extractedCharactersIndex].Jsonize());
+    }
+    payload.WithArray("ExtractedCharacters", std::move(extractedCharactersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

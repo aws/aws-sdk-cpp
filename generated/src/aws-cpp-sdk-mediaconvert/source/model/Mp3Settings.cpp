@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/Mp3Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/Mp3Settings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-Mp3Settings::Mp3Settings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Mp3Settings::Mp3Settings(JsonView jsonValue) { *this = jsonValue; }
 
-Mp3Settings& Mp3Settings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bitrate"))
-  {
+Mp3Settings& Mp3Settings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bitrate")) {
     m_bitrate = jsonValue.GetInteger("bitrate");
     m_bitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("channels"))
-  {
+  if (jsonValue.ValueExists("channels")) {
     m_channels = jsonValue.GetInteger("channels");
     m_channelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rateControlMode"))
-  {
+  if (jsonValue.ValueExists("rateControlMode")) {
     m_rateControlMode = Mp3RateControlModeMapper::GetMp3RateControlModeForName(jsonValue.GetString("rateControlMode"));
     m_rateControlModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sampleRate"))
-  {
+  if (jsonValue.ValueExists("sampleRate")) {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
     m_sampleRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vbrQuality"))
-  {
+  if (jsonValue.ValueExists("vbrQuality")) {
     m_vbrQuality = jsonValue.GetInteger("vbrQuality");
     m_vbrQualityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Mp3Settings::Jsonize() const
-{
+JsonValue Mp3Settings::Jsonize() const {
   JsonValue payload;
 
-  if(m_bitrateHasBeenSet)
-  {
-   payload.WithInteger("bitrate", m_bitrate);
-
+  if (m_bitrateHasBeenSet) {
+    payload.WithInteger("bitrate", m_bitrate);
   }
 
-  if(m_channelsHasBeenSet)
-  {
-   payload.WithInteger("channels", m_channels);
-
+  if (m_channelsHasBeenSet) {
+    payload.WithInteger("channels", m_channels);
   }
 
-  if(m_rateControlModeHasBeenSet)
-  {
-   payload.WithString("rateControlMode", Mp3RateControlModeMapper::GetNameForMp3RateControlMode(m_rateControlMode));
+  if (m_rateControlModeHasBeenSet) {
+    payload.WithString("rateControlMode", Mp3RateControlModeMapper::GetNameForMp3RateControlMode(m_rateControlMode));
   }
 
-  if(m_sampleRateHasBeenSet)
-  {
-   payload.WithInteger("sampleRate", m_sampleRate);
-
+  if (m_sampleRateHasBeenSet) {
+    payload.WithInteger("sampleRate", m_sampleRate);
   }
 
-  if(m_vbrQualityHasBeenSet)
-  {
-   payload.WithInteger("vbrQuality", m_vbrQuality);
-
+  if (m_vbrQualityHasBeenSet) {
+    payload.WithInteger("vbrQuality", m_vbrQuality);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

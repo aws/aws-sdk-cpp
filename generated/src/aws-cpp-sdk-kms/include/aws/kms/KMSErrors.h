@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-enum class KMSErrors
-{
-  //From Core//
+namespace Aws {
+namespace KMS {
+enum class KMSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KMSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class KMSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_HSM_CLUSTER_INVALID_CONFIGURATION,
   CLOUD_HSM_CLUSTER_IN_USE,
   CLOUD_HSM_CLUSTER_NOT_ACTIVE,
@@ -97,9 +94,8 @@ enum class KMSErrors
   XKS_PROXY_VPC_ENDPOINT_SERVICE_NOT_FOUND
 };
 
-class AWS_KMS_API KMSError : public Aws::Client::AWSError<KMSErrors>
-{
-public:
+class AWS_KMS_API KMSError : public Aws::Client::AWSError<KMSErrors> {
+ public:
   KMSError() {}
   KMSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
   KMSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
@@ -110,10 +106,9 @@ public:
   T GetModeledError();
 };
 
-namespace KMSErrorMapper
-{
-  AWS_KMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KMSErrorMapper {
+AWS_KMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace KMS
-} // namespace Aws
+}  // namespace KMS
+}  // namespace Aws

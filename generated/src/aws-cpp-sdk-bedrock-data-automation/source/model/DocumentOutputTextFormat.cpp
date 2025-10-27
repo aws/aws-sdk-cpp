@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-DocumentOutputTextFormat::DocumentOutputTextFormat(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentOutputTextFormat::DocumentOutputTextFormat(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentOutputTextFormat& DocumentOutputTextFormat::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("types"))
-  {
+DocumentOutputTextFormat& DocumentOutputTextFormat::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("types")) {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
-    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-    {
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
       m_types.push_back(DocumentOutputTextFormatTypeMapper::GetDocumentOutputTextFormatTypeForName(typesJsonList[typesIndex].AsString()));
     }
     m_typesHasBeenSet = true;
@@ -37,24 +28,20 @@ DocumentOutputTextFormat& DocumentOutputTextFormat::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue DocumentOutputTextFormat::Jsonize() const
-{
+JsonValue DocumentOutputTextFormat::Jsonize() const {
   JsonValue payload;
 
-  if(m_typesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
-   for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-   {
-     typesJsonList[typesIndex].AsString(DocumentOutputTextFormatTypeMapper::GetNameForDocumentOutputTextFormatType(m_types[typesIndex]));
-   }
-   payload.WithArray("types", std::move(typesJsonList));
-
+  if (m_typesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      typesJsonList[typesIndex].AsString(DocumentOutputTextFormatTypeMapper::GetNameForDocumentOutputTextFormatType(m_types[typesIndex]));
+    }
+    payload.WithArray("types", std::move(typesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

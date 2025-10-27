@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayListenerTlsAcmCertificate::VirtualGatewayListenerTlsAcmCertificate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayListenerTlsAcmCertificate::VirtualGatewayListenerTlsAcmCertificate(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayListenerTlsAcmCertificate& VirtualGatewayListenerTlsAcmCertificate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("certificateArn"))
-  {
+VirtualGatewayListenerTlsAcmCertificate& VirtualGatewayListenerTlsAcmCertificate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("certificateArn")) {
     m_certificateArn = jsonValue.GetString("certificateArn");
     m_certificateArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayListenerTlsAcmCertificate::Jsonize() const
-{
+JsonValue VirtualGatewayListenerTlsAcmCertificate::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("certificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("certificateArn", m_certificateArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

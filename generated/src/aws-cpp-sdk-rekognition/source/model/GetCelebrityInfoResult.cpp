@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/GetCelebrityInfoResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rekognition/model/GetCelebrityInfoResult.h>
 
 #include <utility>
 
@@ -17,42 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCelebrityInfoResult::GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetCelebrityInfoResult::GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetCelebrityInfoResult& GetCelebrityInfoResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Urls"))
-  {
+  if (jsonValue.ValueExists("Urls")) {
     Aws::Utils::Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
-    for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
-    {
+    for (unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex) {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());
     }
     m_urlsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KnownGender"))
-  {
+  if (jsonValue.ValueExists("KnownGender")) {
     m_knownGender = jsonValue.GetObject("KnownGender");
     m_knownGenderHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

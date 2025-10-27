@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/ContinuousParameterRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/ContinuousParameterRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue) { *this = jsonValue; }
 
-ContinuousParameterRange& ContinuousParameterRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ContinuousParameterRange& ContinuousParameterRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxValue"))
-  {
+  if (jsonValue.ValueExists("MaxValue")) {
     m_maxValue = jsonValue.GetDouble("MaxValue");
     m_maxValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinValue"))
-  {
+  if (jsonValue.ValueExists("MinValue")) {
     m_minValue = jsonValue.GetDouble("MinValue");
     m_minValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScalingType"))
-  {
+  if (jsonValue.ValueExists("ScalingType")) {
     m_scalingType = ScalingTypeMapper::GetScalingTypeForName(jsonValue.GetString("ScalingType"));
     m_scalingTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContinuousParameterRange::Jsonize() const
-{
+JsonValue ContinuousParameterRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_maxValueHasBeenSet)
-  {
-   payload.WithDouble("MaxValue", m_maxValue);
-
+  if (m_maxValueHasBeenSet) {
+    payload.WithDouble("MaxValue", m_maxValue);
   }
 
-  if(m_minValueHasBeenSet)
-  {
-   payload.WithDouble("MinValue", m_minValue);
-
+  if (m_minValueHasBeenSet) {
+    payload.WithDouble("MinValue", m_minValue);
   }
 
-  if(m_scalingTypeHasBeenSet)
-  {
-   payload.WithString("ScalingType", ScalingTypeMapper::GetNameForScalingType(m_scalingType));
+  if (m_scalingTypeHasBeenSet) {
+    payload.WithString("ScalingType", ScalingTypeMapper::GetNameForScalingType(m_scalingType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

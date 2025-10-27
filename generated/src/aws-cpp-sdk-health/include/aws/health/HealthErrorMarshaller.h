@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/health/Health_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/health/Health_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_HEALTH_API HealthErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_HEALTH_API HealthErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

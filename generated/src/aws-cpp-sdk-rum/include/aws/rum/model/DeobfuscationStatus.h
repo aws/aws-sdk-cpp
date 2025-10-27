@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rum/CloudWatchRUM_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchRUM
-{
-namespace Model
-{
-  enum class DeobfuscationStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace CloudWatchRUM {
+namespace Model {
+enum class DeobfuscationStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace DeobfuscationStatusMapper
-{
+namespace DeobfuscationStatusMapper {
 AWS_CLOUDWATCHRUM_API DeobfuscationStatus GetDeobfuscationStatusForName(const Aws::String& name);
 
 AWS_CLOUDWATCHRUM_API Aws::String GetNameForDeobfuscationStatus(DeobfuscationStatus value);
-} // namespace DeobfuscationStatusMapper
-} // namespace Model
-} // namespace CloudWatchRUM
-} // namespace Aws
+}  // namespace DeobfuscationStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchRUM
+}  // namespace Aws

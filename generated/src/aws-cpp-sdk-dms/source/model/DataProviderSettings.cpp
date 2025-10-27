@@ -3,148 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/DataProviderSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/DataProviderSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-DataProviderSettings::DataProviderSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataProviderSettings::DataProviderSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DataProviderSettings& DataProviderSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RedshiftSettings"))
-  {
+DataProviderSettings& DataProviderSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RedshiftSettings")) {
     m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
     m_redshiftSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PostgreSqlSettings"))
-  {
+  if (jsonValue.ValueExists("PostgreSqlSettings")) {
     m_postgreSqlSettings = jsonValue.GetObject("PostgreSqlSettings");
     m_postgreSqlSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MySqlSettings"))
-  {
+  if (jsonValue.ValueExists("MySqlSettings")) {
     m_mySqlSettings = jsonValue.GetObject("MySqlSettings");
     m_mySqlSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OracleSettings"))
-  {
+  if (jsonValue.ValueExists("OracleSettings")) {
     m_oracleSettings = jsonValue.GetObject("OracleSettings");
     m_oracleSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MicrosoftSqlServerSettings"))
-  {
+  if (jsonValue.ValueExists("MicrosoftSqlServerSettings")) {
     m_microsoftSqlServerSettings = jsonValue.GetObject("MicrosoftSqlServerSettings");
     m_microsoftSqlServerSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocDbSettings"))
-  {
+  if (jsonValue.ValueExists("DocDbSettings")) {
     m_docDbSettings = jsonValue.GetObject("DocDbSettings");
     m_docDbSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MariaDbSettings"))
-  {
+  if (jsonValue.ValueExists("MariaDbSettings")) {
     m_mariaDbSettings = jsonValue.GetObject("MariaDbSettings");
     m_mariaDbSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IbmDb2LuwSettings"))
-  {
+  if (jsonValue.ValueExists("IbmDb2LuwSettings")) {
     m_ibmDb2LuwSettings = jsonValue.GetObject("IbmDb2LuwSettings");
     m_ibmDb2LuwSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IbmDb2zOsSettings"))
-  {
+  if (jsonValue.ValueExists("IbmDb2zOsSettings")) {
     m_ibmDb2zOsSettings = jsonValue.GetObject("IbmDb2zOsSettings");
     m_ibmDb2zOsSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MongoDbSettings"))
-  {
+  if (jsonValue.ValueExists("MongoDbSettings")) {
     m_mongoDbSettings = jsonValue.GetObject("MongoDbSettings");
     m_mongoDbSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataProviderSettings::Jsonize() const
-{
+JsonValue DataProviderSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_redshiftSettingsHasBeenSet)
-  {
-   payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
-
+  if (m_redshiftSettingsHasBeenSet) {
+    payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
   }
 
-  if(m_postgreSqlSettingsHasBeenSet)
-  {
-   payload.WithObject("PostgreSqlSettings", m_postgreSqlSettings.Jsonize());
-
+  if (m_postgreSqlSettingsHasBeenSet) {
+    payload.WithObject("PostgreSqlSettings", m_postgreSqlSettings.Jsonize());
   }
 
-  if(m_mySqlSettingsHasBeenSet)
-  {
-   payload.WithObject("MySqlSettings", m_mySqlSettings.Jsonize());
-
+  if (m_mySqlSettingsHasBeenSet) {
+    payload.WithObject("MySqlSettings", m_mySqlSettings.Jsonize());
   }
 
-  if(m_oracleSettingsHasBeenSet)
-  {
-   payload.WithObject("OracleSettings", m_oracleSettings.Jsonize());
-
+  if (m_oracleSettingsHasBeenSet) {
+    payload.WithObject("OracleSettings", m_oracleSettings.Jsonize());
   }
 
-  if(m_microsoftSqlServerSettingsHasBeenSet)
-  {
-   payload.WithObject("MicrosoftSqlServerSettings", m_microsoftSqlServerSettings.Jsonize());
-
+  if (m_microsoftSqlServerSettingsHasBeenSet) {
+    payload.WithObject("MicrosoftSqlServerSettings", m_microsoftSqlServerSettings.Jsonize());
   }
 
-  if(m_docDbSettingsHasBeenSet)
-  {
-   payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
-
+  if (m_docDbSettingsHasBeenSet) {
+    payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
   }
 
-  if(m_mariaDbSettingsHasBeenSet)
-  {
-   payload.WithObject("MariaDbSettings", m_mariaDbSettings.Jsonize());
-
+  if (m_mariaDbSettingsHasBeenSet) {
+    payload.WithObject("MariaDbSettings", m_mariaDbSettings.Jsonize());
   }
 
-  if(m_ibmDb2LuwSettingsHasBeenSet)
-  {
-   payload.WithObject("IbmDb2LuwSettings", m_ibmDb2LuwSettings.Jsonize());
-
+  if (m_ibmDb2LuwSettingsHasBeenSet) {
+    payload.WithObject("IbmDb2LuwSettings", m_ibmDb2LuwSettings.Jsonize());
   }
 
-  if(m_ibmDb2zOsSettingsHasBeenSet)
-  {
-   payload.WithObject("IbmDb2zOsSettings", m_ibmDb2zOsSettings.Jsonize());
-
+  if (m_ibmDb2zOsSettingsHasBeenSet) {
+    payload.WithObject("IbmDb2zOsSettings", m_ibmDb2zOsSettings.Jsonize());
   }
 
-  if(m_mongoDbSettingsHasBeenSet)
-  {
-   payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
-
+  if (m_mongoDbSettingsHasBeenSet) {
+    payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

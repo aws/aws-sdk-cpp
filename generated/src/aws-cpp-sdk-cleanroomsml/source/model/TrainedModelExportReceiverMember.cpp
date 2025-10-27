@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-TrainedModelExportReceiverMember::TrainedModelExportReceiverMember(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrainedModelExportReceiverMember::TrainedModelExportReceiverMember(JsonView jsonValue) { *this = jsonValue; }
 
-TrainedModelExportReceiverMember& TrainedModelExportReceiverMember::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+TrainedModelExportReceiverMember& TrainedModelExportReceiverMember::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrainedModelExportReceiverMember::Jsonize() const
-{
+JsonValue TrainedModelExportReceiverMember::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/SortCriterion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/SortCriterion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-SortCriterion::SortCriterion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SortCriterion::SortCriterion(JsonView jsonValue) { *this = jsonValue; }
 
-SortCriterion& SortCriterion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldName"))
-  {
+SortCriterion& SortCriterion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldName")) {
     m_fieldName = jsonValue.GetString("FieldName");
     m_fieldNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sort"))
-  {
+  if (jsonValue.ValueExists("Sort")) {
     m_sort = SortMapper::GetSortForName(jsonValue.GetString("Sort"));
     m_sortHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SortCriterion::Jsonize() const
-{
+JsonValue SortCriterion::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldNameHasBeenSet)
-  {
-   payload.WithString("FieldName", m_fieldName);
-
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("FieldName", m_fieldName);
   }
 
-  if(m_sortHasBeenSet)
-  {
-   payload.WithString("Sort", SortMapper::GetNameForSort(m_sort));
+  if (m_sortHasBeenSet) {
+    payload.WithString("Sort", SortMapper::GetNameForSort(m_sort));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

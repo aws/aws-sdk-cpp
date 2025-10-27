@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudHSM
-{
-enum class CloudHSMErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudHSM {
+enum class CloudHSMErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudHSMErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,10 @@ enum class CloudHSMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
 };
 
-class AWS_CLOUDHSM_API CloudHSMError : public Aws::Client::AWSError<CloudHSMErrors>
-{
-public:
+class AWS_CLOUDHSM_API CloudHSMError : public Aws::Client::AWSError<CloudHSMErrors> {
+ public:
   CloudHSMError() {}
   CloudHSMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
   CloudHSMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
@@ -63,10 +58,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudHSMErrorMapper
-{
-  AWS_CLOUDHSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudHSMErrorMapper {
+AWS_CLOUDHSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudHSM
-} // namespace Aws
+}  // namespace CloudHSM
+}  // namespace Aws

@@ -12,51 +12,34 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProfileRequest::SerializePayload() const
-{
+Aws::String UpdateProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("profileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("profileId", m_profileId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("email", m_email);
   }
 
-  if(m_phoneHasBeenSet)
-  {
-   payload.WithString("phone", m_phone);
-
+  if (m_phoneHasBeenSet) {
+    payload.WithString("phone", m_phone);
   }
 
-  if(m_businessNameHasBeenSet)
-  {
-   payload.WithString("businessName", m_businessName);
-
+  if (m_businessNameHasBeenSet) {
+    payload.WithString("businessName", m_businessName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateProfileRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateProfileRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.UpdateProfile"));
   return headers;
-
 }
-
-
-
-

@@ -12,30 +12,20 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateAgentKnowledgeBaseRequest::SerializePayload() const
-{
+Aws::String AssociateAgentKnowledgeBaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_knowledgeBaseStateHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
+  if (m_knowledgeBaseStateHasBeenSet) {
+    payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

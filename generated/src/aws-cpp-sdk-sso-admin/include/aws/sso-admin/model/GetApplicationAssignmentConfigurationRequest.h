@@ -4,56 +4,57 @@
  */
 
 #pragma once
-#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdminRequest.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
+/**
+ */
+class GetApplicationAssignmentConfigurationRequest : public SSOAdminRequest {
+ public:
+  AWS_SSOADMIN_API GetApplicationAssignmentConfigurationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetApplicationAssignmentConfiguration"; }
+
+  AWS_SSOADMIN_API Aws::String SerializePayload() const override;
+
+  AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Specifies the ARN of the application. For more information about ARNs, see <a
+   * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+   * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+   * Services General Reference</i>.</p>
    */
-  class GetApplicationAssignmentConfigurationRequest : public SSOAdminRequest
-  {
-  public:
-    AWS_SSOADMIN_API GetApplicationAssignmentConfigurationRequest() = default;
+  inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
+  inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+  template <typename ApplicationArnT = Aws::String>
+  void SetApplicationArn(ApplicationArnT&& value) {
+    m_applicationArnHasBeenSet = true;
+    m_applicationArn = std::forward<ApplicationArnT>(value);
+  }
+  template <typename ApplicationArnT = Aws::String>
+  GetApplicationAssignmentConfigurationRequest& WithApplicationArn(ApplicationArnT&& value) {
+    SetApplicationArn(std::forward<ApplicationArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_applicationArn;
+  bool m_applicationArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetApplicationAssignmentConfiguration"; }
-
-    AWS_SSOADMIN_API Aws::String SerializePayload() const override;
-
-    AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Specifies the ARN of the application. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
-     */
-    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
-    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    template<typename ApplicationArnT = Aws::String>
-    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
-    template<typename ApplicationArnT = Aws::String>
-    GetApplicationAssignmentConfigurationRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

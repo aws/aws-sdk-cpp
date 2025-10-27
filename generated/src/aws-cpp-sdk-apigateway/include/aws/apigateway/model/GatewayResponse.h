@@ -6,139 +6,172 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/GatewayResponseType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace APIGateway {
+namespace Model {
 
+/**
+ * <p>A gateway response of a given response type and status code, with optional
+ * response parameters and mapping templates.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponse">AWS
+ * API Reference</a></p>
+ */
+class GatewayResponse {
+ public:
+  AWS_APIGATEWAY_API GatewayResponse() = default;
+  AWS_APIGATEWAY_API GatewayResponse(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APIGATEWAY_API GatewayResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A gateway response of a given response type and status code, with optional
-   * response parameters and mapping templates.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponse">AWS
-   * API Reference</a></p>
+   * <p>The response type of the associated GatewayResponse.</p>
    */
-  class GatewayResponse
-  {
-  public:
-    AWS_APIGATEWAY_API GatewayResponse() = default;
-    AWS_APIGATEWAY_API GatewayResponse(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APIGATEWAY_API GatewayResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline GatewayResponseType GetResponseType() const { return m_responseType; }
+  inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
+  inline void SetResponseType(GatewayResponseType value) {
+    m_responseTypeHasBeenSet = true;
+    m_responseType = value;
+  }
+  inline GatewayResponse& WithResponseType(GatewayResponseType value) {
+    SetResponseType(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The HTTP status code for this GatewayResponse.</p>
+   */
+  inline const Aws::String& GetStatusCode() const { return m_statusCode; }
+  inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+  template <typename StatusCodeT = Aws::String>
+  void SetStatusCode(StatusCodeT&& value) {
+    m_statusCodeHasBeenSet = true;
+    m_statusCode = std::forward<StatusCodeT>(value);
+  }
+  template <typename StatusCodeT = Aws::String>
+  GatewayResponse& WithStatusCode(StatusCodeT&& value) {
+    SetStatusCode(std::forward<StatusCodeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The response type of the associated GatewayResponse.</p>
-     */
-    inline GatewayResponseType GetResponseType() const { return m_responseType; }
-    inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
-    inline void SetResponseType(GatewayResponseType value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
-    inline GatewayResponse& WithResponseType(GatewayResponseType value) { SetResponseType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Response parameters (paths, query strings and headers) of the GatewayResponse
+   * as a string-to-string map of key-value pairs.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetResponseParameters() const { return m_responseParameters; }
+  inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
+  template <typename ResponseParametersT = Aws::Map<Aws::String, Aws::String>>
+  void SetResponseParameters(ResponseParametersT&& value) {
+    m_responseParametersHasBeenSet = true;
+    m_responseParameters = std::forward<ResponseParametersT>(value);
+  }
+  template <typename ResponseParametersT = Aws::Map<Aws::String, Aws::String>>
+  GatewayResponse& WithResponseParameters(ResponseParametersT&& value) {
+    SetResponseParameters(std::forward<ResponseParametersT>(value));
+    return *this;
+  }
+  template <typename ResponseParametersKeyT = Aws::String, typename ResponseParametersValueT = Aws::String>
+  GatewayResponse& AddResponseParameters(ResponseParametersKeyT&& key, ResponseParametersValueT&& value) {
+    m_responseParametersHasBeenSet = true;
+    m_responseParameters.emplace(std::forward<ResponseParametersKeyT>(key), std::forward<ResponseParametersValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The HTTP status code for this GatewayResponse.</p>
-     */
-    inline const Aws::String& GetStatusCode() const { return m_statusCode; }
-    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    template<typename StatusCodeT = Aws::String>
-    void SetStatusCode(StatusCodeT&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::forward<StatusCodeT>(value); }
-    template<typename StatusCodeT = Aws::String>
-    GatewayResponse& WithStatusCode(StatusCodeT&& value) { SetStatusCode(std::forward<StatusCodeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Response templates of the GatewayResponse as a string-to-string map of
+   * key-value pairs.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetResponseTemplates() const { return m_responseTemplates; }
+  inline bool ResponseTemplatesHasBeenSet() const { return m_responseTemplatesHasBeenSet; }
+  template <typename ResponseTemplatesT = Aws::Map<Aws::String, Aws::String>>
+  void SetResponseTemplates(ResponseTemplatesT&& value) {
+    m_responseTemplatesHasBeenSet = true;
+    m_responseTemplates = std::forward<ResponseTemplatesT>(value);
+  }
+  template <typename ResponseTemplatesT = Aws::Map<Aws::String, Aws::String>>
+  GatewayResponse& WithResponseTemplates(ResponseTemplatesT&& value) {
+    SetResponseTemplates(std::forward<ResponseTemplatesT>(value));
+    return *this;
+  }
+  template <typename ResponseTemplatesKeyT = Aws::String, typename ResponseTemplatesValueT = Aws::String>
+  GatewayResponse& AddResponseTemplates(ResponseTemplatesKeyT&& key, ResponseTemplatesValueT&& value) {
+    m_responseTemplatesHasBeenSet = true;
+    m_responseTemplates.emplace(std::forward<ResponseTemplatesKeyT>(key), std::forward<ResponseTemplatesValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Response parameters (paths, query strings and headers) of the GatewayResponse
-     * as a string-to-string map of key-value pairs.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResponseParameters() const { return m_responseParameters; }
-    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
-    template<typename ResponseParametersT = Aws::Map<Aws::String, Aws::String>>
-    void SetResponseParameters(ResponseParametersT&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::forward<ResponseParametersT>(value); }
-    template<typename ResponseParametersT = Aws::Map<Aws::String, Aws::String>>
-    GatewayResponse& WithResponseParameters(ResponseParametersT&& value) { SetResponseParameters(std::forward<ResponseParametersT>(value)); return *this;}
-    template<typename ResponseParametersKeyT = Aws::String, typename ResponseParametersValueT = Aws::String>
-    GatewayResponse& AddResponseParameters(ResponseParametersKeyT&& key, ResponseParametersValueT&& value) {
-      m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::forward<ResponseParametersKeyT>(key), std::forward<ResponseParametersValueT>(value)); return *this;
-    }
-    ///@}
+  ///@{
+  /**
+   * <p>A Boolean flag to indicate whether this GatewayResponse is the default
+   * gateway response (<code>true</code>) or not (<code>false</code>). A default
+   * gateway response is one generated by API Gateway without any customization by an
+   * API developer. </p>
+   */
+  inline bool GetDefaultResponse() const { return m_defaultResponse; }
+  inline bool DefaultResponseHasBeenSet() const { return m_defaultResponseHasBeenSet; }
+  inline void SetDefaultResponse(bool value) {
+    m_defaultResponseHasBeenSet = true;
+    m_defaultResponse = value;
+  }
+  inline GatewayResponse& WithDefaultResponse(bool value) {
+    SetDefaultResponse(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Response templates of the GatewayResponse as a string-to-string map of
-     * key-value pairs.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResponseTemplates() const { return m_responseTemplates; }
-    inline bool ResponseTemplatesHasBeenSet() const { return m_responseTemplatesHasBeenSet; }
-    template<typename ResponseTemplatesT = Aws::Map<Aws::String, Aws::String>>
-    void SetResponseTemplates(ResponseTemplatesT&& value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates = std::forward<ResponseTemplatesT>(value); }
-    template<typename ResponseTemplatesT = Aws::Map<Aws::String, Aws::String>>
-    GatewayResponse& WithResponseTemplates(ResponseTemplatesT&& value) { SetResponseTemplates(std::forward<ResponseTemplatesT>(value)); return *this;}
-    template<typename ResponseTemplatesKeyT = Aws::String, typename ResponseTemplatesValueT = Aws::String>
-    GatewayResponse& AddResponseTemplates(ResponseTemplatesKeyT&& key, ResponseTemplatesValueT&& value) {
-      m_responseTemplatesHasBeenSet = true; m_responseTemplates.emplace(std::forward<ResponseTemplatesKeyT>(key), std::forward<ResponseTemplatesValueT>(value)); return *this;
-    }
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>A Boolean flag to indicate whether this GatewayResponse is the default
-     * gateway response (<code>true</code>) or not (<code>false</code>). A default
-     * gateway response is one generated by API Gateway without any customization by an
-     * API developer. </p>
-     */
-    inline bool GetDefaultResponse() const { return m_defaultResponse; }
-    inline bool DefaultResponseHasBeenSet() const { return m_defaultResponseHasBeenSet; }
-    inline void SetDefaultResponse(bool value) { m_defaultResponseHasBeenSet = true; m_defaultResponse = value; }
-    inline GatewayResponse& WithDefaultResponse(bool value) { SetDefaultResponse(value); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GatewayResponse& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
+  bool m_responseTypeHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GatewayResponse& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_statusCode;
+  bool m_statusCodeHasBeenSet = false;
 
-    GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
-    bool m_responseTypeHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_responseParameters;
+  bool m_responseParametersHasBeenSet = false;
 
-    Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_responseTemplates;
+  bool m_responseTemplatesHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet = false;
+  bool m_defaultResponse{false};
+  bool m_defaultResponseHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    bool m_defaultResponse{false};
-    bool m_defaultResponseHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

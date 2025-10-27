@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudtrail/model/DescribeQueryResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,68 +17,53 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeQueryResult& DescribeQueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeQueryResult& DescribeQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("QueryId"))
-  {
+  if (jsonValue.ValueExists("QueryId")) {
     m_queryId = jsonValue.GetString("QueryId");
     m_queryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryString"))
-  {
+  if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
     m_queryStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryStatus"))
-  {
+  if (jsonValue.ValueExists("QueryStatus")) {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
     m_queryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryStatistics"))
-  {
+  if (jsonValue.ValueExists("QueryStatistics")) {
     m_queryStatistics = jsonValue.GetObject("QueryStatistics");
     m_queryStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeliveryS3Uri"))
-  {
+  if (jsonValue.ValueExists("DeliveryS3Uri")) {
     m_deliveryS3Uri = jsonValue.GetString("DeliveryS3Uri");
     m_deliveryS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeliveryStatus"))
-  {
+  if (jsonValue.ValueExists("DeliveryStatus")) {
     m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
     m_deliveryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Prompt"))
-  {
+  if (jsonValue.ValueExists("Prompt")) {
     m_prompt = jsonValue.GetString("Prompt");
     m_promptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventDataStoreOwnerAccountId"))
-  {
+  if (jsonValue.ValueExists("EventDataStoreOwnerAccountId")) {
     m_eventDataStoreOwnerAccountId = jsonValue.GetString("EventDataStoreOwnerAccountId");
     m_eventDataStoreOwnerAccountIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

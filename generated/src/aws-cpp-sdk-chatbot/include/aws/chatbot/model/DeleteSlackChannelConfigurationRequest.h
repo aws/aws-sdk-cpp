@@ -4,52 +4,53 @@
  */
 
 #pragma once
-#include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/chatbot/ChatbotRequest.h>
+#include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
+/**
+ */
+class DeleteSlackChannelConfigurationRequest : public ChatbotRequest {
+ public:
+  AWS_CHATBOT_API DeleteSlackChannelConfigurationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteSlackChannelConfiguration"; }
+
+  AWS_CHATBOT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to
+   * delete.</p>
    */
-  class DeleteSlackChannelConfigurationRequest : public ChatbotRequest
-  {
-  public:
-    AWS_CHATBOT_API DeleteSlackChannelConfigurationRequest() = default;
+  inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
+  inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
+  template <typename ChatConfigurationArnT = Aws::String>
+  void SetChatConfigurationArn(ChatConfigurationArnT&& value) {
+    m_chatConfigurationArnHasBeenSet = true;
+    m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value);
+  }
+  template <typename ChatConfigurationArnT = Aws::String>
+  DeleteSlackChannelConfigurationRequest& WithChatConfigurationArn(ChatConfigurationArnT&& value) {
+    SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_chatConfigurationArn;
+  bool m_chatConfigurationArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteSlackChannelConfiguration"; }
-
-    AWS_CHATBOT_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to
-     * delete.</p>
-     */
-    inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
-    inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-    template<typename ChatConfigurationArnT = Aws::String>
-    void SetChatConfigurationArn(ChatConfigurationArnT&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value); }
-    template<typename ChatConfigurationArnT = Aws::String>
-    DeleteSlackChannelConfigurationRequest& WithChatConfigurationArn(ChatConfigurationArnT&& value) { SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_chatConfigurationArn;
-    bool m_chatConfigurationArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

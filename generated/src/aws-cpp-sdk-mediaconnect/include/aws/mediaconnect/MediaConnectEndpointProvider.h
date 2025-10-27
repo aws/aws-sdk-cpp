@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/mediaconnect/MediaConnectEndpointRules.h>
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MediaConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MediaConnectDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MEDIACONNECT_API MediaConnectEndpointProvider : public MediaConnectDefaultEpProviderBase
-{
-public:
-    using MediaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MEDIACONNECT_API MediaConnectEndpointProvider : public MediaConnectDefaultEpProviderBase {
+ public:
+  using MediaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MediaConnectEndpointProvider()
-      : MediaConnectDefaultEpProviderBase(Aws::MediaConnect::MediaConnectEndpointRules::GetRulesBlob(), Aws::MediaConnect::MediaConnectEndpointRules::RulesBlobSize)
-    {}
+  MediaConnectEndpointProvider()
+      : MediaConnectDefaultEpProviderBase(Aws::MediaConnect::MediaConnectEndpointRules::GetRulesBlob(),
+                                          Aws::MediaConnect::MediaConnectEndpointRules::RulesBlobSize) {}
 
-    ~MediaConnectEndpointProvider()
-    {
-    }
+  ~MediaConnectEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MediaConnect
+}  // namespace Aws

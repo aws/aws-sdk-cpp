@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_MARKETPLACEMETERING_API MarketplaceMeteringErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_MARKETPLACEMETERING_API MarketplaceMeteringErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

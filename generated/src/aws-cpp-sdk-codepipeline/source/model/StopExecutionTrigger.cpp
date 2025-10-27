@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-StopExecutionTrigger::StopExecutionTrigger(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StopExecutionTrigger::StopExecutionTrigger(JsonView jsonValue) { *this = jsonValue; }
 
-StopExecutionTrigger& StopExecutionTrigger::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("reason"))
-  {
+StopExecutionTrigger& StopExecutionTrigger::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StopExecutionTrigger::Jsonize() const
-{
+JsonValue StopExecutionTrigger::Jsonize() const {
   JsonValue payload;
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

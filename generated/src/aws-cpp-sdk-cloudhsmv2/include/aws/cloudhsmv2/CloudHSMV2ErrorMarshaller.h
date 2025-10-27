@@ -8,16 +8,13 @@
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_CLOUDHSMV2_API CloudHSMV2ErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_CLOUDHSMV2_API CloudHSMV2ErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
-{
+Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateAvailabilityOptions&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_multiAZHasBeenSet)
-  {
+  if (m_multiAZHasBeenSet) {
     ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateAvailabilityOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateAvailabilityOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

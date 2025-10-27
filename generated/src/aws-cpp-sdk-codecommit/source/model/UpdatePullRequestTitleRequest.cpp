@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePullRequestTitleRequest::SerializePayload() const
-{
+Aws::String UpdatePullRequestTitleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pullRequestIdHasBeenSet)
-  {
-   payload.WithString("pullRequestId", m_pullRequestId);
-
+  if (m_pullRequestIdHasBeenSet) {
+    payload.WithString("pullRequestId", m_pullRequestId);
   }
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("title", m_title);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdatePullRequestTitleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdatePullRequestTitleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.UpdatePullRequestTitle"));
   return headers;
-
 }
-
-
-
-

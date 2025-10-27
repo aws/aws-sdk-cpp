@@ -10,40 +10,31 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeStackResourceDriftsRequest::SerializePayload() const
-{
+Aws::String DescribeStackResourceDriftsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeStackResourceDrifts&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_stackResourceDriftStatusFiltersHasBeenSet)
-  {
-    if (m_stackResourceDriftStatusFilters.empty())
-    {
+  if (m_stackResourceDriftStatusFiltersHasBeenSet) {
+    if (m_stackResourceDriftStatusFilters.empty()) {
       ss << "StackResourceDriftStatusFilters=&";
-    }
-    else
-    {
+    } else {
       unsigned stackResourceDriftStatusFiltersCount = 1;
-      for(auto& item : m_stackResourceDriftStatusFilters)
-      {
+      for (auto& item : m_stackResourceDriftStatusFilters) {
         ss << "StackResourceDriftStatusFilters.member." << stackResourceDriftStatusFiltersCount << "="
-            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item)) << "&";
+           << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item)) << "&";
         stackResourceDriftStatusFiltersCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -51,8 +42,4 @@ Aws::String DescribeStackResourceDriftsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeStackResourceDriftsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeStackResourceDriftsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

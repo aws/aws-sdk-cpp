@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mailmanager/model/GetArchiveSearchResultsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mailmanager/model/GetArchiveSearchResultsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetArchiveSearchResultsResult::GetArchiveSearchResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetArchiveSearchResultsResult::GetArchiveSearchResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetArchiveSearchResultsResult& GetArchiveSearchResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetArchiveSearchResultsResult& GetArchiveSearchResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Rows"))
-  {
+  if (jsonValue.ValueExists("Rows")) {
     Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
-    for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
-    {
+    for (unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex) {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());
     }
     m_rowsHasBeenSet = true;
@@ -37,12 +31,10 @@ GetArchiveSearchResultsResult& GetArchiveSearchResultsResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,74 +4,85 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
-  class DescribeRoleCustomPermissionResult
-  {
-  public:
-    AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult() = default;
-    AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
+class DescribeRoleCustomPermissionResult {
+ public:
+  AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult() = default;
+  AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_QUICKSIGHT_API DescribeRoleCustomPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The name of the custom permission that is described.</p>
+   */
+  inline const Aws::String& GetCustomPermissionsName() const { return m_customPermissionsName; }
+  template <typename CustomPermissionsNameT = Aws::String>
+  void SetCustomPermissionsName(CustomPermissionsNameT&& value) {
+    m_customPermissionsNameHasBeenSet = true;
+    m_customPermissionsName = std::forward<CustomPermissionsNameT>(value);
+  }
+  template <typename CustomPermissionsNameT = Aws::String>
+  DescribeRoleCustomPermissionResult& WithCustomPermissionsName(CustomPermissionsNameT&& value) {
+    SetCustomPermissionsName(std::forward<CustomPermissionsNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the custom permission that is described.</p>
-     */
-    inline const Aws::String& GetCustomPermissionsName() const { return m_customPermissionsName; }
-    template<typename CustomPermissionsNameT = Aws::String>
-    void SetCustomPermissionsName(CustomPermissionsNameT&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::forward<CustomPermissionsNameT>(value); }
-    template<typename CustomPermissionsNameT = Aws::String>
-    DescribeRoleCustomPermissionResult& WithCustomPermissionsName(CustomPermissionsNameT&& value) { SetCustomPermissionsName(std::forward<CustomPermissionsNameT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeRoleCustomPermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeRoleCustomPermissionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
-    inline int GetStatus() const { return m_status; }
-    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
-    inline DescribeRoleCustomPermissionResult& WithStatus(int value) { SetStatus(value); return *this;}
-    ///@}
-  private:
+  ///@{
+  /**
+   * <p>The HTTP status of the request.</p>
+   */
+  inline int GetStatus() const { return m_status; }
+  inline void SetStatus(int value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline DescribeRoleCustomPermissionResult& WithStatus(int value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_customPermissionsName;
+  bool m_customPermissionsNameHasBeenSet = false;
 
-    Aws::String m_customPermissionsName;
-    bool m_customPermissionsNameHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+  int m_status{0};
+  bool m_statusHasBeenSet = false;
+};
 
-    int m_status{0};
-    bool m_statusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

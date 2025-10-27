@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig(JsonView jsonValue) { *this = jsonValue; }
 
-PhoneNumberQuickConnectConfig& PhoneNumberQuickConnectConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PhoneNumber"))
-  {
+PhoneNumberQuickConnectConfig& PhoneNumberQuickConnectConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PhoneNumber")) {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
     m_phoneNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PhoneNumberQuickConnectConfig::Jsonize() const
-{
+JsonValue PhoneNumberQuickConnectConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_phoneNumberHasBeenSet)
-  {
-   payload.WithString("PhoneNumber", m_phoneNumber);
-
+  if (m_phoneNumberHasBeenSet) {
+    payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/AWSMigrationHub/MigrationHubRequest.h>
 
-namespace Aws
-{
-namespace MigrationHub
-{
-} // namespace MigrationHub
-} // namespace Aws
+namespace Aws {
+namespace MigrationHub {}  // namespace MigrationHub
+}  // namespace Aws

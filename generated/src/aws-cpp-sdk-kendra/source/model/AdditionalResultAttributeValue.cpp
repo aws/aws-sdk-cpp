@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/AdditionalResultAttributeValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/AdditionalResultAttributeValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-AdditionalResultAttributeValue::AdditionalResultAttributeValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdditionalResultAttributeValue::AdditionalResultAttributeValue(JsonView jsonValue) { *this = jsonValue; }
 
-AdditionalResultAttributeValue& AdditionalResultAttributeValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TextWithHighlightsValue"))
-  {
+AdditionalResultAttributeValue& AdditionalResultAttributeValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TextWithHighlightsValue")) {
     m_textWithHighlightsValue = jsonValue.GetObject("TextWithHighlightsValue");
     m_textWithHighlightsValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdditionalResultAttributeValue::Jsonize() const
-{
+JsonValue AdditionalResultAttributeValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_textWithHighlightsValueHasBeenSet)
-  {
-   payload.WithObject("TextWithHighlightsValue", m_textWithHighlightsValue.Jsonize());
-
+  if (m_textWithHighlightsValueHasBeenSet) {
+    payload.WithObject("TextWithHighlightsValue", m_textWithHighlightsValue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

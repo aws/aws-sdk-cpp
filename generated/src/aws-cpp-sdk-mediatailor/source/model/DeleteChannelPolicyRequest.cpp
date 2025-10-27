@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/DeleteChannelPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/DeleteChannelPolicyRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteChannelPolicyRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteChannelPolicyRequest::SerializePayload() const { return {}; }

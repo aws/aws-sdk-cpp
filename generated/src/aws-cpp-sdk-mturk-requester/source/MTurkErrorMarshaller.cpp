@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MTurk;
 
-AWSError<CoreErrors> MTurkErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MTurkErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MTurkErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

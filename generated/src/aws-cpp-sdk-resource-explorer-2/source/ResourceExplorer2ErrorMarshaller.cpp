@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ResourceExplorer2;
 
-AWSError<CoreErrors> ResourceExplorer2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ResourceExplorer2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ResourceExplorer2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

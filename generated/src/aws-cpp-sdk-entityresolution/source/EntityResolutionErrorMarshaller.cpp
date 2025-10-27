@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EntityResolution;
 
-AWSError<CoreErrors> EntityResolutionErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EntityResolutionErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EntityResolutionErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

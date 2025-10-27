@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/ConfigureHealthCheckRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/ConfigureHealthCheckRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String ConfigureHealthCheckRequest::SerializePayload() const
-{
+Aws::String ConfigureHealthCheckRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ConfigureHealthCheck&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_healthCheckHasBeenSet)
-  {
+  if (m_healthCheckHasBeenSet) {
     m_healthCheck.OutputToStream(ss, "HealthCheck");
   }
 
@@ -28,8 +25,4 @@ Aws::String ConfigureHealthCheckRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ConfigureHealthCheckRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ConfigureHealthCheckRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

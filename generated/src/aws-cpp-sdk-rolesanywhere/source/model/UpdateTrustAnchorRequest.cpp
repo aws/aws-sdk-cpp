@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rolesanywhere/model/UpdateTrustAnchorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rolesanywhere/model/UpdateTrustAnchorRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTrustAnchorRequest::SerializePayload() const
-{
+Aws::String UpdateTrustAnchorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

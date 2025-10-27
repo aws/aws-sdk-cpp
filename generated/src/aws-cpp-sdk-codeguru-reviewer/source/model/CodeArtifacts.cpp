@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-CodeArtifacts::CodeArtifacts(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeArtifacts::CodeArtifacts(JsonView jsonValue) { *this = jsonValue; }
 
-CodeArtifacts& CodeArtifacts::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceCodeArtifactsObjectKey"))
-  {
+CodeArtifacts& CodeArtifacts::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceCodeArtifactsObjectKey")) {
     m_sourceCodeArtifactsObjectKey = jsonValue.GetString("SourceCodeArtifactsObjectKey");
     m_sourceCodeArtifactsObjectKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BuildArtifactsObjectKey"))
-  {
+  if (jsonValue.ValueExists("BuildArtifactsObjectKey")) {
     m_buildArtifactsObjectKey = jsonValue.GetString("BuildArtifactsObjectKey");
     m_buildArtifactsObjectKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeArtifacts::Jsonize() const
-{
+JsonValue CodeArtifacts::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceCodeArtifactsObjectKeyHasBeenSet)
-  {
-   payload.WithString("SourceCodeArtifactsObjectKey", m_sourceCodeArtifactsObjectKey);
-
+  if (m_sourceCodeArtifactsObjectKeyHasBeenSet) {
+    payload.WithString("SourceCodeArtifactsObjectKey", m_sourceCodeArtifactsObjectKey);
   }
 
-  if(m_buildArtifactsObjectKeyHasBeenSet)
-  {
-   payload.WithString("BuildArtifactsObjectKey", m_buildArtifactsObjectKey);
-
+  if (m_buildArtifactsObjectKeyHasBeenSet) {
+    payload.WithString("BuildArtifactsObjectKey", m_buildArtifactsObjectKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Proton;
 
-AWSError<CoreErrors> ProtonErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ProtonErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ProtonErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

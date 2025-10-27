@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-Query::Query(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Query::Query(JsonView jsonValue) { *this = jsonValue; }
 
-Query& Query::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueryId"))
-  {
+Query& Query::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueryId")) {
     m_queryId = jsonValue.GetString("QueryId");
     m_queryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryStatus"))
-  {
+  if (jsonValue.ValueExists("QueryStatus")) {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
     m_queryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Query::Jsonize() const
-{
+JsonValue Query::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryIdHasBeenSet)
-  {
-   payload.WithString("QueryId", m_queryId);
-
+  if (m_queryIdHasBeenSet) {
+    payload.WithString("QueryId", m_queryId);
   }
 
-  if(m_queryStatusHasBeenSet)
-  {
-   payload.WithString("QueryStatus", QueryStatusMapper::GetNameForQueryStatus(m_queryStatus));
+  if (m_queryStatusHasBeenSet) {
+    payload.WithString("QueryStatus", QueryStatusMapper::GetNameForQueryStatus(m_queryStatus));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

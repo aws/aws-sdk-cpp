@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedBlockchainQuery
-{
-class ManagedBlockchainQueryEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ManagedBlockchainQuery {
+class ManagedBlockchainQueryEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ManagedBlockchainQuery
-} // namespace Aws
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

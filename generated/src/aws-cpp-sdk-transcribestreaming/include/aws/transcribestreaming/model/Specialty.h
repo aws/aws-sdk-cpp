@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
-  enum class Specialty
-  {
-    NOT_SET,
-    PRIMARYCARE,
-    CARDIOLOGY,
-    NEUROLOGY,
-    ONCOLOGY,
-    RADIOLOGY,
-    UROLOGY
-  };
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
+enum class Specialty { NOT_SET, PRIMARYCARE, CARDIOLOGY, NEUROLOGY, ONCOLOGY, RADIOLOGY, UROLOGY };
 
-namespace SpecialtyMapper
-{
+namespace SpecialtyMapper {
 AWS_TRANSCRIBESTREAMINGSERVICE_API Specialty GetSpecialtyForName(const Aws::String& name);
 
 AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::String GetNameForSpecialty(Specialty value);
-} // namespace SpecialtyMapper
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace SpecialtyMapper
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

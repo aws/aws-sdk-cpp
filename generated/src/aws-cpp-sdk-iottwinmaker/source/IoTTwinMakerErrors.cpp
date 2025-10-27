@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::IoTTwinMaker;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace IoTTwinMakerErrorMapper
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace IoTTwinMakerErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
@@ -26,42 +23,27 @@ static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QueryTimeoutExce
 static const int CONNECTOR_TIMEOUT_HASH = HashingUtils::HashString("ConnectorTimeoutException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CONNECTOR_FAILURE_HASH)
-  {
+  } else if (hashCode == CONNECTOR_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_FAILURE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == QUERY_TIMEOUT_HASH)
-  {
+  } else if (hashCode == QUERY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::QUERY_TIMEOUT), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CONNECTOR_TIMEOUT_HASH)
-  {
+  } else if (hashCode == CONNECTOR_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_TIMEOUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTTwinMakerErrorMapper
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace IoTTwinMakerErrorMapper
+}  // namespace IoTTwinMaker
+}  // namespace Aws

@@ -12,66 +12,46 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
-{
+Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_costCategoryArnHasBeenSet)
-  {
-   payload.WithString("CostCategoryArn", m_costCategoryArn);
-
+  if (m_costCategoryArnHasBeenSet) {
+    payload.WithString("CostCategoryArn", m_costCategoryArn);
   }
 
-  if(m_effectiveStartHasBeenSet)
-  {
-   payload.WithString("EffectiveStart", m_effectiveStart);
-
+  if (m_effectiveStartHasBeenSet) {
+    payload.WithString("EffectiveStart", m_effectiveStart);
   }
 
-  if(m_ruleVersionHasBeenSet)
-  {
-   payload.WithString("RuleVersion", CostCategoryRuleVersionMapper::GetNameForCostCategoryRuleVersion(m_ruleVersion));
+  if (m_ruleVersionHasBeenSet) {
+    payload.WithString("RuleVersion", CostCategoryRuleVersionMapper::GetNameForCostCategoryRuleVersion(m_ruleVersion));
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("DefaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("DefaultValue", m_defaultValue);
   }
 
-  if(m_splitChargeRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
-   for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
-   {
-     splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
-   }
-   payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
-
+  if (m_splitChargeRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+    for (unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex) {
+      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
+    }
+    payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateCostCategoryDefinitionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.UpdateCostCategoryDefinition"));
   return headers;
-
 }
-
-
-
-

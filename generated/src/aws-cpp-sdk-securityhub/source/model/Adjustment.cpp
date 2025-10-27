@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/Adjustment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/Adjustment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-Adjustment::Adjustment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Adjustment::Adjustment(JsonView jsonValue) { *this = jsonValue; }
 
-Adjustment& Adjustment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Metric"))
-  {
+Adjustment& Adjustment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Metric")) {
     m_metric = jsonValue.GetString("Metric");
     m_metricHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetString("Reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Adjustment::Jsonize() const
-{
+JsonValue Adjustment::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricHasBeenSet)
-  {
-   payload.WithString("Metric", m_metric);
-
+  if (m_metricHasBeenSet) {
+    payload.WithString("Metric", m_metric);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

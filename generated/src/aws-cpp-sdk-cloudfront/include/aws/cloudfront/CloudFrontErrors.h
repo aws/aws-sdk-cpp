@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudfront/CloudFront_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-enum class CloudFrontErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudFront {
+enum class CloudFrontErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudFrontErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudFrontErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_TOO_LARGE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_TOO_LARGE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CACHE_POLICY_ALREADY_EXISTS,
   CACHE_POLICY_IN_USE,
   CANNOT_CHANGE_IMMUTABLE_PUBLIC_KEY_FIELDS,
@@ -200,9 +197,8 @@ enum class CloudFrontErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_CLOUDFRONT_API CloudFrontError : public Aws::Client::AWSError<CloudFrontErrors>
-{
-public:
+class AWS_CLOUDFRONT_API CloudFrontError : public Aws::Client::AWSError<CloudFrontErrors> {
+ public:
   CloudFrontError() {}
   CloudFrontError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
   CloudFrontError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
@@ -213,10 +209,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudFrontErrorMapper
-{
-  AWS_CLOUDFRONT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudFrontErrorMapper {
+AWS_CLOUDFRONT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace CloudFront
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-NetworkInterface::NetworkInterface(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkInterface::NetworkInterface(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attachmentId"))
-  {
+NetworkInterface& NetworkInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attachmentId")) {
     m_attachmentId = jsonValue.GetString("attachmentId");
     m_attachmentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipv6Address"))
-  {
+  if (jsonValue.ValueExists("ipv6Address")) {
     m_ipv6Address = jsonValue.GetString("ipv6Address");
     m_ipv6AddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateIpv4Address"))
-  {
+  if (jsonValue.ValueExists("privateIpv4Address")) {
     m_privateIpv4Address = jsonValue.GetString("privateIpv4Address");
     m_privateIpv4AddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkInterface::Jsonize() const
-{
+JsonValue NetworkInterface::Jsonize() const {
   JsonValue payload;
 
-  if(m_attachmentIdHasBeenSet)
-  {
-   payload.WithString("attachmentId", m_attachmentId);
-
+  if (m_attachmentIdHasBeenSet) {
+    payload.WithString("attachmentId", m_attachmentId);
   }
 
-  if(m_ipv6AddressHasBeenSet)
-  {
-   payload.WithString("ipv6Address", m_ipv6Address);
-
+  if (m_ipv6AddressHasBeenSet) {
+    payload.WithString("ipv6Address", m_ipv6Address);
   }
 
-  if(m_privateIpv4AddressHasBeenSet)
-  {
-   payload.WithString("privateIpv4Address", m_privateIpv4Address);
-
+  if (m_privateIpv4AddressHasBeenSet) {
+    payload.WithString("privateIpv4Address", m_privateIpv4Address);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

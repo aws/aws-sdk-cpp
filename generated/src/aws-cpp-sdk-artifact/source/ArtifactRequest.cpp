@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/artifact/ArtifactRequest.h>
 
-namespace Aws
-{
-namespace Artifact
-{
-} // namespace Artifact
-} // namespace Aws
+namespace Aws {
+namespace Artifact {}  // namespace Artifact
+}  // namespace Aws

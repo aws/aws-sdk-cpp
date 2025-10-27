@@ -3,154 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/ReplicationStats.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/ReplicationStats.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-ReplicationStats::ReplicationStats(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplicationStats::ReplicationStats(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicationStats& ReplicationStats::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FullLoadProgressPercent"))
-  {
+ReplicationStats& ReplicationStats::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FullLoadProgressPercent")) {
     m_fullLoadProgressPercent = jsonValue.GetInteger("FullLoadProgressPercent");
     m_fullLoadProgressPercentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ElapsedTimeMillis"))
-  {
+  if (jsonValue.ValueExists("ElapsedTimeMillis")) {
     m_elapsedTimeMillis = jsonValue.GetInt64("ElapsedTimeMillis");
     m_elapsedTimeMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TablesLoaded"))
-  {
+  if (jsonValue.ValueExists("TablesLoaded")) {
     m_tablesLoaded = jsonValue.GetInteger("TablesLoaded");
     m_tablesLoadedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TablesLoading"))
-  {
+  if (jsonValue.ValueExists("TablesLoading")) {
     m_tablesLoading = jsonValue.GetInteger("TablesLoading");
     m_tablesLoadingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TablesQueued"))
-  {
+  if (jsonValue.ValueExists("TablesQueued")) {
     m_tablesQueued = jsonValue.GetInteger("TablesQueued");
     m_tablesQueuedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TablesErrored"))
-  {
+  if (jsonValue.ValueExists("TablesErrored")) {
     m_tablesErrored = jsonValue.GetInteger("TablesErrored");
     m_tablesErroredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FreshStartDate"))
-  {
+  if (jsonValue.ValueExists("FreshStartDate")) {
     m_freshStartDate = jsonValue.GetDouble("FreshStartDate");
     m_freshStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartDate"))
-  {
+  if (jsonValue.ValueExists("StartDate")) {
     m_startDate = jsonValue.GetDouble("StartDate");
     m_startDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StopDate"))
-  {
+  if (jsonValue.ValueExists("StopDate")) {
     m_stopDate = jsonValue.GetDouble("StopDate");
     m_stopDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FullLoadStartDate"))
-  {
+  if (jsonValue.ValueExists("FullLoadStartDate")) {
     m_fullLoadStartDate = jsonValue.GetDouble("FullLoadStartDate");
     m_fullLoadStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FullLoadFinishDate"))
-  {
+  if (jsonValue.ValueExists("FullLoadFinishDate")) {
     m_fullLoadFinishDate = jsonValue.GetDouble("FullLoadFinishDate");
     m_fullLoadFinishDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicationStats::Jsonize() const
-{
+JsonValue ReplicationStats::Jsonize() const {
   JsonValue payload;
 
-  if(m_fullLoadProgressPercentHasBeenSet)
-  {
-   payload.WithInteger("FullLoadProgressPercent", m_fullLoadProgressPercent);
-
+  if (m_fullLoadProgressPercentHasBeenSet) {
+    payload.WithInteger("FullLoadProgressPercent", m_fullLoadProgressPercent);
   }
 
-  if(m_elapsedTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("ElapsedTimeMillis", m_elapsedTimeMillis);
-
+  if (m_elapsedTimeMillisHasBeenSet) {
+    payload.WithInt64("ElapsedTimeMillis", m_elapsedTimeMillis);
   }
 
-  if(m_tablesLoadedHasBeenSet)
-  {
-   payload.WithInteger("TablesLoaded", m_tablesLoaded);
-
+  if (m_tablesLoadedHasBeenSet) {
+    payload.WithInteger("TablesLoaded", m_tablesLoaded);
   }
 
-  if(m_tablesLoadingHasBeenSet)
-  {
-   payload.WithInteger("TablesLoading", m_tablesLoading);
-
+  if (m_tablesLoadingHasBeenSet) {
+    payload.WithInteger("TablesLoading", m_tablesLoading);
   }
 
-  if(m_tablesQueuedHasBeenSet)
-  {
-   payload.WithInteger("TablesQueued", m_tablesQueued);
-
+  if (m_tablesQueuedHasBeenSet) {
+    payload.WithInteger("TablesQueued", m_tablesQueued);
   }
 
-  if(m_tablesErroredHasBeenSet)
-  {
-   payload.WithInteger("TablesErrored", m_tablesErrored);
-
+  if (m_tablesErroredHasBeenSet) {
+    payload.WithInteger("TablesErrored", m_tablesErrored);
   }
 
-  if(m_freshStartDateHasBeenSet)
-  {
-   payload.WithDouble("FreshStartDate", m_freshStartDate.SecondsWithMSPrecision());
+  if (m_freshStartDateHasBeenSet) {
+    payload.WithDouble("FreshStartDate", m_freshStartDate.SecondsWithMSPrecision());
   }
 
-  if(m_startDateHasBeenSet)
-  {
-   payload.WithDouble("StartDate", m_startDate.SecondsWithMSPrecision());
+  if (m_startDateHasBeenSet) {
+    payload.WithDouble("StartDate", m_startDate.SecondsWithMSPrecision());
   }
 
-  if(m_stopDateHasBeenSet)
-  {
-   payload.WithDouble("StopDate", m_stopDate.SecondsWithMSPrecision());
+  if (m_stopDateHasBeenSet) {
+    payload.WithDouble("StopDate", m_stopDate.SecondsWithMSPrecision());
   }
 
-  if(m_fullLoadStartDateHasBeenSet)
-  {
-   payload.WithDouble("FullLoadStartDate", m_fullLoadStartDate.SecondsWithMSPrecision());
+  if (m_fullLoadStartDateHasBeenSet) {
+    payload.WithDouble("FullLoadStartDate", m_fullLoadStartDate.SecondsWithMSPrecision());
   }
 
-  if(m_fullLoadFinishDateHasBeenSet)
-  {
-   payload.WithDouble("FullLoadFinishDate", m_fullLoadFinishDate.SecondsWithMSPrecision());
+  if (m_fullLoadFinishDateHasBeenSet) {
+    payload.WithDouble("FullLoadFinishDate", m_fullLoadFinishDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

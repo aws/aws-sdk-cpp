@@ -4,48 +4,38 @@
  */
 
 #include <aws/cloudfront/model/DnsConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-DnsConfiguration::DnsConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DnsConfiguration::DnsConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DnsConfiguration& DnsConfiguration::operator =(const XmlNode& xmlNode)
-{
+DnsConfiguration& DnsConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode domainNode = resultNode.FirstChild("Domain");
-    if(!domainNode.IsNull())
-    {
+    if (!domainNode.IsNull()) {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = DnsConfigurationStatusMapper::GetDnsConfigurationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status = DnsConfigurationStatusMapper::GetDnsConfigurationStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
-    if(!reasonNode.IsNull())
-    {
+    if (!reasonNode.IsNull()) {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
     }
@@ -54,29 +44,24 @@ DnsConfiguration& DnsConfiguration::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DnsConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void DnsConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_domainHasBeenSet)
-  {
-   XmlNode domainNode = parentNode.CreateChildElement("Domain");
-   domainNode.SetText(m_domain);
+  if (m_domainHasBeenSet) {
+    XmlNode domainNode = parentNode.CreateChildElement("Domain");
+    domainNode.SetText(m_domain);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   XmlNode statusNode = parentNode.CreateChildElement("Status");
-   statusNode.SetText(DnsConfigurationStatusMapper::GetNameForDnsConfigurationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    XmlNode statusNode = parentNode.CreateChildElement("Status");
+    statusNode.SetText(DnsConfigurationStatusMapper::GetNameForDnsConfigurationStatus(m_status));
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   XmlNode reasonNode = parentNode.CreateChildElement("Reason");
-   reasonNode.SetText(m_reason);
+  if (m_reasonHasBeenSet) {
+    XmlNode reasonNode = parentNode.CreateChildElement("Reason");
+    reasonNode.SetText(m_reason);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

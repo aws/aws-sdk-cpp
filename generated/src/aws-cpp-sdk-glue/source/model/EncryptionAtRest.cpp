@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/EncryptionAtRest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/EncryptionAtRest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-EncryptionAtRest::EncryptionAtRest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionAtRest::EncryptionAtRest(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionAtRest& EncryptionAtRest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CatalogEncryptionMode"))
-  {
+EncryptionAtRest& EncryptionAtRest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CatalogEncryptionMode")) {
     m_catalogEncryptionMode = CatalogEncryptionModeMapper::GetCatalogEncryptionModeForName(jsonValue.GetString("CatalogEncryptionMode"));
     m_catalogEncryptionModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SseAwsKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("SseAwsKmsKeyId")) {
     m_sseAwsKmsKeyId = jsonValue.GetString("SseAwsKmsKeyId");
     m_sseAwsKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CatalogEncryptionServiceRole"))
-  {
+  if (jsonValue.ValueExists("CatalogEncryptionServiceRole")) {
     m_catalogEncryptionServiceRole = jsonValue.GetString("CatalogEncryptionServiceRole");
     m_catalogEncryptionServiceRoleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionAtRest::Jsonize() const
-{
+JsonValue EncryptionAtRest::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogEncryptionModeHasBeenSet)
-  {
-   payload.WithString("CatalogEncryptionMode", CatalogEncryptionModeMapper::GetNameForCatalogEncryptionMode(m_catalogEncryptionMode));
+  if (m_catalogEncryptionModeHasBeenSet) {
+    payload.WithString("CatalogEncryptionMode", CatalogEncryptionModeMapper::GetNameForCatalogEncryptionMode(m_catalogEncryptionMode));
   }
 
-  if(m_sseAwsKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("SseAwsKmsKeyId", m_sseAwsKmsKeyId);
-
+  if (m_sseAwsKmsKeyIdHasBeenSet) {
+    payload.WithString("SseAwsKmsKeyId", m_sseAwsKmsKeyId);
   }
 
-  if(m_catalogEncryptionServiceRoleHasBeenSet)
-  {
-   payload.WithString("CatalogEncryptionServiceRole", m_catalogEncryptionServiceRole);
-
+  if (m_catalogEncryptionServiceRoleHasBeenSet) {
+    payload.WithString("CatalogEncryptionServiceRole", m_catalogEncryptionServiceRole);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

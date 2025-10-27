@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-PutMetadataFlagBody::PutMetadataFlagBody(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PutMetadataFlagBody::PutMetadataFlagBody(JsonView jsonValue) { *this = jsonValue; }
 
-PutMetadataFlagBody& PutMetadataFlagBody::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("newValue"))
-  {
+PutMetadataFlagBody& PutMetadataFlagBody::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("newValue")) {
     m_newValue = jsonValue.GetString("newValue");
     m_newValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PutMetadataFlagBody::Jsonize() const
-{
+JsonValue PutMetadataFlagBody::Jsonize() const {
   JsonValue payload;
 
-  if(m_newValueHasBeenSet)
-  {
-   payload.WithString("newValue", m_newValue);
-
+  if (m_newValueHasBeenSet) {
+    payload.WithString("newValue", m_newValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

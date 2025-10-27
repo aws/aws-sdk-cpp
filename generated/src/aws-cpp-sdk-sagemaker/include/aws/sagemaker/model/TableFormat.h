@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class TableFormat
-  {
-    NOT_SET,
-    Default,
-    Glue,
-    Iceberg
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class TableFormat { NOT_SET, Default, Glue, Iceberg };
 
-namespace TableFormatMapper
-{
+namespace TableFormatMapper {
 AWS_SAGEMAKER_API TableFormat GetTableFormatForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForTableFormat(TableFormat value);
-} // namespace TableFormatMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace TableFormatMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

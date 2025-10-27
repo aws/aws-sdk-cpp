@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/Macie2Request.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-  /**
-   */
-  class DisassociateFromAdministratorAccountRequest : public Macie2Request
-  {
-  public:
-    AWS_MACIE2_API DisassociateFromAdministratorAccountRequest() = default;
+/**
+ */
+class DisassociateFromAdministratorAccountRequest : public Macie2Request {
+ public:
+  AWS_MACIE2_API DisassociateFromAdministratorAccountRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DisassociateFromAdministratorAccount"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DisassociateFromAdministratorAccount"; }
 
-    AWS_MACIE2_API Aws::String SerializePayload() const override;
+  AWS_MACIE2_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

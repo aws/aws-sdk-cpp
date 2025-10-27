@@ -5,12 +5,8 @@
 
 #include <aws/elasticloadbalancing/ElasticLoadBalancingEndpointProvider.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+namespace Aws {
+namespace ElasticLoadBalancing {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

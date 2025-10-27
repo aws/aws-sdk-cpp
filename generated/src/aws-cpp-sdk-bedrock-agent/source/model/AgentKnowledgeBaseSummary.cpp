@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AgentKnowledgeBaseSummary& AgentKnowledgeBaseSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
+AgentKnowledgeBaseSummary& AgentKnowledgeBaseSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseState"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseState")) {
     m_knowledgeBaseState = KnowledgeBaseStateMapper::GetKnowledgeBaseStateForName(jsonValue.GetString("knowledgeBaseState"));
     m_knowledgeBaseStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentKnowledgeBaseSummary::Jsonize() const
-{
+JsonValue AgentKnowledgeBaseSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_knowledgeBaseStateHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
+  if (m_knowledgeBaseStateHasBeenSet) {
+    payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

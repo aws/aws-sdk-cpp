@@ -12,72 +12,50 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InitiateAuthRequest::SerializePayload() const
-{
+Aws::String InitiateAuthRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_authFlowHasBeenSet)
-  {
-   payload.WithString("AuthFlow", AuthFlowTypeMapper::GetNameForAuthFlowType(m_authFlow));
+  if (m_authFlowHasBeenSet) {
+    payload.WithString("AuthFlow", AuthFlowTypeMapper::GetNameForAuthFlowType(m_authFlow));
   }
 
-  if(m_authParametersHasBeenSet)
-  {
-   JsonValue authParametersJsonMap;
-   for(auto& authParametersItem : m_authParameters)
-   {
-     authParametersJsonMap.WithString(authParametersItem.first, authParametersItem.second);
-   }
-   payload.WithObject("AuthParameters", std::move(authParametersJsonMap));
-
+  if (m_authParametersHasBeenSet) {
+    JsonValue authParametersJsonMap;
+    for (auto& authParametersItem : m_authParameters) {
+      authParametersJsonMap.WithString(authParametersItem.first, authParametersItem.second);
+    }
+    payload.WithObject("AuthParameters", std::move(authParametersJsonMap));
   }
 
-  if(m_clientMetadataHasBeenSet)
-  {
-   JsonValue clientMetadataJsonMap;
-   for(auto& clientMetadataItem : m_clientMetadata)
-   {
-     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
-   }
-   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
-
+  if (m_clientMetadataHasBeenSet) {
+    JsonValue clientMetadataJsonMap;
+    for (auto& clientMetadataItem : m_clientMetadata) {
+      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+    }
+    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_analyticsMetadataHasBeenSet)
-  {
-   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
-
+  if (m_analyticsMetadataHasBeenSet) {
+    payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
   }
 
-  if(m_userContextDataHasBeenSet)
-  {
-   payload.WithObject("UserContextData", m_userContextData.Jsonize());
-
+  if (m_userContextDataHasBeenSet) {
+    payload.WithObject("UserContextData", m_userContextData.Jsonize());
   }
 
-  if(m_sessionHasBeenSet)
-  {
-   payload.WithString("Session", m_session);
-
+  if (m_sessionHasBeenSet) {
+    payload.WithString("Session", m_session);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection InitiateAuthRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection InitiateAuthRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.InitiateAuth"));
   return headers;
-
 }
-
-
-
-

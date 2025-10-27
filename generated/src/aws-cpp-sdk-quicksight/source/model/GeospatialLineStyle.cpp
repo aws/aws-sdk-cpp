@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/GeospatialLineStyle.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/GeospatialLineStyle.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-GeospatialLineStyle::GeospatialLineStyle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeospatialLineStyle::GeospatialLineStyle(JsonView jsonValue) { *this = jsonValue; }
 
-GeospatialLineStyle& GeospatialLineStyle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LineSymbolStyle"))
-  {
+GeospatialLineStyle& GeospatialLineStyle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LineSymbolStyle")) {
     m_lineSymbolStyle = jsonValue.GetObject("LineSymbolStyle");
     m_lineSymbolStyleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeospatialLineStyle::Jsonize() const
-{
+JsonValue GeospatialLineStyle::Jsonize() const {
   JsonValue payload;
 
-  if(m_lineSymbolStyleHasBeenSet)
-  {
-   payload.WithObject("LineSymbolStyle", m_lineSymbolStyle.Jsonize());
-
+  if (m_lineSymbolStyleHasBeenSet) {
+    payload.WithObject("LineSymbolStyle", m_lineSymbolStyle.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

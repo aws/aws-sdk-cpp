@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
-  enum class LicenseConversionTaskStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+enum class LicenseConversionTaskStatus { NOT_SET, IN_PROGRESS, SUCCEEDED, FAILED };
 
-namespace LicenseConversionTaskStatusMapper
-{
+namespace LicenseConversionTaskStatusMapper {
 AWS_LICENSEMANAGER_API LicenseConversionTaskStatus GetLicenseConversionTaskStatusForName(const Aws::String& name);
 
 AWS_LICENSEMANAGER_API Aws::String GetNameForLicenseConversionTaskStatus(LicenseConversionTaskStatus value);
-} // namespace LicenseConversionTaskStatusMapper
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace LicenseConversionTaskStatusMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

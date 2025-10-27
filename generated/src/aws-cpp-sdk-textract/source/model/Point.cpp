@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/Point.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/Point.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-Point::Point(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Point::Point(JsonView jsonValue) { *this = jsonValue; }
 
-Point& Point::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("X"))
-  {
+Point& Point::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("X")) {
     m_x = jsonValue.GetDouble("X");
     m_xHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Y"))
-  {
+  if (jsonValue.ValueExists("Y")) {
     m_y = jsonValue.GetDouble("Y");
     m_yHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Point::Jsonize() const
-{
+JsonValue Point::Jsonize() const {
   JsonValue payload;
 
-  if(m_xHasBeenSet)
-  {
-   payload.WithDouble("X", m_x);
-
+  if (m_xHasBeenSet) {
+    payload.WithDouble("X", m_x);
   }
 
-  if(m_yHasBeenSet)
-  {
-   payload.WithDouble("Y", m_y);
-
+  if (m_yHasBeenSet) {
+    payload.WithDouble("Y", m_y);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

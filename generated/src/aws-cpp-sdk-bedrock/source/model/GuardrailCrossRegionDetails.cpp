@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-GuardrailCrossRegionDetails::GuardrailCrossRegionDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailCrossRegionDetails::GuardrailCrossRegionDetails(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailCrossRegionDetails& GuardrailCrossRegionDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("guardrailProfileId"))
-  {
+GuardrailCrossRegionDetails& GuardrailCrossRegionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("guardrailProfileId")) {
     m_guardrailProfileId = jsonValue.GetString("guardrailProfileId");
     m_guardrailProfileIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("guardrailProfileArn"))
-  {
+  if (jsonValue.ValueExists("guardrailProfileArn")) {
     m_guardrailProfileArn = jsonValue.GetString("guardrailProfileArn");
     m_guardrailProfileArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailCrossRegionDetails::Jsonize() const
-{
+JsonValue GuardrailCrossRegionDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_guardrailProfileIdHasBeenSet)
-  {
-   payload.WithString("guardrailProfileId", m_guardrailProfileId);
-
+  if (m_guardrailProfileIdHasBeenSet) {
+    payload.WithString("guardrailProfileId", m_guardrailProfileId);
   }
 
-  if(m_guardrailProfileArnHasBeenSet)
-  {
-   payload.WithString("guardrailProfileArn", m_guardrailProfileArn);
-
+  if (m_guardrailProfileArnHasBeenSet) {
+    payload.WithString("guardrailProfileArn", m_guardrailProfileArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

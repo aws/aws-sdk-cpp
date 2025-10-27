@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-CodegenDependency::CodegenDependency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodegenDependency::CodegenDependency(JsonView jsonValue) { *this = jsonValue; }
 
-CodegenDependency& CodegenDependency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+CodegenDependency& CodegenDependency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedVersion"))
-  {
+  if (jsonValue.ValueExists("supportedVersion")) {
     m_supportedVersion = jsonValue.GetString("supportedVersion");
     m_supportedVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isSemVer"))
-  {
+  if (jsonValue.ValueExists("isSemVer")) {
     m_isSemVer = jsonValue.GetBool("isSemVer");
     m_isSemVerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodegenDependency::Jsonize() const
-{
+JsonValue CodegenDependency::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_supportedVersionHasBeenSet)
-  {
-   payload.WithString("supportedVersion", m_supportedVersion);
-
+  if (m_supportedVersionHasBeenSet) {
+    payload.WithString("supportedVersion", m_supportedVersion);
   }
 
-  if(m_isSemVerHasBeenSet)
-  {
-   payload.WithBool("isSemVer", m_isSemVer);
-
+  if (m_isSemVerHasBeenSet) {
+    payload.WithBool("isSemVer", m_isSemVer);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

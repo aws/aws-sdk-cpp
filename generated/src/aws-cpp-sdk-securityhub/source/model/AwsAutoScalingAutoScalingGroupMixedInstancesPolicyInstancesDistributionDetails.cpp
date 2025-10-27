@@ -3,104 +3,82 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails(JsonView jsonValue)
-{
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OnDemandAllocationStrategy"))
-  {
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails&
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OnDemandAllocationStrategy")) {
     m_onDemandAllocationStrategy = jsonValue.GetString("OnDemandAllocationStrategy");
     m_onDemandAllocationStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandBaseCapacity"))
-  {
+  if (jsonValue.ValueExists("OnDemandBaseCapacity")) {
     m_onDemandBaseCapacity = jsonValue.GetInteger("OnDemandBaseCapacity");
     m_onDemandBaseCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandPercentageAboveBaseCapacity"))
-  {
+  if (jsonValue.ValueExists("OnDemandPercentageAboveBaseCapacity")) {
     m_onDemandPercentageAboveBaseCapacity = jsonValue.GetInteger("OnDemandPercentageAboveBaseCapacity");
     m_onDemandPercentageAboveBaseCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SpotAllocationStrategy"))
-  {
+  if (jsonValue.ValueExists("SpotAllocationStrategy")) {
     m_spotAllocationStrategy = jsonValue.GetString("SpotAllocationStrategy");
     m_spotAllocationStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SpotInstancePools"))
-  {
+  if (jsonValue.ValueExists("SpotInstancePools")) {
     m_spotInstancePools = jsonValue.GetInteger("SpotInstancePools");
     m_spotInstancePoolsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SpotMaxPrice"))
-  {
+  if (jsonValue.ValueExists("SpotMaxPrice")) {
     m_spotMaxPrice = jsonValue.GetString("SpotMaxPrice");
     m_spotMaxPriceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::Jsonize() const
-{
+JsonValue AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_onDemandAllocationStrategyHasBeenSet)
-  {
-   payload.WithString("OnDemandAllocationStrategy", m_onDemandAllocationStrategy);
-
+  if (m_onDemandAllocationStrategyHasBeenSet) {
+    payload.WithString("OnDemandAllocationStrategy", m_onDemandAllocationStrategy);
   }
 
-  if(m_onDemandBaseCapacityHasBeenSet)
-  {
-   payload.WithInteger("OnDemandBaseCapacity", m_onDemandBaseCapacity);
-
+  if (m_onDemandBaseCapacityHasBeenSet) {
+    payload.WithInteger("OnDemandBaseCapacity", m_onDemandBaseCapacity);
   }
 
-  if(m_onDemandPercentageAboveBaseCapacityHasBeenSet)
-  {
-   payload.WithInteger("OnDemandPercentageAboveBaseCapacity", m_onDemandPercentageAboveBaseCapacity);
-
+  if (m_onDemandPercentageAboveBaseCapacityHasBeenSet) {
+    payload.WithInteger("OnDemandPercentageAboveBaseCapacity", m_onDemandPercentageAboveBaseCapacity);
   }
 
-  if(m_spotAllocationStrategyHasBeenSet)
-  {
-   payload.WithString("SpotAllocationStrategy", m_spotAllocationStrategy);
-
+  if (m_spotAllocationStrategyHasBeenSet) {
+    payload.WithString("SpotAllocationStrategy", m_spotAllocationStrategy);
   }
 
-  if(m_spotInstancePoolsHasBeenSet)
-  {
-   payload.WithInteger("SpotInstancePools", m_spotInstancePools);
-
+  if (m_spotInstancePoolsHasBeenSet) {
+    payload.WithInteger("SpotInstancePools", m_spotInstancePools);
   }
 
-  if(m_spotMaxPriceHasBeenSet)
-  {
-   payload.WithString("SpotMaxPrice", m_spotMaxPrice);
-
+  if (m_spotMaxPriceHasBeenSet) {
+    payload.WithString("SpotMaxPrice", m_spotMaxPrice);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

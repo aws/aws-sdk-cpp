@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PromptAgentResource::PromptAgentResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PromptAgentResource::PromptAgentResource(JsonView jsonValue) { *this = jsonValue; }
 
-PromptAgentResource& PromptAgentResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentIdentifier"))
-  {
+PromptAgentResource& PromptAgentResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentIdentifier")) {
     m_agentIdentifier = jsonValue.GetString("agentIdentifier");
     m_agentIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PromptAgentResource::Jsonize() const
-{
+JsonValue PromptAgentResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentIdentifierHasBeenSet)
-  {
-   payload.WithString("agentIdentifier", m_agentIdentifier);
-
+  if (m_agentIdentifierHasBeenSet) {
+    payload.WithString("agentIdentifier", m_agentIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

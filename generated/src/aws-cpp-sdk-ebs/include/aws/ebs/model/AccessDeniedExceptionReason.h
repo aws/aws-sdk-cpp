@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ebs/EBS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EBS
-{
-namespace Model
-{
-  enum class AccessDeniedExceptionReason
-  {
-    NOT_SET,
-    UNAUTHORIZED_ACCOUNT,
-    DEPENDENCY_ACCESS_DENIED
-  };
+namespace Aws {
+namespace EBS {
+namespace Model {
+enum class AccessDeniedExceptionReason { NOT_SET, UNAUTHORIZED_ACCOUNT, DEPENDENCY_ACCESS_DENIED };
 
-namespace AccessDeniedExceptionReasonMapper
-{
+namespace AccessDeniedExceptionReasonMapper {
 AWS_EBS_API AccessDeniedExceptionReason GetAccessDeniedExceptionReasonForName(const Aws::String& name);
 
 AWS_EBS_API Aws::String GetNameForAccessDeniedExceptionReason(AccessDeniedExceptionReason value);
-} // namespace AccessDeniedExceptionReasonMapper
-} // namespace Model
-} // namespace EBS
-} // namespace Aws
+}  // namespace AccessDeniedExceptionReasonMapper
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

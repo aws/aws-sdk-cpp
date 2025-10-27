@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/RemoteDebugConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/RemoteDebugConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-RemoteDebugConfig::RemoteDebugConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RemoteDebugConfig::RemoteDebugConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RemoteDebugConfig& RemoteDebugConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableRemoteDebug"))
-  {
+RemoteDebugConfig& RemoteDebugConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableRemoteDebug")) {
     m_enableRemoteDebug = jsonValue.GetBool("EnableRemoteDebug");
     m_enableRemoteDebugHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RemoteDebugConfig::Jsonize() const
-{
+JsonValue RemoteDebugConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableRemoteDebugHasBeenSet)
-  {
-   payload.WithBool("EnableRemoteDebug", m_enableRemoteDebug);
-
+  if (m_enableRemoteDebugHasBeenSet) {
+    payload.WithBool("EnableRemoteDebug", m_enableRemoteDebug);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

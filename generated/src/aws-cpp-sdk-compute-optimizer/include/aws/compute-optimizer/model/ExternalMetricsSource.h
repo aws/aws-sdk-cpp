@@ -7,27 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class ExternalMetricsSource
-  {
-    NOT_SET,
-    Datadog,
-    Dynatrace,
-    NewRelic,
-    Instana
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class ExternalMetricsSource { NOT_SET, Datadog, Dynatrace, NewRelic, Instana };
 
-namespace ExternalMetricsSourceMapper
-{
+namespace ExternalMetricsSourceMapper {
 AWS_COMPUTEOPTIMIZER_API ExternalMetricsSource GetExternalMetricsSourceForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForExternalMetricsSource(ExternalMetricsSource value);
-} // namespace ExternalMetricsSourceMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace ExternalMetricsSourceMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

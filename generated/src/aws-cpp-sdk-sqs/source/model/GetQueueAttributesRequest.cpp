@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sqs/model/GetQueueAttributesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sqs/model/GetQueueAttributesRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,27 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueueAttributesRequest::SerializePayload() const
-{
+Aws::String GetQueueAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queueUrlHasBeenSet)
-  {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+  if (m_queueUrlHasBeenSet) {
+    payload.WithString("QueueUrl", m_queueUrl);
   }
 
-  if(m_attributeNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
-   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
-   {
-     attributeNamesJsonList[attributeNamesIndex].AsString(QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
-   }
-   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
-
+  if (m_attributeNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
+    for (unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex) {
+      attributeNamesJsonList[attributeNamesIndex].AsString(
+          QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
+    }
+    payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetQueueAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetQueueAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.GetQueueAttributes"));
   return headers;
-
 }
-
-
-
-

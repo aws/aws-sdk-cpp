@@ -4,69 +4,55 @@
  */
 
 #include <aws/amplifyuibuilder/model/SortDirection.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+namespace SortDirectionMapper {
 
-namespace Aws
-{
-  namespace AmplifyUIBuilder
-  {
-    namespace Model
-    {
-      namespace SortDirectionMapper
-      {
+static const int ASC_HASH = HashingUtils::HashString("ASC");
+static const int DESC_HASH = HashingUtils::HashString("DESC");
 
-        static const int ASC_HASH = HashingUtils::HashString("ASC");
-        static const int DESC_HASH = HashingUtils::HashString("DESC");
+SortDirection GetSortDirectionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASC_HASH) {
+    return SortDirection::ASC;
+  } else if (hashCode == DESC_HASH) {
+    return SortDirection::DESC;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SortDirection>(hashCode);
+  }
 
+  return SortDirection::NOT_SET;
+}
 
-        SortDirection GetSortDirectionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ASC_HASH)
-          {
-            return SortDirection::ASC;
-          }
-          else if (hashCode == DESC_HASH)
-          {
-            return SortDirection::DESC;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SortDirection>(hashCode);
-          }
+Aws::String GetNameForSortDirection(SortDirection enumValue) {
+  switch (enumValue) {
+    case SortDirection::NOT_SET:
+      return {};
+    case SortDirection::ASC:
+      return "ASC";
+    case SortDirection::DESC:
+      return "DESC";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SortDirection::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSortDirection(SortDirection enumValue)
-        {
-          switch(enumValue)
-          {
-          case SortDirection::NOT_SET:
-            return {};
-          case SortDirection::ASC:
-            return "ASC";
-          case SortDirection::DESC:
-            return "DESC";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SortDirectionMapper
-    } // namespace Model
-  } // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace SortDirectionMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

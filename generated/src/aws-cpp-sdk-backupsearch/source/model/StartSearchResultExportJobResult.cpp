@@ -4,10 +4,10 @@
  */
 
 #include <aws/backupsearch/model/StartSearchResultExportJobResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSearchResultExportJobResult::StartSearchResultExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+StartSearchResultExportJobResult::StartSearchResultExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-StartSearchResultExportJobResult& StartSearchResultExportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+StartSearchResultExportJobResult& StartSearchResultExportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ExportJobArn"))
-  {
+  if (jsonValue.ValueExists("ExportJobArn")) {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");
     m_exportJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportJobIdentifier"))
-  {
+  if (jsonValue.ValueExists("ExportJobIdentifier")) {
     m_exportJobIdentifier = jsonValue.GetString("ExportJobIdentifier");
     m_exportJobIdentifierHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

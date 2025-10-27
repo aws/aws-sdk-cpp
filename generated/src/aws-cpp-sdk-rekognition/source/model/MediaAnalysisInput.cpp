@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/MediaAnalysisInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/MediaAnalysisInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-MediaAnalysisInput::MediaAnalysisInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaAnalysisInput::MediaAnalysisInput(JsonView jsonValue) { *this = jsonValue; }
 
-MediaAnalysisInput& MediaAnalysisInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Object"))
-  {
+MediaAnalysisInput& MediaAnalysisInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Object")) {
     m_s3Object = jsonValue.GetObject("S3Object");
     m_s3ObjectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaAnalysisInput::Jsonize() const
-{
+JsonValue MediaAnalysisInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ObjectHasBeenSet)
-  {
-   payload.WithObject("S3Object", m_s3Object.Jsonize());
-
+  if (m_s3ObjectHasBeenSet) {
+    payload.WithObject("S3Object", m_s3Object.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

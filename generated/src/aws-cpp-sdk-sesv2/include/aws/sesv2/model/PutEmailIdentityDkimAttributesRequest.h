@@ -4,71 +4,78 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/sesv2/SESV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2Request.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
+/**
+ * <p>A request to enable or disable DKIM signing of email that you send from an
+ * email identity.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimAttributesRequest">AWS
+ * API Reference</a></p>
+ */
+class PutEmailIdentityDkimAttributesRequest : public SESV2Request {
+ public:
+  AWS_SESV2_API PutEmailIdentityDkimAttributesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutEmailIdentityDkimAttributes"; }
+
+  AWS_SESV2_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>A request to enable or disable DKIM signing of email that you send from an
-   * email identity.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimAttributesRequest">AWS
-   * API Reference</a></p>
+   * <p>The email identity.</p>
    */
-  class PutEmailIdentityDkimAttributesRequest : public SESV2Request
-  {
-  public:
-    AWS_SESV2_API PutEmailIdentityDkimAttributesRequest() = default;
+  inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
+  inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
+  template <typename EmailIdentityT = Aws::String>
+  void SetEmailIdentity(EmailIdentityT&& value) {
+    m_emailIdentityHasBeenSet = true;
+    m_emailIdentity = std::forward<EmailIdentityT>(value);
+  }
+  template <typename EmailIdentityT = Aws::String>
+  PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(EmailIdentityT&& value) {
+    SetEmailIdentity(std::forward<EmailIdentityT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutEmailIdentityDkimAttributes"; }
+  ///@{
+  /**
+   * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
+   * this value <code>true</code>, then the messages that are sent from the identity
+   * are signed using DKIM. If you set this value to <code>false</code>, your
+   * messages are sent without DKIM signing.</p>
+   */
+  inline bool GetSigningEnabled() const { return m_signingEnabled; }
+  inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
+  inline void SetSigningEnabled(bool value) {
+    m_signingEnabledHasBeenSet = true;
+    m_signingEnabled = value;
+  }
+  inline PutEmailIdentityDkimAttributesRequest& WithSigningEnabled(bool value) {
+    SetSigningEnabled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_emailIdentity;
+  bool m_emailIdentityHasBeenSet = false;
 
-    AWS_SESV2_API Aws::String SerializePayload() const override;
+  bool m_signingEnabled{false};
+  bool m_signingEnabledHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The email identity.</p>
-     */
-    inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
-    inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-    template<typename EmailIdentityT = Aws::String>
-    void SetEmailIdentity(EmailIdentityT&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::forward<EmailIdentityT>(value); }
-    template<typename EmailIdentityT = Aws::String>
-    PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(EmailIdentityT&& value) { SetEmailIdentity(std::forward<EmailIdentityT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
-     * this value <code>true</code>, then the messages that are sent from the identity
-     * are signed using DKIM. If you set this value to <code>false</code>, your
-     * messages are sent without DKIM signing.</p>
-     */
-    inline bool GetSigningEnabled() const { return m_signingEnabled; }
-    inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
-    inline void SetSigningEnabled(bool value) { m_signingEnabledHasBeenSet = true; m_signingEnabled = value; }
-    inline PutEmailIdentityDkimAttributesRequest& WithSigningEnabled(bool value) { SetSigningEnabled(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet = false;
-
-    bool m_signingEnabled{false};
-    bool m_signingEnabledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf/model/WafAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/model/WafAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace WAF {
+namespace Model {
 
-WafAction::WafAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WafAction::WafAction(JsonView jsonValue) { *this = jsonValue; }
 
-WafAction& WafAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+WafAction& WafAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = WafActionTypeMapper::GetWafActionTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WafAction::Jsonize() const
-{
+JsonValue WafAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", WafActionTypeMapper::GetNameForWafActionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", WafActionTypeMapper::GetNameForWafActionType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

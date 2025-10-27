@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("VpcPeeringAuthorizations"))
-  {
+  if (jsonValue.ValueExists("VpcPeeringAuthorizations")) {
     Aws::Utils::Array<JsonView> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");
-    for(unsigned vpcPeeringAuthorizationsIndex = 0; vpcPeeringAuthorizationsIndex < vpcPeeringAuthorizationsJsonList.GetLength(); ++vpcPeeringAuthorizationsIndex)
-    {
+    for (unsigned vpcPeeringAuthorizationsIndex = 0; vpcPeeringAuthorizationsIndex < vpcPeeringAuthorizationsJsonList.GetLength();
+         ++vpcPeeringAuthorizationsIndex) {
       m_vpcPeeringAuthorizations.push_back(vpcPeeringAuthorizationsJsonList[vpcPeeringAuthorizationsIndex].AsObject());
     }
     m_vpcPeeringAuthorizationsHasBeenSet = true;
@@ -37,12 +35,10 @@ DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

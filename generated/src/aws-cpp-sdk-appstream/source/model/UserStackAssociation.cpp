@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-UserStackAssociation::UserStackAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserStackAssociation::UserStackAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-UserStackAssociation& UserStackAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StackName"))
-  {
+UserStackAssociation& UserStackAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StackName")) {
     m_stackName = jsonValue.GetString("StackName");
     m_stackNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserName"))
-  {
+  if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthenticationType"))
-  {
+  if (jsonValue.ValueExists("AuthenticationType")) {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SendEmailNotification"))
-  {
+  if (jsonValue.ValueExists("SendEmailNotification")) {
     m_sendEmailNotification = jsonValue.GetBool("SendEmailNotification");
     m_sendEmailNotificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserStackAssociation::Jsonize() const
-{
+JsonValue UserStackAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("StackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("StackName", m_stackName);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
-  if(m_sendEmailNotificationHasBeenSet)
-  {
-   payload.WithBool("SendEmailNotification", m_sendEmailNotification);
-
+  if (m_sendEmailNotificationHasBeenSet) {
+    payload.WithBool("SendEmailNotification", m_sendEmailNotification);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

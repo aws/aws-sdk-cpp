@@ -12,36 +12,24 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchAssociateResourcesToCustomLineItemRequest::SerializePayload() const
-{
+Aws::String BatchAssociateResourcesToCustomLineItemRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetArnHasBeenSet)
-  {
-   payload.WithString("TargetArn", m_targetArn);
-
+  if (m_targetArnHasBeenSet) {
+    payload.WithString("TargetArn", m_targetArn);
   }
 
-  if(m_resourceArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
-   for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
-   {
-     resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
-   }
-   payload.WithArray("ResourceArns", std::move(resourceArnsJsonList));
-
+  if (m_resourceArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+    for (unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex) {
+      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
+    }
+    payload.WithArray("ResourceArns", std::move(resourceArnsJsonList));
   }
 
-  if(m_billingPeriodRangeHasBeenSet)
-  {
-   payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
-
+  if (m_billingPeriodRangeHasBeenSet) {
+    payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

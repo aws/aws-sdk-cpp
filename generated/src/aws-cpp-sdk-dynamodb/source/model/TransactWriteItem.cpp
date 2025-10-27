@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/TransactWriteItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/TransactWriteItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-TransactWriteItem::TransactWriteItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransactWriteItem::TransactWriteItem(JsonView jsonValue) { *this = jsonValue; }
 
-TransactWriteItem& TransactWriteItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConditionCheck"))
-  {
+TransactWriteItem& TransactWriteItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConditionCheck")) {
     m_conditionCheck = jsonValue.GetObject("ConditionCheck");
     m_conditionCheckHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Put"))
-  {
+  if (jsonValue.ValueExists("Put")) {
     m_put = jsonValue.GetObject("Put");
     m_putHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Delete"))
-  {
+  if (jsonValue.ValueExists("Delete")) {
     m_delete = jsonValue.GetObject("Delete");
     m_deleteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Update"))
-  {
+  if (jsonValue.ValueExists("Update")) {
     m_update = jsonValue.GetObject("Update");
     m_updateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransactWriteItem::Jsonize() const
-{
+JsonValue TransactWriteItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionCheckHasBeenSet)
-  {
-   payload.WithObject("ConditionCheck", m_conditionCheck.Jsonize());
-
+  if (m_conditionCheckHasBeenSet) {
+    payload.WithObject("ConditionCheck", m_conditionCheck.Jsonize());
   }
 
-  if(m_putHasBeenSet)
-  {
-   payload.WithObject("Put", m_put.Jsonize());
-
+  if (m_putHasBeenSet) {
+    payload.WithObject("Put", m_put.Jsonize());
   }
 
-  if(m_deleteHasBeenSet)
-  {
-   payload.WithObject("Delete", m_delete.Jsonize());
-
+  if (m_deleteHasBeenSet) {
+    payload.WithObject("Delete", m_delete.Jsonize());
   }
 
-  if(m_updateHasBeenSet)
-  {
-   payload.WithObject("Update", m_update.Jsonize());
-
+  if (m_updateHasBeenSet) {
+    payload.WithObject("Update", m_update.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

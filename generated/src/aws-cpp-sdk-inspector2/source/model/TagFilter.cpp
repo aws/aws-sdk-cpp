@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/TagFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/TagFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-TagFilter::TagFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TagFilter::TagFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TagFilter& TagFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("comparison"))
-  {
+TagFilter& TagFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("comparison")) {
     m_comparison = TagComparisonMapper::GetTagComparisonForName(jsonValue.GetString("comparison"));
     m_comparisonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("key"))
-  {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TagFilter::Jsonize() const
-{
+JsonValue TagFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonHasBeenSet)
-  {
-   payload.WithString("comparison", TagComparisonMapper::GetNameForTagComparison(m_comparison));
+  if (m_comparisonHasBeenSet) {
+    payload.WithString("comparison", TagComparisonMapper::GetNameForTagComparison(m_comparison));
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

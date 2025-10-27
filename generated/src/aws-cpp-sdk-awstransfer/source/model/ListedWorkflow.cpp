@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ListedWorkflow::ListedWorkflow(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListedWorkflow::ListedWorkflow(JsonView jsonValue) { *this = jsonValue; }
 
-ListedWorkflow& ListedWorkflow::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WorkflowId"))
-  {
+ListedWorkflow& ListedWorkflow::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WorkflowId")) {
     m_workflowId = jsonValue.GetString("WorkflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListedWorkflow::Jsonize() const
-{
+JsonValue ListedWorkflow::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("WorkflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("WorkflowId", m_workflowId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

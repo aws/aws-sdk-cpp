@@ -5,12 +5,8 @@
 
 #include <aws/mediaconvert/MediaConvertEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaConvert
-} // namespace Aws
+namespace Aws {
+namespace MediaConvert {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaConvert
+}  // namespace Aws

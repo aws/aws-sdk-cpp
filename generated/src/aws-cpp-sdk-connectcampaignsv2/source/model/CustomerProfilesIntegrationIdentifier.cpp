@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-CustomerProfilesIntegrationIdentifier::CustomerProfilesIntegrationIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomerProfilesIntegrationIdentifier::CustomerProfilesIntegrationIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-CustomerProfilesIntegrationIdentifier& CustomerProfilesIntegrationIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainArn"))
-  {
+CustomerProfilesIntegrationIdentifier& CustomerProfilesIntegrationIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainArn")) {
     m_domainArn = jsonValue.GetString("domainArn");
     m_domainArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomerProfilesIntegrationIdentifier::Jsonize() const
-{
+JsonValue CustomerProfilesIntegrationIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainArnHasBeenSet)
-  {
-   payload.WithString("domainArn", m_domainArn);
-
+  if (m_domainArnHasBeenSet) {
+    payload.WithString("domainArn", m_domainArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

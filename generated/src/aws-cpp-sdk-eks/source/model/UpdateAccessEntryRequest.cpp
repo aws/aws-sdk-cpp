@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/UpdateAccessEntryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/UpdateAccessEntryRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccessEntryRequest::SerializePayload() const
-{
+Aws::String UpdateAccessEntryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_kubernetesGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> kubernetesGroupsJsonList(m_kubernetesGroups.size());
-   for(unsigned kubernetesGroupsIndex = 0; kubernetesGroupsIndex < kubernetesGroupsJsonList.GetLength(); ++kubernetesGroupsIndex)
-   {
-     kubernetesGroupsJsonList[kubernetesGroupsIndex].AsString(m_kubernetesGroups[kubernetesGroupsIndex]);
-   }
-   payload.WithArray("kubernetesGroups", std::move(kubernetesGroupsJsonList));
-
+  if (m_kubernetesGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> kubernetesGroupsJsonList(m_kubernetesGroups.size());
+    for (unsigned kubernetesGroupsIndex = 0; kubernetesGroupsIndex < kubernetesGroupsJsonList.GetLength(); ++kubernetesGroupsIndex) {
+      kubernetesGroupsJsonList[kubernetesGroupsIndex].AsString(m_kubernetesGroups[kubernetesGroupsIndex]);
+    }
+    payload.WithArray("kubernetesGroups", std::move(kubernetesGroupsJsonList));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("username", m_username);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

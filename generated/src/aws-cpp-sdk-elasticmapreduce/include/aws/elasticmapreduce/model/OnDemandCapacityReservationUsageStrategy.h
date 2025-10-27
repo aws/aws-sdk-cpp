@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class OnDemandCapacityReservationUsageStrategy
-  {
-    NOT_SET,
-    use_capacity_reservations_first
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class OnDemandCapacityReservationUsageStrategy { NOT_SET, use_capacity_reservations_first };
 
-namespace OnDemandCapacityReservationUsageStrategyMapper
-{
+namespace OnDemandCapacityReservationUsageStrategyMapper {
 AWS_EMR_API OnDemandCapacityReservationUsageStrategy GetOnDemandCapacityReservationUsageStrategyForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForOnDemandCapacityReservationUsageStrategy(OnDemandCapacityReservationUsageStrategy value);
-} // namespace OnDemandCapacityReservationUsageStrategyMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace OnDemandCapacityReservationUsageStrategyMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

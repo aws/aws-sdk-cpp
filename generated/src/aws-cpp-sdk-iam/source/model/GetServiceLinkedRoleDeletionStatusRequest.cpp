@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetServiceLinkedRoleDeletionStatusRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetServiceLinkedRoleDeletionStatusRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetServiceLinkedRoleDeletionStatusRequest::SerializePayload() const
-{
+Aws::String GetServiceLinkedRoleDeletionStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetServiceLinkedRoleDeletionStatus&";
-  if(m_deletionTaskIdHasBeenSet)
-  {
+  if (m_deletionTaskIdHasBeenSet) {
     ss << "DeletionTaskId=" << StringUtils::URLEncode(m_deletionTaskId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetServiceLinkedRoleDeletionStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetServiceLinkedRoleDeletionStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetServiceLinkedRoleDeletionStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

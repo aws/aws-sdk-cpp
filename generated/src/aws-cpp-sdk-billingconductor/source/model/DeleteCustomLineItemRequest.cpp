@@ -12,25 +12,16 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCustomLineItemRequest::SerializePayload() const
-{
+Aws::String DeleteCustomLineItemRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_billingPeriodRangeHasBeenSet)
-  {
-   payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
-
+  if (m_billingPeriodRangeHasBeenSet) {
+    payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

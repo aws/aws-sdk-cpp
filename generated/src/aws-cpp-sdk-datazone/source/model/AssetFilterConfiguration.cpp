@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/AssetFilterConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/AssetFilterConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-AssetFilterConfiguration::AssetFilterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetFilterConfiguration::AssetFilterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AssetFilterConfiguration& AssetFilterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("columnConfiguration"))
-  {
+AssetFilterConfiguration& AssetFilterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("columnConfiguration")) {
     m_columnConfiguration = jsonValue.GetObject("columnConfiguration");
     m_columnConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rowConfiguration"))
-  {
+  if (jsonValue.ValueExists("rowConfiguration")) {
     m_rowConfiguration = jsonValue.GetObject("rowConfiguration");
     m_rowConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetFilterConfiguration::Jsonize() const
-{
+JsonValue AssetFilterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnConfigurationHasBeenSet)
-  {
-   payload.WithObject("columnConfiguration", m_columnConfiguration.Jsonize());
-
+  if (m_columnConfigurationHasBeenSet) {
+    payload.WithObject("columnConfiguration", m_columnConfiguration.Jsonize());
   }
 
-  if(m_rowConfigurationHasBeenSet)
-  {
-   payload.WithObject("rowConfiguration", m_rowConfiguration.Jsonize());
-
+  if (m_rowConfigurationHasBeenSet) {
+    payload.WithObject("rowConfiguration", m_rowConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

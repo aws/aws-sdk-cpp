@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class InputAuthenticationType
-  {
-    NOT_SET,
-    password,
-    no_password_required,
-    iam
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class InputAuthenticationType { NOT_SET, password, no_password_required, iam };
 
-namespace InputAuthenticationTypeMapper
-{
+namespace InputAuthenticationTypeMapper {
 AWS_ELASTICACHE_API InputAuthenticationType GetInputAuthenticationTypeForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForInputAuthenticationType(InputAuthenticationType value);
-} // namespace InputAuthenticationTypeMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace InputAuthenticationTypeMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

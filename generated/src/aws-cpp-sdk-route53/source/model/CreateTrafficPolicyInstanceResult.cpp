@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
 
 #include <utility>
 
@@ -16,21 +16,17 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrafficPolicyInstanceResult::CreateTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateTrafficPolicyInstanceResult::CreateTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-CreateTrafficPolicyInstanceResult& CreateTrafficPolicyInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateTrafficPolicyInstanceResult& CreateTrafficPolicyInstanceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode trafficPolicyInstanceNode = resultNode.FirstChild("TrafficPolicyInstance");
-    if(!trafficPolicyInstanceNode.IsNull())
-    {
+    if (!trafficPolicyInstanceNode.IsNull()) {
       m_trafficPolicyInstance = trafficPolicyInstanceNode;
       m_trafficPolicyInstanceHasBeenSet = true;
     }
@@ -38,15 +34,13 @@ CreateTrafficPolicyInstanceResult& CreateTrafficPolicyInstanceResult::operator =
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& locationIter = headers.find("location");
-  if(locationIter != headers.end())
-  {
+  if (locationIter != headers.end()) {
     m_location = locationIter->second;
     m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

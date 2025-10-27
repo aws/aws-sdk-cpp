@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MemoryDB;
 
-AWSError<CoreErrors> MemoryDBErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MemoryDBErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MemoryDBErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

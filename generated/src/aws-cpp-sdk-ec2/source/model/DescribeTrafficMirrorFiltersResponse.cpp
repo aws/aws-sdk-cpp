@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeTrafficMirrorFiltersResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeTrafficMirrorFiltersResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrafficMirrorFiltersResponse::DescribeTrafficMirrorFiltersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeTrafficMirrorFiltersResponse::DescribeTrafficMirrorFiltersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeTrafficMirrorFiltersResponse& DescribeTrafficMirrorFiltersResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeTrafficMirrorFiltersResponse& DescribeTrafficMirrorFiltersResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTrafficMirrorFiltersResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTrafficMirrorFiltersResponse")) {
     resultNode = rootNode.FirstChild("DescribeTrafficMirrorFiltersResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode trafficMirrorFiltersNode = resultNode.FirstChild("trafficMirrorFilterSet");
-    if(!trafficMirrorFiltersNode.IsNull())
-    {
+    if (!trafficMirrorFiltersNode.IsNull()) {
       XmlNode trafficMirrorFiltersMember = trafficMirrorFiltersNode.FirstChild("item");
       m_trafficMirrorFiltersHasBeenSet = !trafficMirrorFiltersMember.IsNull();
-      while(!trafficMirrorFiltersMember.IsNull())
-      {
+      while (!trafficMirrorFiltersMember.IsNull()) {
         m_trafficMirrorFilters.push_back(trafficMirrorFiltersMember);
         trafficMirrorFiltersMember = trafficMirrorFiltersMember.NextNode("item");
       }
@@ -48,8 +43,7 @@ DescribeTrafficMirrorFiltersResponse& DescribeTrafficMirrorFiltersResponse::oper
       m_trafficMirrorFiltersHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +51,12 @@ DescribeTrafficMirrorFiltersResponse& DescribeTrafficMirrorFiltersResponse::oper
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTrafficMirrorFiltersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTrafficMirrorFiltersResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

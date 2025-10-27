@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-} // namespace ElasticBeanstalk
-} // namespace Aws
+namespace Aws {
+namespace ElasticBeanstalk {}  // namespace ElasticBeanstalk
+}  // namespace Aws

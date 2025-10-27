@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class ConfigurationDeploymentStatus
-  {
-    NOT_SET,
-    deployed,
-    pending,
-    failed
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class ConfigurationDeploymentStatus { NOT_SET, deployed, pending, failed };
 
-namespace ConfigurationDeploymentStatusMapper
-{
+namespace ConfigurationDeploymentStatusMapper {
 AWS_ELASTICBEANSTALK_API ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus value);
-} // namespace ConfigurationDeploymentStatusMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ConfigurationDeploymentStatusMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-Mapping::Mapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Mapping::Mapping(JsonView jsonValue) { *this = jsonValue; }
 
-Mapping& Mapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Framework"))
-  {
+Mapping& Mapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Framework")) {
     m_framework = jsonValue.GetObject("Framework");
     m_frameworkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CommonControl"))
-  {
+  if (jsonValue.ValueExists("CommonControl")) {
     m_commonControl = jsonValue.GetObject("CommonControl");
     m_commonControlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Mapping::Jsonize() const
-{
+JsonValue Mapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_frameworkHasBeenSet)
-  {
-   payload.WithObject("Framework", m_framework.Jsonize());
-
+  if (m_frameworkHasBeenSet) {
+    payload.WithObject("Framework", m_framework.Jsonize());
   }
 
-  if(m_commonControlHasBeenSet)
-  {
-   payload.WithObject("CommonControl", m_commonControl.Jsonize());
-
+  if (m_commonControlHasBeenSet) {
+    payload.WithObject("CommonControl", m_commonControl.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

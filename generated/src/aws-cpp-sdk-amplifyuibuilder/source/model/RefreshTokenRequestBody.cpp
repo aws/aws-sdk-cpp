@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-RefreshTokenRequestBody::RefreshTokenRequestBody(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RefreshTokenRequestBody::RefreshTokenRequestBody(JsonView jsonValue) { *this = jsonValue; }
 
-RefreshTokenRequestBody& RefreshTokenRequestBody::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("token"))
-  {
+RefreshTokenRequestBody& RefreshTokenRequestBody::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("token")) {
     m_token = jsonValue.GetString("token");
     m_tokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientId"))
-  {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RefreshTokenRequestBody::Jsonize() const
-{
+JsonValue RefreshTokenRequestBody::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenHasBeenSet)
-  {
-   payload.WithString("token", m_token);
-
+  if (m_tokenHasBeenSet) {
+    payload.WithString("token", m_token);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

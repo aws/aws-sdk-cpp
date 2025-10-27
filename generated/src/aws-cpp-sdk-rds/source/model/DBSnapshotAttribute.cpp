@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DBSnapshotAttribute.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DBSnapshotAttribute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-DBSnapshotAttribute::DBSnapshotAttribute(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DBSnapshotAttribute::DBSnapshotAttribute(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DBSnapshotAttribute& DBSnapshotAttribute::operator =(const XmlNode& xmlNode)
-{
+DBSnapshotAttribute& DBSnapshotAttribute::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
-    if(!attributeNameNode.IsNull())
-    {
+    if (!attributeNameNode.IsNull()) {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");
-    if(!attributeValuesNode.IsNull())
-    {
+    if (!attributeValuesNode.IsNull()) {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("AttributeValue");
       m_attributeValuesHasBeenSet = !attributeValuesMember.IsNull();
-      while(!attributeValuesMember.IsNull())
-      {
+      while (!attributeValuesMember.IsNull()) {
         m_attributeValues.push_back(attributeValuesMember.GetText());
         attributeValuesMember = attributeValuesMember.NextNode("AttributeValue");
       }
@@ -55,40 +44,33 @@ DBSnapshotAttribute& DBSnapshotAttribute::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_attributeNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_attributeNameHasBeenSet) {
+    oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
 
-  if(m_attributeValuesHasBeenSet)
-  {
-      unsigned attributeValuesIdx = 1;
-      for(auto& item : m_attributeValues)
-      {
-        oStream << location << index << locationValue << ".AttributeValues.AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_attributeNameHasBeenSet)
-  {
-      oStream << location << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
-  }
-  if(m_attributeValuesHasBeenSet)
-  {
-      unsigned attributeValuesIdx = 1;
-      for(auto& item : m_attributeValues)
-      {
-        oStream << location << ".AttributeValues.AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_attributeValuesHasBeenSet) {
+    unsigned attributeValuesIdx = 1;
+    for (auto& item : m_attributeValues) {
+      oStream << location << index << locationValue << ".AttributeValues.AttributeValue." << attributeValuesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_attributeNameHasBeenSet) {
+    oStream << location << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  }
+  if (m_attributeValuesHasBeenSet) {
+    unsigned attributeValuesIdx = 1;
+    for (auto& item : m_attributeValues) {
+      oStream << location << ".AttributeValues.AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

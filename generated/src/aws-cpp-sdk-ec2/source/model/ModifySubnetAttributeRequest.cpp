@@ -3,69 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifySubnetAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifySubnetAttributeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifySubnetAttributeRequest::SerializePayload() const
-{
+Aws::String ModifySubnetAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifySubnetAttribute&";
-  if(m_assignIpv6AddressOnCreationHasBeenSet)
-  {
+  if (m_assignIpv6AddressOnCreationHasBeenSet) {
     m_assignIpv6AddressOnCreation.OutputToStream(ss, "AssignIpv6AddressOnCreation");
   }
 
-  if(m_mapPublicIpOnLaunchHasBeenSet)
-  {
+  if (m_mapPublicIpOnLaunchHasBeenSet) {
     m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch");
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
+  if (m_subnetIdHasBeenSet) {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
-  {
+  if (m_mapCustomerOwnedIpOnLaunchHasBeenSet) {
     m_mapCustomerOwnedIpOnLaunch.OutputToStream(ss, "MapCustomerOwnedIpOnLaunch");
   }
 
-  if(m_customerOwnedIpv4PoolHasBeenSet)
-  {
+  if (m_customerOwnedIpv4PoolHasBeenSet) {
     ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
-  if(m_enableDns64HasBeenSet)
-  {
+  if (m_enableDns64HasBeenSet) {
     m_enableDns64.OutputToStream(ss, "EnableDns64");
   }
 
-  if(m_privateDnsHostnameTypeOnLaunchHasBeenSet)
-  {
-    ss << "PrivateDnsHostnameTypeOnLaunch=" << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameTypeOnLaunch)) << "&";
+  if (m_privateDnsHostnameTypeOnLaunchHasBeenSet) {
+    ss << "PrivateDnsHostnameTypeOnLaunch="
+       << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameTypeOnLaunch)) << "&";
   }
 
-  if(m_enableResourceNameDnsARecordOnLaunchHasBeenSet)
-  {
+  if (m_enableResourceNameDnsARecordOnLaunchHasBeenSet) {
     m_enableResourceNameDnsARecordOnLaunch.OutputToStream(ss, "EnableResourceNameDnsARecordOnLaunch");
   }
 
-  if(m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet)
-  {
+  if (m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet) {
     m_enableResourceNameDnsAAAARecordOnLaunch.OutputToStream(ss, "EnableResourceNameDnsAAAARecordOnLaunch");
   }
 
-  if(m_enableLniAtDeviceIndexHasBeenSet)
-  {
+  if (m_enableLniAtDeviceIndexHasBeenSet) {
     ss << "EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
   }
 
-  if(m_disableLniAtDeviceIndexHasBeenSet)
-  {
+  if (m_disableLniAtDeviceIndexHasBeenSet) {
     m_disableLniAtDeviceIndex.OutputToStream(ss, "DisableLniAtDeviceIndex");
   }
 
@@ -73,8 +62,4 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifySubnetAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifySubnetAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

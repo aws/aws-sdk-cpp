@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class StartingPosition
-  {
-    NOT_SET,
-    latest,
-    trim_horizon,
-    earliest,
-    timestamp
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class StartingPosition { NOT_SET, latest, trim_horizon, earliest, timestamp };
 
-namespace StartingPositionMapper
-{
+namespace StartingPositionMapper {
 AWS_GLUE_API StartingPosition GetStartingPositionForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForStartingPosition(StartingPosition value);
-} // namespace StartingPositionMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace StartingPositionMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

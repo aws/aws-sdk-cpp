@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/UpdatePackageRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/UpdatePackageRequest.h>
 
 #include <utility>
 
@@ -15,42 +15,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String UpdatePackageRequest::SerializePayload() const
-{
+Aws::String UpdatePackageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_defaultVersionNameHasBeenSet)
-  {
-   payload.WithString("defaultVersionName", m_defaultVersionName);
-
+  if (m_defaultVersionNameHasBeenSet) {
+    payload.WithString("defaultVersionName", m_defaultVersionName);
   }
 
-  if(m_unsetDefaultVersionHasBeenSet)
-  {
-   payload.WithBool("unsetDefaultVersion", m_unsetDefaultVersion);
-
+  if (m_unsetDefaultVersionHasBeenSet) {
+    payload.WithBool("unsetDefaultVersion", m_unsetDefaultVersion);
   }
 
   return payload.View().WriteReadable();
 }
 
-void UpdatePackageRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_clientTokenHasBeenSet)
-    {
-      ss << m_clientToken;
-      uri.AddQueryStringParameter("clientToken", ss.str());
-      ss.str("");
-    }
-
+void UpdatePackageRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
+    ss.str("");
+  }
 }
-
-
-

@@ -11,25 +11,17 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-CommunicationLimits::CommunicationLimits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CommunicationLimits::CommunicationLimits(JsonView jsonValue) { *this = jsonValue; }
 
-CommunicationLimits& CommunicationLimits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("communicationLimitsList"))
-  {
+CommunicationLimits& CommunicationLimits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("communicationLimitsList")) {
     Aws::Utils::Array<JsonView> communicationLimitsListJsonList = jsonValue.GetArray("communicationLimitsList");
-    for(unsigned communicationLimitsListIndex = 0; communicationLimitsListIndex < communicationLimitsListJsonList.GetLength(); ++communicationLimitsListIndex)
-    {
+    for (unsigned communicationLimitsListIndex = 0; communicationLimitsListIndex < communicationLimitsListJsonList.GetLength();
+         ++communicationLimitsListIndex) {
       m_communicationLimitsList.push_back(communicationLimitsListJsonList[communicationLimitsListIndex].AsObject());
     }
     m_communicationLimitsListHasBeenSet = true;
@@ -37,24 +29,22 @@ CommunicationLimits& CommunicationLimits::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CommunicationLimits::Jsonize() const
-{
+JsonValue CommunicationLimits::Jsonize() const {
   JsonValue payload;
 
-  if(m_communicationLimitsListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> communicationLimitsListJsonList(m_communicationLimitsList.size());
-   for(unsigned communicationLimitsListIndex = 0; communicationLimitsListIndex < communicationLimitsListJsonList.GetLength(); ++communicationLimitsListIndex)
-   {
-     communicationLimitsListJsonList[communicationLimitsListIndex].AsObject(m_communicationLimitsList[communicationLimitsListIndex].Jsonize());
-   }
-   payload.WithArray("communicationLimitsList", std::move(communicationLimitsListJsonList));
-
+  if (m_communicationLimitsListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> communicationLimitsListJsonList(m_communicationLimitsList.size());
+    for (unsigned communicationLimitsListIndex = 0; communicationLimitsListIndex < communicationLimitsListJsonList.GetLength();
+         ++communicationLimitsListIndex) {
+      communicationLimitsListJsonList[communicationLimitsListIndex].AsObject(
+          m_communicationLimitsList[communicationLimitsListIndex].Jsonize());
+    }
+    payload.WithArray("communicationLimitsList", std::move(communicationLimitsListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

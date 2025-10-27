@@ -12,25 +12,16 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateApiKeyRequest::SerializePayload() const
-{
+Aws::String CreateApiKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_expiresHasBeenSet)
-  {
-   payload.WithInt64("expires", m_expires);
-
+  if (m_expiresHasBeenSet) {
+    payload.WithInt64("expires", m_expires);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReleaseAddressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReleaseAddressRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReleaseAddressRequest::SerializePayload() const
-{
+Aws::String ReleaseAddressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReleaseAddress&";
-  if(m_allocationIdHasBeenSet)
-  {
+  if (m_allocationIdHasBeenSet) {
     ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
-  if(m_publicIpHasBeenSet)
-  {
+  if (m_publicIpHasBeenSet) {
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  if(m_networkBorderGroupHasBeenSet)
-  {
+  if (m_networkBorderGroupHasBeenSet) {
     ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ReleaseAddressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReleaseAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReleaseAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

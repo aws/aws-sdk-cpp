@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ECSServiceProjectedUtilizationMetric& ECSServiceProjectedUtilizationMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ECSServiceProjectedUtilizationMetric& ECSServiceProjectedUtilizationMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = ECSServiceMetricNameMapper::GetECSServiceMetricNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statistic"))
-  {
+  if (jsonValue.ValueExists("statistic")) {
     m_statistic = ECSServiceMetricStatisticMapper::GetECSServiceMetricStatisticForName(jsonValue.GetString("statistic"));
     m_statisticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lowerBoundValue"))
-  {
+  if (jsonValue.ValueExists("lowerBoundValue")) {
     m_lowerBoundValue = jsonValue.GetDouble("lowerBoundValue");
     m_lowerBoundValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("upperBoundValue"))
-  {
+  if (jsonValue.ValueExists("upperBoundValue")) {
     m_upperBoundValue = jsonValue.GetDouble("upperBoundValue");
     m_upperBoundValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ECSServiceProjectedUtilizationMetric::Jsonize() const
-{
+JsonValue ECSServiceProjectedUtilizationMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ECSServiceMetricNameMapper::GetNameForECSServiceMetricName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ECSServiceMetricNameMapper::GetNameForECSServiceMetricName(m_name));
   }
 
-  if(m_statisticHasBeenSet)
-  {
-   payload.WithString("statistic", ECSServiceMetricStatisticMapper::GetNameForECSServiceMetricStatistic(m_statistic));
+  if (m_statisticHasBeenSet) {
+    payload.WithString("statistic", ECSServiceMetricStatisticMapper::GetNameForECSServiceMetricStatistic(m_statistic));
   }
 
-  if(m_lowerBoundValueHasBeenSet)
-  {
-   payload.WithDouble("lowerBoundValue", m_lowerBoundValue);
-
+  if (m_lowerBoundValueHasBeenSet) {
+    payload.WithDouble("lowerBoundValue", m_lowerBoundValue);
   }
 
-  if(m_upperBoundValueHasBeenSet)
-  {
-   payload.WithDouble("upperBoundValue", m_upperBoundValue);
-
+  if (m_upperBoundValueHasBeenSet) {
+    payload.WithDouble("upperBoundValue", m_upperBoundValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

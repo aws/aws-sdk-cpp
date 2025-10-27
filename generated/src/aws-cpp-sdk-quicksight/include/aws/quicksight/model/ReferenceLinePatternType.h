@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ReferenceLinePatternType
-  {
-    NOT_SET,
-    SOLID,
-    DASHED,
-    DOTTED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ReferenceLinePatternType { NOT_SET, SOLID, DASHED, DOTTED };
 
-namespace ReferenceLinePatternTypeMapper
-{
+namespace ReferenceLinePatternTypeMapper {
 AWS_QUICKSIGHT_API ReferenceLinePatternType GetReferenceLinePatternTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForReferenceLinePatternType(ReferenceLinePatternType value);
-} // namespace ReferenceLinePatternTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ReferenceLinePatternTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

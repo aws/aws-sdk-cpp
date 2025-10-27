@@ -12,72 +12,50 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCostAndUsageRequest::SerializePayload() const
-{
+Aws::String GetCostAndUsageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_timePeriodHasBeenSet)
-  {
-   payload.WithObject("TimePeriod", m_timePeriod.Jsonize());
-
+  if (m_timePeriodHasBeenSet) {
+    payload.WithObject("TimePeriod", m_timePeriod.Jsonize());
   }
 
-  if(m_granularityHasBeenSet)
-  {
-   payload.WithString("Granularity", GranularityMapper::GetNameForGranularity(m_granularity));
+  if (m_granularityHasBeenSet) {
+    payload.WithString("Granularity", GranularityMapper::GetNameForGranularity(m_granularity));
   }
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("Filter", m_filter.Jsonize());
   }
 
-  if(m_metricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
-   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
-   {
-     metricsJsonList[metricsIndex].AsString(m_metrics[metricsIndex]);
-   }
-   payload.WithArray("Metrics", std::move(metricsJsonList));
-
+  if (m_metricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+    for (unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex) {
+      metricsJsonList[metricsIndex].AsString(m_metrics[metricsIndex]);
+    }
+    payload.WithArray("Metrics", std::move(metricsJsonList));
   }
 
-  if(m_groupByHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
-   for(unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex)
-   {
-     groupByJsonList[groupByIndex].AsObject(m_groupBy[groupByIndex].Jsonize());
-   }
-   payload.WithArray("GroupBy", std::move(groupByJsonList));
-
+  if (m_groupByHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
+    for (unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex) {
+      groupByJsonList[groupByIndex].AsObject(m_groupBy[groupByIndex].Jsonize());
+    }
+    payload.WithArray("GroupBy", std::move(groupByJsonList));
   }
 
-  if(m_billingViewArnHasBeenSet)
-  {
-   payload.WithString("BillingViewArn", m_billingViewArn);
-
+  if (m_billingViewArnHasBeenSet) {
+    payload.WithString("BillingViewArn", m_billingViewArn);
   }
 
-  if(m_nextPageTokenHasBeenSet)
-  {
-   payload.WithString("NextPageToken", m_nextPageToken);
-
+  if (m_nextPageTokenHasBeenSet) {
+    payload.WithString("NextPageToken", m_nextPageToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCostAndUsageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCostAndUsageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.GetCostAndUsage"));
   return headers;
-
 }
-
-
-
-

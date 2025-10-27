@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/CreateLensVersionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/wellarchitected/model/CreateLensVersionResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLensVersionResult::CreateLensVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateLensVersionResult::CreateLensVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateLensVersionResult& CreateLensVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateLensVersionResult& CreateLensVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("LensArn"))
-  {
+  if (jsonValue.ValueExists("LensArn")) {
     m_lensArn = jsonValue.GetString("LensArn");
     m_lensArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LensVersion"))
-  {
+  if (jsonValue.ValueExists("LensVersion")) {
     m_lensVersion = jsonValue.GetString("LensVersion");
     m_lensVersionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

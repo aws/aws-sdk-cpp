@@ -3,58 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/FeatureActivations.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/FeatureActivations.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-FeatureActivations::FeatureActivations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FeatureActivations::FeatureActivations(JsonView jsonValue) { *this = jsonValue; }
 
-FeatureActivations& FeatureActivations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inputPrepareScheduleActions"))
-  {
-    m_inputPrepareScheduleActions = FeatureActivationsInputPrepareScheduleActionsMapper::GetFeatureActivationsInputPrepareScheduleActionsForName(jsonValue.GetString("inputPrepareScheduleActions"));
+FeatureActivations& FeatureActivations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputPrepareScheduleActions")) {
+    m_inputPrepareScheduleActions =
+        FeatureActivationsInputPrepareScheduleActionsMapper::GetFeatureActivationsInputPrepareScheduleActionsForName(
+            jsonValue.GetString("inputPrepareScheduleActions"));
     m_inputPrepareScheduleActionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputStaticImageOverlayScheduleActions"))
-  {
-    m_outputStaticImageOverlayScheduleActions = FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(jsonValue.GetString("outputStaticImageOverlayScheduleActions"));
+  if (jsonValue.ValueExists("outputStaticImageOverlayScheduleActions")) {
+    m_outputStaticImageOverlayScheduleActions = FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::
+        GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(jsonValue.GetString("outputStaticImageOverlayScheduleActions"));
     m_outputStaticImageOverlayScheduleActionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FeatureActivations::Jsonize() const
-{
+JsonValue FeatureActivations::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputPrepareScheduleActionsHasBeenSet)
-  {
-   payload.WithString("inputPrepareScheduleActions", FeatureActivationsInputPrepareScheduleActionsMapper::GetNameForFeatureActivationsInputPrepareScheduleActions(m_inputPrepareScheduleActions));
+  if (m_inputPrepareScheduleActionsHasBeenSet) {
+    payload.WithString("inputPrepareScheduleActions",
+                       FeatureActivationsInputPrepareScheduleActionsMapper::GetNameForFeatureActivationsInputPrepareScheduleActions(
+                           m_inputPrepareScheduleActions));
   }
 
-  if(m_outputStaticImageOverlayScheduleActionsHasBeenSet)
-  {
-   payload.WithString("outputStaticImageOverlayScheduleActions", FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::GetNameForFeatureActivationsOutputStaticImageOverlayScheduleActions(m_outputStaticImageOverlayScheduleActions));
+  if (m_outputStaticImageOverlayScheduleActionsHasBeenSet) {
+    payload.WithString("outputStaticImageOverlayScheduleActions",
+                       FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::
+                           GetNameForFeatureActivationsOutputStaticImageOverlayScheduleActions(m_outputStaticImageOverlayScheduleActions));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

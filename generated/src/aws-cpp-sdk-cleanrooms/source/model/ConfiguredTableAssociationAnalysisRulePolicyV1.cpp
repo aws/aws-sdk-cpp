@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ConfiguredTableAssociationAnalysisRulePolicyV1::ConfiguredTableAssociationAnalysisRulePolicyV1(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfiguredTableAssociationAnalysisRulePolicyV1::ConfiguredTableAssociationAnalysisRulePolicyV1(JsonView jsonValue) { *this = jsonValue; }
 
-ConfiguredTableAssociationAnalysisRulePolicyV1& ConfiguredTableAssociationAnalysisRulePolicyV1::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("list"))
-  {
+ConfiguredTableAssociationAnalysisRulePolicyV1& ConfiguredTableAssociationAnalysisRulePolicyV1::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("list")) {
     m_list = jsonValue.GetObject("list");
     m_listHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aggregation"))
-  {
+  if (jsonValue.ValueExists("aggregation")) {
     m_aggregation = jsonValue.GetObject("aggregation");
     m_aggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("custom"))
-  {
+  if (jsonValue.ValueExists("custom")) {
     m_custom = jsonValue.GetObject("custom");
     m_customHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfiguredTableAssociationAnalysisRulePolicyV1::Jsonize() const
-{
+JsonValue ConfiguredTableAssociationAnalysisRulePolicyV1::Jsonize() const {
   JsonValue payload;
 
-  if(m_listHasBeenSet)
-  {
-   payload.WithObject("list", m_list.Jsonize());
-
+  if (m_listHasBeenSet) {
+    payload.WithObject("list", m_list.Jsonize());
   }
 
-  if(m_aggregationHasBeenSet)
-  {
-   payload.WithObject("aggregation", m_aggregation.Jsonize());
-
+  if (m_aggregationHasBeenSet) {
+    payload.WithObject("aggregation", m_aggregation.Jsonize());
   }
 
-  if(m_customHasBeenSet)
-  {
-   payload.WithObject("custom", m_custom.Jsonize());
-
+  if (m_customHasBeenSet) {
+    payload.WithObject("custom", m_custom.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

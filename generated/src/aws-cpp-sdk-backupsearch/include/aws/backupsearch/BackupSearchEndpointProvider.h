@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/backupsearch/BackupSearchEndpointRules.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/backupsearch/BackupSearchEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BackupSearch {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BackupSearchClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using BackupSearchDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BACKUPSEARCH_API BackupSearchEndpointProvider : public BackupSearchDefaultEpProviderBase
-{
-public:
-    using BackupSearchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BACKUPSEARCH_API BackupSearchEndpointProvider : public BackupSearchDefaultEpProviderBase {
+ public:
+  using BackupSearchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BackupSearchEndpointProvider()
-      : BackupSearchDefaultEpProviderBase(Aws::BackupSearch::BackupSearchEndpointRules::GetRulesBlob(), Aws::BackupSearch::BackupSearchEndpointRules::RulesBlobSize)
-    {}
+  BackupSearchEndpointProvider()
+      : BackupSearchDefaultEpProviderBase(Aws::BackupSearch::BackupSearchEndpointRules::GetRulesBlob(),
+                                          Aws::BackupSearch::BackupSearchEndpointRules::RulesBlobSize) {}
 
-    ~BackupSearchEndpointProvider()
-    {
-    }
+  ~BackupSearchEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BackupSearch
+}  // namespace Aws

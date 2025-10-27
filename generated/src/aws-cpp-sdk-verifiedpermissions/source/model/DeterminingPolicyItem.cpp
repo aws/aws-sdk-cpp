@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/DeterminingPolicyItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/DeterminingPolicyItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-DeterminingPolicyItem::DeterminingPolicyItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeterminingPolicyItem::DeterminingPolicyItem(JsonView jsonValue) { *this = jsonValue; }
 
-DeterminingPolicyItem& DeterminingPolicyItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("policyId"))
-  {
+DeterminingPolicyItem& DeterminingPolicyItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("policyId")) {
     m_policyId = jsonValue.GetString("policyId");
     m_policyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeterminingPolicyItem::Jsonize() const
-{
+JsonValue DeterminingPolicyItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyIdHasBeenSet)
-  {
-   payload.WithString("policyId", m_policyId);
-
+  if (m_policyIdHasBeenSet) {
+    payload.WithString("policyId", m_policyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

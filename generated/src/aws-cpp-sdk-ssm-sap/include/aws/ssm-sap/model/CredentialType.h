@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class CredentialType
-  {
-    NOT_SET,
-    ADMIN
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class CredentialType { NOT_SET, ADMIN };
 
-namespace CredentialTypeMapper
-{
+namespace CredentialTypeMapper {
 AWS_SSMSAP_API CredentialType GetCredentialTypeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForCredentialType(CredentialType value);
-} // namespace CredentialTypeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace CredentialTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

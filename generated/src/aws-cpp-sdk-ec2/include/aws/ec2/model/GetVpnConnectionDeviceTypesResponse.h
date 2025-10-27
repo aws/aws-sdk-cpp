@@ -4,86 +4,101 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VpnConnectionDeviceType.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
-  class GetVpnConnectionDeviceTypesResponse
-  {
-  public:
-    AWS_EC2_API GetVpnConnectionDeviceTypesResponse() = default;
-    AWS_EC2_API GetVpnConnectionDeviceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_EC2_API GetVpnConnectionDeviceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class GetVpnConnectionDeviceTypesResponse {
+ public:
+  AWS_EC2_API GetVpnConnectionDeviceTypesResponse() = default;
+  AWS_EC2_API GetVpnConnectionDeviceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API GetVpnConnectionDeviceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>List of customer gateway devices that have a sample configuration file
+   * available for use.</p>
+   */
+  inline const Aws::Vector<VpnConnectionDeviceType>& GetVpnConnectionDeviceTypes() const { return m_vpnConnectionDeviceTypes; }
+  template <typename VpnConnectionDeviceTypesT = Aws::Vector<VpnConnectionDeviceType>>
+  void SetVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) {
+    m_vpnConnectionDeviceTypesHasBeenSet = true;
+    m_vpnConnectionDeviceTypes = std::forward<VpnConnectionDeviceTypesT>(value);
+  }
+  template <typename VpnConnectionDeviceTypesT = Aws::Vector<VpnConnectionDeviceType>>
+  GetVpnConnectionDeviceTypesResponse& WithVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) {
+    SetVpnConnectionDeviceTypes(std::forward<VpnConnectionDeviceTypesT>(value));
+    return *this;
+  }
+  template <typename VpnConnectionDeviceTypesT = VpnConnectionDeviceType>
+  GetVpnConnectionDeviceTypesResponse& AddVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) {
+    m_vpnConnectionDeviceTypesHasBeenSet = true;
+    m_vpnConnectionDeviceTypes.emplace_back(std::forward<VpnConnectionDeviceTypesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>List of customer gateway devices that have a sample configuration file
-     * available for use.</p>
-     */
-    inline const Aws::Vector<VpnConnectionDeviceType>& GetVpnConnectionDeviceTypes() const { return m_vpnConnectionDeviceTypes; }
-    template<typename VpnConnectionDeviceTypesT = Aws::Vector<VpnConnectionDeviceType>>
-    void SetVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) { m_vpnConnectionDeviceTypesHasBeenSet = true; m_vpnConnectionDeviceTypes = std::forward<VpnConnectionDeviceTypesT>(value); }
-    template<typename VpnConnectionDeviceTypesT = Aws::Vector<VpnConnectionDeviceType>>
-    GetVpnConnectionDeviceTypesResponse& WithVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) { SetVpnConnectionDeviceTypes(std::forward<VpnConnectionDeviceTypesT>(value)); return *this;}
-    template<typename VpnConnectionDeviceTypesT = VpnConnectionDeviceType>
-    GetVpnConnectionDeviceTypesResponse& AddVpnConnectionDeviceTypes(VpnConnectionDeviceTypesT&& value) { m_vpnConnectionDeviceTypesHasBeenSet = true; m_vpnConnectionDeviceTypes.emplace_back(std::forward<VpnConnectionDeviceTypesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The <code>NextToken</code> value to include in a future
+   * <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
+   * <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
+   * this value can be used to retrieve the next page of results. This value is null
+   * when there are no more results to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetVpnConnectionDeviceTypesResponse& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-     * <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetVpnConnectionDeviceTypesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    GetVpnConnectionDeviceTypesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  GetVpnConnectionDeviceTypesResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<VpnConnectionDeviceType> m_vpnConnectionDeviceTypes;
+  bool m_vpnConnectionDeviceTypesHasBeenSet = false;
 
-    Aws::Vector<VpnConnectionDeviceType> m_vpnConnectionDeviceTypes;
-    bool m_vpnConnectionDeviceTypesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

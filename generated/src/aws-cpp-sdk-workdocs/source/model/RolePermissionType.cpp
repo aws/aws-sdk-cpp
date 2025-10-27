@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/RolePermissionType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/workdocs/model/RolePermissionType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+namespace RolePermissionTypeMapper {
 
-namespace Aws
-{
-  namespace WorkDocs
-  {
-    namespace Model
-    {
-      namespace RolePermissionTypeMapper
-      {
+static const int DIRECT_HASH = HashingUtils::HashString("DIRECT");
+static const int INHERITED_HASH = HashingUtils::HashString("INHERITED");
 
-        static const int DIRECT_HASH = HashingUtils::HashString("DIRECT");
-        static const int INHERITED_HASH = HashingUtils::HashString("INHERITED");
+RolePermissionType GetRolePermissionTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DIRECT_HASH) {
+    return RolePermissionType::DIRECT;
+  } else if (hashCode == INHERITED_HASH) {
+    return RolePermissionType::INHERITED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RolePermissionType>(hashCode);
+  }
 
+  return RolePermissionType::NOT_SET;
+}
 
-        RolePermissionType GetRolePermissionTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DIRECT_HASH)
-          {
-            return RolePermissionType::DIRECT;
-          }
-          else if (hashCode == INHERITED_HASH)
-          {
-            return RolePermissionType::INHERITED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RolePermissionType>(hashCode);
-          }
+Aws::String GetNameForRolePermissionType(RolePermissionType enumValue) {
+  switch (enumValue) {
+    case RolePermissionType::NOT_SET:
+      return {};
+    case RolePermissionType::DIRECT:
+      return "DIRECT";
+    case RolePermissionType::INHERITED:
+      return "INHERITED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RolePermissionType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRolePermissionType(RolePermissionType enumValue)
-        {
-          switch(enumValue)
-          {
-          case RolePermissionType::NOT_SET:
-            return {};
-          case RolePermissionType::DIRECT:
-            return "DIRECT";
-          case RolePermissionType::INHERITED:
-            return "INHERITED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RolePermissionTypeMapper
-    } // namespace Model
-  } // namespace WorkDocs
-} // namespace Aws
+}  // namespace RolePermissionTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

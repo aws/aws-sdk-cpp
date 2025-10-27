@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class TranscriptFormat
-  {
-    NOT_SET,
-    Lex
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class TranscriptFormat { NOT_SET, Lex };
 
-namespace TranscriptFormatMapper
-{
+namespace TranscriptFormatMapper {
 AWS_LEXMODELSV2_API TranscriptFormat GetTranscriptFormatForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForTranscriptFormat(TranscriptFormat value);
-} // namespace TranscriptFormatMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace TranscriptFormatMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

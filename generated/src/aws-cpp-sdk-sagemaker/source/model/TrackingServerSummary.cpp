@@ -3,111 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/TrackingServerSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/TrackingServerSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-TrackingServerSummary::TrackingServerSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrackingServerSummary::TrackingServerSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TrackingServerSummary& TrackingServerSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TrackingServerArn"))
-  {
+TrackingServerSummary& TrackingServerSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TrackingServerArn")) {
     m_trackingServerArn = jsonValue.GetString("TrackingServerArn");
     m_trackingServerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrackingServerName"))
-  {
+  if (jsonValue.ValueExists("TrackingServerName")) {
     m_trackingServerName = jsonValue.GetString("TrackingServerName");
     m_trackingServerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrackingServerStatus"))
-  {
+  if (jsonValue.ValueExists("TrackingServerStatus")) {
     m_trackingServerStatus = TrackingServerStatusMapper::GetTrackingServerStatusForName(jsonValue.GetString("TrackingServerStatus"));
     m_trackingServerStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsActive"))
-  {
+  if (jsonValue.ValueExists("IsActive")) {
     m_isActive = IsTrackingServerActiveMapper::GetIsTrackingServerActiveForName(jsonValue.GetString("IsActive"));
     m_isActiveHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MlflowVersion"))
-  {
+  if (jsonValue.ValueExists("MlflowVersion")) {
     m_mlflowVersion = jsonValue.GetString("MlflowVersion");
     m_mlflowVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrackingServerSummary::Jsonize() const
-{
+JsonValue TrackingServerSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_trackingServerArnHasBeenSet)
-  {
-   payload.WithString("TrackingServerArn", m_trackingServerArn);
-
+  if (m_trackingServerArnHasBeenSet) {
+    payload.WithString("TrackingServerArn", m_trackingServerArn);
   }
 
-  if(m_trackingServerNameHasBeenSet)
-  {
-   payload.WithString("TrackingServerName", m_trackingServerName);
-
+  if (m_trackingServerNameHasBeenSet) {
+    payload.WithString("TrackingServerName", m_trackingServerName);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_trackingServerStatusHasBeenSet)
-  {
-   payload.WithString("TrackingServerStatus", TrackingServerStatusMapper::GetNameForTrackingServerStatus(m_trackingServerStatus));
+  if (m_trackingServerStatusHasBeenSet) {
+    payload.WithString("TrackingServerStatus", TrackingServerStatusMapper::GetNameForTrackingServerStatus(m_trackingServerStatus));
   }
 
-  if(m_isActiveHasBeenSet)
-  {
-   payload.WithString("IsActive", IsTrackingServerActiveMapper::GetNameForIsTrackingServerActive(m_isActive));
+  if (m_isActiveHasBeenSet) {
+    payload.WithString("IsActive", IsTrackingServerActiveMapper::GetNameForIsTrackingServerActive(m_isActive));
   }
 
-  if(m_mlflowVersionHasBeenSet)
-  {
-   payload.WithString("MlflowVersion", m_mlflowVersion);
-
+  if (m_mlflowVersionHasBeenSet) {
+    payload.WithString("MlflowVersion", m_mlflowVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

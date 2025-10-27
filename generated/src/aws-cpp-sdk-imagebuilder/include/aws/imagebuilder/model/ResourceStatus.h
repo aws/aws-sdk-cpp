@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class ResourceStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    DELETED,
-    DEPRECATED,
-    DISABLED
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class ResourceStatus { NOT_SET, AVAILABLE, DELETED, DEPRECATED, DISABLED };
 
-namespace ResourceStatusMapper
-{
+namespace ResourceStatusMapper {
 AWS_IMAGEBUILDER_API ResourceStatus GetResourceStatusForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForResourceStatus(ResourceStatus value);
-} // namespace ResourceStatusMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace ResourceStatusMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

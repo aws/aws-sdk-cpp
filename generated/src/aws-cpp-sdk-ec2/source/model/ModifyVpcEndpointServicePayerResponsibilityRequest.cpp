@@ -3,38 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVpcEndpointServicePayerResponsibilityRequest::SerializePayload() const
-{
+Aws::String ModifyVpcEndpointServicePayerResponsibilityRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcEndpointServicePayerResponsibility&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_serviceIdHasBeenSet)
-  {
+  if (m_serviceIdHasBeenSet) {
     ss << "ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
   }
 
-  if(m_payerResponsibilityHasBeenSet)
-  {
-    ss << "PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
+  if (m_payerResponsibilityHasBeenSet) {
+    ss << "PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility))
+       << "&";
   }
 
   ss << "Version=2016-11-15";
   return ss.str();
 }
 
-
-void  ModifyVpcEndpointServicePayerResponsibilityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ModifyVpcEndpointServicePayerResponsibilityRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

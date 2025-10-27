@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/SqlRunConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/SqlRunConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-SqlRunConfiguration::SqlRunConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SqlRunConfiguration::SqlRunConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SqlRunConfiguration& SqlRunConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InputId"))
-  {
+SqlRunConfiguration& SqlRunConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InputId")) {
     m_inputId = jsonValue.GetString("InputId");
     m_inputIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputStartingPositionConfiguration"))
-  {
+  if (jsonValue.ValueExists("InputStartingPositionConfiguration")) {
     m_inputStartingPositionConfiguration = jsonValue.GetObject("InputStartingPositionConfiguration");
     m_inputStartingPositionConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SqlRunConfiguration::Jsonize() const
-{
+JsonValue SqlRunConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputIdHasBeenSet)
-  {
-   payload.WithString("InputId", m_inputId);
-
+  if (m_inputIdHasBeenSet) {
+    payload.WithString("InputId", m_inputId);
   }
 
-  if(m_inputStartingPositionConfigurationHasBeenSet)
-  {
-   payload.WithObject("InputStartingPositionConfiguration", m_inputStartingPositionConfiguration.Jsonize());
-
+  if (m_inputStartingPositionConfigurationHasBeenSet) {
+    payload.WithObject("InputStartingPositionConfiguration", m_inputStartingPositionConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

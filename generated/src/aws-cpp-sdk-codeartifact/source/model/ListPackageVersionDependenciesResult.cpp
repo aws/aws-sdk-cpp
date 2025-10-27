@@ -4,10 +4,10 @@
  */
 
 #include <aws/codeartifact/model/ListPackageVersionDependenciesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,49 +17,40 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPackageVersionDependenciesResult::ListPackageVersionDependenciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPackageVersionDependenciesResult::ListPackageVersionDependenciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListPackageVersionDependenciesResult& ListPackageVersionDependenciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPackageVersionDependenciesResult& ListPackageVersionDependenciesResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("format"))
-  {
+  if (jsonValue.ValueExists("format")) {
     m_format = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespace"))
-  {
+  if (jsonValue.ValueExists("namespace")) {
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("package"))
-  {
+  if (jsonValue.ValueExists("package")) {
     m_package = jsonValue.GetString("package");
     m_packageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionRevision"))
-  {
+  if (jsonValue.ValueExists("versionRevision")) {
     m_versionRevision = jsonValue.GetString("versionRevision");
     m_versionRevisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dependencies"))
-  {
+  if (jsonValue.ValueExists("dependencies")) {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
-    for(unsigned dependenciesIndex = 0; dependenciesIndex < dependenciesJsonList.GetLength(); ++dependenciesIndex)
-    {
+    for (unsigned dependenciesIndex = 0; dependenciesIndex < dependenciesJsonList.GetLength(); ++dependenciesIndex) {
       m_dependencies.push_back(dependenciesJsonList[dependenciesIndex].AsObject());
     }
     m_dependenciesHasBeenSet = true;
@@ -67,12 +58,10 @@ ListPackageVersionDependenciesResult& ListPackageVersionDependenciesResult::oper
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

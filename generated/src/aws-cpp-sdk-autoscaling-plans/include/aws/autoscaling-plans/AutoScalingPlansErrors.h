@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-enum class AutoScalingPlansErrors
-{
-  //From Core//
+namespace Aws {
+namespace AutoScalingPlans {
+enum class AutoScalingPlansErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AutoScalingPlansErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class AutoScalingPlansErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_UPDATE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_UPDATE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
   OBJECT_NOT_FOUND
 };
 
-class AWS_AUTOSCALINGPLANS_API AutoScalingPlansError : public Aws::Client::AWSError<AutoScalingPlansErrors>
-{
-public:
+class AWS_AUTOSCALINGPLANS_API AutoScalingPlansError : public Aws::Client::AWSError<AutoScalingPlansErrors> {
+ public:
   AutoScalingPlansError() {}
   AutoScalingPlansError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
   AutoScalingPlansError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace AutoScalingPlansErrorMapper
-{
-  AWS_AUTOSCALINGPLANS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AutoScalingPlansErrorMapper {
+AWS_AUTOSCALINGPLANS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AutoScalingPlans
-} // namespace Aws
+}  // namespace AutoScalingPlans
+}  // namespace Aws

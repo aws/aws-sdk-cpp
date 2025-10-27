@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-RuntimePlatform::RuntimePlatform(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuntimePlatform::RuntimePlatform(JsonView jsonValue) { *this = jsonValue; }
 
-RuntimePlatform& RuntimePlatform::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("operatingSystemFamily"))
-  {
+RuntimePlatform& RuntimePlatform::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("operatingSystemFamily")) {
     m_operatingSystemFamily = jsonValue.GetString("operatingSystemFamily");
     m_operatingSystemFamilyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cpuArchitecture"))
-  {
+  if (jsonValue.ValueExists("cpuArchitecture")) {
     m_cpuArchitecture = jsonValue.GetString("cpuArchitecture");
     m_cpuArchitectureHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuntimePlatform::Jsonize() const
-{
+JsonValue RuntimePlatform::Jsonize() const {
   JsonValue payload;
 
-  if(m_operatingSystemFamilyHasBeenSet)
-  {
-   payload.WithString("operatingSystemFamily", m_operatingSystemFamily);
-
+  if (m_operatingSystemFamilyHasBeenSet) {
+    payload.WithString("operatingSystemFamily", m_operatingSystemFamily);
   }
 
-  if(m_cpuArchitectureHasBeenSet)
-  {
-   payload.WithString("cpuArchitecture", m_cpuArchitecture);
-
+  if (m_cpuArchitectureHasBeenSet) {
+    payload.WithString("cpuArchitecture", m_cpuArchitecture);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

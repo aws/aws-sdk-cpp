@@ -7,28 +7,16 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
-  enum class ConfigurationItemStatus
-  {
-    NOT_SET,
-    OK,
-    ResourceDiscovered,
-    ResourceNotRecorded,
-    ResourceDeleted,
-    ResourceDeletedNotRecorded
-  };
+namespace Aws {
+namespace ConfigService {
+namespace Model {
+enum class ConfigurationItemStatus { NOT_SET, OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded };
 
-namespace ConfigurationItemStatusMapper
-{
+namespace ConfigurationItemStatusMapper {
 AWS_CONFIGSERVICE_API ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name);
 
 AWS_CONFIGSERVICE_API Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus value);
-} // namespace ConfigurationItemStatusMapper
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace ConfigurationItemStatusMapper
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ResourceTagsSearchCriteria::ResourceTagsSearchCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceTagsSearchCriteria::ResourceTagsSearchCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceTagsSearchCriteria& ResourceTagsSearchCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TagSearchCondition"))
-  {
+ResourceTagsSearchCriteria& ResourceTagsSearchCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TagSearchCondition")) {
     m_tagSearchCondition = jsonValue.GetObject("TagSearchCondition");
     m_tagSearchConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceTagsSearchCriteria::Jsonize() const
-{
+JsonValue ResourceTagsSearchCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagSearchConditionHasBeenSet)
-  {
-   payload.WithObject("TagSearchCondition", m_tagSearchCondition.Jsonize());
-
+  if (m_tagSearchConditionHasBeenSet) {
+    payload.WithObject("TagSearchCondition", m_tagSearchCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

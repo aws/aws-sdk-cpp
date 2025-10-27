@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Pinpoint {
+namespace Model {
 
+/**
+ * <p>Specifies the status and settings of the voice channel for an
+ * application.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelRequest">AWS
+ * API Reference</a></p>
+ */
+class VoiceChannelRequest {
+ public:
+  AWS_PINPOINT_API VoiceChannelRequest() = default;
+  AWS_PINPOINT_API VoiceChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINT_API VoiceChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Specifies the status and settings of the voice channel for an
-   * application.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelRequest">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether to enable the voice channel for the application.</p>
    */
-  class VoiceChannelRequest
-  {
-  public:
-    AWS_PINPOINT_API VoiceChannelRequest() = default;
-    AWS_PINPOINT_API VoiceChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINT_API VoiceChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline VoiceChannelRequest& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Specifies whether to enable the voice channel for the application.</p>
-     */
-    inline bool GetEnabled() const { return m_enabled; }
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-    inline VoiceChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enabled{false};
-    bool m_enabledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

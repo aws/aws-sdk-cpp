@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoTRequest.h>
+#include <aws/iot/IoT_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
+/**
+ */
+class DeleteJobTemplateRequest : public IoTRequest {
+ public:
+  AWS_IOT_API DeleteJobTemplateRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteJobTemplate"; }
+
+  AWS_IOT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier of the job template to delete.</p>
    */
-  class DeleteJobTemplateRequest : public IoTRequest
-  {
-  public:
-    AWS_IOT_API DeleteJobTemplateRequest() = default;
+  inline const Aws::String& GetJobTemplateId() const { return m_jobTemplateId; }
+  inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
+  template <typename JobTemplateIdT = Aws::String>
+  void SetJobTemplateId(JobTemplateIdT&& value) {
+    m_jobTemplateIdHasBeenSet = true;
+    m_jobTemplateId = std::forward<JobTemplateIdT>(value);
+  }
+  template <typename JobTemplateIdT = Aws::String>
+  DeleteJobTemplateRequest& WithJobTemplateId(JobTemplateIdT&& value) {
+    SetJobTemplateId(std::forward<JobTemplateIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_jobTemplateId;
+  bool m_jobTemplateIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteJobTemplate"; }
-
-    AWS_IOT_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The unique identifier of the job template to delete.</p>
-     */
-    inline const Aws::String& GetJobTemplateId() const { return m_jobTemplateId; }
-    inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
-    template<typename JobTemplateIdT = Aws::String>
-    void SetJobTemplateId(JobTemplateIdT&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::forward<JobTemplateIdT>(value); }
-    template<typename JobTemplateIdT = Aws::String>
-    DeleteJobTemplateRequest& WithJobTemplateId(JobTemplateIdT&& value) { SetJobTemplateId(std::forward<JobTemplateIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_jobTemplateId;
-    bool m_jobTemplateIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

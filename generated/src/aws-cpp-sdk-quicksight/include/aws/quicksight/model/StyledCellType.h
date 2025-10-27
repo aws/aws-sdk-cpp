@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class StyledCellType
-  {
-    NOT_SET,
-    TOTAL,
-    METRIC_HEADER,
-    VALUE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class StyledCellType { NOT_SET, TOTAL, METRIC_HEADER, VALUE };
 
-namespace StyledCellTypeMapper
-{
+namespace StyledCellTypeMapper {
 AWS_QUICKSIGHT_API StyledCellType GetStyledCellTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForStyledCellType(StyledCellType value);
-} // namespace StyledCellTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace StyledCellTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

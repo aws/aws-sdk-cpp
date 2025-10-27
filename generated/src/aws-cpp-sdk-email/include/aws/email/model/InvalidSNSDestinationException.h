@@ -4,75 +4,80 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace SES {
+namespace Model {
 
+/**
+ * <p>Indicates that the Amazon Simple Notification Service (Amazon SNS)
+ * destination is invalid. See the error message for details.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidSNSDestinationException">AWS
+ * API Reference</a></p>
+ */
+class InvalidSNSDestinationException {
+ public:
+  AWS_SES_API InvalidSNSDestinationException() = default;
+  AWS_SES_API InvalidSNSDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_SES_API InvalidSNSDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Indicates that the Amazon Simple Notification Service (Amazon SNS)
-   * destination is invalid. See the error message for details.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidSNSDestinationException">AWS
-   * API Reference</a></p>
+   * <p>Indicates that the configuration set does not exist.</p>
    */
-  class InvalidSNSDestinationException
-  {
-  public:
-    AWS_SES_API InvalidSNSDestinationException() = default;
-    AWS_SES_API InvalidSNSDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_SES_API InvalidSNSDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
+  inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+  template <typename ConfigurationSetNameT = Aws::String>
+  void SetConfigurationSetName(ConfigurationSetNameT&& value) {
+    m_configurationSetNameHasBeenSet = true;
+    m_configurationSetName = std::forward<ConfigurationSetNameT>(value);
+  }
+  template <typename ConfigurationSetNameT = Aws::String>
+  InvalidSNSDestinationException& WithConfigurationSetName(ConfigurationSetNameT&& value) {
+    SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>Indicates that the event destination does not exist.</p>
+   */
+  inline const Aws::String& GetEventDestinationName() const { return m_eventDestinationName; }
+  inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
+  template <typename EventDestinationNameT = Aws::String>
+  void SetEventDestinationName(EventDestinationNameT&& value) {
+    m_eventDestinationNameHasBeenSet = true;
+    m_eventDestinationName = std::forward<EventDestinationNameT>(value);
+  }
+  template <typename EventDestinationNameT = Aws::String>
+  InvalidSNSDestinationException& WithEventDestinationName(EventDestinationNameT&& value) {
+    SetEventDestinationName(std::forward<EventDestinationNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_configurationSetName;
+  bool m_configurationSetNameHasBeenSet = false;
 
+  Aws::String m_eventDestinationName;
+  bool m_eventDestinationNameHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
-    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
-    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    template<typename ConfigurationSetNameT = Aws::String>
-    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
-    template<typename ConfigurationSetNameT = Aws::String>
-    InvalidSNSDestinationException& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
-    inline const Aws::String& GetEventDestinationName() const { return m_eventDestinationName; }
-    inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
-    template<typename EventDestinationNameT = Aws::String>
-    void SetEventDestinationName(EventDestinationNameT&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::forward<EventDestinationNameT>(value); }
-    template<typename EventDestinationNameT = Aws::String>
-    InvalidSNSDestinationException& WithEventDestinationName(EventDestinationNameT&& value) { SetEventDestinationName(std::forward<EventDestinationNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet = false;
-
-    Aws::String m_eventDestinationName;
-    bool m_eventDestinationNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

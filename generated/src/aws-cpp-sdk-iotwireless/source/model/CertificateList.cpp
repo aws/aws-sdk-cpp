@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/CertificateList.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/CertificateList.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-CertificateList::CertificateList(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CertificateList::CertificateList(JsonView jsonValue) { *this = jsonValue; }
 
-CertificateList& CertificateList::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SigningAlg"))
-  {
+CertificateList& CertificateList::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SigningAlg")) {
     m_signingAlg = SigningAlgMapper::GetSigningAlgForName(jsonValue.GetString("SigningAlg"));
     m_signingAlgHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CertificateList::Jsonize() const
-{
+JsonValue CertificateList::Jsonize() const {
   JsonValue payload;
 
-  if(m_signingAlgHasBeenSet)
-  {
-   payload.WithString("SigningAlg", SigningAlgMapper::GetNameForSigningAlg(m_signingAlg));
+  if (m_signingAlgHasBeenSet) {
+    payload.WithString("SigningAlg", SigningAlgMapper::GetNameForSigningAlg(m_signingAlg));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

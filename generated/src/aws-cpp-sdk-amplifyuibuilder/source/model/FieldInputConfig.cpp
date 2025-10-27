@@ -11,206 +11,150 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FieldInputConfig::FieldInputConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldInputConfig::FieldInputConfig(JsonView jsonValue) { *this = jsonValue; }
 
-FieldInputConfig& FieldInputConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FieldInputConfig& FieldInputConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("required"))
-  {
+  if (jsonValue.ValueExists("required")) {
     m_required = jsonValue.GetBool("required");
     m_requiredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("readOnly"))
-  {
+  if (jsonValue.ValueExists("readOnly")) {
     m_readOnly = jsonValue.GetBool("readOnly");
     m_readOnlyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("placeholder"))
-  {
+  if (jsonValue.ValueExists("placeholder")) {
     m_placeholder = jsonValue.GetString("placeholder");
     m_placeholderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultValue"))
-  {
+  if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = jsonValue.GetString("defaultValue");
     m_defaultValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("descriptiveText"))
-  {
+  if (jsonValue.ValueExists("descriptiveText")) {
     m_descriptiveText = jsonValue.GetString("descriptiveText");
     m_descriptiveTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultChecked"))
-  {
+  if (jsonValue.ValueExists("defaultChecked")) {
     m_defaultChecked = jsonValue.GetBool("defaultChecked");
     m_defaultCheckedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultCountryCode"))
-  {
+  if (jsonValue.ValueExists("defaultCountryCode")) {
     m_defaultCountryCode = jsonValue.GetString("defaultCountryCode");
     m_defaultCountryCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("valueMappings"))
-  {
+  if (jsonValue.ValueExists("valueMappings")) {
     m_valueMappings = jsonValue.GetObject("valueMappings");
     m_valueMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minValue"))
-  {
+  if (jsonValue.ValueExists("minValue")) {
     m_minValue = jsonValue.GetDouble("minValue");
     m_minValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxValue"))
-  {
+  if (jsonValue.ValueExists("maxValue")) {
     m_maxValue = jsonValue.GetDouble("maxValue");
     m_maxValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("step"))
-  {
+  if (jsonValue.ValueExists("step")) {
     m_step = jsonValue.GetDouble("step");
     m_stepHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isArray"))
-  {
+  if (jsonValue.ValueExists("isArray")) {
     m_isArray = jsonValue.GetBool("isArray");
     m_isArrayHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileUploaderConfig"))
-  {
+  if (jsonValue.ValueExists("fileUploaderConfig")) {
     m_fileUploaderConfig = jsonValue.GetObject("fileUploaderConfig");
     m_fileUploaderConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldInputConfig::Jsonize() const
-{
+JsonValue FieldInputConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_requiredHasBeenSet)
-  {
-   payload.WithBool("required", m_required);
-
+  if (m_requiredHasBeenSet) {
+    payload.WithBool("required", m_required);
   }
 
-  if(m_readOnlyHasBeenSet)
-  {
-   payload.WithBool("readOnly", m_readOnly);
-
+  if (m_readOnlyHasBeenSet) {
+    payload.WithBool("readOnly", m_readOnly);
   }
 
-  if(m_placeholderHasBeenSet)
-  {
-   payload.WithString("placeholder", m_placeholder);
-
+  if (m_placeholderHasBeenSet) {
+    payload.WithString("placeholder", m_placeholder);
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("defaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", m_defaultValue);
   }
 
-  if(m_descriptiveTextHasBeenSet)
-  {
-   payload.WithString("descriptiveText", m_descriptiveText);
-
+  if (m_descriptiveTextHasBeenSet) {
+    payload.WithString("descriptiveText", m_descriptiveText);
   }
 
-  if(m_defaultCheckedHasBeenSet)
-  {
-   payload.WithBool("defaultChecked", m_defaultChecked);
-
+  if (m_defaultCheckedHasBeenSet) {
+    payload.WithBool("defaultChecked", m_defaultChecked);
   }
 
-  if(m_defaultCountryCodeHasBeenSet)
-  {
-   payload.WithString("defaultCountryCode", m_defaultCountryCode);
-
+  if (m_defaultCountryCodeHasBeenSet) {
+    payload.WithString("defaultCountryCode", m_defaultCountryCode);
   }
 
-  if(m_valueMappingsHasBeenSet)
-  {
-   payload.WithObject("valueMappings", m_valueMappings.Jsonize());
-
+  if (m_valueMappingsHasBeenSet) {
+    payload.WithObject("valueMappings", m_valueMappings.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_minValueHasBeenSet)
-  {
-   payload.WithDouble("minValue", m_minValue);
-
+  if (m_minValueHasBeenSet) {
+    payload.WithDouble("minValue", m_minValue);
   }
 
-  if(m_maxValueHasBeenSet)
-  {
-   payload.WithDouble("maxValue", m_maxValue);
-
+  if (m_maxValueHasBeenSet) {
+    payload.WithDouble("maxValue", m_maxValue);
   }
 
-  if(m_stepHasBeenSet)
-  {
-   payload.WithDouble("step", m_step);
-
+  if (m_stepHasBeenSet) {
+    payload.WithDouble("step", m_step);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_isArrayHasBeenSet)
-  {
-   payload.WithBool("isArray", m_isArray);
-
+  if (m_isArrayHasBeenSet) {
+    payload.WithBool("isArray", m_isArray);
   }
 
-  if(m_fileUploaderConfigHasBeenSet)
-  {
-   payload.WithObject("fileUploaderConfig", m_fileUploaderConfig.Jsonize());
-
+  if (m_fileUploaderConfigHasBeenSet) {
+    payload.WithObject("fileUploaderConfig", m_fileUploaderConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

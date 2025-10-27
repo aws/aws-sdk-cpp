@@ -12,27 +12,18 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DetectDominantLanguageRequest::SerializePayload() const
-{
+Aws::String DetectDominantLanguageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectDominantLanguageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DetectDominantLanguageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DetectDominantLanguage"));
   return headers;
-
 }
-
-
-
-

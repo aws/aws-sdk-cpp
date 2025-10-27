@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class InputSourceType
-  {
-    NOT_SET,
-    STATIC_,
-    DYNAMIC
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class InputSourceType { NOT_SET, STATIC_, DYNAMIC };
 
-namespace InputSourceTypeMapper
-{
+namespace InputSourceTypeMapper {
 AWS_MEDIALIVE_API InputSourceType GetInputSourceTypeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForInputSourceType(InputSourceType value);
-} // namespace InputSourceTypeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace InputSourceTypeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

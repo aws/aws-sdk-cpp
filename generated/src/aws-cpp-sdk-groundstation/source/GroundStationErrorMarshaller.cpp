@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GroundStation;
 
-AWSError<CoreErrors> GroundStationErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GroundStationErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GroundStationErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

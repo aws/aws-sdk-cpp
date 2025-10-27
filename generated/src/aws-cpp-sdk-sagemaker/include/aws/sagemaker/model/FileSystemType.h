@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class FileSystemType
-  {
-    NOT_SET,
-    EFS,
-    FSxLustre
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class FileSystemType { NOT_SET, EFS, FSxLustre };
 
-namespace FileSystemTypeMapper
-{
+namespace FileSystemTypeMapper {
 AWS_SAGEMAKER_API FileSystemType GetFileSystemTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForFileSystemType(FileSystemType value);
-} // namespace FileSystemTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace FileSystemTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
-  enum class TlsPolicy
-  {
-    NOT_SET,
-    Require,
-    Optional
-  };
+namespace Aws {
+namespace SES {
+namespace Model {
+enum class TlsPolicy { NOT_SET, Require, Optional };
 
-namespace TlsPolicyMapper
-{
+namespace TlsPolicyMapper {
 AWS_SES_API TlsPolicy GetTlsPolicyForName(const Aws::String& name);
 
 AWS_SES_API Aws::String GetNameForTlsPolicy(TlsPolicy value);
-} // namespace TlsPolicyMapper
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace TlsPolicyMapper
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

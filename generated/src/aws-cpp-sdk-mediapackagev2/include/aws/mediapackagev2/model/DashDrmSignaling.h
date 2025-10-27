@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
-namespace Aws
-{
-namespace mediapackagev2
-{
-namespace Model
-{
-  enum class DashDrmSignaling
-  {
-    NOT_SET,
-    INDIVIDUAL,
-    REFERENCED
-  };
+namespace Aws {
+namespace mediapackagev2 {
+namespace Model {
+enum class DashDrmSignaling { NOT_SET, INDIVIDUAL, REFERENCED };
 
-namespace DashDrmSignalingMapper
-{
+namespace DashDrmSignalingMapper {
 AWS_MEDIAPACKAGEV2_API DashDrmSignaling GetDashDrmSignalingForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGEV2_API Aws::String GetNameForDashDrmSignaling(DashDrmSignaling value);
-} // namespace DashDrmSignalingMapper
-} // namespace Model
-} // namespace mediapackagev2
-} // namespace Aws
+}  // namespace DashDrmSignalingMapper
+}  // namespace Model
+}  // namespace mediapackagev2
+}  // namespace Aws

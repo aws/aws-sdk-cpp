@@ -4,76 +4,83 @@
  */
 
 #pragma once
-#include <aws/docdb/DocDB_EXPORTS.h>
-#include <aws/docdb/DocDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/docdb/DocDBRequest.h>
+#include <aws/docdb/DocDB_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
+/**
+ * <p>Represents the input to
+ * <a>RemoveSourceIdentifierFromSubscription</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscriptionMessage">AWS
+ * API Reference</a></p>
+ */
+class RemoveSourceIdentifierFromSubscriptionRequest : public DocDBRequest {
+ public:
+  AWS_DOCDB_API RemoveSourceIdentifierFromSubscriptionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "RemoveSourceIdentifierFromSubscription"; }
+
+  AWS_DOCDB_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents the input to
-   * <a>RemoveSourceIdentifierFromSubscription</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscriptionMessage">AWS
-   * API Reference</a></p>
+   * <p>The name of the Amazon DocumentDB event notification subscription that you
+   * want to remove a source identifier from.</p>
    */
-  class RemoveSourceIdentifierFromSubscriptionRequest : public DocDBRequest
-  {
-  public:
-    AWS_DOCDB_API RemoveSourceIdentifierFromSubscriptionRequest() = default;
+  inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
+  inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
+  template <typename SubscriptionNameT = Aws::String>
+  void SetSubscriptionName(SubscriptionNameT&& value) {
+    m_subscriptionNameHasBeenSet = true;
+    m_subscriptionName = std::forward<SubscriptionNameT>(value);
+  }
+  template <typename SubscriptionNameT = Aws::String>
+  RemoveSourceIdentifierFromSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) {
+    SetSubscriptionName(std::forward<SubscriptionNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "RemoveSourceIdentifierFromSubscription"; }
+  ///@{
+  /**
+   * <p> The source identifier to be removed from the subscription, such as the
+   * instance identifier for an instance, or the name of a security group. </p>
+   */
+  inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
+  inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+  template <typename SourceIdentifierT = Aws::String>
+  void SetSourceIdentifier(SourceIdentifierT&& value) {
+    m_sourceIdentifierHasBeenSet = true;
+    m_sourceIdentifier = std::forward<SourceIdentifierT>(value);
+  }
+  template <typename SourceIdentifierT = Aws::String>
+  RemoveSourceIdentifierFromSubscriptionRequest& WithSourceIdentifier(SourceIdentifierT&& value) {
+    SetSourceIdentifier(std::forward<SourceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_subscriptionName;
+  bool m_subscriptionNameHasBeenSet = false;
 
-    AWS_DOCDB_API Aws::String SerializePayload() const override;
+  Aws::String m_sourceIdentifier;
+  bool m_sourceIdentifierHasBeenSet = false;
+};
 
-  protected:
-    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>The name of the Amazon DocumentDB event notification subscription that you
-     * want to remove a source identifier from.</p>
-     */
-    inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
-    inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-    template<typename SubscriptionNameT = Aws::String>
-    void SetSubscriptionName(SubscriptionNameT&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::forward<SubscriptionNameT>(value); }
-    template<typename SubscriptionNameT = Aws::String>
-    RemoveSourceIdentifierFromSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) { SetSubscriptionName(std::forward<SubscriptionNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The source identifier to be removed from the subscription, such as the
-     * instance identifier for an instance, or the name of a security group. </p>
-     */
-    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
-    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    template<typename SourceIdentifierT = Aws::String>
-    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
-    template<typename SourceIdentifierT = Aws::String>
-    RemoveSourceIdentifierFromSubscriptionRequest& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_subscriptionName;
-    bool m_subscriptionNameHasBeenSet = false;
-
-    Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

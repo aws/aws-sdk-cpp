@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
-  enum class TableTagPolicyLFPermission
-  {
-    NOT_SET,
-    DESCRIBE,
-    SELECT
-  };
+namespace Aws {
+namespace DataExchange {
+namespace Model {
+enum class TableTagPolicyLFPermission { NOT_SET, DESCRIBE, SELECT };
 
-namespace TableTagPolicyLFPermissionMapper
-{
+namespace TableTagPolicyLFPermissionMapper {
 AWS_DATAEXCHANGE_API TableTagPolicyLFPermission GetTableTagPolicyLFPermissionForName(const Aws::String& name);
 
 AWS_DATAEXCHANGE_API Aws::String GetNameForTableTagPolicyLFPermission(TableTagPolicyLFPermission value);
-} // namespace TableTagPolicyLFPermissionMapper
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace TableTagPolicyLFPermissionMapper
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

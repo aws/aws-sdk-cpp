@@ -11,50 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-UserAttributeUpdateSettingsType::UserAttributeUpdateSettingsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserAttributeUpdateSettingsType::UserAttributeUpdateSettingsType(JsonView jsonValue) { *this = jsonValue; }
 
-UserAttributeUpdateSettingsType& UserAttributeUpdateSettingsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributesRequireVerificationBeforeUpdate"))
-  {
-    Aws::Utils::Array<JsonView> attributesRequireVerificationBeforeUpdateJsonList = jsonValue.GetArray("AttributesRequireVerificationBeforeUpdate");
-    for(unsigned attributesRequireVerificationBeforeUpdateIndex = 0; attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength(); ++attributesRequireVerificationBeforeUpdateIndex)
-    {
-      m_attributesRequireVerificationBeforeUpdate.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString()));
+UserAttributeUpdateSettingsType& UserAttributeUpdateSettingsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributesRequireVerificationBeforeUpdate")) {
+    Aws::Utils::Array<JsonView> attributesRequireVerificationBeforeUpdateJsonList =
+        jsonValue.GetArray("AttributesRequireVerificationBeforeUpdate");
+    for (unsigned attributesRequireVerificationBeforeUpdateIndex = 0;
+         attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength();
+         ++attributesRequireVerificationBeforeUpdateIndex) {
+      m_attributesRequireVerificationBeforeUpdate.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(
+          attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString()));
     }
     m_attributesRequireVerificationBeforeUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserAttributeUpdateSettingsType::Jsonize() const
-{
+JsonValue UserAttributeUpdateSettingsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesRequireVerificationBeforeUpdateHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesRequireVerificationBeforeUpdateJsonList(m_attributesRequireVerificationBeforeUpdate.size());
-   for(unsigned attributesRequireVerificationBeforeUpdateIndex = 0; attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength(); ++attributesRequireVerificationBeforeUpdateIndex)
-   {
-     attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_attributesRequireVerificationBeforeUpdate[attributesRequireVerificationBeforeUpdateIndex]));
-   }
-   payload.WithArray("AttributesRequireVerificationBeforeUpdate", std::move(attributesRequireVerificationBeforeUpdateJsonList));
-
+  if (m_attributesRequireVerificationBeforeUpdateHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesRequireVerificationBeforeUpdateJsonList(m_attributesRequireVerificationBeforeUpdate.size());
+    for (unsigned attributesRequireVerificationBeforeUpdateIndex = 0;
+         attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength();
+         ++attributesRequireVerificationBeforeUpdateIndex) {
+      attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString(
+          VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(
+              m_attributesRequireVerificationBeforeUpdate[attributesRequireVerificationBeforeUpdateIndex]));
+    }
+    payload.WithArray("AttributesRequireVerificationBeforeUpdate", std::move(attributesRequireVerificationBeforeUpdateJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

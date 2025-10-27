@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
-  enum class RecencyType
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
+enum class RecencyType { NOT_SET, ACTIVE, INACTIVE };
 
-namespace RecencyTypeMapper
-{
+namespace RecencyTypeMapper {
 AWS_PINPOINT_API RecencyType GetRecencyTypeForName(const Aws::String& name);
 
 AWS_PINPOINT_API Aws::String GetNameForRecencyType(RecencyType value);
-} // namespace RecencyTypeMapper
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace RecencyTypeMapper
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

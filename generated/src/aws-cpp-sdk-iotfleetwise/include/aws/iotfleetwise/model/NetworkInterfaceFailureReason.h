@@ -4,34 +4,29 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class NetworkInterfaceFailureReason
-  {
-    NOT_SET,
-    DUPLICATE_NETWORK_INTERFACE,
-    CONFLICTING_NETWORK_INTERFACE,
-    NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS,
-    CAN_NETWORK_INTERFACE_INFO_IS_NULL,
-    OBD_NETWORK_INTERFACE_INFO_IS_NULL,
-    NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS,
-    VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL,
-    CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class NetworkInterfaceFailureReason {
+  NOT_SET,
+  DUPLICATE_NETWORK_INTERFACE,
+  CONFLICTING_NETWORK_INTERFACE,
+  NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS,
+  CAN_NETWORK_INTERFACE_INFO_IS_NULL,
+  OBD_NETWORK_INTERFACE_INFO_IS_NULL,
+  NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS,
+  VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL,
+  CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL
+};
 
-namespace NetworkInterfaceFailureReasonMapper
-{
+namespace NetworkInterfaceFailureReasonMapper {
 AWS_IOTFLEETWISE_API NetworkInterfaceFailureReason GetNetworkInterfaceFailureReasonForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForNetworkInterfaceFailureReason(NetworkInterfaceFailureReason value);
-} // namespace NetworkInterfaceFailureReasonMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace NetworkInterfaceFailureReasonMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

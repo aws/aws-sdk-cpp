@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsInputSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/HlsInputSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-HlsInputSettings::HlsInputSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HlsInputSettings::HlsInputSettings(JsonView jsonValue) { *this = jsonValue; }
 
-HlsInputSettings& HlsInputSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bandwidth"))
-  {
+HlsInputSettings& HlsInputSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bandwidth")) {
     m_bandwidth = jsonValue.GetInteger("bandwidth");
     m_bandwidthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bufferSegments"))
-  {
+  if (jsonValue.ValueExists("bufferSegments")) {
     m_bufferSegments = jsonValue.GetInteger("bufferSegments");
     m_bufferSegmentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("retries"))
-  {
+  if (jsonValue.ValueExists("retries")) {
     m_retries = jsonValue.GetInteger("retries");
     m_retriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("retryInterval"))
-  {
+  if (jsonValue.ValueExists("retryInterval")) {
     m_retryInterval = jsonValue.GetInteger("retryInterval");
     m_retryIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scte35Source"))
-  {
+  if (jsonValue.ValueExists("scte35Source")) {
     m_scte35Source = HlsScte35SourceTypeMapper::GetHlsScte35SourceTypeForName(jsonValue.GetString("scte35Source"));
     m_scte35SourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HlsInputSettings::Jsonize() const
-{
+JsonValue HlsInputSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_bandwidthHasBeenSet)
-  {
-   payload.WithInteger("bandwidth", m_bandwidth);
-
+  if (m_bandwidthHasBeenSet) {
+    payload.WithInteger("bandwidth", m_bandwidth);
   }
 
-  if(m_bufferSegmentsHasBeenSet)
-  {
-   payload.WithInteger("bufferSegments", m_bufferSegments);
-
+  if (m_bufferSegmentsHasBeenSet) {
+    payload.WithInteger("bufferSegments", m_bufferSegments);
   }
 
-  if(m_retriesHasBeenSet)
-  {
-   payload.WithInteger("retries", m_retries);
-
+  if (m_retriesHasBeenSet) {
+    payload.WithInteger("retries", m_retries);
   }
 
-  if(m_retryIntervalHasBeenSet)
-  {
-   payload.WithInteger("retryInterval", m_retryInterval);
-
+  if (m_retryIntervalHasBeenSet) {
+    payload.WithInteger("retryInterval", m_retryInterval);
   }
 
-  if(m_scte35SourceHasBeenSet)
-  {
-   payload.WithString("scte35Source", HlsScte35SourceTypeMapper::GetNameForHlsScte35SourceType(m_scte35Source));
+  if (m_scte35SourceHasBeenSet) {
+    payload.WithString("scte35Source", HlsScte35SourceTypeMapper::GetNameForHlsScte35SourceType(m_scte35Source));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

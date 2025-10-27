@@ -12,27 +12,18 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetWorkloadEstimateRequest::SerializePayload() const
-{
+Aws::String GetWorkloadEstimateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetWorkloadEstimateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetWorkloadEstimateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.GetWorkloadEstimate"));
   return headers;
-
 }
-
-
-
-

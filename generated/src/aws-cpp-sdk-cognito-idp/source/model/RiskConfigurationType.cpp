@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-RiskConfigurationType::RiskConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RiskConfigurationType::RiskConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-RiskConfigurationType& RiskConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserPoolId"))
-  {
+RiskConfigurationType& RiskConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserPoolId")) {
     m_userPoolId = jsonValue.GetString("UserPoolId");
     m_userPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientId"))
-  {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompromisedCredentialsRiskConfiguration"))
-  {
+  if (jsonValue.ValueExists("CompromisedCredentialsRiskConfiguration")) {
     m_compromisedCredentialsRiskConfiguration = jsonValue.GetObject("CompromisedCredentialsRiskConfiguration");
     m_compromisedCredentialsRiskConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountTakeoverRiskConfiguration"))
-  {
+  if (jsonValue.ValueExists("AccountTakeoverRiskConfiguration")) {
     m_accountTakeoverRiskConfiguration = jsonValue.GetObject("AccountTakeoverRiskConfiguration");
     m_accountTakeoverRiskConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RiskExceptionConfiguration"))
-  {
+  if (jsonValue.ValueExists("RiskExceptionConfiguration")) {
     m_riskExceptionConfiguration = jsonValue.GetObject("RiskExceptionConfiguration");
     m_riskExceptionConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RiskConfigurationType::Jsonize() const
-{
+JsonValue RiskConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_compromisedCredentialsRiskConfigurationHasBeenSet)
-  {
-   payload.WithObject("CompromisedCredentialsRiskConfiguration", m_compromisedCredentialsRiskConfiguration.Jsonize());
-
+  if (m_compromisedCredentialsRiskConfigurationHasBeenSet) {
+    payload.WithObject("CompromisedCredentialsRiskConfiguration", m_compromisedCredentialsRiskConfiguration.Jsonize());
   }
 
-  if(m_accountTakeoverRiskConfigurationHasBeenSet)
-  {
-   payload.WithObject("AccountTakeoverRiskConfiguration", m_accountTakeoverRiskConfiguration.Jsonize());
-
+  if (m_accountTakeoverRiskConfigurationHasBeenSet) {
+    payload.WithObject("AccountTakeoverRiskConfiguration", m_accountTakeoverRiskConfiguration.Jsonize());
   }
 
-  if(m_riskExceptionConfigurationHasBeenSet)
-  {
-   payload.WithObject("RiskExceptionConfiguration", m_riskExceptionConfiguration.Jsonize());
-
+  if (m_riskExceptionConfigurationHasBeenSet) {
+    payload.WithObject("RiskExceptionConfiguration", m_riskExceptionConfiguration.Jsonize());
   }
 
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  if (m_lastModifiedDateHasBeenSet) {
+    payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

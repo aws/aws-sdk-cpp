@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-TlsConfigInput::TlsConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TlsConfigInput::TlsConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-TlsConfigInput& TlsConfigInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serverNameToVerify"))
-  {
+TlsConfigInput& TlsConfigInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serverNameToVerify")) {
     m_serverNameToVerify = jsonValue.GetString("serverNameToVerify");
     m_serverNameToVerifyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TlsConfigInput::Jsonize() const
-{
+JsonValue TlsConfigInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_serverNameToVerifyHasBeenSet)
-  {
-   payload.WithString("serverNameToVerify", m_serverNameToVerify);
-
+  if (m_serverNameToVerifyHasBeenSet) {
+    payload.WithString("serverNameToVerify", m_serverNameToVerify);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

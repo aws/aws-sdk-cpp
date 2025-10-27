@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetManagedPrefixListEntriesRequest::SerializePayload() const
-{
+Aws::String GetManagedPrefixListEntriesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetManagedPrefixListEntries&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_prefixListIdHasBeenSet)
-  {
+  if (m_prefixListIdHasBeenSet) {
     ss << "PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 
-  if(m_targetVersionHasBeenSet)
-  {
+  if (m_targetVersionHasBeenSet) {
     ss << "TargetVersion=" << m_targetVersion << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String GetManagedPrefixListEntriesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetManagedPrefixListEntriesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetManagedPrefixListEntriesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

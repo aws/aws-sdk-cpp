@@ -12,45 +12,30 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateSourceResourceRequest::SerializePayload() const
-{
+Aws::String DisassociateSourceResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
-
+  if (m_progressUpdateStreamHasBeenSet) {
+    payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
   }
 
-  if(m_migrationTaskNameHasBeenSet)
-  {
-   payload.WithString("MigrationTaskName", m_migrationTaskName);
-
+  if (m_migrationTaskNameHasBeenSet) {
+    payload.WithString("MigrationTaskName", m_migrationTaskName);
   }
 
-  if(m_sourceResourceNameHasBeenSet)
-  {
-   payload.WithString("SourceResourceName", m_sourceResourceName);
-
+  if (m_sourceResourceNameHasBeenSet) {
+    payload.WithString("SourceResourceName", m_sourceResourceName);
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("DryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DisassociateSourceResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DisassociateSourceResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMigrationHub.DisassociateSourceResource"));
   return headers;
-
 }
-
-
-
-

@@ -3,156 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DomainController.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/DomainController.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-DomainController::DomainController(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainController::DomainController(JsonView jsonValue) { *this = jsonValue; }
 
-DomainController& DomainController::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DirectoryId"))
-  {
+DomainController& DomainController::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DirectoryId")) {
     m_directoryId = jsonValue.GetString("DirectoryId");
     m_directoryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainControllerId"))
-  {
+  if (jsonValue.ValueExists("DomainControllerId")) {
     m_domainControllerId = jsonValue.GetString("DomainControllerId");
     m_domainControllerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsIpAddr"))
-  {
+  if (jsonValue.ValueExists("DnsIpAddr")) {
     m_dnsIpAddr = jsonValue.GetString("DnsIpAddr");
     m_dnsIpAddrHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsIpv6Addr"))
-  {
+  if (jsonValue.ValueExists("DnsIpv6Addr")) {
     m_dnsIpv6Addr = jsonValue.GetString("DnsIpv6Addr");
     m_dnsIpv6AddrHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetId"))
-  {
+  if (jsonValue.ValueExists("SubnetId")) {
     m_subnetId = jsonValue.GetString("SubnetId");
     m_subnetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvailabilityZone"))
-  {
+  if (jsonValue.ValueExists("AvailabilityZone")) {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DomainControllerStatusMapper::GetDomainControllerStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusReason"))
-  {
+  if (jsonValue.ValueExists("StatusReason")) {
     m_statusReason = jsonValue.GetString("StatusReason");
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LaunchTime"))
-  {
+  if (jsonValue.ValueExists("LaunchTime")) {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
     m_launchTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusLastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("StatusLastUpdatedDateTime")) {
     m_statusLastUpdatedDateTime = jsonValue.GetDouble("StatusLastUpdatedDateTime");
     m_statusLastUpdatedDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainController::Jsonize() const
-{
+JsonValue DomainController::Jsonize() const {
   JsonValue payload;
 
-  if(m_directoryIdHasBeenSet)
-  {
-   payload.WithString("DirectoryId", m_directoryId);
-
+  if (m_directoryIdHasBeenSet) {
+    payload.WithString("DirectoryId", m_directoryId);
   }
 
-  if(m_domainControllerIdHasBeenSet)
-  {
-   payload.WithString("DomainControllerId", m_domainControllerId);
-
+  if (m_domainControllerIdHasBeenSet) {
+    payload.WithString("DomainControllerId", m_domainControllerId);
   }
 
-  if(m_dnsIpAddrHasBeenSet)
-  {
-   payload.WithString("DnsIpAddr", m_dnsIpAddr);
-
+  if (m_dnsIpAddrHasBeenSet) {
+    payload.WithString("DnsIpAddr", m_dnsIpAddr);
   }
 
-  if(m_dnsIpv6AddrHasBeenSet)
-  {
-   payload.WithString("DnsIpv6Addr", m_dnsIpv6Addr);
-
+  if (m_dnsIpv6AddrHasBeenSet) {
+    payload.WithString("DnsIpv6Addr", m_dnsIpv6Addr);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithString("SubnetId", m_subnetId);
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithString("SubnetId", m_subnetId);
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("AvailabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", DomainControllerStatusMapper::GetNameForDomainControllerStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", DomainControllerStatusMapper::GetNameForDomainControllerStatus(m_status));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("StatusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", m_statusReason);
   }
 
-  if(m_launchTimeHasBeenSet)
-  {
-   payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
+  if (m_launchTimeHasBeenSet) {
+    payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusLastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("StatusLastUpdatedDateTime", m_statusLastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_statusLastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("StatusLastUpdatedDateTime", m_statusLastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

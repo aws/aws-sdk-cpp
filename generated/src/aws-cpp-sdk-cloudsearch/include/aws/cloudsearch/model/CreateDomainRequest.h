@@ -4,62 +4,63 @@
  */
 
 #pragma once
-#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/CloudSearchRequest.h>
+#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
+/**
+ * <p>Container for the parameters to the <code><a>CreateDomain</a></code>
+ * operation. Specifies a name for the new search domain.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomainRequest">AWS
+ * API Reference</a></p>
+ */
+class CreateDomainRequest : public CloudSearchRequest {
+ public:
+  AWS_CLOUDSEARCH_API CreateDomainRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateDomain"; }
+
+  AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Container for the parameters to the <code><a>CreateDomain</a></code>
-   * operation. Specifies a name for the new search domain.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomainRequest">AWS
-   * API Reference</a></p>
+   * <p>A name for the domain you are creating. Allowed characters are a-z
+   * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
+   * or number and be at least 3 and no more than 28 characters long.</p>
    */
-  class CreateDomainRequest : public CloudSearchRequest
-  {
-  public:
-    AWS_CLOUDSEARCH_API CreateDomainRequest() = default;
+  inline const Aws::String& GetDomainName() const { return m_domainName; }
+  inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+  template <typename DomainNameT = Aws::String>
+  void SetDomainName(DomainNameT&& value) {
+    m_domainNameHasBeenSet = true;
+    m_domainName = std::forward<DomainNameT>(value);
+  }
+  template <typename DomainNameT = Aws::String>
+  CreateDomainRequest& WithDomainName(DomainNameT&& value) {
+    SetDomainName(std::forward<DomainNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainName;
+  bool m_domainNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateDomain"; }
-
-    AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
-
-  protected:
-    AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
-    inline const Aws::String& GetDomainName() const { return m_domainName; }
-    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    template<typename DomainNameT = Aws::String>
-    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
-    template<typename DomainNameT = Aws::String>
-    CreateDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domainName;
-    bool m_domainNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

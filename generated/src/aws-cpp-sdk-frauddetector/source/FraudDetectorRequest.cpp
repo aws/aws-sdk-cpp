@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/frauddetector/FraudDetectorRequest.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-} // namespace FraudDetector
-} // namespace Aws
+namespace Aws {
+namespace FraudDetector {}  // namespace FraudDetector
+}  // namespace Aws

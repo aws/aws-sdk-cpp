@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/ListBatchJobExecutionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/m2/model/ListBatchJobExecutionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBatchJobExecutionsResult::ListBatchJobExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListBatchJobExecutionsResult::ListBatchJobExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListBatchJobExecutionsResult& ListBatchJobExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListBatchJobExecutionsResult& ListBatchJobExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("batchJobExecutions"))
-  {
+  if (jsonValue.ValueExists("batchJobExecutions")) {
     Aws::Utils::Array<JsonView> batchJobExecutionsJsonList = jsonValue.GetArray("batchJobExecutions");
-    for(unsigned batchJobExecutionsIndex = 0; batchJobExecutionsIndex < batchJobExecutionsJsonList.GetLength(); ++batchJobExecutionsIndex)
-    {
+    for (unsigned batchJobExecutionsIndex = 0; batchJobExecutionsIndex < batchJobExecutionsJsonList.GetLength();
+         ++batchJobExecutionsIndex) {
       m_batchJobExecutions.push_back(batchJobExecutionsJsonList[batchJobExecutionsIndex].AsObject());
     }
     m_batchJobExecutionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

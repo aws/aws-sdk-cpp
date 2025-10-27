@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class RootAccess
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class RootAccess { NOT_SET, Enabled, Disabled };
 
-namespace RootAccessMapper
-{
+namespace RootAccessMapper {
 AWS_SAGEMAKER_API RootAccess GetRootAccessForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForRootAccess(RootAccess value);
-} // namespace RootAccessMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace RootAccessMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pipes/model/BatchResourceRequirement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pipes/model/BatchResourceRequirement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
+namespace Aws {
+namespace Pipes {
+namespace Model {
 
-BatchResourceRequirement::BatchResourceRequirement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchResourceRequirement::BatchResourceRequirement(JsonView jsonValue) { *this = jsonValue; }
 
-BatchResourceRequirement& BatchResourceRequirement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+BatchResourceRequirement& BatchResourceRequirement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = BatchResourceRequirementTypeMapper::GetBatchResourceRequirementTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchResourceRequirement::Jsonize() const
-{
+JsonValue BatchResourceRequirement::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", BatchResourceRequirementTypeMapper::GetNameForBatchResourceRequirementType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", BatchResourceRequirementTypeMapper::GetNameForBatchResourceRequirementType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/PermissionInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workdocs/model/PermissionInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
 
-PermissionInfo::PermissionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PermissionInfo::PermissionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-PermissionInfo& PermissionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Role"))
-  {
+PermissionInfo& PermissionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Role")) {
     m_role = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("Role"));
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = RolePermissionTypeMapper::GetRolePermissionTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PermissionInfo::Jsonize() const
-{
+JsonValue PermissionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", RoleTypeMapper::GetNameForRoleType(m_role));
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", RoleTypeMapper::GetNameForRoleType(m_role));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", RolePermissionTypeMapper::GetNameForRolePermissionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RolePermissionTypeMapper::GetNameForRolePermissionType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

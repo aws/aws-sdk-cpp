@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConnect {
+namespace Model {
 
+/**
+ * <p> Create a bridge with the egress bridge type. An egress bridge is a
+ * cloud-to-ground bridge. The content comes from an existing MediaConnect flow and
+ * is delivered to your premises. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddEgressGatewayBridgeRequest">AWS
+ * API Reference</a></p>
+ */
+class AddEgressGatewayBridgeRequest {
+ public:
+  AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest() = default;
+  AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> Create a bridge with the egress bridge type. An egress bridge is a
-   * cloud-to-ground bridge. The content comes from an existing MediaConnect flow and
-   * is delivered to your premises. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddEgressGatewayBridgeRequest">AWS
-   * API Reference</a></p>
+   * <p> The maximum expected bitrate (in bps) of the egress bridge.</p>
    */
-  class AddEgressGatewayBridgeRequest
-  {
-  public:
-    AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest() = default;
-    AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONNECT_API AddEgressGatewayBridgeRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMaxBitrate() const { return m_maxBitrate; }
+  inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
+  inline void SetMaxBitrate(int value) {
+    m_maxBitrateHasBeenSet = true;
+    m_maxBitrate = value;
+  }
+  inline AddEgressGatewayBridgeRequest& WithMaxBitrate(int value) {
+    SetMaxBitrate(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxBitrate{0};
+  bool m_maxBitrateHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p> The maximum expected bitrate (in bps) of the egress bridge.</p>
-     */
-    inline int GetMaxBitrate() const { return m_maxBitrate; }
-    inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
-    inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
-    inline AddEgressGatewayBridgeRequest& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
-    ///@}
-  private:
-
-    int m_maxBitrate{0};
-    bool m_maxBitrateHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

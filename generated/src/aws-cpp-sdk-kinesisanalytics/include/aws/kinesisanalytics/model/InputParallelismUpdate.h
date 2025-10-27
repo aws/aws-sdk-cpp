@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace KinesisAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace KinesisAnalytics {
+namespace Model {
 
+/**
+ * <p>Provides updates to the parallelism count.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelismUpdate">AWS
+ * API Reference</a></p>
+ */
+class InputParallelismUpdate {
+ public:
+  AWS_KINESISANALYTICS_API InputParallelismUpdate() = default;
+  AWS_KINESISANALYTICS_API InputParallelismUpdate(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KINESISANALYTICS_API InputParallelismUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides updates to the parallelism count.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelismUpdate">AWS
-   * API Reference</a></p>
+   * <p>Number of in-application streams to create for the specified streaming
+   * source.</p>
    */
-  class InputParallelismUpdate
-  {
-  public:
-    AWS_KINESISANALYTICS_API InputParallelismUpdate() = default;
-    AWS_KINESISANALYTICS_API InputParallelismUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KINESISANALYTICS_API InputParallelismUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetCountUpdate() const { return m_countUpdate; }
+  inline bool CountUpdateHasBeenSet() const { return m_countUpdateHasBeenSet; }
+  inline void SetCountUpdate(int value) {
+    m_countUpdateHasBeenSet = true;
+    m_countUpdate = value;
+  }
+  inline InputParallelismUpdate& WithCountUpdate(int value) {
+    SetCountUpdate(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_countUpdate{0};
+  bool m_countUpdateHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Number of in-application streams to create for the specified streaming
-     * source.</p>
-     */
-    inline int GetCountUpdate() const { return m_countUpdate; }
-    inline bool CountUpdateHasBeenSet() const { return m_countUpdateHasBeenSet; }
-    inline void SetCountUpdate(int value) { m_countUpdateHasBeenSet = true; m_countUpdate = value; }
-    inline InputParallelismUpdate& WithCountUpdate(int value) { SetCountUpdate(value); return *this;}
-    ///@}
-  private:
-
-    int m_countUpdate{0};
-    bool m_countUpdateHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalytics
+}  // namespace Aws

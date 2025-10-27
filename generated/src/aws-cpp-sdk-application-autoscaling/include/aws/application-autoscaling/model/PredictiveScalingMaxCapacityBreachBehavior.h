@@ -7,25 +7,18 @@
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
-  enum class PredictiveScalingMaxCapacityBreachBehavior
-  {
-    NOT_SET,
-    HonorMaxCapacity,
-    IncreaseMaxCapacity
-  };
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
+enum class PredictiveScalingMaxCapacityBreachBehavior { NOT_SET, HonorMaxCapacity, IncreaseMaxCapacity };
 
-namespace PredictiveScalingMaxCapacityBreachBehaviorMapper
-{
-AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMaxCapacityBreachBehavior GetPredictiveScalingMaxCapacityBreachBehaviorForName(const Aws::String& name);
+namespace PredictiveScalingMaxCapacityBreachBehaviorMapper {
+AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMaxCapacityBreachBehavior
+GetPredictiveScalingMaxCapacityBreachBehaviorForName(const Aws::String& name);
 
-AWS_APPLICATIONAUTOSCALING_API Aws::String GetNameForPredictiveScalingMaxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior value);
-} // namespace PredictiveScalingMaxCapacityBreachBehaviorMapper
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+AWS_APPLICATIONAUTOSCALING_API Aws::String GetNameForPredictiveScalingMaxCapacityBreachBehavior(
+    PredictiveScalingMaxCapacityBreachBehavior value);
+}  // namespace PredictiveScalingMaxCapacityBreachBehaviorMapper
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

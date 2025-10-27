@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-Credential::Credential(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Credential::Credential(JsonView jsonValue) { *this = jsonValue; }
 
-Credential& Credential::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Username"))
-  {
+Credential& Credential::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Username")) {
     m_username = jsonValue.GetString("Username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Password"))
-  {
+  if (jsonValue.ValueExists("Password")) {
     m_password = jsonValue.GetString("Password");
     m_passwordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Credential::Jsonize() const
-{
+JsonValue Credential::Jsonize() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("Password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

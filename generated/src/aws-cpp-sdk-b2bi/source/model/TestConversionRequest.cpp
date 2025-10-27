@@ -12,33 +12,22 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TestConversionRequest::SerializePayload() const
-{
+Aws::String TestConversionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("target", m_target.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection TestConversionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection TestConversionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.TestConversion"));
   return headers;
-
 }
-
-
-
-

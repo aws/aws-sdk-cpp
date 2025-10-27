@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetOrganizationCustomRulePolicyRequest::SerializePayload() const
-{
+Aws::String GetOrganizationCustomRulePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationConfigRuleNameHasBeenSet)
-  {
-   payload.WithString("OrganizationConfigRuleName", m_organizationConfigRuleName);
-
+  if (m_organizationConfigRuleNameHasBeenSet) {
+    payload.WithString("OrganizationConfigRuleName", m_organizationConfigRuleName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetOrganizationCustomRulePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetOrganizationCustomRulePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.GetOrganizationCustomRulePolicy"));
   return headers;
-
 }
-
-
-
-

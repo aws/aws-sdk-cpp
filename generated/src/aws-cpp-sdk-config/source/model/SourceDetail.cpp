@@ -11,60 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-SourceDetail::SourceDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceDetail::SourceDetail(JsonView jsonValue) { *this = jsonValue; }
 
-SourceDetail& SourceDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventSource"))
-  {
+SourceDetail& SourceDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventSource")) {
     m_eventSource = EventSourceMapper::GetEventSourceForName(jsonValue.GetString("EventSource"));
     m_eventSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MessageType"))
-  {
+  if (jsonValue.ValueExists("MessageType")) {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
     m_messageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumExecutionFrequency"))
-  {
-    m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
+  if (jsonValue.ValueExists("MaximumExecutionFrequency")) {
+    m_maximumExecutionFrequency =
+        MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceDetail::Jsonize() const
-{
+JsonValue SourceDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventSourceHasBeenSet)
-  {
-   payload.WithString("EventSource", EventSourceMapper::GetNameForEventSource(m_eventSource));
+  if (m_eventSourceHasBeenSet) {
+    payload.WithString("EventSource", EventSourceMapper::GetNameForEventSource(m_eventSource));
   }
 
-  if(m_messageTypeHasBeenSet)
-  {
-   payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  if (m_messageTypeHasBeenSet) {
+    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
   }
 
-  if(m_maximumExecutionFrequencyHasBeenSet)
-  {
-   payload.WithString("MaximumExecutionFrequency", MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_maximumExecutionFrequency));
+  if (m_maximumExecutionFrequencyHasBeenSet) {
+    payload.WithString("MaximumExecutionFrequency",
+                       MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_maximumExecutionFrequency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

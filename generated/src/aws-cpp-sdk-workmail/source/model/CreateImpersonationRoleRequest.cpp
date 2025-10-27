@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/CreateImpersonationRoleRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/CreateImpersonationRoleRequest.h>
 
 #include <utility>
 
@@ -12,61 +12,42 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateImpersonationRoleRequest::SerializePayload() const
-{
+Aws::String CreateImpersonationRoleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ImpersonationRoleTypeMapper::GetNameForImpersonationRoleType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ImpersonationRoleTypeMapper::GetNameForImpersonationRoleType(m_type));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateImpersonationRoleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateImpersonationRoleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.CreateImpersonationRole"));
   return headers;
-
 }
-
-
-
-

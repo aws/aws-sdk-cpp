@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-FilePart::FilePart(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilePart::FilePart(JsonView jsonValue) { *this = jsonValue; }
 
-FilePart& FilePart::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("files"))
-  {
+FilePart& FilePart::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("files")) {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
-    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
-    {
+    for (unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex) {
       m_files.push_back(filesJsonList[filesIndex].AsObject());
     }
     m_filesHasBeenSet = true;
@@ -37,24 +28,20 @@ FilePart& FilePart::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FilePart::Jsonize() const
-{
+JsonValue FilePart::Jsonize() const {
   JsonValue payload;
 
-  if(m_filesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
-   for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
-   {
-     filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
-   }
-   payload.WithArray("files", std::move(filesJsonList));
-
+  if (m_filesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
+    for (unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex) {
+      filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
+    }
+    payload.WithArray("files", std::move(filesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

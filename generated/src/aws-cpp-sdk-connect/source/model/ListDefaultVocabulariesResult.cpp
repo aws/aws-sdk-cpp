@@ -4,10 +4,10 @@
  */
 
 #include <aws/connect/model/ListDefaultVocabulariesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDefaultVocabulariesResult::ListDefaultVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListDefaultVocabulariesResult::ListDefaultVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListDefaultVocabulariesResult& ListDefaultVocabulariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDefaultVocabulariesResult& ListDefaultVocabulariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DefaultVocabularyList"))
-  {
+  if (jsonValue.ValueExists("DefaultVocabularyList")) {
     Aws::Utils::Array<JsonView> defaultVocabularyListJsonList = jsonValue.GetArray("DefaultVocabularyList");
-    for(unsigned defaultVocabularyListIndex = 0; defaultVocabularyListIndex < defaultVocabularyListJsonList.GetLength(); ++defaultVocabularyListIndex)
-    {
+    for (unsigned defaultVocabularyListIndex = 0; defaultVocabularyListIndex < defaultVocabularyListJsonList.GetLength();
+         ++defaultVocabularyListIndex) {
       m_defaultVocabularyList.push_back(defaultVocabularyListJsonList[defaultVocabularyListIndex].AsObject());
     }
     m_defaultVocabularyListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

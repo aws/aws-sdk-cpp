@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pi/PI_EXPORTS.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
-  enum class AcceptLanguage
-  {
-    NOT_SET,
-    EN_US
-  };
+namespace Aws {
+namespace PI {
+namespace Model {
+enum class AcceptLanguage { NOT_SET, EN_US };
 
-namespace AcceptLanguageMapper
-{
+namespace AcceptLanguageMapper {
 AWS_PI_API AcceptLanguage GetAcceptLanguageForName(const Aws::String& name);
 
 AWS_PI_API Aws::String GetNameForAcceptLanguage(AcceptLanguage value);
-} // namespace AcceptLanguageMapper
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace AcceptLanguageMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

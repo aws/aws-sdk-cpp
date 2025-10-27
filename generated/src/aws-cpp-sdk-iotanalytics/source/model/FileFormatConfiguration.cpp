@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/FileFormatConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/FileFormatConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-FileFormatConfiguration::FileFormatConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileFormatConfiguration::FileFormatConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FileFormatConfiguration& FileFormatConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jsonConfiguration"))
-  {
+FileFormatConfiguration& FileFormatConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jsonConfiguration")) {
     m_jsonConfiguration = jsonValue.GetObject("jsonConfiguration");
     m_jsonConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parquetConfiguration"))
-  {
+  if (jsonValue.ValueExists("parquetConfiguration")) {
     m_parquetConfiguration = jsonValue.GetObject("parquetConfiguration");
     m_parquetConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileFormatConfiguration::Jsonize() const
-{
+JsonValue FileFormatConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonConfigurationHasBeenSet)
-  {
-   payload.WithObject("jsonConfiguration", m_jsonConfiguration.Jsonize());
-
+  if (m_jsonConfigurationHasBeenSet) {
+    payload.WithObject("jsonConfiguration", m_jsonConfiguration.Jsonize());
   }
 
-  if(m_parquetConfigurationHasBeenSet)
-  {
-   payload.WithObject("parquetConfiguration", m_parquetConfiguration.Jsonize());
-
+  if (m_parquetConfigurationHasBeenSet) {
+    payload.WithObject("parquetConfiguration", m_parquetConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

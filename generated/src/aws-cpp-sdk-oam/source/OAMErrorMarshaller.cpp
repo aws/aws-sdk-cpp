@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::OAM;
 
-AWSError<CoreErrors> OAMErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> OAMErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = OAMErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

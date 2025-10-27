@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class InferenceComponentStatus
-  {
-    NOT_SET,
-    InService,
-    Creating,
-    Updating,
-    Failed,
-    Deleting
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class InferenceComponentStatus { NOT_SET, InService, Creating, Updating, Failed, Deleting };
 
-namespace InferenceComponentStatusMapper
-{
+namespace InferenceComponentStatusMapper {
 AWS_SAGEMAKER_API InferenceComponentStatus GetInferenceComponentStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForInferenceComponentStatus(InferenceComponentStatus value);
-} // namespace InferenceComponentStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace InferenceComponentStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

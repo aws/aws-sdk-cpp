@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis-video-media/model/GetMediaRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis-video-media/model/GetMediaRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::KinesisVideoMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMediaRequest::SerializePayload() const
-{
+Aws::String GetMediaRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
-  if(m_streamARNHasBeenSet)
-  {
-   payload.WithString("StreamARN", m_streamARN);
-
+  if (m_streamARNHasBeenSet) {
+    payload.WithString("StreamARN", m_streamARN);
   }
 
-  if(m_startSelectorHasBeenSet)
-  {
-   payload.WithObject("StartSelector", m_startSelector.Jsonize());
-
+  if (m_startSelectorHasBeenSet) {
+    payload.WithObject("StartSelector", m_startSelector.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

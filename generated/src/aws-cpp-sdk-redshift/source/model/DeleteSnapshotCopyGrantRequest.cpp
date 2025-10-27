@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteSnapshotCopyGrantRequest::SerializePayload() const
-{
+Aws::String DeleteSnapshotCopyGrantRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteSnapshotCopyGrant&";
-  if(m_snapshotCopyGrantNameHasBeenSet)
-  {
+  if (m_snapshotCopyGrantNameHasBeenSet) {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteSnapshotCopyGrantRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteSnapshotCopyGrantRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteSnapshotCopyGrantRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

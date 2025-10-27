@@ -3,55 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/IpamPoolSourceResourceRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/IpamPoolSourceResourceRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-IpamPoolSourceResourceRequest::IpamPoolSourceResourceRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+IpamPoolSourceResourceRequest::IpamPoolSourceResourceRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-IpamPoolSourceResourceRequest& IpamPoolSourceResourceRequest::operator =(const XmlNode& xmlNode)
-{
+IpamPoolSourceResourceRequest& IpamPoolSourceResourceRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
-    if(!resourceIdNode.IsNull())
-    {
+    if (!resourceIdNode.IsNull()) {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
-    if(!resourceTypeNode.IsNull())
-    {
-      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
+    if (!resourceTypeNode.IsNull()) {
+      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("ResourceRegion");
-    if(!resourceRegionNode.IsNull())
-    {
+    if (!resourceRegionNode.IsNull()) {
       m_resourceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(resourceRegionNode.GetText());
       m_resourceRegionHasBeenSet = true;
     }
     XmlNode resourceOwnerNode = resultNode.FirstChild("ResourceOwner");
-    if(!resourceOwnerNode.IsNull())
-    {
+    if (!resourceOwnerNode.IsNull()) {
       m_resourceOwner = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerNode.GetText());
       m_resourceOwnerHasBeenSet = true;
     }
@@ -60,50 +49,42 @@ IpamPoolSourceResourceRequest& IpamPoolSourceResourceRequest::operator =(const X
   return *this;
 }
 
-void IpamPoolSourceResourceRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_resourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
+void IpamPoolSourceResourceRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                   const char* locationValue) const {
+  if (m_resourceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(IpamPoolSourceResourceTypeMapper::GetNameForIpamPoolSourceResourceType(m_resourceType)) << "&";
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceType="
+            << StringUtils::URLEncode(IpamPoolSourceResourceTypeMapper::GetNameForIpamPoolSourceResourceType(m_resourceType)) << "&";
   }
 
-  if(m_resourceRegionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceRegion=" << StringUtils::URLEncode(m_resourceRegion.c_str()) << "&";
+  if (m_resourceRegionHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceRegion=" << StringUtils::URLEncode(m_resourceRegion.c_str()) << "&";
   }
 
-  if(m_resourceOwnerHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
-  }
-
-}
-
-void IpamPoolSourceResourceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_resourceIdHasBeenSet)
-  {
-      oStream << location << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
-  }
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << ".ResourceType=" << StringUtils::URLEncode(IpamPoolSourceResourceTypeMapper::GetNameForIpamPoolSourceResourceType(m_resourceType)) << "&";
-  }
-  if(m_resourceRegionHasBeenSet)
-  {
-      oStream << location << ".ResourceRegion=" << StringUtils::URLEncode(m_resourceRegion.c_str()) << "&";
-  }
-  if(m_resourceOwnerHasBeenSet)
-  {
-      oStream << location << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
+  if (m_resourceOwnerHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void IpamPoolSourceResourceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_resourceIdHasBeenSet) {
+    oStream << location << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
+  }
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << ".ResourceType="
+            << StringUtils::URLEncode(IpamPoolSourceResourceTypeMapper::GetNameForIpamPoolSourceResourceType(m_resourceType)) << "&";
+  }
+  if (m_resourceRegionHasBeenSet) {
+    oStream << location << ".ResourceRegion=" << StringUtils::URLEncode(m_resourceRegion.c_str()) << "&";
+  }
+  if (m_resourceOwnerHasBeenSet) {
+    oStream << location << ".ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

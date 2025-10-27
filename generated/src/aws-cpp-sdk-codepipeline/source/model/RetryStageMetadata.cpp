@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-RetryStageMetadata::RetryStageMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetryStageMetadata::RetryStageMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-RetryStageMetadata& RetryStageMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoStageRetryAttempt"))
-  {
+RetryStageMetadata& RetryStageMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoStageRetryAttempt")) {
     m_autoStageRetryAttempt = jsonValue.GetInteger("autoStageRetryAttempt");
     m_autoStageRetryAttemptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("manualStageRetryAttempt"))
-  {
+  if (jsonValue.ValueExists("manualStageRetryAttempt")) {
     m_manualStageRetryAttempt = jsonValue.GetInteger("manualStageRetryAttempt");
     m_manualStageRetryAttemptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestRetryTrigger"))
-  {
+  if (jsonValue.ValueExists("latestRetryTrigger")) {
     m_latestRetryTrigger = RetryTriggerMapper::GetRetryTriggerForName(jsonValue.GetString("latestRetryTrigger"));
     m_latestRetryTriggerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetryStageMetadata::Jsonize() const
-{
+JsonValue RetryStageMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoStageRetryAttemptHasBeenSet)
-  {
-   payload.WithInteger("autoStageRetryAttempt", m_autoStageRetryAttempt);
-
+  if (m_autoStageRetryAttemptHasBeenSet) {
+    payload.WithInteger("autoStageRetryAttempt", m_autoStageRetryAttempt);
   }
 
-  if(m_manualStageRetryAttemptHasBeenSet)
-  {
-   payload.WithInteger("manualStageRetryAttempt", m_manualStageRetryAttempt);
-
+  if (m_manualStageRetryAttemptHasBeenSet) {
+    payload.WithInteger("manualStageRetryAttempt", m_manualStageRetryAttempt);
   }
 
-  if(m_latestRetryTriggerHasBeenSet)
-  {
-   payload.WithString("latestRetryTrigger", RetryTriggerMapper::GetNameForRetryTrigger(m_latestRetryTrigger));
+  if (m_latestRetryTriggerHasBeenSet) {
+    payload.WithString("latestRetryTrigger", RetryTriggerMapper::GetNameForRetryTrigger(m_latestRetryTrigger));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

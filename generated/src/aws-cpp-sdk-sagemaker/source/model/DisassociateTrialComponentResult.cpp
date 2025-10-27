@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateTrialComponentResult::DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DisassociateTrialComponentResult::DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DisassociateTrialComponentResult& DisassociateTrialComponentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DisassociateTrialComponentResult& DisassociateTrialComponentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TrialComponentArn"))
-  {
+  if (jsonValue.ValueExists("TrialComponentArn")) {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");
     m_trialComponentArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrialArn"))
-  {
+  if (jsonValue.ValueExists("TrialArn")) {
     m_trialArn = jsonValue.GetString("TrialArn");
     m_trialArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

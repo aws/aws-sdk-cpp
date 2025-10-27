@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/PointsOfInterest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/PointsOfInterest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
 
-PointsOfInterest::PointsOfInterest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PointsOfInterest::PointsOfInterest(JsonView jsonValue) { *this = jsonValue; }
 
-PointsOfInterest& PointsOfInterest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimestampRanges"))
-  {
+PointsOfInterest& PointsOfInterest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimestampRanges")) {
     Aws::Utils::Array<JsonView> timestampRangesJsonList = jsonValue.GetArray("TimestampRanges");
-    for(unsigned timestampRangesIndex = 0; timestampRangesIndex < timestampRangesJsonList.GetLength(); ++timestampRangesIndex)
-    {
+    for (unsigned timestampRangesIndex = 0; timestampRangesIndex < timestampRangesJsonList.GetLength(); ++timestampRangesIndex) {
       m_timestampRanges.push_back(timestampRangesJsonList[timestampRangesIndex].AsObject());
     }
     m_timestampRangesHasBeenSet = true;
@@ -37,24 +28,20 @@ PointsOfInterest& PointsOfInterest::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PointsOfInterest::Jsonize() const
-{
+JsonValue PointsOfInterest::Jsonize() const {
   JsonValue payload;
 
-  if(m_timestampRangesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> timestampRangesJsonList(m_timestampRanges.size());
-   for(unsigned timestampRangesIndex = 0; timestampRangesIndex < timestampRangesJsonList.GetLength(); ++timestampRangesIndex)
-   {
-     timestampRangesJsonList[timestampRangesIndex].AsObject(m_timestampRanges[timestampRangesIndex].Jsonize());
-   }
-   payload.WithArray("TimestampRanges", std::move(timestampRangesJsonList));
-
+  if (m_timestampRangesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> timestampRangesJsonList(m_timestampRanges.size());
+    for (unsigned timestampRangesIndex = 0; timestampRangesIndex < timestampRangesJsonList.GetLength(); ++timestampRangesIndex) {
+      timestampRangesJsonList[timestampRangesIndex].AsObject(m_timestampRanges[timestampRangesIndex].Jsonize());
+    }
+    payload.WithArray("TimestampRanges", std::move(timestampRangesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/pcs/PCSEndpointProvider.h>
 
-namespace Aws
-{
-namespace PCS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PCS
-} // namespace Aws
+namespace Aws {
+namespace PCS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PCS
+}  // namespace Aws

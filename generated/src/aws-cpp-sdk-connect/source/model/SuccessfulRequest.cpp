@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SuccessfulRequest::SuccessfulRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuccessfulRequest::SuccessfulRequest(JsonView jsonValue) { *this = jsonValue; }
 
-SuccessfulRequest& SuccessfulRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RequestIdentifier"))
-  {
+SuccessfulRequest& SuccessfulRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RequestIdentifier")) {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
     m_requestIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactId"))
-  {
+  if (jsonValue.ValueExists("ContactId")) {
     m_contactId = jsonValue.GetString("ContactId");
     m_contactIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuccessfulRequest::Jsonize() const
-{
+JsonValue SuccessfulRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestIdentifierHasBeenSet)
-  {
-   payload.WithString("RequestIdentifier", m_requestIdentifier);
-
+  if (m_requestIdentifierHasBeenSet) {
+    payload.WithString("RequestIdentifier", m_requestIdentifier);
   }
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/SemtechGnssConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/SemtechGnssConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-SemtechGnssConfiguration::SemtechGnssConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SemtechGnssConfiguration::SemtechGnssConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SemtechGnssConfiguration& SemtechGnssConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+SemtechGnssConfiguration& SemtechGnssConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = PositionConfigurationStatusMapper::GetPositionConfigurationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Fec"))
-  {
+  if (jsonValue.ValueExists("Fec")) {
     m_fec = PositionConfigurationFecMapper::GetPositionConfigurationFecForName(jsonValue.GetString("Fec"));
     m_fecHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SemtechGnssConfiguration::Jsonize() const
-{
+JsonValue SemtechGnssConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", PositionConfigurationStatusMapper::GetNameForPositionConfigurationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", PositionConfigurationStatusMapper::GetNameForPositionConfigurationStatus(m_status));
   }
 
-  if(m_fecHasBeenSet)
-  {
-   payload.WithString("Fec", PositionConfigurationFecMapper::GetNameForPositionConfigurationFec(m_fec));
+  if (m_fecHasBeenSet) {
+    payload.WithString("Fec", PositionConfigurationFecMapper::GetNameForPositionConfigurationFec(m_fec));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

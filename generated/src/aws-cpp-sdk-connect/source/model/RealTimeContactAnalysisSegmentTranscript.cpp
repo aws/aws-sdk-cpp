@@ -11,127 +11,96 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisSegmentTranscript& RealTimeContactAnalysisSegmentTranscript::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+RealTimeContactAnalysisSegmentTranscript& RealTimeContactAnalysisSegmentTranscript::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantId"))
-  {
+  if (jsonValue.ValueExists("ParticipantId")) {
     m_participantId = jsonValue.GetString("ParticipantId");
     m_participantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantRole"))
-  {
+  if (jsonValue.ValueExists("ParticipantRole")) {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
     m_participantRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentType"))
-  {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Time"))
-  {
+  if (jsonValue.ValueExists("Time")) {
     m_time = jsonValue.GetObject("Time");
     m_timeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Redaction"))
-  {
+  if (jsonValue.ValueExists("Redaction")) {
     m_redaction = jsonValue.GetObject("Redaction");
     m_redactionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sentiment"))
-  {
-    m_sentiment = RealTimeContactAnalysisSentimentLabelMapper::GetRealTimeContactAnalysisSentimentLabelForName(jsonValue.GetString("Sentiment"));
+  if (jsonValue.ValueExists("Sentiment")) {
+    m_sentiment =
+        RealTimeContactAnalysisSentimentLabelMapper::GetRealTimeContactAnalysisSentimentLabelForName(jsonValue.GetString("Sentiment"));
     m_sentimentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisSegmentTranscript::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisSegmentTranscript::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_participantIdHasBeenSet)
-  {
-   payload.WithString("ParticipantId", m_participantId);
-
+  if (m_participantIdHasBeenSet) {
+    payload.WithString("ParticipantId", m_participantId);
   }
 
-  if(m_participantRoleHasBeenSet)
-  {
-   payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  if (m_participantRoleHasBeenSet) {
+    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithObject("Time", m_time.Jsonize());
-
+  if (m_timeHasBeenSet) {
+    payload.WithObject("Time", m_time.Jsonize());
   }
 
-  if(m_redactionHasBeenSet)
-  {
-   payload.WithObject("Redaction", m_redaction.Jsonize());
-
+  if (m_redactionHasBeenSet) {
+    payload.WithObject("Redaction", m_redaction.Jsonize());
   }
 
-  if(m_sentimentHasBeenSet)
-  {
-   payload.WithString("Sentiment", RealTimeContactAnalysisSentimentLabelMapper::GetNameForRealTimeContactAnalysisSentimentLabel(m_sentiment));
+  if (m_sentimentHasBeenSet) {
+    payload.WithString("Sentiment",
+                       RealTimeContactAnalysisSentimentLabelMapper::GetNameForRealTimeContactAnalysisSentimentLabel(m_sentiment));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

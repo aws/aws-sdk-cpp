@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+namespace Model {
 
-TimestampSegment::TimestampSegment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimestampSegment::TimestampSegment(JsonView jsonValue) { *this = jsonValue; }
 
-TimestampSegment& TimestampSegment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startTimeMillis"))
-  {
+TimestampSegment& TimestampSegment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startTimeMillis")) {
     m_startTimeMillis = jsonValue.GetInt64("startTimeMillis");
     m_startTimeMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTimeMillis"))
-  {
+  if (jsonValue.ValueExists("endTimeMillis")) {
     m_endTimeMillis = jsonValue.GetInt64("endTimeMillis");
     m_endTimeMillisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimestampSegment::Jsonize() const
-{
+JsonValue TimestampSegment::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("startTimeMillis", m_startTimeMillis);
-
+  if (m_startTimeMillisHasBeenSet) {
+    payload.WithInt64("startTimeMillis", m_startTimeMillis);
   }
 
-  if(m_endTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("endTimeMillis", m_endTimeMillis);
-
+  if (m_endTimeMillisHasBeenSet) {
+    payload.WithInt64("endTimeMillis", m_endTimeMillis);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

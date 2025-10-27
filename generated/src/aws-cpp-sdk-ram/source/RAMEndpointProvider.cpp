@@ -5,12 +5,8 @@
 
 #include <aws/ram/RAMEndpointProvider.h>
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RAM
-} // namespace Aws
+namespace Aws {
+namespace RAM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RAM
+}  // namespace Aws

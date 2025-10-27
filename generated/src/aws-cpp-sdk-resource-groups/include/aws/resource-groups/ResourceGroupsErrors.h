@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-enum class ResourceGroupsErrors
-{
-  //From Core//
+namespace Aws {
+namespace ResourceGroups {
+enum class ResourceGroupsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ResourceGroupsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ResourceGroupsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,
   METHOD_NOT_ALLOWED,
@@ -56,9 +53,8 @@ enum class ResourceGroupsErrors
   UNAUTHORIZED
 };
 
-class AWS_RESOURCEGROUPS_API ResourceGroupsError : public Aws::Client::AWSError<ResourceGroupsErrors>
-{
-public:
+class AWS_RESOURCEGROUPS_API ResourceGroupsError : public Aws::Client::AWSError<ResourceGroupsErrors> {
+ public:
   ResourceGroupsError() {}
   ResourceGroupsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
   ResourceGroupsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace ResourceGroupsErrorMapper
-{
-  AWS_RESOURCEGROUPS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ResourceGroupsErrorMapper {
+AWS_RESOURCEGROUPS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace ResourceGroups
+}  // namespace Aws

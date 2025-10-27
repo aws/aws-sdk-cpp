@@ -3,80 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const
-{
+Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyTrafficMirrorFilterRule&";
-  if(m_trafficMirrorFilterRuleIdHasBeenSet)
-  {
+  if (m_trafficMirrorFilterRuleIdHasBeenSet) {
     ss << "TrafficMirrorFilterRuleId=" << StringUtils::URLEncode(m_trafficMirrorFilterRuleId.c_str()) << "&";
   }
 
-  if(m_trafficDirectionHasBeenSet)
-  {
+  if (m_trafficDirectionHasBeenSet) {
     ss << "TrafficDirection=" << StringUtils::URLEncode(TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection)) << "&";
   }
 
-  if(m_ruleNumberHasBeenSet)
-  {
+  if (m_ruleNumberHasBeenSet) {
     ss << "RuleNumber=" << m_ruleNumber << "&";
   }
 
-  if(m_ruleActionHasBeenSet)
-  {
+  if (m_ruleActionHasBeenSet) {
     ss << "RuleAction=" << StringUtils::URLEncode(TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction)) << "&";
   }
 
-  if(m_destinationPortRangeHasBeenSet)
-  {
+  if (m_destinationPortRangeHasBeenSet) {
     m_destinationPortRange.OutputToStream(ss, "DestinationPortRange");
   }
 
-  if(m_sourcePortRangeHasBeenSet)
-  {
+  if (m_sourcePortRangeHasBeenSet) {
     m_sourcePortRange.OutputToStream(ss, "SourcePortRange");
   }
 
-  if(m_protocolHasBeenSet)
-  {
+  if (m_protocolHasBeenSet) {
     ss << "Protocol=" << m_protocol << "&";
   }
 
-  if(m_destinationCidrBlockHasBeenSet)
-  {
+  if (m_destinationCidrBlockHasBeenSet) {
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
-  if(m_sourceCidrBlockHasBeenSet)
-  {
+  if (m_sourceCidrBlockHasBeenSet) {
     ss << "SourceCidrBlock=" << StringUtils::URLEncode(m_sourceCidrBlock.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_removeFieldsHasBeenSet)
-  {
+  if (m_removeFieldsHasBeenSet) {
     unsigned removeFieldsCount = 1;
-    for(auto& item : m_removeFields)
-    {
+    for (auto& item : m_removeFields) {
       ss << "RemoveField." << removeFieldsCount << "="
-          << StringUtils::URLEncode(TrafficMirrorFilterRuleFieldMapper::GetNameForTrafficMirrorFilterRuleField(item)) << "&";
+         << StringUtils::URLEncode(TrafficMirrorFilterRuleFieldMapper::GetNameForTrafficMirrorFilterRuleField(item)) << "&";
       removeFieldsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -84,8 +70,4 @@ Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyTrafficMirrorFilterRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyTrafficMirrorFilterRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

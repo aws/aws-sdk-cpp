@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/ServiceQuotaExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/ServiceQuotaExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+ServiceQuotaExceededException& ServiceQuotaExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quotaCode"))
-  {
+  if (jsonValue.ValueExists("quotaCode")) {
     m_quotaCode = jsonValue.GetString("quotaCode");
     m_quotaCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
-  {
+  if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = jsonValue.GetString("resourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceCode"))
-  {
+  if (jsonValue.ValueExists("serviceCode")) {
     m_serviceCode = jsonValue.GetString("serviceCode");
     m_serviceCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceQuotaExceededException::Jsonize() const
-{
+JsonValue ServiceQuotaExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("quotaCode", m_quotaCode);
-
+  if (m_quotaCodeHasBeenSet) {
+    payload.WithString("quotaCode", m_quotaCode);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
   }
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("serviceCode", m_serviceCode);
-
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("serviceCode", m_serviceCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

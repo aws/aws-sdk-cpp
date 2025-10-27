@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-enum class CloudWatchEvidentlyErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudWatchEvidently {
+enum class CloudWatchEvidentlyErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudWatchEvidentlyErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,28 +44,29 @@ enum class CloudWatchEvidentlyErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_CLOUDWATCHEVIDENTLY_API CloudWatchEvidentlyError : public Aws::Client::AWSError<CloudWatchEvidentlyErrors>
-{
-public:
+class AWS_CLOUDWATCHEVIDENTLY_API CloudWatchEvidentlyError : public Aws::Client::AWSError<CloudWatchEvidentlyErrors> {
+ public:
   CloudWatchEvidentlyError() {}
-  CloudWatchEvidentlyError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
+  CloudWatchEvidentlyError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
   CloudWatchEvidentlyError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
-  CloudWatchEvidentlyError(const Aws::Client::AWSError<CloudWatchEvidentlyErrors>& rhs) : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
-  CloudWatchEvidentlyError(Aws::Client::AWSError<CloudWatchEvidentlyErrors>&& rhs) : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
+  CloudWatchEvidentlyError(const Aws::Client::AWSError<CloudWatchEvidentlyErrors>& rhs)
+      : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
+  CloudWatchEvidentlyError(Aws::Client::AWSError<CloudWatchEvidentlyErrors>&& rhs)
+      : Aws::Client::AWSError<CloudWatchEvidentlyErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace CloudWatchEvidentlyErrorMapper
-{
-  AWS_CLOUDWATCHEVIDENTLY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudWatchEvidentlyErrorMapper {
+AWS_CLOUDWATCHEVIDENTLY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LiveConnectorSourceConfiguration& LiveConnectorSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceType"))
-  {
+LiveConnectorSourceConfiguration& LiveConnectorSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = LiveConnectorSourceTypeMapper::GetLiveConnectorSourceTypeForName(jsonValue.GetString("SourceType"));
     m_sourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChimeSdkMeetingLiveConnectorConfiguration"))
-  {
+  if (jsonValue.ValueExists("ChimeSdkMeetingLiveConnectorConfiguration")) {
     m_chimeSdkMeetingLiveConnectorConfiguration = jsonValue.GetObject("ChimeSdkMeetingLiveConnectorConfiguration");
     m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LiveConnectorSourceConfiguration::Jsonize() const
-{
+JsonValue LiveConnectorSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", LiveConnectorSourceTypeMapper::GetNameForLiveConnectorSourceType(m_sourceType));
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", LiveConnectorSourceTypeMapper::GetNameForLiveConnectorSourceType(m_sourceType));
   }
 
-  if(m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet)
-  {
-   payload.WithObject("ChimeSdkMeetingLiveConnectorConfiguration", m_chimeSdkMeetingLiveConnectorConfiguration.Jsonize());
-
+  if (m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet) {
+    payload.WithObject("ChimeSdkMeetingLiveConnectorConfiguration", m_chimeSdkMeetingLiveConnectorConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

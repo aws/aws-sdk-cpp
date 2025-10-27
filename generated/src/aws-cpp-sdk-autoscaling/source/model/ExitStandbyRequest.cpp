@@ -10,30 +10,22 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String ExitStandbyRequest::SerializePayload() const
-{
+Aws::String ExitStandbyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ExitStandby&";
-  if(m_instanceIdsHasBeenSet)
-  {
-    if (m_instanceIds.empty())
-    {
+  if (m_instanceIdsHasBeenSet) {
+    if (m_instanceIds.empty()) {
       ss << "InstanceIds=&";
-    }
-    else
-    {
+    } else {
       unsigned instanceIdsCount = 1;
-      for(auto& item : m_instanceIds)
-      {
-        ss << "InstanceIds.member." << instanceIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_instanceIds) {
+        ss << "InstanceIds.member." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         instanceIdsCount++;
       }
     }
   }
 
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
@@ -41,8 +33,4 @@ Aws::String ExitStandbyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ExitStandbyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ExitStandbyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

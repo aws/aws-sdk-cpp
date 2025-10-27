@@ -7,24 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class TargetListType
-  {
-    NOT_SET,
-    PROFICIENCIES
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class TargetListType { NOT_SET, PROFICIENCIES };
 
-namespace TargetListTypeMapper
-{
+namespace TargetListTypeMapper {
 AWS_CONNECT_API TargetListType GetTargetListTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForTargetListType(TargetListType value);
-} // namespace TargetListTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace TargetListTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

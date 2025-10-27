@@ -4,80 +4,95 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/Product.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
-  class DescribeProductsResult
-  {
-  public:
-    AWS_SECURITYHUB_API DescribeProductsResult() = default;
-    AWS_SECURITYHUB_API DescribeProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SECURITYHUB_API DescribeProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
+class DescribeProductsResult {
+ public:
+  AWS_SECURITYHUB_API DescribeProductsResult() = default;
+  AWS_SECURITYHUB_API DescribeProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SECURITYHUB_API DescribeProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A list of products, including details for each product.</p>
+   */
+  inline const Aws::Vector<Product>& GetProducts() const { return m_products; }
+  template <typename ProductsT = Aws::Vector<Product>>
+  void SetProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products = std::forward<ProductsT>(value);
+  }
+  template <typename ProductsT = Aws::Vector<Product>>
+  DescribeProductsResult& WithProducts(ProductsT&& value) {
+    SetProducts(std::forward<ProductsT>(value));
+    return *this;
+  }
+  template <typename ProductsT = Product>
+  DescribeProductsResult& AddProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products.emplace_back(std::forward<ProductsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A list of products, including details for each product.</p>
-     */
-    inline const Aws::Vector<Product>& GetProducts() const { return m_products; }
-    template<typename ProductsT = Aws::Vector<Product>>
-    void SetProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products = std::forward<ProductsT>(value); }
-    template<typename ProductsT = Aws::Vector<Product>>
-    DescribeProductsResult& WithProducts(ProductsT&& value) { SetProducts(std::forward<ProductsT>(value)); return *this;}
-    template<typename ProductsT = Product>
-    DescribeProductsResult& AddProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products.emplace_back(std::forward<ProductsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The pagination token to use to request the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeProductsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The pagination token to use to request the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeProductsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeProductsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeProductsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Product> m_products;
+  bool m_productsHasBeenSet = false;
 
-    Aws::Vector<Product> m_products;
-    bool m_productsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class ConfigurationStatus
-  {
-    NOT_SET,
-    HEALTHY,
-    UNHEALTHY
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class ConfigurationStatus { NOT_SET, HEALTHY, UNHEALTHY };
 
-namespace ConfigurationStatusMapper
-{
+namespace ConfigurationStatusMapper {
 AWS_IOT_API ConfigurationStatus GetConfigurationStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForConfigurationStatus(ConfigurationStatus value);
-} // namespace ConfigurationStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace ConfigurationStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

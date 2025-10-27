@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/ParsingPrompt.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/ParsingPrompt.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-ParsingPrompt::ParsingPrompt(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParsingPrompt::ParsingPrompt(JsonView jsonValue) { *this = jsonValue; }
 
-ParsingPrompt& ParsingPrompt::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("parsingPromptText"))
-  {
+ParsingPrompt& ParsingPrompt::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("parsingPromptText")) {
     m_parsingPromptText = jsonValue.GetString("parsingPromptText");
     m_parsingPromptTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParsingPrompt::Jsonize() const
-{
+JsonValue ParsingPrompt::Jsonize() const {
   JsonValue payload;
 
-  if(m_parsingPromptTextHasBeenSet)
-  {
-   payload.WithString("parsingPromptText", m_parsingPromptText);
-
+  if (m_parsingPromptTextHasBeenSet) {
+    payload.WithString("parsingPromptText", m_parsingPromptText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

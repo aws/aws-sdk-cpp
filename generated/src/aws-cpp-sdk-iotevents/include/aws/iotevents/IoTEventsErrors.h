@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEvents
-{
-enum class IoTEventsErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTEvents {
+enum class IoTEventsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTEventsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class IoTEventsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_IN_USE,
   UNSUPPORTED_OPERATION
 };
 
-class AWS_IOTEVENTS_API IoTEventsError : public Aws::Client::AWSError<IoTEventsErrors>
-{
-public:
+class AWS_IOTEVENTS_API IoTEventsError : public Aws::Client::AWSError<IoTEventsErrors> {
+ public:
   IoTEventsError() {}
   IoTEventsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTEventsErrors>(rhs) {}
   IoTEventsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTEventsErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTEventsErrorMapper
-{
-  AWS_IOTEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTEventsErrorMapper {
+AWS_IOTEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace IoTEvents
+}  // namespace Aws

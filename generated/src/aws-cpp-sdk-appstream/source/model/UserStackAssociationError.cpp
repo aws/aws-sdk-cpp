@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-UserStackAssociationError::UserStackAssociationError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserStackAssociationError::UserStackAssociationError(JsonView jsonValue) { *this = jsonValue; }
 
-UserStackAssociationError& UserStackAssociationError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserStackAssociation"))
-  {
+UserStackAssociationError& UserStackAssociationError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserStackAssociation")) {
     m_userStackAssociation = jsonValue.GetObject("UserStackAssociation");
     m_userStackAssociationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = UserStackAssociationErrorCodeMapper::GetUserStackAssociationErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserStackAssociationError::Jsonize() const
-{
+JsonValue UserStackAssociationError::Jsonize() const {
   JsonValue payload;
 
-  if(m_userStackAssociationHasBeenSet)
-  {
-   payload.WithObject("UserStackAssociation", m_userStackAssociation.Jsonize());
-
+  if (m_userStackAssociationHasBeenSet) {
+    payload.WithObject("UserStackAssociation", m_userStackAssociation.Jsonize());
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", UserStackAssociationErrorCodeMapper::GetNameForUserStackAssociationErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", UserStackAssociationErrorCodeMapper::GetNameForUserStackAssociationErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

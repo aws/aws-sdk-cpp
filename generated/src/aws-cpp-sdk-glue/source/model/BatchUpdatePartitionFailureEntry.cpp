@@ -3,69 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BatchUpdatePartitionFailureEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/BatchUpdatePartitionFailureEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BatchUpdatePartitionFailureEntry& BatchUpdatePartitionFailureEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PartitionValueList"))
-  {
+BatchUpdatePartitionFailureEntry& BatchUpdatePartitionFailureEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PartitionValueList")) {
     Aws::Utils::Array<JsonView> partitionValueListJsonList = jsonValue.GetArray("PartitionValueList");
-    for(unsigned partitionValueListIndex = 0; partitionValueListIndex < partitionValueListJsonList.GetLength(); ++partitionValueListIndex)
-    {
+    for (unsigned partitionValueListIndex = 0; partitionValueListIndex < partitionValueListJsonList.GetLength();
+         ++partitionValueListIndex) {
       m_partitionValueList.push_back(partitionValueListJsonList[partitionValueListIndex].AsString());
     }
     m_partitionValueListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorDetail"))
-  {
+  if (jsonValue.ValueExists("ErrorDetail")) {
     m_errorDetail = jsonValue.GetObject("ErrorDetail");
     m_errorDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchUpdatePartitionFailureEntry::Jsonize() const
-{
+JsonValue BatchUpdatePartitionFailureEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_partitionValueListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> partitionValueListJsonList(m_partitionValueList.size());
-   for(unsigned partitionValueListIndex = 0; partitionValueListIndex < partitionValueListJsonList.GetLength(); ++partitionValueListIndex)
-   {
-     partitionValueListJsonList[partitionValueListIndex].AsString(m_partitionValueList[partitionValueListIndex]);
-   }
-   payload.WithArray("PartitionValueList", std::move(partitionValueListJsonList));
-
+  if (m_partitionValueListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> partitionValueListJsonList(m_partitionValueList.size());
+    for (unsigned partitionValueListIndex = 0; partitionValueListIndex < partitionValueListJsonList.GetLength();
+         ++partitionValueListIndex) {
+      partitionValueListJsonList[partitionValueListIndex].AsString(m_partitionValueList[partitionValueListIndex]);
+    }
+    payload.WithArray("PartitionValueList", std::move(partitionValueListJsonList));
   }
 
-  if(m_errorDetailHasBeenSet)
-  {
-   payload.WithObject("ErrorDetail", m_errorDetail.Jsonize());
-
+  if (m_errorDetailHasBeenSet) {
+    payload.WithObject("ErrorDetail", m_errorDetail.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/AdapterOverview.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/AdapterOverview.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-AdapterOverview::AdapterOverview(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdapterOverview::AdapterOverview(JsonView jsonValue) { *this = jsonValue; }
 
-AdapterOverview& AdapterOverview::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AdapterId"))
-  {
+AdapterOverview& AdapterOverview::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AdapterId")) {
     m_adapterId = jsonValue.GetString("AdapterId");
     m_adapterIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdapterName"))
-  {
+  if (jsonValue.ValueExists("AdapterName")) {
     m_adapterName = jsonValue.GetString("AdapterName");
     m_adapterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FeatureTypes"))
-  {
+  if (jsonValue.ValueExists("FeatureTypes")) {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
-    for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
-    {
+    for (unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex) {
       m_featureTypes.push_back(FeatureTypeMapper::GetFeatureTypeForName(featureTypesJsonList[featureTypesIndex].AsString()));
     }
     m_featureTypesHasBeenSet = true;
@@ -52,41 +40,32 @@ AdapterOverview& AdapterOverview::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AdapterOverview::Jsonize() const
-{
+JsonValue AdapterOverview::Jsonize() const {
   JsonValue payload;
 
-  if(m_adapterIdHasBeenSet)
-  {
-   payload.WithString("AdapterId", m_adapterId);
-
+  if (m_adapterIdHasBeenSet) {
+    payload.WithString("AdapterId", m_adapterId);
   }
 
-  if(m_adapterNameHasBeenSet)
-  {
-   payload.WithString("AdapterName", m_adapterName);
-
+  if (m_adapterNameHasBeenSet) {
+    payload.WithString("AdapterName", m_adapterName);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_featureTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
-   for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
-   {
-     featureTypesJsonList[featureTypesIndex].AsString(FeatureTypeMapper::GetNameForFeatureType(m_featureTypes[featureTypesIndex]));
-   }
-   payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
-
+  if (m_featureTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
+    for (unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex) {
+      featureTypesJsonList[featureTypesIndex].AsString(FeatureTypeMapper::GetNameForFeatureType(m_featureTypes[featureTypesIndex]));
+    }
+    payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

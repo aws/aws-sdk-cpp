@@ -4,129 +4,160 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/opensearchserverless/model/SecurityPolicyType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/model/SecurityPolicyType.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
+#include <utility>
 
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+
+/**
+ */
+class UpdateSecurityPolicyRequest : public OpenSearchServerlessRequest {
+ public:
+  AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateSecurityPolicy"; }
+
+  AWS_OPENSEARCHSERVERLESS_API Aws::String SerializePayload() const override;
+
+  AWS_OPENSEARCHSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The type of access policy.</p>
    */
-  class UpdateSecurityPolicyRequest : public OpenSearchServerlessRequest
-  {
-  public:
-    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyRequest() = default;
+  inline SecurityPolicyType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(SecurityPolicyType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline UpdateSecurityPolicyRequest& WithType(SecurityPolicyType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateSecurityPolicy"; }
+  ///@{
+  /**
+   * <p>The name of the policy.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateSecurityPolicyRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_OPENSEARCHSERVERLESS_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The version of the policy being updated.</p>
+   */
+  inline const Aws::String& GetPolicyVersion() const { return m_policyVersion; }
+  inline bool PolicyVersionHasBeenSet() const { return m_policyVersionHasBeenSet; }
+  template <typename PolicyVersionT = Aws::String>
+  void SetPolicyVersion(PolicyVersionT&& value) {
+    m_policyVersionHasBeenSet = true;
+    m_policyVersion = std::forward<PolicyVersionT>(value);
+  }
+  template <typename PolicyVersionT = Aws::String>
+  UpdateSecurityPolicyRequest& WithPolicyVersion(PolicyVersionT&& value) {
+    SetPolicyVersion(std::forward<PolicyVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_OPENSEARCHSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>A description of the policy. Typically used to store information about the
+   * permissions defined in the policy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateSecurityPolicyRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The JSON policy document to use as the content for the new policy.</p>
+   */
+  inline const Aws::String& GetPolicy() const { return m_policy; }
+  inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+  template <typename PolicyT = Aws::String>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Aws::String>
+  UpdateSecurityPolicyRequest& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of access policy.</p>
-     */
-    inline SecurityPolicyType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(SecurityPolicyType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline UpdateSecurityPolicyRequest& WithType(SecurityPolicyType value) { SetType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateSecurityPolicyRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the policy.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateSecurityPolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The version of the policy being updated.</p>
-     */
-    inline const Aws::String& GetPolicyVersion() const { return m_policyVersion; }
-    inline bool PolicyVersionHasBeenSet() const { return m_policyVersionHasBeenSet; }
-    template<typename PolicyVersionT = Aws::String>
-    void SetPolicyVersion(PolicyVersionT&& value) { m_policyVersionHasBeenSet = true; m_policyVersion = std::forward<PolicyVersionT>(value); }
-    template<typename PolicyVersionT = Aws::String>
-    UpdateSecurityPolicyRequest& WithPolicyVersion(PolicyVersionT&& value) { SetPolicyVersion(std::forward<PolicyVersionT>(value)); return *this;}
-    ///@}
+  Aws::String m_policyVersion;
+  bool m_policyVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A description of the policy. Typically used to store information about the
-     * permissions defined in the policy.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateSecurityPolicyRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The JSON policy document to use as the content for the new policy.</p>
-     */
-    inline const Aws::String& GetPolicy() const { return m_policy; }
-    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    template<typename PolicyT = Aws::String>
-    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
-    template<typename PolicyT = Aws::String>
-    UpdateSecurityPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
-    ///@}
+  Aws::String m_policy;
+  bool m_policyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateSecurityPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+};
 
-    SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
-    bool m_typeHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_policyVersion;
-    bool m_policyVersionHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

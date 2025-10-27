@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceEvaluationFilters::ResourceEvaluationFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceEvaluationFilters::ResourceEvaluationFilters(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceEvaluationFilters& ResourceEvaluationFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationMode"))
-  {
+ResourceEvaluationFilters& ResourceEvaluationFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationMode")) {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
     m_evaluationModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeWindow"))
-  {
+  if (jsonValue.ValueExists("TimeWindow")) {
     m_timeWindow = jsonValue.GetObject("TimeWindow");
     m_timeWindowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationContextIdentifier"))
-  {
+  if (jsonValue.ValueExists("EvaluationContextIdentifier")) {
     m_evaluationContextIdentifier = jsonValue.GetString("EvaluationContextIdentifier");
     m_evaluationContextIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceEvaluationFilters::Jsonize() const
-{
+JsonValue ResourceEvaluationFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationModeHasBeenSet)
-  {
-   payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
+  if (m_evaluationModeHasBeenSet) {
+    payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
   }
 
-  if(m_timeWindowHasBeenSet)
-  {
-   payload.WithObject("TimeWindow", m_timeWindow.Jsonize());
-
+  if (m_timeWindowHasBeenSet) {
+    payload.WithObject("TimeWindow", m_timeWindow.Jsonize());
   }
 
-  if(m_evaluationContextIdentifierHasBeenSet)
-  {
-   payload.WithString("EvaluationContextIdentifier", m_evaluationContextIdentifier);
-
+  if (m_evaluationContextIdentifierHasBeenSet) {
+    payload.WithString("EvaluationContextIdentifier", m_evaluationContextIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

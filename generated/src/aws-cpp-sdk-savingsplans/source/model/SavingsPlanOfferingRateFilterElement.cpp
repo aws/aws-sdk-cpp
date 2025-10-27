@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/savingsplans/model/SavingsPlanOfferingRateFilterElement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/savingsplans/model/SavingsPlanOfferingRateFilterElement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace SavingsPlans {
+namespace Model {
 
-SavingsPlanOfferingRateFilterElement::SavingsPlanOfferingRateFilterElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlanOfferingRateFilterElement::SavingsPlanOfferingRateFilterElement(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlanOfferingRateFilterElement& SavingsPlanOfferingRateFilterElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SavingsPlanOfferingRateFilterElement& SavingsPlanOfferingRateFilterElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = SavingsPlanRateFilterAttributeMapper::GetSavingsPlanRateFilterAttributeForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ SavingsPlanOfferingRateFilterElement& SavingsPlanOfferingRateFilterElement::oper
   return *this;
 }
 
-JsonValue SavingsPlanOfferingRateFilterElement::Jsonize() const
-{
+JsonValue SavingsPlanOfferingRateFilterElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", SavingsPlanRateFilterAttributeMapper::GetNameForSavingsPlanRateFilterAttribute(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", SavingsPlanRateFilterAttributeMapper::GetNameForSavingsPlanRateFilterAttribute(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SavingsPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace SavingsPlans
+}  // namespace Aws

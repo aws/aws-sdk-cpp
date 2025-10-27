@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsWebdavHttpTransferMode
-  {
-    NOT_SET,
-    CHUNKED,
-    NON_CHUNKED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsWebdavHttpTransferMode { NOT_SET, CHUNKED, NON_CHUNKED };
 
-namespace HlsWebdavHttpTransferModeMapper
-{
+namespace HlsWebdavHttpTransferModeMapper {
 AWS_MEDIALIVE_API HlsWebdavHttpTransferMode GetHlsWebdavHttpTransferModeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsWebdavHttpTransferMode(HlsWebdavHttpTransferMode value);
-} // namespace HlsWebdavHttpTransferModeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsWebdavHttpTransferModeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

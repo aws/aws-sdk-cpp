@@ -5,12 +5,8 @@
 
 #include <aws/appfabric/AppFabricEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppFabric
-} // namespace Aws
+namespace Aws {
+namespace AppFabric {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppFabric
+}  // namespace Aws

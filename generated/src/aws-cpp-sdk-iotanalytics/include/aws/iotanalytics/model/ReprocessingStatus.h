@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
-  enum class ReprocessingStatus
-  {
-    NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    CANCELLED,
-    FAILED
-  };
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
+enum class ReprocessingStatus { NOT_SET, RUNNING, SUCCEEDED, CANCELLED, FAILED };
 
-namespace ReprocessingStatusMapper
-{
+namespace ReprocessingStatusMapper {
 AWS_IOTANALYTICS_API ReprocessingStatus GetReprocessingStatusForName(const Aws::String& name);
 
 AWS_IOTANALYTICS_API Aws::String GetNameForReprocessingStatus(ReprocessingStatus value);
-} // namespace ReprocessingStatusMapper
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace ReprocessingStatusMapper
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

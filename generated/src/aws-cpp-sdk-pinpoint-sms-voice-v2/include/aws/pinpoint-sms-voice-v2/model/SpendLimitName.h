@@ -4,29 +4,24 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class SpendLimitName
-  {
-    NOT_SET,
-    TEXT_MESSAGE_MONTHLY_SPEND_LIMIT,
-    VOICE_MESSAGE_MONTHLY_SPEND_LIMIT,
-    MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class SpendLimitName {
+  NOT_SET,
+  TEXT_MESSAGE_MONTHLY_SPEND_LIMIT,
+  VOICE_MESSAGE_MONTHLY_SPEND_LIMIT,
+  MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT
+};
 
-namespace SpendLimitNameMapper
-{
+namespace SpendLimitNameMapper {
 AWS_PINPOINTSMSVOICEV2_API SpendLimitName GetSpendLimitNameForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForSpendLimitName(SpendLimitName value);
-} // namespace SpendLimitNameMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace SpendLimitNameMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

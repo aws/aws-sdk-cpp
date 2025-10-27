@@ -3,20 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/codedeploy/CodeDeployErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/codedeploy/CodeDeployErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CodeDeploy;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace CodeDeployErrorMapper
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace CodeDeployErrorMapper {
 
 static const int INSTANCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("InstanceLimitExceededException");
 static const int INVALID_E_C2_TAG_COMBINATION_HASH = HashingUtils::HashString("InvalidEC2TagCombinationException");
@@ -25,11 +22,13 @@ static const int DEPLOYMENT_NOT_STARTED_HASH = HashingUtils::HashString("Deploym
 static const int LIFECYCLE_EVENT_ALREADY_COMPLETED_HASH = HashingUtils::HashString("LifecycleEventAlreadyCompletedException");
 static const int DEPLOYMENT_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentGroupAlreadyExistsException");
 static const int DEPLOYMENT_ID_REQUIRED_HASH = HashingUtils::HashString("DeploymentIdRequiredException");
-static const int INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE_HASH = HashingUtils::HashString("InvalidIgnoreApplicationStopFailuresValueException");
+static const int INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE_HASH =
+    HashingUtils::HashString("InvalidIgnoreApplicationStopFailuresValueException");
 static const int DEPLOYMENT_CONFIG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentConfigLimitExceededException");
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
 static const int INVALID_REVISION_HASH = HashingUtils::HashString("InvalidRevisionException");
-static const int INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE_HASH = HashingUtils::HashString("InvalidUpdateOutdatedInstancesOnlyValueException");
+static const int INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE_HASH =
+    HashingUtils::HashString("InvalidUpdateOutdatedInstancesOnlyValueException");
 static const int DEPLOYMENT_GROUP_DOES_NOT_EXIST_HASH = HashingUtils::HashString("DeploymentGroupDoesNotExistException");
 static const int IAM_SESSION_ARN_ALREADY_REGISTERED_HASH = HashingUtils::HashString("IamSessionArnAlreadyRegisteredException");
 static const int DEPLOYMENT_CONFIG_IN_USE_HASH = HashingUtils::HashString("DeploymentConfigInUseException");
@@ -48,7 +47,8 @@ static const int INVALID_ON_PREMISES_TAG_COMBINATION_HASH = HashingUtils::HashSt
 static const int INVALID_EXTERNAL_ID_HASH = HashingUtils::HashString("InvalidExternalIdException");
 static const int DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentConfigAlreadyExistsException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
-static const int INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("InvalidBlueGreenDeploymentConfigurationException");
+static const int INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH =
+    HashingUtils::HashString("InvalidBlueGreenDeploymentConfigurationException");
 static const int INSTANCE_NAME_ALREADY_REGISTERED_HASH = HashingUtils::HashString("InstanceNameAlreadyRegisteredException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int INVALID_DEPLOYMENT_CONFIG_NAME_HASH = HashingUtils::HashString("InvalidDeploymentConfigNameException");
@@ -89,7 +89,8 @@ static const int INVALID_DEPLOYMENT_TARGET_ID_HASH = HashingUtils::HashString("I
 static const int INVALID_DEPLOYED_STATE_FILTER_HASH = HashingUtils::HashString("InvalidDeployedStateFilterException");
 static const int INVALID_DEPLOYMENT_GROUP_NAME_HASH = HashingUtils::HashString("InvalidDeploymentGroupNameException");
 static const int INVALID_DEPLOYMENT_WAIT_TYPE_HASH = HashingUtils::HashString("InvalidDeploymentWaitTypeException");
-static const int INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS_HASH = HashingUtils::HashString("InvalidLifecycleEventHookExecutionStatusException");
+static const int INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS_HASH =
+    HashingUtils::HashString("InvalidLifecycleEventHookExecutionStatusException");
 static const int INVALID_DEPLOYMENT_ID_HASH = HashingUtils::HashString("InvalidDeploymentIdException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
 static const int RESOURCE_ARN_REQUIRED_HASH = HashingUtils::HashString("ResourceArnRequiredException");
@@ -127,446 +128,245 @@ static const int ROLE_REQUIRED_HASH = HashingUtils::HashString("RoleRequiredExce
 static const int DEPLOYMENT_GROUP_NAME_REQUIRED_HASH = HashingUtils::HashString("DeploymentGroupNameRequiredException");
 static const int REVISION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RevisionDoesNotExistException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INSTANCE_LIMIT_EXCEEDED_HASH)
-  {
+  if (hashCode == INSTANCE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_E_C2_TAG_COMBINATION_HASH)
-  {
+  } else if (hashCode == INVALID_E_C2_TAG_COMBINATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_E_C2_TAG_COMBINATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_CONFIG_NAME_REQUIRED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_CONFIG_NAME_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_NOT_STARTED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_NOT_STARTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_NOT_STARTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIFECYCLE_EVENT_ALREADY_COMPLETED_HASH)
-  {
+  } else if (hashCode == LIFECYCLE_EVENT_ALREADY_COMPLETED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::LIFECYCLE_EVENT_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_GROUP_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_GROUP_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_GROUP_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_ID_REQUIRED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_ID_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_CONFIG_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_IGNORE_APPLICATION_STOP_FAILURES_VALUE),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_CONFIG_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TAG_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::TAG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REVISION_HASH)
-  {
+  } else if (hashCode == INVALID_REVISION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_REVISION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_GROUP_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_UPDATE_OUTDATED_INSTANCES_ONLY_VALUE),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_GROUP_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_GROUP_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IAM_SESSION_ARN_ALREADY_REGISTERED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_SESSION_ARN_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_CONFIG_IN_USE_HASH)
-  {
+  } else if (hashCode == IAM_SESSION_ARN_ALREADY_REGISTERED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_SESSION_ARN_ALREADY_REGISTERED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_CONFIG_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MULTIPLE_IAM_ARNS_PROVIDED_HASH)
-  {
+  } else if (hashCode == MULTIPLE_IAM_ARNS_PROVIDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::MULTIPLE_IAM_ARNS_PROVIDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_TARGET_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_TARGET_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_TARGET_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ARN_NOT_SUPPORTED_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ARN_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::ARN_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == APPLICATION_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == APPLICATION_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::APPLICATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_AUTO_SCALING_GROUP_HASH)
-  {
+  } else if (hashCode == INVALID_AUTO_SCALING_GROUP_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_AUTO_SCALING_GROUP), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TRIGGER_TARGETS_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TRIGGER_TARGETS_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::TRIGGER_TARGETS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_TARGET_LIST_SIZE_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_TARGET_LIST_SIZE_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TRAFFIC_ROUTING_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TRAFFIC_ROUTING_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_GIT_HUB_ACCOUNT_TOKEN_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_TARGET_LIST_SIZE_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_TARGET_LIST_SIZE_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_TRAFFIC_ROUTING_CONFIGURATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TRAFFIC_ROUTING_CONFIGURATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_GIT_HUB_ACCOUNT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_GIT_HUB_ACCOUNT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ON_PREMISES_TAG_COMBINATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ON_PREMISES_TAG_COMBINATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_EXTERNAL_ID_HASH)
-  {
+  } else if (hashCode == INVALID_ON_PREMISES_TAG_COMBINATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ON_PREMISES_TAG_COMBINATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_EXTERNAL_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_EXTERNAL_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ROLE_HASH)
-  {
+  } else if (hashCode == INVALID_ROLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ROLE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INSTANCE_NAME_ALREADY_REGISTERED_HASH)
-  {
+  } else if (hashCode == INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INSTANCE_NAME_ALREADY_REGISTERED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_NAME_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TAG_HASH)
-  {
+  } else if (hashCode == INVALID_TAG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_CONFIG_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_CONFIG_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_CONFIG_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_AUTO_ROLLBACK_CONFIG_HASH)
-  {
+  } else if (hashCode == INVALID_AUTO_ROLLBACK_CONFIG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_AUTO_ROLLBACK_CONFIG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ALARMS_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == ALARMS_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::ALARMS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INSTANCE_TYPE_HASH)
-  {
+  } else if (hashCode == INVALID_INSTANCE_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_INSTANCE_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IAM_USER_ARN_ALREADY_REGISTERED_HASH)
-  {
+  } else if (hashCode == IAM_USER_ARN_ALREADY_REGISTERED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_USER_ARN_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TRIGGER_CONFIG_HASH)
-  {
+  } else if (hashCode == INVALID_TRIGGER_CONFIG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TRIGGER_CONFIG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SORT_BY_HASH)
-  {
+  } else if (hashCode == INVALID_SORT_BY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_SORT_BY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_IS_NOT_IN_READY_STATE_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_IS_NOT_IN_READY_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_IS_NOT_IN_READY_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_SET_LIST_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TAG_SET_LIST_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::TAG_SET_LIST_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TIME_RANGE_HASH)
-  {
+  } else if (hashCode == INVALID_TIME_RANGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TIME_RANGE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_REQUIRED_HASH)
-  {
+  } else if (hashCode == TAG_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::TAG_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_KEY_PREFIX_FILTER_HASH)
-  {
+  } else if (hashCode == INVALID_KEY_PREFIX_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_KEY_PREFIX_FILTER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_E_C_S_SERVICE_HASH)
-  {
+  } else if (hashCode == INVALID_E_C_S_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_E_C_S_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INSTANCE_STATUS_HASH)
-  {
+  } else if (hashCode == INVALID_INSTANCE_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_INSTANCE_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
+  } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_ID_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_TARGET_ID_REQUIRED_HASH)
-  {
+  } else if (hashCode == INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_ID_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_ID),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_TARGET_ID_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_TARGET_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == GIT_HUB_ACCOUNT_TOKEN_NAME_REQUIRED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::GIT_HUB_ACCOUNT_TOKEN_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_CONFIG_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == GIT_HUB_ACCOUNT_TOKEN_NAME_REQUIRED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::GIT_HUB_ACCOUNT_TOKEN_NAME_REQUIRED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_CONFIG_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_CONFIG_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == E_C_S_SERVICE_MAPPING_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::E_C_S_SERVICE_MAPPING_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == E_C_S_SERVICE_MAPPING_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::E_C_S_SERVICE_MAPPING_LIMIT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPLOYMENT_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_COMPUTE_PLATFORM_HASH)
-  {
+  } else if (hashCode == INVALID_COMPUTE_PLATFORM_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_COMPUTE_PLATFORM), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IAM_USER_ARN_REQUIRED_HASH)
-  {
+  } else if (hashCode == IAM_USER_ARN_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_USER_ARN_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_IAM_SESSION_ARN_HASH)
-  {
+  } else if (hashCode == INVALID_IAM_SESSION_ARN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_IAM_SESSION_ARN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_STATUS_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == APPLICATION_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == APPLICATION_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::APPLICATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TARGET_GROUP_PAIR_HASH)
-  {
+  } else if (hashCode == INVALID_TARGET_GROUP_PAIR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TARGET_GROUP_PAIR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_FILE_EXISTS_BEHAVIOR_HASH)
-  {
+  } else if (hashCode == INVALID_FILE_EXISTS_BEHAVIOR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_FILE_EXISTS_BEHAVIOR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INSTANCE_NAME_REQUIRED_HASH)
-  {
+  } else if (hashCode == INSTANCE_NAME_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REGISTRATION_STATUS_HASH)
-  {
+  } else if (hashCode == INVALID_REGISTRATION_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_REGISTRATION_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_ALREADY_COMPLETED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_ALREADY_COMPLETED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_INSTANCE_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_TARGET_ID_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_TARGET_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_TARGET_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYED_STATE_FILTER_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYED_STATE_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYED_STATE_FILTER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_GROUP_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_GROUP_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_GROUP_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_WAIT_TYPE_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_WAIT_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_WAIT_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_ID_HASH)
-  {
+  } else if (hashCode == INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_DEPLOYMENT_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
-  {
+  } else if (hashCode == OPERATION_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::OPERATION_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
-  {
+  } else if (hashCode == RESOURCE_ARN_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::RESOURCE_ARN_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_GROUP_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_GROUP_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_GROUP_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_MINIMUM_HEALTHY_HOST_VALUE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_MINIMUM_HEALTHY_HOST_VALUE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_LOAD_BALANCER_INFO_HASH)
-  {
+  } else if (hashCode == INVALID_MINIMUM_HEALTHY_HOST_VALUE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_MINIMUM_HEALTHY_HOST_VALUE),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_LOAD_BALANCER_INFO_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_LOAD_BALANCER_INFO), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INSTANCE_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_INSTANCE_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_INSTANCE_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_VALIDATION_HASH)
-  {
+  } else if (hashCode == RESOURCE_VALIDATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::RESOURCE_VALIDATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEPLOYMENT_STYLE_HASH)
-  {
+  } else if (hashCode == INVALID_DEPLOYMENT_STYLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_STYLE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ZONAL_DEPLOYMENT_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ZONAL_DEPLOYMENT_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_APPLICATION_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_ZONAL_DEPLOYMENT_CONFIGURATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ZONAL_DEPLOYMENT_CONFIGURATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_APPLICATION_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_APPLICATION_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BATCH_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == BATCH_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::BATCH_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::LIFECYCLE_HOOK_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TAGS_TO_ADD_HASH)
-  {
+  } else if (hashCode == INVALID_TAGS_TO_ADD_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAGS_TO_ADD), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_IAM_USER_ARN_HASH)
-  {
+  } else if (hashCode == INVALID_IAM_USER_ARN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_IAM_USER_ARN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_GIT_HUB_ACCOUNT_TOKEN_NAME_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_GIT_HUB_ACCOUNT_TOKEN_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == REVISION_REQUIRED_HASH)
-  {
+  } else if (hashCode == INVALID_GIT_HUB_ACCOUNT_TOKEN_NAME_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_GIT_HUB_ACCOUNT_TOKEN_NAME),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == REVISION_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::REVISION_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TARGET_INSTANCES_HASH)
-  {
+  } else if (hashCode == INVALID_TARGET_INSTANCES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TARGET_INSTANCES), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INSTANCE_NOT_REGISTERED_HASH)
-  {
+  } else if (hashCode == INSTANCE_NOT_REGISTERED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_NOT_REGISTERED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OPERATION_HASH)
-  {
+  } else if (hashCode == INVALID_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BUCKET_NAME_FILTER_REQUIRED_HASH)
-  {
+  } else if (hashCode == BUCKET_NAME_FILTER_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::BUCKET_NAME_FILTER_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TAG_FILTER_HASH)
-  {
+  } else if (hashCode == INVALID_TAG_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAG_FILTER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_BUCKET_NAME_FILTER_HASH)
-  {
+  } else if (hashCode == INVALID_BUCKET_NAME_FILTER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_BUCKET_NAME_FILTER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ALARM_CONFIG_HASH)
-  {
+  } else if (hashCode == INVALID_ALARM_CONFIG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ALARM_CONFIG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TARGET_FILTER_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_TARGET_FILTER_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TARGET_FILTER_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IAM_ARN_REQUIRED_HASH)
-  {
+  } else if (hashCode == IAM_ARN_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_ARN_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == APPLICATION_NAME_REQUIRED_HASH)
-  {
+  } else if (hashCode == APPLICATION_NAME_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::APPLICATION_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INSTANCE_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == INSTANCE_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == APPLICATION_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == APPLICATION_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::APPLICATION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_E_C2_TAG_HASH)
-  {
+  } else if (hashCode == INVALID_E_C2_TAG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_E_C2_TAG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARN_HASH)
-  {
+  } else if (hashCode == INVALID_ARN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SORT_ORDER_HASH)
-  {
+  } else if (hashCode == INVALID_SORT_ORDER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_SORT_ORDER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DESCRIPTION_TOO_LONG_HASH)
-  {
+  } else if (hashCode == DESCRIPTION_TOO_LONG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DESCRIPTION_TOO_LONG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ROLE_REQUIRED_HASH)
-  {
+  } else if (hashCode == ROLE_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::ROLE_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEPLOYMENT_GROUP_NAME_REQUIRED_HASH)
-  {
+  } else if (hashCode == DEPLOYMENT_GROUP_NAME_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_GROUP_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == REVISION_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == REVISION_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::REVISION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CodeDeployErrorMapper
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace CodeDeployErrorMapper
+}  // namespace CodeDeploy
+}  // namespace Aws

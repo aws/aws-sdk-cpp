@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/WeeklySchedule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/WeeklySchedule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-WeeklySchedule::WeeklySchedule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WeeklySchedule::WeeklySchedule(JsonView jsonValue) { *this = jsonValue; }
 
-WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startTime"))
-  {
+WeeklySchedule& WeeklySchedule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetObject("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("days"))
-  {
+  if (jsonValue.ValueExists("days")) {
     Aws::Utils::Array<JsonView> daysJsonList = jsonValue.GetArray("days");
-    for(unsigned daysIndex = 0; daysIndex < daysJsonList.GetLength(); ++daysIndex)
-    {
+    for (unsigned daysIndex = 0; daysIndex < daysJsonList.GetLength(); ++daysIndex) {
       m_days.push_back(DayMapper::GetDayForName(daysJsonList[daysIndex].AsString()));
     }
     m_daysHasBeenSet = true;
@@ -42,30 +32,24 @@ WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue WeeklySchedule::Jsonize() const
-{
+JsonValue WeeklySchedule::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithObject("startTime", m_startTime.Jsonize());
-
+  if (m_startTimeHasBeenSet) {
+    payload.WithObject("startTime", m_startTime.Jsonize());
   }
 
-  if(m_daysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> daysJsonList(m_days.size());
-   for(unsigned daysIndex = 0; daysIndex < daysJsonList.GetLength(); ++daysIndex)
-   {
-     daysJsonList[daysIndex].AsString(DayMapper::GetNameForDay(m_days[daysIndex]));
-   }
-   payload.WithArray("days", std::move(daysJsonList));
-
+  if (m_daysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> daysJsonList(m_days.size());
+    for (unsigned daysIndex = 0; daysIndex < daysJsonList.GetLength(); ++daysIndex) {
+      daysJsonList[daysIndex].AsString(DayMapper::GetNameForDay(m_days[daysIndex]));
+    }
+    payload.WithArray("days", std::move(daysJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

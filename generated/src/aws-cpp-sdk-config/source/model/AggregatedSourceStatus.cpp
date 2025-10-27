@@ -11,104 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue) { *this = jsonValue; }
 
-AggregatedSourceStatus& AggregatedSourceStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceId"))
-  {
+AggregatedSourceStatus& AggregatedSourceStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceId")) {
     m_sourceId = jsonValue.GetString("SourceId");
     m_sourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceType"))
-  {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = AggregatedSourceTypeMapper::GetAggregatedSourceTypeForName(jsonValue.GetString("SourceType"));
     m_sourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = jsonValue.GetString("AwsRegion");
     m_awsRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdateStatus"))
-  {
+  if (jsonValue.ValueExists("LastUpdateStatus")) {
     m_lastUpdateStatus = AggregatedSourceStatusTypeMapper::GetAggregatedSourceStatusTypeForName(jsonValue.GetString("LastUpdateStatus"));
     m_lastUpdateStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastErrorCode"))
-  {
+  if (jsonValue.ValueExists("LastErrorCode")) {
     m_lastErrorCode = jsonValue.GetString("LastErrorCode");
     m_lastErrorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastErrorMessage"))
-  {
+  if (jsonValue.ValueExists("LastErrorMessage")) {
     m_lastErrorMessage = jsonValue.GetString("LastErrorMessage");
     m_lastErrorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregatedSourceStatus::Jsonize() const
-{
+JsonValue AggregatedSourceStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceIdHasBeenSet)
-  {
-   payload.WithString("SourceId", m_sourceId);
-
+  if (m_sourceIdHasBeenSet) {
+    payload.WithString("SourceId", m_sourceId);
   }
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", AggregatedSourceTypeMapper::GetNameForAggregatedSourceType(m_sourceType));
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", AggregatedSourceTypeMapper::GetNameForAggregatedSourceType(m_sourceType));
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", m_awsRegion);
   }
 
-  if(m_lastUpdateStatusHasBeenSet)
-  {
-   payload.WithString("LastUpdateStatus", AggregatedSourceStatusTypeMapper::GetNameForAggregatedSourceStatusType(m_lastUpdateStatus));
+  if (m_lastUpdateStatusHasBeenSet) {
+    payload.WithString("LastUpdateStatus", AggregatedSourceStatusTypeMapper::GetNameForAggregatedSourceStatusType(m_lastUpdateStatus));
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastErrorCodeHasBeenSet)
-  {
-   payload.WithString("LastErrorCode", m_lastErrorCode);
-
+  if (m_lastErrorCodeHasBeenSet) {
+    payload.WithString("LastErrorCode", m_lastErrorCode);
   }
 
-  if(m_lastErrorMessageHasBeenSet)
-  {
-   payload.WithString("LastErrorMessage", m_lastErrorMessage);
-
+  if (m_lastErrorMessageHasBeenSet) {
+    payload.WithString("LastErrorMessage", m_lastErrorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

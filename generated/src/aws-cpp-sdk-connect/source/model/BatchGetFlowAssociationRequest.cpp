@@ -12,29 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetFlowAssociationRequest::SerializePayload() const
-{
+Aws::String BatchGetFlowAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
-   }
-   payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
-
+  if (m_resourceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
+      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
+    }
+    payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ListFlowAssociationResourceTypeMapper::GetNameForListFlowAssociationResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", ListFlowAssociationResourceTypeMapper::GetNameForListFlowAssociationResourceType(m_resourceType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-Websocket::Websocket(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Websocket::Websocket(JsonView jsonValue) { *this = jsonValue; }
 
-Websocket& Websocket::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Url"))
-  {
+Websocket& Websocket::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionExpiry"))
-  {
+  if (jsonValue.ValueExists("ConnectionExpiry")) {
     m_connectionExpiry = jsonValue.GetString("ConnectionExpiry");
     m_connectionExpiryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Websocket::Jsonize() const
-{
+JsonValue Websocket::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
-  if(m_connectionExpiryHasBeenSet)
-  {
-   payload.WithString("ConnectionExpiry", m_connectionExpiry);
-
+  if (m_connectionExpiryHasBeenSet) {
+    payload.WithString("ConnectionExpiry", m_connectionExpiry);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

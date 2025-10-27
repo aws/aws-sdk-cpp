@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressStringOperator
-  {
-    NOT_SET,
-    EQUALS,
-    NOT_EQUALS,
-    STARTS_WITH,
-    ENDS_WITH,
-    CONTAINS
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressStringOperator { NOT_SET, EQUALS, NOT_EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS };
 
-namespace IngressStringOperatorMapper
-{
+namespace IngressStringOperatorMapper {
 AWS_MAILMANAGER_API IngressStringOperator GetIngressStringOperatorForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressStringOperator(IngressStringOperator value);
-} // namespace IngressStringOperatorMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressStringOperatorMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

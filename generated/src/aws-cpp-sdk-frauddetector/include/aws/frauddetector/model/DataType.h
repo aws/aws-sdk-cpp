@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class DataType
-  {
-    NOT_SET,
-    STRING,
-    INTEGER,
-    FLOAT,
-    BOOLEAN,
-    DATETIME
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class DataType { NOT_SET, STRING, INTEGER, FLOAT, BOOLEAN, DATETIME };
 
-namespace DataTypeMapper
-{
+namespace DataTypeMapper {
 AWS_FRAUDDETECTOR_API DataType GetDataTypeForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForDataType(DataType value);
-} // namespace DataTypeMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace DataTypeMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

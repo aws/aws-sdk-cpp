@@ -4,71 +4,78 @@
  */
 
 #pragma once
-#include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
+#include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
+/**
+ */
+class DeleteKeyGroup2020_05_31Request : public CloudFrontRequest {
+ public:
+  AWS_CLOUDFRONT_API DeleteKeyGroup2020_05_31Request() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteKeyGroup"; }
+
+  AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
+
+  AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The identifier of the key group that you are deleting. To get the identifier,
+   * use <code>ListKeyGroups</code>.</p>
    */
-  class DeleteKeyGroup2020_05_31Request : public CloudFrontRequest
-  {
-  public:
-    AWS_CLOUDFRONT_API DeleteKeyGroup2020_05_31Request() = default;
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  DeleteKeyGroup2020_05_31Request& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteKeyGroup"; }
+  ///@{
+  /**
+   * <p>The version of the key group that you are deleting. The version is the key
+   * group's <code>ETag</code> value. To get the <code>ETag</code>, use
+   * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+   */
+  inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
+  inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
+  template <typename IfMatchT = Aws::String>
+  void SetIfMatch(IfMatchT&& value) {
+    m_ifMatchHasBeenSet = true;
+    m_ifMatch = std::forward<IfMatchT>(value);
+  }
+  template <typename IfMatchT = Aws::String>
+  DeleteKeyGroup2020_05_31Request& WithIfMatch(IfMatchT&& value) {
+    SetIfMatch(std::forward<IfMatchT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
+  Aws::String m_ifMatch;
+  bool m_ifMatchHasBeenSet = false;
+};
 
-    AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The identifier of the key group that you are deleting. To get the identifier,
-     * use <code>ListKeyGroups</code>.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    DeleteKeyGroup2020_05_31Request& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version of the key group that you are deleting. The version is the key
-     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
-     * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
-     */
-    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
-    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    template<typename IfMatchT = Aws::String>
-    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
-    template<typename IfMatchT = Aws::String>
-    DeleteKeyGroup2020_05_31Request& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

@@ -4,61 +4,49 @@
  */
 
 #include <aws/cloudsearch/model/AnalysisOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
-AnalysisOptions::AnalysisOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AnalysisOptions::AnalysisOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AnalysisOptions& AnalysisOptions::operator =(const XmlNode& xmlNode)
-{
+AnalysisOptions& AnalysisOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode synonymsNode = resultNode.FirstChild("Synonyms");
-    if(!synonymsNode.IsNull())
-    {
+    if (!synonymsNode.IsNull()) {
       m_synonyms = Aws::Utils::Xml::DecodeEscapedXmlText(synonymsNode.GetText());
       m_synonymsHasBeenSet = true;
     }
     XmlNode stopwordsNode = resultNode.FirstChild("Stopwords");
-    if(!stopwordsNode.IsNull())
-    {
+    if (!stopwordsNode.IsNull()) {
       m_stopwords = Aws::Utils::Xml::DecodeEscapedXmlText(stopwordsNode.GetText());
       m_stopwordsHasBeenSet = true;
     }
     XmlNode stemmingDictionaryNode = resultNode.FirstChild("StemmingDictionary");
-    if(!stemmingDictionaryNode.IsNull())
-    {
+    if (!stemmingDictionaryNode.IsNull()) {
       m_stemmingDictionary = Aws::Utils::Xml::DecodeEscapedXmlText(stemmingDictionaryNode.GetText());
       m_stemmingDictionaryHasBeenSet = true;
     }
     XmlNode japaneseTokenizationDictionaryNode = resultNode.FirstChild("JapaneseTokenizationDictionary");
-    if(!japaneseTokenizationDictionaryNode.IsNull())
-    {
+    if (!japaneseTokenizationDictionaryNode.IsNull()) {
       m_japaneseTokenizationDictionary = Aws::Utils::Xml::DecodeEscapedXmlText(japaneseTokenizationDictionaryNode.GetText());
       m_japaneseTokenizationDictionaryHasBeenSet = true;
     }
     XmlNode algorithmicStemmingNode = resultNode.FirstChild("AlgorithmicStemming");
-    if(!algorithmicStemmingNode.IsNull())
-    {
-      m_algorithmicStemming = AlgorithmicStemmingMapper::GetAlgorithmicStemmingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(algorithmicStemmingNode.GetText()).c_str()));
+    if (!algorithmicStemmingNode.IsNull()) {
+      m_algorithmicStemming = AlgorithmicStemmingMapper::GetAlgorithmicStemmingForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(algorithmicStemmingNode.GetText()).c_str()));
       m_algorithmicStemmingHasBeenSet = true;
     }
   }
@@ -66,59 +54,49 @@ AnalysisOptions& AnalysisOptions::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_synonymsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Synonyms=" << StringUtils::URLEncode(m_synonyms.c_str()) << "&";
+void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_synonymsHasBeenSet) {
+    oStream << location << index << locationValue << ".Synonyms=" << StringUtils::URLEncode(m_synonyms.c_str()) << "&";
   }
 
-  if(m_stopwordsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Stopwords=" << StringUtils::URLEncode(m_stopwords.c_str()) << "&";
+  if (m_stopwordsHasBeenSet) {
+    oStream << location << index << locationValue << ".Stopwords=" << StringUtils::URLEncode(m_stopwords.c_str()) << "&";
   }
 
-  if(m_stemmingDictionaryHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StemmingDictionary=" << StringUtils::URLEncode(m_stemmingDictionary.c_str()) << "&";
+  if (m_stemmingDictionaryHasBeenSet) {
+    oStream << location << index << locationValue << ".StemmingDictionary=" << StringUtils::URLEncode(m_stemmingDictionary.c_str()) << "&";
   }
 
-  if(m_japaneseTokenizationDictionaryHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".JapaneseTokenizationDictionary=" << StringUtils::URLEncode(m_japaneseTokenizationDictionary.c_str()) << "&";
+  if (m_japaneseTokenizationDictionaryHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".JapaneseTokenizationDictionary=" << StringUtils::URLEncode(m_japaneseTokenizationDictionary.c_str()) << "&";
   }
 
-  if(m_algorithmicStemmingHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AlgorithmicStemming=" << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
-  }
-
-}
-
-void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_synonymsHasBeenSet)
-  {
-      oStream << location << ".Synonyms=" << StringUtils::URLEncode(m_synonyms.c_str()) << "&";
-  }
-  if(m_stopwordsHasBeenSet)
-  {
-      oStream << location << ".Stopwords=" << StringUtils::URLEncode(m_stopwords.c_str()) << "&";
-  }
-  if(m_stemmingDictionaryHasBeenSet)
-  {
-      oStream << location << ".StemmingDictionary=" << StringUtils::URLEncode(m_stemmingDictionary.c_str()) << "&";
-  }
-  if(m_japaneseTokenizationDictionaryHasBeenSet)
-  {
-      oStream << location << ".JapaneseTokenizationDictionary=" << StringUtils::URLEncode(m_japaneseTokenizationDictionary.c_str()) << "&";
-  }
-  if(m_algorithmicStemmingHasBeenSet)
-  {
-      oStream << location << ".AlgorithmicStemming=" << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
+  if (m_algorithmicStemmingHasBeenSet) {
+    oStream << location << index << locationValue << ".AlgorithmicStemming="
+            << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_synonymsHasBeenSet) {
+    oStream << location << ".Synonyms=" << StringUtils::URLEncode(m_synonyms.c_str()) << "&";
+  }
+  if (m_stopwordsHasBeenSet) {
+    oStream << location << ".Stopwords=" << StringUtils::URLEncode(m_stopwords.c_str()) << "&";
+  }
+  if (m_stemmingDictionaryHasBeenSet) {
+    oStream << location << ".StemmingDictionary=" << StringUtils::URLEncode(m_stemmingDictionary.c_str()) << "&";
+  }
+  if (m_japaneseTokenizationDictionaryHasBeenSet) {
+    oStream << location << ".JapaneseTokenizationDictionary=" << StringUtils::URLEncode(m_japaneseTokenizationDictionary.c_str()) << "&";
+  }
+  if (m_algorithmicStemmingHasBeenSet) {
+    oStream << location << ".AlgorithmicStemming="
+            << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

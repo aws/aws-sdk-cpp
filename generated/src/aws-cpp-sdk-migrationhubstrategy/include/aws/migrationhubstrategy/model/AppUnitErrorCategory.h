@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class AppUnitErrorCategory
-  {
-    NOT_SET,
-    CREDENTIAL_ERROR,
-    CONNECTIVITY_ERROR,
-    PERMISSION_ERROR,
-    UNSUPPORTED_ERROR,
-    OTHER_ERROR
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class AppUnitErrorCategory { NOT_SET, CREDENTIAL_ERROR, CONNECTIVITY_ERROR, PERMISSION_ERROR, UNSUPPORTED_ERROR, OTHER_ERROR };
 
-namespace AppUnitErrorCategoryMapper
-{
+namespace AppUnitErrorCategoryMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AppUnitErrorCategory GetAppUnitErrorCategoryForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForAppUnitErrorCategory(AppUnitErrorCategory value);
-} // namespace AppUnitErrorCategoryMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace AppUnitErrorCategoryMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

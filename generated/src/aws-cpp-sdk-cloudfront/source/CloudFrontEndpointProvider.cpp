@@ -5,12 +5,8 @@
 
 #include <aws/cloudfront/CloudFrontEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudFront
-} // namespace Aws
+namespace Aws {
+namespace CloudFront {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudFront
+}  // namespace Aws

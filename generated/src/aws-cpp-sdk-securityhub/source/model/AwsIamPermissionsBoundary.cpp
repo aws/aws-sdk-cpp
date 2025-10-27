@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsIamPermissionsBoundary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsIamPermissionsBoundary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsIamPermissionsBoundary::AwsIamPermissionsBoundary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsIamPermissionsBoundary::AwsIamPermissionsBoundary(JsonView jsonValue) { *this = jsonValue; }
 
-AwsIamPermissionsBoundary& AwsIamPermissionsBoundary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PermissionsBoundaryArn"))
-  {
+AwsIamPermissionsBoundary& AwsIamPermissionsBoundary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PermissionsBoundaryArn")) {
     m_permissionsBoundaryArn = jsonValue.GetString("PermissionsBoundaryArn");
     m_permissionsBoundaryArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PermissionsBoundaryType"))
-  {
+  if (jsonValue.ValueExists("PermissionsBoundaryType")) {
     m_permissionsBoundaryType = jsonValue.GetString("PermissionsBoundaryType");
     m_permissionsBoundaryTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsIamPermissionsBoundary::Jsonize() const
-{
+JsonValue AwsIamPermissionsBoundary::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionsBoundaryArnHasBeenSet)
-  {
-   payload.WithString("PermissionsBoundaryArn", m_permissionsBoundaryArn);
-
+  if (m_permissionsBoundaryArnHasBeenSet) {
+    payload.WithString("PermissionsBoundaryArn", m_permissionsBoundaryArn);
   }
 
-  if(m_permissionsBoundaryTypeHasBeenSet)
-  {
-   payload.WithString("PermissionsBoundaryType", m_permissionsBoundaryType);
-
+  if (m_permissionsBoundaryTypeHasBeenSet) {
+    payload.WithString("PermissionsBoundaryType", m_permissionsBoundaryType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ModifyRecommendationDetail::ModifyRecommendationDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModifyRecommendationDetail::ModifyRecommendationDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ModifyRecommendationDetail& ModifyRecommendationDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetInstances"))
-  {
+ModifyRecommendationDetail& ModifyRecommendationDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetInstances")) {
     Aws::Utils::Array<JsonView> targetInstancesJsonList = jsonValue.GetArray("TargetInstances");
-    for(unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex)
-    {
+    for (unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex) {
       m_targetInstances.push_back(targetInstancesJsonList[targetInstancesIndex].AsObject());
     }
     m_targetInstancesHasBeenSet = true;
@@ -37,24 +28,20 @@ ModifyRecommendationDetail& ModifyRecommendationDetail::operator =(JsonView json
   return *this;
 }
 
-JsonValue ModifyRecommendationDetail::Jsonize() const
-{
+JsonValue ModifyRecommendationDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetInstancesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetInstancesJsonList(m_targetInstances.size());
-   for(unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex)
-   {
-     targetInstancesJsonList[targetInstancesIndex].AsObject(m_targetInstances[targetInstancesIndex].Jsonize());
-   }
-   payload.WithArray("TargetInstances", std::move(targetInstancesJsonList));
-
+  if (m_targetInstancesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetInstancesJsonList(m_targetInstances.size());
+    for (unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex) {
+      targetInstancesJsonList[targetInstancesIndex].AsObject(m_targetInstances[targetInstancesIndex].Jsonize());
+    }
+    payload.WithArray("TargetInstances", std::move(targetInstancesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

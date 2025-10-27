@@ -7,26 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class DifferenceType
-  {
-    NOT_SET,
-    ADD,
-    REMOVE,
-    NOT_EQUAL
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class DifferenceType { NOT_SET, ADD, REMOVE, NOT_EQUAL };
 
-namespace DifferenceTypeMapper
-{
+namespace DifferenceTypeMapper {
 AWS_CLOUDFORMATION_API DifferenceType GetDifferenceTypeForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForDifferenceType(DifferenceType value);
-} // namespace DifferenceTypeMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace DifferenceTypeMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

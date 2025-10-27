@@ -3,91 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/RecommenderConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/RecommenderConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-RecommenderConfig::RecommenderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommenderConfig::RecommenderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RecommenderConfig& RecommenderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("itemExplorationConfig"))
-  {
+RecommenderConfig& RecommenderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("itemExplorationConfig")) {
     Aws::Map<Aws::String, JsonView> itemExplorationConfigJsonMap = jsonValue.GetObject("itemExplorationConfig").GetAllObjects();
-    for(auto& itemExplorationConfigItem : itemExplorationConfigJsonMap)
-    {
+    for (auto& itemExplorationConfigItem : itemExplorationConfigJsonMap) {
       m_itemExplorationConfig[itemExplorationConfigItem.first] = itemExplorationConfigItem.second.AsString();
     }
     m_itemExplorationConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minRecommendationRequestsPerSecond"))
-  {
+  if (jsonValue.ValueExists("minRecommendationRequestsPerSecond")) {
     m_minRecommendationRequestsPerSecond = jsonValue.GetInteger("minRecommendationRequestsPerSecond");
     m_minRecommendationRequestsPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingDataConfig"))
-  {
+  if (jsonValue.ValueExists("trainingDataConfig")) {
     m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
     m_trainingDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enableMetadataWithRecommendations"))
-  {
+  if (jsonValue.ValueExists("enableMetadataWithRecommendations")) {
     m_enableMetadataWithRecommendations = jsonValue.GetBool("enableMetadataWithRecommendations");
     m_enableMetadataWithRecommendationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommenderConfig::Jsonize() const
-{
+JsonValue RecommenderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_itemExplorationConfigHasBeenSet)
-  {
-   JsonValue itemExplorationConfigJsonMap;
-   for(auto& itemExplorationConfigItem : m_itemExplorationConfig)
-   {
-     itemExplorationConfigJsonMap.WithString(itemExplorationConfigItem.first, itemExplorationConfigItem.second);
-   }
-   payload.WithObject("itemExplorationConfig", std::move(itemExplorationConfigJsonMap));
-
+  if (m_itemExplorationConfigHasBeenSet) {
+    JsonValue itemExplorationConfigJsonMap;
+    for (auto& itemExplorationConfigItem : m_itemExplorationConfig) {
+      itemExplorationConfigJsonMap.WithString(itemExplorationConfigItem.first, itemExplorationConfigItem.second);
+    }
+    payload.WithObject("itemExplorationConfig", std::move(itemExplorationConfigJsonMap));
   }
 
-  if(m_minRecommendationRequestsPerSecondHasBeenSet)
-  {
-   payload.WithInteger("minRecommendationRequestsPerSecond", m_minRecommendationRequestsPerSecond);
-
+  if (m_minRecommendationRequestsPerSecondHasBeenSet) {
+    payload.WithInteger("minRecommendationRequestsPerSecond", m_minRecommendationRequestsPerSecond);
   }
 
-  if(m_trainingDataConfigHasBeenSet)
-  {
-   payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
-
+  if (m_trainingDataConfigHasBeenSet) {
+    payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
   }
 
-  if(m_enableMetadataWithRecommendationsHasBeenSet)
-  {
-   payload.WithBool("enableMetadataWithRecommendations", m_enableMetadataWithRecommendations);
-
+  if (m_enableMetadataWithRecommendationsHasBeenSet) {
+    payload.WithBool("enableMetadataWithRecommendations", m_enableMetadataWithRecommendations);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

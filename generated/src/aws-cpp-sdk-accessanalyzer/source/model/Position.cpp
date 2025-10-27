@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Position::Position(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Position::Position(JsonView jsonValue) { *this = jsonValue; }
 
-Position& Position::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("line"))
-  {
+Position& Position::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("line")) {
     m_line = jsonValue.GetInteger("line");
     m_lineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("column"))
-  {
+  if (jsonValue.ValueExists("column")) {
     m_column = jsonValue.GetInteger("column");
     m_columnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("offset"))
-  {
+  if (jsonValue.ValueExists("offset")) {
     m_offset = jsonValue.GetInteger("offset");
     m_offsetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Position::Jsonize() const
-{
+JsonValue Position::Jsonize() const {
   JsonValue payload;
 
-  if(m_lineHasBeenSet)
-  {
-   payload.WithInteger("line", m_line);
-
+  if (m_lineHasBeenSet) {
+    payload.WithInteger("line", m_line);
   }
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithInteger("column", m_column);
-
+  if (m_columnHasBeenSet) {
+    payload.WithInteger("column", m_column);
   }
 
-  if(m_offsetHasBeenSet)
-  {
-   payload.WithInteger("offset", m_offset);
-
+  if (m_offsetHasBeenSet) {
+    payload.WithInteger("offset", m_offset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

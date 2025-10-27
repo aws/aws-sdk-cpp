@@ -11,40 +11,29 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-Proxy::Proxy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Proxy::Proxy(JsonView jsonValue) { *this = jsonValue; }
 
-Proxy& Proxy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultSessionExpiryMinutes"))
-  {
+Proxy& Proxy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultSessionExpiryMinutes")) {
     m_defaultSessionExpiryMinutes = jsonValue.GetInteger("DefaultSessionExpiryMinutes");
     m_defaultSessionExpiryMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Disabled"))
-  {
+  if (jsonValue.ValueExists("Disabled")) {
     m_disabled = jsonValue.GetBool("Disabled");
     m_disabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FallBackPhoneNumber"))
-  {
+  if (jsonValue.ValueExists("FallBackPhoneNumber")) {
     m_fallBackPhoneNumber = jsonValue.GetString("FallBackPhoneNumber");
     m_fallBackPhoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PhoneNumberCountries"))
-  {
+  if (jsonValue.ValueExists("PhoneNumberCountries")) {
     Aws::Utils::Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
-    for(unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength(); ++phoneNumberCountriesIndex)
-    {
+    for (unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength();
+         ++phoneNumberCountriesIndex) {
       m_phoneNumberCountries.push_back(phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsString());
     }
     m_phoneNumberCountriesHasBeenSet = true;
@@ -52,42 +41,33 @@ Proxy& Proxy::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Proxy::Jsonize() const
-{
+JsonValue Proxy::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultSessionExpiryMinutesHasBeenSet)
-  {
-   payload.WithInteger("DefaultSessionExpiryMinutes", m_defaultSessionExpiryMinutes);
-
+  if (m_defaultSessionExpiryMinutesHasBeenSet) {
+    payload.WithInteger("DefaultSessionExpiryMinutes", m_defaultSessionExpiryMinutes);
   }
 
-  if(m_disabledHasBeenSet)
-  {
-   payload.WithBool("Disabled", m_disabled);
-
+  if (m_disabledHasBeenSet) {
+    payload.WithBool("Disabled", m_disabled);
   }
 
-  if(m_fallBackPhoneNumberHasBeenSet)
-  {
-   payload.WithString("FallBackPhoneNumber", m_fallBackPhoneNumber);
-
+  if (m_fallBackPhoneNumberHasBeenSet) {
+    payload.WithString("FallBackPhoneNumber", m_fallBackPhoneNumber);
   }
 
-  if(m_phoneNumberCountriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> phoneNumberCountriesJsonList(m_phoneNumberCountries.size());
-   for(unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength(); ++phoneNumberCountriesIndex)
-   {
-     phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsString(m_phoneNumberCountries[phoneNumberCountriesIndex]);
-   }
-   payload.WithArray("PhoneNumberCountries", std::move(phoneNumberCountriesJsonList));
-
+  if (m_phoneNumberCountriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> phoneNumberCountriesJsonList(m_phoneNumberCountries.size());
+    for (unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength();
+         ++phoneNumberCountriesIndex) {
+      phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsString(m_phoneNumberCountries[phoneNumberCountriesIndex]);
+    }
+    payload.WithArray("PhoneNumberCountries", std::move(phoneNumberCountriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

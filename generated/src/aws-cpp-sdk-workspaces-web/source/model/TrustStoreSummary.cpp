@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/TrustStoreSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/TrustStoreSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
 
-TrustStoreSummary::TrustStoreSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrustStoreSummary::TrustStoreSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TrustStoreSummary& TrustStoreSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("trustStoreArn"))
-  {
+TrustStoreSummary& TrustStoreSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("trustStoreArn")) {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
     m_trustStoreArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrustStoreSummary::Jsonize() const
-{
+JsonValue TrustStoreSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_trustStoreArnHasBeenSet)
-  {
-   payload.WithString("trustStoreArn", m_trustStoreArn);
-
+  if (m_trustStoreArnHasBeenSet) {
+    payload.WithString("trustStoreArn", m_trustStoreArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

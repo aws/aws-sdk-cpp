@@ -4,10 +4,10 @@
  */
 
 #include <aws/backup/model/GetBackupPlanResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,68 +17,54 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackupPlanResult::GetBackupPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetBackupPlanResult::GetBackupPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetBackupPlanResult& GetBackupPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetBackupPlanResult& GetBackupPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("BackupPlan"))
-  {
+  if (jsonValue.ValueExists("BackupPlan")) {
     m_backupPlan = jsonValue.GetObject("BackupPlan");
     m_backupPlanHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackupPlanId"))
-  {
+  if (jsonValue.ValueExists("BackupPlanId")) {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
     m_backupPlanIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackupPlanArn"))
-  {
+  if (jsonValue.ValueExists("BackupPlanArn")) {
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
     m_backupPlanArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionId"))
-  {
+  if (jsonValue.ValueExists("VersionId")) {
     m_versionId = jsonValue.GetString("VersionId");
     m_versionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatorRequestId"))
-  {
+  if (jsonValue.ValueExists("CreatorRequestId")) {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
     m_creatorRequestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletionDate"))
-  {
+  if (jsonValue.ValueExists("DeletionDate")) {
     m_deletionDate = jsonValue.GetDouble("DeletionDate");
     m_deletionDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastExecutionDate"))
-  {
+  if (jsonValue.ValueExists("LastExecutionDate")) {
     m_lastExecutionDate = jsonValue.GetDouble("LastExecutionDate");
     m_lastExecutionDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdvancedBackupSettings"))
-  {
+  if (jsonValue.ValueExists("AdvancedBackupSettings")) {
     Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
-    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
-    {
+    for (unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength();
+         ++advancedBackupSettingsIndex) {
       m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduledRunsPreview"))
-  {
+  if (jsonValue.ValueExists("ScheduledRunsPreview")) {
     Aws::Utils::Array<JsonView> scheduledRunsPreviewJsonList = jsonValue.GetArray("ScheduledRunsPreview");
-    for(unsigned scheduledRunsPreviewIndex = 0; scheduledRunsPreviewIndex < scheduledRunsPreviewJsonList.GetLength(); ++scheduledRunsPreviewIndex)
-    {
+    for (unsigned scheduledRunsPreviewIndex = 0; scheduledRunsPreviewIndex < scheduledRunsPreviewJsonList.GetLength();
+         ++scheduledRunsPreviewIndex) {
       m_scheduledRunsPreview.push_back(scheduledRunsPreviewJsonList[scheduledRunsPreviewIndex].AsObject());
     }
     m_scheduledRunsPreviewHasBeenSet = true;
@@ -86,12 +72,10 @@ GetBackupPlanResult& GetBackupPlanResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

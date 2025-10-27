@@ -3,91 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordResultDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordResultDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {
+namespace Model {
 
-BatchGetRecordResultDetail::BatchGetRecordResultDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetRecordResultDetail::BatchGetRecordResultDetail(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetRecordResultDetail& BatchGetRecordResultDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FeatureGroupName"))
-  {
+BatchGetRecordResultDetail& BatchGetRecordResultDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FeatureGroupName")) {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
     m_featureGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecordIdentifierValueAsString"))
-  {
+  if (jsonValue.ValueExists("RecordIdentifierValueAsString")) {
     m_recordIdentifierValueAsString = jsonValue.GetString("RecordIdentifierValueAsString");
     m_recordIdentifierValueAsStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Record"))
-  {
+  if (jsonValue.ValueExists("Record")) {
     Aws::Utils::Array<JsonView> recordJsonList = jsonValue.GetArray("Record");
-    for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
-    {
+    for (unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex) {
       m_record.push_back(recordJsonList[recordIndex].AsObject());
     }
     m_recordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpiresAt"))
-  {
+  if (jsonValue.ValueExists("ExpiresAt")) {
     m_expiresAt = jsonValue.GetString("ExpiresAt");
     m_expiresAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetRecordResultDetail::Jsonize() const
-{
+JsonValue BatchGetRecordResultDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureGroupNameHasBeenSet)
-  {
-   payload.WithString("FeatureGroupName", m_featureGroupName);
-
+  if (m_featureGroupNameHasBeenSet) {
+    payload.WithString("FeatureGroupName", m_featureGroupName);
   }
 
-  if(m_recordIdentifierValueAsStringHasBeenSet)
-  {
-   payload.WithString("RecordIdentifierValueAsString", m_recordIdentifierValueAsString);
-
+  if (m_recordIdentifierValueAsStringHasBeenSet) {
+    payload.WithString("RecordIdentifierValueAsString", m_recordIdentifierValueAsString);
   }
 
-  if(m_recordHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
-   for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
-   {
-     recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
-   }
-   payload.WithArray("Record", std::move(recordJsonList));
-
+  if (m_recordHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
+    for (unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex) {
+      recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
+    }
+    payload.WithArray("Record", std::move(recordJsonList));
   }
 
-  if(m_expiresAtHasBeenSet)
-  {
-   payload.WithString("ExpiresAt", m_expiresAt);
-
+  if (m_expiresAtHasBeenSet) {
+    payload.WithString("ExpiresAt", m_expiresAt);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

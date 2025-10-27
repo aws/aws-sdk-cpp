@@ -5,12 +5,8 @@
 
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlEndpointProvider.h>
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

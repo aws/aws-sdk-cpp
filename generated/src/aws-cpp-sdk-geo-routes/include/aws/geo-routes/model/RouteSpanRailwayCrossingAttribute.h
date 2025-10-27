@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteSpanRailwayCrossingAttribute
-  {
-    NOT_SET,
-    Protected,
-    Unprotected
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteSpanRailwayCrossingAttribute { NOT_SET, Protected, Unprotected };
 
-namespace RouteSpanRailwayCrossingAttributeMapper
-{
+namespace RouteSpanRailwayCrossingAttributeMapper {
 AWS_GEOROUTES_API RouteSpanRailwayCrossingAttribute GetRouteSpanRailwayCrossingAttributeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteSpanRailwayCrossingAttribute(RouteSpanRailwayCrossingAttribute value);
-} // namespace RouteSpanRailwayCrossingAttributeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteSpanRailwayCrossingAttributeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

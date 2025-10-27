@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class JobTemplateType
-  {
-    NOT_SET,
-    JSON,
-    YAML
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class JobTemplateType { NOT_SET, JSON, YAML };
 
-namespace JobTemplateTypeMapper
-{
+namespace JobTemplateTypeMapper {
 AWS_DEADLINE_API JobTemplateType GetJobTemplateTypeForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForJobTemplateType(JobTemplateType value);
-} // namespace JobTemplateTypeMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace JobTemplateTypeMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

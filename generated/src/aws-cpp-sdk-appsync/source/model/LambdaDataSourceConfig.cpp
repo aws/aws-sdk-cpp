@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaDataSourceConfig& LambdaDataSourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambdaFunctionArn"))
-  {
+LambdaDataSourceConfig& LambdaDataSourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("lambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaDataSourceConfig::Jsonize() const
-{
+JsonValue LambdaDataSourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("lambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("lambdaFunctionArn", m_lambdaFunctionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

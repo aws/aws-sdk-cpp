@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/FirewallManagerStatement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/FirewallManagerStatement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-FirewallManagerStatement::FirewallManagerStatement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FirewallManagerStatement::FirewallManagerStatement(JsonView jsonValue) { *this = jsonValue; }
 
-FirewallManagerStatement& FirewallManagerStatement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ManagedRuleGroupStatement"))
-  {
+FirewallManagerStatement& FirewallManagerStatement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ManagedRuleGroupStatement")) {
     m_managedRuleGroupStatement = jsonValue.GetObject("ManagedRuleGroupStatement");
     m_managedRuleGroupStatementHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroupReferenceStatement"))
-  {
+  if (jsonValue.ValueExists("RuleGroupReferenceStatement")) {
     m_ruleGroupReferenceStatement = jsonValue.GetObject("RuleGroupReferenceStatement");
     m_ruleGroupReferenceStatementHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FirewallManagerStatement::Jsonize() const
-{
+JsonValue FirewallManagerStatement::Jsonize() const {
   JsonValue payload;
 
-  if(m_managedRuleGroupStatementHasBeenSet)
-  {
-   payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement.Jsonize());
-
+  if (m_managedRuleGroupStatementHasBeenSet) {
+    payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement.Jsonize());
   }
 
-  if(m_ruleGroupReferenceStatementHasBeenSet)
-  {
-   payload.WithObject("RuleGroupReferenceStatement", m_ruleGroupReferenceStatement.Jsonize());
-
+  if (m_ruleGroupReferenceStatementHasBeenSet) {
+    payload.WithObject("RuleGroupReferenceStatement", m_ruleGroupReferenceStatement.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ArtifactSourceIdType
-  {
-    NOT_SET,
-    MD5Hash,
-    S3ETag,
-    S3Version,
-    Custom
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ArtifactSourceIdType { NOT_SET, MD5Hash, S3ETag, S3Version, Custom };
 
-namespace ArtifactSourceIdTypeMapper
-{
+namespace ArtifactSourceIdTypeMapper {
 AWS_SAGEMAKER_API ArtifactSourceIdType GetArtifactSourceIdTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForArtifactSourceIdType(ArtifactSourceIdType value);
-} // namespace ArtifactSourceIdTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ArtifactSourceIdTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

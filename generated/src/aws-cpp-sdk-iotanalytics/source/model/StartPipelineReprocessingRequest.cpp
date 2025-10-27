@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/StartPipelineReprocessingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/StartPipelineReprocessingRequest.h>
 
 #include <utility>
 
@@ -12,29 +12,20 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartPipelineReprocessingRequest::SerializePayload() const
-{
+Aws::String StartPipelineReprocessingRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_channelMessagesHasBeenSet)
-  {
-   payload.WithObject("channelMessages", m_channelMessages.Jsonize());
-
+  if (m_channelMessagesHasBeenSet) {
+    payload.WithObject("channelMessages", m_channelMessages.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

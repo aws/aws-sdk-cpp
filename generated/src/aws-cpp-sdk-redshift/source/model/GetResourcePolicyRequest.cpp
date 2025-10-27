@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/GetResourcePolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/GetResourcePolicyRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String GetResourcePolicyRequest::SerializePayload() const
-{
+Aws::String GetResourcePolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetResourcePolicy&";
-  if(m_resourceArnHasBeenSet)
-  {
+  if (m_resourceArnHasBeenSet) {
     ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetResourcePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetResourcePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetResourcePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -12,38 +12,26 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateSourceViewsRequest::SerializePayload() const
-{
+Aws::String DisassociateSourceViewsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_sourceViewsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourceViewsJsonList(m_sourceViews.size());
-   for(unsigned sourceViewsIndex = 0; sourceViewsIndex < sourceViewsJsonList.GetLength(); ++sourceViewsIndex)
-   {
-     sourceViewsJsonList[sourceViewsIndex].AsString(m_sourceViews[sourceViewsIndex]);
-   }
-   payload.WithArray("sourceViews", std::move(sourceViewsJsonList));
-
+  if (m_sourceViewsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceViewsJsonList(m_sourceViews.size());
+    for (unsigned sourceViewsIndex = 0; sourceViewsIndex < sourceViewsJsonList.GetLength(); ++sourceViewsIndex) {
+      sourceViewsJsonList[sourceViewsIndex].AsString(m_sourceViews[sourceViewsIndex]);
+    }
+    payload.WithArray("sourceViews", std::move(sourceViewsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DisassociateSourceViewsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DisassociateSourceViewsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBilling.DisassociateSourceViews"));
   return headers;
-
 }
-
-
-
-

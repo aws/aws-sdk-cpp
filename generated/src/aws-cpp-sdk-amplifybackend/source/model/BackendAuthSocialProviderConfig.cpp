@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-BackendAuthSocialProviderConfig& BackendAuthSocialProviderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("client_id"))
-  {
+BackendAuthSocialProviderConfig& BackendAuthSocialProviderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("client_id")) {
     m_clientId = jsonValue.GetString("client_id");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("client_secret"))
-  {
+  if (jsonValue.ValueExists("client_secret")) {
     m_clientSecret = jsonValue.GetString("client_secret");
     m_clientSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackendAuthSocialProviderConfig::Jsonize() const
-{
+JsonValue BackendAuthSocialProviderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("client_id", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("client_id", m_clientId);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("client_secret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("client_secret", m_clientSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/GetSyncJobRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iottwinmaker/model/GetSyncJobRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetSyncJobRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetSyncJobRequest::SerializePayload() const { return {}; }
+
+void GetSyncJobRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_workspaceIdHasBeenSet) {
+    ss << m_workspaceId;
+    uri.AddQueryStringParameter("workspace", ss.str());
+    ss.str("");
+  }
 }
-
-void GetSyncJobRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_workspaceIdHasBeenSet)
-    {
-      ss << m_workspaceId;
-      uri.AddQueryStringParameter("workspace", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

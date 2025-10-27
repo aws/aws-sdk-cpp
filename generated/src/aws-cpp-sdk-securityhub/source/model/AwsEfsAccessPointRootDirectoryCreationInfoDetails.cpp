@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEfsAccessPointRootDirectoryCreationInfoDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEfsAccessPointRootDirectoryCreationInfoDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails(JsonView jsonValue)
-{
+AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEfsAccessPointRootDirectoryCreationInfoDetails& AwsEfsAccessPointRootDirectoryCreationInfoDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OwnerGid"))
-  {
+AwsEfsAccessPointRootDirectoryCreationInfoDetails& AwsEfsAccessPointRootDirectoryCreationInfoDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OwnerGid")) {
     m_ownerGid = jsonValue.GetString("OwnerGid");
     m_ownerGidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerUid"))
-  {
+  if (jsonValue.ValueExists("OwnerUid")) {
     m_ownerUid = jsonValue.GetString("OwnerUid");
     m_ownerUidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Permissions"))
-  {
+  if (jsonValue.ValueExists("Permissions")) {
     m_permissions = jsonValue.GetString("Permissions");
     m_permissionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEfsAccessPointRootDirectoryCreationInfoDetails::Jsonize() const
-{
+JsonValue AwsEfsAccessPointRootDirectoryCreationInfoDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_ownerGidHasBeenSet)
-  {
-   payload.WithString("OwnerGid", m_ownerGid);
-
+  if (m_ownerGidHasBeenSet) {
+    payload.WithString("OwnerGid", m_ownerGid);
   }
 
-  if(m_ownerUidHasBeenSet)
-  {
-   payload.WithString("OwnerUid", m_ownerUid);
-
+  if (m_ownerUidHasBeenSet) {
+    payload.WithString("OwnerUid", m_ownerUid);
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   payload.WithString("Permissions", m_permissions);
-
+  if (m_permissionsHasBeenSet) {
+    payload.WithString("Permissions", m_permissions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

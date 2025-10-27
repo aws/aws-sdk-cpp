@@ -12,32 +12,24 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCostAllocationTagsStatusRequest::SerializePayload() const
-{
+Aws::String UpdateCostAllocationTagsStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_costAllocationTagsStatusHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> costAllocationTagsStatusJsonList(m_costAllocationTagsStatus.size());
-   for(unsigned costAllocationTagsStatusIndex = 0; costAllocationTagsStatusIndex < costAllocationTagsStatusJsonList.GetLength(); ++costAllocationTagsStatusIndex)
-   {
-     costAllocationTagsStatusJsonList[costAllocationTagsStatusIndex].AsObject(m_costAllocationTagsStatus[costAllocationTagsStatusIndex].Jsonize());
-   }
-   payload.WithArray("CostAllocationTagsStatus", std::move(costAllocationTagsStatusJsonList));
-
+  if (m_costAllocationTagsStatusHasBeenSet) {
+    Aws::Utils::Array<JsonValue> costAllocationTagsStatusJsonList(m_costAllocationTagsStatus.size());
+    for (unsigned costAllocationTagsStatusIndex = 0; costAllocationTagsStatusIndex < costAllocationTagsStatusJsonList.GetLength();
+         ++costAllocationTagsStatusIndex) {
+      costAllocationTagsStatusJsonList[costAllocationTagsStatusIndex].AsObject(
+          m_costAllocationTagsStatus[costAllocationTagsStatusIndex].Jsonize());
+    }
+    payload.WithArray("CostAllocationTagsStatus", std::move(costAllocationTagsStatusJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateCostAllocationTagsStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateCostAllocationTagsStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.UpdateCostAllocationTagsStatus"));
   return headers;
-
 }
-
-
-
-

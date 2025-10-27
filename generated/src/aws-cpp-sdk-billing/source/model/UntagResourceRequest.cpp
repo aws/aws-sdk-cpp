@@ -12,38 +12,26 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UntagResourceRequest::SerializePayload() const
-{
+Aws::String UntagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_resourceTagKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
-   for(unsigned resourceTagKeysIndex = 0; resourceTagKeysIndex < resourceTagKeysJsonList.GetLength(); ++resourceTagKeysIndex)
-   {
-     resourceTagKeysJsonList[resourceTagKeysIndex].AsString(m_resourceTagKeys[resourceTagKeysIndex]);
-   }
-   payload.WithArray("resourceTagKeys", std::move(resourceTagKeysJsonList));
-
+  if (m_resourceTagKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
+    for (unsigned resourceTagKeysIndex = 0; resourceTagKeysIndex < resourceTagKeysJsonList.GetLength(); ++resourceTagKeysIndex) {
+      resourceTagKeysJsonList[resourceTagKeysIndex].AsString(m_resourceTagKeys[resourceTagKeysIndex]);
+    }
+    payload.WithArray("resourceTagKeys", std::move(resourceTagKeysJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBilling.UntagResource"));
   return headers;
-
 }
-
-
-
-

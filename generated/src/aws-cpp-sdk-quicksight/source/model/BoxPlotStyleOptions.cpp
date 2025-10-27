@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/BoxPlotStyleOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/BoxPlotStyleOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-BoxPlotStyleOptions::BoxPlotStyleOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BoxPlotStyleOptions::BoxPlotStyleOptions(JsonView jsonValue) { *this = jsonValue; }
 
-BoxPlotStyleOptions& BoxPlotStyleOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FillStyle"))
-  {
+BoxPlotStyleOptions& BoxPlotStyleOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FillStyle")) {
     m_fillStyle = BoxPlotFillStyleMapper::GetBoxPlotFillStyleForName(jsonValue.GetString("FillStyle"));
     m_fillStyleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BoxPlotStyleOptions::Jsonize() const
-{
+JsonValue BoxPlotStyleOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_fillStyleHasBeenSet)
-  {
-   payload.WithString("FillStyle", BoxPlotFillStyleMapper::GetNameForBoxPlotFillStyle(m_fillStyle));
+  if (m_fillStyleHasBeenSet) {
+    payload.WithString("FillStyle", BoxPlotFillStyleMapper::GetNameForBoxPlotFillStyle(m_fillStyle));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

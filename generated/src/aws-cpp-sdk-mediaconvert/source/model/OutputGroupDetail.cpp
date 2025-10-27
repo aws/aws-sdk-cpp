@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/OutputGroupDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/OutputGroupDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-OutputGroupDetail::OutputGroupDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputGroupDetail::OutputGroupDetail(JsonView jsonValue) { *this = jsonValue; }
 
-OutputGroupDetail& OutputGroupDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("outputDetails"))
-  {
+OutputGroupDetail& OutputGroupDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("outputDetails")) {
     Aws::Utils::Array<JsonView> outputDetailsJsonList = jsonValue.GetArray("outputDetails");
-    for(unsigned outputDetailsIndex = 0; outputDetailsIndex < outputDetailsJsonList.GetLength(); ++outputDetailsIndex)
-    {
+    for (unsigned outputDetailsIndex = 0; outputDetailsIndex < outputDetailsJsonList.GetLength(); ++outputDetailsIndex) {
       m_outputDetails.push_back(outputDetailsJsonList[outputDetailsIndex].AsObject());
     }
     m_outputDetailsHasBeenSet = true;
@@ -37,24 +28,20 @@ OutputGroupDetail& OutputGroupDetail::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OutputGroupDetail::Jsonize() const
-{
+JsonValue OutputGroupDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputDetailsJsonList(m_outputDetails.size());
-   for(unsigned outputDetailsIndex = 0; outputDetailsIndex < outputDetailsJsonList.GetLength(); ++outputDetailsIndex)
-   {
-     outputDetailsJsonList[outputDetailsIndex].AsObject(m_outputDetails[outputDetailsIndex].Jsonize());
-   }
-   payload.WithArray("outputDetails", std::move(outputDetailsJsonList));
-
+  if (m_outputDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputDetailsJsonList(m_outputDetails.size());
+    for (unsigned outputDetailsIndex = 0; outputDetailsIndex < outputDetailsJsonList.GetLength(); ++outputDetailsIndex) {
+      outputDetailsJsonList[outputDetailsIndex].AsObject(m_outputDetails[outputDetailsIndex].Jsonize());
+    }
+    payload.WithArray("outputDetails", std::move(outputDetailsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

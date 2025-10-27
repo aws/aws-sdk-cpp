@@ -12,33 +12,22 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCapacityReservationRequest::SerializePayload() const
-{
+Aws::String UpdateCapacityReservationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetDpusHasBeenSet)
-  {
-   payload.WithInteger("TargetDpus", m_targetDpus);
-
+  if (m_targetDpusHasBeenSet) {
+    payload.WithInteger("TargetDpus", m_targetDpus);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateCapacityReservationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateCapacityReservationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.UpdateCapacityReservation"));
   return headers;
-
 }
-
-
-
-

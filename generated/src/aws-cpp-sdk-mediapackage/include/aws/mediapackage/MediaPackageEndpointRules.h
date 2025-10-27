@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-class MediaPackageEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MediaPackage {
+class MediaPackageEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MediaPackage
-} // namespace Aws
+}  // namespace MediaPackage
+}  // namespace Aws

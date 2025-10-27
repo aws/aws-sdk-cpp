@@ -7,30 +7,16 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
-  enum class ToxicContentType
-  {
-    NOT_SET,
-    GRAPHIC,
-    HARASSMENT_OR_ABUSE,
-    HATE_SPEECH,
-    INSULT,
-    PROFANITY,
-    SEXUAL,
-    VIOLENCE_OR_THREAT
-  };
+namespace Aws {
+namespace Comprehend {
+namespace Model {
+enum class ToxicContentType { NOT_SET, GRAPHIC, HARASSMENT_OR_ABUSE, HATE_SPEECH, INSULT, PROFANITY, SEXUAL, VIOLENCE_OR_THREAT };
 
-namespace ToxicContentTypeMapper
-{
+namespace ToxicContentTypeMapper {
 AWS_COMPREHEND_API ToxicContentType GetToxicContentTypeForName(const Aws::String& name);
 
 AWS_COMPREHEND_API Aws::String GetNameForToxicContentType(ToxicContentType value);
-} // namespace ToxicContentTypeMapper
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace ToxicContentTypeMapper
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

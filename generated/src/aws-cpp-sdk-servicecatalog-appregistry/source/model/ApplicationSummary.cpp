@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/ApplicationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog-appregistry/model/ApplicationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationSummary::ApplicationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ApplicationSummary& ApplicationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetString("lastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationSummary::Jsonize() const
-{
+JsonValue ApplicationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithString("lastUpdateTime", m_lastUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithString("lastUpdateTime", m_lastUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

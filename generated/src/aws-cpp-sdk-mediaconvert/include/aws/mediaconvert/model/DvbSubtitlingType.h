@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DvbSubtitlingType
-  {
-    NOT_SET,
-    HEARING_IMPAIRED,
-    STANDARD
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DvbSubtitlingType { NOT_SET, HEARING_IMPAIRED, STANDARD };
 
-namespace DvbSubtitlingTypeMapper
-{
+namespace DvbSubtitlingTypeMapper {
 AWS_MEDIACONVERT_API DvbSubtitlingType GetDvbSubtitlingTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDvbSubtitlingType(DvbSubtitlingType value);
-} // namespace DvbSubtitlingTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DvbSubtitlingTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

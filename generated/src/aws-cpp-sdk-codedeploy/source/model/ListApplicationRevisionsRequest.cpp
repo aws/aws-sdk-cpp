@@ -12,60 +12,42 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListApplicationRevisionsRequest::SerializePayload() const
-{
+Aws::String ListApplicationRevisionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", ApplicationRevisionSortByMapper::GetNameForApplicationRevisionSortBy(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", ApplicationRevisionSortByMapper::GetNameForApplicationRevisionSortBy(m_sortBy));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithString("s3Bucket", m_s3Bucket);
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithString("s3Bucket", m_s3Bucket);
   }
 
-  if(m_s3KeyPrefixHasBeenSet)
-  {
-   payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
-
+  if (m_s3KeyPrefixHasBeenSet) {
+    payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
   }
 
-  if(m_deployedHasBeenSet)
-  {
-   payload.WithString("deployed", ListStateFilterActionMapper::GetNameForListStateFilterAction(m_deployed));
+  if (m_deployedHasBeenSet) {
+    payload.WithString("deployed", ListStateFilterActionMapper::GetNameForListStateFilterAction(m_deployed));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListApplicationRevisionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListApplicationRevisionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListApplicationRevisions"));
   return headers;
-
 }
-
-
-
-

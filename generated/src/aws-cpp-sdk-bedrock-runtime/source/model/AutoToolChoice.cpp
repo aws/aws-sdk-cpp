@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-AutoToolChoice::AutoToolChoice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoToolChoice::AutoToolChoice(JsonView jsonValue) { *this = jsonValue; }
 
-AutoToolChoice& AutoToolChoice::operator =(JsonView jsonValue)
-{
+AutoToolChoice& AutoToolChoice::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue AutoToolChoice::Jsonize() const
-{
+JsonValue AutoToolChoice::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

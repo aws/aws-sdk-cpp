@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/oam/OAM_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/oam/OAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_OAM_API OAMErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_OAM_API OAMErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

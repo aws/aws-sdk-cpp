@@ -12,23 +12,16 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAssessmentFrameworkShareRequest::SerializePayload() const
-{
+Aws::String UpdateAssessmentFrameworkShareRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_requestTypeHasBeenSet)
-  {
-   payload.WithString("requestType", ShareRequestTypeMapper::GetNameForShareRequestType(m_requestType));
+  if (m_requestTypeHasBeenSet) {
+    payload.WithString("requestType", ShareRequestTypeMapper::GetNameForShareRequestType(m_requestType));
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", ShareRequestActionMapper::GetNameForShareRequestAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", ShareRequestActionMapper::GetNameForShareRequestAction(m_action));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

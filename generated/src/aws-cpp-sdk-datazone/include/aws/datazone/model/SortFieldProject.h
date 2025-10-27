@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class SortFieldProject
-  {
-    NOT_SET,
-    NAME
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class SortFieldProject { NOT_SET, NAME };
 
-namespace SortFieldProjectMapper
-{
+namespace SortFieldProjectMapper {
 AWS_DATAZONE_API SortFieldProject GetSortFieldProjectForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForSortFieldProject(SortFieldProject value);
-} // namespace SortFieldProjectMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace SortFieldProjectMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

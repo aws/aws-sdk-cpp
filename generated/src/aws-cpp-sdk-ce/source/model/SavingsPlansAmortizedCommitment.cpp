@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansAmortizedCommitment& SavingsPlansAmortizedCommitment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AmortizedRecurringCommitment"))
-  {
+SavingsPlansAmortizedCommitment& SavingsPlansAmortizedCommitment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AmortizedRecurringCommitment")) {
     m_amortizedRecurringCommitment = jsonValue.GetString("AmortizedRecurringCommitment");
     m_amortizedRecurringCommitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AmortizedUpfrontCommitment"))
-  {
+  if (jsonValue.ValueExists("AmortizedUpfrontCommitment")) {
     m_amortizedUpfrontCommitment = jsonValue.GetString("AmortizedUpfrontCommitment");
     m_amortizedUpfrontCommitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalAmortizedCommitment"))
-  {
+  if (jsonValue.ValueExists("TotalAmortizedCommitment")) {
     m_totalAmortizedCommitment = jsonValue.GetString("TotalAmortizedCommitment");
     m_totalAmortizedCommitmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansAmortizedCommitment::Jsonize() const
-{
+JsonValue SavingsPlansAmortizedCommitment::Jsonize() const {
   JsonValue payload;
 
-  if(m_amortizedRecurringCommitmentHasBeenSet)
-  {
-   payload.WithString("AmortizedRecurringCommitment", m_amortizedRecurringCommitment);
-
+  if (m_amortizedRecurringCommitmentHasBeenSet) {
+    payload.WithString("AmortizedRecurringCommitment", m_amortizedRecurringCommitment);
   }
 
-  if(m_amortizedUpfrontCommitmentHasBeenSet)
-  {
-   payload.WithString("AmortizedUpfrontCommitment", m_amortizedUpfrontCommitment);
-
+  if (m_amortizedUpfrontCommitmentHasBeenSet) {
+    payload.WithString("AmortizedUpfrontCommitment", m_amortizedUpfrontCommitment);
   }
 
-  if(m_totalAmortizedCommitmentHasBeenSet)
-  {
-   payload.WithString("TotalAmortizedCommitment", m_totalAmortizedCommitment);
-
+  if (m_totalAmortizedCommitmentHasBeenSet) {
+    payload.WithString("TotalAmortizedCommitment", m_totalAmortizedCommitment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

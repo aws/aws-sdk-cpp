@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class LocalGatewayRouteType
-  {
-    NOT_SET,
-    static_,
-    propagated
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class LocalGatewayRouteType { NOT_SET, static_, propagated };
 
-namespace LocalGatewayRouteTypeMapper
-{
+namespace LocalGatewayRouteTypeMapper {
 AWS_EC2_API LocalGatewayRouteType GetLocalGatewayRouteTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForLocalGatewayRouteType(LocalGatewayRouteType value);
-} // namespace LocalGatewayRouteTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace LocalGatewayRouteTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

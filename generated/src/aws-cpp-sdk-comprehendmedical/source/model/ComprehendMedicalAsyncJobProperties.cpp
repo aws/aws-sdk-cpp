@@ -11,179 +11,134 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-ComprehendMedicalAsyncJobProperties::ComprehendMedicalAsyncJobProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComprehendMedicalAsyncJobProperties::ComprehendMedicalAsyncJobProperties(JsonView jsonValue) { *this = jsonValue; }
 
-ComprehendMedicalAsyncJobProperties& ComprehendMedicalAsyncJobProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobId"))
-  {
+ComprehendMedicalAsyncJobProperties& ComprehendMedicalAsyncJobProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobName"))
-  {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTime"))
-  {
+  if (jsonValue.ValueExists("SubmitTime")) {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
     m_submitTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationTime"))
-  {
+  if (jsonValue.ValueExists("ExpirationTime")) {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
     m_expirationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputDataConfig"))
-  {
+  if (jsonValue.ValueExists("InputDataConfig")) {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
     m_inputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputDataConfig"))
-  {
+  if (jsonValue.ValueExists("OutputDataConfig")) {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
     m_outputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("DataAccessRoleArn")) {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
     m_dataAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ManifestFilePath"))
-  {
+  if (jsonValue.ValueExists("ManifestFilePath")) {
     m_manifestFilePath = jsonValue.GetString("ManifestFilePath");
     m_manifestFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KMSKey"))
-  {
+  if (jsonValue.ValueExists("KMSKey")) {
     m_kMSKey = jsonValue.GetString("KMSKey");
     m_kMSKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelVersion"))
-  {
+  if (jsonValue.ValueExists("ModelVersion")) {
     m_modelVersion = jsonValue.GetString("ModelVersion");
     m_modelVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComprehendMedicalAsyncJobProperties::Jsonize() const
-{
+JsonValue ComprehendMedicalAsyncJobProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_submitTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
+  if (m_submitTimeHasBeenSet) {
+    payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_expirationTimeHasBeenSet)
-  {
-   payload.WithDouble("ExpirationTime", m_expirationTime.SecondsWithMSPrecision());
+  if (m_expirationTimeHasBeenSet) {
+    payload.WithDouble("ExpirationTime", m_expirationTime.SecondsWithMSPrecision());
   }
 
-  if(m_inputDataConfigHasBeenSet)
-  {
-   payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
-
+  if (m_inputDataConfigHasBeenSet) {
+    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
   }
 
-  if(m_outputDataConfigHasBeenSet)
-  {
-   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
-
+  if (m_outputDataConfigHasBeenSet) {
+    payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_manifestFilePathHasBeenSet)
-  {
-   payload.WithString("ManifestFilePath", m_manifestFilePath);
-
+  if (m_manifestFilePathHasBeenSet) {
+    payload.WithString("ManifestFilePath", m_manifestFilePath);
   }
 
-  if(m_kMSKeyHasBeenSet)
-  {
-   payload.WithString("KMSKey", m_kMSKey);
-
+  if (m_kMSKeyHasBeenSet) {
+    payload.WithString("KMSKey", m_kMSKey);
   }
 
-  if(m_modelVersionHasBeenSet)
-  {
-   payload.WithString("ModelVersion", m_modelVersion);
-
+  if (m_modelVersionHasBeenSet) {
+    payload.WithString("ModelVersion", m_modelVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

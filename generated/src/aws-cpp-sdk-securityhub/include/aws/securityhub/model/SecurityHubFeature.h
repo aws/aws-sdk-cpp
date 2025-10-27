@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class SecurityHubFeature
-  {
-    NOT_SET,
-    SecurityHub,
-    SecurityHubV2
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class SecurityHubFeature { NOT_SET, SecurityHub, SecurityHubV2 };
 
-namespace SecurityHubFeatureMapper
-{
+namespace SecurityHubFeatureMapper {
 AWS_SECURITYHUB_API SecurityHubFeature GetSecurityHubFeatureForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForSecurityHubFeature(SecurityHubFeature value);
-} // namespace SecurityHubFeatureMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace SecurityHubFeatureMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

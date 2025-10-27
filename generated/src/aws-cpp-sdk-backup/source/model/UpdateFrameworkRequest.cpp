@@ -12,36 +12,24 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFrameworkRequest::SerializePayload() const
-{
+Aws::String UpdateFrameworkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_frameworkDescriptionHasBeenSet)
-  {
-   payload.WithString("FrameworkDescription", m_frameworkDescription);
-
+  if (m_frameworkDescriptionHasBeenSet) {
+    payload.WithString("FrameworkDescription", m_frameworkDescription);
   }
 
-  if(m_frameworkControlsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> frameworkControlsJsonList(m_frameworkControls.size());
-   for(unsigned frameworkControlsIndex = 0; frameworkControlsIndex < frameworkControlsJsonList.GetLength(); ++frameworkControlsIndex)
-   {
-     frameworkControlsJsonList[frameworkControlsIndex].AsObject(m_frameworkControls[frameworkControlsIndex].Jsonize());
-   }
-   payload.WithArray("FrameworkControls", std::move(frameworkControlsJsonList));
-
+  if (m_frameworkControlsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> frameworkControlsJsonList(m_frameworkControls.size());
+    for (unsigned frameworkControlsIndex = 0; frameworkControlsIndex < frameworkControlsJsonList.GetLength(); ++frameworkControlsIndex) {
+      frameworkControlsJsonList[frameworkControlsIndex].AsObject(m_frameworkControls[frameworkControlsIndex].Jsonize());
+    }
+    payload.WithArray("FrameworkControls", std::move(frameworkControlsJsonList));
   }
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

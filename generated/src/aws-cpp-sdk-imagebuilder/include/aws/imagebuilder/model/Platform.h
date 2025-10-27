@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class Platform
-  {
-    NOT_SET,
-    Windows,
-    Linux,
-    macOS
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class Platform { NOT_SET, Windows, Linux, macOS };
 
-namespace PlatformMapper
-{
+namespace PlatformMapper {
 AWS_IMAGEBUILDER_API Platform GetPlatformForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForPlatform(Platform value);
-} // namespace PlatformMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace PlatformMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

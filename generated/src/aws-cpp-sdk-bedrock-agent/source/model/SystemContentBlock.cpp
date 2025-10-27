@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-SystemContentBlock::SystemContentBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SystemContentBlock::SystemContentBlock(JsonView jsonValue) { *this = jsonValue; }
 
-SystemContentBlock& SystemContentBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+SystemContentBlock& SystemContentBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cachePoint"))
-  {
+  if (jsonValue.ValueExists("cachePoint")) {
     m_cachePoint = jsonValue.GetObject("cachePoint");
     m_cachePointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SystemContentBlock::Jsonize() const
-{
+JsonValue SystemContentBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_cachePointHasBeenSet)
-  {
-   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
-
+  if (m_cachePointHasBeenSet) {
+    payload.WithObject("cachePoint", m_cachePoint.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

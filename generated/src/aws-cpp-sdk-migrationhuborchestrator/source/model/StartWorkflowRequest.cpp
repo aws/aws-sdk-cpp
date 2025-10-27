@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhuborchestrator/model/StartWorkflowRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhuborchestrator/model/StartWorkflowRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartWorkflowRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StartWorkflowRequest::SerializePayload() const { return {}; }

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobConfigurationDetails::ProtectedJobConfigurationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobConfigurationDetails::ProtectedJobConfigurationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobConfigurationDetails& ProtectedJobConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("directAnalysisConfigurationDetails"))
-  {
+ProtectedJobConfigurationDetails& ProtectedJobConfigurationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("directAnalysisConfigurationDetails")) {
     m_directAnalysisConfigurationDetails = jsonValue.GetObject("directAnalysisConfigurationDetails");
     m_directAnalysisConfigurationDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobConfigurationDetails::Jsonize() const
-{
+JsonValue ProtectedJobConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_directAnalysisConfigurationDetailsHasBeenSet)
-  {
-   payload.WithObject("directAnalysisConfigurationDetails", m_directAnalysisConfigurationDetails.Jsonize());
-
+  if (m_directAnalysisConfigurationDetailsHasBeenSet) {
+    payload.WithObject("directAnalysisConfigurationDetails", m_directAnalysisConfigurationDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

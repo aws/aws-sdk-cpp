@@ -4,74 +4,79 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QConnect {
+namespace Model {
 
+/**
+ * <p>Details of streaming chunk data for email responses including completion text
+ * and pagination tokens.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/EmailResponseChunkDataDetails">AWS
+ * API Reference</a></p>
+ */
+class EmailResponseChunkDataDetails {
+ public:
+  AWS_QCONNECT_API EmailResponseChunkDataDetails() = default;
+  AWS_QCONNECT_API EmailResponseChunkDataDetails(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QCONNECT_API EmailResponseChunkDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Details of streaming chunk data for email responses including completion text
-   * and pagination tokens.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/EmailResponseChunkDataDetails">AWS
-   * API Reference</a></p>
+   * <p>The partial or complete professional email response text with appropriate
+   * greetings and closings.</p>
    */
-  class EmailResponseChunkDataDetails
-  {
-  public:
-    AWS_QCONNECT_API EmailResponseChunkDataDetails() = default;
-    AWS_QCONNECT_API EmailResponseChunkDataDetails(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QCONNECT_API EmailResponseChunkDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetCompletion() const { return m_completion; }
+  inline bool CompletionHasBeenSet() const { return m_completionHasBeenSet; }
+  template <typename CompletionT = Aws::String>
+  void SetCompletion(CompletionT&& value) {
+    m_completionHasBeenSet = true;
+    m_completion = std::forward<CompletionT>(value);
+  }
+  template <typename CompletionT = Aws::String>
+  EmailResponseChunkDataDetails& WithCompletion(CompletionT&& value) {
+    SetCompletion(std::forward<CompletionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Token for retrieving the next chunk of streaming response data, if
+   * available.</p>
+   */
+  inline const Aws::String& GetNextChunkToken() const { return m_nextChunkToken; }
+  inline bool NextChunkTokenHasBeenSet() const { return m_nextChunkTokenHasBeenSet; }
+  template <typename NextChunkTokenT = Aws::String>
+  void SetNextChunkToken(NextChunkTokenT&& value) {
+    m_nextChunkTokenHasBeenSet = true;
+    m_nextChunkToken = std::forward<NextChunkTokenT>(value);
+  }
+  template <typename NextChunkTokenT = Aws::String>
+  EmailResponseChunkDataDetails& WithNextChunkToken(NextChunkTokenT&& value) {
+    SetNextChunkToken(std::forward<NextChunkTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_completion;
+  bool m_completionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The partial or complete professional email response text with appropriate
-     * greetings and closings.</p>
-     */
-    inline const Aws::String& GetCompletion() const { return m_completion; }
-    inline bool CompletionHasBeenSet() const { return m_completionHasBeenSet; }
-    template<typename CompletionT = Aws::String>
-    void SetCompletion(CompletionT&& value) { m_completionHasBeenSet = true; m_completion = std::forward<CompletionT>(value); }
-    template<typename CompletionT = Aws::String>
-    EmailResponseChunkDataDetails& WithCompletion(CompletionT&& value) { SetCompletion(std::forward<CompletionT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextChunkToken;
+  bool m_nextChunkTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Token for retrieving the next chunk of streaming response data, if
-     * available.</p>
-     */
-    inline const Aws::String& GetNextChunkToken() const { return m_nextChunkToken; }
-    inline bool NextChunkTokenHasBeenSet() const { return m_nextChunkTokenHasBeenSet; }
-    template<typename NextChunkTokenT = Aws::String>
-    void SetNextChunkToken(NextChunkTokenT&& value) { m_nextChunkTokenHasBeenSet = true; m_nextChunkToken = std::forward<NextChunkTokenT>(value); }
-    template<typename NextChunkTokenT = Aws::String>
-    EmailResponseChunkDataDetails& WithNextChunkToken(NextChunkTokenT&& value) { SetNextChunkToken(std::forward<NextChunkTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_completion;
-    bool m_completionHasBeenSet = false;
-
-    Aws::String m_nextChunkToken;
-    bool m_nextChunkTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

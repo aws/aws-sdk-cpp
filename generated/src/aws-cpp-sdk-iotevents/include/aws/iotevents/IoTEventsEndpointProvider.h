@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iotevents/IoTEventsEndpointRules.h>
+#include <aws/iotevents/IoTEvents_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTEventsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTEventsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTEVENTS_API IoTEventsEndpointProvider : public IoTEventsDefaultEpProviderBase
-{
-public:
-    using IoTEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTEVENTS_API IoTEventsEndpointProvider : public IoTEventsDefaultEpProviderBase {
+ public:
+  using IoTEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTEventsEndpointProvider()
-      : IoTEventsDefaultEpProviderBase(Aws::IoTEvents::IoTEventsEndpointRules::GetRulesBlob(), Aws::IoTEvents::IoTEventsEndpointRules::RulesBlobSize)
-    {}
+  IoTEventsEndpointProvider()
+      : IoTEventsDefaultEpProviderBase(Aws::IoTEvents::IoTEventsEndpointRules::GetRulesBlob(),
+                                       Aws::IoTEvents::IoTEventsEndpointRules::RulesBlobSize) {}
 
-    ~IoTEventsEndpointProvider()
-    {
-    }
+  ~IoTEventsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTEvents
+}  // namespace Aws

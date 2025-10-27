@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class ExperimentReportName
-  {
-    NOT_SET,
-    BayesianInference
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class ExperimentReportName { NOT_SET, BayesianInference };
 
-namespace ExperimentReportNameMapper
-{
+namespace ExperimentReportNameMapper {
 AWS_CLOUDWATCHEVIDENTLY_API ExperimentReportName GetExperimentReportNameForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForExperimentReportName(ExperimentReportName value);
-} // namespace ExperimentReportNameMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace ExperimentReportNameMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

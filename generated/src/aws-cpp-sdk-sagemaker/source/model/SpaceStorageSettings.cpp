@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/SpaceStorageSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/SpaceStorageSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-SpaceStorageSettings::SpaceStorageSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpaceStorageSettings::SpaceStorageSettings(JsonView jsonValue) { *this = jsonValue; }
 
-SpaceStorageSettings& SpaceStorageSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EbsStorageSettings"))
-  {
+SpaceStorageSettings& SpaceStorageSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EbsStorageSettings")) {
     m_ebsStorageSettings = jsonValue.GetObject("EbsStorageSettings");
     m_ebsStorageSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SpaceStorageSettings::Jsonize() const
-{
+JsonValue SpaceStorageSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_ebsStorageSettingsHasBeenSet)
-  {
-   payload.WithObject("EbsStorageSettings", m_ebsStorageSettings.Jsonize());
-
+  if (m_ebsStorageSettingsHasBeenSet) {
+    payload.WithObject("EbsStorageSettings", m_ebsStorageSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

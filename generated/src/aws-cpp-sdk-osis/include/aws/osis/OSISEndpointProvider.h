@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/osis/OSIS_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/osis/OSISEndpointRules.h>
+#include <aws/osis/OSIS_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace OSIS
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace OSIS {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using OSISClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,22 @@ using OSISBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using OSISEndpointProviderBase =
-    EndpointProviderBase<OSISClientConfiguration, OSISBuiltInParameters, OSISClientContextParameters>;
+using OSISEndpointProviderBase = EndpointProviderBase<OSISClientConfiguration, OSISBuiltInParameters, OSISClientContextParameters>;
 
-using OSISDefaultEpProviderBase =
-    DefaultEndpointProvider<OSISClientConfiguration, OSISBuiltInParameters, OSISClientContextParameters>;
+using OSISDefaultEpProviderBase = DefaultEndpointProvider<OSISClientConfiguration, OSISBuiltInParameters, OSISClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_OSIS_API OSISEndpointProvider : public OSISDefaultEpProviderBase
-{
-public:
-    using OSISResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_OSIS_API OSISEndpointProvider : public OSISDefaultEpProviderBase {
+ public:
+  using OSISResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    OSISEndpointProvider()
-      : OSISDefaultEpProviderBase(Aws::OSIS::OSISEndpointRules::GetRulesBlob(), Aws::OSIS::OSISEndpointRules::RulesBlobSize)
-    {}
+  OSISEndpointProvider()
+      : OSISDefaultEpProviderBase(Aws::OSIS::OSISEndpointRules::GetRulesBlob(), Aws::OSIS::OSISEndpointRules::RulesBlobSize) {}
 
-    ~OSISEndpointProvider()
-    {
-    }
+  ~OSISEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace OSIS
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace OSIS
+}  // namespace Aws

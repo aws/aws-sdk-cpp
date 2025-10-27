@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/PrefixLevel.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/PrefixLevel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-PrefixLevel::PrefixLevel(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PrefixLevel::PrefixLevel(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PrefixLevel& PrefixLevel::operator =(const XmlNode& xmlNode)
-{
+PrefixLevel& PrefixLevel::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode storageMetricsNode = resultNode.FirstChild("StorageMetrics");
-    if(!storageMetricsNode.IsNull())
-    {
+    if (!storageMetricsNode.IsNull()) {
       m_storageMetrics = storageMetricsNode;
       m_storageMetricsHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ PrefixLevel& PrefixLevel::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void PrefixLevel::AddToNode(XmlNode& parentNode) const
-{
+void PrefixLevel::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_storageMetricsHasBeenSet)
-  {
-   XmlNode storageMetricsNode = parentNode.CreateChildElement("StorageMetrics");
-   m_storageMetrics.AddToNode(storageMetricsNode);
+  if (m_storageMetricsHasBeenSet) {
+    XmlNode storageMetricsNode = parentNode.CreateChildElement("StorageMetrics");
+    m_storageMetrics.AddToNode(storageMetricsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

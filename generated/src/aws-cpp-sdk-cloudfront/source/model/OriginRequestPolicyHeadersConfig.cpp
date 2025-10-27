@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/OriginRequestPolicyHeadersConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OriginRequestPolicyHeadersConfig& OriginRequestPolicyHeadersConfig::operator =(const XmlNode& xmlNode)
-{
+OriginRequestPolicyHeadersConfig& OriginRequestPolicyHeadersConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode headerBehaviorNode = resultNode.FirstChild("HeaderBehavior");
-    if(!headerBehaviorNode.IsNull())
-    {
-      m_headerBehavior = OriginRequestPolicyHeaderBehaviorMapper::GetOriginRequestPolicyHeaderBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()));
+    if (!headerBehaviorNode.IsNull()) {
+      m_headerBehavior = OriginRequestPolicyHeaderBehaviorMapper::GetOriginRequestPolicyHeaderBehaviorForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()));
       m_headerBehaviorHasBeenSet = true;
     }
     XmlNode headersNode = resultNode.FirstChild("Headers");
-    if(!headersNode.IsNull())
-    {
+    if (!headersNode.IsNull()) {
       m_headers = headersNode;
       m_headersHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ OriginRequestPolicyHeadersConfig& OriginRequestPolicyHeadersConfig::operator =(c
   return *this;
 }
 
-void OriginRequestPolicyHeadersConfig::AddToNode(XmlNode& parentNode) const
-{
+void OriginRequestPolicyHeadersConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_headerBehaviorHasBeenSet)
-  {
-   XmlNode headerBehaviorNode = parentNode.CreateChildElement("HeaderBehavior");
-   headerBehaviorNode.SetText(OriginRequestPolicyHeaderBehaviorMapper::GetNameForOriginRequestPolicyHeaderBehavior(m_headerBehavior));
+  if (m_headerBehaviorHasBeenSet) {
+    XmlNode headerBehaviorNode = parentNode.CreateChildElement("HeaderBehavior");
+    headerBehaviorNode.SetText(OriginRequestPolicyHeaderBehaviorMapper::GetNameForOriginRequestPolicyHeaderBehavior(m_headerBehavior));
   }
 
-  if(m_headersHasBeenSet)
-  {
-   XmlNode headersNode = parentNode.CreateChildElement("Headers");
-   m_headers.AddToNode(headersNode);
+  if (m_headersHasBeenSet) {
+    XmlNode headersNode = parentNode.CreateChildElement("Headers");
+    m_headers.AddToNode(headersNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/DeregisterWirelessDeviceRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/DeregisterWirelessDeviceRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeregisterWirelessDeviceRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeregisterWirelessDeviceRequest::SerializePayload() const { return {}; }
+
+void DeregisterWirelessDeviceRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_wirelessDeviceTypeHasBeenSet) {
+    ss << WirelessDeviceTypeMapper::GetNameForWirelessDeviceType(m_wirelessDeviceType);
+    uri.AddQueryStringParameter("WirelessDeviceType", ss.str());
+    ss.str("");
+  }
 }
-
-void DeregisterWirelessDeviceRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_wirelessDeviceTypeHasBeenSet)
-    {
-      ss << WirelessDeviceTypeMapper::GetNameForWirelessDeviceType(m_wirelessDeviceType);
-      uri.AddQueryStringParameter("WirelessDeviceType", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/logs/CloudWatchLogsEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudWatchLogs
-} // namespace Aws
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudWatchLogs
+}  // namespace Aws

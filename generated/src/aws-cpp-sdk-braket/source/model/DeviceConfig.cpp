@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-DeviceConfig::DeviceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeviceConfig::DeviceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DeviceConfig& DeviceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("device"))
-  {
+DeviceConfig& DeviceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("device")) {
     m_device = jsonValue.GetString("device");
     m_deviceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeviceConfig::Jsonize() const
-{
+JsonValue DeviceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_deviceHasBeenSet)
-  {
-   payload.WithString("device", m_device);
-
+  if (m_deviceHasBeenSet) {
+    payload.WithString("device", m_device);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

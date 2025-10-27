@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/amp/PrometheusService_EXPORTS.h>
 
-namespace Aws
-{
-namespace PrometheusService
-{
-enum class PrometheusServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace PrometheusService {
+enum class PrometheusServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class PrometheusServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class PrometheusServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_PROMETHEUSSERVICE_API PrometheusServiceError : public Aws::Client::AWSError<PrometheusServiceErrors>
-{
-public:
+class AWS_PROMETHEUSSERVICE_API PrometheusServiceError : public Aws::Client::AWSError<PrometheusServiceErrors> {
+ public:
   PrometheusServiceError() {}
   PrometheusServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PrometheusServiceErrors>(rhs) {}
   PrometheusServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PrometheusServiceErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace PrometheusServiceErrorMapper
-{
-  AWS_PROMETHEUSSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace PrometheusServiceErrorMapper {
+AWS_PROMETHEUSSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace PrometheusService
+}  // namespace Aws

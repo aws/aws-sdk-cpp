@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    PROJECT,
-    DATASET,
-    MODEL,
-    TRIAL,
-    MODEL_PACKAGE_JOB
-  };
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
+enum class ResourceType { NOT_SET, PROJECT, DATASET, MODEL, TRIAL, MODEL_PACKAGE_JOB };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_LOOKOUTFORVISION_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_LOOKOUTFORVISION_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

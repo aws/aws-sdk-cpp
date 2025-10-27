@@ -12,27 +12,18 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteTransformerRequest::SerializePayload() const
-{
+Aws::String DeleteTransformerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transformerIdHasBeenSet)
-  {
-   payload.WithString("transformerId", m_transformerId);
-
+  if (m_transformerIdHasBeenSet) {
+    payload.WithString("transformerId", m_transformerId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteTransformerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteTransformerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.DeleteTransformer"));
   return headers;
-
 }
-
-
-
-

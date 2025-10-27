@@ -12,24 +12,16 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AddNotificationChannelsRequest::SerializePayload() const
-{
+Aws::String AddNotificationChannelsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_channelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
-   for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-   {
-     channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());
-   }
-   payload.WithArray("channels", std::move(channelsJsonList));
-
+  if (m_channelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());
+    }
+    payload.WithArray("channels", std::move(channelsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

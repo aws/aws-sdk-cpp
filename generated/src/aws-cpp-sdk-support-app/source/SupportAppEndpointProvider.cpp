@@ -5,12 +5,8 @@
 
 #include <aws/support-app/SupportAppEndpointProvider.h>
 
-namespace Aws
-{
-namespace SupportApp
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SupportApp
-} // namespace Aws
+namespace Aws {
+namespace SupportApp {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SupportApp
+}  // namespace Aws

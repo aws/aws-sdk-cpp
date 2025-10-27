@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class NodeSignalValue
-  {
-    NOT_SET,
-    PAUSE,
-    RESUME
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class NodeSignalValue { NOT_SET, PAUSE, RESUME };
 
-namespace NodeSignalValueMapper
-{
+namespace NodeSignalValueMapper {
 AWS_PANORAMA_API NodeSignalValue GetNodeSignalValueForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForNodeSignalValue(NodeSignalValue value);
-} // namespace NodeSignalValueMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace NodeSignalValueMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

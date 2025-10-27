@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class DeviceDefenderIndexingMode
-  {
-    NOT_SET,
-    OFF,
-    VIOLATIONS
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class DeviceDefenderIndexingMode { NOT_SET, OFF, VIOLATIONS };
 
-namespace DeviceDefenderIndexingModeMapper
-{
+namespace DeviceDefenderIndexingModeMapper {
 AWS_IOT_API DeviceDefenderIndexingMode GetDeviceDefenderIndexingModeForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForDeviceDefenderIndexingMode(DeviceDefenderIndexingMode value);
-} // namespace DeviceDefenderIndexingModeMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace DeviceDefenderIndexingModeMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

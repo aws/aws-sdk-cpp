@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateDBProxyEndpointResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/CreateDBProxyEndpointResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDBProxyEndpointResult::CreateDBProxyEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateDBProxyEndpointResult::CreateDBProxyEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateDBProxyEndpointResult& CreateDBProxyEndpointResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateDBProxyEndpointResult& CreateDBProxyEndpointResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDBProxyEndpointResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDBProxyEndpointResult")) {
     resultNode = rootNode.FirstChild("CreateDBProxyEndpointResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dBProxyEndpointNode = resultNode.FirstChild("DBProxyEndpoint");
-    if(!dBProxyEndpointNode.IsNull())
-    {
+    if (!dBProxyEndpointNode.IsNull()) {
       m_dBProxyEndpoint = dBProxyEndpointNode;
       m_dBProxyEndpointHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ CreateDBProxyEndpointResult& CreateDBProxyEndpointResult::operator =(const Aws::
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBProxyEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBProxyEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

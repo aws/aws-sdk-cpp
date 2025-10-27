@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-ChannelMessageStatusStructure::ChannelMessageStatusStructure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelMessageStatusStructure::ChannelMessageStatusStructure(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelMessageStatusStructure& ChannelMessageStatusStructure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+ChannelMessageStatusStructure& ChannelMessageStatusStructure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = ChannelMessageStatusMapper::GetChannelMessageStatusForName(jsonValue.GetString("Value"));
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Detail"))
-  {
+  if (jsonValue.ValueExists("Detail")) {
     m_detail = jsonValue.GetString("Detail");
     m_detailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelMessageStatusStructure::Jsonize() const
-{
+JsonValue ChannelMessageStatusStructure::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", ChannelMessageStatusMapper::GetNameForChannelMessageStatus(m_value));
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", ChannelMessageStatusMapper::GetNameForChannelMessageStatus(m_value));
   }
 
-  if(m_detailHasBeenSet)
-  {
-   payload.WithString("Detail", m_detail);
-
+  if (m_detailHasBeenSet) {
+    payload.WithString("Detail", m_detail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ListedUser::ListedUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListedUser::ListedUser(JsonView jsonValue) { *this = jsonValue; }
 
-ListedUser& ListedUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+ListedUser& ListedUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectory"))
-  {
+  if (jsonValue.ValueExists("HomeDirectory")) {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
     m_homeDirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectoryType"))
-  {
+  if (jsonValue.ValueExists("HomeDirectoryType")) {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
     m_homeDirectoryTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SshPublicKeyCount"))
-  {
+  if (jsonValue.ValueExists("SshPublicKeyCount")) {
     m_sshPublicKeyCount = jsonValue.GetInteger("SshPublicKeyCount");
     m_sshPublicKeyCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserName"))
-  {
+  if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListedUser::Jsonize() const
-{
+JsonValue ListedUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_homeDirectoryHasBeenSet)
-  {
-   payload.WithString("HomeDirectory", m_homeDirectory);
-
+  if (m_homeDirectoryHasBeenSet) {
+    payload.WithString("HomeDirectory", m_homeDirectory);
   }
 
-  if(m_homeDirectoryTypeHasBeenSet)
-  {
-   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
+  if (m_homeDirectoryTypeHasBeenSet) {
+    payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_sshPublicKeyCountHasBeenSet)
-  {
-   payload.WithInteger("SshPublicKeyCount", m_sshPublicKeyCount);
-
+  if (m_sshPublicKeyCountHasBeenSet) {
+    payload.WithInteger("SshPublicKeyCount", m_sshPublicKeyCount);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

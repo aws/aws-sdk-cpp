@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Billing
-{
-namespace Model
-{
+namespace Aws {
+namespace Billing {
+namespace Model {
 
-Expression::Expression(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Expression::Expression(JsonView jsonValue) { *this = jsonValue; }
 
-Expression& Expression::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dimensions"))
-  {
+Expression& Expression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensions")) {
     m_dimensions = jsonValue.GetObject("dimensions");
     m_dimensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     m_tags = jsonValue.GetObject("tags");
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeRange"))
-  {
+  if (jsonValue.ValueExists("timeRange")) {
     m_timeRange = jsonValue.GetObject("timeRange");
     m_timeRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Expression::Jsonize() const
-{
+JsonValue Expression::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionsHasBeenSet)
-  {
-   payload.WithObject("dimensions", m_dimensions.Jsonize());
-
+  if (m_dimensionsHasBeenSet) {
+    payload.WithObject("dimensions", m_dimensions.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
-
+  if (m_tagsHasBeenSet) {
+    payload.WithObject("tags", m_tags.Jsonize());
   }
 
-  if(m_timeRangeHasBeenSet)
-  {
-   payload.WithObject("timeRange", m_timeRange.Jsonize());
-
+  if (m_timeRangeHasBeenSet) {
+    payload.WithObject("timeRange", m_timeRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Billing
-} // namespace Aws
+}  // namespace Model
+}  // namespace Billing
+}  // namespace Aws

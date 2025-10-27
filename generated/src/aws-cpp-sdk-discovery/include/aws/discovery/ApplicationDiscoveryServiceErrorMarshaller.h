@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

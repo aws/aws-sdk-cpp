@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-SessionSummary::SessionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SessionSummary::SessionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-SessionSummary& SessionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SessionId"))
-  {
+SessionSummary& SessionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngineVersion"))
-  {
+  if (jsonValue.ValueExists("EngineVersion")) {
     m_engineVersion = jsonValue.GetObject("EngineVersion");
     m_engineVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotebookVersion"))
-  {
+  if (jsonValue.ValueExists("NotebookVersion")) {
     m_notebookVersion = jsonValue.GetString("NotebookVersion");
     m_notebookVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SessionSummary::Jsonize() const
-{
+JsonValue SessionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("SessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
-   payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
-
+  if (m_engineVersionHasBeenSet) {
+    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
   }
 
-  if(m_notebookVersionHasBeenSet)
-  {
-   payload.WithString("NotebookVersion", m_notebookVersion);
-
+  if (m_notebookVersionHasBeenSet) {
+    payload.WithString("NotebookVersion", m_notebookVersion);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("Status", m_status.Jsonize());
-
+  if (m_statusHasBeenSet) {
+    payload.WithObject("Status", m_status.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ResetImageAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ResetImageAttributeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ResetImageAttributeRequest::SerializePayload() const
-{
+Aws::String ResetImageAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ResetImageAttribute&";
-  if(m_attributeHasBeenSet)
-  {
+  if (m_attributeHasBeenSet) {
     ss << "Attribute=" << StringUtils::URLEncode(ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute)) << "&";
   }
 
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ResetImageAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ResetImageAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ResetImageAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -12,24 +12,16 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchDeleteMemoryRecordsRequest::SerializePayload() const
-{
+Aws::String BatchDeleteMemoryRecordsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_recordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
-   for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
-   {
-     recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
-   }
-   payload.WithArray("records", std::move(recordsJsonList));
-
+  if (m_recordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
+    for (unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex) {
+      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
+    }
+    payload.WithArray("records", std::move(recordsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

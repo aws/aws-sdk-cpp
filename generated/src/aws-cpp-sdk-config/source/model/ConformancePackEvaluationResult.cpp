@@ -11,82 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConformancePackEvaluationResult::ConformancePackEvaluationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConformancePackEvaluationResult::ConformancePackEvaluationResult(JsonView jsonValue) { *this = jsonValue; }
 
-ConformancePackEvaluationResult& ConformancePackEvaluationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+ConformancePackEvaluationResult& ConformancePackEvaluationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationResultIdentifier"))
-  {
+  if (jsonValue.ValueExists("EvaluationResultIdentifier")) {
     m_evaluationResultIdentifier = jsonValue.GetObject("EvaluationResultIdentifier");
     m_evaluationResultIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConfigRuleInvokedTime"))
-  {
+  if (jsonValue.ValueExists("ConfigRuleInvokedTime")) {
     m_configRuleInvokedTime = jsonValue.GetDouble("ConfigRuleInvokedTime");
     m_configRuleInvokedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultRecordedTime"))
-  {
+  if (jsonValue.ValueExists("ResultRecordedTime")) {
     m_resultRecordedTime = jsonValue.GetDouble("ResultRecordedTime");
     m_resultRecordedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Annotation"))
-  {
+  if (jsonValue.ValueExists("Annotation")) {
     m_annotation = jsonValue.GetString("Annotation");
     m_annotationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConformancePackEvaluationResult::Jsonize() const
-{
+JsonValue ConformancePackEvaluationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", ConformancePackComplianceTypeMapper::GetNameForConformancePackComplianceType(m_complianceType));
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", ConformancePackComplianceTypeMapper::GetNameForConformancePackComplianceType(m_complianceType));
   }
 
-  if(m_evaluationResultIdentifierHasBeenSet)
-  {
-   payload.WithObject("EvaluationResultIdentifier", m_evaluationResultIdentifier.Jsonize());
-
+  if (m_evaluationResultIdentifierHasBeenSet) {
+    payload.WithObject("EvaluationResultIdentifier", m_evaluationResultIdentifier.Jsonize());
   }
 
-  if(m_configRuleInvokedTimeHasBeenSet)
-  {
-   payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime.SecondsWithMSPrecision());
+  if (m_configRuleInvokedTimeHasBeenSet) {
+    payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime.SecondsWithMSPrecision());
   }
 
-  if(m_resultRecordedTimeHasBeenSet)
-  {
-   payload.WithDouble("ResultRecordedTime", m_resultRecordedTime.SecondsWithMSPrecision());
+  if (m_resultRecordedTimeHasBeenSet) {
+    payload.WithDouble("ResultRecordedTime", m_resultRecordedTime.SecondsWithMSPrecision());
   }
 
-  if(m_annotationHasBeenSet)
-  {
-   payload.WithString("Annotation", m_annotation);
-
+  if (m_annotationHasBeenSet) {
+    payload.WithString("Annotation", m_annotation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

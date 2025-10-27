@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/InstanceConnectEndpointDnsNames.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/InstanceConnectEndpointDnsNames.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-InstanceConnectEndpointDnsNames::InstanceConnectEndpointDnsNames(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceConnectEndpointDnsNames::InstanceConnectEndpointDnsNames(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceConnectEndpointDnsNames& InstanceConnectEndpointDnsNames::operator =(const XmlNode& xmlNode)
-{
+InstanceConnectEndpointDnsNames& InstanceConnectEndpointDnsNames::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
-    if(!dnsNameNode.IsNull())
-    {
+    if (!dnsNameNode.IsNull()) {
       m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
       m_dnsNameHasBeenSet = true;
     }
     XmlNode fipsDnsNameNode = resultNode.FirstChild("fipsDnsName");
-    if(!fipsDnsNameNode.IsNull())
-    {
+    if (!fipsDnsNameNode.IsNull()) {
       m_fipsDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(fipsDnsNameNode.GetText());
       m_fipsDnsNameHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ InstanceConnectEndpointDnsNames& InstanceConnectEndpointDnsNames::operator =(con
   return *this;
 }
 
-void InstanceConnectEndpointDnsNames::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_dnsNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DnsName=" << StringUtils::URLEncode(m_dnsName.c_str()) << "&";
+void InstanceConnectEndpointDnsNames::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                     const char* locationValue) const {
+  if (m_dnsNameHasBeenSet) {
+    oStream << location << index << locationValue << ".DnsName=" << StringUtils::URLEncode(m_dnsName.c_str()) << "&";
   }
 
-  if(m_fipsDnsNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FipsDnsName=" << StringUtils::URLEncode(m_fipsDnsName.c_str()) << "&";
-  }
-
-}
-
-void InstanceConnectEndpointDnsNames::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_dnsNameHasBeenSet)
-  {
-      oStream << location << ".DnsName=" << StringUtils::URLEncode(m_dnsName.c_str()) << "&";
-  }
-  if(m_fipsDnsNameHasBeenSet)
-  {
-      oStream << location << ".FipsDnsName=" << StringUtils::URLEncode(m_fipsDnsName.c_str()) << "&";
+  if (m_fipsDnsNameHasBeenSet) {
+    oStream << location << index << locationValue << ".FipsDnsName=" << StringUtils::URLEncode(m_fipsDnsName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void InstanceConnectEndpointDnsNames::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_dnsNameHasBeenSet) {
+    oStream << location << ".DnsName=" << StringUtils::URLEncode(m_dnsName.c_str()) << "&";
+  }
+  if (m_fipsDnsNameHasBeenSet) {
+    oStream << location << ".FipsDnsName=" << StringUtils::URLEncode(m_fipsDnsName.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

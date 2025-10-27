@@ -11,126 +11,94 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-Bot::Bot(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Bot::Bot(JsonView jsonValue) { *this = jsonValue; }
 
-Bot& Bot::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BotId"))
-  {
+Bot& Bot::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BotId")) {
     m_botId = jsonValue.GetString("BotId");
     m_botIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserId"))
-  {
+  if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BotType"))
-  {
+  if (jsonValue.ValueExists("BotType")) {
     m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("BotType"));
     m_botTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Disabled"))
-  {
+  if (jsonValue.ValueExists("Disabled")) {
     m_disabled = jsonValue.GetBool("Disabled");
     m_disabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BotEmail"))
-  {
+  if (jsonValue.ValueExists("BotEmail")) {
     m_botEmail = jsonValue.GetString("BotEmail");
     m_botEmailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityToken"))
-  {
+  if (jsonValue.ValueExists("SecurityToken")) {
     m_securityToken = jsonValue.GetString("SecurityToken");
     m_securityTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Bot::Jsonize() const
-{
+JsonValue Bot::Jsonize() const {
   JsonValue payload;
 
-  if(m_botIdHasBeenSet)
-  {
-   payload.WithString("BotId", m_botId);
-
+  if (m_botIdHasBeenSet) {
+    payload.WithString("BotId", m_botId);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_botTypeHasBeenSet)
-  {
-   payload.WithString("BotType", BotTypeMapper::GetNameForBotType(m_botType));
+  if (m_botTypeHasBeenSet) {
+    payload.WithString("BotType", BotTypeMapper::GetNameForBotType(m_botType));
   }
 
-  if(m_disabledHasBeenSet)
-  {
-   payload.WithBool("Disabled", m_disabled);
-
+  if (m_disabledHasBeenSet) {
+    payload.WithBool("Disabled", m_disabled);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_botEmailHasBeenSet)
-  {
-   payload.WithString("BotEmail", m_botEmail);
-
+  if (m_botEmailHasBeenSet) {
+    payload.WithString("BotEmail", m_botEmail);
   }
 
-  if(m_securityTokenHasBeenSet)
-  {
-   payload.WithString("SecurityToken", m_securityToken);
-
+  if (m_securityTokenHasBeenSet) {
+    payload.WithString("SecurityToken", m_securityToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-class ServiceDiscoveryEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ServiceDiscovery {
+class ServiceDiscoveryEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace ServiceDiscovery
+}  // namespace Aws

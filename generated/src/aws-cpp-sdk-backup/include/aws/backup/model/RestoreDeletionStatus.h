@@ -7,26 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class RestoreDeletionStatus
-  {
-    NOT_SET,
-    DELETING,
-    FAILED,
-    SUCCESSFUL
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class RestoreDeletionStatus { NOT_SET, DELETING, FAILED, SUCCESSFUL };
 
-namespace RestoreDeletionStatusMapper
-{
+namespace RestoreDeletionStatusMapper {
 AWS_BACKUP_API RestoreDeletionStatus GetRestoreDeletionStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForRestoreDeletionStatus(RestoreDeletionStatus value);
-} // namespace RestoreDeletionStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace RestoreDeletionStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/DocumentsMetadataConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/DocumentsMetadataConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-DocumentsMetadataConfiguration::DocumentsMetadataConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentsMetadataConfiguration::DocumentsMetadataConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentsMetadataConfiguration& DocumentsMetadataConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Prefix"))
-  {
+DocumentsMetadataConfiguration& DocumentsMetadataConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Prefix")) {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
     m_s3PrefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentsMetadataConfiguration::Jsonize() const
-{
+JsonValue DocumentsMetadataConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3PrefixHasBeenSet)
-  {
-   payload.WithString("S3Prefix", m_s3Prefix);
-
+  if (m_s3PrefixHasBeenSet) {
+    payload.WithString("S3Prefix", m_s3Prefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

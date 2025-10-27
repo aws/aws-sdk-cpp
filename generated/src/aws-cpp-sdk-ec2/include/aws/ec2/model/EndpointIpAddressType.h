@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class EndpointIpAddressType
-  {
-    NOT_SET,
-    ipv4,
-    ipv6,
-    dual_stack
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class EndpointIpAddressType { NOT_SET, ipv4, ipv6, dual_stack };
 
-namespace EndpointIpAddressTypeMapper
-{
+namespace EndpointIpAddressTypeMapper {
 AWS_EC2_API EndpointIpAddressType GetEndpointIpAddressTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForEndpointIpAddressType(EndpointIpAddressType value);
-} // namespace EndpointIpAddressTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace EndpointIpAddressTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class DocumentHashType
-  {
-    NOT_SET,
-    Sha256,
-    Sha1
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class DocumentHashType { NOT_SET, Sha256, Sha1 };
 
-namespace DocumentHashTypeMapper
-{
+namespace DocumentHashTypeMapper {
 AWS_SSM_API DocumentHashType GetDocumentHashTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForDocumentHashType(DocumentHashType value);
-} // namespace DocumentHashTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace DocumentHashTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

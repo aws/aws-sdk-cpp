@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/ConnectionStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconnect/model/ConnectionStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
+namespace ConnectionStatusMapper {
 
-namespace Aws
-{
-  namespace MediaConnect
-  {
-    namespace Model
-    {
-      namespace ConnectionStatusMapper
-      {
+static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
+static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
 
-        static const int CONNECTED_HASH = HashingUtils::HashString("CONNECTED");
-        static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
+ConnectionStatus GetConnectionStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CONNECTED_HASH) {
+    return ConnectionStatus::CONNECTED;
+  } else if (hashCode == DISCONNECTED_HASH) {
+    return ConnectionStatus::DISCONNECTED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ConnectionStatus>(hashCode);
+  }
 
+  return ConnectionStatus::NOT_SET;
+}
 
-        ConnectionStatus GetConnectionStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CONNECTED_HASH)
-          {
-            return ConnectionStatus::CONNECTED;
-          }
-          else if (hashCode == DISCONNECTED_HASH)
-          {
-            return ConnectionStatus::DISCONNECTED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ConnectionStatus>(hashCode);
-          }
+Aws::String GetNameForConnectionStatus(ConnectionStatus enumValue) {
+  switch (enumValue) {
+    case ConnectionStatus::NOT_SET:
+      return {};
+    case ConnectionStatus::CONNECTED:
+      return "CONNECTED";
+    case ConnectionStatus::DISCONNECTED:
+      return "DISCONNECTED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ConnectionStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForConnectionStatus(ConnectionStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case ConnectionStatus::NOT_SET:
-            return {};
-          case ConnectionStatus::CONNECTED:
-            return "CONNECTED";
-          case ConnectionStatus::DISCONNECTED:
-            return "DISCONNECTED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ConnectionStatusMapper
-    } // namespace Model
-  } // namespace MediaConnect
-} // namespace Aws
+}  // namespace ConnectionStatusMapper
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

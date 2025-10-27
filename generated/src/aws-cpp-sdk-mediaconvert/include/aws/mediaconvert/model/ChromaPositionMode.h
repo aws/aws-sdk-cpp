@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ChromaPositionMode
-  {
-    NOT_SET,
-    AUTO,
-    FORCE_CENTER,
-    FORCE_TOP_LEFT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ChromaPositionMode { NOT_SET, AUTO, FORCE_CENTER, FORCE_TOP_LEFT };
 
-namespace ChromaPositionModeMapper
-{
+namespace ChromaPositionModeMapper {
 AWS_MEDIACONVERT_API ChromaPositionMode GetChromaPositionModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForChromaPositionMode(ChromaPositionMode value);
-} // namespace ChromaPositionModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ChromaPositionModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-enum class ProtonErrors
-{
-  //From Core//
+namespace Aws {
+namespace Proton {
+enum class ProtonErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ProtonErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,10 @@ enum class ProtonErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
 };
 
-class AWS_PROTON_API ProtonError : public Aws::Client::AWSError<ProtonErrors>
-{
-public:
+class AWS_PROTON_API ProtonError : public Aws::Client::AWSError<ProtonErrors> {
+ public:
   ProtonError() {}
   ProtonError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ProtonErrors>(rhs) {}
   ProtonError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ProtonErrors>(rhs) {}
@@ -63,10 +58,9 @@ public:
   T GetModeledError();
 };
 
-namespace ProtonErrorMapper
-{
-  AWS_PROTON_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ProtonErrorMapper {
+AWS_PROTON_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Proton
-} // namespace Aws
+}  // namespace Proton
+}  // namespace Aws

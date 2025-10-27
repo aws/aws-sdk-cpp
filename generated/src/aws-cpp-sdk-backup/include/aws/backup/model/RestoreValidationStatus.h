@@ -7,27 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class RestoreValidationStatus
-  {
-    NOT_SET,
-    FAILED,
-    SUCCESSFUL,
-    TIMED_OUT,
-    VALIDATING
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class RestoreValidationStatus { NOT_SET, FAILED, SUCCESSFUL, TIMED_OUT, VALIDATING };
 
-namespace RestoreValidationStatusMapper
-{
+namespace RestoreValidationStatusMapper {
 AWS_BACKUP_API RestoreValidationStatus GetRestoreValidationStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForRestoreValidationStatus(RestoreValidationStatus value);
-} // namespace RestoreValidationStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace RestoreValidationStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

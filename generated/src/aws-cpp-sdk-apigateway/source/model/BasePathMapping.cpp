@@ -12,63 +12,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-BasePathMapping::BasePathMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BasePathMapping::BasePathMapping(JsonView jsonValue) { *this = jsonValue; }
 
-BasePathMapping& BasePathMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("basePath"))
-  {
+BasePathMapping& BasePathMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("basePath")) {
     m_basePath = jsonValue.GetString("basePath");
     m_basePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restApiId"))
-  {
+  if (jsonValue.ValueExists("restApiId")) {
     m_restApiId = jsonValue.GetString("restApiId");
     m_restApiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stage"))
-  {
+  if (jsonValue.ValueExists("stage")) {
     m_stage = jsonValue.GetString("stage");
     m_stageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BasePathMapping::Jsonize() const
-{
+JsonValue BasePathMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_basePathHasBeenSet)
-  {
-   payload.WithString("basePath", m_basePath);
-
+  if (m_basePathHasBeenSet) {
+    payload.WithString("basePath", m_basePath);
   }
 
-  if(m_restApiIdHasBeenSet)
-  {
-   payload.WithString("restApiId", m_restApiId);
-
+  if (m_restApiIdHasBeenSet) {
+    payload.WithString("restApiId", m_restApiId);
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("stage", m_stage);
-
+  if (m_stageHasBeenSet) {
+    payload.WithString("stage", m_stage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

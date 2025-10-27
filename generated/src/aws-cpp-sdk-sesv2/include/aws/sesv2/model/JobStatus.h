@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    CREATED,
-    PROCESSING,
-    COMPLETED,
-    FAILED,
-    CANCELLED
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class JobStatus { NOT_SET, CREATED, PROCESSING, COMPLETED, FAILED, CANCELLED };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_SESV2_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

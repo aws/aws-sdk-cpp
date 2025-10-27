@@ -4,63 +4,70 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  class GetTrustStoreCaCertificatesBundleResult
-  {
-  public:
-    AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult() = default;
-    AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+class GetTrustStoreCaCertificatesBundleResult {
+ public:
+  AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult() = default;
+  AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>The ca certificate bundles Amazon S3 URI.</p>
+   */
+  inline const Aws::String& GetLocation() const { return m_location; }
+  template <typename LocationT = Aws::String>
+  void SetLocation(LocationT&& value) {
+    m_locationHasBeenSet = true;
+    m_location = std::forward<LocationT>(value);
+  }
+  template <typename LocationT = Aws::String>
+  GetTrustStoreCaCertificatesBundleResult& WithLocation(LocationT&& value) {
+    SetLocation(std::forward<LocationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
-    inline const Aws::String& GetLocation() const { return m_location; }
-    template<typename LocationT = Aws::String>
-    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
-    template<typename LocationT = Aws::String>
-    GetTrustStoreCaCertificatesBundleResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    GetTrustStoreCaCertificatesBundleResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  GetTrustStoreCaCertificatesBundleResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_location;
+  bool m_locationHasBeenSet = false;
 
-    Aws::String m_location;
-    bool m_locationHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

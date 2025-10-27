@@ -12,33 +12,22 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPreparedStatementRequest::SerializePayload() const
-{
+Aws::String GetPreparedStatementRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statementNameHasBeenSet)
-  {
-   payload.WithString("StatementName", m_statementName);
-
+  if (m_statementNameHasBeenSet) {
+    payload.WithString("StatementName", m_statementName);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPreparedStatementRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPreparedStatementRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetPreparedStatement"));
   return headers;
-
 }
-
-
-
-

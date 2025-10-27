@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/JobScheduleFrequency.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/JobScheduleFrequency.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-JobScheduleFrequency::JobScheduleFrequency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobScheduleFrequency::JobScheduleFrequency(JsonView jsonValue) { *this = jsonValue; }
 
-JobScheduleFrequency& JobScheduleFrequency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dailySchedule"))
-  {
+JobScheduleFrequency& JobScheduleFrequency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dailySchedule")) {
     m_dailySchedule = jsonValue.GetObject("dailySchedule");
     m_dailyScheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("monthlySchedule"))
-  {
+  if (jsonValue.ValueExists("monthlySchedule")) {
     m_monthlySchedule = jsonValue.GetObject("monthlySchedule");
     m_monthlyScheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("weeklySchedule"))
-  {
+  if (jsonValue.ValueExists("weeklySchedule")) {
     m_weeklySchedule = jsonValue.GetObject("weeklySchedule");
     m_weeklyScheduleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobScheduleFrequency::Jsonize() const
-{
+JsonValue JobScheduleFrequency::Jsonize() const {
   JsonValue payload;
 
-  if(m_dailyScheduleHasBeenSet)
-  {
-   payload.WithObject("dailySchedule", m_dailySchedule.Jsonize());
-
+  if (m_dailyScheduleHasBeenSet) {
+    payload.WithObject("dailySchedule", m_dailySchedule.Jsonize());
   }
 
-  if(m_monthlyScheduleHasBeenSet)
-  {
-   payload.WithObject("monthlySchedule", m_monthlySchedule.Jsonize());
-
+  if (m_monthlyScheduleHasBeenSet) {
+    payload.WithObject("monthlySchedule", m_monthlySchedule.Jsonize());
   }
 
-  if(m_weeklyScheduleHasBeenSet)
-  {
-   payload.WithObject("weeklySchedule", m_weeklySchedule.Jsonize());
-
+  if (m_weeklyScheduleHasBeenSet) {
+    payload.WithObject("weeklySchedule", m_weeklySchedule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

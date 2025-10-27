@@ -12,11 +12,4 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetTokenRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetTokenRequest::SerializePayload() const { return {}; }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
-  enum class TelemetryEnrichmentStatus
-  {
-    NOT_SET,
-    Running,
-    Stopped,
-    Impaired
-  };
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+enum class TelemetryEnrichmentStatus { NOT_SET, Running, Stopped, Impaired };
 
-namespace TelemetryEnrichmentStatusMapper
-{
+namespace TelemetryEnrichmentStatusMapper {
 AWS_OBSERVABILITYADMIN_API TelemetryEnrichmentStatus GetTelemetryEnrichmentStatusForName(const Aws::String& name);
 
 AWS_OBSERVABILITYADMIN_API Aws::String GetNameForTelemetryEnrichmentStatus(TelemetryEnrichmentStatus value);
-} // namespace TelemetryEnrichmentStatusMapper
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace TelemetryEnrichmentStatusMapper
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

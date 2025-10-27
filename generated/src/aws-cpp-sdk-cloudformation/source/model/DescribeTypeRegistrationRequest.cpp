@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTypeRegistrationRequest::SerializePayload() const
-{
+Aws::String DescribeTypeRegistrationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTypeRegistration&";
-  if(m_registrationTokenHasBeenSet)
-  {
+  if (m_registrationTokenHasBeenSet) {
     ss << "RegistrationToken=" << StringUtils::URLEncode(m_registrationToken.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeTypeRegistrationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTypeRegistrationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTypeRegistrationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

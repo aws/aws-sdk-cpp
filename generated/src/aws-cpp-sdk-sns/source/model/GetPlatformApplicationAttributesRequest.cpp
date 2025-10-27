@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/GetPlatformApplicationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/GetPlatformApplicationAttributesRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetPlatformApplicationAttributesRequest::SerializePayload() const
-{
+Aws::String GetPlatformApplicationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetPlatformApplicationAttributes&";
-  if(m_platformApplicationArnHasBeenSet)
-  {
+  if (m_platformApplicationArnHasBeenSet) {
     ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetPlatformApplicationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetPlatformApplicationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetPlatformApplicationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

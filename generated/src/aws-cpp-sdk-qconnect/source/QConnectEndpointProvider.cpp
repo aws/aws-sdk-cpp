@@ -5,12 +5,8 @@
 
 #include <aws/qconnect/QConnectEndpointProvider.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QConnect
-} // namespace Aws
+namespace Aws {
+namespace QConnect {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QConnect
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/UpdateProjectDataDeliveryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/UpdateProjectDataDeliveryRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProjectDataDeliveryRequest::SerializePayload() const
-{
+Aws::String UpdateProjectDataDeliveryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cloudWatchLogsHasBeenSet)
-  {
-   payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
-
+  if (m_cloudWatchLogsHasBeenSet) {
+    payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
   }
 
-  if(m_s3DestinationHasBeenSet)
-  {
-   payload.WithObject("s3Destination", m_s3Destination.Jsonize());
-
+  if (m_s3DestinationHasBeenSet) {
+    payload.WithObject("s3Destination", m_s3Destination.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

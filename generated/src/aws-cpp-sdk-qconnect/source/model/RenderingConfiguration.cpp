@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/RenderingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/RenderingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-RenderingConfiguration::RenderingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RenderingConfiguration::RenderingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RenderingConfiguration& RenderingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("templateUri"))
-  {
+RenderingConfiguration& RenderingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("templateUri")) {
     m_templateUri = jsonValue.GetString("templateUri");
     m_templateUriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RenderingConfiguration::Jsonize() const
-{
+JsonValue RenderingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateUriHasBeenSet)
-  {
-   payload.WithString("templateUri", m_templateUri);
-
+  if (m_templateUriHasBeenSet) {
+    payload.WithString("templateUri", m_templateUri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

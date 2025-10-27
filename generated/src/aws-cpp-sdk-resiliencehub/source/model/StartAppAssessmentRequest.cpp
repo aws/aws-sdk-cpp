@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/StartAppAssessmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/StartAppAssessmentRequest.h>
 
 #include <utility>
 
@@ -12,48 +12,32 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartAppAssessmentRequest::SerializePayload() const
-{
+Aws::String StartAppAssessmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appArnHasBeenSet)
-  {
-   payload.WithString("appArn", m_appArn);
-
+  if (m_appArnHasBeenSet) {
+    payload.WithString("appArn", m_appArn);
   }
 
-  if(m_appVersionHasBeenSet)
-  {
-   payload.WithString("appVersion", m_appVersion);
-
+  if (m_appVersionHasBeenSet) {
+    payload.WithString("appVersion", m_appVersion);
   }
 
-  if(m_assessmentNameHasBeenSet)
-  {
-   payload.WithString("assessmentName", m_assessmentName);
-
+  if (m_assessmentNameHasBeenSet) {
+    payload.WithString("assessmentName", m_assessmentName);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

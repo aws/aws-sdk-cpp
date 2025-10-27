@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVpcAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeVpcAttributeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeVpcAttributeRequest::SerializePayload() const
-{
+Aws::String DescribeVpcAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeVpcAttribute&";
-  if(m_attributeHasBeenSet)
-  {
+  if (m_attributeHasBeenSet) {
     ss << "Attribute=" << StringUtils::URLEncode(VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute)) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeVpcAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeVpcAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeVpcAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

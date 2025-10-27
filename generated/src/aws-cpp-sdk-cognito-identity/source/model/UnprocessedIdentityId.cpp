@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
 
-UnprocessedIdentityId::UnprocessedIdentityId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedIdentityId::UnprocessedIdentityId(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedIdentityId& UnprocessedIdentityId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IdentityId"))
-  {
+UnprocessedIdentityId& UnprocessedIdentityId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IdentityId")) {
     m_identityId = jsonValue.GetString("IdentityId");
     m_identityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedIdentityId::Jsonize() const
-{
+JsonValue UnprocessedIdentityId::Jsonize() const {
   JsonValue payload;
 
-  if(m_identityIdHasBeenSet)
-  {
-   payload.WithString("IdentityId", m_identityId);
-
+  if (m_identityIdHasBeenSet) {
+    payload.WithString("IdentityId", m_identityId);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

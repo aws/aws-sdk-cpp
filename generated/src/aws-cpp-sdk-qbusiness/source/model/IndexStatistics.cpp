@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/IndexStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/IndexStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-IndexStatistics::IndexStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IndexStatistics::IndexStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-IndexStatistics& IndexStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("textDocumentStatistics"))
-  {
+IndexStatistics& IndexStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("textDocumentStatistics")) {
     m_textDocumentStatistics = jsonValue.GetObject("textDocumentStatistics");
     m_textDocumentStatisticsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IndexStatistics::Jsonize() const
-{
+JsonValue IndexStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_textDocumentStatisticsHasBeenSet)
-  {
-   payload.WithObject("textDocumentStatistics", m_textDocumentStatistics.Jsonize());
-
+  if (m_textDocumentStatisticsHasBeenSet) {
+    payload.WithObject("textDocumentStatistics", m_textDocumentStatistics.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/OutputConfigInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/OutputConfigInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-OutputConfigInput::OutputConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputConfigInput::OutputConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-OutputConfigInput& OutputConfigInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Data"))
-  {
+OutputConfigInput& OutputConfigInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Data")) {
     m_s3Data = jsonValue.GetObject("S3Data");
     m_s3DataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputConfigInput::Jsonize() const
-{
+JsonValue OutputConfigInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DataHasBeenSet)
-  {
-   payload.WithObject("S3Data", m_s3Data.Jsonize());
-
+  if (m_s3DataHasBeenSet) {
+    payload.WithObject("S3Data", m_s3Data.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

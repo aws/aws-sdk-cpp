@@ -12,38 +12,27 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutCapacityAssignmentConfigurationRequest::SerializePayload() const
-{
+Aws::String PutCapacityAssignmentConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_capacityReservationNameHasBeenSet)
-  {
-   payload.WithString("CapacityReservationName", m_capacityReservationName);
-
+  if (m_capacityReservationNameHasBeenSet) {
+    payload.WithString("CapacityReservationName", m_capacityReservationName);
   }
 
-  if(m_capacityAssignmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capacityAssignmentsJsonList(m_capacityAssignments.size());
-   for(unsigned capacityAssignmentsIndex = 0; capacityAssignmentsIndex < capacityAssignmentsJsonList.GetLength(); ++capacityAssignmentsIndex)
-   {
-     capacityAssignmentsJsonList[capacityAssignmentsIndex].AsObject(m_capacityAssignments[capacityAssignmentsIndex].Jsonize());
-   }
-   payload.WithArray("CapacityAssignments", std::move(capacityAssignmentsJsonList));
-
+  if (m_capacityAssignmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capacityAssignmentsJsonList(m_capacityAssignments.size());
+    for (unsigned capacityAssignmentsIndex = 0; capacityAssignmentsIndex < capacityAssignmentsJsonList.GetLength();
+         ++capacityAssignmentsIndex) {
+      capacityAssignmentsJsonList[capacityAssignmentsIndex].AsObject(m_capacityAssignments[capacityAssignmentsIndex].Jsonize());
+    }
+    payload.WithArray("CapacityAssignments", std::move(capacityAssignmentsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutCapacityAssignmentConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutCapacityAssignmentConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.PutCapacityAssignmentConfiguration"));
   return headers;
-
 }
-
-
-
-

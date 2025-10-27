@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/DeleteAppInputSourceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/resiliencehub/model/DeleteAppInputSourceResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAppInputSourceResult::DeleteAppInputSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DeleteAppInputSourceResult::DeleteAppInputSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DeleteAppInputSourceResult& DeleteAppInputSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteAppInputSourceResult& DeleteAppInputSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("appArn"))
-  {
+  if (jsonValue.ValueExists("appArn")) {
     m_appArn = jsonValue.GetString("appArn");
     m_appArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("appInputSource"))
-  {
+  if (jsonValue.ValueExists("appInputSource")) {
     m_appInputSource = jsonValue.GetObject("appInputSource");
     m_appInputSourceHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

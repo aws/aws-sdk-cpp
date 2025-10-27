@@ -11,182 +11,134 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-PricingRuleListElement::PricingRuleListElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PricingRuleListElement::PricingRuleListElement(JsonView jsonValue) { *this = jsonValue; }
 
-PricingRuleListElement& PricingRuleListElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+PricingRuleListElement& PricingRuleListElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Scope"))
-  {
+  if (jsonValue.ValueExists("Scope")) {
     m_scope = PricingRuleScopeMapper::GetPricingRuleScopeForName(jsonValue.GetString("Scope"));
     m_scopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = PricingRuleTypeMapper::GetPricingRuleTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModifierPercentage"))
-  {
+  if (jsonValue.ValueExists("ModifierPercentage")) {
     m_modifierPercentage = jsonValue.GetDouble("ModifierPercentage");
     m_modifierPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Service"))
-  {
+  if (jsonValue.ValueExists("Service")) {
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociatedPricingPlanCount"))
-  {
+  if (jsonValue.ValueExists("AssociatedPricingPlanCount")) {
     m_associatedPricingPlanCount = jsonValue.GetInt64("AssociatedPricingPlanCount");
     m_associatedPricingPlanCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetInt64("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetInt64("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillingEntity"))
-  {
+  if (jsonValue.ValueExists("BillingEntity")) {
     m_billingEntity = jsonValue.GetString("BillingEntity");
     m_billingEntityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tiering"))
-  {
+  if (jsonValue.ValueExists("Tiering")) {
     m_tiering = jsonValue.GetObject("Tiering");
     m_tieringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UsageType"))
-  {
+  if (jsonValue.ValueExists("UsageType")) {
     m_usageType = jsonValue.GetString("UsageType");
     m_usageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operation"))
-  {
+  if (jsonValue.ValueExists("Operation")) {
     m_operation = jsonValue.GetString("Operation");
     m_operationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PricingRuleListElement::Jsonize() const
-{
+JsonValue PricingRuleListElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithString("Scope", PricingRuleScopeMapper::GetNameForPricingRuleScope(m_scope));
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", PricingRuleScopeMapper::GetNameForPricingRuleScope(m_scope));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", PricingRuleTypeMapper::GetNameForPricingRuleType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", PricingRuleTypeMapper::GetNameForPricingRuleType(m_type));
   }
 
-  if(m_modifierPercentageHasBeenSet)
-  {
-   payload.WithDouble("ModifierPercentage", m_modifierPercentage);
-
+  if (m_modifierPercentageHasBeenSet) {
+    payload.WithDouble("ModifierPercentage", m_modifierPercentage);
   }
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("Service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("Service", m_service);
   }
 
-  if(m_associatedPricingPlanCountHasBeenSet)
-  {
-   payload.WithInt64("AssociatedPricingPlanCount", m_associatedPricingPlanCount);
-
+  if (m_associatedPricingPlanCountHasBeenSet) {
+    payload.WithInt64("AssociatedPricingPlanCount", m_associatedPricingPlanCount);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithInt64("CreationTime", m_creationTime);
-
+  if (m_creationTimeHasBeenSet) {
+    payload.WithInt64("CreationTime", m_creationTime);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithInt64("LastModifiedTime", m_lastModifiedTime);
-
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithInt64("LastModifiedTime", m_lastModifiedTime);
   }
 
-  if(m_billingEntityHasBeenSet)
-  {
-   payload.WithString("BillingEntity", m_billingEntity);
-
+  if (m_billingEntityHasBeenSet) {
+    payload.WithString("BillingEntity", m_billingEntity);
   }
 
-  if(m_tieringHasBeenSet)
-  {
-   payload.WithObject("Tiering", m_tiering.Jsonize());
-
+  if (m_tieringHasBeenSet) {
+    payload.WithObject("Tiering", m_tiering.Jsonize());
   }
 
-  if(m_usageTypeHasBeenSet)
-  {
-   payload.WithString("UsageType", m_usageType);
-
+  if (m_usageTypeHasBeenSet) {
+    payload.WithString("UsageType", m_usageType);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", m_operation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

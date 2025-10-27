@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesResult.h>
 
 #include <utility>
 
@@ -17,30 +17,24 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLoadBalancerPoliciesResult::DescribeLoadBalancerPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeLoadBalancerPoliciesResult::DescribeLoadBalancerPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeLoadBalancerPoliciesResult& DescribeLoadBalancerPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeLoadBalancerPoliciesResult& DescribeLoadBalancerPoliciesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeLoadBalancerPoliciesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeLoadBalancerPoliciesResult")) {
     resultNode = rootNode.FirstChild("DescribeLoadBalancerPoliciesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode policyDescriptionsNode = resultNode.FirstChild("PolicyDescriptions");
-    if(!policyDescriptionsNode.IsNull())
-    {
+    if (!policyDescriptionsNode.IsNull()) {
       XmlNode policyDescriptionsMember = policyDescriptionsNode.FirstChild("member");
       m_policyDescriptionsHasBeenSet = !policyDescriptionsMember.IsNull();
-      while(!policyDescriptionsMember.IsNull())
-      {
+      while (!policyDescriptionsMember.IsNull()) {
         m_policyDescriptions.push_back(policyDescriptionsMember);
         policyDescriptionsMember = policyDescriptionsMember.NextNode("member");
       }
@@ -53,7 +47,8 @@ DescribeLoadBalancerPoliciesResult& DescribeLoadBalancerPoliciesResult::operator
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancerPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancerPoliciesResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

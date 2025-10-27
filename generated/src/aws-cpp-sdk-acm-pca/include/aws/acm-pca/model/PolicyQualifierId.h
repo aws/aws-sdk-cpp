@@ -7,24 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class PolicyQualifierId
-  {
-    NOT_SET,
-    CPS
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class PolicyQualifierId { NOT_SET, CPS };
 
-namespace PolicyQualifierIdMapper
-{
+namespace PolicyQualifierIdMapper {
 AWS_ACMPCA_API PolicyQualifierId GetPolicyQualifierIdForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForPolicyQualifierId(PolicyQualifierId value);
-} // namespace PolicyQualifierIdMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace PolicyQualifierIdMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

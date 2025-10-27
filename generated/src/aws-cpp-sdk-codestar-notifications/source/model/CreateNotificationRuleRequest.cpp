@@ -12,74 +12,52 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateNotificationRuleRequest::SerializePayload() const
-{
+Aws::String CreateNotificationRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_eventTypeIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventTypeIdsJsonList(m_eventTypeIds.size());
-   for(unsigned eventTypeIdsIndex = 0; eventTypeIdsIndex < eventTypeIdsJsonList.GetLength(); ++eventTypeIdsIndex)
-   {
-     eventTypeIdsJsonList[eventTypeIdsIndex].AsString(m_eventTypeIds[eventTypeIdsIndex]);
-   }
-   payload.WithArray("EventTypeIds", std::move(eventTypeIdsJsonList));
-
+  if (m_eventTypeIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventTypeIdsJsonList(m_eventTypeIds.size());
+    for (unsigned eventTypeIdsIndex = 0; eventTypeIdsIndex < eventTypeIdsJsonList.GetLength(); ++eventTypeIdsIndex) {
+      eventTypeIdsJsonList[eventTypeIdsIndex].AsString(m_eventTypeIds[eventTypeIdsIndex]);
+    }
+    payload.WithArray("EventTypeIds", std::move(eventTypeIdsJsonList));
   }
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithString("Resource", m_resource);
-
+  if (m_resourceHasBeenSet) {
+    payload.WithString("Resource", m_resource);
   }
 
-  if(m_targetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
-   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
-   {
-     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
-   }
-   payload.WithArray("Targets", std::move(targetsJsonList));
-
+  if (m_targetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
+    for (unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex) {
+      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+    }
+    payload.WithArray("Targets", std::move(targetsJsonList));
   }
 
-  if(m_detailTypeHasBeenSet)
-  {
-   payload.WithString("DetailType", DetailTypeMapper::GetNameForDetailType(m_detailType));
+  if (m_detailTypeHasBeenSet) {
+    payload.WithString("DetailType", DetailTypeMapper::GetNameForDetailType(m_detailType));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", NotificationRuleStatusMapper::GetNameForNotificationRuleStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", NotificationRuleStatusMapper::GetNameForNotificationRuleStatus(m_status));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

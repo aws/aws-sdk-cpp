@@ -5,12 +5,8 @@
 
 #include <aws/mq/MQEndpointProvider.h>
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MQ
-} // namespace Aws
+namespace Aws {
+namespace MQ {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MQ
+}  // namespace Aws

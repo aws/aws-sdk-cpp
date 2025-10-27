@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-} // namespace VerifiedPermissions
-} // namespace Aws
+namespace Aws {
+namespace VerifiedPermissions {}  // namespace VerifiedPermissions
+}  // namespace Aws

@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVerifiedAccessGroupPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVerifiedAccessGroupPolicyRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVerifiedAccessGroupPolicyRequest::SerializePayload() const
-{
+Aws::String ModifyVerifiedAccessGroupPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVerifiedAccessGroupPolicy&";
-  if(m_verifiedAccessGroupIdHasBeenSet)
-  {
+  if (m_verifiedAccessGroupIdHasBeenSet) {
     ss << "VerifiedAccessGroupId=" << StringUtils::URLEncode(m_verifiedAccessGroupId.c_str()) << "&";
   }
 
-  if(m_policyEnabledHasBeenSet)
-  {
+  if (m_policyEnabledHasBeenSet) {
     ss << "PolicyEnabled=" << std::boolalpha << m_policyEnabled << "&";
   }
 
-  if(m_policyDocumentHasBeenSet)
-  {
+  if (m_policyDocumentHasBeenSet) {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_sseSpecificationHasBeenSet)
-  {
+  if (m_sseSpecificationHasBeenSet) {
     m_sseSpecification.OutputToStream(ss, "SseSpecification");
   }
 
@@ -48,8 +41,4 @@ Aws::String ModifyVerifiedAccessGroupPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyVerifiedAccessGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyVerifiedAccessGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

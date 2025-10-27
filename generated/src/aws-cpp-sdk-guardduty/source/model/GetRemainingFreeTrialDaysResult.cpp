@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/GetRemainingFreeTrialDaysResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/guardduty/model/GetRemainingFreeTrialDaysResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRemainingFreeTrialDaysResult::GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetRemainingFreeTrialDaysResult::GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accounts"))
-  {
+  if (jsonValue.ValueExists("accounts")) {
     Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
-    for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
-    {
+    for (unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex) {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
     }
     m_accountsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unprocessedAccounts"))
-  {
+  if (jsonValue.ValueExists("unprocessedAccounts")) {
     Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
-    for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
-    {
+    for (unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength();
+         ++unprocessedAccountsIndex) {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());
     }
     m_unprocessedAccountsHasBeenSet = true;
@@ -46,12 +39,10 @@ GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

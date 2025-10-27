@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/email/SESRequest.h>
 
-namespace Aws
-{
-namespace SES
-{
-} // namespace SES
-} // namespace Aws
+namespace Aws {
+namespace SES {}  // namespace SES
+}  // namespace Aws

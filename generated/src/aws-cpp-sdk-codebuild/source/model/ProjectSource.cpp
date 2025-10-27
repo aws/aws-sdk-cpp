@@ -11,139 +11,102 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectSource::ProjectSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectSource::ProjectSource(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectSource& ProjectSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ProjectSource& ProjectSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("location"))
-  {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetString("location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gitCloneDepth"))
-  {
+  if (jsonValue.ValueExists("gitCloneDepth")) {
     m_gitCloneDepth = jsonValue.GetInteger("gitCloneDepth");
     m_gitCloneDepthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gitSubmodulesConfig"))
-  {
+  if (jsonValue.ValueExists("gitSubmodulesConfig")) {
     m_gitSubmodulesConfig = jsonValue.GetObject("gitSubmodulesConfig");
     m_gitSubmodulesConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("buildspec"))
-  {
+  if (jsonValue.ValueExists("buildspec")) {
     m_buildspec = jsonValue.GetString("buildspec");
     m_buildspecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("auth"))
-  {
+  if (jsonValue.ValueExists("auth")) {
     m_auth = jsonValue.GetObject("auth");
     m_authHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportBuildStatus"))
-  {
+  if (jsonValue.ValueExists("reportBuildStatus")) {
     m_reportBuildStatus = jsonValue.GetBool("reportBuildStatus");
     m_reportBuildStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("buildStatusConfig"))
-  {
+  if (jsonValue.ValueExists("buildStatusConfig")) {
     m_buildStatusConfig = jsonValue.GetObject("buildStatusConfig");
     m_buildStatusConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("insecureSsl"))
-  {
+  if (jsonValue.ValueExists("insecureSsl")) {
     m_insecureSsl = jsonValue.GetBool("insecureSsl");
     m_insecureSslHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceIdentifier"))
-  {
+  if (jsonValue.ValueExists("sourceIdentifier")) {
     m_sourceIdentifier = jsonValue.GetString("sourceIdentifier");
     m_sourceIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectSource::Jsonize() const
-{
+JsonValue ProjectSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SourceTypeMapper::GetNameForSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", SourceTypeMapper::GetNameForSourceType(m_type));
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("location", m_location);
   }
 
-  if(m_gitCloneDepthHasBeenSet)
-  {
-   payload.WithInteger("gitCloneDepth", m_gitCloneDepth);
-
+  if (m_gitCloneDepthHasBeenSet) {
+    payload.WithInteger("gitCloneDepth", m_gitCloneDepth);
   }
 
-  if(m_gitSubmodulesConfigHasBeenSet)
-  {
-   payload.WithObject("gitSubmodulesConfig", m_gitSubmodulesConfig.Jsonize());
-
+  if (m_gitSubmodulesConfigHasBeenSet) {
+    payload.WithObject("gitSubmodulesConfig", m_gitSubmodulesConfig.Jsonize());
   }
 
-  if(m_buildspecHasBeenSet)
-  {
-   payload.WithString("buildspec", m_buildspec);
-
+  if (m_buildspecHasBeenSet) {
+    payload.WithString("buildspec", m_buildspec);
   }
 
-  if(m_authHasBeenSet)
-  {
-   payload.WithObject("auth", m_auth.Jsonize());
-
+  if (m_authHasBeenSet) {
+    payload.WithObject("auth", m_auth.Jsonize());
   }
 
-  if(m_reportBuildStatusHasBeenSet)
-  {
-   payload.WithBool("reportBuildStatus", m_reportBuildStatus);
-
+  if (m_reportBuildStatusHasBeenSet) {
+    payload.WithBool("reportBuildStatus", m_reportBuildStatus);
   }
 
-  if(m_buildStatusConfigHasBeenSet)
-  {
-   payload.WithObject("buildStatusConfig", m_buildStatusConfig.Jsonize());
-
+  if (m_buildStatusConfigHasBeenSet) {
+    payload.WithObject("buildStatusConfig", m_buildStatusConfig.Jsonize());
   }
 
-  if(m_insecureSslHasBeenSet)
-  {
-   payload.WithBool("insecureSsl", m_insecureSsl);
-
+  if (m_insecureSslHasBeenSet) {
+    payload.WithBool("insecureSsl", m_insecureSsl);
   }
 
-  if(m_sourceIdentifierHasBeenSet)
-  {
-   payload.WithString("sourceIdentifier", m_sourceIdentifier);
-
+  if (m_sourceIdentifierHasBeenSet) {
+    payload.WithString("sourceIdentifier", m_sourceIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

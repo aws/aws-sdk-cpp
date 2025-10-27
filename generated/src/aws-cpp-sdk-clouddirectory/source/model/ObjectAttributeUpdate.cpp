@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-ObjectAttributeUpdate::ObjectAttributeUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ObjectAttributeUpdate::ObjectAttributeUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-ObjectAttributeUpdate& ObjectAttributeUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectAttributeKey"))
-  {
+ObjectAttributeUpdate& ObjectAttributeUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectAttributeKey")) {
     m_objectAttributeKey = jsonValue.GetObject("ObjectAttributeKey");
     m_objectAttributeKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectAttributeAction"))
-  {
+  if (jsonValue.ValueExists("ObjectAttributeAction")) {
     m_objectAttributeAction = jsonValue.GetObject("ObjectAttributeAction");
     m_objectAttributeActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ObjectAttributeUpdate::Jsonize() const
-{
+JsonValue ObjectAttributeUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectAttributeKeyHasBeenSet)
-  {
-   payload.WithObject("ObjectAttributeKey", m_objectAttributeKey.Jsonize());
-
+  if (m_objectAttributeKeyHasBeenSet) {
+    payload.WithObject("ObjectAttributeKey", m_objectAttributeKey.Jsonize());
   }
 
-  if(m_objectAttributeActionHasBeenSet)
-  {
-   payload.WithObject("ObjectAttributeAction", m_objectAttributeAction.Jsonize());
-
+  if (m_objectAttributeActionHasBeenSet) {
+    payload.WithObject("ObjectAttributeAction", m_objectAttributeAction.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

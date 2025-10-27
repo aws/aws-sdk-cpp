@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-MergeOperations::MergeOperations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MergeOperations::MergeOperations(JsonView jsonValue) { *this = jsonValue; }
 
-MergeOperations& MergeOperations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+MergeOperations& MergeOperations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = ChangeTypeEnumMapper::GetChangeTypeEnumForName(jsonValue.GetString("source"));
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = ChangeTypeEnumMapper::GetChangeTypeEnumForName(jsonValue.GetString("destination"));
     m_destinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MergeOperations::Jsonize() const
-{
+JsonValue MergeOperations::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_source));
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_source));
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("destination", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_destination));
+  if (m_destinationHasBeenSet) {
+    payload.WithString("destination", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_destination));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

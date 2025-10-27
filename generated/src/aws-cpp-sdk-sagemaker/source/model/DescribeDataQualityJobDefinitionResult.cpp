@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DescribeDataQualityJobDefinitionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/DescribeDataQualityJobDefinitionResult.h>
 
 #include <utility>
 
@@ -17,78 +17,64 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataQualityJobDefinitionResult::DescribeDataQualityJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeDataQualityJobDefinitionResult::DescribeDataQualityJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeDataQualityJobDefinitionResult& DescribeDataQualityJobDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeDataQualityJobDefinitionResult& DescribeDataQualityJobDefinitionResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobDefinitionArn"))
-  {
+  if (jsonValue.ValueExists("JobDefinitionArn")) {
     m_jobDefinitionArn = jsonValue.GetString("JobDefinitionArn");
     m_jobDefinitionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobDefinitionName"))
-  {
+  if (jsonValue.ValueExists("JobDefinitionName")) {
     m_jobDefinitionName = jsonValue.GetString("JobDefinitionName");
     m_jobDefinitionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataQualityBaselineConfig"))
-  {
+  if (jsonValue.ValueExists("DataQualityBaselineConfig")) {
     m_dataQualityBaselineConfig = jsonValue.GetObject("DataQualityBaselineConfig");
     m_dataQualityBaselineConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataQualityAppSpecification"))
-  {
+  if (jsonValue.ValueExists("DataQualityAppSpecification")) {
     m_dataQualityAppSpecification = jsonValue.GetObject("DataQualityAppSpecification");
     m_dataQualityAppSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataQualityJobInput"))
-  {
+  if (jsonValue.ValueExists("DataQualityJobInput")) {
     m_dataQualityJobInput = jsonValue.GetObject("DataQualityJobInput");
     m_dataQualityJobInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataQualityJobOutputConfig"))
-  {
+  if (jsonValue.ValueExists("DataQualityJobOutputConfig")) {
     m_dataQualityJobOutputConfig = jsonValue.GetObject("DataQualityJobOutputConfig");
     m_dataQualityJobOutputConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobResources"))
-  {
+  if (jsonValue.ValueExists("JobResources")) {
     m_jobResources = jsonValue.GetObject("JobResources");
     m_jobResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkConfig"))
-  {
+  if (jsonValue.ValueExists("NetworkConfig")) {
     m_networkConfig = jsonValue.GetObject("NetworkConfig");
     m_networkConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StoppingCondition"))
-  {
+  if (jsonValue.ValueExists("StoppingCondition")) {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
     m_stoppingConditionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

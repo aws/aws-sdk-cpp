@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/XksProxyConfigurationType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/model/XksProxyConfigurationType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
+namespace Aws {
+namespace KMS {
+namespace Model {
 
-XksProxyConfigurationType::XksProxyConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+XksProxyConfigurationType::XksProxyConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-XksProxyConfigurationType& XksProxyConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Connectivity"))
-  {
+XksProxyConfigurationType& XksProxyConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Connectivity")) {
     m_connectivity = XksProxyConnectivityTypeMapper::GetXksProxyConnectivityTypeForName(jsonValue.GetString("Connectivity"));
     m_connectivityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessKeyId"))
-  {
+  if (jsonValue.ValueExists("AccessKeyId")) {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
     m_accessKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UriEndpoint"))
-  {
+  if (jsonValue.ValueExists("UriEndpoint")) {
     m_uriEndpoint = jsonValue.GetString("UriEndpoint");
     m_uriEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UriPath"))
-  {
+  if (jsonValue.ValueExists("UriPath")) {
     m_uriPath = jsonValue.GetString("UriPath");
     m_uriPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcEndpointServiceName"))
-  {
+  if (jsonValue.ValueExists("VpcEndpointServiceName")) {
     m_vpcEndpointServiceName = jsonValue.GetString("VpcEndpointServiceName");
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue XksProxyConfigurationType::Jsonize() const
-{
+JsonValue XksProxyConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectivityHasBeenSet)
-  {
-   payload.WithString("Connectivity", XksProxyConnectivityTypeMapper::GetNameForXksProxyConnectivityType(m_connectivity));
+  if (m_connectivityHasBeenSet) {
+    payload.WithString("Connectivity", XksProxyConnectivityTypeMapper::GetNameForXksProxyConnectivityType(m_connectivity));
   }
 
-  if(m_accessKeyIdHasBeenSet)
-  {
-   payload.WithString("AccessKeyId", m_accessKeyId);
-
+  if (m_accessKeyIdHasBeenSet) {
+    payload.WithString("AccessKeyId", m_accessKeyId);
   }
 
-  if(m_uriEndpointHasBeenSet)
-  {
-   payload.WithString("UriEndpoint", m_uriEndpoint);
-
+  if (m_uriEndpointHasBeenSet) {
+    payload.WithString("UriEndpoint", m_uriEndpoint);
   }
 
-  if(m_uriPathHasBeenSet)
-  {
-   payload.WithString("UriPath", m_uriPath);
-
+  if (m_uriPathHasBeenSet) {
+    payload.WithString("UriPath", m_uriPath);
   }
 
-  if(m_vpcEndpointServiceNameHasBeenSet)
-  {
-   payload.WithString("VpcEndpointServiceName", m_vpcEndpointServiceName);
-
+  if (m_vpcEndpointServiceNameHasBeenSet) {
+    payload.WithString("VpcEndpointServiceName", m_vpcEndpointServiceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

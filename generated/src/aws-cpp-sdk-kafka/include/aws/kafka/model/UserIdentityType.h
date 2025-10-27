@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
-  enum class UserIdentityType
-  {
-    NOT_SET,
-    AWSACCOUNT,
-    AWSSERVICE
-  };
+namespace Aws {
+namespace Kafka {
+namespace Model {
+enum class UserIdentityType { NOT_SET, AWSACCOUNT, AWSSERVICE };
 
-namespace UserIdentityTypeMapper
-{
+namespace UserIdentityTypeMapper {
 AWS_KAFKA_API UserIdentityType GetUserIdentityTypeForName(const Aws::String& name);
 
 AWS_KAFKA_API Aws::String GetNameForUserIdentityType(UserIdentityType value);
-} // namespace UserIdentityTypeMapper
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace UserIdentityTypeMapper
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

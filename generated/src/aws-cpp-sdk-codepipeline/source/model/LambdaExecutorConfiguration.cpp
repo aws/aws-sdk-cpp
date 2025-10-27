@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-LambdaExecutorConfiguration::LambdaExecutorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaExecutorConfiguration::LambdaExecutorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaExecutorConfiguration& LambdaExecutorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambdaFunctionArn"))
-  {
+LambdaExecutorConfiguration& LambdaExecutorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("lambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaExecutorConfiguration::Jsonize() const
-{
+JsonValue LambdaExecutorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("lambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("lambdaFunctionArn", m_lambdaFunctionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

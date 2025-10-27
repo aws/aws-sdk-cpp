@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/OrganizationS3LogsConfigurationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/OrganizationS3LogsConfigurationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-OrganizationS3LogsConfigurationResult::OrganizationS3LogsConfigurationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrganizationS3LogsConfigurationResult::OrganizationS3LogsConfigurationResult(JsonView jsonValue) { *this = jsonValue; }
 
-OrganizationS3LogsConfigurationResult& OrganizationS3LogsConfigurationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoEnable"))
-  {
+OrganizationS3LogsConfigurationResult& OrganizationS3LogsConfigurationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoEnable")) {
     m_autoEnable = jsonValue.GetBool("autoEnable");
     m_autoEnableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrganizationS3LogsConfigurationResult::Jsonize() const
-{
+JsonValue OrganizationS3LogsConfigurationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoEnableHasBeenSet)
-  {
-   payload.WithBool("autoEnable", m_autoEnable);
-
+  if (m_autoEnableHasBeenSet) {
+    payload.WithBool("autoEnable", m_autoEnable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

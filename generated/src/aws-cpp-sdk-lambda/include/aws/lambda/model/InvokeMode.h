@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class InvokeMode
-  {
-    NOT_SET,
-    BUFFERED,
-    RESPONSE_STREAM
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class InvokeMode { NOT_SET, BUFFERED, RESPONSE_STREAM };
 
-namespace InvokeModeMapper
-{
+namespace InvokeModeMapper {
 AWS_LAMBDA_API InvokeMode GetInvokeModeForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForInvokeMode(InvokeMode value);
-} // namespace InvokeModeMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace InvokeModeMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateDhcpOptionsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDhcpOptionsResponse::CreateDhcpOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateDhcpOptionsResponse::CreateDhcpOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateDhcpOptionsResponse& CreateDhcpOptionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateDhcpOptionsResponse& CreateDhcpOptionsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDhcpOptionsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDhcpOptionsResponse")) {
     resultNode = rootNode.FirstChild("CreateDhcpOptionsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dhcpOptionsNode = resultNode.FirstChild("dhcpOptions");
-    if(!dhcpOptionsNode.IsNull())
-    {
+    if (!dhcpOptionsNode.IsNull()) {
       m_dhcpOptions = dhcpOptionsNode;
       m_dhcpOptionsHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ CreateDhcpOptionsResponse& CreateDhcpOptionsResponse::operator =(const Aws::Amaz
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateDhcpOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateDhcpOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

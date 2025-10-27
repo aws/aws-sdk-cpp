@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/PutMultiRegionAccessPointPolicyInput.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/PutMultiRegionAccessPointPolicyInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PutMultiRegionAccessPointPolicyInput& PutMultiRegionAccessPointPolicyInput::operator =(const XmlNode& xmlNode)
-{
+PutMultiRegionAccessPointPolicyInput& PutMultiRegionAccessPointPolicyInput::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode policyNode = resultNode.FirstChild("Policy");
-    if(!policyNode.IsNull())
-    {
+    if (!policyNode.IsNull()) {
       m_policy = Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText());
       m_policyHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ PutMultiRegionAccessPointPolicyInput& PutMultiRegionAccessPointPolicyInput::oper
   return *this;
 }
 
-void PutMultiRegionAccessPointPolicyInput::AddToNode(XmlNode& parentNode) const
-{
+void PutMultiRegionAccessPointPolicyInput::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_policyHasBeenSet)
-  {
-   XmlNode policyNode = parentNode.CreateChildElement("Policy");
-   policyNode.SetText(m_policy);
+  if (m_policyHasBeenSet) {
+    XmlNode policyNode = parentNode.CreateChildElement("Policy");
+    policyNode.SetText(m_policy);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

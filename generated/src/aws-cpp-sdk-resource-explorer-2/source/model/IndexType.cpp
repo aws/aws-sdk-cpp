@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resource-explorer-2/model/IndexType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/resource-explorer-2/model/IndexType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ResourceExplorer2 {
+namespace Model {
+namespace IndexTypeMapper {
 
-namespace Aws
-{
-  namespace ResourceExplorer2
-  {
-    namespace Model
-    {
-      namespace IndexTypeMapper
-      {
+static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
+static const int AGGREGATOR_HASH = HashingUtils::HashString("AGGREGATOR");
 
-        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
-        static const int AGGREGATOR_HASH = HashingUtils::HashString("AGGREGATOR");
+IndexType GetIndexTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == LOCAL_HASH) {
+    return IndexType::LOCAL;
+  } else if (hashCode == AGGREGATOR_HASH) {
+    return IndexType::AGGREGATOR;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IndexType>(hashCode);
+  }
 
+  return IndexType::NOT_SET;
+}
 
-        IndexType GetIndexTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LOCAL_HASH)
-          {
-            return IndexType::LOCAL;
-          }
-          else if (hashCode == AGGREGATOR_HASH)
-          {
-            return IndexType::AGGREGATOR;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<IndexType>(hashCode);
-          }
+Aws::String GetNameForIndexType(IndexType enumValue) {
+  switch (enumValue) {
+    case IndexType::NOT_SET:
+      return {};
+    case IndexType::LOCAL:
+      return "LOCAL";
+    case IndexType::AGGREGATOR:
+      return "AGGREGATOR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return IndexType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForIndexType(IndexType enumValue)
-        {
-          switch(enumValue)
-          {
-          case IndexType::NOT_SET:
-            return {};
-          case IndexType::LOCAL:
-            return "LOCAL";
-          case IndexType::AGGREGATOR:
-            return "AGGREGATOR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace IndexTypeMapper
-    } // namespace Model
-  } // namespace ResourceExplorer2
-} // namespace Aws
+}  // namespace IndexTypeMapper
+}  // namespace Model
+}  // namespace ResourceExplorer2
+}  // namespace Aws

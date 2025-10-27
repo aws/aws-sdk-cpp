@@ -5,12 +5,8 @@
 
 #include <aws/chime/ChimeEndpointProvider.h>
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Chime
-} // namespace Aws
+namespace Aws {
+namespace Chime {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Chime
+}  // namespace Aws

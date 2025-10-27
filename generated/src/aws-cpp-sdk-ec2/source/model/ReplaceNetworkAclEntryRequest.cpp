@@ -3,64 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReplaceNetworkAclEntryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReplaceNetworkAclEntryRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
-{
+Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReplaceNetworkAclEntry&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_networkAclIdHasBeenSet)
-  {
+  if (m_networkAclIdHasBeenSet) {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
 
-  if(m_ruleNumberHasBeenSet)
-  {
+  if (m_ruleNumberHasBeenSet) {
     ss << "RuleNumber=" << m_ruleNumber << "&";
   }
 
-  if(m_protocolHasBeenSet)
-  {
+  if (m_protocolHasBeenSet) {
     ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
 
-  if(m_ruleActionHasBeenSet)
-  {
+  if (m_ruleActionHasBeenSet) {
     ss << "RuleAction=" << StringUtils::URLEncode(RuleActionMapper::GetNameForRuleAction(m_ruleAction)) << "&";
   }
 
-  if(m_egressHasBeenSet)
-  {
+  if (m_egressHasBeenSet) {
     ss << "Egress=" << std::boolalpha << m_egress << "&";
   }
 
-  if(m_cidrBlockHasBeenSet)
-  {
+  if (m_cidrBlockHasBeenSet) {
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
-  if(m_ipv6CidrBlockHasBeenSet)
-  {
+  if (m_ipv6CidrBlockHasBeenSet) {
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
   }
 
-  if(m_icmpTypeCodeHasBeenSet)
-  {
+  if (m_icmpTypeCodeHasBeenSet) {
     m_icmpTypeCode.OutputToStream(ss, "Icmp");
   }
 
-  if(m_portRangeHasBeenSet)
-  {
+  if (m_portRangeHasBeenSet) {
     m_portRange.OutputToStream(ss, "PortRange");
   }
 
@@ -68,8 +57,4 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReplaceNetworkAclEntryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReplaceNetworkAclEntryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

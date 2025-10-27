@@ -5,12 +5,8 @@
 
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointProvider.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

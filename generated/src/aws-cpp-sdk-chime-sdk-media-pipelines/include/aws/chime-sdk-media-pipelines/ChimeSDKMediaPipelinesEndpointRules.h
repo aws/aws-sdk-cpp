@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-class ChimeSDKMediaPipelinesEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+class ChimeSDKMediaPipelinesEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

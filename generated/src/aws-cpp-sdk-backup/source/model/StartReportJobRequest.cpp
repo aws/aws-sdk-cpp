@@ -12,19 +12,12 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartReportJobRequest::SerializePayload() const
-{
+Aws::String StartReportJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

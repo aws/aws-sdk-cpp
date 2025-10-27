@@ -3,73 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeUsageLimitsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeUsageLimitsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeUsageLimitsRequest::SerializePayload() const
-{
+Aws::String DescribeUsageLimitsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeUsageLimits&";
-  if(m_usageLimitIdHasBeenSet)
-  {
+  if (m_usageLimitIdHasBeenSet) {
     ss << "UsageLimitId=" << StringUtils::URLEncode(m_usageLimitId.c_str()) << "&";
   }
 
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_featureTypeHasBeenSet)
-  {
+  if (m_featureTypeHasBeenSet) {
     ss << "FeatureType=" << StringUtils::URLEncode(UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType)) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-    if (m_tagKeys.empty())
-    {
+  if (m_tagKeysHasBeenSet) {
+    if (m_tagKeys.empty()) {
       ss << "TagKeys=&";
-    }
-    else
-    {
+    } else {
       unsigned tagKeysCount = 1;
-      for(auto& item : m_tagKeys)
-      {
-        ss << "TagKeys.TagKey." << tagKeysCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagKeys) {
+        ss << "TagKeys.TagKey." << tagKeysCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
     }
   }
 
-  if(m_tagValuesHasBeenSet)
-  {
-    if (m_tagValues.empty())
-    {
+  if (m_tagValuesHasBeenSet) {
+    if (m_tagValues.empty()) {
       ss << "TagValues=&";
-    }
-    else
-    {
+    } else {
       unsigned tagValuesCount = 1;
-      for(auto& item : m_tagValues)
-      {
-        ss << "TagValues.TagValue." << tagValuesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagValues) {
+        ss << "TagValues.TagValue." << tagValuesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagValuesCount++;
       }
     }
@@ -79,8 +61,4 @@ Aws::String DescribeUsageLimitsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeUsageLimitsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeUsageLimitsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

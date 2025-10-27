@@ -3,79 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/TrafficPattern.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/TrafficPattern.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-TrafficPattern::TrafficPattern(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrafficPattern::TrafficPattern(JsonView jsonValue) { *this = jsonValue; }
 
-TrafficPattern& TrafficPattern::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TrafficType"))
-  {
+TrafficPattern& TrafficPattern::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TrafficType")) {
     m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(jsonValue.GetString("TrafficType"));
     m_trafficTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Phases"))
-  {
+  if (jsonValue.ValueExists("Phases")) {
     Aws::Utils::Array<JsonView> phasesJsonList = jsonValue.GetArray("Phases");
-    for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
-    {
+    for (unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex) {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());
     }
     m_phasesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Stairs"))
-  {
+  if (jsonValue.ValueExists("Stairs")) {
     m_stairs = jsonValue.GetObject("Stairs");
     m_stairsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrafficPattern::Jsonize() const
-{
+JsonValue TrafficPattern::Jsonize() const {
   JsonValue payload;
 
-  if(m_trafficTypeHasBeenSet)
-  {
-   payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
+  if (m_trafficTypeHasBeenSet) {
+    payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
   }
 
-  if(m_phasesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> phasesJsonList(m_phases.size());
-   for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
-   {
-     phasesJsonList[phasesIndex].AsObject(m_phases[phasesIndex].Jsonize());
-   }
-   payload.WithArray("Phases", std::move(phasesJsonList));
-
+  if (m_phasesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> phasesJsonList(m_phases.size());
+    for (unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex) {
+      phasesJsonList[phasesIndex].AsObject(m_phases[phasesIndex].Jsonize());
+    }
+    payload.WithArray("Phases", std::move(phasesJsonList));
   }
 
-  if(m_stairsHasBeenSet)
-  {
-   payload.WithObject("Stairs", m_stairs.Jsonize());
-
+  if (m_stairsHasBeenSet) {
+    payload.WithObject("Stairs", m_stairs.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

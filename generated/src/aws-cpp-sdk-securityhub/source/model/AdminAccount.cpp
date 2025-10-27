@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AdminAccount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AdminAccount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AdminAccount::AdminAccount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdminAccount::AdminAccount(JsonView jsonValue) { *this = jsonValue; }
 
-AdminAccount& AdminAccount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountId"))
-  {
+AdminAccount& AdminAccount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = AdminStatusMapper::GetAdminStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdminAccount::Jsonize() const
-{
+JsonValue AdminAccount::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", AdminStatusMapper::GetNameForAdminStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", AdminStatusMapper::GetNameForAdminStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

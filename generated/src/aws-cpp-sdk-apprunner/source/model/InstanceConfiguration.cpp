@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceConfiguration::InstanceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Cpu"))
-  {
+InstanceConfiguration& InstanceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Cpu")) {
     m_cpu = jsonValue.GetString("Cpu");
     m_cpuHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Memory"))
-  {
+  if (jsonValue.ValueExists("Memory")) {
     m_memory = jsonValue.GetString("Memory");
     m_memoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceRoleArn"))
-  {
+  if (jsonValue.ValueExists("InstanceRoleArn")) {
     m_instanceRoleArn = jsonValue.GetString("InstanceRoleArn");
     m_instanceRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceConfiguration::Jsonize() const
-{
+JsonValue InstanceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_cpuHasBeenSet)
-  {
-   payload.WithString("Cpu", m_cpu);
-
+  if (m_cpuHasBeenSet) {
+    payload.WithString("Cpu", m_cpu);
   }
 
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithString("Memory", m_memory);
-
+  if (m_memoryHasBeenSet) {
+    payload.WithString("Memory", m_memory);
   }
 
-  if(m_instanceRoleArnHasBeenSet)
-  {
-   payload.WithString("InstanceRoleArn", m_instanceRoleArn);
-
+  if (m_instanceRoleArnHasBeenSet) {
+    payload.WithString("InstanceRoleArn", m_instanceRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

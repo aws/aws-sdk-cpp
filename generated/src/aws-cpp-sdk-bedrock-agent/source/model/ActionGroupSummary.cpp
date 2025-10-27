@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-ActionGroupSummary::ActionGroupSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionGroupSummary::ActionGroupSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ActionGroupSummary& ActionGroupSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actionGroupId"))
-  {
+ActionGroupSummary& ActionGroupSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionGroupId")) {
     m_actionGroupId = jsonValue.GetString("actionGroupId");
     m_actionGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actionGroupName"))
-  {
+  if (jsonValue.ValueExists("actionGroupName")) {
     m_actionGroupName = jsonValue.GetString("actionGroupName");
     m_actionGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actionGroupState"))
-  {
+  if (jsonValue.ValueExists("actionGroupState")) {
     m_actionGroupState = ActionGroupStateMapper::GetActionGroupStateForName(jsonValue.GetString("actionGroupState"));
     m_actionGroupStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionGroupSummary::Jsonize() const
-{
+JsonValue ActionGroupSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionGroupIdHasBeenSet)
-  {
-   payload.WithString("actionGroupId", m_actionGroupId);
-
+  if (m_actionGroupIdHasBeenSet) {
+    payload.WithString("actionGroupId", m_actionGroupId);
   }
 
-  if(m_actionGroupNameHasBeenSet)
-  {
-   payload.WithString("actionGroupName", m_actionGroupName);
-
+  if (m_actionGroupNameHasBeenSet) {
+    payload.WithString("actionGroupName", m_actionGroupName);
   }
 
-  if(m_actionGroupStateHasBeenSet)
-  {
-   payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
+  if (m_actionGroupStateHasBeenSet) {
+    payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

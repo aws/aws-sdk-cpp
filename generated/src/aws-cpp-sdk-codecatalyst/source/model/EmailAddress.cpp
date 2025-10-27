@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-EmailAddress::EmailAddress(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailAddress::EmailAddress(JsonView jsonValue) { *this = jsonValue; }
 
-EmailAddress& EmailAddress::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("email"))
-  {
+EmailAddress& EmailAddress::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("email")) {
     m_email = jsonValue.GetString("email");
     m_emailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verified"))
-  {
+  if (jsonValue.ValueExists("verified")) {
     m_verified = jsonValue.GetBool("verified");
     m_verifiedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmailAddress::Jsonize() const
-{
+JsonValue EmailAddress::Jsonize() const {
   JsonValue payload;
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("email", m_email);
   }
 
-  if(m_verifiedHasBeenSet)
-  {
-   payload.WithBool("verified", m_verified);
-
+  if (m_verifiedHasBeenSet) {
+    payload.WithBool("verified", m_verified);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteSAMLProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteSAMLProviderRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteSAMLProviderRequest::SerializePayload() const
-{
+Aws::String DeleteSAMLProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteSAMLProvider&";
-  if(m_sAMLProviderArnHasBeenSet)
-  {
+  if (m_sAMLProviderArnHasBeenSet) {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

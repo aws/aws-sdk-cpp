@@ -4,82 +4,95 @@
  */
 
 #pragma once
-#include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
-#include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rolesanywhere/RolesAnywhereRequest.h>
+#include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace RolesAnywhere
-{
-namespace Model
-{
+namespace Aws {
+namespace RolesAnywhere {
+namespace Model {
 
+/**
+ */
+class UpdateCrlRequest : public RolesAnywhereRequest {
+ public:
+  AWS_ROLESANYWHERE_API UpdateCrlRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateCrl"; }
+
+  AWS_ROLESANYWHERE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The x509 v3 specified certificate revocation list (CRL).</p>
    */
-  class UpdateCrlRequest : public RolesAnywhereRequest
-  {
-  public:
-    AWS_ROLESANYWHERE_API UpdateCrlRequest() = default;
+  inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
+  inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
+  template <typename CrlDataT = Aws::Utils::ByteBuffer>
+  void SetCrlData(CrlDataT&& value) {
+    m_crlDataHasBeenSet = true;
+    m_crlData = std::forward<CrlDataT>(value);
+  }
+  template <typename CrlDataT = Aws::Utils::ByteBuffer>
+  UpdateCrlRequest& WithCrlData(CrlDataT&& value) {
+    SetCrlData(std::forward<CrlDataT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateCrl"; }
+  ///@{
+  /**
+   * <p>The unique identifier of the certificate revocation list (CRL).</p>
+   */
+  inline const Aws::String& GetCrlId() const { return m_crlId; }
+  inline bool CrlIdHasBeenSet() const { return m_crlIdHasBeenSet; }
+  template <typename CrlIdT = Aws::String>
+  void SetCrlId(CrlIdT&& value) {
+    m_crlIdHasBeenSet = true;
+    m_crlId = std::forward<CrlIdT>(value);
+  }
+  template <typename CrlIdT = Aws::String>
+  UpdateCrlRequest& WithCrlId(CrlIdT&& value) {
+    SetCrlId(std::forward<CrlIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_ROLESANYWHERE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The name of the Crl.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateCrlRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::ByteBuffer m_crlData{};
+  bool m_crlDataHasBeenSet = false;
 
+  Aws::String m_crlId;
+  bool m_crlIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The x509 v3 specified certificate revocation list (CRL).</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
-    inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
-    template<typename CrlDataT = Aws::Utils::ByteBuffer>
-    void SetCrlData(CrlDataT&& value) { m_crlDataHasBeenSet = true; m_crlData = std::forward<CrlDataT>(value); }
-    template<typename CrlDataT = Aws::Utils::ByteBuffer>
-    UpdateCrlRequest& WithCrlData(CrlDataT&& value) { SetCrlData(std::forward<CrlDataT>(value)); return *this;}
-    ///@}
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The unique identifier of the certificate revocation list (CRL).</p>
-     */
-    inline const Aws::String& GetCrlId() const { return m_crlId; }
-    inline bool CrlIdHasBeenSet() const { return m_crlIdHasBeenSet; }
-    template<typename CrlIdT = Aws::String>
-    void SetCrlId(CrlIdT&& value) { m_crlIdHasBeenSet = true; m_crlId = std::forward<CrlIdT>(value); }
-    template<typename CrlIdT = Aws::String>
-    UpdateCrlRequest& WithCrlId(CrlIdT&& value) { SetCrlId(std::forward<CrlIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the Crl.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateCrlRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::Utils::ByteBuffer m_crlData{};
-    bool m_crlDataHasBeenSet = false;
-
-    Aws::String m_crlId;
-    bool m_crlIdHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RolesAnywhere
-} // namespace Aws
+}  // namespace Model
+}  // namespace RolesAnywhere
+}  // namespace Aws

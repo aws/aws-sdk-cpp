@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ContextSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ContextSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ContextSummary::ContextSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContextSummary::ContextSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ContextSummary& ContextSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContextArn"))
-  {
+ContextSummary& ContextSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContextArn")) {
     m_contextArn = jsonValue.GetString("ContextArn");
     m_contextArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContextName"))
-  {
+  if (jsonValue.ValueExists("ContextName")) {
     m_contextName = jsonValue.GetString("ContextName");
     m_contextNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Source"))
-  {
+  if (jsonValue.ValueExists("Source")) {
     m_source = jsonValue.GetObject("Source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContextType"))
-  {
+  if (jsonValue.ValueExists("ContextType")) {
     m_contextType = jsonValue.GetString("ContextType");
     m_contextTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContextSummary::Jsonize() const
-{
+JsonValue ContextSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_contextArnHasBeenSet)
-  {
-   payload.WithString("ContextArn", m_contextArn);
-
+  if (m_contextArnHasBeenSet) {
+    payload.WithString("ContextArn", m_contextArn);
   }
 
-  if(m_contextNameHasBeenSet)
-  {
-   payload.WithString("ContextName", m_contextName);
-
+  if (m_contextNameHasBeenSet) {
+    payload.WithString("ContextName", m_contextName);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("Source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
   }
 
-  if(m_contextTypeHasBeenSet)
-  {
-   payload.WithString("ContextType", m_contextType);
-
+  if (m_contextTypeHasBeenSet) {
+    payload.WithString("ContextType", m_contextType);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

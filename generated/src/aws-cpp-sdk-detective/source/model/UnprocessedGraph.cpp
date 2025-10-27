@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/UnprocessedGraph.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/UnprocessedGraph.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
+namespace Aws {
+namespace Detective {
+namespace Model {
 
-UnprocessedGraph::UnprocessedGraph(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedGraph::UnprocessedGraph(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedGraph& UnprocessedGraph::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GraphArn"))
-  {
+UnprocessedGraph& UnprocessedGraph::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GraphArn")) {
     m_graphArn = jsonValue.GetString("GraphArn");
     m_graphArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetString("Reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedGraph::Jsonize() const
-{
+JsonValue UnprocessedGraph::Jsonize() const {
   JsonValue payload;
 
-  if(m_graphArnHasBeenSet)
-  {
-   payload.WithString("GraphArn", m_graphArn);
-
+  if (m_graphArnHasBeenSet) {
+    payload.WithString("GraphArn", m_graphArn);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

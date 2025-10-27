@@ -3,29 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteQueuedReservedInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteQueuedReservedInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteQueuedReservedInstancesRequest::SerializePayload() const
-{
+Aws::String DeleteQueuedReservedInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteQueuedReservedInstances&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_reservedInstancesIdsHasBeenSet)
-  {
+  if (m_reservedInstancesIdsHasBeenSet) {
     unsigned reservedInstancesIdsCount = 1;
-    for(auto& item : m_reservedInstancesIds)
-    {
-      ss << "ReservedInstancesId." << reservedInstancesIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_reservedInstancesIds) {
+      ss << "ReservedInstancesId." << reservedInstancesIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       reservedInstancesIdsCount++;
     }
   }
@@ -34,8 +29,4 @@ Aws::String DeleteQueuedReservedInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteQueuedReservedInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteQueuedReservedInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

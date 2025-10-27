@@ -7,27 +7,16 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
-  enum class ControlOperationType
-  {
-    NOT_SET,
-    ENABLE_CONTROL,
-    DISABLE_CONTROL,
-    UPDATE_ENABLED_CONTROL,
-    RESET_ENABLED_CONTROL
-  };
+namespace Aws {
+namespace ControlTower {
+namespace Model {
+enum class ControlOperationType { NOT_SET, ENABLE_CONTROL, DISABLE_CONTROL, UPDATE_ENABLED_CONTROL, RESET_ENABLED_CONTROL };
 
-namespace ControlOperationTypeMapper
-{
+namespace ControlOperationTypeMapper {
 AWS_CONTROLTOWER_API ControlOperationType GetControlOperationTypeForName(const Aws::String& name);
 
 AWS_CONTROLTOWER_API Aws::String GetNameForControlOperationType(ControlOperationType value);
-} // namespace ControlOperationTypeMapper
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace ControlOperationTypeMapper
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

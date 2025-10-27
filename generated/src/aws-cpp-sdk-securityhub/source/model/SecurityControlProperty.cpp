@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/SecurityControlProperty.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/securityhub/model/SecurityControlProperty.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+namespace SecurityControlPropertyMapper {
 
-namespace Aws
-{
-  namespace SecurityHub
-  {
-    namespace Model
-    {
-      namespace SecurityControlPropertyMapper
-      {
+static const int Parameters_HASH = HashingUtils::HashString("Parameters");
 
-        static const int Parameters_HASH = HashingUtils::HashString("Parameters");
+SecurityControlProperty GetSecurityControlPropertyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Parameters_HASH) {
+    return SecurityControlProperty::Parameters;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SecurityControlProperty>(hashCode);
+  }
 
+  return SecurityControlProperty::NOT_SET;
+}
 
-        SecurityControlProperty GetSecurityControlPropertyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Parameters_HASH)
-          {
-            return SecurityControlProperty::Parameters;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SecurityControlProperty>(hashCode);
-          }
+Aws::String GetNameForSecurityControlProperty(SecurityControlProperty enumValue) {
+  switch (enumValue) {
+    case SecurityControlProperty::NOT_SET:
+      return {};
+    case SecurityControlProperty::Parameters:
+      return "Parameters";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SecurityControlProperty::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSecurityControlProperty(SecurityControlProperty enumValue)
-        {
-          switch(enumValue)
-          {
-          case SecurityControlProperty::NOT_SET:
-            return {};
-          case SecurityControlProperty::Parameters:
-            return "Parameters";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SecurityControlPropertyMapper
-    } // namespace Model
-  } // namespace SecurityHub
-} // namespace Aws
+}  // namespace SecurityControlPropertyMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

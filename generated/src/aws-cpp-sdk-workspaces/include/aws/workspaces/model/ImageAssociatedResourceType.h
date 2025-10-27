@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class ImageAssociatedResourceType
-  {
-    NOT_SET,
-    APPLICATION
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class ImageAssociatedResourceType { NOT_SET, APPLICATION };
 
-namespace ImageAssociatedResourceTypeMapper
-{
+namespace ImageAssociatedResourceTypeMapper {
 AWS_WORKSPACES_API ImageAssociatedResourceType GetImageAssociatedResourceTypeForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForImageAssociatedResourceType(ImageAssociatedResourceType value);
-} // namespace ImageAssociatedResourceTypeMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace ImageAssociatedResourceTypeMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

@@ -12,47 +12,32 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EnableControlRequest::SerializePayload() const
-{
+Aws::String EnableControlRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_controlIdentifierHasBeenSet)
-  {
-   payload.WithString("controlIdentifier", m_controlIdentifier);
-
+  if (m_controlIdentifierHasBeenSet) {
+    payload.WithString("controlIdentifier", m_controlIdentifier);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-   {
-     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-   }
-   payload.WithArray("parameters", std::move(parametersJsonList));
-
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_targetIdentifierHasBeenSet)
-  {
-   payload.WithString("targetIdentifier", m_targetIdentifier);
-
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

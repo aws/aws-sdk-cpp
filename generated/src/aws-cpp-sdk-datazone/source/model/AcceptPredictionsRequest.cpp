@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/AcceptPredictionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datazone/model/AcceptPredictionsRequest.h>
 
 #include <utility>
 
@@ -15,47 +15,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String AcceptPredictionsRequest::SerializePayload() const
-{
+Aws::String AcceptPredictionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_acceptChoicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> acceptChoicesJsonList(m_acceptChoices.size());
-   for(unsigned acceptChoicesIndex = 0; acceptChoicesIndex < acceptChoicesJsonList.GetLength(); ++acceptChoicesIndex)
-   {
-     acceptChoicesJsonList[acceptChoicesIndex].AsObject(m_acceptChoices[acceptChoicesIndex].Jsonize());
-   }
-   payload.WithArray("acceptChoices", std::move(acceptChoicesJsonList));
-
+  if (m_acceptChoicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceptChoicesJsonList(m_acceptChoices.size());
+    for (unsigned acceptChoicesIndex = 0; acceptChoicesIndex < acceptChoicesJsonList.GetLength(); ++acceptChoicesIndex) {
+      acceptChoicesJsonList[acceptChoicesIndex].AsObject(m_acceptChoices[acceptChoicesIndex].Jsonize());
+    }
+    payload.WithArray("acceptChoices", std::move(acceptChoicesJsonList));
   }
 
-  if(m_acceptRuleHasBeenSet)
-  {
-   payload.WithObject("acceptRule", m_acceptRule.Jsonize());
-
+  if (m_acceptRuleHasBeenSet) {
+    payload.WithObject("acceptRule", m_acceptRule.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-void AcceptPredictionsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_revisionHasBeenSet)
-    {
-      ss << m_revision;
-      uri.AddQueryStringParameter("revision", ss.str());
-      ss.str("");
-    }
-
+void AcceptPredictionsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_revisionHasBeenSet) {
+    ss << m_revision;
+    uri.AddQueryStringParameter("revision", ss.str());
+    ss.str("");
+  }
 }
-
-
-

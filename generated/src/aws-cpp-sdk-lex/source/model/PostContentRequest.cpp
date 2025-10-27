@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex/model/PostContentRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lex/model/PostContentRequest.h>
 
 #include <utility>
 
@@ -15,40 +15,32 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-
-
-Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_sessionAttributesHasBeenSet)
-  {
+  if (m_sessionAttributesHasBeenSet) {
     ss << m_sessionAttributes;
-    headers.emplace("x-amz-lex-session-attributes",  ss.str());
+    headers.emplace("x-amz-lex-session-attributes", ss.str());
     ss.str("");
   }
 
-  if(m_requestAttributesHasBeenSet)
-  {
+  if (m_requestAttributesHasBeenSet) {
     ss << m_requestAttributes;
-    headers.emplace("x-amz-lex-request-attributes",  ss.str());
+    headers.emplace("x-amz-lex-request-attributes", ss.str());
     ss.str("");
   }
 
-  if(m_acceptHasBeenSet)
-  {
+  if (m_acceptHasBeenSet) {
     ss << m_accept;
-    headers.emplace("accept",  ss.str());
+    headers.emplace("accept", ss.str());
     ss.str("");
   }
 
-  if(m_activeContextsHasBeenSet)
-  {
+  if (m_activeContextsHasBeenSet) {
     ss << m_activeContexts;
-    headers.emplace("x-amz-lex-active-contexts",  ss.str());
+    headers.emplace("x-amz-lex-active-contexts", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/dlm/DLMRequest.h>
 
-namespace Aws
-{
-namespace DLM
-{
-} // namespace DLM
-} // namespace Aws
+namespace Aws {
+namespace DLM {}  // namespace DLM
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-LexV2Bot::LexV2Bot(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LexV2Bot::LexV2Bot(JsonView jsonValue) { *this = jsonValue; }
 
-LexV2Bot& LexV2Bot::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AliasArn"))
-  {
+LexV2Bot& LexV2Bot::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AliasArn")) {
     m_aliasArn = jsonValue.GetString("AliasArn");
     m_aliasArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LexV2Bot::Jsonize() const
-{
+JsonValue LexV2Bot::Jsonize() const {
   JsonValue payload;
 
-  if(m_aliasArnHasBeenSet)
-  {
-   payload.WithString("AliasArn", m_aliasArn);
-
+  if (m_aliasArnHasBeenSet) {
+    payload.WithString("AliasArn", m_aliasArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

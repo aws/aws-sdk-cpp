@@ -4,69 +4,55 @@
  */
 
 #include <aws/comprehend/model/Split.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Comprehend {
+namespace Model {
+namespace SplitMapper {
 
-namespace Aws
-{
-  namespace Comprehend
-  {
-    namespace Model
-    {
-      namespace SplitMapper
-      {
+static const int TRAIN_HASH = HashingUtils::HashString("TRAIN");
+static const int TEST_HASH = HashingUtils::HashString("TEST");
 
-        static const int TRAIN_HASH = HashingUtils::HashString("TRAIN");
-        static const int TEST_HASH = HashingUtils::HashString("TEST");
+Split GetSplitForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TRAIN_HASH) {
+    return Split::TRAIN;
+  } else if (hashCode == TEST_HASH) {
+    return Split::TEST;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Split>(hashCode);
+  }
 
+  return Split::NOT_SET;
+}
 
-        Split GetSplitForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TRAIN_HASH)
-          {
-            return Split::TRAIN;
-          }
-          else if (hashCode == TEST_HASH)
-          {
-            return Split::TEST;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Split>(hashCode);
-          }
+Aws::String GetNameForSplit(Split enumValue) {
+  switch (enumValue) {
+    case Split::NOT_SET:
+      return {};
+    case Split::TRAIN:
+      return "TRAIN";
+    case Split::TEST:
+      return "TEST";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Split::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSplit(Split enumValue)
-        {
-          switch(enumValue)
-          {
-          case Split::NOT_SET:
-            return {};
-          case Split::TRAIN:
-            return "TRAIN";
-          case Split::TEST:
-            return "TEST";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SplitMapper
-    } // namespace Model
-  } // namespace Comprehend
-} // namespace Aws
+}  // namespace SplitMapper
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

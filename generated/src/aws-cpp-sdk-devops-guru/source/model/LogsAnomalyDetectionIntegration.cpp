@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/LogsAnomalyDetectionIntegration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devops-guru/model/LogsAnomalyDetectionIntegration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
 
-LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration(JsonView jsonValue) { *this = jsonValue; }
 
-LogsAnomalyDetectionIntegration& LogsAnomalyDetectionIntegration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OptInStatus"))
-  {
+LogsAnomalyDetectionIntegration& LogsAnomalyDetectionIntegration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OptInStatus")) {
     m_optInStatus = OptInStatusMapper::GetOptInStatusForName(jsonValue.GetString("OptInStatus"));
     m_optInStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LogsAnomalyDetectionIntegration::Jsonize() const
-{
+JsonValue LogsAnomalyDetectionIntegration::Jsonize() const {
   JsonValue payload;
 
-  if(m_optInStatusHasBeenSet)
-  {
-   payload.WithString("OptInStatus", OptInStatusMapper::GetNameForOptInStatus(m_optInStatus));
+  if (m_optInStatusHasBeenSet) {
+    payload.WithString("OptInStatus", OptInStatusMapper::GetNameForOptInStatus(m_optInStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

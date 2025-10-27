@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class UserIdentityType
-  {
-    NOT_SET,
-    AssumedRole,
-    IAMUser,
-    FederatedUser,
-    Root,
-    AWSAccount,
-    AWSService
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class UserIdentityType { NOT_SET, AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService };
 
-namespace UserIdentityTypeMapper
-{
+namespace UserIdentityTypeMapper {
 AWS_MACIE2_API UserIdentityType GetUserIdentityTypeForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForUserIdentityType(UserIdentityType value);
-} // namespace UserIdentityTypeMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace UserIdentityTypeMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

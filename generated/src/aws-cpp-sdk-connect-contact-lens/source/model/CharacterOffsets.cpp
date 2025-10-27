@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectContactLens
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectContactLens {
+namespace Model {
 
-CharacterOffsets::CharacterOffsets(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CharacterOffsets::CharacterOffsets(JsonView jsonValue) { *this = jsonValue; }
 
-CharacterOffsets& CharacterOffsets::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BeginOffsetChar"))
-  {
+CharacterOffsets& CharacterOffsets::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BeginOffsetChar")) {
     m_beginOffsetChar = jsonValue.GetInteger("BeginOffsetChar");
     m_beginOffsetCharHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffsetChar"))
-  {
+  if (jsonValue.ValueExists("EndOffsetChar")) {
     m_endOffsetChar = jsonValue.GetInteger("EndOffsetChar");
     m_endOffsetCharHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CharacterOffsets::Jsonize() const
-{
+JsonValue CharacterOffsets::Jsonize() const {
   JsonValue payload;
 
-  if(m_beginOffsetCharHasBeenSet)
-  {
-   payload.WithInteger("BeginOffsetChar", m_beginOffsetChar);
-
+  if (m_beginOffsetCharHasBeenSet) {
+    payload.WithInteger("BeginOffsetChar", m_beginOffsetChar);
   }
 
-  if(m_endOffsetCharHasBeenSet)
-  {
-   payload.WithInteger("EndOffsetChar", m_endOffsetChar);
-
+  if (m_endOffsetCharHasBeenSet) {
+    payload.WithInteger("EndOffsetChar", m_endOffsetChar);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectContactLens
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectContactLens
+}  // namespace Aws

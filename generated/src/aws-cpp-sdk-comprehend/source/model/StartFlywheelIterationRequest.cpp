@@ -12,33 +12,22 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartFlywheelIterationRequest::SerializePayload() const
-{
+Aws::String StartFlywheelIterationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flywheelArnHasBeenSet)
-  {
-   payload.WithString("FlywheelArn", m_flywheelArn);
-
+  if (m_flywheelArnHasBeenSet) {
+    payload.WithString("FlywheelArn", m_flywheelArn);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartFlywheelIterationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartFlywheelIterationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.StartFlywheelIteration"));
   return headers;
-
 }
-
-
-
-

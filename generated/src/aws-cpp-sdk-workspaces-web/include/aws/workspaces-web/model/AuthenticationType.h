@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
-  enum class AuthenticationType
-  {
-    NOT_SET,
-    Standard,
-    IAM_Identity_Center
-  };
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+enum class AuthenticationType { NOT_SET, Standard, IAM_Identity_Center };
 
-namespace AuthenticationTypeMapper
-{
+namespace AuthenticationTypeMapper {
 AWS_WORKSPACESWEB_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);
 
 AWS_WORKSPACESWEB_API Aws::String GetNameForAuthenticationType(AuthenticationType value);
-} // namespace AuthenticationTypeMapper
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace AuthenticationTypeMapper
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

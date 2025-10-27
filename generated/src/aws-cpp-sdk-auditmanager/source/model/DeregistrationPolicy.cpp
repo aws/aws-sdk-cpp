@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-DeregistrationPolicy::DeregistrationPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeregistrationPolicy::DeregistrationPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-DeregistrationPolicy& DeregistrationPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deleteResources"))
-  {
+DeregistrationPolicy& DeregistrationPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deleteResources")) {
     m_deleteResources = DeleteResourcesMapper::GetDeleteResourcesForName(jsonValue.GetString("deleteResources"));
     m_deleteResourcesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeregistrationPolicy::Jsonize() const
-{
+JsonValue DeregistrationPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_deleteResourcesHasBeenSet)
-  {
-   payload.WithString("deleteResources", DeleteResourcesMapper::GetNameForDeleteResources(m_deleteResources));
+  if (m_deleteResourcesHasBeenSet) {
+    payload.WithString("deleteResources", DeleteResourcesMapper::GetNameForDeleteResources(m_deleteResources));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

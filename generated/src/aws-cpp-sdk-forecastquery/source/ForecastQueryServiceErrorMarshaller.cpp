@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ForecastQueryService;
 
-AWSError<CoreErrors> ForecastQueryServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ForecastQueryServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ForecastQueryServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

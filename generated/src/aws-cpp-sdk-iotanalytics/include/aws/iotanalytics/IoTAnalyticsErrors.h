@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-enum class IoTAnalyticsErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTAnalytics {
+enum class IoTAnalyticsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTAnalyticsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class IoTAnalyticsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_IOTANALYTICS_API IoTAnalyticsError : public Aws::Client::AWSError<IoTAnalyticsErrors>
-{
-public:
+class AWS_IOTANALYTICS_API IoTAnalyticsError : public Aws::Client::AWSError<IoTAnalyticsErrors> {
+ public:
   IoTAnalyticsError() {}
   IoTAnalyticsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
   IoTAnalyticsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTAnalyticsErrorMapper
-{
-  AWS_IOTANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTAnalyticsErrorMapper {
+AWS_IOTANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace IoTAnalytics
+}  // namespace Aws

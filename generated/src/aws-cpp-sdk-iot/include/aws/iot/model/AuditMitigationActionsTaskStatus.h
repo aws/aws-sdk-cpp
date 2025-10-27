@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class AuditMitigationActionsTaskStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETED,
-    FAILED,
-    CANCELED
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class AuditMitigationActionsTaskStatus { NOT_SET, IN_PROGRESS, COMPLETED, FAILED, CANCELED };
 
-namespace AuditMitigationActionsTaskStatusMapper
-{
+namespace AuditMitigationActionsTaskStatusMapper {
 AWS_IOT_API AuditMitigationActionsTaskStatus GetAuditMitigationActionsTaskStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForAuditMitigationActionsTaskStatus(AuditMitigationActionsTaskStatus value);
-} // namespace AuditMitigationActionsTaskStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace AuditMitigationActionsTaskStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

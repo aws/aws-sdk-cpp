@@ -12,11 +12,4 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteVoiceProfileDomainRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteVoiceProfileDomainRequest::SerializePayload() const { return {}; }

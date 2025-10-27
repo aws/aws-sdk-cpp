@@ -12,51 +12,34 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSubscriberRequest::SerializePayload() const
-{
+Aws::String UpdateSubscriberRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_budgetNameHasBeenSet)
-  {
-   payload.WithString("BudgetName", m_budgetName);
-
+  if (m_budgetNameHasBeenSet) {
+    payload.WithString("BudgetName", m_budgetName);
   }
 
-  if(m_notificationHasBeenSet)
-  {
-   payload.WithObject("Notification", m_notification.Jsonize());
-
+  if (m_notificationHasBeenSet) {
+    payload.WithObject("Notification", m_notification.Jsonize());
   }
 
-  if(m_oldSubscriberHasBeenSet)
-  {
-   payload.WithObject("OldSubscriber", m_oldSubscriber.Jsonize());
-
+  if (m_oldSubscriberHasBeenSet) {
+    payload.WithObject("OldSubscriber", m_oldSubscriber.Jsonize());
   }
 
-  if(m_newSubscriberHasBeenSet)
-  {
-   payload.WithObject("NewSubscriber", m_newSubscriber.Jsonize());
-
+  if (m_newSubscriberHasBeenSet) {
+    payload.WithObject("NewSubscriber", m_newSubscriber.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateSubscriberRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateSubscriberRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBudgetServiceGateway.UpdateSubscriber"));
   return headers;
-
 }
-
-
-
-

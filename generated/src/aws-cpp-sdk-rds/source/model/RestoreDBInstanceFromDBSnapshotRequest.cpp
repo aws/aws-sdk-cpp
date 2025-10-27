@@ -3,297 +3,230 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
-{
+Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RestoreDBInstanceFromDBSnapshot&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_dBSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBSnapshotIdentifierHasBeenSet) {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_dBInstanceClassHasBeenSet)
-  {
+  if (m_dBInstanceClassHasBeenSet) {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
 
-  if(m_portHasBeenSet)
-  {
+  if (m_portHasBeenSet) {
     ss << "Port=" << m_port << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
+  if (m_availabilityZoneHasBeenSet) {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_dBSubnetGroupNameHasBeenSet)
-  {
+  if (m_dBSubnetGroupNameHasBeenSet) {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
-  if(m_multiAZHasBeenSet)
-  {
+  if (m_multiAZHasBeenSet) {
     ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
-  if(m_publiclyAccessibleHasBeenSet)
-  {
+  if (m_publiclyAccessibleHasBeenSet) {
     ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
-  if(m_autoMinorVersionUpgradeHasBeenSet)
-  {
+  if (m_autoMinorVersionUpgradeHasBeenSet) {
     ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
-  if(m_licenseModelHasBeenSet)
-  {
+  if (m_licenseModelHasBeenSet) {
     ss << "LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
 
-  if(m_dBNameHasBeenSet)
-  {
+  if (m_dBNameHasBeenSet) {
     ss << "DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
 
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_iopsHasBeenSet)
-  {
+  if (m_iopsHasBeenSet) {
     ss << "Iops=" << m_iops << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
-  {
+  if (m_storageThroughputHasBeenSet) {
     ss << "StorageThroughput=" << m_storageThroughput << "&";
   }
 
-  if(m_optionGroupNameHasBeenSet)
-  {
+  if (m_optionGroupNameHasBeenSet) {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_storageTypeHasBeenSet)
-  {
+  if (m_storageTypeHasBeenSet) {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
-  if(m_tdeCredentialArnHasBeenSet)
-  {
+  if (m_tdeCredentialArnHasBeenSet) {
     ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
   }
 
-  if(m_tdeCredentialPasswordHasBeenSet)
-  {
+  if (m_tdeCredentialPasswordHasBeenSet) {
     ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
   }
 
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-    if (m_vpcSecurityGroupIds.empty())
-    {
+  if (m_vpcSecurityGroupIdsHasBeenSet) {
+    if (m_vpcSecurityGroupIds.empty()) {
       ss << "VpcSecurityGroupIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSecurityGroupIdsCount = 1;
-      for(auto& item : m_vpcSecurityGroupIds)
-      {
-        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSecurityGroupIds) {
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
     }
   }
 
-  if(m_domainHasBeenSet)
-  {
+  if (m_domainHasBeenSet) {
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
-  if(m_domainFqdnHasBeenSet)
-  {
+  if (m_domainFqdnHasBeenSet) {
     ss << "DomainFqdn=" << StringUtils::URLEncode(m_domainFqdn.c_str()) << "&";
   }
 
-  if(m_domainOuHasBeenSet)
-  {
+  if (m_domainOuHasBeenSet) {
     ss << "DomainOu=" << StringUtils::URLEncode(m_domainOu.c_str()) << "&";
   }
 
-  if(m_domainAuthSecretArnHasBeenSet)
-  {
+  if (m_domainAuthSecretArnHasBeenSet) {
     ss << "DomainAuthSecretArn=" << StringUtils::URLEncode(m_domainAuthSecretArn.c_str()) << "&";
   }
 
-  if(m_domainDnsIpsHasBeenSet)
-  {
-    if (m_domainDnsIps.empty())
-    {
+  if (m_domainDnsIpsHasBeenSet) {
+    if (m_domainDnsIps.empty()) {
       ss << "DomainDnsIps=&";
-    }
-    else
-    {
+    } else {
       unsigned domainDnsIpsCount = 1;
-      for(auto& item : m_domainDnsIps)
-      {
-        ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_domainDnsIps) {
+        ss << "DomainDnsIps.member." << domainDnsIpsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         domainDnsIpsCount++;
       }
     }
   }
 
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
+  if (m_copyTagsToSnapshotHasBeenSet) {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
-  if(m_domainIAMRoleNameHasBeenSet)
-  {
+  if (m_domainIAMRoleNameHasBeenSet) {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
-  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
-  {
+  if (m_enableIAMDatabaseAuthenticationHasBeenSet) {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
-  if(m_enableCloudwatchLogsExportsHasBeenSet)
-  {
-    if (m_enableCloudwatchLogsExports.empty())
-    {
+  if (m_enableCloudwatchLogsExportsHasBeenSet) {
+    if (m_enableCloudwatchLogsExports.empty()) {
       ss << "EnableCloudwatchLogsExports=&";
-    }
-    else
-    {
+    } else {
       unsigned enableCloudwatchLogsExportsCount = 1;
-      for(auto& item : m_enableCloudwatchLogsExports)
-      {
-        ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_enableCloudwatchLogsExports) {
+        ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "=" << StringUtils::URLEncode(item.c_str())
+           << "&";
         enableCloudwatchLogsExportsCount++;
       }
     }
   }
 
-  if(m_processorFeaturesHasBeenSet)
-  {
-    if (m_processorFeatures.empty())
-    {
+  if (m_processorFeaturesHasBeenSet) {
+    if (m_processorFeatures.empty()) {
       ss << "ProcessorFeatures=&";
-    }
-    else
-    {
+    } else {
       unsigned processorFeaturesCount = 1;
-      for(auto& item : m_processorFeatures)
-      {
+      for (auto& item : m_processorFeatures) {
         item.OutputToStream(ss, "ProcessorFeatures.ProcessorFeature.", processorFeaturesCount, "");
         processorFeaturesCount++;
       }
     }
   }
 
-  if(m_useDefaultProcessorFeaturesHasBeenSet)
-  {
+  if (m_useDefaultProcessorFeaturesHasBeenSet) {
     ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
   }
 
-  if(m_dBParameterGroupNameHasBeenSet)
-  {
+  if (m_dBParameterGroupNameHasBeenSet) {
     ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
 
-  if(m_deletionProtectionHasBeenSet)
-  {
+  if (m_deletionProtectionHasBeenSet) {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
-  if(m_enableCustomerOwnedIpHasBeenSet)
-  {
+  if (m_enableCustomerOwnedIpHasBeenSet) {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
+  if (m_networkTypeHasBeenSet) {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
-  if(m_backupTargetHasBeenSet)
-  {
+  if (m_backupTargetHasBeenSet) {
     ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
-  if(m_customIamInstanceProfileHasBeenSet)
-  {
+  if (m_customIamInstanceProfileHasBeenSet) {
     ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
-  if(m_allocatedStorageHasBeenSet)
-  {
+  if (m_allocatedStorageHasBeenSet) {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
-  if(m_dBClusterSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBClusterSnapshotIdentifierHasBeenSet) {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_dedicatedLogVolumeHasBeenSet)
-  {
+  if (m_dedicatedLogVolumeHasBeenSet) {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
-  if(m_cACertificateIdentifierHasBeenSet)
-  {
+  if (m_cACertificateIdentifierHasBeenSet) {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
-  if(m_engineLifecycleSupportHasBeenSet)
-  {
+  if (m_engineLifecycleSupportHasBeenSet) {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
-  if(m_manageMasterUserPasswordHasBeenSet)
-  {
+  if (m_manageMasterUserPasswordHasBeenSet) {
     ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
   }
 
-  if(m_masterUserSecretKmsKeyIdHasBeenSet)
-  {
+  if (m_masterUserSecretKmsKeyIdHasBeenSet) {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
@@ -301,8 +234,4 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RestoreDBInstanceFromDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RestoreDBInstanceFromDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

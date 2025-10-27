@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class InstanceMetadataState
-  {
-    NOT_SET,
-    pending,
-    applied
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class InstanceMetadataState { NOT_SET, pending, applied };
 
-namespace InstanceMetadataStateMapper
-{
+namespace InstanceMetadataStateMapper {
 AWS_LIGHTSAIL_API InstanceMetadataState GetInstanceMetadataStateForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForInstanceMetadataState(InstanceMetadataState value);
-} // namespace InstanceMetadataStateMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace InstanceMetadataStateMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

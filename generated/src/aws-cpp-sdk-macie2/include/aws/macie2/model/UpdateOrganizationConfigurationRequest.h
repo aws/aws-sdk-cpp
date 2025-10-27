@@ -4,48 +4,48 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/Macie2Request.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
+/**
+ */
+class UpdateOrganizationConfigurationRequest : public Macie2Request {
+ public:
+  AWS_MACIE2_API UpdateOrganizationConfigurationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateOrganizationConfiguration"; }
+
+  AWS_MACIE2_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>Specifies whether to enable Amazon Macie automatically for accounts that are
+   * added to the organization in Organizations.</p>
    */
-  class UpdateOrganizationConfigurationRequest : public Macie2Request
-  {
-  public:
-    AWS_MACIE2_API UpdateOrganizationConfigurationRequest() = default;
+  inline bool GetAutoEnable() const { return m_autoEnable; }
+  inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
+  inline void SetAutoEnable(bool value) {
+    m_autoEnableHasBeenSet = true;
+    m_autoEnable = value;
+  }
+  inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) {
+    SetAutoEnable(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_autoEnable{false};
+  bool m_autoEnableHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateOrganizationConfiguration"; }
-
-    AWS_MACIE2_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>Specifies whether to enable Amazon Macie automatically for accounts that are
-     * added to the organization in Organizations.</p>
-     */
-    inline bool GetAutoEnable() const { return m_autoEnable; }
-    inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-    inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-    inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
-    ///@}
-  private:
-
-    bool m_autoEnable{false};
-    bool m_autoEnableHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

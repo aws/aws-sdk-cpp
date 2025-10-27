@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/PositionSolverType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/iotwireless/model/PositionSolverType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+namespace PositionSolverTypeMapper {
 
-namespace Aws
-{
-  namespace IoTWireless
-  {
-    namespace Model
-    {
-      namespace PositionSolverTypeMapper
-      {
+static const int GNSS_HASH = HashingUtils::HashString("GNSS");
 
-        static const int GNSS_HASH = HashingUtils::HashString("GNSS");
+PositionSolverType GetPositionSolverTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == GNSS_HASH) {
+    return PositionSolverType::GNSS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PositionSolverType>(hashCode);
+  }
 
+  return PositionSolverType::NOT_SET;
+}
 
-        PositionSolverType GetPositionSolverTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GNSS_HASH)
-          {
-            return PositionSolverType::GNSS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PositionSolverType>(hashCode);
-          }
+Aws::String GetNameForPositionSolverType(PositionSolverType enumValue) {
+  switch (enumValue) {
+    case PositionSolverType::NOT_SET:
+      return {};
+    case PositionSolverType::GNSS:
+      return "GNSS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PositionSolverType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPositionSolverType(PositionSolverType enumValue)
-        {
-          switch(enumValue)
-          {
-          case PositionSolverType::NOT_SET:
-            return {};
-          case PositionSolverType::GNSS:
-            return "GNSS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PositionSolverTypeMapper
-    } // namespace Model
-  } // namespace IoTWireless
-} // namespace Aws
+}  // namespace PositionSolverTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

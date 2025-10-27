@@ -11,121 +11,95 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-PhoneNumberOrder::PhoneNumberOrder(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PhoneNumberOrder::PhoneNumberOrder(JsonView jsonValue) { *this = jsonValue; }
 
-PhoneNumberOrder& PhoneNumberOrder::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PhoneNumberOrderId"))
-  {
+PhoneNumberOrder& PhoneNumberOrder::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PhoneNumberOrderId")) {
     m_phoneNumberOrderId = jsonValue.GetString("PhoneNumberOrderId");
     m_phoneNumberOrderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductType"))
-  {
+  if (jsonValue.ValueExists("ProductType")) {
     m_productType = PhoneNumberProductTypeMapper::GetPhoneNumberProductTypeForName(jsonValue.GetString("ProductType"));
     m_productTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = PhoneNumberOrderStatusMapper::GetPhoneNumberOrderStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrderType"))
-  {
+  if (jsonValue.ValueExists("OrderType")) {
     m_orderType = PhoneNumberOrderTypeMapper::GetPhoneNumberOrderTypeForName(jsonValue.GetString("OrderType"));
     m_orderTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrderedPhoneNumbers"))
-  {
+  if (jsonValue.ValueExists("OrderedPhoneNumbers")) {
     Aws::Utils::Array<JsonView> orderedPhoneNumbersJsonList = jsonValue.GetArray("OrderedPhoneNumbers");
-    for(unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength(); ++orderedPhoneNumbersIndex)
-    {
+    for (unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength();
+         ++orderedPhoneNumbersIndex) {
       m_orderedPhoneNumbers.push_back(orderedPhoneNumbersJsonList[orderedPhoneNumbersIndex].AsObject());
     }
     m_orderedPhoneNumbersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FocDate"))
-  {
+  if (jsonValue.ValueExists("FocDate")) {
     m_focDate = jsonValue.GetString("FocDate");
     m_focDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PhoneNumberOrder::Jsonize() const
-{
+JsonValue PhoneNumberOrder::Jsonize() const {
   JsonValue payload;
 
-  if(m_phoneNumberOrderIdHasBeenSet)
-  {
-   payload.WithString("PhoneNumberOrderId", m_phoneNumberOrderId);
-
+  if (m_phoneNumberOrderIdHasBeenSet) {
+    payload.WithString("PhoneNumberOrderId", m_phoneNumberOrderId);
   }
 
-  if(m_productTypeHasBeenSet)
-  {
-   payload.WithString("ProductType", PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType));
+  if (m_productTypeHasBeenSet) {
+    payload.WithString("ProductType", PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", PhoneNumberOrderStatusMapper::GetNameForPhoneNumberOrderStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", PhoneNumberOrderStatusMapper::GetNameForPhoneNumberOrderStatus(m_status));
   }
 
-  if(m_orderTypeHasBeenSet)
-  {
-   payload.WithString("OrderType", PhoneNumberOrderTypeMapper::GetNameForPhoneNumberOrderType(m_orderType));
+  if (m_orderTypeHasBeenSet) {
+    payload.WithString("OrderType", PhoneNumberOrderTypeMapper::GetNameForPhoneNumberOrderType(m_orderType));
   }
 
-  if(m_orderedPhoneNumbersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> orderedPhoneNumbersJsonList(m_orderedPhoneNumbers.size());
-   for(unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength(); ++orderedPhoneNumbersIndex)
-   {
-     orderedPhoneNumbersJsonList[orderedPhoneNumbersIndex].AsObject(m_orderedPhoneNumbers[orderedPhoneNumbersIndex].Jsonize());
-   }
-   payload.WithArray("OrderedPhoneNumbers", std::move(orderedPhoneNumbersJsonList));
-
+  if (m_orderedPhoneNumbersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orderedPhoneNumbersJsonList(m_orderedPhoneNumbers.size());
+    for (unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength();
+         ++orderedPhoneNumbersIndex) {
+      orderedPhoneNumbersJsonList[orderedPhoneNumbersIndex].AsObject(m_orderedPhoneNumbers[orderedPhoneNumbersIndex].Jsonize());
+    }
+    payload.WithArray("OrderedPhoneNumbers", std::move(orderedPhoneNumbersJsonList));
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_focDateHasBeenSet)
-  {
-   payload.WithString("FocDate", m_focDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_focDateHasBeenSet) {
+    payload.WithString("FocDate", m_focDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

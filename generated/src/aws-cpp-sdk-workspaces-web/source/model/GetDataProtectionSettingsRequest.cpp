@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/GetDataProtectionSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/GetDataProtectionSettingsRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDataProtectionSettingsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetDataProtectionSettingsRequest::SerializePayload() const { return {}; }

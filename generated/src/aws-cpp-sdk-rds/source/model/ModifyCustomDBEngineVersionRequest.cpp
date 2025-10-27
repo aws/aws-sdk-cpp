@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyCustomDBEngineVersionRequest::SerializePayload() const
-{
+Aws::String ModifyCustomDBEngineVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyCustomDBEngineVersion&";
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(CustomEngineVersionStatusMapper::GetNameForCustomEngineVersionStatus(m_status)) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ModifyCustomDBEngineVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyCustomDBEngineVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyCustomDBEngineVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

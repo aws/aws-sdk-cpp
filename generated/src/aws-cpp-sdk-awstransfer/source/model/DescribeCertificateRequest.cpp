@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeCertificateRequest::SerializePayload() const
-{
+Aws::String DescribeCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateIdHasBeenSet)
-  {
-   payload.WithString("CertificateId", m_certificateId);
-
+  if (m_certificateIdHasBeenSet) {
+    payload.WithString("CertificateId", m_certificateId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeCertificate"));
   return headers;
-
 }
-
-
-
-

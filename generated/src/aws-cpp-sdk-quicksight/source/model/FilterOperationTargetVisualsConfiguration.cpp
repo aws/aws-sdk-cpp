@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/FilterOperationTargetVisualsConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/FilterOperationTargetVisualsConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FilterOperationTargetVisualsConfiguration& FilterOperationTargetVisualsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SameSheetTargetVisualConfiguration"))
-  {
+FilterOperationTargetVisualsConfiguration& FilterOperationTargetVisualsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SameSheetTargetVisualConfiguration")) {
     m_sameSheetTargetVisualConfiguration = jsonValue.GetObject("SameSheetTargetVisualConfiguration");
     m_sameSheetTargetVisualConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FilterOperationTargetVisualsConfiguration::Jsonize() const
-{
+JsonValue FilterOperationTargetVisualsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sameSheetTargetVisualConfigurationHasBeenSet)
-  {
-   payload.WithObject("SameSheetTargetVisualConfiguration", m_sameSheetTargetVisualConfiguration.Jsonize());
-
+  if (m_sameSheetTargetVisualConfigurationHasBeenSet) {
+    payload.WithObject("SameSheetTargetVisualConfiguration", m_sameSheetTargetVisualConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

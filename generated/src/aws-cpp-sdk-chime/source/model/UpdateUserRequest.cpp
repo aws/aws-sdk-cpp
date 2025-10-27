@@ -12,29 +12,20 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserRequest::SerializePayload() const
-{
+Aws::String UpdateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_licenseTypeHasBeenSet)
-  {
-   payload.WithString("LicenseType", LicenseMapper::GetNameForLicense(m_licenseType));
+  if (m_licenseTypeHasBeenSet) {
+    payload.WithString("LicenseType", LicenseMapper::GetNameForLicense(m_licenseType));
   }
 
-  if(m_userTypeHasBeenSet)
-  {
-   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
+  if (m_userTypeHasBeenSet) {
+    payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
   }
 
-  if(m_alexaForBusinessMetadataHasBeenSet)
-  {
-   payload.WithObject("AlexaForBusinessMetadata", m_alexaForBusinessMetadata.Jsonize());
-
+  if (m_alexaForBusinessMetadataHasBeenSet) {
+    payload.WithObject("AlexaForBusinessMetadata", m_alexaForBusinessMetadata.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

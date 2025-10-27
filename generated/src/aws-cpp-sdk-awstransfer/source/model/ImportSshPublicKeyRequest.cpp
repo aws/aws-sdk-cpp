@@ -12,39 +12,26 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ImportSshPublicKeyRequest::SerializePayload() const
-{
+Aws::String ImportSshPublicKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_sshPublicKeyBodyHasBeenSet)
-  {
-   payload.WithString("SshPublicKeyBody", m_sshPublicKeyBody);
-
+  if (m_sshPublicKeyBodyHasBeenSet) {
+    payload.WithString("SshPublicKeyBody", m_sshPublicKeyBody);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ImportSshPublicKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ImportSshPublicKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.ImportSshPublicKey"));
   return headers;
-
 }
-
-
-
-

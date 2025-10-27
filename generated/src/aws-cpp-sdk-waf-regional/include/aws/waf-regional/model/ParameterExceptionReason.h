@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
-  enum class ParameterExceptionReason
-  {
-    NOT_SET,
-    INVALID_OPTION,
-    ILLEGAL_COMBINATION,
-    ILLEGAL_ARGUMENT,
-    INVALID_TAG_KEY
-  };
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
+enum class ParameterExceptionReason { NOT_SET, INVALID_OPTION, ILLEGAL_COMBINATION, ILLEGAL_ARGUMENT, INVALID_TAG_KEY };
 
-namespace ParameterExceptionReasonMapper
-{
+namespace ParameterExceptionReasonMapper {
 AWS_WAFREGIONAL_API ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name);
 
 AWS_WAFREGIONAL_API Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason value);
-} // namespace ParameterExceptionReasonMapper
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace ParameterExceptionReasonMapper
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class QBusinessInsightsStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class QBusinessInsightsStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace QBusinessInsightsStatusMapper
-{
+namespace QBusinessInsightsStatusMapper {
 AWS_QUICKSIGHT_API QBusinessInsightsStatus GetQBusinessInsightsStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForQBusinessInsightsStatus(QBusinessInsightsStatus value);
-} // namespace QBusinessInsightsStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace QBusinessInsightsStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

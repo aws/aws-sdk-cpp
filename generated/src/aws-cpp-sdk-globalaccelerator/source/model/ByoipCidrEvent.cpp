@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/ByoipCidrEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/ByoipCidrEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
 
-ByoipCidrEvent::ByoipCidrEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ByoipCidrEvent::ByoipCidrEvent(JsonView jsonValue) { *this = jsonValue; }
 
-ByoipCidrEvent& ByoipCidrEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ByoipCidrEvent& ByoipCidrEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Timestamp"))
-  {
+  if (jsonValue.ValueExists("Timestamp")) {
     m_timestamp = jsonValue.GetDouble("Timestamp");
     m_timestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ByoipCidrEvent::Jsonize() const
-{
+JsonValue ByoipCidrEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

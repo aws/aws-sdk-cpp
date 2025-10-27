@@ -12,11 +12,4 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEventRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteEventRequest::SerializePayload() const { return {}; }

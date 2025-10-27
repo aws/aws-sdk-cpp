@@ -3,59 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medical-imaging/model/DICOMUpdates.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medical-imaging/model/DICOMUpdates.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MedicalImaging
-{
-namespace Model
-{
+namespace Aws {
+namespace MedicalImaging {
+namespace Model {
 
-DICOMUpdates::DICOMUpdates(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DICOMUpdates::DICOMUpdates(JsonView jsonValue) { *this = jsonValue; }
 
-DICOMUpdates& DICOMUpdates::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("removableAttributes"))
-  {
+DICOMUpdates& DICOMUpdates::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("removableAttributes")) {
     m_removableAttributes = HashingUtils::Base64Decode(jsonValue.GetString("removableAttributes"));
     m_removableAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatableAttributes"))
-  {
+  if (jsonValue.ValueExists("updatableAttributes")) {
     m_updatableAttributes = HashingUtils::Base64Decode(jsonValue.GetString("updatableAttributes"));
     m_updatableAttributesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DICOMUpdates::Jsonize() const
-{
+JsonValue DICOMUpdates::Jsonize() const {
   JsonValue payload;
 
-  if(m_removableAttributesHasBeenSet)
-  {
-   payload.WithString("removableAttributes", HashingUtils::Base64Encode(m_removableAttributes));
+  if (m_removableAttributesHasBeenSet) {
+    payload.WithString("removableAttributes", HashingUtils::Base64Encode(m_removableAttributes));
   }
 
-  if(m_updatableAttributesHasBeenSet)
-  {
-   payload.WithString("updatableAttributes", HashingUtils::Base64Encode(m_updatableAttributes));
+  if (m_updatableAttributesHasBeenSet) {
+    payload.WithString("updatableAttributes", HashingUtils::Base64Encode(m_updatableAttributes));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MedicalImaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace MedicalImaging
+}  // namespace Aws

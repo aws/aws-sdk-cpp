@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/DescribeEndpointResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/eventbridge/model/DescribeEndpointResult.h>
 
 #include <utility>
 
@@ -17,92 +17,72 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointResult::DescribeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeEndpointResult::DescribeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeEndpointResult& DescribeEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoutingConfig"))
-  {
+  if (jsonValue.ValueExists("RoutingConfig")) {
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
     m_routingConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicationConfig"))
-  {
+  if (jsonValue.ValueExists("ReplicationConfig")) {
     m_replicationConfig = jsonValue.GetObject("ReplicationConfig");
     m_replicationConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventBuses"))
-  {
+  if (jsonValue.ValueExists("EventBuses")) {
     Aws::Utils::Array<JsonView> eventBusesJsonList = jsonValue.GetArray("EventBuses");
-    for(unsigned eventBusesIndex = 0; eventBusesIndex < eventBusesJsonList.GetLength(); ++eventBusesIndex)
-    {
+    for (unsigned eventBusesIndex = 0; eventBusesIndex < eventBusesJsonList.GetLength(); ++eventBusesIndex) {
       m_eventBuses.push_back(eventBusesJsonList[eventBusesIndex].AsObject());
     }
     m_eventBusesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointId"))
-  {
+  if (jsonValue.ValueExists("EndpointId")) {
     m_endpointId = jsonValue.GetString("EndpointId");
     m_endpointIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointUrl"))
-  {
+  if (jsonValue.ValueExists("EndpointUrl")) {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
     m_endpointUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = EndpointStateMapper::GetEndpointStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateReason"))
-  {
+  if (jsonValue.ValueExists("StateReason")) {
     m_stateReason = jsonValue.GetString("StateReason");
     m_stateReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

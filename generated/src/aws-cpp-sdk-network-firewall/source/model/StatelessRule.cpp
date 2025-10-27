@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/StatelessRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/StatelessRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-StatelessRule::StatelessRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatelessRule::StatelessRule(JsonView jsonValue) { *this = jsonValue; }
 
-StatelessRule& StatelessRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleDefinition"))
-  {
+StatelessRule& StatelessRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleDefinition")) {
     m_ruleDefinition = jsonValue.GetObject("RuleDefinition");
     m_ruleDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatelessRule::Jsonize() const
-{
+JsonValue StatelessRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleDefinitionHasBeenSet)
-  {
-   payload.WithObject("RuleDefinition", m_ruleDefinition.Jsonize());
-
+  if (m_ruleDefinitionHasBeenSet) {
+    payload.WithObject("RuleDefinition", m_ruleDefinition.Jsonize());
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

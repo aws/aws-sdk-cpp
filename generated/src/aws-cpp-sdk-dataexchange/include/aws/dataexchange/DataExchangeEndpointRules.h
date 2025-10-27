@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-class DataExchangeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DataExchange {
+class DataExchangeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace DataExchange
+}  // namespace Aws

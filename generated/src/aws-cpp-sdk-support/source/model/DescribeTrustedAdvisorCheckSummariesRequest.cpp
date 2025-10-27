@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/support/model/DescribeTrustedAdvisorCheckSummariesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/support/model/DescribeTrustedAdvisorCheckSummariesRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeTrustedAdvisorCheckSummariesRequest::SerializePayload() const
-{
+Aws::String DescribeTrustedAdvisorCheckSummariesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_checkIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> checkIdsJsonList(m_checkIds.size());
-   for(unsigned checkIdsIndex = 0; checkIdsIndex < checkIdsJsonList.GetLength(); ++checkIdsIndex)
-   {
-     checkIdsJsonList[checkIdsIndex].AsString(m_checkIds[checkIdsIndex]);
-   }
-   payload.WithArray("checkIds", std::move(checkIdsJsonList));
-
+  if (m_checkIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> checkIdsJsonList(m_checkIds.size());
+    for (unsigned checkIdsIndex = 0; checkIdsIndex < checkIdsJsonList.GetLength(); ++checkIdsIndex) {
+      checkIdsJsonList[checkIdsIndex].AsString(m_checkIds[checkIdsIndex]);
+    }
+    payload.WithArray("checkIds", std::move(checkIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeTrustedAdvisorCheckSummariesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeTrustedAdvisorCheckSummariesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries"));
   return headers;
-
 }
-
-
-
-

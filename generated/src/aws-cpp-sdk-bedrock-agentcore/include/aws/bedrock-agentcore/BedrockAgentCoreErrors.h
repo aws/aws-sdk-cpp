@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-enum class BedrockAgentCoreErrors
-{
-  //From Core//
+namespace Aws {
+namespace BedrockAgentCore {
+enum class BedrockAgentCoreErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class BedrockAgentCoreErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class BedrockAgentCoreErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_INPUT,
   RUNTIME_CLIENT,
@@ -56,9 +53,8 @@ enum class BedrockAgentCoreErrors
   UNAUTHORIZED
 };
 
-class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreError : public Aws::Client::AWSError<BedrockAgentCoreErrors>
-{
-public:
+class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreError : public Aws::Client::AWSError<BedrockAgentCoreErrors> {
+ public:
   BedrockAgentCoreError() {}
   BedrockAgentCoreError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BedrockAgentCoreErrors>(rhs) {}
   BedrockAgentCoreError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BedrockAgentCoreErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace BedrockAgentCoreErrorMapper
-{
-  AWS_BEDROCKAGENTCORE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace BedrockAgentCoreErrorMapper {
+AWS_BEDROCKAGENTCORE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace BedrockAgentCore
+}  // namespace Aws

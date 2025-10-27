@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class MultiRegionConsistency
-  {
-    NOT_SET,
-    EVENTUAL,
-    STRONG
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class MultiRegionConsistency { NOT_SET, EVENTUAL, STRONG };
 
-namespace MultiRegionConsistencyMapper
-{
+namespace MultiRegionConsistencyMapper {
 AWS_DYNAMODB_API MultiRegionConsistency GetMultiRegionConsistencyForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForMultiRegionConsistency(MultiRegionConsistency value);
-} // namespace MultiRegionConsistencyMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace MultiRegionConsistencyMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

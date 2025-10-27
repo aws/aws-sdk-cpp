@@ -3,38 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistorySuccessEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistorySuccessEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistorySuccessEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entryId"))
-  {
+BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistorySuccessEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entryId")) {
     m_entryId = jsonValue.GetString("entryId");
     m_entryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assetPropertyValueHistory"))
-  {
+  if (jsonValue.ValueExists("assetPropertyValueHistory")) {
     Aws::Utils::Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
-    for(unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength(); ++assetPropertyValueHistoryIndex)
-    {
+    for (unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength();
+         ++assetPropertyValueHistoryIndex) {
       m_assetPropertyValueHistory.push_back(assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject());
     }
     m_assetPropertyValueHistoryHasBeenSet = true;
@@ -42,30 +33,26 @@ BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistory
   return *this;
 }
 
-JsonValue BatchGetAssetPropertyValueHistorySuccessEntry::Jsonize() const
-{
+JsonValue BatchGetAssetPropertyValueHistorySuccessEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_entryIdHasBeenSet)
-  {
-   payload.WithString("entryId", m_entryId);
-
+  if (m_entryIdHasBeenSet) {
+    payload.WithString("entryId", m_entryId);
   }
 
-  if(m_assetPropertyValueHistoryHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> assetPropertyValueHistoryJsonList(m_assetPropertyValueHistory.size());
-   for(unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength(); ++assetPropertyValueHistoryIndex)
-   {
-     assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject(m_assetPropertyValueHistory[assetPropertyValueHistoryIndex].Jsonize());
-   }
-   payload.WithArray("assetPropertyValueHistory", std::move(assetPropertyValueHistoryJsonList));
-
+  if (m_assetPropertyValueHistoryHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetPropertyValueHistoryJsonList(m_assetPropertyValueHistory.size());
+    for (unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength();
+         ++assetPropertyValueHistoryIndex) {
+      assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject(
+          m_assetPropertyValueHistory[assetPropertyValueHistoryIndex].Jsonize());
+    }
+    payload.WithArray("assetPropertyValueHistory", std::move(assetPropertyValueHistoryJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/ListCacheReportsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/ListCacheReportsRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListCacheReportsRequest::SerializePayload() const
-{
+Aws::String ListCacheReportsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_markerHasBeenSet)
-  {
-   payload.WithString("Marker", m_marker);
-
+  if (m_markerHasBeenSet) {
+    payload.WithString("Marker", m_marker);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListCacheReportsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListCacheReportsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StorageGateway_20130630.ListCacheReports"));
   return headers;
-
 }
-
-
-
-

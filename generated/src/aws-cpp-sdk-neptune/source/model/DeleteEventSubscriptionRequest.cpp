@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/DeleteEventSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/DeleteEventSubscriptionRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
-{
+Aws::String DeleteEventSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteEventSubscription&";
-  if(m_subscriptionNameHasBeenSet)
-  {
+  if (m_subscriptionNameHasBeenSet) {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteEventSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteEventSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

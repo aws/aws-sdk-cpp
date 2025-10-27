@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-FileAccessLog::FileAccessLog(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileAccessLog::FileAccessLog(JsonView jsonValue) { *this = jsonValue; }
 
-FileAccessLog& FileAccessLog::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("format"))
-  {
+FileAccessLog& FileAccessLog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("format")) {
     m_format = jsonValue.GetObject("format");
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileAccessLog::Jsonize() const
-{
+JsonValue FileAccessLog::Jsonize() const {
   JsonValue payload;
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithObject("format", m_format.Jsonize());
-
+  if (m_formatHasBeenSet) {
+    payload.WithObject("format", m_format.Jsonize());
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

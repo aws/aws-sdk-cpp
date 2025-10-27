@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/FailedServiceActionAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/FailedServiceActionAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-FailedServiceActionAssociation::FailedServiceActionAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailedServiceActionAssociation::FailedServiceActionAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-FailedServiceActionAssociation& FailedServiceActionAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceActionId"))
-  {
+FailedServiceActionAssociation& FailedServiceActionAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceActionId")) {
     m_serviceActionId = jsonValue.GetString("ServiceActionId");
     m_serviceActionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductId"))
-  {
+  if (jsonValue.ValueExists("ProductId")) {
     m_productId = jsonValue.GetString("ProductId");
     m_productIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisioningArtifactId"))
-  {
+  if (jsonValue.ValueExists("ProvisioningArtifactId")) {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
     m_provisioningArtifactIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = ServiceActionAssociationErrorCodeMapper::GetServiceActionAssociationErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailedServiceActionAssociation::Jsonize() const
-{
+JsonValue FailedServiceActionAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceActionIdHasBeenSet)
-  {
-   payload.WithString("ServiceActionId", m_serviceActionId);
-
+  if (m_serviceActionIdHasBeenSet) {
+    payload.WithString("ServiceActionId", m_serviceActionId);
   }
 
-  if(m_productIdHasBeenSet)
-  {
-   payload.WithString("ProductId", m_productId);
-
+  if (m_productIdHasBeenSet) {
+    payload.WithString("ProductId", m_productId);
   }
 
-  if(m_provisioningArtifactIdHasBeenSet)
-  {
-   payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
-
+  if (m_provisioningArtifactIdHasBeenSet) {
+    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", ServiceActionAssociationErrorCodeMapper::GetNameForServiceActionAssociationErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", ServiceActionAssociationErrorCodeMapper::GetNameForServiceActionAssociationErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

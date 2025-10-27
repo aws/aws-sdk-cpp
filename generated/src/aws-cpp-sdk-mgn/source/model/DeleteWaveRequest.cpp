@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/DeleteWaveRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/DeleteWaveRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteWaveRequest::SerializePayload() const
-{
+Aws::String DeleteWaveRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIDHasBeenSet)
-  {
-   payload.WithString("accountID", m_accountID);
-
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
-  if(m_waveIDHasBeenSet)
-  {
-   payload.WithString("waveID", m_waveID);
-
+  if (m_waveIDHasBeenSet) {
+    payload.WithString("waveID", m_waveID);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

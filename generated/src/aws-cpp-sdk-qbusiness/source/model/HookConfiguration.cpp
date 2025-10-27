@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/HookConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/HookConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-HookConfiguration::HookConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HookConfiguration::HookConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HookConfiguration& HookConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("invocationCondition"))
-  {
+HookConfiguration& HookConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("invocationCondition")) {
     m_invocationCondition = jsonValue.GetObject("invocationCondition");
     m_invocationConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaArn"))
-  {
+  if (jsonValue.ValueExists("lambdaArn")) {
     m_lambdaArn = jsonValue.GetString("lambdaArn");
     m_lambdaArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3BucketName"))
-  {
+  if (jsonValue.ValueExists("s3BucketName")) {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HookConfiguration::Jsonize() const
-{
+JsonValue HookConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_invocationConditionHasBeenSet)
-  {
-   payload.WithObject("invocationCondition", m_invocationCondition.Jsonize());
-
+  if (m_invocationConditionHasBeenSet) {
+    payload.WithObject("invocationCondition", m_invocationCondition.Jsonize());
   }
 
-  if(m_lambdaArnHasBeenSet)
-  {
-   payload.WithString("lambdaArn", m_lambdaArn);
-
+  if (m_lambdaArnHasBeenSet) {
+    payload.WithString("lambdaArn", m_lambdaArn);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("s3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("s3BucketName", m_s3BucketName);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

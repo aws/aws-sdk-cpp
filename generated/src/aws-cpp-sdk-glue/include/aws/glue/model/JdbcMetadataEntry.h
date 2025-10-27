@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class JdbcMetadataEntry
-  {
-    NOT_SET,
-    COMMENTS,
-    RAWTYPES
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class JdbcMetadataEntry { NOT_SET, COMMENTS, RAWTYPES };
 
-namespace JdbcMetadataEntryMapper
-{
+namespace JdbcMetadataEntryMapper {
 AWS_GLUE_API JdbcMetadataEntry GetJdbcMetadataEntryForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForJdbcMetadataEntry(JdbcMetadataEntry value);
-} // namespace JdbcMetadataEntryMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace JdbcMetadataEntryMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

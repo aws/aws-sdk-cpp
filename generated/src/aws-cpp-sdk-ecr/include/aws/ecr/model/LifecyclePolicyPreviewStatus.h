@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class LifecyclePolicyPreviewStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETE,
-    EXPIRED,
-    FAILED
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class LifecyclePolicyPreviewStatus { NOT_SET, IN_PROGRESS, COMPLETE, EXPIRED, FAILED };
 
-namespace LifecyclePolicyPreviewStatusMapper
-{
+namespace LifecyclePolicyPreviewStatusMapper {
 AWS_ECR_API LifecyclePolicyPreviewStatus GetLifecyclePolicyPreviewStatusForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForLifecyclePolicyPreviewStatus(LifecyclePolicyPreviewStatus value);
-} // namespace LifecyclePolicyPreviewStatusMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace LifecyclePolicyPreviewStatusMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

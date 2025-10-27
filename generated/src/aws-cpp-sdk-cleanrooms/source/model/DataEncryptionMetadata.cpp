@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-DataEncryptionMetadata::DataEncryptionMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataEncryptionMetadata::DataEncryptionMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DataEncryptionMetadata& DataEncryptionMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowCleartext"))
-  {
+DataEncryptionMetadata& DataEncryptionMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowCleartext")) {
     m_allowCleartext = jsonValue.GetBool("allowCleartext");
     m_allowCleartextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowDuplicates"))
-  {
+  if (jsonValue.ValueExists("allowDuplicates")) {
     m_allowDuplicates = jsonValue.GetBool("allowDuplicates");
     m_allowDuplicatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowJoinsOnColumnsWithDifferentNames"))
-  {
+  if (jsonValue.ValueExists("allowJoinsOnColumnsWithDifferentNames")) {
     m_allowJoinsOnColumnsWithDifferentNames = jsonValue.GetBool("allowJoinsOnColumnsWithDifferentNames");
     m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preserveNulls"))
-  {
+  if (jsonValue.ValueExists("preserveNulls")) {
     m_preserveNulls = jsonValue.GetBool("preserveNulls");
     m_preserveNullsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataEncryptionMetadata::Jsonize() const
-{
+JsonValue DataEncryptionMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowCleartextHasBeenSet)
-  {
-   payload.WithBool("allowCleartext", m_allowCleartext);
-
+  if (m_allowCleartextHasBeenSet) {
+    payload.WithBool("allowCleartext", m_allowCleartext);
   }
 
-  if(m_allowDuplicatesHasBeenSet)
-  {
-   payload.WithBool("allowDuplicates", m_allowDuplicates);
-
+  if (m_allowDuplicatesHasBeenSet) {
+    payload.WithBool("allowDuplicates", m_allowDuplicates);
   }
 
-  if(m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet)
-  {
-   payload.WithBool("allowJoinsOnColumnsWithDifferentNames", m_allowJoinsOnColumnsWithDifferentNames);
-
+  if (m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet) {
+    payload.WithBool("allowJoinsOnColumnsWithDifferentNames", m_allowJoinsOnColumnsWithDifferentNames);
   }
 
-  if(m_preserveNullsHasBeenSet)
-  {
-   payload.WithBool("preserveNulls", m_preserveNulls);
-
+  if (m_preserveNullsHasBeenSet) {
+    payload.WithBool("preserveNulls", m_preserveNulls);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MediaConnectFlow.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MediaConnectFlow::MediaConnectFlow(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaConnectFlow::MediaConnectFlow(JsonView jsonValue) { *this = jsonValue; }
 
-MediaConnectFlow& MediaConnectFlow::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("flowArn"))
-  {
+MediaConnectFlow& MediaConnectFlow::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");
     m_flowArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaConnectFlow::Jsonize() const
-{
+JsonValue MediaConnectFlow::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowArnHasBeenSet)
-  {
-   payload.WithString("flowArn", m_flowArn);
-
+  if (m_flowArnHasBeenSet) {
+    payload.WithString("flowArn", m_flowArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

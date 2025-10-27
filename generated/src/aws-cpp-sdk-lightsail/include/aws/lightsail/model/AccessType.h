@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class AccessType
-  {
-    NOT_SET,
-    public_,
-    private_
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class AccessType { NOT_SET, public_, private_ };
 
-namespace AccessTypeMapper
-{
+namespace AccessTypeMapper {
 AWS_LIGHTSAIL_API AccessType GetAccessTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForAccessType(AccessType value);
-} // namespace AccessTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace AccessTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

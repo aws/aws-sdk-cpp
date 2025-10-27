@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-BooleanCondition::BooleanCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BooleanCondition::BooleanCondition(JsonView jsonValue) { *this = jsonValue; }
 
-BooleanCondition& BooleanCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("equalTo"))
-  {
+BooleanCondition& BooleanCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("equalTo")) {
     m_equalTo = jsonValue.GetObject("equalTo");
     m_equalToHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("notEqualTo"))
-  {
+  if (jsonValue.ValueExists("notEqualTo")) {
     m_notEqualTo = jsonValue.GetObject("notEqualTo");
     m_notEqualToHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BooleanCondition::Jsonize() const
-{
+JsonValue BooleanCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_equalToHasBeenSet)
-  {
-   payload.WithObject("equalTo", m_equalTo.Jsonize());
-
+  if (m_equalToHasBeenSet) {
+    payload.WithObject("equalTo", m_equalTo.Jsonize());
   }
 
-  if(m_notEqualToHasBeenSet)
-  {
-   payload.WithObject("notEqualTo", m_notEqualTo.Jsonize());
-
+  if (m_notEqualToHasBeenSet) {
+    payload.WithObject("notEqualTo", m_notEqualTo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class SupportType
-  {
-    NOT_SET,
-    STANDARD,
-    EXTENDED
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class SupportType { NOT_SET, STANDARD, EXTENDED };
 
-namespace SupportTypeMapper
-{
+namespace SupportTypeMapper {
 AWS_EKS_API SupportType GetSupportTypeForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForSupportType(SupportType value);
-} // namespace SupportTypeMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace SupportTypeMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

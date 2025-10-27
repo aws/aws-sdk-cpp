@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class RepositoryFilterType
-  {
-    NOT_SET,
-    PREFIX_MATCH
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class RepositoryFilterType { NOT_SET, PREFIX_MATCH };
 
-namespace RepositoryFilterTypeMapper
-{
+namespace RepositoryFilterTypeMapper {
 AWS_ECR_API RepositoryFilterType GetRepositoryFilterTypeForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForRepositoryFilterType(RepositoryFilterType value);
-} // namespace RepositoryFilterTypeMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace RepositoryFilterTypeMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

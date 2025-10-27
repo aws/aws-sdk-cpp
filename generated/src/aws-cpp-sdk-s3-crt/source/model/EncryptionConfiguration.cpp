@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/EncryptionConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/EncryptionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(const XmlNode& xmlNode)
-{
+EncryptionConfiguration& EncryptionConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode replicaKmsKeyIDNode = resultNode.FirstChild("ReplicaKmsKeyID");
-    if(!replicaKmsKeyIDNode.IsNull())
-    {
+    if (!replicaKmsKeyIDNode.IsNull()) {
       m_replicaKmsKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(replicaKmsKeyIDNode.GetText());
       m_replicaKmsKeyIDHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void EncryptionConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void EncryptionConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_replicaKmsKeyIDHasBeenSet)
-  {
-   XmlNode replicaKmsKeyIDNode = parentNode.CreateChildElement("ReplicaKmsKeyID");
-   replicaKmsKeyIDNode.SetText(m_replicaKmsKeyID);
+  if (m_replicaKmsKeyIDHasBeenSet) {
+    XmlNode replicaKmsKeyIDNode = parentNode.CreateChildElement("ReplicaKmsKeyID");
+    replicaKmsKeyIDNode.SetText(m_replicaKmsKeyID);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

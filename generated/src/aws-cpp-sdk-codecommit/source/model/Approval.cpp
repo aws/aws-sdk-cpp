@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-Approval::Approval(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Approval::Approval(JsonView jsonValue) { *this = jsonValue; }
 
-Approval& Approval::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userArn"))
-  {
+Approval& Approval::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userArn")) {
     m_userArn = jsonValue.GetString("userArn");
     m_userArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalState"))
-  {
+  if (jsonValue.ValueExists("approvalState")) {
     m_approvalState = ApprovalStateMapper::GetApprovalStateForName(jsonValue.GetString("approvalState"));
     m_approvalStateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Approval::Jsonize() const
-{
+JsonValue Approval::Jsonize() const {
   JsonValue payload;
 
-  if(m_userArnHasBeenSet)
-  {
-   payload.WithString("userArn", m_userArn);
-
+  if (m_userArnHasBeenSet) {
+    payload.WithString("userArn", m_userArn);
   }
 
-  if(m_approvalStateHasBeenSet)
-  {
-   payload.WithString("approvalState", ApprovalStateMapper::GetNameForApprovalState(m_approvalState));
+  if (m_approvalStateHasBeenSet) {
+    payload.WithString("approvalState", ApprovalStateMapper::GetNameForApprovalState(m_approvalState));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-class LookoutEquipmentEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace LookoutEquipment {
+class LookoutEquipmentEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace LookoutEquipment
+}  // namespace Aws

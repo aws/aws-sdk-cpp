@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/DuplicateTimestamps.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/DuplicateTimestamps.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
-DuplicateTimestamps::DuplicateTimestamps(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DuplicateTimestamps::DuplicateTimestamps(JsonView jsonValue) { *this = jsonValue; }
 
-DuplicateTimestamps& DuplicateTimestamps::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TotalNumberOfDuplicateTimestamps"))
-  {
+DuplicateTimestamps& DuplicateTimestamps::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TotalNumberOfDuplicateTimestamps")) {
     m_totalNumberOfDuplicateTimestamps = jsonValue.GetInteger("TotalNumberOfDuplicateTimestamps");
     m_totalNumberOfDuplicateTimestampsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DuplicateTimestamps::Jsonize() const
-{
+JsonValue DuplicateTimestamps::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalNumberOfDuplicateTimestampsHasBeenSet)
-  {
-   payload.WithInteger("TotalNumberOfDuplicateTimestamps", m_totalNumberOfDuplicateTimestamps);
-
+  if (m_totalNumberOfDuplicateTimestampsHasBeenSet) {
+    payload.WithInteger("TotalNumberOfDuplicateTimestamps", m_totalNumberOfDuplicateTimestamps);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

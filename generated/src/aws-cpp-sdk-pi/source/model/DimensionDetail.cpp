@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pi/model/DimensionDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pi/model/DimensionDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
+namespace Aws {
+namespace PI {
+namespace Model {
 
-DimensionDetail::DimensionDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DimensionDetail::DimensionDetail(JsonView jsonValue) { *this = jsonValue; }
 
-DimensionDetail& DimensionDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Identifier"))
-  {
+DimensionDetail& DimensionDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");
     m_identifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DimensionDetail::Jsonize() const
-{
+JsonValue DimensionDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

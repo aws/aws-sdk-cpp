@@ -12,45 +12,30 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFlywheelRequest::SerializePayload() const
-{
+Aws::String UpdateFlywheelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flywheelArnHasBeenSet)
-  {
-   payload.WithString("FlywheelArn", m_flywheelArn);
-
+  if (m_flywheelArnHasBeenSet) {
+    payload.WithString("FlywheelArn", m_flywheelArn);
   }
 
-  if(m_activeModelArnHasBeenSet)
-  {
-   payload.WithString("ActiveModelArn", m_activeModelArn);
-
+  if (m_activeModelArnHasBeenSet) {
+    payload.WithString("ActiveModelArn", m_activeModelArn);
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_dataSecurityConfigHasBeenSet)
-  {
-   payload.WithObject("DataSecurityConfig", m_dataSecurityConfig.Jsonize());
-
+  if (m_dataSecurityConfigHasBeenSet) {
+    payload.WithObject("DataSecurityConfig", m_dataSecurityConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateFlywheelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateFlywheelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.UpdateFlywheel"));
   return headers;
-
 }
-
-
-
-

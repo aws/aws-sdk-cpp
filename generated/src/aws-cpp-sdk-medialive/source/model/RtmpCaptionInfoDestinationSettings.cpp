@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/RtmpCaptionInfoDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/RtmpCaptionInfoDestinationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-RtmpCaptionInfoDestinationSettings& RtmpCaptionInfoDestinationSettings::operator =(JsonView jsonValue)
-{
+RtmpCaptionInfoDestinationSettings& RtmpCaptionInfoDestinationSettings::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue RtmpCaptionInfoDestinationSettings::Jsonize() const
-{
+JsonValue RtmpCaptionInfoDestinationSettings::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,62 +4,69 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  class StartMetadataModelExportAsScriptResult
-  {
-  public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult() = default;
-    AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
+class StartMetadataModelExportAsScriptResult {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportAsScriptResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The identifier for the export operation.</p>
+   */
+  inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
+  template <typename RequestIdentifierT = Aws::String>
+  void SetRequestIdentifier(RequestIdentifierT&& value) {
+    m_requestIdentifierHasBeenSet = true;
+    m_requestIdentifier = std::forward<RequestIdentifierT>(value);
+  }
+  template <typename RequestIdentifierT = Aws::String>
+  StartMetadataModelExportAsScriptResult& WithRequestIdentifier(RequestIdentifierT&& value) {
+    SetRequestIdentifier(std::forward<RequestIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier for the export operation.</p>
-     */
-    inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
-    template<typename RequestIdentifierT = Aws::String>
-    void SetRequestIdentifier(RequestIdentifierT&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::forward<RequestIdentifierT>(value); }
-    template<typename RequestIdentifierT = Aws::String>
-    StartMetadataModelExportAsScriptResult& WithRequestIdentifier(RequestIdentifierT&& value) { SetRequestIdentifier(std::forward<RequestIdentifierT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    StartMetadataModelExportAsScriptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartMetadataModelExportAsScriptResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_requestIdentifier;
+  bool m_requestIdentifierHasBeenSet = false;
 
-    Aws::String m_requestIdentifier;
-    bool m_requestIdentifierHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

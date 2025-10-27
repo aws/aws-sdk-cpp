@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/secretsmanager/model/CreateSecretResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/secretsmanager/model/CreateSecretResult.h>
 
 #include <utility>
 
@@ -17,34 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSecretResult::CreateSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateSecretResult::CreateSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateSecretResult& CreateSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ARN"))
-  {
+  if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");
     m_aRNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionId"))
-  {
+  if (jsonValue.ValueExists("VersionId")) {
     m_versionId = jsonValue.GetString("VersionId");
     m_versionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicationStatus"))
-  {
+  if (jsonValue.ValueExists("ReplicationStatus")) {
     Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
-    for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
-    {
+    for (unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex) {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
     }
     m_replicationStatusHasBeenSet = true;
@@ -52,12 +43,10 @@ CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceRe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

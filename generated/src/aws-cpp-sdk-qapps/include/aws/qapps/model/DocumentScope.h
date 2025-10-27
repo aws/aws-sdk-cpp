@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QApps_EXPORTS.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Model
-{
-  enum class DocumentScope
-  {
-    NOT_SET,
-    APPLICATION,
-    SESSION
-  };
+namespace Aws {
+namespace QApps {
+namespace Model {
+enum class DocumentScope { NOT_SET, APPLICATION, SESSION };
 
-namespace DocumentScopeMapper
-{
+namespace DocumentScopeMapper {
 AWS_QAPPS_API DocumentScope GetDocumentScopeForName(const Aws::String& name);
 
 AWS_QAPPS_API Aws::String GetNameForDocumentScope(DocumentScope value);
-} // namespace DocumentScopeMapper
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace DocumentScopeMapper
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

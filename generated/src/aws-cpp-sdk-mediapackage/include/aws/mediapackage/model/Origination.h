@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-namespace Model
-{
-  enum class Origination
-  {
-    NOT_SET,
-    ALLOW,
-    DENY
-  };
+namespace Aws {
+namespace MediaPackage {
+namespace Model {
+enum class Origination { NOT_SET, ALLOW, DENY };
 
-namespace OriginationMapper
-{
+namespace OriginationMapper {
 AWS_MEDIAPACKAGE_API Origination GetOriginationForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGE_API Aws::String GetNameForOrigination(Origination value);
-} // namespace OriginationMapper
-} // namespace Model
-} // namespace MediaPackage
-} // namespace Aws
+}  // namespace OriginationMapper
+}  // namespace Model
+}  // namespace MediaPackage
+}  // namespace Aws

@@ -12,87 +12,60 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDataIntegrationRequest::SerializePayload() const
-{
+Aws::String CreateDataIntegrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithString("KmsKey", m_kmsKey);
-
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
   }
 
-  if(m_sourceURIHasBeenSet)
-  {
-   payload.WithString("SourceURI", m_sourceURI);
-
+  if (m_sourceURIHasBeenSet) {
+    payload.WithString("SourceURI", m_sourceURI);
   }
 
-  if(m_scheduleConfigHasBeenSet)
-  {
-   payload.WithObject("ScheduleConfig", m_scheduleConfig.Jsonize());
-
+  if (m_scheduleConfigHasBeenSet) {
+    payload.WithObject("ScheduleConfig", m_scheduleConfig.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_fileConfigurationHasBeenSet)
-  {
-   payload.WithObject("FileConfiguration", m_fileConfiguration.Jsonize());
-
+  if (m_fileConfigurationHasBeenSet) {
+    payload.WithObject("FileConfiguration", m_fileConfiguration.Jsonize());
   }
 
-  if(m_objectConfigurationHasBeenSet)
-  {
-   JsonValue objectConfigurationJsonMap;
-   for(auto& objectConfigurationItem : m_objectConfiguration)
-   {
-     JsonValue fieldsMapJsonMap;
-     for(auto& fieldsMapItem : objectConfigurationItem.second)
-     {
-       Aws::Utils::Array<JsonValue> fieldsListJsonList(fieldsMapItem.second.size());
-       for(unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex)
-       {
-         fieldsListJsonList[fieldsListIndex].AsString(fieldsMapItem.second[fieldsListIndex]);
-       }
-       fieldsMapJsonMap.WithArray(fieldsMapItem.first, std::move(fieldsListJsonList));
-     }
-     objectConfigurationJsonMap.WithObject(objectConfigurationItem.first, std::move(fieldsMapJsonMap));
-   }
-   payload.WithObject("ObjectConfiguration", std::move(objectConfigurationJsonMap));
-
+  if (m_objectConfigurationHasBeenSet) {
+    JsonValue objectConfigurationJsonMap;
+    for (auto& objectConfigurationItem : m_objectConfiguration) {
+      JsonValue fieldsMapJsonMap;
+      for (auto& fieldsMapItem : objectConfigurationItem.second) {
+        Aws::Utils::Array<JsonValue> fieldsListJsonList(fieldsMapItem.second.size());
+        for (unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex) {
+          fieldsListJsonList[fieldsListIndex].AsString(fieldsMapItem.second[fieldsListIndex]);
+        }
+        fieldsMapJsonMap.WithArray(fieldsMapItem.first, std::move(fieldsListJsonList));
+      }
+      objectConfigurationJsonMap.WithObject(objectConfigurationItem.first, std::move(fieldsMapJsonMap));
+    }
+    payload.WithObject("ObjectConfiguration", std::move(objectConfigurationJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

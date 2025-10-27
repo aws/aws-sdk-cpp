@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
-CategoryWithFindingNum::CategoryWithFindingNum(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CategoryWithFindingNum::CategoryWithFindingNum(JsonView jsonValue) { *this = jsonValue; }
 
-CategoryWithFindingNum& CategoryWithFindingNum::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("categoryName"))
-  {
+CategoryWithFindingNum& CategoryWithFindingNum::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("categoryName")) {
     m_categoryName = jsonValue.GetString("categoryName");
     m_categoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingNumber"))
-  {
+  if (jsonValue.ValueExists("findingNumber")) {
     m_findingNumber = jsonValue.GetInteger("findingNumber");
     m_findingNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CategoryWithFindingNum::Jsonize() const
-{
+JsonValue CategoryWithFindingNum::Jsonize() const {
   JsonValue payload;
 
-  if(m_categoryNameHasBeenSet)
-  {
-   payload.WithString("categoryName", m_categoryName);
-
+  if (m_categoryNameHasBeenSet) {
+    payload.WithString("categoryName", m_categoryName);
   }
 
-  if(m_findingNumberHasBeenSet)
-  {
-   payload.WithInteger("findingNumber", m_findingNumber);
-
+  if (m_findingNumberHasBeenSet) {
+    payload.WithInteger("findingNumber", m_findingNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class SubnetState
-  {
-    NOT_SET,
-    pending,
-    available,
-    unavailable,
-    failed,
-    failed_insufficient_capacity
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class SubnetState { NOT_SET, pending, available, unavailable, failed, failed_insufficient_capacity };
 
-namespace SubnetStateMapper
-{
+namespace SubnetStateMapper {
 AWS_EC2_API SubnetState GetSubnetStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForSubnetState(SubnetState value);
-} // namespace SubnetStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace SubnetStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

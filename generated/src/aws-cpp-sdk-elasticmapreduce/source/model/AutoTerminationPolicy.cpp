@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/AutoTerminationPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/AutoTerminationPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-AutoTerminationPolicy::AutoTerminationPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoTerminationPolicy::AutoTerminationPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-AutoTerminationPolicy& AutoTerminationPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IdleTimeout"))
-  {
+AutoTerminationPolicy& AutoTerminationPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IdleTimeout")) {
     m_idleTimeout = jsonValue.GetInt64("IdleTimeout");
     m_idleTimeoutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoTerminationPolicy::Jsonize() const
-{
+JsonValue AutoTerminationPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_idleTimeoutHasBeenSet)
-  {
-   payload.WithInt64("IdleTimeout", m_idleTimeout);
-
+  if (m_idleTimeoutHasBeenSet) {
+    payload.WithInt64("IdleTimeout", m_idleTimeout);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

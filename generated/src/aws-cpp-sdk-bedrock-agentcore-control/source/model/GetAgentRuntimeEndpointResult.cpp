@@ -4,10 +4,10 @@
  */
 
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,78 +17,61 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAgentRuntimeEndpointResult::GetAgentRuntimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAgentRuntimeEndpointResult::GetAgentRuntimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAgentRuntimeEndpointResult& GetAgentRuntimeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAgentRuntimeEndpointResult& GetAgentRuntimeEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("liveVersion"))
-  {
+  if (jsonValue.ValueExists("liveVersion")) {
     m_liveVersion = jsonValue.GetString("liveVersion");
     m_liveVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetVersion"))
-  {
+  if (jsonValue.ValueExists("targetVersion")) {
     m_targetVersion = jsonValue.GetString("targetVersion");
     m_targetVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentRuntimeEndpointArn"))
-  {
+  if (jsonValue.ValueExists("agentRuntimeEndpointArn")) {
     m_agentRuntimeEndpointArn = jsonValue.GetString("agentRuntimeEndpointArn");
     m_agentRuntimeEndpointArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentRuntimeArn"))
-  {
+  if (jsonValue.ValueExists("agentRuntimeArn")) {
     m_agentRuntimeArn = jsonValue.GetString("agentRuntimeArn");
     m_agentRuntimeArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = AgentRuntimeEndpointStatusMapper::GetAgentRuntimeEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

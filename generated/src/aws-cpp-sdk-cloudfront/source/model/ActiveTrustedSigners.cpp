@@ -4,52 +4,42 @@
  */
 
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ActiveTrustedSigners::ActiveTrustedSigners(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ActiveTrustedSigners::ActiveTrustedSigners(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
-{
+ActiveTrustedSigners& ActiveTrustedSigners::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
-    if(!quantityNode.IsNull())
-    {
-      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
+    if (!quantityNode.IsNull()) {
+      m_quantity =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
-    if(!itemsNode.IsNull())
-    {
+    if (!itemsNode.IsNull()) {
       XmlNode itemsMember = itemsNode.FirstChild("Signer");
       m_itemsHasBeenSet = !itemsMember.IsNull();
-      while(!itemsMember.IsNull())
-      {
+      while (!itemsMember.IsNull()) {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("Signer");
       }
@@ -61,37 +51,31 @@ ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ActiveTrustedSigners::AddToNode(XmlNode& parentNode) const
-{
+void ActiveTrustedSigners::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_enabledHasBeenSet)
-  {
-   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-   ss << std::boolalpha << m_enabled;
-   enabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_enabledHasBeenSet) {
+    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+    ss << std::boolalpha << m_enabled;
+    enabledNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_quantityHasBeenSet)
-  {
-   XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
-   ss << m_quantity;
-   quantityNode.SetText(ss.str());
-   ss.str("");
+  if (m_quantityHasBeenSet) {
+    XmlNode quantityNode = parentNode.CreateChildElement("Quantity");
+    ss << m_quantity;
+    quantityNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
-   for(const auto& item : m_items)
-   {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("Signer");
-     item.AddToNode(itemsNode);
-   }
+  if (m_itemsHasBeenSet) {
+    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
+    for (const auto& item : m_items) {
+      XmlNode itemsNode = itemsParentNode.CreateChildElement("Signer");
+      item.AddToNode(itemsNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

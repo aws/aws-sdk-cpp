@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetVpnTunnelReplacementStatusRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetVpnTunnelReplacementStatusRequest::SerializePayload() const
-{
+Aws::String GetVpnTunnelReplacementStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetVpnTunnelReplacementStatus&";
-  if(m_vpnConnectionIdHasBeenSet)
-  {
+  if (m_vpnConnectionIdHasBeenSet) {
     ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
   }
 
-  if(m_vpnTunnelOutsideIpAddressHasBeenSet)
-  {
+  if (m_vpnTunnelOutsideIpAddressHasBeenSet) {
     ss << "VpnTunnelOutsideIpAddress=" << StringUtils::URLEncode(m_vpnTunnelOutsideIpAddress.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String GetVpnTunnelReplacementStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetVpnTunnelReplacementStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetVpnTunnelReplacementStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

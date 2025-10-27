@@ -3,33 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/EnvironmentInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/EnvironmentInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-EnvironmentInfo::EnvironmentInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnvironmentInfo::EnvironmentInfo(JsonView jsonValue) { *this = jsonValue; }
 
-EnvironmentInfo& EnvironmentInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityZoneInformation"))
-  {
+EnvironmentInfo& EnvironmentInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityZoneInformation")) {
     Aws::Utils::Array<JsonView> availabilityZoneInformationJsonList = jsonValue.GetArray("AvailabilityZoneInformation");
-    for(unsigned availabilityZoneInformationIndex = 0; availabilityZoneInformationIndex < availabilityZoneInformationJsonList.GetLength(); ++availabilityZoneInformationIndex)
-    {
+    for (unsigned availabilityZoneInformationIndex = 0; availabilityZoneInformationIndex < availabilityZoneInformationJsonList.GetLength();
+         ++availabilityZoneInformationIndex) {
       m_availabilityZoneInformation.push_back(availabilityZoneInformationJsonList[availabilityZoneInformationIndex].AsObject());
     }
     m_availabilityZoneInformationHasBeenSet = true;
@@ -37,24 +29,22 @@ EnvironmentInfo& EnvironmentInfo::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EnvironmentInfo::Jsonize() const
-{
+JsonValue EnvironmentInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneInformationHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> availabilityZoneInformationJsonList(m_availabilityZoneInformation.size());
-   for(unsigned availabilityZoneInformationIndex = 0; availabilityZoneInformationIndex < availabilityZoneInformationJsonList.GetLength(); ++availabilityZoneInformationIndex)
-   {
-     availabilityZoneInformationJsonList[availabilityZoneInformationIndex].AsObject(m_availabilityZoneInformation[availabilityZoneInformationIndex].Jsonize());
-   }
-   payload.WithArray("AvailabilityZoneInformation", std::move(availabilityZoneInformationJsonList));
-
+  if (m_availabilityZoneInformationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZoneInformationJsonList(m_availabilityZoneInformation.size());
+    for (unsigned availabilityZoneInformationIndex = 0; availabilityZoneInformationIndex < availabilityZoneInformationJsonList.GetLength();
+         ++availabilityZoneInformationIndex) {
+      availabilityZoneInformationJsonList[availabilityZoneInformationIndex].AsObject(
+          m_availabilityZoneInformation[availabilityZoneInformationIndex].Jsonize());
+    }
+    payload.WithArray("AvailabilityZoneInformation", std::move(availabilityZoneInformationJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

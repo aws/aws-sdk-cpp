@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/GetTopicAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/GetTopicAttributesRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetTopicAttributesRequest::SerializePayload() const
-{
+Aws::String GetTopicAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetTopicAttributes&";
-  if(m_topicArnHasBeenSet)
-  {
+  if (m_topicArnHasBeenSet) {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetTopicAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetTopicAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetTopicAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/IpDiscovery.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/memorydb/model/IpDiscovery.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
+namespace IpDiscoveryMapper {
 
-namespace Aws
-{
-  namespace MemoryDB
-  {
-    namespace Model
-    {
-      namespace IpDiscoveryMapper
-      {
+static const int ipv4_HASH = HashingUtils::HashString("ipv4");
+static const int ipv6_HASH = HashingUtils::HashString("ipv6");
 
-        static const int ipv4_HASH = HashingUtils::HashString("ipv4");
-        static const int ipv6_HASH = HashingUtils::HashString("ipv6");
+IpDiscovery GetIpDiscoveryForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ipv4_HASH) {
+    return IpDiscovery::ipv4;
+  } else if (hashCode == ipv6_HASH) {
+    return IpDiscovery::ipv6;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IpDiscovery>(hashCode);
+  }
 
+  return IpDiscovery::NOT_SET;
+}
 
-        IpDiscovery GetIpDiscoveryForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ipv4_HASH)
-          {
-            return IpDiscovery::ipv4;
-          }
-          else if (hashCode == ipv6_HASH)
-          {
-            return IpDiscovery::ipv6;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<IpDiscovery>(hashCode);
-          }
+Aws::String GetNameForIpDiscovery(IpDiscovery enumValue) {
+  switch (enumValue) {
+    case IpDiscovery::NOT_SET:
+      return {};
+    case IpDiscovery::ipv4:
+      return "ipv4";
+    case IpDiscovery::ipv6:
+      return "ipv6";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return IpDiscovery::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForIpDiscovery(IpDiscovery enumValue)
-        {
-          switch(enumValue)
-          {
-          case IpDiscovery::NOT_SET:
-            return {};
-          case IpDiscovery::ipv4:
-            return "ipv4";
-          case IpDiscovery::ipv6:
-            return "ipv6";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace IpDiscoveryMapper
-    } // namespace Model
-  } // namespace MemoryDB
-} // namespace Aws
+}  // namespace IpDiscoveryMapper
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-FieldValue::FieldValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldValue::FieldValue(JsonView jsonValue) { *this = jsonValue; }
 
-FieldValue& FieldValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+FieldValue& FieldValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldValue::Jsonize() const
-{
+JsonValue FieldValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("value", m_value.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

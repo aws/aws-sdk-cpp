@@ -5,12 +5,8 @@
 
 #include <aws/cleanrooms/CleanRoomsEndpointProvider.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CleanRooms
-} // namespace Aws
+namespace Aws {
+namespace CleanRooms {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CleanRooms
+}  // namespace Aws

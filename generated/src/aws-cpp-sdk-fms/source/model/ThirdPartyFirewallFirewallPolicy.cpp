@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/ThirdPartyFirewallFirewallPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/ThirdPartyFirewallFirewallPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-ThirdPartyFirewallFirewallPolicy::ThirdPartyFirewallFirewallPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThirdPartyFirewallFirewallPolicy::ThirdPartyFirewallFirewallPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-ThirdPartyFirewallFirewallPolicy& ThirdPartyFirewallFirewallPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirewallPolicyId"))
-  {
+ThirdPartyFirewallFirewallPolicy& ThirdPartyFirewallFirewallPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirewallPolicyId")) {
     m_firewallPolicyId = jsonValue.GetString("FirewallPolicyId");
     m_firewallPolicyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FirewallPolicyName"))
-  {
+  if (jsonValue.ValueExists("FirewallPolicyName")) {
     m_firewallPolicyName = jsonValue.GetString("FirewallPolicyName");
     m_firewallPolicyNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThirdPartyFirewallFirewallPolicy::Jsonize() const
-{
+JsonValue ThirdPartyFirewallFirewallPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_firewallPolicyIdHasBeenSet)
-  {
-   payload.WithString("FirewallPolicyId", m_firewallPolicyId);
-
+  if (m_firewallPolicyIdHasBeenSet) {
+    payload.WithString("FirewallPolicyId", m_firewallPolicyId);
   }
 
-  if(m_firewallPolicyNameHasBeenSet)
-  {
-   payload.WithString("FirewallPolicyName", m_firewallPolicyName);
-
+  if (m_firewallPolicyNameHasBeenSet) {
+    payload.WithString("FirewallPolicyName", m_firewallPolicyName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

@@ -4,72 +4,77 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace OpenSearchService {
+namespace Model {
 
+/**
+ * <p>A validation failure that occurred as the result of a pre-update validation
+ * check (verbose dry run) on a domain.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ValidationFailure">AWS
+ * API Reference</a></p>
+ */
+class ValidationFailure {
+ public:
+  AWS_OPENSEARCHSERVICE_API ValidationFailure() = default;
+  AWS_OPENSEARCHSERVICE_API ValidationFailure(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVICE_API ValidationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A validation failure that occurred as the result of a pre-update validation
-   * check (verbose dry run) on a domain.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ValidationFailure">AWS
-   * API Reference</a></p>
+   * <p>The error code of the failure.</p>
    */
-  class ValidationFailure
-  {
-  public:
-    AWS_OPENSEARCHSERVICE_API ValidationFailure() = default;
-    AWS_OPENSEARCHSERVICE_API ValidationFailure(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVICE_API ValidationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  ValidationFailure& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A message corresponding to the failure.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ValidationFailure& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_code;
+  bool m_codeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The error code of the failure.</p>
-     */
-    inline const Aws::String& GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    template<typename CodeT = Aws::String>
-    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
-    template<typename CodeT = Aws::String>
-    ValidationFailure& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
-    ///@}
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>A message corresponding to the failure.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    ValidationFailure& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
-
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

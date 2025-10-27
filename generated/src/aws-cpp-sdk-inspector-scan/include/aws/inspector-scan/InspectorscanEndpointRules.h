@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
 
-namespace Aws
-{
-namespace inspectorscan
-{
-class InspectorscanEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace inspectorscan {
+class InspectorscanEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace inspectorscan
-} // namespace Aws
+}  // namespace inspectorscan
+}  // namespace Aws

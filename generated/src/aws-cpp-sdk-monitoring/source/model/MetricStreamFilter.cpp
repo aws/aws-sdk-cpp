@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/MetricStreamFilter.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/MetricStreamFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-MetricStreamFilter::MetricStreamFilter(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MetricStreamFilter::MetricStreamFilter(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetricStreamFilter& MetricStreamFilter::operator =(const XmlNode& xmlNode)
-{
+MetricStreamFilter& MetricStreamFilter::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    if(!namespaceNode.IsNull())
-    {
+    if (!namespaceNode.IsNull()) {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNamesNode = resultNode.FirstChild("MetricNames");
-    if(!metricNamesNode.IsNull())
-    {
+    if (!metricNamesNode.IsNull()) {
       XmlNode metricNamesMember = metricNamesNode.FirstChild("member");
       m_metricNamesHasBeenSet = !metricNamesMember.IsNull();
-      while(!metricNamesMember.IsNull())
-      {
+      while (!metricNamesMember.IsNull()) {
         m_metricNames.push_back(metricNamesMember.GetText());
         metricNamesMember = metricNamesMember.NextNode("member");
       }
@@ -55,40 +44,32 @@ MetricStreamFilter& MetricStreamFilter::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void MetricStreamFilter::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_namespaceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+void MetricStreamFilter::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_namespaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
 
-  if(m_metricNamesHasBeenSet)
-  {
-      unsigned metricNamesIdx = 1;
-      for(auto& item : m_metricNames)
-      {
-        oStream << location << index << locationValue << ".MetricNames.member." << metricNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void MetricStreamFilter::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_namespaceHasBeenSet)
-  {
-      oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
-  }
-  if(m_metricNamesHasBeenSet)
-  {
-      unsigned metricNamesIdx = 1;
-      for(auto& item : m_metricNames)
-      {
-        oStream << location << ".MetricNames.member." << metricNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_metricNamesHasBeenSet) {
+    unsigned metricNamesIdx = 1;
+    for (auto& item : m_metricNames) {
+      oStream << location << index << locationValue << ".MetricNames.member." << metricNamesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void MetricStreamFilter::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_namespaceHasBeenSet) {
+    oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
+  if (m_metricNamesHasBeenSet) {
+    unsigned metricNamesIdx = 1;
+    for (auto& item : m_metricNames) {
+      oStream << location << ".MetricNames.member." << metricNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

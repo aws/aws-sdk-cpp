@@ -12,43 +12,28 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateMemoryRequest::SerializePayload() const
-{
+Aws::String UpdateMemoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_eventExpiryDurationHasBeenSet)
-  {
-   payload.WithInteger("eventExpiryDuration", m_eventExpiryDuration);
-
+  if (m_eventExpiryDurationHasBeenSet) {
+    payload.WithInteger("eventExpiryDuration", m_eventExpiryDuration);
   }
 
-  if(m_memoryExecutionRoleArnHasBeenSet)
-  {
-   payload.WithString("memoryExecutionRoleArn", m_memoryExecutionRoleArn);
-
+  if (m_memoryExecutionRoleArnHasBeenSet) {
+    payload.WithString("memoryExecutionRoleArn", m_memoryExecutionRoleArn);
   }
 
-  if(m_memoryStrategiesHasBeenSet)
-  {
-   payload.WithObject("memoryStrategies", m_memoryStrategies.Jsonize());
-
+  if (m_memoryStrategiesHasBeenSet) {
+    payload.WithObject("memoryStrategies", m_memoryStrategies.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

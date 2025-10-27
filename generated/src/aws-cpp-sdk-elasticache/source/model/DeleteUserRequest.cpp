@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteUserRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteUserRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteUserRequest::SerializePayload() const
-{
+Aws::String DeleteUserRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteUser&";
-  if(m_userIdHasBeenSet)
-  {
+  if (m_userIdHasBeenSet) {
     ss << "UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteUserRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteUserRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteUserRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

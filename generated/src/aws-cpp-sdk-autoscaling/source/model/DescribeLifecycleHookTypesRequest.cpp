@@ -10,16 +10,11 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeLifecycleHookTypesRequest::SerializePayload() const
-{
+Aws::String DescribeLifecycleHookTypesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeLifecycleHookTypes&";
   ss << "Version=2011-01-01";
   return ss.str();
 }
 
-
-void  DescribeLifecycleHookTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeLifecycleHookTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

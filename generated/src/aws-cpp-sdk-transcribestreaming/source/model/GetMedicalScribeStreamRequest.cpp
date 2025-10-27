@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/GetMedicalScribeStreamRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/GetMedicalScribeStreamRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMedicalScribeStreamRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetMedicalScribeStreamRequest::SerializePayload() const { return {}; }

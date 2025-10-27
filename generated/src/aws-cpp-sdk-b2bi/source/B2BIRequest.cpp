@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/b2bi/B2BIRequest.h>
 
-namespace Aws
-{
-namespace B2BI
-{
-} // namespace B2BI
-} // namespace Aws
+namespace Aws {
+namespace B2BI {}  // namespace B2BI
+}  // namespace Aws

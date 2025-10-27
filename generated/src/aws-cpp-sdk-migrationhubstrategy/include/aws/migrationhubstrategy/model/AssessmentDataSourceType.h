@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class AssessmentDataSourceType
-  {
-    NOT_SET,
-    StrategyRecommendationsApplicationDataCollector,
-    ManualImport,
-    ApplicationDiscoveryService
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class AssessmentDataSourceType { NOT_SET, StrategyRecommendationsApplicationDataCollector, ManualImport, ApplicationDiscoveryService };
 
-namespace AssessmentDataSourceTypeMapper
-{
+namespace AssessmentDataSourceTypeMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssessmentDataSourceType GetAssessmentDataSourceTypeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForAssessmentDataSourceType(AssessmentDataSourceType value);
-} // namespace AssessmentDataSourceTypeMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace AssessmentDataSourceTypeMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

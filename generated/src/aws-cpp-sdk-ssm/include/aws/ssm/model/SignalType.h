@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class SignalType
-  {
-    NOT_SET,
-    Approve,
-    Reject,
-    StartStep,
-    StopStep,
-    Resume,
-    Revoke
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class SignalType { NOT_SET, Approve, Reject, StartStep, StopStep, Resume, Revoke };
 
-namespace SignalTypeMapper
-{
+namespace SignalTypeMapper {
 AWS_SSM_API SignalType GetSignalTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForSignalType(SignalType value);
-} // namespace SignalTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace SignalTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

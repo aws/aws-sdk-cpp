@@ -3,82 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/RequestCancelExternalWorkflowExecutionInitiatedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/RequestCancelExternalWorkflowExecutionInitiatedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue)
-{
+RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowId"))
-  {
+RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowId")) {
     m_workflowId = jsonValue.GetString("workflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runId"))
-  {
+  if (jsonValue.ValueExists("runId")) {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("control"))
-  {
+  if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetString("control");
     m_controlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::Jsonize() const
-{
+JsonValue RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_runIdHasBeenSet)
-  {
-   payload.WithString("runId", m_runId);
-
+  if (m_runIdHasBeenSet) {
+    payload.WithString("runId", m_runId);
   }
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", m_control);
-
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", m_control);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

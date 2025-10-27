@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/ListDelegatedServicesForAccountResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/organizations/model/ListDelegatedServicesForAccountResult.h>
 
 #include <utility>
 
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDelegatedServicesForAccountResult::ListDelegatedServicesForAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDelegatedServicesForAccountResult::ListDelegatedServicesForAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListDelegatedServicesForAccountResult& ListDelegatedServicesForAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDelegatedServicesForAccountResult& ListDelegatedServicesForAccountResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DelegatedServices"))
-  {
+  if (jsonValue.ValueExists("DelegatedServices")) {
     Aws::Utils::Array<JsonView> delegatedServicesJsonList = jsonValue.GetArray("DelegatedServices");
-    for(unsigned delegatedServicesIndex = 0; delegatedServicesIndex < delegatedServicesJsonList.GetLength(); ++delegatedServicesIndex)
-    {
+    for (unsigned delegatedServicesIndex = 0; delegatedServicesIndex < delegatedServicesJsonList.GetLength(); ++delegatedServicesIndex) {
       m_delegatedServices.push_back(delegatedServicesJsonList[delegatedServicesIndex].AsObject());
     }
     m_delegatedServicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,28 +4,21 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class FeatureActivationsOutputStaticImageOverlayScheduleActions
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class FeatureActivationsOutputStaticImageOverlayScheduleActions { NOT_SET, DISABLED, ENABLED };
 
-namespace FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper
-{
-AWS_MEDIALIVE_API FeatureActivationsOutputStaticImageOverlayScheduleActions GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(const Aws::String& name);
+namespace FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper {
+AWS_MEDIALIVE_API FeatureActivationsOutputStaticImageOverlayScheduleActions
+GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(const Aws::String& name);
 
-AWS_MEDIALIVE_API Aws::String GetNameForFeatureActivationsOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions value);
-} // namespace FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+AWS_MEDIALIVE_API Aws::String GetNameForFeatureActivationsOutputStaticImageOverlayScheduleActions(
+    FeatureActivationsOutputStaticImageOverlayScheduleActions value);
+}  // namespace FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

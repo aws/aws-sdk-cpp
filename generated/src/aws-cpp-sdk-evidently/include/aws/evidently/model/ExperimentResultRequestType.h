@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class ExperimentResultRequestType
-  {
-    NOT_SET,
-    BaseStat,
-    TreatmentEffect,
-    ConfidenceInterval,
-    PValue
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class ExperimentResultRequestType { NOT_SET, BaseStat, TreatmentEffect, ConfidenceInterval, PValue };
 
-namespace ExperimentResultRequestTypeMapper
-{
+namespace ExperimentResultRequestTypeMapper {
 AWS_CLOUDWATCHEVIDENTLY_API ExperimentResultRequestType GetExperimentResultRequestTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForExperimentResultRequestType(ExperimentResultRequestType value);
-} // namespace ExperimentResultRequestTypeMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace ExperimentResultRequestTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

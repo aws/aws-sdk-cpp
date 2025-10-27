@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-CommonControlFilter::CommonControlFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CommonControlFilter::CommonControlFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CommonControlFilter& CommonControlFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Objectives"))
-  {
+CommonControlFilter& CommonControlFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Objectives")) {
     Aws::Utils::Array<JsonView> objectivesJsonList = jsonValue.GetArray("Objectives");
-    for(unsigned objectivesIndex = 0; objectivesIndex < objectivesJsonList.GetLength(); ++objectivesIndex)
-    {
+    for (unsigned objectivesIndex = 0; objectivesIndex < objectivesJsonList.GetLength(); ++objectivesIndex) {
       m_objectives.push_back(objectivesJsonList[objectivesIndex].AsObject());
     }
     m_objectivesHasBeenSet = true;
@@ -37,24 +28,20 @@ CommonControlFilter& CommonControlFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CommonControlFilter::Jsonize() const
-{
+JsonValue CommonControlFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectivesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> objectivesJsonList(m_objectives.size());
-   for(unsigned objectivesIndex = 0; objectivesIndex < objectivesJsonList.GetLength(); ++objectivesIndex)
-   {
-     objectivesJsonList[objectivesIndex].AsObject(m_objectives[objectivesIndex].Jsonize());
-   }
-   payload.WithArray("Objectives", std::move(objectivesJsonList));
-
+  if (m_objectivesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> objectivesJsonList(m_objectives.size());
+    for (unsigned objectivesIndex = 0; objectivesIndex < objectivesJsonList.GetLength(); ++objectivesIndex) {
+      objectivesJsonList[objectivesIndex].AsObject(m_objectives[objectivesIndex].Jsonize());
+    }
+    payload.WithArray("Objectives", std::move(objectivesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

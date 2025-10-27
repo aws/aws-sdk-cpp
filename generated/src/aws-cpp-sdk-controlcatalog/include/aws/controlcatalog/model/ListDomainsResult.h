@@ -5,79 +5,94 @@
 
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/controlcatalog/model/DomainSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ControlCatalog
-{
-namespace Model
-{
-  class ListDomainsResult
-  {
-  public:
-    AWS_CONTROLCATALOG_API ListDomainsResult() = default;
-    AWS_CONTROLCATALOG_API ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CONTROLCATALOG_API ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ControlCatalog {
+namespace Model {
+class ListDomainsResult {
+ public:
+  AWS_CONTROLCATALOG_API ListDomainsResult() = default;
+  AWS_CONTROLCATALOG_API ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONTROLCATALOG_API ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The list of domains that the <code>ListDomains</code> API returns.</p>
+   */
+  inline const Aws::Vector<DomainSummary>& GetDomains() const { return m_domains; }
+  template <typename DomainsT = Aws::Vector<DomainSummary>>
+  void SetDomains(DomainsT&& value) {
+    m_domainsHasBeenSet = true;
+    m_domains = std::forward<DomainsT>(value);
+  }
+  template <typename DomainsT = Aws::Vector<DomainSummary>>
+  ListDomainsResult& WithDomains(DomainsT&& value) {
+    SetDomains(std::forward<DomainsT>(value));
+    return *this;
+  }
+  template <typename DomainsT = DomainSummary>
+  ListDomainsResult& AddDomains(DomainsT&& value) {
+    m_domainsHasBeenSet = true;
+    m_domains.emplace_back(std::forward<DomainsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The list of domains that the <code>ListDomains</code> API returns.</p>
-     */
-    inline const Aws::Vector<DomainSummary>& GetDomains() const { return m_domains; }
-    template<typename DomainsT = Aws::Vector<DomainSummary>>
-    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
-    template<typename DomainsT = Aws::Vector<DomainSummary>>
-    ListDomainsResult& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
-    template<typename DomainsT = DomainSummary>
-    ListDomainsResult& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The pagination token that's used to fetch the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDomainsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The pagination token that's used to fetch the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDomainsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListDomainsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListDomainsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<DomainSummary> m_domains;
+  bool m_domainsHasBeenSet = false;
 
-    Aws::Vector<DomainSummary> m_domains;
-    bool m_domainsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

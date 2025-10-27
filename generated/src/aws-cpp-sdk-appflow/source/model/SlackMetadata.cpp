@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SlackMetadata::SlackMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlackMetadata::SlackMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-SlackMetadata& SlackMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oAuthScopes"))
-  {
+SlackMetadata& SlackMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oAuthScopes")) {
     Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
-    for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
-    {
+    for (unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex) {
       m_oAuthScopes.push_back(oAuthScopesJsonList[oAuthScopesIndex].AsString());
     }
     m_oAuthScopesHasBeenSet = true;
@@ -37,24 +28,20 @@ SlackMetadata& SlackMetadata::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SlackMetadata::Jsonize() const
-{
+JsonValue SlackMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_oAuthScopesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
-   for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
-   {
-     oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);
-   }
-   payload.WithArray("oAuthScopes", std::move(oAuthScopesJsonList));
-
+  if (m_oAuthScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
+    for (unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex) {
+      oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);
+    }
+    payload.WithArray("oAuthScopes", std::move(oAuthScopesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

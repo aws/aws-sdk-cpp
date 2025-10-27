@@ -10,26 +10,19 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DetachTrafficSourcesRequest::SerializePayload() const
-{
+Aws::String DetachTrafficSourcesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetachTrafficSources&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_trafficSourcesHasBeenSet)
-  {
-    if (m_trafficSources.empty())
-    {
+  if (m_trafficSourcesHasBeenSet) {
+    if (m_trafficSources.empty()) {
       ss << "TrafficSources=&";
-    }
-    else
-    {
+    } else {
       unsigned trafficSourcesCount = 1;
-      for(auto& item : m_trafficSources)
-      {
+      for (auto& item : m_trafficSources) {
         item.OutputToStream(ss, "TrafficSources.member.", trafficSourcesCount, "");
         trafficSourcesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String DetachTrafficSourcesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetachTrafficSourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetachTrafficSourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

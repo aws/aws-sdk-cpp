@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ConditionalFormattingIconDisplayOption
-  {
-    NOT_SET,
-    ICON_ONLY
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ConditionalFormattingIconDisplayOption { NOT_SET, ICON_ONLY };
 
-namespace ConditionalFormattingIconDisplayOptionMapper
-{
+namespace ConditionalFormattingIconDisplayOptionMapper {
 AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayOption GetConditionalFormattingIconDisplayOptionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForConditionalFormattingIconDisplayOption(ConditionalFormattingIconDisplayOption value);
-} // namespace ConditionalFormattingIconDisplayOptionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ConditionalFormattingIconDisplayOptionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

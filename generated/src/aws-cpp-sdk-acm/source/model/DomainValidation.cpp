@@ -11,114 +11,85 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-DomainValidation::DomainValidation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainValidation::DomainValidation(JsonView jsonValue) { *this = jsonValue; }
 
-DomainValidation& DomainValidation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DomainName"))
-  {
+DomainValidation& DomainValidation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationEmails"))
-  {
+  if (jsonValue.ValueExists("ValidationEmails")) {
     Aws::Utils::Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
-    for(unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex)
-    {
+    for (unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex) {
       m_validationEmails.push_back(validationEmailsJsonList[validationEmailsIndex].AsString());
     }
     m_validationEmailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationDomain"))
-  {
+  if (jsonValue.ValueExists("ValidationDomain")) {
     m_validationDomain = jsonValue.GetString("ValidationDomain");
     m_validationDomainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationStatus"))
-  {
+  if (jsonValue.ValueExists("ValidationStatus")) {
     m_validationStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("ValidationStatus"));
     m_validationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceRecord"))
-  {
+  if (jsonValue.ValueExists("ResourceRecord")) {
     m_resourceRecord = jsonValue.GetObject("ResourceRecord");
     m_resourceRecordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HttpRedirect"))
-  {
+  if (jsonValue.ValueExists("HttpRedirect")) {
     m_httpRedirect = jsonValue.GetObject("HttpRedirect");
     m_httpRedirectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationMethod"))
-  {
+  if (jsonValue.ValueExists("ValidationMethod")) {
     m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
     m_validationMethodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainValidation::Jsonize() const
-{
+JsonValue DomainValidation::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_validationEmailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> validationEmailsJsonList(m_validationEmails.size());
-   for(unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex)
-   {
-     validationEmailsJsonList[validationEmailsIndex].AsString(m_validationEmails[validationEmailsIndex]);
-   }
-   payload.WithArray("ValidationEmails", std::move(validationEmailsJsonList));
-
+  if (m_validationEmailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validationEmailsJsonList(m_validationEmails.size());
+    for (unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex) {
+      validationEmailsJsonList[validationEmailsIndex].AsString(m_validationEmails[validationEmailsIndex]);
+    }
+    payload.WithArray("ValidationEmails", std::move(validationEmailsJsonList));
   }
 
-  if(m_validationDomainHasBeenSet)
-  {
-   payload.WithString("ValidationDomain", m_validationDomain);
-
+  if (m_validationDomainHasBeenSet) {
+    payload.WithString("ValidationDomain", m_validationDomain);
   }
 
-  if(m_validationStatusHasBeenSet)
-  {
-   payload.WithString("ValidationStatus", DomainStatusMapper::GetNameForDomainStatus(m_validationStatus));
+  if (m_validationStatusHasBeenSet) {
+    payload.WithString("ValidationStatus", DomainStatusMapper::GetNameForDomainStatus(m_validationStatus));
   }
 
-  if(m_resourceRecordHasBeenSet)
-  {
-   payload.WithObject("ResourceRecord", m_resourceRecord.Jsonize());
-
+  if (m_resourceRecordHasBeenSet) {
+    payload.WithObject("ResourceRecord", m_resourceRecord.Jsonize());
   }
 
-  if(m_httpRedirectHasBeenSet)
-  {
-   payload.WithObject("HttpRedirect", m_httpRedirect.Jsonize());
-
+  if (m_httpRedirectHasBeenSet) {
+    payload.WithObject("HttpRedirect", m_httpRedirect.Jsonize());
   }
 
-  if(m_validationMethodHasBeenSet)
-  {
-   payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
+  if (m_validationMethodHasBeenSet) {
+    payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

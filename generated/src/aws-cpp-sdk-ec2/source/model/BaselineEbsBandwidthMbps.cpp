@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/BaselineEbsBandwidthMbps.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/BaselineEbsBandwidthMbps.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-BaselineEbsBandwidthMbps::BaselineEbsBandwidthMbps(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+BaselineEbsBandwidthMbps::BaselineEbsBandwidthMbps(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BaselineEbsBandwidthMbps& BaselineEbsBandwidthMbps::operator =(const XmlNode& xmlNode)
-{
+BaselineEbsBandwidthMbps& BaselineEbsBandwidthMbps::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode minNode = resultNode.FirstChild("min");
-    if(!minNode.IsNull())
-    {
+    if (!minNode.IsNull()) {
       m_min = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("max");
-    if(!maxNode.IsNull())
-    {
+    if (!maxNode.IsNull()) {
       m_max = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ BaselineEbsBandwidthMbps& BaselineEbsBandwidthMbps::operator =(const XmlNode& xm
   return *this;
 }
 
-void BaselineEbsBandwidthMbps::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_minHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Min=" << m_min << "&";
+void BaselineEbsBandwidthMbps::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                              const char* locationValue) const {
+  if (m_minHasBeenSet) {
+    oStream << location << index << locationValue << ".Min=" << m_min << "&";
   }
 
-  if(m_maxHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Max=" << m_max << "&";
-  }
-
-}
-
-void BaselineEbsBandwidthMbps::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_minHasBeenSet)
-  {
-      oStream << location << ".Min=" << m_min << "&";
-  }
-  if(m_maxHasBeenSet)
-  {
-      oStream << location << ".Max=" << m_max << "&";
+  if (m_maxHasBeenSet) {
+    oStream << location << index << locationValue << ".Max=" << m_max << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void BaselineEbsBandwidthMbps::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_minHasBeenSet) {
+    oStream << location << ".Min=" << m_min << "&";
+  }
+  if (m_maxHasBeenSet) {
+    oStream << location << ".Max=" << m_max << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

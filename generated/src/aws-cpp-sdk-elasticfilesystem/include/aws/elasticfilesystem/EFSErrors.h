@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EFS
-{
-enum class EFSErrors
-{
-  //From Core//
+namespace Aws {
+namespace EFS {
+enum class EFSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class EFSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class EFSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_POINT_ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_POINT_ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACCESS_POINT_LIMIT_EXCEEDED,
   ACCESS_POINT_NOT_FOUND,
   AVAILABILITY_ZONES_MISMATCH,
@@ -78,9 +75,8 @@ enum class EFSErrors
   UNSUPPORTED_AVAILABILITY_ZONE
 };
 
-class AWS_EFS_API EFSError : public Aws::Client::AWSError<EFSErrors>
-{
-public:
+class AWS_EFS_API EFSError : public Aws::Client::AWSError<EFSErrors> {
+ public:
   EFSError() {}
   EFSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EFSErrors>(rhs) {}
   EFSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EFSErrors>(rhs) {}
@@ -91,10 +87,9 @@ public:
   T GetModeledError();
 };
 
-namespace EFSErrorMapper
-{
-  AWS_EFS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace EFSErrorMapper {
+AWS_EFS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace EFS
-} // namespace Aws
+}  // namespace EFS
+}  // namespace Aws

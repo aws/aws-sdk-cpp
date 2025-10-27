@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/trustedadvisor/model/GetOrganizationRecommendationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/trustedadvisor/model/GetOrganizationRecommendationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::TrustedAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetOrganizationRecommendationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetOrganizationRecommendationRequest::SerializePayload() const { return {}; }

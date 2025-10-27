@@ -3,68 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/savingsplans/model/SavingsPlanRate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/savingsplans/model/SavingsPlanRate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace SavingsPlans {
+namespace Model {
 
-SavingsPlanRate::SavingsPlanRate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlanRate::SavingsPlanRate(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlanRate& SavingsPlanRate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rate"))
-  {
+SavingsPlanRate& SavingsPlanRate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rate")) {
     m_rate = jsonValue.GetString("rate");
     m_rateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currency"))
-  {
+  if (jsonValue.ValueExists("currency")) {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
     m_currencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unit"))
-  {
+  if (jsonValue.ValueExists("unit")) {
     m_unit = SavingsPlanRateUnitMapper::GetSavingsPlanRateUnitForName(jsonValue.GetString("unit"));
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("productType"))
-  {
+  if (jsonValue.ValueExists("productType")) {
     m_productType = SavingsPlanProductTypeMapper::GetSavingsPlanProductTypeForName(jsonValue.GetString("productType"));
     m_productTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceCode"))
-  {
+  if (jsonValue.ValueExists("serviceCode")) {
     m_serviceCode = SavingsPlanRateServiceCodeMapper::GetSavingsPlanRateServiceCodeForName(jsonValue.GetString("serviceCode"));
     m_serviceCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("usageType"))
-  {
+  if (jsonValue.ValueExists("usageType")) {
     m_usageType = jsonValue.GetString("usageType");
     m_usageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operation"))
-  {
+  if (jsonValue.ValueExists("operation")) {
     m_operation = jsonValue.GetString("operation");
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("properties"))
-  {
+  if (jsonValue.ValueExists("properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
-    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-    {
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
       m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
     }
     m_propertiesHasBeenSet = true;
@@ -72,62 +56,48 @@ SavingsPlanRate& SavingsPlanRate::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SavingsPlanRate::Jsonize() const
-{
+JsonValue SavingsPlanRate::Jsonize() const {
   JsonValue payload;
 
-  if(m_rateHasBeenSet)
-  {
-   payload.WithString("rate", m_rate);
-
+  if (m_rateHasBeenSet) {
+    payload.WithString("rate", m_rate);
   }
 
-  if(m_currencyHasBeenSet)
-  {
-   payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
+  if (m_currencyHasBeenSet) {
+    payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("unit", SavingsPlanRateUnitMapper::GetNameForSavingsPlanRateUnit(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", SavingsPlanRateUnitMapper::GetNameForSavingsPlanRateUnit(m_unit));
   }
 
-  if(m_productTypeHasBeenSet)
-  {
-   payload.WithString("productType", SavingsPlanProductTypeMapper::GetNameForSavingsPlanProductType(m_productType));
+  if (m_productTypeHasBeenSet) {
+    payload.WithString("productType", SavingsPlanProductTypeMapper::GetNameForSavingsPlanProductType(m_productType));
   }
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("serviceCode", SavingsPlanRateServiceCodeMapper::GetNameForSavingsPlanRateServiceCode(m_serviceCode));
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("serviceCode", SavingsPlanRateServiceCodeMapper::GetNameForSavingsPlanRateServiceCode(m_serviceCode));
   }
 
-  if(m_usageTypeHasBeenSet)
-  {
-   payload.WithString("usageType", m_usageType);
-
+  if (m_usageTypeHasBeenSet) {
+    payload.WithString("usageType", m_usageType);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("operation", m_operation);
   }
 
-  if(m_propertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
-   for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-   {
-     propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
-   }
-   payload.WithArray("properties", std::move(propertiesJsonList));
-
+  if (m_propertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
+      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
+    }
+    payload.WithArray("properties", std::move(propertiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SavingsPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace SavingsPlans
+}  // namespace Aws

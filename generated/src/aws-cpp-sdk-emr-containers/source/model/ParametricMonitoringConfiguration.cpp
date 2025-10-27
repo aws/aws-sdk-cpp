@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-containers/model/ParametricMonitoringConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/model/ParametricMonitoringConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRContainers {
+namespace Model {
 
-ParametricMonitoringConfiguration::ParametricMonitoringConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParametricMonitoringConfiguration::ParametricMonitoringConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ParametricMonitoringConfiguration& ParametricMonitoringConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("persistentAppUI"))
-  {
+ParametricMonitoringConfiguration& ParametricMonitoringConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("persistentAppUI")) {
     m_persistentAppUI = jsonValue.GetString("persistentAppUI");
     m_persistentAppUIHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cloudWatchMonitoringConfiguration"))
-  {
+  if (jsonValue.ValueExists("cloudWatchMonitoringConfiguration")) {
     m_cloudWatchMonitoringConfiguration = jsonValue.GetObject("cloudWatchMonitoringConfiguration");
     m_cloudWatchMonitoringConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3MonitoringConfiguration"))
-  {
+  if (jsonValue.ValueExists("s3MonitoringConfiguration")) {
     m_s3MonitoringConfiguration = jsonValue.GetObject("s3MonitoringConfiguration");
     m_s3MonitoringConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParametricMonitoringConfiguration::Jsonize() const
-{
+JsonValue ParametricMonitoringConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_persistentAppUIHasBeenSet)
-  {
-   payload.WithString("persistentAppUI", m_persistentAppUI);
-
+  if (m_persistentAppUIHasBeenSet) {
+    payload.WithString("persistentAppUI", m_persistentAppUI);
   }
 
-  if(m_cloudWatchMonitoringConfigurationHasBeenSet)
-  {
-   payload.WithObject("cloudWatchMonitoringConfiguration", m_cloudWatchMonitoringConfiguration.Jsonize());
-
+  if (m_cloudWatchMonitoringConfigurationHasBeenSet) {
+    payload.WithObject("cloudWatchMonitoringConfiguration", m_cloudWatchMonitoringConfiguration.Jsonize());
   }
 
-  if(m_s3MonitoringConfigurationHasBeenSet)
-  {
-   payload.WithObject("s3MonitoringConfiguration", m_s3MonitoringConfiguration.Jsonize());
-
+  if (m_s3MonitoringConfigurationHasBeenSet) {
+    payload.WithObject("s3MonitoringConfiguration", m_s3MonitoringConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRContainers
+}  // namespace Aws

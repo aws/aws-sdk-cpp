@@ -4,37 +4,19 @@
  */
 
 #pragma once
-#include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 
-namespace Aws
-{
-namespace TrustedAdvisor
-{
-namespace Model
-{
-  enum class RecommendationLanguage
-  {
-    NOT_SET,
-    en,
-    ja,
-    zh,
-    fr,
-    de,
-    ko,
-    zh_TW,
-    it,
-    es,
-    pt_BR,
-    id
-  };
+namespace Aws {
+namespace TrustedAdvisor {
+namespace Model {
+enum class RecommendationLanguage { NOT_SET, en, ja, zh, fr, de, ko, zh_TW, it, es, pt_BR, id };
 
-namespace RecommendationLanguageMapper
-{
+namespace RecommendationLanguageMapper {
 AWS_TRUSTEDADVISOR_API RecommendationLanguage GetRecommendationLanguageForName(const Aws::String& name);
 
 AWS_TRUSTEDADVISOR_API Aws::String GetNameForRecommendationLanguage(RecommendationLanguage value);
-} // namespace RecommendationLanguageMapper
-} // namespace Model
-} // namespace TrustedAdvisor
-} // namespace Aws
+}  // namespace RecommendationLanguageMapper
+}  // namespace Model
+}  // namespace TrustedAdvisor
+}  // namespace Aws

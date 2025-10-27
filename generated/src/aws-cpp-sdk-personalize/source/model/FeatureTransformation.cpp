@@ -3,111 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/FeatureTransformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/FeatureTransformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-FeatureTransformation::FeatureTransformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FeatureTransformation::FeatureTransformation(JsonView jsonValue) { *this = jsonValue; }
 
-FeatureTransformation& FeatureTransformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+FeatureTransformation& FeatureTransformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("featureTransformationArn"))
-  {
+  if (jsonValue.ValueExists("featureTransformationArn")) {
     m_featureTransformationArn = jsonValue.GetString("featureTransformationArn");
     m_featureTransformationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultParameters"))
-  {
+  if (jsonValue.ValueExists("defaultParameters")) {
     Aws::Map<Aws::String, JsonView> defaultParametersJsonMap = jsonValue.GetObject("defaultParameters").GetAllObjects();
-    for(auto& defaultParametersItem : defaultParametersJsonMap)
-    {
+    for (auto& defaultParametersItem : defaultParametersJsonMap) {
       m_defaultParameters[defaultParametersItem.first] = defaultParametersItem.second.AsString();
     }
     m_defaultParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FeatureTransformation::Jsonize() const
-{
+JsonValue FeatureTransformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_featureTransformationArnHasBeenSet)
-  {
-   payload.WithString("featureTransformationArn", m_featureTransformationArn);
-
+  if (m_featureTransformationArnHasBeenSet) {
+    payload.WithString("featureTransformationArn", m_featureTransformationArn);
   }
 
-  if(m_defaultParametersHasBeenSet)
-  {
-   JsonValue defaultParametersJsonMap;
-   for(auto& defaultParametersItem : m_defaultParameters)
-   {
-     defaultParametersJsonMap.WithString(defaultParametersItem.first, defaultParametersItem.second);
-   }
-   payload.WithObject("defaultParameters", std::move(defaultParametersJsonMap));
-
+  if (m_defaultParametersHasBeenSet) {
+    JsonValue defaultParametersJsonMap;
+    for (auto& defaultParametersItem : m_defaultParameters) {
+      defaultParametersJsonMap.WithString(defaultParametersItem.first, defaultParametersItem.second);
+    }
+    payload.WithObject("defaultParameters", std::move(defaultParametersJsonMap));
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

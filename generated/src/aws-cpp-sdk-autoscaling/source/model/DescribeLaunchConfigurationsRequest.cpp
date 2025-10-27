@@ -10,35 +10,26 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
-{
+Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeLaunchConfigurations&";
-  if(m_launchConfigurationNamesHasBeenSet)
-  {
-    if (m_launchConfigurationNames.empty())
-    {
+  if (m_launchConfigurationNamesHasBeenSet) {
+    if (m_launchConfigurationNames.empty()) {
       ss << "LaunchConfigurationNames=&";
-    }
-    else
-    {
+    } else {
       unsigned launchConfigurationNamesCount = 1;
-      for(auto& item : m_launchConfigurationNames)
-      {
-        ss << "LaunchConfigurationNames.member." << launchConfigurationNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_launchConfigurationNames) {
+        ss << "LaunchConfigurationNames.member." << launchConfigurationNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         launchConfigurationNamesCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeLaunchConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeLaunchConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GameLift;
 
-AWSError<CoreErrors> GameLiftErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GameLiftErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GameLiftErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,59 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateManagedPrefixListRequest::SerializePayload() const
-{
+Aws::String CreateManagedPrefixListRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateManagedPrefixList&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_prefixListNameHasBeenSet)
-  {
+  if (m_prefixListNameHasBeenSet) {
     ss << "PrefixListName=" << StringUtils::URLEncode(m_prefixListName.c_str()) << "&";
   }
 
-  if(m_entriesHasBeenSet)
-  {
+  if (m_entriesHasBeenSet) {
     unsigned entriesCount = 1;
-    for(auto& item : m_entries)
-    {
+    for (auto& item : m_entries) {
       item.OutputToStream(ss, "Entry.", entriesCount, "");
       entriesCount++;
     }
   }
 
-  if(m_maxEntriesHasBeenSet)
-  {
+  if (m_maxEntriesHasBeenSet) {
     ss << "MaxEntries=" << m_maxEntries << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_addressFamilyHasBeenSet)
-  {
+  if (m_addressFamilyHasBeenSet) {
     ss << "AddressFamily=" << StringUtils::URLEncode(m_addressFamily.c_str()) << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -63,8 +53,4 @@ Aws::String CreateManagedPrefixListRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateManagedPrefixListRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateManagedPrefixListRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

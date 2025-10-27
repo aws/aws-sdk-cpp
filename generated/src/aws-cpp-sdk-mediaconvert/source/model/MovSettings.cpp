@@ -3,88 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/MovSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/MovSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-MovSettings::MovSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MovSettings::MovSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MovSettings& MovSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clapAtom"))
-  {
+MovSettings& MovSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clapAtom")) {
     m_clapAtom = MovClapAtomMapper::GetMovClapAtomForName(jsonValue.GetString("clapAtom"));
     m_clapAtomHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cslgAtom"))
-  {
+  if (jsonValue.ValueExists("cslgAtom")) {
     m_cslgAtom = MovCslgAtomMapper::GetMovCslgAtomForName(jsonValue.GetString("cslgAtom"));
     m_cslgAtomHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mpeg2FourCCControl"))
-  {
+  if (jsonValue.ValueExists("mpeg2FourCCControl")) {
     m_mpeg2FourCCControl = MovMpeg2FourCCControlMapper::GetMovMpeg2FourCCControlForName(jsonValue.GetString("mpeg2FourCCControl"));
     m_mpeg2FourCCControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paddingControl"))
-  {
+  if (jsonValue.ValueExists("paddingControl")) {
     m_paddingControl = MovPaddingControlMapper::GetMovPaddingControlForName(jsonValue.GetString("paddingControl"));
     m_paddingControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reference"))
-  {
+  if (jsonValue.ValueExists("reference")) {
     m_reference = MovReferenceMapper::GetMovReferenceForName(jsonValue.GetString("reference"));
     m_referenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MovSettings::Jsonize() const
-{
+JsonValue MovSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_clapAtomHasBeenSet)
-  {
-   payload.WithString("clapAtom", MovClapAtomMapper::GetNameForMovClapAtom(m_clapAtom));
+  if (m_clapAtomHasBeenSet) {
+    payload.WithString("clapAtom", MovClapAtomMapper::GetNameForMovClapAtom(m_clapAtom));
   }
 
-  if(m_cslgAtomHasBeenSet)
-  {
-   payload.WithString("cslgAtom", MovCslgAtomMapper::GetNameForMovCslgAtom(m_cslgAtom));
+  if (m_cslgAtomHasBeenSet) {
+    payload.WithString("cslgAtom", MovCslgAtomMapper::GetNameForMovCslgAtom(m_cslgAtom));
   }
 
-  if(m_mpeg2FourCCControlHasBeenSet)
-  {
-   payload.WithString("mpeg2FourCCControl", MovMpeg2FourCCControlMapper::GetNameForMovMpeg2FourCCControl(m_mpeg2FourCCControl));
+  if (m_mpeg2FourCCControlHasBeenSet) {
+    payload.WithString("mpeg2FourCCControl", MovMpeg2FourCCControlMapper::GetNameForMovMpeg2FourCCControl(m_mpeg2FourCCControl));
   }
 
-  if(m_paddingControlHasBeenSet)
-  {
-   payload.WithString("paddingControl", MovPaddingControlMapper::GetNameForMovPaddingControl(m_paddingControl));
+  if (m_paddingControlHasBeenSet) {
+    payload.WithString("paddingControl", MovPaddingControlMapper::GetNameForMovPaddingControl(m_paddingControl));
   }
 
-  if(m_referenceHasBeenSet)
-  {
-   payload.WithString("reference", MovReferenceMapper::GetNameForMovReference(m_reference));
+  if (m_referenceHasBeenSet) {
+    payload.WithString("reference", MovReferenceMapper::GetNameForMovReference(m_reference));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

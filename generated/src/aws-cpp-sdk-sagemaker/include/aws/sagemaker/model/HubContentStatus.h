@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class HubContentStatus
-  {
-    NOT_SET,
-    Available,
-    Importing,
-    Deleting,
-    ImportFailed,
-    DeleteFailed
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class HubContentStatus { NOT_SET, Available, Importing, Deleting, ImportFailed, DeleteFailed };
 
-namespace HubContentStatusMapper
-{
+namespace HubContentStatusMapper {
 AWS_SAGEMAKER_API HubContentStatus GetHubContentStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForHubContentStatus(HubContentStatus value);
-} // namespace HubContentStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace HubContentStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

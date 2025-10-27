@@ -4,72 +4,77 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ECR {
+namespace Model {
 
+/**
+ * <p>Details about the recommended course of action to remediate the
+ * finding.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Recommendation">AWS
+ * API Reference</a></p>
+ */
+class Recommendation {
+ public:
+  AWS_ECR_API Recommendation() = default;
+  AWS_ECR_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Details about the recommended course of action to remediate the
-   * finding.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Recommendation">AWS
-   * API Reference</a></p>
+   * <p>The URL address to the CVE remediation recommendations.</p>
    */
-  class Recommendation
-  {
-  public:
-    AWS_ECR_API Recommendation() = default;
-    AWS_ECR_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECR_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetUrl() const { return m_url; }
+  inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+  template <typename UrlT = Aws::String>
+  void SetUrl(UrlT&& value) {
+    m_urlHasBeenSet = true;
+    m_url = std::forward<UrlT>(value);
+  }
+  template <typename UrlT = Aws::String>
+  Recommendation& WithUrl(UrlT&& value) {
+    SetUrl(std::forward<UrlT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The recommended course of action to remediate the finding.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  Recommendation& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_url;
+  bool m_urlHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The URL address to the CVE remediation recommendations.</p>
-     */
-    inline const Aws::String& GetUrl() const { return m_url; }
-    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    template<typename UrlT = Aws::String>
-    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
-    template<typename UrlT = Aws::String>
-    Recommendation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
-    ///@}
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The recommended course of action to remediate the finding.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    Recommendation& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_url;
-    bool m_urlHasBeenSet = false;
-
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

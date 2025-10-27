@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sagemaker-geospatial/SageMakerGeospatialRequest.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-} // namespace SageMakerGeospatial
-} // namespace Aws
+namespace Aws {
+namespace SageMakerGeospatial {}  // namespace SageMakerGeospatial
+}  // namespace Aws

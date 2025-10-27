@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-ExtensionAssociationSummary::ExtensionAssociationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExtensionAssociationSummary::ExtensionAssociationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ExtensionAssociationSummary& ExtensionAssociationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+ExtensionAssociationSummary& ExtensionAssociationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExtensionArn"))
-  {
+  if (jsonValue.ValueExists("ExtensionArn")) {
     m_extensionArn = jsonValue.GetString("ExtensionArn");
     m_extensionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExtensionAssociationSummary::Jsonize() const
-{
+JsonValue ExtensionAssociationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_extensionArnHasBeenSet)
-  {
-   payload.WithString("ExtensionArn", m_extensionArn);
-
+  if (m_extensionArnHasBeenSet) {
+    payload.WithString("ExtensionArn", m_extensionArn);
   }
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

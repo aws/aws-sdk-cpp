@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeUsersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DescribeUsersResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeUsersResult& DescribeUsersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeUsersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeUsersResult")) {
     resultNode = rootNode.FirstChild("DescribeUsersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode usersNode = resultNode.FirstChild("Users");
-    if(!usersNode.IsNull())
-    {
+    if (!usersNode.IsNull()) {
       XmlNode usersMember = usersNode.FirstChild("member");
       m_usersHasBeenSet = !usersMember.IsNull();
-      while(!usersMember.IsNull())
-      {
+      while (!usersMember.IsNull()) {
         m_users.push_back(usersMember);
         usersMember = usersMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebService
       m_usersHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -59,7 +50,7 @@ DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebService
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeUsersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeUsersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/ElasticsearchServiceRequest.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
 
-  /**
-   */
-  class DeleteElasticsearchServiceRoleRequest : public ElasticsearchServiceRequest
-  {
-  public:
-    AWS_ELASTICSEARCHSERVICE_API DeleteElasticsearchServiceRoleRequest() = default;
+/**
+ */
+class DeleteElasticsearchServiceRoleRequest : public ElasticsearchServiceRequest {
+ public:
+  AWS_ELASTICSEARCHSERVICE_API DeleteElasticsearchServiceRoleRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteElasticsearchServiceRole"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteElasticsearchServiceRole"; }
 
-    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+  AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DescribeEventTopicsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ds/model/DescribeEventTopicsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventTopicsResult::DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeEventTopicsResult::DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeEventTopicsResult& DescribeEventTopicsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeEventTopicsResult& DescribeEventTopicsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EventTopics"))
-  {
+  if (jsonValue.ValueExists("EventTopics")) {
     Aws::Utils::Array<JsonView> eventTopicsJsonList = jsonValue.GetArray("EventTopics");
-    for(unsigned eventTopicsIndex = 0; eventTopicsIndex < eventTopicsJsonList.GetLength(); ++eventTopicsIndex)
-    {
+    for (unsigned eventTopicsIndex = 0; eventTopicsIndex < eventTopicsJsonList.GetLength(); ++eventTopicsIndex) {
       m_eventTopics.push_back(eventTopicsJsonList[eventTopicsIndex].AsObject());
     }
     m_eventTopicsHasBeenSet = true;
@@ -37,12 +31,10 @@ DescribeEventTopicsResult& DescribeEventTopicsResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

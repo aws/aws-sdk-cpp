@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-class GeoPlacesEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace GeoPlaces {
+class GeoPlacesEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace GeoPlaces
+}  // namespace Aws

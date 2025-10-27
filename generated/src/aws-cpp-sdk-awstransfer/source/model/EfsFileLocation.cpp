@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-EfsFileLocation::EfsFileLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EfsFileLocation::EfsFileLocation(JsonView jsonValue) { *this = jsonValue; }
 
-EfsFileLocation& EfsFileLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FileSystemId"))
-  {
+EfsFileLocation& EfsFileLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FileSystemId")) {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
     m_fileSystemIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EfsFileLocation::Jsonize() const
-{
+JsonValue EfsFileLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileSystemIdHasBeenSet)
-  {
-   payload.WithString("FileSystemId", m_fileSystemId);
-
+  if (m_fileSystemIdHasBeenSet) {
+    payload.WithString("FileSystemId", m_fileSystemId);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

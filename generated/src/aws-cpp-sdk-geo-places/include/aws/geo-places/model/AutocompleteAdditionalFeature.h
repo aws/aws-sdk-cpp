@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class AutocompleteAdditionalFeature
-  {
-    NOT_SET,
-    Core
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class AutocompleteAdditionalFeature { NOT_SET, Core };
 
-namespace AutocompleteAdditionalFeatureMapper
-{
+namespace AutocompleteAdditionalFeatureMapper {
 AWS_GEOPLACES_API AutocompleteAdditionalFeature GetAutocompleteAdditionalFeatureForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForAutocompleteAdditionalFeature(AutocompleteAdditionalFeature value);
-} // namespace AutocompleteAdditionalFeatureMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace AutocompleteAdditionalFeatureMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

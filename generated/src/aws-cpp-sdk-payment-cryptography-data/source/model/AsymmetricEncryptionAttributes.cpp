@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-AsymmetricEncryptionAttributes& AsymmetricEncryptionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PaddingType"))
-  {
+AsymmetricEncryptionAttributes& AsymmetricEncryptionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PaddingType")) {
     m_paddingType = PaddingTypeMapper::GetPaddingTypeForName(jsonValue.GetString("PaddingType"));
     m_paddingTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AsymmetricEncryptionAttributes::Jsonize() const
-{
+JsonValue AsymmetricEncryptionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_paddingTypeHasBeenSet)
-  {
-   payload.WithString("PaddingType", PaddingTypeMapper::GetNameForPaddingType(m_paddingType));
+  if (m_paddingTypeHasBeenSet) {
+    payload.WithString("PaddingType", PaddingTypeMapper::GetNameForPaddingType(m_paddingType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

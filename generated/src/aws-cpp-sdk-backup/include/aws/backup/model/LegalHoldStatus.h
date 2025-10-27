@@ -7,27 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class LegalHoldStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    CANCELING,
-    CANCELED
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class LegalHoldStatus { NOT_SET, CREATING, ACTIVE, CANCELING, CANCELED };
 
-namespace LegalHoldStatusMapper
-{
+namespace LegalHoldStatusMapper {
 AWS_BACKUP_API LegalHoldStatus GetLegalHoldStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForLegalHoldStatus(LegalHoldStatus value);
-} // namespace LegalHoldStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace LegalHoldStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

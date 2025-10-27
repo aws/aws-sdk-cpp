@@ -3,120 +3,97 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RegisterImageRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RegisterImageRequest::SerializePayload() const
-{
+Aws::String RegisterImageRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RegisterImage&";
-  if(m_imageLocationHasBeenSet)
-  {
+  if (m_imageLocationHasBeenSet) {
     ss << "ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
   }
 
-  if(m_billingProductsHasBeenSet)
-  {
+  if (m_billingProductsHasBeenSet) {
     unsigned billingProductsCount = 1;
-    for(auto& item : m_billingProducts)
-    {
-      ss << "BillingProduct." << billingProductsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_billingProducts) {
+      ss << "BillingProduct." << billingProductsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       billingProductsCount++;
     }
   }
 
-  if(m_bootModeHasBeenSet)
-  {
+  if (m_bootModeHasBeenSet) {
     ss << "BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 
-  if(m_tpmSupportHasBeenSet)
-  {
+  if (m_tpmSupportHasBeenSet) {
     ss << "TpmSupport=" << StringUtils::URLEncode(TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport)) << "&";
   }
 
-  if(m_uefiDataHasBeenSet)
-  {
+  if (m_uefiDataHasBeenSet) {
     ss << "UefiData=" << StringUtils::URLEncode(m_uefiData.c_str()) << "&";
   }
 
-  if(m_imdsSupportHasBeenSet)
-  {
+  if (m_imdsSupportHasBeenSet) {
     ss << "ImdsSupport=" << StringUtils::URLEncode(ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport)) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_architectureHasBeenSet)
-  {
+  if (m_architectureHasBeenSet) {
     ss << "Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
 
-  if(m_kernelIdHasBeenSet)
-  {
+  if (m_kernelIdHasBeenSet) {
     ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
 
-  if(m_ramdiskIdHasBeenSet)
-  {
+  if (m_ramdiskIdHasBeenSet) {
     ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
 
-  if(m_rootDeviceNameHasBeenSet)
-  {
+  if (m_rootDeviceNameHasBeenSet) {
     ss << "RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
   }
 
-  if(m_blockDeviceMappingsHasBeenSet)
-  {
+  if (m_blockDeviceMappingsHasBeenSet) {
     unsigned blockDeviceMappingsCount = 1;
-    for(auto& item : m_blockDeviceMappings)
-    {
+    for (auto& item : m_blockDeviceMappings) {
       item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
       blockDeviceMappingsCount++;
     }
   }
 
-  if(m_virtualizationTypeHasBeenSet)
-  {
+  if (m_virtualizationTypeHasBeenSet) {
     ss << "VirtualizationType=" << StringUtils::URLEncode(m_virtualizationType.c_str()) << "&";
   }
 
-  if(m_sriovNetSupportHasBeenSet)
-  {
+  if (m_sriovNetSupportHasBeenSet) {
     ss << "SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
-  if(m_enaSupportHasBeenSet)
-  {
+  if (m_enaSupportHasBeenSet) {
     ss << "EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 
@@ -124,8 +101,4 @@ Aws::String RegisterImageRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RegisterImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RegisterImageRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

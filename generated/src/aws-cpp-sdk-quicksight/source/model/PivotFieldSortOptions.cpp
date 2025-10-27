@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PivotFieldSortOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PivotFieldSortOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-PivotFieldSortOptions::PivotFieldSortOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PivotFieldSortOptions::PivotFieldSortOptions(JsonView jsonValue) { *this = jsonValue; }
 
-PivotFieldSortOptions& PivotFieldSortOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldId"))
-  {
+PivotFieldSortOptions& PivotFieldSortOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldId")) {
     m_fieldId = jsonValue.GetString("FieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SortBy"))
-  {
+  if (jsonValue.ValueExists("SortBy")) {
     m_sortBy = jsonValue.GetObject("SortBy");
     m_sortByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PivotFieldSortOptions::Jsonize() const
-{
+JsonValue PivotFieldSortOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("FieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("FieldId", m_fieldId);
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithObject("SortBy", m_sortBy.Jsonize());
-
+  if (m_sortByHasBeenSet) {
+    payload.WithObject("SortBy", m_sortBy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

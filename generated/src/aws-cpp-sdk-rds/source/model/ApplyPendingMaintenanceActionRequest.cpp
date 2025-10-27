@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
-{
+Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ApplyPendingMaintenanceAction&";
-  if(m_resourceIdentifierHasBeenSet)
-  {
+  if (m_resourceIdentifierHasBeenSet) {
     ss << "ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
   }
 
-  if(m_applyActionHasBeenSet)
-  {
+  if (m_applyActionHasBeenSet) {
     ss << "ApplyAction=" << StringUtils::URLEncode(m_applyAction.c_str()) << "&";
   }
 
-  if(m_optInTypeHasBeenSet)
-  {
+  if (m_optInTypeHasBeenSet) {
     ss << "OptInType=" << StringUtils::URLEncode(m_optInType.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ApplyPendingMaintenanceActionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ApplyPendingMaintenanceActionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

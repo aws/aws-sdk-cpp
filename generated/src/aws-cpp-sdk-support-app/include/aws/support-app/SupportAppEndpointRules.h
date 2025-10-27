@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 
-namespace Aws
-{
-namespace SupportApp
-{
-class SupportAppEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SupportApp {
+class SupportAppEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SupportApp
-} // namespace Aws
+}  // namespace SupportApp
+}  // namespace Aws

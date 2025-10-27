@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-TransformationFunction::TransformationFunction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransformationFunction::TransformationFunction(JsonView jsonValue) { *this = jsonValue; }
 
-TransformationFunction& TransformationFunction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("transformationLambdaConfiguration"))
-  {
+TransformationFunction& TransformationFunction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("transformationLambdaConfiguration")) {
     m_transformationLambdaConfiguration = jsonValue.GetObject("transformationLambdaConfiguration");
     m_transformationLambdaConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransformationFunction::Jsonize() const
-{
+JsonValue TransformationFunction::Jsonize() const {
   JsonValue payload;
 
-  if(m_transformationLambdaConfigurationHasBeenSet)
-  {
-   payload.WithObject("transformationLambdaConfiguration", m_transformationLambdaConfiguration.Jsonize());
-
+  if (m_transformationLambdaConfigurationHasBeenSet) {
+    payload.WithObject("transformationLambdaConfiguration", m_transformationLambdaConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

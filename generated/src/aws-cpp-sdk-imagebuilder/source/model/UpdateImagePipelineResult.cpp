@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/UpdateImagePipelineResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/UpdateImagePipelineResult.h>
 
 #include <utility>
 
@@ -16,30 +16,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateImagePipelineResult::UpdateImagePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateImagePipelineResult::UpdateImagePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateImagePipelineResult& UpdateImagePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateImagePipelineResult& UpdateImagePipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("requestId"))
-  {
+  if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientToken"))
-  {
+  if (jsonValue.ValueExists("clientToken")) {
     m_clientToken = jsonValue.GetString("clientToken");
     m_clientTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imagePipelineArn"))
-  {
+  if (jsonValue.ValueExists("imagePipelineArn")) {
     m_imagePipelineArn = jsonValue.GetString("imagePipelineArn");
     m_imagePipelineArnHasBeenSet = true;
   }
-
 
   return *this;
 }

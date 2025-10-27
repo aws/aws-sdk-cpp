@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/firehose/model/Serializer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/model/Serializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Firehose {
+namespace Model {
 
-Serializer::Serializer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Serializer::Serializer(JsonView jsonValue) { *this = jsonValue; }
 
-Serializer& Serializer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParquetSerDe"))
-  {
+Serializer& Serializer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParquetSerDe")) {
     m_parquetSerDe = jsonValue.GetObject("ParquetSerDe");
     m_parquetSerDeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrcSerDe"))
-  {
+  if (jsonValue.ValueExists("OrcSerDe")) {
     m_orcSerDe = jsonValue.GetObject("OrcSerDe");
     m_orcSerDeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Serializer::Jsonize() const
-{
+JsonValue Serializer::Jsonize() const {
   JsonValue payload;
 
-  if(m_parquetSerDeHasBeenSet)
-  {
-   payload.WithObject("ParquetSerDe", m_parquetSerDe.Jsonize());
-
+  if (m_parquetSerDeHasBeenSet) {
+    payload.WithObject("ParquetSerDe", m_parquetSerDe.Jsonize());
   }
 
-  if(m_orcSerDeHasBeenSet)
-  {
-   payload.WithObject("OrcSerDe", m_orcSerDe.Jsonize());
-
+  if (m_orcSerDeHasBeenSet) {
+    payload.WithObject("OrcSerDe", m_orcSerDe.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

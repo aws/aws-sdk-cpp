@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisCharacterInterval::RealTimeContactAnalysisCharacterInterval(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisCharacterInterval::RealTimeContactAnalysisCharacterInterval(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisCharacterInterval& RealTimeContactAnalysisCharacterInterval::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BeginOffsetChar"))
-  {
+RealTimeContactAnalysisCharacterInterval& RealTimeContactAnalysisCharacterInterval::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BeginOffsetChar")) {
     m_beginOffsetChar = jsonValue.GetInteger("BeginOffsetChar");
     m_beginOffsetCharHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffsetChar"))
-  {
+  if (jsonValue.ValueExists("EndOffsetChar")) {
     m_endOffsetChar = jsonValue.GetInteger("EndOffsetChar");
     m_endOffsetCharHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisCharacterInterval::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisCharacterInterval::Jsonize() const {
   JsonValue payload;
 
-  if(m_beginOffsetCharHasBeenSet)
-  {
-   payload.WithInteger("BeginOffsetChar", m_beginOffsetChar);
-
+  if (m_beginOffsetCharHasBeenSet) {
+    payload.WithInteger("BeginOffsetChar", m_beginOffsetChar);
   }
 
-  if(m_endOffsetCharHasBeenSet)
-  {
-   payload.WithInteger("EndOffsetChar", m_endOffsetChar);
-
+  if (m_endOffsetCharHasBeenSet) {
+    payload.WithInteger("EndOffsetChar", m_endOffsetChar);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

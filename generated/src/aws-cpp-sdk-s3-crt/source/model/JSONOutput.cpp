@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/JSONOutput.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/JSONOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-JSONOutput::JSONOutput(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+JSONOutput::JSONOutput(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JSONOutput& JSONOutput::operator =(const XmlNode& xmlNode)
-{
+JSONOutput& JSONOutput::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
-    if(!recordDelimiterNode.IsNull())
-    {
+    if (!recordDelimiterNode.IsNull()) {
       m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
       m_recordDelimiterHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ JSONOutput& JSONOutput::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void JSONOutput::AddToNode(XmlNode& parentNode) const
-{
+void JSONOutput::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_recordDelimiterHasBeenSet)
-  {
-   XmlNode recordDelimiterNode = parentNode.CreateChildElement("RecordDelimiter");
-   recordDelimiterNode.SetText(m_recordDelimiter);
+  if (m_recordDelimiterHasBeenSet) {
+    XmlNode recordDelimiterNode = parentNode.CreateChildElement("RecordDelimiter");
+    recordDelimiterNode.SetText(m_recordDelimiter);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::PinpointSMSVoiceV2;
 
-AWSError<CoreErrors> PinpointSMSVoiceV2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PinpointSMSVoiceV2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PinpointSMSVoiceV2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
-{
+Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedInstancesOffering&";
-  if(m_instanceCountHasBeenSet)
-  {
+  if (m_instanceCountHasBeenSet) {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
 
-  if(m_reservedInstancesOfferingIdHasBeenSet)
-  {
+  if (m_reservedInstancesOfferingIdHasBeenSet) {
     ss << "ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
   }
 
-  if(m_purchaseTimeHasBeenSet)
-  {
+  if (m_purchaseTimeHasBeenSet) {
     ss << "PurchaseTime=" << StringUtils::URLEncode(m_purchaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_limitPriceHasBeenSet)
-  {
+  if (m_limitPriceHasBeenSet) {
     m_limitPrice.OutputToStream(ss, "LimitPrice");
   }
 
@@ -43,8 +37,4 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PurchaseReservedInstancesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseReservedInstancesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceReporting
-{
-class MarketplaceReportingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MarketplaceReporting {
+class MarketplaceReportingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MarketplaceReporting
-} // namespace Aws
+}  // namespace MarketplaceReporting
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-SmsMfaConfigType& SmsMfaConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SmsAuthenticationMessage"))
-  {
+SmsMfaConfigType& SmsMfaConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SmsAuthenticationMessage")) {
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
     m_smsAuthenticationMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SmsConfiguration"))
-  {
+  if (jsonValue.ValueExists("SmsConfiguration")) {
     m_smsConfiguration = jsonValue.GetObject("SmsConfiguration");
     m_smsConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SmsMfaConfigType::Jsonize() const
-{
+JsonValue SmsMfaConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_smsAuthenticationMessageHasBeenSet)
-  {
-   payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
-
+  if (m_smsAuthenticationMessageHasBeenSet) {
+    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
   }
 
-  if(m_smsConfigurationHasBeenSet)
-  {
-   payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
-
+  if (m_smsConfigurationHasBeenSet) {
+    payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class Unit
-  {
-    NOT_SET,
-    DAYS
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class Unit { NOT_SET, DAYS };
 
-namespace UnitMapper
-{
+namespace UnitMapper {
 AWS_FSX_API Unit GetUnitForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForUnit(Unit value);
-} // namespace UnitMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace UnitMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

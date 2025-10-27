@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeEndpointRules.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockDataAutomationRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,28 @@ using BedrockDataAutomationRuntimeBuiltInParameters = Aws::Endpoint::BuiltInPara
  * The SDK must use service-specific type for each service per specification.
  */
 using BedrockDataAutomationRuntimeEndpointProviderBase =
-    EndpointProviderBase<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters, BedrockDataAutomationRuntimeClientContextParameters>;
+    EndpointProviderBase<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters,
+                         BedrockDataAutomationRuntimeClientContextParameters>;
 
 using BedrockDataAutomationRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters, BedrockDataAutomationRuntimeClientContextParameters>;
+    DefaultEndpointProvider<BedrockDataAutomationRuntimeClientConfiguration, BedrockDataAutomationRuntimeBuiltInParameters,
+                            BedrockDataAutomationRuntimeClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeEndpointProvider : public BedrockDataAutomationRuntimeDefaultEpProviderBase
-{
-public:
-    using BedrockDataAutomationRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeEndpointProvider
+    : public BedrockDataAutomationRuntimeDefaultEpProviderBase {
+ public:
+  using BedrockDataAutomationRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BedrockDataAutomationRuntimeEndpointProvider()
-      : BedrockDataAutomationRuntimeDefaultEpProviderBase(Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::GetRulesBlob(), Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::RulesBlobSize)
-    {}
+  BedrockDataAutomationRuntimeEndpointProvider()
+      : BedrockDataAutomationRuntimeDefaultEpProviderBase(
+            Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::GetRulesBlob(),
+            Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeEndpointRules::RulesBlobSize) {}
 
-    ~BedrockDataAutomationRuntimeEndpointProvider()
-    {
-    }
+  ~BedrockDataAutomationRuntimeEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

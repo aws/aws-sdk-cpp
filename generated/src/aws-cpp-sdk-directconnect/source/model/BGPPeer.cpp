@@ -3,156 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/BGPPeer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directconnect/model/BGPPeer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
 
-BGPPeer::BGPPeer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BGPPeer::BGPPeer(JsonView jsonValue) { *this = jsonValue; }
 
-BGPPeer& BGPPeer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bgpPeerId"))
-  {
+BGPPeer& BGPPeer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bgpPeerId")) {
     m_bgpPeerId = jsonValue.GetString("bgpPeerId");
     m_bgpPeerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("asn"))
-  {
+  if (jsonValue.ValueExists("asn")) {
     m_asn = jsonValue.GetInteger("asn");
     m_asnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("asnLong"))
-  {
+  if (jsonValue.ValueExists("asnLong")) {
     m_asnLong = jsonValue.GetInt64("asnLong");
     m_asnLongHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authKey"))
-  {
+  if (jsonValue.ValueExists("authKey")) {
     m_authKey = jsonValue.GetString("authKey");
     m_authKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("addressFamily"))
-  {
+  if (jsonValue.ValueExists("addressFamily")) {
     m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
     m_addressFamilyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("amazonAddress"))
-  {
+  if (jsonValue.ValueExists("amazonAddress")) {
     m_amazonAddress = jsonValue.GetString("amazonAddress");
     m_amazonAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customerAddress"))
-  {
+  if (jsonValue.ValueExists("customerAddress")) {
     m_customerAddress = jsonValue.GetString("customerAddress");
     m_customerAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bgpPeerState"))
-  {
+  if (jsonValue.ValueExists("bgpPeerState")) {
     m_bgpPeerState = BGPPeerStateMapper::GetBGPPeerStateForName(jsonValue.GetString("bgpPeerState"));
     m_bgpPeerStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bgpStatus"))
-  {
+  if (jsonValue.ValueExists("bgpStatus")) {
     m_bgpStatus = BGPStatusMapper::GetBGPStatusForName(jsonValue.GetString("bgpStatus"));
     m_bgpStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsDeviceV2"))
-  {
+  if (jsonValue.ValueExists("awsDeviceV2")) {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
     m_awsDeviceV2HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsLogicalDeviceId"))
-  {
+  if (jsonValue.ValueExists("awsLogicalDeviceId")) {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BGPPeer::Jsonize() const
-{
+JsonValue BGPPeer::Jsonize() const {
   JsonValue payload;
 
-  if(m_bgpPeerIdHasBeenSet)
-  {
-   payload.WithString("bgpPeerId", m_bgpPeerId);
-
+  if (m_bgpPeerIdHasBeenSet) {
+    payload.WithString("bgpPeerId", m_bgpPeerId);
   }
 
-  if(m_asnHasBeenSet)
-  {
-   payload.WithInteger("asn", m_asn);
-
+  if (m_asnHasBeenSet) {
+    payload.WithInteger("asn", m_asn);
   }
 
-  if(m_asnLongHasBeenSet)
-  {
-   payload.WithInt64("asnLong", m_asnLong);
-
+  if (m_asnLongHasBeenSet) {
+    payload.WithInt64("asnLong", m_asnLong);
   }
 
-  if(m_authKeyHasBeenSet)
-  {
-   payload.WithString("authKey", m_authKey);
-
+  if (m_authKeyHasBeenSet) {
+    payload.WithString("authKey", m_authKey);
   }
 
-  if(m_addressFamilyHasBeenSet)
-  {
-   payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
+  if (m_addressFamilyHasBeenSet) {
+    payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
   }
 
-  if(m_amazonAddressHasBeenSet)
-  {
-   payload.WithString("amazonAddress", m_amazonAddress);
-
+  if (m_amazonAddressHasBeenSet) {
+    payload.WithString("amazonAddress", m_amazonAddress);
   }
 
-  if(m_customerAddressHasBeenSet)
-  {
-   payload.WithString("customerAddress", m_customerAddress);
-
+  if (m_customerAddressHasBeenSet) {
+    payload.WithString("customerAddress", m_customerAddress);
   }
 
-  if(m_bgpPeerStateHasBeenSet)
-  {
-   payload.WithString("bgpPeerState", BGPPeerStateMapper::GetNameForBGPPeerState(m_bgpPeerState));
+  if (m_bgpPeerStateHasBeenSet) {
+    payload.WithString("bgpPeerState", BGPPeerStateMapper::GetNameForBGPPeerState(m_bgpPeerState));
   }
 
-  if(m_bgpStatusHasBeenSet)
-  {
-   payload.WithString("bgpStatus", BGPStatusMapper::GetNameForBGPStatus(m_bgpStatus));
+  if (m_bgpStatusHasBeenSet) {
+    payload.WithString("bgpStatus", BGPStatusMapper::GetNameForBGPStatus(m_bgpStatus));
   }
 
-  if(m_awsDeviceV2HasBeenSet)
-  {
-   payload.WithString("awsDeviceV2", m_awsDeviceV2);
-
+  if (m_awsDeviceV2HasBeenSet) {
+    payload.WithString("awsDeviceV2", m_awsDeviceV2);
   }
 
-  if(m_awsLogicalDeviceIdHasBeenSet)
-  {
-   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
-
+  if (m_awsLogicalDeviceIdHasBeenSet) {
+    payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

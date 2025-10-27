@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>Configuration that controls the parallelism of the pipeline. By default, the
+ * parallelism configuration specified applies to all executions of the pipeline
+ * unless overridden.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParallelismConfiguration">AWS
+ * API Reference</a></p>
+ */
+class ParallelismConfiguration {
+ public:
+  AWS_SAGEMAKER_API ParallelismConfiguration() = default;
+  AWS_SAGEMAKER_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configuration that controls the parallelism of the pipeline. By default, the
-   * parallelism configuration specified applies to all executions of the pipeline
-   * unless overridden.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParallelismConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The max number of steps that can be executed in parallel. </p>
    */
-  class ParallelismConfiguration
-  {
-  public:
-    AWS_SAGEMAKER_API ParallelismConfiguration() = default;
-    AWS_SAGEMAKER_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMaxParallelExecutionSteps() const { return m_maxParallelExecutionSteps; }
+  inline bool MaxParallelExecutionStepsHasBeenSet() const { return m_maxParallelExecutionStepsHasBeenSet; }
+  inline void SetMaxParallelExecutionSteps(int value) {
+    m_maxParallelExecutionStepsHasBeenSet = true;
+    m_maxParallelExecutionSteps = value;
+  }
+  inline ParallelismConfiguration& WithMaxParallelExecutionSteps(int value) {
+    SetMaxParallelExecutionSteps(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxParallelExecutionSteps{0};
+  bool m_maxParallelExecutionStepsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The max number of steps that can be executed in parallel. </p>
-     */
-    inline int GetMaxParallelExecutionSteps() const { return m_maxParallelExecutionSteps; }
-    inline bool MaxParallelExecutionStepsHasBeenSet() const { return m_maxParallelExecutionStepsHasBeenSet; }
-    inline void SetMaxParallelExecutionSteps(int value) { m_maxParallelExecutionStepsHasBeenSet = true; m_maxParallelExecutionSteps = value; }
-    inline ParallelismConfiguration& WithMaxParallelExecutionSteps(int value) { SetMaxParallelExecutionSteps(value); return *this;}
-    ///@}
-  private:
-
-    int m_maxParallelExecutionSteps{0};
-    bool m_maxParallelExecutionStepsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

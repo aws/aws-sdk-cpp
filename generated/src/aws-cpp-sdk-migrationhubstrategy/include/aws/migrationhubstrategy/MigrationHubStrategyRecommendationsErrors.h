@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-enum class MigrationHubStrategyRecommendationsErrors
-{
-  //From Core//
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+enum class MigrationHubStrategyRecommendationsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MigrationHubStrategyRecommendationsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,30 +44,33 @@ enum class MigrationHubStrategyRecommendationsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY,
   INTERNAL_SERVER,
   SERVICE_LINKED_ROLE_LOCK_CLIENT,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsError : public Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>
-{
-public:
+class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsError
+    : public Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors> {
+ public:
   MigrationHubStrategyRecommendationsError() {}
-  MigrationHubStrategyRecommendationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
-  MigrationHubStrategyRecommendationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
-  MigrationHubStrategyRecommendationsError(const Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>& rhs) : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
-  MigrationHubStrategyRecommendationsError(Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>&& rhs) : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
+  MigrationHubStrategyRecommendationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
+  MigrationHubStrategyRecommendationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
+  MigrationHubStrategyRecommendationsError(const Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>& rhs)
+      : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
+  MigrationHubStrategyRecommendationsError(Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>&& rhs)
+      : Aws::Client::AWSError<MigrationHubStrategyRecommendationsErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MigrationHubStrategyRecommendationsErrorMapper
-{
-  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MigrationHubStrategyRecommendationsErrorMapper {
+AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SearchableRoutingCriteria::SearchableRoutingCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchableRoutingCriteria::SearchableRoutingCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-SearchableRoutingCriteria& SearchableRoutingCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Steps"))
-  {
+SearchableRoutingCriteria& SearchableRoutingCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Steps")) {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
-    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-    {
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
     m_stepsHasBeenSet = true;
@@ -37,24 +28,20 @@ SearchableRoutingCriteria& SearchableRoutingCriteria::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue SearchableRoutingCriteria::Jsonize() const
-{
+JsonValue SearchableRoutingCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
-   for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-   {
-     stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
-   }
-   payload.WithArray("Steps", std::move(stepsJsonList));
-
+  if (m_stepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
+      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+    }
+    payload.WithArray("Steps", std::move(stepsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

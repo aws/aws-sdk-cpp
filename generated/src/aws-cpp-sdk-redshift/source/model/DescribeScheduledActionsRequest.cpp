@@ -3,66 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeScheduledActionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeScheduledActionsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeScheduledActionsRequest::SerializePayload() const
-{
+Aws::String DescribeScheduledActionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeScheduledActions&";
-  if(m_scheduledActionNameHasBeenSet)
-  {
+  if (m_scheduledActionNameHasBeenSet) {
     ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
   }
 
-  if(m_targetActionTypeHasBeenSet)
-  {
-    ss << "TargetActionType=" << StringUtils::URLEncode(ScheduledActionTypeValuesMapper::GetNameForScheduledActionTypeValues(m_targetActionType)) << "&";
+  if (m_targetActionTypeHasBeenSet) {
+    ss << "TargetActionType="
+       << StringUtils::URLEncode(ScheduledActionTypeValuesMapper::GetNameForScheduledActionTypeValues(m_targetActionType)) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_activeHasBeenSet)
-  {
+  if (m_activeHasBeenSet) {
     ss << "Active=" << std::boolalpha << m_active << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.ScheduledActionFilter.", filtersCount, "");
         filtersCount++;
       }
     }
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -70,8 +58,4 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeScheduledActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeScheduledActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

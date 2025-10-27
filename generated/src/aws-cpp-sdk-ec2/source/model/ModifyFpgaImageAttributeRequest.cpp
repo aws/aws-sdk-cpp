@@ -3,82 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyFpgaImageAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyFpgaImageAttributeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyFpgaImageAttributeRequest::SerializePayload() const
-{
+Aws::String ModifyFpgaImageAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyFpgaImageAttribute&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_fpgaImageIdHasBeenSet)
-  {
+  if (m_fpgaImageIdHasBeenSet) {
     ss << "FpgaImageId=" << StringUtils::URLEncode(m_fpgaImageId.c_str()) << "&";
   }
 
-  if(m_attributeHasBeenSet)
-  {
+  if (m_attributeHasBeenSet) {
     ss << "Attribute=" << StringUtils::URLEncode(FpgaImageAttributeNameMapper::GetNameForFpgaImageAttributeName(m_attribute)) << "&";
   }
 
-  if(m_operationTypeHasBeenSet)
-  {
+  if (m_operationTypeHasBeenSet) {
     ss << "OperationType=" << StringUtils::URLEncode(OperationTypeMapper::GetNameForOperationType(m_operationType)) << "&";
   }
 
-  if(m_userIdsHasBeenSet)
-  {
+  if (m_userIdsHasBeenSet) {
     unsigned userIdsCount = 1;
-    for(auto& item : m_userIds)
-    {
-      ss << "UserId." << userIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_userIds) {
+      ss << "UserId." << userIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       userIdsCount++;
     }
   }
 
-  if(m_userGroupsHasBeenSet)
-  {
+  if (m_userGroupsHasBeenSet) {
     unsigned userGroupsCount = 1;
-    for(auto& item : m_userGroups)
-    {
-      ss << "UserGroup." << userGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_userGroups) {
+      ss << "UserGroup." << userGroupsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       userGroupsCount++;
     }
   }
 
-  if(m_productCodesHasBeenSet)
-  {
+  if (m_productCodesHasBeenSet) {
     unsigned productCodesCount = 1;
-    for(auto& item : m_productCodes)
-    {
-      ss << "ProductCode." << productCodesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_productCodes) {
+      ss << "ProductCode." << productCodesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       productCodesCount++;
     }
   }
 
-  if(m_loadPermissionHasBeenSet)
-  {
+  if (m_loadPermissionHasBeenSet) {
     m_loadPermission.OutputToStream(ss, "LoadPermission");
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
@@ -86,8 +69,4 @@ Aws::String ModifyFpgaImageAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyFpgaImageAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyFpgaImageAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

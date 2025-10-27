@@ -12,33 +12,22 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeAccessRequest::SerializePayload() const
-{
+Aws::String DescribeAccessRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("ExternalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("ExternalId", m_externalId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeAccessRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeAccessRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeAccess"));
   return headers;
-
 }
-
-
-
-

@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mailmanager/model/DropAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mailmanager/model/DropAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
+namespace Aws {
+namespace MailManager {
+namespace Model {
 
-DropAction::DropAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DropAction::DropAction(JsonView jsonValue) { *this = jsonValue; }
 
-DropAction& DropAction::operator =(JsonView jsonValue)
-{
+DropAction& DropAction::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue DropAction::Jsonize() const
-{
+JsonValue DropAction::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

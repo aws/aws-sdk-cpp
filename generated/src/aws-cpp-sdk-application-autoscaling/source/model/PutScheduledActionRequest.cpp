@@ -12,71 +12,50 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutScheduledActionRequest::SerializePayload() const
-{
+Aws::String PutScheduledActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceNamespaceHasBeenSet)
-  {
-   payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
+  if (m_serviceNamespaceHasBeenSet) {
+    payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithString("Schedule", m_schedule);
-
+  if (m_scheduleHasBeenSet) {
+    payload.WithString("Schedule", m_schedule);
   }
 
-  if(m_timezoneHasBeenSet)
-  {
-   payload.WithString("Timezone", m_timezone);
-
+  if (m_timezoneHasBeenSet) {
+    payload.WithString("Timezone", m_timezone);
   }
 
-  if(m_scheduledActionNameHasBeenSet)
-  {
-   payload.WithString("ScheduledActionName", m_scheduledActionName);
-
+  if (m_scheduledActionNameHasBeenSet) {
+    payload.WithString("ScheduledActionName", m_scheduledActionName);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_scalableDimensionHasBeenSet)
-  {
-   payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
+  if (m_scalableDimensionHasBeenSet) {
+    payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_scalableTargetActionHasBeenSet)
-  {
-   payload.WithObject("ScalableTargetAction", m_scalableTargetAction.Jsonize());
-
+  if (m_scalableTargetActionHasBeenSet) {
+    payload.WithObject("ScalableTargetAction", m_scalableTargetAction.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutScheduledActionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutScheduledActionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AnyScaleFrontendService.PutScheduledAction"));
   return headers;
-
 }
-
-
-
-

@@ -11,135 +11,103 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-VoiceConnector::VoiceConnector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VoiceConnector::VoiceConnector(JsonView jsonValue) { *this = jsonValue; }
 
-VoiceConnector& VoiceConnector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VoiceConnectorId"))
-  {
+VoiceConnector& VoiceConnector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VoiceConnectorId")) {
     m_voiceConnectorId = jsonValue.GetString("VoiceConnectorId");
     m_voiceConnectorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = VoiceConnectorAwsRegionMapper::GetVoiceConnectorAwsRegionForName(jsonValue.GetString("AwsRegion"));
     m_awsRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutboundHostName"))
-  {
+  if (jsonValue.ValueExists("OutboundHostName")) {
     m_outboundHostName = jsonValue.GetString("OutboundHostName");
     m_outboundHostNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequireEncryption"))
-  {
+  if (jsonValue.ValueExists("RequireEncryption")) {
     m_requireEncryption = jsonValue.GetBool("RequireEncryption");
     m_requireEncryptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceConnectorArn"))
-  {
+  if (jsonValue.ValueExists("VoiceConnectorArn")) {
     m_voiceConnectorArn = jsonValue.GetString("VoiceConnectorArn");
     m_voiceConnectorArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IntegrationType"))
-  {
-    m_integrationType = VoiceConnectorIntegrationTypeMapper::GetVoiceConnectorIntegrationTypeForName(jsonValue.GetString("IntegrationType"));
+  if (jsonValue.ValueExists("IntegrationType")) {
+    m_integrationType =
+        VoiceConnectorIntegrationTypeMapper::GetVoiceConnectorIntegrationTypeForName(jsonValue.GetString("IntegrationType"));
     m_integrationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkType"))
-  {
+  if (jsonValue.ValueExists("NetworkType")) {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
     m_networkTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VoiceConnector::Jsonize() const
-{
+JsonValue VoiceConnector::Jsonize() const {
   JsonValue payload;
 
-  if(m_voiceConnectorIdHasBeenSet)
-  {
-   payload.WithString("VoiceConnectorId", m_voiceConnectorId);
-
+  if (m_voiceConnectorIdHasBeenSet) {
+    payload.WithString("VoiceConnectorId", m_voiceConnectorId);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", VoiceConnectorAwsRegionMapper::GetNameForVoiceConnectorAwsRegion(m_awsRegion));
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", VoiceConnectorAwsRegionMapper::GetNameForVoiceConnectorAwsRegion(m_awsRegion));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_outboundHostNameHasBeenSet)
-  {
-   payload.WithString("OutboundHostName", m_outboundHostName);
-
+  if (m_outboundHostNameHasBeenSet) {
+    payload.WithString("OutboundHostName", m_outboundHostName);
   }
 
-  if(m_requireEncryptionHasBeenSet)
-  {
-   payload.WithBool("RequireEncryption", m_requireEncryption);
-
+  if (m_requireEncryptionHasBeenSet) {
+    payload.WithBool("RequireEncryption", m_requireEncryption);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_voiceConnectorArnHasBeenSet)
-  {
-   payload.WithString("VoiceConnectorArn", m_voiceConnectorArn);
-
+  if (m_voiceConnectorArnHasBeenSet) {
+    payload.WithString("VoiceConnectorArn", m_voiceConnectorArn);
   }
 
-  if(m_integrationTypeHasBeenSet)
-  {
-   payload.WithString("IntegrationType", VoiceConnectorIntegrationTypeMapper::GetNameForVoiceConnectorIntegrationType(m_integrationType));
+  if (m_integrationTypeHasBeenSet) {
+    payload.WithString("IntegrationType", VoiceConnectorIntegrationTypeMapper::GetNameForVoiceConnectorIntegrationType(m_integrationType));
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
-   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-Destination::Destination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Destination::Destination(JsonView jsonValue) { *this = jsonValue; }
 
-Destination& Destination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ampConfiguration"))
-  {
+Destination& Destination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ampConfiguration")) {
     m_ampConfiguration = jsonValue.GetObject("ampConfiguration");
     m_ampConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Destination::Jsonize() const
-{
+JsonValue Destination::Jsonize() const {
   JsonValue payload;
 
-  if(m_ampConfigurationHasBeenSet)
-  {
-   payload.WithObject("ampConfiguration", m_ampConfiguration.Jsonize());
-
+  if (m_ampConfigurationHasBeenSet) {
+    payload.WithObject("ampConfiguration", m_ampConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

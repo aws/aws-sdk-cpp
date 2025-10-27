@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-AnalysisTemplateArtifact::AnalysisTemplateArtifact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisTemplateArtifact::AnalysisTemplateArtifact(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisTemplateArtifact& AnalysisTemplateArtifact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("location"))
-  {
+AnalysisTemplateArtifact& AnalysisTemplateArtifact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalysisTemplateArtifact::Jsonize() const
-{
+JsonValue AnalysisTemplateArtifact::Jsonize() const {
   JsonValue payload;
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("location", m_location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

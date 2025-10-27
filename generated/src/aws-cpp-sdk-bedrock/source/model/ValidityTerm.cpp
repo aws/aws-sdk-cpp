@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-ValidityTerm::ValidityTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidityTerm::ValidityTerm(JsonView jsonValue) { *this = jsonValue; }
 
-ValidityTerm& ValidityTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agreementDuration"))
-  {
+ValidityTerm& ValidityTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agreementDuration")) {
     m_agreementDuration = jsonValue.GetString("agreementDuration");
     m_agreementDurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidityTerm::Jsonize() const
-{
+JsonValue ValidityTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_agreementDurationHasBeenSet)
-  {
-   payload.WithString("agreementDuration", m_agreementDuration);
-
+  if (m_agreementDurationHasBeenSet) {
+    payload.WithString("agreementDuration", m_agreementDuration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

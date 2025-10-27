@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class InventoryIncludedObjectVersions
-  {
-    NOT_SET,
-    All,
-    Current
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class InventoryIncludedObjectVersions { NOT_SET, All, Current };
 
-namespace InventoryIncludedObjectVersionsMapper
-{
+namespace InventoryIncludedObjectVersionsMapper {
 AWS_S3CRT_API InventoryIncludedObjectVersions GetInventoryIncludedObjectVersionsForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForInventoryIncludedObjectVersions(InventoryIncludedObjectVersions value);
-} // namespace InventoryIncludedObjectVersionsMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace InventoryIncludedObjectVersionsMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

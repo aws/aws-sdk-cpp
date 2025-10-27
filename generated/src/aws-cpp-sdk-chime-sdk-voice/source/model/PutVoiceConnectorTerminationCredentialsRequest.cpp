@@ -12,24 +12,16 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutVoiceConnectorTerminationCredentialsRequest::SerializePayload() const
-{
+Aws::String PutVoiceConnectorTerminationCredentialsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_credentialsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> credentialsJsonList(m_credentials.size());
-   for(unsigned credentialsIndex = 0; credentialsIndex < credentialsJsonList.GetLength(); ++credentialsIndex)
-   {
-     credentialsJsonList[credentialsIndex].AsObject(m_credentials[credentialsIndex].Jsonize());
-   }
-   payload.WithArray("Credentials", std::move(credentialsJsonList));
-
+  if (m_credentialsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> credentialsJsonList(m_credentials.size());
+    for (unsigned credentialsIndex = 0; credentialsIndex < credentialsJsonList.GetLength(); ++credentialsIndex) {
+      credentialsJsonList[credentialsIndex].AsObject(m_credentials[credentialsIndex].Jsonize());
+    }
+    payload.WithArray("Credentials", std::move(credentialsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

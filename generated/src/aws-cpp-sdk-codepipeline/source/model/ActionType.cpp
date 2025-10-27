@@ -11,94 +11,72 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ActionType::ActionType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionType::ActionType(JsonView jsonValue) { *this = jsonValue; }
 
-ActionType& ActionType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ActionType& ActionType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetObject("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("settings"))
-  {
+  if (jsonValue.ValueExists("settings")) {
     m_settings = jsonValue.GetObject("settings");
     m_settingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actionConfigurationProperties"))
-  {
+  if (jsonValue.ValueExists("actionConfigurationProperties")) {
     Aws::Utils::Array<JsonView> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
-    for(unsigned actionConfigurationPropertiesIndex = 0; actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex)
-    {
+    for (unsigned actionConfigurationPropertiesIndex = 0;
+         actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex) {
       m_actionConfigurationProperties.push_back(actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject());
     }
     m_actionConfigurationPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputArtifactDetails"))
-  {
+  if (jsonValue.ValueExists("inputArtifactDetails")) {
     m_inputArtifactDetails = jsonValue.GetObject("inputArtifactDetails");
     m_inputArtifactDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputArtifactDetails"))
-  {
+  if (jsonValue.ValueExists("outputArtifactDetails")) {
     m_outputArtifactDetails = jsonValue.GetObject("outputArtifactDetails");
     m_outputArtifactDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionType::Jsonize() const
-{
+JsonValue ActionType::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithObject("id", m_id.Jsonize());
-
+  if (m_idHasBeenSet) {
+    payload.WithObject("id", m_id.Jsonize());
   }
 
-  if(m_settingsHasBeenSet)
-  {
-   payload.WithObject("settings", m_settings.Jsonize());
-
+  if (m_settingsHasBeenSet) {
+    payload.WithObject("settings", m_settings.Jsonize());
   }
 
-  if(m_actionConfigurationPropertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionConfigurationPropertiesJsonList(m_actionConfigurationProperties.size());
-   for(unsigned actionConfigurationPropertiesIndex = 0; actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex)
-   {
-     actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject(m_actionConfigurationProperties[actionConfigurationPropertiesIndex].Jsonize());
-   }
-   payload.WithArray("actionConfigurationProperties", std::move(actionConfigurationPropertiesJsonList));
-
+  if (m_actionConfigurationPropertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionConfigurationPropertiesJsonList(m_actionConfigurationProperties.size());
+    for (unsigned actionConfigurationPropertiesIndex = 0;
+         actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex) {
+      actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject(
+          m_actionConfigurationProperties[actionConfigurationPropertiesIndex].Jsonize());
+    }
+    payload.WithArray("actionConfigurationProperties", std::move(actionConfigurationPropertiesJsonList));
   }
 
-  if(m_inputArtifactDetailsHasBeenSet)
-  {
-   payload.WithObject("inputArtifactDetails", m_inputArtifactDetails.Jsonize());
-
+  if (m_inputArtifactDetailsHasBeenSet) {
+    payload.WithObject("inputArtifactDetails", m_inputArtifactDetails.Jsonize());
   }
 
-  if(m_outputArtifactDetailsHasBeenSet)
-  {
-   payload.WithObject("outputArtifactDetails", m_outputArtifactDetails.Jsonize());
-
+  if (m_outputArtifactDetailsHasBeenSet) {
+    payload.WithObject("outputArtifactDetails", m_outputArtifactDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

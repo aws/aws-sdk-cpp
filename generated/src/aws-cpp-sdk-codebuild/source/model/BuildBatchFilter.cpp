@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-BuildBatchFilter::BuildBatchFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BuildBatchFilter::BuildBatchFilter(JsonView jsonValue) { *this = jsonValue; }
 
-BuildBatchFilter& BuildBatchFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+BuildBatchFilter& BuildBatchFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BuildBatchFilter::Jsonize() const
-{
+JsonValue BuildBatchFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusTypeMapper::GetNameForStatusType(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusTypeMapper::GetNameForStatusType(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

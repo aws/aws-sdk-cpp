@@ -7,26 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class VaultState
-  {
-    NOT_SET,
-    CREATING,
-    AVAILABLE,
-    FAILED
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class VaultState { NOT_SET, CREATING, AVAILABLE, FAILED };
 
-namespace VaultStateMapper
-{
+namespace VaultStateMapper {
 AWS_BACKUP_API VaultState GetVaultStateForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForVaultState(VaultState value);
-} // namespace VaultStateMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace VaultStateMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

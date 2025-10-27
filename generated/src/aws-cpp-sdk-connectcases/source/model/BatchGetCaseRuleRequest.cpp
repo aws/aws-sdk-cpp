@@ -12,24 +12,16 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetCaseRuleRequest::SerializePayload() const
-{
+Aws::String BatchGetCaseRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_caseRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> caseRulesJsonList(m_caseRules.size());
-   for(unsigned caseRulesIndex = 0; caseRulesIndex < caseRulesJsonList.GetLength(); ++caseRulesIndex)
-   {
-     caseRulesJsonList[caseRulesIndex].AsObject(m_caseRules[caseRulesIndex].Jsonize());
-   }
-   payload.WithArray("caseRules", std::move(caseRulesJsonList));
-
+  if (m_caseRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> caseRulesJsonList(m_caseRules.size());
+    for (unsigned caseRulesIndex = 0; caseRulesIndex < caseRulesJsonList.GetLength(); ++caseRulesIndex) {
+      caseRulesJsonList[caseRulesIndex].AsObject(m_caseRules[caseRulesIndex].Jsonize());
+    }
+    payload.WithArray("caseRules", std::move(caseRulesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

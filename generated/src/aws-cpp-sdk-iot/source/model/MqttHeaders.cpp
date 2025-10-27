@@ -3,58 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/MqttHeaders.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/MqttHeaders.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-MqttHeaders::MqttHeaders(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MqttHeaders::MqttHeaders(JsonView jsonValue) { *this = jsonValue; }
 
-MqttHeaders& MqttHeaders::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("payloadFormatIndicator"))
-  {
+MqttHeaders& MqttHeaders::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("payloadFormatIndicator")) {
     m_payloadFormatIndicator = jsonValue.GetString("payloadFormatIndicator");
     m_payloadFormatIndicatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = jsonValue.GetString("contentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseTopic"))
-  {
+  if (jsonValue.ValueExists("responseTopic")) {
     m_responseTopic = jsonValue.GetString("responseTopic");
     m_responseTopicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("correlationData"))
-  {
+  if (jsonValue.ValueExists("correlationData")) {
     m_correlationData = jsonValue.GetString("correlationData");
     m_correlationDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageExpiry"))
-  {
+  if (jsonValue.ValueExists("messageExpiry")) {
     m_messageExpiry = jsonValue.GetString("messageExpiry");
     m_messageExpiryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userProperties"))
-  {
+  if (jsonValue.ValueExists("userProperties")) {
     Aws::Utils::Array<JsonView> userPropertiesJsonList = jsonValue.GetArray("userProperties");
-    for(unsigned userPropertiesIndex = 0; userPropertiesIndex < userPropertiesJsonList.GetLength(); ++userPropertiesIndex)
-    {
+    for (unsigned userPropertiesIndex = 0; userPropertiesIndex < userPropertiesJsonList.GetLength(); ++userPropertiesIndex) {
       m_userProperties.push_back(userPropertiesJsonList[userPropertiesIndex].AsObject());
     }
     m_userPropertiesHasBeenSet = true;
@@ -62,54 +48,40 @@ MqttHeaders& MqttHeaders::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MqttHeaders::Jsonize() const
-{
+JsonValue MqttHeaders::Jsonize() const {
   JsonValue payload;
 
-  if(m_payloadFormatIndicatorHasBeenSet)
-  {
-   payload.WithString("payloadFormatIndicator", m_payloadFormatIndicator);
-
+  if (m_payloadFormatIndicatorHasBeenSet) {
+    payload.WithString("payloadFormatIndicator", m_payloadFormatIndicator);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_responseTopicHasBeenSet)
-  {
-   payload.WithString("responseTopic", m_responseTopic);
-
+  if (m_responseTopicHasBeenSet) {
+    payload.WithString("responseTopic", m_responseTopic);
   }
 
-  if(m_correlationDataHasBeenSet)
-  {
-   payload.WithString("correlationData", m_correlationData);
-
+  if (m_correlationDataHasBeenSet) {
+    payload.WithString("correlationData", m_correlationData);
   }
 
-  if(m_messageExpiryHasBeenSet)
-  {
-   payload.WithString("messageExpiry", m_messageExpiry);
-
+  if (m_messageExpiryHasBeenSet) {
+    payload.WithString("messageExpiry", m_messageExpiry);
   }
 
-  if(m_userPropertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userPropertiesJsonList(m_userProperties.size());
-   for(unsigned userPropertiesIndex = 0; userPropertiesIndex < userPropertiesJsonList.GetLength(); ++userPropertiesIndex)
-   {
-     userPropertiesJsonList[userPropertiesIndex].AsObject(m_userProperties[userPropertiesIndex].Jsonize());
-   }
-   payload.WithArray("userProperties", std::move(userPropertiesJsonList));
-
+  if (m_userPropertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userPropertiesJsonList(m_userProperties.size());
+    for (unsigned userPropertiesIndex = 0; userPropertiesIndex < userPropertiesJsonList.GetLength(); ++userPropertiesIndex) {
+      userPropertiesJsonList[userPropertiesIndex].AsObject(m_userProperties[userPropertiesIndex].Jsonize());
+    }
+    payload.WithArray("userProperties", std::move(userPropertiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

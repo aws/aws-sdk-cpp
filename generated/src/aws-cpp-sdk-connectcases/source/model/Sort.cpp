@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-Sort::Sort(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Sort::Sort(JsonView jsonValue) { *this = jsonValue; }
 
-Sort& Sort::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fieldId"))
-  {
+Sort& Sort::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fieldId")) {
     m_fieldId = jsonValue.GetString("fieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = OrderMapper::GetOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Sort::Jsonize() const
-{
+JsonValue Sort::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("fieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("fieldId", m_fieldId);
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", OrderMapper::GetNameForOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", OrderMapper::GetNameForOrder(m_sortOrder));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

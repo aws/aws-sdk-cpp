@@ -10,27 +10,22 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String SignalResourceRequest::SerializePayload() const
-{
+Aws::String SignalResourceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SignalResource&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_logicalResourceIdHasBeenSet)
-  {
+  if (m_logicalResourceIdHasBeenSet) {
     ss << "LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
 
-  if(m_uniqueIdHasBeenSet)
-  {
+  if (m_uniqueIdHasBeenSet) {
     ss << "UniqueId=" << StringUtils::URLEncode(m_uniqueId.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(ResourceSignalStatusMapper::GetNameForResourceSignalStatus(m_status)) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String SignalResourceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SignalResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SignalResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

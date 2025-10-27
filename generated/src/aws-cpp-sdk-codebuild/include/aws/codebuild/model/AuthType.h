@@ -7,28 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class AuthType
-  {
-    NOT_SET,
-    OAUTH,
-    BASIC_AUTH,
-    PERSONAL_ACCESS_TOKEN,
-    CODECONNECTIONS,
-    SECRETS_MANAGER
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class AuthType { NOT_SET, OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, SECRETS_MANAGER };
 
-namespace AuthTypeMapper
-{
+namespace AuthTypeMapper {
 AWS_CODEBUILD_API AuthType GetAuthTypeForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForAuthType(AuthType value);
-} // namespace AuthTypeMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace AuthTypeMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

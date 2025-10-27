@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pi/PI_EXPORTS.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
-  enum class DetailStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    PROCESSING,
-    UNAVAILABLE
-  };
+namespace Aws {
+namespace PI {
+namespace Model {
+enum class DetailStatus { NOT_SET, AVAILABLE, PROCESSING, UNAVAILABLE };
 
-namespace DetailStatusMapper
-{
+namespace DetailStatusMapper {
 AWS_PI_API DetailStatus GetDetailStatusForName(const Aws::String& name);
 
 AWS_PI_API Aws::String GetNameForDetailStatus(DetailStatus value);
-} // namespace DetailStatusMapper
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace DetailStatusMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

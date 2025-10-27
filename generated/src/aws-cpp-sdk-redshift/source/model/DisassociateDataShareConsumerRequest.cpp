@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DisassociateDataShareConsumerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DisassociateDataShareConsumerRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateDataShareConsumerRequest::SerializePayload() const
-{
+Aws::String DisassociateDataShareConsumerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateDataShareConsumer&";
-  if(m_dataShareArnHasBeenSet)
-  {
+  if (m_dataShareArnHasBeenSet) {
     ss << "DataShareArn=" << StringUtils::URLEncode(m_dataShareArn.c_str()) << "&";
   }
 
-  if(m_disassociateEntireAccountHasBeenSet)
-  {
+  if (m_disassociateEntireAccountHasBeenSet) {
     ss << "DisassociateEntireAccount=" << std::boolalpha << m_disassociateEntireAccount << "&";
   }
 
-  if(m_consumerArnHasBeenSet)
-  {
+  if (m_consumerArnHasBeenSet) {
     ss << "ConsumerArn=" << StringUtils::URLEncode(m_consumerArn.c_str()) << "&";
   }
 
-  if(m_consumerRegionHasBeenSet)
-  {
+  if (m_consumerRegionHasBeenSet) {
     ss << "ConsumerRegion=" << StringUtils::URLEncode(m_consumerRegion.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DisassociateDataShareConsumerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateDataShareConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateDataShareConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -5,12 +5,8 @@
 
 #include <aws/connect-contact-lens/ConnectContactLensEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConnectContactLens
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConnectContactLens
-} // namespace Aws
+namespace Aws {
+namespace ConnectContactLens {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConnectContactLens
+}  // namespace Aws

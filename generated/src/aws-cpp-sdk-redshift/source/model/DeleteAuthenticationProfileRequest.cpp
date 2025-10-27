@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteAuthenticationProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteAuthenticationProfileRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteAuthenticationProfileRequest::SerializePayload() const
-{
+Aws::String DeleteAuthenticationProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteAuthenticationProfile&";
-  if(m_authenticationProfileNameHasBeenSet)
-  {
+  if (m_authenticationProfileNameHasBeenSet) {
     ss << "AuthenticationProfileName=" << StringUtils::URLEncode(m_authenticationProfileName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteAuthenticationProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteAuthenticationProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteAuthenticationProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/AssumeRootRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sts/model/AssumeRootRequest.h>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-Aws::String AssumeRootRequest::SerializePayload() const
-{
+Aws::String AssumeRootRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssumeRoot&";
-  if(m_targetPrincipalHasBeenSet)
-  {
+  if (m_targetPrincipalHasBeenSet) {
     ss << "TargetPrincipal=" << StringUtils::URLEncode(m_targetPrincipal.c_str()) << "&";
   }
 
-  if(m_taskPolicyArnHasBeenSet)
-  {
+  if (m_taskPolicyArnHasBeenSet) {
     m_taskPolicyArn.OutputToStream(ss, "TaskPolicyArn");
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
+  if (m_durationSecondsHasBeenSet) {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AssumeRootRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AssumeRootRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssumeRootRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

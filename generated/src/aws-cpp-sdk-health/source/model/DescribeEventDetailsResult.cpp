@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/health/model/DescribeEventDetailsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/health/model/DescribeEventDetailsResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventDetailsResult::DescribeEventDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeEventDetailsResult::DescribeEventDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeEventDetailsResult& DescribeEventDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("successfulSet"))
-  {
+  if (jsonValue.ValueExists("successfulSet")) {
     Aws::Utils::Array<JsonView> successfulSetJsonList = jsonValue.GetArray("successfulSet");
-    for(unsigned successfulSetIndex = 0; successfulSetIndex < successfulSetJsonList.GetLength(); ++successfulSetIndex)
-    {
+    for (unsigned successfulSetIndex = 0; successfulSetIndex < successfulSetJsonList.GetLength(); ++successfulSetIndex) {
       m_successfulSet.push_back(successfulSetJsonList[successfulSetIndex].AsObject());
     }
     m_successfulSetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failedSet"))
-  {
+  if (jsonValue.ValueExists("failedSet")) {
     Aws::Utils::Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
-    for(unsigned failedSetIndex = 0; failedSetIndex < failedSetJsonList.GetLength(); ++failedSetIndex)
-    {
+    for (unsigned failedSetIndex = 0; failedSetIndex < failedSetJsonList.GetLength(); ++failedSetIndex) {
       m_failedSet.push_back(failedSetJsonList[failedSetIndex].AsObject());
     }
     m_failedSetHasBeenSet = true;
@@ -46,12 +38,10 @@ DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

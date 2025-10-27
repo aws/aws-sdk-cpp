@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafv2WebAclCaptchaConfigDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafv2WebAclCaptchaConfigDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafv2WebAclCaptchaConfigDetails::AwsWafv2WebAclCaptchaConfigDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafv2WebAclCaptchaConfigDetails::AwsWafv2WebAclCaptchaConfigDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafv2WebAclCaptchaConfigDetails& AwsWafv2WebAclCaptchaConfigDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ImmunityTimeProperty"))
-  {
+AwsWafv2WebAclCaptchaConfigDetails& AwsWafv2WebAclCaptchaConfigDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ImmunityTimeProperty")) {
     m_immunityTimeProperty = jsonValue.GetObject("ImmunityTimeProperty");
     m_immunityTimePropertyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafv2WebAclCaptchaConfigDetails::Jsonize() const
-{
+JsonValue AwsWafv2WebAclCaptchaConfigDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_immunityTimePropertyHasBeenSet)
-  {
-   payload.WithObject("ImmunityTimeProperty", m_immunityTimeProperty.Jsonize());
-
+  if (m_immunityTimePropertyHasBeenSet) {
+    payload.WithObject("ImmunityTimeProperty", m_immunityTimeProperty.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

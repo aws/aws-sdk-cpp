@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class MoveStatus
-  {
-    NOT_SET,
-    movingToVpc,
-    restoringToClassic
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class MoveStatus { NOT_SET, movingToVpc, restoringToClassic };
 
-namespace MoveStatusMapper
-{
+namespace MoveStatusMapper {
 AWS_EC2_API MoveStatus GetMoveStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForMoveStatus(MoveStatus value);
-} // namespace MoveStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace MoveStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

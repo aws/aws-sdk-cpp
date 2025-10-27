@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-AccessLogSettings::AccessLogSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessLogSettings::AccessLogSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AccessLogSettings& AccessLogSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("format"))
-  {
+AccessLogSettings& AccessLogSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("format")) {
     m_format = jsonValue.GetString("format");
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationArn"))
-  {
+  if (jsonValue.ValueExists("destinationArn")) {
     m_destinationArn = jsonValue.GetString("destinationArn");
     m_destinationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessLogSettings::Jsonize() const
-{
+JsonValue AccessLogSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", m_format);
-
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", m_format);
   }
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("destinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("destinationArn", m_destinationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

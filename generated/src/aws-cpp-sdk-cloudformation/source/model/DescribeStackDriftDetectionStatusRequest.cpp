@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeStackDriftDetectionStatusRequest::SerializePayload() const
-{
+Aws::String DescribeStackDriftDetectionStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeStackDriftDetectionStatus&";
-  if(m_stackDriftDetectionIdHasBeenSet)
-  {
+  if (m_stackDriftDetectionIdHasBeenSet) {
     ss << "StackDriftDetectionId=" << StringUtils::URLEncode(m_stackDriftDetectionId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeStackDriftDetectionStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeStackDriftDetectionStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeStackDriftDetectionStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/VersioningConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/VersioningConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-VersioningConfiguration::VersioningConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VersioningConfiguration::VersioningConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-VersioningConfiguration& VersioningConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unlimited"))
-  {
+VersioningConfiguration& VersioningConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unlimited")) {
     m_unlimited = jsonValue.GetBool("unlimited");
     m_unlimitedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxVersions"))
-  {
+  if (jsonValue.ValueExists("maxVersions")) {
     m_maxVersions = jsonValue.GetInteger("maxVersions");
     m_maxVersionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VersioningConfiguration::Jsonize() const
-{
+JsonValue VersioningConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_unlimitedHasBeenSet)
-  {
-   payload.WithBool("unlimited", m_unlimited);
-
+  if (m_unlimitedHasBeenSet) {
+    payload.WithBool("unlimited", m_unlimited);
   }
 
-  if(m_maxVersionsHasBeenSet)
-  {
-   payload.WithInteger("maxVersions", m_maxVersions);
-
+  if (m_maxVersionsHasBeenSet) {
+    payload.WithInteger("maxVersions", m_maxVersions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

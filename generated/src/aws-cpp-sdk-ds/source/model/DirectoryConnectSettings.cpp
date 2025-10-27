@@ -3,120 +3,91 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DirectoryConnectSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/DirectoryConnectSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcId"))
-  {
+DirectoryConnectSettings& DirectoryConnectSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetIds"))
-  {
+  if (jsonValue.ValueExists("SubnetIds")) {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
-    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-    {
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomerDnsIps"))
-  {
+  if (jsonValue.ValueExists("CustomerDnsIps")) {
     Aws::Utils::Array<JsonView> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
-    for(unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex)
-    {
+    for (unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex) {
       m_customerDnsIps.push_back(customerDnsIpsJsonList[customerDnsIpsIndex].AsString());
     }
     m_customerDnsIpsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomerDnsIpsV6"))
-  {
+  if (jsonValue.ValueExists("CustomerDnsIpsV6")) {
     Aws::Utils::Array<JsonView> customerDnsIpsV6JsonList = jsonValue.GetArray("CustomerDnsIpsV6");
-    for(unsigned customerDnsIpsV6Index = 0; customerDnsIpsV6Index < customerDnsIpsV6JsonList.GetLength(); ++customerDnsIpsV6Index)
-    {
+    for (unsigned customerDnsIpsV6Index = 0; customerDnsIpsV6Index < customerDnsIpsV6JsonList.GetLength(); ++customerDnsIpsV6Index) {
       m_customerDnsIpsV6.push_back(customerDnsIpsV6JsonList[customerDnsIpsV6Index].AsString());
     }
     m_customerDnsIpsV6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomerUserName"))
-  {
+  if (jsonValue.ValueExists("CustomerUserName")) {
     m_customerUserName = jsonValue.GetString("CustomerUserName");
     m_customerUserNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DirectoryConnectSettings::Jsonize() const
-{
+JsonValue DirectoryConnectSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
-
+  if (m_subnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+    }
+    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
   }
 
-  if(m_customerDnsIpsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customerDnsIpsJsonList(m_customerDnsIps.size());
-   for(unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex)
-   {
-     customerDnsIpsJsonList[customerDnsIpsIndex].AsString(m_customerDnsIps[customerDnsIpsIndex]);
-   }
-   payload.WithArray("CustomerDnsIps", std::move(customerDnsIpsJsonList));
-
+  if (m_customerDnsIpsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customerDnsIpsJsonList(m_customerDnsIps.size());
+    for (unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex) {
+      customerDnsIpsJsonList[customerDnsIpsIndex].AsString(m_customerDnsIps[customerDnsIpsIndex]);
+    }
+    payload.WithArray("CustomerDnsIps", std::move(customerDnsIpsJsonList));
   }
 
-  if(m_customerDnsIpsV6HasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customerDnsIpsV6JsonList(m_customerDnsIpsV6.size());
-   for(unsigned customerDnsIpsV6Index = 0; customerDnsIpsV6Index < customerDnsIpsV6JsonList.GetLength(); ++customerDnsIpsV6Index)
-   {
-     customerDnsIpsV6JsonList[customerDnsIpsV6Index].AsString(m_customerDnsIpsV6[customerDnsIpsV6Index]);
-   }
-   payload.WithArray("CustomerDnsIpsV6", std::move(customerDnsIpsV6JsonList));
-
+  if (m_customerDnsIpsV6HasBeenSet) {
+    Aws::Utils::Array<JsonValue> customerDnsIpsV6JsonList(m_customerDnsIpsV6.size());
+    for (unsigned customerDnsIpsV6Index = 0; customerDnsIpsV6Index < customerDnsIpsV6JsonList.GetLength(); ++customerDnsIpsV6Index) {
+      customerDnsIpsV6JsonList[customerDnsIpsV6Index].AsString(m_customerDnsIpsV6[customerDnsIpsV6Index]);
+    }
+    payload.WithArray("CustomerDnsIpsV6", std::move(customerDnsIpsV6JsonList));
   }
 
-  if(m_customerUserNameHasBeenSet)
-  {
-   payload.WithString("CustomerUserName", m_customerUserName);
-
+  if (m_customerUserNameHasBeenSet) {
+    payload.WithString("CustomerUserName", m_customerUserName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/DeliveryOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/DeliveryOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
-DeliveryOptions::DeliveryOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeliveryOptions::DeliveryOptions(JsonView jsonValue) { *this = jsonValue; }
 
-DeliveryOptions& DeliveryOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TlsPolicy"))
-  {
+DeliveryOptions& DeliveryOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TlsPolicy")) {
     m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(jsonValue.GetString("TlsPolicy"));
     m_tlsPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SendingPoolName"))
-  {
+  if (jsonValue.ValueExists("SendingPoolName")) {
     m_sendingPoolName = jsonValue.GetString("SendingPoolName");
     m_sendingPoolNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeliveryOptions::Jsonize() const
-{
+JsonValue DeliveryOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_tlsPolicyHasBeenSet)
-  {
-   payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  if (m_tlsPolicyHasBeenSet) {
+    payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
   }
 
-  if(m_sendingPoolNameHasBeenSet)
-  {
-   payload.WithString("SendingPoolName", m_sendingPoolName);
-
+  if (m_sendingPoolNameHasBeenSet) {
+    payload.WithString("SendingPoolName", m_sendingPoolName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/arc-region-switch/ARCRegionswitchEndpointRules.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/arc-region-switch/ARCRegionswitchEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ARCRegionswitchClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ARCRegionswitchDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ARCREGIONSWITCH_API ARCRegionswitchEndpointProvider : public ARCRegionswitchDefaultEpProviderBase
-{
-public:
-    using ARCRegionswitchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ARCREGIONSWITCH_API ARCRegionswitchEndpointProvider : public ARCRegionswitchDefaultEpProviderBase {
+ public:
+  using ARCRegionswitchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ARCRegionswitchEndpointProvider()
-      : ARCRegionswitchDefaultEpProviderBase(Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::GetRulesBlob(), Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::RulesBlobSize)
-    {}
+  ARCRegionswitchEndpointProvider()
+      : ARCRegionswitchDefaultEpProviderBase(Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::GetRulesBlob(),
+                                             Aws::ARCRegionswitch::ARCRegionswitchEndpointRules::RulesBlobSize) {}
 
-    ~ARCRegionswitchEndpointProvider()
-    {
-    }
+  ~ARCRegionswitchEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ARCRegionswitch
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/Segment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/Segment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-Segment::Segment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Segment::Segment(JsonView jsonValue) { *this = jsonValue; }
 
-Segment& Segment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SegmentNumber"))
-  {
+Segment& Segment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SegmentNumber")) {
     m_segmentNumber = jsonValue.GetInteger("SegmentNumber");
     m_segmentNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalSegments"))
-  {
+  if (jsonValue.ValueExists("TotalSegments")) {
     m_totalSegments = jsonValue.GetInteger("TotalSegments");
     m_totalSegmentsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Segment::Jsonize() const
-{
+JsonValue Segment::Jsonize() const {
   JsonValue payload;
 
-  if(m_segmentNumberHasBeenSet)
-  {
-   payload.WithInteger("SegmentNumber", m_segmentNumber);
-
+  if (m_segmentNumberHasBeenSet) {
+    payload.WithInteger("SegmentNumber", m_segmentNumber);
   }
 
-  if(m_totalSegmentsHasBeenSet)
-  {
-   payload.WithInteger("TotalSegments", m_totalSegments);
-
+  if (m_totalSegmentsHasBeenSet) {
+    payload.WithInteger("TotalSegments", m_totalSegments);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

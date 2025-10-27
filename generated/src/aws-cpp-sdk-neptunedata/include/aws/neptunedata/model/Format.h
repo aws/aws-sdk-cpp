@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
-  enum class Format
-  {
-    NOT_SET,
-    csv,
-    opencypher,
-    ntriples,
-    nquads,
-    rdfxml,
-    turtle
-  };
+namespace Aws {
+namespace neptunedata {
+namespace Model {
+enum class Format { NOT_SET, csv, opencypher, ntriples, nquads, rdfxml, turtle };
 
-namespace FormatMapper
-{
+namespace FormatMapper {
 AWS_NEPTUNEDATA_API Format GetFormatForName(const Aws::String& name);
 
 AWS_NEPTUNEDATA_API Aws::String GetNameForFormat(Format value);
-} // namespace FormatMapper
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace FormatMapper
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

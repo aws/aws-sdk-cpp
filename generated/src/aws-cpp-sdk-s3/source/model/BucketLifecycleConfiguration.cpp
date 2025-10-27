@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/BucketLifecycleConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/BucketLifecycleConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-BucketLifecycleConfiguration::BucketLifecycleConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+BucketLifecycleConfiguration::BucketLifecycleConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BucketLifecycleConfiguration& BucketLifecycleConfiguration::operator =(const XmlNode& xmlNode)
-{
+BucketLifecycleConfiguration& BucketLifecycleConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode rulesNode = resultNode.FirstChild("Rule");
-    if(!rulesNode.IsNull())
-    {
+    if (!rulesNode.IsNull()) {
       XmlNode ruleMember = rulesNode;
       m_rulesHasBeenSet = !ruleMember.IsNull();
-      while(!ruleMember.IsNull())
-      {
+      while (!ruleMember.IsNull()) {
         m_rules.push_back(ruleMember);
         ruleMember = ruleMember.NextNode("Rule");
       }
@@ -49,20 +39,16 @@ BucketLifecycleConfiguration& BucketLifecycleConfiguration::operator =(const Xml
   return *this;
 }
 
-void BucketLifecycleConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void BucketLifecycleConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_rulesHasBeenSet)
-  {
-   for(const auto& item : m_rules)
-   {
-     XmlNode rulesNode = parentNode.CreateChildElement("Rule");
-     item.AddToNode(rulesNode);
-   }
+  if (m_rulesHasBeenSet) {
+    for (const auto& item : m_rules) {
+      XmlNode rulesNode = parentNode.CreateChildElement("Rule");
+      item.AddToNode(rulesNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

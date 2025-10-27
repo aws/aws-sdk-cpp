@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class OrderBy
-  {
-    NOT_SET,
-    LogStreamName,
-    LastEventTime
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class OrderBy { NOT_SET, LogStreamName, LastEventTime };
 
-namespace OrderByMapper
-{
+namespace OrderByMapper {
 AWS_CLOUDWATCHLOGS_API OrderBy GetOrderByForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForOrderBy(OrderBy value);
-} // namespace OrderByMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace OrderByMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

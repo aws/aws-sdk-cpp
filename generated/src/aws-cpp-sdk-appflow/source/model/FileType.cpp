@@ -4,76 +4,60 @@
  */
 
 #include <aws/appflow/model/FileType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Appflow {
+namespace Model {
+namespace FileTypeMapper {
 
-namespace Aws
-{
-  namespace Appflow
-  {
-    namespace Model
-    {
-      namespace FileTypeMapper
-      {
+static const int CSV_HASH = HashingUtils::HashString("CSV");
+static const int JSON_HASH = HashingUtils::HashString("JSON");
+static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
+FileType GetFileTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CSV_HASH) {
+    return FileType::CSV;
+  } else if (hashCode == JSON_HASH) {
+    return FileType::JSON;
+  } else if (hashCode == PARQUET_HASH) {
+    return FileType::PARQUET;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<FileType>(hashCode);
+  }
 
+  return FileType::NOT_SET;
+}
 
-        FileType GetFileTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CSV_HASH)
-          {
-            return FileType::CSV;
-          }
-          else if (hashCode == JSON_HASH)
-          {
-            return FileType::JSON;
-          }
-          else if (hashCode == PARQUET_HASH)
-          {
-            return FileType::PARQUET;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FileType>(hashCode);
-          }
+Aws::String GetNameForFileType(FileType enumValue) {
+  switch (enumValue) {
+    case FileType::NOT_SET:
+      return {};
+    case FileType::CSV:
+      return "CSV";
+    case FileType::JSON:
+      return "JSON";
+    case FileType::PARQUET:
+      return "PARQUET";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return FileType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForFileType(FileType enumValue)
-        {
-          switch(enumValue)
-          {
-          case FileType::NOT_SET:
-            return {};
-          case FileType::CSV:
-            return "CSV";
-          case FileType::JSON:
-            return "JSON";
-          case FileType::PARQUET:
-            return "PARQUET";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace FileTypeMapper
-    } // namespace Model
-  } // namespace Appflow
-} // namespace Aws
+}  // namespace FileTypeMapper
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

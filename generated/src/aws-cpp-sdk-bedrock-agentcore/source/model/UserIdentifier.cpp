@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-UserIdentifier::UserIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserIdentifier::UserIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-UserIdentifier& UserIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userToken"))
-  {
+UserIdentifier& UserIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userToken")) {
     m_userToken = jsonValue.GetString("userToken");
     m_userTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userId"))
-  {
+  if (jsonValue.ValueExists("userId")) {
     m_userId = jsonValue.GetString("userId");
     m_userIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserIdentifier::Jsonize() const
-{
+JsonValue UserIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_userTokenHasBeenSet)
-  {
-   payload.WithString("userToken", m_userToken);
-
+  if (m_userTokenHasBeenSet) {
+    payload.WithString("userToken", m_userToken);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("userId", m_userId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

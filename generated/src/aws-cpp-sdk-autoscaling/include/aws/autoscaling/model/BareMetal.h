@@ -7,26 +7,16 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
-  enum class BareMetal
-  {
-    NOT_SET,
-    included,
-    excluded,
-    required
-  };
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
+enum class BareMetal { NOT_SET, included, excluded, required };
 
-namespace BareMetalMapper
-{
+namespace BareMetalMapper {
 AWS_AUTOSCALING_API BareMetal GetBareMetalForName(const Aws::String& name);
 
 AWS_AUTOSCALING_API Aws::String GetNameForBareMetal(BareMetal value);
-} // namespace BareMetalMapper
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace BareMetalMapper
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

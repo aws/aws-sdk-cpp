@@ -4,10 +4,10 @@
  */
 
 #include <aws/codecatalyst/model/StartDevEnvironmentSessionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,48 +17,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartDevEnvironmentSessionResult::StartDevEnvironmentSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+StartDevEnvironmentSessionResult::StartDevEnvironmentSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-StartDevEnvironmentSessionResult& StartDevEnvironmentSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+StartDevEnvironmentSessionResult& StartDevEnvironmentSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accessDetails"))
-  {
+  if (jsonValue.ValueExists("accessDetails")) {
     m_accessDetails = jsonValue.GetObject("accessDetails");
     m_accessDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionId"))
-  {
+  if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("spaceName"))
-  {
+  if (jsonValue.ValueExists("spaceName")) {
     m_spaceName = jsonValue.GetString("spaceName");
     m_spaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectName"))
-  {
+  if (jsonValue.ValueExists("projectName")) {
     m_projectName = jsonValue.GetString("projectName");
     m_projectNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

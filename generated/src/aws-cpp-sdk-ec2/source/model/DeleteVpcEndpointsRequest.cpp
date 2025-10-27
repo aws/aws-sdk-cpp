@@ -3,29 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteVpcEndpointsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteVpcEndpointsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
-{
+Aws::String DeleteVpcEndpointsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteVpcEndpoints&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_vpcEndpointIdsHasBeenSet)
-  {
+  if (m_vpcEndpointIdsHasBeenSet) {
     unsigned vpcEndpointIdsCount = 1;
-    for(auto& item : m_vpcEndpointIds)
-    {
-      ss << "VpcEndpointId." << vpcEndpointIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_vpcEndpointIds) {
+      ss << "VpcEndpointId." << vpcEndpointIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       vpcEndpointIdsCount++;
     }
   }
@@ -34,8 +29,4 @@ Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteVpcEndpointsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteVpcEndpointsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

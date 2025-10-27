@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteConnectInstanceIntegrationRequest::SerializePayload() const
-{
+Aws::String DeleteConnectInstanceIntegrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_integrationIdentifierHasBeenSet)
-  {
-   payload.WithObject("integrationIdentifier", m_integrationIdentifier.Jsonize());
-
+  if (m_integrationIdentifierHasBeenSet) {
+    payload.WithObject("integrationIdentifier", m_integrationIdentifier.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

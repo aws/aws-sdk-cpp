@@ -11,39 +11,27 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-MetricResultV2::MetricResultV2(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricResultV2::MetricResultV2(JsonView jsonValue) { *this = jsonValue; }
 
-MetricResultV2& MetricResultV2::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Dimensions"))
-  {
+MetricResultV2& MetricResultV2::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Dimensions")) {
     Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
-    for(auto& dimensionsItem : dimensionsJsonMap)
-    {
+    for (auto& dimensionsItem : dimensionsJsonMap) {
       m_dimensions[dimensionsItem.first] = dimensionsItem.second.AsString();
     }
     m_dimensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricInterval"))
-  {
+  if (jsonValue.ValueExists("MetricInterval")) {
     m_metricInterval = jsonValue.GetObject("MetricInterval");
     m_metricIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Collections"))
-  {
+  if (jsonValue.ValueExists("Collections")) {
     Aws::Utils::Array<JsonView> collectionsJsonList = jsonValue.GetArray("Collections");
-    for(unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex)
-    {
+    for (unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex) {
       m_collections.push_back(collectionsJsonList[collectionsIndex].AsObject());
     }
     m_collectionsHasBeenSet = true;
@@ -51,41 +39,32 @@ MetricResultV2& MetricResultV2::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MetricResultV2::Jsonize() const
-{
+JsonValue MetricResultV2::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionsHasBeenSet)
-  {
-   JsonValue dimensionsJsonMap;
-   for(auto& dimensionsItem : m_dimensions)
-   {
-     dimensionsJsonMap.WithString(dimensionsItem.first, dimensionsItem.second);
-   }
-   payload.WithObject("Dimensions", std::move(dimensionsJsonMap));
-
+  if (m_dimensionsHasBeenSet) {
+    JsonValue dimensionsJsonMap;
+    for (auto& dimensionsItem : m_dimensions) {
+      dimensionsJsonMap.WithString(dimensionsItem.first, dimensionsItem.second);
+    }
+    payload.WithObject("Dimensions", std::move(dimensionsJsonMap));
   }
 
-  if(m_metricIntervalHasBeenSet)
-  {
-   payload.WithObject("MetricInterval", m_metricInterval.Jsonize());
-
+  if (m_metricIntervalHasBeenSet) {
+    payload.WithObject("MetricInterval", m_metricInterval.Jsonize());
   }
 
-  if(m_collectionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> collectionsJsonList(m_collections.size());
-   for(unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex)
-   {
-     collectionsJsonList[collectionsIndex].AsObject(m_collections[collectionsIndex].Jsonize());
-   }
-   payload.WithArray("Collections", std::move(collectionsJsonList));
-
+  if (m_collectionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> collectionsJsonList(m_collections.size());
+    for (unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex) {
+      collectionsJsonList[collectionsIndex].AsObject(m_collections[collectionsIndex].Jsonize());
+    }
+    payload.WithArray("Collections", std::move(collectionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

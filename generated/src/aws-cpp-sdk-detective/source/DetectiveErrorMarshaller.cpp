@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Detective;
 
-AWSError<CoreErrors> DetectiveErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DetectiveErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DetectiveErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

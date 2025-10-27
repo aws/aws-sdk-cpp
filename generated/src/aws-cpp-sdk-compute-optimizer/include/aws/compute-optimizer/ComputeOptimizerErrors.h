@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-enum class ComputeOptimizerErrors
-{
-  //From Core//
+namespace Aws {
+namespace ComputeOptimizer {
+enum class ComputeOptimizerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ComputeOptimizerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class ComputeOptimizerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED
 };
 
-class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerError : public Aws::Client::AWSError<ComputeOptimizerErrors>
-{
-public:
+class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerError : public Aws::Client::AWSError<ComputeOptimizerErrors> {
+ public:
   ComputeOptimizerError() {}
   ComputeOptimizerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
   ComputeOptimizerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace ComputeOptimizerErrorMapper
-{
-  AWS_COMPUTEOPTIMIZER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ComputeOptimizerErrorMapper {
+AWS_COMPUTEOPTIMIZER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace ComputeOptimizer
+}  // namespace Aws

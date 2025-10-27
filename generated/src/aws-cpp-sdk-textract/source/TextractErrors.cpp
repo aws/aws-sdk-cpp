@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::Textract;
 using namespace Aws::Textract::Model;
 
-namespace Aws
-{
-namespace Textract
-{
-template<> AWS_TEXTRACT_API HumanLoopQuotaExceededException TextractError::GetModeledError()
-{
+namespace Aws {
+namespace Textract {
+template <>
+AWS_TEXTRACT_API HumanLoopQuotaExceededException TextractError::GetModeledError() {
   assert(this->GetErrorType() == TextractErrors::HUMAN_LOOP_QUOTA_EXCEEDED);
   return HumanLoopQuotaExceededException(this->GetJsonPayload().View());
 }
 
-namespace TextractErrorMapper
-{
+namespace TextractErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int UNSUPPORTED_DOCUMENT_HASH = HashingUtils::HashString("UnsupportedDocumentException");
@@ -40,66 +37,39 @@ static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString
 static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
 static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_DOCUMENT_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::UNSUPPORTED_DOCUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_DOCUMENT_HASH)
-  {
+  } else if (hashCode == BAD_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::BAD_DOCUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
-  {
+  } else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_JOB_ID_HASH)
-  {
+  } else if (hashCode == INVALID_JOB_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_JOB_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_K_M_S_KEY_HASH)
-  {
+  } else if (hashCode == INVALID_K_M_S_KEY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_K_M_S_KEY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DOCUMENT_TOO_LARGE_HASH)
-  {
+  } else if (hashCode == DOCUMENT_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::DOCUMENT_TOO_LARGE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_S3_OBJECT_HASH)
-  {
+  } else if (hashCode == INVALID_S3_OBJECT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_S3_OBJECT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::HUMAN_LOOP_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace TextractErrorMapper
-} // namespace Textract
-} // namespace Aws
+}  // namespace TextractErrorMapper
+}  // namespace Textract
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class PartnerType
-  {
-    NOT_SET,
-    Sidewalk
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class PartnerType { NOT_SET, Sidewalk };
 
-namespace PartnerTypeMapper
-{
+namespace PartnerTypeMapper {
 AWS_IOTWIRELESS_API PartnerType GetPartnerTypeForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForPartnerType(PartnerType value);
-} // namespace PartnerTypeMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace PartnerTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

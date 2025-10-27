@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/memorydb/MemoryDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
-  enum class DataTieringStatus
-  {
-    NOT_SET,
-    true_,
-    false_
-  };
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
+enum class DataTieringStatus { NOT_SET, true_, false_ };
 
-namespace DataTieringStatusMapper
-{
+namespace DataTieringStatusMapper {
 AWS_MEMORYDB_API DataTieringStatus GetDataTieringStatusForName(const Aws::String& name);
 
 AWS_MEMORYDB_API Aws::String GetNameForDataTieringStatus(DataTieringStatus value);
-} // namespace DataTieringStatusMapper
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace DataTieringStatusMapper
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

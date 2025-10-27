@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class NationalSecurity
-  {
-    NOT_SET,
-    Yes,
-    No
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class NationalSecurity { NOT_SET, Yes, No };
 
-namespace NationalSecurityMapper
-{
+namespace NationalSecurityMapper {
 AWS_PARTNERCENTRALSELLING_API NationalSecurity GetNationalSecurityForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForNationalSecurity(NationalSecurity value);
-} // namespace NationalSecurityMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace NationalSecurityMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

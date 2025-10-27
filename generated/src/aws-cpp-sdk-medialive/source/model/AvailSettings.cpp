@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/AvailSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/AvailSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-AvailSettings::AvailSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AvailSettings::AvailSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AvailSettings& AvailSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("esam"))
-  {
+AvailSettings& AvailSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("esam")) {
     m_esam = jsonValue.GetObject("esam");
     m_esamHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scte35SpliceInsert"))
-  {
+  if (jsonValue.ValueExists("scte35SpliceInsert")) {
     m_scte35SpliceInsert = jsonValue.GetObject("scte35SpliceInsert");
     m_scte35SpliceInsertHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scte35TimeSignalApos"))
-  {
+  if (jsonValue.ValueExists("scte35TimeSignalApos")) {
     m_scte35TimeSignalApos = jsonValue.GetObject("scte35TimeSignalApos");
     m_scte35TimeSignalAposHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AvailSettings::Jsonize() const
-{
+JsonValue AvailSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_esamHasBeenSet)
-  {
-   payload.WithObject("esam", m_esam.Jsonize());
-
+  if (m_esamHasBeenSet) {
+    payload.WithObject("esam", m_esam.Jsonize());
   }
 
-  if(m_scte35SpliceInsertHasBeenSet)
-  {
-   payload.WithObject("scte35SpliceInsert", m_scte35SpliceInsert.Jsonize());
-
+  if (m_scte35SpliceInsertHasBeenSet) {
+    payload.WithObject("scte35SpliceInsert", m_scte35SpliceInsert.Jsonize());
   }
 
-  if(m_scte35TimeSignalAposHasBeenSet)
-  {
-   payload.WithObject("scte35TimeSignalApos", m_scte35TimeSignalApos.Jsonize());
-
+  if (m_scte35TimeSignalAposHasBeenSet) {
+    payload.WithObject("scte35TimeSignalApos", m_scte35TimeSignalApos.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

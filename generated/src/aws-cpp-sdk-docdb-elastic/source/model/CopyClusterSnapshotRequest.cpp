@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb-elastic/model/CopyClusterSnapshotRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/docdb-elastic/model/CopyClusterSnapshotRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CopyClusterSnapshotRequest::SerializePayload() const
-{
+Aws::String CopyClusterSnapshotRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_copyTagsHasBeenSet)
-  {
-   payload.WithBool("copyTags", m_copyTags);
-
+  if (m_copyTagsHasBeenSet) {
+    payload.WithBool("copyTags", m_copyTags);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_targetSnapshotNameHasBeenSet)
-  {
-   payload.WithString("targetSnapshotName", m_targetSnapshotName);
-
+  if (m_targetSnapshotNameHasBeenSet) {
+    payload.WithString("targetSnapshotName", m_targetSnapshotName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

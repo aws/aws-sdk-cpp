@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/GuardrailWordConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/GuardrailWordConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-GuardrailWordConfig::GuardrailWordConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailWordConfig::GuardrailWordConfig(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailWordConfig& GuardrailWordConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+GuardrailWordConfig& GuardrailWordConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailWordConfig::Jsonize() const
-{
+JsonValue GuardrailWordConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

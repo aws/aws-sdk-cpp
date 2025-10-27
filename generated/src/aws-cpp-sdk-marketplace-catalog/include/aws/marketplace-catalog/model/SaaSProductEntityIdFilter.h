@@ -4,60 +4,63 @@
  */
 
 #pragma once
-#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MarketplaceCatalog {
+namespace Model {
 
+/**
+ * <p>Object that allows filtering on entity id of a SaaS product.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/SaaSProductEntityIdFilter">AWS
+ * API Reference</a></p>
+ */
+class SaaSProductEntityIdFilter {
+ public:
+  AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter() = default;
+  AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Object that allows filtering on entity id of a SaaS product.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/SaaSProductEntityIdFilter">AWS
-   * API Reference</a></p>
+   * <p>A string array of unique entity id values to be filtered on.</p>
    */
-  class SaaSProductEntityIdFilter
-  {
-  public:
-    AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter() = default;
-    AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MARKETPLACECATALOG_API SaaSProductEntityIdFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<Aws::String>& GetValueList() const { return m_valueList; }
+  inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
+  template <typename ValueListT = Aws::Vector<Aws::String>>
+  void SetValueList(ValueListT&& value) {
+    m_valueListHasBeenSet = true;
+    m_valueList = std::forward<ValueListT>(value);
+  }
+  template <typename ValueListT = Aws::Vector<Aws::String>>
+  SaaSProductEntityIdFilter& WithValueList(ValueListT&& value) {
+    SetValueList(std::forward<ValueListT>(value));
+    return *this;
+  }
+  template <typename ValueListT = Aws::String>
+  SaaSProductEntityIdFilter& AddValueList(ValueListT&& value) {
+    m_valueListHasBeenSet = true;
+    m_valueList.emplace_back(std::forward<ValueListT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_valueList;
+  bool m_valueListHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetValueList() const { return m_valueList; }
-    inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    template<typename ValueListT = Aws::Vector<Aws::String>>
-    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
-    template<typename ValueListT = Aws::Vector<Aws::String>>
-    SaaSProductEntityIdFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
-    template<typename ValueListT = Aws::String>
-    SaaSProductEntityIdFilter& AddValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList.emplace_back(std::forward<ValueListT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<Aws::String> m_valueList;
-    bool m_valueListHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

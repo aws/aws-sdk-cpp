@@ -3,78 +3,60 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/TestCaseRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/model/TestCaseRun.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTDeviceAdvisor {
+namespace Model {
 
-TestCaseRun::TestCaseRun(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestCaseRun::TestCaseRun(JsonView jsonValue) { *this = jsonValue; }
 
-TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("testCaseRunId"))
-  {
+TestCaseRun& TestCaseRun::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("testCaseRunId")) {
     m_testCaseRunId = jsonValue.GetString("testCaseRunId");
     m_testCaseRunIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testCaseDefinitionId"))
-  {
+  if (jsonValue.ValueExists("testCaseDefinitionId")) {
     m_testCaseDefinitionId = jsonValue.GetString("testCaseDefinitionId");
     m_testCaseDefinitionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testCaseDefinitionName"))
-  {
+  if (jsonValue.ValueExists("testCaseDefinitionName")) {
     m_testCaseDefinitionName = jsonValue.GetString("testCaseDefinitionName");
     m_testCaseDefinitionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTime"))
-  {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logUrl"))
-  {
+  if (jsonValue.ValueExists("logUrl")) {
     m_logUrl = jsonValue.GetString("logUrl");
     m_logUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("warnings"))
-  {
+  if (jsonValue.ValueExists("warnings")) {
     m_warnings = jsonValue.GetString("warnings");
     m_warningsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failure"))
-  {
+  if (jsonValue.ValueExists("failure")) {
     m_failure = jsonValue.GetString("failure");
     m_failureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testScenarios"))
-  {
+  if (jsonValue.ValueExists("testScenarios")) {
     Aws::Utils::Array<JsonView> testScenariosJsonList = jsonValue.GetArray("testScenarios");
-    for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
-    {
+    for (unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex) {
       m_testScenarios.push_back(testScenariosJsonList[testScenariosIndex].AsObject());
     }
     m_testScenariosHasBeenSet = true;
@@ -82,75 +64,56 @@ TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TestCaseRun::Jsonize() const
-{
+JsonValue TestCaseRun::Jsonize() const {
   JsonValue payload;
 
-  if(m_testCaseRunIdHasBeenSet)
-  {
-   payload.WithString("testCaseRunId", m_testCaseRunId);
-
+  if (m_testCaseRunIdHasBeenSet) {
+    payload.WithString("testCaseRunId", m_testCaseRunId);
   }
 
-  if(m_testCaseDefinitionIdHasBeenSet)
-  {
-   payload.WithString("testCaseDefinitionId", m_testCaseDefinitionId);
-
+  if (m_testCaseDefinitionIdHasBeenSet) {
+    payload.WithString("testCaseDefinitionId", m_testCaseDefinitionId);
   }
 
-  if(m_testCaseDefinitionNameHasBeenSet)
-  {
-   payload.WithString("testCaseDefinitionName", m_testCaseDefinitionName);
-
+  if (m_testCaseDefinitionNameHasBeenSet) {
+    payload.WithString("testCaseDefinitionName", m_testCaseDefinitionName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_logUrlHasBeenSet)
-  {
-   payload.WithString("logUrl", m_logUrl);
-
+  if (m_logUrlHasBeenSet) {
+    payload.WithString("logUrl", m_logUrl);
   }
 
-  if(m_warningsHasBeenSet)
-  {
-   payload.WithString("warnings", m_warnings);
-
+  if (m_warningsHasBeenSet) {
+    payload.WithString("warnings", m_warnings);
   }
 
-  if(m_failureHasBeenSet)
-  {
-   payload.WithString("failure", m_failure);
-
+  if (m_failureHasBeenSet) {
+    payload.WithString("failure", m_failure);
   }
 
-  if(m_testScenariosHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> testScenariosJsonList(m_testScenarios.size());
-   for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
-   {
-     testScenariosJsonList[testScenariosIndex].AsObject(m_testScenarios[testScenariosIndex].Jsonize());
-   }
-   payload.WithArray("testScenarios", std::move(testScenariosJsonList));
-
+  if (m_testScenariosHasBeenSet) {
+    Aws::Utils::Array<JsonValue> testScenariosJsonList(m_testScenarios.size());
+    for (unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex) {
+      testScenariosJsonList[testScenariosIndex].AsObject(m_testScenarios[testScenariosIndex].Jsonize());
+    }
+    payload.WithArray("testScenarios", std::move(testScenariosJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elastictranscoder/model/Captions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastictranscoder/model/Captions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticTranscoder
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticTranscoder {
+namespace Model {
 
-Captions::Captions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Captions::Captions(JsonView jsonValue) { *this = jsonValue; }
 
-Captions& Captions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CaptionFormats"))
-  {
+Captions& Captions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CaptionFormats")) {
     Aws::Utils::Array<JsonView> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
-    for(unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex)
-    {
+    for (unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex) {
       m_captionFormats.push_back(captionFormatsJsonList[captionFormatsIndex].AsObject());
     }
     m_captionFormatsHasBeenSet = true;
@@ -37,24 +28,20 @@ Captions& Captions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Captions::Jsonize() const
-{
+JsonValue Captions::Jsonize() const {
   JsonValue payload;
 
-  if(m_captionFormatsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> captionFormatsJsonList(m_captionFormats.size());
-   for(unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex)
-   {
-     captionFormatsJsonList[captionFormatsIndex].AsObject(m_captionFormats[captionFormatsIndex].Jsonize());
-   }
-   payload.WithArray("CaptionFormats", std::move(captionFormatsJsonList));
-
+  if (m_captionFormatsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> captionFormatsJsonList(m_captionFormats.size());
+    for (unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex) {
+      captionFormatsJsonList[captionFormatsIndex].AsObject(m_captionFormats[captionFormatsIndex].Jsonize());
+    }
+    payload.WithArray("CaptionFormats", std::move(captionFormatsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ElasticTranscoder
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticTranscoder
+}  // namespace Aws

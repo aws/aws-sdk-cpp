@@ -7,26 +7,16 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
-  enum class ListenerTlsMode
-  {
-    NOT_SET,
-    STRICT,
-    PERMISSIVE,
-    DISABLED
-  };
+namespace Aws {
+namespace AppMesh {
+namespace Model {
+enum class ListenerTlsMode { NOT_SET, STRICT, PERMISSIVE, DISABLED };
 
-namespace ListenerTlsModeMapper
-{
+namespace ListenerTlsModeMapper {
 AWS_APPMESH_API ListenerTlsMode GetListenerTlsModeForName(const Aws::String& name);
 
 AWS_APPMESH_API Aws::String GetNameForListenerTlsMode(ListenerTlsMode value);
-} // namespace ListenerTlsModeMapper
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace ListenerTlsModeMapper
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

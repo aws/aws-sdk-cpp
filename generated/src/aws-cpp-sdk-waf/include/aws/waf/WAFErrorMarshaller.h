@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_WAF_API WAFErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_WAF_API WAFErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

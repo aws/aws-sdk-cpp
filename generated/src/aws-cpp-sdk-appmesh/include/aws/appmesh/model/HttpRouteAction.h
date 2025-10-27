@@ -5,60 +5,63 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appmesh/model/WeightedTarget.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace AppMesh {
+namespace Model {
 
+/**
+ * <p>An object that represents the action to take if a match is
+ * determined.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteAction">AWS
+ * API Reference</a></p>
+ */
+class HttpRouteAction {
+ public:
+  AWS_APPMESH_API HttpRouteAction() = default;
+  AWS_APPMESH_API HttpRouteAction(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPMESH_API HttpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object that represents the action to take if a match is
-   * determined.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteAction">AWS
-   * API Reference</a></p>
+   * <p>An object that represents the targets that traffic is routed to when a
+   * request matches the route.</p>
    */
-  class HttpRouteAction
-  {
-  public:
-    AWS_APPMESH_API HttpRouteAction() = default;
-    AWS_APPMESH_API HttpRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPMESH_API HttpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const { return m_weightedTargets; }
+  inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
+  template <typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+  void SetWeightedTargets(WeightedTargetsT&& value) {
+    m_weightedTargetsHasBeenSet = true;
+    m_weightedTargets = std::forward<WeightedTargetsT>(value);
+  }
+  template <typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+  HttpRouteAction& WithWeightedTargets(WeightedTargetsT&& value) {
+    SetWeightedTargets(std::forward<WeightedTargetsT>(value));
+    return *this;
+  }
+  template <typename WeightedTargetsT = WeightedTarget>
+  HttpRouteAction& AddWeightedTargets(WeightedTargetsT&& value) {
+    m_weightedTargetsHasBeenSet = true;
+    m_weightedTargets.emplace_back(std::forward<WeightedTargetsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<WeightedTarget> m_weightedTargets;
+  bool m_weightedTargetsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
-    inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const { return m_weightedTargets; }
-    inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
-    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
-    void SetWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::forward<WeightedTargetsT>(value); }
-    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
-    HttpRouteAction& WithWeightedTargets(WeightedTargetsT&& value) { SetWeightedTargets(std::forward<WeightedTargetsT>(value)); return *this;}
-    template<typename WeightedTargetsT = WeightedTarget>
-    HttpRouteAction& AddWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.emplace_back(std::forward<WeightedTargetsT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<WeightedTarget> m_weightedTargets;
-    bool m_weightedTargetsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

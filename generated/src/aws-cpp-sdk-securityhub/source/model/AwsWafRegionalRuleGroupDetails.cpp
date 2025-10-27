@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafRegionalRuleGroupDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafRegionalRuleGroupDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafRegionalRuleGroupDetails::AwsWafRegionalRuleGroupDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafRegionalRuleGroupDetails::AwsWafRegionalRuleGroupDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafRegionalRuleGroupDetails& AwsWafRegionalRuleGroupDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricName"))
-  {
+AwsWafRegionalRuleGroupDetails& AwsWafRegionalRuleGroupDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroupId"))
-  {
+  if (jsonValue.ValueExists("RuleGroupId")) {
     m_ruleGroupId = jsonValue.GetString("RuleGroupId");
     m_ruleGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Rules"))
-  {
+  if (jsonValue.ValueExists("Rules")) {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
     m_rulesHasBeenSet = true;
@@ -52,42 +40,32 @@ AwsWafRegionalRuleGroupDetails& AwsWafRegionalRuleGroupDetails::operator =(JsonV
   return *this;
 }
 
-JsonValue AwsWafRegionalRuleGroupDetails::Jsonize() const
-{
+JsonValue AwsWafRegionalRuleGroupDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_ruleGroupIdHasBeenSet)
-  {
-   payload.WithString("RuleGroupId", m_ruleGroupId);
-
+  if (m_ruleGroupIdHasBeenSet) {
+    payload.WithString("RuleGroupId", m_ruleGroupId);
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

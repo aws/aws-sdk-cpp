@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
-  enum class TelemetryState
-  {
-    NOT_SET,
-    Enabled,
-    Disabled,
-    NotApplicable
-  };
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+enum class TelemetryState { NOT_SET, Enabled, Disabled, NotApplicable };
 
-namespace TelemetryStateMapper
-{
+namespace TelemetryStateMapper {
 AWS_OBSERVABILITYADMIN_API TelemetryState GetTelemetryStateForName(const Aws::String& name);
 
 AWS_OBSERVABILITYADMIN_API Aws::String GetNameForTelemetryState(TelemetryState value);
-} // namespace TelemetryStateMapper
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace TelemetryStateMapper
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

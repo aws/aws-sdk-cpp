@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::QApps;
 
-AWSError<CoreErrors> QAppsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> QAppsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = QAppsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

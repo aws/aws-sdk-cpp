@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class Role
-  {
-    NOT_SET,
-    ADMIN,
-    AUTHOR,
-    READER,
-    ADMIN_PRO,
-    AUTHOR_PRO,
-    READER_PRO
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class Role { NOT_SET, ADMIN, AUTHOR, READER, ADMIN_PRO, AUTHOR_PRO, READER_PRO };
 
-namespace RoleMapper
-{
+namespace RoleMapper {
 AWS_QUICKSIGHT_API Role GetRoleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForRole(Role value);
-} // namespace RoleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace RoleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-ResourceAttribute::ResourceAttribute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceAttribute::ResourceAttribute(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceAttribute& ResourceAttribute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ResourceAttribute& ResourceAttribute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ResourceAttributeTypeMapper::GetResourceAttributeTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceAttribute::Jsonize() const
-{
+JsonValue ResourceAttribute::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ResourceAttributeTypeMapper::GetNameForResourceAttributeType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ResourceAttributeTypeMapper::GetNameForResourceAttributeType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

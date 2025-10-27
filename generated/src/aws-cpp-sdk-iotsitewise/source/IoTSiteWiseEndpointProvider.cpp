@@ -5,12 +5,8 @@
 
 #include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTSiteWise
-} // namespace Aws
+namespace Aws {
+namespace IoTSiteWise {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTSiteWise
+}  // namespace Aws

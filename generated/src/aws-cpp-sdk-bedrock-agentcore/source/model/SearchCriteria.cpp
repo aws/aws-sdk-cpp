@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-SearchCriteria::SearchCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchCriteria::SearchCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("searchQuery"))
-  {
+SearchCriteria& SearchCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("searchQuery")) {
     m_searchQuery = jsonValue.GetString("searchQuery");
     m_searchQueryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memoryStrategyId"))
-  {
+  if (jsonValue.ValueExists("memoryStrategyId")) {
     m_memoryStrategyId = jsonValue.GetString("memoryStrategyId");
     m_memoryStrategyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("topK"))
-  {
+  if (jsonValue.ValueExists("topK")) {
     m_topK = jsonValue.GetInteger("topK");
     m_topKHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SearchCriteria::Jsonize() const
-{
+JsonValue SearchCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_searchQueryHasBeenSet)
-  {
-   payload.WithString("searchQuery", m_searchQuery);
-
+  if (m_searchQueryHasBeenSet) {
+    payload.WithString("searchQuery", m_searchQuery);
   }
 
-  if(m_memoryStrategyIdHasBeenSet)
-  {
-   payload.WithString("memoryStrategyId", m_memoryStrategyId);
-
+  if (m_memoryStrategyIdHasBeenSet) {
+    payload.WithString("memoryStrategyId", m_memoryStrategyId);
   }
 
-  if(m_topKHasBeenSet)
-  {
-   payload.WithInteger("topK", m_topK);
-
+  if (m_topKHasBeenSet) {
+    payload.WithInteger("topK", m_topK);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

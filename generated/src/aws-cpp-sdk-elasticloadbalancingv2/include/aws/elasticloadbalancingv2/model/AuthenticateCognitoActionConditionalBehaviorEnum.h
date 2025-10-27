@@ -4,29 +4,21 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class AuthenticateCognitoActionConditionalBehaviorEnum
-  {
-    NOT_SET,
-    deny,
-    allow,
-    authenticate
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class AuthenticateCognitoActionConditionalBehaviorEnum { NOT_SET, deny, allow, authenticate };
 
-namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
-{
-AWS_ELASTICLOADBALANCINGV2_API AuthenticateCognitoActionConditionalBehaviorEnum GetAuthenticateCognitoActionConditionalBehaviorEnumForName(const Aws::String& name);
+namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper {
+AWS_ELASTICLOADBALANCINGV2_API AuthenticateCognitoActionConditionalBehaviorEnum
+GetAuthenticateCognitoActionConditionalBehaviorEnumForName(const Aws::String& name);
 
-AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(AuthenticateCognitoActionConditionalBehaviorEnum value);
-} // namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(
+    AuthenticateCognitoActionConditionalBehaviorEnum value);
+}  // namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

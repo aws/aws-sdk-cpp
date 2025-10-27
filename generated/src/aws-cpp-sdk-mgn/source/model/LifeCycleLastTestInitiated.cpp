@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/LifeCycleLastTestInitiated.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/LifeCycleLastTestInitiated.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
+namespace Aws {
+namespace mgn {
+namespace Model {
 
-LifeCycleLastTestInitiated::LifeCycleLastTestInitiated(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LifeCycleLastTestInitiated::LifeCycleLastTestInitiated(JsonView jsonValue) { *this = jsonValue; }
 
-LifeCycleLastTestInitiated& LifeCycleLastTestInitiated::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiCallDateTime"))
-  {
+LifeCycleLastTestInitiated& LifeCycleLastTestInitiated::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiCallDateTime")) {
     m_apiCallDateTime = jsonValue.GetString("apiCallDateTime");
     m_apiCallDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobID"))
-  {
+  if (jsonValue.ValueExists("jobID")) {
     m_jobID = jsonValue.GetString("jobID");
     m_jobIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LifeCycleLastTestInitiated::Jsonize() const
-{
+JsonValue LifeCycleLastTestInitiated::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiCallDateTimeHasBeenSet)
-  {
-   payload.WithString("apiCallDateTime", m_apiCallDateTime);
-
+  if (m_apiCallDateTimeHasBeenSet) {
+    payload.WithString("apiCallDateTime", m_apiCallDateTime);
   }
 
-  if(m_jobIDHasBeenSet)
-  {
-   payload.WithString("jobID", m_jobID);
-
+  if (m_jobIDHasBeenSet) {
+    payload.WithString("jobID", m_jobID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

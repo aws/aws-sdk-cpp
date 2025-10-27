@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/lookoutmetrics/LookoutMetricsEndpointRules.h>
+#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LookoutMetricsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using LookoutMetricsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LOOKOUTMETRICS_API LookoutMetricsEndpointProvider : public LookoutMetricsDefaultEpProviderBase
-{
-public:
-    using LookoutMetricsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LOOKOUTMETRICS_API LookoutMetricsEndpointProvider : public LookoutMetricsDefaultEpProviderBase {
+ public:
+  using LookoutMetricsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LookoutMetricsEndpointProvider()
-      : LookoutMetricsDefaultEpProviderBase(Aws::LookoutMetrics::LookoutMetricsEndpointRules::GetRulesBlob(), Aws::LookoutMetrics::LookoutMetricsEndpointRules::RulesBlobSize)
-    {}
+  LookoutMetricsEndpointProvider()
+      : LookoutMetricsDefaultEpProviderBase(Aws::LookoutMetrics::LookoutMetricsEndpointRules::GetRulesBlob(),
+                                            Aws::LookoutMetrics::LookoutMetricsEndpointRules::RulesBlobSize) {}
 
-    ~LookoutMetricsEndpointProvider()
-    {
-    }
+  ~LookoutMetricsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace LookoutMetrics
+}  // namespace Aws

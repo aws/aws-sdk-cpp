@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/oam/OAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace OAM
-{
-class OAMEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace OAM {
+class OAMEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace OAM
-} // namespace Aws
+}  // namespace OAM
+}  // namespace Aws

@@ -12,18 +12,12 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAssessmentStatusRequest::SerializePayload() const
-{
+Aws::String UpdateAssessmentStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AssessmentStatusMapper::GetNameForAssessmentStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AssessmentStatusMapper::GetNameForAssessmentStatus(m_status));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

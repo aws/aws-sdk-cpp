@@ -5,12 +5,8 @@
 
 #include <aws/kendra-ranking/KendraRankingEndpointProvider.h>
 
-namespace Aws
-{
-namespace KendraRanking
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KendraRanking
-} // namespace Aws
+namespace Aws {
+namespace KendraRanking {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KendraRanking
+}  // namespace Aws

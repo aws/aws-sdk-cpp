@@ -12,24 +12,16 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeConnectorRequest::SerializePayload() const
-{
+Aws::String DescribeConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorTypeHasBeenSet)
-  {
-   payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  if (m_connectorTypeHasBeenSet) {
+    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
   }
 
-  if(m_connectorLabelHasBeenSet)
-  {
-   payload.WithString("connectorLabel", m_connectorLabel);
-
+  if (m_connectorLabelHasBeenSet) {
+    payload.WithString("connectorLabel", m_connectorLabel);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

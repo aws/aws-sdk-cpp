@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateNetworkSettingsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DisassociateNetworkSettingsRequest::SerializePayload() const { return {}; }

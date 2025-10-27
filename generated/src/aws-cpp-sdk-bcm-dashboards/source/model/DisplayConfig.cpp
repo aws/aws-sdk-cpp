@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
 
-DisplayConfig::DisplayConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DisplayConfig::DisplayConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DisplayConfig& DisplayConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("graph"))
-  {
+DisplayConfig& DisplayConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("graph")) {
     Aws::Map<Aws::String, JsonView> graphJsonMap = jsonValue.GetObject("graph").GetAllObjects();
-    for(auto& graphItem : graphJsonMap)
-    {
+    for (auto& graphItem : graphJsonMap) {
       m_graph[graphItem.first] = graphItem.second.AsObject();
     }
     m_graphHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("table"))
-  {
+  if (jsonValue.ValueExists("table")) {
     m_table = jsonValue.GetObject("table");
     m_tableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DisplayConfig::Jsonize() const
-{
+JsonValue DisplayConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_graphHasBeenSet)
-  {
-   JsonValue graphJsonMap;
-   for(auto& graphItem : m_graph)
-   {
-     graphJsonMap.WithObject(graphItem.first, graphItem.second.Jsonize());
-   }
-   payload.WithObject("graph", std::move(graphJsonMap));
-
+  if (m_graphHasBeenSet) {
+    JsonValue graphJsonMap;
+    for (auto& graphItem : m_graph) {
+      graphJsonMap.WithObject(graphItem.first, graphItem.second.Jsonize());
+    }
+    payload.WithObject("graph", std::move(graphJsonMap));
   }
 
-  if(m_tableHasBeenSet)
-  {
-   payload.WithObject("table", m_table.Jsonize());
-
+  if (m_tableHasBeenSet) {
+    payload.WithObject("table", m_table.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

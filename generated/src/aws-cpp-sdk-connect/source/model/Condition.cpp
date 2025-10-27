@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Condition::Condition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
 
-Condition& Condition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StringCondition"))
-  {
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StringCondition")) {
     m_stringCondition = jsonValue.GetObject("StringCondition");
     m_stringConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberCondition"))
-  {
+  if (jsonValue.ValueExists("NumberCondition")) {
     m_numberCondition = jsonValue.GetObject("NumberCondition");
     m_numberConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Condition::Jsonize() const
-{
+JsonValue Condition::Jsonize() const {
   JsonValue payload;
 
-  if(m_stringConditionHasBeenSet)
-  {
-   payload.WithObject("StringCondition", m_stringCondition.Jsonize());
-
+  if (m_stringConditionHasBeenSet) {
+    payload.WithObject("StringCondition", m_stringCondition.Jsonize());
   }
 
-  if(m_numberConditionHasBeenSet)
-  {
-   payload.WithObject("NumberCondition", m_numberCondition.Jsonize());
-
+  if (m_numberConditionHasBeenSet) {
+    payload.WithObject("NumberCondition", m_numberCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

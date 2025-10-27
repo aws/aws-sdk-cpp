@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/ServiceLimitExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/ServiceLimitExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceLimitExceededException& ServiceLimitExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LimitName"))
-  {
+ServiceLimitExceededException& ServiceLimitExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LimitName")) {
     m_limitName = LimitNameMapper::GetLimitNameForName(jsonValue.GetString("LimitName"));
     m_limitNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LimitValue"))
-  {
+  if (jsonValue.ValueExists("LimitValue")) {
     m_limitValue = jsonValue.GetDouble("LimitValue");
     m_limitValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceLimitExceededException::Jsonize() const
-{
+JsonValue ServiceLimitExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_limitNameHasBeenSet)
-  {
-   payload.WithString("LimitName", LimitNameMapper::GetNameForLimitName(m_limitName));
+  if (m_limitNameHasBeenSet) {
+    payload.WithString("LimitName", LimitNameMapper::GetNameForLimitName(m_limitName));
   }
 
-  if(m_limitValueHasBeenSet)
-  {
-   payload.WithDouble("LimitValue", m_limitValue);
-
+  if (m_limitValueHasBeenSet) {
+    payload.WithDouble("LimitValue", m_limitValue);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

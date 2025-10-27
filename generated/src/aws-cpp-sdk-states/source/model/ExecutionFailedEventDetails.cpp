@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/states/model/ExecutionFailedEventDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/states/model/ExecutionFailedEventDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
+namespace Aws {
+namespace SFN {
+namespace Model {
 
-ExecutionFailedEventDetails::ExecutionFailedEventDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionFailedEventDetails::ExecutionFailedEventDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionFailedEventDetails& ExecutionFailedEventDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("error"))
-  {
+ExecutionFailedEventDetails& ExecutionFailedEventDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("error")) {
     m_error = jsonValue.GetString("error");
     m_errorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cause"))
-  {
+  if (jsonValue.ValueExists("cause")) {
     m_cause = jsonValue.GetString("cause");
     m_causeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionFailedEventDetails::Jsonize() const
-{
+JsonValue ExecutionFailedEventDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
-
+  if (m_errorHasBeenSet) {
+    payload.WithString("error", m_error);
   }
 
-  if(m_causeHasBeenSet)
-  {
-   payload.WithString("cause", m_cause);
-
+  if (m_causeHasBeenSet) {
+    payload.WithString("cause", m_cause);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class ResolverLevelMetricsConfig
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class ResolverLevelMetricsConfig { NOT_SET, ENABLED, DISABLED };
 
-namespace ResolverLevelMetricsConfigMapper
-{
+namespace ResolverLevelMetricsConfigMapper {
 AWS_APPSYNC_API ResolverLevelMetricsConfig GetResolverLevelMetricsConfigForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForResolverLevelMetricsConfig(ResolverLevelMetricsConfig value);
-} // namespace ResolverLevelMetricsConfigMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace ResolverLevelMetricsConfigMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

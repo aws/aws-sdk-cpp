@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::imagebuilder;
 
-AWSError<CoreErrors> ImagebuilderErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ImagebuilderErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ImagebuilderErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

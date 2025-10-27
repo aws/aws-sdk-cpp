@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LiveConnectorSinkConfiguration& LiveConnectorSinkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SinkType"))
-  {
+LiveConnectorSinkConfiguration& LiveConnectorSinkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SinkType")) {
     m_sinkType = LiveConnectorSinkTypeMapper::GetLiveConnectorSinkTypeForName(jsonValue.GetString("SinkType"));
     m_sinkTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RTMPConfiguration"))
-  {
+  if (jsonValue.ValueExists("RTMPConfiguration")) {
     m_rTMPConfiguration = jsonValue.GetObject("RTMPConfiguration");
     m_rTMPConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LiveConnectorSinkConfiguration::Jsonize() const
-{
+JsonValue LiveConnectorSinkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sinkTypeHasBeenSet)
-  {
-   payload.WithString("SinkType", LiveConnectorSinkTypeMapper::GetNameForLiveConnectorSinkType(m_sinkType));
+  if (m_sinkTypeHasBeenSet) {
+    payload.WithString("SinkType", LiveConnectorSinkTypeMapper::GetNameForLiveConnectorSinkType(m_sinkType));
   }
 
-  if(m_rTMPConfigurationHasBeenSet)
-  {
-   payload.WithObject("RTMPConfiguration", m_rTMPConfiguration.Jsonize());
-
+  if (m_rTMPConfigurationHasBeenSet) {
+    payload.WithObject("RTMPConfiguration", m_rTMPConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

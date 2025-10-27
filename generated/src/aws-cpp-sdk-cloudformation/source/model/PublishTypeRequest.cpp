@@ -10,27 +10,22 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String PublishTypeRequest::SerializePayload() const
-{
+Aws::String PublishTypeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PublishType&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
-  if(m_arnHasBeenSet)
-  {
+  if (m_arnHasBeenSet) {
     ss << "Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_publicVersionNumberHasBeenSet)
-  {
+  if (m_publicVersionNumberHasBeenSet) {
     ss << "PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String PublishTypeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PublishTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PublishTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

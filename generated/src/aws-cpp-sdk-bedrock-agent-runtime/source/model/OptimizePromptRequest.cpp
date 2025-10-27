@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String OptimizePromptRequest::SerializePayload() const
-{
+Aws::String OptimizePromptRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithObject("input", m_input.Jsonize());
-
+  if (m_inputHasBeenSet) {
+    payload.WithObject("input", m_input.Jsonize());
   }
 
-  if(m_targetModelIdHasBeenSet)
-  {
-   payload.WithString("targetModelId", m_targetModelId);
-
+  if (m_targetModelIdHasBeenSet) {
+    payload.WithString("targetModelId", m_targetModelId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

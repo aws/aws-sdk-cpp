@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchLogsConfigurationType& CloudWatchLogsConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LogGroupArn"))
-  {
+CloudWatchLogsConfigurationType& CloudWatchLogsConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LogGroupArn")) {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
     m_logGroupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchLogsConfigurationType::Jsonize() const
-{
+JsonValue CloudWatchLogsConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_logGroupArnHasBeenSet)
-  {
-   payload.WithString("LogGroupArn", m_logGroupArn);
-
+  if (m_logGroupArnHasBeenSet) {
+    payload.WithString("LogGroupArn", m_logGroupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -4,133 +4,162 @@
  */
 
 #pragma once
-#include <aws/eks-auth/EKSAuth_EXPORTS.h>
-#include <aws/eks-auth/model/Subject.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/eks-auth/model/PodIdentityAssociation.h>
+#include <aws/eks-auth/EKSAuth_EXPORTS.h>
 #include <aws/eks-auth/model/AssumedRoleUser.h>
 #include <aws/eks-auth/model/Credentials.h>
+#include <aws/eks-auth/model/PodIdentityAssociation.h>
+#include <aws/eks-auth/model/Subject.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace EKSAuth
-{
-namespace Model
-{
-  class AssumeRoleForPodIdentityResult
-  {
-  public:
-    AWS_EKSAUTH_API AssumeRoleForPodIdentityResult() = default;
-    AWS_EKSAUTH_API AssumeRoleForPodIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_EKSAUTH_API AssumeRoleForPodIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace EKSAuth {
+namespace Model {
+class AssumeRoleForPodIdentityResult {
+ public:
+  AWS_EKSAUTH_API AssumeRoleForPodIdentityResult() = default;
+  AWS_EKSAUTH_API AssumeRoleForPodIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_EKSAUTH_API AssumeRoleForPodIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The name of the Kubernetes service account inside the cluster to associate
+   * the IAM credentials with.</p>
+   */
+  inline const Subject& GetSubject() const { return m_subject; }
+  template <typename SubjectT = Subject>
+  void SetSubject(SubjectT&& value) {
+    m_subjectHasBeenSet = true;
+    m_subject = std::forward<SubjectT>(value);
+  }
+  template <typename SubjectT = Subject>
+  AssumeRoleForPodIdentityResult& WithSubject(SubjectT&& value) {
+    SetSubject(std::forward<SubjectT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the Kubernetes service account inside the cluster to associate
-     * the IAM credentials with.</p>
-     */
-    inline const Subject& GetSubject() const { return m_subject; }
-    template<typename SubjectT = Subject>
-    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
-    template<typename SubjectT = Subject>
-    AssumeRoleForPodIdentityResult& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identity that is allowed to use the credentials. This value is always
+   * <code>pods.eks.amazonaws.com</code>.</p>
+   */
+  inline const Aws::String& GetAudience() const { return m_audience; }
+  template <typename AudienceT = Aws::String>
+  void SetAudience(AudienceT&& value) {
+    m_audienceHasBeenSet = true;
+    m_audience = std::forward<AudienceT>(value);
+  }
+  template <typename AudienceT = Aws::String>
+  AssumeRoleForPodIdentityResult& WithAudience(AudienceT&& value) {
+    SetAudience(std::forward<AudienceT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identity that is allowed to use the credentials. This value is always
-     * <code>pods.eks.amazonaws.com</code>.</p>
-     */
-    inline const Aws::String& GetAudience() const { return m_audience; }
-    template<typename AudienceT = Aws::String>
-    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
-    template<typename AudienceT = Aws::String>
-    AssumeRoleForPodIdentityResult& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) and ID of the EKS Pod Identity
+   * association.</p>
+   */
+  inline const PodIdentityAssociation& GetPodIdentityAssociation() const { return m_podIdentityAssociation; }
+  template <typename PodIdentityAssociationT = PodIdentityAssociation>
+  void SetPodIdentityAssociation(PodIdentityAssociationT&& value) {
+    m_podIdentityAssociationHasBeenSet = true;
+    m_podIdentityAssociation = std::forward<PodIdentityAssociationT>(value);
+  }
+  template <typename PodIdentityAssociationT = PodIdentityAssociation>
+  AssumeRoleForPodIdentityResult& WithPodIdentityAssociation(PodIdentityAssociationT&& value) {
+    SetPodIdentityAssociation(std::forward<PodIdentityAssociationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) and ID of the EKS Pod Identity
-     * association.</p>
-     */
-    inline const PodIdentityAssociation& GetPodIdentityAssociation() const { return m_podIdentityAssociation; }
-    template<typename PodIdentityAssociationT = PodIdentityAssociation>
-    void SetPodIdentityAssociation(PodIdentityAssociationT&& value) { m_podIdentityAssociationHasBeenSet = true; m_podIdentityAssociation = std::forward<PodIdentityAssociationT>(value); }
-    template<typename PodIdentityAssociationT = PodIdentityAssociation>
-    AssumeRoleForPodIdentityResult& WithPodIdentityAssociation(PodIdentityAssociationT&& value) { SetPodIdentityAssociation(std::forward<PodIdentityAssociationT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>An object with the permanent IAM role identity and the temporary session
+   * name.</p> <p>The ARN of the IAM role that the temporary credentials authenticate
+   * to.</p> <p>The session name of the temporary session requested to STS. The value
+   * is a unique identifier that contains the role ID, a colon (<code>:</code>), and
+   * the role session name of the role that is being assumed. The role ID is
+   * generated by IAM when the role is created. The role session name part of the
+   * value follows this format: <code>eks-<i>clustername</i>-<i>podname</i>-<i>random
+   * UUID</i> </code> </p>
+   */
+  inline const AssumedRoleUser& GetAssumedRoleUser() const { return m_assumedRoleUser; }
+  template <typename AssumedRoleUserT = AssumedRoleUser>
+  void SetAssumedRoleUser(AssumedRoleUserT&& value) {
+    m_assumedRoleUserHasBeenSet = true;
+    m_assumedRoleUser = std::forward<AssumedRoleUserT>(value);
+  }
+  template <typename AssumedRoleUserT = AssumedRoleUser>
+  AssumeRoleForPodIdentityResult& WithAssumedRoleUser(AssumedRoleUserT&& value) {
+    SetAssumedRoleUser(std::forward<AssumedRoleUserT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An object with the permanent IAM role identity and the temporary session
-     * name.</p> <p>The ARN of the IAM role that the temporary credentials authenticate
-     * to.</p> <p>The session name of the temporary session requested to STS. The value
-     * is a unique identifier that contains the role ID, a colon (<code>:</code>), and
-     * the role session name of the role that is being assumed. The role ID is
-     * generated by IAM when the role is created. The role session name part of the
-     * value follows this format: <code>eks-<i>clustername</i>-<i>podname</i>-<i>random
-     * UUID</i> </code> </p>
-     */
-    inline const AssumedRoleUser& GetAssumedRoleUser() const { return m_assumedRoleUser; }
-    template<typename AssumedRoleUserT = AssumedRoleUser>
-    void SetAssumedRoleUser(AssumedRoleUserT&& value) { m_assumedRoleUserHasBeenSet = true; m_assumedRoleUser = std::forward<AssumedRoleUserT>(value); }
-    template<typename AssumedRoleUserT = AssumedRoleUser>
-    AssumeRoleForPodIdentityResult& WithAssumedRoleUser(AssumedRoleUserT&& value) { SetAssumedRoleUser(std::forward<AssumedRoleUserT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The <i>Amazon Web Services Signature Version 4</i> type of temporary
+   * credentials.</p>
+   */
+  inline const Credentials& GetCredentials() const { return m_credentials; }
+  template <typename CredentialsT = Credentials>
+  void SetCredentials(CredentialsT&& value) {
+    m_credentialsHasBeenSet = true;
+    m_credentials = std::forward<CredentialsT>(value);
+  }
+  template <typename CredentialsT = Credentials>
+  AssumeRoleForPodIdentityResult& WithCredentials(CredentialsT&& value) {
+    SetCredentials(std::forward<CredentialsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <i>Amazon Web Services Signature Version 4</i> type of temporary
-     * credentials.</p>
-     */
-    inline const Credentials& GetCredentials() const { return m_credentials; }
-    template<typename CredentialsT = Credentials>
-    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
-    template<typename CredentialsT = Credentials>
-    AssumeRoleForPodIdentityResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    AssumeRoleForPodIdentityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  AssumeRoleForPodIdentityResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Subject m_subject;
+  bool m_subjectHasBeenSet = false;
 
-    Subject m_subject;
-    bool m_subjectHasBeenSet = false;
+  Aws::String m_audience;
+  bool m_audienceHasBeenSet = false;
 
-    Aws::String m_audience;
-    bool m_audienceHasBeenSet = false;
+  PodIdentityAssociation m_podIdentityAssociation;
+  bool m_podIdentityAssociationHasBeenSet = false;
 
-    PodIdentityAssociation m_podIdentityAssociation;
-    bool m_podIdentityAssociationHasBeenSet = false;
+  AssumedRoleUser m_assumedRoleUser;
+  bool m_assumedRoleUserHasBeenSet = false;
 
-    AssumedRoleUser m_assumedRoleUser;
-    bool m_assumedRoleUserHasBeenSet = false;
+  Credentials m_credentials;
+  bool m_credentialsHasBeenSet = false;
 
-    Credentials m_credentials;
-    bool m_credentialsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EKSAuth
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKSAuth
+}  // namespace Aws

@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TopBottomRankedComputation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TopBottomRankedComputation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TopBottomRankedComputation::TopBottomRankedComputation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TopBottomRankedComputation::TopBottomRankedComputation(JsonView jsonValue) { *this = jsonValue; }
 
-TopBottomRankedComputation& TopBottomRankedComputation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComputationId"))
-  {
+TopBottomRankedComputation& TopBottomRankedComputation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComputationId")) {
     m_computationId = jsonValue.GetString("ComputationId");
     m_computationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Category"))
-  {
+  if (jsonValue.ValueExists("Category")) {
     m_category = jsonValue.GetObject("Category");
     m_categoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetObject("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultSize"))
-  {
+  if (jsonValue.ValueExists("ResultSize")) {
     m_resultSize = jsonValue.GetInteger("ResultSize");
     m_resultSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TopBottomComputationTypeMapper::GetTopBottomComputationTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TopBottomRankedComputation::Jsonize() const
-{
+JsonValue TopBottomRankedComputation::Jsonize() const {
   JsonValue payload;
 
-  if(m_computationIdHasBeenSet)
-  {
-   payload.WithString("ComputationId", m_computationId);
-
+  if (m_computationIdHasBeenSet) {
+    payload.WithString("ComputationId", m_computationId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithObject("Category", m_category.Jsonize());
-
+  if (m_categoryHasBeenSet) {
+    payload.WithObject("Category", m_category.Jsonize());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("Value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("Value", m_value.Jsonize());
   }
 
-  if(m_resultSizeHasBeenSet)
-  {
-   payload.WithInteger("ResultSize", m_resultSize);
-
+  if (m_resultSizeHasBeenSet) {
+    payload.WithInteger("ResultSize", m_resultSize);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TopBottomComputationTypeMapper::GetNameForTopBottomComputationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TopBottomComputationTypeMapper::GetNameForTopBottomComputationType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

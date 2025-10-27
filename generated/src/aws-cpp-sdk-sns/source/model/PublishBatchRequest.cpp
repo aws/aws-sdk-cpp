@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/PublishBatchRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/PublishBatchRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String PublishBatchRequest::SerializePayload() const
-{
+Aws::String PublishBatchRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PublishBatch&";
-  if(m_topicArnHasBeenSet)
-  {
+  if (m_topicArnHasBeenSet) {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 
-  if(m_publishBatchRequestEntriesHasBeenSet)
-  {
-    if (m_publishBatchRequestEntries.empty())
-    {
+  if (m_publishBatchRequestEntriesHasBeenSet) {
+    if (m_publishBatchRequestEntries.empty()) {
       ss << "PublishBatchRequestEntries=&";
-    }
-    else
-    {
+    } else {
       unsigned publishBatchRequestEntriesCount = 1;
-      for(auto& item : m_publishBatchRequestEntries)
-      {
+      for (auto& item : m_publishBatchRequestEntries) {
         item.OutputToStream(ss, "PublishBatchRequestEntries.member.", publishBatchRequestEntriesCount, "");
         publishBatchRequestEntriesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String PublishBatchRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PublishBatchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PublishBatchRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-Resource::Resource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
-Resource& Resource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+Resource& Resource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceName"))
-  {
+  if (jsonValue.ValueExists("ResourceName")) {
     m_resourceName = jsonValue.GetString("ResourceName");
     m_resourceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Resource::Jsonize() const
-{
+JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("ResourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("ResourceName", m_resourceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-InferenceConfig::InferenceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceConfig::InferenceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceConfig& InferenceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("textInferenceConfig"))
-  {
+InferenceConfig& InferenceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("textInferenceConfig")) {
     m_textInferenceConfig = jsonValue.GetObject("textInferenceConfig");
     m_textInferenceConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferenceConfig::Jsonize() const
-{
+JsonValue InferenceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_textInferenceConfigHasBeenSet)
-  {
-   payload.WithObject("textInferenceConfig", m_textInferenceConfig.Jsonize());
-
+  if (m_textInferenceConfigHasBeenSet) {
+    payload.WithObject("textInferenceConfig", m_textInferenceConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

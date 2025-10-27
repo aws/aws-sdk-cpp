@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/UnsupportedTimestamps.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/UnsupportedTimestamps.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
-UnsupportedTimestamps::UnsupportedTimestamps(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnsupportedTimestamps::UnsupportedTimestamps(JsonView jsonValue) { *this = jsonValue; }
 
-UnsupportedTimestamps& UnsupportedTimestamps::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TotalNumberOfUnsupportedTimestamps"))
-  {
+UnsupportedTimestamps& UnsupportedTimestamps::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TotalNumberOfUnsupportedTimestamps")) {
     m_totalNumberOfUnsupportedTimestamps = jsonValue.GetInteger("TotalNumberOfUnsupportedTimestamps");
     m_totalNumberOfUnsupportedTimestampsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnsupportedTimestamps::Jsonize() const
-{
+JsonValue UnsupportedTimestamps::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalNumberOfUnsupportedTimestampsHasBeenSet)
-  {
-   payload.WithInteger("TotalNumberOfUnsupportedTimestamps", m_totalNumberOfUnsupportedTimestamps);
-
+  if (m_totalNumberOfUnsupportedTimestampsHasBeenSet) {
+    payload.WithInteger("TotalNumberOfUnsupportedTimestamps", m_totalNumberOfUnsupportedTimestamps);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

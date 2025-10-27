@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-BatchDeleteEvaluationJobError::BatchDeleteEvaluationJobError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDeleteEvaluationJobError::BatchDeleteEvaluationJobError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDeleteEvaluationJobError& BatchDeleteEvaluationJobError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobIdentifier"))
-  {
+BatchDeleteEvaluationJobError& BatchDeleteEvaluationJobError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobIdentifier")) {
     m_jobIdentifier = jsonValue.GetString("jobIdentifier");
     m_jobIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDeleteEvaluationJobError::Jsonize() const
-{
+JsonValue BatchDeleteEvaluationJobError::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdentifierHasBeenSet)
-  {
-   payload.WithString("jobIdentifier", m_jobIdentifier);
-
+  if (m_jobIdentifierHasBeenSet) {
+    payload.WithString("jobIdentifier", m_jobIdentifier);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

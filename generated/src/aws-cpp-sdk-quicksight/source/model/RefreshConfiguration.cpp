@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RefreshConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RefreshConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RefreshConfiguration::RefreshConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RefreshConfiguration::RefreshConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RefreshConfiguration& RefreshConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IncrementalRefresh"))
-  {
+RefreshConfiguration& RefreshConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IncrementalRefresh")) {
     m_incrementalRefresh = jsonValue.GetObject("IncrementalRefresh");
     m_incrementalRefreshHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RefreshConfiguration::Jsonize() const
-{
+JsonValue RefreshConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_incrementalRefreshHasBeenSet)
-  {
-   payload.WithObject("IncrementalRefresh", m_incrementalRefresh.Jsonize());
-
+  if (m_incrementalRefreshHasBeenSet) {
+    payload.WithObject("IncrementalRefresh", m_incrementalRefresh.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

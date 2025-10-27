@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/ListAnomalousLogGroupsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/devops-guru/model/ListAnomalousLogGroupsResult.h>
 
 #include <utility>
 
@@ -17,42 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnomalousLogGroupsResult::ListAnomalousLogGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAnomalousLogGroupsResult::ListAnomalousLogGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAnomalousLogGroupsResult& ListAnomalousLogGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAnomalousLogGroupsResult& ListAnomalousLogGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("InsightId"))
-  {
+  if (jsonValue.ValueExists("InsightId")) {
     m_insightId = jsonValue.GetString("InsightId");
     m_insightIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AnomalousLogGroups"))
-  {
+  if (jsonValue.ValueExists("AnomalousLogGroups")) {
     Aws::Utils::Array<JsonView> anomalousLogGroupsJsonList = jsonValue.GetArray("AnomalousLogGroups");
-    for(unsigned anomalousLogGroupsIndex = 0; anomalousLogGroupsIndex < anomalousLogGroupsJsonList.GetLength(); ++anomalousLogGroupsIndex)
-    {
+    for (unsigned anomalousLogGroupsIndex = 0; anomalousLogGroupsIndex < anomalousLogGroupsJsonList.GetLength();
+         ++anomalousLogGroupsIndex) {
       m_anomalousLogGroups.push_back(anomalousLogGroupsJsonList[anomalousLogGroupsIndex].AsObject());
     }
     m_anomalousLogGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

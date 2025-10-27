@@ -7,25 +7,16 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
-  enum class AgreementStatusType
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace Transfer {
+namespace Model {
+enum class AgreementStatusType { NOT_SET, ACTIVE, INACTIVE };
 
-namespace AgreementStatusTypeMapper
-{
+namespace AgreementStatusTypeMapper {
 AWS_TRANSFER_API AgreementStatusType GetAgreementStatusTypeForName(const Aws::String& name);
 
 AWS_TRANSFER_API Aws::String GetNameForAgreementStatusType(AgreementStatusType value);
-} // namespace AgreementStatusTypeMapper
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace AgreementStatusTypeMapper
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

@@ -7,33 +7,16 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class Locale
-  {
-    NOT_SET,
-    DE,
-    EN,
-    ES,
-    FR,
-    IT,
-    JA,
-    KO,
-    PT_BR,
-    ZH_CN,
-    ZH_TW
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class Locale { NOT_SET, DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW };
 
-namespace LocaleMapper
-{
+namespace LocaleMapper {
 AWS_ACCESSANALYZER_API Locale GetLocaleForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForLocale(Locale value);
-} // namespace LocaleMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace LocaleMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

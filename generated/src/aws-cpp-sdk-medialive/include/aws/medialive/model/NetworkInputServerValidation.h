@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class NetworkInputServerValidation
-  {
-    NOT_SET,
-    CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME,
-    CHECK_CRYPTOGRAPHY_ONLY
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class NetworkInputServerValidation { NOT_SET, CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY };
 
-namespace NetworkInputServerValidationMapper
-{
+namespace NetworkInputServerValidationMapper {
 AWS_MEDIALIVE_API NetworkInputServerValidation GetNetworkInputServerValidationForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForNetworkInputServerValidation(NetworkInputServerValidation value);
-} // namespace NetworkInputServerValidationMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace NetworkInputServerValidationMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class NetworkProtocol
-  {
-    NOT_SET,
-    TCP,
-    UDP
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class NetworkProtocol { NOT_SET, TCP, UDP };
 
-namespace NetworkProtocolMapper
-{
+namespace NetworkProtocolMapper {
 AWS_INSPECTOR2_API NetworkProtocol GetNetworkProtocolForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForNetworkProtocol(NetworkProtocol value);
-} // namespace NetworkProtocolMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace NetworkProtocolMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

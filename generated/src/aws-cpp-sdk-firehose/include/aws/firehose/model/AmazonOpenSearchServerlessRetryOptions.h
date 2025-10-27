@@ -6,56 +6,54 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Firehose {
+namespace Model {
 
+/**
+ * <p>Configures retry behavior in case Firehose is unable to deliver documents to
+ * the Serverless offering for Amazon OpenSearch Service.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonOpenSearchServerlessRetryOptions">AWS
+ * API Reference</a></p>
+ */
+class AmazonOpenSearchServerlessRetryOptions {
+ public:
+  AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions() = default;
+  AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configures retry behavior in case Firehose is unable to deliver documents to
-   * the Serverless offering for Amazon OpenSearch Service.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonOpenSearchServerlessRetryOptions">AWS
-   * API Reference</a></p>
+   * <p>After an initial failure to deliver to the Serverless offering for Amazon
+   * OpenSearch Service, the total amount of time during which Firehose retries
+   * delivery (including the first attempt). After this time has elapsed, the failed
+   * documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A
+   * value of 0 (zero) results in no retries.</p>
    */
-  class AmazonOpenSearchServerlessRetryOptions
-  {
-  public:
-    AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions() = default;
-    AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API AmazonOpenSearchServerlessRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetDurationInSeconds() const { return m_durationInSeconds; }
+  inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
+  inline void SetDurationInSeconds(int value) {
+    m_durationInSecondsHasBeenSet = true;
+    m_durationInSeconds = value;
+  }
+  inline AmazonOpenSearchServerlessRetryOptions& WithDurationInSeconds(int value) {
+    SetDurationInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_durationInSeconds{0};
+  bool m_durationInSecondsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>After an initial failure to deliver to the Serverless offering for Amazon
-     * OpenSearch Service, the total amount of time during which Firehose retries
-     * delivery (including the first attempt). After this time has elapsed, the failed
-     * documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A
-     * value of 0 (zero) results in no retries.</p>
-     */
-    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
-    inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-    inline AmazonOpenSearchServerlessRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    int m_durationInSeconds{0};
-    bool m_durationInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

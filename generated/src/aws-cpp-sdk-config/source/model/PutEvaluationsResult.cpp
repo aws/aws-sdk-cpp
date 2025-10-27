@@ -4,10 +4,10 @@
  */
 
 #include <aws/config/model/PutEvaluationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutEvaluationsResult::PutEvaluationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutEvaluationsResult::PutEvaluationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutEvaluationsResult& PutEvaluationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedEvaluations"))
-  {
+  if (jsonValue.ValueExists("FailedEvaluations")) {
     Aws::Utils::Array<JsonView> failedEvaluationsJsonList = jsonValue.GetArray("FailedEvaluations");
-    for(unsigned failedEvaluationsIndex = 0; failedEvaluationsIndex < failedEvaluationsJsonList.GetLength(); ++failedEvaluationsIndex)
-    {
+    for (unsigned failedEvaluationsIndex = 0; failedEvaluationsIndex < failedEvaluationsJsonList.GetLength(); ++failedEvaluationsIndex) {
       m_failedEvaluations.push_back(failedEvaluationsJsonList[failedEvaluationsIndex].AsObject());
     }
     m_failedEvaluationsHasBeenSet = true;
@@ -37,12 +31,10 @@ PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServi
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Route53Domains;
 
-AWSError<CoreErrors> Route53DomainsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> Route53DomainsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = Route53DomainsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

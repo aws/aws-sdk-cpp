@@ -5,12 +5,8 @@
 
 #include <aws/elasticfilesystem/EFSEndpointProvider.h>
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EFS
-} // namespace Aws
+namespace Aws {
+namespace EFS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EFS
+}  // namespace Aws

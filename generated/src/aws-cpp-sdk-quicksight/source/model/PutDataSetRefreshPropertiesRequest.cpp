@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PutDataSetRefreshPropertiesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PutDataSetRefreshPropertiesRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutDataSetRefreshPropertiesRequest::SerializePayload() const
-{
+Aws::String PutDataSetRefreshPropertiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dataSetRefreshPropertiesHasBeenSet)
-  {
-   payload.WithObject("DataSetRefreshProperties", m_dataSetRefreshProperties.Jsonize());
-
+  if (m_dataSetRefreshPropertiesHasBeenSet) {
+    payload.WithObject("DataSetRefreshProperties", m_dataSetRefreshProperties.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

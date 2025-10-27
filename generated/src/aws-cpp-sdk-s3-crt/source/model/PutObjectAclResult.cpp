@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/PutObjectAclResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/PutObjectAclResult.h>
 
 #include <utility>
 
@@ -16,31 +16,24 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectAclResult::PutObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+PutObjectAclResult::PutObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-PutObjectAclResult& PutObjectAclResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+PutObjectAclResult& PutObjectAclResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestChargedIter = headers.find("x-amz-request-charged");
-  if(requestChargedIter != headers.end())
-  {
+  if (requestChargedIter != headers.end()) {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
     m_requestChargedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

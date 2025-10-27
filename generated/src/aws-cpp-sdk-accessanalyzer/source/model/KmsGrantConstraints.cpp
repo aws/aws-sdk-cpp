@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-KmsGrantConstraints::KmsGrantConstraints(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KmsGrantConstraints::KmsGrantConstraints(JsonView jsonValue) { *this = jsonValue; }
 
-KmsGrantConstraints& KmsGrantConstraints::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("encryptionContextEquals"))
-  {
+KmsGrantConstraints& KmsGrantConstraints::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("encryptionContextEquals")) {
     Aws::Map<Aws::String, JsonView> encryptionContextEqualsJsonMap = jsonValue.GetObject("encryptionContextEquals").GetAllObjects();
-    for(auto& encryptionContextEqualsItem : encryptionContextEqualsJsonMap)
-    {
+    for (auto& encryptionContextEqualsItem : encryptionContextEqualsJsonMap) {
       m_encryptionContextEquals[encryptionContextEqualsItem.first] = encryptionContextEqualsItem.second.AsString();
     }
     m_encryptionContextEqualsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionContextSubset"))
-  {
+  if (jsonValue.ValueExists("encryptionContextSubset")) {
     Aws::Map<Aws::String, JsonView> encryptionContextSubsetJsonMap = jsonValue.GetObject("encryptionContextSubset").GetAllObjects();
-    for(auto& encryptionContextSubsetItem : encryptionContextSubsetJsonMap)
-    {
+    for (auto& encryptionContextSubsetItem : encryptionContextSubsetJsonMap) {
       m_encryptionContextSubset[encryptionContextSubsetItem.first] = encryptionContextSubsetItem.second.AsString();
     }
     m_encryptionContextSubsetHasBeenSet = true;
@@ -46,35 +35,28 @@ KmsGrantConstraints& KmsGrantConstraints::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue KmsGrantConstraints::Jsonize() const
-{
+JsonValue KmsGrantConstraints::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionContextEqualsHasBeenSet)
-  {
-   JsonValue encryptionContextEqualsJsonMap;
-   for(auto& encryptionContextEqualsItem : m_encryptionContextEquals)
-   {
-     encryptionContextEqualsJsonMap.WithString(encryptionContextEqualsItem.first, encryptionContextEqualsItem.second);
-   }
-   payload.WithObject("encryptionContextEquals", std::move(encryptionContextEqualsJsonMap));
-
+  if (m_encryptionContextEqualsHasBeenSet) {
+    JsonValue encryptionContextEqualsJsonMap;
+    for (auto& encryptionContextEqualsItem : m_encryptionContextEquals) {
+      encryptionContextEqualsJsonMap.WithString(encryptionContextEqualsItem.first, encryptionContextEqualsItem.second);
+    }
+    payload.WithObject("encryptionContextEquals", std::move(encryptionContextEqualsJsonMap));
   }
 
-  if(m_encryptionContextSubsetHasBeenSet)
-  {
-   JsonValue encryptionContextSubsetJsonMap;
-   for(auto& encryptionContextSubsetItem : m_encryptionContextSubset)
-   {
-     encryptionContextSubsetJsonMap.WithString(encryptionContextSubsetItem.first, encryptionContextSubsetItem.second);
-   }
-   payload.WithObject("encryptionContextSubset", std::move(encryptionContextSubsetJsonMap));
-
+  if (m_encryptionContextSubsetHasBeenSet) {
+    JsonValue encryptionContextSubsetJsonMap;
+    for (auto& encryptionContextSubsetItem : m_encryptionContextSubset) {
+      encryptionContextSubsetJsonMap.WithString(encryptionContextSubsetItem.first, encryptionContextSubsetItem.second);
+    }
+    payload.WithObject("encryptionContextSubset", std::move(encryptionContextSubsetJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

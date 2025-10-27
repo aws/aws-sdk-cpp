@@ -3,101 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/Fleet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/Fleet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-Fleet::Fleet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Fleet::Fleet(JsonView jsonValue) { *this = jsonValue; }
 
-Fleet& Fleet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Fleet& Fleet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastDeploymentStatus"))
-  {
+  if (jsonValue.ValueExists("lastDeploymentStatus")) {
     m_lastDeploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("lastDeploymentStatus"));
     m_lastDeploymentStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastDeploymentJob"))
-  {
+  if (jsonValue.ValueExists("lastDeploymentJob")) {
     m_lastDeploymentJob = jsonValue.GetString("lastDeploymentJob");
     m_lastDeploymentJobHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastDeploymentTime"))
-  {
+  if (jsonValue.ValueExists("lastDeploymentTime")) {
     m_lastDeploymentTime = jsonValue.GetDouble("lastDeploymentTime");
     m_lastDeploymentTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Fleet::Jsonize() const
-{
+JsonValue Fleet::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastDeploymentStatusHasBeenSet)
-  {
-   payload.WithString("lastDeploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_lastDeploymentStatus));
+  if (m_lastDeploymentStatusHasBeenSet) {
+    payload.WithString("lastDeploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_lastDeploymentStatus));
   }
 
-  if(m_lastDeploymentJobHasBeenSet)
-  {
-   payload.WithString("lastDeploymentJob", m_lastDeploymentJob);
-
+  if (m_lastDeploymentJobHasBeenSet) {
+    payload.WithString("lastDeploymentJob", m_lastDeploymentJob);
   }
 
-  if(m_lastDeploymentTimeHasBeenSet)
-  {
-   payload.WithDouble("lastDeploymentTime", m_lastDeploymentTime.SecondsWithMSPrecision());
+  if (m_lastDeploymentTimeHasBeenSet) {
+    payload.WithDouble("lastDeploymentTime", m_lastDeploymentTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

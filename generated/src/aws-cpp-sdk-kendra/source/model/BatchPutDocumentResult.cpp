@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/BatchPutDocumentResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kendra/model/BatchPutDocumentResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchPutDocumentResult::BatchPutDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchPutDocumentResult::BatchPutDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchPutDocumentResult& BatchPutDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchPutDocumentResult& BatchPutDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedDocuments"))
-  {
+  if (jsonValue.ValueExists("FailedDocuments")) {
     Aws::Utils::Array<JsonView> failedDocumentsJsonList = jsonValue.GetArray("FailedDocuments");
-    for(unsigned failedDocumentsIndex = 0; failedDocumentsIndex < failedDocumentsJsonList.GetLength(); ++failedDocumentsIndex)
-    {
+    for (unsigned failedDocumentsIndex = 0; failedDocumentsIndex < failedDocumentsJsonList.GetLength(); ++failedDocumentsIndex) {
       m_failedDocuments.push_back(failedDocumentsJsonList[failedDocumentsIndex].AsObject());
     }
     m_failedDocumentsHasBeenSet = true;
@@ -37,12 +31,10 @@ BatchPutDocumentResult& BatchPutDocumentResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

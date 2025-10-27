@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class DiscoveryModification
-  {
-    NOT_SET,
-    DISCOVERED,
-    UPDATED,
-    NO_CHANGE
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class DiscoveryModification { NOT_SET, DISCOVERED, UPDATED, NO_CHANGE };
 
-namespace DiscoveryModificationMapper
-{
+namespace DiscoveryModificationMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API DiscoveryModification GetDiscoveryModificationForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForDiscoveryModification(DiscoveryModification value);
-} // namespace DiscoveryModificationMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace DiscoveryModificationMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

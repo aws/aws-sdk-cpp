@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AttachManagedPolicyToPermissionSetRequest::SerializePayload() const
-{
+Aws::String AttachManagedPolicyToPermissionSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
+  if (m_instanceArnHasBeenSet) {
+    payload.WithString("InstanceArn", m_instanceArn);
   }
 
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
+  if (m_permissionSetArnHasBeenSet) {
+    payload.WithString("PermissionSetArn", m_permissionSetArn);
   }
 
-  if(m_managedPolicyArnHasBeenSet)
-  {
-   payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
-
+  if (m_managedPolicyArnHasBeenSet) {
+    payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AttachManagedPolicyToPermissionSetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AttachManagedPolicyToPermissionSetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SWBExternalService.AttachManagedPolicyToPermissionSet"));
   return headers;
-
 }
-
-
-
-

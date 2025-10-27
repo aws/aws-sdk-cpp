@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivschat/model/CreateChatTokenResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ivschat/model/CreateChatTokenResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChatTokenResult::CreateChatTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateChatTokenResult::CreateChatTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateChatTokenResult& CreateChatTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateChatTokenResult& CreateChatTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("token"))
-  {
+  if (jsonValue.ValueExists("token")) {
     m_token = jsonValue.GetString("token");
     m_tokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenExpirationTime"))
-  {
+  if (jsonValue.ValueExists("tokenExpirationTime")) {
     m_tokenExpirationTime = jsonValue.GetString("tokenExpirationTime");
     m_tokenExpirationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionExpirationTime"))
-  {
+  if (jsonValue.ValueExists("sessionExpirationTime")) {
     m_sessionExpirationTime = jsonValue.GetString("sessionExpirationTime");
     m_sessionExpirationTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

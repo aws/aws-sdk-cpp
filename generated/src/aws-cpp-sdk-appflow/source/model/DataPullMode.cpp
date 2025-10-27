@@ -4,69 +4,55 @@
  */
 
 #include <aws/appflow/model/DataPullMode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Appflow {
+namespace Model {
+namespace DataPullModeMapper {
 
-namespace Aws
-{
-  namespace Appflow
-  {
-    namespace Model
-    {
-      namespace DataPullModeMapper
-      {
+static const int Incremental_HASH = HashingUtils::HashString("Incremental");
+static const int Complete_HASH = HashingUtils::HashString("Complete");
 
-        static const int Incremental_HASH = HashingUtils::HashString("Incremental");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
+DataPullMode GetDataPullModeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Incremental_HASH) {
+    return DataPullMode::Incremental;
+  } else if (hashCode == Complete_HASH) {
+    return DataPullMode::Complete;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DataPullMode>(hashCode);
+  }
 
+  return DataPullMode::NOT_SET;
+}
 
-        DataPullMode GetDataPullModeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Incremental_HASH)
-          {
-            return DataPullMode::Incremental;
-          }
-          else if (hashCode == Complete_HASH)
-          {
-            return DataPullMode::Complete;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DataPullMode>(hashCode);
-          }
+Aws::String GetNameForDataPullMode(DataPullMode enumValue) {
+  switch (enumValue) {
+    case DataPullMode::NOT_SET:
+      return {};
+    case DataPullMode::Incremental:
+      return "Incremental";
+    case DataPullMode::Complete:
+      return "Complete";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return DataPullMode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForDataPullMode(DataPullMode enumValue)
-        {
-          switch(enumValue)
-          {
-          case DataPullMode::NOT_SET:
-            return {};
-          case DataPullMode::Incremental:
-            return "Incremental";
-          case DataPullMode::Complete:
-            return "Complete";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace DataPullModeMapper
-    } // namespace Model
-  } // namespace Appflow
-} // namespace Aws
+}  // namespace DataPullModeMapper
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

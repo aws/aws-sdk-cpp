@@ -3,49 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2LaunchTemplateDataHibernationOptionsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2LaunchTemplateDataHibernationOptionsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2LaunchTemplateDataHibernationOptionsDetails::AwsEc2LaunchTemplateDataHibernationOptionsDetails(JsonView jsonValue)
-{
+AwsEc2LaunchTemplateDataHibernationOptionsDetails::AwsEc2LaunchTemplateDataHibernationOptionsDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEc2LaunchTemplateDataHibernationOptionsDetails& AwsEc2LaunchTemplateDataHibernationOptionsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Configured"))
-  {
+AwsEc2LaunchTemplateDataHibernationOptionsDetails& AwsEc2LaunchTemplateDataHibernationOptionsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Configured")) {
     m_configured = jsonValue.GetBool("Configured");
     m_configuredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2LaunchTemplateDataHibernationOptionsDetails::Jsonize() const
-{
+JsonValue AwsEc2LaunchTemplateDataHibernationOptionsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_configuredHasBeenSet)
-  {
-   payload.WithBool("Configured", m_configured);
-
+  if (m_configuredHasBeenSet) {
+    payload.WithBool("Configured", m_configured);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

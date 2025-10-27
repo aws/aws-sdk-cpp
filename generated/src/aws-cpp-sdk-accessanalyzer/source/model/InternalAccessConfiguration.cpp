@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-InternalAccessConfiguration::InternalAccessConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalAccessConfiguration::InternalAccessConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InternalAccessConfiguration& InternalAccessConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("analysisRule"))
-  {
+InternalAccessConfiguration& InternalAccessConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("analysisRule")) {
     m_analysisRule = jsonValue.GetObject("analysisRule");
     m_analysisRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InternalAccessConfiguration::Jsonize() const
-{
+JsonValue InternalAccessConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_analysisRuleHasBeenSet)
-  {
-   payload.WithObject("analysisRule", m_analysisRule.Jsonize());
-
+  if (m_analysisRuleHasBeenSet) {
+    payload.WithObject("analysisRule", m_analysisRule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

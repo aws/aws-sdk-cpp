@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/LiveTailSessionMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/LiveTailSessionMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-LiveTailSessionMetadata::LiveTailSessionMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveTailSessionMetadata::LiveTailSessionMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-LiveTailSessionMetadata& LiveTailSessionMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sampled"))
-  {
+LiveTailSessionMetadata& LiveTailSessionMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sampled")) {
     m_sampled = jsonValue.GetBool("sampled");
     m_sampledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LiveTailSessionMetadata::Jsonize() const
-{
+JsonValue LiveTailSessionMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_sampledHasBeenSet)
-  {
-   payload.WithBool("sampled", m_sampled);
-
+  if (m_sampledHasBeenSet) {
+    payload.WithBool("sampled", m_sampled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

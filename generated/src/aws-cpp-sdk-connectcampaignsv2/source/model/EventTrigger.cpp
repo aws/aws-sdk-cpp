@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-EventTrigger::EventTrigger(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventTrigger::EventTrigger(JsonView jsonValue) { *this = jsonValue; }
 
-EventTrigger& EventTrigger::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customerProfilesDomainArn"))
-  {
+EventTrigger& EventTrigger::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customerProfilesDomainArn")) {
     m_customerProfilesDomainArn = jsonValue.GetString("customerProfilesDomainArn");
     m_customerProfilesDomainArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventTrigger::Jsonize() const
-{
+JsonValue EventTrigger::Jsonize() const {
   JsonValue payload;
 
-  if(m_customerProfilesDomainArnHasBeenSet)
-  {
-   payload.WithString("customerProfilesDomainArn", m_customerProfilesDomainArn);
-
+  if (m_customerProfilesDomainArnHasBeenSet) {
+    payload.WithString("customerProfilesDomainArn", m_customerProfilesDomainArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

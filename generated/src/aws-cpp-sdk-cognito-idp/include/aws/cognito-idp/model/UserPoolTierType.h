@@ -7,26 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class UserPoolTierType
-  {
-    NOT_SET,
-    LITE,
-    ESSENTIALS,
-    PLUS
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class UserPoolTierType { NOT_SET, LITE, ESSENTIALS, PLUS };
 
-namespace UserPoolTierTypeMapper
-{
+namespace UserPoolTierTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API UserPoolTierType GetUserPoolTierTypeForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForUserPoolTierType(UserPoolTierType value);
-} // namespace UserPoolTierTypeMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace UserPoolTierTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

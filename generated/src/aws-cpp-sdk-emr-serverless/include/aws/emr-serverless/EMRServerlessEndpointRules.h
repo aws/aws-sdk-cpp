@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMRServerless
-{
-class EMRServerlessEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace EMRServerless {
+class EMRServerlessEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace EMRServerless
+}  // namespace Aws

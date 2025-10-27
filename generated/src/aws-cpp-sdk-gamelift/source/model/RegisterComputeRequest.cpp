@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/RegisterComputeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/RegisterComputeRequest.h>
 
 #include <utility>
 
@@ -12,57 +12,38 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterComputeRequest::SerializePayload() const
-{
+Aws::String RegisterComputeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_fleetIdHasBeenSet)
-  {
-   payload.WithString("FleetId", m_fleetId);
-
+  if (m_fleetIdHasBeenSet) {
+    payload.WithString("FleetId", m_fleetId);
   }
 
-  if(m_computeNameHasBeenSet)
-  {
-   payload.WithString("ComputeName", m_computeName);
-
+  if (m_computeNameHasBeenSet) {
+    payload.WithString("ComputeName", m_computeName);
   }
 
-  if(m_certificatePathHasBeenSet)
-  {
-   payload.WithString("CertificatePath", m_certificatePath);
-
+  if (m_certificatePathHasBeenSet) {
+    payload.WithString("CertificatePath", m_certificatePath);
   }
 
-  if(m_dnsNameHasBeenSet)
-  {
-   payload.WithString("DnsName", m_dnsName);
-
+  if (m_dnsNameHasBeenSet) {
+    payload.WithString("DnsName", m_dnsName);
   }
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RegisterComputeRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RegisterComputeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.RegisterCompute"));
   return headers;
-
 }
-
-
-
-

@@ -11,105 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-GridViewConfiguration::GridViewConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GridViewConfiguration::GridViewConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-GridViewConfiguration& GridViewConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContentShareLayout"))
-  {
+GridViewConfiguration& GridViewConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContentShareLayout")) {
     m_contentShareLayout = ContentShareLayoutOptionMapper::GetContentShareLayoutOptionForName(jsonValue.GetString("ContentShareLayout"));
     m_contentShareLayoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PresenterOnlyConfiguration"))
-  {
+  if (jsonValue.ValueExists("PresenterOnlyConfiguration")) {
     m_presenterOnlyConfiguration = jsonValue.GetObject("PresenterOnlyConfiguration");
     m_presenterOnlyConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActiveSpeakerOnlyConfiguration"))
-  {
+  if (jsonValue.ValueExists("ActiveSpeakerOnlyConfiguration")) {
     m_activeSpeakerOnlyConfiguration = jsonValue.GetObject("ActiveSpeakerOnlyConfiguration");
     m_activeSpeakerOnlyConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HorizontalLayoutConfiguration"))
-  {
+  if (jsonValue.ValueExists("HorizontalLayoutConfiguration")) {
     m_horizontalLayoutConfiguration = jsonValue.GetObject("HorizontalLayoutConfiguration");
     m_horizontalLayoutConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VerticalLayoutConfiguration"))
-  {
+  if (jsonValue.ValueExists("VerticalLayoutConfiguration")) {
     m_verticalLayoutConfiguration = jsonValue.GetObject("VerticalLayoutConfiguration");
     m_verticalLayoutConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VideoAttribute"))
-  {
+  if (jsonValue.ValueExists("VideoAttribute")) {
     m_videoAttribute = jsonValue.GetObject("VideoAttribute");
     m_videoAttributeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CanvasOrientation"))
-  {
+  if (jsonValue.ValueExists("CanvasOrientation")) {
     m_canvasOrientation = CanvasOrientationMapper::GetCanvasOrientationForName(jsonValue.GetString("CanvasOrientation"));
     m_canvasOrientationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GridViewConfiguration::Jsonize() const
-{
+JsonValue GridViewConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentShareLayoutHasBeenSet)
-  {
-   payload.WithString("ContentShareLayout", ContentShareLayoutOptionMapper::GetNameForContentShareLayoutOption(m_contentShareLayout));
+  if (m_contentShareLayoutHasBeenSet) {
+    payload.WithString("ContentShareLayout", ContentShareLayoutOptionMapper::GetNameForContentShareLayoutOption(m_contentShareLayout));
   }
 
-  if(m_presenterOnlyConfigurationHasBeenSet)
-  {
-   payload.WithObject("PresenterOnlyConfiguration", m_presenterOnlyConfiguration.Jsonize());
-
+  if (m_presenterOnlyConfigurationHasBeenSet) {
+    payload.WithObject("PresenterOnlyConfiguration", m_presenterOnlyConfiguration.Jsonize());
   }
 
-  if(m_activeSpeakerOnlyConfigurationHasBeenSet)
-  {
-   payload.WithObject("ActiveSpeakerOnlyConfiguration", m_activeSpeakerOnlyConfiguration.Jsonize());
-
+  if (m_activeSpeakerOnlyConfigurationHasBeenSet) {
+    payload.WithObject("ActiveSpeakerOnlyConfiguration", m_activeSpeakerOnlyConfiguration.Jsonize());
   }
 
-  if(m_horizontalLayoutConfigurationHasBeenSet)
-  {
-   payload.WithObject("HorizontalLayoutConfiguration", m_horizontalLayoutConfiguration.Jsonize());
-
+  if (m_horizontalLayoutConfigurationHasBeenSet) {
+    payload.WithObject("HorizontalLayoutConfiguration", m_horizontalLayoutConfiguration.Jsonize());
   }
 
-  if(m_verticalLayoutConfigurationHasBeenSet)
-  {
-   payload.WithObject("VerticalLayoutConfiguration", m_verticalLayoutConfiguration.Jsonize());
-
+  if (m_verticalLayoutConfigurationHasBeenSet) {
+    payload.WithObject("VerticalLayoutConfiguration", m_verticalLayoutConfiguration.Jsonize());
   }
 
-  if(m_videoAttributeHasBeenSet)
-  {
-   payload.WithObject("VideoAttribute", m_videoAttribute.Jsonize());
-
+  if (m_videoAttributeHasBeenSet) {
+    payload.WithObject("VideoAttribute", m_videoAttribute.Jsonize());
   }
 
-  if(m_canvasOrientationHasBeenSet)
-  {
-   payload.WithString("CanvasOrientation", CanvasOrientationMapper::GetNameForCanvasOrientation(m_canvasOrientation));
+  if (m_canvasOrientationHasBeenSet) {
+    payload.WithString("CanvasOrientation", CanvasOrientationMapper::GetNameForCanvasOrientation(m_canvasOrientation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/fsx/FSxEndpointProvider.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace FSx
-} // namespace Aws
+namespace Aws {
+namespace FSx {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace FSx
+}  // namespace Aws

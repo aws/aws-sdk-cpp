@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/LaunchActionParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/LaunchActionParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-LaunchActionParameter::LaunchActionParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LaunchActionParameter::LaunchActionParameter(JsonView jsonValue) { *this = jsonValue; }
 
-LaunchActionParameter& LaunchActionParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+LaunchActionParameter& LaunchActionParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = LaunchActionParameterTypeMapper::GetLaunchActionParameterTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LaunchActionParameter::Jsonize() const
-{
+JsonValue LaunchActionParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", LaunchActionParameterTypeMapper::GetNameForLaunchActionParameterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", LaunchActionParameterTypeMapper::GetNameForLaunchActionParameterType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

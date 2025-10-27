@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/controltower/ControlTowerErrorMarshaller.h>
 #include <aws/controltower/ControlTowerErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::ControlTower;
 
-AWSError<CoreErrors> ControlTowerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ControlTowerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ControlTowerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-edge/model/EdgeMetric.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-edge/model/EdgeMetric.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-namespace Model
-{
+namespace Aws {
+namespace SagemakerEdgeManager {
+namespace Model {
 
-EdgeMetric::EdgeMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdgeMetric::EdgeMetric(JsonView jsonValue) { *this = jsonValue; }
 
-EdgeMetric& EdgeMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Dimension"))
-  {
+EdgeMetric& EdgeMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Dimension")) {
     m_dimension = jsonValue.GetString("Dimension");
     m_dimensionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricName"))
-  {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Timestamp"))
-  {
+  if (jsonValue.ValueExists("Timestamp")) {
     m_timestamp = jsonValue.GetDouble("Timestamp");
     m_timestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EdgeMetric::Jsonize() const
-{
+JsonValue EdgeMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionHasBeenSet)
-  {
-   payload.WithString("Dimension", m_dimension);
-
+  if (m_dimensionHasBeenSet) {
+    payload.WithString("Dimension", m_dimension);
   }
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

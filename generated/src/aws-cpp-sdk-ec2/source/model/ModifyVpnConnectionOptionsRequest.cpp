@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVpnConnectionOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVpnConnectionOptionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVpnConnectionOptionsRequest::SerializePayload() const
-{
+Aws::String ModifyVpnConnectionOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVpnConnectionOptions&";
-  if(m_vpnConnectionIdHasBeenSet)
-  {
+  if (m_vpnConnectionIdHasBeenSet) {
     ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
   }
 
-  if(m_localIpv4NetworkCidrHasBeenSet)
-  {
+  if (m_localIpv4NetworkCidrHasBeenSet) {
     ss << "LocalIpv4NetworkCidr=" << StringUtils::URLEncode(m_localIpv4NetworkCidr.c_str()) << "&";
   }
 
-  if(m_remoteIpv4NetworkCidrHasBeenSet)
-  {
+  if (m_remoteIpv4NetworkCidrHasBeenSet) {
     ss << "RemoteIpv4NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv4NetworkCidr.c_str()) << "&";
   }
 
-  if(m_localIpv6NetworkCidrHasBeenSet)
-  {
+  if (m_localIpv6NetworkCidrHasBeenSet) {
     ss << "LocalIpv6NetworkCidr=" << StringUtils::URLEncode(m_localIpv6NetworkCidr.c_str()) << "&";
   }
 
-  if(m_remoteIpv6NetworkCidrHasBeenSet)
-  {
+  if (m_remoteIpv6NetworkCidrHasBeenSet) {
     ss << "RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String ModifyVpnConnectionOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyVpnConnectionOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyVpnConnectionOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/OrganizationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/OrganizationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OrganizationConfiguration& OrganizationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableIntegration"))
-  {
+OrganizationConfiguration& OrganizationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableIntegration")) {
     m_enableIntegration = jsonValue.GetBool("EnableIntegration");
     m_enableIntegrationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrganizationConfiguration::Jsonize() const
-{
+JsonValue OrganizationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableIntegrationHasBeenSet)
-  {
-   payload.WithBool("EnableIntegration", m_enableIntegration);
-
+  if (m_enableIntegrationHasBeenSet) {
+    payload.WithBool("EnableIntegration", m_enableIntegration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

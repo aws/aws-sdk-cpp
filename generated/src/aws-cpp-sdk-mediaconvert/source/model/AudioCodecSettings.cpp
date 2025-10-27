@@ -3,169 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/AudioCodecSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/AudioCodecSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-AudioCodecSettings::AudioCodecSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aacSettings"))
-  {
+AudioCodecSettings& AudioCodecSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aacSettings")) {
     m_aacSettings = jsonValue.GetObject("aacSettings");
     m_aacSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ac3Settings"))
-  {
+  if (jsonValue.ValueExists("ac3Settings")) {
     m_ac3Settings = jsonValue.GetObject("ac3Settings");
     m_ac3SettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aiffSettings"))
-  {
+  if (jsonValue.ValueExists("aiffSettings")) {
     m_aiffSettings = jsonValue.GetObject("aiffSettings");
     m_aiffSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codec"))
-  {
+  if (jsonValue.ValueExists("codec")) {
     m_codec = AudioCodecMapper::GetAudioCodecForName(jsonValue.GetString("codec"));
     m_codecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eac3AtmosSettings"))
-  {
+  if (jsonValue.ValueExists("eac3AtmosSettings")) {
     m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
     m_eac3AtmosSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eac3Settings"))
-  {
+  if (jsonValue.ValueExists("eac3Settings")) {
     m_eac3Settings = jsonValue.GetObject("eac3Settings");
     m_eac3SettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flacSettings"))
-  {
+  if (jsonValue.ValueExists("flacSettings")) {
     m_flacSettings = jsonValue.GetObject("flacSettings");
     m_flacSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mp2Settings"))
-  {
+  if (jsonValue.ValueExists("mp2Settings")) {
     m_mp2Settings = jsonValue.GetObject("mp2Settings");
     m_mp2SettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mp3Settings"))
-  {
+  if (jsonValue.ValueExists("mp3Settings")) {
     m_mp3Settings = jsonValue.GetObject("mp3Settings");
     m_mp3SettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("opusSettings"))
-  {
+  if (jsonValue.ValueExists("opusSettings")) {
     m_opusSettings = jsonValue.GetObject("opusSettings");
     m_opusSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vorbisSettings"))
-  {
+  if (jsonValue.ValueExists("vorbisSettings")) {
     m_vorbisSettings = jsonValue.GetObject("vorbisSettings");
     m_vorbisSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("wavSettings"))
-  {
+  if (jsonValue.ValueExists("wavSettings")) {
     m_wavSettings = jsonValue.GetObject("wavSettings");
     m_wavSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioCodecSettings::Jsonize() const
-{
+JsonValue AudioCodecSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_aacSettingsHasBeenSet)
-  {
-   payload.WithObject("aacSettings", m_aacSettings.Jsonize());
-
+  if (m_aacSettingsHasBeenSet) {
+    payload.WithObject("aacSettings", m_aacSettings.Jsonize());
   }
 
-  if(m_ac3SettingsHasBeenSet)
-  {
-   payload.WithObject("ac3Settings", m_ac3Settings.Jsonize());
-
+  if (m_ac3SettingsHasBeenSet) {
+    payload.WithObject("ac3Settings", m_ac3Settings.Jsonize());
   }
 
-  if(m_aiffSettingsHasBeenSet)
-  {
-   payload.WithObject("aiffSettings", m_aiffSettings.Jsonize());
-
+  if (m_aiffSettingsHasBeenSet) {
+    payload.WithObject("aiffSettings", m_aiffSettings.Jsonize());
   }
 
-  if(m_codecHasBeenSet)
-  {
-   payload.WithString("codec", AudioCodecMapper::GetNameForAudioCodec(m_codec));
+  if (m_codecHasBeenSet) {
+    payload.WithString("codec", AudioCodecMapper::GetNameForAudioCodec(m_codec));
   }
 
-  if(m_eac3AtmosSettingsHasBeenSet)
-  {
-   payload.WithObject("eac3AtmosSettings", m_eac3AtmosSettings.Jsonize());
-
+  if (m_eac3AtmosSettingsHasBeenSet) {
+    payload.WithObject("eac3AtmosSettings", m_eac3AtmosSettings.Jsonize());
   }
 
-  if(m_eac3SettingsHasBeenSet)
-  {
-   payload.WithObject("eac3Settings", m_eac3Settings.Jsonize());
-
+  if (m_eac3SettingsHasBeenSet) {
+    payload.WithObject("eac3Settings", m_eac3Settings.Jsonize());
   }
 
-  if(m_flacSettingsHasBeenSet)
-  {
-   payload.WithObject("flacSettings", m_flacSettings.Jsonize());
-
+  if (m_flacSettingsHasBeenSet) {
+    payload.WithObject("flacSettings", m_flacSettings.Jsonize());
   }
 
-  if(m_mp2SettingsHasBeenSet)
-  {
-   payload.WithObject("mp2Settings", m_mp2Settings.Jsonize());
-
+  if (m_mp2SettingsHasBeenSet) {
+    payload.WithObject("mp2Settings", m_mp2Settings.Jsonize());
   }
 
-  if(m_mp3SettingsHasBeenSet)
-  {
-   payload.WithObject("mp3Settings", m_mp3Settings.Jsonize());
-
+  if (m_mp3SettingsHasBeenSet) {
+    payload.WithObject("mp3Settings", m_mp3Settings.Jsonize());
   }
 
-  if(m_opusSettingsHasBeenSet)
-  {
-   payload.WithObject("opusSettings", m_opusSettings.Jsonize());
-
+  if (m_opusSettingsHasBeenSet) {
+    payload.WithObject("opusSettings", m_opusSettings.Jsonize());
   }
 
-  if(m_vorbisSettingsHasBeenSet)
-  {
-   payload.WithObject("vorbisSettings", m_vorbisSettings.Jsonize());
-
+  if (m_vorbisSettingsHasBeenSet) {
+    payload.WithObject("vorbisSettings", m_vorbisSettings.Jsonize());
   }
 
-  if(m_wavSettingsHasBeenSet)
-  {
-   payload.WithObject("wavSettings", m_wavSettings.Jsonize());
-
+  if (m_wavSettingsHasBeenSet) {
+    payload.WithObject("wavSettings", m_wavSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

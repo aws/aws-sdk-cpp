@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SAPODataPaginationConfig::SAPODataPaginationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SAPODataPaginationConfig::SAPODataPaginationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SAPODataPaginationConfig& SAPODataPaginationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxPageSize"))
-  {
+SAPODataPaginationConfig& SAPODataPaginationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxPageSize")) {
     m_maxPageSize = jsonValue.GetInteger("maxPageSize");
     m_maxPageSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SAPODataPaginationConfig::Jsonize() const
-{
+JsonValue SAPODataPaginationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxPageSizeHasBeenSet)
-  {
-   payload.WithInteger("maxPageSize", m_maxPageSize);
-
+  if (m_maxPageSizeHasBeenSet) {
+    payload.WithInteger("maxPageSize", m_maxPageSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

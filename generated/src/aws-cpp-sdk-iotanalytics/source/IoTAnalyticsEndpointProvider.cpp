@@ -5,12 +5,8 @@
 
 #include <aws/iotanalytics/IoTAnalyticsEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTAnalytics
-} // namespace Aws
+namespace Aws {
+namespace IoTAnalytics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTAnalytics
+}  // namespace Aws

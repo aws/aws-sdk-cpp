@@ -12,32 +12,22 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListRuleTypesRequest::SerializePayload() const
-{
+Aws::String ListRuleTypesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_ruleOwnerFilterHasBeenSet)
-  {
-   payload.WithString("ruleOwnerFilter", RuleOwnerMapper::GetNameForRuleOwner(m_ruleOwnerFilter));
+  if (m_ruleOwnerFilterHasBeenSet) {
+    payload.WithString("ruleOwnerFilter", RuleOwnerMapper::GetNameForRuleOwner(m_ruleOwnerFilter));
   }
 
-  if(m_regionFilterHasBeenSet)
-  {
-   payload.WithString("regionFilter", m_regionFilter);
-
+  if (m_regionFilterHasBeenSet) {
+    payload.WithString("regionFilter", m_regionFilter);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListRuleTypesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListRuleTypesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.ListRuleTypes"));
   return headers;
-
 }
-
-
-
-

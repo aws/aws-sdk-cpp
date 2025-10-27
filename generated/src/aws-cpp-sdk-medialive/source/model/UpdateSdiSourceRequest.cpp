@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/UpdateSdiSourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/UpdateSdiSourceRequest.h>
 
 #include <utility>
 
@@ -12,29 +12,20 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSdiSourceRequest::SerializePayload() const
-{
+Aws::String UpdateSdiSourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", SdiSourceModeMapper::GetNameForSdiSourceMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("mode", SdiSourceModeMapper::GetNameForSdiSourceMode(m_mode));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SdiSourceTypeMapper::GetNameForSdiSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", SdiSourceTypeMapper::GetNameForSdiSourceType(m_type));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

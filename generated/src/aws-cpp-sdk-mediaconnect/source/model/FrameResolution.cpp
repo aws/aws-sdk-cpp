@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/FrameResolution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/FrameResolution.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-FrameResolution::FrameResolution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FrameResolution::FrameResolution(JsonView jsonValue) { *this = jsonValue; }
 
-FrameResolution& FrameResolution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("frameHeight"))
-  {
+FrameResolution& FrameResolution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("frameHeight")) {
     m_frameHeight = jsonValue.GetInteger("frameHeight");
     m_frameHeightHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("frameWidth"))
-  {
+  if (jsonValue.ValueExists("frameWidth")) {
     m_frameWidth = jsonValue.GetInteger("frameWidth");
     m_frameWidthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FrameResolution::Jsonize() const
-{
+JsonValue FrameResolution::Jsonize() const {
   JsonValue payload;
 
-  if(m_frameHeightHasBeenSet)
-  {
-   payload.WithInteger("frameHeight", m_frameHeight);
-
+  if (m_frameHeightHasBeenSet) {
+    payload.WithInteger("frameHeight", m_frameHeight);
   }
 
-  if(m_frameWidthHasBeenSet)
-  {
-   payload.WithInteger("frameWidth", m_frameWidth);
-
+  if (m_frameWidthHasBeenSet) {
+    payload.WithInteger("frameWidth", m_frameWidth);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

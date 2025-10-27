@@ -4,10 +4,10 @@
  */
 
 #include <aws/appfabric/model/BatchGetUserAccessTasksResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,19 +17,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetUserAccessTasksResult::BatchGetUserAccessTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetUserAccessTasksResult::BatchGetUserAccessTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetUserAccessTasksResult& BatchGetUserAccessTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetUserAccessTasksResult& BatchGetUserAccessTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("userAccessResultsList"))
-  {
+  if (jsonValue.ValueExists("userAccessResultsList")) {
     Aws::Utils::Array<JsonView> userAccessResultsListJsonList = jsonValue.GetArray("userAccessResultsList");
-    for(unsigned userAccessResultsListIndex = 0; userAccessResultsListIndex < userAccessResultsListJsonList.GetLength(); ++userAccessResultsListIndex)
-    {
+    for (unsigned userAccessResultsListIndex = 0; userAccessResultsListIndex < userAccessResultsListJsonList.GetLength();
+         ++userAccessResultsListIndex) {
       m_userAccessResultsList.push_back(userAccessResultsListJsonList[userAccessResultsListIndex].AsObject());
     }
     m_userAccessResultsListHasBeenSet = true;
@@ -37,12 +32,10 @@ BatchGetUserAccessTasksResult& BatchGetUserAccessTasksResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

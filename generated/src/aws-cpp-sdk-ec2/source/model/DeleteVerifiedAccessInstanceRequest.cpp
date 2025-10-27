@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteVerifiedAccessInstanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteVerifiedAccessInstanceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteVerifiedAccessInstanceRequest::SerializePayload() const
-{
+Aws::String DeleteVerifiedAccessInstanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteVerifiedAccessInstance&";
-  if(m_verifiedAccessInstanceIdHasBeenSet)
-  {
+  if (m_verifiedAccessInstanceIdHasBeenSet) {
     ss << "VerifiedAccessInstanceId=" << StringUtils::URLEncode(m_verifiedAccessInstanceId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteVerifiedAccessInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteVerifiedAccessInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteVerifiedAccessInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

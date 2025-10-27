@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/SetVoiceMessageSpendLimitOverrideRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/SetVoiceMessageSpendLimitOverrideRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetVoiceMessageSpendLimitOverrideRequest::SerializePayload() const
-{
+Aws::String SetVoiceMessageSpendLimitOverrideRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_monthlyLimitHasBeenSet)
-  {
-   payload.WithInt64("MonthlyLimit", m_monthlyLimit);
-
+  if (m_monthlyLimitHasBeenSet) {
+    payload.WithInt64("MonthlyLimit", m_monthlyLimit);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SetVoiceMessageSpendLimitOverrideRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SetVoiceMessageSpendLimitOverrideRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PinpointSMSVoiceV2.SetVoiceMessageSpendLimitOverride"));
   return headers;
-
 }
-
-
-
-

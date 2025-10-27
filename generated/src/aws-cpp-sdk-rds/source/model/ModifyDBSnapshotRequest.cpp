@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyDBSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyDBSnapshotRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyDBSnapshotRequest::SerializePayload() const
-{
+Aws::String ModifyDBSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyDBSnapshot&";
-  if(m_dBSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBSnapshotIdentifierHasBeenSet) {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_optionGroupNameHasBeenSet)
-  {
+  if (m_optionGroupNameHasBeenSet) {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ModifyDBSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

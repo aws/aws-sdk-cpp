@@ -4,100 +4,127 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
-#include <aws/fsx/FSxRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/FSxRequest.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
+/**
+ */
+class DescribeDataRepositoryAssociationsRequest : public FSxRequest {
+ public:
+  AWS_FSX_API DescribeDataRepositoryAssociationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeDataRepositoryAssociations"; }
+
+  AWS_FSX_API Aws::String SerializePayload() const override;
+
+  AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>IDs of the data repository associations whose descriptions you want to
+   * retrieve (String).</p>
    */
-  class DescribeDataRepositoryAssociationsRequest : public FSxRequest
-  {
-  public:
-    AWS_FSX_API DescribeDataRepositoryAssociationsRequest() = default;
+  inline const Aws::Vector<Aws::String>& GetAssociationIds() const { return m_associationIds; }
+  inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
+  template <typename AssociationIdsT = Aws::Vector<Aws::String>>
+  void SetAssociationIds(AssociationIdsT&& value) {
+    m_associationIdsHasBeenSet = true;
+    m_associationIds = std::forward<AssociationIdsT>(value);
+  }
+  template <typename AssociationIdsT = Aws::Vector<Aws::String>>
+  DescribeDataRepositoryAssociationsRequest& WithAssociationIds(AssociationIdsT&& value) {
+    SetAssociationIds(std::forward<AssociationIdsT>(value));
+    return *this;
+  }
+  template <typename AssociationIdsT = Aws::String>
+  DescribeDataRepositoryAssociationsRequest& AddAssociationIds(AssociationIdsT&& value) {
+    m_associationIdsHasBeenSet = true;
+    m_associationIds.emplace_back(std::forward<AssociationIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeDataRepositoryAssociations"; }
+  ///@{
 
-    AWS_FSX_API Aws::String SerializePayload() const override;
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  DescribeDataRepositoryAssociationsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  DescribeDataRepositoryAssociationsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The maximum number of resources to return in the response. This value must be
+   * an integer greater than zero.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeDataRepositoryAssociationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>IDs of the data repository associations whose descriptions you want to
-     * retrieve (String).</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAssociationIds() const { return m_associationIds; }
-    inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
-    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
-    void SetAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::forward<AssociationIdsT>(value); }
-    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
-    DescribeDataRepositoryAssociationsRequest& WithAssociationIds(AssociationIdsT&& value) { SetAssociationIds(std::forward<AssociationIdsT>(value)); return *this;}
-    template<typename AssociationIdsT = Aws::String>
-    DescribeDataRepositoryAssociationsRequest& AddAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds.emplace_back(std::forward<AssociationIdsT>(value)); return *this; }
-    ///@}
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeDataRepositoryAssociationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_associationIds;
+  bool m_associationIdsHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    DescribeDataRepositoryAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    DescribeDataRepositoryAssociationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
+  Aws::Vector<Filter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of resources to return in the response. This value must be
-     * an integer greater than zero.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeDataRepositoryAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeDataRepositoryAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    Aws::Vector<Aws::String> m_associationIds;
-    bool m_associationIdsHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

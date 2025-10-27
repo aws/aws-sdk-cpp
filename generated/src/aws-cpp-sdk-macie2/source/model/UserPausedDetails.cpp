@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/UserPausedDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/UserPausedDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-UserPausedDetails::UserPausedDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserPausedDetails::UserPausedDetails(JsonView jsonValue) { *this = jsonValue; }
 
-UserPausedDetails& UserPausedDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobExpiresAt"))
-  {
+UserPausedDetails& UserPausedDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobExpiresAt")) {
     m_jobExpiresAt = jsonValue.GetString("jobExpiresAt");
     m_jobExpiresAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobImminentExpirationHealthEventArn"))
-  {
+  if (jsonValue.ValueExists("jobImminentExpirationHealthEventArn")) {
     m_jobImminentExpirationHealthEventArn = jsonValue.GetString("jobImminentExpirationHealthEventArn");
     m_jobImminentExpirationHealthEventArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobPausedAt"))
-  {
+  if (jsonValue.ValueExists("jobPausedAt")) {
     m_jobPausedAt = jsonValue.GetString("jobPausedAt");
     m_jobPausedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserPausedDetails::Jsonize() const
-{
+JsonValue UserPausedDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobExpiresAtHasBeenSet)
-  {
-   payload.WithString("jobExpiresAt", m_jobExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_jobExpiresAtHasBeenSet) {
+    payload.WithString("jobExpiresAt", m_jobExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_jobImminentExpirationHealthEventArnHasBeenSet)
-  {
-   payload.WithString("jobImminentExpirationHealthEventArn", m_jobImminentExpirationHealthEventArn);
-
+  if (m_jobImminentExpirationHealthEventArnHasBeenSet) {
+    payload.WithString("jobImminentExpirationHealthEventArn", m_jobImminentExpirationHealthEventArn);
   }
 
-  if(m_jobPausedAtHasBeenSet)
-  {
-   payload.WithString("jobPausedAt", m_jobPausedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_jobPausedAtHasBeenSet) {
+    payload.WithString("jobPausedAt", m_jobPausedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

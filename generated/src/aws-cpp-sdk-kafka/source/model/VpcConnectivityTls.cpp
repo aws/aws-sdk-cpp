@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/VpcConnectivityTls.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/VpcConnectivityTls.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-VpcConnectivityTls::VpcConnectivityTls(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConnectivityTls::VpcConnectivityTls(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConnectivityTls& VpcConnectivityTls::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+VpcConnectivityTls& VpcConnectivityTls::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcConnectivityTls::Jsonize() const
-{
+JsonValue VpcConnectivityTls::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

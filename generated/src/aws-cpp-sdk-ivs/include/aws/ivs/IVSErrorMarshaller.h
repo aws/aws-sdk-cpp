@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/ivs/IVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_IVS_API IVSErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_IVS_API IVSErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

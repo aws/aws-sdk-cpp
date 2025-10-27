@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-DeadLetterConfig::DeadLetterConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeadLetterConfig::DeadLetterConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DeadLetterConfig& DeadLetterConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetArn"))
-  {
+DeadLetterConfig& DeadLetterConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetArn")) {
     m_targetArn = jsonValue.GetString("TargetArn");
     m_targetArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeadLetterConfig::Jsonize() const
-{
+JsonValue DeadLetterConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetArnHasBeenSet)
-  {
-   payload.WithString("TargetArn", m_targetArn);
-
+  if (m_targetArnHasBeenSet) {
+    payload.WithString("TargetArn", m_targetArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

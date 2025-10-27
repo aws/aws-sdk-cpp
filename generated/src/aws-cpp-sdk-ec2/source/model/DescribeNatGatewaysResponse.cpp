@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeNatGatewaysResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeNatGatewaysResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNatGatewaysResponse::DescribeNatGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeNatGatewaysResponse::DescribeNatGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNatGatewaysResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNatGatewaysResponse")) {
     resultNode = rootNode.FirstChild("DescribeNatGatewaysResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode natGatewaysNode = resultNode.FirstChild("natGatewaySet");
-    if(!natGatewaysNode.IsNull())
-    {
+    if (!natGatewaysNode.IsNull()) {
       XmlNode natGatewaysMember = natGatewaysNode.FirstChild("item");
       m_natGatewaysHasBeenSet = !natGatewaysMember.IsNull();
-      while(!natGatewaysMember.IsNull())
-      {
+      while (!natGatewaysMember.IsNull()) {
         m_natGateways.push_back(natGatewaysMember);
         natGatewaysMember = natGatewaysMember.NextNode("item");
       }
@@ -48,8 +40,7 @@ DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator =(const Aws::
       m_natGatewaysHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +48,11 @@ DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator =(const Aws::
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNatGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNatGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/TagFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/TagFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
+namespace Aws {
+namespace RAM {
+namespace Model {
 
-TagFilter::TagFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TagFilter::TagFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TagFilter& TagFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tagKey"))
-  {
+TagFilter& TagFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tagKey")) {
     m_tagKey = jsonValue.GetString("tagKey");
     m_tagKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tagValues"))
-  {
+  if (jsonValue.ValueExists("tagValues")) {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("tagValues");
-    for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
-    {
+    for (unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex) {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());
     }
     m_tagValuesHasBeenSet = true;
@@ -42,30 +32,24 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TagFilter::Jsonize() const
-{
+JsonValue TagFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagKeyHasBeenSet)
-  {
-   payload.WithString("tagKey", m_tagKey);
-
+  if (m_tagKeyHasBeenSet) {
+    payload.WithString("tagKey", m_tagKey);
   }
 
-  if(m_tagValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
-   for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
-   {
-     tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);
-   }
-   payload.WithArray("tagValues", std::move(tagValuesJsonList));
-
+  if (m_tagValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
+    for (unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex) {
+      tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);
+    }
+    payload.WithArray("tagValues", std::move(tagValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

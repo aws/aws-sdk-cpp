@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class CompactionStrategy
-  {
-    NOT_SET,
-    binpack,
-    sort,
-    z_order
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class CompactionStrategy { NOT_SET, binpack, sort, z_order };
 
-namespace CompactionStrategyMapper
-{
+namespace CompactionStrategyMapper {
 AWS_GLUE_API CompactionStrategy GetCompactionStrategyForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForCompactionStrategy(CompactionStrategy value);
-} // namespace CompactionStrategyMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace CompactionStrategyMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

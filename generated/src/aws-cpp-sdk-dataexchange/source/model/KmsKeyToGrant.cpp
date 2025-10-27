@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/KmsKeyToGrant.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/KmsKeyToGrant.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-KmsKeyToGrant::KmsKeyToGrant(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KmsKeyToGrant::KmsKeyToGrant(JsonView jsonValue) { *this = jsonValue; }
 
-KmsKeyToGrant& KmsKeyToGrant::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyArn"))
-  {
+KmsKeyToGrant& KmsKeyToGrant::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KmsKeyToGrant::Jsonize() const
-{
+JsonValue KmsKeyToGrant::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("KmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

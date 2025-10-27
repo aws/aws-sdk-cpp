@@ -4,8 +4,8 @@
  */
 
 #include <aws/chime-sdk-messaging/model/GetChannelMessageStatusRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,37 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetChannelMessageStatusRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String GetChannelMessageStatusRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection GetChannelMessageStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetChannelMessageStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-void GetChannelMessageStatusRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_subChannelIdHasBeenSet)
-    {
-      ss << m_subChannelId;
-      uri.AddQueryStringParameter("sub-channel-id", ss.str());
-      ss.str("");
-    }
-
+void GetChannelMessageStatusRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_subChannelIdHasBeenSet) {
+    ss << m_subChannelId;
+    uri.AddQueryStringParameter("sub-channel-id", ss.str());
+    ss.str("");
+  }
 }
-
-
-

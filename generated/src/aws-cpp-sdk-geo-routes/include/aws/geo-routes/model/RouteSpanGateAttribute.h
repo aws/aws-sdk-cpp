@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteSpanGateAttribute
-  {
-    NOT_SET,
-    Emergency,
-    KeyAccess,
-    PermissionRequired
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteSpanGateAttribute { NOT_SET, Emergency, KeyAccess, PermissionRequired };
 
-namespace RouteSpanGateAttributeMapper
-{
+namespace RouteSpanGateAttributeMapper {
 AWS_GEOROUTES_API RouteSpanGateAttribute GetRouteSpanGateAttributeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteSpanGateAttribute(RouteSpanGateAttribute value);
-} // namespace RouteSpanGateAttributeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteSpanGateAttributeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

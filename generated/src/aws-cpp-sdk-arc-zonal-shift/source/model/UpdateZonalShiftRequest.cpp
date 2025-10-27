@@ -12,25 +12,16 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateZonalShiftRequest::SerializePayload() const
-{
+Aws::String UpdateZonalShiftRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_commentHasBeenSet)
-  {
-   payload.WithString("comment", m_comment);
-
+  if (m_commentHasBeenSet) {
+    payload.WithString("comment", m_comment);
   }
 
-  if(m_expiresInHasBeenSet)
-  {
-   payload.WithString("expiresIn", m_expiresIn);
-
+  if (m_expiresInHasBeenSet) {
+    payload.WithString("expiresIn", m_expiresIn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

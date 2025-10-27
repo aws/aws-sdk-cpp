@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/IoTJobRateIncreaseCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/IoTJobRateIncreaseCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-IoTJobRateIncreaseCriteria::IoTJobRateIncreaseCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IoTJobRateIncreaseCriteria::IoTJobRateIncreaseCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-IoTJobRateIncreaseCriteria& IoTJobRateIncreaseCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfNotifiedThings"))
-  {
+IoTJobRateIncreaseCriteria& IoTJobRateIncreaseCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfNotifiedThings")) {
     m_numberOfNotifiedThings = jsonValue.GetInteger("numberOfNotifiedThings");
     m_numberOfNotifiedThingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numberOfSucceededThings"))
-  {
+  if (jsonValue.ValueExists("numberOfSucceededThings")) {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
     m_numberOfSucceededThingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IoTJobRateIncreaseCriteria::Jsonize() const
-{
+JsonValue IoTJobRateIncreaseCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfNotifiedThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
-
+  if (m_numberOfNotifiedThingsHasBeenSet) {
+    payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
   }
 
-  if(m_numberOfSucceededThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
-
+  if (m_numberOfSucceededThingsHasBeenSet) {
+    payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

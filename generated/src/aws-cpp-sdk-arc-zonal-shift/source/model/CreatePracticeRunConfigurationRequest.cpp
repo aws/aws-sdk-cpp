@@ -12,74 +12,52 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
-{
+Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithString("resourceIdentifier", m_resourceIdentifier);
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithString("resourceIdentifier", m_resourceIdentifier);
   }
 
-  if(m_blockedWindowsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockedWindowsJsonList(m_blockedWindows.size());
-   for(unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex)
-   {
-     blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
-   }
-   payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
-
+  if (m_blockedWindowsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> blockedWindowsJsonList(m_blockedWindows.size());
+    for (unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex) {
+      blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
+    }
+    payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
   }
 
-  if(m_blockedDatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
-   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
-   {
-     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
-   }
-   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
-
+  if (m_blockedDatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
+    for (unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex) {
+      blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
+    }
+    payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
   }
 
-  if(m_blockingAlarmsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockingAlarmsJsonList(m_blockingAlarms.size());
-   for(unsigned blockingAlarmsIndex = 0; blockingAlarmsIndex < blockingAlarmsJsonList.GetLength(); ++blockingAlarmsIndex)
-   {
-     blockingAlarmsJsonList[blockingAlarmsIndex].AsObject(m_blockingAlarms[blockingAlarmsIndex].Jsonize());
-   }
-   payload.WithArray("blockingAlarms", std::move(blockingAlarmsJsonList));
-
+  if (m_blockingAlarmsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> blockingAlarmsJsonList(m_blockingAlarms.size());
+    for (unsigned blockingAlarmsIndex = 0; blockingAlarmsIndex < blockingAlarmsJsonList.GetLength(); ++blockingAlarmsIndex) {
+      blockingAlarmsJsonList[blockingAlarmsIndex].AsObject(m_blockingAlarms[blockingAlarmsIndex].Jsonize());
+    }
+    payload.WithArray("blockingAlarms", std::move(blockingAlarmsJsonList));
   }
 
-  if(m_allowedWindowsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedWindowsJsonList(m_allowedWindows.size());
-   for(unsigned allowedWindowsIndex = 0; allowedWindowsIndex < allowedWindowsJsonList.GetLength(); ++allowedWindowsIndex)
-   {
-     allowedWindowsJsonList[allowedWindowsIndex].AsString(m_allowedWindows[allowedWindowsIndex]);
-   }
-   payload.WithArray("allowedWindows", std::move(allowedWindowsJsonList));
-
+  if (m_allowedWindowsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedWindowsJsonList(m_allowedWindows.size());
+    for (unsigned allowedWindowsIndex = 0; allowedWindowsIndex < allowedWindowsJsonList.GetLength(); ++allowedWindowsIndex) {
+      allowedWindowsJsonList[allowedWindowsIndex].AsString(m_allowedWindows[allowedWindowsIndex]);
+    }
+    payload.WithArray("allowedWindows", std::move(allowedWindowsJsonList));
   }
 
-  if(m_outcomeAlarmsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outcomeAlarmsJsonList(m_outcomeAlarms.size());
-   for(unsigned outcomeAlarmsIndex = 0; outcomeAlarmsIndex < outcomeAlarmsJsonList.GetLength(); ++outcomeAlarmsIndex)
-   {
-     outcomeAlarmsJsonList[outcomeAlarmsIndex].AsObject(m_outcomeAlarms[outcomeAlarmsIndex].Jsonize());
-   }
-   payload.WithArray("outcomeAlarms", std::move(outcomeAlarmsJsonList));
-
+  if (m_outcomeAlarmsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outcomeAlarmsJsonList(m_outcomeAlarms.size());
+    for (unsigned outcomeAlarmsIndex = 0; outcomeAlarmsIndex < outcomeAlarmsJsonList.GetLength(); ++outcomeAlarmsIndex) {
+      outcomeAlarmsJsonList[outcomeAlarmsIndex].AsObject(m_outcomeAlarms[outcomeAlarmsIndex].Jsonize());
+    }
+    payload.WithArray("outcomeAlarms", std::move(outcomeAlarmsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

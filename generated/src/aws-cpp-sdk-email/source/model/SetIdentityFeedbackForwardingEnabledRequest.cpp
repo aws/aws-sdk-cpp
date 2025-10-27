@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/SetIdentityFeedbackForwardingEnabledRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/SetIdentityFeedbackForwardingEnabledRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() const
-{
+Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetIdentityFeedbackForwardingEnabled&";
-  if(m_identityHasBeenSet)
-  {
+  if (m_identityHasBeenSet) {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
 
-  if(m_forwardingEnabledHasBeenSet)
-  {
+  if (m_forwardingEnabledHasBeenSet) {
     ss << "ForwardingEnabled=" << std::boolalpha << m_forwardingEnabled << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() cons
   return ss.str();
 }
 
-
-void  SetIdentityFeedbackForwardingEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetIdentityFeedbackForwardingEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class AllowsUnencryptedObjectUploads
-  {
-    NOT_SET,
-    TRUE,
-    FALSE,
-    UNKNOWN
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class AllowsUnencryptedObjectUploads { NOT_SET, TRUE, FALSE, UNKNOWN };
 
-namespace AllowsUnencryptedObjectUploadsMapper
-{
+namespace AllowsUnencryptedObjectUploadsMapper {
 AWS_MACIE2_API AllowsUnencryptedObjectUploads GetAllowsUnencryptedObjectUploadsForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads value);
-} // namespace AllowsUnencryptedObjectUploadsMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace AllowsUnencryptedObjectUploadsMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medical-imaging/model/GetImageFrameRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medical-imaging/model/GetImageFrameRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetImageFrameRequest::SerializePayload() const
-{
+Aws::String GetImageFrameRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_imageFrameInformationHasBeenSet)
-  {
-   payload = m_imageFrameInformation.Jsonize();
+  if (m_imageFrameInformationHasBeenSet) {
+    payload = m_imageFrameInformation.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

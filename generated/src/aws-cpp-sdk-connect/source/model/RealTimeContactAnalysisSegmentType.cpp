@@ -4,97 +4,75 @@
  */
 
 #include <aws/connect/model/RealTimeContactAnalysisSegmentType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Connect {
+namespace Model {
+namespace RealTimeContactAnalysisSegmentTypeMapper {
 
-namespace Aws
-{
-  namespace Connect
-  {
-    namespace Model
-    {
-      namespace RealTimeContactAnalysisSegmentTypeMapper
-      {
+static const int Transcript_HASH = HashingUtils::HashString("Transcript");
+static const int Categories_HASH = HashingUtils::HashString("Categories");
+static const int Issues_HASH = HashingUtils::HashString("Issues");
+static const int Event_HASH = HashingUtils::HashString("Event");
+static const int Attachments_HASH = HashingUtils::HashString("Attachments");
+static const int PostContactSummary_HASH = HashingUtils::HashString("PostContactSummary");
 
-        static const int Transcript_HASH = HashingUtils::HashString("Transcript");
-        static const int Categories_HASH = HashingUtils::HashString("Categories");
-        static const int Issues_HASH = HashingUtils::HashString("Issues");
-        static const int Event_HASH = HashingUtils::HashString("Event");
-        static const int Attachments_HASH = HashingUtils::HashString("Attachments");
-        static const int PostContactSummary_HASH = HashingUtils::HashString("PostContactSummary");
+RealTimeContactAnalysisSegmentType GetRealTimeContactAnalysisSegmentTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Transcript_HASH) {
+    return RealTimeContactAnalysisSegmentType::Transcript;
+  } else if (hashCode == Categories_HASH) {
+    return RealTimeContactAnalysisSegmentType::Categories;
+  } else if (hashCode == Issues_HASH) {
+    return RealTimeContactAnalysisSegmentType::Issues;
+  } else if (hashCode == Event_HASH) {
+    return RealTimeContactAnalysisSegmentType::Event;
+  } else if (hashCode == Attachments_HASH) {
+    return RealTimeContactAnalysisSegmentType::Attachments;
+  } else if (hashCode == PostContactSummary_HASH) {
+    return RealTimeContactAnalysisSegmentType::PostContactSummary;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RealTimeContactAnalysisSegmentType>(hashCode);
+  }
 
+  return RealTimeContactAnalysisSegmentType::NOT_SET;
+}
 
-        RealTimeContactAnalysisSegmentType GetRealTimeContactAnalysisSegmentTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Transcript_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::Transcript;
-          }
-          else if (hashCode == Categories_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::Categories;
-          }
-          else if (hashCode == Issues_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::Issues;
-          }
-          else if (hashCode == Event_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::Event;
-          }
-          else if (hashCode == Attachments_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::Attachments;
-          }
-          else if (hashCode == PostContactSummary_HASH)
-          {
-            return RealTimeContactAnalysisSegmentType::PostContactSummary;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RealTimeContactAnalysisSegmentType>(hashCode);
-          }
+Aws::String GetNameForRealTimeContactAnalysisSegmentType(RealTimeContactAnalysisSegmentType enumValue) {
+  switch (enumValue) {
+    case RealTimeContactAnalysisSegmentType::NOT_SET:
+      return {};
+    case RealTimeContactAnalysisSegmentType::Transcript:
+      return "Transcript";
+    case RealTimeContactAnalysisSegmentType::Categories:
+      return "Categories";
+    case RealTimeContactAnalysisSegmentType::Issues:
+      return "Issues";
+    case RealTimeContactAnalysisSegmentType::Event:
+      return "Event";
+    case RealTimeContactAnalysisSegmentType::Attachments:
+      return "Attachments";
+    case RealTimeContactAnalysisSegmentType::PostContactSummary:
+      return "PostContactSummary";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RealTimeContactAnalysisSegmentType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRealTimeContactAnalysisSegmentType(RealTimeContactAnalysisSegmentType enumValue)
-        {
-          switch(enumValue)
-          {
-          case RealTimeContactAnalysisSegmentType::NOT_SET:
-            return {};
-          case RealTimeContactAnalysisSegmentType::Transcript:
-            return "Transcript";
-          case RealTimeContactAnalysisSegmentType::Categories:
-            return "Categories";
-          case RealTimeContactAnalysisSegmentType::Issues:
-            return "Issues";
-          case RealTimeContactAnalysisSegmentType::Event:
-            return "Event";
-          case RealTimeContactAnalysisSegmentType::Attachments:
-            return "Attachments";
-          case RealTimeContactAnalysisSegmentType::PostContactSummary:
-            return "PostContactSummary";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RealTimeContactAnalysisSegmentTypeMapper
-    } // namespace Model
-  } // namespace Connect
-} // namespace Aws
+}  // namespace RealTimeContactAnalysisSegmentTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

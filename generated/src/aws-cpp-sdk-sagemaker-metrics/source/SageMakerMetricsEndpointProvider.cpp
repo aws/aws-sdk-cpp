@@ -5,12 +5,8 @@
 
 #include <aws/sagemaker-metrics/SageMakerMetricsEndpointProvider.h>
 
-namespace Aws
-{
-namespace SageMakerMetrics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SageMakerMetrics
-} // namespace Aws
+namespace Aws {
+namespace SageMakerMetrics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SageMakerMetrics
+}  // namespace Aws

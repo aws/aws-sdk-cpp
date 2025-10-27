@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class CertificateState
-  {
-    NOT_SET,
-    Registering,
-    Registered,
-    RegisterFailed,
-    Deregistering,
-    Deregistered,
-    DeregisterFailed
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class CertificateState { NOT_SET, Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed };
 
-namespace CertificateStateMapper
-{
+namespace CertificateStateMapper {
 AWS_DIRECTORYSERVICE_API CertificateState GetCertificateStateForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForCertificateState(CertificateState value);
-} // namespace CertificateStateMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace CertificateStateMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

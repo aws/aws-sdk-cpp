@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ApplicationTheme.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ApplicationTheme.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ApplicationTheme::ApplicationTheme(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationTheme::ApplicationTheme(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationTheme& ApplicationTheme::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BrandColorPalette"))
-  {
+ApplicationTheme& ApplicationTheme::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BrandColorPalette")) {
     m_brandColorPalette = jsonValue.GetObject("BrandColorPalette");
     m_brandColorPaletteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContextualAccentPalette"))
-  {
+  if (jsonValue.ValueExists("ContextualAccentPalette")) {
     m_contextualAccentPalette = jsonValue.GetObject("ContextualAccentPalette");
     m_contextualAccentPaletteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BrandElementStyle"))
-  {
+  if (jsonValue.ValueExists("BrandElementStyle")) {
     m_brandElementStyle = jsonValue.GetObject("BrandElementStyle");
     m_brandElementStyleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationTheme::Jsonize() const
-{
+JsonValue ApplicationTheme::Jsonize() const {
   JsonValue payload;
 
-  if(m_brandColorPaletteHasBeenSet)
-  {
-   payload.WithObject("BrandColorPalette", m_brandColorPalette.Jsonize());
-
+  if (m_brandColorPaletteHasBeenSet) {
+    payload.WithObject("BrandColorPalette", m_brandColorPalette.Jsonize());
   }
 
-  if(m_contextualAccentPaletteHasBeenSet)
-  {
-   payload.WithObject("ContextualAccentPalette", m_contextualAccentPalette.Jsonize());
-
+  if (m_contextualAccentPaletteHasBeenSet) {
+    payload.WithObject("ContextualAccentPalette", m_contextualAccentPalette.Jsonize());
   }
 
-  if(m_brandElementStyleHasBeenSet)
-  {
-   payload.WithObject("BrandElementStyle", m_brandElementStyle.Jsonize());
-
+  if (m_brandElementStyleHasBeenSet) {
+    payload.WithObject("BrandElementStyle", m_brandElementStyle.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

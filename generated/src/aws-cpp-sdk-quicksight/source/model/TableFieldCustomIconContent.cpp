@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TableFieldCustomIconContent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TableFieldCustomIconContent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TableFieldCustomIconContent::TableFieldCustomIconContent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableFieldCustomIconContent::TableFieldCustomIconContent(JsonView jsonValue) { *this = jsonValue; }
 
-TableFieldCustomIconContent& TableFieldCustomIconContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Icon"))
-  {
+TableFieldCustomIconContent& TableFieldCustomIconContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Icon")) {
     m_icon = TableFieldIconSetTypeMapper::GetTableFieldIconSetTypeForName(jsonValue.GetString("Icon"));
     m_iconHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableFieldCustomIconContent::Jsonize() const
-{
+JsonValue TableFieldCustomIconContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_iconHasBeenSet)
-  {
-   payload.WithString("Icon", TableFieldIconSetTypeMapper::GetNameForTableFieldIconSetType(m_icon));
+  if (m_iconHasBeenSet) {
+    payload.WithString("Icon", TableFieldIconSetTypeMapper::GetNameForTableFieldIconSetType(m_icon));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

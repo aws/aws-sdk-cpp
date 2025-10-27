@@ -4,63 +4,68 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Inspector2
-{
-namespace Model
-{
-  class EnableDelegatedAdminAccountResult
-  {
-  public:
-    AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult() = default;
-    AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Inspector2 {
+namespace Model {
+class EnableDelegatedAdminAccountResult {
+ public:
+  AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult() = default;
+  AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID of the successfully Amazon Inspector
+   * delegated administrator.</p>
+   */
+  inline const Aws::String& GetDelegatedAdminAccountId() const { return m_delegatedAdminAccountId; }
+  template <typename DelegatedAdminAccountIdT = Aws::String>
+  void SetDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) {
+    m_delegatedAdminAccountIdHasBeenSet = true;
+    m_delegatedAdminAccountId = std::forward<DelegatedAdminAccountIdT>(value);
+  }
+  template <typename DelegatedAdminAccountIdT = Aws::String>
+  EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) {
+    SetDelegatedAdminAccountId(std::forward<DelegatedAdminAccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID of the successfully Amazon Inspector
-     * delegated administrator.</p>
-     */
-    inline const Aws::String& GetDelegatedAdminAccountId() const { return m_delegatedAdminAccountId; }
-    template<typename DelegatedAdminAccountIdT = Aws::String>
-    void SetDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::forward<DelegatedAdminAccountIdT>(value); }
-    template<typename DelegatedAdminAccountIdT = Aws::String>
-    EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { SetDelegatedAdminAccountId(std::forward<DelegatedAdminAccountIdT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    EnableDelegatedAdminAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  EnableDelegatedAdminAccountResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_delegatedAdminAccountId;
+  bool m_delegatedAdminAccountIdHasBeenSet = false;
 
-    Aws::String m_delegatedAdminAccountId;
-    bool m_delegatedAdminAccountIdHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

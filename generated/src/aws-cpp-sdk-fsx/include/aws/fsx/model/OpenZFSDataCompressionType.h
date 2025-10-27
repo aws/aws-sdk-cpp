@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class OpenZFSDataCompressionType
-  {
-    NOT_SET,
-    NONE,
-    ZSTD,
-    LZ4
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class OpenZFSDataCompressionType { NOT_SET, NONE, ZSTD, LZ4 };
 
-namespace OpenZFSDataCompressionTypeMapper
-{
+namespace OpenZFSDataCompressionTypeMapper {
 AWS_FSX_API OpenZFSDataCompressionType GetOpenZFSDataCompressionTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForOpenZFSDataCompressionType(OpenZFSDataCompressionType value);
-} // namespace OpenZFSDataCompressionTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace OpenZFSDataCompressionTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

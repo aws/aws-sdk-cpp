@@ -4,100 +4,117 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
-#include <aws/wellarchitected/model/WorkloadIssueManagementStatus.h>
-#include <aws/wellarchitected/model/IssueManagementType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
+#include <aws/wellarchitected/model/IssueManagementType.h>
+#include <aws/wellarchitected/model/WorkloadIssueManagementStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WellArchitected {
+namespace Model {
 
+/**
+ * <p>Workload-level: Output configuration of the Jira integration.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/WorkloadJiraConfigurationOutput">AWS
+ * API Reference</a></p>
+ */
+class WorkloadJiraConfigurationOutput {
+ public:
+  AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput() = default;
+  AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Workload-level: Output configuration of the Jira integration.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/WorkloadJiraConfigurationOutput">AWS
-   * API Reference</a></p>
+   * <p>Workload-level: Jira issue management status.</p>
    */
-  class WorkloadJiraConfigurationOutput
-  {
-  public:
-    AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput() = default;
-    AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WELLARCHITECTED_API WorkloadJiraConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline WorkloadIssueManagementStatus GetIssueManagementStatus() const { return m_issueManagementStatus; }
+  inline bool IssueManagementStatusHasBeenSet() const { return m_issueManagementStatusHasBeenSet; }
+  inline void SetIssueManagementStatus(WorkloadIssueManagementStatus value) {
+    m_issueManagementStatusHasBeenSet = true;
+    m_issueManagementStatus = value;
+  }
+  inline WorkloadJiraConfigurationOutput& WithIssueManagementStatus(WorkloadIssueManagementStatus value) {
+    SetIssueManagementStatus(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Workload-level: Jira issue management type.</p>
+   */
+  inline IssueManagementType GetIssueManagementType() const { return m_issueManagementType; }
+  inline bool IssueManagementTypeHasBeenSet() const { return m_issueManagementTypeHasBeenSet; }
+  inline void SetIssueManagementType(IssueManagementType value) {
+    m_issueManagementTypeHasBeenSet = true;
+    m_issueManagementType = value;
+  }
+  inline WorkloadJiraConfigurationOutput& WithIssueManagementType(IssueManagementType value) {
+    SetIssueManagementType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Workload-level: Jira issue management status.</p>
-     */
-    inline WorkloadIssueManagementStatus GetIssueManagementStatus() const { return m_issueManagementStatus; }
-    inline bool IssueManagementStatusHasBeenSet() const { return m_issueManagementStatusHasBeenSet; }
-    inline void SetIssueManagementStatus(WorkloadIssueManagementStatus value) { m_issueManagementStatusHasBeenSet = true; m_issueManagementStatus = value; }
-    inline WorkloadJiraConfigurationOutput& WithIssueManagementStatus(WorkloadIssueManagementStatus value) { SetIssueManagementStatus(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Workload-level: Jira project key to sync workloads to.</p>
+   */
+  inline const Aws::String& GetJiraProjectKey() const { return m_jiraProjectKey; }
+  inline bool JiraProjectKeyHasBeenSet() const { return m_jiraProjectKeyHasBeenSet; }
+  template <typename JiraProjectKeyT = Aws::String>
+  void SetJiraProjectKey(JiraProjectKeyT&& value) {
+    m_jiraProjectKeyHasBeenSet = true;
+    m_jiraProjectKey = std::forward<JiraProjectKeyT>(value);
+  }
+  template <typename JiraProjectKeyT = Aws::String>
+  WorkloadJiraConfigurationOutput& WithJiraProjectKey(JiraProjectKeyT&& value) {
+    SetJiraProjectKey(std::forward<JiraProjectKeyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Workload-level: Jira issue management type.</p>
-     */
-    inline IssueManagementType GetIssueManagementType() const { return m_issueManagementType; }
-    inline bool IssueManagementTypeHasBeenSet() const { return m_issueManagementTypeHasBeenSet; }
-    inline void SetIssueManagementType(IssueManagementType value) { m_issueManagementTypeHasBeenSet = true; m_issueManagementType = value; }
-    inline WorkloadJiraConfigurationOutput& WithIssueManagementType(IssueManagementType value) { SetIssueManagementType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Workload-level: Status message on configuration of the Jira integration.</p>
+   */
+  inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+  inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+  template <typename StatusMessageT = Aws::String>
+  void SetStatusMessage(StatusMessageT&& value) {
+    m_statusMessageHasBeenSet = true;
+    m_statusMessage = std::forward<StatusMessageT>(value);
+  }
+  template <typename StatusMessageT = Aws::String>
+  WorkloadJiraConfigurationOutput& WithStatusMessage(StatusMessageT&& value) {
+    SetStatusMessage(std::forward<StatusMessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  WorkloadIssueManagementStatus m_issueManagementStatus{WorkloadIssueManagementStatus::NOT_SET};
+  bool m_issueManagementStatusHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Workload-level: Jira project key to sync workloads to.</p>
-     */
-    inline const Aws::String& GetJiraProjectKey() const { return m_jiraProjectKey; }
-    inline bool JiraProjectKeyHasBeenSet() const { return m_jiraProjectKeyHasBeenSet; }
-    template<typename JiraProjectKeyT = Aws::String>
-    void SetJiraProjectKey(JiraProjectKeyT&& value) { m_jiraProjectKeyHasBeenSet = true; m_jiraProjectKey = std::forward<JiraProjectKeyT>(value); }
-    template<typename JiraProjectKeyT = Aws::String>
-    WorkloadJiraConfigurationOutput& WithJiraProjectKey(JiraProjectKeyT&& value) { SetJiraProjectKey(std::forward<JiraProjectKeyT>(value)); return *this;}
-    ///@}
+  IssueManagementType m_issueManagementType{IssueManagementType::NOT_SET};
+  bool m_issueManagementTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Workload-level: Status message on configuration of the Jira integration.</p>
-     */
-    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
-    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    template<typename StatusMessageT = Aws::String>
-    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
-    template<typename StatusMessageT = Aws::String>
-    WorkloadJiraConfigurationOutput& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_jiraProjectKey;
+  bool m_jiraProjectKeyHasBeenSet = false;
 
-    WorkloadIssueManagementStatus m_issueManagementStatus{WorkloadIssueManagementStatus::NOT_SET};
-    bool m_issueManagementStatusHasBeenSet = false;
+  Aws::String m_statusMessage;
+  bool m_statusMessageHasBeenSet = false;
+};
 
-    IssueManagementType m_issueManagementType{IssueManagementType::NOT_SET};
-    bool m_issueManagementTypeHasBeenSet = false;
-
-    Aws::String m_jiraProjectKey;
-    bool m_jiraProjectKeyHasBeenSet = false;
-
-    Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

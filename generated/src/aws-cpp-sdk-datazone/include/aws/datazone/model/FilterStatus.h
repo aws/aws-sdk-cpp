@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class FilterStatus
-  {
-    NOT_SET,
-    VALID,
-    INVALID
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class FilterStatus { NOT_SET, VALID, INVALID };
 
-namespace FilterStatusMapper
-{
+namespace FilterStatusMapper {
 AWS_DATAZONE_API FilterStatus GetFilterStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForFilterStatus(FilterStatus value);
-} // namespace FilterStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace FilterStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

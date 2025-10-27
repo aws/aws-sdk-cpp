@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTDataPlane
-{
-enum class IoTDataPlaneErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTDataPlane {
+enum class IoTDataPlaneErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTDataPlaneErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class IoTDataPlaneErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FORBIDDEN,
   INVALID_REQUEST,
   METHOD_NOT_ALLOWED,
@@ -56,9 +53,8 @@ enum class IoTDataPlaneErrors
   UNSUPPORTED_DOCUMENT_ENCODING
 };
 
-class AWS_IOTDATAPLANE_API IoTDataPlaneError : public Aws::Client::AWSError<IoTDataPlaneErrors>
-{
-public:
+class AWS_IOTDATAPLANE_API IoTDataPlaneError : public Aws::Client::AWSError<IoTDataPlaneErrors> {
+ public:
   IoTDataPlaneError() {}
   IoTDataPlaneError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
   IoTDataPlaneError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTDataPlaneErrorMapper
-{
-  AWS_IOTDATAPLANE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTDataPlaneErrorMapper {
+AWS_IOTDATAPLANE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTDataPlane
-} // namespace Aws
+}  // namespace IoTDataPlane
+}  // namespace Aws

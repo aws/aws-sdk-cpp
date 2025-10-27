@@ -11,94 +11,71 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchListOutgoingTypedLinks::BatchListOutgoingTypedLinks(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchListOutgoingTypedLinks::BatchListOutgoingTypedLinks(JsonView jsonValue) { *this = jsonValue; }
 
-BatchListOutgoingTypedLinks& BatchListOutgoingTypedLinks::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectReference"))
-  {
+BatchListOutgoingTypedLinks& BatchListOutgoingTypedLinks::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectReference")) {
     m_objectReference = jsonValue.GetObject("ObjectReference");
     m_objectReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilterAttributeRanges"))
-  {
+  if (jsonValue.ValueExists("FilterAttributeRanges")) {
     Aws::Utils::Array<JsonView> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
-    for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
-    {
+    for (unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength();
+         ++filterAttributeRangesIndex) {
       m_filterAttributeRanges.push_back(filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject());
     }
     m_filterAttributeRangesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilterTypedLink"))
-  {
+  if (jsonValue.ValueExists("FilterTypedLink")) {
     m_filterTypedLink = jsonValue.GetObject("FilterTypedLink");
     m_filterTypedLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxResults"))
-  {
+  if (jsonValue.ValueExists("MaxResults")) {
     m_maxResults = jsonValue.GetInteger("MaxResults");
     m_maxResultsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchListOutgoingTypedLinks::Jsonize() const
-{
+JsonValue BatchListOutgoingTypedLinks::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
-  if(m_filterAttributeRangesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
-   for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
-   {
-     filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject(m_filterAttributeRanges[filterAttributeRangesIndex].Jsonize());
-   }
-   payload.WithArray("FilterAttributeRanges", std::move(filterAttributeRangesJsonList));
-
+  if (m_filterAttributeRangesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
+    for (unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength();
+         ++filterAttributeRangesIndex) {
+      filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject(m_filterAttributeRanges[filterAttributeRangesIndex].Jsonize());
+    }
+    payload.WithArray("FilterAttributeRanges", std::move(filterAttributeRangesJsonList));
   }
 
-  if(m_filterTypedLinkHasBeenSet)
-  {
-   payload.WithObject("FilterTypedLink", m_filterTypedLink.Jsonize());
-
+  if (m_filterTypedLinkHasBeenSet) {
+    payload.WithObject("FilterTypedLink", m_filterTypedLink.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

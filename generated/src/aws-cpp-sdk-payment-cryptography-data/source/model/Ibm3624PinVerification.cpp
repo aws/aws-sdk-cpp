@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/Ibm3624PinVerification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/Ibm3624PinVerification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-Ibm3624PinVerification::Ibm3624PinVerification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ibm3624PinVerification::Ibm3624PinVerification(JsonView jsonValue) { *this = jsonValue; }
 
-Ibm3624PinVerification& Ibm3624PinVerification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DecimalizationTable"))
-  {
+Ibm3624PinVerification& Ibm3624PinVerification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DecimalizationTable")) {
     m_decimalizationTable = jsonValue.GetString("DecimalizationTable");
     m_decimalizationTableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PinValidationDataPadCharacter"))
-  {
+  if (jsonValue.ValueExists("PinValidationDataPadCharacter")) {
     m_pinValidationDataPadCharacter = jsonValue.GetString("PinValidationDataPadCharacter");
     m_pinValidationDataPadCharacterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PinValidationData"))
-  {
+  if (jsonValue.ValueExists("PinValidationData")) {
     m_pinValidationData = jsonValue.GetString("PinValidationData");
     m_pinValidationDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PinOffset"))
-  {
+  if (jsonValue.ValueExists("PinOffset")) {
     m_pinOffset = jsonValue.GetString("PinOffset");
     m_pinOffsetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ibm3624PinVerification::Jsonize() const
-{
+JsonValue Ibm3624PinVerification::Jsonize() const {
   JsonValue payload;
 
-  if(m_decimalizationTableHasBeenSet)
-  {
-   payload.WithString("DecimalizationTable", m_decimalizationTable);
-
+  if (m_decimalizationTableHasBeenSet) {
+    payload.WithString("DecimalizationTable", m_decimalizationTable);
   }
 
-  if(m_pinValidationDataPadCharacterHasBeenSet)
-  {
-   payload.WithString("PinValidationDataPadCharacter", m_pinValidationDataPadCharacter);
-
+  if (m_pinValidationDataPadCharacterHasBeenSet) {
+    payload.WithString("PinValidationDataPadCharacter", m_pinValidationDataPadCharacter);
   }
 
-  if(m_pinValidationDataHasBeenSet)
-  {
-   payload.WithString("PinValidationData", m_pinValidationData);
-
+  if (m_pinValidationDataHasBeenSet) {
+    payload.WithString("PinValidationData", m_pinValidationData);
   }
 
-  if(m_pinOffsetHasBeenSet)
-  {
-   payload.WithString("PinOffset", m_pinOffset);
-
+  if (m_pinOffsetHasBeenSet) {
+    payload.WithString("PinOffset", m_pinOffset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

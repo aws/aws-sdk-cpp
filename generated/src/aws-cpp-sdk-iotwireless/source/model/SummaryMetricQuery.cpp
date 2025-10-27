@@ -3,109 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/SummaryMetricQuery.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/SummaryMetricQuery.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-SummaryMetricQuery::SummaryMetricQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SummaryMetricQuery::SummaryMetricQuery(JsonView jsonValue) { *this = jsonValue; }
 
-SummaryMetricQuery& SummaryMetricQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueryId"))
-  {
+SummaryMetricQuery& SummaryMetricQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueryId")) {
     m_queryId = jsonValue.GetString("QueryId");
     m_queryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricName"))
-  {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("MetricName"));
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Dimensions"))
-  {
+  if (jsonValue.ValueExists("Dimensions")) {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
-    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-    {
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
     }
     m_dimensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AggregationPeriod"))
-  {
+  if (jsonValue.ValueExists("AggregationPeriod")) {
     m_aggregationPeriod = AggregationPeriodMapper::GetAggregationPeriodForName(jsonValue.GetString("AggregationPeriod"));
     m_aggregationPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTimestamp"))
-  {
+  if (jsonValue.ValueExists("StartTimestamp")) {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
     m_startTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTimestamp"))
-  {
+  if (jsonValue.ValueExists("EndTimestamp")) {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
     m_endTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SummaryMetricQuery::Jsonize() const
-{
+JsonValue SummaryMetricQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryIdHasBeenSet)
-  {
-   payload.WithString("QueryId", m_queryId);
-
+  if (m_queryIdHasBeenSet) {
+    payload.WithString("QueryId", m_queryId);
   }
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", MetricNameMapper::GetNameForMetricName(m_metricName));
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", MetricNameMapper::GetNameForMetricName(m_metricName));
   }
 
-  if(m_dimensionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
-   for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-   {
-     dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
-   }
-   payload.WithArray("Dimensions", std::move(dimensionsJsonList));
-
+  if (m_dimensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
+      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
+    }
+    payload.WithArray("Dimensions", std::move(dimensionsJsonList));
   }
 
-  if(m_aggregationPeriodHasBeenSet)
-  {
-   payload.WithString("AggregationPeriod", AggregationPeriodMapper::GetNameForAggregationPeriod(m_aggregationPeriod));
+  if (m_aggregationPeriodHasBeenSet) {
+    payload.WithString("AggregationPeriod", AggregationPeriodMapper::GetNameForAggregationPeriod(m_aggregationPeriod));
   }
 
-  if(m_startTimestampHasBeenSet)
-  {
-   payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
+  if (m_startTimestampHasBeenSet) {
+    payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_endTimestampHasBeenSet)
-  {
-   payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
+  if (m_endTimestampHasBeenSet) {
+    payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -12,70 +12,48 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateTestSuiteRequest::SerializePayload() const
-{
+Aws::String CreateTestSuiteRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_beforeStepsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> beforeStepsJsonList(m_beforeSteps.size());
-   for(unsigned beforeStepsIndex = 0; beforeStepsIndex < beforeStepsJsonList.GetLength(); ++beforeStepsIndex)
-   {
-     beforeStepsJsonList[beforeStepsIndex].AsObject(m_beforeSteps[beforeStepsIndex].Jsonize());
-   }
-   payload.WithArray("beforeSteps", std::move(beforeStepsJsonList));
-
+  if (m_beforeStepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> beforeStepsJsonList(m_beforeSteps.size());
+    for (unsigned beforeStepsIndex = 0; beforeStepsIndex < beforeStepsJsonList.GetLength(); ++beforeStepsIndex) {
+      beforeStepsJsonList[beforeStepsIndex].AsObject(m_beforeSteps[beforeStepsIndex].Jsonize());
+    }
+    payload.WithArray("beforeSteps", std::move(beforeStepsJsonList));
   }
 
-  if(m_afterStepsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> afterStepsJsonList(m_afterSteps.size());
-   for(unsigned afterStepsIndex = 0; afterStepsIndex < afterStepsJsonList.GetLength(); ++afterStepsIndex)
-   {
-     afterStepsJsonList[afterStepsIndex].AsObject(m_afterSteps[afterStepsIndex].Jsonize());
-   }
-   payload.WithArray("afterSteps", std::move(afterStepsJsonList));
-
+  if (m_afterStepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> afterStepsJsonList(m_afterSteps.size());
+    for (unsigned afterStepsIndex = 0; afterStepsIndex < afterStepsJsonList.GetLength(); ++afterStepsIndex) {
+      afterStepsJsonList[afterStepsIndex].AsObject(m_afterSteps[afterStepsIndex].Jsonize());
+    }
+    payload.WithArray("afterSteps", std::move(afterStepsJsonList));
   }
 
-  if(m_testCasesHasBeenSet)
-  {
-   payload.WithObject("testCases", m_testCases.Jsonize());
-
+  if (m_testCasesHasBeenSet) {
+    payload.WithObject("testCases", m_testCases.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

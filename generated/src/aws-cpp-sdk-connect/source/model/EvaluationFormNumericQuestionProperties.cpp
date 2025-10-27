@@ -11,83 +11,61 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationFormNumericQuestionProperties::EvaluationFormNumericQuestionProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationFormNumericQuestionProperties::EvaluationFormNumericQuestionProperties(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationFormNumericQuestionProperties& EvaluationFormNumericQuestionProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinValue"))
-  {
+EvaluationFormNumericQuestionProperties& EvaluationFormNumericQuestionProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinValue")) {
     m_minValue = jsonValue.GetInteger("MinValue");
     m_minValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxValue"))
-  {
+  if (jsonValue.ValueExists("MaxValue")) {
     m_maxValue = jsonValue.GetInteger("MaxValue");
     m_maxValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Options"))
-  {
+  if (jsonValue.ValueExists("Options")) {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
-    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
-    {
+    for (unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex) {
       m_options.push_back(optionsJsonList[optionsIndex].AsObject());
     }
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Automation"))
-  {
+  if (jsonValue.ValueExists("Automation")) {
     m_automation = jsonValue.GetObject("Automation");
     m_automationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationFormNumericQuestionProperties::Jsonize() const
-{
+JsonValue EvaluationFormNumericQuestionProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_minValueHasBeenSet)
-  {
-   payload.WithInteger("MinValue", m_minValue);
-
+  if (m_minValueHasBeenSet) {
+    payload.WithInteger("MinValue", m_minValue);
   }
 
-  if(m_maxValueHasBeenSet)
-  {
-   payload.WithInteger("MaxValue", m_maxValue);
-
+  if (m_maxValueHasBeenSet) {
+    payload.WithInteger("MaxValue", m_maxValue);
   }
 
-  if(m_optionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
-   for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
-   {
-     optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());
-   }
-   payload.WithArray("Options", std::move(optionsJsonList));
-
+  if (m_optionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
+    for (unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex) {
+      optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());
+    }
+    payload.WithArray("Options", std::move(optionsJsonList));
   }
 
-  if(m_automationHasBeenSet)
-  {
-   payload.WithObject("Automation", m_automation.Jsonize());
-
+  if (m_automationHasBeenSet) {
+    payload.WithObject("Automation", m_automation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

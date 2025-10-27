@@ -4,46 +4,36 @@
  */
 
 #include <aws/cloudfront/model/RealtimeLogConfigs.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RealtimeLogConfigs& RealtimeLogConfigs::operator =(const XmlNode& xmlNode)
-{
+RealtimeLogConfigs& RealtimeLogConfigs::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
-    if(!maxItemsNode.IsNull())
-    {
-      m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText()).c_str()).c_str());
+    if (!maxItemsNode.IsNull()) {
+      m_maxItems =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText()).c_str()).c_str());
       m_maxItemsHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
-    if(!itemsNode.IsNull())
-    {
+    if (!itemsNode.IsNull()) {
       XmlNode itemsMember = itemsNode.FirstChild("member");
       m_itemsHasBeenSet = !itemsMember.IsNull();
-      while(!itemsMember.IsNull())
-      {
+      while (!itemsMember.IsNull()) {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("member");
       }
@@ -51,20 +41,18 @@ RealtimeLogConfigs& RealtimeLogConfigs::operator =(const XmlNode& xmlNode)
       m_itemsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(!isTruncatedNode.IsNull())
-    {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+    if (!isTruncatedNode.IsNull()) {
+      m_isTruncated =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
-    if(!nextMarkerNode.IsNull())
-    {
+    if (!nextMarkerNode.IsNull()) {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
       m_nextMarkerHasBeenSet = true;
     }
@@ -73,49 +61,41 @@ RealtimeLogConfigs& RealtimeLogConfigs::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void RealtimeLogConfigs::AddToNode(XmlNode& parentNode) const
-{
+void RealtimeLogConfigs::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_maxItemsHasBeenSet)
-  {
-   XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
-   ss << m_maxItems;
-   maxItemsNode.SetText(ss.str());
-   ss.str("");
+  if (m_maxItemsHasBeenSet) {
+    XmlNode maxItemsNode = parentNode.CreateChildElement("MaxItems");
+    ss << m_maxItems;
+    maxItemsNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
-   for(const auto& item : m_items)
-   {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("RealtimeLogConfig");
-     item.AddToNode(itemsNode);
-   }
+  if (m_itemsHasBeenSet) {
+    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
+    for (const auto& item : m_items) {
+      XmlNode itemsNode = itemsParentNode.CreateChildElement("RealtimeLogConfig");
+      item.AddToNode(itemsNode);
+    }
   }
 
-  if(m_isTruncatedHasBeenSet)
-  {
-   XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
-   ss << std::boolalpha << m_isTruncated;
-   isTruncatedNode.SetText(ss.str());
-   ss.str("");
+  if (m_isTruncatedHasBeenSet) {
+    XmlNode isTruncatedNode = parentNode.CreateChildElement("IsTruncated");
+    ss << std::boolalpha << m_isTruncated;
+    isTruncatedNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_markerHasBeenSet)
-  {
-   XmlNode markerNode = parentNode.CreateChildElement("Marker");
-   markerNode.SetText(m_marker);
+  if (m_markerHasBeenSet) {
+    XmlNode markerNode = parentNode.CreateChildElement("Marker");
+    markerNode.SetText(m_marker);
   }
 
-  if(m_nextMarkerHasBeenSet)
-  {
-   XmlNode nextMarkerNode = parentNode.CreateChildElement("NextMarker");
-   nextMarkerNode.SetText(m_nextMarker);
+  if (m_nextMarkerHasBeenSet) {
+    XmlNode nextMarkerNode = parentNode.CreateChildElement("NextMarker");
+    nextMarkerNode.SetText(m_nextMarker);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

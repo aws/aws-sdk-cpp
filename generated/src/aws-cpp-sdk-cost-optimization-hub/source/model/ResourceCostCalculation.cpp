@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/ResourceCostCalculation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/ResourceCostCalculation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceCostCalculation& ResourceCostCalculation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("usages"))
-  {
+ResourceCostCalculation& ResourceCostCalculation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("usages")) {
     Aws::Utils::Array<JsonView> usagesJsonList = jsonValue.GetArray("usages");
-    for(unsigned usagesIndex = 0; usagesIndex < usagesJsonList.GetLength(); ++usagesIndex)
-    {
+    for (unsigned usagesIndex = 0; usagesIndex < usagesJsonList.GetLength(); ++usagesIndex) {
       m_usages.push_back(usagesJsonList[usagesIndex].AsObject());
     }
     m_usagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pricing"))
-  {
+  if (jsonValue.ValueExists("pricing")) {
     m_pricing = jsonValue.GetObject("pricing");
     m_pricingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceCostCalculation::Jsonize() const
-{
+JsonValue ResourceCostCalculation::Jsonize() const {
   JsonValue payload;
 
-  if(m_usagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> usagesJsonList(m_usages.size());
-   for(unsigned usagesIndex = 0; usagesIndex < usagesJsonList.GetLength(); ++usagesIndex)
-   {
-     usagesJsonList[usagesIndex].AsObject(m_usages[usagesIndex].Jsonize());
-   }
-   payload.WithArray("usages", std::move(usagesJsonList));
-
+  if (m_usagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> usagesJsonList(m_usages.size());
+    for (unsigned usagesIndex = 0; usagesIndex < usagesJsonList.GetLength(); ++usagesIndex) {
+      usagesJsonList[usagesIndex].AsObject(m_usages[usagesIndex].Jsonize());
+    }
+    payload.WithArray("usages", std::move(usagesJsonList));
   }
 
-  if(m_pricingHasBeenSet)
-  {
-   payload.WithObject("pricing", m_pricing.Jsonize());
-
+  if (m_pricingHasBeenSet) {
+    payload.WithObject("pricing", m_pricing.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

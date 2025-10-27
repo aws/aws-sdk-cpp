@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/elasticloadbalancing/ElasticLoadBalancingEndpointRules.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ElasticLoadBalancing {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ElasticLoadBalancingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using ElasticLoadBalancingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using ElasticLoadBalancingEndpointProviderBase =
-    EndpointProviderBase<ElasticLoadBalancingClientConfiguration, ElasticLoadBalancingBuiltInParameters, ElasticLoadBalancingClientContextParameters>;
+    EndpointProviderBase<ElasticLoadBalancingClientConfiguration, ElasticLoadBalancingBuiltInParameters,
+                         ElasticLoadBalancingClientContextParameters>;
 
 using ElasticLoadBalancingDefaultEpProviderBase =
-    DefaultEndpointProvider<ElasticLoadBalancingClientConfiguration, ElasticLoadBalancingBuiltInParameters, ElasticLoadBalancingClientContextParameters>;
+    DefaultEndpointProvider<ElasticLoadBalancingClientConfiguration, ElasticLoadBalancingBuiltInParameters,
+                            ElasticLoadBalancingClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingEndpointProvider : public ElasticLoadBalancingDefaultEpProviderBase
-{
-public:
-    using ElasticLoadBalancingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingEndpointProvider : public ElasticLoadBalancingDefaultEpProviderBase {
+ public:
+  using ElasticLoadBalancingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ElasticLoadBalancingEndpointProvider()
-      : ElasticLoadBalancingDefaultEpProviderBase(Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::GetRulesBlob(), Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::RulesBlobSize)
-    {}
+  ElasticLoadBalancingEndpointProvider()
+      : ElasticLoadBalancingDefaultEpProviderBase(Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::GetRulesBlob(),
+                                                  Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::RulesBlobSize) {}
 
-    ~ElasticLoadBalancingEndpointProvider()
-    {
-    }
+  ~ElasticLoadBalancingEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

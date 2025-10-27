@@ -4,36 +4,27 @@
  */
 
 #include <aws/cloudfront/model/KeyGroupSummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-KeyGroupSummary::KeyGroupSummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+KeyGroupSummary::KeyGroupSummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-KeyGroupSummary& KeyGroupSummary::operator =(const XmlNode& xmlNode)
-{
+KeyGroupSummary& KeyGroupSummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode keyGroupNode = resultNode.FirstChild("KeyGroup");
-    if(!keyGroupNode.IsNull())
-    {
+    if (!keyGroupNode.IsNull()) {
       m_keyGroup = keyGroupNode;
       m_keyGroupHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ KeyGroupSummary& KeyGroupSummary::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void KeyGroupSummary::AddToNode(XmlNode& parentNode) const
-{
+void KeyGroupSummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_keyGroupHasBeenSet)
-  {
-   XmlNode keyGroupNode = parentNode.CreateChildElement("KeyGroup");
-   m_keyGroup.AddToNode(keyGroupNode);
+  if (m_keyGroupHasBeenSet) {
+    XmlNode keyGroupNode = parentNode.CreateChildElement("KeyGroup");
+    m_keyGroup.AddToNode(keyGroupNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

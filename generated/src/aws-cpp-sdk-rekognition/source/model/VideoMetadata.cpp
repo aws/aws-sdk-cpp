@@ -3,114 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/VideoMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-VideoMetadata::VideoMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VideoMetadata::VideoMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-VideoMetadata& VideoMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Codec"))
-  {
+VideoMetadata& VideoMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Codec")) {
     m_codec = jsonValue.GetString("Codec");
     m_codecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DurationMillis"))
-  {
+  if (jsonValue.ValueExists("DurationMillis")) {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
     m_durationMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Format"))
-  {
+  if (jsonValue.ValueExists("Format")) {
     m_format = jsonValue.GetString("Format");
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameRate"))
-  {
+  if (jsonValue.ValueExists("FrameRate")) {
     m_frameRate = jsonValue.GetDouble("FrameRate");
     m_frameRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameHeight"))
-  {
+  if (jsonValue.ValueExists("FrameHeight")) {
     m_frameHeight = jsonValue.GetInt64("FrameHeight");
     m_frameHeightHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameWidth"))
-  {
+  if (jsonValue.ValueExists("FrameWidth")) {
     m_frameWidth = jsonValue.GetInt64("FrameWidth");
     m_frameWidthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColorRange"))
-  {
+  if (jsonValue.ValueExists("ColorRange")) {
     m_colorRange = VideoColorRangeMapper::GetVideoColorRangeForName(jsonValue.GetString("ColorRange"));
     m_colorRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VideoMetadata::Jsonize() const
-{
+JsonValue VideoMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_codecHasBeenSet)
-  {
-   payload.WithString("Codec", m_codec);
-
+  if (m_codecHasBeenSet) {
+    payload.WithString("Codec", m_codec);
   }
 
-  if(m_durationMillisHasBeenSet)
-  {
-   payload.WithInt64("DurationMillis", m_durationMillis);
-
+  if (m_durationMillisHasBeenSet) {
+    payload.WithInt64("DurationMillis", m_durationMillis);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("Format", m_format);
-
+  if (m_formatHasBeenSet) {
+    payload.WithString("Format", m_format);
   }
 
-  if(m_frameRateHasBeenSet)
-  {
-   payload.WithDouble("FrameRate", m_frameRate);
-
+  if (m_frameRateHasBeenSet) {
+    payload.WithDouble("FrameRate", m_frameRate);
   }
 
-  if(m_frameHeightHasBeenSet)
-  {
-   payload.WithInt64("FrameHeight", m_frameHeight);
-
+  if (m_frameHeightHasBeenSet) {
+    payload.WithInt64("FrameHeight", m_frameHeight);
   }
 
-  if(m_frameWidthHasBeenSet)
-  {
-   payload.WithInt64("FrameWidth", m_frameWidth);
-
+  if (m_frameWidthHasBeenSet) {
+    payload.WithInt64("FrameWidth", m_frameWidth);
   }
 
-  if(m_colorRangeHasBeenSet)
-  {
-   payload.WithString("ColorRange", VideoColorRangeMapper::GetNameForVideoColorRange(m_colorRange));
+  if (m_colorRangeHasBeenSet) {
+    payload.WithString("ColorRange", VideoColorRangeMapper::GetNameForVideoColorRange(m_colorRange));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

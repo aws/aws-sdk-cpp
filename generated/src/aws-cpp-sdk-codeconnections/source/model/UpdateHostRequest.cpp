@@ -12,39 +12,26 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateHostRequest::SerializePayload() const
-{
+Aws::String UpdateHostRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hostArnHasBeenSet)
-  {
-   payload.WithString("HostArn", m_hostArn);
-
+  if (m_hostArnHasBeenSet) {
+    payload.WithString("HostArn", m_hostArn);
   }
 
-  if(m_providerEndpointHasBeenSet)
-  {
-   payload.WithString("ProviderEndpoint", m_providerEndpoint);
-
+  if (m_providerEndpointHasBeenSet) {
+    payload.WithString("ProviderEndpoint", m_providerEndpoint);
   }
 
-  if(m_vpcConfigurationHasBeenSet)
-  {
-   payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
-
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateHostRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateHostRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.UpdateHost"));
   return headers;
-
 }
-
-
-
-

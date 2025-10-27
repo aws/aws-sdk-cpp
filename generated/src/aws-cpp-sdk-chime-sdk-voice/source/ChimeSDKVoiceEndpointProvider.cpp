@@ -5,12 +5,8 @@
 
 #include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ChimeSDKVoice
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

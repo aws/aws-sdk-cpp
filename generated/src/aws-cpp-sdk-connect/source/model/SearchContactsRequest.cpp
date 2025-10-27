@@ -12,49 +12,32 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SearchContactsRequest::SerializePayload() const
-{
+Aws::String SearchContactsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_timeRangeHasBeenSet)
-  {
-   payload.WithObject("TimeRange", m_timeRange.Jsonize());
-
+  if (m_timeRangeHasBeenSet) {
+    payload.WithObject("TimeRange", m_timeRange.Jsonize());
   }
 
-  if(m_searchCriteriaHasBeenSet)
-  {
-   payload.WithObject("SearchCriteria", m_searchCriteria.Jsonize());
-
+  if (m_searchCriteriaHasBeenSet) {
+    payload.WithObject("SearchCriteria", m_searchCriteria.Jsonize());
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_sortHasBeenSet)
-  {
-   payload.WithObject("Sort", m_sort.Jsonize());
-
+  if (m_sortHasBeenSet) {
+    payload.WithObject("Sort", m_sort.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/SegmentOverride.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/SegmentOverride.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-SegmentOverride::SegmentOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SegmentOverride::SegmentOverride(JsonView jsonValue) { *this = jsonValue; }
 
-SegmentOverride& SegmentOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("evaluationOrder"))
-  {
+SegmentOverride& SegmentOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("evaluationOrder")) {
     m_evaluationOrder = jsonValue.GetInt64("evaluationOrder");
     m_evaluationOrderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("segment"))
-  {
+  if (jsonValue.ValueExists("segment")) {
     m_segment = jsonValue.GetString("segment");
     m_segmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("weights"))
-  {
+  if (jsonValue.ValueExists("weights")) {
     Aws::Map<Aws::String, JsonView> weightsJsonMap = jsonValue.GetObject("weights").GetAllObjects();
-    for(auto& weightsItem : weightsJsonMap)
-    {
+    for (auto& weightsItem : weightsJsonMap) {
       m_weights[weightsItem.first] = weightsItem.second.AsInt64();
     }
     m_weightsHasBeenSet = true;
@@ -47,36 +36,28 @@ SegmentOverride& SegmentOverride::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SegmentOverride::Jsonize() const
-{
+JsonValue SegmentOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationOrderHasBeenSet)
-  {
-   payload.WithInt64("evaluationOrder", m_evaluationOrder);
-
+  if (m_evaluationOrderHasBeenSet) {
+    payload.WithInt64("evaluationOrder", m_evaluationOrder);
   }
 
-  if(m_segmentHasBeenSet)
-  {
-   payload.WithString("segment", m_segment);
-
+  if (m_segmentHasBeenSet) {
+    payload.WithString("segment", m_segment);
   }
 
-  if(m_weightsHasBeenSet)
-  {
-   JsonValue weightsJsonMap;
-   for(auto& weightsItem : m_weights)
-   {
-     weightsJsonMap.WithInt64(weightsItem.first, weightsItem.second);
-   }
-   payload.WithObject("weights", std::move(weightsJsonMap));
-
+  if (m_weightsHasBeenSet) {
+    JsonValue weightsJsonMap;
+    for (auto& weightsItem : m_weights) {
+      weightsJsonMap.WithInt64(weightsItem.first, weightsItem.second);
+    }
+    payload.WithObject("weights", std::move(weightsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

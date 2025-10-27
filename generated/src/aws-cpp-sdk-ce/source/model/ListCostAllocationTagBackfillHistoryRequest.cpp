@@ -12,33 +12,22 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListCostAllocationTagBackfillHistoryRequest::SerializePayload() const
-{
+Aws::String ListCostAllocationTagBackfillHistoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListCostAllocationTagBackfillHistoryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListCostAllocationTagBackfillHistoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.ListCostAllocationTagBackfillHistory"));
   return headers;
-
 }
-
-
-
-

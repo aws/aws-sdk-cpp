@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class DescribeWorkspacesPoolsFilterName
-  {
-    NOT_SET,
-    PoolName
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class DescribeWorkspacesPoolsFilterName { NOT_SET, PoolName };
 
-namespace DescribeWorkspacesPoolsFilterNameMapper
-{
+namespace DescribeWorkspacesPoolsFilterNameMapper {
 AWS_WORKSPACES_API DescribeWorkspacesPoolsFilterName GetDescribeWorkspacesPoolsFilterNameForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForDescribeWorkspacesPoolsFilterName(DescribeWorkspacesPoolsFilterName value);
-} // namespace DescribeWorkspacesPoolsFilterNameMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace DescribeWorkspacesPoolsFilterNameMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

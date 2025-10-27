@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/ExtendedDataServices.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/ExtendedDataServices.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-ExtendedDataServices::ExtendedDataServices(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExtendedDataServices::ExtendedDataServices(JsonView jsonValue) { *this = jsonValue; }
 
-ExtendedDataServices& ExtendedDataServices::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("copyProtectionAction"))
-  {
+ExtendedDataServices& ExtendedDataServices::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("copyProtectionAction")) {
     m_copyProtectionAction = CopyProtectionActionMapper::GetCopyProtectionActionForName(jsonValue.GetString("copyProtectionAction"));
     m_copyProtectionActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vchipAction"))
-  {
+  if (jsonValue.ValueExists("vchipAction")) {
     m_vchipAction = VchipActionMapper::GetVchipActionForName(jsonValue.GetString("vchipAction"));
     m_vchipActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExtendedDataServices::Jsonize() const
-{
+JsonValue ExtendedDataServices::Jsonize() const {
   JsonValue payload;
 
-  if(m_copyProtectionActionHasBeenSet)
-  {
-   payload.WithString("copyProtectionAction", CopyProtectionActionMapper::GetNameForCopyProtectionAction(m_copyProtectionAction));
+  if (m_copyProtectionActionHasBeenSet) {
+    payload.WithString("copyProtectionAction", CopyProtectionActionMapper::GetNameForCopyProtectionAction(m_copyProtectionAction));
   }
 
-  if(m_vchipActionHasBeenSet)
-  {
-   payload.WithString("vchipAction", VchipActionMapper::GetNameForVchipAction(m_vchipAction));
+  if (m_vchipActionHasBeenSet) {
+    payload.WithString("vchipAction", VchipActionMapper::GetNameForVchipAction(m_vchipAction));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

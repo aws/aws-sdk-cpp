@@ -3,56 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/FailoverState.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/neptune/model/FailoverState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Neptune
-{
-namespace Model
-{
+namespace Aws {
+namespace Neptune {
+namespace Model {
 
-FailoverState::FailoverState(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+FailoverState::FailoverState(const XmlNode& xmlNode) { *this = xmlNode; }
 
-FailoverState& FailoverState::operator =(const XmlNode& xmlNode)
-{
+FailoverState& FailoverState::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = FailoverStatusMapper::GetFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status = FailoverStatusMapper::GetFailoverStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode fromDbClusterArnNode = resultNode.FirstChild("FromDbClusterArn");
-    if(!fromDbClusterArnNode.IsNull())
-    {
+    if (!fromDbClusterArnNode.IsNull()) {
       m_fromDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(fromDbClusterArnNode.GetText());
       m_fromDbClusterArnHasBeenSet = true;
     }
     XmlNode toDbClusterArnNode = resultNode.FirstChild("ToDbClusterArn");
-    if(!toDbClusterArnNode.IsNull())
-    {
+    if (!toDbClusterArnNode.IsNull()) {
       m_toDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(toDbClusterArnNode.GetText());
       m_toDbClusterArnHasBeenSet = true;
     }
     XmlNode isDataLossAllowedNode = resultNode.FirstChild("IsDataLossAllowed");
-    if(!isDataLossAllowedNode.IsNull())
-    {
-      m_isDataLossAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDataLossAllowedNode.GetText()).c_str()).c_str());
+    if (!isDataLossAllowedNode.IsNull()) {
+      m_isDataLossAllowed = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDataLossAllowedNode.GetText()).c_str()).c_str());
       m_isDataLossAllowedHasBeenSet = true;
     }
   }
@@ -60,50 +50,40 @@ FailoverState& FailoverState::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
+void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
   }
 
-  if(m_fromDbClusterArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FromDbClusterArn=" << StringUtils::URLEncode(m_fromDbClusterArn.c_str()) << "&";
+  if (m_fromDbClusterArnHasBeenSet) {
+    oStream << location << index << locationValue << ".FromDbClusterArn=" << StringUtils::URLEncode(m_fromDbClusterArn.c_str()) << "&";
   }
 
-  if(m_toDbClusterArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
+  if (m_toDbClusterArnHasBeenSet) {
+    oStream << location << index << locationValue << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
   }
 
-  if(m_isDataLossAllowedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
-  }
-
-}
-
-void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
-  }
-  if(m_fromDbClusterArnHasBeenSet)
-  {
-      oStream << location << ".FromDbClusterArn=" << StringUtils::URLEncode(m_fromDbClusterArn.c_str()) << "&";
-  }
-  if(m_toDbClusterArnHasBeenSet)
-  {
-      oStream << location << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
-  }
-  if(m_isDataLossAllowedHasBeenSet)
-  {
-      oStream << location << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
+  if (m_isDataLossAllowedHasBeenSet) {
+    oStream << location << index << locationValue << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
   }
 }
 
-} // namespace Model
-} // namespace Neptune
-} // namespace Aws
+void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
+  }
+  if (m_fromDbClusterArnHasBeenSet) {
+    oStream << location << ".FromDbClusterArn=" << StringUtils::URLEncode(m_fromDbClusterArn.c_str()) << "&";
+  }
+  if (m_toDbClusterArnHasBeenSet) {
+    oStream << location << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
+  }
+  if (m_isDataLossAllowedHasBeenSet) {
+    oStream << location << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/CreateAvailabilityConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/CreateAvailabilityConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,51 +12,34 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAvailabilityConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateAvailabilityConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_ewsProviderHasBeenSet)
-  {
-   payload.WithObject("EwsProvider", m_ewsProvider.Jsonize());
-
+  if (m_ewsProviderHasBeenSet) {
+    payload.WithObject("EwsProvider", m_ewsProvider.Jsonize());
   }
 
-  if(m_lambdaProviderHasBeenSet)
-  {
-   payload.WithObject("LambdaProvider", m_lambdaProvider.Jsonize());
-
+  if (m_lambdaProviderHasBeenSet) {
+    payload.WithObject("LambdaProvider", m_lambdaProvider.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateAvailabilityConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateAvailabilityConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.CreateAvailabilityConfiguration"));
   return headers;
-
 }
-
-
-
-

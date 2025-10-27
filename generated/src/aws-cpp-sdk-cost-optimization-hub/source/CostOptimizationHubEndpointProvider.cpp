@@ -5,12 +5,8 @@
 
 #include <aws/cost-optimization-hub/CostOptimizationHubEndpointProvider.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CostOptimizationHub
-} // namespace Aws
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CostOptimizationHub
+}  // namespace Aws

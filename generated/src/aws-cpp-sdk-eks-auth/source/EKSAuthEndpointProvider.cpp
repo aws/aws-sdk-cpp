@@ -5,12 +5,8 @@
 
 #include <aws/eks-auth/EKSAuthEndpointProvider.h>
 
-namespace Aws
-{
-namespace EKSAuth
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EKSAuth
-} // namespace Aws
+namespace Aws {
+namespace EKSAuth {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EKSAuth
+}  // namespace Aws

@@ -11,72 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-Device::Device(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Device::Device(JsonView jsonValue) { *this = jsonValue; }
 
-Device& Device::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hostPath"))
-  {
+Device& Device::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hostPath")) {
     m_hostPath = jsonValue.GetString("hostPath");
     m_hostPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containerPath"))
-  {
+  if (jsonValue.ValueExists("containerPath")) {
     m_containerPath = jsonValue.GetString("containerPath");
     m_containerPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("permissions"))
-  {
+  if (jsonValue.ValueExists("permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
-    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-    {
-      m_permissions.push_back(DeviceCgroupPermissionMapper::GetDeviceCgroupPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
+      m_permissions.push_back(
+          DeviceCgroupPermissionMapper::GetDeviceCgroupPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
     }
     m_permissionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Device::Jsonize() const
-{
+JsonValue Device::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostPathHasBeenSet)
-  {
-   payload.WithString("hostPath", m_hostPath);
-
+  if (m_hostPathHasBeenSet) {
+    payload.WithString("hostPath", m_hostPath);
   }
 
-  if(m_containerPathHasBeenSet)
-  {
-   payload.WithString("containerPath", m_containerPath);
-
+  if (m_containerPathHasBeenSet) {
+    payload.WithString("containerPath", m_containerPath);
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
-   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-   {
-     permissionsJsonList[permissionsIndex].AsString(DeviceCgroupPermissionMapper::GetNameForDeviceCgroupPermission(m_permissions[permissionsIndex]));
-   }
-   payload.WithArray("permissions", std::move(permissionsJsonList));
-
+  if (m_permissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
+      permissionsJsonList[permissionsIndex].AsString(
+          DeviceCgroupPermissionMapper::GetNameForDeviceCgroupPermission(m_permissions[permissionsIndex]));
+    }
+    payload.WithArray("permissions", std::move(permissionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

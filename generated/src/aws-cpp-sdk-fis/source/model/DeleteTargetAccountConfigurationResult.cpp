@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/DeleteTargetAccountConfigurationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/fis/model/DeleteTargetAccountConfigurationResult.h>
 
 #include <utility>
 
@@ -17,28 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTargetAccountConfigurationResult::DeleteTargetAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteTargetAccountConfigurationResult::DeleteTargetAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DeleteTargetAccountConfigurationResult& DeleteTargetAccountConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteTargetAccountConfigurationResult& DeleteTargetAccountConfigurationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("targetAccountConfiguration"))
-  {
+  if (jsonValue.ValueExists("targetAccountConfiguration")) {
     m_targetAccountConfiguration = jsonValue.GetObject("targetAccountConfiguration");
     m_targetAccountConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

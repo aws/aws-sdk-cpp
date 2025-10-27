@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-enum class IoTTwinMakerErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTTwinMaker {
+enum class IoTTwinMakerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTTwinMakerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class IoTTwinMakerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONNECTOR_FAILURE,
   CONNECTOR_TIMEOUT,
   INTERNAL_SERVER,
@@ -56,9 +53,8 @@ enum class IoTTwinMakerErrors
   TOO_MANY_TAGS
 };
 
-class AWS_IOTTWINMAKER_API IoTTwinMakerError : public Aws::Client::AWSError<IoTTwinMakerErrors>
-{
-public:
+class AWS_IOTTWINMAKER_API IoTTwinMakerError : public Aws::Client::AWSError<IoTTwinMakerErrors> {
+ public:
   IoTTwinMakerError() {}
   IoTTwinMakerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTTwinMakerErrors>(rhs) {}
   IoTTwinMakerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTTwinMakerErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTTwinMakerErrorMapper
-{
-  AWS_IOTTWINMAKER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTTwinMakerErrorMapper {
+AWS_IOTTWINMAKER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace IoTTwinMaker
+}  // namespace Aws

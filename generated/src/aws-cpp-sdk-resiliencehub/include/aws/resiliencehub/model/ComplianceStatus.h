@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ComplianceStatus
-  {
-    NOT_SET,
-    PolicyBreached,
-    PolicyMet,
-    NotApplicable,
-    MissingPolicy
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ComplianceStatus { NOT_SET, PolicyBreached, PolicyMet, NotApplicable, MissingPolicy };
 
-namespace ComplianceStatusMapper
-{
+namespace ComplianceStatusMapper {
 AWS_RESILIENCEHUB_API ComplianceStatus GetComplianceStatusForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForComplianceStatus(ComplianceStatus value);
-} // namespace ComplianceStatusMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ComplianceStatusMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

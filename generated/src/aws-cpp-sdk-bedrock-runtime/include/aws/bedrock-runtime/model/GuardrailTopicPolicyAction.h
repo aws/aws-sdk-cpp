@@ -7,25 +7,16 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class GuardrailTopicPolicyAction
-  {
-    NOT_SET,
-    BLOCKED,
-    NONE
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class GuardrailTopicPolicyAction { NOT_SET, BLOCKED, NONE };
 
-namespace GuardrailTopicPolicyActionMapper
-{
+namespace GuardrailTopicPolicyActionMapper {
 AWS_BEDROCKRUNTIME_API GuardrailTopicPolicyAction GetGuardrailTopicPolicyActionForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForGuardrailTopicPolicyAction(GuardrailTopicPolicyAction value);
-} // namespace GuardrailTopicPolicyActionMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace GuardrailTopicPolicyActionMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/BatchCreateCustomVocabularyItemResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lexv2-models/model/BatchCreateCustomVocabularyItemResult.h>
 
 #include <utility>
 
@@ -17,43 +17,35 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchCreateCustomVocabularyItemResult::BatchCreateCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchCreateCustomVocabularyItemResult::BatchCreateCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-BatchCreateCustomVocabularyItemResult& BatchCreateCustomVocabularyItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchCreateCustomVocabularyItemResult& BatchCreateCustomVocabularyItemResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("botId"))
-  {
+  if (jsonValue.ValueExists("botId")) {
     m_botId = jsonValue.GetString("botId");
     m_botIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botVersion"))
-  {
+  if (jsonValue.ValueExists("botVersion")) {
     m_botVersion = jsonValue.GetString("botVersion");
     m_botVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("localeId"))
-  {
+  if (jsonValue.ValueExists("localeId")) {
     m_localeId = jsonValue.GetString("localeId");
     m_localeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errors"))
-  {
+  if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resources"))
-  {
+  if (jsonValue.ValueExists("resources")) {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
-    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
-    {
+    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
     }
     m_resourcesHasBeenSet = true;
@@ -61,12 +53,10 @@ BatchCreateCustomVocabularyItemResult& BatchCreateCustomVocabularyItemResult::op
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

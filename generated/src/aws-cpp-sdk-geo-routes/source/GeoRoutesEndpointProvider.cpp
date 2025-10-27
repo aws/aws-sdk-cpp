@@ -5,12 +5,8 @@
 
 #include <aws/geo-routes/GeoRoutesEndpointProvider.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GeoRoutes
-} // namespace Aws
+namespace Aws {
+namespace GeoRoutes {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GeoRoutes
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetIdentityPoolRolesRequest::SerializePayload() const
-{
+Aws::String GetIdentityPoolRolesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetIdentityPoolRolesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetIdentityPoolRolesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetIdentityPoolRoles"));
   return headers;
-
 }
-
-
-
-

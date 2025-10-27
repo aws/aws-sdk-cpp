@@ -3,81 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/Emv2000Attributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/Emv2000Attributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-Emv2000Attributes::Emv2000Attributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Emv2000Attributes::Emv2000Attributes(JsonView jsonValue) { *this = jsonValue; }
 
-Emv2000Attributes& Emv2000Attributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MajorKeyDerivationMode"))
-  {
-    m_majorKeyDerivationMode = MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
+Emv2000Attributes& Emv2000Attributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MajorKeyDerivationMode")) {
+    m_majorKeyDerivationMode =
+        MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrimaryAccountNumber"))
-  {
+  if (jsonValue.ValueExists("PrimaryAccountNumber")) {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
     m_primaryAccountNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PanSequenceNumber"))
-  {
+  if (jsonValue.ValueExists("PanSequenceNumber")) {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
     m_panSequenceNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
-  {
+  if (jsonValue.ValueExists("ApplicationTransactionCounter")) {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
     m_applicationTransactionCounterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Emv2000Attributes::Jsonize() const
-{
+JsonValue Emv2000Attributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_majorKeyDerivationModeHasBeenSet)
-  {
-   payload.WithString("MajorKeyDerivationMode", MajorKeyDerivationModeMapper::GetNameForMajorKeyDerivationMode(m_majorKeyDerivationMode));
+  if (m_majorKeyDerivationModeHasBeenSet) {
+    payload.WithString("MajorKeyDerivationMode", MajorKeyDerivationModeMapper::GetNameForMajorKeyDerivationMode(m_majorKeyDerivationMode));
   }
 
-  if(m_primaryAccountNumberHasBeenSet)
-  {
-   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
-
+  if (m_primaryAccountNumberHasBeenSet) {
+    payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
   }
 
-  if(m_panSequenceNumberHasBeenSet)
-  {
-   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
-
+  if (m_panSequenceNumberHasBeenSet) {
+    payload.WithString("PanSequenceNumber", m_panSequenceNumber);
   }
 
-  if(m_applicationTransactionCounterHasBeenSet)
-  {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
-
+  if (m_applicationTransactionCounterHasBeenSet) {
+    payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

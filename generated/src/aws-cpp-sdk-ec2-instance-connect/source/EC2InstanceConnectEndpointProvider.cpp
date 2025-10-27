@@ -5,12 +5,8 @@
 
 #include <aws/ec2-instance-connect/EC2InstanceConnectEndpointProvider.h>
 
-namespace Aws
-{
-namespace EC2InstanceConnect
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EC2InstanceConnect
-} // namespace Aws
+namespace Aws {
+namespace EC2InstanceConnect {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EC2InstanceConnect
+}  // namespace Aws

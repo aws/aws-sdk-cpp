@@ -12,27 +12,18 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEndpointRequest::SerializePayload() const
-{
+Aws::String DeleteEndpointRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_endpointArnHasBeenSet)
-  {
-   payload.WithString("EndpointArn", m_endpointArn);
-
+  if (m_endpointArnHasBeenSet) {
+    payload.WithString("EndpointArn", m_endpointArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteEndpointRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteEndpointRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DeleteEndpoint"));
   return headers;
-
 }
-
-
-
-

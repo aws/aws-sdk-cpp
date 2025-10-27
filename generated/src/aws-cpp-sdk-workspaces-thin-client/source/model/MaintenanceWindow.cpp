@@ -3,122 +3,93 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-thin-client/model/MaintenanceWindow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-thin-client/model/MaintenanceWindow.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Model {
 
-MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MaintenanceWindow::MaintenanceWindow(JsonView jsonValue) { *this = jsonValue; }
 
-MaintenanceWindow& MaintenanceWindow::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+MaintenanceWindow& MaintenanceWindow::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = MaintenanceWindowTypeMapper::GetMaintenanceWindowTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimeHour"))
-  {
+  if (jsonValue.ValueExists("startTimeHour")) {
     m_startTimeHour = jsonValue.GetInteger("startTimeHour");
     m_startTimeHourHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimeMinute"))
-  {
+  if (jsonValue.ValueExists("startTimeMinute")) {
     m_startTimeMinute = jsonValue.GetInteger("startTimeMinute");
     m_startTimeMinuteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTimeHour"))
-  {
+  if (jsonValue.ValueExists("endTimeHour")) {
     m_endTimeHour = jsonValue.GetInteger("endTimeHour");
     m_endTimeHourHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTimeMinute"))
-  {
+  if (jsonValue.ValueExists("endTimeMinute")) {
     m_endTimeMinute = jsonValue.GetInteger("endTimeMinute");
     m_endTimeMinuteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("daysOfTheWeek"))
-  {
+  if (jsonValue.ValueExists("daysOfTheWeek")) {
     Aws::Utils::Array<JsonView> daysOfTheWeekJsonList = jsonValue.GetArray("daysOfTheWeek");
-    for(unsigned daysOfTheWeekIndex = 0; daysOfTheWeekIndex < daysOfTheWeekJsonList.GetLength(); ++daysOfTheWeekIndex)
-    {
+    for (unsigned daysOfTheWeekIndex = 0; daysOfTheWeekIndex < daysOfTheWeekJsonList.GetLength(); ++daysOfTheWeekIndex) {
       m_daysOfTheWeek.push_back(DayOfWeekMapper::GetDayOfWeekForName(daysOfTheWeekJsonList[daysOfTheWeekIndex].AsString()));
     }
     m_daysOfTheWeekHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applyTimeOf"))
-  {
+  if (jsonValue.ValueExists("applyTimeOf")) {
     m_applyTimeOf = ApplyTimeOfMapper::GetApplyTimeOfForName(jsonValue.GetString("applyTimeOf"));
     m_applyTimeOfHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MaintenanceWindow::Jsonize() const
-{
+JsonValue MaintenanceWindow::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MaintenanceWindowTypeMapper::GetNameForMaintenanceWindowType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", MaintenanceWindowTypeMapper::GetNameForMaintenanceWindowType(m_type));
   }
 
-  if(m_startTimeHourHasBeenSet)
-  {
-   payload.WithInteger("startTimeHour", m_startTimeHour);
-
+  if (m_startTimeHourHasBeenSet) {
+    payload.WithInteger("startTimeHour", m_startTimeHour);
   }
 
-  if(m_startTimeMinuteHasBeenSet)
-  {
-   payload.WithInteger("startTimeMinute", m_startTimeMinute);
-
+  if (m_startTimeMinuteHasBeenSet) {
+    payload.WithInteger("startTimeMinute", m_startTimeMinute);
   }
 
-  if(m_endTimeHourHasBeenSet)
-  {
-   payload.WithInteger("endTimeHour", m_endTimeHour);
-
+  if (m_endTimeHourHasBeenSet) {
+    payload.WithInteger("endTimeHour", m_endTimeHour);
   }
 
-  if(m_endTimeMinuteHasBeenSet)
-  {
-   payload.WithInteger("endTimeMinute", m_endTimeMinute);
-
+  if (m_endTimeMinuteHasBeenSet) {
+    payload.WithInteger("endTimeMinute", m_endTimeMinute);
   }
 
-  if(m_daysOfTheWeekHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> daysOfTheWeekJsonList(m_daysOfTheWeek.size());
-   for(unsigned daysOfTheWeekIndex = 0; daysOfTheWeekIndex < daysOfTheWeekJsonList.GetLength(); ++daysOfTheWeekIndex)
-   {
-     daysOfTheWeekJsonList[daysOfTheWeekIndex].AsString(DayOfWeekMapper::GetNameForDayOfWeek(m_daysOfTheWeek[daysOfTheWeekIndex]));
-   }
-   payload.WithArray("daysOfTheWeek", std::move(daysOfTheWeekJsonList));
-
+  if (m_daysOfTheWeekHasBeenSet) {
+    Aws::Utils::Array<JsonValue> daysOfTheWeekJsonList(m_daysOfTheWeek.size());
+    for (unsigned daysOfTheWeekIndex = 0; daysOfTheWeekIndex < daysOfTheWeekJsonList.GetLength(); ++daysOfTheWeekIndex) {
+      daysOfTheWeekJsonList[daysOfTheWeekIndex].AsString(DayOfWeekMapper::GetNameForDayOfWeek(m_daysOfTheWeek[daysOfTheWeekIndex]));
+    }
+    payload.WithArray("daysOfTheWeek", std::move(daysOfTheWeekJsonList));
   }
 
-  if(m_applyTimeOfHasBeenSet)
-  {
-   payload.WithString("applyTimeOf", ApplyTimeOfMapper::GetNameForApplyTimeOf(m_applyTimeOf));
+  if (m_applyTimeOfHasBeenSet) {
+    payload.WithString("applyTimeOf", ApplyTimeOfMapper::GetNameForApplyTimeOf(m_applyTimeOf));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

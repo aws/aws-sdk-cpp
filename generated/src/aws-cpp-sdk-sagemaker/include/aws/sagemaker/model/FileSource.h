@@ -4,86 +4,97 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>Contains details regarding the file source.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSource">AWS
+ * API Reference</a></p>
+ */
+class FileSource {
+ public:
+  AWS_SAGEMAKER_API FileSource() = default;
+  AWS_SAGEMAKER_API FileSource(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains details regarding the file source.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSource">AWS
-   * API Reference</a></p>
+   * <p>The type of content stored in the file source.</p>
    */
-  class FileSource
-  {
-  public:
-    AWS_SAGEMAKER_API FileSource() = default;
-    AWS_SAGEMAKER_API FileSource(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetContentType() const { return m_contentType; }
+  inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+  template <typename ContentTypeT = Aws::String>
+  void SetContentType(ContentTypeT&& value) {
+    m_contentTypeHasBeenSet = true;
+    m_contentType = std::forward<ContentTypeT>(value);
+  }
+  template <typename ContentTypeT = Aws::String>
+  FileSource& WithContentType(ContentTypeT&& value) {
+    SetContentType(std::forward<ContentTypeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The digest of the file source.</p>
+   */
+  inline const Aws::String& GetContentDigest() const { return m_contentDigest; }
+  inline bool ContentDigestHasBeenSet() const { return m_contentDigestHasBeenSet; }
+  template <typename ContentDigestT = Aws::String>
+  void SetContentDigest(ContentDigestT&& value) {
+    m_contentDigestHasBeenSet = true;
+    m_contentDigest = std::forward<ContentDigestT>(value);
+  }
+  template <typename ContentDigestT = Aws::String>
+  FileSource& WithContentDigest(ContentDigestT&& value) {
+    SetContentDigest(std::forward<ContentDigestT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of content stored in the file source.</p>
-     */
-    inline const Aws::String& GetContentType() const { return m_contentType; }
-    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    template<typename ContentTypeT = Aws::String>
-    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
-    template<typename ContentTypeT = Aws::String>
-    FileSource& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon S3 URI for the file source.</p>
+   */
+  inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
+  inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
+  template <typename S3UriT = Aws::String>
+  void SetS3Uri(S3UriT&& value) {
+    m_s3UriHasBeenSet = true;
+    m_s3Uri = std::forward<S3UriT>(value);
+  }
+  template <typename S3UriT = Aws::String>
+  FileSource& WithS3Uri(S3UriT&& value) {
+    SetS3Uri(std::forward<S3UriT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_contentType;
+  bool m_contentTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The digest of the file source.</p>
-     */
-    inline const Aws::String& GetContentDigest() const { return m_contentDigest; }
-    inline bool ContentDigestHasBeenSet() const { return m_contentDigestHasBeenSet; }
-    template<typename ContentDigestT = Aws::String>
-    void SetContentDigest(ContentDigestT&& value) { m_contentDigestHasBeenSet = true; m_contentDigest = std::forward<ContentDigestT>(value); }
-    template<typename ContentDigestT = Aws::String>
-    FileSource& WithContentDigest(ContentDigestT&& value) { SetContentDigest(std::forward<ContentDigestT>(value)); return *this;}
-    ///@}
+  Aws::String m_contentDigest;
+  bool m_contentDigestHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The Amazon S3 URI for the file source.</p>
-     */
-    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
-    inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    template<typename S3UriT = Aws::String>
-    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
-    template<typename S3UriT = Aws::String>
-    FileSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_s3Uri;
+  bool m_s3UriHasBeenSet = false;
+};
 
-    Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet = false;
-
-    Aws::String m_contentDigest;
-    bool m_contentDigestHasBeenSet = false;
-
-    Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-RecoveryOptionType::RecoveryOptionType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecoveryOptionType::RecoveryOptionType(JsonView jsonValue) { *this = jsonValue; }
 
-RecoveryOptionType& RecoveryOptionType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Priority"))
-  {
+RecoveryOptionType& RecoveryOptionType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = RecoveryOptionNameTypeMapper::GetRecoveryOptionNameTypeForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecoveryOptionType::Jsonize() const
-{
+JsonValue RecoveryOptionType::Jsonize() const {
   JsonValue payload;
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", RecoveryOptionNameTypeMapper::GetNameForRecoveryOptionNameType(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", RecoveryOptionNameTypeMapper::GetNameForRecoveryOptionNameType(m_name));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MovReference
-  {
-    NOT_SET,
-    SELF_CONTAINED,
-    EXTERNAL
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MovReference { NOT_SET, SELF_CONTAINED, EXTERNAL };
 
-namespace MovReferenceMapper
-{
+namespace MovReferenceMapper {
 AWS_MEDIACONVERT_API MovReference GetMovReferenceForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMovReference(MovReference value);
-} // namespace MovReferenceMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MovReferenceMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

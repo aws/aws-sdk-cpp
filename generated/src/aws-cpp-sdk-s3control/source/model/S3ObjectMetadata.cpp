@@ -3,109 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/S3ObjectMetadata.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/S3ObjectMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-S3ObjectMetadata::S3ObjectMetadata(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+S3ObjectMetadata::S3ObjectMetadata(const XmlNode& xmlNode) { *this = xmlNode; }
 
-S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
-{
+S3ObjectMetadata& S3ObjectMetadata::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cacheControlNode = resultNode.FirstChild("CacheControl");
-    if(!cacheControlNode.IsNull())
-    {
+    if (!cacheControlNode.IsNull()) {
       m_cacheControl = Aws::Utils::Xml::DecodeEscapedXmlText(cacheControlNode.GetText());
       m_cacheControlHasBeenSet = true;
     }
     XmlNode contentDispositionNode = resultNode.FirstChild("ContentDisposition");
-    if(!contentDispositionNode.IsNull())
-    {
+    if (!contentDispositionNode.IsNull()) {
       m_contentDisposition = Aws::Utils::Xml::DecodeEscapedXmlText(contentDispositionNode.GetText());
       m_contentDispositionHasBeenSet = true;
     }
     XmlNode contentEncodingNode = resultNode.FirstChild("ContentEncoding");
-    if(!contentEncodingNode.IsNull())
-    {
+    if (!contentEncodingNode.IsNull()) {
       m_contentEncoding = Aws::Utils::Xml::DecodeEscapedXmlText(contentEncodingNode.GetText());
       m_contentEncodingHasBeenSet = true;
     }
     XmlNode contentLanguageNode = resultNode.FirstChild("ContentLanguage");
-    if(!contentLanguageNode.IsNull())
-    {
+    if (!contentLanguageNode.IsNull()) {
       m_contentLanguage = Aws::Utils::Xml::DecodeEscapedXmlText(contentLanguageNode.GetText());
       m_contentLanguageHasBeenSet = true;
     }
     XmlNode userMetadataNode = resultNode.FirstChild("UserMetadata");
 
-    if(!userMetadataNode.IsNull())
-    {
+    if (!userMetadataNode.IsNull()) {
       XmlNode userMetadataEntry = userMetadataNode.FirstChild("entry");
       m_userMetadataHasBeenSet = !userMetadataEntry.IsNull();
-      while(!userMetadataEntry.IsNull())
-      {
+      while (!userMetadataEntry.IsNull()) {
         XmlNode keyNode = userMetadataEntry.FirstChild("key");
         XmlNode valueNode = userMetadataEntry.FirstChild("value");
-        m_userMetadata[keyNode.GetText()] =
-            valueNode.GetText();
+        m_userMetadata[keyNode.GetText()] = valueNode.GetText();
         userMetadataEntry = userMetadataEntry.NextNode("entry");
       }
 
       m_userMetadataHasBeenSet = true;
     }
     XmlNode contentLengthNode = resultNode.FirstChild("ContentLength");
-    if(!contentLengthNode.IsNull())
-    {
-      m_contentLength = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contentLengthNode.GetText()).c_str()).c_str());
+    if (!contentLengthNode.IsNull()) {
+      m_contentLength = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contentLengthNode.GetText()).c_str()).c_str());
       m_contentLengthHasBeenSet = true;
     }
     XmlNode contentMD5Node = resultNode.FirstChild("ContentMD5");
-    if(!contentMD5Node.IsNull())
-    {
+    if (!contentMD5Node.IsNull()) {
       m_contentMD5 = Aws::Utils::Xml::DecodeEscapedXmlText(contentMD5Node.GetText());
       m_contentMD5HasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
-    if(!contentTypeNode.IsNull())
-    {
+    if (!contentTypeNode.IsNull()) {
       m_contentType = Aws::Utils::Xml::DecodeEscapedXmlText(contentTypeNode.GetText());
       m_contentTypeHasBeenSet = true;
     }
     XmlNode httpExpiresDateNode = resultNode.FirstChild("HttpExpiresDate");
-    if(!httpExpiresDateNode.IsNull())
-    {
-      m_httpExpiresDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpExpiresDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!httpExpiresDateNode.IsNull()) {
+      m_httpExpiresDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpExpiresDateNode.GetText()).c_str()).c_str(),
+                                   Aws::Utils::DateFormat::ISO_8601);
       m_httpExpiresDateHasBeenSet = true;
     }
     XmlNode requesterChargedNode = resultNode.FirstChild("RequesterCharged");
-    if(!requesterChargedNode.IsNull())
-    {
-      m_requesterCharged = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requesterChargedNode.GetText()).c_str()).c_str());
+    if (!requesterChargedNode.IsNull()) {
+      m_requesterCharged = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requesterChargedNode.GetText()).c_str()).c_str());
       m_requesterChargedHasBeenSet = true;
     }
     XmlNode sSEAlgorithmNode = resultNode.FirstChild("SSEAlgorithm");
-    if(!sSEAlgorithmNode.IsNull())
-    {
-      m_sSEAlgorithm = S3SSEAlgorithmMapper::GetS3SSEAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()));
+    if (!sSEAlgorithmNode.IsNull()) {
+      m_sSEAlgorithm = S3SSEAlgorithmMapper::GetS3SSEAlgorithmForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()));
       m_sSEAlgorithmHasBeenSet = true;
     }
   }
@@ -113,88 +96,74 @@ S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void S3ObjectMetadata::AddToNode(XmlNode& parentNode) const
-{
+void S3ObjectMetadata::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_cacheControlHasBeenSet)
-  {
-   XmlNode cacheControlNode = parentNode.CreateChildElement("CacheControl");
-   cacheControlNode.SetText(m_cacheControl);
+  if (m_cacheControlHasBeenSet) {
+    XmlNode cacheControlNode = parentNode.CreateChildElement("CacheControl");
+    cacheControlNode.SetText(m_cacheControl);
   }
 
-  if(m_contentDispositionHasBeenSet)
-  {
-   XmlNode contentDispositionNode = parentNode.CreateChildElement("ContentDisposition");
-   contentDispositionNode.SetText(m_contentDisposition);
+  if (m_contentDispositionHasBeenSet) {
+    XmlNode contentDispositionNode = parentNode.CreateChildElement("ContentDisposition");
+    contentDispositionNode.SetText(m_contentDisposition);
   }
 
-  if(m_contentEncodingHasBeenSet)
-  {
-   XmlNode contentEncodingNode = parentNode.CreateChildElement("ContentEncoding");
-   contentEncodingNode.SetText(m_contentEncoding);
+  if (m_contentEncodingHasBeenSet) {
+    XmlNode contentEncodingNode = parentNode.CreateChildElement("ContentEncoding");
+    contentEncodingNode.SetText(m_contentEncoding);
   }
 
-  if(m_contentLanguageHasBeenSet)
-  {
-   XmlNode contentLanguageNode = parentNode.CreateChildElement("ContentLanguage");
-   contentLanguageNode.SetText(m_contentLanguage);
+  if (m_contentLanguageHasBeenSet) {
+    XmlNode contentLanguageNode = parentNode.CreateChildElement("ContentLanguage");
+    contentLanguageNode.SetText(m_contentLanguage);
   }
 
-  if(m_userMetadataHasBeenSet)
-  {
-   XmlNode userMetadataParentNode = parentNode.CreateChildElement("UserMetadata");
-   for(const auto& mapItem : m_userMetadata)
-   {
-     XmlNode userMetadataMapEntryNode = userMetadataParentNode.CreateChildElement("entry");
-     XmlNode userMetadataKeyNode = userMetadataMapEntryNode.CreateChildElement("key");
-     userMetadataKeyNode.SetText(mapItem.first);
-     XmlNode userMetadataValueNode = userMetadataMapEntryNode.CreateChildElement("value");
-     userMetadataValueNode.SetText(mapItem.second);
-   }
+  if (m_userMetadataHasBeenSet) {
+    XmlNode userMetadataParentNode = parentNode.CreateChildElement("UserMetadata");
+    for (const auto& mapItem : m_userMetadata) {
+      XmlNode userMetadataMapEntryNode = userMetadataParentNode.CreateChildElement("entry");
+      XmlNode userMetadataKeyNode = userMetadataMapEntryNode.CreateChildElement("key");
+      userMetadataKeyNode.SetText(mapItem.first);
+      XmlNode userMetadataValueNode = userMetadataMapEntryNode.CreateChildElement("value");
+      userMetadataValueNode.SetText(mapItem.second);
+    }
   }
 
-  if(m_contentLengthHasBeenSet)
-  {
-   XmlNode contentLengthNode = parentNode.CreateChildElement("ContentLength");
-   ss << m_contentLength;
-   contentLengthNode.SetText(ss.str());
-   ss.str("");
+  if (m_contentLengthHasBeenSet) {
+    XmlNode contentLengthNode = parentNode.CreateChildElement("ContentLength");
+    ss << m_contentLength;
+    contentLengthNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_contentMD5HasBeenSet)
-  {
-   XmlNode contentMD5Node = parentNode.CreateChildElement("ContentMD5");
-   contentMD5Node.SetText(m_contentMD5);
+  if (m_contentMD5HasBeenSet) {
+    XmlNode contentMD5Node = parentNode.CreateChildElement("ContentMD5");
+    contentMD5Node.SetText(m_contentMD5);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   XmlNode contentTypeNode = parentNode.CreateChildElement("ContentType");
-   contentTypeNode.SetText(m_contentType);
+  if (m_contentTypeHasBeenSet) {
+    XmlNode contentTypeNode = parentNode.CreateChildElement("ContentType");
+    contentTypeNode.SetText(m_contentType);
   }
 
-  if(m_httpExpiresDateHasBeenSet)
-  {
-   XmlNode httpExpiresDateNode = parentNode.CreateChildElement("HttpExpiresDate");
-   httpExpiresDateNode.SetText(m_httpExpiresDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_httpExpiresDateHasBeenSet) {
+    XmlNode httpExpiresDateNode = parentNode.CreateChildElement("HttpExpiresDate");
+    httpExpiresDateNode.SetText(m_httpExpiresDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_requesterChargedHasBeenSet)
-  {
-   XmlNode requesterChargedNode = parentNode.CreateChildElement("RequesterCharged");
-   ss << std::boolalpha << m_requesterCharged;
-   requesterChargedNode.SetText(ss.str());
-   ss.str("");
+  if (m_requesterChargedHasBeenSet) {
+    XmlNode requesterChargedNode = parentNode.CreateChildElement("RequesterCharged");
+    ss << std::boolalpha << m_requesterCharged;
+    requesterChargedNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_sSEAlgorithmHasBeenSet)
-  {
-   XmlNode sSEAlgorithmNode = parentNode.CreateChildElement("SSEAlgorithm");
-   sSEAlgorithmNode.SetText(S3SSEAlgorithmMapper::GetNameForS3SSEAlgorithm(m_sSEAlgorithm));
+  if (m_sSEAlgorithmHasBeenSet) {
+    XmlNode sSEAlgorithmNode = parentNode.CreateChildElement("SSEAlgorithm");
+    sSEAlgorithmNode.SetText(S3SSEAlgorithmMapper::GetNameForS3SSEAlgorithm(m_sSEAlgorithm));
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

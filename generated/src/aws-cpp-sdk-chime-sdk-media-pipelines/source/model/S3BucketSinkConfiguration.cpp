@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-S3BucketSinkConfiguration::S3BucketSinkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3BucketSinkConfiguration::S3BucketSinkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3BucketSinkConfiguration& S3BucketSinkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Destination"))
-  {
+S3BucketSinkConfiguration& S3BucketSinkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Destination")) {
     m_destination = jsonValue.GetString("Destination");
     m_destinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3BucketSinkConfiguration::Jsonize() const
-{
+JsonValue S3BucketSinkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("Destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithString("Destination", m_destination);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

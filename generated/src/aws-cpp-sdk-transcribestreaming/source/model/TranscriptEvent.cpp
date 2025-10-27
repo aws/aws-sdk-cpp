@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/TranscriptEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/TranscriptEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
 
-TranscriptEvent::TranscriptEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TranscriptEvent::TranscriptEvent(JsonView jsonValue) { *this = jsonValue; }
 
-TranscriptEvent& TranscriptEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Transcript"))
-  {
+TranscriptEvent& TranscriptEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Transcript")) {
     m_transcript = jsonValue.GetObject("Transcript");
     m_transcriptHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TranscriptEvent::Jsonize() const
-{
+JsonValue TranscriptEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_transcriptHasBeenSet)
-  {
-   payload.WithObject("Transcript", m_transcript.Jsonize());
-
+  if (m_transcriptHasBeenSet) {
+    payload.WithObject("Transcript", m_transcript.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

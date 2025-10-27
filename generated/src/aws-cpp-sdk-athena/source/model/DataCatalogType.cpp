@@ -4,83 +4,65 @@
  */
 
 #include <aws/athena/model/DataCatalogType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Athena {
+namespace Model {
+namespace DataCatalogTypeMapper {
 
-namespace Aws
-{
-  namespace Athena
-  {
-    namespace Model
-    {
-      namespace DataCatalogTypeMapper
-      {
+static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
+static const int GLUE_HASH = HashingUtils::HashString("GLUE");
+static const int HIVE_HASH = HashingUtils::HashString("HIVE");
+static const int FEDERATED_HASH = HashingUtils::HashString("FEDERATED");
 
-        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
-        static const int GLUE_HASH = HashingUtils::HashString("GLUE");
-        static const int HIVE_HASH = HashingUtils::HashString("HIVE");
-        static const int FEDERATED_HASH = HashingUtils::HashString("FEDERATED");
+DataCatalogType GetDataCatalogTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == LAMBDA_HASH) {
+    return DataCatalogType::LAMBDA;
+  } else if (hashCode == GLUE_HASH) {
+    return DataCatalogType::GLUE;
+  } else if (hashCode == HIVE_HASH) {
+    return DataCatalogType::HIVE;
+  } else if (hashCode == FEDERATED_HASH) {
+    return DataCatalogType::FEDERATED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DataCatalogType>(hashCode);
+  }
 
+  return DataCatalogType::NOT_SET;
+}
 
-        DataCatalogType GetDataCatalogTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LAMBDA_HASH)
-          {
-            return DataCatalogType::LAMBDA;
-          }
-          else if (hashCode == GLUE_HASH)
-          {
-            return DataCatalogType::GLUE;
-          }
-          else if (hashCode == HIVE_HASH)
-          {
-            return DataCatalogType::HIVE;
-          }
-          else if (hashCode == FEDERATED_HASH)
-          {
-            return DataCatalogType::FEDERATED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DataCatalogType>(hashCode);
-          }
+Aws::String GetNameForDataCatalogType(DataCatalogType enumValue) {
+  switch (enumValue) {
+    case DataCatalogType::NOT_SET:
+      return {};
+    case DataCatalogType::LAMBDA:
+      return "LAMBDA";
+    case DataCatalogType::GLUE:
+      return "GLUE";
+    case DataCatalogType::HIVE:
+      return "HIVE";
+    case DataCatalogType::FEDERATED:
+      return "FEDERATED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return DataCatalogType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForDataCatalogType(DataCatalogType enumValue)
-        {
-          switch(enumValue)
-          {
-          case DataCatalogType::NOT_SET:
-            return {};
-          case DataCatalogType::LAMBDA:
-            return "LAMBDA";
-          case DataCatalogType::GLUE:
-            return "GLUE";
-          case DataCatalogType::HIVE:
-            return "HIVE";
-          case DataCatalogType::FEDERATED:
-            return "FEDERATED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace DataCatalogTypeMapper
-    } // namespace Model
-  } // namespace Athena
-} // namespace Aws
+}  // namespace DataCatalogTypeMapper
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

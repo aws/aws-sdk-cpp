@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/PolicyDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/PolicyDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-PolicyDefinition::PolicyDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PolicyDefinition::PolicyDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-PolicyDefinition& PolicyDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("static"))
-  {
+PolicyDefinition& PolicyDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("static")) {
     m_static = jsonValue.GetObject("static");
     m_staticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateLinked"))
-  {
+  if (jsonValue.ValueExists("templateLinked")) {
     m_templateLinked = jsonValue.GetObject("templateLinked");
     m_templateLinkedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PolicyDefinition::Jsonize() const
-{
+JsonValue PolicyDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_staticHasBeenSet)
-  {
-   payload.WithObject("static", m_static.Jsonize());
-
+  if (m_staticHasBeenSet) {
+    payload.WithObject("static", m_static.Jsonize());
   }
 
-  if(m_templateLinkedHasBeenSet)
-  {
-   payload.WithObject("templateLinked", m_templateLinked.Jsonize());
-
+  if (m_templateLinkedHasBeenSet) {
+    payload.WithObject("templateLinked", m_templateLinked.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

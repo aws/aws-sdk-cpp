@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
 
 #include <utility>
 
@@ -17,38 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchCreateTopicReviewedAnswerResult::BatchCreateTopicReviewedAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchCreateTopicReviewedAnswerResult::BatchCreateTopicReviewedAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-BatchCreateTopicReviewedAnswerResult& BatchCreateTopicReviewedAnswerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchCreateTopicReviewedAnswerResult& BatchCreateTopicReviewedAnswerResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TopicId"))
-  {
+  if (jsonValue.ValueExists("TopicId")) {
     m_topicId = jsonValue.GetString("TopicId");
     m_topicIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TopicArn"))
-  {
+  if (jsonValue.ValueExists("TopicArn")) {
     m_topicArn = jsonValue.GetString("TopicArn");
     m_topicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SucceededAnswers"))
-  {
+  if (jsonValue.ValueExists("SucceededAnswers")) {
     Aws::Utils::Array<JsonView> succeededAnswersJsonList = jsonValue.GetArray("SucceededAnswers");
-    for(unsigned succeededAnswersIndex = 0; succeededAnswersIndex < succeededAnswersJsonList.GetLength(); ++succeededAnswersIndex)
-    {
+    for (unsigned succeededAnswersIndex = 0; succeededAnswersIndex < succeededAnswersJsonList.GetLength(); ++succeededAnswersIndex) {
       m_succeededAnswers.push_back(succeededAnswersJsonList[succeededAnswersIndex].AsObject());
     }
     m_succeededAnswersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvalidAnswers"))
-  {
+  if (jsonValue.ValueExists("InvalidAnswers")) {
     Aws::Utils::Array<JsonView> invalidAnswersJsonList = jsonValue.GetArray("InvalidAnswers");
-    for(unsigned invalidAnswersIndex = 0; invalidAnswersIndex < invalidAnswersJsonList.GetLength(); ++invalidAnswersIndex)
-    {
+    for (unsigned invalidAnswersIndex = 0; invalidAnswersIndex < invalidAnswersJsonList.GetLength(); ++invalidAnswersIndex) {
       m_invalidAnswers.push_back(invalidAnswersJsonList[invalidAnswersIndex].AsObject());
     }
     m_invalidAnswersHasBeenSet = true;
@@ -56,12 +49,10 @@ BatchCreateTopicReviewedAnswerResult& BatchCreateTopicReviewedAnswerResult::oper
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_status = static_cast<int>(result.GetResponseCode());
   m_statusHasBeenSet = true;

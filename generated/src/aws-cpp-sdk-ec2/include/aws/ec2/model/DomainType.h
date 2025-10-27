@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class DomainType
-  {
-    NOT_SET,
-    vpc,
-    standard
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class DomainType { NOT_SET, vpc, standard };
 
-namespace DomainTypeMapper
-{
+namespace DomainTypeMapper {
 AWS_EC2_API DomainType GetDomainTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForDomainType(DomainType value);
-} // namespace DomainTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace DomainTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

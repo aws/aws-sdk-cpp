@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateBrokerTypeRequest::SerializePayload() const
-{
+Aws::String UpdateBrokerTypeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("currentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("currentVersion", m_currentVersion);
   }
 
-  if(m_targetInstanceTypeHasBeenSet)
-  {
-   payload.WithString("targetInstanceType", m_targetInstanceType);
-
+  if (m_targetInstanceTypeHasBeenSet) {
+    payload.WithString("targetInstanceType", m_targetInstanceType);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

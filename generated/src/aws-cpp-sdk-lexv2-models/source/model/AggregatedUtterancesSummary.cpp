@@ -3,102 +3,79 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/AggregatedUtterancesSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/AggregatedUtterancesSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-AggregatedUtterancesSummary::AggregatedUtterancesSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregatedUtterancesSummary::AggregatedUtterancesSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AggregatedUtterancesSummary& AggregatedUtterancesSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("utterance"))
-  {
+AggregatedUtterancesSummary& AggregatedUtterancesSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("utterance")) {
     m_utterance = jsonValue.GetString("utterance");
     m_utteranceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hitCount"))
-  {
+  if (jsonValue.ValueExists("hitCount")) {
     m_hitCount = jsonValue.GetInteger("hitCount");
     m_hitCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("missedCount"))
-  {
+  if (jsonValue.ValueExists("missedCount")) {
     m_missedCount = jsonValue.GetInteger("missedCount");
     m_missedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("utteranceFirstRecordedInAggregationDuration"))
-  {
+  if (jsonValue.ValueExists("utteranceFirstRecordedInAggregationDuration")) {
     m_utteranceFirstRecordedInAggregationDuration = jsonValue.GetDouble("utteranceFirstRecordedInAggregationDuration");
     m_utteranceFirstRecordedInAggregationDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("utteranceLastRecordedInAggregationDuration"))
-  {
+  if (jsonValue.ValueExists("utteranceLastRecordedInAggregationDuration")) {
     m_utteranceLastRecordedInAggregationDuration = jsonValue.GetDouble("utteranceLastRecordedInAggregationDuration");
     m_utteranceLastRecordedInAggregationDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containsDataFromDeletedResources"))
-  {
+  if (jsonValue.ValueExists("containsDataFromDeletedResources")) {
     m_containsDataFromDeletedResources = jsonValue.GetBool("containsDataFromDeletedResources");
     m_containsDataFromDeletedResourcesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregatedUtterancesSummary::Jsonize() const
-{
+JsonValue AggregatedUtterancesSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_utteranceHasBeenSet)
-  {
-   payload.WithString("utterance", m_utterance);
-
+  if (m_utteranceHasBeenSet) {
+    payload.WithString("utterance", m_utterance);
   }
 
-  if(m_hitCountHasBeenSet)
-  {
-   payload.WithInteger("hitCount", m_hitCount);
-
+  if (m_hitCountHasBeenSet) {
+    payload.WithInteger("hitCount", m_hitCount);
   }
 
-  if(m_missedCountHasBeenSet)
-  {
-   payload.WithInteger("missedCount", m_missedCount);
-
+  if (m_missedCountHasBeenSet) {
+    payload.WithInteger("missedCount", m_missedCount);
   }
 
-  if(m_utteranceFirstRecordedInAggregationDurationHasBeenSet)
-  {
-   payload.WithDouble("utteranceFirstRecordedInAggregationDuration", m_utteranceFirstRecordedInAggregationDuration.SecondsWithMSPrecision());
+  if (m_utteranceFirstRecordedInAggregationDurationHasBeenSet) {
+    payload.WithDouble("utteranceFirstRecordedInAggregationDuration",
+                       m_utteranceFirstRecordedInAggregationDuration.SecondsWithMSPrecision());
   }
 
-  if(m_utteranceLastRecordedInAggregationDurationHasBeenSet)
-  {
-   payload.WithDouble("utteranceLastRecordedInAggregationDuration", m_utteranceLastRecordedInAggregationDuration.SecondsWithMSPrecision());
+  if (m_utteranceLastRecordedInAggregationDurationHasBeenSet) {
+    payload.WithDouble("utteranceLastRecordedInAggregationDuration", m_utteranceLastRecordedInAggregationDuration.SecondsWithMSPrecision());
   }
 
-  if(m_containsDataFromDeletedResourcesHasBeenSet)
-  {
-   payload.WithBool("containsDataFromDeletedResources", m_containsDataFromDeletedResources);
-
+  if (m_containsDataFromDeletedResourcesHasBeenSet) {
+    payload.WithBool("containsDataFromDeletedResources", m_containsDataFromDeletedResources);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-ExecutorsSummary::ExecutorsSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutorsSummary::ExecutorsSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutorsSummary& ExecutorsSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExecutorId"))
-  {
+ExecutorsSummary& ExecutorsSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExecutorId")) {
     m_executorId = jsonValue.GetString("ExecutorId");
     m_executorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutorType"))
-  {
+  if (jsonValue.ValueExists("ExecutorType")) {
     m_executorType = ExecutorTypeMapper::GetExecutorTypeForName(jsonValue.GetString("ExecutorType"));
     m_executorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartDateTime"))
-  {
+  if (jsonValue.ValueExists("StartDateTime")) {
     m_startDateTime = jsonValue.GetInt64("StartDateTime");
     m_startDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TerminationDateTime"))
-  {
+  if (jsonValue.ValueExists("TerminationDateTime")) {
     m_terminationDateTime = jsonValue.GetInt64("TerminationDateTime");
     m_terminationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutorState"))
-  {
+  if (jsonValue.ValueExists("ExecutorState")) {
     m_executorState = ExecutorStateMapper::GetExecutorStateForName(jsonValue.GetString("ExecutorState"));
     m_executorStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutorSize"))
-  {
+  if (jsonValue.ValueExists("ExecutorSize")) {
     m_executorSize = jsonValue.GetInt64("ExecutorSize");
     m_executorSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutorsSummary::Jsonize() const
-{
+JsonValue ExecutorsSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_executorIdHasBeenSet)
-  {
-   payload.WithString("ExecutorId", m_executorId);
-
+  if (m_executorIdHasBeenSet) {
+    payload.WithString("ExecutorId", m_executorId);
   }
 
-  if(m_executorTypeHasBeenSet)
-  {
-   payload.WithString("ExecutorType", ExecutorTypeMapper::GetNameForExecutorType(m_executorType));
+  if (m_executorTypeHasBeenSet) {
+    payload.WithString("ExecutorType", ExecutorTypeMapper::GetNameForExecutorType(m_executorType));
   }
 
-  if(m_startDateTimeHasBeenSet)
-  {
-   payload.WithInt64("StartDateTime", m_startDateTime);
-
+  if (m_startDateTimeHasBeenSet) {
+    payload.WithInt64("StartDateTime", m_startDateTime);
   }
 
-  if(m_terminationDateTimeHasBeenSet)
-  {
-   payload.WithInt64("TerminationDateTime", m_terminationDateTime);
-
+  if (m_terminationDateTimeHasBeenSet) {
+    payload.WithInt64("TerminationDateTime", m_terminationDateTime);
   }
 
-  if(m_executorStateHasBeenSet)
-  {
-   payload.WithString("ExecutorState", ExecutorStateMapper::GetNameForExecutorState(m_executorState));
+  if (m_executorStateHasBeenSet) {
+    payload.WithString("ExecutorState", ExecutorStateMapper::GetNameForExecutorState(m_executorState));
   }
 
-  if(m_executorSizeHasBeenSet)
-  {
-   payload.WithInt64("ExecutorSize", m_executorSize);
-
+  if (m_executorSizeHasBeenSet) {
+    payload.WithInt64("ExecutorSize", m_executorSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

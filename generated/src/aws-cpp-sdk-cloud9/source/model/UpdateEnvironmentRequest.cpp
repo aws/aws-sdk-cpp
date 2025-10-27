@@ -12,44 +12,31 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateEnvironmentRequest::SerializePayload() const
-{
+Aws::String UpdateEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_environmentIdHasBeenSet)
-  {
-   payload.WithString("environmentId", m_environmentId);
-
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_managedCredentialsActionHasBeenSet)
-  {
-   payload.WithString("managedCredentialsAction", ManagedCredentialsActionMapper::GetNameForManagedCredentialsAction(m_managedCredentialsAction));
+  if (m_managedCredentialsActionHasBeenSet) {
+    payload.WithString("managedCredentialsAction",
+                       ManagedCredentialsActionMapper::GetNameForManagedCredentialsAction(m_managedCredentialsAction));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateEnvironmentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateEnvironmentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.UpdateEnvironment"));
   return headers;
-
 }
-
-
-
-

@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>The option that determines the decimal places configuration.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DecimalPlacesConfiguration">AWS
+ * API Reference</a></p>
+ */
+class DecimalPlacesConfiguration {
+ public:
+  AWS_QUICKSIGHT_API DecimalPlacesConfiguration() = default;
+  AWS_QUICKSIGHT_API DecimalPlacesConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API DecimalPlacesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The option that determines the decimal places configuration.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DecimalPlacesConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The values of the decimal places.</p>
    */
-  class DecimalPlacesConfiguration
-  {
-  public:
-    AWS_QUICKSIGHT_API DecimalPlacesConfiguration() = default;
-    AWS_QUICKSIGHT_API DecimalPlacesConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API DecimalPlacesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetDecimalPlaces() const { return m_decimalPlaces; }
+  inline bool DecimalPlacesHasBeenSet() const { return m_decimalPlacesHasBeenSet; }
+  inline void SetDecimalPlaces(long long value) {
+    m_decimalPlacesHasBeenSet = true;
+    m_decimalPlaces = value;
+  }
+  inline DecimalPlacesConfiguration& WithDecimalPlaces(long long value) {
+    SetDecimalPlaces(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_decimalPlaces{0};
+  bool m_decimalPlacesHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The values of the decimal places.</p>
-     */
-    inline long long GetDecimalPlaces() const { return m_decimalPlaces; }
-    inline bool DecimalPlacesHasBeenSet() const { return m_decimalPlacesHasBeenSet; }
-    inline void SetDecimalPlaces(long long value) { m_decimalPlacesHasBeenSet = true; m_decimalPlaces = value; }
-    inline DecimalPlacesConfiguration& WithDecimalPlaces(long long value) { SetDecimalPlaces(value); return *this;}
-    ///@}
-  private:
-
-    long long m_decimalPlaces{0};
-    bool m_decimalPlacesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

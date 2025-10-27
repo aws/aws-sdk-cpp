@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
-{
+Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteHsmClientCertificate&";
-  if(m_hsmClientCertificateIdentifierHasBeenSet)
-  {
+  if (m_hsmClientCertificateIdentifierHasBeenSet) {
     ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteHsmClientCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteHsmClientCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

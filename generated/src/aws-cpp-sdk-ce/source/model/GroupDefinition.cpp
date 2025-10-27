@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-GroupDefinition::GroupDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GroupDefinition::GroupDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-GroupDefinition& GroupDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+GroupDefinition& GroupDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = GroupDefinitionTypeMapper::GetGroupDefinitionTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GroupDefinition::Jsonize() const
-{
+JsonValue GroupDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", GroupDefinitionTypeMapper::GetNameForGroupDefinitionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", GroupDefinitionTypeMapper::GetNameForGroupDefinitionType(m_type));
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

@@ -7,84 +7,95 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/GeospatialColor.h>
 #include <aws/quicksight/model/GeospatialLineWidth.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>The polygon symbol style for a polygon layer.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialPolygonSymbolStyle">AWS
+ * API Reference</a></p>
+ */
+class GeospatialPolygonSymbolStyle {
+ public:
+  AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle() = default;
+  AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The polygon symbol style for a polygon layer.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialPolygonSymbolStyle">AWS
-   * API Reference</a></p>
+   * <p>The color and opacity values for the fill color.</p>
    */
-  class GeospatialPolygonSymbolStyle
-  {
-  public:
-    AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle() = default;
-    AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const GeospatialColor& GetFillColor() const { return m_fillColor; }
+  inline bool FillColorHasBeenSet() const { return m_fillColorHasBeenSet; }
+  template <typename FillColorT = GeospatialColor>
+  void SetFillColor(FillColorT&& value) {
+    m_fillColorHasBeenSet = true;
+    m_fillColor = std::forward<FillColorT>(value);
+  }
+  template <typename FillColorT = GeospatialColor>
+  GeospatialPolygonSymbolStyle& WithFillColor(FillColorT&& value) {
+    SetFillColor(std::forward<FillColorT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The color and opacity values for the stroke color.</p>
+   */
+  inline const GeospatialColor& GetStrokeColor() const { return m_strokeColor; }
+  inline bool StrokeColorHasBeenSet() const { return m_strokeColorHasBeenSet; }
+  template <typename StrokeColorT = GeospatialColor>
+  void SetStrokeColor(StrokeColorT&& value) {
+    m_strokeColorHasBeenSet = true;
+    m_strokeColor = std::forward<StrokeColorT>(value);
+  }
+  template <typename StrokeColorT = GeospatialColor>
+  GeospatialPolygonSymbolStyle& WithStrokeColor(StrokeColorT&& value) {
+    SetStrokeColor(std::forward<StrokeColorT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The color and opacity values for the fill color.</p>
-     */
-    inline const GeospatialColor& GetFillColor() const { return m_fillColor; }
-    inline bool FillColorHasBeenSet() const { return m_fillColorHasBeenSet; }
-    template<typename FillColorT = GeospatialColor>
-    void SetFillColor(FillColorT&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::forward<FillColorT>(value); }
-    template<typename FillColorT = GeospatialColor>
-    GeospatialPolygonSymbolStyle& WithFillColor(FillColorT&& value) { SetFillColor(std::forward<FillColorT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The width of the border stroke.</p>
+   */
+  inline const GeospatialLineWidth& GetStrokeWidth() const { return m_strokeWidth; }
+  inline bool StrokeWidthHasBeenSet() const { return m_strokeWidthHasBeenSet; }
+  template <typename StrokeWidthT = GeospatialLineWidth>
+  void SetStrokeWidth(StrokeWidthT&& value) {
+    m_strokeWidthHasBeenSet = true;
+    m_strokeWidth = std::forward<StrokeWidthT>(value);
+  }
+  template <typename StrokeWidthT = GeospatialLineWidth>
+  GeospatialPolygonSymbolStyle& WithStrokeWidth(StrokeWidthT&& value) {
+    SetStrokeWidth(std::forward<StrokeWidthT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  GeospatialColor m_fillColor;
+  bool m_fillColorHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The color and opacity values for the stroke color.</p>
-     */
-    inline const GeospatialColor& GetStrokeColor() const { return m_strokeColor; }
-    inline bool StrokeColorHasBeenSet() const { return m_strokeColorHasBeenSet; }
-    template<typename StrokeColorT = GeospatialColor>
-    void SetStrokeColor(StrokeColorT&& value) { m_strokeColorHasBeenSet = true; m_strokeColor = std::forward<StrokeColorT>(value); }
-    template<typename StrokeColorT = GeospatialColor>
-    GeospatialPolygonSymbolStyle& WithStrokeColor(StrokeColorT&& value) { SetStrokeColor(std::forward<StrokeColorT>(value)); return *this;}
-    ///@}
+  GeospatialColor m_strokeColor;
+  bool m_strokeColorHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The width of the border stroke.</p>
-     */
-    inline const GeospatialLineWidth& GetStrokeWidth() const { return m_strokeWidth; }
-    inline bool StrokeWidthHasBeenSet() const { return m_strokeWidthHasBeenSet; }
-    template<typename StrokeWidthT = GeospatialLineWidth>
-    void SetStrokeWidth(StrokeWidthT&& value) { m_strokeWidthHasBeenSet = true; m_strokeWidth = std::forward<StrokeWidthT>(value); }
-    template<typename StrokeWidthT = GeospatialLineWidth>
-    GeospatialPolygonSymbolStyle& WithStrokeWidth(StrokeWidthT&& value) { SetStrokeWidth(std::forward<StrokeWidthT>(value)); return *this;}
-    ///@}
-  private:
+  GeospatialLineWidth m_strokeWidth;
+  bool m_strokeWidthHasBeenSet = false;
+};
 
-    GeospatialColor m_fillColor;
-    bool m_fillColorHasBeenSet = false;
-
-    GeospatialColor m_strokeColor;
-    bool m_strokeColorHasBeenSet = false;
-
-    GeospatialLineWidth m_strokeWidth;
-    bool m_strokeWidthHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

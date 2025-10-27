@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ServiceResourceId::ServiceResourceId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceResourceId::ServiceResourceId(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceResourceId& ServiceResourceId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ServiceResourceId& ServiceResourceId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = ServiceResourceIdNameMapper::GetServiceResourceIdNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceResourceId::Jsonize() const
-{
+JsonValue ServiceResourceId::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ServiceResourceIdNameMapper::GetNameForServiceResourceIdName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ServiceResourceIdNameMapper::GetNameForServiceResourceIdName(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

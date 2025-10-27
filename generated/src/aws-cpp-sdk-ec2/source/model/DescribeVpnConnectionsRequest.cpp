@@ -3,40 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeVpnConnectionsRequest::SerializePayload() const
-{
+Aws::String DescribeVpnConnectionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeVpnConnections&";
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_vpnConnectionIdsHasBeenSet)
-  {
+  if (m_vpnConnectionIdsHasBeenSet) {
     unsigned vpnConnectionIdsCount = 1;
-    for(auto& item : m_vpnConnectionIds)
-    {
-      ss << "VpnConnectionId." << vpnConnectionIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_vpnConnectionIds) {
+      ss << "VpnConnectionId." << vpnConnectionIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       vpnConnectionIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -44,8 +37,4 @@ Aws::String DescribeVpnConnectionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeVpnConnectionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeVpnConnectionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/tnb/TnbEndpointRules.h>
+#include <aws/tnb/Tnb_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace tnb
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace tnb {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using TnbClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,21 @@ using TnbBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using TnbEndpointProviderBase =
-    EndpointProviderBase<TnbClientConfiguration, TnbBuiltInParameters, TnbClientContextParameters>;
+using TnbEndpointProviderBase = EndpointProviderBase<TnbClientConfiguration, TnbBuiltInParameters, TnbClientContextParameters>;
 
-using TnbDefaultEpProviderBase =
-    DefaultEndpointProvider<TnbClientConfiguration, TnbBuiltInParameters, TnbClientContextParameters>;
+using TnbDefaultEpProviderBase = DefaultEndpointProvider<TnbClientConfiguration, TnbBuiltInParameters, TnbClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_TNB_API TnbEndpointProvider : public TnbDefaultEpProviderBase
-{
-public:
-    using TnbResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_TNB_API TnbEndpointProvider : public TnbDefaultEpProviderBase {
+ public:
+  using TnbResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    TnbEndpointProvider()
-      : TnbDefaultEpProviderBase(Aws::tnb::TnbEndpointRules::GetRulesBlob(), Aws::tnb::TnbEndpointRules::RulesBlobSize)
-    {}
+  TnbEndpointProvider() : TnbDefaultEpProviderBase(Aws::tnb::TnbEndpointRules::GetRulesBlob(), Aws::tnb::TnbEndpointRules::RulesBlobSize) {}
 
-    ~TnbEndpointProvider()
-    {
-    }
+  ~TnbEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace tnb
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace tnb
+}  // namespace Aws

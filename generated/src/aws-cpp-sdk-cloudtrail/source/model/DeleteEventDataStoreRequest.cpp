@@ -12,27 +12,18 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEventDataStoreRequest::SerializePayload() const
-{
+Aws::String DeleteEventDataStoreRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventDataStoreHasBeenSet)
-  {
-   payload.WithString("EventDataStore", m_eventDataStore);
-
+  if (m_eventDataStoreHasBeenSet) {
+    payload.WithString("EventDataStore", m_eventDataStore);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteEventDataStoreRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteEventDataStoreRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteEventDataStore"));
   return headers;
-
 }
-
-
-
-

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune-graph/model/NeptuneImportOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptune-graph/model/NeptuneImportOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
 
-NeptuneImportOptions::NeptuneImportOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NeptuneImportOptions::NeptuneImportOptions(JsonView jsonValue) { *this = jsonValue; }
 
-NeptuneImportOptions& NeptuneImportOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3ExportPath"))
-  {
+NeptuneImportOptions& NeptuneImportOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3ExportPath")) {
     m_s3ExportPath = jsonValue.GetString("s3ExportPath");
     m_s3ExportPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3ExportKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("s3ExportKmsKeyId")) {
     m_s3ExportKmsKeyId = jsonValue.GetString("s3ExportKmsKeyId");
     m_s3ExportKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preserveDefaultVertexLabels"))
-  {
+  if (jsonValue.ValueExists("preserveDefaultVertexLabels")) {
     m_preserveDefaultVertexLabels = jsonValue.GetBool("preserveDefaultVertexLabels");
     m_preserveDefaultVertexLabelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preserveEdgeIds"))
-  {
+  if (jsonValue.ValueExists("preserveEdgeIds")) {
     m_preserveEdgeIds = jsonValue.GetBool("preserveEdgeIds");
     m_preserveEdgeIdsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NeptuneImportOptions::Jsonize() const
-{
+JsonValue NeptuneImportOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ExportPathHasBeenSet)
-  {
-   payload.WithString("s3ExportPath", m_s3ExportPath);
-
+  if (m_s3ExportPathHasBeenSet) {
+    payload.WithString("s3ExportPath", m_s3ExportPath);
   }
 
-  if(m_s3ExportKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("s3ExportKmsKeyId", m_s3ExportKmsKeyId);
-
+  if (m_s3ExportKmsKeyIdHasBeenSet) {
+    payload.WithString("s3ExportKmsKeyId", m_s3ExportKmsKeyId);
   }
 
-  if(m_preserveDefaultVertexLabelsHasBeenSet)
-  {
-   payload.WithBool("preserveDefaultVertexLabels", m_preserveDefaultVertexLabels);
-
+  if (m_preserveDefaultVertexLabelsHasBeenSet) {
+    payload.WithBool("preserveDefaultVertexLabels", m_preserveDefaultVertexLabels);
   }
 
-  if(m_preserveEdgeIdsHasBeenSet)
-  {
-   payload.WithBool("preserveEdgeIds", m_preserveEdgeIds);
-
+  if (m_preserveEdgeIdsHasBeenSet) {
+    payload.WithBool("preserveEdgeIds", m_preserveEdgeIds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

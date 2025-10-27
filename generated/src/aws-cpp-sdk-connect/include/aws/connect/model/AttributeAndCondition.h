@@ -5,73 +5,82 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/HierarchyGroupCondition.h>
 #include <aws/connect/model/TagCondition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
 
+/**
+ * <p>A list of conditions which would be applied together with an <code>AND</code>
+ * condition.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AttributeAndCondition">AWS
+ * API Reference</a></p>
+ */
+class AttributeAndCondition {
+ public:
+  AWS_CONNECT_API AttributeAndCondition() = default;
+  AWS_CONNECT_API AttributeAndCondition(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API AttributeAndCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A list of conditions which would be applied together with an <code>AND</code>
-   * condition.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AttributeAndCondition">AWS
-   * API Reference</a></p>
+   * <p>A leaf node condition which can be used to specify a tag condition.</p>
    */
-  class AttributeAndCondition
-  {
-  public:
-    AWS_CONNECT_API AttributeAndCondition() = default;
-    AWS_CONNECT_API AttributeAndCondition(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECT_API AttributeAndCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<TagCondition>& GetTagConditions() const { return m_tagConditions; }
+  inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
+  template <typename TagConditionsT = Aws::Vector<TagCondition>>
+  void SetTagConditions(TagConditionsT&& value) {
+    m_tagConditionsHasBeenSet = true;
+    m_tagConditions = std::forward<TagConditionsT>(value);
+  }
+  template <typename TagConditionsT = Aws::Vector<TagCondition>>
+  AttributeAndCondition& WithTagConditions(TagConditionsT&& value) {
+    SetTagConditions(std::forward<TagConditionsT>(value));
+    return *this;
+  }
+  template <typename TagConditionsT = TagCondition>
+  AttributeAndCondition& AddTagConditions(TagConditionsT&& value) {
+    m_tagConditionsHasBeenSet = true;
+    m_tagConditions.emplace_back(std::forward<TagConditionsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>A leaf node condition which can be used to specify a tag condition.</p>
-     */
-    inline const Aws::Vector<TagCondition>& GetTagConditions() const { return m_tagConditions; }
-    inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
-    template<typename TagConditionsT = Aws::Vector<TagCondition>>
-    void SetTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::forward<TagConditionsT>(value); }
-    template<typename TagConditionsT = Aws::Vector<TagCondition>>
-    AttributeAndCondition& WithTagConditions(TagConditionsT&& value) { SetTagConditions(std::forward<TagConditionsT>(value)); return *this;}
-    template<typename TagConditionsT = TagCondition>
-    AttributeAndCondition& AddTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.emplace_back(std::forward<TagConditionsT>(value)); return *this; }
-    ///@}
+  inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
+  inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
+  template <typename HierarchyGroupConditionT = HierarchyGroupCondition>
+  void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) {
+    m_hierarchyGroupConditionHasBeenSet = true;
+    m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value);
+  }
+  template <typename HierarchyGroupConditionT = HierarchyGroupCondition>
+  AttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) {
+    SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<TagCondition> m_tagConditions;
+  bool m_tagConditionsHasBeenSet = false;
 
-    ///@{
-    
-    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
-    inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
-    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
-    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
-    AttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
-    ///@}
-  private:
+  HierarchyGroupCondition m_hierarchyGroupCondition;
+  bool m_hierarchyGroupConditionHasBeenSet = false;
+};
 
-    Aws::Vector<TagCondition> m_tagConditions;
-    bool m_tagConditionsHasBeenSet = false;
-
-    HierarchyGroupCondition m_hierarchyGroupCondition;
-    bool m_hierarchyGroupConditionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

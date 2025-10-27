@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MediaTailor;
 
-AWSError<CoreErrors> MediaTailorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MediaTailorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MediaTailorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

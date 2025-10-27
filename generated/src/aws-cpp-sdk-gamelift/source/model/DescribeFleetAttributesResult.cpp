@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/DescribeFleetAttributesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/gamelift/model/DescribeFleetAttributesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetAttributesResult::DescribeFleetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeFleetAttributesResult::DescribeFleetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeFleetAttributesResult& DescribeFleetAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeFleetAttributesResult& DescribeFleetAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FleetAttributes"))
-  {
+  if (jsonValue.ValueExists("FleetAttributes")) {
     Aws::Utils::Array<JsonView> fleetAttributesJsonList = jsonValue.GetArray("FleetAttributes");
-    for(unsigned fleetAttributesIndex = 0; fleetAttributesIndex < fleetAttributesJsonList.GetLength(); ++fleetAttributesIndex)
-    {
+    for (unsigned fleetAttributesIndex = 0; fleetAttributesIndex < fleetAttributesJsonList.GetLength(); ++fleetAttributesIndex) {
       m_fleetAttributes.push_back(fleetAttributesJsonList[fleetAttributesIndex].AsObject());
     }
     m_fleetAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

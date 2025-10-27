@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIndexFieldRequest::SerializePayload() const
-{
+Aws::String DeleteIndexFieldRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIndexField&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_indexFieldNameHasBeenSet)
-  {
+  if (m_indexFieldNameHasBeenSet) {
     ss << "IndexFieldName=" << StringUtils::URLEncode(m_indexFieldName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteIndexFieldRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteIndexFieldRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteIndexFieldRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

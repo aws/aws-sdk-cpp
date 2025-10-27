@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class DocumentFormat
-  {
-    NOT_SET,
-    YAML,
-    JSON,
-    TEXT
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class DocumentFormat { NOT_SET, YAML, JSON, TEXT };
 
-namespace DocumentFormatMapper
-{
+namespace DocumentFormatMapper {
 AWS_SSM_API DocumentFormat GetDocumentFormatForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForDocumentFormat(DocumentFormat value);
-} // namespace DocumentFormatMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace DocumentFormatMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

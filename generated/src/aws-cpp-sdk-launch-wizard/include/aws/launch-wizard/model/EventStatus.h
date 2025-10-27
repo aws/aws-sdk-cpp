@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
-namespace Aws
-{
-namespace LaunchWizard
-{
-namespace Model
-{
-  enum class EventStatus
-  {
-    NOT_SET,
-    CANCELED,
-    CANCELING,
-    COMPLETED,
-    CREATED,
-    FAILED,
-    IN_PROGRESS,
-    PENDING,
-    TIMED_OUT
-  };
+namespace Aws {
+namespace LaunchWizard {
+namespace Model {
+enum class EventStatus { NOT_SET, CANCELED, CANCELING, COMPLETED, CREATED, FAILED, IN_PROGRESS, PENDING, TIMED_OUT };
 
-namespace EventStatusMapper
-{
+namespace EventStatusMapper {
 AWS_LAUNCHWIZARD_API EventStatus GetEventStatusForName(const Aws::String& name);
 
 AWS_LAUNCHWIZARD_API Aws::String GetNameForEventStatus(EventStatus value);
-} // namespace EventStatusMapper
-} // namespace Model
-} // namespace LaunchWizard
-} // namespace Aws
+}  // namespace EventStatusMapper
+}  // namespace Model
+}  // namespace LaunchWizard
+}  // namespace Aws

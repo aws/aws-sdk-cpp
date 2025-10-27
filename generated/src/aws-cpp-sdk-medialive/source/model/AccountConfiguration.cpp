@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/AccountConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/AccountConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-AccountConfiguration::AccountConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountConfiguration::AccountConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AccountConfiguration& AccountConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+AccountConfiguration& AccountConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountConfiguration::Jsonize() const
-{
+JsonValue AccountConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
-  enum class MemberAccountDiscountVisibility
-  {
-    NOT_SET,
-    All,
-    None
-  };
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class MemberAccountDiscountVisibility { NOT_SET, All, None };
 
-namespace MemberAccountDiscountVisibilityMapper
-{
+namespace MemberAccountDiscountVisibilityMapper {
 AWS_COSTOPTIMIZATIONHUB_API MemberAccountDiscountVisibility GetMemberAccountDiscountVisibilityForName(const Aws::String& name);
 
 AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForMemberAccountDiscountVisibility(MemberAccountDiscountVisibility value);
-} // namespace MemberAccountDiscountVisibilityMapper
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace MemberAccountDiscountVisibilityMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

@@ -3,227 +3,172 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/DataRepositoryTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/DataRepositoryTask.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-DataRepositoryTask::DataRepositoryTask(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataRepositoryTask::DataRepositoryTask(JsonView jsonValue) { *this = jsonValue; }
 
-DataRepositoryTask& DataRepositoryTask::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TaskId"))
-  {
+DataRepositoryTask& DataRepositoryTask::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TaskId")) {
     m_taskId = jsonValue.GetString("TaskId");
     m_taskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Lifecycle"))
-  {
+  if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = DataRepositoryTaskLifecycleMapper::GetDataRepositoryTaskLifecycleForName(jsonValue.GetString("Lifecycle"));
     m_lifecycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DataRepositoryTaskTypeMapper::GetDataRepositoryTaskTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTime"))
-  {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetDouble("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceARN"))
-  {
+  if (jsonValue.ValueExists("ResourceARN")) {
     m_resourceARN = jsonValue.GetString("ResourceARN");
     m_resourceARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileSystemId"))
-  {
+  if (jsonValue.ValueExists("FileSystemId")) {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
     m_fileSystemIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Paths"))
-  {
+  if (jsonValue.ValueExists("Paths")) {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
-    for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
-    {
+    for (unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex) {
       m_paths.push_back(pathsJsonList[pathsIndex].AsString());
     }
     m_pathsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureDetails"))
-  {
+  if (jsonValue.ValueExists("FailureDetails")) {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
     m_failureDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Report"))
-  {
+  if (jsonValue.ValueExists("Report")) {
     m_report = jsonValue.GetObject("Report");
     m_reportHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CapacityToRelease"))
-  {
+  if (jsonValue.ValueExists("CapacityToRelease")) {
     m_capacityToRelease = jsonValue.GetInt64("CapacityToRelease");
     m_capacityToReleaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileCacheId"))
-  {
+  if (jsonValue.ValueExists("FileCacheId")) {
     m_fileCacheId = jsonValue.GetString("FileCacheId");
     m_fileCacheIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReleaseConfiguration"))
-  {
+  if (jsonValue.ValueExists("ReleaseConfiguration")) {
     m_releaseConfiguration = jsonValue.GetObject("ReleaseConfiguration");
     m_releaseConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataRepositoryTask::Jsonize() const
-{
+JsonValue DataRepositoryTask::Jsonize() const {
   JsonValue payload;
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("TaskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("TaskId", m_taskId);
   }
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithString("Lifecycle", DataRepositoryTaskLifecycleMapper::GetNameForDataRepositoryTaskLifecycle(m_lifecycle));
+  if (m_lifecycleHasBeenSet) {
+    payload.WithString("Lifecycle", DataRepositoryTaskLifecycleMapper::GetNameForDataRepositoryTaskLifecycle(m_lifecycle));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DataRepositoryTaskTypeMapper::GetNameForDataRepositoryTaskType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DataRepositoryTaskTypeMapper::GetNameForDataRepositoryTaskType(m_type));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("ResourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("ResourceARN", m_resourceARN);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_fileSystemIdHasBeenSet)
-  {
-   payload.WithString("FileSystemId", m_fileSystemId);
-
+  if (m_fileSystemIdHasBeenSet) {
+    payload.WithString("FileSystemId", m_fileSystemId);
   }
 
-  if(m_pathsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
-   for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
-   {
-     pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
-   }
-   payload.WithArray("Paths", std::move(pathsJsonList));
-
+  if (m_pathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
+    for (unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex) {
+      pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
+    }
+    payload.WithArray("Paths", std::move(pathsJsonList));
   }
 
-  if(m_failureDetailsHasBeenSet)
-  {
-   payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
-
+  if (m_failureDetailsHasBeenSet) {
+    payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("Status", m_status.Jsonize());
-
+  if (m_statusHasBeenSet) {
+    payload.WithObject("Status", m_status.Jsonize());
   }
 
-  if(m_reportHasBeenSet)
-  {
-   payload.WithObject("Report", m_report.Jsonize());
-
+  if (m_reportHasBeenSet) {
+    payload.WithObject("Report", m_report.Jsonize());
   }
 
-  if(m_capacityToReleaseHasBeenSet)
-  {
-   payload.WithInt64("CapacityToRelease", m_capacityToRelease);
-
+  if (m_capacityToReleaseHasBeenSet) {
+    payload.WithInt64("CapacityToRelease", m_capacityToRelease);
   }
 
-  if(m_fileCacheIdHasBeenSet)
-  {
-   payload.WithString("FileCacheId", m_fileCacheId);
-
+  if (m_fileCacheIdHasBeenSet) {
+    payload.WithString("FileCacheId", m_fileCacheId);
   }
 
-  if(m_releaseConfigurationHasBeenSet)
-  {
-   payload.WithObject("ReleaseConfiguration", m_releaseConfiguration.Jsonize());
-
+  if (m_releaseConfigurationHasBeenSet) {
+    payload.WithObject("ReleaseConfiguration", m_releaseConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

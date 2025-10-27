@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-LatestServiceJobAttempt::LatestServiceJobAttempt(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LatestServiceJobAttempt::LatestServiceJobAttempt(JsonView jsonValue) { *this = jsonValue; }
 
-LatestServiceJobAttempt& LatestServiceJobAttempt::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serviceResourceId"))
-  {
+LatestServiceJobAttempt& LatestServiceJobAttempt::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serviceResourceId")) {
     m_serviceResourceId = jsonValue.GetObject("serviceResourceId");
     m_serviceResourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LatestServiceJobAttempt::Jsonize() const
-{
+JsonValue LatestServiceJobAttempt::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceResourceIdHasBeenSet)
-  {
-   payload.WithObject("serviceResourceId", m_serviceResourceId.Jsonize());
-
+  if (m_serviceResourceIdHasBeenSet) {
+    payload.WithObject("serviceResourceId", m_serviceResourceId.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

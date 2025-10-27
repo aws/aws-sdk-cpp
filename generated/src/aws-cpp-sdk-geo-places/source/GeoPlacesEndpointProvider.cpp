@@ -5,12 +5,8 @@
 
 #include <aws/geo-places/GeoPlacesEndpointProvider.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GeoPlaces
-} // namespace Aws
+namespace Aws {
+namespace GeoPlaces {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GeoPlaces
+}  // namespace Aws

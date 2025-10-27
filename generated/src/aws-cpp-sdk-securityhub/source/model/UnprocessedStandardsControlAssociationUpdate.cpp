@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/UnprocessedStandardsControlAssociationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/UnprocessedStandardsControlAssociationUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedStandardsControlAssociationUpdate& UnprocessedStandardsControlAssociationUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StandardsControlAssociationUpdate"))
-  {
+UnprocessedStandardsControlAssociationUpdate& UnprocessedStandardsControlAssociationUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StandardsControlAssociationUpdate")) {
     m_standardsControlAssociationUpdate = jsonValue.GetObject("StandardsControlAssociationUpdate");
     m_standardsControlAssociationUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = UnprocessedErrorCodeMapper::GetUnprocessedErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorReason"))
-  {
+  if (jsonValue.ValueExists("ErrorReason")) {
     m_errorReason = jsonValue.GetString("ErrorReason");
     m_errorReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedStandardsControlAssociationUpdate::Jsonize() const
-{
+JsonValue UnprocessedStandardsControlAssociationUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_standardsControlAssociationUpdateHasBeenSet)
-  {
-   payload.WithObject("StandardsControlAssociationUpdate", m_standardsControlAssociationUpdate.Jsonize());
-
+  if (m_standardsControlAssociationUpdateHasBeenSet) {
+    payload.WithObject("StandardsControlAssociationUpdate", m_standardsControlAssociationUpdate.Jsonize());
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", UnprocessedErrorCodeMapper::GetNameForUnprocessedErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", UnprocessedErrorCodeMapper::GetNameForUnprocessedErrorCode(m_errorCode));
   }
 
-  if(m_errorReasonHasBeenSet)
-  {
-   payload.WithString("ErrorReason", m_errorReason);
-
+  if (m_errorReasonHasBeenSet) {
+    payload.WithString("ErrorReason", m_errorReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

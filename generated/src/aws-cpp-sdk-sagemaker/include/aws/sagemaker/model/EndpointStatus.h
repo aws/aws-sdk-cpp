@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class EndpointStatus
-  {
-    NOT_SET,
-    OutOfService,
-    Creating,
-    Updating,
-    SystemUpdating,
-    RollingBack,
-    InService,
-    Deleting,
-    Failed,
-    UpdateRollbackFailed
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class EndpointStatus {
+  NOT_SET,
+  OutOfService,
+  Creating,
+  Updating,
+  SystemUpdating,
+  RollingBack,
+  InService,
+  Deleting,
+  Failed,
+  UpdateRollbackFailed
+};
 
-namespace EndpointStatusMapper
-{
+namespace EndpointStatusMapper {
 AWS_SAGEMAKER_API EndpointStatus GetEndpointStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForEndpointStatus(EndpointStatus value);
-} // namespace EndpointStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace EndpointStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

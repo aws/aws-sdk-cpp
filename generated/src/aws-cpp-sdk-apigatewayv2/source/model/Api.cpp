@@ -11,113 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-Api::Api(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Api::Api(JsonView jsonValue) { *this = jsonValue; }
 
-Api& Api::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiEndpoint"))
-  {
+Api& Api::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiEndpoint")) {
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");
     m_apiEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiGatewayManaged"))
-  {
+  if (jsonValue.ValueExists("apiGatewayManaged")) {
     m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
     m_apiGatewayManagedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiId"))
-  {
+  if (jsonValue.ValueExists("apiId")) {
     m_apiId = jsonValue.GetString("apiId");
     m_apiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiKeySelectionExpression"))
-  {
+  if (jsonValue.ValueExists("apiKeySelectionExpression")) {
     m_apiKeySelectionExpression = jsonValue.GetString("apiKeySelectionExpression");
     m_apiKeySelectionExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("corsConfiguration"))
-  {
+  if (jsonValue.ValueExists("corsConfiguration")) {
     m_corsConfiguration = jsonValue.GetObject("corsConfiguration");
     m_corsConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdDate"))
-  {
+  if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetString("createdDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("disableSchemaValidation"))
-  {
+  if (jsonValue.ValueExists("disableSchemaValidation")) {
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
     m_disableSchemaValidationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
-  {
+  if (jsonValue.ValueExists("disableExecuteApiEndpoint")) {
     m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
     m_disableExecuteApiEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importInfo"))
-  {
+  if (jsonValue.ValueExists("importInfo")) {
     Aws::Utils::Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
-    for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
-    {
+    for (unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex) {
       m_importInfo.push_back(importInfoJsonList[importInfoIndex].AsString());
     }
     m_importInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressType"))
-  {
+  if (jsonValue.ValueExists("ipAddressType")) {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocolType"))
-  {
+  if (jsonValue.ValueExists("protocolType")) {
     m_protocolType = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("protocolType"));
     m_protocolTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("routeSelectionExpression"))
-  {
+  if (jsonValue.ValueExists("routeSelectionExpression")) {
     m_routeSelectionExpression = jsonValue.GetString("routeSelectionExpression");
     m_routeSelectionExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("warnings"))
-  {
+  if (jsonValue.ValueExists("warnings")) {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
-    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-    {
+    for (unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex) {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
     m_warningsHasBeenSet = true;
@@ -125,127 +98,92 @@ Api& Api::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Api::Jsonize() const
-{
+JsonValue Api::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiEndpointHasBeenSet)
-  {
-   payload.WithString("apiEndpoint", m_apiEndpoint);
-
+  if (m_apiEndpointHasBeenSet) {
+    payload.WithString("apiEndpoint", m_apiEndpoint);
   }
 
-  if(m_apiGatewayManagedHasBeenSet)
-  {
-   payload.WithBool("apiGatewayManaged", m_apiGatewayManaged);
-
+  if (m_apiGatewayManagedHasBeenSet) {
+    payload.WithBool("apiGatewayManaged", m_apiGatewayManaged);
   }
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("apiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("apiId", m_apiId);
   }
 
-  if(m_apiKeySelectionExpressionHasBeenSet)
-  {
-   payload.WithString("apiKeySelectionExpression", m_apiKeySelectionExpression);
-
+  if (m_apiKeySelectionExpressionHasBeenSet) {
+    payload.WithString("apiKeySelectionExpression", m_apiKeySelectionExpression);
   }
 
-  if(m_corsConfigurationHasBeenSet)
-  {
-   payload.WithObject("corsConfiguration", m_corsConfiguration.Jsonize());
-
+  if (m_corsConfigurationHasBeenSet) {
+    payload.WithObject("corsConfiguration", m_corsConfiguration.Jsonize());
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdDateHasBeenSet) {
+    payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_disableSchemaValidationHasBeenSet)
-  {
-   payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
-
+  if (m_disableSchemaValidationHasBeenSet) {
+    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
   }
 
-  if(m_disableExecuteApiEndpointHasBeenSet)
-  {
-   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
-
+  if (m_disableExecuteApiEndpointHasBeenSet) {
+    payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
   }
 
-  if(m_importInfoHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> importInfoJsonList(m_importInfo.size());
-   for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
-   {
-     importInfoJsonList[importInfoIndex].AsString(m_importInfo[importInfoIndex]);
-   }
-   payload.WithArray("importInfo", std::move(importInfoJsonList));
-
+  if (m_importInfoHasBeenSet) {
+    Aws::Utils::Array<JsonValue> importInfoJsonList(m_importInfo.size());
+    for (unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex) {
+      importInfoJsonList[importInfoIndex].AsString(m_importInfo[importInfoIndex]);
+    }
+    payload.WithArray("importInfo", std::move(importInfoJsonList));
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
-   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_protocolTypeHasBeenSet)
-  {
-   payload.WithString("protocolType", ProtocolTypeMapper::GetNameForProtocolType(m_protocolType));
+  if (m_protocolTypeHasBeenSet) {
+    payload.WithString("protocolType", ProtocolTypeMapper::GetNameForProtocolType(m_protocolType));
   }
 
-  if(m_routeSelectionExpressionHasBeenSet)
-  {
-   payload.WithString("routeSelectionExpression", m_routeSelectionExpression);
-
+  if (m_routeSelectionExpressionHasBeenSet) {
+    payload.WithString("routeSelectionExpression", m_routeSelectionExpression);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
-  if(m_warningsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
-   for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
-   {
-     warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
-   }
-   payload.WithArray("warnings", std::move(warningsJsonList));
-
+  if (m_warningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
+    for (unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex) {
+      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
+    }
+    payload.WithArray("warnings", std::move(warningsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

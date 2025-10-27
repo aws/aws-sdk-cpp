@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class GovernanceType
-  {
-    NOT_SET,
-    AWS_MANAGED,
-    USER_MANAGED
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class GovernanceType { NOT_SET, AWS_MANAGED, USER_MANAGED };
 
-namespace GovernanceTypeMapper
-{
+namespace GovernanceTypeMapper {
 AWS_DATAZONE_API GovernanceType GetGovernanceTypeForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForGovernanceType(GovernanceType value);
-} // namespace GovernanceTypeMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace GovernanceTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

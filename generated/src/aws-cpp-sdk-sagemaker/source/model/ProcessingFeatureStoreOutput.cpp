@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ProcessingFeatureStoreOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ProcessingFeatureStoreOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput(JsonView jsonValue) { *this = jsonValue; }
 
-ProcessingFeatureStoreOutput& ProcessingFeatureStoreOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FeatureGroupName"))
-  {
+ProcessingFeatureStoreOutput& ProcessingFeatureStoreOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FeatureGroupName")) {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
     m_featureGroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProcessingFeatureStoreOutput::Jsonize() const
-{
+JsonValue ProcessingFeatureStoreOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureGroupNameHasBeenSet)
-  {
-   payload.WithString("FeatureGroupName", m_featureGroupName);
-
+  if (m_featureGroupNameHasBeenSet) {
+    payload.WithString("FeatureGroupName", m_featureGroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

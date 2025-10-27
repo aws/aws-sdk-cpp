@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/DelegatedService.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/organizations/model/DelegatedService.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
+namespace Aws {
+namespace Organizations {
+namespace Model {
 
-DelegatedService::DelegatedService(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DelegatedService::DelegatedService(JsonView jsonValue) { *this = jsonValue; }
 
-DelegatedService& DelegatedService::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServicePrincipal"))
-  {
+DelegatedService& DelegatedService::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServicePrincipal")) {
     m_servicePrincipal = jsonValue.GetString("ServicePrincipal");
     m_servicePrincipalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DelegationEnabledDate"))
-  {
+  if (jsonValue.ValueExists("DelegationEnabledDate")) {
     m_delegationEnabledDate = jsonValue.GetDouble("DelegationEnabledDate");
     m_delegationEnabledDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DelegatedService::Jsonize() const
-{
+JsonValue DelegatedService::Jsonize() const {
   JsonValue payload;
 
-  if(m_servicePrincipalHasBeenSet)
-  {
-   payload.WithString("ServicePrincipal", m_servicePrincipal);
-
+  if (m_servicePrincipalHasBeenSet) {
+    payload.WithString("ServicePrincipal", m_servicePrincipal);
   }
 
-  if(m_delegationEnabledDateHasBeenSet)
-  {
-   payload.WithDouble("DelegationEnabledDate", m_delegationEnabledDate.SecondsWithMSPrecision());
+  if (m_delegationEnabledDateHasBeenSet) {
+    payload.WithDouble("DelegationEnabledDate", m_delegationEnabledDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

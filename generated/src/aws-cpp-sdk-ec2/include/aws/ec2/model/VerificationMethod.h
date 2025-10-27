@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VerificationMethod
-  {
-    NOT_SET,
-    remarks_x509,
-    dns_token
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VerificationMethod { NOT_SET, remarks_x509, dns_token };
 
-namespace VerificationMethodMapper
-{
+namespace VerificationMethodMapper {
 AWS_EC2_API VerificationMethod GetVerificationMethodForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVerificationMethod(VerificationMethod value);
-} // namespace VerificationMethodMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VerificationMethodMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

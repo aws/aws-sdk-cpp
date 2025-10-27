@@ -7,39 +7,34 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class MetricName
-  {
-    NOT_SET,
-    Cpu,
-    Memory,
-    EBS_READ_OPS_PER_SECOND,
-    EBS_WRITE_OPS_PER_SECOND,
-    EBS_READ_BYTES_PER_SECOND,
-    EBS_WRITE_BYTES_PER_SECOND,
-    DISK_READ_OPS_PER_SECOND,
-    DISK_WRITE_OPS_PER_SECOND,
-    DISK_READ_BYTES_PER_SECOND,
-    DISK_WRITE_BYTES_PER_SECOND,
-    NETWORK_IN_BYTES_PER_SECOND,
-    NETWORK_OUT_BYTES_PER_SECOND,
-    NETWORK_PACKETS_IN_PER_SECOND,
-    NETWORK_PACKETS_OUT_PER_SECOND,
-    GPU_PERCENTAGE,
-    GPU_MEMORY_PERCENTAGE
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class MetricName {
+  NOT_SET,
+  Cpu,
+  Memory,
+  EBS_READ_OPS_PER_SECOND,
+  EBS_WRITE_OPS_PER_SECOND,
+  EBS_READ_BYTES_PER_SECOND,
+  EBS_WRITE_BYTES_PER_SECOND,
+  DISK_READ_OPS_PER_SECOND,
+  DISK_WRITE_OPS_PER_SECOND,
+  DISK_READ_BYTES_PER_SECOND,
+  DISK_WRITE_BYTES_PER_SECOND,
+  NETWORK_IN_BYTES_PER_SECOND,
+  NETWORK_OUT_BYTES_PER_SECOND,
+  NETWORK_PACKETS_IN_PER_SECOND,
+  NETWORK_PACKETS_OUT_PER_SECOND,
+  GPU_PERCENTAGE,
+  GPU_MEMORY_PERCENTAGE
+};
 
-namespace MetricNameMapper
-{
+namespace MetricNameMapper {
 AWS_COMPUTEOPTIMIZER_API MetricName GetMetricNameForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForMetricName(MetricName value);
-} // namespace MetricNameMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace MetricNameMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

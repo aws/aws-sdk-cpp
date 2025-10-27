@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class TerminationMode
-  {
-    NOT_SET,
-    TRIGGER_ON_PROCESS_TERMINATE,
-    FORCE_TERMINATE
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class TerminationMode { NOT_SET, TRIGGER_ON_PROCESS_TERMINATE, FORCE_TERMINATE };
 
-namespace TerminationModeMapper
-{
+namespace TerminationModeMapper {
 AWS_GAMELIFT_API TerminationMode GetTerminationModeForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForTerminationMode(TerminationMode value);
-} // namespace TerminationModeMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace TerminationModeMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

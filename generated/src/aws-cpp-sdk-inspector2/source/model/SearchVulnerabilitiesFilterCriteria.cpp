@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/SearchVulnerabilitiesFilterCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/SearchVulnerabilitiesFilterCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-SearchVulnerabilitiesFilterCriteria& SearchVulnerabilitiesFilterCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vulnerabilityIds"))
-  {
+SearchVulnerabilitiesFilterCriteria& SearchVulnerabilitiesFilterCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vulnerabilityIds")) {
     Aws::Utils::Array<JsonView> vulnerabilityIdsJsonList = jsonValue.GetArray("vulnerabilityIds");
-    for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
-    {
+    for (unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex) {
       m_vulnerabilityIds.push_back(vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsString());
     }
     m_vulnerabilityIdsHasBeenSet = true;
@@ -37,24 +28,20 @@ SearchVulnerabilitiesFilterCriteria& SearchVulnerabilitiesFilterCriteria::operat
   return *this;
 }
 
-JsonValue SearchVulnerabilitiesFilterCriteria::Jsonize() const
-{
+JsonValue SearchVulnerabilitiesFilterCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_vulnerabilityIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
-   for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
-   {
-     vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsString(m_vulnerabilityIds[vulnerabilityIdsIndex]);
-   }
-   payload.WithArray("vulnerabilityIds", std::move(vulnerabilityIdsJsonList));
-
+  if (m_vulnerabilityIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
+    for (unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex) {
+      vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsString(m_vulnerabilityIds[vulnerabilityIdsIndex]);
+    }
+    payload.WithArray("vulnerabilityIds", std::move(vulnerabilityIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

@@ -3,39 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyInstanceMetadataDefaultsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyInstanceMetadataDefaultsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const
-{
+Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyInstanceMetadataDefaults&";
-  if(m_httpTokensHasBeenSet)
-  {
-    ss << "HttpTokens=" << StringUtils::URLEncode(MetadataDefaultHttpTokensStateMapper::GetNameForMetadataDefaultHttpTokensState(m_httpTokens)) << "&";
+  if (m_httpTokensHasBeenSet) {
+    ss << "HttpTokens="
+       << StringUtils::URLEncode(MetadataDefaultHttpTokensStateMapper::GetNameForMetadataDefaultHttpTokensState(m_httpTokens)) << "&";
   }
 
-  if(m_httpPutResponseHopLimitHasBeenSet)
-  {
+  if (m_httpPutResponseHopLimitHasBeenSet) {
     ss << "HttpPutResponseHopLimit=" << m_httpPutResponseHopLimit << "&";
   }
 
-  if(m_httpEndpointHasBeenSet)
-  {
-    ss << "HttpEndpoint=" << StringUtils::URLEncode(DefaultInstanceMetadataEndpointStateMapper::GetNameForDefaultInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
+  if (m_httpEndpointHasBeenSet) {
+    ss << "HttpEndpoint="
+       << StringUtils::URLEncode(DefaultInstanceMetadataEndpointStateMapper::GetNameForDefaultInstanceMetadataEndpointState(m_httpEndpoint))
+       << "&";
   }
 
-  if(m_instanceMetadataTagsHasBeenSet)
-  {
-    ss << "InstanceMetadataTags=" << StringUtils::URLEncode(DefaultInstanceMetadataTagsStateMapper::GetNameForDefaultInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
+  if (m_instanceMetadataTagsHasBeenSet) {
+    ss << "InstanceMetadataTags="
+       << StringUtils::URLEncode(DefaultInstanceMetadataTagsStateMapper::GetNameForDefaultInstanceMetadataTagsState(m_instanceMetadataTags))
+       << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +42,4 @@ Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyInstanceMetadataDefaultsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyInstanceMetadataDefaultsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

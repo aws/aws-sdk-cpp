@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DescribeTrustsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ds/model/DescribeTrustsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrustsResult::DescribeTrustsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeTrustsResult::DescribeTrustsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeTrustsResult& DescribeTrustsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeTrustsResult& DescribeTrustsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Trusts"))
-  {
+  if (jsonValue.ValueExists("Trusts")) {
     Aws::Utils::Array<JsonView> trustsJsonList = jsonValue.GetArray("Trusts");
-    for(unsigned trustsIndex = 0; trustsIndex < trustsJsonList.GetLength(); ++trustsIndex)
-    {
+    for (unsigned trustsIndex = 0; trustsIndex < trustsJsonList.GetLength(); ++trustsIndex) {
       m_trusts.push_back(trustsJsonList[trustsIndex].AsObject());
     }
     m_trustsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

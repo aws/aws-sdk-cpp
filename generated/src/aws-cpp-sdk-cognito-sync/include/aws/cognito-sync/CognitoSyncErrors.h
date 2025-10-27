@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace CognitoSync
-{
-enum class CognitoSyncErrors
-{
-  //From Core//
+namespace Aws {
+namespace CognitoSync {
+enum class CognitoSyncErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CognitoSyncErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CognitoSyncErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_STREAMED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_STREAMED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   DUPLICATE_REQUEST,
   INTERNAL_ERROR,
@@ -61,9 +58,8 @@ enum class CognitoSyncErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_COGNITOSYNC_API CognitoSyncError : public Aws::Client::AWSError<CognitoSyncErrors>
-{
-public:
+class AWS_COGNITOSYNC_API CognitoSyncError : public Aws::Client::AWSError<CognitoSyncErrors> {
+ public:
   CognitoSyncError() {}
   CognitoSyncError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
   CognitoSyncError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
@@ -74,10 +70,9 @@ public:
   T GetModeledError();
 };
 
-namespace CognitoSyncErrorMapper
-{
-  AWS_COGNITOSYNC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CognitoSyncErrorMapper {
+AWS_COGNITOSYNC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CognitoSync
-} // namespace Aws
+}  // namespace CognitoSync
+}  // namespace Aws

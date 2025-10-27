@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ImageConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ImageConfig::ImageConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageConfig::ImageConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ImageConfig& ImageConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RepositoryAccessMode"))
-  {
+ImageConfig& ImageConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RepositoryAccessMode")) {
     m_repositoryAccessMode = RepositoryAccessModeMapper::GetRepositoryAccessModeForName(jsonValue.GetString("RepositoryAccessMode"));
     m_repositoryAccessModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RepositoryAuthConfig"))
-  {
+  if (jsonValue.ValueExists("RepositoryAuthConfig")) {
     m_repositoryAuthConfig = jsonValue.GetObject("RepositoryAuthConfig");
     m_repositoryAuthConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageConfig::Jsonize() const
-{
+JsonValue ImageConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryAccessModeHasBeenSet)
-  {
-   payload.WithString("RepositoryAccessMode", RepositoryAccessModeMapper::GetNameForRepositoryAccessMode(m_repositoryAccessMode));
+  if (m_repositoryAccessModeHasBeenSet) {
+    payload.WithString("RepositoryAccessMode", RepositoryAccessModeMapper::GetNameForRepositoryAccessMode(m_repositoryAccessMode));
   }
 
-  if(m_repositoryAuthConfigHasBeenSet)
-  {
-   payload.WithObject("RepositoryAuthConfig", m_repositoryAuthConfig.Jsonize());
-
+  if (m_repositoryAuthConfigHasBeenSet) {
+    payload.WithObject("RepositoryAuthConfig", m_repositoryAuthConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-Type::Type(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Type::Type(JsonView jsonValue) { *this = jsonValue; }
 
-Type& Type::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Type& Type::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("definition"))
-  {
+  if (jsonValue.ValueExists("definition")) {
     m_definition = jsonValue.GetString("definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("format"))
-  {
+  if (jsonValue.ValueExists("format")) {
     m_format = TypeDefinitionFormatMapper::GetTypeDefinitionFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Type::Jsonize() const
-{
+JsonValue Type::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithString("definition", m_definition);
-
+  if (m_definitionHasBeenSet) {
+    payload.WithString("definition", m_definition);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", TypeDefinitionFormatMapper::GetNameForTypeDefinitionFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", TypeDefinitionFormatMapper::GetNameForTypeDefinitionFormat(m_format));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

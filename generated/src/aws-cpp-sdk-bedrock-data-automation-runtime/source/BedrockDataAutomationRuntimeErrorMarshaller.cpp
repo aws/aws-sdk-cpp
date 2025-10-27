@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrorMarshaller.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::BedrockDataAutomationRuntime;
 
-AWSError<CoreErrors> BedrockDataAutomationRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> BedrockDataAutomationRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = BedrockDataAutomationRuntimeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

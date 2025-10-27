@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/finspace-data/FinSpaceDataEndpointRules.h>
+#include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace FinSpaceData {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using FinSpaceDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using FinSpaceDataDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_FINSPACEDATA_API FinSpaceDataEndpointProvider : public FinSpaceDataDefaultEpProviderBase
-{
-public:
-    using FinSpaceDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_FINSPACEDATA_API FinSpaceDataEndpointProvider : public FinSpaceDataDefaultEpProviderBase {
+ public:
+  using FinSpaceDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    FinSpaceDataEndpointProvider()
-      : FinSpaceDataDefaultEpProviderBase(Aws::FinSpaceData::FinSpaceDataEndpointRules::GetRulesBlob(), Aws::FinSpaceData::FinSpaceDataEndpointRules::RulesBlobSize)
-    {}
+  FinSpaceDataEndpointProvider()
+      : FinSpaceDataDefaultEpProviderBase(Aws::FinSpaceData::FinSpaceDataEndpointRules::GetRulesBlob(),
+                                          Aws::FinSpaceData::FinSpaceDataEndpointRules::RulesBlobSize) {}
 
-    ~FinSpaceDataEndpointProvider()
-    {
-    }
+  ~FinSpaceDataEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace FinSpaceData
+}  // namespace Aws

@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-VeevaMetadata::VeevaMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VeevaMetadata::VeevaMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-VeevaMetadata& VeevaMetadata::operator =(JsonView jsonValue)
-{
+VeevaMetadata& VeevaMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue VeevaMetadata::Jsonize() const
-{
+JsonValue VeevaMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

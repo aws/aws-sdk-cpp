@@ -5,12 +5,8 @@
 
 #include <aws/ce/CostExplorerEndpointProvider.h>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CostExplorer
-} // namespace Aws
+namespace Aws {
+namespace CostExplorer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CostExplorer
+}  // namespace Aws

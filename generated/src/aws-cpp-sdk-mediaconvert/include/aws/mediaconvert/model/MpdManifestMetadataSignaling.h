@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MpdManifestMetadataSignaling
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MpdManifestMetadataSignaling { NOT_SET, ENABLED, DISABLED };
 
-namespace MpdManifestMetadataSignalingMapper
-{
+namespace MpdManifestMetadataSignalingMapper {
 AWS_MEDIACONVERT_API MpdManifestMetadataSignaling GetMpdManifestMetadataSignalingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMpdManifestMetadataSignaling(MpdManifestMetadataSignaling value);
-} // namespace MpdManifestMetadataSignalingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MpdManifestMetadataSignalingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

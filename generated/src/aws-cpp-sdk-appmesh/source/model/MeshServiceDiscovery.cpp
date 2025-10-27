@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-MeshServiceDiscovery::MeshServiceDiscovery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MeshServiceDiscovery::MeshServiceDiscovery(JsonView jsonValue) { *this = jsonValue; }
 
-MeshServiceDiscovery& MeshServiceDiscovery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ipPreference"))
-  {
+MeshServiceDiscovery& MeshServiceDiscovery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ipPreference")) {
     m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
     m_ipPreferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MeshServiceDiscovery::Jsonize() const
-{
+JsonValue MeshServiceDiscovery::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipPreferenceHasBeenSet)
-  {
-   payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
+  if (m_ipPreferenceHasBeenSet) {
+    payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

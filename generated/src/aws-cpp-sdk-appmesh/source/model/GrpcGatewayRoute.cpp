@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GrpcGatewayRoute::GrpcGatewayRoute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GrpcGatewayRoute::GrpcGatewayRoute(JsonView jsonValue) { *this = jsonValue; }
 
-GrpcGatewayRoute& GrpcGatewayRoute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("action"))
-  {
+GrpcGatewayRoute& GrpcGatewayRoute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
     m_action = jsonValue.GetObject("action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("match"))
-  {
+  if (jsonValue.ValueExists("match")) {
     m_match = jsonValue.GetObject("match");
     m_matchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GrpcGatewayRoute::Jsonize() const
-{
+JsonValue GrpcGatewayRoute::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("action", m_action.Jsonize());
   }
 
-  if(m_matchHasBeenSet)
-  {
-   payload.WithObject("match", m_match.Jsonize());
-
+  if (m_matchHasBeenSet) {
+    payload.WithObject("match", m_match.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

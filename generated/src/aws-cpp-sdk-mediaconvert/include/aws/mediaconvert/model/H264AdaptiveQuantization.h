@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class H264AdaptiveQuantization
-  {
-    NOT_SET,
-    OFF,
-    AUTO,
-    LOW,
-    MEDIUM,
-    HIGH,
-    HIGHER,
-    MAX
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class H264AdaptiveQuantization { NOT_SET, OFF, AUTO, LOW, MEDIUM, HIGH, HIGHER, MAX };
 
-namespace H264AdaptiveQuantizationMapper
-{
+namespace H264AdaptiveQuantizationMapper {
 AWS_MEDIACONVERT_API H264AdaptiveQuantization GetH264AdaptiveQuantizationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForH264AdaptiveQuantization(H264AdaptiveQuantization value);
-} // namespace H264AdaptiveQuantizationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace H264AdaptiveQuantizationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

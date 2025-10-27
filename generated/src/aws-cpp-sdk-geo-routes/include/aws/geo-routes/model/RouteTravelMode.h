@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteTravelMode
-  {
-    NOT_SET,
-    Car,
-    Pedestrian,
-    Scooter,
-    Truck
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteTravelMode { NOT_SET, Car, Pedestrian, Scooter, Truck };
 
-namespace RouteTravelModeMapper
-{
+namespace RouteTravelModeMapper {
 AWS_GEOROUTES_API RouteTravelMode GetRouteTravelModeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteTravelMode(RouteTravelMode value);
-} // namespace RouteTravelModeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteTravelModeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

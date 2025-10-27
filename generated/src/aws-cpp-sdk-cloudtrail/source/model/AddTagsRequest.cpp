@@ -12,38 +12,26 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AddTagsRequest::SerializePayload() const
-{
+Aws::String AddTagsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_tagsListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
-   for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
-   {
-     tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
-   }
-   payload.WithArray("TagsList", std::move(tagsListJsonList));
-
+  if (m_tagsListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
+    for (unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex) {
+      tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
+    }
+    payload.WithArray("TagsList", std::move(tagsListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AddTagsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AddTagsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.AddTags"));
   return headers;
-
 }
-
-
-
-

@@ -12,25 +12,16 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountPreferencesRequest::SerializePayload() const
-{
+Aws::String UpdateAccountPreferencesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userAuthorizationRequiredHasBeenSet)
-  {
-   payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
-
+  if (m_userAuthorizationRequiredHasBeenSet) {
+    payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
   }
 
-  if(m_trainingDataCollectionEnabledHasBeenSet)
-  {
-   payload.WithBool("TrainingDataCollectionEnabled", m_trainingDataCollectionEnabled);
-
+  if (m_trainingDataCollectionEnabledHasBeenSet) {
+    payload.WithBool("TrainingDataCollectionEnabled", m_trainingDataCollectionEnabled);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

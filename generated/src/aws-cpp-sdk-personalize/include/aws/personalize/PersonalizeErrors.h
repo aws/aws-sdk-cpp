@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
-namespace Aws
-{
-namespace Personalize
-{
-enum class PersonalizeErrors
-{
-  //From Core//
+namespace Aws {
+namespace Personalize {
+enum class PersonalizeErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class PersonalizeErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class PersonalizeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_INPUT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS,
@@ -56,9 +53,8 @@ enum class PersonalizeErrors
   TOO_MANY_TAG_KEYS
 };
 
-class AWS_PERSONALIZE_API PersonalizeError : public Aws::Client::AWSError<PersonalizeErrors>
-{
-public:
+class AWS_PERSONALIZE_API PersonalizeError : public Aws::Client::AWSError<PersonalizeErrors> {
+ public:
   PersonalizeError() {}
   PersonalizeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
   PersonalizeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace PersonalizeErrorMapper
-{
-  AWS_PERSONALIZE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace PersonalizeErrorMapper {
+AWS_PERSONALIZE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Personalize
+}  // namespace Aws

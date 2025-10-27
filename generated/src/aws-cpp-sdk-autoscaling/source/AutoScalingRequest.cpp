@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/autoscaling/AutoScalingRequest.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-} // namespace AutoScaling
-} // namespace Aws
+namespace Aws {
+namespace AutoScaling {}  // namespace AutoScaling
+}  // namespace Aws

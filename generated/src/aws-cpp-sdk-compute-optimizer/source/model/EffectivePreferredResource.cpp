@@ -11,48 +11,35 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-EffectivePreferredResource::EffectivePreferredResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EffectivePreferredResource::EffectivePreferredResource(JsonView jsonValue) { *this = jsonValue; }
 
-EffectivePreferredResource& EffectivePreferredResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+EffectivePreferredResource& EffectivePreferredResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = PreferredResourceNameMapper::GetPreferredResourceNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includeList"))
-  {
+  if (jsonValue.ValueExists("includeList")) {
     Aws::Utils::Array<JsonView> includeListJsonList = jsonValue.GetArray("includeList");
-    for(unsigned includeListIndex = 0; includeListIndex < includeListJsonList.GetLength(); ++includeListIndex)
-    {
+    for (unsigned includeListIndex = 0; includeListIndex < includeListJsonList.GetLength(); ++includeListIndex) {
       m_includeList.push_back(includeListJsonList[includeListIndex].AsString());
     }
     m_includeListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("effectiveIncludeList"))
-  {
+  if (jsonValue.ValueExists("effectiveIncludeList")) {
     Aws::Utils::Array<JsonView> effectiveIncludeListJsonList = jsonValue.GetArray("effectiveIncludeList");
-    for(unsigned effectiveIncludeListIndex = 0; effectiveIncludeListIndex < effectiveIncludeListJsonList.GetLength(); ++effectiveIncludeListIndex)
-    {
+    for (unsigned effectiveIncludeListIndex = 0; effectiveIncludeListIndex < effectiveIncludeListJsonList.GetLength();
+         ++effectiveIncludeListIndex) {
       m_effectiveIncludeList.push_back(effectiveIncludeListJsonList[effectiveIncludeListIndex].AsString());
     }
     m_effectiveIncludeListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("excludeList"))
-  {
+  if (jsonValue.ValueExists("excludeList")) {
     Aws::Utils::Array<JsonView> excludeListJsonList = jsonValue.GetArray("excludeList");
-    for(unsigned excludeListIndex = 0; excludeListIndex < excludeListJsonList.GetLength(); ++excludeListIndex)
-    {
+    for (unsigned excludeListIndex = 0; excludeListIndex < excludeListJsonList.GetLength(); ++excludeListIndex) {
       m_excludeList.push_back(excludeListJsonList[excludeListIndex].AsString());
     }
     m_excludeListHasBeenSet = true;
@@ -60,51 +47,41 @@ EffectivePreferredResource& EffectivePreferredResource::operator =(JsonView json
   return *this;
 }
 
-JsonValue EffectivePreferredResource::Jsonize() const
-{
+JsonValue EffectivePreferredResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", PreferredResourceNameMapper::GetNameForPreferredResourceName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", PreferredResourceNameMapper::GetNameForPreferredResourceName(m_name));
   }
 
-  if(m_includeListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> includeListJsonList(m_includeList.size());
-   for(unsigned includeListIndex = 0; includeListIndex < includeListJsonList.GetLength(); ++includeListIndex)
-   {
-     includeListJsonList[includeListIndex].AsString(m_includeList[includeListIndex]);
-   }
-   payload.WithArray("includeList", std::move(includeListJsonList));
-
+  if (m_includeListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> includeListJsonList(m_includeList.size());
+    for (unsigned includeListIndex = 0; includeListIndex < includeListJsonList.GetLength(); ++includeListIndex) {
+      includeListJsonList[includeListIndex].AsString(m_includeList[includeListIndex]);
+    }
+    payload.WithArray("includeList", std::move(includeListJsonList));
   }
 
-  if(m_effectiveIncludeListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> effectiveIncludeListJsonList(m_effectiveIncludeList.size());
-   for(unsigned effectiveIncludeListIndex = 0; effectiveIncludeListIndex < effectiveIncludeListJsonList.GetLength(); ++effectiveIncludeListIndex)
-   {
-     effectiveIncludeListJsonList[effectiveIncludeListIndex].AsString(m_effectiveIncludeList[effectiveIncludeListIndex]);
-   }
-   payload.WithArray("effectiveIncludeList", std::move(effectiveIncludeListJsonList));
-
+  if (m_effectiveIncludeListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> effectiveIncludeListJsonList(m_effectiveIncludeList.size());
+    for (unsigned effectiveIncludeListIndex = 0; effectiveIncludeListIndex < effectiveIncludeListJsonList.GetLength();
+         ++effectiveIncludeListIndex) {
+      effectiveIncludeListJsonList[effectiveIncludeListIndex].AsString(m_effectiveIncludeList[effectiveIncludeListIndex]);
+    }
+    payload.WithArray("effectiveIncludeList", std::move(effectiveIncludeListJsonList));
   }
 
-  if(m_excludeListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> excludeListJsonList(m_excludeList.size());
-   for(unsigned excludeListIndex = 0; excludeListIndex < excludeListJsonList.GetLength(); ++excludeListIndex)
-   {
-     excludeListJsonList[excludeListIndex].AsString(m_excludeList[excludeListIndex]);
-   }
-   payload.WithArray("excludeList", std::move(excludeListJsonList));
-
+  if (m_excludeListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> excludeListJsonList(m_excludeList.size());
+    for (unsigned excludeListIndex = 0; excludeListIndex < excludeListJsonList.GetLength(); ++excludeListIndex) {
+      excludeListJsonList[excludeListIndex].AsString(m_excludeList[excludeListIndex]);
+    }
+    payload.WithArray("excludeList", std::move(excludeListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

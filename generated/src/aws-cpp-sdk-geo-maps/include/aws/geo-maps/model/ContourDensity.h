@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Model
-{
-  enum class ContourDensity
-  {
-    NOT_SET,
-    Medium
-  };
+namespace Aws {
+namespace GeoMaps {
+namespace Model {
+enum class ContourDensity { NOT_SET, Medium };
 
-namespace ContourDensityMapper
-{
+namespace ContourDensityMapper {
 AWS_GEOMAPS_API ContourDensity GetContourDensityForName(const Aws::String& name);
 
 AWS_GEOMAPS_API Aws::String GetNameForContourDensity(ContourDensity value);
-} // namespace ContourDensityMapper
-} // namespace Model
-} // namespace GeoMaps
-} // namespace Aws
+}  // namespace ContourDensityMapper
+}  // namespace Model
+}  // namespace GeoMaps
+}  // namespace Aws

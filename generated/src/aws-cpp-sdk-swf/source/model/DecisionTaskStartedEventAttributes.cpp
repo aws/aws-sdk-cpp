@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/DecisionTaskStartedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/DecisionTaskStartedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-DecisionTaskStartedEventAttributes& DecisionTaskStartedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("identity"))
-  {
+DecisionTaskStartedEventAttributes& DecisionTaskStartedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("identity")) {
     m_identity = jsonValue.GetString("identity");
     m_identityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduledEventId"))
-  {
+  if (jsonValue.ValueExists("scheduledEventId")) {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
     m_scheduledEventIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DecisionTaskStartedEventAttributes::Jsonize() const
-{
+JsonValue DecisionTaskStartedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_identityHasBeenSet)
-  {
-   payload.WithString("identity", m_identity);
-
+  if (m_identityHasBeenSet) {
+    payload.WithString("identity", m_identity);
   }
 
-  if(m_scheduledEventIdHasBeenSet)
-  {
-   payload.WithInt64("scheduledEventId", m_scheduledEventId);
-
+  if (m_scheduledEventIdHasBeenSet) {
+    payload.WithInt64("scheduledEventId", m_scheduledEventId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

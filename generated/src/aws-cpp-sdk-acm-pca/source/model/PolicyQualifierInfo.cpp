@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-PolicyQualifierInfo::PolicyQualifierInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PolicyQualifierInfo::PolicyQualifierInfo(JsonView jsonValue) { *this = jsonValue; }
 
-PolicyQualifierInfo& PolicyQualifierInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyQualifierId"))
-  {
+PolicyQualifierInfo& PolicyQualifierInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyQualifierId")) {
     m_policyQualifierId = PolicyQualifierIdMapper::GetPolicyQualifierIdForName(jsonValue.GetString("PolicyQualifierId"));
     m_policyQualifierIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Qualifier"))
-  {
+  if (jsonValue.ValueExists("Qualifier")) {
     m_qualifier = jsonValue.GetObject("Qualifier");
     m_qualifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PolicyQualifierInfo::Jsonize() const
-{
+JsonValue PolicyQualifierInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyQualifierIdHasBeenSet)
-  {
-   payload.WithString("PolicyQualifierId", PolicyQualifierIdMapper::GetNameForPolicyQualifierId(m_policyQualifierId));
+  if (m_policyQualifierIdHasBeenSet) {
+    payload.WithString("PolicyQualifierId", PolicyQualifierIdMapper::GetNameForPolicyQualifierId(m_policyQualifierId));
   }
 
-  if(m_qualifierHasBeenSet)
-  {
-   payload.WithObject("Qualifier", m_qualifier.Jsonize());
-
+  if (m_qualifierHasBeenSet) {
+    payload.WithObject("Qualifier", m_qualifier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

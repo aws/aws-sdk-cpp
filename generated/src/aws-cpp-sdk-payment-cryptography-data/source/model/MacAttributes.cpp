@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/MacAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/MacAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-MacAttributes::MacAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MacAttributes::MacAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-MacAttributes& MacAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Algorithm"))
-  {
+MacAttributes& MacAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Algorithm")) {
     m_algorithm = MacAlgorithmMapper::GetMacAlgorithmForName(jsonValue.GetString("Algorithm"));
     m_algorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmvMac"))
-  {
+  if (jsonValue.ValueExists("EmvMac")) {
     m_emvMac = jsonValue.GetObject("EmvMac");
     m_emvMacHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DukptIso9797Algorithm1"))
-  {
+  if (jsonValue.ValueExists("DukptIso9797Algorithm1")) {
     m_dukptIso9797Algorithm1 = jsonValue.GetObject("DukptIso9797Algorithm1");
     m_dukptIso9797Algorithm1HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DukptIso9797Algorithm3"))
-  {
+  if (jsonValue.ValueExists("DukptIso9797Algorithm3")) {
     m_dukptIso9797Algorithm3 = jsonValue.GetObject("DukptIso9797Algorithm3");
     m_dukptIso9797Algorithm3HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DukptCmac"))
-  {
+  if (jsonValue.ValueExists("DukptCmac")) {
     m_dukptCmac = jsonValue.GetObject("DukptCmac");
     m_dukptCmacHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MacAttributes::Jsonize() const
-{
+JsonValue MacAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_algorithmHasBeenSet)
-  {
-   payload.WithString("Algorithm", MacAlgorithmMapper::GetNameForMacAlgorithm(m_algorithm));
+  if (m_algorithmHasBeenSet) {
+    payload.WithString("Algorithm", MacAlgorithmMapper::GetNameForMacAlgorithm(m_algorithm));
   }
 
-  if(m_emvMacHasBeenSet)
-  {
-   payload.WithObject("EmvMac", m_emvMac.Jsonize());
-
+  if (m_emvMacHasBeenSet) {
+    payload.WithObject("EmvMac", m_emvMac.Jsonize());
   }
 
-  if(m_dukptIso9797Algorithm1HasBeenSet)
-  {
-   payload.WithObject("DukptIso9797Algorithm1", m_dukptIso9797Algorithm1.Jsonize());
-
+  if (m_dukptIso9797Algorithm1HasBeenSet) {
+    payload.WithObject("DukptIso9797Algorithm1", m_dukptIso9797Algorithm1.Jsonize());
   }
 
-  if(m_dukptIso9797Algorithm3HasBeenSet)
-  {
-   payload.WithObject("DukptIso9797Algorithm3", m_dukptIso9797Algorithm3.Jsonize());
-
+  if (m_dukptIso9797Algorithm3HasBeenSet) {
+    payload.WithObject("DukptIso9797Algorithm3", m_dukptIso9797Algorithm3.Jsonize());
   }
 
-  if(m_dukptCmacHasBeenSet)
-  {
-   payload.WithObject("DukptCmac", m_dukptCmac.Jsonize());
-
+  if (m_dukptCmacHasBeenSet) {
+    payload.WithObject("DukptCmac", m_dukptCmac.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

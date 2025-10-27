@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class TaskDefinitionPlacementConstraintType
-  {
-    NOT_SET,
-    memberOf
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class TaskDefinitionPlacementConstraintType { NOT_SET, memberOf };
 
-namespace TaskDefinitionPlacementConstraintTypeMapper
-{
+namespace TaskDefinitionPlacementConstraintTypeMapper {
 AWS_ECS_API TaskDefinitionPlacementConstraintType GetTaskDefinitionPlacementConstraintTypeForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForTaskDefinitionPlacementConstraintType(TaskDefinitionPlacementConstraintType value);
-} // namespace TaskDefinitionPlacementConstraintTypeMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace TaskDefinitionPlacementConstraintTypeMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

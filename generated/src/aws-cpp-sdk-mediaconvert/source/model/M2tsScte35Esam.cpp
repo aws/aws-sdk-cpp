@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/M2tsScte35Esam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/M2tsScte35Esam.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-M2tsScte35Esam::M2tsScte35Esam(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+M2tsScte35Esam::M2tsScte35Esam(JsonView jsonValue) { *this = jsonValue; }
 
-M2tsScte35Esam& M2tsScte35Esam::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scte35EsamPid"))
-  {
+M2tsScte35Esam& M2tsScte35Esam::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scte35EsamPid")) {
     m_scte35EsamPid = jsonValue.GetInteger("scte35EsamPid");
     m_scte35EsamPidHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue M2tsScte35Esam::Jsonize() const
-{
+JsonValue M2tsScte35Esam::Jsonize() const {
   JsonValue payload;
 
-  if(m_scte35EsamPidHasBeenSet)
-  {
-   payload.WithInteger("scte35EsamPid", m_scte35EsamPid);
-
+  if (m_scte35EsamPidHasBeenSet) {
+    payload.WithInteger("scte35EsamPid", m_scte35EsamPid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

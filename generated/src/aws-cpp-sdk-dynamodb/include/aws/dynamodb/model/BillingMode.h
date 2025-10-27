@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class BillingMode
-  {
-    NOT_SET,
-    PROVISIONED,
-    PAY_PER_REQUEST
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class BillingMode { NOT_SET, PROVISIONED, PAY_PER_REQUEST };
 
-namespace BillingModeMapper
-{
+namespace BillingModeMapper {
 AWS_DYNAMODB_API BillingMode GetBillingModeForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForBillingMode(BillingMode value);
-} // namespace BillingModeMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace BillingModeMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

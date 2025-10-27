@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateClientVpnRouteResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateClientVpnRouteResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClientVpnRouteResponse::CreateClientVpnRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateClientVpnRouteResponse::CreateClientVpnRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateClientVpnRouteResponse& CreateClientVpnRouteResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateClientVpnRouteResponse& CreateClientVpnRouteResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateClientVpnRouteResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateClientVpnRouteResponse")) {
     resultNode = rootNode.FirstChild("CreateClientVpnRouteResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = statusNode;
       m_statusHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ CreateClientVpnRouteResponse& CreateClientVpnRouteResponse::operator =(const Aws
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateClientVpnRouteResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateClientVpnRouteResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

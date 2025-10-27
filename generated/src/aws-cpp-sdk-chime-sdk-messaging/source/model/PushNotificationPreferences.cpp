@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-PushNotificationPreferences::PushNotificationPreferences(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PushNotificationPreferences::PushNotificationPreferences(JsonView jsonValue) { *this = jsonValue; }
 
-PushNotificationPreferences& PushNotificationPreferences::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowNotifications"))
-  {
+PushNotificationPreferences& PushNotificationPreferences::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowNotifications")) {
     m_allowNotifications = AllowNotificationsMapper::GetAllowNotificationsForName(jsonValue.GetString("AllowNotifications"));
     m_allowNotificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilterRule"))
-  {
+  if (jsonValue.ValueExists("FilterRule")) {
     m_filterRule = jsonValue.GetString("FilterRule");
     m_filterRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PushNotificationPreferences::Jsonize() const
-{
+JsonValue PushNotificationPreferences::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowNotificationsHasBeenSet)
-  {
-   payload.WithString("AllowNotifications", AllowNotificationsMapper::GetNameForAllowNotifications(m_allowNotifications));
+  if (m_allowNotificationsHasBeenSet) {
+    payload.WithString("AllowNotifications", AllowNotificationsMapper::GetNameForAllowNotifications(m_allowNotifications));
   }
 
-  if(m_filterRuleHasBeenSet)
-  {
-   payload.WithString("FilterRule", m_filterRule);
-
+  if (m_filterRuleHasBeenSet) {
+    payload.WithString("FilterRule", m_filterRule);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

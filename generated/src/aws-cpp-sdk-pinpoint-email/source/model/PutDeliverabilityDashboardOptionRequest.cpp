@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutDeliverabilityDashboardOptionRequest::SerializePayload() const
-{
+Aws::String PutDeliverabilityDashboardOptionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dashboardEnabledHasBeenSet)
-  {
-   payload.WithBool("DashboardEnabled", m_dashboardEnabled);
-
+  if (m_dashboardEnabledHasBeenSet) {
+    payload.WithBool("DashboardEnabled", m_dashboardEnabled);
   }
 
-  if(m_subscribedDomainsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subscribedDomainsJsonList(m_subscribedDomains.size());
-   for(unsigned subscribedDomainsIndex = 0; subscribedDomainsIndex < subscribedDomainsJsonList.GetLength(); ++subscribedDomainsIndex)
-   {
-     subscribedDomainsJsonList[subscribedDomainsIndex].AsObject(m_subscribedDomains[subscribedDomainsIndex].Jsonize());
-   }
-   payload.WithArray("SubscribedDomains", std::move(subscribedDomainsJsonList));
-
+  if (m_subscribedDomainsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscribedDomainsJsonList(m_subscribedDomains.size());
+    for (unsigned subscribedDomainsIndex = 0; subscribedDomainsIndex < subscribedDomainsJsonList.GetLength(); ++subscribedDomainsIndex) {
+      subscribedDomainsJsonList[subscribedDomainsIndex].AsObject(m_subscribedDomains[subscribedDomainsIndex].Jsonize());
+    }
+    payload.WithArray("SubscribedDomains", std::move(subscribedDomainsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

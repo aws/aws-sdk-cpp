@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/StopReplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/StopReplicationRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopReplicationRequest::SerializePayload() const
-{
+Aws::String StopReplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationConfigArnHasBeenSet)
-  {
-   payload.WithString("ReplicationConfigArn", m_replicationConfigArn);
-
+  if (m_replicationConfigArnHasBeenSet) {
+    payload.WithString("ReplicationConfigArn", m_replicationConfigArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopReplicationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopReplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonDMSv20160101.StopReplication"));
   return headers;
-
 }
-
-
-
-

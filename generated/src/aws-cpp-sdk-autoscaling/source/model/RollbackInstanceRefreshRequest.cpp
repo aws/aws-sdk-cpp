@@ -10,12 +10,10 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String RollbackInstanceRefreshRequest::SerializePayload() const
-{
+Aws::String RollbackInstanceRefreshRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RollbackInstanceRefresh&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String RollbackInstanceRefreshRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RollbackInstanceRefreshRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RollbackInstanceRefreshRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class AbortCriteriaAction
-  {
-    NOT_SET,
-    CANCEL
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class AbortCriteriaAction { NOT_SET, CANCEL };
 
-namespace AbortCriteriaActionMapper
-{
+namespace AbortCriteriaActionMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API AbortCriteriaAction GetAbortCriteriaActionForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForAbortCriteriaAction(AbortCriteriaAction value);
-} // namespace AbortCriteriaActionMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace AbortCriteriaActionMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

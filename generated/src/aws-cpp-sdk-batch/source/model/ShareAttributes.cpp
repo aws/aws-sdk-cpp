@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ShareAttributes::ShareAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ShareAttributes::ShareAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-ShareAttributes& ShareAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("shareIdentifier"))
-  {
+ShareAttributes& ShareAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("shareIdentifier")) {
     m_shareIdentifier = jsonValue.GetString("shareIdentifier");
     m_shareIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("weightFactor"))
-  {
+  if (jsonValue.ValueExists("weightFactor")) {
     m_weightFactor = jsonValue.GetDouble("weightFactor");
     m_weightFactorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ShareAttributes::Jsonize() const
-{
+JsonValue ShareAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_shareIdentifierHasBeenSet)
-  {
-   payload.WithString("shareIdentifier", m_shareIdentifier);
-
+  if (m_shareIdentifierHasBeenSet) {
+    payload.WithString("shareIdentifier", m_shareIdentifier);
   }
 
-  if(m_weightFactorHasBeenSet)
-  {
-   payload.WithDouble("weightFactor", m_weightFactor);
-
+  if (m_weightFactorHasBeenSet) {
+    payload.WithDouble("weightFactor", m_weightFactor);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

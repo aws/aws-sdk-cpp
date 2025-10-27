@@ -12,24 +12,16 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateExtensionAssociationRequest::SerializePayload() const
-{
+Aws::String UpdateExtensionAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

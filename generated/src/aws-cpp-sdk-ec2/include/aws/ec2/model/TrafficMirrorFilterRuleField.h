@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class TrafficMirrorFilterRuleField
-  {
-    NOT_SET,
-    destination_port_range,
-    source_port_range,
-    protocol,
-    description
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class TrafficMirrorFilterRuleField { NOT_SET, destination_port_range, source_port_range, protocol, description };
 
-namespace TrafficMirrorFilterRuleFieldMapper
-{
+namespace TrafficMirrorFilterRuleFieldMapper {
 AWS_EC2_API TrafficMirrorFilterRuleField GetTrafficMirrorFilterRuleFieldForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTrafficMirrorFilterRuleField(TrafficMirrorFilterRuleField value);
-} // namespace TrafficMirrorFilterRuleFieldMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TrafficMirrorFilterRuleFieldMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

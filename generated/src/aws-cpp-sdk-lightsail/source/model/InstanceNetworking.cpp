@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/InstanceNetworking.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-InstanceNetworking::InstanceNetworking(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceNetworking::InstanceNetworking(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceNetworking& InstanceNetworking::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("monthlyTransfer"))
-  {
+InstanceNetworking& InstanceNetworking::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("monthlyTransfer")) {
     m_monthlyTransfer = jsonValue.GetObject("monthlyTransfer");
     m_monthlyTransferHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ports"))
-  {
+  if (jsonValue.ValueExists("ports")) {
     Aws::Utils::Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
-    for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
-    {
+    for (unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex) {
       m_ports.push_back(portsJsonList[portsIndex].AsObject());
     }
     m_portsHasBeenSet = true;
@@ -42,30 +32,24 @@ InstanceNetworking& InstanceNetworking::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue InstanceNetworking::Jsonize() const
-{
+JsonValue InstanceNetworking::Jsonize() const {
   JsonValue payload;
 
-  if(m_monthlyTransferHasBeenSet)
-  {
-   payload.WithObject("monthlyTransfer", m_monthlyTransfer.Jsonize());
-
+  if (m_monthlyTransferHasBeenSet) {
+    payload.WithObject("monthlyTransfer", m_monthlyTransfer.Jsonize());
   }
 
-  if(m_portsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> portsJsonList(m_ports.size());
-   for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
-   {
-     portsJsonList[portsIndex].AsObject(m_ports[portsIndex].Jsonize());
-   }
-   payload.WithArray("ports", std::move(portsJsonList));
-
+  if (m_portsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> portsJsonList(m_ports.size());
+    for (unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex) {
+      portsJsonList[portsIndex].AsObject(m_ports[portsIndex].Jsonize());
+    }
+    payload.WithArray("ports", std::move(portsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Translate;
 
-AWSError<CoreErrors> TranslateErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TranslateErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TranslateErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

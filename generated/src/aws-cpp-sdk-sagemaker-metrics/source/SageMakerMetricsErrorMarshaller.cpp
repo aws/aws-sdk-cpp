@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SageMakerMetrics;
 
-AWSError<CoreErrors> SageMakerMetricsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SageMakerMetricsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SageMakerMetricsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

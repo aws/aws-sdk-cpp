@@ -5,12 +5,8 @@
 
 #include <aws/launch-wizard/LaunchWizardEndpointProvider.h>
 
-namespace Aws
-{
-namespace LaunchWizard
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LaunchWizard
-} // namespace Aws
+namespace Aws {
+namespace LaunchWizard {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LaunchWizard
+}  // namespace Aws

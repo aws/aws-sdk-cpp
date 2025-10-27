@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/UpdateFilterRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFilterRequest::SerializePayload() const
-{
+Aws::String UpdateFilterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
   }
 
-  if(m_rankHasBeenSet)
-  {
-   payload.WithInteger("rank", m_rank);
-
+  if (m_rankHasBeenSet) {
+    payload.WithInteger("rank", m_rank);
   }
 
-  if(m_findingCriteriaHasBeenSet)
-  {
-   payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
-
+  if (m_findingCriteriaHasBeenSet) {
+    payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

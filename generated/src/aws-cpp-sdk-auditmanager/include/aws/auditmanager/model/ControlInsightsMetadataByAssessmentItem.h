@@ -5,121 +5,144 @@
 
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/auditmanager/model/EvidenceInsights.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace AuditManager {
+namespace Model {
 
+/**
+ * <p>A summary of the latest analytics data for a specific control in a specific
+ * active assessment.</p> <p>Control insights are grouped by control domain, and
+ * ranked by the highest total count of non-compliant evidence. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlInsightsMetadataByAssessmentItem">AWS
+ * API Reference</a></p>
+ */
+class ControlInsightsMetadataByAssessmentItem {
+ public:
+  AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem() = default;
+  AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem(Aws::Utils::Json::JsonView jsonValue);
+  AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A summary of the latest analytics data for a specific control in a specific
-   * active assessment.</p> <p>Control insights are grouped by control domain, and
-   * ranked by the highest total count of non-compliant evidence. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlInsightsMetadataByAssessmentItem">AWS
-   * API Reference</a></p>
+   * <p>The name of the assessment control. </p>
    */
-  class ControlInsightsMetadataByAssessmentItem
-  {
-  public:
-    AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem() = default;
-    AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem(Aws::Utils::Json::JsonView jsonValue);
-    AWS_AUDITMANAGER_API ControlInsightsMetadataByAssessmentItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ControlInsightsMetadataByAssessmentItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The unique identifier for the assessment control. </p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  ControlInsightsMetadataByAssessmentItem& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the assessment control. </p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ControlInsightsMetadataByAssessmentItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A breakdown of the compliance check status for the evidence that’s associated
+   * with the assessment control. </p>
+   */
+  inline const EvidenceInsights& GetEvidenceInsights() const { return m_evidenceInsights; }
+  inline bool EvidenceInsightsHasBeenSet() const { return m_evidenceInsightsHasBeenSet; }
+  template <typename EvidenceInsightsT = EvidenceInsights>
+  void SetEvidenceInsights(EvidenceInsightsT&& value) {
+    m_evidenceInsightsHasBeenSet = true;
+    m_evidenceInsights = std::forward<EvidenceInsightsT>(value);
+  }
+  template <typename EvidenceInsightsT = EvidenceInsights>
+  ControlInsightsMetadataByAssessmentItem& WithEvidenceInsights(EvidenceInsightsT&& value) {
+    SetEvidenceInsights(std::forward<EvidenceInsightsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The unique identifier for the assessment control. </p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ControlInsightsMetadataByAssessmentItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the control set that the assessment control belongs to. </p>
+   */
+  inline const Aws::String& GetControlSetName() const { return m_controlSetName; }
+  inline bool ControlSetNameHasBeenSet() const { return m_controlSetNameHasBeenSet; }
+  template <typename ControlSetNameT = Aws::String>
+  void SetControlSetName(ControlSetNameT&& value) {
+    m_controlSetNameHasBeenSet = true;
+    m_controlSetName = std::forward<ControlSetNameT>(value);
+  }
+  template <typename ControlSetNameT = Aws::String>
+  ControlInsightsMetadataByAssessmentItem& WithControlSetName(ControlSetNameT&& value) {
+    SetControlSetName(std::forward<ControlSetNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A breakdown of the compliance check status for the evidence that’s associated
-     * with the assessment control. </p>
-     */
-    inline const EvidenceInsights& GetEvidenceInsights() const { return m_evidenceInsights; }
-    inline bool EvidenceInsightsHasBeenSet() const { return m_evidenceInsightsHasBeenSet; }
-    template<typename EvidenceInsightsT = EvidenceInsights>
-    void SetEvidenceInsights(EvidenceInsightsT&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::forward<EvidenceInsightsT>(value); }
-    template<typename EvidenceInsightsT = EvidenceInsights>
-    ControlInsightsMetadataByAssessmentItem& WithEvidenceInsights(EvidenceInsightsT&& value) { SetEvidenceInsights(std::forward<EvidenceInsightsT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time when the assessment control insights were last updated. </p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
+  inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+  template <typename LastUpdatedT = Aws::Utils::DateTime>
+  void SetLastUpdated(LastUpdatedT&& value) {
+    m_lastUpdatedHasBeenSet = true;
+    m_lastUpdated = std::forward<LastUpdatedT>(value);
+  }
+  template <typename LastUpdatedT = Aws::Utils::DateTime>
+  ControlInsightsMetadataByAssessmentItem& WithLastUpdated(LastUpdatedT&& value) {
+    SetLastUpdated(std::forward<LastUpdatedT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the control set that the assessment control belongs to. </p>
-     */
-    inline const Aws::String& GetControlSetName() const { return m_controlSetName; }
-    inline bool ControlSetNameHasBeenSet() const { return m_controlSetNameHasBeenSet; }
-    template<typename ControlSetNameT = Aws::String>
-    void SetControlSetName(ControlSetNameT&& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = std::forward<ControlSetNameT>(value); }
-    template<typename ControlSetNameT = Aws::String>
-    ControlInsightsMetadataByAssessmentItem& WithControlSetName(ControlSetNameT&& value) { SetControlSetName(std::forward<ControlSetNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time when the assessment control insights were last updated. </p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
-    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    template<typename LastUpdatedT = Aws::Utils::DateTime>
-    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
-    template<typename LastUpdatedT = Aws::Utils::DateTime>
-    ControlInsightsMetadataByAssessmentItem& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
-    ///@}
-  private:
+  EvidenceInsights m_evidenceInsights;
+  bool m_evidenceInsightsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  Aws::String m_controlSetName;
+  bool m_controlSetNameHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+  Aws::Utils::DateTime m_lastUpdated{};
+  bool m_lastUpdatedHasBeenSet = false;
+};
 
-    EvidenceInsights m_evidenceInsights;
-    bool m_evidenceInsightsHasBeenSet = false;
-
-    Aws::String m_controlSetName;
-    bool m_controlSetNameHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdated{};
-    bool m_lastUpdatedHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

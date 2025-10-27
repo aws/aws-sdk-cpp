@@ -3,48 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/PurchaseCapacityBlockRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseCapacityBlockRequest::SerializePayload() const
-{
+Aws::String PurchaseCapacityBlockRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseCapacityBlock&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_capacityBlockOfferingIdHasBeenSet)
-  {
+  if (m_capacityBlockOfferingIdHasBeenSet) {
     ss << "CapacityBlockOfferingId=" << StringUtils::URLEncode(m_capacityBlockOfferingId.c_str()) << "&";
   }
 
-  if(m_instancePlatformHasBeenSet)
-  {
-    ss << "InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
+  if (m_instancePlatformHasBeenSet) {
+    ss << "InstancePlatform="
+       << StringUtils::URLEncode(
+              CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform))
+       << "&";
   }
 
   ss << "Version=2016-11-15";
   return ss.str();
 }
 
-
-void  PurchaseCapacityBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseCapacityBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

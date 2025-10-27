@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/wellarchitected/WellArchitectedEndpointRules.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using WellArchitectedClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using WellArchitectedDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_WELLARCHITECTED_API WellArchitectedEndpointProvider : public WellArchitectedDefaultEpProviderBase
-{
-public:
-    using WellArchitectedResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_WELLARCHITECTED_API WellArchitectedEndpointProvider : public WellArchitectedDefaultEpProviderBase {
+ public:
+  using WellArchitectedResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    WellArchitectedEndpointProvider()
-      : WellArchitectedDefaultEpProviderBase(Aws::WellArchitected::WellArchitectedEndpointRules::GetRulesBlob(), Aws::WellArchitected::WellArchitectedEndpointRules::RulesBlobSize)
-    {}
+  WellArchitectedEndpointProvider()
+      : WellArchitectedDefaultEpProviderBase(Aws::WellArchitected::WellArchitectedEndpointRules::GetRulesBlob(),
+                                             Aws::WellArchitected::WellArchitectedEndpointRules::RulesBlobSize) {}
 
-    ~WellArchitectedEndpointProvider()
-    {
-    }
+  ~WellArchitectedEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace WellArchitected
+}  // namespace Aws

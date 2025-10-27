@@ -3,80 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AggregationFunction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AggregationFunction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AggregationFunction::AggregationFunction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregationFunction::AggregationFunction(JsonView jsonValue) { *this = jsonValue; }
 
-AggregationFunction& AggregationFunction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NumericalAggregationFunction"))
-  {
+AggregationFunction& AggregationFunction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NumericalAggregationFunction")) {
     m_numericalAggregationFunction = jsonValue.GetObject("NumericalAggregationFunction");
     m_numericalAggregationFunctionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CategoricalAggregationFunction"))
-  {
-    m_categoricalAggregationFunction = CategoricalAggregationFunctionMapper::GetCategoricalAggregationFunctionForName(jsonValue.GetString("CategoricalAggregationFunction"));
+  if (jsonValue.ValueExists("CategoricalAggregationFunction")) {
+    m_categoricalAggregationFunction = CategoricalAggregationFunctionMapper::GetCategoricalAggregationFunctionForName(
+        jsonValue.GetString("CategoricalAggregationFunction"));
     m_categoricalAggregationFunctionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DateAggregationFunction"))
-  {
-    m_dateAggregationFunction = DateAggregationFunctionMapper::GetDateAggregationFunctionForName(jsonValue.GetString("DateAggregationFunction"));
+  if (jsonValue.ValueExists("DateAggregationFunction")) {
+    m_dateAggregationFunction =
+        DateAggregationFunctionMapper::GetDateAggregationFunctionForName(jsonValue.GetString("DateAggregationFunction"));
     m_dateAggregationFunctionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeAggregationFunction"))
-  {
+  if (jsonValue.ValueExists("AttributeAggregationFunction")) {
     m_attributeAggregationFunction = jsonValue.GetObject("AttributeAggregationFunction");
     m_attributeAggregationFunctionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregationFunction::Jsonize() const
-{
+JsonValue AggregationFunction::Jsonize() const {
   JsonValue payload;
 
-  if(m_numericalAggregationFunctionHasBeenSet)
-  {
-   payload.WithObject("NumericalAggregationFunction", m_numericalAggregationFunction.Jsonize());
-
+  if (m_numericalAggregationFunctionHasBeenSet) {
+    payload.WithObject("NumericalAggregationFunction", m_numericalAggregationFunction.Jsonize());
   }
 
-  if(m_categoricalAggregationFunctionHasBeenSet)
-  {
-   payload.WithString("CategoricalAggregationFunction", CategoricalAggregationFunctionMapper::GetNameForCategoricalAggregationFunction(m_categoricalAggregationFunction));
+  if (m_categoricalAggregationFunctionHasBeenSet) {
+    payload.WithString("CategoricalAggregationFunction",
+                       CategoricalAggregationFunctionMapper::GetNameForCategoricalAggregationFunction(m_categoricalAggregationFunction));
   }
 
-  if(m_dateAggregationFunctionHasBeenSet)
-  {
-   payload.WithString("DateAggregationFunction", DateAggregationFunctionMapper::GetNameForDateAggregationFunction(m_dateAggregationFunction));
+  if (m_dateAggregationFunctionHasBeenSet) {
+    payload.WithString("DateAggregationFunction",
+                       DateAggregationFunctionMapper::GetNameForDateAggregationFunction(m_dateAggregationFunction));
   }
 
-  if(m_attributeAggregationFunctionHasBeenSet)
-  {
-   payload.WithObject("AttributeAggregationFunction", m_attributeAggregationFunction.Jsonize());
-
+  if (m_attributeAggregationFunctionHasBeenSet) {
+    payload.WithObject("AttributeAggregationFunction", m_attributeAggregationFunction.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-EBSSavingsOpportunityAfterDiscounts::EBSSavingsOpportunityAfterDiscounts(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EBSSavingsOpportunityAfterDiscounts::EBSSavingsOpportunityAfterDiscounts(JsonView jsonValue) { *this = jsonValue; }
 
-EBSSavingsOpportunityAfterDiscounts& EBSSavingsOpportunityAfterDiscounts::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("savingsOpportunityPercentage"))
-  {
+EBSSavingsOpportunityAfterDiscounts& EBSSavingsOpportunityAfterDiscounts::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("savingsOpportunityPercentage")) {
     m_savingsOpportunityPercentage = jsonValue.GetDouble("savingsOpportunityPercentage");
     m_savingsOpportunityPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("estimatedMonthlySavings"))
-  {
+  if (jsonValue.ValueExists("estimatedMonthlySavings")) {
     m_estimatedMonthlySavings = jsonValue.GetObject("estimatedMonthlySavings");
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EBSSavingsOpportunityAfterDiscounts::Jsonize() const
-{
+JsonValue EBSSavingsOpportunityAfterDiscounts::Jsonize() const {
   JsonValue payload;
 
-  if(m_savingsOpportunityPercentageHasBeenSet)
-  {
-   payload.WithDouble("savingsOpportunityPercentage", m_savingsOpportunityPercentage);
-
+  if (m_savingsOpportunityPercentageHasBeenSet) {
+    payload.WithDouble("savingsOpportunityPercentage", m_savingsOpportunityPercentage);
   }
 
-  if(m_estimatedMonthlySavingsHasBeenSet)
-  {
-   payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
-
+  if (m_estimatedMonthlySavingsHasBeenSet) {
+    payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

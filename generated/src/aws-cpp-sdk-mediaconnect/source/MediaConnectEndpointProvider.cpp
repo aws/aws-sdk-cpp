@@ -5,12 +5,8 @@
 
 #include <aws/mediaconnect/MediaConnectEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaConnect
-} // namespace Aws
+namespace Aws {
+namespace MediaConnect {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaConnect
+}  // namespace Aws

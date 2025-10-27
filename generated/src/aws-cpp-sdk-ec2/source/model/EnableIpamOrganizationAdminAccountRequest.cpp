@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableIpamOrganizationAdminAccountRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/EnableIpamOrganizationAdminAccountRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableIpamOrganizationAdminAccountRequest::SerializePayload() const
-{
+Aws::String EnableIpamOrganizationAdminAccountRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableIpamOrganizationAdminAccount&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_delegatedAdminAccountIdHasBeenSet)
-  {
+  if (m_delegatedAdminAccountIdHasBeenSet) {
     ss << "DelegatedAdminAccountId=" << StringUtils::URLEncode(m_delegatedAdminAccountId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String EnableIpamOrganizationAdminAccountRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableIpamOrganizationAdminAccountRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableIpamOrganizationAdminAccountRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

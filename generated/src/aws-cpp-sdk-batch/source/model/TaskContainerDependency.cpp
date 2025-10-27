@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-TaskContainerDependency::TaskContainerDependency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskContainerDependency::TaskContainerDependency(JsonView jsonValue) { *this = jsonValue; }
 
-TaskContainerDependency& TaskContainerDependency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("containerName"))
-  {
+TaskContainerDependency& TaskContainerDependency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("containerName")) {
     m_containerName = jsonValue.GetString("containerName");
     m_containerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("condition"))
-  {
+  if (jsonValue.ValueExists("condition")) {
     m_condition = jsonValue.GetString("condition");
     m_conditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TaskContainerDependency::Jsonize() const
-{
+JsonValue TaskContainerDependency::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
-  {
-   payload.WithString("containerName", m_containerName);
-
+  if (m_containerNameHasBeenSet) {
+    payload.WithString("containerName", m_containerName);
   }
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("condition", m_condition);
-
+  if (m_conditionHasBeenSet) {
+    payload.WithString("condition", m_condition);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

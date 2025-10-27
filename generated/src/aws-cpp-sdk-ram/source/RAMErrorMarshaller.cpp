@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RAM;
 
-AWSError<CoreErrors> RAMErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RAMErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RAMErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

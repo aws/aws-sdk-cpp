@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class Distribution
-  {
-    NOT_SET,
-    Random,
-    ByLogStream
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class Distribution { NOT_SET, Random, ByLogStream };
 
-namespace DistributionMapper
-{
+namespace DistributionMapper {
 AWS_CLOUDWATCHLOGS_API Distribution GetDistributionForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForDistribution(Distribution value);
-} // namespace DistributionMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace DistributionMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

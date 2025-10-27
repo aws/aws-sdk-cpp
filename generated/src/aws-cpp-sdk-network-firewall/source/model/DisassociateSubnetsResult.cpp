@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/DisassociateSubnetsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/network-firewall/model/DisassociateSubnetsResult.h>
 
 #include <utility>
 
@@ -17,47 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateSubnetsResult::DisassociateSubnetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DisassociateSubnetsResult::DisassociateSubnetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DisassociateSubnetsResult& DisassociateSubnetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DisassociateSubnetsResult& DisassociateSubnetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FirewallArn"))
-  {
+  if (jsonValue.ValueExists("FirewallArn")) {
     m_firewallArn = jsonValue.GetString("FirewallArn");
     m_firewallArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FirewallName"))
-  {
+  if (jsonValue.ValueExists("FirewallName")) {
     m_firewallName = jsonValue.GetString("FirewallName");
     m_firewallNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetMappings"))
-  {
+  if (jsonValue.ValueExists("SubnetMappings")) {
     Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
-    for(unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex)
-    {
+    for (unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex) {
       m_subnetMappings.push_back(subnetMappingsJsonList[subnetMappingsIndex].AsObject());
     }
     m_subnetMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateToken"))
-  {
+  if (jsonValue.ValueExists("UpdateToken")) {
     m_updateToken = jsonValue.GetString("UpdateToken");
     m_updateTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

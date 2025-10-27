@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/CreateTokenResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/license-manager/model/CreateTokenResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTokenResult::CreateTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateTokenResult::CreateTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateTokenResult& CreateTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateTokenResult& CreateTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TokenId"))
-  {
+  if (jsonValue.ValueExists("TokenId")) {
     m_tokenId = jsonValue.GetString("TokenId");
     m_tokenIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TokenType"))
-  {
+  if (jsonValue.ValueExists("TokenType")) {
     m_tokenType = TokenTypeMapper::GetTokenTypeForName(jsonValue.GetString("TokenType"));
     m_tokenTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Token"))
-  {
+  if (jsonValue.ValueExists("Token")) {
     m_token = jsonValue.GetString("Token");
     m_tokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

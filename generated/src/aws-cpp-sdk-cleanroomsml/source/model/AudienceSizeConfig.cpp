@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-AudienceSizeConfig::AudienceSizeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudienceSizeConfig::AudienceSizeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AudienceSizeConfig& AudienceSizeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audienceSizeType"))
-  {
+AudienceSizeConfig& AudienceSizeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audienceSizeType")) {
     m_audienceSizeType = AudienceSizeTypeMapper::GetAudienceSizeTypeForName(jsonValue.GetString("audienceSizeType"));
     m_audienceSizeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audienceSizeBins"))
-  {
+  if (jsonValue.ValueExists("audienceSizeBins")) {
     Aws::Utils::Array<JsonView> audienceSizeBinsJsonList = jsonValue.GetArray("audienceSizeBins");
-    for(unsigned audienceSizeBinsIndex = 0; audienceSizeBinsIndex < audienceSizeBinsJsonList.GetLength(); ++audienceSizeBinsIndex)
-    {
+    for (unsigned audienceSizeBinsIndex = 0; audienceSizeBinsIndex < audienceSizeBinsJsonList.GetLength(); ++audienceSizeBinsIndex) {
       m_audienceSizeBins.push_back(audienceSizeBinsJsonList[audienceSizeBinsIndex].AsInteger());
     }
     m_audienceSizeBinsHasBeenSet = true;
@@ -42,29 +32,24 @@ AudienceSizeConfig& AudienceSizeConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AudienceSizeConfig::Jsonize() const
-{
+JsonValue AudienceSizeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_audienceSizeTypeHasBeenSet)
-  {
-   payload.WithString("audienceSizeType", AudienceSizeTypeMapper::GetNameForAudienceSizeType(m_audienceSizeType));
+  if (m_audienceSizeTypeHasBeenSet) {
+    payload.WithString("audienceSizeType", AudienceSizeTypeMapper::GetNameForAudienceSizeType(m_audienceSizeType));
   }
 
-  if(m_audienceSizeBinsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> audienceSizeBinsJsonList(m_audienceSizeBins.size());
-   for(unsigned audienceSizeBinsIndex = 0; audienceSizeBinsIndex < audienceSizeBinsJsonList.GetLength(); ++audienceSizeBinsIndex)
-   {
-     audienceSizeBinsJsonList[audienceSizeBinsIndex].AsInteger(m_audienceSizeBins[audienceSizeBinsIndex]);
-   }
-   payload.WithArray("audienceSizeBins", std::move(audienceSizeBinsJsonList));
-
+  if (m_audienceSizeBinsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> audienceSizeBinsJsonList(m_audienceSizeBins.size());
+    for (unsigned audienceSizeBinsIndex = 0; audienceSizeBinsIndex < audienceSizeBinsJsonList.GetLength(); ++audienceSizeBinsIndex) {
+      audienceSizeBinsJsonList[audienceSizeBinsIndex].AsInteger(m_audienceSizeBins[audienceSizeBinsIndex]);
+    }
+    payload.WithArray("audienceSizeBins", std::move(audienceSizeBinsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-SqlKnowledgeBaseConfiguration::SqlKnowledgeBaseConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SqlKnowledgeBaseConfiguration::SqlKnowledgeBaseConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SqlKnowledgeBaseConfiguration& SqlKnowledgeBaseConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+SqlKnowledgeBaseConfiguration& SqlKnowledgeBaseConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = QueryEngineTypeMapper::GetQueryEngineTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redshiftConfiguration"))
-  {
+  if (jsonValue.ValueExists("redshiftConfiguration")) {
     m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
     m_redshiftConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SqlKnowledgeBaseConfiguration::Jsonize() const
-{
+JsonValue SqlKnowledgeBaseConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", QueryEngineTypeMapper::GetNameForQueryEngineType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", QueryEngineTypeMapper::GetNameForQueryEngineType(m_type));
   }
 
-  if(m_redshiftConfigurationHasBeenSet)
-  {
-   payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
-
+  if (m_redshiftConfigurationHasBeenSet) {
+    payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

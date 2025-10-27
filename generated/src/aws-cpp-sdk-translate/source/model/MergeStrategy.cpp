@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/MergeStrategy.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/translate/model/MergeStrategy.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Translate {
+namespace Model {
+namespace MergeStrategyMapper {
 
-namespace Aws
-{
-  namespace Translate
-  {
-    namespace Model
-    {
-      namespace MergeStrategyMapper
-      {
+static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
 
-        static const int OVERWRITE_HASH = HashingUtils::HashString("OVERWRITE");
+MergeStrategy GetMergeStrategyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OVERWRITE_HASH) {
+    return MergeStrategy::OVERWRITE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MergeStrategy>(hashCode);
+  }
 
+  return MergeStrategy::NOT_SET;
+}
 
-        MergeStrategy GetMergeStrategyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OVERWRITE_HASH)
-          {
-            return MergeStrategy::OVERWRITE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MergeStrategy>(hashCode);
-          }
+Aws::String GetNameForMergeStrategy(MergeStrategy enumValue) {
+  switch (enumValue) {
+    case MergeStrategy::NOT_SET:
+      return {};
+    case MergeStrategy::OVERWRITE:
+      return "OVERWRITE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MergeStrategy::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMergeStrategy(MergeStrategy enumValue)
-        {
-          switch(enumValue)
-          {
-          case MergeStrategy::NOT_SET:
-            return {};
-          case MergeStrategy::OVERWRITE:
-            return "OVERWRITE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MergeStrategyMapper
-    } // namespace Model
-  } // namespace Translate
-} // namespace Aws
+}  // namespace MergeStrategyMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

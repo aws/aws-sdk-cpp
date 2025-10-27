@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>Represents the JSON dataset format used when running a monitoring
+ * job.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringJsonDatasetFormat">AWS
+ * API Reference</a></p>
+ */
+class MonitoringJsonDatasetFormat {
+ public:
+  AWS_SAGEMAKER_API MonitoringJsonDatasetFormat() = default;
+  AWS_SAGEMAKER_API MonitoringJsonDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API MonitoringJsonDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Represents the JSON dataset format used when running a monitoring
-   * job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringJsonDatasetFormat">AWS
-   * API Reference</a></p>
+   * <p>Indicates if the file should be read as a JSON object per line. </p>
    */
-  class MonitoringJsonDatasetFormat
-  {
-  public:
-    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat() = default;
-    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetLine() const { return m_line; }
+  inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
+  inline void SetLine(bool value) {
+    m_lineHasBeenSet = true;
+    m_line = value;
+  }
+  inline MonitoringJsonDatasetFormat& WithLine(bool value) {
+    SetLine(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_line{false};
+  bool m_lineHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Indicates if the file should be read as a JSON object per line. </p>
-     */
-    inline bool GetLine() const { return m_line; }
-    inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
-    inline void SetLine(bool value) { m_lineHasBeenSet = true; m_line = value; }
-    inline MonitoringJsonDatasetFormat& WithLine(bool value) { SetLine(value); return *this;}
-    ///@}
-  private:
-
-    bool m_line{false};
-    bool m_lineHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

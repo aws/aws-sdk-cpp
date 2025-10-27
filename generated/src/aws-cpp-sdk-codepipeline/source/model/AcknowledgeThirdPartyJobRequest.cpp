@@ -12,39 +12,26 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AcknowledgeThirdPartyJobRequest::SerializePayload() const
-{
+Aws::String AcknowledgeThirdPartyJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_nonceHasBeenSet)
-  {
-   payload.WithString("nonce", m_nonce);
-
+  if (m_nonceHasBeenSet) {
+    payload.WithString("nonce", m_nonce);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AcknowledgeThirdPartyJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AcknowledgeThirdPartyJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.AcknowledgeThirdPartyJob"));
   return headers;
-
 }
-
-
-
-

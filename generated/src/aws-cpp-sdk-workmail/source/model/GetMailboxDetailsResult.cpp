@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/GetMailboxDetailsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workmail/model/GetMailboxDetailsResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetMailboxDetailsResult& GetMailboxDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetMailboxDetailsResult& GetMailboxDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MailboxQuota"))
-  {
+  if (jsonValue.ValueExists("MailboxQuota")) {
     m_mailboxQuota = jsonValue.GetInteger("MailboxQuota");
     m_mailboxQuotaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MailboxSize"))
-  {
+  if (jsonValue.ValueExists("MailboxSize")) {
     m_mailboxSize = jsonValue.GetDouble("MailboxSize");
     m_mailboxSizeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

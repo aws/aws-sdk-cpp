@@ -11,35 +11,25 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-Summary::Summary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Summary::Summary(JsonView jsonValue) { *this = jsonValue; }
 
-Summary& Summary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Summary& Summary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = FindingMapper::GetFindingForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reasonCodeSummaries"))
-  {
+  if (jsonValue.ValueExists("reasonCodeSummaries")) {
     Aws::Utils::Array<JsonView> reasonCodeSummariesJsonList = jsonValue.GetArray("reasonCodeSummaries");
-    for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
-    {
+    for (unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength();
+         ++reasonCodeSummariesIndex) {
       m_reasonCodeSummaries.push_back(reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject());
     }
     m_reasonCodeSummariesHasBeenSet = true;
@@ -47,35 +37,29 @@ Summary& Summary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Summary::Jsonize() const
-{
+JsonValue Summary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", FindingMapper::GetNameForFinding(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", FindingMapper::GetNameForFinding(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("value", m_value);
   }
 
-  if(m_reasonCodeSummariesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> reasonCodeSummariesJsonList(m_reasonCodeSummaries.size());
-   for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
-   {
-     reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject(m_reasonCodeSummaries[reasonCodeSummariesIndex].Jsonize());
-   }
-   payload.WithArray("reasonCodeSummaries", std::move(reasonCodeSummariesJsonList));
-
+  if (m_reasonCodeSummariesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> reasonCodeSummariesJsonList(m_reasonCodeSummaries.size());
+    for (unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength();
+         ++reasonCodeSummariesIndex) {
+      reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject(m_reasonCodeSummaries[reasonCodeSummariesIndex].Jsonize());
+    }
+    payload.WithArray("reasonCodeSummaries", std::move(reasonCodeSummariesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteApplicationRequest::SerializePayload() const
-{
+Aws::String DeleteApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeleteApplication"));
   return headers;
-
 }
-
-
-
-

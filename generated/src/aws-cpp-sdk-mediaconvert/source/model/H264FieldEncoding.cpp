@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/H264FieldEncoding.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/H264FieldEncoding.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace H264FieldEncodingMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace H264FieldEncodingMapper
-      {
+static const int PAFF_HASH = HashingUtils::HashString("PAFF");
+static const int FORCE_FIELD_HASH = HashingUtils::HashString("FORCE_FIELD");
+static const int MBAFF_HASH = HashingUtils::HashString("MBAFF");
 
-        static const int PAFF_HASH = HashingUtils::HashString("PAFF");
-        static const int FORCE_FIELD_HASH = HashingUtils::HashString("FORCE_FIELD");
-        static const int MBAFF_HASH = HashingUtils::HashString("MBAFF");
+H264FieldEncoding GetH264FieldEncodingForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PAFF_HASH) {
+    return H264FieldEncoding::PAFF;
+  } else if (hashCode == FORCE_FIELD_HASH) {
+    return H264FieldEncoding::FORCE_FIELD;
+  } else if (hashCode == MBAFF_HASH) {
+    return H264FieldEncoding::MBAFF;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<H264FieldEncoding>(hashCode);
+  }
 
+  return H264FieldEncoding::NOT_SET;
+}
 
-        H264FieldEncoding GetH264FieldEncodingForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PAFF_HASH)
-          {
-            return H264FieldEncoding::PAFF;
-          }
-          else if (hashCode == FORCE_FIELD_HASH)
-          {
-            return H264FieldEncoding::FORCE_FIELD;
-          }
-          else if (hashCode == MBAFF_HASH)
-          {
-            return H264FieldEncoding::MBAFF;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<H264FieldEncoding>(hashCode);
-          }
+Aws::String GetNameForH264FieldEncoding(H264FieldEncoding enumValue) {
+  switch (enumValue) {
+    case H264FieldEncoding::NOT_SET:
+      return {};
+    case H264FieldEncoding::PAFF:
+      return "PAFF";
+    case H264FieldEncoding::FORCE_FIELD:
+      return "FORCE_FIELD";
+    case H264FieldEncoding::MBAFF:
+      return "MBAFF";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return H264FieldEncoding::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForH264FieldEncoding(H264FieldEncoding enumValue)
-        {
-          switch(enumValue)
-          {
-          case H264FieldEncoding::NOT_SET:
-            return {};
-          case H264FieldEncoding::PAFF:
-            return "PAFF";
-          case H264FieldEncoding::FORCE_FIELD:
-            return "FORCE_FIELD";
-          case H264FieldEncoding::MBAFF:
-            return "MBAFF";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace H264FieldEncodingMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace H264FieldEncodingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

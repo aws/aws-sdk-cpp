@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/Note.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/Note.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-Note::Note(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Note::Note(JsonView jsonValue) { *this = jsonValue; }
 
-Note& Note::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Text"))
-  {
+Note& Note::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Text")) {
     m_text = jsonValue.GetString("Text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedBy"))
-  {
+  if (jsonValue.ValueExists("UpdatedBy")) {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
     m_updatedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Note::Jsonize() const
-{
+JsonValue Note::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
-  if(m_updatedByHasBeenSet)
-  {
-   payload.WithString("UpdatedBy", m_updatedBy);
-
+  if (m_updatedByHasBeenSet) {
+    payload.WithString("UpdatedBy", m_updatedBy);
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("UpdatedAt", m_updatedAt);
-
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("UpdatedAt", m_updatedAt);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

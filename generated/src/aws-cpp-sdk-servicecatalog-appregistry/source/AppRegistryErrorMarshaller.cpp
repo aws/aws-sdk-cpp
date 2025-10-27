@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::AppRegistry;
 
-AWSError<CoreErrors> AppRegistryErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> AppRegistryErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = AppRegistryErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

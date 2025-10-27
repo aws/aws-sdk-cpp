@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Vectors
-{
-class S3VectorsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace S3Vectors {
+class S3VectorsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace S3Vectors
-} // namespace Aws
+}  // namespace S3Vectors
+}  // namespace Aws

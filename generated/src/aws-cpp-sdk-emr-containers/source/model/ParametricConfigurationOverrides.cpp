@@ -3,69 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-containers/model/ParametricConfigurationOverrides.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/model/ParametricConfigurationOverrides.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRContainers {
+namespace Model {
 
-ParametricConfigurationOverrides::ParametricConfigurationOverrides(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParametricConfigurationOverrides::ParametricConfigurationOverrides(JsonView jsonValue) { *this = jsonValue; }
 
-ParametricConfigurationOverrides& ParametricConfigurationOverrides::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("applicationConfiguration"))
-  {
+ParametricConfigurationOverrides& ParametricConfigurationOverrides::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("applicationConfiguration")) {
     Aws::Utils::Array<JsonView> applicationConfigurationJsonList = jsonValue.GetArray("applicationConfiguration");
-    for(unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength(); ++applicationConfigurationIndex)
-    {
+    for (unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength();
+         ++applicationConfigurationIndex) {
       m_applicationConfiguration.push_back(applicationConfigurationJsonList[applicationConfigurationIndex].AsObject());
     }
     m_applicationConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("monitoringConfiguration"))
-  {
+  if (jsonValue.ValueExists("monitoringConfiguration")) {
     m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
     m_monitoringConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParametricConfigurationOverrides::Jsonize() const
-{
+JsonValue ParametricConfigurationOverrides::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationConfigurationHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> applicationConfigurationJsonList(m_applicationConfiguration.size());
-   for(unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength(); ++applicationConfigurationIndex)
-   {
-     applicationConfigurationJsonList[applicationConfigurationIndex].AsObject(m_applicationConfiguration[applicationConfigurationIndex].Jsonize());
-   }
-   payload.WithArray("applicationConfiguration", std::move(applicationConfigurationJsonList));
-
+  if (m_applicationConfigurationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicationConfigurationJsonList(m_applicationConfiguration.size());
+    for (unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength();
+         ++applicationConfigurationIndex) {
+      applicationConfigurationJsonList[applicationConfigurationIndex].AsObject(
+          m_applicationConfiguration[applicationConfigurationIndex].Jsonize());
+    }
+    payload.WithArray("applicationConfiguration", std::move(applicationConfigurationJsonList));
   }
 
-  if(m_monitoringConfigurationHasBeenSet)
-  {
-   payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
-
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRContainers
+}  // namespace Aws

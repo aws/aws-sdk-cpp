@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/EksAnywhereSubscription.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace EKS
-{
-namespace Model
-{
-  class DeleteEksAnywhereSubscriptionResult
-  {
-  public:
-    AWS_EKS_API DeleteEksAnywhereSubscriptionResult() = default;
-    AWS_EKS_API DeleteEksAnywhereSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_EKS_API DeleteEksAnywhereSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace EKS {
+namespace Model {
+class DeleteEksAnywhereSubscriptionResult {
+ public:
+  AWS_EKS_API DeleteEksAnywhereSubscriptionResult() = default;
+  AWS_EKS_API DeleteEksAnywhereSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_EKS_API DeleteEksAnywhereSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The full description of the subscription to be deleted.</p>
+   */
+  inline const EksAnywhereSubscription& GetSubscription() const { return m_subscription; }
+  template <typename SubscriptionT = EksAnywhereSubscription>
+  void SetSubscription(SubscriptionT&& value) {
+    m_subscriptionHasBeenSet = true;
+    m_subscription = std::forward<SubscriptionT>(value);
+  }
+  template <typename SubscriptionT = EksAnywhereSubscription>
+  DeleteEksAnywhereSubscriptionResult& WithSubscription(SubscriptionT&& value) {
+    SetSubscription(std::forward<SubscriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The full description of the subscription to be deleted.</p>
-     */
-    inline const EksAnywhereSubscription& GetSubscription() const { return m_subscription; }
-    template<typename SubscriptionT = EksAnywhereSubscription>
-    void SetSubscription(SubscriptionT&& value) { m_subscriptionHasBeenSet = true; m_subscription = std::forward<SubscriptionT>(value); }
-    template<typename SubscriptionT = EksAnywhereSubscription>
-    DeleteEksAnywhereSubscriptionResult& WithSubscription(SubscriptionT&& value) { SetSubscription(std::forward<SubscriptionT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DeleteEksAnywhereSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteEksAnywhereSubscriptionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  EksAnywhereSubscription m_subscription;
+  bool m_subscriptionHasBeenSet = false;
 
-    EksAnywhereSubscription m_subscription;
-    bool m_subscriptionHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

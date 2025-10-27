@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/DeployAsApplicationConfigurationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/DeployAsApplicationConfigurationDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-DeployAsApplicationConfigurationDescription::DeployAsApplicationConfigurationDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeployAsApplicationConfigurationDescription::DeployAsApplicationConfigurationDescription(JsonView jsonValue) { *this = jsonValue; }
 
-DeployAsApplicationConfigurationDescription& DeployAsApplicationConfigurationDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3ContentLocationDescription"))
-  {
+DeployAsApplicationConfigurationDescription& DeployAsApplicationConfigurationDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3ContentLocationDescription")) {
     m_s3ContentLocationDescription = jsonValue.GetObject("S3ContentLocationDescription");
     m_s3ContentLocationDescriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeployAsApplicationConfigurationDescription::Jsonize() const
-{
+JsonValue DeployAsApplicationConfigurationDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ContentLocationDescriptionHasBeenSet)
-  {
-   payload.WithObject("S3ContentLocationDescription", m_s3ContentLocationDescription.Jsonize());
-
+  if (m_s3ContentLocationDescriptionHasBeenSet) {
+    payload.WithObject("S3ContentLocationDescription", m_s3ContentLocationDescription.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

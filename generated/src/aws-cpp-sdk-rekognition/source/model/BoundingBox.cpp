@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/BoundingBox.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/BoundingBox.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-BoundingBox::BoundingBox(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BoundingBox::BoundingBox(JsonView jsonValue) { *this = jsonValue; }
 
-BoundingBox& BoundingBox::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Width"))
-  {
+BoundingBox& BoundingBox::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Width")) {
     m_width = jsonValue.GetDouble("Width");
     m_widthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Height"))
-  {
+  if (jsonValue.ValueExists("Height")) {
     m_height = jsonValue.GetDouble("Height");
     m_heightHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Left"))
-  {
+  if (jsonValue.ValueExists("Left")) {
     m_left = jsonValue.GetDouble("Left");
     m_leftHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Top"))
-  {
+  if (jsonValue.ValueExists("Top")) {
     m_top = jsonValue.GetDouble("Top");
     m_topHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BoundingBox::Jsonize() const
-{
+JsonValue BoundingBox::Jsonize() const {
   JsonValue payload;
 
-  if(m_widthHasBeenSet)
-  {
-   payload.WithDouble("Width", m_width);
-
+  if (m_widthHasBeenSet) {
+    payload.WithDouble("Width", m_width);
   }
 
-  if(m_heightHasBeenSet)
-  {
-   payload.WithDouble("Height", m_height);
-
+  if (m_heightHasBeenSet) {
+    payload.WithDouble("Height", m_height);
   }
 
-  if(m_leftHasBeenSet)
-  {
-   payload.WithDouble("Left", m_left);
-
+  if (m_leftHasBeenSet) {
+    payload.WithDouble("Left", m_left);
   }
 
-  if(m_topHasBeenSet)
-  {
-   payload.WithDouble("Top", m_top);
-
+  if (m_topHasBeenSet) {
+    payload.WithDouble("Top", m_top);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

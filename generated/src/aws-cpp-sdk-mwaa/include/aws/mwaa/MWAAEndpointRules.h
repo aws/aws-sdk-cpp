@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/mwaa/MWAA_EXPORTS.h>
 
-namespace Aws
-{
-namespace MWAA
-{
-class MWAAEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MWAA {
+class MWAAEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MWAA
-} // namespace Aws
+}  // namespace MWAA
+}  // namespace Aws

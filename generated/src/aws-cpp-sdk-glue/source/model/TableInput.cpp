@@ -3,208 +3,156 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/TableInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/TableInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-TableInput::TableInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableInput::TableInput(JsonView jsonValue) { *this = jsonValue; }
 
-TableInput& TableInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+TableInput& TableInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Owner"))
-  {
+  if (jsonValue.ValueExists("Owner")) {
     m_owner = jsonValue.GetString("Owner");
     m_ownerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastAccessTime"))
-  {
+  if (jsonValue.ValueExists("LastAccessTime")) {
     m_lastAccessTime = jsonValue.GetDouble("LastAccessTime");
     m_lastAccessTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastAnalyzedTime"))
-  {
+  if (jsonValue.ValueExists("LastAnalyzedTime")) {
     m_lastAnalyzedTime = jsonValue.GetDouble("LastAnalyzedTime");
     m_lastAnalyzedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Retention"))
-  {
+  if (jsonValue.ValueExists("Retention")) {
     m_retention = jsonValue.GetInteger("Retention");
     m_retentionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StorageDescriptor"))
-  {
+  if (jsonValue.ValueExists("StorageDescriptor")) {
     m_storageDescriptor = jsonValue.GetObject("StorageDescriptor");
     m_storageDescriptorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PartitionKeys"))
-  {
+  if (jsonValue.ValueExists("PartitionKeys")) {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
-    for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
-    {
+    for (unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex) {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
     }
     m_partitionKeysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViewOriginalText"))
-  {
+  if (jsonValue.ValueExists("ViewOriginalText")) {
     m_viewOriginalText = jsonValue.GetString("ViewOriginalText");
     m_viewOriginalTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViewExpandedText"))
-  {
+  if (jsonValue.ValueExists("ViewExpandedText")) {
     m_viewExpandedText = jsonValue.GetString("ViewExpandedText");
     m_viewExpandedTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableType"))
-  {
+  if (jsonValue.ValueExists("TableType")) {
     m_tableType = jsonValue.GetString("TableType");
     m_tableTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
-    for(auto& parametersItem : parametersJsonMap)
-    {
+    for (auto& parametersItem : parametersJsonMap) {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();
     }
     m_parametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetTable"))
-  {
+  if (jsonValue.ValueExists("TargetTable")) {
     m_targetTable = jsonValue.GetObject("TargetTable");
     m_targetTableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViewDefinition"))
-  {
+  if (jsonValue.ValueExists("ViewDefinition")) {
     m_viewDefinition = jsonValue.GetObject("ViewDefinition");
     m_viewDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableInput::Jsonize() const
-{
+JsonValue TableInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("Owner", m_owner);
-
+  if (m_ownerHasBeenSet) {
+    payload.WithString("Owner", m_owner);
   }
 
-  if(m_lastAccessTimeHasBeenSet)
-  {
-   payload.WithDouble("LastAccessTime", m_lastAccessTime.SecondsWithMSPrecision());
+  if (m_lastAccessTimeHasBeenSet) {
+    payload.WithDouble("LastAccessTime", m_lastAccessTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastAnalyzedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastAnalyzedTime", m_lastAnalyzedTime.SecondsWithMSPrecision());
+  if (m_lastAnalyzedTimeHasBeenSet) {
+    payload.WithDouble("LastAnalyzedTime", m_lastAnalyzedTime.SecondsWithMSPrecision());
   }
 
-  if(m_retentionHasBeenSet)
-  {
-   payload.WithInteger("Retention", m_retention);
-
+  if (m_retentionHasBeenSet) {
+    payload.WithInteger("Retention", m_retention);
   }
 
-  if(m_storageDescriptorHasBeenSet)
-  {
-   payload.WithObject("StorageDescriptor", m_storageDescriptor.Jsonize());
-
+  if (m_storageDescriptorHasBeenSet) {
+    payload.WithObject("StorageDescriptor", m_storageDescriptor.Jsonize());
   }
 
-  if(m_partitionKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
-   for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
-   {
-     partitionKeysJsonList[partitionKeysIndex].AsObject(m_partitionKeys[partitionKeysIndex].Jsonize());
-   }
-   payload.WithArray("PartitionKeys", std::move(partitionKeysJsonList));
-
+  if (m_partitionKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
+    for (unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex) {
+      partitionKeysJsonList[partitionKeysIndex].AsObject(m_partitionKeys[partitionKeysIndex].Jsonize());
+    }
+    payload.WithArray("PartitionKeys", std::move(partitionKeysJsonList));
   }
 
-  if(m_viewOriginalTextHasBeenSet)
-  {
-   payload.WithString("ViewOriginalText", m_viewOriginalText);
-
+  if (m_viewOriginalTextHasBeenSet) {
+    payload.WithString("ViewOriginalText", m_viewOriginalText);
   }
 
-  if(m_viewExpandedTextHasBeenSet)
-  {
-   payload.WithString("ViewExpandedText", m_viewExpandedText);
-
+  if (m_viewExpandedTextHasBeenSet) {
+    payload.WithString("ViewExpandedText", m_viewExpandedText);
   }
 
-  if(m_tableTypeHasBeenSet)
-  {
-   payload.WithString("TableType", m_tableType);
-
+  if (m_tableTypeHasBeenSet) {
+    payload.WithString("TableType", m_tableType);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_targetTableHasBeenSet)
-  {
-   payload.WithObject("TargetTable", m_targetTable.Jsonize());
-
+  if (m_targetTableHasBeenSet) {
+    payload.WithObject("TargetTable", m_targetTable.Jsonize());
   }
 
-  if(m_viewDefinitionHasBeenSet)
-  {
-   payload.WithObject("ViewDefinition", m_viewDefinition.Jsonize());
-
+  if (m_viewDefinitionHasBeenSet) {
+    payload.WithObject("ViewDefinition", m_viewDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

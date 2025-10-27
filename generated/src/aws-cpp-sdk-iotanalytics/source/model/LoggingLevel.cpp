@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/LoggingLevel.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/iotanalytics/model/LoggingLevel.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
+namespace LoggingLevelMapper {
 
-namespace Aws
-{
-  namespace IoTAnalytics
-  {
-    namespace Model
-    {
-      namespace LoggingLevelMapper
-      {
+static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+LoggingLevel GetLoggingLevelForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ERROR__HASH) {
+    return LoggingLevel::ERROR_;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LoggingLevel>(hashCode);
+  }
 
+  return LoggingLevel::NOT_SET;
+}
 
-        LoggingLevel GetLoggingLevelForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ERROR__HASH)
-          {
-            return LoggingLevel::ERROR_;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LoggingLevel>(hashCode);
-          }
+Aws::String GetNameForLoggingLevel(LoggingLevel enumValue) {
+  switch (enumValue) {
+    case LoggingLevel::NOT_SET:
+      return {};
+    case LoggingLevel::ERROR_:
+      return "ERROR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LoggingLevel::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLoggingLevel(LoggingLevel enumValue)
-        {
-          switch(enumValue)
-          {
-          case LoggingLevel::NOT_SET:
-            return {};
-          case LoggingLevel::ERROR_:
-            return "ERROR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LoggingLevelMapper
-    } // namespace Model
-  } // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace LoggingLevelMapper
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

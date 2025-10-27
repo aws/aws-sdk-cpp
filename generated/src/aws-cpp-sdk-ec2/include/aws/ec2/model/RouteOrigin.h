@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class RouteOrigin
-  {
-    NOT_SET,
-    CreateRouteTable,
-    CreateRoute,
-    EnableVgwRoutePropagation,
-    Advertisement
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class RouteOrigin { NOT_SET, CreateRouteTable, CreateRoute, EnableVgwRoutePropagation, Advertisement };
 
-namespace RouteOriginMapper
-{
+namespace RouteOriginMapper {
 AWS_EC2_API RouteOrigin GetRouteOriginForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForRouteOrigin(RouteOrigin value);
-} // namespace RouteOriginMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace RouteOriginMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

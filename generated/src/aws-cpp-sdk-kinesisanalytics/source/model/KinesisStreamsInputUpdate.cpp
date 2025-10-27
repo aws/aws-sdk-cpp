@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalytics/model/KinesisStreamsInputUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalytics/model/KinesisStreamsInputUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalytics {
+namespace Model {
 
-KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceARNUpdate"))
-  {
+KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceARNUpdate")) {
     m_resourceARNUpdate = jsonValue.GetString("ResourceARNUpdate");
     m_resourceARNUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleARNUpdate"))
-  {
+  if (jsonValue.ValueExists("RoleARNUpdate")) {
     m_roleARNUpdate = jsonValue.GetString("RoleARNUpdate");
     m_roleARNUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisStreamsInputUpdate::Jsonize() const
-{
+JsonValue KinesisStreamsInputUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceARNUpdateHasBeenSet)
-  {
-   payload.WithString("ResourceARNUpdate", m_resourceARNUpdate);
-
+  if (m_resourceARNUpdateHasBeenSet) {
+    payload.WithString("ResourceARNUpdate", m_resourceARNUpdate);
   }
 
-  if(m_roleARNUpdateHasBeenSet)
-  {
-   payload.WithString("RoleARNUpdate", m_roleARNUpdate);
-
+  if (m_roleARNUpdateHasBeenSet) {
+    payload.WithString("RoleARNUpdate", m_roleARNUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalytics
+}  // namespace Aws

@@ -7,27 +7,16 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
-  enum class DurationUnit
-  {
-    NOT_SET,
-    MINUTE,
-    HOUR,
-    DAY,
-    MONTH
-  };
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
+enum class DurationUnit { NOT_SET, MINUTE, HOUR, DAY, MONTH };
 
-namespace DurationUnitMapper
-{
+namespace DurationUnitMapper {
 AWS_APPLICATIONSIGNALS_API DurationUnit GetDurationUnitForName(const Aws::String& name);
 
 AWS_APPLICATIONSIGNALS_API Aws::String GetNameForDurationUnit(DurationUnit value);
-} // namespace DurationUnitMapper
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace DurationUnitMapper
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

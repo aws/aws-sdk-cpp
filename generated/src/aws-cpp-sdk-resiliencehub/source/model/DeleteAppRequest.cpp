@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/DeleteAppRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/DeleteAppRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAppRequest::SerializePayload() const
-{
+Aws::String DeleteAppRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appArnHasBeenSet)
-  {
-   payload.WithString("appArn", m_appArn);
-
+  if (m_appArnHasBeenSet) {
+    payload.WithString("appArn", m_appArn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
-   payload.WithBool("forceDelete", m_forceDelete);
-
+  if (m_forceDeleteHasBeenSet) {
+    payload.WithBool("forceDelete", m_forceDelete);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

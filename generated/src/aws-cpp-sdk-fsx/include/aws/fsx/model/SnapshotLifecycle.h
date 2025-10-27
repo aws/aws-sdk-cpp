@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class SnapshotLifecycle
-  {
-    NOT_SET,
-    PENDING,
-    CREATING,
-    DELETING,
-    AVAILABLE
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class SnapshotLifecycle { NOT_SET, PENDING, CREATING, DELETING, AVAILABLE };
 
-namespace SnapshotLifecycleMapper
-{
+namespace SnapshotLifecycleMapper {
 AWS_FSX_API SnapshotLifecycle GetSnapshotLifecycleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForSnapshotLifecycle(SnapshotLifecycle value);
-} // namespace SnapshotLifecycleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace SnapshotLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

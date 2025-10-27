@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ArtifactStore::ArtifactStore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArtifactStore::ArtifactStore(JsonView jsonValue) { *this = jsonValue; }
 
-ArtifactStore& ArtifactStore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ArtifactStore& ArtifactStore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = ArtifactStoreTypeMapper::GetArtifactStoreTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("location"))
-  {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetString("location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionKey"))
-  {
+  if (jsonValue.ValueExists("encryptionKey")) {
     m_encryptionKey = jsonValue.GetObject("encryptionKey");
     m_encryptionKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArtifactStore::Jsonize() const
-{
+JsonValue ArtifactStore::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ArtifactStoreTypeMapper::GetNameForArtifactStoreType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ArtifactStoreTypeMapper::GetNameForArtifactStoreType(m_type));
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("location", m_location);
   }
 
-  if(m_encryptionKeyHasBeenSet)
-  {
-   payload.WithObject("encryptionKey", m_encryptionKey.Jsonize());
-
+  if (m_encryptionKeyHasBeenSet) {
+    payload.WithObject("encryptionKey", m_encryptionKey.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudControlApi
-{
-class CloudControlApiEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudControlApi {
+class CloudControlApiEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudControlApi
-} // namespace Aws
+}  // namespace CloudControlApi
+}  // namespace Aws

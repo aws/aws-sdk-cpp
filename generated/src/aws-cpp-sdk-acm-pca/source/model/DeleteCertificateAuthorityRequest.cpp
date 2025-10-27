@@ -12,33 +12,22 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCertificateAuthorityRequest::SerializePayload() const
-{
+Aws::String DeleteCertificateAuthorityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_permanentDeletionTimeInDaysHasBeenSet)
-  {
-   payload.WithInteger("PermanentDeletionTimeInDays", m_permanentDeletionTimeInDays);
-
+  if (m_permanentDeletionTimeInDaysHasBeenSet) {
+    payload.WithInteger("PermanentDeletionTimeInDays", m_permanentDeletionTimeInDays);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCertificateAuthorityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCertificateAuthorityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.DeleteCertificateAuthority"));
   return headers;
-
 }
-
-
-
-

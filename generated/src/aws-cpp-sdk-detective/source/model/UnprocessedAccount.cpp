@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/UnprocessedAccount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/UnprocessedAccount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
+namespace Aws {
+namespace Detective {
+namespace Model {
 
-UnprocessedAccount::UnprocessedAccount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedAccount::UnprocessedAccount(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedAccount& UnprocessedAccount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountId"))
-  {
+UnprocessedAccount& UnprocessedAccount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetString("Reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedAccount::Jsonize() const
-{
+JsonValue UnprocessedAccount::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

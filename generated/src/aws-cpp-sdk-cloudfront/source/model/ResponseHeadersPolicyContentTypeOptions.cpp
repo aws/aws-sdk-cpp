@@ -4,37 +4,29 @@
  */
 
 #include <aws/cloudfront/model/ResponseHeadersPolicyContentTypeOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResponseHeadersPolicyContentTypeOptions& ResponseHeadersPolicyContentTypeOptions::operator =(const XmlNode& xmlNode)
-{
+ResponseHeadersPolicyContentTypeOptions& ResponseHeadersPolicyContentTypeOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode overrideNode = resultNode.FirstChild("Override");
-    if(!overrideNode.IsNull())
-    {
-      m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
+    if (!overrideNode.IsNull()) {
+      m_override =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
     }
   }
@@ -42,19 +34,16 @@ ResponseHeadersPolicyContentTypeOptions& ResponseHeadersPolicyContentTypeOptions
   return *this;
 }
 
-void ResponseHeadersPolicyContentTypeOptions::AddToNode(XmlNode& parentNode) const
-{
+void ResponseHeadersPolicyContentTypeOptions::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_overrideHasBeenSet)
-  {
-   XmlNode overrideNode = parentNode.CreateChildElement("Override");
-   ss << std::boolalpha << m_override;
-   overrideNode.SetText(ss.str());
-   ss.str("");
+  if (m_overrideHasBeenSet) {
+    XmlNode overrideNode = parentNode.CreateChildElement("Override");
+    ss << std::boolalpha << m_override;
+    overrideNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

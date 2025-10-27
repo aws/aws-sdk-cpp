@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/DestinationSchema.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/DestinationSchema.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-DestinationSchema::DestinationSchema(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationSchema::DestinationSchema(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationSchema& DestinationSchema::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecordFormatType"))
-  {
+DestinationSchema& DestinationSchema::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecordFormatType")) {
     m_recordFormatType = RecordFormatTypeMapper::GetRecordFormatTypeForName(jsonValue.GetString("RecordFormatType"));
     m_recordFormatTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationSchema::Jsonize() const
-{
+JsonValue DestinationSchema::Jsonize() const {
   JsonValue payload;
 
-  if(m_recordFormatTypeHasBeenSet)
-  {
-   payload.WithString("RecordFormatType", RecordFormatTypeMapper::GetNameForRecordFormatType(m_recordFormatType));
+  if (m_recordFormatTypeHasBeenSet) {
+    payload.WithString("RecordFormatType", RecordFormatTypeMapper::GetNameForRecordFormatType(m_recordFormatType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

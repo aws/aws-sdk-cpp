@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gameliftstreams/model/DeleteApplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gameliftstreams/model/DeleteApplicationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteApplicationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteApplicationRequest::SerializePayload() const { return {}; }

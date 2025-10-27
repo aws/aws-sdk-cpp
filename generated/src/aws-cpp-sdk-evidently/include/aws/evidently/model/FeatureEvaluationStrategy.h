@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class FeatureEvaluationStrategy
-  {
-    NOT_SET,
-    ALL_RULES,
-    DEFAULT_VARIATION
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class FeatureEvaluationStrategy { NOT_SET, ALL_RULES, DEFAULT_VARIATION };
 
-namespace FeatureEvaluationStrategyMapper
-{
+namespace FeatureEvaluationStrategyMapper {
 AWS_CLOUDWATCHEVIDENTLY_API FeatureEvaluationStrategy GetFeatureEvaluationStrategyForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForFeatureEvaluationStrategy(FeatureEvaluationStrategy value);
-} // namespace FeatureEvaluationStrategyMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace FeatureEvaluationStrategyMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

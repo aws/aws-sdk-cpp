@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DeleteRuleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DeleteRuleRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteRuleRequest::SerializePayload() const
-{
+Aws::String DeleteRuleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteRule&";
-  if(m_ruleArnHasBeenSet)
-  {
+  if (m_ruleArnHasBeenSet) {
     ss << "RuleArn=" << StringUtils::URLEncode(m_ruleArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteRuleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

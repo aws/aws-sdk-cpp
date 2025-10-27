@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-RecordingStreamConfiguration::RecordingStreamConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordingStreamConfiguration::RecordingStreamConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RecordingStreamConfiguration& RecordingStreamConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamArn"))
-  {
+RecordingStreamConfiguration& RecordingStreamConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamArn")) {
     m_streamArn = jsonValue.GetString("StreamArn");
     m_streamArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordingStreamConfiguration::Jsonize() const
-{
+JsonValue RecordingStreamConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamArnHasBeenSet)
-  {
-   payload.WithString("StreamArn", m_streamArn);
-
+  if (m_streamArnHasBeenSet) {
+    payload.WithString("StreamArn", m_streamArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

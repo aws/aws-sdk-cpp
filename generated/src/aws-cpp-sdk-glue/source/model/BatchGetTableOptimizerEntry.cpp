@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BatchGetTableOptimizerEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/BatchGetTableOptimizerEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-BatchGetTableOptimizerEntry::BatchGetTableOptimizerEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetTableOptimizerEntry::BatchGetTableOptimizerEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetTableOptimizerEntry& BatchGetTableOptimizerEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("catalogId"))
-  {
+BatchGetTableOptimizerEntry& BatchGetTableOptimizerEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("catalogId")) {
     m_catalogId = jsonValue.GetString("catalogId");
     m_catalogIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseName"))
-  {
+  if (jsonValue.ValueExists("databaseName")) {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableName"))
-  {
+  if (jsonValue.ValueExists("tableName")) {
     m_tableName = jsonValue.GetString("tableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = TableOptimizerTypeMapper::GetTableOptimizerTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetTableOptimizerEntry::Jsonize() const
-{
+JsonValue BatchGetTableOptimizerEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogIdHasBeenSet)
-  {
-   payload.WithString("catalogId", m_catalogId);
-
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("catalogId", m_catalogId);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("databaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("databaseName", m_databaseName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("tableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("tableName", m_tableName);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TableOptimizerTypeMapper::GetNameForTableOptimizerType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TableOptimizerTypeMapper::GetNameForTableOptimizerType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

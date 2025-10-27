@@ -12,24 +12,17 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateSigninDelegateGroupsWithAccountRequest::SerializePayload() const
-{
+Aws::String AssociateSigninDelegateGroupsWithAccountRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_signinDelegateGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
-   for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
-   {
-     signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject(m_signinDelegateGroups[signinDelegateGroupsIndex].Jsonize());
-   }
-   payload.WithArray("SigninDelegateGroups", std::move(signinDelegateGroupsJsonList));
-
+  if (m_signinDelegateGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
+    for (unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength();
+         ++signinDelegateGroupsIndex) {
+      signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject(m_signinDelegateGroups[signinDelegateGroupsIndex].Jsonize());
+    }
+    payload.WithArray("SigninDelegateGroups", std::move(signinDelegateGroupsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

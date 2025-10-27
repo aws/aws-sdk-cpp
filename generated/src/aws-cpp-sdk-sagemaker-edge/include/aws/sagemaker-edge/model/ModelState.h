@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-namespace Model
-{
-  enum class ModelState
-  {
-    NOT_SET,
-    DEPLOY,
-    UNDEPLOY
-  };
+namespace Aws {
+namespace SagemakerEdgeManager {
+namespace Model {
+enum class ModelState { NOT_SET, DEPLOY, UNDEPLOY };
 
-namespace ModelStateMapper
-{
+namespace ModelStateMapper {
 AWS_SAGEMAKEREDGEMANAGER_API ModelState GetModelStateForName(const Aws::String& name);
 
 AWS_SAGEMAKEREDGEMANAGER_API Aws::String GetNameForModelState(ModelState value);
-} // namespace ModelStateMapper
-} // namespace Model
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace ModelStateMapper
+}  // namespace Model
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

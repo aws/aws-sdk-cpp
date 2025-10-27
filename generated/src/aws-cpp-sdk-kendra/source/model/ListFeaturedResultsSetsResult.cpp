@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ListFeaturedResultsSetsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kendra/model/ListFeaturedResultsSetsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFeaturedResultsSetsResult::ListFeaturedResultsSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListFeaturedResultsSetsResult::ListFeaturedResultsSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListFeaturedResultsSetsResult& ListFeaturedResultsSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListFeaturedResultsSetsResult& ListFeaturedResultsSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FeaturedResultsSetSummaryItems"))
-  {
+  if (jsonValue.ValueExists("FeaturedResultsSetSummaryItems")) {
     Aws::Utils::Array<JsonView> featuredResultsSetSummaryItemsJsonList = jsonValue.GetArray("FeaturedResultsSetSummaryItems");
-    for(unsigned featuredResultsSetSummaryItemsIndex = 0; featuredResultsSetSummaryItemsIndex < featuredResultsSetSummaryItemsJsonList.GetLength(); ++featuredResultsSetSummaryItemsIndex)
-    {
+    for (unsigned featuredResultsSetSummaryItemsIndex = 0;
+         featuredResultsSetSummaryItemsIndex < featuredResultsSetSummaryItemsJsonList.GetLength(); ++featuredResultsSetSummaryItemsIndex) {
       m_featuredResultsSetSummaryItems.push_back(featuredResultsSetSummaryItemsJsonList[featuredResultsSetSummaryItemsIndex].AsObject());
     }
     m_featuredResultsSetSummaryItemsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

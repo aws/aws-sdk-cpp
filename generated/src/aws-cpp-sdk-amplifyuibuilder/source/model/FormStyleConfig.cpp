@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormStyleConfig::FormStyleConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormStyleConfig::FormStyleConfig(JsonView jsonValue) { *this = jsonValue; }
 
-FormStyleConfig& FormStyleConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tokenReference"))
-  {
+FormStyleConfig& FormStyleConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tokenReference")) {
     m_tokenReference = jsonValue.GetString("tokenReference");
     m_tokenReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormStyleConfig::Jsonize() const
-{
+JsonValue FormStyleConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenReferenceHasBeenSet)
-  {
-   payload.WithString("tokenReference", m_tokenReference);
-
+  if (m_tokenReferenceHasBeenSet) {
+    payload.WithString("tokenReference", m_tokenReference);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

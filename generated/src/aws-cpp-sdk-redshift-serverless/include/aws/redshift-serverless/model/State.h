@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
-  enum class State
-  {
-    NOT_SET,
-    ACTIVE,
-    DISABLED
-  };
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
+enum class State { NOT_SET, ACTIVE, DISABLED };
 
-namespace StateMapper
-{
+namespace StateMapper {
 AWS_REDSHIFTSERVERLESS_API State GetStateForName(const Aws::String& name);
 
 AWS_REDSHIFTSERVERLESS_API Aws::String GetNameForState(State value);
-} // namespace StateMapper
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace StateMapper
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/EventStreamDestinationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/EventStreamDestinationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-EventStreamDestinationDetails::EventStreamDestinationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventStreamDestinationDetails::EventStreamDestinationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-EventStreamDestinationDetails& EventStreamDestinationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Uri"))
-  {
+EventStreamDestinationDetails& EventStreamDestinationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Uri")) {
     m_uri = jsonValue.GetString("Uri");
     m_uriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = EventStreamDestinationStatusMapper::GetEventStreamDestinationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnhealthySince"))
-  {
+  if (jsonValue.ValueExists("UnhealthySince")) {
     m_unhealthySince = jsonValue.GetDouble("UnhealthySince");
     m_unhealthySinceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventStreamDestinationDetails::Jsonize() const
-{
+JsonValue EventStreamDestinationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("Uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("Uri", m_uri);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", EventStreamDestinationStatusMapper::GetNameForEventStreamDestinationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", EventStreamDestinationStatusMapper::GetNameForEventStreamDestinationStatus(m_status));
   }
 
-  if(m_unhealthySinceHasBeenSet)
-  {
-   payload.WithDouble("UnhealthySince", m_unhealthySince.SecondsWithMSPrecision());
+  if (m_unhealthySinceHasBeenSet) {
+    payload.WithDouble("UnhealthySince", m_unhealthySince.SecondsWithMSPrecision());
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

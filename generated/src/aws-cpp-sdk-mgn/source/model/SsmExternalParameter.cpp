@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/SsmExternalParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/SsmExternalParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
+namespace Aws {
+namespace mgn {
+namespace Model {
 
-SsmExternalParameter::SsmExternalParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SsmExternalParameter::SsmExternalParameter(JsonView jsonValue) { *this = jsonValue; }
 
-SsmExternalParameter& SsmExternalParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dynamicPath"))
-  {
+SsmExternalParameter& SsmExternalParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dynamicPath")) {
     m_dynamicPath = jsonValue.GetString("dynamicPath");
     m_dynamicPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SsmExternalParameter::Jsonize() const
-{
+JsonValue SsmExternalParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_dynamicPathHasBeenSet)
-  {
-   payload.WithString("dynamicPath", m_dynamicPath);
-
+  if (m_dynamicPathHasBeenSet) {
+    payload.WithString("dynamicPath", m_dynamicPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

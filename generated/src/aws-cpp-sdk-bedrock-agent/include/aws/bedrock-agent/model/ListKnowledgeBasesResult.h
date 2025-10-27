@@ -5,81 +5,96 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace BedrockAgent
-{
-namespace Model
-{
-  class ListKnowledgeBasesResult
-  {
-  public:
-    AWS_BEDROCKAGENT_API ListKnowledgeBasesResult() = default;
-    AWS_BEDROCKAGENT_API ListKnowledgeBasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_BEDROCKAGENT_API ListKnowledgeBasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgent {
+namespace Model {
+class ListKnowledgeBasesResult {
+ public:
+  AWS_BEDROCKAGENT_API ListKnowledgeBasesResult() = default;
+  AWS_BEDROCKAGENT_API ListKnowledgeBasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BEDROCKAGENT_API ListKnowledgeBasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A list of knowledge bases with information about each knowledge base.</p>
+   */
+  inline const Aws::Vector<KnowledgeBaseSummary>& GetKnowledgeBaseSummaries() const { return m_knowledgeBaseSummaries; }
+  template <typename KnowledgeBaseSummariesT = Aws::Vector<KnowledgeBaseSummary>>
+  void SetKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) {
+    m_knowledgeBaseSummariesHasBeenSet = true;
+    m_knowledgeBaseSummaries = std::forward<KnowledgeBaseSummariesT>(value);
+  }
+  template <typename KnowledgeBaseSummariesT = Aws::Vector<KnowledgeBaseSummary>>
+  ListKnowledgeBasesResult& WithKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) {
+    SetKnowledgeBaseSummaries(std::forward<KnowledgeBaseSummariesT>(value));
+    return *this;
+  }
+  template <typename KnowledgeBaseSummariesT = KnowledgeBaseSummary>
+  ListKnowledgeBasesResult& AddKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) {
+    m_knowledgeBaseSummariesHasBeenSet = true;
+    m_knowledgeBaseSummaries.emplace_back(std::forward<KnowledgeBaseSummariesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A list of knowledge bases with information about each knowledge base.</p>
-     */
-    inline const Aws::Vector<KnowledgeBaseSummary>& GetKnowledgeBaseSummaries() const { return m_knowledgeBaseSummaries; }
-    template<typename KnowledgeBaseSummariesT = Aws::Vector<KnowledgeBaseSummary>>
-    void SetKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) { m_knowledgeBaseSummariesHasBeenSet = true; m_knowledgeBaseSummaries = std::forward<KnowledgeBaseSummariesT>(value); }
-    template<typename KnowledgeBaseSummariesT = Aws::Vector<KnowledgeBaseSummary>>
-    ListKnowledgeBasesResult& WithKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) { SetKnowledgeBaseSummaries(std::forward<KnowledgeBaseSummariesT>(value)); return *this;}
-    template<typename KnowledgeBaseSummariesT = KnowledgeBaseSummary>
-    ListKnowledgeBasesResult& AddKnowledgeBaseSummaries(KnowledgeBaseSummariesT&& value) { m_knowledgeBaseSummariesHasBeenSet = true; m_knowledgeBaseSummaries.emplace_back(std::forward<KnowledgeBaseSummariesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>If the total number of results is greater than the <code>maxResults</code>
+   * value provided in the request, use this token when making another request in the
+   * <code>nextToken</code> field to return the next batch of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListKnowledgeBasesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If the total number of results is greater than the <code>maxResults</code>
-     * value provided in the request, use this token when making another request in the
-     * <code>nextToken</code> field to return the next batch of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListKnowledgeBasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListKnowledgeBasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListKnowledgeBasesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<KnowledgeBaseSummary> m_knowledgeBaseSummaries;
+  bool m_knowledgeBaseSummariesHasBeenSet = false;
 
-    Aws::Vector<KnowledgeBaseSummary> m_knowledgeBaseSummaries;
-    bool m_knowledgeBaseSummariesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

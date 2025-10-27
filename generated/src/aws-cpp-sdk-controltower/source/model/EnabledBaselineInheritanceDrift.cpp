@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlTower {
+namespace Model {
 
-EnabledBaselineInheritanceDrift::EnabledBaselineInheritanceDrift(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnabledBaselineInheritanceDrift::EnabledBaselineInheritanceDrift(JsonView jsonValue) { *this = jsonValue; }
 
-EnabledBaselineInheritanceDrift& EnabledBaselineInheritanceDrift::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+EnabledBaselineInheritanceDrift& EnabledBaselineInheritanceDrift::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = EnabledBaselineDriftStatusMapper::GetEnabledBaselineDriftStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EnabledBaselineInheritanceDrift::Jsonize() const
-{
+JsonValue EnabledBaselineInheritanceDrift::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

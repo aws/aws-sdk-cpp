@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/RDSDataService_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDSDataService
-{
-namespace Model
-{
-  enum class TypeHint
-  {
-    NOT_SET,
-    JSON,
-    UUID,
-    TIMESTAMP,
-    DATE,
-    TIME,
-    DECIMAL
-  };
+namespace Aws {
+namespace RDSDataService {
+namespace Model {
+enum class TypeHint { NOT_SET, JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL };
 
-namespace TypeHintMapper
-{
+namespace TypeHintMapper {
 AWS_RDSDATASERVICE_API TypeHint GetTypeHintForName(const Aws::String& name);
 
 AWS_RDSDATASERVICE_API Aws::String GetNameForTypeHint(TypeHint value);
-} // namespace TypeHintMapper
-} // namespace Model
-} // namespace RDSDataService
-} // namespace Aws
+}  // namespace TypeHintMapper
+}  // namespace Model
+}  // namespace RDSDataService
+}  // namespace Aws

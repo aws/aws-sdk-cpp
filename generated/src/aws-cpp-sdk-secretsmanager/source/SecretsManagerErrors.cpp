@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::SecretsManager;
 
-namespace Aws
-{
-namespace SecretsManager
-{
-namespace SecretsManagerErrorMapper
-{
+namespace Aws {
+namespace SecretsManager {
+namespace SecretsManagerErrorMapper {
 
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
@@ -30,58 +27,35 @@ static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNext
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_EXISTS_HASH)
-  {
+  if (hashCode == RESOURCE_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
-  {
+  } else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DECRYPTION_FAILURE_HASH)
-  {
+  } else if (hashCode == DECRYPTION_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::DECRYPTION_FAILURE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PUBLIC_POLICY_HASH)
-  {
+  } else if (hashCode == PUBLIC_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::PUBLIC_POLICY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PRECONDITION_NOT_MET_HASH)
-  {
+  } else if (hashCode == PRECONDITION_NOT_MET_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::PRECONDITION_NOT_MET), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ENCRYPTION_FAILURE_HASH)
-  {
+  } else if (hashCode == ENCRYPTION_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::ENCRYPTION_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace SecretsManagerErrorMapper
-} // namespace SecretsManager
-} // namespace Aws
+}  // namespace SecretsManagerErrorMapper
+}  // namespace SecretsManager
+}  // namespace Aws

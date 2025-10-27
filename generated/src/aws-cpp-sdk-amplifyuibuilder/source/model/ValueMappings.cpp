@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ValueMappings::ValueMappings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValueMappings::ValueMappings(JsonView jsonValue) { *this = jsonValue; }
 
-ValueMappings& ValueMappings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("values"))
-  {
+ValueMappings& ValueMappings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bindingProperties"))
-  {
+  if (jsonValue.ValueExists("bindingProperties")) {
     Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
-    for(auto& bindingPropertiesItem : bindingPropertiesJsonMap)
-    {
+    for (auto& bindingPropertiesItem : bindingPropertiesJsonMap) {
       m_bindingProperties[bindingPropertiesItem.first] = bindingPropertiesItem.second.AsObject();
     }
     m_bindingPropertiesHasBeenSet = true;
@@ -46,35 +35,28 @@ ValueMappings& ValueMappings::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ValueMappings::Jsonize() const
-{
+JsonValue ValueMappings::Jsonize() const {
   JsonValue payload;
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
-  if(m_bindingPropertiesHasBeenSet)
-  {
-   JsonValue bindingPropertiesJsonMap;
-   for(auto& bindingPropertiesItem : m_bindingProperties)
-   {
-     bindingPropertiesJsonMap.WithObject(bindingPropertiesItem.first, bindingPropertiesItem.second.Jsonize());
-   }
-   payload.WithObject("bindingProperties", std::move(bindingPropertiesJsonMap));
-
+  if (m_bindingPropertiesHasBeenSet) {
+    JsonValue bindingPropertiesJsonMap;
+    for (auto& bindingPropertiesItem : m_bindingProperties) {
+      bindingPropertiesJsonMap.WithObject(bindingPropertiesItem.first, bindingPropertiesItem.second.Jsonize());
+    }
+    payload.WithObject("bindingProperties", std::move(bindingPropertiesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

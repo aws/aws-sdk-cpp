@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-EvaluationConfig::EvaluationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationConfig::EvaluationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationConfig& EvaluationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("automated"))
-  {
+EvaluationConfig& EvaluationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("automated")) {
     m_automated = jsonValue.GetObject("automated");
     m_automatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("human"))
-  {
+  if (jsonValue.ValueExists("human")) {
     m_human = jsonValue.GetObject("human");
     m_humanHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationConfig::Jsonize() const
-{
+JsonValue EvaluationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_automatedHasBeenSet)
-  {
-   payload.WithObject("automated", m_automated.Jsonize());
-
+  if (m_automatedHasBeenSet) {
+    payload.WithObject("automated", m_automated.Jsonize());
   }
 
-  if(m_humanHasBeenSet)
-  {
-   payload.WithObject("human", m_human.Jsonize());
-
+  if (m_humanHasBeenSet) {
+    payload.WithObject("human", m_human.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

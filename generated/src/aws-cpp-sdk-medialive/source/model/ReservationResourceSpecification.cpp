@@ -3,118 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/ReservationResourceSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-ReservationResourceSpecification::ReservationResourceSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservationResourceSpecification::ReservationResourceSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-ReservationResourceSpecification& ReservationResourceSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channelClass"))
-  {
+ReservationResourceSpecification& ReservationResourceSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channelClass")) {
     m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));
     m_channelClassHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codec"))
-  {
+  if (jsonValue.ValueExists("codec")) {
     m_codec = ReservationCodecMapper::GetReservationCodecForName(jsonValue.GetString("codec"));
     m_codecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximumBitrate"))
-  {
+  if (jsonValue.ValueExists("maximumBitrate")) {
     m_maximumBitrate = ReservationMaximumBitrateMapper::GetReservationMaximumBitrateForName(jsonValue.GetString("maximumBitrate"));
     m_maximumBitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximumFramerate"))
-  {
+  if (jsonValue.ValueExists("maximumFramerate")) {
     m_maximumFramerate = ReservationMaximumFramerateMapper::GetReservationMaximumFramerateForName(jsonValue.GetString("maximumFramerate"));
     m_maximumFramerateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resolution"))
-  {
+  if (jsonValue.ValueExists("resolution")) {
     m_resolution = ReservationResolutionMapper::GetReservationResolutionForName(jsonValue.GetString("resolution"));
     m_resolutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = ReservationResourceTypeMapper::GetReservationResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("specialFeature"))
-  {
+  if (jsonValue.ValueExists("specialFeature")) {
     m_specialFeature = ReservationSpecialFeatureMapper::GetReservationSpecialFeatureForName(jsonValue.GetString("specialFeature"));
     m_specialFeatureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("videoQuality"))
-  {
+  if (jsonValue.ValueExists("videoQuality")) {
     m_videoQuality = ReservationVideoQualityMapper::GetReservationVideoQualityForName(jsonValue.GetString("videoQuality"));
     m_videoQualityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservationResourceSpecification::Jsonize() const
-{
+JsonValue ReservationResourceSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelClassHasBeenSet)
-  {
-   payload.WithString("channelClass", ChannelClassMapper::GetNameForChannelClass(m_channelClass));
+  if (m_channelClassHasBeenSet) {
+    payload.WithString("channelClass", ChannelClassMapper::GetNameForChannelClass(m_channelClass));
   }
 
-  if(m_codecHasBeenSet)
-  {
-   payload.WithString("codec", ReservationCodecMapper::GetNameForReservationCodec(m_codec));
+  if (m_codecHasBeenSet) {
+    payload.WithString("codec", ReservationCodecMapper::GetNameForReservationCodec(m_codec));
   }
 
-  if(m_maximumBitrateHasBeenSet)
-  {
-   payload.WithString("maximumBitrate", ReservationMaximumBitrateMapper::GetNameForReservationMaximumBitrate(m_maximumBitrate));
+  if (m_maximumBitrateHasBeenSet) {
+    payload.WithString("maximumBitrate", ReservationMaximumBitrateMapper::GetNameForReservationMaximumBitrate(m_maximumBitrate));
   }
 
-  if(m_maximumFramerateHasBeenSet)
-  {
-   payload.WithString("maximumFramerate", ReservationMaximumFramerateMapper::GetNameForReservationMaximumFramerate(m_maximumFramerate));
+  if (m_maximumFramerateHasBeenSet) {
+    payload.WithString("maximumFramerate", ReservationMaximumFramerateMapper::GetNameForReservationMaximumFramerate(m_maximumFramerate));
   }
 
-  if(m_resolutionHasBeenSet)
-  {
-   payload.WithString("resolution", ReservationResolutionMapper::GetNameForReservationResolution(m_resolution));
+  if (m_resolutionHasBeenSet) {
+    payload.WithString("resolution", ReservationResolutionMapper::GetNameForReservationResolution(m_resolution));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ReservationResourceTypeMapper::GetNameForReservationResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ReservationResourceTypeMapper::GetNameForReservationResourceType(m_resourceType));
   }
 
-  if(m_specialFeatureHasBeenSet)
-  {
-   payload.WithString("specialFeature", ReservationSpecialFeatureMapper::GetNameForReservationSpecialFeature(m_specialFeature));
+  if (m_specialFeatureHasBeenSet) {
+    payload.WithString("specialFeature", ReservationSpecialFeatureMapper::GetNameForReservationSpecialFeature(m_specialFeature));
   }
 
-  if(m_videoQualityHasBeenSet)
-  {
-   payload.WithString("videoQuality", ReservationVideoQualityMapper::GetNameForReservationVideoQuality(m_videoQuality));
+  if (m_videoQualityHasBeenSet) {
+    payload.WithString("videoQuality", ReservationVideoQualityMapper::GetNameForReservationVideoQuality(m_videoQuality));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

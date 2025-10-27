@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/ConnectionHeaderParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/ConnectionHeaderParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-ConnectionHeaderParameter::ConnectionHeaderParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionHeaderParameter::ConnectionHeaderParameter(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionHeaderParameter& ConnectionHeaderParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+ConnectionHeaderParameter& ConnectionHeaderParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsValueSecret"))
-  {
+  if (jsonValue.ValueExists("IsValueSecret")) {
     m_isValueSecret = jsonValue.GetBool("IsValueSecret");
     m_isValueSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectionHeaderParameter::Jsonize() const
-{
+JsonValue ConnectionHeaderParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_isValueSecretHasBeenSet)
-  {
-   payload.WithBool("IsValueSecret", m_isValueSecret);
-
+  if (m_isValueSecretHasBeenSet) {
+    payload.WithBool("IsValueSecret", m_isValueSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

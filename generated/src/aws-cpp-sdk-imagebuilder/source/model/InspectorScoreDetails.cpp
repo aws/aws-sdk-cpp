@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/InspectorScoreDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/InspectorScoreDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-InspectorScoreDetails::InspectorScoreDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InspectorScoreDetails::InspectorScoreDetails(JsonView jsonValue) { *this = jsonValue; }
 
-InspectorScoreDetails& InspectorScoreDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("adjustedCvss"))
-  {
+InspectorScoreDetails& InspectorScoreDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("adjustedCvss")) {
     m_adjustedCvss = jsonValue.GetObject("adjustedCvss");
     m_adjustedCvssHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InspectorScoreDetails::Jsonize() const
-{
+JsonValue InspectorScoreDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_adjustedCvssHasBeenSet)
-  {
-   payload.WithObject("adjustedCvss", m_adjustedCvss.Jsonize());
-
+  if (m_adjustedCvssHasBeenSet) {
+    payload.WithObject("adjustedCvss", m_adjustedCvss.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

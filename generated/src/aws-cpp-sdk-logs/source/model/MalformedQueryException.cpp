@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/MalformedQueryException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/MalformedQueryException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-MalformedQueryException::MalformedQueryException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MalformedQueryException::MalformedQueryException(JsonView jsonValue) { *this = jsonValue; }
 
-MalformedQueryException& MalformedQueryException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("queryCompileError"))
-  {
+MalformedQueryException& MalformedQueryException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("queryCompileError")) {
     m_queryCompileError = jsonValue.GetObject("queryCompileError");
     m_queryCompileErrorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MalformedQueryException::Jsonize() const
-{
+JsonValue MalformedQueryException::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryCompileErrorHasBeenSet)
-  {
-   payload.WithObject("queryCompileError", m_queryCompileError.Jsonize());
-
+  if (m_queryCompileErrorHasBeenSet) {
+    payload.WithObject("queryCompileError", m_queryCompileError.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

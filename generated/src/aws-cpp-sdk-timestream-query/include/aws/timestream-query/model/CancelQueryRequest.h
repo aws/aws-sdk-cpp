@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-query/TimestreamQueryRequest.h>
+#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
+/**
+ */
+class CancelQueryRequest : public TimestreamQueryRequest {
+ public:
+  AWS_TIMESTREAMQUERY_API CancelQueryRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CancelQuery"; }
+
+  AWS_TIMESTREAMQUERY_API Aws::String SerializePayload() const override;
+
+  AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is
+   * returned as part of the query result. </p>
    */
-  class CancelQueryRequest : public TimestreamQueryRequest
-  {
-  public:
-    AWS_TIMESTREAMQUERY_API CancelQueryRequest() = default;
+  inline const Aws::String& GetQueryId() const { return m_queryId; }
+  inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+  template <typename QueryIdT = Aws::String>
+  void SetQueryId(QueryIdT&& value) {
+    m_queryIdHasBeenSet = true;
+    m_queryId = std::forward<QueryIdT>(value);
+  }
+  template <typename QueryIdT = Aws::String>
+  CancelQueryRequest& WithQueryId(QueryIdT&& value) {
+    SetQueryId(std::forward<QueryIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_queryId;
+  bool m_queryIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CancelQuery"; }
-
-    AWS_TIMESTREAMQUERY_API Aws::String SerializePayload() const override;
-
-    AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is
-     * returned as part of the query result. </p>
-     */
-    inline const Aws::String& GetQueryId() const { return m_queryId; }
-    inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    template<typename QueryIdT = Aws::String>
-    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
-    template<typename QueryIdT = Aws::String>
-    CancelQueryRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_queryId;
-    bool m_queryIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DashboardInvalidInputError.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/DashboardInvalidInputError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DashboardInvalidInputError& DashboardInvalidInputError::operator =(const XmlNode& xmlNode)
-{
+DashboardInvalidInputError& DashboardInvalidInputError::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode messageNode = resultNode.FirstChild("message");
-    if(!messageNode.IsNull())
-    {
+    if (!messageNode.IsNull()) {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
     XmlNode dashboardValidationMessagesNode = resultNode.FirstChild("dashboardValidationMessages");
-    if(!dashboardValidationMessagesNode.IsNull())
-    {
+    if (!dashboardValidationMessagesNode.IsNull()) {
       XmlNode dashboardValidationMessagesMember = dashboardValidationMessagesNode.FirstChild("member");
       m_dashboardValidationMessagesHasBeenSet = !dashboardValidationMessagesMember.IsNull();
-      while(!dashboardValidationMessagesMember.IsNull())
-      {
+      while (!dashboardValidationMessagesMember.IsNull()) {
         m_dashboardValidationMessages.push_back(dashboardValidationMessagesMember);
         dashboardValidationMessagesMember = dashboardValidationMessagesMember.NextNode("member");
       }
@@ -55,44 +44,37 @@ DashboardInvalidInputError& DashboardInvalidInputError::operator =(const XmlNode
   return *this;
 }
 
-void DashboardInvalidInputError::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_messageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+void DashboardInvalidInputError::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                const char* locationValue) const {
+  if (m_messageHasBeenSet) {
+    oStream << location << index << locationValue << ".message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 
-  if(m_dashboardValidationMessagesHasBeenSet)
-  {
-      unsigned dashboardValidationMessagesIdx = 1;
-      for(auto& item : m_dashboardValidationMessages)
-      {
-        Aws::StringStream dashboardValidationMessagesSs;
-        dashboardValidationMessagesSs << location << index << locationValue << ".dashboardValidationMessages.member." << dashboardValidationMessagesIdx++;
-        item.OutputToStream(oStream, dashboardValidationMessagesSs.str().c_str());
-      }
-  }
-
-}
-
-void DashboardInvalidInputError::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_messageHasBeenSet)
-  {
-      oStream << location << ".message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
-  }
-  if(m_dashboardValidationMessagesHasBeenSet)
-  {
-      unsigned dashboardValidationMessagesIdx = 1;
-      for(auto& item : m_dashboardValidationMessages)
-      {
-        Aws::StringStream dashboardValidationMessagesSs;
-        dashboardValidationMessagesSs << location << ".dashboardValidationMessages.member." << dashboardValidationMessagesIdx++;
-        item.OutputToStream(oStream, dashboardValidationMessagesSs.str().c_str());
-      }
+  if (m_dashboardValidationMessagesHasBeenSet) {
+    unsigned dashboardValidationMessagesIdx = 1;
+    for (auto& item : m_dashboardValidationMessages) {
+      Aws::StringStream dashboardValidationMessagesSs;
+      dashboardValidationMessagesSs << location << index << locationValue << ".dashboardValidationMessages.member."
+                                    << dashboardValidationMessagesIdx++;
+      item.OutputToStream(oStream, dashboardValidationMessagesSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void DashboardInvalidInputError::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_messageHasBeenSet) {
+    oStream << location << ".message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  }
+  if (m_dashboardValidationMessagesHasBeenSet) {
+    unsigned dashboardValidationMessagesIdx = 1;
+    for (auto& item : m_dashboardValidationMessages) {
+      Aws::StringStream dashboardValidationMessagesSs;
+      dashboardValidationMessagesSs << location << ".dashboardValidationMessages.member." << dashboardValidationMessagesIdx++;
+      item.OutputToStream(oStream, dashboardValidationMessagesSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

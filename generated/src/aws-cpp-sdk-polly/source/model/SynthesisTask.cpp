@@ -3,214 +3,165 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/polly/model/SynthesisTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/polly/model/SynthesisTask.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Model
-{
+namespace Aws {
+namespace Polly {
+namespace Model {
 
-SynthesisTask::SynthesisTask(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SynthesisTask::SynthesisTask(JsonView jsonValue) { *this = jsonValue; }
 
-SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Engine"))
-  {
+SynthesisTask& SynthesisTask::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Engine")) {
     m_engine = EngineMapper::GetEngineForName(jsonValue.GetString("Engine"));
     m_engineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskId"))
-  {
+  if (jsonValue.ValueExists("TaskId")) {
     m_taskId = jsonValue.GetString("TaskId");
     m_taskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskStatus"))
-  {
+  if (jsonValue.ValueExists("TaskStatus")) {
     m_taskStatus = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("TaskStatus"));
     m_taskStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskStatusReason"))
-  {
+  if (jsonValue.ValueExists("TaskStatusReason")) {
     m_taskStatusReason = jsonValue.GetString("TaskStatusReason");
     m_taskStatusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputUri"))
-  {
+  if (jsonValue.ValueExists("OutputUri")) {
     m_outputUri = jsonValue.GetString("OutputUri");
     m_outputUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestCharacters"))
-  {
+  if (jsonValue.ValueExists("RequestCharacters")) {
     m_requestCharacters = jsonValue.GetInteger("RequestCharacters");
     m_requestCharactersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnsTopicArn"))
-  {
+  if (jsonValue.ValueExists("SnsTopicArn")) {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
     m_snsTopicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LexiconNames"))
-  {
+  if (jsonValue.ValueExists("LexiconNames")) {
     Aws::Utils::Array<JsonView> lexiconNamesJsonList = jsonValue.GetArray("LexiconNames");
-    for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
-    {
+    for (unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex) {
       m_lexiconNames.push_back(lexiconNamesJsonList[lexiconNamesIndex].AsString());
     }
     m_lexiconNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputFormat"))
-  {
+  if (jsonValue.ValueExists("OutputFormat")) {
     m_outputFormat = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("OutputFormat"));
     m_outputFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SampleRate"))
-  {
+  if (jsonValue.ValueExists("SampleRate")) {
     m_sampleRate = jsonValue.GetString("SampleRate");
     m_sampleRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SpeechMarkTypes"))
-  {
+  if (jsonValue.ValueExists("SpeechMarkTypes")) {
     Aws::Utils::Array<JsonView> speechMarkTypesJsonList = jsonValue.GetArray("SpeechMarkTypes");
-    for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
-    {
+    for (unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex) {
       m_speechMarkTypes.push_back(SpeechMarkTypeMapper::GetSpeechMarkTypeForName(speechMarkTypesJsonList[speechMarkTypesIndex].AsString()));
     }
     m_speechMarkTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextType"))
-  {
+  if (jsonValue.ValueExists("TextType")) {
     m_textType = TextTypeMapper::GetTextTypeForName(jsonValue.GetString("TextType"));
     m_textTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceId"))
-  {
+  if (jsonValue.ValueExists("VoiceId")) {
     m_voiceId = VoiceIdMapper::GetVoiceIdForName(jsonValue.GetString("VoiceId"));
     m_voiceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SynthesisTask::Jsonize() const
-{
+JsonValue SynthesisTask::Jsonize() const {
   JsonValue payload;
 
-  if(m_engineHasBeenSet)
-  {
-   payload.WithString("Engine", EngineMapper::GetNameForEngine(m_engine));
+  if (m_engineHasBeenSet) {
+    payload.WithString("Engine", EngineMapper::GetNameForEngine(m_engine));
   }
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("TaskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("TaskId", m_taskId);
   }
 
-  if(m_taskStatusHasBeenSet)
-  {
-   payload.WithString("TaskStatus", TaskStatusMapper::GetNameForTaskStatus(m_taskStatus));
+  if (m_taskStatusHasBeenSet) {
+    payload.WithString("TaskStatus", TaskStatusMapper::GetNameForTaskStatus(m_taskStatus));
   }
 
-  if(m_taskStatusReasonHasBeenSet)
-  {
-   payload.WithString("TaskStatusReason", m_taskStatusReason);
-
+  if (m_taskStatusReasonHasBeenSet) {
+    payload.WithString("TaskStatusReason", m_taskStatusReason);
   }
 
-  if(m_outputUriHasBeenSet)
-  {
-   payload.WithString("OutputUri", m_outputUri);
-
+  if (m_outputUriHasBeenSet) {
+    payload.WithString("OutputUri", m_outputUri);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_requestCharactersHasBeenSet)
-  {
-   payload.WithInteger("RequestCharacters", m_requestCharacters);
-
+  if (m_requestCharactersHasBeenSet) {
+    payload.WithInteger("RequestCharacters", m_requestCharacters);
   }
 
-  if(m_snsTopicArnHasBeenSet)
-  {
-   payload.WithString("SnsTopicArn", m_snsTopicArn);
-
+  if (m_snsTopicArnHasBeenSet) {
+    payload.WithString("SnsTopicArn", m_snsTopicArn);
   }
 
-  if(m_lexiconNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
-   for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
-   {
-     lexiconNamesJsonList[lexiconNamesIndex].AsString(m_lexiconNames[lexiconNamesIndex]);
-   }
-   payload.WithArray("LexiconNames", std::move(lexiconNamesJsonList));
-
+  if (m_lexiconNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
+    for (unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex) {
+      lexiconNamesJsonList[lexiconNamesIndex].AsString(m_lexiconNames[lexiconNamesIndex]);
+    }
+    payload.WithArray("LexiconNames", std::move(lexiconNamesJsonList));
   }
 
-  if(m_outputFormatHasBeenSet)
-  {
-   payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
+  if (m_outputFormatHasBeenSet) {
+    payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
   }
 
-  if(m_sampleRateHasBeenSet)
-  {
-   payload.WithString("SampleRate", m_sampleRate);
-
+  if (m_sampleRateHasBeenSet) {
+    payload.WithString("SampleRate", m_sampleRate);
   }
 
-  if(m_speechMarkTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
-   for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
-   {
-     speechMarkTypesJsonList[speechMarkTypesIndex].AsString(SpeechMarkTypeMapper::GetNameForSpeechMarkType(m_speechMarkTypes[speechMarkTypesIndex]));
-   }
-   payload.WithArray("SpeechMarkTypes", std::move(speechMarkTypesJsonList));
-
+  if (m_speechMarkTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
+    for (unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex) {
+      speechMarkTypesJsonList[speechMarkTypesIndex].AsString(
+          SpeechMarkTypeMapper::GetNameForSpeechMarkType(m_speechMarkTypes[speechMarkTypesIndex]));
+    }
+    payload.WithArray("SpeechMarkTypes", std::move(speechMarkTypesJsonList));
   }
 
-  if(m_textTypeHasBeenSet)
-  {
-   payload.WithString("TextType", TextTypeMapper::GetNameForTextType(m_textType));
+  if (m_textTypeHasBeenSet) {
+    payload.WithString("TextType", TextTypeMapper::GetNameForTextType(m_textType));
   }
 
-  if(m_voiceIdHasBeenSet)
-  {
-   payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
+  if (m_voiceIdHasBeenSet) {
+    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Polly
-} // namespace Aws
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

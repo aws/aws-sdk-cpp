@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migration-hub-refactor-spaces/model/DefaultRouteInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migration-hub-refactor-spaces/model/DefaultRouteInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubRefactorSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubRefactorSpaces {
+namespace Model {
 
-DefaultRouteInput::DefaultRouteInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultRouteInput::DefaultRouteInput(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultRouteInput& DefaultRouteInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActivationState"))
-  {
+DefaultRouteInput& DefaultRouteInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActivationState")) {
     m_activationState = RouteActivationStateMapper::GetRouteActivationStateForName(jsonValue.GetString("ActivationState"));
     m_activationStateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultRouteInput::Jsonize() const
-{
+JsonValue DefaultRouteInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_activationStateHasBeenSet)
-  {
-   payload.WithString("ActivationState", RouteActivationStateMapper::GetNameForRouteActivationState(m_activationState));
+  if (m_activationStateHasBeenSet) {
+    payload.WithString("ActivationState", RouteActivationStateMapper::GetNameForRouteActivationState(m_activationState));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubRefactorSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubRefactorSpaces
+}  // namespace Aws

@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-EnrollmentFilter::EnrollmentFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnrollmentFilter::EnrollmentFilter(JsonView jsonValue) { *this = jsonValue; }
 
-EnrollmentFilter& EnrollmentFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+EnrollmentFilter& EnrollmentFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = EnrollmentFilterNameMapper::GetEnrollmentFilterNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ EnrollmentFilter& EnrollmentFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EnrollmentFilter::Jsonize() const
-{
+JsonValue EnrollmentFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", EnrollmentFilterNameMapper::GetNameForEnrollmentFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", EnrollmentFilterNameMapper::GetNameForEnrollmentFilterName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

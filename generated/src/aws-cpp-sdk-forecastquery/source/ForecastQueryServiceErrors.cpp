@@ -11,42 +11,30 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ForecastQueryService;
 
-namespace Aws
-{
-namespace ForecastQueryService
-{
-namespace ForecastQueryServiceErrorMapper
-{
+namespace Aws {
+namespace ForecastQueryService {
+namespace ForecastQueryServiceErrorMapper {
 
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
+  } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ForecastQueryServiceErrorMapper
-} // namespace ForecastQueryService
-} // namespace Aws
+}  // namespace ForecastQueryServiceErrorMapper
+}  // namespace ForecastQueryService
+}  // namespace Aws

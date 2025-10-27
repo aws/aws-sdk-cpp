@@ -5,12 +5,8 @@
 
 #include <aws/marketplace-agreement/AgreementServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AgreementService
-} // namespace Aws
+namespace Aws {
+namespace AgreementService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AgreementService
+}  // namespace Aws

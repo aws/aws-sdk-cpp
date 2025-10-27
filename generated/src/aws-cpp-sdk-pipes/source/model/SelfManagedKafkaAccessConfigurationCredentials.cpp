@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pipes/model/SelfManagedKafkaAccessConfigurationCredentials.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pipes/model/SelfManagedKafkaAccessConfigurationCredentials.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
+namespace Aws {
+namespace Pipes {
+namespace Model {
 
-SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-SelfManagedKafkaAccessConfigurationCredentials& SelfManagedKafkaAccessConfigurationCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BasicAuth"))
-  {
+SelfManagedKafkaAccessConfigurationCredentials& SelfManagedKafkaAccessConfigurationCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BasicAuth")) {
     m_basicAuth = jsonValue.GetString("BasicAuth");
     m_basicAuthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SaslScram512Auth"))
-  {
+  if (jsonValue.ValueExists("SaslScram512Auth")) {
     m_saslScram512Auth = jsonValue.GetString("SaslScram512Auth");
     m_saslScram512AuthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SaslScram256Auth"))
-  {
+  if (jsonValue.ValueExists("SaslScram256Auth")) {
     m_saslScram256Auth = jsonValue.GetString("SaslScram256Auth");
     m_saslScram256AuthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientCertificateTlsAuth"))
-  {
+  if (jsonValue.ValueExists("ClientCertificateTlsAuth")) {
     m_clientCertificateTlsAuth = jsonValue.GetString("ClientCertificateTlsAuth");
     m_clientCertificateTlsAuthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SelfManagedKafkaAccessConfigurationCredentials::Jsonize() const
-{
+JsonValue SelfManagedKafkaAccessConfigurationCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_basicAuthHasBeenSet)
-  {
-   payload.WithString("BasicAuth", m_basicAuth);
-
+  if (m_basicAuthHasBeenSet) {
+    payload.WithString("BasicAuth", m_basicAuth);
   }
 
-  if(m_saslScram512AuthHasBeenSet)
-  {
-   payload.WithString("SaslScram512Auth", m_saslScram512Auth);
-
+  if (m_saslScram512AuthHasBeenSet) {
+    payload.WithString("SaslScram512Auth", m_saslScram512Auth);
   }
 
-  if(m_saslScram256AuthHasBeenSet)
-  {
-   payload.WithString("SaslScram256Auth", m_saslScram256Auth);
-
+  if (m_saslScram256AuthHasBeenSet) {
+    payload.WithString("SaslScram256Auth", m_saslScram256Auth);
   }
 
-  if(m_clientCertificateTlsAuthHasBeenSet)
-  {
-   payload.WithString("ClientCertificateTlsAuth", m_clientCertificateTlsAuth);
-
+  if (m_clientCertificateTlsAuthHasBeenSet) {
+    payload.WithString("ClientCertificateTlsAuth", m_clientCertificateTlsAuth);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

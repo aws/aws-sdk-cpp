@@ -12,27 +12,18 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteConnectionRequest::SerializePayload() const
-{
+Aws::String DeleteConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteConnectionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteConnectionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.DeleteConnection"));
   return headers;
-
 }
-
-
-
-

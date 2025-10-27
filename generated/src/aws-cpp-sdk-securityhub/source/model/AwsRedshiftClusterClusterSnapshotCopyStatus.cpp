@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRedshiftClusterClusterSnapshotCopyStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRedshiftClusterClusterSnapshotCopyStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRedshiftClusterClusterSnapshotCopyStatus& AwsRedshiftClusterClusterSnapshotCopyStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DestinationRegion"))
-  {
+AwsRedshiftClusterClusterSnapshotCopyStatus& AwsRedshiftClusterClusterSnapshotCopyStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DestinationRegion")) {
     m_destinationRegion = jsonValue.GetString("DestinationRegion");
     m_destinationRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ManualSnapshotRetentionPeriod"))
-  {
+  if (jsonValue.ValueExists("ManualSnapshotRetentionPeriod")) {
     m_manualSnapshotRetentionPeriod = jsonValue.GetInteger("ManualSnapshotRetentionPeriod");
     m_manualSnapshotRetentionPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetentionPeriod"))
-  {
+  if (jsonValue.ValueExists("RetentionPeriod")) {
     m_retentionPeriod = jsonValue.GetInteger("RetentionPeriod");
     m_retentionPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotCopyGrantName"))
-  {
+  if (jsonValue.ValueExists("SnapshotCopyGrantName")) {
     m_snapshotCopyGrantName = jsonValue.GetString("SnapshotCopyGrantName");
     m_snapshotCopyGrantNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRedshiftClusterClusterSnapshotCopyStatus::Jsonize() const
-{
+JsonValue AwsRedshiftClusterClusterSnapshotCopyStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationRegionHasBeenSet)
-  {
-   payload.WithString("DestinationRegion", m_destinationRegion);
-
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("DestinationRegion", m_destinationRegion);
   }
 
-  if(m_manualSnapshotRetentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("ManualSnapshotRetentionPeriod", m_manualSnapshotRetentionPeriod);
-
+  if (m_manualSnapshotRetentionPeriodHasBeenSet) {
+    payload.WithInteger("ManualSnapshotRetentionPeriod", m_manualSnapshotRetentionPeriod);
   }
 
-  if(m_retentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("RetentionPeriod", m_retentionPeriod);
-
+  if (m_retentionPeriodHasBeenSet) {
+    payload.WithInteger("RetentionPeriod", m_retentionPeriod);
   }
 
-  if(m_snapshotCopyGrantNameHasBeenSet)
-  {
-   payload.WithString("SnapshotCopyGrantName", m_snapshotCopyGrantName);
-
+  if (m_snapshotCopyGrantNameHasBeenSet) {
+    payload.WithString("SnapshotCopyGrantName", m_snapshotCopyGrantName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

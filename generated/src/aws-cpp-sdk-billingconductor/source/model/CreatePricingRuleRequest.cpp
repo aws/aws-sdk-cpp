@@ -13,97 +13,68 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePricingRuleRequest::SerializePayload() const
-{
+Aws::String CreatePricingRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithString("Scope", PricingRuleScopeMapper::GetNameForPricingRuleScope(m_scope));
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", PricingRuleScopeMapper::GetNameForPricingRuleScope(m_scope));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", PricingRuleTypeMapper::GetNameForPricingRuleType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", PricingRuleTypeMapper::GetNameForPricingRuleType(m_type));
   }
 
-  if(m_modifierPercentageHasBeenSet)
-  {
-   payload.WithDouble("ModifierPercentage", m_modifierPercentage);
-
+  if (m_modifierPercentageHasBeenSet) {
+    payload.WithDouble("ModifierPercentage", m_modifierPercentage);
   }
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("Service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("Service", m_service);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_billingEntityHasBeenSet)
-  {
-   payload.WithString("BillingEntity", m_billingEntity);
-
+  if (m_billingEntityHasBeenSet) {
+    payload.WithString("BillingEntity", m_billingEntity);
   }
 
-  if(m_tieringHasBeenSet)
-  {
-   payload.WithObject("Tiering", m_tiering.Jsonize());
-
+  if (m_tieringHasBeenSet) {
+    payload.WithObject("Tiering", m_tiering.Jsonize());
   }
 
-  if(m_usageTypeHasBeenSet)
-  {
-   payload.WithString("UsageType", m_usageType);
-
+  if (m_usageTypeHasBeenSet) {
+    payload.WithString("UsageType", m_usageType);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", m_operation);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreatePricingRuleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreatePricingRuleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

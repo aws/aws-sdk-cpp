@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/GroupingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/GroupingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-GroupingConfiguration::GroupingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GroupingConfiguration::GroupingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-GroupingConfiguration& GroupingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("criteria"))
-  {
+GroupingConfiguration& GroupingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("criteria")) {
     m_criteria = jsonValue.GetString("criteria");
     m_criteriaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,30 +32,24 @@ GroupingConfiguration& GroupingConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue GroupingConfiguration::Jsonize() const
-{
+JsonValue GroupingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_criteriaHasBeenSet)
-  {
-   payload.WithString("criteria", m_criteria);
-
+  if (m_criteriaHasBeenSet) {
+    payload.WithString("criteria", m_criteria);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

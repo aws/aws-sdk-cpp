@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWirelessDeviceRequest::SerializePayload() const
-{
+Aws::String UpdateWirelessDeviceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationNameHasBeenSet)
-  {
-   payload.WithString("DestinationName", m_destinationName);
-
+  if (m_destinationNameHasBeenSet) {
+    payload.WithString("DestinationName", m_destinationName);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_loRaWANHasBeenSet)
-  {
-   payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
-
+  if (m_loRaWANHasBeenSet) {
+    payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
   }
 
-  if(m_positioningHasBeenSet)
-  {
-   payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
+  if (m_positioningHasBeenSet) {
+    payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

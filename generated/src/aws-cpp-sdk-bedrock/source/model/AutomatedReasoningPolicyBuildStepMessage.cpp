@@ -11,51 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyBuildStepMessage::AutomatedReasoningPolicyBuildStepMessage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyBuildStepMessage::AutomatedReasoningPolicyBuildStepMessage(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyBuildStepMessage& AutomatedReasoningPolicyBuildStepMessage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+AutomatedReasoningPolicyBuildStepMessage& AutomatedReasoningPolicyBuildStepMessage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageType"))
-  {
-    m_messageType = AutomatedReasoningPolicyBuildMessageTypeMapper::GetAutomatedReasoningPolicyBuildMessageTypeForName(jsonValue.GetString("messageType"));
+  if (jsonValue.ValueExists("messageType")) {
+    m_messageType = AutomatedReasoningPolicyBuildMessageTypeMapper::GetAutomatedReasoningPolicyBuildMessageTypeForName(
+        jsonValue.GetString("messageType"));
     m_messageTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyBuildStepMessage::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyBuildStepMessage::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_messageTypeHasBeenSet)
-  {
-   payload.WithString("messageType", AutomatedReasoningPolicyBuildMessageTypeMapper::GetNameForAutomatedReasoningPolicyBuildMessageType(m_messageType));
+  if (m_messageTypeHasBeenSet) {
+    payload.WithString("messageType",
+                       AutomatedReasoningPolicyBuildMessageTypeMapper::GetNameForAutomatedReasoningPolicyBuildMessageType(m_messageType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

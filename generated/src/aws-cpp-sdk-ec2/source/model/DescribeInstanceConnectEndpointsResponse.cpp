@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeInstanceConnectEndpointsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeInstanceConnectEndpointsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceConnectEndpointsResponse::DescribeInstanceConnectEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeInstanceConnectEndpointsResponse::DescribeInstanceConnectEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeInstanceConnectEndpointsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeInstanceConnectEndpointsResponse")) {
     resultNode = rootNode.FirstChild("DescribeInstanceConnectEndpointsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceConnectEndpointsNode = resultNode.FirstChild("instanceConnectEndpointSet");
-    if(!instanceConnectEndpointsNode.IsNull())
-    {
+    if (!instanceConnectEndpointsNode.IsNull()) {
       XmlNode instanceConnectEndpointsMember = instanceConnectEndpointsNode.FirstChild("item");
       m_instanceConnectEndpointsHasBeenSet = !instanceConnectEndpointsMember.IsNull();
-      while(!instanceConnectEndpointsMember.IsNull())
-      {
+      while (!instanceConnectEndpointsMember.IsNull()) {
         m_instanceConnectEndpoints.push_back(instanceConnectEndpointsMember);
         instanceConnectEndpointsMember = instanceConnectEndpointsMember.NextNode("item");
       }
@@ -48,8 +43,7 @@ DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsRespon
       m_instanceConnectEndpointsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +51,12 @@ DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsRespon
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceConnectEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceConnectEndpointsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

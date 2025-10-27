@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class IntentFilterOperator
-  {
-    NOT_SET,
-    CO,
-    EQ
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class IntentFilterOperator { NOT_SET, CO, EQ };
 
-namespace IntentFilterOperatorMapper
-{
+namespace IntentFilterOperatorMapper {
 AWS_LEXMODELSV2_API IntentFilterOperator GetIntentFilterOperatorForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForIntentFilterOperator(IntentFilterOperator value);
-} // namespace IntentFilterOperatorMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace IntentFilterOperatorMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -12,27 +12,19 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterOrganizationDelegatedAdminRequest::SerializePayload() const
-{
+Aws::String RegisterOrganizationDelegatedAdminRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_memberAccountIdHasBeenSet)
-  {
-   payload.WithString("MemberAccountId", m_memberAccountId);
-
+  if (m_memberAccountIdHasBeenSet) {
+    payload.WithString("MemberAccountId", m_memberAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RegisterOrganizationDelegatedAdminRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RegisterOrganizationDelegatedAdminRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RegisterOrganizationDelegatedAdmin"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target",
+                                            "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RegisterOrganizationDelegatedAdmin"));
   return headers;
-
 }
-
-
-
-

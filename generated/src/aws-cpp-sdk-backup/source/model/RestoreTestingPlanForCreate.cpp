@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-RestoreTestingPlanForCreate::RestoreTestingPlanForCreate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RestoreTestingPlanForCreate::RestoreTestingPlanForCreate(JsonView jsonValue) { *this = jsonValue; }
 
-RestoreTestingPlanForCreate& RestoreTestingPlanForCreate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecoveryPointSelection"))
-  {
+RestoreTestingPlanForCreate& RestoreTestingPlanForCreate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecoveryPointSelection")) {
     m_recoveryPointSelection = jsonValue.GetObject("RecoveryPointSelection");
     m_recoveryPointSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RestoreTestingPlanName"))
-  {
+  if (jsonValue.ValueExists("RestoreTestingPlanName")) {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
     m_restoreTestingPlanNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduleExpression"))
-  {
+  if (jsonValue.ValueExists("ScheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
-  {
+  if (jsonValue.ValueExists("ScheduleExpressionTimezone")) {
     m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
     m_scheduleExpressionTimezoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartWindowHours"))
-  {
+  if (jsonValue.ValueExists("StartWindowHours")) {
     m_startWindowHours = jsonValue.GetInteger("StartWindowHours");
     m_startWindowHoursHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RestoreTestingPlanForCreate::Jsonize() const
-{
+JsonValue RestoreTestingPlanForCreate::Jsonize() const {
   JsonValue payload;
 
-  if(m_recoveryPointSelectionHasBeenSet)
-  {
-   payload.WithObject("RecoveryPointSelection", m_recoveryPointSelection.Jsonize());
-
+  if (m_recoveryPointSelectionHasBeenSet) {
+    payload.WithObject("RecoveryPointSelection", m_recoveryPointSelection.Jsonize());
   }
 
-  if(m_restoreTestingPlanNameHasBeenSet)
-  {
-   payload.WithString("RestoreTestingPlanName", m_restoreTestingPlanName);
-
+  if (m_restoreTestingPlanNameHasBeenSet) {
+    payload.WithString("RestoreTestingPlanName", m_restoreTestingPlanName);
   }
 
-  if(m_scheduleExpressionHasBeenSet)
-  {
-   payload.WithString("ScheduleExpression", m_scheduleExpression);
-
+  if (m_scheduleExpressionHasBeenSet) {
+    payload.WithString("ScheduleExpression", m_scheduleExpression);
   }
 
-  if(m_scheduleExpressionTimezoneHasBeenSet)
-  {
-   payload.WithString("ScheduleExpressionTimezone", m_scheduleExpressionTimezone);
-
+  if (m_scheduleExpressionTimezoneHasBeenSet) {
+    payload.WithString("ScheduleExpressionTimezone", m_scheduleExpressionTimezone);
   }
 
-  if(m_startWindowHoursHasBeenSet)
-  {
-   payload.WithInteger("StartWindowHours", m_startWindowHours);
-
+  if (m_startWindowHoursHasBeenSet) {
+    payload.WithInteger("StartWindowHours", m_startWindowHours);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

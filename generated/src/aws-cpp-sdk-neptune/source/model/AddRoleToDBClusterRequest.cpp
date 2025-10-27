@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/AddRoleToDBClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/AddRoleToDBClusterRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String AddRoleToDBClusterRequest::SerializePayload() const
-{
+Aws::String AddRoleToDBClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddRoleToDBCluster&";
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
+  if (m_dBClusterIdentifierHasBeenSet) {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_roleArnHasBeenSet)
-  {
+  if (m_roleArnHasBeenSet) {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
 
-  if(m_featureNameHasBeenSet)
-  {
+  if (m_featureNameHasBeenSet) {
     ss << "FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AddRoleToDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddRoleToDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddRoleToDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

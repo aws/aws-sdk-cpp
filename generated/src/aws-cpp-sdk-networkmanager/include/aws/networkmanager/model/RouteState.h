@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class RouteState
-  {
-    NOT_SET,
-    ACTIVE,
-    BLACKHOLE
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class RouteState { NOT_SET, ACTIVE, BLACKHOLE };
 
-namespace RouteStateMapper
-{
+namespace RouteStateMapper {
 AWS_NETWORKMANAGER_API RouteState GetRouteStateForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForRouteState(RouteState value);
-} // namespace RouteStateMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace RouteStateMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

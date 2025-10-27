@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String ListManagedInsightRulesRequest::SerializePayload() const
-{
+Aws::String ListManagedInsightRulesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListManagedInsightRules&";
-  if(m_resourceARNHasBeenSet)
-  {
+  if (m_resourceARNHasBeenSet) {
     ss << "ResourceARN=" << StringUtils::URLEncode(m_resourceARN.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListManagedInsightRulesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListManagedInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListManagedInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

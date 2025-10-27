@@ -12,51 +12,34 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutThirdPartyJobSuccessResultRequest::SerializePayload() const
-{
+Aws::String PutThirdPartyJobSuccessResultRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_currentRevisionHasBeenSet)
-  {
-   payload.WithObject("currentRevision", m_currentRevision.Jsonize());
-
+  if (m_currentRevisionHasBeenSet) {
+    payload.WithObject("currentRevision", m_currentRevision.Jsonize());
   }
 
-  if(m_continuationTokenHasBeenSet)
-  {
-   payload.WithString("continuationToken", m_continuationToken);
-
+  if (m_continuationTokenHasBeenSet) {
+    payload.WithString("continuationToken", m_continuationToken);
   }
 
-  if(m_executionDetailsHasBeenSet)
-  {
-   payload.WithObject("executionDetails", m_executionDetails.Jsonize());
-
+  if (m_executionDetailsHasBeenSet) {
+    payload.WithObject("executionDetails", m_executionDetails.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutThirdPartyJobSuccessResultRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutThirdPartyJobSuccessResultRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutThirdPartyJobSuccessResult"));
   return headers;
-
 }
-
-
-
-

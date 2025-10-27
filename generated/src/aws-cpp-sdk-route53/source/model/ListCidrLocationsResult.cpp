@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/ListCidrLocationsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ListCidrLocationsResult.h>
 
 #include <utility>
 
@@ -16,31 +16,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCidrLocationsResult::ListCidrLocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListCidrLocationsResult::ListCidrLocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListCidrLocationsResult& ListCidrLocationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListCidrLocationsResult& ListCidrLocationsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode cidrLocationsNode = resultNode.FirstChild("CidrLocations");
-    if(!cidrLocationsNode.IsNull())
-    {
+    if (!cidrLocationsNode.IsNull()) {
       XmlNode cidrLocationsMember = cidrLocationsNode.FirstChild("member");
       m_cidrLocationsHasBeenSet = !cidrLocationsMember.IsNull();
-      while(!cidrLocationsMember.IsNull())
-      {
+      while (!cidrLocationsMember.IsNull()) {
         m_cidrLocations.push_back(cidrLocationsMember);
         cidrLocationsMember = cidrLocationsMember.NextNode("member");
       }
@@ -51,8 +43,7 @@ ListCidrLocationsResult& ListCidrLocationsResult::operator =(const Aws::AmazonWe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/CustomerManagedPolicyReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/CustomerManagedPolicyReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-CustomerManagedPolicyReference::CustomerManagedPolicyReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomerManagedPolicyReference::CustomerManagedPolicyReference(JsonView jsonValue) { *this = jsonValue; }
 
-CustomerManagedPolicyReference& CustomerManagedPolicyReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+CustomerManagedPolicyReference& CustomerManagedPolicyReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomerManagedPolicyReference::Jsonize() const
-{
+JsonValue CustomerManagedPolicyReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

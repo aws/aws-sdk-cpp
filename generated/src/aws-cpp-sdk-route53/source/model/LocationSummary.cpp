@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/LocationSummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/LocationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-LocationSummary::LocationSummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LocationSummary::LocationSummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LocationSummary& LocationSummary::operator =(const XmlNode& xmlNode)
-{
+LocationSummary& LocationSummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode locationNameNode = resultNode.FirstChild("LocationName");
-    if(!locationNameNode.IsNull())
-    {
+    if (!locationNameNode.IsNull()) {
       m_locationName = Aws::Utils::Xml::DecodeEscapedXmlText(locationNameNode.GetText());
       m_locationNameHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ LocationSummary& LocationSummary::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LocationSummary::AddToNode(XmlNode& parentNode) const
-{
+void LocationSummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_locationNameHasBeenSet)
-  {
-   XmlNode locationNameNode = parentNode.CreateChildElement("LocationName");
-   locationNameNode.SetText(m_locationName);
+  if (m_locationNameHasBeenSet) {
+    XmlNode locationNameNode = parentNode.CreateChildElement("LocationName");
+    locationNameNode.SetText(m_locationName);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

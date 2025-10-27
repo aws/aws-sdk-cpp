@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-CalculatedLifecycle::CalculatedLifecycle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CalculatedLifecycle::CalculatedLifecycle(JsonView jsonValue) { *this = jsonValue; }
 
-CalculatedLifecycle& CalculatedLifecycle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MoveToColdStorageAt"))
-  {
+CalculatedLifecycle& CalculatedLifecycle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MoveToColdStorageAt")) {
     m_moveToColdStorageAt = jsonValue.GetDouble("MoveToColdStorageAt");
     m_moveToColdStorageAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeleteAt"))
-  {
+  if (jsonValue.ValueExists("DeleteAt")) {
     m_deleteAt = jsonValue.GetDouble("DeleteAt");
     m_deleteAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CalculatedLifecycle::Jsonize() const
-{
+JsonValue CalculatedLifecycle::Jsonize() const {
   JsonValue payload;
 
-  if(m_moveToColdStorageAtHasBeenSet)
-  {
-   payload.WithDouble("MoveToColdStorageAt", m_moveToColdStorageAt.SecondsWithMSPrecision());
+  if (m_moveToColdStorageAtHasBeenSet) {
+    payload.WithDouble("MoveToColdStorageAt", m_moveToColdStorageAt.SecondsWithMSPrecision());
   }
 
-  if(m_deleteAtHasBeenSet)
-  {
-   payload.WithDouble("DeleteAt", m_deleteAt.SecondsWithMSPrecision());
+  if (m_deleteAtHasBeenSet) {
+    payload.WithDouble("DeleteAt", m_deleteAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

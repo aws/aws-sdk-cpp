@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-EndpointAttributes::EndpointAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointAttributes::EndpointAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointAttributes& EndpointAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeviceToken"))
-  {
+EndpointAttributes& EndpointAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeviceToken")) {
     m_deviceToken = jsonValue.GetString("DeviceToken");
     m_deviceTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoipDeviceToken"))
-  {
+  if (jsonValue.ValueExists("VoipDeviceToken")) {
     m_voipDeviceToken = jsonValue.GetString("VoipDeviceToken");
     m_voipDeviceTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointAttributes::Jsonize() const
-{
+JsonValue EndpointAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_deviceTokenHasBeenSet)
-  {
-   payload.WithString("DeviceToken", m_deviceToken);
-
+  if (m_deviceTokenHasBeenSet) {
+    payload.WithString("DeviceToken", m_deviceToken);
   }
 
-  if(m_voipDeviceTokenHasBeenSet)
-  {
-   payload.WithString("VoipDeviceToken", m_voipDeviceToken);
-
+  if (m_voipDeviceTokenHasBeenSet) {
+    payload.WithString("VoipDeviceToken", m_voipDeviceToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

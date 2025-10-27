@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/UpdateThemeAliasRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/UpdateThemeAliasRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateThemeAliasRequest::SerializePayload() const
-{
+Aws::String UpdateThemeAliasRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_themeVersionNumberHasBeenSet)
-  {
-   payload.WithInt64("ThemeVersionNumber", m_themeVersionNumber);
-
+  if (m_themeVersionNumberHasBeenSet) {
+    payload.WithInt64("ThemeVersionNumber", m_themeVersionNumber);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

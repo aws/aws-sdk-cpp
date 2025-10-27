@@ -3,76 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
-{
+Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeDBEngineVersions&";
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_dBParameterGroupFamilyHasBeenSet)
-  {
+  if (m_dBParameterGroupFamilyHasBeenSet) {
     ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.Filter.", filtersCount, "");
         filtersCount++;
       }
     }
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_defaultOnlyHasBeenSet)
-  {
+  if (m_defaultOnlyHasBeenSet) {
     ss << "DefaultOnly=" << std::boolalpha << m_defaultOnly << "&";
   }
 
-  if(m_listSupportedCharacterSetsHasBeenSet)
-  {
+  if (m_listSupportedCharacterSetsHasBeenSet) {
     ss << "ListSupportedCharacterSets=" << std::boolalpha << m_listSupportedCharacterSets << "&";
   }
 
-  if(m_listSupportedTimezonesHasBeenSet)
-  {
+  if (m_listSupportedTimezonesHasBeenSet) {
     ss << "ListSupportedTimezones=" << std::boolalpha << m_listSupportedTimezones << "&";
   }
 
-  if(m_includeAllHasBeenSet)
-  {
+  if (m_includeAllHasBeenSet) {
     ss << "IncludeAll=" << std::boolalpha << m_includeAll << "&";
   }
 
@@ -80,8 +65,4 @@ Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeDBEngineVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeDBEngineVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

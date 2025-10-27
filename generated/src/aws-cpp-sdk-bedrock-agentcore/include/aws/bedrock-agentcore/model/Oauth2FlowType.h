@@ -7,25 +7,16 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
-  enum class Oauth2FlowType
-  {
-    NOT_SET,
-    USER_FEDERATION,
-    M2M
-  };
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
+enum class Oauth2FlowType { NOT_SET, USER_FEDERATION, M2M };
 
-namespace Oauth2FlowTypeMapper
-{
+namespace Oauth2FlowTypeMapper {
 AWS_BEDROCKAGENTCORE_API Oauth2FlowType GetOauth2FlowTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTCORE_API Aws::String GetNameForOauth2FlowType(Oauth2FlowType value);
-} // namespace Oauth2FlowTypeMapper
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Oauth2FlowTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

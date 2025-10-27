@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeBlueGreenDeploymentsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribeBlueGreenDeploymentsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,24 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBlueGreenDeploymentsResult::DescribeBlueGreenDeploymentsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeBlueGreenDeploymentsResult::DescribeBlueGreenDeploymentsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeBlueGreenDeploymentsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeBlueGreenDeploymentsResult")) {
     resultNode = rootNode.FirstChild("DescribeBlueGreenDeploymentsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode blueGreenDeploymentsNode = resultNode.FirstChild("BlueGreenDeployments");
-    if(!blueGreenDeploymentsNode.IsNull())
-    {
+    if (!blueGreenDeploymentsNode.IsNull()) {
       XmlNode blueGreenDeploymentsMember = blueGreenDeploymentsNode.FirstChild("member");
       m_blueGreenDeploymentsHasBeenSet = !blueGreenDeploymentsMember.IsNull();
-      while(!blueGreenDeploymentsMember.IsNull())
-      {
+      while (!blueGreenDeploymentsMember.IsNull()) {
         m_blueGreenDeployments.push_back(blueGreenDeploymentsMember);
         blueGreenDeploymentsMember = blueGreenDeploymentsMember.NextNode("member");
       }
@@ -48,8 +42,7 @@ DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator
       m_blueGreenDeploymentsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -59,7 +52,7 @@ DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeBlueGreenDeploymentsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeBlueGreenDeploymentsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

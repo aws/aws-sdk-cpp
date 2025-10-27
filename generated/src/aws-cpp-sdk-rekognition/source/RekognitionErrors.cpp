@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::Rekognition;
 using namespace Aws::Rekognition::Model;
 
-namespace Aws
-{
-namespace Rekognition
-{
-template<> AWS_REKOGNITION_API HumanLoopQuotaExceededException RekognitionError::GetModeledError()
-{
+namespace Aws {
+namespace Rekognition {
+template <>
+AWS_REKOGNITION_API HumanLoopQuotaExceededException RekognitionError::GetModeledError() {
   assert(this->GetErrorType() == RekognitionErrors::HUMAN_LOOP_QUOTA_EXCEEDED);
   return HumanLoopQuotaExceededException(this->GetJsonPayload().View());
 }
 
-namespace RekognitionErrorMapper
-{
+namespace RekognitionErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int IMAGE_TOO_LARGE_HASH = HashingUtils::HashString("ImageTooLargeException");
@@ -46,90 +43,51 @@ static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3Obj
 static const int INVALID_IMAGE_FORMAT_HASH = HashingUtils::HashString("InvalidImageFormatException");
 static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IMAGE_TOO_LARGE_HASH)
-  {
+  } else if (hashCode == IMAGE_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::IMAGE_TOO_LARGE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_NOT_READY_HASH)
-  {
+  } else if (hashCode == RESOURCE_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
-  {
+  } else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_MANIFEST_HASH)
-  {
+  } else if (hashCode == INVALID_MANIFEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_MANIFEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_POLICY_REVISION_ID_HASH)
-  {
+  } else if (hashCode == INVALID_POLICY_REVISION_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_POLICY_REVISION_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SESSION_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == SESSION_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::SESSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
-  {
+  } else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == VIDEO_TOO_LARGE_HASH)
-  {
+  } else if (hashCode == VIDEO_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::VIDEO_TOO_LARGE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_S3_OBJECT_HASH)
-  {
+  } else if (hashCode == INVALID_S3_OBJECT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_S3_OBJECT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_IMAGE_FORMAT_HASH)
-  {
+  } else if (hashCode == INVALID_IMAGE_FORMAT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_IMAGE_FORMAT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::HUMAN_LOOP_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace RekognitionErrorMapper
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace RekognitionErrorMapper
+}  // namespace Rekognition
+}  // namespace Aws

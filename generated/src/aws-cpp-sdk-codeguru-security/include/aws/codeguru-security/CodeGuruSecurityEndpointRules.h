@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-class CodeGuruSecurityEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeGuruSecurity {
+class CodeGuruSecurityEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

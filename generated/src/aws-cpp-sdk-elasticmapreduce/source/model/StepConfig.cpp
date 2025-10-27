@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/StepConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-StepConfig::StepConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StepConfig::StepConfig(JsonView jsonValue) { *this = jsonValue; }
 
-StepConfig& StepConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+StepConfig& StepConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionOnFailure"))
-  {
+  if (jsonValue.ValueExists("ActionOnFailure")) {
     m_actionOnFailure = ActionOnFailureMapper::GetActionOnFailureForName(jsonValue.GetString("ActionOnFailure"));
     m_actionOnFailureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HadoopJarStep"))
-  {
+  if (jsonValue.ValueExists("HadoopJarStep")) {
     m_hadoopJarStep = jsonValue.GetObject("HadoopJarStep");
     m_hadoopJarStepHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StepConfig::Jsonize() const
-{
+JsonValue StepConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_actionOnFailureHasBeenSet)
-  {
-   payload.WithString("ActionOnFailure", ActionOnFailureMapper::GetNameForActionOnFailure(m_actionOnFailure));
+  if (m_actionOnFailureHasBeenSet) {
+    payload.WithString("ActionOnFailure", ActionOnFailureMapper::GetNameForActionOnFailure(m_actionOnFailure));
   }
 
-  if(m_hadoopJarStepHasBeenSet)
-  {
-   payload.WithObject("HadoopJarStep", m_hadoopJarStep.Jsonize());
-
+  if (m_hadoopJarStepHasBeenSet) {
+    payload.WithObject("HadoopJarStep", m_hadoopJarStep.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class SourceRepository
-  {
-    NOT_SET,
-    CodeCommit,
-    S3
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class SourceRepository { NOT_SET, CodeCommit, S3 };
 
-namespace SourceRepositoryMapper
-{
+namespace SourceRepositoryMapper {
 AWS_ELASTICBEANSTALK_API SourceRepository GetSourceRepositoryForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForSourceRepository(SourceRepository value);
-} // namespace SourceRepositoryMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace SourceRepositoryMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

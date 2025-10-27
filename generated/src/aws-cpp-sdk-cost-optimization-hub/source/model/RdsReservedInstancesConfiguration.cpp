@@ -3,225 +3,166 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/RdsReservedInstancesConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/RdsReservedInstancesConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-RdsReservedInstancesConfiguration::RdsReservedInstancesConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RdsReservedInstancesConfiguration::RdsReservedInstancesConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RdsReservedInstancesConfiguration& RdsReservedInstancesConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountScope"))
-  {
+RdsReservedInstancesConfiguration& RdsReservedInstancesConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountScope")) {
     m_accountScope = jsonValue.GetString("accountScope");
     m_accountScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("service"))
-  {
+  if (jsonValue.ValueExists("service")) {
     m_service = jsonValue.GetString("service");
     m_serviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("term"))
-  {
+  if (jsonValue.ValueExists("term")) {
     m_term = jsonValue.GetString("term");
     m_termHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paymentOption"))
-  {
+  if (jsonValue.ValueExists("paymentOption")) {
     m_paymentOption = jsonValue.GetString("paymentOption");
     m_paymentOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reservedInstancesRegion"))
-  {
+  if (jsonValue.ValueExists("reservedInstancesRegion")) {
     m_reservedInstancesRegion = jsonValue.GetString("reservedInstancesRegion");
     m_reservedInstancesRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("upfrontCost"))
-  {
+  if (jsonValue.ValueExists("upfrontCost")) {
     m_upfrontCost = jsonValue.GetString("upfrontCost");
     m_upfrontCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("monthlyRecurringCost"))
-  {
+  if (jsonValue.ValueExists("monthlyRecurringCost")) {
     m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
     m_monthlyRecurringCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("normalizedUnitsToPurchase"))
-  {
+  if (jsonValue.ValueExists("normalizedUnitsToPurchase")) {
     m_normalizedUnitsToPurchase = jsonValue.GetString("normalizedUnitsToPurchase");
     m_normalizedUnitsToPurchaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numberOfInstancesToPurchase"))
-  {
+  if (jsonValue.ValueExists("numberOfInstancesToPurchase")) {
     m_numberOfInstancesToPurchase = jsonValue.GetString("numberOfInstancesToPurchase");
     m_numberOfInstancesToPurchaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceFamily"))
-  {
+  if (jsonValue.ValueExists("instanceFamily")) {
     m_instanceFamily = jsonValue.GetString("instanceFamily");
     m_instanceFamilyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceType"))
-  {
+  if (jsonValue.ValueExists("instanceType")) {
     m_instanceType = jsonValue.GetString("instanceType");
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sizeFlexEligible"))
-  {
+  if (jsonValue.ValueExists("sizeFlexEligible")) {
     m_sizeFlexEligible = jsonValue.GetBool("sizeFlexEligible");
     m_sizeFlexEligibleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currentGeneration"))
-  {
+  if (jsonValue.ValueExists("currentGeneration")) {
     m_currentGeneration = jsonValue.GetString("currentGeneration");
     m_currentGenerationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseModel"))
-  {
+  if (jsonValue.ValueExists("licenseModel")) {
     m_licenseModel = jsonValue.GetString("licenseModel");
     m_licenseModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseEdition"))
-  {
+  if (jsonValue.ValueExists("databaseEdition")) {
     m_databaseEdition = jsonValue.GetString("databaseEdition");
     m_databaseEditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseEngine"))
-  {
+  if (jsonValue.ValueExists("databaseEngine")) {
     m_databaseEngine = jsonValue.GetString("databaseEngine");
     m_databaseEngineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentOption"))
-  {
+  if (jsonValue.ValueExists("deploymentOption")) {
     m_deploymentOption = jsonValue.GetString("deploymentOption");
     m_deploymentOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RdsReservedInstancesConfiguration::Jsonize() const
-{
+JsonValue RdsReservedInstancesConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountScopeHasBeenSet)
-  {
-   payload.WithString("accountScope", m_accountScope);
-
+  if (m_accountScopeHasBeenSet) {
+    payload.WithString("accountScope", m_accountScope);
   }
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("service", m_service);
   }
 
-  if(m_termHasBeenSet)
-  {
-   payload.WithString("term", m_term);
-
+  if (m_termHasBeenSet) {
+    payload.WithString("term", m_term);
   }
 
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("paymentOption", m_paymentOption);
-
+  if (m_paymentOptionHasBeenSet) {
+    payload.WithString("paymentOption", m_paymentOption);
   }
 
-  if(m_reservedInstancesRegionHasBeenSet)
-  {
-   payload.WithString("reservedInstancesRegion", m_reservedInstancesRegion);
-
+  if (m_reservedInstancesRegionHasBeenSet) {
+    payload.WithString("reservedInstancesRegion", m_reservedInstancesRegion);
   }
 
-  if(m_upfrontCostHasBeenSet)
-  {
-   payload.WithString("upfrontCost", m_upfrontCost);
-
+  if (m_upfrontCostHasBeenSet) {
+    payload.WithString("upfrontCost", m_upfrontCost);
   }
 
-  if(m_monthlyRecurringCostHasBeenSet)
-  {
-   payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
-
+  if (m_monthlyRecurringCostHasBeenSet) {
+    payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
   }
 
-  if(m_normalizedUnitsToPurchaseHasBeenSet)
-  {
-   payload.WithString("normalizedUnitsToPurchase", m_normalizedUnitsToPurchase);
-
+  if (m_normalizedUnitsToPurchaseHasBeenSet) {
+    payload.WithString("normalizedUnitsToPurchase", m_normalizedUnitsToPurchase);
   }
 
-  if(m_numberOfInstancesToPurchaseHasBeenSet)
-  {
-   payload.WithString("numberOfInstancesToPurchase", m_numberOfInstancesToPurchase);
-
+  if (m_numberOfInstancesToPurchaseHasBeenSet) {
+    payload.WithString("numberOfInstancesToPurchase", m_numberOfInstancesToPurchase);
   }
 
-  if(m_instanceFamilyHasBeenSet)
-  {
-   payload.WithString("instanceFamily", m_instanceFamily);
-
+  if (m_instanceFamilyHasBeenSet) {
+    payload.WithString("instanceFamily", m_instanceFamily);
   }
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", m_instanceType);
-
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", m_instanceType);
   }
 
-  if(m_sizeFlexEligibleHasBeenSet)
-  {
-   payload.WithBool("sizeFlexEligible", m_sizeFlexEligible);
-
+  if (m_sizeFlexEligibleHasBeenSet) {
+    payload.WithBool("sizeFlexEligible", m_sizeFlexEligible);
   }
 
-  if(m_currentGenerationHasBeenSet)
-  {
-   payload.WithString("currentGeneration", m_currentGeneration);
-
+  if (m_currentGenerationHasBeenSet) {
+    payload.WithString("currentGeneration", m_currentGeneration);
   }
 
-  if(m_licenseModelHasBeenSet)
-  {
-   payload.WithString("licenseModel", m_licenseModel);
-
+  if (m_licenseModelHasBeenSet) {
+    payload.WithString("licenseModel", m_licenseModel);
   }
 
-  if(m_databaseEditionHasBeenSet)
-  {
-   payload.WithString("databaseEdition", m_databaseEdition);
-
+  if (m_databaseEditionHasBeenSet) {
+    payload.WithString("databaseEdition", m_databaseEdition);
   }
 
-  if(m_databaseEngineHasBeenSet)
-  {
-   payload.WithString("databaseEngine", m_databaseEngine);
-
+  if (m_databaseEngineHasBeenSet) {
+    payload.WithString("databaseEngine", m_databaseEngine);
   }
 
-  if(m_deploymentOptionHasBeenSet)
-  {
-   payload.WithString("deploymentOption", m_deploymentOption);
-
+  if (m_deploymentOptionHasBeenSet) {
+    payload.WithString("deploymentOption", m_deploymentOption);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

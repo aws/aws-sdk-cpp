@@ -4,46 +4,36 @@
  */
 
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StackSetOperationPreferences& StackSetOperationPreferences::operator =(const XmlNode& xmlNode)
-{
+StackSetOperationPreferences& StackSetOperationPreferences::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode regionConcurrencyTypeNode = resultNode.FirstChild("RegionConcurrencyType");
-    if(!regionConcurrencyTypeNode.IsNull())
-    {
-      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()));
+    if (!regionConcurrencyTypeNode.IsNull()) {
+      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()));
       m_regionConcurrencyTypeHasBeenSet = true;
     }
     XmlNode regionOrderNode = resultNode.FirstChild("RegionOrder");
-    if(!regionOrderNode.IsNull())
-    {
+    if (!regionOrderNode.IsNull()) {
       XmlNode regionOrderMember = regionOrderNode.FirstChild("member");
       m_regionOrderHasBeenSet = !regionOrderMember.IsNull();
-      while(!regionOrderMember.IsNull())
-      {
+      while (!regionOrderMember.IsNull()) {
         m_regionOrder.push_back(regionOrderMember.GetText());
         regionOrderMember = regionOrderMember.NextNode("member");
       }
@@ -51,33 +41,33 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
       m_regionOrderHasBeenSet = true;
     }
     XmlNode failureToleranceCountNode = resultNode.FirstChild("FailureToleranceCount");
-    if(!failureToleranceCountNode.IsNull())
-    {
-      m_failureToleranceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureToleranceCountNode.GetText()).c_str()).c_str());
+    if (!failureToleranceCountNode.IsNull()) {
+      m_failureToleranceCount = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureToleranceCountNode.GetText()).c_str()).c_str());
       m_failureToleranceCountHasBeenSet = true;
     }
     XmlNode failureTolerancePercentageNode = resultNode.FirstChild("FailureTolerancePercentage");
-    if(!failureTolerancePercentageNode.IsNull())
-    {
-      m_failureTolerancePercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureTolerancePercentageNode.GetText()).c_str()).c_str());
+    if (!failureTolerancePercentageNode.IsNull()) {
+      m_failureTolerancePercentage = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureTolerancePercentageNode.GetText()).c_str()).c_str());
       m_failureTolerancePercentageHasBeenSet = true;
     }
     XmlNode maxConcurrentCountNode = resultNode.FirstChild("MaxConcurrentCount");
-    if(!maxConcurrentCountNode.IsNull())
-    {
-      m_maxConcurrentCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentCountNode.GetText()).c_str()).c_str());
+    if (!maxConcurrentCountNode.IsNull()) {
+      m_maxConcurrentCount = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentCountNode.GetText()).c_str()).c_str());
       m_maxConcurrentCountHasBeenSet = true;
     }
     XmlNode maxConcurrentPercentageNode = resultNode.FirstChild("MaxConcurrentPercentage");
-    if(!maxConcurrentPercentageNode.IsNull())
-    {
-      m_maxConcurrentPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentPercentageNode.GetText()).c_str()).c_str());
+    if (!maxConcurrentPercentageNode.IsNull()) {
+      m_maxConcurrentPercentage = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentPercentageNode.GetText()).c_str()).c_str());
       m_maxConcurrentPercentageHasBeenSet = true;
     }
     XmlNode concurrencyModeNode = resultNode.FirstChild("ConcurrencyMode");
-    if(!concurrencyModeNode.IsNull())
-    {
-      m_concurrencyMode = ConcurrencyModeMapper::GetConcurrencyModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(concurrencyModeNode.GetText()).c_str()));
+    if (!concurrencyModeNode.IsNull()) {
+      m_concurrencyMode = ConcurrencyModeMapper::GetConcurrencyModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(concurrencyModeNode.GetText()).c_str()));
       m_concurrencyModeHasBeenSet = true;
     }
   }
@@ -85,85 +75,72 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
   return *this;
 }
 
-void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_regionConcurrencyTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RegionConcurrencyType=" << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
+void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                  const char* locationValue) const {
+  if (m_regionConcurrencyTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".RegionConcurrencyType="
+            << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
   }
 
-  if(m_regionOrderHasBeenSet)
-  {
-      unsigned regionOrderIdx = 1;
-      for(auto& item : m_regionOrder)
-      {
-        oStream << location << index << locationValue << ".RegionOrder.member." << regionOrderIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_regionOrderHasBeenSet) {
+    unsigned regionOrderIdx = 1;
+    for (auto& item : m_regionOrder) {
+      oStream << location << index << locationValue << ".RegionOrder.member." << regionOrderIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_failureToleranceCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FailureToleranceCount=" << m_failureToleranceCount << "&";
+  if (m_failureToleranceCountHasBeenSet) {
+    oStream << location << index << locationValue << ".FailureToleranceCount=" << m_failureToleranceCount << "&";
   }
 
-  if(m_failureTolerancePercentageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FailureTolerancePercentage=" << m_failureTolerancePercentage << "&";
+  if (m_failureTolerancePercentageHasBeenSet) {
+    oStream << location << index << locationValue << ".FailureTolerancePercentage=" << m_failureTolerancePercentage << "&";
   }
 
-  if(m_maxConcurrentCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MaxConcurrentCount=" << m_maxConcurrentCount << "&";
+  if (m_maxConcurrentCountHasBeenSet) {
+    oStream << location << index << locationValue << ".MaxConcurrentCount=" << m_maxConcurrentCount << "&";
   }
 
-  if(m_maxConcurrentPercentageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
+  if (m_maxConcurrentPercentageHasBeenSet) {
+    oStream << location << index << locationValue << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
   }
 
-  if(m_concurrencyModeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
-  }
-
-}
-
-void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_regionConcurrencyTypeHasBeenSet)
-  {
-      oStream << location << ".RegionConcurrencyType=" << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
-  }
-  if(m_regionOrderHasBeenSet)
-  {
-      unsigned regionOrderIdx = 1;
-      for(auto& item : m_regionOrder)
-      {
-        oStream << location << ".RegionOrder.member." << regionOrderIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_failureToleranceCountHasBeenSet)
-  {
-      oStream << location << ".FailureToleranceCount=" << m_failureToleranceCount << "&";
-  }
-  if(m_failureTolerancePercentageHasBeenSet)
-  {
-      oStream << location << ".FailureTolerancePercentage=" << m_failureTolerancePercentage << "&";
-  }
-  if(m_maxConcurrentCountHasBeenSet)
-  {
-      oStream << location << ".MaxConcurrentCount=" << m_maxConcurrentCount << "&";
-  }
-  if(m_maxConcurrentPercentageHasBeenSet)
-  {
-      oStream << location << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
-  }
-  if(m_concurrencyModeHasBeenSet)
-  {
-      oStream << location << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
+  if (m_concurrencyModeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_regionConcurrencyTypeHasBeenSet) {
+    oStream << location << ".RegionConcurrencyType="
+            << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
+  }
+  if (m_regionOrderHasBeenSet) {
+    unsigned regionOrderIdx = 1;
+    for (auto& item : m_regionOrder) {
+      oStream << location << ".RegionOrder.member." << regionOrderIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_failureToleranceCountHasBeenSet) {
+    oStream << location << ".FailureToleranceCount=" << m_failureToleranceCount << "&";
+  }
+  if (m_failureTolerancePercentageHasBeenSet) {
+    oStream << location << ".FailureTolerancePercentage=" << m_failureTolerancePercentage << "&";
+  }
+  if (m_maxConcurrentCountHasBeenSet) {
+    oStream << location << ".MaxConcurrentCount=" << m_maxConcurrentCount << "&";
+  }
+  if (m_maxConcurrentPercentageHasBeenSet) {
+    oStream << location << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
+  }
+  if (m_concurrencyModeHasBeenSet) {
+    oStream << location
+            << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

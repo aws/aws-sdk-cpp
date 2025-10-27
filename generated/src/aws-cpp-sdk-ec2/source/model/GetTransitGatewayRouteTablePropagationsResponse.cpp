@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransitGatewayRouteTablePropagationsResponse::GetTransitGatewayRouteTablePropagationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetTransitGatewayRouteTablePropagationsResponse::GetTransitGatewayRouteTablePropagationsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetTransitGatewayRouteTablePropagationsResponse& GetTransitGatewayRouteTablePropagationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetTransitGatewayRouteTablePropagationsResponse& GetTransitGatewayRouteTablePropagationsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetTransitGatewayRouteTablePropagationsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetTransitGatewayRouteTablePropagationsResponse")) {
     resultNode = rootNode.FirstChild("GetTransitGatewayRouteTablePropagationsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode transitGatewayRouteTablePropagationsNode = resultNode.FirstChild("transitGatewayRouteTablePropagations");
-    if(!transitGatewayRouteTablePropagationsNode.IsNull())
-    {
+    if (!transitGatewayRouteTablePropagationsNode.IsNull()) {
       XmlNode transitGatewayRouteTablePropagationsMember = transitGatewayRouteTablePropagationsNode.FirstChild("item");
       m_transitGatewayRouteTablePropagationsHasBeenSet = !transitGatewayRouteTablePropagationsMember.IsNull();
-      while(!transitGatewayRouteTablePropagationsMember.IsNull())
-      {
+      while (!transitGatewayRouteTablePropagationsMember.IsNull()) {
         m_transitGatewayRouteTablePropagations.push_back(transitGatewayRouteTablePropagationsMember);
         transitGatewayRouteTablePropagationsMember = transitGatewayRouteTablePropagationsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ GetTransitGatewayRouteTablePropagationsResponse& GetTransitGatewayRouteTableProp
       m_transitGatewayRouteTablePropagationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ GetTransitGatewayRouteTablePropagationsResponse& GetTransitGatewayRouteTableProp
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayRouteTablePropagationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayRouteTablePropagationsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -12,11 +12,4 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProfilingGroupRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteProfilingGroupRequest::SerializePayload() const { return {}; }

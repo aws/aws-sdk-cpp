@@ -12,33 +12,22 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteResourcePolicyRequest::SerializePayload() const
-{
+Aws::String DeleteResourcePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_policyRevisionIdHasBeenSet)
-  {
-   payload.WithString("PolicyRevisionId", m_policyRevisionId);
-
+  if (m_policyRevisionIdHasBeenSet) {
+    payload.WithString("PolicyRevisionId", m_policyRevisionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteResourcePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteResourcePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DeleteResourcePolicy"));
   return headers;
-
 }
-
-
-
-

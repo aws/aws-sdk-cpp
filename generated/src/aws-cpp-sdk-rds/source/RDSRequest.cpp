@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/rds/RDSRequest.h>
 
-namespace Aws
-{
-namespace RDS
-{
-} // namespace RDS
-} // namespace Aws
+namespace Aws {
+namespace RDS {}  // namespace RDS
+}  // namespace Aws

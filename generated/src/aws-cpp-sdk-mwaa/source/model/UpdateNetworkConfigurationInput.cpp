@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mwaa/model/UpdateNetworkConfigurationInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mwaa/model/UpdateNetworkConfigurationInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MWAA
-{
-namespace Model
-{
+namespace Aws {
+namespace MWAA {
+namespace Model {
 
-UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateNetworkConfigurationInput& UpdateNetworkConfigurationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SecurityGroupIds"))
-  {
+UpdateNetworkConfigurationInput& UpdateNetworkConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SecurityGroupIds")) {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
@@ -37,24 +28,20 @@ UpdateNetworkConfigurationInput& UpdateNetworkConfigurationInput::operator =(Jso
   return *this;
 }
 
-JsonValue UpdateNetworkConfigurationInput::Jsonize() const
-{
+JsonValue UpdateNetworkConfigurationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
-
+  if (m_securityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    }
+    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MWAA
-} // namespace Aws
+}  // namespace Model
+}  // namespace MWAA
+}  // namespace Aws

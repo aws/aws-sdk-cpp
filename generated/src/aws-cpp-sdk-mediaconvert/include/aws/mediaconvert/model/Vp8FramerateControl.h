@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Vp8FramerateControl
-  {
-    NOT_SET,
-    INITIALIZE_FROM_SOURCE,
-    SPECIFIED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Vp8FramerateControl { NOT_SET, INITIALIZE_FROM_SOURCE, SPECIFIED };
 
-namespace Vp8FramerateControlMapper
-{
+namespace Vp8FramerateControlMapper {
 AWS_MEDIACONVERT_API Vp8FramerateControl GetVp8FramerateControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVp8FramerateControl(Vp8FramerateControl value);
-} // namespace Vp8FramerateControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Vp8FramerateControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

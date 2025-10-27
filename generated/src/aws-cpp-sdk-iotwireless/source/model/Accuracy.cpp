@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/Accuracy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/Accuracy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-Accuracy::Accuracy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Accuracy::Accuracy(JsonView jsonValue) { *this = jsonValue; }
 
-Accuracy& Accuracy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HorizontalAccuracy"))
-  {
+Accuracy& Accuracy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HorizontalAccuracy")) {
     m_horizontalAccuracy = jsonValue.GetDouble("HorizontalAccuracy");
     m_horizontalAccuracyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VerticalAccuracy"))
-  {
+  if (jsonValue.ValueExists("VerticalAccuracy")) {
     m_verticalAccuracy = jsonValue.GetDouble("VerticalAccuracy");
     m_verticalAccuracyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Accuracy::Jsonize() const
-{
+JsonValue Accuracy::Jsonize() const {
   JsonValue payload;
 
-  if(m_horizontalAccuracyHasBeenSet)
-  {
-   payload.WithDouble("HorizontalAccuracy", m_horizontalAccuracy);
-
+  if (m_horizontalAccuracyHasBeenSet) {
+    payload.WithDouble("HorizontalAccuracy", m_horizontalAccuracy);
   }
 
-  if(m_verticalAccuracyHasBeenSet)
-  {
-   payload.WithDouble("VerticalAccuracy", m_verticalAccuracy);
-
+  if (m_verticalAccuracyHasBeenSet) {
+    payload.WithDouble("VerticalAccuracy", m_verticalAccuracy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

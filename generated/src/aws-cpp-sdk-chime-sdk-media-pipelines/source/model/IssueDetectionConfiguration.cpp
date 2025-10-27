@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-IssueDetectionConfiguration::IssueDetectionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IssueDetectionConfiguration::IssueDetectionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IssueDetectionConfiguration& IssueDetectionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleName"))
-  {
+IssueDetectionConfiguration& IssueDetectionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleName")) {
     m_ruleName = jsonValue.GetString("RuleName");
     m_ruleNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IssueDetectionConfiguration::Jsonize() const
-{
+JsonValue IssueDetectionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleNameHasBeenSet)
-  {
-   payload.WithString("RuleName", m_ruleName);
-
+  if (m_ruleNameHasBeenSet) {
+    payload.WithString("RuleName", m_ruleName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

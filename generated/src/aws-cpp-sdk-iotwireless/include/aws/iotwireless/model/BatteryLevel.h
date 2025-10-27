@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class BatteryLevel
-  {
-    NOT_SET,
-    normal,
-    low,
-    critical
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class BatteryLevel { NOT_SET, normal, low, critical };
 
-namespace BatteryLevelMapper
-{
+namespace BatteryLevelMapper {
 AWS_IOTWIRELESS_API BatteryLevel GetBatteryLevelForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForBatteryLevel(BatteryLevel value);
-} // namespace BatteryLevelMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace BatteryLevelMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

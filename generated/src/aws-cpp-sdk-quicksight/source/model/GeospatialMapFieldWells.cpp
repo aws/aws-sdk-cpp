@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/GeospatialMapFieldWells.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/GeospatialMapFieldWells.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-GeospatialMapFieldWells::GeospatialMapFieldWells(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeospatialMapFieldWells::GeospatialMapFieldWells(JsonView jsonValue) { *this = jsonValue; }
 
-GeospatialMapFieldWells& GeospatialMapFieldWells::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GeospatialMapAggregatedFieldWells"))
-  {
+GeospatialMapFieldWells& GeospatialMapFieldWells::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GeospatialMapAggregatedFieldWells")) {
     m_geospatialMapAggregatedFieldWells = jsonValue.GetObject("GeospatialMapAggregatedFieldWells");
     m_geospatialMapAggregatedFieldWellsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeospatialMapFieldWells::Jsonize() const
-{
+JsonValue GeospatialMapFieldWells::Jsonize() const {
   JsonValue payload;
 
-  if(m_geospatialMapAggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("GeospatialMapAggregatedFieldWells", m_geospatialMapAggregatedFieldWells.Jsonize());
-
+  if (m_geospatialMapAggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("GeospatialMapAggregatedFieldWells", m_geospatialMapAggregatedFieldWells.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

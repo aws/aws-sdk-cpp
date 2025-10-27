@@ -7,32 +7,27 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class DataSourceType
-  {
-    NOT_SET,
-    AWS_LAMBDA,
-    AMAZON_DYNAMODB,
-    AMAZON_ELASTICSEARCH,
-    NONE,
-    HTTP,
-    RELATIONAL_DATABASE,
-    AMAZON_OPENSEARCH_SERVICE,
-    AMAZON_EVENTBRIDGE,
-    AMAZON_BEDROCK_RUNTIME
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class DataSourceType {
+  NOT_SET,
+  AWS_LAMBDA,
+  AMAZON_DYNAMODB,
+  AMAZON_ELASTICSEARCH,
+  NONE,
+  HTTP,
+  RELATIONAL_DATABASE,
+  AMAZON_OPENSEARCH_SERVICE,
+  AMAZON_EVENTBRIDGE,
+  AMAZON_BEDROCK_RUNTIME
+};
 
-namespace DataSourceTypeMapper
-{
+namespace DataSourceTypeMapper {
 AWS_APPSYNC_API DataSourceType GetDataSourceTypeForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForDataSourceType(DataSourceType value);
-} // namespace DataSourceTypeMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace DataSourceTypeMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

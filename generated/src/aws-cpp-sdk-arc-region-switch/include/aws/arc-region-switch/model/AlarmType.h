@@ -7,25 +7,16 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
-  enum class AlarmType
-  {
-    NOT_SET,
-    applicationHealth,
-    trigger
-  };
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
+enum class AlarmType { NOT_SET, applicationHealth, trigger };
 
-namespace AlarmTypeMapper
-{
+namespace AlarmTypeMapper {
 AWS_ARCREGIONSWITCH_API AlarmType GetAlarmTypeForName(const Aws::String& name);
 
 AWS_ARCREGIONSWITCH_API Aws::String GetNameForAlarmType(AlarmType value);
-} // namespace AlarmTypeMapper
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace AlarmTypeMapper
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

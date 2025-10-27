@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/SearchResourcesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workdocs/model/SearchResourcesRequest.h>
 
 #include <utility>
 
@@ -13,91 +13,68 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SearchResourcesRequest::SerializePayload() const
-{
+Aws::String SearchResourcesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryTextHasBeenSet)
-  {
-   payload.WithString("QueryText", m_queryText);
-
+  if (m_queryTextHasBeenSet) {
+    payload.WithString("QueryText", m_queryText);
   }
 
-  if(m_queryScopesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queryScopesJsonList(m_queryScopes.size());
-   for(unsigned queryScopesIndex = 0; queryScopesIndex < queryScopesJsonList.GetLength(); ++queryScopesIndex)
-   {
-     queryScopesJsonList[queryScopesIndex].AsString(SearchQueryScopeTypeMapper::GetNameForSearchQueryScopeType(m_queryScopes[queryScopesIndex]));
-   }
-   payload.WithArray("QueryScopes", std::move(queryScopesJsonList));
-
+  if (m_queryScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queryScopesJsonList(m_queryScopes.size());
+    for (unsigned queryScopesIndex = 0; queryScopesIndex < queryScopesJsonList.GetLength(); ++queryScopesIndex) {
+      queryScopesJsonList[queryScopesIndex].AsString(
+          SearchQueryScopeTypeMapper::GetNameForSearchQueryScopeType(m_queryScopes[queryScopesIndex]));
+    }
+    payload.WithArray("QueryScopes", std::move(queryScopesJsonList));
   }
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_additionalResponseFieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> additionalResponseFieldsJsonList(m_additionalResponseFields.size());
-   for(unsigned additionalResponseFieldsIndex = 0; additionalResponseFieldsIndex < additionalResponseFieldsJsonList.GetLength(); ++additionalResponseFieldsIndex)
-   {
-     additionalResponseFieldsJsonList[additionalResponseFieldsIndex].AsString(AdditionalResponseFieldTypeMapper::GetNameForAdditionalResponseFieldType(m_additionalResponseFields[additionalResponseFieldsIndex]));
-   }
-   payload.WithArray("AdditionalResponseFields", std::move(additionalResponseFieldsJsonList));
-
+  if (m_additionalResponseFieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalResponseFieldsJsonList(m_additionalResponseFields.size());
+    for (unsigned additionalResponseFieldsIndex = 0; additionalResponseFieldsIndex < additionalResponseFieldsJsonList.GetLength();
+         ++additionalResponseFieldsIndex) {
+      additionalResponseFieldsJsonList[additionalResponseFieldsIndex].AsString(
+          AdditionalResponseFieldTypeMapper::GetNameForAdditionalResponseFieldType(
+              m_additionalResponseFields[additionalResponseFieldsIndex]));
+    }
+    payload.WithArray("AdditionalResponseFields", std::move(additionalResponseFieldsJsonList));
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   payload.WithObject("Filters", m_filters.Jsonize());
-
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("Filters", m_filters.Jsonize());
   }
 
-  if(m_orderByHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> orderByJsonList(m_orderBy.size());
-   for(unsigned orderByIndex = 0; orderByIndex < orderByJsonList.GetLength(); ++orderByIndex)
-   {
-     orderByJsonList[orderByIndex].AsObject(m_orderBy[orderByIndex].Jsonize());
-   }
-   payload.WithArray("OrderBy", std::move(orderByJsonList));
-
+  if (m_orderByHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orderByJsonList(m_orderBy.size());
+    for (unsigned orderByIndex = 0; orderByIndex < orderByJsonList.GetLength(); ++orderByIndex) {
+      orderByJsonList[orderByIndex].AsObject(m_orderBy[orderByIndex].Jsonize());
+    }
+    payload.WithArray("OrderBy", std::move(orderByJsonList));
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
-  if(m_markerHasBeenSet)
-  {
-   payload.WithString("Marker", m_marker);
-
+  if (m_markerHasBeenSet) {
+    payload.WithString("Marker", m_marker);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SearchResourcesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SearchResourcesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_authenticationTokenHasBeenSet)
-  {
+  if (m_authenticationTokenHasBeenSet) {
     ss << m_authenticationToken;
-    headers.emplace("authentication",  ss.str());
+    headers.emplace("authentication", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

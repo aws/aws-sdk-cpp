@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/Record.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/Record.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-Record::Record(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Record::Record(JsonView jsonValue) { *this = jsonValue; }
 
-Record& Record::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jsonPath"))
-  {
+Record& Record::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jsonPath")) {
     m_jsonPath = jsonValue.GetString("jsonPath");
     m_jsonPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recordIndex"))
-  {
+  if (jsonValue.ValueExists("recordIndex")) {
     m_recordIndex = jsonValue.GetInt64("recordIndex");
     m_recordIndexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Record::Jsonize() const
-{
+JsonValue Record::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonPathHasBeenSet)
-  {
-   payload.WithString("jsonPath", m_jsonPath);
-
+  if (m_jsonPathHasBeenSet) {
+    payload.WithString("jsonPath", m_jsonPath);
   }
 
-  if(m_recordIndexHasBeenSet)
-  {
-   payload.WithInt64("recordIndex", m_recordIndex);
-
+  if (m_recordIndexHasBeenSet) {
+    payload.WithInt64("recordIndex", m_recordIndex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

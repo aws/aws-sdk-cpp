@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/ExperimentSchedule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/ExperimentSchedule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-ExperimentSchedule::ExperimentSchedule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentSchedule::ExperimentSchedule(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentSchedule& ExperimentSchedule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("analysisCompleteTime"))
-  {
+ExperimentSchedule& ExperimentSchedule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("analysisCompleteTime")) {
     m_analysisCompleteTime = jsonValue.GetDouble("analysisCompleteTime");
     m_analysisCompleteTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentSchedule::Jsonize() const
-{
+JsonValue ExperimentSchedule::Jsonize() const {
   JsonValue payload;
 
-  if(m_analysisCompleteTimeHasBeenSet)
-  {
-   payload.WithDouble("analysisCompleteTime", m_analysisCompleteTime.SecondsWithMSPrecision());
+  if (m_analysisCompleteTimeHasBeenSet) {
+    payload.WithDouble("analysisCompleteTime", m_analysisCompleteTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

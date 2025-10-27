@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-enum class DynamoDBErrors
-{
-  //From Core//
+namespace Aws {
+namespace DynamoDB {
+enum class DynamoDBErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DynamoDBErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class DynamoDBErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BACKUP_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BACKUP_IN_USE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BACKUP_NOT_FOUND,
   CONDITIONAL_CHECK_FAILED,
   CONTINUOUS_BACKUPS_UNAVAILABLE,
@@ -80,9 +77,8 @@ enum class DynamoDBErrors
   TRANSACTION_IN_PROGRESS
 };
 
-class AWS_DYNAMODB_API DynamoDBError : public Aws::Client::AWSError<DynamoDBErrors>
-{
-public:
+class AWS_DYNAMODB_API DynamoDBError : public Aws::Client::AWSError<DynamoDBErrors> {
+ public:
   DynamoDBError() {}
   DynamoDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DynamoDBErrors>(rhs) {}
   DynamoDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DynamoDBErrors>(rhs) {}
@@ -93,10 +89,9 @@ public:
   T GetModeledError();
 };
 
-namespace DynamoDBErrorMapper
-{
-  AWS_DYNAMODB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DynamoDBErrorMapper {
+AWS_DYNAMODB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace DynamoDB
+}  // namespace Aws

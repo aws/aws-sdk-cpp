@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class BurnInDestinationSubtitleRows
-  {
-    NOT_SET,
-    ROWS_16,
-    ROWS_20,
-    ROWS_24
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class BurnInDestinationSubtitleRows { NOT_SET, ROWS_16, ROWS_20, ROWS_24 };
 
-namespace BurnInDestinationSubtitleRowsMapper
-{
+namespace BurnInDestinationSubtitleRowsMapper {
 AWS_MEDIALIVE_API BurnInDestinationSubtitleRows GetBurnInDestinationSubtitleRowsForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForBurnInDestinationSubtitleRows(BurnInDestinationSubtitleRows value);
-} // namespace BurnInDestinationSubtitleRowsMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace BurnInDestinationSubtitleRowsMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class SessionLifecycleTargetStatus
-  {
-    NOT_SET,
-    ENDED
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class SessionLifecycleTargetStatus { NOT_SET, ENDED };
 
-namespace SessionLifecycleTargetStatusMapper
-{
+namespace SessionLifecycleTargetStatusMapper {
 AWS_DEADLINE_API SessionLifecycleTargetStatus GetSessionLifecycleTargetStatusForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForSessionLifecycleTargetStatus(SessionLifecycleTargetStatus value);
-} // namespace SessionLifecycleTargetStatusMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace SessionLifecycleTargetStatusMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

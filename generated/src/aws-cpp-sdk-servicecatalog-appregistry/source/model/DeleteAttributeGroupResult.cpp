@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/DeleteAttributeGroupResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/servicecatalog-appregistry/model/DeleteAttributeGroupResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAttributeGroupResult::DeleteAttributeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DeleteAttributeGroupResult::DeleteAttributeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DeleteAttributeGroupResult& DeleteAttributeGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteAttributeGroupResult& DeleteAttributeGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("attributeGroup"))
-  {
+  if (jsonValue.ValueExists("attributeGroup")) {
     m_attributeGroup = jsonValue.GetObject("attributeGroup");
     m_attributeGroupHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue) { *this = jsonValue; }
 
-AuditEventPerformedBy& AuditEventPerformedBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("user"))
-  {
+AuditEventPerformedBy& AuditEventPerformedBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("user")) {
     m_user = jsonValue.GetObject("user");
     m_userHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iamPrincipalArn"))
-  {
+  if (jsonValue.ValueExists("iamPrincipalArn")) {
     m_iamPrincipalArn = jsonValue.GetString("iamPrincipalArn");
     m_iamPrincipalArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuditEventPerformedBy::Jsonize() const
-{
+JsonValue AuditEventPerformedBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_userHasBeenSet)
-  {
-   payload.WithObject("user", m_user.Jsonize());
-
+  if (m_userHasBeenSet) {
+    payload.WithObject("user", m_user.Jsonize());
   }
 
-  if(m_iamPrincipalArnHasBeenSet)
-  {
-   payload.WithString("iamPrincipalArn", m_iamPrincipalArn);
-
+  if (m_iamPrincipalArnHasBeenSet) {
+    payload.WithString("iamPrincipalArn", m_iamPrincipalArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

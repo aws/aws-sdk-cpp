@@ -12,31 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTrafficDistributionRequest::SerializePayload() const
-{
+Aws::String UpdateTrafficDistributionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_telephonyConfigHasBeenSet)
-  {
-   payload.WithObject("TelephonyConfig", m_telephonyConfig.Jsonize());
-
+  if (m_telephonyConfigHasBeenSet) {
+    payload.WithObject("TelephonyConfig", m_telephonyConfig.Jsonize());
   }
 
-  if(m_signInConfigHasBeenSet)
-  {
-   payload.WithObject("SignInConfig", m_signInConfig.Jsonize());
-
+  if (m_signInConfigHasBeenSet) {
+    payload.WithObject("SignInConfig", m_signInConfig.Jsonize());
   }
 
-  if(m_agentConfigHasBeenSet)
-  {
-   payload.WithObject("AgentConfig", m_agentConfig.Jsonize());
-
+  if (m_agentConfigHasBeenSet) {
+    payload.WithObject("AgentConfig", m_agentConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

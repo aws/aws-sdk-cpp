@@ -5,12 +5,8 @@
 
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QBusiness
-} // namespace Aws
+namespace Aws {
+namespace QBusiness {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QBusiness
+}  // namespace Aws

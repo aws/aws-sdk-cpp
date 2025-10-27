@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ContactSearchSummaryAgentInfo& ContactSearchSummaryAgentInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+ContactSearchSummaryAgentInfo& ContactSearchSummaryAgentInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectedToAgentTimestamp"))
-  {
+  if (jsonValue.ValueExists("ConnectedToAgentTimestamp")) {
     m_connectedToAgentTimestamp = jsonValue.GetDouble("ConnectedToAgentTimestamp");
     m_connectedToAgentTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContactSearchSummaryAgentInfo::Jsonize() const
-{
+JsonValue ContactSearchSummaryAgentInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_connectedToAgentTimestampHasBeenSet)
-  {
-   payload.WithDouble("ConnectedToAgentTimestamp", m_connectedToAgentTimestamp.SecondsWithMSPrecision());
+  if (m_connectedToAgentTimestampHasBeenSet) {
+    payload.WithDouble("ConnectedToAgentTimestamp", m_connectedToAgentTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

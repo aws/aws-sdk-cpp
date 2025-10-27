@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-TimeBasedTrigger::TimeBasedTrigger(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeBasedTrigger::TimeBasedTrigger(JsonView jsonValue) { *this = jsonValue; }
 
-TimeBasedTrigger& TimeBasedTrigger::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("idleSessionTimeout"))
-  {
+TimeBasedTrigger& TimeBasedTrigger::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("idleSessionTimeout")) {
     m_idleSessionTimeout = jsonValue.GetInteger("idleSessionTimeout");
     m_idleSessionTimeoutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeBasedTrigger::Jsonize() const
-{
+JsonValue TimeBasedTrigger::Jsonize() const {
   JsonValue payload;
 
-  if(m_idleSessionTimeoutHasBeenSet)
-  {
-   payload.WithInteger("idleSessionTimeout", m_idleSessionTimeout);
-
+  if (m_idleSessionTimeoutHasBeenSet) {
+    payload.WithInteger("idleSessionTimeout", m_idleSessionTimeout);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

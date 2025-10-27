@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class FunctionResponseType
-  {
-    NOT_SET,
-    ReportBatchItemFailures
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class FunctionResponseType { NOT_SET, ReportBatchItemFailures };
 
-namespace FunctionResponseTypeMapper
-{
+namespace FunctionResponseTypeMapper {
 AWS_LAMBDA_API FunctionResponseType GetFunctionResponseTypeForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForFunctionResponseType(FunctionResponseType value);
-} // namespace FunctionResponseTypeMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace FunctionResponseTypeMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class InstanceStatus
-  {
-    NOT_SET,
-    CREATION_IN_PROGRESS,
-    ACTIVE,
-    CREATION_FAILED
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class InstanceStatus { NOT_SET, CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED };
 
-namespace InstanceStatusMapper
-{
+namespace InstanceStatusMapper {
 AWS_CONNECT_API InstanceStatus GetInstanceStatusForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForInstanceStatus(InstanceStatus value);
-} // namespace InstanceStatusMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace InstanceStatusMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

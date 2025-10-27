@@ -4,10 +4,10 @@
  */
 
 #include <aws/apigateway/model/GetResourceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,39 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceResult::GetResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetResourceResult::GetResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetResourceResult& GetResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetResourceResult& GetResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parentId"))
-  {
+  if (jsonValue.ValueExists("parentId")) {
     m_parentId = jsonValue.GetString("parentId");
     m_parentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pathPart"))
-  {
+  if (jsonValue.ValueExists("pathPart")) {
     m_pathPart = jsonValue.GetString("pathPart");
     m_pathPartHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceMethods"))
-  {
+  if (jsonValue.ValueExists("resourceMethods")) {
     Aws::Map<Aws::String, JsonView> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
-    for(auto& resourceMethodsItem : resourceMethodsJsonMap)
-    {
+    for (auto& resourceMethodsItem : resourceMethodsJsonMap) {
       m_resourceMethods[resourceMethodsItem.first] = resourceMethodsItem.second.AsObject();
     }
     m_resourceMethodsHasBeenSet = true;
@@ -57,12 +47,10 @@ GetResourceResult& GetResourceResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

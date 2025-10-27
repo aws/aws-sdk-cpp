@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfigData
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfigData {
+namespace Model {
 
-InvalidParameterDetail::InvalidParameterDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidParameterDetail::InvalidParameterDetail(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidParameterDetail& InvalidParameterDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Problem"))
-  {
+InvalidParameterDetail& InvalidParameterDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Problem")) {
     m_problem = InvalidParameterProblemMapper::GetInvalidParameterProblemForName(jsonValue.GetString("Problem"));
     m_problemHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidParameterDetail::Jsonize() const
-{
+JsonValue InvalidParameterDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_problemHasBeenSet)
-  {
-   payload.WithString("Problem", InvalidParameterProblemMapper::GetNameForInvalidParameterProblem(m_problem));
+  if (m_problemHasBeenSet) {
+    payload.WithString("Problem", InvalidParameterProblemMapper::GetNameForInvalidParameterProblem(m_problem));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfigData
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfigData
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/BusinessNameGenerationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/BusinessNameGenerationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-BusinessNameGenerationConfiguration::BusinessNameGenerationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BusinessNameGenerationConfiguration::BusinessNameGenerationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BusinessNameGenerationConfiguration& BusinessNameGenerationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+BusinessNameGenerationConfiguration& BusinessNameGenerationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BusinessNameGenerationConfiguration::Jsonize() const
-{
+JsonValue BusinessNameGenerationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

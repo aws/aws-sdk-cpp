@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-SharePointCrawlerConfiguration::SharePointCrawlerConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SharePointCrawlerConfiguration::SharePointCrawlerConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SharePointCrawlerConfiguration& SharePointCrawlerConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filterConfiguration"))
-  {
+SharePointCrawlerConfiguration& SharePointCrawlerConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filterConfiguration")) {
     m_filterConfiguration = jsonValue.GetObject("filterConfiguration");
     m_filterConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SharePointCrawlerConfiguration::Jsonize() const
-{
+JsonValue SharePointCrawlerConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterConfigurationHasBeenSet)
-  {
-   payload.WithObject("filterConfiguration", m_filterConfiguration.Jsonize());
-
+  if (m_filterConfigurationHasBeenSet) {
+    payload.WithObject("filterConfiguration", m_filterConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

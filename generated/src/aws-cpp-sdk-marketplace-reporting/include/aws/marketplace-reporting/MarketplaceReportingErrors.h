@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceReporting
-{
-enum class MarketplaceReportingErrors
-{
-  //From Core//
+namespace Aws {
+namespace MarketplaceReporting {
+enum class MarketplaceReportingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MarketplaceReportingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,28 +44,30 @@ enum class MarketplaceReportingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   UNAUTHORIZED
 };
 
-class AWS_MARKETPLACEREPORTING_API MarketplaceReportingError : public Aws::Client::AWSError<MarketplaceReportingErrors>
-{
-public:
+class AWS_MARKETPLACEREPORTING_API MarketplaceReportingError : public Aws::Client::AWSError<MarketplaceReportingErrors> {
+ public:
   MarketplaceReportingError() {}
-  MarketplaceReportingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
-  MarketplaceReportingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
-  MarketplaceReportingError(const Aws::Client::AWSError<MarketplaceReportingErrors>& rhs) : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
-  MarketplaceReportingError(Aws::Client::AWSError<MarketplaceReportingErrors>&& rhs) : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
+  MarketplaceReportingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
+  MarketplaceReportingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
+  MarketplaceReportingError(const Aws::Client::AWSError<MarketplaceReportingErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
+  MarketplaceReportingError(Aws::Client::AWSError<MarketplaceReportingErrors>&& rhs)
+      : Aws::Client::AWSError<MarketplaceReportingErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MarketplaceReportingErrorMapper
-{
-  AWS_MARKETPLACEREPORTING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MarketplaceReportingErrorMapper {
+AWS_MARKETPLACEREPORTING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MarketplaceReporting
-} // namespace Aws
+}  // namespace MarketplaceReporting
+}  // namespace Aws

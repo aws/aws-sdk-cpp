@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/GradientColor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/GradientColor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-GradientColor::GradientColor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GradientColor::GradientColor(JsonView jsonValue) { *this = jsonValue; }
 
-GradientColor& GradientColor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Stops"))
-  {
+GradientColor& GradientColor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Stops")) {
     Aws::Utils::Array<JsonView> stopsJsonList = jsonValue.GetArray("Stops");
-    for(unsigned stopsIndex = 0; stopsIndex < stopsJsonList.GetLength(); ++stopsIndex)
-    {
+    for (unsigned stopsIndex = 0; stopsIndex < stopsJsonList.GetLength(); ++stopsIndex) {
       m_stops.push_back(stopsJsonList[stopsIndex].AsObject());
     }
     m_stopsHasBeenSet = true;
@@ -37,24 +28,20 @@ GradientColor& GradientColor::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue GradientColor::Jsonize() const
-{
+JsonValue GradientColor::Jsonize() const {
   JsonValue payload;
 
-  if(m_stopsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stopsJsonList(m_stops.size());
-   for(unsigned stopsIndex = 0; stopsIndex < stopsJsonList.GetLength(); ++stopsIndex)
-   {
-     stopsJsonList[stopsIndex].AsObject(m_stops[stopsIndex].Jsonize());
-   }
-   payload.WithArray("Stops", std::move(stopsJsonList));
-
+  if (m_stopsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stopsJsonList(m_stops.size());
+    for (unsigned stopsIndex = 0; stopsIndex < stopsJsonList.GetLength(); ++stopsIndex) {
+      stopsJsonList[stopsIndex].AsObject(m_stops[stopsIndex].Jsonize());
+    }
+    payload.WithArray("Stops", std::move(stopsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

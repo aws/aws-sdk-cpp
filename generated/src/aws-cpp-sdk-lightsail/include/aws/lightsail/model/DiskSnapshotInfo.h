@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Lightsail {
+namespace Model {
 
+/**
+ * <p>Describes a disk snapshot.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskSnapshotInfo">AWS
+ * API Reference</a></p>
+ */
+class DiskSnapshotInfo {
+ public:
+  AWS_LIGHTSAIL_API DiskSnapshotInfo() = default;
+  AWS_LIGHTSAIL_API DiskSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LIGHTSAIL_API DiskSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Describes a disk snapshot.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskSnapshotInfo">AWS
-   * API Reference</a></p>
+   * <p>The size of the disk in GB (<code>32</code>).</p>
    */
-  class DiskSnapshotInfo
-  {
-  public:
-    AWS_LIGHTSAIL_API DiskSnapshotInfo() = default;
-    AWS_LIGHTSAIL_API DiskSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LIGHTSAIL_API DiskSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetSizeInGb() const { return m_sizeInGb; }
+  inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+  inline void SetSizeInGb(int value) {
+    m_sizeInGbHasBeenSet = true;
+    m_sizeInGb = value;
+  }
+  inline DiskSnapshotInfo& WithSizeInGb(int value) {
+    SetSizeInGb(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_sizeInGb{0};
+  bool m_sizeInGbHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
-    inline int GetSizeInGb() const { return m_sizeInGb; }
-    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
-    inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
-    inline DiskSnapshotInfo& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
-    ///@}
-  private:
-
-    int m_sizeInGb{0};
-    bool m_sizeInGbHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

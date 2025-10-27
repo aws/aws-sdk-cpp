@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateDBSecurityGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/CreateDBSecurityGroupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateDBSecurityGroupRequest::SerializePayload() const
-{
+Aws::String CreateDBSecurityGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateDBSecurityGroup&";
-  if(m_dBSecurityGroupNameHasBeenSet)
-  {
+  if (m_dBSecurityGroupNameHasBeenSet) {
     ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_dBSecurityGroupDescriptionHasBeenSet)
-  {
+  if (m_dBSecurityGroupDescriptionHasBeenSet) {
     ss << "DBSecurityGroupDescription=" << StringUtils::URLEncode(m_dBSecurityGroupDescription.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -45,8 +37,4 @@ Aws::String CreateDBSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateDBSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateDBSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

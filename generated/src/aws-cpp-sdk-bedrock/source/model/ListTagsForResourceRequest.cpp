@@ -12,19 +12,12 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListTagsForResourceRequest::SerializePayload() const
-{
+Aws::String ListTagsForResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("resourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("resourceARN", m_resourceARN);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class ServiceActionAssociationErrorCode
-  {
-    NOT_SET,
-    DUPLICATE_RESOURCE,
-    INTERNAL_FAILURE,
-    LIMIT_EXCEEDED,
-    RESOURCE_NOT_FOUND,
-    THROTTLING,
-    INVALID_PARAMETER
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class ServiceActionAssociationErrorCode {
+  NOT_SET,
+  DUPLICATE_RESOURCE,
+  INTERNAL_FAILURE,
+  LIMIT_EXCEEDED,
+  RESOURCE_NOT_FOUND,
+  THROTTLING,
+  INVALID_PARAMETER
+};
 
-namespace ServiceActionAssociationErrorCodeMapper
-{
+namespace ServiceActionAssociationErrorCodeMapper {
 AWS_SERVICECATALOG_API ServiceActionAssociationErrorCode GetServiceActionAssociationErrorCodeForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForServiceActionAssociationErrorCode(ServiceActionAssociationErrorCode value);
-} // namespace ServiceActionAssociationErrorCodeMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ServiceActionAssociationErrorCodeMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

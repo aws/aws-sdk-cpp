@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListInstanceProfilesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListInstanceProfilesRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListInstanceProfilesRequest::SerializePayload() const
-{
+Aws::String ListInstanceProfilesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListInstanceProfiles&";
-  if(m_pathPrefixHasBeenSet)
-  {
+  if (m_pathPrefixHasBeenSet) {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListInstanceProfilesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListInstanceProfilesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListInstanceProfilesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

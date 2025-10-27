@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/Filter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/Filter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-Filter::Filter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Filter::Filter(JsonView jsonValue) { *this = jsonValue; }
 
-Filter& Filter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Pattern"))
-  {
+Filter& Filter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Pattern")) {
     m_pattern = jsonValue.GetString("Pattern");
     m_patternHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Filter::Jsonize() const
-{
+JsonValue Filter::Jsonize() const {
   JsonValue payload;
 
-  if(m_patternHasBeenSet)
-  {
-   payload.WithString("Pattern", m_pattern);
-
+  if (m_patternHasBeenSet) {
+    payload.WithString("Pattern", m_pattern);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

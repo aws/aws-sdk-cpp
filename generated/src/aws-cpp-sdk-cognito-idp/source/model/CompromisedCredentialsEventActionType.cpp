@@ -4,69 +4,55 @@
  */
 
 #include <aws/cognito-idp/model/CompromisedCredentialsEventActionType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+namespace CompromisedCredentialsEventActionTypeMapper {
 
-namespace Aws
-{
-  namespace CognitoIdentityProvider
-  {
-    namespace Model
-    {
-      namespace CompromisedCredentialsEventActionTypeMapper
-      {
+static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
+static const int NO_ACTION_HASH = HashingUtils::HashString("NO_ACTION");
 
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int NO_ACTION_HASH = HashingUtils::HashString("NO_ACTION");
+CompromisedCredentialsEventActionType GetCompromisedCredentialsEventActionTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == BLOCK_HASH) {
+    return CompromisedCredentialsEventActionType::BLOCK;
+  } else if (hashCode == NO_ACTION_HASH) {
+    return CompromisedCredentialsEventActionType::NO_ACTION;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CompromisedCredentialsEventActionType>(hashCode);
+  }
 
+  return CompromisedCredentialsEventActionType::NOT_SET;
+}
 
-        CompromisedCredentialsEventActionType GetCompromisedCredentialsEventActionTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == BLOCK_HASH)
-          {
-            return CompromisedCredentialsEventActionType::BLOCK;
-          }
-          else if (hashCode == NO_ACTION_HASH)
-          {
-            return CompromisedCredentialsEventActionType::NO_ACTION;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CompromisedCredentialsEventActionType>(hashCode);
-          }
+Aws::String GetNameForCompromisedCredentialsEventActionType(CompromisedCredentialsEventActionType enumValue) {
+  switch (enumValue) {
+    case CompromisedCredentialsEventActionType::NOT_SET:
+      return {};
+    case CompromisedCredentialsEventActionType::BLOCK:
+      return "BLOCK";
+    case CompromisedCredentialsEventActionType::NO_ACTION:
+      return "NO_ACTION";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CompromisedCredentialsEventActionType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCompromisedCredentialsEventActionType(CompromisedCredentialsEventActionType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CompromisedCredentialsEventActionType::NOT_SET:
-            return {};
-          case CompromisedCredentialsEventActionType::BLOCK:
-            return "BLOCK";
-          case CompromisedCredentialsEventActionType::NO_ACTION:
-            return "NO_ACTION";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CompromisedCredentialsEventActionTypeMapper
-    } // namespace Model
-  } // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace CompromisedCredentialsEventActionTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

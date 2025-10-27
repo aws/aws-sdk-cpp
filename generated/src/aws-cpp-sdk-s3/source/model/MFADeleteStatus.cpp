@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/MFADeleteStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/s3/model/MFADeleteStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace S3 {
+namespace Model {
+namespace MFADeleteStatusMapper {
 
-namespace Aws
-{
-  namespace S3
-  {
-    namespace Model
-    {
-      namespace MFADeleteStatusMapper
-      {
+static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Enabled_HASH) {
+    return MFADeleteStatus::Enabled;
+  } else if (hashCode == Disabled_HASH) {
+    return MFADeleteStatus::Disabled;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MFADeleteStatus>(hashCode);
+  }
 
+  return MFADeleteStatus::NOT_SET;
+}
 
-        MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Enabled_HASH)
-          {
-            return MFADeleteStatus::Enabled;
-          }
-          else if (hashCode == Disabled_HASH)
-          {
-            return MFADeleteStatus::Disabled;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MFADeleteStatus>(hashCode);
-          }
+Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue) {
+  switch (enumValue) {
+    case MFADeleteStatus::NOT_SET:
+      return {};
+    case MFADeleteStatus::Enabled:
+      return "Enabled";
+    case MFADeleteStatus::Disabled:
+      return "Disabled";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MFADeleteStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case MFADeleteStatus::NOT_SET:
-            return {};
-          case MFADeleteStatus::Enabled:
-            return "Enabled";
-          case MFADeleteStatus::Disabled:
-            return "Disabled";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MFADeleteStatusMapper
-    } // namespace Model
-  } // namespace S3
-} // namespace Aws
+}  // namespace MFADeleteStatusMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

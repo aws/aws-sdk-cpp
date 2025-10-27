@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
-  enum class SensitivityToAct
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
-  };
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
+enum class SensitivityToAct { NOT_SET, LOW, MEDIUM, HIGH };
 
-namespace SensitivityToActMapper
-{
+namespace SensitivityToActMapper {
 AWS_WAFV2_API SensitivityToAct GetSensitivityToActForName(const Aws::String& name);
 
 AWS_WAFV2_API Aws::String GetNameForSensitivityToAct(SensitivityToAct value);
-} // namespace SensitivityToActMapper
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace SensitivityToActMapper
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

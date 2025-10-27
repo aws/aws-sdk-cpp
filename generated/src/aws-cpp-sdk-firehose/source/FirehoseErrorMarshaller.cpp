@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Firehose;
 
-AWSError<CoreErrors> FirehoseErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> FirehoseErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = FirehoseErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

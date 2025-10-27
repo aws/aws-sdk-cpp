@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LexRuntimeService;
 
-AWSError<CoreErrors> LexRuntimeServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LexRuntimeServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LexRuntimeServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

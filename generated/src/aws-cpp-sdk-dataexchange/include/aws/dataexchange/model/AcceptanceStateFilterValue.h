@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
-  enum class AcceptanceStateFilterValue
-  {
-    NOT_SET,
-    PENDING_RECEIVER_ACCEPTANCE,
-    ACCEPTED
-  };
+namespace Aws {
+namespace DataExchange {
+namespace Model {
+enum class AcceptanceStateFilterValue { NOT_SET, PENDING_RECEIVER_ACCEPTANCE, ACCEPTED };
 
-namespace AcceptanceStateFilterValueMapper
-{
+namespace AcceptanceStateFilterValueMapper {
 AWS_DATAEXCHANGE_API AcceptanceStateFilterValue GetAcceptanceStateFilterValueForName(const Aws::String& name);
 
 AWS_DATAEXCHANGE_API Aws::String GetNameForAcceptanceStateFilterValue(AcceptanceStateFilterValue value);
-} // namespace AcceptanceStateFilterValueMapper
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace AcceptanceStateFilterValueMapper
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

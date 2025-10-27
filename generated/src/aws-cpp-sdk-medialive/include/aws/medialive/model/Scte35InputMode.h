@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class Scte35InputMode
-  {
-    NOT_SET,
-    FIXED,
-    FOLLOW_ACTIVE
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class Scte35InputMode { NOT_SET, FIXED, FOLLOW_ACTIVE };
 
-namespace Scte35InputModeMapper
-{
+namespace Scte35InputModeMapper {
 AWS_MEDIALIVE_API Scte35InputMode GetScte35InputModeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForScte35InputMode(Scte35InputMode value);
-} // namespace Scte35InputModeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Scte35InputModeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

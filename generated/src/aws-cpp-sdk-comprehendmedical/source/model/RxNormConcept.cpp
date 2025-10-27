@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-RxNormConcept::RxNormConcept(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RxNormConcept::RxNormConcept(JsonView jsonValue) { *this = jsonValue; }
 
-RxNormConcept& RxNormConcept::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+RxNormConcept& RxNormConcept::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Code"))
-  {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RxNormConcept::Jsonize() const
-{
+JsonValue RxNormConcept::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

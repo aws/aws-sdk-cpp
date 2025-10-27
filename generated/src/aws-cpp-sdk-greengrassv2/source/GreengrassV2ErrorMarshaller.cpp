@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GreengrassV2;
 
-AWSError<CoreErrors> GreengrassV2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GreengrassV2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GreengrassV2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

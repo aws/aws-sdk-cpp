@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/GetApplicationSessionConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/GetApplicationSessionConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetApplicationSessionConfigurationRequest::SerializePayload() const
-{
+Aws::String GetApplicationSessionConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationArn", m_applicationArn);
-
+  if (m_applicationArnHasBeenSet) {
+    payload.WithString("ApplicationArn", m_applicationArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetApplicationSessionConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetApplicationSessionConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SWBExternalService.GetApplicationSessionConfiguration"));
   return headers;
-
 }
-
-
-
-

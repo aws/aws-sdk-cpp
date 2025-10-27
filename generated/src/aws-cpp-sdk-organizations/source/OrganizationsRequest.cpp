@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/organizations/OrganizationsRequest.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-} // namespace Organizations
-} // namespace Aws
+namespace Aws {
+namespace Organizations {}  // namespace Organizations
+}  // namespace Aws

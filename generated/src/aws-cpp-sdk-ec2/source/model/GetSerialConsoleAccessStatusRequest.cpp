@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetSerialConsoleAccessStatusRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetSerialConsoleAccessStatusRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetSerialConsoleAccessStatusRequest::SerializePayload() const
-{
+Aws::String GetSerialConsoleAccessStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetSerialConsoleAccessStatus&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetSerialConsoleAccessStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetSerialConsoleAccessStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetSerialConsoleAccessStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
-ConfiguredTeam::ConfiguredTeam(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfiguredTeam::ConfiguredTeam(JsonView jsonValue) { *this = jsonValue; }
 
-ConfiguredTeam& ConfiguredTeam::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TenantId"))
-  {
+ConfiguredTeam& ConfiguredTeam::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TenantId")) {
     m_tenantId = jsonValue.GetString("TenantId");
     m_tenantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamId"))
-  {
+  if (jsonValue.ValueExists("TeamId")) {
     m_teamId = jsonValue.GetString("TeamId");
     m_teamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamName"))
-  {
+  if (jsonValue.ValueExists("TeamName")) {
     m_teamName = jsonValue.GetString("TeamName");
     m_teamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = jsonValue.GetString("State");
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateReason"))
-  {
+  if (jsonValue.ValueExists("StateReason")) {
     m_stateReason = jsonValue.GetString("StateReason");
     m_stateReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfiguredTeam::Jsonize() const
-{
+JsonValue ConfiguredTeam::Jsonize() const {
   JsonValue payload;
 
-  if(m_tenantIdHasBeenSet)
-  {
-   payload.WithString("TenantId", m_tenantId);
-
+  if (m_tenantIdHasBeenSet) {
+    payload.WithString("TenantId", m_tenantId);
   }
 
-  if(m_teamIdHasBeenSet)
-  {
-   payload.WithString("TeamId", m_teamId);
-
+  if (m_teamIdHasBeenSet) {
+    payload.WithString("TeamId", m_teamId);
   }
 
-  if(m_teamNameHasBeenSet)
-  {
-   payload.WithString("TeamName", m_teamName);
-
+  if (m_teamNameHasBeenSet) {
+    payload.WithString("TeamName", m_teamName);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", m_state);
-
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", m_state);
   }
 
-  if(m_stateReasonHasBeenSet)
-  {
-   payload.WithString("StateReason", m_stateReason);
-
+  if (m_stateReasonHasBeenSet) {
+    payload.WithString("StateReason", m_stateReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

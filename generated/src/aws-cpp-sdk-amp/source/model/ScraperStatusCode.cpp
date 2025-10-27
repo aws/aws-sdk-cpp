@@ -4,104 +4,80 @@
  */
 
 #include <aws/amp/model/ScraperStatusCode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
+namespace ScraperStatusCodeMapper {
 
-namespace Aws
-{
-  namespace PrometheusService
-  {
-    namespace Model
-    {
-      namespace ScraperStatusCodeMapper
-      {
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
+ScraperStatusCode GetScraperStatusCodeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CREATING_HASH) {
+    return ScraperStatusCode::CREATING;
+  } else if (hashCode == UPDATING_HASH) {
+    return ScraperStatusCode::UPDATING;
+  } else if (hashCode == ACTIVE_HASH) {
+    return ScraperStatusCode::ACTIVE;
+  } else if (hashCode == DELETING_HASH) {
+    return ScraperStatusCode::DELETING;
+  } else if (hashCode == CREATION_FAILED_HASH) {
+    return ScraperStatusCode::CREATION_FAILED;
+  } else if (hashCode == UPDATE_FAILED_HASH) {
+    return ScraperStatusCode::UPDATE_FAILED;
+  } else if (hashCode == DELETION_FAILED_HASH) {
+    return ScraperStatusCode::DELETION_FAILED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ScraperStatusCode>(hashCode);
+  }
 
+  return ScraperStatusCode::NOT_SET;
+}
 
-        ScraperStatusCode GetScraperStatusCodeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREATING_HASH)
-          {
-            return ScraperStatusCode::CREATING;
-          }
-          else if (hashCode == UPDATING_HASH)
-          {
-            return ScraperStatusCode::UPDATING;
-          }
-          else if (hashCode == ACTIVE_HASH)
-          {
-            return ScraperStatusCode::ACTIVE;
-          }
-          else if (hashCode == DELETING_HASH)
-          {
-            return ScraperStatusCode::DELETING;
-          }
-          else if (hashCode == CREATION_FAILED_HASH)
-          {
-            return ScraperStatusCode::CREATION_FAILED;
-          }
-          else if (hashCode == UPDATE_FAILED_HASH)
-          {
-            return ScraperStatusCode::UPDATE_FAILED;
-          }
-          else if (hashCode == DELETION_FAILED_HASH)
-          {
-            return ScraperStatusCode::DELETION_FAILED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ScraperStatusCode>(hashCode);
-          }
+Aws::String GetNameForScraperStatusCode(ScraperStatusCode enumValue) {
+  switch (enumValue) {
+    case ScraperStatusCode::NOT_SET:
+      return {};
+    case ScraperStatusCode::CREATING:
+      return "CREATING";
+    case ScraperStatusCode::UPDATING:
+      return "UPDATING";
+    case ScraperStatusCode::ACTIVE:
+      return "ACTIVE";
+    case ScraperStatusCode::DELETING:
+      return "DELETING";
+    case ScraperStatusCode::CREATION_FAILED:
+      return "CREATION_FAILED";
+    case ScraperStatusCode::UPDATE_FAILED:
+      return "UPDATE_FAILED";
+    case ScraperStatusCode::DELETION_FAILED:
+      return "DELETION_FAILED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ScraperStatusCode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForScraperStatusCode(ScraperStatusCode enumValue)
-        {
-          switch(enumValue)
-          {
-          case ScraperStatusCode::NOT_SET:
-            return {};
-          case ScraperStatusCode::CREATING:
-            return "CREATING";
-          case ScraperStatusCode::UPDATING:
-            return "UPDATING";
-          case ScraperStatusCode::ACTIVE:
-            return "ACTIVE";
-          case ScraperStatusCode::DELETING:
-            return "DELETING";
-          case ScraperStatusCode::CREATION_FAILED:
-            return "CREATION_FAILED";
-          case ScraperStatusCode::UPDATE_FAILED:
-            return "UPDATE_FAILED";
-          case ScraperStatusCode::DELETION_FAILED:
-            return "DELETION_FAILED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ScraperStatusCodeMapper
-    } // namespace Model
-  } // namespace PrometheusService
-} // namespace Aws
+}  // namespace ScraperStatusCodeMapper
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

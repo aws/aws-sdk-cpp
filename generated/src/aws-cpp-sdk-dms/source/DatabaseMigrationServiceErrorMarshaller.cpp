@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DatabaseMigrationService;
 
-AWSError<CoreErrors> DatabaseMigrationServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DatabaseMigrationServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DatabaseMigrationServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

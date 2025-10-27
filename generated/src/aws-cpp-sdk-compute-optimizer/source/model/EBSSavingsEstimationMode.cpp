@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-EBSSavingsEstimationMode::EBSSavingsEstimationMode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EBSSavingsEstimationMode::EBSSavingsEstimationMode(JsonView jsonValue) { *this = jsonValue; }
 
-EBSSavingsEstimationMode& EBSSavingsEstimationMode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+EBSSavingsEstimationMode& EBSSavingsEstimationMode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = EBSSavingsEstimationModeSourceMapper::GetEBSSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EBSSavingsEstimationMode::Jsonize() const
-{
+JsonValue EBSSavingsEstimationMode::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", EBSSavingsEstimationModeSourceMapper::GetNameForEBSSavingsEstimationModeSource(m_source));
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", EBSSavingsEstimationModeSourceMapper::GetNameForEBSSavingsEstimationModeSource(m_source));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

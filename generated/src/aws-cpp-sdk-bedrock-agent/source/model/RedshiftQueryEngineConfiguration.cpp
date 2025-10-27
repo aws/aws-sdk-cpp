@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RedshiftQueryEngineConfiguration::RedshiftQueryEngineConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftQueryEngineConfiguration::RedshiftQueryEngineConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftQueryEngineConfiguration& RedshiftQueryEngineConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+RedshiftQueryEngineConfiguration& RedshiftQueryEngineConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = RedshiftQueryEngineTypeMapper::GetRedshiftQueryEngineTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serverlessConfiguration"))
-  {
+  if (jsonValue.ValueExists("serverlessConfiguration")) {
     m_serverlessConfiguration = jsonValue.GetObject("serverlessConfiguration");
     m_serverlessConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("provisionedConfiguration"))
-  {
+  if (jsonValue.ValueExists("provisionedConfiguration")) {
     m_provisionedConfiguration = jsonValue.GetObject("provisionedConfiguration");
     m_provisionedConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftQueryEngineConfiguration::Jsonize() const
-{
+JsonValue RedshiftQueryEngineConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RedshiftQueryEngineTypeMapper::GetNameForRedshiftQueryEngineType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RedshiftQueryEngineTypeMapper::GetNameForRedshiftQueryEngineType(m_type));
   }
 
-  if(m_serverlessConfigurationHasBeenSet)
-  {
-   payload.WithObject("serverlessConfiguration", m_serverlessConfiguration.Jsonize());
-
+  if (m_serverlessConfigurationHasBeenSet) {
+    payload.WithObject("serverlessConfiguration", m_serverlessConfiguration.Jsonize());
   }
 
-  if(m_provisionedConfigurationHasBeenSet)
-  {
-   payload.WithObject("provisionedConfiguration", m_provisionedConfiguration.Jsonize());
-
+  if (m_provisionedConfigurationHasBeenSet) {
+    payload.WithObject("provisionedConfiguration", m_provisionedConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

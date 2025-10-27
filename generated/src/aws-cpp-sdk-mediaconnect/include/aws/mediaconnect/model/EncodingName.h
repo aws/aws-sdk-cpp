@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
-  enum class EncodingName
-  {
-    NOT_SET,
-    jxsv,
-    raw,
-    smpte291,
-    pcm
-  };
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
+enum class EncodingName { NOT_SET, jxsv, raw, smpte291, pcm };
 
-namespace EncodingNameMapper
-{
+namespace EncodingNameMapper {
 AWS_MEDIACONNECT_API EncodingName GetEncodingNameForName(const Aws::String& name);
 
 AWS_MEDIACONNECT_API Aws::String GetNameForEncodingName(EncodingName value);
-} // namespace EncodingNameMapper
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace EncodingNameMapper
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

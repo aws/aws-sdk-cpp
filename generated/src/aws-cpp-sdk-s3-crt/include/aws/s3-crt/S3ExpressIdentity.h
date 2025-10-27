@@ -5,72 +5,45 @@
 
 #pragma once
 
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
 
 namespace Aws {
-    namespace S3Crt {
-        class S3ExpressIdentity final: public smithy::AwsCredentialIdentityBase {
-        public:
-            S3ExpressIdentity() = default;
+namespace S3Crt {
+class S3ExpressIdentity final : public smithy::AwsCredentialIdentityBase {
+ public:
+  S3ExpressIdentity() = default;
 
-            inline S3ExpressIdentity(String accessKeyId,
-                String secretKeyId,
-                String sessionToken,
-                const Utils::DateTime &expiration) :
-                m_accessKeyId(std::move(accessKeyId)),
-                m_secretKeyId(std::move(secretKeyId)),
-                m_sessionToken(std::move(sessionToken)),
-                m_expiration(expiration) {}
+  inline S3ExpressIdentity(String accessKeyId, String secretKeyId, String sessionToken, const Utils::DateTime &expiration)
+      : m_accessKeyId(std::move(accessKeyId)),
+        m_secretKeyId(std::move(secretKeyId)),
+        m_sessionToken(std::move(sessionToken)),
+        m_expiration(expiration) {}
 
-            const String &getAccessKeyId() const {
-                return m_accessKeyId;
-            }
+  const String &getAccessKeyId() const { return m_accessKeyId; }
 
-            const String &getSecretKeyId() const {
-                return m_secretKeyId;
-            }
+  const String &getSecretKeyId() const { return m_secretKeyId; }
 
-            const String &getSessionToken() const {
-                return m_sessionToken;
-            }
+  const String &getSessionToken() const { return m_sessionToken; }
 
-            const Utils::DateTime &getExpiration() const {
-                return m_expiration;
-            }
+  const Utils::DateTime &getExpiration() const { return m_expiration; }
 
-            String accessKeyId() const override
-            {
-                return getAccessKeyId();
-            }
+  String accessKeyId() const override { return getAccessKeyId(); }
 
-            String secretAccessKey() const override
-            {
-                return getSecretKeyId();
-            }
+  String secretAccessKey() const override { return getSecretKeyId(); }
 
-            Crt::Optional<String> sessionToken() const override
-            {
-                return getSessionToken();
-            }
+  Crt::Optional<String> sessionToken() const override { return getSessionToken(); }
 
-            Crt::Optional<DateTime> expiration() const override
-            {
-                return getExpiration();
-            }
+  Crt::Optional<DateTime> expiration() const override { return getExpiration(); }
 
-            Aws::Crt::Optional<Aws::String> accountId() const override
-            {
-                return Aws::Crt::Optional<Aws::String>{};
-            }
+  Aws::Crt::Optional<Aws::String> accountId() const override { return Aws::Crt::Optional<Aws::String>{}; }
 
-
-        private:
-            Aws::String m_accessKeyId;
-            Aws::String m_secretKeyId;
-            Aws::String m_sessionToken;
-            Aws::Utils::DateTime m_expiration;
-        };
-    }
-}
+ private:
+  Aws::String m_accessKeyId;
+  Aws::String m_secretKeyId;
+  Aws::String m_sessionToken;
+  Aws::Utils::DateTime m_expiration;
+};
+}  // namespace S3Crt
+}  // namespace Aws

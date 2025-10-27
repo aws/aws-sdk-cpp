@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-QueueQuickConnectConfig::QueueQuickConnectConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueueQuickConnectConfig::QueueQuickConnectConfig(JsonView jsonValue) { *this = jsonValue; }
 
-QueueQuickConnectConfig& QueueQuickConnectConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueueId"))
-  {
+QueueQuickConnectConfig& QueueQuickConnectConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueueId")) {
     m_queueId = jsonValue.GetString("QueueId");
     m_queueIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactFlowId"))
-  {
+  if (jsonValue.ValueExists("ContactFlowId")) {
     m_contactFlowId = jsonValue.GetString("ContactFlowId");
     m_contactFlowIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueueQuickConnectConfig::Jsonize() const
-{
+JsonValue QueueQuickConnectConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_queueIdHasBeenSet)
-  {
-   payload.WithString("QueueId", m_queueId);
-
+  if (m_queueIdHasBeenSet) {
+    payload.WithString("QueueId", m_queueId);
   }
 
-  if(m_contactFlowIdHasBeenSet)
-  {
-   payload.WithString("ContactFlowId", m_contactFlowId);
-
+  if (m_contactFlowIdHasBeenSet) {
+    payload.WithString("ContactFlowId", m_contactFlowId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -11,72 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-AgentConfiguration::AgentConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentConfiguration::AgentConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AgentConfiguration& AgentConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentParameters"))
-  {
+AgentConfiguration& AgentConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentParameters")) {
     Aws::Map<Aws::String, JsonView> agentParametersJsonMap = jsonValue.GetObject("agentParameters").GetAllObjects();
-    for(auto& agentParametersItem : agentParametersJsonMap)
-    {
-      m_agentParameters[AgentParameterFieldMapper::GetAgentParameterFieldForName(agentParametersItem.first)] = agentParametersItem.second.AsString();
+    for (auto& agentParametersItem : agentParametersJsonMap) {
+      m_agentParameters[AgentParameterFieldMapper::GetAgentParameterFieldForName(agentParametersItem.first)] =
+          agentParametersItem.second.AsString();
     }
     m_agentParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("periodInSeconds"))
-  {
+  if (jsonValue.ValueExists("periodInSeconds")) {
     m_periodInSeconds = jsonValue.GetInteger("periodInSeconds");
     m_periodInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shouldProfile"))
-  {
+  if (jsonValue.ValueExists("shouldProfile")) {
     m_shouldProfile = jsonValue.GetBool("shouldProfile");
     m_shouldProfileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentConfiguration::Jsonize() const
-{
+JsonValue AgentConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentParametersHasBeenSet)
-  {
-   JsonValue agentParametersJsonMap;
-   for(auto& agentParametersItem : m_agentParameters)
-   {
-     agentParametersJsonMap.WithString(AgentParameterFieldMapper::GetNameForAgentParameterField(agentParametersItem.first), agentParametersItem.second);
-   }
-   payload.WithObject("agentParameters", std::move(agentParametersJsonMap));
-
+  if (m_agentParametersHasBeenSet) {
+    JsonValue agentParametersJsonMap;
+    for (auto& agentParametersItem : m_agentParameters) {
+      agentParametersJsonMap.WithString(AgentParameterFieldMapper::GetNameForAgentParameterField(agentParametersItem.first),
+                                        agentParametersItem.second);
+    }
+    payload.WithObject("agentParameters", std::move(agentParametersJsonMap));
   }
 
-  if(m_periodInSecondsHasBeenSet)
-  {
-   payload.WithInteger("periodInSeconds", m_periodInSeconds);
-
+  if (m_periodInSecondsHasBeenSet) {
+    payload.WithInteger("periodInSeconds", m_periodInSeconds);
   }
 
-  if(m_shouldProfileHasBeenSet)
-  {
-   payload.WithBool("shouldProfile", m_shouldProfile);
-
+  if (m_shouldProfileHasBeenSet) {
+    payload.WithBool("shouldProfile", m_shouldProfile);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

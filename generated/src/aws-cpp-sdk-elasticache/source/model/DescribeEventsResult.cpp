@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeEventsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DescribeEventsResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventsResult::DescribeEventsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeEventsResult::DescribeEventsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEventsResult& DescribeEventsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEventsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEventsResult")) {
     resultNode = rootNode.FirstChild("DescribeEventsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Events");
-    if(!eventsNode.IsNull())
-    {
+    if (!eventsNode.IsNull()) {
       XmlNode eventsMember = eventsNode.FirstChild("Event");
       m_eventsHasBeenSet = !eventsMember.IsNull();
-      while(!eventsMember.IsNull())
-      {
+      while (!eventsMember.IsNull()) {
         m_events.push_back(eventsMember);
         eventsMember = eventsMember.NextNode("Event");
       }
@@ -59,7 +50,7 @@ DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServi
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeEventsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeEventsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class SubscriptionRequestStatus
-  {
-    NOT_SET,
-    PENDING,
-    ACCEPTED,
-    REJECTED
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class SubscriptionRequestStatus { NOT_SET, PENDING, ACCEPTED, REJECTED };
 
-namespace SubscriptionRequestStatusMapper
-{
+namespace SubscriptionRequestStatusMapper {
 AWS_DATAZONE_API SubscriptionRequestStatus GetSubscriptionRequestStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForSubscriptionRequestStatus(SubscriptionRequestStatus value);
-} // namespace SubscriptionRequestStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace SubscriptionRequestStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

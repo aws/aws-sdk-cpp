@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
-  enum class Directionality
-  {
-    NOT_SET,
-    UNI,
-    MULTI
-  };
+namespace Aws {
+namespace Translate {
+namespace Model {
+enum class Directionality { NOT_SET, UNI, MULTI };
 
-namespace DirectionalityMapper
-{
+namespace DirectionalityMapper {
 AWS_TRANSLATE_API Directionality GetDirectionalityForName(const Aws::String& name);
 
 AWS_TRANSLATE_API Aws::String GetNameForDirectionality(Directionality value);
-} // namespace DirectionalityMapper
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace DirectionalityMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

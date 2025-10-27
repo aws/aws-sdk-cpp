@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/KxSavedownStorageConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/KxSavedownStorageConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KxSavedownStorageConfiguration& KxSavedownStorageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+KxSavedownStorageConfiguration& KxSavedownStorageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = KxSavedownStorageTypeMapper::GetKxSavedownStorageTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("size"))
-  {
+  if (jsonValue.ValueExists("size")) {
     m_size = jsonValue.GetInteger("size");
     m_sizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeName"))
-  {
+  if (jsonValue.ValueExists("volumeName")) {
     m_volumeName = jsonValue.GetString("volumeName");
     m_volumeNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KxSavedownStorageConfiguration::Jsonize() const
-{
+JsonValue KxSavedownStorageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", KxSavedownStorageTypeMapper::GetNameForKxSavedownStorageType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", KxSavedownStorageTypeMapper::GetNameForKxSavedownStorageType(m_type));
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInteger("size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInteger("size", m_size);
   }
 
-  if(m_volumeNameHasBeenSet)
-  {
-   payload.WithString("volumeName", m_volumeName);
-
+  if (m_volumeNameHasBeenSet) {
+    payload.WithString("volumeName", m_volumeName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

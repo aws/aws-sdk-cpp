@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::EC2InstanceConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SendSerialConsoleSSHPublicKeyRequest::SerializePayload() const
-{
+Aws::String SendSerialConsoleSSHPublicKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_serialPortHasBeenSet)
-  {
-   payload.WithInteger("SerialPort", m_serialPort);
-
+  if (m_serialPortHasBeenSet) {
+    payload.WithInteger("SerialPort", m_serialPort);
   }
 
-  if(m_sSHPublicKeyHasBeenSet)
-  {
-   payload.WithString("SSHPublicKey", m_sSHPublicKey);
-
+  if (m_sSHPublicKeyHasBeenSet) {
+    payload.WithString("SSHPublicKey", m_sSHPublicKey);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SendSerialConsoleSSHPublicKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SendSerialConsoleSSHPublicKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey"));
   return headers;
-
 }
-
-
-
-

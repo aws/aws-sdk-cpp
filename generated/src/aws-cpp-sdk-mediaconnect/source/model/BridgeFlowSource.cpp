@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/BridgeFlowSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/BridgeFlowSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-BridgeFlowSource::BridgeFlowSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BridgeFlowSource::BridgeFlowSource(JsonView jsonValue) { *this = jsonValue; }
 
-BridgeFlowSource& BridgeFlowSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("flowArn"))
-  {
+BridgeFlowSource& BridgeFlowSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");
     m_flowArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flowVpcInterfaceAttachment"))
-  {
+  if (jsonValue.ValueExists("flowVpcInterfaceAttachment")) {
     m_flowVpcInterfaceAttachment = jsonValue.GetObject("flowVpcInterfaceAttachment");
     m_flowVpcInterfaceAttachmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputArn"))
-  {
+  if (jsonValue.ValueExists("outputArn")) {
     m_outputArn = jsonValue.GetString("outputArn");
     m_outputArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BridgeFlowSource::Jsonize() const
-{
+JsonValue BridgeFlowSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowArnHasBeenSet)
-  {
-   payload.WithString("flowArn", m_flowArn);
-
+  if (m_flowArnHasBeenSet) {
+    payload.WithString("flowArn", m_flowArn);
   }
 
-  if(m_flowVpcInterfaceAttachmentHasBeenSet)
-  {
-   payload.WithObject("flowVpcInterfaceAttachment", m_flowVpcInterfaceAttachment.Jsonize());
-
+  if (m_flowVpcInterfaceAttachmentHasBeenSet) {
+    payload.WithObject("flowVpcInterfaceAttachment", m_flowVpcInterfaceAttachment.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_outputArnHasBeenSet)
-  {
-   payload.WithString("outputArn", m_outputArn);
-
+  if (m_outputArnHasBeenSet) {
+    payload.WithString("outputArn", m_outputArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

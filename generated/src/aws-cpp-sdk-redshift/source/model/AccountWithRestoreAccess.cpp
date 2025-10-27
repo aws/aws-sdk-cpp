@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/AccountWithRestoreAccess.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/AccountWithRestoreAccess.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xmlNode)
-{
+AccountWithRestoreAccess& AccountWithRestoreAccess::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
-    if(!accountIdNode.IsNull())
-    {
+    if (!accountIdNode.IsNull()) {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
     XmlNode accountAliasNode = resultNode.FirstChild("AccountAlias");
-    if(!accountAliasNode.IsNull())
-    {
+    if (!accountAliasNode.IsNull()) {
       m_accountAlias = Aws::Utils::Xml::DecodeEscapedXmlText(accountAliasNode.GetText());
       m_accountAliasHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xm
   return *this;
 }
 
-void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_accountIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                              const char* locationValue) const {
+  if (m_accountIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
 
-  if(m_accountAliasHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
-  }
-
-}
-
-void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_accountIdHasBeenSet)
-  {
-      oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
-  }
-  if(m_accountAliasHasBeenSet)
-  {
-      oStream << location << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
+  if (m_accountAliasHasBeenSet) {
+    oStream << location << index << locationValue << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_accountIdHasBeenSet) {
+    oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+  if (m_accountAliasHasBeenSet) {
+    oStream << location << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

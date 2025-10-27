@@ -7,25 +7,16 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
-  enum class PutMode
-  {
-    NOT_SET,
-    merge,
-    overwrite
-  };
+namespace Aws {
+namespace APIGateway {
+namespace Model {
+enum class PutMode { NOT_SET, merge, overwrite };
 
-namespace PutModeMapper
-{
+namespace PutModeMapper {
 AWS_APIGATEWAY_API PutMode GetPutModeForName(const Aws::String& name);
 
 AWS_APIGATEWAY_API Aws::String GetNameForPutMode(PutMode value);
-} // namespace PutModeMapper
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace PutModeMapper
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

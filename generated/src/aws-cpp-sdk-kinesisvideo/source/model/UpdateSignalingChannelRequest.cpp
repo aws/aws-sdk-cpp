@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/UpdateSignalingChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/UpdateSignalingChannelRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSignalingChannelRequest::SerializePayload() const
-{
+Aws::String UpdateSignalingChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_channelARNHasBeenSet)
-  {
-   payload.WithString("ChannelARN", m_channelARN);
-
+  if (m_channelARNHasBeenSet) {
+    payload.WithString("ChannelARN", m_channelARN);
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("CurrentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("CurrentVersion", m_currentVersion);
   }
 
-  if(m_singleMasterConfigurationHasBeenSet)
-  {
-   payload.WithObject("SingleMasterConfiguration", m_singleMasterConfiguration.Jsonize());
-
+  if (m_singleMasterConfigurationHasBeenSet) {
+    payload.WithObject("SingleMasterConfiguration", m_singleMasterConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/Subscription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/Subscription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-Subscription::Subscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Subscription::Subscription(JsonView jsonValue) { *this = jsonValue; }
 
-Subscription& Subscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+Subscription& Subscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Source"))
-  {
+  if (jsonValue.ValueExists("Source")) {
     m_source = jsonValue.GetString("Source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subject"))
-  {
+  if (jsonValue.ValueExists("Subject")) {
     m_subject = jsonValue.GetString("Subject");
     m_subjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Target"))
-  {
+  if (jsonValue.ValueExists("Target")) {
     m_target = jsonValue.GetString("Target");
     m_targetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Subscription::Jsonize() const
-{
+JsonValue Subscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("Source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("Source", m_source);
   }
 
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithString("Subject", m_subject);
-
+  if (m_subjectHasBeenSet) {
+    payload.WithString("Subject", m_subject);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("Target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("Target", m_target);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

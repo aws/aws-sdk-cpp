@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-ExtractedCharactersListItem::ExtractedCharactersListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExtractedCharactersListItem::ExtractedCharactersListItem(JsonView jsonValue) { *this = jsonValue; }
 
-ExtractedCharactersListItem& ExtractedCharactersListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Page"))
-  {
+ExtractedCharactersListItem& ExtractedCharactersListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Page")) {
     m_page = jsonValue.GetInteger("Page");
     m_pageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExtractedCharactersListItem::Jsonize() const
-{
+JsonValue ExtractedCharactersListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_pageHasBeenSet)
-  {
-   payload.WithInteger("Page", m_page);
-
+  if (m_pageHasBeenSet) {
+    payload.WithInteger("Page", m_page);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

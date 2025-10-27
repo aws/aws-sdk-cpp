@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DescribeTargetGroupAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DescribeTargetGroupAttributesRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTargetGroupAttributesRequest::SerializePayload() const
-{
+Aws::String DescribeTargetGroupAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTargetGroupAttributes&";
-  if(m_targetGroupArnHasBeenSet)
-  {
+  if (m_targetGroupArnHasBeenSet) {
     ss << "TargetGroupArn=" << StringUtils::URLEncode(m_targetGroupArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeTargetGroupAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTargetGroupAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTargetGroupAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

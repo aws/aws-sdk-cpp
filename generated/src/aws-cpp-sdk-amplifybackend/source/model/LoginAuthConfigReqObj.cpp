@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-LoginAuthConfigReqObj::LoginAuthConfigReqObj(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoginAuthConfigReqObj::LoginAuthConfigReqObj(JsonView jsonValue) { *this = jsonValue; }
 
-LoginAuthConfigReqObj& LoginAuthConfigReqObj::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aws_cognito_identity_pool_id"))
-  {
+LoginAuthConfigReqObj& LoginAuthConfigReqObj::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aws_cognito_identity_pool_id")) {
     m_awsCognitoIdentityPoolId = jsonValue.GetString("aws_cognito_identity_pool_id");
     m_awsCognitoIdentityPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aws_cognito_region"))
-  {
+  if (jsonValue.ValueExists("aws_cognito_region")) {
     m_awsCognitoRegion = jsonValue.GetString("aws_cognito_region");
     m_awsCognitoRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aws_user_pools_id"))
-  {
+  if (jsonValue.ValueExists("aws_user_pools_id")) {
     m_awsUserPoolsId = jsonValue.GetString("aws_user_pools_id");
     m_awsUserPoolsIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aws_user_pools_web_client_id"))
-  {
+  if (jsonValue.ValueExists("aws_user_pools_web_client_id")) {
     m_awsUserPoolsWebClientId = jsonValue.GetString("aws_user_pools_web_client_id");
     m_awsUserPoolsWebClientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoginAuthConfigReqObj::Jsonize() const
-{
+JsonValue LoginAuthConfigReqObj::Jsonize() const {
   JsonValue payload;
 
-  if(m_awsCognitoIdentityPoolIdHasBeenSet)
-  {
-   payload.WithString("aws_cognito_identity_pool_id", m_awsCognitoIdentityPoolId);
-
+  if (m_awsCognitoIdentityPoolIdHasBeenSet) {
+    payload.WithString("aws_cognito_identity_pool_id", m_awsCognitoIdentityPoolId);
   }
 
-  if(m_awsCognitoRegionHasBeenSet)
-  {
-   payload.WithString("aws_cognito_region", m_awsCognitoRegion);
-
+  if (m_awsCognitoRegionHasBeenSet) {
+    payload.WithString("aws_cognito_region", m_awsCognitoRegion);
   }
 
-  if(m_awsUserPoolsIdHasBeenSet)
-  {
-   payload.WithString("aws_user_pools_id", m_awsUserPoolsId);
-
+  if (m_awsUserPoolsIdHasBeenSet) {
+    payload.WithString("aws_user_pools_id", m_awsUserPoolsId);
   }
 
-  if(m_awsUserPoolsWebClientIdHasBeenSet)
-  {
-   payload.WithString("aws_user_pools_web_client_id", m_awsUserPoolsWebClientId);
-
+  if (m_awsUserPoolsWebClientIdHasBeenSet) {
+    payload.WithString("aws_user_pools_web_client_id", m_awsUserPoolsWebClientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

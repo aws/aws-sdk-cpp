@@ -5,12 +5,8 @@
 
 #include <aws/qldb/QLDBEndpointProvider.h>
 
-namespace Aws
-{
-namespace QLDB
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QLDB
-} // namespace Aws
+namespace Aws {
+namespace QLDB {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QLDB
+}  // namespace Aws

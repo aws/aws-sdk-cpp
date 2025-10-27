@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue) { *this = jsonValue; }
 
-UpdatePhoneNumberRequestItem& UpdatePhoneNumberRequestItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PhoneNumberId"))
-  {
+UpdatePhoneNumberRequestItem& UpdatePhoneNumberRequestItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PhoneNumberId")) {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
     m_phoneNumberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductType"))
-  {
+  if (jsonValue.ValueExists("ProductType")) {
     m_productType = PhoneNumberProductTypeMapper::GetPhoneNumberProductTypeForName(jsonValue.GetString("ProductType"));
     m_productTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CallingName"))
-  {
+  if (jsonValue.ValueExists("CallingName")) {
     m_callingName = jsonValue.GetString("CallingName");
     m_callingNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdatePhoneNumberRequestItem::Jsonize() const
-{
+JsonValue UpdatePhoneNumberRequestItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_phoneNumberIdHasBeenSet)
-  {
-   payload.WithString("PhoneNumberId", m_phoneNumberId);
-
+  if (m_phoneNumberIdHasBeenSet) {
+    payload.WithString("PhoneNumberId", m_phoneNumberId);
   }
 
-  if(m_productTypeHasBeenSet)
-  {
-   payload.WithString("ProductType", PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType));
+  if (m_productTypeHasBeenSet) {
+    payload.WithString("ProductType", PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType));
   }
 
-  if(m_callingNameHasBeenSet)
-  {
-   payload.WithString("CallingName", m_callingName);
-
+  if (m_callingNameHasBeenSet) {
+    payload.WithString("CallingName", m_callingName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

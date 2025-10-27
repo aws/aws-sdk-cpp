@@ -12,33 +12,22 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateGatewayInformationRequest::SerializePayload() const
-{
+Aws::String UpdateGatewayInformationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gatewayArnHasBeenSet)
-  {
-   payload.WithString("GatewayArn", m_gatewayArn);
-
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
-  if(m_gatewayDisplayNameHasBeenSet)
-  {
-   payload.WithString("GatewayDisplayName", m_gatewayDisplayName);
-
+  if (m_gatewayDisplayNameHasBeenSet) {
+    payload.WithString("GatewayDisplayName", m_gatewayDisplayName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateGatewayInformationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateGatewayInformationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.UpdateGatewayInformation"));
   return headers;
-
 }
-
-
-
-

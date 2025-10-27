@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/ListQualificationTypesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mturk-requester/model/ListQualificationTypesResult.h>
 
 #include <utility>
 
@@ -17,29 +17,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQualificationTypesResult::ListQualificationTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListQualificationTypesResult::ListQualificationTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListQualificationTypesResult& ListQualificationTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListQualificationTypesResult& ListQualificationTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NumResults"))
-  {
+  if (jsonValue.ValueExists("NumResults")) {
     m_numResults = jsonValue.GetInteger("NumResults");
     m_numResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QualificationTypes"))
-  {
+  if (jsonValue.ValueExists("QualificationTypes")) {
     Aws::Utils::Array<JsonView> qualificationTypesJsonList = jsonValue.GetArray("QualificationTypes");
-    for(unsigned qualificationTypesIndex = 0; qualificationTypesIndex < qualificationTypesJsonList.GetLength(); ++qualificationTypesIndex)
-    {
+    for (unsigned qualificationTypesIndex = 0; qualificationTypesIndex < qualificationTypesJsonList.GetLength();
+         ++qualificationTypesIndex) {
       m_qualificationTypes.push_back(qualificationTypesJsonList[qualificationTypesIndex].AsObject());
     }
     m_qualificationTypesHasBeenSet = true;
@@ -47,12 +40,10 @@ ListQualificationTypesResult& ListQualificationTypesResult::operator =(const Aws
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

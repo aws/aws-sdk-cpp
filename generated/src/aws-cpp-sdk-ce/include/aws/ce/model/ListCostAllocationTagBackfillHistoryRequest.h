@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
+#include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
+/**
+ */
+class ListCostAllocationTagBackfillHistoryRequest : public CostExplorerRequest {
+ public:
+  AWS_COSTEXPLORER_API ListCostAllocationTagBackfillHistoryRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListCostAllocationTagBackfillHistory"; }
+
+  AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
+
+  AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p> The token to retrieve the next set of results. Amazon Web Services provides
+   * the token when the response from a previous call has more results than the
+   * maximum page size. </p>
    */
-  class ListCostAllocationTagBackfillHistoryRequest : public CostExplorerRequest
-  {
-  public:
-    AWS_COSTEXPLORER_API ListCostAllocationTagBackfillHistoryRequest() = default;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListCostAllocationTagBackfillHistoryRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListCostAllocationTagBackfillHistory"; }
+  ///@{
+  /**
+   * <p> The maximum number of objects that are returned for this request. </p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListCostAllocationTagBackfillHistoryRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p> The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListCostAllocationTagBackfillHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The maximum number of objects that are returned for this request. </p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCostAllocationTagBackfillHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

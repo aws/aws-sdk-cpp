@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-AuthRequest::AuthRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthRequest::AuthRequest(JsonView jsonValue) { *this = jsonValue; }
 
-AuthRequest& AuthRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("redirectUri"))
-  {
+AuthRequest& AuthRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("redirectUri")) {
     m_redirectUri = jsonValue.GetString("redirectUri");
     m_redirectUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthRequest::Jsonize() const
-{
+JsonValue AuthRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_redirectUriHasBeenSet)
-  {
-   payload.WithString("redirectUri", m_redirectUri);
-
+  if (m_redirectUriHasBeenSet) {
+    payload.WithString("redirectUri", m_redirectUri);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

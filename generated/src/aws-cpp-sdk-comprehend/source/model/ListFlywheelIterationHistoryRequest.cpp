@@ -12,45 +12,30 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListFlywheelIterationHistoryRequest::SerializePayload() const
-{
+Aws::String ListFlywheelIterationHistoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flywheelArnHasBeenSet)
-  {
-   payload.WithString("FlywheelArn", m_flywheelArn);
-
+  if (m_flywheelArnHasBeenSet) {
+    payload.WithString("FlywheelArn", m_flywheelArn);
   }
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("Filter", m_filter.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListFlywheelIterationHistoryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListFlywheelIterationHistoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.ListFlywheelIterationHistory"));
   return headers;
-
 }
-
-
-
-

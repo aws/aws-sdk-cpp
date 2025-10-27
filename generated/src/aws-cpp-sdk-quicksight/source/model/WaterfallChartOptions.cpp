@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/WaterfallChartOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/WaterfallChartOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-WaterfallChartOptions::WaterfallChartOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WaterfallChartOptions::WaterfallChartOptions(JsonView jsonValue) { *this = jsonValue; }
 
-WaterfallChartOptions& WaterfallChartOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TotalBarLabel"))
-  {
+WaterfallChartOptions& WaterfallChartOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TotalBarLabel")) {
     m_totalBarLabel = jsonValue.GetString("TotalBarLabel");
     m_totalBarLabelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WaterfallChartOptions::Jsonize() const
-{
+JsonValue WaterfallChartOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalBarLabelHasBeenSet)
-  {
-   payload.WithString("TotalBarLabel", m_totalBarLabel);
-
+  if (m_totalBarLabelHasBeenSet) {
+    payload.WithString("TotalBarLabel", m_totalBarLabel);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

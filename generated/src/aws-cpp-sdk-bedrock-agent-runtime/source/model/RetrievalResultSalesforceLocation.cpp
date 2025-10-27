@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RetrievalResultSalesforceLocation::RetrievalResultSalesforceLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrievalResultSalesforceLocation::RetrievalResultSalesforceLocation(JsonView jsonValue) { *this = jsonValue; }
 
-RetrievalResultSalesforceLocation& RetrievalResultSalesforceLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("url"))
-  {
+RetrievalResultSalesforceLocation& RetrievalResultSalesforceLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetrievalResultSalesforceLocation::Jsonize() const
-{
+JsonValue RetrievalResultSalesforceLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

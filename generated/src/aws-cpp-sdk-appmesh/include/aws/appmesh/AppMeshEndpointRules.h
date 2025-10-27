@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 
-namespace Aws
-{
-namespace AppMesh
-{
-class AppMeshEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace AppMesh {
+class AppMeshEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace AppMesh
+}  // namespace Aws

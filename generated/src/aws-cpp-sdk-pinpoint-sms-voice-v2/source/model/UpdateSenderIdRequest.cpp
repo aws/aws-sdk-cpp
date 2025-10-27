@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/UpdateSenderIdRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/UpdateSenderIdRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSenderIdRequest::SerializePayload() const
-{
+Aws::String UpdateSenderIdRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_senderIdHasBeenSet)
-  {
-   payload.WithString("SenderId", m_senderId);
-
+  if (m_senderIdHasBeenSet) {
+    payload.WithString("SenderId", m_senderId);
   }
 
-  if(m_isoCountryCodeHasBeenSet)
-  {
-   payload.WithString("IsoCountryCode", m_isoCountryCode);
-
+  if (m_isoCountryCodeHasBeenSet) {
+    payload.WithString("IsoCountryCode", m_isoCountryCode);
   }
 
-  if(m_deletionProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
-
+  if (m_deletionProtectionEnabledHasBeenSet) {
+    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateSenderIdRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateSenderIdRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PinpointSMSVoiceV2.UpdateSenderId"));
   return headers;
-
 }
-
-
-
-

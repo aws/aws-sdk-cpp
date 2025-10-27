@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-PrivacyBudget::PrivacyBudget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrivacyBudget::PrivacyBudget(JsonView jsonValue) { *this = jsonValue; }
 
-PrivacyBudget& PrivacyBudget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("differentialPrivacy"))
-  {
+PrivacyBudget& PrivacyBudget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("differentialPrivacy")) {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
     m_differentialPrivacyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessBudget"))
-  {
+  if (jsonValue.ValueExists("accessBudget")) {
     m_accessBudget = jsonValue.GetObject("accessBudget");
     m_accessBudgetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrivacyBudget::Jsonize() const
-{
+JsonValue PrivacyBudget::Jsonize() const {
   JsonValue payload;
 
-  if(m_differentialPrivacyHasBeenSet)
-  {
-   payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
-
+  if (m_differentialPrivacyHasBeenSet) {
+    payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
   }
 
-  if(m_accessBudgetHasBeenSet)
-  {
-   payload.WithObject("accessBudget", m_accessBudget.Jsonize());
-
+  if (m_accessBudgetHasBeenSet) {
+    payload.WithObject("accessBudget", m_accessBudget.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

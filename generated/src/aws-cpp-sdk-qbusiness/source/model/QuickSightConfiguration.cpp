@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/QuickSightConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/QuickSightConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-QuickSightConfiguration::QuickSightConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickSightConfiguration::QuickSightConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-QuickSightConfiguration& QuickSightConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientNamespace"))
-  {
+QuickSightConfiguration& QuickSightConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientNamespace")) {
     m_clientNamespace = jsonValue.GetString("clientNamespace");
     m_clientNamespaceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickSightConfiguration::Jsonize() const
-{
+JsonValue QuickSightConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientNamespaceHasBeenSet)
-  {
-   payload.WithString("clientNamespace", m_clientNamespace);
-
+  if (m_clientNamespaceHasBeenSet) {
+    payload.WithString("clientNamespace", m_clientNamespace);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

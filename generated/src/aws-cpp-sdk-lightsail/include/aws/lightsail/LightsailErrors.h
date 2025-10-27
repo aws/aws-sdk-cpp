@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-enum class LightsailErrors
-{
-  //From Core//
+namespace Aws {
+namespace Lightsail {
+enum class LightsailErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class LightsailErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class LightsailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_SETUP_IN_PROGRESS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_SETUP_IN_PROGRESS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT,
   NOT_FOUND,
   OPERATION_FAILURE,
@@ -56,9 +53,8 @@ enum class LightsailErrors
   UNAUTHENTICATED
 };
 
-class AWS_LIGHTSAIL_API LightsailError : public Aws::Client::AWSError<LightsailErrors>
-{
-public:
+class AWS_LIGHTSAIL_API LightsailError : public Aws::Client::AWSError<LightsailErrors> {
+ public:
   LightsailError() {}
   LightsailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
   LightsailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace LightsailErrorMapper
-{
-  AWS_LIGHTSAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace LightsailErrorMapper {
+AWS_LIGHTSAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Lightsail
+}  // namespace Aws

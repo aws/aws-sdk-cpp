@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("recommendedInstanceType"))
-  {
+RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("recommendedInstanceType")) {
     m_recommendedInstanceType = jsonValue.GetString("recommendedInstanceType");
     m_recommendedInstanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rank"))
-  {
+  if (jsonValue.ValueExists("rank")) {
     m_rank = jsonValue.GetInteger("rank");
     m_rankHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectedMetrics"))
-  {
+  if (jsonValue.ValueExists("projectedMetrics")) {
     Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
-    for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
-    {
+    for (unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex) {
       m_projectedMetrics.push_back(projectedMetricsJsonList[projectedMetricsIndex].AsObject());
     }
     m_projectedMetricsHasBeenSet = true;
@@ -47,36 +36,28 @@ RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator =(J
   return *this;
 }
 
-JsonValue RecommendedOptionProjectedMetric::Jsonize() const
-{
+JsonValue RecommendedOptionProjectedMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendedInstanceTypeHasBeenSet)
-  {
-   payload.WithString("recommendedInstanceType", m_recommendedInstanceType);
-
+  if (m_recommendedInstanceTypeHasBeenSet) {
+    payload.WithString("recommendedInstanceType", m_recommendedInstanceType);
   }
 
-  if(m_rankHasBeenSet)
-  {
-   payload.WithInteger("rank", m_rank);
-
+  if (m_rankHasBeenSet) {
+    payload.WithInteger("rank", m_rank);
   }
 
-  if(m_projectedMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
-   for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
-   {
-     projectedMetricsJsonList[projectedMetricsIndex].AsObject(m_projectedMetrics[projectedMetricsIndex].Jsonize());
-   }
-   payload.WithArray("projectedMetrics", std::move(projectedMetricsJsonList));
-
+  if (m_projectedMetricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
+    for (unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex) {
+      projectedMetricsJsonList[projectedMetricsIndex].AsObject(m_projectedMetrics[projectedMetricsIndex].Jsonize());
+    }
+    payload.WithArray("projectedMetrics", std::move(projectedMetricsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
-{
+Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetIdentityNotificationAttributes&";
-  if(m_identitiesHasBeenSet)
-  {
-    if (m_identities.empty())
-    {
+  if (m_identitiesHasBeenSet) {
+    if (m_identities.empty()) {
       ss << "Identities=&";
-    }
-    else
-    {
+    } else {
       unsigned identitiesCount = 1;
-      for(auto& item : m_identities)
-      {
-        ss << "Identities.member." << identitiesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_identities) {
+        ss << "Identities.member." << identitiesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         identitiesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetIdentityNotificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetIdentityNotificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

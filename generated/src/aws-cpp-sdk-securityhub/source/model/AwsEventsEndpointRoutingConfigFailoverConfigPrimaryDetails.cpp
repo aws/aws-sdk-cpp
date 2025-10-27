@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails(JsonView jsonValue)
-{
+AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HealthCheck"))
-  {
+AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("HealthCheck")) {
     m_healthCheck = jsonValue.GetString("HealthCheck");
     m_healthCheckHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::Jsonize() const
-{
+JsonValue AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_healthCheckHasBeenSet)
-  {
-   payload.WithString("HealthCheck", m_healthCheck);
-
+  if (m_healthCheckHasBeenSet) {
+    payload.WithString("HealthCheck", m_healthCheck);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

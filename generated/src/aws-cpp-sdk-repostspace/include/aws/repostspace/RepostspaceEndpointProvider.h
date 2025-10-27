@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/repostspace/RepostspaceEndpointRules.h>
+#include <aws/repostspace/Repostspace_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace repostspace
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace repostspace {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using RepostspaceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using RepostspaceDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_REPOSTSPACE_API RepostspaceEndpointProvider : public RepostspaceDefaultEpProviderBase
-{
-public:
-    using RepostspaceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_REPOSTSPACE_API RepostspaceEndpointProvider : public RepostspaceDefaultEpProviderBase {
+ public:
+  using RepostspaceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    RepostspaceEndpointProvider()
-      : RepostspaceDefaultEpProviderBase(Aws::repostspace::RepostspaceEndpointRules::GetRulesBlob(), Aws::repostspace::RepostspaceEndpointRules::RulesBlobSize)
-    {}
+  RepostspaceEndpointProvider()
+      : RepostspaceDefaultEpProviderBase(Aws::repostspace::RepostspaceEndpointRules::GetRulesBlob(),
+                                         Aws::repostspace::RepostspaceEndpointRules::RulesBlobSize) {}
 
-    ~RepostspaceEndpointProvider()
-    {
-    }
+  ~RepostspaceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace repostspace
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace repostspace
+}  // namespace Aws

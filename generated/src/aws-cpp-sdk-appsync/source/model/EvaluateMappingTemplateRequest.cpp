@@ -12,25 +12,16 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EvaluateMappingTemplateRequest::SerializePayload() const
-{
+Aws::String EvaluateMappingTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_templateHasBeenSet)
-  {
-   payload.WithString("template", m_template);
-
+  if (m_templateHasBeenSet) {
+    payload.WithString("template", m_template);
   }
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithString("context", m_context);
-
+  if (m_contextHasBeenSet) {
+    payload.WithString("context", m_context);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

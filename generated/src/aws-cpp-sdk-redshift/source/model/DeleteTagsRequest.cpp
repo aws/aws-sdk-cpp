@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteTagsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteTagsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTagsRequest::SerializePayload() const
-{
+Aws::String DeleteTagsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTags&";
-  if(m_resourceNameHasBeenSet)
-  {
+  if (m_resourceNameHasBeenSet) {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-    if (m_tagKeys.empty())
-    {
+  if (m_tagKeysHasBeenSet) {
+    if (m_tagKeys.empty()) {
       ss << "TagKeys=&";
-    }
-    else
-    {
+    } else {
       unsigned tagKeysCount = 1;
-      for(auto& item : m_tagKeys)
-      {
-        ss << "TagKeys.TagKey." << tagKeysCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagKeys) {
+        ss << "TagKeys.TagKey." << tagKeysCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DeleteTagsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

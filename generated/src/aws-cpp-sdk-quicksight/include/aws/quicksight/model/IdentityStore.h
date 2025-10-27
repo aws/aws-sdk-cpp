@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class IdentityStore
-  {
-    NOT_SET,
-    QUICKSIGHT
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class IdentityStore { NOT_SET, QUICKSIGHT };
 
-namespace IdentityStoreMapper
-{
+namespace IdentityStoreMapper {
 AWS_QUICKSIGHT_API IdentityStore GetIdentityStoreForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForIdentityStore(IdentityStore value);
-} // namespace IdentityStoreMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace IdentityStoreMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

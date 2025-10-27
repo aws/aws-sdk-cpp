@@ -6,54 +6,52 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaLive {
+namespace Model {
 
+/**
+ * Ancillary Source Settings<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AncillarySourceSettings">AWS
+ * API Reference</a></p>
+ */
+class AncillarySourceSettings {
+ public:
+  AWS_MEDIALIVE_API AncillarySourceSettings() = default;
+  AWS_MEDIALIVE_API AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Ancillary Source Settings<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AncillarySourceSettings">AWS
-   * API Reference</a></p>
+   * Specifies the number (1 to 4) of the captions channel you want to extract from
+   * the ancillary captions. If you plan to convert the ancillary captions to another
+   * format, complete this field. If you plan to choose Embedded as the captions
+   * destination in the output (to pass through all the channels in the ancillary
+   * captions), leave this field blank because MediaLive ignores the field.
    */
-  class AncillarySourceSettings
-  {
-  public:
-    AWS_MEDIALIVE_API AncillarySourceSettings() = default;
-    AWS_MEDIALIVE_API AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetSourceAncillaryChannelNumber() const { return m_sourceAncillaryChannelNumber; }
+  inline bool SourceAncillaryChannelNumberHasBeenSet() const { return m_sourceAncillaryChannelNumberHasBeenSet; }
+  inline void SetSourceAncillaryChannelNumber(int value) {
+    m_sourceAncillaryChannelNumberHasBeenSet = true;
+    m_sourceAncillaryChannelNumber = value;
+  }
+  inline AncillarySourceSettings& WithSourceAncillaryChannelNumber(int value) {
+    SetSourceAncillaryChannelNumber(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_sourceAncillaryChannelNumber{0};
+  bool m_sourceAncillaryChannelNumberHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * Specifies the number (1 to 4) of the captions channel you want to extract from
-     * the ancillary captions. If you plan to convert the ancillary captions to another
-     * format, complete this field. If you plan to choose Embedded as the captions
-     * destination in the output (to pass through all the channels in the ancillary
-     * captions), leave this field blank because MediaLive ignores the field.
-     */
-    inline int GetSourceAncillaryChannelNumber() const { return m_sourceAncillaryChannelNumber; }
-    inline bool SourceAncillaryChannelNumberHasBeenSet() const { return m_sourceAncillaryChannelNumberHasBeenSet; }
-    inline void SetSourceAncillaryChannelNumber(int value) { m_sourceAncillaryChannelNumberHasBeenSet = true; m_sourceAncillaryChannelNumber = value; }
-    inline AncillarySourceSettings& WithSourceAncillaryChannelNumber(int value) { SetSourceAncillaryChannelNumber(value); return *this;}
-    ///@}
-  private:
-
-    int m_sourceAncillaryChannelNumber{0};
-    bool m_sourceAncillaryChannelNumberHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

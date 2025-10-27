@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/City.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/City.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-City::City(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+City::City(JsonView jsonValue) { *this = jsonValue; }
 
-City& City::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CityName"))
-  {
+City& City::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CityName")) {
     m_cityName = jsonValue.GetString("CityName");
     m_cityNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue City::Jsonize() const
-{
+JsonValue City::Jsonize() const {
   JsonValue payload;
 
-  if(m_cityNameHasBeenSet)
-  {
-   payload.WithString("CityName", m_cityName);
-
+  if (m_cityNameHasBeenSet) {
+    payload.WithString("CityName", m_cityName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

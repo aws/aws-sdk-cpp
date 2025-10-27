@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/CloudWatchEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
-  enum class LaunchType
-  {
-    NOT_SET,
-    EC2,
-    FARGATE,
-    EXTERNAL
-  };
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
+enum class LaunchType { NOT_SET, EC2, FARGATE, EXTERNAL };
 
-namespace LaunchTypeMapper
-{
+namespace LaunchTypeMapper {
 AWS_CLOUDWATCHEVENTS_API LaunchType GetLaunchTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVENTS_API Aws::String GetNameForLaunchType(LaunchType value);
-} // namespace LaunchTypeMapper
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace LaunchTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

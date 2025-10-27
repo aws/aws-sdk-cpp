@@ -11,105 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-DelegationMetadata::DelegationMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DelegationMetadata::DelegationMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DelegationMetadata& DelegationMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+DelegationMetadata& DelegationMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assessmentName"))
-  {
+  if (jsonValue.ValueExists("assessmentName")) {
     m_assessmentName = jsonValue.GetString("assessmentName");
     m_assessmentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assessmentId"))
-  {
+  if (jsonValue.ValueExists("assessmentId")) {
     m_assessmentId = jsonValue.GetString("assessmentId");
     m_assessmentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = DelegationStatusMapper::GetDelegationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("controlSetName"))
-  {
+  if (jsonValue.ValueExists("controlSetName")) {
     m_controlSetName = jsonValue.GetString("controlSetName");
     m_controlSetNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DelegationMetadata::Jsonize() const
-{
+JsonValue DelegationMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_assessmentNameHasBeenSet)
-  {
-   payload.WithString("assessmentName", m_assessmentName);
-
+  if (m_assessmentNameHasBeenSet) {
+    payload.WithString("assessmentName", m_assessmentName);
   }
 
-  if(m_assessmentIdHasBeenSet)
-  {
-   payload.WithString("assessmentId", m_assessmentId);
-
+  if (m_assessmentIdHasBeenSet) {
+    payload.WithString("assessmentId", m_assessmentId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DelegationStatusMapper::GetNameForDelegationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DelegationStatusMapper::GetNameForDelegationStatus(m_status));
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_controlSetNameHasBeenSet)
-  {
-   payload.WithString("controlSetName", m_controlSetName);
-
+  if (m_controlSetNameHasBeenSet) {
+    payload.WithString("controlSetName", m_controlSetName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

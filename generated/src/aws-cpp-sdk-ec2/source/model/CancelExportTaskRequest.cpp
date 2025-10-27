@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CancelExportTaskRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CancelExportTaskRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CancelExportTaskRequest::SerializePayload() const
-{
+Aws::String CancelExportTaskRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CancelExportTask&";
-  if(m_exportTaskIdHasBeenSet)
-  {
+  if (m_exportTaskIdHasBeenSet) {
     ss << "ExportTaskId=" << StringUtils::URLEncode(m_exportTaskId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String CancelExportTaskRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CancelExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CancelExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

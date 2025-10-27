@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class OpsItemDataType
-  {
-    NOT_SET,
-    SearchableString,
-    String
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class OpsItemDataType { NOT_SET, SearchableString, String };
 
-namespace OpsItemDataTypeMapper
-{
+namespace OpsItemDataTypeMapper {
 AWS_SSM_API OpsItemDataType GetOpsItemDataTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForOpsItemDataType(OpsItemDataType value);
-} // namespace OpsItemDataTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace OpsItemDataTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

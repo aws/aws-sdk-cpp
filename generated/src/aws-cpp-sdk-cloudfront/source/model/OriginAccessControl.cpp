@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/OriginAccessControl.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OriginAccessControl& OriginAccessControl::operator =(const XmlNode& xmlNode)
-{
+OriginAccessControl& OriginAccessControl::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
+    if (!idNode.IsNull()) {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode originAccessControlConfigNode = resultNode.FirstChild("OriginAccessControlConfig");
-    if(!originAccessControlConfigNode.IsNull())
-    {
+    if (!originAccessControlConfigNode.IsNull()) {
       m_originAccessControlConfig = originAccessControlConfigNode;
       m_originAccessControlConfigHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ OriginAccessControl& OriginAccessControl::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void OriginAccessControl::AddToNode(XmlNode& parentNode) const
-{
+void OriginAccessControl::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_idHasBeenSet)
-  {
-   XmlNode idNode = parentNode.CreateChildElement("Id");
-   idNode.SetText(m_id);
+  if (m_idHasBeenSet) {
+    XmlNode idNode = parentNode.CreateChildElement("Id");
+    idNode.SetText(m_id);
   }
 
-  if(m_originAccessControlConfigHasBeenSet)
-  {
-   XmlNode originAccessControlConfigNode = parentNode.CreateChildElement("OriginAccessControlConfig");
-   m_originAccessControlConfig.AddToNode(originAccessControlConfigNode);
+  if (m_originAccessControlConfigHasBeenSet) {
+    XmlNode originAccessControlConfigNode = parentNode.CreateChildElement("OriginAccessControlConfig");
+    m_originAccessControlConfig.AddToNode(originAccessControlConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

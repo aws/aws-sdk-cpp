@@ -3,537 +3,407 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllocatedStorage"))
-  {
+AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllocatedStorage")) {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
     m_allocatedStorageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvailabilityZones"))
-  {
+  if (jsonValue.ValueExists("AvailabilityZones")) {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
-    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
-    {
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
     }
     m_availabilityZonesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackupRetentionPeriod"))
-  {
+  if (jsonValue.ValueExists("BackupRetentionPeriod")) {
     m_backupRetentionPeriod = jsonValue.GetInteger("BackupRetentionPeriod");
     m_backupRetentionPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatabaseName"))
-  {
+  if (jsonValue.ValueExists("DatabaseName")) {
     m_databaseName = jsonValue.GetString("DatabaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Endpoint"))
-  {
+  if (jsonValue.ValueExists("Endpoint")) {
     m_endpoint = jsonValue.GetString("Endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReaderEndpoint"))
-  {
+  if (jsonValue.ValueExists("ReaderEndpoint")) {
     m_readerEndpoint = jsonValue.GetString("ReaderEndpoint");
     m_readerEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomEndpoints"))
-  {
+  if (jsonValue.ValueExists("CustomEndpoints")) {
     Aws::Utils::Array<JsonView> customEndpointsJsonList = jsonValue.GetArray("CustomEndpoints");
-    for(unsigned customEndpointsIndex = 0; customEndpointsIndex < customEndpointsJsonList.GetLength(); ++customEndpointsIndex)
-    {
+    for (unsigned customEndpointsIndex = 0; customEndpointsIndex < customEndpointsJsonList.GetLength(); ++customEndpointsIndex) {
       m_customEndpoints.push_back(customEndpointsJsonList[customEndpointsIndex].AsString());
     }
     m_customEndpointsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiAz"))
-  {
+  if (jsonValue.ValueExists("MultiAz")) {
     m_multiAz = jsonValue.GetBool("MultiAz");
     m_multiAzHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Engine"))
-  {
+  if (jsonValue.ValueExists("Engine")) {
     m_engine = jsonValue.GetString("Engine");
     m_engineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngineVersion"))
-  {
+  if (jsonValue.ValueExists("EngineVersion")) {
     m_engineVersion = jsonValue.GetString("EngineVersion");
     m_engineVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MasterUsername"))
-  {
+  if (jsonValue.ValueExists("MasterUsername")) {
     m_masterUsername = jsonValue.GetString("MasterUsername");
     m_masterUsernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PreferredBackupWindow"))
-  {
+  if (jsonValue.ValueExists("PreferredBackupWindow")) {
     m_preferredBackupWindow = jsonValue.GetString("PreferredBackupWindow");
     m_preferredBackupWindowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
-  {
+  if (jsonValue.ValueExists("PreferredMaintenanceWindow")) {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadReplicaIdentifiers"))
-  {
+  if (jsonValue.ValueExists("ReadReplicaIdentifiers")) {
     Aws::Utils::Array<JsonView> readReplicaIdentifiersJsonList = jsonValue.GetArray("ReadReplicaIdentifiers");
-    for(unsigned readReplicaIdentifiersIndex = 0; readReplicaIdentifiersIndex < readReplicaIdentifiersJsonList.GetLength(); ++readReplicaIdentifiersIndex)
-    {
+    for (unsigned readReplicaIdentifiersIndex = 0; readReplicaIdentifiersIndex < readReplicaIdentifiersJsonList.GetLength();
+         ++readReplicaIdentifiersIndex) {
       m_readReplicaIdentifiers.push_back(readReplicaIdentifiersJsonList[readReplicaIdentifiersIndex].AsString());
     }
     m_readReplicaIdentifiersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcSecurityGroups"))
-  {
+  if (jsonValue.ValueExists("VpcSecurityGroups")) {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
-    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
-    {
+    for (unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex) {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HostedZoneId"))
-  {
+  if (jsonValue.ValueExists("HostedZoneId")) {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
     m_hostedZoneIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StorageEncrypted"))
-  {
+  if (jsonValue.ValueExists("StorageEncrypted")) {
     m_storageEncrypted = jsonValue.GetBool("StorageEncrypted");
     m_storageEncryptedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbClusterResourceId"))
-  {
+  if (jsonValue.ValueExists("DbClusterResourceId")) {
     m_dbClusterResourceId = jsonValue.GetString("DbClusterResourceId");
     m_dbClusterResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociatedRoles"))
-  {
+  if (jsonValue.ValueExists("AssociatedRoles")) {
     Aws::Utils::Array<JsonView> associatedRolesJsonList = jsonValue.GetArray("AssociatedRoles");
-    for(unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex)
-    {
+    for (unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex) {
       m_associatedRoles.push_back(associatedRolesJsonList[associatedRolesIndex].AsObject());
     }
     m_associatedRolesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClusterCreateTime"))
-  {
+  if (jsonValue.ValueExists("ClusterCreateTime")) {
     m_clusterCreateTime = jsonValue.GetString("ClusterCreateTime");
     m_clusterCreateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnabledCloudWatchLogsExports"))
-  {
+  if (jsonValue.ValueExists("EnabledCloudWatchLogsExports")) {
     Aws::Utils::Array<JsonView> enabledCloudWatchLogsExportsJsonList = jsonValue.GetArray("EnabledCloudWatchLogsExports");
-    for(unsigned enabledCloudWatchLogsExportsIndex = 0; enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex)
-    {
+    for (unsigned enabledCloudWatchLogsExportsIndex = 0;
+         enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex) {
       m_enabledCloudWatchLogsExports.push_back(enabledCloudWatchLogsExportsJsonList[enabledCloudWatchLogsExportsIndex].AsString());
     }
     m_enabledCloudWatchLogsExportsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngineMode"))
-  {
+  if (jsonValue.ValueExists("EngineMode")) {
     m_engineMode = jsonValue.GetString("EngineMode");
     m_engineModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletionProtection"))
-  {
+  if (jsonValue.ValueExists("DeletionProtection")) {
     m_deletionProtection = jsonValue.GetBool("DeletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HttpEndpointEnabled"))
-  {
+  if (jsonValue.ValueExists("HttpEndpointEnabled")) {
     m_httpEndpointEnabled = jsonValue.GetBool("HttpEndpointEnabled");
     m_httpEndpointEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActivityStreamStatus"))
-  {
+  if (jsonValue.ValueExists("ActivityStreamStatus")) {
     m_activityStreamStatus = jsonValue.GetString("ActivityStreamStatus");
     m_activityStreamStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CopyTagsToSnapshot"))
-  {
+  if (jsonValue.ValueExists("CopyTagsToSnapshot")) {
     m_copyTagsToSnapshot = jsonValue.GetBool("CopyTagsToSnapshot");
     m_copyTagsToSnapshotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CrossAccountClone"))
-  {
+  if (jsonValue.ValueExists("CrossAccountClone")) {
     m_crossAccountClone = jsonValue.GetBool("CrossAccountClone");
     m_crossAccountCloneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainMemberships"))
-  {
+  if (jsonValue.ValueExists("DomainMemberships")) {
     Aws::Utils::Array<JsonView> domainMembershipsJsonList = jsonValue.GetArray("DomainMemberships");
-    for(unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex)
-    {
+    for (unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex) {
       m_domainMemberships.push_back(domainMembershipsJsonList[domainMembershipsIndex].AsObject());
     }
     m_domainMembershipsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbClusterParameterGroup"))
-  {
+  if (jsonValue.ValueExists("DbClusterParameterGroup")) {
     m_dbClusterParameterGroup = jsonValue.GetString("DbClusterParameterGroup");
     m_dbClusterParameterGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbSubnetGroup"))
-  {
+  if (jsonValue.ValueExists("DbSubnetGroup")) {
     m_dbSubnetGroup = jsonValue.GetString("DbSubnetGroup");
     m_dbSubnetGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbClusterOptionGroupMemberships"))
-  {
+  if (jsonValue.ValueExists("DbClusterOptionGroupMemberships")) {
     Aws::Utils::Array<JsonView> dbClusterOptionGroupMembershipsJsonList = jsonValue.GetArray("DbClusterOptionGroupMemberships");
-    for(unsigned dbClusterOptionGroupMembershipsIndex = 0; dbClusterOptionGroupMembershipsIndex < dbClusterOptionGroupMembershipsJsonList.GetLength(); ++dbClusterOptionGroupMembershipsIndex)
-    {
+    for (unsigned dbClusterOptionGroupMembershipsIndex = 0;
+         dbClusterOptionGroupMembershipsIndex < dbClusterOptionGroupMembershipsJsonList.GetLength();
+         ++dbClusterOptionGroupMembershipsIndex) {
       m_dbClusterOptionGroupMemberships.push_back(dbClusterOptionGroupMembershipsJsonList[dbClusterOptionGroupMembershipsIndex].AsObject());
     }
     m_dbClusterOptionGroupMembershipsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbClusterIdentifier"))
-  {
+  if (jsonValue.ValueExists("DbClusterIdentifier")) {
     m_dbClusterIdentifier = jsonValue.GetString("DbClusterIdentifier");
     m_dbClusterIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DbClusterMembers"))
-  {
+  if (jsonValue.ValueExists("DbClusterMembers")) {
     Aws::Utils::Array<JsonView> dbClusterMembersJsonList = jsonValue.GetArray("DbClusterMembers");
-    for(unsigned dbClusterMembersIndex = 0; dbClusterMembersIndex < dbClusterMembersJsonList.GetLength(); ++dbClusterMembersIndex)
-    {
+    for (unsigned dbClusterMembersIndex = 0; dbClusterMembersIndex < dbClusterMembersJsonList.GetLength(); ++dbClusterMembersIndex) {
       m_dbClusterMembers.push_back(dbClusterMembersJsonList[dbClusterMembersIndex].AsObject());
     }
     m_dbClusterMembersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IamDatabaseAuthenticationEnabled"))
-  {
+  if (jsonValue.ValueExists("IamDatabaseAuthenticationEnabled")) {
     m_iamDatabaseAuthenticationEnabled = jsonValue.GetBool("IamDatabaseAuthenticationEnabled");
     m_iamDatabaseAuthenticationEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
-  {
+  if (jsonValue.ValueExists("AutoMinorVersionUpgrade")) {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRdsDbClusterDetails::Jsonize() const
-{
+JsonValue AwsRdsDbClusterDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_allocatedStorageHasBeenSet)
-  {
-   payload.WithInteger("AllocatedStorage", m_allocatedStorage);
-
+  if (m_allocatedStorageHasBeenSet) {
+    payload.WithInteger("AllocatedStorage", m_allocatedStorage);
   }
 
-  if(m_availabilityZonesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
-   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
-   {
-     availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
-   }
-   payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
-
+  if (m_availabilityZonesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+    }
+    payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
   }
 
-  if(m_backupRetentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("BackupRetentionPeriod", m_backupRetentionPeriod);
-
+  if (m_backupRetentionPeriodHasBeenSet) {
+    payload.WithInteger("BackupRetentionPeriod", m_backupRetentionPeriod);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("Endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("Endpoint", m_endpoint);
   }
 
-  if(m_readerEndpointHasBeenSet)
-  {
-   payload.WithString("ReaderEndpoint", m_readerEndpoint);
-
+  if (m_readerEndpointHasBeenSet) {
+    payload.WithString("ReaderEndpoint", m_readerEndpoint);
   }
 
-  if(m_customEndpointsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customEndpointsJsonList(m_customEndpoints.size());
-   for(unsigned customEndpointsIndex = 0; customEndpointsIndex < customEndpointsJsonList.GetLength(); ++customEndpointsIndex)
-   {
-     customEndpointsJsonList[customEndpointsIndex].AsString(m_customEndpoints[customEndpointsIndex]);
-   }
-   payload.WithArray("CustomEndpoints", std::move(customEndpointsJsonList));
-
+  if (m_customEndpointsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customEndpointsJsonList(m_customEndpoints.size());
+    for (unsigned customEndpointsIndex = 0; customEndpointsIndex < customEndpointsJsonList.GetLength(); ++customEndpointsIndex) {
+      customEndpointsJsonList[customEndpointsIndex].AsString(m_customEndpoints[customEndpointsIndex]);
+    }
+    payload.WithArray("CustomEndpoints", std::move(customEndpointsJsonList));
   }
 
-  if(m_multiAzHasBeenSet)
-  {
-   payload.WithBool("MultiAz", m_multiAz);
-
+  if (m_multiAzHasBeenSet) {
+    payload.WithBool("MultiAz", m_multiAz);
   }
 
-  if(m_engineHasBeenSet)
-  {
-   payload.WithString("Engine", m_engine);
-
+  if (m_engineHasBeenSet) {
+    payload.WithString("Engine", m_engine);
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
-   payload.WithString("EngineVersion", m_engineVersion);
-
+  if (m_engineVersionHasBeenSet) {
+    payload.WithString("EngineVersion", m_engineVersion);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_masterUsernameHasBeenSet)
-  {
-   payload.WithString("MasterUsername", m_masterUsername);
-
+  if (m_masterUsernameHasBeenSet) {
+    payload.WithString("MasterUsername", m_masterUsername);
   }
 
-  if(m_preferredBackupWindowHasBeenSet)
-  {
-   payload.WithString("PreferredBackupWindow", m_preferredBackupWindow);
-
+  if (m_preferredBackupWindowHasBeenSet) {
+    payload.WithString("PreferredBackupWindow", m_preferredBackupWindow);
   }
 
-  if(m_preferredMaintenanceWindowHasBeenSet)
-  {
-   payload.WithString("PreferredMaintenanceWindow", m_preferredMaintenanceWindow);
-
+  if (m_preferredMaintenanceWindowHasBeenSet) {
+    payload.WithString("PreferredMaintenanceWindow", m_preferredMaintenanceWindow);
   }
 
-  if(m_readReplicaIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> readReplicaIdentifiersJsonList(m_readReplicaIdentifiers.size());
-   for(unsigned readReplicaIdentifiersIndex = 0; readReplicaIdentifiersIndex < readReplicaIdentifiersJsonList.GetLength(); ++readReplicaIdentifiersIndex)
-   {
-     readReplicaIdentifiersJsonList[readReplicaIdentifiersIndex].AsString(m_readReplicaIdentifiers[readReplicaIdentifiersIndex]);
-   }
-   payload.WithArray("ReadReplicaIdentifiers", std::move(readReplicaIdentifiersJsonList));
-
+  if (m_readReplicaIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> readReplicaIdentifiersJsonList(m_readReplicaIdentifiers.size());
+    for (unsigned readReplicaIdentifiersIndex = 0; readReplicaIdentifiersIndex < readReplicaIdentifiersJsonList.GetLength();
+         ++readReplicaIdentifiersIndex) {
+      readReplicaIdentifiersJsonList[readReplicaIdentifiersIndex].AsString(m_readReplicaIdentifiers[readReplicaIdentifiersIndex]);
+    }
+    payload.WithArray("ReadReplicaIdentifiers", std::move(readReplicaIdentifiersJsonList));
   }
 
-  if(m_vpcSecurityGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
-   for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
-   {
-     vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
-   }
-   payload.WithArray("VpcSecurityGroups", std::move(vpcSecurityGroupsJsonList));
-
+  if (m_vpcSecurityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+    for (unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex) {
+      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
+    }
+    payload.WithArray("VpcSecurityGroups", std::move(vpcSecurityGroupsJsonList));
   }
 
-  if(m_hostedZoneIdHasBeenSet)
-  {
-   payload.WithString("HostedZoneId", m_hostedZoneId);
-
+  if (m_hostedZoneIdHasBeenSet) {
+    payload.WithString("HostedZoneId", m_hostedZoneId);
   }
 
-  if(m_storageEncryptedHasBeenSet)
-  {
-   payload.WithBool("StorageEncrypted", m_storageEncrypted);
-
+  if (m_storageEncryptedHasBeenSet) {
+    payload.WithBool("StorageEncrypted", m_storageEncrypted);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_dbClusterResourceIdHasBeenSet)
-  {
-   payload.WithString("DbClusterResourceId", m_dbClusterResourceId);
-
+  if (m_dbClusterResourceIdHasBeenSet) {
+    payload.WithString("DbClusterResourceId", m_dbClusterResourceId);
   }
 
-  if(m_associatedRolesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> associatedRolesJsonList(m_associatedRoles.size());
-   for(unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex)
-   {
-     associatedRolesJsonList[associatedRolesIndex].AsObject(m_associatedRoles[associatedRolesIndex].Jsonize());
-   }
-   payload.WithArray("AssociatedRoles", std::move(associatedRolesJsonList));
-
+  if (m_associatedRolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> associatedRolesJsonList(m_associatedRoles.size());
+    for (unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex) {
+      associatedRolesJsonList[associatedRolesIndex].AsObject(m_associatedRoles[associatedRolesIndex].Jsonize());
+    }
+    payload.WithArray("AssociatedRoles", std::move(associatedRolesJsonList));
   }
 
-  if(m_clusterCreateTimeHasBeenSet)
-  {
-   payload.WithString("ClusterCreateTime", m_clusterCreateTime);
-
+  if (m_clusterCreateTimeHasBeenSet) {
+    payload.WithString("ClusterCreateTime", m_clusterCreateTime);
   }
 
-  if(m_enabledCloudWatchLogsExportsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> enabledCloudWatchLogsExportsJsonList(m_enabledCloudWatchLogsExports.size());
-   for(unsigned enabledCloudWatchLogsExportsIndex = 0; enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex)
-   {
-     enabledCloudWatchLogsExportsJsonList[enabledCloudWatchLogsExportsIndex].AsString(m_enabledCloudWatchLogsExports[enabledCloudWatchLogsExportsIndex]);
-   }
-   payload.WithArray("EnabledCloudWatchLogsExports", std::move(enabledCloudWatchLogsExportsJsonList));
-
+  if (m_enabledCloudWatchLogsExportsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enabledCloudWatchLogsExportsJsonList(m_enabledCloudWatchLogsExports.size());
+    for (unsigned enabledCloudWatchLogsExportsIndex = 0;
+         enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex) {
+      enabledCloudWatchLogsExportsJsonList[enabledCloudWatchLogsExportsIndex].AsString(
+          m_enabledCloudWatchLogsExports[enabledCloudWatchLogsExportsIndex]);
+    }
+    payload.WithArray("EnabledCloudWatchLogsExports", std::move(enabledCloudWatchLogsExportsJsonList));
   }
 
-  if(m_engineModeHasBeenSet)
-  {
-   payload.WithString("EngineMode", m_engineMode);
-
+  if (m_engineModeHasBeenSet) {
+    payload.WithString("EngineMode", m_engineMode);
   }
 
-  if(m_deletionProtectionHasBeenSet)
-  {
-   payload.WithBool("DeletionProtection", m_deletionProtection);
-
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithBool("DeletionProtection", m_deletionProtection);
   }
 
-  if(m_httpEndpointEnabledHasBeenSet)
-  {
-   payload.WithBool("HttpEndpointEnabled", m_httpEndpointEnabled);
-
+  if (m_httpEndpointEnabledHasBeenSet) {
+    payload.WithBool("HttpEndpointEnabled", m_httpEndpointEnabled);
   }
 
-  if(m_activityStreamStatusHasBeenSet)
-  {
-   payload.WithString("ActivityStreamStatus", m_activityStreamStatus);
-
+  if (m_activityStreamStatusHasBeenSet) {
+    payload.WithString("ActivityStreamStatus", m_activityStreamStatus);
   }
 
-  if(m_copyTagsToSnapshotHasBeenSet)
-  {
-   payload.WithBool("CopyTagsToSnapshot", m_copyTagsToSnapshot);
-
+  if (m_copyTagsToSnapshotHasBeenSet) {
+    payload.WithBool("CopyTagsToSnapshot", m_copyTagsToSnapshot);
   }
 
-  if(m_crossAccountCloneHasBeenSet)
-  {
-   payload.WithBool("CrossAccountClone", m_crossAccountClone);
-
+  if (m_crossAccountCloneHasBeenSet) {
+    payload.WithBool("CrossAccountClone", m_crossAccountClone);
   }
 
-  if(m_domainMembershipsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> domainMembershipsJsonList(m_domainMemberships.size());
-   for(unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex)
-   {
-     domainMembershipsJsonList[domainMembershipsIndex].AsObject(m_domainMemberships[domainMembershipsIndex].Jsonize());
-   }
-   payload.WithArray("DomainMemberships", std::move(domainMembershipsJsonList));
-
+  if (m_domainMembershipsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> domainMembershipsJsonList(m_domainMemberships.size());
+    for (unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex) {
+      domainMembershipsJsonList[domainMembershipsIndex].AsObject(m_domainMemberships[domainMembershipsIndex].Jsonize());
+    }
+    payload.WithArray("DomainMemberships", std::move(domainMembershipsJsonList));
   }
 
-  if(m_dbClusterParameterGroupHasBeenSet)
-  {
-   payload.WithString("DbClusterParameterGroup", m_dbClusterParameterGroup);
-
+  if (m_dbClusterParameterGroupHasBeenSet) {
+    payload.WithString("DbClusterParameterGroup", m_dbClusterParameterGroup);
   }
 
-  if(m_dbSubnetGroupHasBeenSet)
-  {
-   payload.WithString("DbSubnetGroup", m_dbSubnetGroup);
-
+  if (m_dbSubnetGroupHasBeenSet) {
+    payload.WithString("DbSubnetGroup", m_dbSubnetGroup);
   }
 
-  if(m_dbClusterOptionGroupMembershipsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dbClusterOptionGroupMembershipsJsonList(m_dbClusterOptionGroupMemberships.size());
-   for(unsigned dbClusterOptionGroupMembershipsIndex = 0; dbClusterOptionGroupMembershipsIndex < dbClusterOptionGroupMembershipsJsonList.GetLength(); ++dbClusterOptionGroupMembershipsIndex)
-   {
-     dbClusterOptionGroupMembershipsJsonList[dbClusterOptionGroupMembershipsIndex].AsObject(m_dbClusterOptionGroupMemberships[dbClusterOptionGroupMembershipsIndex].Jsonize());
-   }
-   payload.WithArray("DbClusterOptionGroupMemberships", std::move(dbClusterOptionGroupMembershipsJsonList));
-
+  if (m_dbClusterOptionGroupMembershipsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dbClusterOptionGroupMembershipsJsonList(m_dbClusterOptionGroupMemberships.size());
+    for (unsigned dbClusterOptionGroupMembershipsIndex = 0;
+         dbClusterOptionGroupMembershipsIndex < dbClusterOptionGroupMembershipsJsonList.GetLength();
+         ++dbClusterOptionGroupMembershipsIndex) {
+      dbClusterOptionGroupMembershipsJsonList[dbClusterOptionGroupMembershipsIndex].AsObject(
+          m_dbClusterOptionGroupMemberships[dbClusterOptionGroupMembershipsIndex].Jsonize());
+    }
+    payload.WithArray("DbClusterOptionGroupMemberships", std::move(dbClusterOptionGroupMembershipsJsonList));
   }
 
-  if(m_dbClusterIdentifierHasBeenSet)
-  {
-   payload.WithString("DbClusterIdentifier", m_dbClusterIdentifier);
-
+  if (m_dbClusterIdentifierHasBeenSet) {
+    payload.WithString("DbClusterIdentifier", m_dbClusterIdentifier);
   }
 
-  if(m_dbClusterMembersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dbClusterMembersJsonList(m_dbClusterMembers.size());
-   for(unsigned dbClusterMembersIndex = 0; dbClusterMembersIndex < dbClusterMembersJsonList.GetLength(); ++dbClusterMembersIndex)
-   {
-     dbClusterMembersJsonList[dbClusterMembersIndex].AsObject(m_dbClusterMembers[dbClusterMembersIndex].Jsonize());
-   }
-   payload.WithArray("DbClusterMembers", std::move(dbClusterMembersJsonList));
-
+  if (m_dbClusterMembersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dbClusterMembersJsonList(m_dbClusterMembers.size());
+    for (unsigned dbClusterMembersIndex = 0; dbClusterMembersIndex < dbClusterMembersJsonList.GetLength(); ++dbClusterMembersIndex) {
+      dbClusterMembersJsonList[dbClusterMembersIndex].AsObject(m_dbClusterMembers[dbClusterMembersIndex].Jsonize());
+    }
+    payload.WithArray("DbClusterMembers", std::move(dbClusterMembersJsonList));
   }
 
-  if(m_iamDatabaseAuthenticationEnabledHasBeenSet)
-  {
-   payload.WithBool("IamDatabaseAuthenticationEnabled", m_iamDatabaseAuthenticationEnabled);
-
+  if (m_iamDatabaseAuthenticationEnabledHasBeenSet) {
+    payload.WithBool("IamDatabaseAuthenticationEnabled", m_iamDatabaseAuthenticationEnabled);
   }
 
-  if(m_autoMinorVersionUpgradeHasBeenSet)
-  {
-   payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
-
+  if (m_autoMinorVersionUpgradeHasBeenSet) {
+    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

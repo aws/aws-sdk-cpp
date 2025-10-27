@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
-#include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/security-ir/SecurityIRRequest.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityIR {
+namespace Model {
 
+/**
+ */
+class ListMembershipsRequest : public SecurityIRRequest {
+ public:
+  AWS_SECURITYIR_API ListMembershipsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListMemberships"; }
+
+  AWS_SECURITYIR_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>An optional string that, if supplied, must be copied from the output of a
+   * previous call to ListMemberships. When provided in this manner, the API fetches
+   * the next page of results. </p>
    */
-  class ListMembershipsRequest : public SecurityIRRequest
-  {
-  public:
-    AWS_SECURITYIR_API ListMembershipsRequest() = default;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListMembershipsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListMemberships"; }
+  ///@{
+  /**
+   * <p>Request element for ListMemberships to limit the number of responses.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListMembershipsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    AWS_SECURITYIR_API Aws::String SerializePayload() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>An optional string that, if supplied, must be copied from the output of a
-     * previous call to ListMemberships. When provided in this manner, the API fetches
-     * the next page of results. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListMembershipsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Request element for ListMemberships to limit the number of responses.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListMembershipsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityIR
+}  // namespace Aws

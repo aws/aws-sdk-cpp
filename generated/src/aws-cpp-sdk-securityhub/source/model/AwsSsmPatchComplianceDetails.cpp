@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsSsmPatchComplianceDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsSsmPatchComplianceDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsSsmPatchComplianceDetails::AwsSsmPatchComplianceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsSsmPatchComplianceDetails::AwsSsmPatchComplianceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsSsmPatchComplianceDetails& AwsSsmPatchComplianceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Patch"))
-  {
+AwsSsmPatchComplianceDetails& AwsSsmPatchComplianceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Patch")) {
     m_patch = jsonValue.GetObject("Patch");
     m_patchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsSsmPatchComplianceDetails::Jsonize() const
-{
+JsonValue AwsSsmPatchComplianceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_patchHasBeenSet)
-  {
-   payload.WithObject("Patch", m_patch.Jsonize());
-
+  if (m_patchHasBeenSet) {
+    payload.WithObject("Patch", m_patch.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

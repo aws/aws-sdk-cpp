@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CoverageNormalizedUnits::CoverageNormalizedUnits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoverageNormalizedUnits::CoverageNormalizedUnits(JsonView jsonValue) { *this = jsonValue; }
 
-CoverageNormalizedUnits& CoverageNormalizedUnits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OnDemandNormalizedUnits"))
-  {
+CoverageNormalizedUnits& CoverageNormalizedUnits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OnDemandNormalizedUnits")) {
     m_onDemandNormalizedUnits = jsonValue.GetString("OnDemandNormalizedUnits");
     m_onDemandNormalizedUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReservedNormalizedUnits"))
-  {
+  if (jsonValue.ValueExists("ReservedNormalizedUnits")) {
     m_reservedNormalizedUnits = jsonValue.GetString("ReservedNormalizedUnits");
     m_reservedNormalizedUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalRunningNormalizedUnits"))
-  {
+  if (jsonValue.ValueExists("TotalRunningNormalizedUnits")) {
     m_totalRunningNormalizedUnits = jsonValue.GetString("TotalRunningNormalizedUnits");
     m_totalRunningNormalizedUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CoverageNormalizedUnitsPercentage"))
-  {
+  if (jsonValue.ValueExists("CoverageNormalizedUnitsPercentage")) {
     m_coverageNormalizedUnitsPercentage = jsonValue.GetString("CoverageNormalizedUnitsPercentage");
     m_coverageNormalizedUnitsPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoverageNormalizedUnits::Jsonize() const
-{
+JsonValue CoverageNormalizedUnits::Jsonize() const {
   JsonValue payload;
 
-  if(m_onDemandNormalizedUnitsHasBeenSet)
-  {
-   payload.WithString("OnDemandNormalizedUnits", m_onDemandNormalizedUnits);
-
+  if (m_onDemandNormalizedUnitsHasBeenSet) {
+    payload.WithString("OnDemandNormalizedUnits", m_onDemandNormalizedUnits);
   }
 
-  if(m_reservedNormalizedUnitsHasBeenSet)
-  {
-   payload.WithString("ReservedNormalizedUnits", m_reservedNormalizedUnits);
-
+  if (m_reservedNormalizedUnitsHasBeenSet) {
+    payload.WithString("ReservedNormalizedUnits", m_reservedNormalizedUnits);
   }
 
-  if(m_totalRunningNormalizedUnitsHasBeenSet)
-  {
-   payload.WithString("TotalRunningNormalizedUnits", m_totalRunningNormalizedUnits);
-
+  if (m_totalRunningNormalizedUnitsHasBeenSet) {
+    payload.WithString("TotalRunningNormalizedUnits", m_totalRunningNormalizedUnits);
   }
 
-  if(m_coverageNormalizedUnitsPercentageHasBeenSet)
-  {
-   payload.WithString("CoverageNormalizedUnitsPercentage", m_coverageNormalizedUnitsPercentage);
-
+  if (m_coverageNormalizedUnitsPercentageHasBeenSet) {
+    payload.WithString("CoverageNormalizedUnitsPercentage", m_coverageNormalizedUnitsPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

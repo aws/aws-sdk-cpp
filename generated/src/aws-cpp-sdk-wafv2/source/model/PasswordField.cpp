@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/PasswordField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/PasswordField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-PasswordField::PasswordField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PasswordField::PasswordField(JsonView jsonValue) { *this = jsonValue; }
 
-PasswordField& PasswordField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Identifier"))
-  {
+PasswordField& PasswordField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");
     m_identifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PasswordField::Jsonize() const
-{
+JsonValue PasswordField::Jsonize() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

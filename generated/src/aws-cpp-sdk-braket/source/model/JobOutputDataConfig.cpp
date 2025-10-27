@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-JobOutputDataConfig::JobOutputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobOutputDataConfig::JobOutputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-JobOutputDataConfig& JobOutputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+JobOutputDataConfig& JobOutputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Path"))
-  {
+  if (jsonValue.ValueExists("s3Path")) {
     m_s3Path = jsonValue.GetString("s3Path");
     m_s3PathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobOutputDataConfig::Jsonize() const
-{
+JsonValue JobOutputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_s3PathHasBeenSet)
-  {
-   payload.WithString("s3Path", m_s3Path);
-
+  if (m_s3PathHasBeenSet) {
+    payload.WithString("s3Path", m_s3Path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

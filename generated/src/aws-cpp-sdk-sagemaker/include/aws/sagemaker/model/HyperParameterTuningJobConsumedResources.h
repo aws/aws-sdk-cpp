@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>The total resources consumed by your hyperparameter tuning job.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobConsumedResources">AWS
+ * API Reference</a></p>
+ */
+class HyperParameterTuningJobConsumedResources {
+ public:
+  AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources() = default;
+  AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The total resources consumed by your hyperparameter tuning job.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobConsumedResources">AWS
-   * API Reference</a></p>
+   * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
    */
-  class HyperParameterTuningJobConsumedResources
-  {
-  public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources() = default;
-    AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetRuntimeInSeconds() const { return m_runtimeInSeconds; }
+  inline bool RuntimeInSecondsHasBeenSet() const { return m_runtimeInSecondsHasBeenSet; }
+  inline void SetRuntimeInSeconds(int value) {
+    m_runtimeInSecondsHasBeenSet = true;
+    m_runtimeInSeconds = value;
+  }
+  inline HyperParameterTuningJobConsumedResources& WithRuntimeInSeconds(int value) {
+    SetRuntimeInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_runtimeInSeconds{0};
+  bool m_runtimeInSecondsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-     */
-    inline int GetRuntimeInSeconds() const { return m_runtimeInSeconds; }
-    inline bool RuntimeInSecondsHasBeenSet() const { return m_runtimeInSecondsHasBeenSet; }
-    inline void SetRuntimeInSeconds(int value) { m_runtimeInSecondsHasBeenSet = true; m_runtimeInSeconds = value; }
-    inline HyperParameterTuningJobConsumedResources& WithRuntimeInSeconds(int value) { SetRuntimeInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    int m_runtimeInSeconds{0};
-    bool m_runtimeInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

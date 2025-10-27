@@ -12,35 +12,25 @@ using namespace Aws::ARCRegionswitch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePlanRequest::SerializePayload() const
-{
+Aws::String DeletePlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeletePlanRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeletePlanRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ArcRegionSwitch.DeletePlan"));
   return headers;
-
 }
 
-
-
-DeletePlanRequest::EndpointParameters DeletePlanRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Static context parameters
-    parameters.emplace_back(Aws::String("UseControlPlaneEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
-    return parameters;
+DeletePlanRequest::EndpointParameters DeletePlanRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("UseControlPlaneEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
 }
-
-

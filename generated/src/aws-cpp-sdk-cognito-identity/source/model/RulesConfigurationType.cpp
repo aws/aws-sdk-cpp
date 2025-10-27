@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
 
-RulesConfigurationType::RulesConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RulesConfigurationType::RulesConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-RulesConfigurationType& RulesConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Rules"))
-  {
+RulesConfigurationType& RulesConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Rules")) {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
     m_rulesHasBeenSet = true;
@@ -37,24 +28,20 @@ RulesConfigurationType& RulesConfigurationType::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RulesConfigurationType::Jsonize() const
-{
+JsonValue RulesConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

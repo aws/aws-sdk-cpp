@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    EKS,
-    ECS,
-    EC2
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class ResourceType { NOT_SET, EKS, ECS, EC2 };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_GUARDDUTY_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

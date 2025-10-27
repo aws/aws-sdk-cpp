@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/gameliftstreams/GameLiftStreamsEndpointRules.h>
+#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GameLiftStreams
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GameLiftStreams {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GameLiftStreamsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GameLiftStreamsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GAMELIFTSTREAMS_API GameLiftStreamsEndpointProvider : public GameLiftStreamsDefaultEpProviderBase
-{
-public:
-    using GameLiftStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GAMELIFTSTREAMS_API GameLiftStreamsEndpointProvider : public GameLiftStreamsDefaultEpProviderBase {
+ public:
+  using GameLiftStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GameLiftStreamsEndpointProvider()
-      : GameLiftStreamsDefaultEpProviderBase(Aws::GameLiftStreams::GameLiftStreamsEndpointRules::GetRulesBlob(), Aws::GameLiftStreams::GameLiftStreamsEndpointRules::RulesBlobSize)
-    {}
+  GameLiftStreamsEndpointProvider()
+      : GameLiftStreamsDefaultEpProviderBase(Aws::GameLiftStreams::GameLiftStreamsEndpointRules::GetRulesBlob(),
+                                             Aws::GameLiftStreams::GameLiftStreamsEndpointRules::RulesBlobSize) {}
 
-    ~GameLiftStreamsEndpointProvider()
-    {
-    }
+  ~GameLiftStreamsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GameLiftStreams
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GameLiftStreams
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class AnomalyType
-  {
-    NOT_SET,
-    CAUSAL,
-    CONTEXTUAL
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class AnomalyType { NOT_SET, CAUSAL, CONTEXTUAL };
 
-namespace AnomalyTypeMapper
-{
+namespace AnomalyTypeMapper {
 AWS_DEVOPSGURU_API AnomalyType GetAnomalyTypeForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForAnomalyType(AnomalyType value);
-} // namespace AnomalyTypeMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace AnomalyTypeMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

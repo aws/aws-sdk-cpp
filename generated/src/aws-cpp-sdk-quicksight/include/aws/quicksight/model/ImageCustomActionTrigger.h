@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ImageCustomActionTrigger
-  {
-    NOT_SET,
-    CLICK,
-    MENU
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ImageCustomActionTrigger { NOT_SET, CLICK, MENU };
 
-namespace ImageCustomActionTriggerMapper
-{
+namespace ImageCustomActionTriggerMapper {
 AWS_QUICKSIGHT_API ImageCustomActionTrigger GetImageCustomActionTriggerForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForImageCustomActionTrigger(ImageCustomActionTrigger value);
-} // namespace ImageCustomActionTriggerMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ImageCustomActionTriggerMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

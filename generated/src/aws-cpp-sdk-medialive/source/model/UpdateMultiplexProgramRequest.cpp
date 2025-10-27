@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/UpdateMultiplexProgramRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/UpdateMultiplexProgramRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateMultiplexProgramRequest::SerializePayload() const
-{
+Aws::String UpdateMultiplexProgramRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_multiplexProgramSettingsHasBeenSet)
-  {
-   payload.WithObject("multiplexProgramSettings", m_multiplexProgramSettings.Jsonize());
-
+  if (m_multiplexProgramSettingsHasBeenSet) {
+    payload.WithObject("multiplexProgramSettings", m_multiplexProgramSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

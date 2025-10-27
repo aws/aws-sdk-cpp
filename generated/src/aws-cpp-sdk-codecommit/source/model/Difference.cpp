@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-Difference::Difference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Difference::Difference(JsonView jsonValue) { *this = jsonValue; }
 
-Difference& Difference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("beforeBlob"))
-  {
+Difference& Difference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("beforeBlob")) {
     m_beforeBlob = jsonValue.GetObject("beforeBlob");
     m_beforeBlobHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("afterBlob"))
-  {
+  if (jsonValue.ValueExists("afterBlob")) {
     m_afterBlob = jsonValue.GetObject("afterBlob");
     m_afterBlobHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("changeType"))
-  {
+  if (jsonValue.ValueExists("changeType")) {
     m_changeType = ChangeTypeEnumMapper::GetChangeTypeEnumForName(jsonValue.GetString("changeType"));
     m_changeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Difference::Jsonize() const
-{
+JsonValue Difference::Jsonize() const {
   JsonValue payload;
 
-  if(m_beforeBlobHasBeenSet)
-  {
-   payload.WithObject("beforeBlob", m_beforeBlob.Jsonize());
-
+  if (m_beforeBlobHasBeenSet) {
+    payload.WithObject("beforeBlob", m_beforeBlob.Jsonize());
   }
 
-  if(m_afterBlobHasBeenSet)
-  {
-   payload.WithObject("afterBlob", m_afterBlob.Jsonize());
-
+  if (m_afterBlobHasBeenSet) {
+    payload.WithObject("afterBlob", m_afterBlob.Jsonize());
   }
 
-  if(m_changeTypeHasBeenSet)
-  {
-   payload.WithString("changeType", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_changeType));
+  if (m_changeTypeHasBeenSet) {
+    payload.WithString("changeType", ChangeTypeEnumMapper::GetNameForChangeTypeEnum(m_changeType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

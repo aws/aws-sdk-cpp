@@ -5,12 +5,8 @@
 
 #include <aws/securityhub/SecurityHubEndpointProvider.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SecurityHub
-} // namespace Aws
+namespace Aws {
+namespace SecurityHub {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SecurityHub
+}  // namespace Aws

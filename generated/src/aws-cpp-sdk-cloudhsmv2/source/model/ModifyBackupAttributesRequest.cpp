@@ -12,33 +12,22 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ModifyBackupAttributesRequest::SerializePayload() const
-{
+Aws::String ModifyBackupAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_backupIdHasBeenSet)
-  {
-   payload.WithString("BackupId", m_backupId);
-
+  if (m_backupIdHasBeenSet) {
+    payload.WithString("BackupId", m_backupId);
   }
 
-  if(m_neverExpiresHasBeenSet)
-  {
-   payload.WithBool("NeverExpires", m_neverExpires);
-
+  if (m_neverExpiresHasBeenSet) {
+    payload.WithBool("NeverExpires", m_neverExpires);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ModifyBackupAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ModifyBackupAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.ModifyBackupAttributes"));
   return headers;
-
 }
-
-
-
-

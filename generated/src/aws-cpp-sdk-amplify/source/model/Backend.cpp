@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-Backend::Backend(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Backend::Backend(JsonView jsonValue) { *this = jsonValue; }
 
-Backend& Backend::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stackArn"))
-  {
+Backend& Backend::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stackArn")) {
     m_stackArn = jsonValue.GetString("stackArn");
     m_stackArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Backend::Jsonize() const
-{
+JsonValue Backend::Jsonize() const {
   JsonValue payload;
 
-  if(m_stackArnHasBeenSet)
-  {
-   payload.WithString("stackArn", m_stackArn);
-
+  if (m_stackArnHasBeenSet) {
+    payload.WithString("stackArn", m_stackArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

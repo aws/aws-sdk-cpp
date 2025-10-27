@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/GeospatialHeatmapConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/GeospatialHeatmapConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-GeospatialHeatmapConfiguration& GeospatialHeatmapConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HeatmapColor"))
-  {
+GeospatialHeatmapConfiguration& GeospatialHeatmapConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HeatmapColor")) {
     m_heatmapColor = jsonValue.GetObject("HeatmapColor");
     m_heatmapColorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeospatialHeatmapConfiguration::Jsonize() const
-{
+JsonValue GeospatialHeatmapConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_heatmapColorHasBeenSet)
-  {
-   payload.WithObject("HeatmapColor", m_heatmapColor.Jsonize());
-
+  if (m_heatmapColorHasBeenSet) {
+    payload.WithObject("HeatmapColor", m_heatmapColor.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

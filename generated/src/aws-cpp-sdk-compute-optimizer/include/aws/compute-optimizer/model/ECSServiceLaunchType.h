@@ -7,25 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class ECSServiceLaunchType
-  {
-    NOT_SET,
-    EC2,
-    Fargate
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class ECSServiceLaunchType { NOT_SET, EC2, Fargate };
 
-namespace ECSServiceLaunchTypeMapper
-{
+namespace ECSServiceLaunchTypeMapper {
 AWS_COMPUTEOPTIMIZER_API ECSServiceLaunchType GetECSServiceLaunchTypeForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForECSServiceLaunchType(ECSServiceLaunchType value);
-} // namespace ECSServiceLaunchTypeMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace ECSServiceLaunchTypeMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

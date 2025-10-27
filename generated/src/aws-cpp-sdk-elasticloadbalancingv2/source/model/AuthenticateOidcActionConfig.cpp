@@ -3,115 +3,97 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/AuthenticateOidcActionConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/AuthenticateOidcActionConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const XmlNode& xmlNode)
-{
+AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
-    if(!issuerNode.IsNull())
-    {
+    if (!issuerNode.IsNull()) {
       m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("AuthorizationEndpoint");
-    if(!authorizationEndpointNode.IsNull())
-    {
+    if (!authorizationEndpointNode.IsNull()) {
       m_authorizationEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationEndpointNode.GetText());
       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("TokenEndpoint");
-    if(!tokenEndpointNode.IsNull())
-    {
+    if (!tokenEndpointNode.IsNull()) {
       m_tokenEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(tokenEndpointNode.GetText());
       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("UserInfoEndpoint");
-    if(!userInfoEndpointNode.IsNull())
-    {
+    if (!userInfoEndpointNode.IsNull()) {
       m_userInfoEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(userInfoEndpointNode.GetText());
       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("ClientId");
-    if(!clientIdNode.IsNull())
-    {
+    if (!clientIdNode.IsNull()) {
       m_clientId = Aws::Utils::Xml::DecodeEscapedXmlText(clientIdNode.GetText());
       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("ClientSecret");
-    if(!clientSecretNode.IsNull())
-    {
+    if (!clientSecretNode.IsNull()) {
       m_clientSecret = Aws::Utils::Xml::DecodeEscapedXmlText(clientSecretNode.GetText());
       m_clientSecretHasBeenSet = true;
     }
     XmlNode sessionCookieNameNode = resultNode.FirstChild("SessionCookieName");
-    if(!sessionCookieNameNode.IsNull())
-    {
+    if (!sessionCookieNameNode.IsNull()) {
       m_sessionCookieName = Aws::Utils::Xml::DecodeEscapedXmlText(sessionCookieNameNode.GetText());
       m_sessionCookieNameHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
-    if(!scopeNode.IsNull())
-    {
+    if (!scopeNode.IsNull()) {
       m_scope = Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText());
       m_scopeHasBeenSet = true;
     }
     XmlNode sessionTimeoutNode = resultNode.FirstChild("SessionTimeout");
-    if(!sessionTimeoutNode.IsNull())
-    {
-      m_sessionTimeout = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutNode.GetText()).c_str()).c_str());
+    if (!sessionTimeoutNode.IsNull()) {
+      m_sessionTimeout = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutNode.GetText()).c_str()).c_str());
       m_sessionTimeoutHasBeenSet = true;
     }
     XmlNode authenticationRequestExtraParamsNode = resultNode.FirstChild("AuthenticationRequestExtraParams");
 
-    if(!authenticationRequestExtraParamsNode.IsNull())
-    {
+    if (!authenticationRequestExtraParamsNode.IsNull()) {
       XmlNode authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsNode.FirstChild("entry");
       m_authenticationRequestExtraParamsHasBeenSet = !authenticationRequestExtraParamsEntry.IsNull();
-      while(!authenticationRequestExtraParamsEntry.IsNull())
-      {
+      while (!authenticationRequestExtraParamsEntry.IsNull()) {
         XmlNode keyNode = authenticationRequestExtraParamsEntry.FirstChild("key");
         XmlNode valueNode = authenticationRequestExtraParamsEntry.FirstChild("value");
-        m_authenticationRequestExtraParams[keyNode.GetText()] =
-            valueNode.GetText();
+        m_authenticationRequestExtraParams[keyNode.GetText()] = valueNode.GetText();
         authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsEntry.NextNode("entry");
       }
 
       m_authenticationRequestExtraParamsHasBeenSet = true;
     }
     XmlNode onUnauthenticatedRequestNode = resultNode.FirstChild("OnUnauthenticatedRequest");
-    if(!onUnauthenticatedRequestNode.IsNull())
-    {
-      m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()));
+    if (!onUnauthenticatedRequestNode.IsNull()) {
+      m_onUnauthenticatedRequest =
+          AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(
+              StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()));
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
     XmlNode useExistingClientSecretNode = resultNode.FirstChild("UseExistingClientSecret");
-    if(!useExistingClientSecretNode.IsNull())
-    {
-      m_useExistingClientSecret = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useExistingClientSecretNode.GetText()).c_str()).c_str());
+    if (!useExistingClientSecretNode.IsNull()) {
+      m_useExistingClientSecret = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useExistingClientSecretNode.GetText()).c_str()).c_str());
       m_useExistingClientSecretHasBeenSet = true;
     }
   }
@@ -119,138 +101,119 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
   return *this;
 }
 
-void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_issuerHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Issuer=" << StringUtils::URLEncode(m_issuer.c_str()) << "&";
+void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                  const char* locationValue) const {
+  if (m_issuerHasBeenSet) {
+    oStream << location << index << locationValue << ".Issuer=" << StringUtils::URLEncode(m_issuer.c_str()) << "&";
   }
 
-  if(m_authorizationEndpointHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AuthorizationEndpoint=" << StringUtils::URLEncode(m_authorizationEndpoint.c_str()) << "&";
+  if (m_authorizationEndpointHasBeenSet) {
+    oStream << location << index << locationValue << ".AuthorizationEndpoint=" << StringUtils::URLEncode(m_authorizationEndpoint.c_str())
+            << "&";
   }
 
-  if(m_tokenEndpointHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TokenEndpoint=" << StringUtils::URLEncode(m_tokenEndpoint.c_str()) << "&";
+  if (m_tokenEndpointHasBeenSet) {
+    oStream << location << index << locationValue << ".TokenEndpoint=" << StringUtils::URLEncode(m_tokenEndpoint.c_str()) << "&";
   }
 
-  if(m_userInfoEndpointHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UserInfoEndpoint=" << StringUtils::URLEncode(m_userInfoEndpoint.c_str()) << "&";
+  if (m_userInfoEndpointHasBeenSet) {
+    oStream << location << index << locationValue << ".UserInfoEndpoint=" << StringUtils::URLEncode(m_userInfoEndpoint.c_str()) << "&";
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ClientId=" << StringUtils::URLEncode(m_clientId.c_str()) << "&";
+  if (m_clientIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ClientId=" << StringUtils::URLEncode(m_clientId.c_str()) << "&";
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ClientSecret=" << StringUtils::URLEncode(m_clientSecret.c_str()) << "&";
+  if (m_clientSecretHasBeenSet) {
+    oStream << location << index << locationValue << ".ClientSecret=" << StringUtils::URLEncode(m_clientSecret.c_str()) << "&";
   }
 
-  if(m_sessionCookieNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SessionCookieName=" << StringUtils::URLEncode(m_sessionCookieName.c_str()) << "&";
+  if (m_sessionCookieNameHasBeenSet) {
+    oStream << location << index << locationValue << ".SessionCookieName=" << StringUtils::URLEncode(m_sessionCookieName.c_str()) << "&";
   }
 
-  if(m_scopeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(m_scope.c_str()) << "&";
+  if (m_scopeHasBeenSet) {
+    oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(m_scope.c_str()) << "&";
   }
 
-  if(m_sessionTimeoutHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SessionTimeout=" << m_sessionTimeout << "&";
+  if (m_sessionTimeoutHasBeenSet) {
+    oStream << location << index << locationValue << ".SessionTimeout=" << m_sessionTimeout << "&";
   }
 
-  if(m_authenticationRequestExtraParamsHasBeenSet)
-  {
-      unsigned authenticationRequestExtraParamsIdx = 1;
-      for(auto& item : m_authenticationRequestExtraParams)
-      {
-        oStream << location << index << locationValue << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".key="
-            << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location << index << locationValue << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
-            << StringUtils::URLEncode(item.second.c_str()) << "&";
-        authenticationRequestExtraParamsIdx++;
-      }
+  if (m_authenticationRequestExtraParamsHasBeenSet) {
+    unsigned authenticationRequestExtraParamsIdx = 1;
+    for (auto& item : m_authenticationRequestExtraParams) {
+      oStream << location << index << locationValue << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx
+              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      oStream << location << index << locationValue << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx
+              << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
+      authenticationRequestExtraParamsIdx++;
+    }
   }
 
-  if(m_onUnauthenticatedRequestHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
+  if (m_onUnauthenticatedRequestHasBeenSet) {
+    oStream << location << index << locationValue << ".OnUnauthenticatedRequest="
+            << StringUtils::URLEncode(
+                   AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(
+                       m_onUnauthenticatedRequest))
+            << "&";
   }
 
-  if(m_useExistingClientSecretHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
-  }
-
-}
-
-void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_issuerHasBeenSet)
-  {
-      oStream << location << ".Issuer=" << StringUtils::URLEncode(m_issuer.c_str()) << "&";
-  }
-  if(m_authorizationEndpointHasBeenSet)
-  {
-      oStream << location << ".AuthorizationEndpoint=" << StringUtils::URLEncode(m_authorizationEndpoint.c_str()) << "&";
-  }
-  if(m_tokenEndpointHasBeenSet)
-  {
-      oStream << location << ".TokenEndpoint=" << StringUtils::URLEncode(m_tokenEndpoint.c_str()) << "&";
-  }
-  if(m_userInfoEndpointHasBeenSet)
-  {
-      oStream << location << ".UserInfoEndpoint=" << StringUtils::URLEncode(m_userInfoEndpoint.c_str()) << "&";
-  }
-  if(m_clientIdHasBeenSet)
-  {
-      oStream << location << ".ClientId=" << StringUtils::URLEncode(m_clientId.c_str()) << "&";
-  }
-  if(m_clientSecretHasBeenSet)
-  {
-      oStream << location << ".ClientSecret=" << StringUtils::URLEncode(m_clientSecret.c_str()) << "&";
-  }
-  if(m_sessionCookieNameHasBeenSet)
-  {
-      oStream << location << ".SessionCookieName=" << StringUtils::URLEncode(m_sessionCookieName.c_str()) << "&";
-  }
-  if(m_scopeHasBeenSet)
-  {
-      oStream << location << ".Scope=" << StringUtils::URLEncode(m_scope.c_str()) << "&";
-  }
-  if(m_sessionTimeoutHasBeenSet)
-  {
-      oStream << location << ".SessionTimeout=" << m_sessionTimeout << "&";
-  }
-  if(m_authenticationRequestExtraParamsHasBeenSet)
-  {
-      unsigned authenticationRequestExtraParamsIdx = 1;
-      for(auto& item : m_authenticationRequestExtraParams)
-      {
-        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".key="
-            << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
-            << StringUtils::URLEncode(item.second.c_str()) << "&";
-        authenticationRequestExtraParamsIdx++;
-      }
-  }
-  if(m_onUnauthenticatedRequestHasBeenSet)
-  {
-      oStream << location << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
-  }
-  if(m_useExistingClientSecretHasBeenSet)
-  {
-      oStream << location << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
+  if (m_useExistingClientSecretHasBeenSet) {
+    oStream << location << index << locationValue << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_issuerHasBeenSet) {
+    oStream << location << ".Issuer=" << StringUtils::URLEncode(m_issuer.c_str()) << "&";
+  }
+  if (m_authorizationEndpointHasBeenSet) {
+    oStream << location << ".AuthorizationEndpoint=" << StringUtils::URLEncode(m_authorizationEndpoint.c_str()) << "&";
+  }
+  if (m_tokenEndpointHasBeenSet) {
+    oStream << location << ".TokenEndpoint=" << StringUtils::URLEncode(m_tokenEndpoint.c_str()) << "&";
+  }
+  if (m_userInfoEndpointHasBeenSet) {
+    oStream << location << ".UserInfoEndpoint=" << StringUtils::URLEncode(m_userInfoEndpoint.c_str()) << "&";
+  }
+  if (m_clientIdHasBeenSet) {
+    oStream << location << ".ClientId=" << StringUtils::URLEncode(m_clientId.c_str()) << "&";
+  }
+  if (m_clientSecretHasBeenSet) {
+    oStream << location << ".ClientSecret=" << StringUtils::URLEncode(m_clientSecret.c_str()) << "&";
+  }
+  if (m_sessionCookieNameHasBeenSet) {
+    oStream << location << ".SessionCookieName=" << StringUtils::URLEncode(m_sessionCookieName.c_str()) << "&";
+  }
+  if (m_scopeHasBeenSet) {
+    oStream << location << ".Scope=" << StringUtils::URLEncode(m_scope.c_str()) << "&";
+  }
+  if (m_sessionTimeoutHasBeenSet) {
+    oStream << location << ".SessionTimeout=" << m_sessionTimeout << "&";
+  }
+  if (m_authenticationRequestExtraParamsHasBeenSet) {
+    unsigned authenticationRequestExtraParamsIdx = 1;
+    for (auto& item : m_authenticationRequestExtraParams) {
+      oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx
+              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx
+              << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
+      authenticationRequestExtraParamsIdx++;
+    }
+  }
+  if (m_onUnauthenticatedRequestHasBeenSet) {
+    oStream << location << ".OnUnauthenticatedRequest="
+            << StringUtils::URLEncode(
+                   AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(
+                       m_onUnauthenticatedRequest))
+            << "&";
+  }
+  if (m_useExistingClientSecretHasBeenSet) {
+    oStream << location << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

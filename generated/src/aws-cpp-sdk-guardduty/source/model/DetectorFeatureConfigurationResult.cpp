@@ -3,48 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/DetectorFeatureConfigurationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/DetectorFeatureConfigurationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-DetectorFeatureConfigurationResult::DetectorFeatureConfigurationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectorFeatureConfigurationResult::DetectorFeatureConfigurationResult(JsonView jsonValue) { *this = jsonValue; }
 
-DetectorFeatureConfigurationResult& DetectorFeatureConfigurationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DetectorFeatureConfigurationResult& DetectorFeatureConfigurationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = DetectorFeatureResultMapper::GetDetectorFeatureResultForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("additionalConfiguration"))
-  {
+  if (jsonValue.ValueExists("additionalConfiguration")) {
     Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
-    for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
-    {
+    for (unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength();
+         ++additionalConfigurationIndex) {
       m_additionalConfiguration.push_back(additionalConfigurationJsonList[additionalConfigurationIndex].AsObject());
     }
     m_additionalConfigurationHasBeenSet = true;
@@ -52,39 +41,34 @@ DetectorFeatureConfigurationResult& DetectorFeatureConfigurationResult::operator
   return *this;
 }
 
-JsonValue DetectorFeatureConfigurationResult::Jsonize() const
-{
+JsonValue DetectorFeatureConfigurationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", DetectorFeatureResultMapper::GetNameForDetectorFeatureResult(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", DetectorFeatureResultMapper::GetNameForDetectorFeatureResult(m_name));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_additionalConfigurationHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> additionalConfigurationJsonList(m_additionalConfiguration.size());
-   for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
-   {
-     additionalConfigurationJsonList[additionalConfigurationIndex].AsObject(m_additionalConfiguration[additionalConfigurationIndex].Jsonize());
-   }
-   payload.WithArray("additionalConfiguration", std::move(additionalConfigurationJsonList));
-
+  if (m_additionalConfigurationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalConfigurationJsonList(m_additionalConfiguration.size());
+    for (unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength();
+         ++additionalConfigurationIndex) {
+      additionalConfigurationJsonList[additionalConfigurationIndex].AsObject(
+          m_additionalConfiguration[additionalConfigurationIndex].Jsonize());
+    }
+    payload.WithArray("additionalConfiguration", std::move(additionalConfigurationJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

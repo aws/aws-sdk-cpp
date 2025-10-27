@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceResult.h>
 
 #include <utility>
 
@@ -17,37 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListClientDevicesAssociatedWithCoreDeviceResult::ListClientDevicesAssociatedWithCoreDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListClientDevicesAssociatedWithCoreDeviceResult::ListClientDevicesAssociatedWithCoreDeviceResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListClientDevicesAssociatedWithCoreDeviceResult& ListClientDevicesAssociatedWithCoreDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListClientDevicesAssociatedWithCoreDeviceResult& ListClientDevicesAssociatedWithCoreDeviceResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("associatedClientDevices"))
-  {
+  if (jsonValue.ValueExists("associatedClientDevices")) {
     Aws::Utils::Array<JsonView> associatedClientDevicesJsonList = jsonValue.GetArray("associatedClientDevices");
-    for(unsigned associatedClientDevicesIndex = 0; associatedClientDevicesIndex < associatedClientDevicesJsonList.GetLength(); ++associatedClientDevicesIndex)
-    {
+    for (unsigned associatedClientDevicesIndex = 0; associatedClientDevicesIndex < associatedClientDevicesJsonList.GetLength();
+         ++associatedClientDevicesIndex) {
       m_associatedClientDevices.push_back(associatedClientDevicesJsonList[associatedClientDevicesIndex].AsObject());
     }
     m_associatedClientDevicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

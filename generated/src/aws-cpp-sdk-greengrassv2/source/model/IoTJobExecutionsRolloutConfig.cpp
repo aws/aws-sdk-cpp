@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/IoTJobExecutionsRolloutConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/IoTJobExecutionsRolloutConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-IoTJobExecutionsRolloutConfig::IoTJobExecutionsRolloutConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IoTJobExecutionsRolloutConfig::IoTJobExecutionsRolloutConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IoTJobExecutionsRolloutConfig& IoTJobExecutionsRolloutConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exponentialRate"))
-  {
+IoTJobExecutionsRolloutConfig& IoTJobExecutionsRolloutConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exponentialRate")) {
     m_exponentialRate = jsonValue.GetObject("exponentialRate");
     m_exponentialRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximumPerMinute"))
-  {
+  if (jsonValue.ValueExists("maximumPerMinute")) {
     m_maximumPerMinute = jsonValue.GetInteger("maximumPerMinute");
     m_maximumPerMinuteHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IoTJobExecutionsRolloutConfig::Jsonize() const
-{
+JsonValue IoTJobExecutionsRolloutConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_exponentialRateHasBeenSet)
-  {
-   payload.WithObject("exponentialRate", m_exponentialRate.Jsonize());
-
+  if (m_exponentialRateHasBeenSet) {
+    payload.WithObject("exponentialRate", m_exponentialRate.Jsonize());
   }
 
-  if(m_maximumPerMinuteHasBeenSet)
-  {
-   payload.WithInteger("maximumPerMinute", m_maximumPerMinute);
-
+  if (m_maximumPerMinuteHasBeenSet) {
+    payload.WithInteger("maximumPerMinute", m_maximumPerMinute);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

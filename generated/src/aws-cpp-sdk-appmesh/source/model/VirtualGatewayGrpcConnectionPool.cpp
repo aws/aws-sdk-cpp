@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayGrpcConnectionPool::VirtualGatewayGrpcConnectionPool(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayGrpcConnectionPool::VirtualGatewayGrpcConnectionPool(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayGrpcConnectionPool& VirtualGatewayGrpcConnectionPool::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxRequests"))
-  {
+VirtualGatewayGrpcConnectionPool& VirtualGatewayGrpcConnectionPool::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxRequests")) {
     m_maxRequests = jsonValue.GetInteger("maxRequests");
     m_maxRequestsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayGrpcConnectionPool::Jsonize() const
-{
+JsonValue VirtualGatewayGrpcConnectionPool::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxRequestsHasBeenSet)
-  {
-   payload.WithInteger("maxRequests", m_maxRequests);
-
+  if (m_maxRequestsHasBeenSet) {
+    payload.WithInteger("maxRequests", m_maxRequests);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/CreateSegmentDefinitionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/customer-profiles/model/CreateSegmentDefinitionResult.h>
 
 #include <utility>
 
@@ -17,44 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSegmentDefinitionResult::CreateSegmentDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateSegmentDefinitionResult::CreateSegmentDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateSegmentDefinitionResult& CreateSegmentDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateSegmentDefinitionResult& CreateSegmentDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SegmentDefinitionName"))
-  {
+  if (jsonValue.ValueExists("SegmentDefinitionName")) {
     m_segmentDefinitionName = jsonValue.GetString("SegmentDefinitionName");
     m_segmentDefinitionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentDefinitionArn"))
-  {
+  if (jsonValue.ValueExists("SegmentDefinitionArn")) {
     m_segmentDefinitionArn = jsonValue.GetString("SegmentDefinitionArn");
     m_segmentDefinitionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -62,12 +51,10 @@ CreateSegmentDefinitionResult& CreateSegmentDefinitionResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

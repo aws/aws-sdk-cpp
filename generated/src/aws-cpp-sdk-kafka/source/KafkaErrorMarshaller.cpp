@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Kafka;
 
-AWSError<CoreErrors> KafkaErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KafkaErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KafkaErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

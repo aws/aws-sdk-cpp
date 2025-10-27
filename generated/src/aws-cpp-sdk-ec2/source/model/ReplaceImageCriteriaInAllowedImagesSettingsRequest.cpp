@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReplaceImageCriteriaInAllowedImagesSettingsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReplaceImageCriteriaInAllowedImagesSettingsRequest::SerializePayload() const
-{
+Aws::String ReplaceImageCriteriaInAllowedImagesSettingsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReplaceImageCriteriaInAllowedImagesSettings&";
-  if(m_imageCriteriaHasBeenSet)
-  {
+  if (m_imageCriteriaHasBeenSet) {
     unsigned imageCriteriaCount = 1;
-    for(auto& item : m_imageCriteria)
-    {
+    for (auto& item : m_imageCriteria) {
       item.OutputToStream(ss, "ImageCriterion.", imageCriteriaCount, "");
       imageCriteriaCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,6 @@ Aws::String ReplaceImageCriteriaInAllowedImagesSettingsRequest::SerializePayload
   return ss.str();
 }
 
-
-void  ReplaceImageCriteriaInAllowedImagesSettingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ReplaceImageCriteriaInAllowedImagesSettingsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

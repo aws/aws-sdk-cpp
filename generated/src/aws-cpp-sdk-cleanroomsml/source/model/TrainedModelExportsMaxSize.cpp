@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-TrainedModelExportsMaxSize::TrainedModelExportsMaxSize(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrainedModelExportsMaxSize::TrainedModelExportsMaxSize(JsonView jsonValue) { *this = jsonValue; }
 
-TrainedModelExportsMaxSize& TrainedModelExportsMaxSize::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unit"))
-  {
+TrainedModelExportsMaxSize& TrainedModelExportsMaxSize::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unit")) {
     m_unit = TrainedModelExportsMaxSizeUnitTypeMapper::GetTrainedModelExportsMaxSizeUnitTypeForName(jsonValue.GetString("unit"));
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrainedModelExportsMaxSize::Jsonize() const
-{
+JsonValue TrainedModelExportsMaxSize::Jsonize() const {
   JsonValue payload;
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("unit", TrainedModelExportsMaxSizeUnitTypeMapper::GetNameForTrainedModelExportsMaxSizeUnitType(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", TrainedModelExportsMaxSizeUnitTypeMapper::GetNameForTrainedModelExportsMaxSizeUnitType(m_unit));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

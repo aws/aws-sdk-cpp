@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class LogType
-  {
-    NOT_SET,
-    AS_RUN
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class LogType { NOT_SET, AS_RUN };
 
-namespace LogTypeMapper
-{
+namespace LogTypeMapper {
 AWS_MEDIATAILOR_API LogType GetLogTypeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForLogType(LogType value);
-} // namespace LogTypeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace LogTypeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

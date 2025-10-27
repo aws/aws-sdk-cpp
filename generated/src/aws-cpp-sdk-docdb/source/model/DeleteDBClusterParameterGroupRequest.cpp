@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/DeleteDBClusterParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/DeleteDBClusterParameterGroupRequest.h>
 
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const
-{
+Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDBClusterParameterGroup&";
-  if(m_dBClusterParameterGroupNameHasBeenSet)
-  {
+  if (m_dBClusterParameterGroupNameHasBeenSet) {
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

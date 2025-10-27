@@ -5,12 +5,8 @@
 
 #include <aws/ssm-quicksetup/SSMQuickSetupEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSMQuickSetup
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSMQuickSetup
-} // namespace Aws
+namespace Aws {
+namespace SSMQuickSetup {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSMQuickSetup
+}  // namespace Aws

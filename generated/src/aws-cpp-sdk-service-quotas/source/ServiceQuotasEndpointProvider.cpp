@@ -5,12 +5,8 @@
 
 #include <aws/service-quotas/ServiceQuotasEndpointProvider.h>
 
-namespace Aws
-{
-namespace ServiceQuotas
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ServiceQuotas
-} // namespace Aws
+namespace Aws {
+namespace ServiceQuotas {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ServiceQuotas
+}  // namespace Aws

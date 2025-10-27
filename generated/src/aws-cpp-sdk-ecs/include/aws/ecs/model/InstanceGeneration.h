@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class InstanceGeneration
-  {
-    NOT_SET,
-    current,
-    previous
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class InstanceGeneration { NOT_SET, current, previous };
 
-namespace InstanceGenerationMapper
-{
+namespace InstanceGenerationMapper {
 AWS_ECS_API InstanceGeneration GetInstanceGenerationForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForInstanceGeneration(InstanceGeneration value);
-} // namespace InstanceGenerationMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace InstanceGenerationMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

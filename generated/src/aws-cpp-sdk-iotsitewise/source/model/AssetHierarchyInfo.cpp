@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/AssetHierarchyInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/AssetHierarchyInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-AssetHierarchyInfo::AssetHierarchyInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetHierarchyInfo::AssetHierarchyInfo(JsonView jsonValue) { *this = jsonValue; }
 
-AssetHierarchyInfo& AssetHierarchyInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("parentAssetId"))
-  {
+AssetHierarchyInfo& AssetHierarchyInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("parentAssetId")) {
     m_parentAssetId = jsonValue.GetString("parentAssetId");
     m_parentAssetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("childAssetId"))
-  {
+  if (jsonValue.ValueExists("childAssetId")) {
     m_childAssetId = jsonValue.GetString("childAssetId");
     m_childAssetIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetHierarchyInfo::Jsonize() const
-{
+JsonValue AssetHierarchyInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_parentAssetIdHasBeenSet)
-  {
-   payload.WithString("parentAssetId", m_parentAssetId);
-
+  if (m_parentAssetIdHasBeenSet) {
+    payload.WithString("parentAssetId", m_parentAssetId);
   }
 
-  if(m_childAssetIdHasBeenSet)
-  {
-   payload.WithString("childAssetId", m_childAssetId);
-
+  if (m_childAssetIdHasBeenSet) {
+    payload.WithString("childAssetId", m_childAssetId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

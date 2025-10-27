@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/robomaker/RoboMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
-  enum class ComputeType
-  {
-    NOT_SET,
-    CPU,
-    GPU_AND_CPU
-  };
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
+enum class ComputeType { NOT_SET, CPU, GPU_AND_CPU };
 
-namespace ComputeTypeMapper
-{
+namespace ComputeTypeMapper {
 AWS_ROBOMAKER_API ComputeType GetComputeTypeForName(const Aws::String& name);
 
 AWS_ROBOMAKER_API Aws::String GetNameForComputeType(ComputeType value);
-} // namespace ComputeTypeMapper
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace ComputeTypeMapper
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

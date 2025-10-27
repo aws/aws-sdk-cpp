@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-ProviderUserIdentifierType::ProviderUserIdentifierType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProviderUserIdentifierType::ProviderUserIdentifierType(JsonView jsonValue) { *this = jsonValue; }
 
-ProviderUserIdentifierType& ProviderUserIdentifierType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProviderName"))
-  {
+ProviderUserIdentifierType& ProviderUserIdentifierType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProviderName")) {
     m_providerName = jsonValue.GetString("ProviderName");
     m_providerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProviderAttributeName"))
-  {
+  if (jsonValue.ValueExists("ProviderAttributeName")) {
     m_providerAttributeName = jsonValue.GetString("ProviderAttributeName");
     m_providerAttributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProviderAttributeValue"))
-  {
+  if (jsonValue.ValueExists("ProviderAttributeValue")) {
     m_providerAttributeValue = jsonValue.GetString("ProviderAttributeValue");
     m_providerAttributeValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProviderUserIdentifierType::Jsonize() const
-{
+JsonValue ProviderUserIdentifierType::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerNameHasBeenSet)
-  {
-   payload.WithString("ProviderName", m_providerName);
-
+  if (m_providerNameHasBeenSet) {
+    payload.WithString("ProviderName", m_providerName);
   }
 
-  if(m_providerAttributeNameHasBeenSet)
-  {
-   payload.WithString("ProviderAttributeName", m_providerAttributeName);
-
+  if (m_providerAttributeNameHasBeenSet) {
+    payload.WithString("ProviderAttributeName", m_providerAttributeName);
   }
 
-  if(m_providerAttributeValueHasBeenSet)
-  {
-   payload.WithString("ProviderAttributeValue", m_providerAttributeValue);
-
+  if (m_providerAttributeValueHasBeenSet) {
+    payload.WithString("ProviderAttributeValue", m_providerAttributeValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Model
-{
-  enum class AcceptType
-  {
-    NOT_SET,
-    DELIVERED,
-    READ
-  };
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
+enum class AcceptType { NOT_SET, DELIVERED, READ };
 
-namespace AcceptTypeMapper
-{
+namespace AcceptTypeMapper {
 AWS_SSMCONTACTS_API AcceptType GetAcceptTypeForName(const Aws::String& name);
 
 AWS_SSMCONTACTS_API Aws::String GetNameForAcceptType(AcceptType value);
-} // namespace AcceptTypeMapper
-} // namespace Model
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace AcceptTypeMapper
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

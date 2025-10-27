@@ -3,42 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/S3DataAccessDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/S3DataAccessDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-S3DataAccessDetails::S3DataAccessDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3DataAccessDetails::S3DataAccessDetails(JsonView jsonValue) { *this = jsonValue; }
 
-S3DataAccessDetails& S3DataAccessDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyPrefixes"))
-  {
+S3DataAccessDetails& S3DataAccessDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyPrefixes")) {
     Aws::Utils::Array<JsonView> keyPrefixesJsonList = jsonValue.GetArray("KeyPrefixes");
-    for(unsigned keyPrefixesIndex = 0; keyPrefixesIndex < keyPrefixesJsonList.GetLength(); ++keyPrefixesIndex)
-    {
+    for (unsigned keyPrefixesIndex = 0; keyPrefixesIndex < keyPrefixesJsonList.GetLength(); ++keyPrefixesIndex) {
       m_keyPrefixes.push_back(keyPrefixesJsonList[keyPrefixesIndex].AsString());
     }
     m_keyPrefixesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Keys"))
-  {
+  if (jsonValue.ValueExists("Keys")) {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
-    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
-    {
+    for (unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex) {
       m_keys.push_back(keysJsonList[keysIndex].AsString());
     }
     m_keysHasBeenSet = true;
@@ -46,35 +35,28 @@ S3DataAccessDetails& S3DataAccessDetails::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue S3DataAccessDetails::Jsonize() const
-{
+JsonValue S3DataAccessDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyPrefixesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keyPrefixesJsonList(m_keyPrefixes.size());
-   for(unsigned keyPrefixesIndex = 0; keyPrefixesIndex < keyPrefixesJsonList.GetLength(); ++keyPrefixesIndex)
-   {
-     keyPrefixesJsonList[keyPrefixesIndex].AsString(m_keyPrefixes[keyPrefixesIndex]);
-   }
-   payload.WithArray("KeyPrefixes", std::move(keyPrefixesJsonList));
-
+  if (m_keyPrefixesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keyPrefixesJsonList(m_keyPrefixes.size());
+    for (unsigned keyPrefixesIndex = 0; keyPrefixesIndex < keyPrefixesJsonList.GetLength(); ++keyPrefixesIndex) {
+      keyPrefixesJsonList[keyPrefixesIndex].AsString(m_keyPrefixes[keyPrefixesIndex]);
+    }
+    payload.WithArray("KeyPrefixes", std::move(keyPrefixesJsonList));
   }
 
-  if(m_keysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
-   for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
-   {
-     keysJsonList[keysIndex].AsString(m_keys[keysIndex]);
-   }
-   payload.WithArray("Keys", std::move(keysJsonList));
-
+  if (m_keysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
+    for (unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex) {
+      keysJsonList[keysIndex].AsString(m_keys[keysIndex]);
+    }
+    payload.WithArray("Keys", std::move(keysJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

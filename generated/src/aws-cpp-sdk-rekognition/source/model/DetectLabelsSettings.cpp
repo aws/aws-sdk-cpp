@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/DetectLabelsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/DetectLabelsSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-DetectLabelsSettings::DetectLabelsSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectLabelsSettings::DetectLabelsSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DetectLabelsSettings& DetectLabelsSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GeneralLabels"))
-  {
+DetectLabelsSettings& DetectLabelsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GeneralLabels")) {
     m_generalLabels = jsonValue.GetObject("GeneralLabels");
     m_generalLabelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImageProperties"))
-  {
+  if (jsonValue.ValueExists("ImageProperties")) {
     m_imageProperties = jsonValue.GetObject("ImageProperties");
     m_imagePropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DetectLabelsSettings::Jsonize() const
-{
+JsonValue DetectLabelsSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_generalLabelsHasBeenSet)
-  {
-   payload.WithObject("GeneralLabels", m_generalLabels.Jsonize());
-
+  if (m_generalLabelsHasBeenSet) {
+    payload.WithObject("GeneralLabels", m_generalLabels.Jsonize());
   }
 
-  if(m_imagePropertiesHasBeenSet)
-  {
-   payload.WithObject("ImageProperties", m_imageProperties.Jsonize());
-
+  if (m_imagePropertiesHasBeenSet) {
+    payload.WithObject("ImageProperties", m_imageProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

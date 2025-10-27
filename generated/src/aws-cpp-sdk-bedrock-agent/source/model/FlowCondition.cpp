@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FlowCondition::FlowCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowCondition::FlowCondition(JsonView jsonValue) { *this = jsonValue; }
 
-FlowCondition& FlowCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+FlowCondition& FlowCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expression"))
-  {
+  if (jsonValue.ValueExists("expression")) {
     m_expression = jsonValue.GetString("expression");
     m_expressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowCondition::Jsonize() const
-{
+JsonValue FlowCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

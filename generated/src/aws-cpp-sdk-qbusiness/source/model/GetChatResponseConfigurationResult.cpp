@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/GetChatResponseConfigurationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qbusiness/model/GetChatResponseConfigurationResult.h>
 
 #include <utility>
 
@@ -17,53 +17,43 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetChatResponseConfigurationResult::GetChatResponseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetChatResponseConfigurationResult::GetChatResponseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetChatResponseConfigurationResult& GetChatResponseConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetChatResponseConfigurationResult& GetChatResponseConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("chatResponseConfigurationId"))
-  {
+  if (jsonValue.ValueExists("chatResponseConfigurationId")) {
     m_chatResponseConfigurationId = jsonValue.GetString("chatResponseConfigurationId");
     m_chatResponseConfigurationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("chatResponseConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("chatResponseConfigurationArn")) {
     m_chatResponseConfigurationArn = jsonValue.GetString("chatResponseConfigurationArn");
     m_chatResponseConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
-  {
+  if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inUseConfiguration"))
-  {
+  if (jsonValue.ValueExists("inUseConfiguration")) {
     m_inUseConfiguration = jsonValue.GetObject("inUseConfiguration");
     m_inUseConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateConfiguration"))
-  {
+  if (jsonValue.ValueExists("lastUpdateConfiguration")) {
     m_lastUpdateConfiguration = jsonValue.GetObject("lastUpdateConfiguration");
     m_lastUpdateConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

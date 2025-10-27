@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsNetworkFirewallRuleGroupDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsNetworkFirewallRuleGroupDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsNetworkFirewallRuleGroupDetails& AwsNetworkFirewallRuleGroupDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Capacity"))
-  {
+AwsNetworkFirewallRuleGroupDetails& AwsNetworkFirewallRuleGroupDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Capacity")) {
     m_capacity = jsonValue.GetInteger("Capacity");
     m_capacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroup"))
-  {
+  if (jsonValue.ValueExists("RuleGroup")) {
     m_ruleGroup = jsonValue.GetObject("RuleGroup");
     m_ruleGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroupArn"))
-  {
+  if (jsonValue.ValueExists("RuleGroupArn")) {
     m_ruleGroupArn = jsonValue.GetString("RuleGroupArn");
     m_ruleGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroupId"))
-  {
+  if (jsonValue.ValueExists("RuleGroupId")) {
     m_ruleGroupId = jsonValue.GetString("RuleGroupId");
     m_ruleGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleGroupName"))
-  {
+  if (jsonValue.ValueExists("RuleGroupName")) {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");
     m_ruleGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsNetworkFirewallRuleGroupDetails::Jsonize() const
-{
+JsonValue AwsNetworkFirewallRuleGroupDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_capacityHasBeenSet)
-  {
-   payload.WithInteger("Capacity", m_capacity);
-
+  if (m_capacityHasBeenSet) {
+    payload.WithInteger("Capacity", m_capacity);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_ruleGroupHasBeenSet)
-  {
-   payload.WithObject("RuleGroup", m_ruleGroup.Jsonize());
-
+  if (m_ruleGroupHasBeenSet) {
+    payload.WithObject("RuleGroup", m_ruleGroup.Jsonize());
   }
 
-  if(m_ruleGroupArnHasBeenSet)
-  {
-   payload.WithString("RuleGroupArn", m_ruleGroupArn);
-
+  if (m_ruleGroupArnHasBeenSet) {
+    payload.WithString("RuleGroupArn", m_ruleGroupArn);
   }
 
-  if(m_ruleGroupIdHasBeenSet)
-  {
-   payload.WithString("RuleGroupId", m_ruleGroupId);
-
+  if (m_ruleGroupIdHasBeenSet) {
+    payload.WithString("RuleGroupId", m_ruleGroupId);
   }
 
-  if(m_ruleGroupNameHasBeenSet)
-  {
-   payload.WithString("RuleGroupName", m_ruleGroupName);
-
+  if (m_ruleGroupNameHasBeenSet) {
+    payload.WithString("RuleGroupName", m_ruleGroupName);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

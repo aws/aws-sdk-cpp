@@ -7,24 +7,16 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class CachePointType
-  {
-    NOT_SET,
-    default_
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class CachePointType { NOT_SET, default_ };
 
-namespace CachePointTypeMapper
-{
+namespace CachePointTypeMapper {
 AWS_BEDROCKRUNTIME_API CachePointType GetCachePointTypeForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForCachePointType(CachePointType value);
-} // namespace CachePointTypeMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace CachePointTypeMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

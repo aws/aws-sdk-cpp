@@ -12,37 +12,24 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RetrieveAndGenerateStreamRequest::SerializePayload() const
-{
+Aws::String RetrieveAndGenerateStreamRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithObject("input", m_input.Jsonize());
-
+  if (m_inputHasBeenSet) {
+    payload.WithObject("input", m_input.Jsonize());
   }
 
-  if(m_retrieveAndGenerateConfigurationHasBeenSet)
-  {
-   payload.WithObject("retrieveAndGenerateConfiguration", m_retrieveAndGenerateConfiguration.Jsonize());
-
+  if (m_retrieveAndGenerateConfigurationHasBeenSet) {
+    payload.WithObject("retrieveAndGenerateConfiguration", m_retrieveAndGenerateConfiguration.Jsonize());
   }
 
-  if(m_sessionConfigurationHasBeenSet)
-  {
-   payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
-
+  if (m_sessionConfigurationHasBeenSet) {
+    payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

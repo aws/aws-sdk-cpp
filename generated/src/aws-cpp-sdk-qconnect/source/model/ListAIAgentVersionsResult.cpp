@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/ListAIAgentVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qconnect/model/ListAIAgentVersionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAIAgentVersionsResult::ListAIAgentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAIAgentVersionsResult::ListAIAgentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAIAgentVersionsResult& ListAIAgentVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAIAgentVersionsResult& ListAIAgentVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("aiAgentVersionSummaries"))
-  {
+  if (jsonValue.ValueExists("aiAgentVersionSummaries")) {
     Aws::Utils::Array<JsonView> aiAgentVersionSummariesJsonList = jsonValue.GetArray("aiAgentVersionSummaries");
-    for(unsigned aiAgentVersionSummariesIndex = 0; aiAgentVersionSummariesIndex < aiAgentVersionSummariesJsonList.GetLength(); ++aiAgentVersionSummariesIndex)
-    {
+    for (unsigned aiAgentVersionSummariesIndex = 0; aiAgentVersionSummariesIndex < aiAgentVersionSummariesJsonList.GetLength();
+         ++aiAgentVersionSummariesIndex) {
       m_aiAgentVersionSummaries.push_back(aiAgentVersionSummariesJsonList[aiAgentVersionSummariesIndex].AsObject());
     }
     m_aiAgentVersionSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

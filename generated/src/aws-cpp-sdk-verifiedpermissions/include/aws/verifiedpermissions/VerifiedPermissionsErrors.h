@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-enum class VerifiedPermissionsErrors
-{
-  //From Core//
+namespace Aws {
+namespace VerifiedPermissions {
+enum class VerifiedPermissionsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class VerifiedPermissionsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,30 +44,31 @@ enum class VerifiedPermissionsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_STATE,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS
 };
 
-class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsError : public Aws::Client::AWSError<VerifiedPermissionsErrors>
-{
-public:
+class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsError : public Aws::Client::AWSError<VerifiedPermissionsErrors> {
+ public:
   VerifiedPermissionsError() {}
-  VerifiedPermissionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
+  VerifiedPermissionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
   VerifiedPermissionsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
-  VerifiedPermissionsError(const Aws::Client::AWSError<VerifiedPermissionsErrors>& rhs) : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
-  VerifiedPermissionsError(Aws::Client::AWSError<VerifiedPermissionsErrors>&& rhs) : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
+  VerifiedPermissionsError(const Aws::Client::AWSError<VerifiedPermissionsErrors>& rhs)
+      : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
+  VerifiedPermissionsError(Aws::Client::AWSError<VerifiedPermissionsErrors>&& rhs)
+      : Aws::Client::AWSError<VerifiedPermissionsErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace VerifiedPermissionsErrorMapper
-{
-  AWS_VERIFIEDPERMISSIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace VerifiedPermissionsErrorMapper {
+AWS_VERIFIEDPERMISSIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace VerifiedPermissions
+}  // namespace Aws

@@ -3,170 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCloudFrontDistributionDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CacheBehaviors"))
-  {
+AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CacheBehaviors")) {
     m_cacheBehaviors = jsonValue.GetObject("CacheBehaviors");
     m_cacheBehaviorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultCacheBehavior"))
-  {
+  if (jsonValue.ValueExists("DefaultCacheBehavior")) {
     m_defaultCacheBehavior = jsonValue.GetObject("DefaultCacheBehavior");
     m_defaultCacheBehaviorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultRootObject"))
-  {
+  if (jsonValue.ValueExists("DefaultRootObject")) {
     m_defaultRootObject = jsonValue.GetString("DefaultRootObject");
     m_defaultRootObjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainName"))
-  {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ETag"))
-  {
+  if (jsonValue.ValueExists("ETag")) {
     m_eTag = jsonValue.GetString("ETag");
     m_eTagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetString("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Logging"))
-  {
+  if (jsonValue.ValueExists("Logging")) {
     m_logging = jsonValue.GetObject("Logging");
     m_loggingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Origins"))
-  {
+  if (jsonValue.ValueExists("Origins")) {
     m_origins = jsonValue.GetObject("Origins");
     m_originsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OriginGroups"))
-  {
+  if (jsonValue.ValueExists("OriginGroups")) {
     m_originGroups = jsonValue.GetObject("OriginGroups");
     m_originGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViewerCertificate"))
-  {
+  if (jsonValue.ValueExists("ViewerCertificate")) {
     m_viewerCertificate = jsonValue.GetObject("ViewerCertificate");
     m_viewerCertificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebAclId"))
-  {
+  if (jsonValue.ValueExists("WebAclId")) {
     m_webAclId = jsonValue.GetString("WebAclId");
     m_webAclIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCloudFrontDistributionDetails::Jsonize() const
-{
+JsonValue AwsCloudFrontDistributionDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_cacheBehaviorsHasBeenSet)
-  {
-   payload.WithObject("CacheBehaviors", m_cacheBehaviors.Jsonize());
-
+  if (m_cacheBehaviorsHasBeenSet) {
+    payload.WithObject("CacheBehaviors", m_cacheBehaviors.Jsonize());
   }
 
-  if(m_defaultCacheBehaviorHasBeenSet)
-  {
-   payload.WithObject("DefaultCacheBehavior", m_defaultCacheBehavior.Jsonize());
-
+  if (m_defaultCacheBehaviorHasBeenSet) {
+    payload.WithObject("DefaultCacheBehavior", m_defaultCacheBehavior.Jsonize());
   }
 
-  if(m_defaultRootObjectHasBeenSet)
-  {
-   payload.WithString("DefaultRootObject", m_defaultRootObject);
-
+  if (m_defaultRootObjectHasBeenSet) {
+    payload.WithString("DefaultRootObject", m_defaultRootObject);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_eTagHasBeenSet)
-  {
-   payload.WithString("ETag", m_eTag);
-
+  if (m_eTagHasBeenSet) {
+    payload.WithString("ETag", m_eTag);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithString("LastModifiedTime", m_lastModifiedTime);
-
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("LastModifiedTime", m_lastModifiedTime);
   }
 
-  if(m_loggingHasBeenSet)
-  {
-   payload.WithObject("Logging", m_logging.Jsonize());
-
+  if (m_loggingHasBeenSet) {
+    payload.WithObject("Logging", m_logging.Jsonize());
   }
 
-  if(m_originsHasBeenSet)
-  {
-   payload.WithObject("Origins", m_origins.Jsonize());
-
+  if (m_originsHasBeenSet) {
+    payload.WithObject("Origins", m_origins.Jsonize());
   }
 
-  if(m_originGroupsHasBeenSet)
-  {
-   payload.WithObject("OriginGroups", m_originGroups.Jsonize());
-
+  if (m_originGroupsHasBeenSet) {
+    payload.WithObject("OriginGroups", m_originGroups.Jsonize());
   }
 
-  if(m_viewerCertificateHasBeenSet)
-  {
-   payload.WithObject("ViewerCertificate", m_viewerCertificate.Jsonize());
-
+  if (m_viewerCertificateHasBeenSet) {
+    payload.WithObject("ViewerCertificate", m_viewerCertificate.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_webAclIdHasBeenSet)
-  {
-   payload.WithString("WebAclId", m_webAclId);
-
+  if (m_webAclIdHasBeenSet) {
+    payload.WithString("WebAclId", m_webAclId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

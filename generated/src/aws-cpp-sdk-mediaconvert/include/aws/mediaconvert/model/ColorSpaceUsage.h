@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ColorSpaceUsage
-  {
-    NOT_SET,
-    FORCE,
-    FALLBACK
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ColorSpaceUsage { NOT_SET, FORCE, FALLBACK };
 
-namespace ColorSpaceUsageMapper
-{
+namespace ColorSpaceUsageMapper {
 AWS_MEDIACONVERT_API ColorSpaceUsage GetColorSpaceUsageForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForColorSpaceUsage(ColorSpaceUsage value);
-} // namespace ColorSpaceUsageMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ColorSpaceUsageMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

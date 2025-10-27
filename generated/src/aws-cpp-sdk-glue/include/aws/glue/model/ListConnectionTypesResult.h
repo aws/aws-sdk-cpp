@@ -4,81 +4,96 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/ConnectionTypeBrief.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Glue
-{
-namespace Model
-{
-  class ListConnectionTypesResult
-  {
-  public:
-    AWS_GLUE_API ListConnectionTypesResult() = default;
-    AWS_GLUE_API ListConnectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_GLUE_API ListConnectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Glue {
+namespace Model {
+class ListConnectionTypesResult {
+ public:
+  AWS_GLUE_API ListConnectionTypesResult() = default;
+  AWS_GLUE_API ListConnectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUE_API ListConnectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A list of <code>ConnectionTypeBrief</code> objects containing brief
+   * information about the supported connection types.</p>
+   */
+  inline const Aws::Vector<ConnectionTypeBrief>& GetConnectionTypes() const { return m_connectionTypes; }
+  template <typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
+  void SetConnectionTypes(ConnectionTypesT&& value) {
+    m_connectionTypesHasBeenSet = true;
+    m_connectionTypes = std::forward<ConnectionTypesT>(value);
+  }
+  template <typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
+  ListConnectionTypesResult& WithConnectionTypes(ConnectionTypesT&& value) {
+    SetConnectionTypes(std::forward<ConnectionTypesT>(value));
+    return *this;
+  }
+  template <typename ConnectionTypesT = ConnectionTypeBrief>
+  ListConnectionTypesResult& AddConnectionTypes(ConnectionTypesT&& value) {
+    m_connectionTypesHasBeenSet = true;
+    m_connectionTypes.emplace_back(std::forward<ConnectionTypesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A list of <code>ConnectionTypeBrief</code> objects containing brief
-     * information about the supported connection types.</p>
-     */
-    inline const Aws::Vector<ConnectionTypeBrief>& GetConnectionTypes() const { return m_connectionTypes; }
-    template<typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
-    void SetConnectionTypes(ConnectionTypesT&& value) { m_connectionTypesHasBeenSet = true; m_connectionTypes = std::forward<ConnectionTypesT>(value); }
-    template<typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
-    ListConnectionTypesResult& WithConnectionTypes(ConnectionTypesT&& value) { SetConnectionTypes(std::forward<ConnectionTypesT>(value)); return *this;}
-    template<typename ConnectionTypesT = ConnectionTypeBrief>
-    ListConnectionTypesResult& AddConnectionTypes(ConnectionTypesT&& value) { m_connectionTypesHasBeenSet = true; m_connectionTypes.emplace_back(std::forward<ConnectionTypesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A continuation token, if the current list segment is not the last.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListConnectionTypesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A continuation token, if the current list segment is not the last.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListConnectionTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListConnectionTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListConnectionTypesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<ConnectionTypeBrief> m_connectionTypes;
+  bool m_connectionTypesHasBeenSet = false;
 
-    Aws::Vector<ConnectionTypeBrief> m_connectionTypes;
-    bool m_connectionTypesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

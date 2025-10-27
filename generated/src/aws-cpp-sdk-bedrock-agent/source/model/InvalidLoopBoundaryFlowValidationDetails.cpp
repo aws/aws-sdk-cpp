@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-InvalidLoopBoundaryFlowValidationDetails::InvalidLoopBoundaryFlowValidationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidLoopBoundaryFlowValidationDetails::InvalidLoopBoundaryFlowValidationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidLoopBoundaryFlowValidationDetails& InvalidLoopBoundaryFlowValidationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connection"))
-  {
+InvalidLoopBoundaryFlowValidationDetails& InvalidLoopBoundaryFlowValidationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connection")) {
     m_connection = jsonValue.GetString("connection");
     m_connectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetString("target");
     m_targetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidLoopBoundaryFlowValidationDetails::Jsonize() const
-{
+JsonValue InvalidLoopBoundaryFlowValidationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionHasBeenSet)
-  {
-   payload.WithString("connection", m_connection);
-
+  if (m_connectionHasBeenSet) {
+    payload.WithString("connection", m_connection);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("target", m_target);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

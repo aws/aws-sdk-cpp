@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ChangePasswordRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ChangePasswordRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ChangePasswordRequest::SerializePayload() const
-{
+Aws::String ChangePasswordRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ChangePassword&";
-  if(m_oldPasswordHasBeenSet)
-  {
+  if (m_oldPasswordHasBeenSet) {
     ss << "OldPassword=" << StringUtils::URLEncode(m_oldPassword.c_str()) << "&";
   }
 
-  if(m_newPasswordHasBeenSet)
-  {
+  if (m_newPasswordHasBeenSet) {
     ss << "NewPassword=" << StringUtils::URLEncode(m_newPassword.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ChangePasswordRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ChangePasswordRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ChangePasswordRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

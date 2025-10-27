@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-PackageOriginRestrictions::PackageOriginRestrictions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageOriginRestrictions::PackageOriginRestrictions(JsonView jsonValue) { *this = jsonValue; }
 
-PackageOriginRestrictions& PackageOriginRestrictions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("publish"))
-  {
+PackageOriginRestrictions& PackageOriginRestrictions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("publish")) {
     m_publish = AllowPublishMapper::GetAllowPublishForName(jsonValue.GetString("publish"));
     m_publishHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("upstream"))
-  {
+  if (jsonValue.ValueExists("upstream")) {
     m_upstream = AllowUpstreamMapper::GetAllowUpstreamForName(jsonValue.GetString("upstream"));
     m_upstreamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageOriginRestrictions::Jsonize() const
-{
+JsonValue PackageOriginRestrictions::Jsonize() const {
   JsonValue payload;
 
-  if(m_publishHasBeenSet)
-  {
-   payload.WithString("publish", AllowPublishMapper::GetNameForAllowPublish(m_publish));
+  if (m_publishHasBeenSet) {
+    payload.WithString("publish", AllowPublishMapper::GetNameForAllowPublish(m_publish));
   }
 
-  if(m_upstreamHasBeenSet)
-  {
-   payload.WithString("upstream", AllowUpstreamMapper::GetNameForAllowUpstream(m_upstream));
+  if (m_upstreamHasBeenSet) {
+    payload.WithString("upstream", AllowUpstreamMapper::GetNameForAllowUpstream(m_upstream));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

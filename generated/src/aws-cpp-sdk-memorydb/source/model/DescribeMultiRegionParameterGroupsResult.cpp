@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMultiRegionParameterGroupsResult::DescribeMultiRegionParameterGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeMultiRegionParameterGroupsResult::DescribeMultiRegionParameterGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeMultiRegionParameterGroupsResult& DescribeMultiRegionParameterGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeMultiRegionParameterGroupsResult& DescribeMultiRegionParameterGroupsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiRegionParameterGroups"))
-  {
+  if (jsonValue.ValueExists("MultiRegionParameterGroups")) {
     Aws::Utils::Array<JsonView> multiRegionParameterGroupsJsonList = jsonValue.GetArray("MultiRegionParameterGroups");
-    for(unsigned multiRegionParameterGroupsIndex = 0; multiRegionParameterGroupsIndex < multiRegionParameterGroupsJsonList.GetLength(); ++multiRegionParameterGroupsIndex)
-    {
+    for (unsigned multiRegionParameterGroupsIndex = 0; multiRegionParameterGroupsIndex < multiRegionParameterGroupsJsonList.GetLength();
+         ++multiRegionParameterGroupsIndex) {
       m_multiRegionParameterGroups.push_back(multiRegionParameterGroupsJsonList[multiRegionParameterGroupsIndex].AsObject());
     }
     m_multiRegionParameterGroupsHasBeenSet = true;
@@ -42,12 +39,10 @@ DescribeMultiRegionParameterGroupsResult& DescribeMultiRegionParameterGroupsResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

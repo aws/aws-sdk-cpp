@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sso/SSORequest.h>
 
-namespace Aws
-{
-namespace SSO
-{
-} // namespace SSO
-} // namespace Aws
+namespace Aws {
+namespace SSO {}  // namespace SSO
+}  // namespace Aws

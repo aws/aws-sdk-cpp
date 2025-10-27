@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/BillingRecord.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/BillingRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
 
-BillingRecord::BillingRecord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BillingRecord::BillingRecord(JsonView jsonValue) { *this = jsonValue; }
 
-BillingRecord& BillingRecord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DomainName"))
-  {
+BillingRecord& BillingRecord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operation"))
-  {
+  if (jsonValue.ValueExists("Operation")) {
     m_operation = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Operation"));
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvoiceId"))
-  {
+  if (jsonValue.ValueExists("InvoiceId")) {
     m_invoiceId = jsonValue.GetString("InvoiceId");
     m_invoiceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillDate"))
-  {
+  if (jsonValue.ValueExists("BillDate")) {
     m_billDate = jsonValue.GetDouble("BillDate");
     m_billDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Price"))
-  {
+  if (jsonValue.ValueExists("Price")) {
     m_price = jsonValue.GetDouble("Price");
     m_priceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BillingRecord::Jsonize() const
-{
+JsonValue BillingRecord::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", OperationTypeMapper::GetNameForOperationType(m_operation));
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", OperationTypeMapper::GetNameForOperationType(m_operation));
   }
 
-  if(m_invoiceIdHasBeenSet)
-  {
-   payload.WithString("InvoiceId", m_invoiceId);
-
+  if (m_invoiceIdHasBeenSet) {
+    payload.WithString("InvoiceId", m_invoiceId);
   }
 
-  if(m_billDateHasBeenSet)
-  {
-   payload.WithDouble("BillDate", m_billDate.SecondsWithMSPrecision());
+  if (m_billDateHasBeenSet) {
+    payload.WithDouble("BillDate", m_billDate.SecondsWithMSPrecision());
   }
 
-  if(m_priceHasBeenSet)
-  {
-   payload.WithDouble("Price", m_price);
-
+  if (m_priceHasBeenSet) {
+    payload.WithDouble("Price", m_price);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/internetmonitor/model/AvailabilityMeasurement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/internetmonitor/model/AvailabilityMeasurement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
 
-AvailabilityMeasurement::AvailabilityMeasurement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AvailabilityMeasurement::AvailabilityMeasurement(JsonView jsonValue) { *this = jsonValue; }
 
-AvailabilityMeasurement& AvailabilityMeasurement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExperienceScore"))
-  {
+AvailabilityMeasurement& AvailabilityMeasurement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExperienceScore")) {
     m_experienceScore = jsonValue.GetDouble("ExperienceScore");
     m_experienceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PercentOfTotalTrafficImpacted"))
-  {
+  if (jsonValue.ValueExists("PercentOfTotalTrafficImpacted")) {
     m_percentOfTotalTrafficImpacted = jsonValue.GetDouble("PercentOfTotalTrafficImpacted");
     m_percentOfTotalTrafficImpactedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PercentOfClientLocationImpacted"))
-  {
+  if (jsonValue.ValueExists("PercentOfClientLocationImpacted")) {
     m_percentOfClientLocationImpacted = jsonValue.GetDouble("PercentOfClientLocationImpacted");
     m_percentOfClientLocationImpactedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AvailabilityMeasurement::Jsonize() const
-{
+JsonValue AvailabilityMeasurement::Jsonize() const {
   JsonValue payload;
 
-  if(m_experienceScoreHasBeenSet)
-  {
-   payload.WithDouble("ExperienceScore", m_experienceScore);
-
+  if (m_experienceScoreHasBeenSet) {
+    payload.WithDouble("ExperienceScore", m_experienceScore);
   }
 
-  if(m_percentOfTotalTrafficImpactedHasBeenSet)
-  {
-   payload.WithDouble("PercentOfTotalTrafficImpacted", m_percentOfTotalTrafficImpacted);
-
+  if (m_percentOfTotalTrafficImpactedHasBeenSet) {
+    payload.WithDouble("PercentOfTotalTrafficImpacted", m_percentOfTotalTrafficImpacted);
   }
 
-  if(m_percentOfClientLocationImpactedHasBeenSet)
-  {
-   payload.WithDouble("PercentOfClientLocationImpacted", m_percentOfClientLocationImpacted);
-
+  if (m_percentOfClientLocationImpactedHasBeenSet) {
+    payload.WithDouble("PercentOfClientLocationImpacted", m_percentOfClientLocationImpacted);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

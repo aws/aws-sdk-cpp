@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
 
 #include <utility>
 
@@ -12,92 +12,62 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateRelationalDatabaseRequest::SerializePayload() const
-{
+Aws::String CreateRelationalDatabaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_relationalDatabaseNameHasBeenSet)
-  {
-   payload.WithString("relationalDatabaseName", m_relationalDatabaseName);
-
+  if (m_relationalDatabaseNameHasBeenSet) {
+    payload.WithString("relationalDatabaseName", m_relationalDatabaseName);
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("availabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("availabilityZone", m_availabilityZone);
   }
 
-  if(m_relationalDatabaseBlueprintIdHasBeenSet)
-  {
-   payload.WithString("relationalDatabaseBlueprintId", m_relationalDatabaseBlueprintId);
-
+  if (m_relationalDatabaseBlueprintIdHasBeenSet) {
+    payload.WithString("relationalDatabaseBlueprintId", m_relationalDatabaseBlueprintId);
   }
 
-  if(m_relationalDatabaseBundleIdHasBeenSet)
-  {
-   payload.WithString("relationalDatabaseBundleId", m_relationalDatabaseBundleId);
-
+  if (m_relationalDatabaseBundleIdHasBeenSet) {
+    payload.WithString("relationalDatabaseBundleId", m_relationalDatabaseBundleId);
   }
 
-  if(m_masterDatabaseNameHasBeenSet)
-  {
-   payload.WithString("masterDatabaseName", m_masterDatabaseName);
-
+  if (m_masterDatabaseNameHasBeenSet) {
+    payload.WithString("masterDatabaseName", m_masterDatabaseName);
   }
 
-  if(m_masterUsernameHasBeenSet)
-  {
-   payload.WithString("masterUsername", m_masterUsername);
-
+  if (m_masterUsernameHasBeenSet) {
+    payload.WithString("masterUsername", m_masterUsername);
   }
 
-  if(m_masterUserPasswordHasBeenSet)
-  {
-   payload.WithString("masterUserPassword", m_masterUserPassword);
-
+  if (m_masterUserPasswordHasBeenSet) {
+    payload.WithString("masterUserPassword", m_masterUserPassword);
   }
 
-  if(m_preferredBackupWindowHasBeenSet)
-  {
-   payload.WithString("preferredBackupWindow", m_preferredBackupWindow);
-
+  if (m_preferredBackupWindowHasBeenSet) {
+    payload.WithString("preferredBackupWindow", m_preferredBackupWindow);
   }
 
-  if(m_preferredMaintenanceWindowHasBeenSet)
-  {
-   payload.WithString("preferredMaintenanceWindow", m_preferredMaintenanceWindow);
-
+  if (m_preferredMaintenanceWindowHasBeenSet) {
+    payload.WithString("preferredMaintenanceWindow", m_preferredMaintenanceWindow);
   }
 
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-   payload.WithBool("publiclyAccessible", m_publiclyAccessible);
-
+  if (m_publiclyAccessibleHasBeenSet) {
+    payload.WithBool("publiclyAccessible", m_publiclyAccessible);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateRelationalDatabaseRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateRelationalDatabaseRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.CreateRelationalDatabase"));
   return headers;
-
 }
-
-
-
-

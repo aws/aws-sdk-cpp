@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/RelationalDatabaseHardware.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/RelationalDatabaseHardware.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-RelationalDatabaseHardware::RelationalDatabaseHardware(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelationalDatabaseHardware::RelationalDatabaseHardware(JsonView jsonValue) { *this = jsonValue; }
 
-RelationalDatabaseHardware& RelationalDatabaseHardware::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cpuCount"))
-  {
+RelationalDatabaseHardware& RelationalDatabaseHardware::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cpuCount")) {
     m_cpuCount = jsonValue.GetInteger("cpuCount");
     m_cpuCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("diskSizeInGb"))
-  {
+  if (jsonValue.ValueExists("diskSizeInGb")) {
     m_diskSizeInGb = jsonValue.GetInteger("diskSizeInGb");
     m_diskSizeInGbHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ramSizeInGb"))
-  {
+  if (jsonValue.ValueExists("ramSizeInGb")) {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
     m_ramSizeInGbHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RelationalDatabaseHardware::Jsonize() const
-{
+JsonValue RelationalDatabaseHardware::Jsonize() const {
   JsonValue payload;
 
-  if(m_cpuCountHasBeenSet)
-  {
-   payload.WithInteger("cpuCount", m_cpuCount);
-
+  if (m_cpuCountHasBeenSet) {
+    payload.WithInteger("cpuCount", m_cpuCount);
   }
 
-  if(m_diskSizeInGbHasBeenSet)
-  {
-   payload.WithInteger("diskSizeInGb", m_diskSizeInGb);
-
+  if (m_diskSizeInGbHasBeenSet) {
+    payload.WithInteger("diskSizeInGb", m_diskSizeInGb);
   }
 
-  if(m_ramSizeInGbHasBeenSet)
-  {
-   payload.WithDouble("ramSizeInGb", m_ramSizeInGb);
-
+  if (m_ramSizeInGbHasBeenSet) {
+    payload.WithDouble("ramSizeInGb", m_ramSizeInGb);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

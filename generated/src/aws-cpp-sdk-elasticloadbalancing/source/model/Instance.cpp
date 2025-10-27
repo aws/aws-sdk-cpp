@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/Instance.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancing/model/Instance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancing {
+namespace Model {
 
-Instance::Instance(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Instance::Instance(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Instance& Instance::operator =(const XmlNode& xmlNode)
-{
+Instance& Instance::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
-    if(!instanceIdNode.IsNull())
-    {
+    if (!instanceIdNode.IsNull()) {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-}
-
-void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

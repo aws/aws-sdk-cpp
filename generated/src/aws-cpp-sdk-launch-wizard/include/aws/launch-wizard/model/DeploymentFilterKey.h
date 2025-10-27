@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
-namespace Aws
-{
-namespace LaunchWizard
-{
-namespace Model
-{
-  enum class DeploymentFilterKey
-  {
-    NOT_SET,
-    WORKLOAD_NAME,
-    DEPLOYMENT_STATUS
-  };
+namespace Aws {
+namespace LaunchWizard {
+namespace Model {
+enum class DeploymentFilterKey { NOT_SET, WORKLOAD_NAME, DEPLOYMENT_STATUS };
 
-namespace DeploymentFilterKeyMapper
-{
+namespace DeploymentFilterKeyMapper {
 AWS_LAUNCHWIZARD_API DeploymentFilterKey GetDeploymentFilterKeyForName(const Aws::String& name);
 
 AWS_LAUNCHWIZARD_API Aws::String GetNameForDeploymentFilterKey(DeploymentFilterKey value);
-} // namespace DeploymentFilterKeyMapper
-} // namespace Model
-} // namespace LaunchWizard
-} // namespace Aws
+}  // namespace DeploymentFilterKeyMapper
+}  // namespace Model
+}  // namespace LaunchWizard
+}  // namespace Aws

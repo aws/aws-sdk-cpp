@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/RejectedRecordsException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/RejectedRecordsException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
 
-RejectedRecordsException::RejectedRecordsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RejectedRecordsException::RejectedRecordsException(JsonView jsonValue) { *this = jsonValue; }
 
-RejectedRecordsException& RejectedRecordsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+RejectedRecordsException& RejectedRecordsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RejectedRecords"))
-  {
+  if (jsonValue.ValueExists("RejectedRecords")) {
     Aws::Utils::Array<JsonView> rejectedRecordsJsonList = jsonValue.GetArray("RejectedRecords");
-    for(unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex)
-    {
+    for (unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex) {
       m_rejectedRecords.push_back(rejectedRecordsJsonList[rejectedRecordsIndex].AsObject());
     }
     m_rejectedRecordsHasBeenSet = true;
@@ -42,30 +32,24 @@ RejectedRecordsException& RejectedRecordsException::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue RejectedRecordsException::Jsonize() const
-{
+JsonValue RejectedRecordsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_rejectedRecordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rejectedRecordsJsonList(m_rejectedRecords.size());
-   for(unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex)
-   {
-     rejectedRecordsJsonList[rejectedRecordsIndex].AsObject(m_rejectedRecords[rejectedRecordsIndex].Jsonize());
-   }
-   payload.WithArray("RejectedRecords", std::move(rejectedRecordsJsonList));
-
+  if (m_rejectedRecordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rejectedRecordsJsonList(m_rejectedRecords.size());
+    for (unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex) {
+      rejectedRecordsJsonList[rejectedRecordsIndex].AsObject(m_rejectedRecords[rejectedRecordsIndex].Jsonize());
+    }
+    payload.WithArray("RejectedRecords", std::move(rejectedRecordsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

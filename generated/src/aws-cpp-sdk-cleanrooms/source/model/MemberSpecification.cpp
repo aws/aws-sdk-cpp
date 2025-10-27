@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-MemberSpecification::MemberSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberSpecification::MemberSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-MemberSpecification& MemberSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+MemberSpecification& MemberSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memberAbilities"))
-  {
+  if (jsonValue.ValueExists("memberAbilities")) {
     Aws::Utils::Array<JsonView> memberAbilitiesJsonList = jsonValue.GetArray("memberAbilities");
-    for(unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex)
-    {
+    for (unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex) {
       m_memberAbilities.push_back(MemberAbilityMapper::GetMemberAbilityForName(memberAbilitiesJsonList[memberAbilitiesIndex].AsString()));
     }
     m_memberAbilitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mlMemberAbilities"))
-  {
+  if (jsonValue.ValueExists("mlMemberAbilities")) {
     m_mlMemberAbilities = jsonValue.GetObject("mlMemberAbilities");
     m_mlMemberAbilitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
-  {
+  if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paymentConfiguration"))
-  {
+  if (jsonValue.ValueExists("paymentConfiguration")) {
     m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
     m_paymentConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberSpecification::Jsonize() const
-{
+JsonValue MemberSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_memberAbilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memberAbilitiesJsonList(m_memberAbilities.size());
-   for(unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex)
-   {
-     memberAbilitiesJsonList[memberAbilitiesIndex].AsString(MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
-   }
-   payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
-
+  if (m_memberAbilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memberAbilitiesJsonList(m_memberAbilities.size());
+    for (unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex) {
+      memberAbilitiesJsonList[memberAbilitiesIndex].AsString(
+          MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
+    }
+    payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
   }
 
-  if(m_mlMemberAbilitiesHasBeenSet)
-  {
-   payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
-
+  if (m_mlMemberAbilitiesHasBeenSet) {
+    payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
   }
 
-  if(m_paymentConfigurationHasBeenSet)
-  {
-   payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
-
+  if (m_paymentConfigurationHasBeenSet) {
+    payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

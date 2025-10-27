@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/ivs/IVSRequest.h>
 
-namespace Aws
-{
-namespace IVS
-{
-} // namespace IVS
-} // namespace Aws
+namespace Aws {
+namespace IVS {}  // namespace IVS
+}  // namespace Aws

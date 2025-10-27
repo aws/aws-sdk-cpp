@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/AdminScope.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/AdminScope.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-AdminScope::AdminScope(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdminScope::AdminScope(JsonView jsonValue) { *this = jsonValue; }
 
-AdminScope& AdminScope::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountScope"))
-  {
+AdminScope& AdminScope::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountScope")) {
     m_accountScope = jsonValue.GetObject("AccountScope");
     m_accountScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationalUnitScope"))
-  {
+  if (jsonValue.ValueExists("OrganizationalUnitScope")) {
     m_organizationalUnitScope = jsonValue.GetObject("OrganizationalUnitScope");
     m_organizationalUnitScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegionScope"))
-  {
+  if (jsonValue.ValueExists("RegionScope")) {
     m_regionScope = jsonValue.GetObject("RegionScope");
     m_regionScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyTypeScope"))
-  {
+  if (jsonValue.ValueExists("PolicyTypeScope")) {
     m_policyTypeScope = jsonValue.GetObject("PolicyTypeScope");
     m_policyTypeScopeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdminScope::Jsonize() const
-{
+JsonValue AdminScope::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountScopeHasBeenSet)
-  {
-   payload.WithObject("AccountScope", m_accountScope.Jsonize());
-
+  if (m_accountScopeHasBeenSet) {
+    payload.WithObject("AccountScope", m_accountScope.Jsonize());
   }
 
-  if(m_organizationalUnitScopeHasBeenSet)
-  {
-   payload.WithObject("OrganizationalUnitScope", m_organizationalUnitScope.Jsonize());
-
+  if (m_organizationalUnitScopeHasBeenSet) {
+    payload.WithObject("OrganizationalUnitScope", m_organizationalUnitScope.Jsonize());
   }
 
-  if(m_regionScopeHasBeenSet)
-  {
-   payload.WithObject("RegionScope", m_regionScope.Jsonize());
-
+  if (m_regionScopeHasBeenSet) {
+    payload.WithObject("RegionScope", m_regionScope.Jsonize());
   }
 
-  if(m_policyTypeScopeHasBeenSet)
-  {
-   payload.WithObject("PolicyTypeScope", m_policyTypeScope.Jsonize());
-
+  if (m_policyTypeScopeHasBeenSet) {
+    payload.WithObject("PolicyTypeScope", m_policyTypeScope.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

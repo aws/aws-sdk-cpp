@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/artifact/ArtifactRequest.h>
+#include <aws/artifact/Artifact_EXPORTS.h>
 
-namespace Aws
-{
-namespace Artifact
-{
-namespace Model
-{
+namespace Aws {
+namespace Artifact {
+namespace Model {
 
-  /**
-   */
-  class GetAccountSettingsRequest : public ArtifactRequest
-  {
-  public:
-    AWS_ARTIFACT_API GetAccountSettingsRequest() = default;
+/**
+ */
+class GetAccountSettingsRequest : public ArtifactRequest {
+ public:
+  AWS_ARTIFACT_API GetAccountSettingsRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetAccountSettings"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetAccountSettings"; }
 
-    AWS_ARTIFACT_API Aws::String SerializePayload() const override;
+  AWS_ARTIFACT_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Artifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace Artifact
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-AnomalyDateInterval::AnomalyDateInterval(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnomalyDateInterval::AnomalyDateInterval(JsonView jsonValue) { *this = jsonValue; }
 
-AnomalyDateInterval& AnomalyDateInterval::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StartDate"))
-  {
+AnomalyDateInterval& AnomalyDateInterval::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StartDate")) {
     m_startDate = jsonValue.GetString("StartDate");
     m_startDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndDate"))
-  {
+  if (jsonValue.ValueExists("EndDate")) {
     m_endDate = jsonValue.GetString("EndDate");
     m_endDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnomalyDateInterval::Jsonize() const
-{
+JsonValue AnomalyDateInterval::Jsonize() const {
   JsonValue payload;
 
-  if(m_startDateHasBeenSet)
-  {
-   payload.WithString("StartDate", m_startDate);
-
+  if (m_startDateHasBeenSet) {
+    payload.WithString("StartDate", m_startDate);
   }
 
-  if(m_endDateHasBeenSet)
-  {
-   payload.WithString("EndDate", m_endDate);
-
+  if (m_endDateHasBeenSet) {
+    payload.WithString("EndDate", m_endDate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

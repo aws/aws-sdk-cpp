@@ -4,87 +4,99 @@
  */
 
 #pragma once
-#include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/AccessAnalyzerRequest.h>
+#include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace AccessAnalyzer {
+namespace Model {
 
+/**
+ */
+class ListPolicyGenerationsRequest : public AccessAnalyzerRequest {
+ public:
+  AWS_ACCESSANALYZER_API ListPolicyGenerationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListPolicyGenerations"; }
+
+  AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
+
+  AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The ARN of the IAM entity (user or role) for which you are generating a
+   * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+   * to only include results for a specific principal.</p>
    */
-  class ListPolicyGenerationsRequest : public AccessAnalyzerRequest
-  {
-  public:
-    AWS_ACCESSANALYZER_API ListPolicyGenerationsRequest() = default;
+  inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
+  inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
+  template <typename PrincipalArnT = Aws::String>
+  void SetPrincipalArn(PrincipalArnT&& value) {
+    m_principalArnHasBeenSet = true;
+    m_principalArn = std::forward<PrincipalArnT>(value);
+  }
+  template <typename PrincipalArnT = Aws::String>
+  ListPolicyGenerationsRequest& WithPrincipalArn(PrincipalArnT&& value) {
+    SetPrincipalArn(std::forward<PrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListPolicyGenerations"; }
+  ///@{
+  /**
+   * <p>The maximum number of results to return in the response.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListPolicyGenerationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A token used for pagination of results returned.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListPolicyGenerationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_principalArn;
+  bool m_principalArnHasBeenSet = false;
 
-    AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
-    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    template<typename PrincipalArnT = Aws::String>
-    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
-    template<typename PrincipalArnT = Aws::String>
-    ListPolicyGenerationsRequest& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListPolicyGenerationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListPolicyGenerationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

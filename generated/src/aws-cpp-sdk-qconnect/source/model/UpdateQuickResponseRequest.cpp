@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/UpdateQuickResponseRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/UpdateQuickResponseRequest.h>
 
 #include <utility>
 
@@ -12,90 +12,60 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateQuickResponseRequest::SerializePayload() const
-{
+Aws::String UpdateQuickResponseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_groupingConfigurationHasBeenSet)
-  {
-   payload.WithObject("groupingConfiguration", m_groupingConfiguration.Jsonize());
-
+  if (m_groupingConfigurationHasBeenSet) {
+    payload.WithObject("groupingConfiguration", m_groupingConfiguration.Jsonize());
   }
 
-  if(m_removeGroupingConfigurationHasBeenSet)
-  {
-   payload.WithBool("removeGroupingConfiguration", m_removeGroupingConfiguration);
-
+  if (m_removeGroupingConfigurationHasBeenSet) {
+    payload.WithBool("removeGroupingConfiguration", m_removeGroupingConfiguration);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_removeDescriptionHasBeenSet)
-  {
-   payload.WithBool("removeDescription", m_removeDescription);
-
+  if (m_removeDescriptionHasBeenSet) {
+    payload.WithBool("removeDescription", m_removeDescription);
   }
 
-  if(m_shortcutKeyHasBeenSet)
-  {
-   payload.WithString("shortcutKey", m_shortcutKey);
-
+  if (m_shortcutKeyHasBeenSet) {
+    payload.WithString("shortcutKey", m_shortcutKey);
   }
 
-  if(m_removeShortcutKeyHasBeenSet)
-  {
-   payload.WithBool("removeShortcutKey", m_removeShortcutKey);
-
+  if (m_removeShortcutKeyHasBeenSet) {
+    payload.WithBool("removeShortcutKey", m_removeShortcutKey);
   }
 
-  if(m_isActiveHasBeenSet)
-  {
-   payload.WithBool("isActive", m_isActive);
-
+  if (m_isActiveHasBeenSet) {
+    payload.WithBool("isActive", m_isActive);
   }
 
-  if(m_channelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
-   for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-   {
-     channelsJsonList[channelsIndex].AsString(m_channels[channelsIndex]);
-   }
-   payload.WithArray("channels", std::move(channelsJsonList));
-
+  if (m_channelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      channelsJsonList[channelsIndex].AsString(m_channels[channelsIndex]);
+    }
+    payload.WithArray("channels", std::move(channelsJsonList));
   }
 
-  if(m_languageHasBeenSet)
-  {
-   payload.WithString("language", m_language);
-
+  if (m_languageHasBeenSet) {
+    payload.WithString("language", m_language);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

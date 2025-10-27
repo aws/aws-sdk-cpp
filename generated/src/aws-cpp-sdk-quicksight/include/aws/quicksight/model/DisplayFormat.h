@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class DisplayFormat
-  {
-    NOT_SET,
-    AUTO,
-    PERCENT,
-    CURRENCY,
-    NUMBER,
-    DATE,
-    STRING
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class DisplayFormat { NOT_SET, AUTO, PERCENT, CURRENCY, NUMBER, DATE, STRING };
 
-namespace DisplayFormatMapper
-{
+namespace DisplayFormatMapper {
 AWS_QUICKSIGHT_API DisplayFormat GetDisplayFormatForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForDisplayFormat(DisplayFormat value);
-} // namespace DisplayFormatMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace DisplayFormatMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

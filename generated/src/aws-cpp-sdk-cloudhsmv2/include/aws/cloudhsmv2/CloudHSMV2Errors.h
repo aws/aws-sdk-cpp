@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudHSMV2
-{
-enum class CloudHSMV2Errors
-{
-  //From Core//
+namespace Aws {
+namespace CloudHSMV2 {
+enum class CloudHSMV2Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudHSMV2Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudHSMV2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLOUD_HSM_ACCESS_DENIED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLOUD_HSM_ACCESS_DENIED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_HSM_INTERNAL_FAILURE,
   CLOUD_HSM_INVALID_REQUEST,
   CLOUD_HSM_RESOURCE_LIMIT_EXCEEDED,
@@ -56,9 +53,8 @@ enum class CloudHSMV2Errors
   CLOUD_HSM_TAG
 };
 
-class AWS_CLOUDHSMV2_API CloudHSMV2Error : public Aws::Client::AWSError<CloudHSMV2Errors>
-{
-public:
+class AWS_CLOUDHSMV2_API CloudHSMV2Error : public Aws::Client::AWSError<CloudHSMV2Errors> {
+ public:
   CloudHSMV2Error() {}
   CloudHSMV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
   CloudHSMV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudHSMV2ErrorMapper
-{
-  AWS_CLOUDHSMV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudHSMV2ErrorMapper {
+AWS_CLOUDHSMV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudHSMV2
-} // namespace Aws
+}  // namespace CloudHSMV2
+}  // namespace Aws

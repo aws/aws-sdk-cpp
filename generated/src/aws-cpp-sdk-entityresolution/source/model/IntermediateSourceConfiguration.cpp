@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/entityresolution/model/IntermediateSourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/entityresolution/model/IntermediateSourceConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
 
-IntermediateSourceConfiguration::IntermediateSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntermediateSourceConfiguration::IntermediateSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IntermediateSourceConfiguration& IntermediateSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("intermediateS3Path"))
-  {
+IntermediateSourceConfiguration& IntermediateSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("intermediateS3Path")) {
     m_intermediateS3Path = jsonValue.GetString("intermediateS3Path");
     m_intermediateS3PathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntermediateSourceConfiguration::Jsonize() const
-{
+JsonValue IntermediateSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_intermediateS3PathHasBeenSet)
-  {
-   payload.WithString("intermediateS3Path", m_intermediateS3Path);
-
+  if (m_intermediateS3PathHasBeenSet) {
+    payload.WithString("intermediateS3Path", m_intermediateS3Path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

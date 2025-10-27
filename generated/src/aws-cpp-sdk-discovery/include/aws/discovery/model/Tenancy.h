@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
-  enum class Tenancy
-  {
-    NOT_SET,
-    DEDICATED,
-    SHARED
-  };
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
+enum class Tenancy { NOT_SET, DEDICATED, SHARED };
 
-namespace TenancyMapper
-{
+namespace TenancyMapper {
 AWS_APPLICATIONDISCOVERYSERVICE_API Tenancy GetTenancyForName(const Aws::String& name);
 
 AWS_APPLICATIONDISCOVERYSERVICE_API Aws::String GetNameForTenancy(Tenancy value);
-} // namespace TenancyMapper
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace TenancyMapper
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

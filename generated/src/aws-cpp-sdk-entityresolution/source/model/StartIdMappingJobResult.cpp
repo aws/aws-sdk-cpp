@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/entityresolution/model/StartIdMappingJobResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/entityresolution/model/StartIdMappingJobResult.h>
 
 #include <utility>
 
@@ -17,42 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartIdMappingJobResult::StartIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+StartIdMappingJobResult::StartIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-StartIdMappingJobResult& StartIdMappingJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+StartIdMappingJobResult& StartIdMappingJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("jobId"))
-  {
+  if (jsonValue.ValueExists("jobId")) {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputSourceConfig"))
-  {
+  if (jsonValue.ValueExists("outputSourceConfig")) {
     Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
-    for(unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength(); ++outputSourceConfigIndex)
-    {
+    for (unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength();
+         ++outputSourceConfigIndex) {
       m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
     }
     m_outputSourceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobType"))
-  {
+  if (jsonValue.ValueExists("jobType")) {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("jobType"));
     m_jobTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

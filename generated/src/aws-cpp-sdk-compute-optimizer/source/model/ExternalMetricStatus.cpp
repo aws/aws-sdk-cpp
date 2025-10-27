@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ExternalMetricStatus& ExternalMetricStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+ExternalMetricStatus& ExternalMetricStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = ExternalMetricStatusCodeMapper::GetExternalMetricStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExternalMetricStatus::Jsonize() const
-{
+JsonValue ExternalMetricStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", ExternalMetricStatusCodeMapper::GetNameForExternalMetricStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", ExternalMetricStatusCodeMapper::GetNameForExternalMetricStatusCode(m_statusCode));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("statusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

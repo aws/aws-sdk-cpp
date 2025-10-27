@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PineconeConfiguration::PineconeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PineconeConfiguration::PineconeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PineconeConfiguration& PineconeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectionString"))
-  {
+PineconeConfiguration& PineconeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectionString")) {
     m_connectionString = jsonValue.GetString("connectionString");
     m_connectionStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialsSecretArn"))
-  {
+  if (jsonValue.ValueExists("credentialsSecretArn")) {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespace"))
-  {
+  if (jsonValue.ValueExists("namespace")) {
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
+  if (jsonValue.ValueExists("fieldMapping")) {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
     m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PineconeConfiguration::Jsonize() const
-{
+JsonValue PineconeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionStringHasBeenSet)
-  {
-   payload.WithString("connectionString", m_connectionString);
-
+  if (m_connectionStringHasBeenSet) {
+    payload.WithString("connectionString", m_connectionString);
   }
 
-  if(m_credentialsSecretArnHasBeenSet)
-  {
-   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
-
+  if (m_credentialsSecretArnHasBeenSet) {
+    payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
   }
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("namespace", m_namespace);
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
+  if (m_fieldMappingHasBeenSet) {
+    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

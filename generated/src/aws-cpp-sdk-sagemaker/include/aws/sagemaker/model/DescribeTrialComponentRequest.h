@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMakerRequest.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
+/**
+ */
+class DescribeTrialComponentRequest : public SageMakerRequest {
+ public:
+  AWS_SAGEMAKER_API DescribeTrialComponentRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeTrialComponent"; }
+
+  AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
+
+  AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the trial component to describe.</p>
    */
-  class DescribeTrialComponentRequest : public SageMakerRequest
-  {
-  public:
-    AWS_SAGEMAKER_API DescribeTrialComponentRequest() = default;
+  inline const Aws::String& GetTrialComponentName() const { return m_trialComponentName; }
+  inline bool TrialComponentNameHasBeenSet() const { return m_trialComponentNameHasBeenSet; }
+  template <typename TrialComponentNameT = Aws::String>
+  void SetTrialComponentName(TrialComponentNameT&& value) {
+    m_trialComponentNameHasBeenSet = true;
+    m_trialComponentName = std::forward<TrialComponentNameT>(value);
+  }
+  template <typename TrialComponentNameT = Aws::String>
+  DescribeTrialComponentRequest& WithTrialComponentName(TrialComponentNameT&& value) {
+    SetTrialComponentName(std::forward<TrialComponentNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_trialComponentName;
+  bool m_trialComponentNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeTrialComponent"; }
-
-    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
-
-    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the trial component to describe.</p>
-     */
-    inline const Aws::String& GetTrialComponentName() const { return m_trialComponentName; }
-    inline bool TrialComponentNameHasBeenSet() const { return m_trialComponentNameHasBeenSet; }
-    template<typename TrialComponentNameT = Aws::String>
-    void SetTrialComponentName(TrialComponentNameT&& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = std::forward<TrialComponentNameT>(value); }
-    template<typename TrialComponentNameT = Aws::String>
-    DescribeTrialComponentRequest& WithTrialComponentName(TrialComponentNameT&& value) { SetTrialComponentName(std::forward<TrialComponentNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

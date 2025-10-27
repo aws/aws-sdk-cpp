@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/NotebookInstanceLifecycleHook.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/NotebookInstanceLifecycleHook.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue) { *this = jsonValue; }
 
-NotebookInstanceLifecycleHook& NotebookInstanceLifecycleHook::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Content"))
-  {
+NotebookInstanceLifecycleHook& NotebookInstanceLifecycleHook::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotebookInstanceLifecycleHook::Jsonize() const
-{
+JsonValue NotebookInstanceLifecycleHook::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

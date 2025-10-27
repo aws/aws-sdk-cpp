@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/MetricDimension.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/MetricDimension.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-MetricDimension::MetricDimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricDimension::MetricDimension(JsonView jsonValue) { *this = jsonValue; }
 
-MetricDimension& MetricDimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dimensionName"))
-  {
+MetricDimension& MetricDimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensionName")) {
     m_dimensionName = jsonValue.GetString("dimensionName");
     m_dimensionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operator"))
-  {
+  if (jsonValue.ValueExists("operator")) {
     m_operator = DimensionValueOperatorMapper::GetDimensionValueOperatorForName(jsonValue.GetString("operator"));
     m_operatorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricDimension::Jsonize() const
-{
+JsonValue MetricDimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionNameHasBeenSet)
-  {
-   payload.WithString("dimensionName", m_dimensionName);
-
+  if (m_dimensionNameHasBeenSet) {
+    payload.WithString("dimensionName", m_dimensionName);
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", DimensionValueOperatorMapper::GetNameForDimensionValueOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("operator", DimensionValueOperatorMapper::GetNameForDimensionValueOperator(m_operator));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

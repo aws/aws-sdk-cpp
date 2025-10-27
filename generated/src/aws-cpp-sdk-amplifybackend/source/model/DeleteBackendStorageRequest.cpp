@@ -12,24 +12,16 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteBackendStorageRequest::SerializePayload() const
-{
+Aws::String DeleteBackendStorageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("resourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

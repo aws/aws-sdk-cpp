@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-runtime/model/RecognizeUtteranceRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lexv2-runtime/model/RecognizeUtteranceRequest.h>
 
 #include <utility>
 
@@ -15,40 +15,32 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-
-
-Aws::Http::HeaderValueCollection RecognizeUtteranceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RecognizeUtteranceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_sessionStateHasBeenSet)
-  {
+  if (m_sessionStateHasBeenSet) {
     ss << m_sessionState;
-    headers.emplace("x-amz-lex-session-state",  ss.str());
+    headers.emplace("x-amz-lex-session-state", ss.str());
     ss.str("");
   }
 
-  if(m_requestAttributesHasBeenSet)
-  {
+  if (m_requestAttributesHasBeenSet) {
     ss << m_requestAttributes;
-    headers.emplace("x-amz-lex-request-attributes",  ss.str());
+    headers.emplace("x-amz-lex-request-attributes", ss.str());
     ss.str("");
   }
 
-  if(m_requestContentTypeHasBeenSet)
-  {
+  if (m_requestContentTypeHasBeenSet) {
     ss << m_requestContentType;
-    headers.emplace("content-type",  ss.str());
+    headers.emplace("content-type", ss.str());
     ss.str("");
   }
 
-  if(m_responseContentTypeHasBeenSet)
-  {
+  if (m_responseContentTypeHasBeenSet) {
     ss << m_responseContentType;
-    headers.emplace("response-content-type",  ss.str());
+    headers.emplace("response-content-type", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }

@@ -7,26 +7,16 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
-  enum class ConnectionType
-  {
-    NOT_SET,
-    WEBSOCKET,
-    CONNECTION_CREDENTIALS,
-    WEBRTC_CONNECTION
-  };
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
+enum class ConnectionType { NOT_SET, WEBSOCKET, CONNECTION_CREDENTIALS, WEBRTC_CONNECTION };
 
-namespace ConnectionTypeMapper
-{
+namespace ConnectionTypeMapper {
 AWS_CONNECTPARTICIPANT_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
 
 AWS_CONNECTPARTICIPANT_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace ConnectionTypeMapper
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

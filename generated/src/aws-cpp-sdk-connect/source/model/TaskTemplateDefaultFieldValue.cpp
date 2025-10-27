@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TaskTemplateDefaultFieldValue::TaskTemplateDefaultFieldValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskTemplateDefaultFieldValue::TaskTemplateDefaultFieldValue(JsonView jsonValue) { *this = jsonValue; }
 
-TaskTemplateDefaultFieldValue& TaskTemplateDefaultFieldValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+TaskTemplateDefaultFieldValue& TaskTemplateDefaultFieldValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetObject("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultValue"))
-  {
+  if (jsonValue.ValueExists("DefaultValue")) {
     m_defaultValue = jsonValue.GetString("DefaultValue");
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TaskTemplateDefaultFieldValue::Jsonize() const
-{
+JsonValue TaskTemplateDefaultFieldValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithObject("Id", m_id.Jsonize());
-
+  if (m_idHasBeenSet) {
+    payload.WithObject("Id", m_id.Jsonize());
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("DefaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("DefaultValue", m_defaultValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

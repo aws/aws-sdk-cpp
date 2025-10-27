@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/GetAdminScopeResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/fms/model/GetAdminScopeResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAdminScopeResult& GetAdminScopeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAdminScopeResult& GetAdminScopeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AdminScope"))
-  {
+  if (jsonValue.ValueExists("AdminScope")) {
     m_adminScope = jsonValue.GetObject("AdminScope");
     m_adminScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = OrganizationStatusMapper::GetOrganizationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

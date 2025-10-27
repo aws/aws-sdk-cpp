@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-class BedrockEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Bedrock {
+class BedrockEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Bedrock
+}  // namespace Aws

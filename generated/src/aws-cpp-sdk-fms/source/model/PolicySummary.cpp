@@ -3,124 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/PolicySummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/PolicySummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-PolicySummary::PolicySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PolicySummary::PolicySummary(JsonView jsonValue) { *this = jsonValue; }
 
-PolicySummary& PolicySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyArn"))
-  {
+PolicySummary& PolicySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyArn")) {
     m_policyArn = jsonValue.GetString("PolicyArn");
     m_policyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyId"))
-  {
+  if (jsonValue.ValueExists("PolicyId")) {
     m_policyId = jsonValue.GetString("PolicyId");
     m_policyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyName"))
-  {
+  if (jsonValue.ValueExists("PolicyName")) {
     m_policyName = jsonValue.GetString("PolicyName");
     m_policyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityServiceType"))
-  {
+  if (jsonValue.ValueExists("SecurityServiceType")) {
     m_securityServiceType = SecurityServiceTypeMapper::GetSecurityServiceTypeForName(jsonValue.GetString("SecurityServiceType"));
     m_securityServiceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RemediationEnabled"))
-  {
+  if (jsonValue.ValueExists("RemediationEnabled")) {
     m_remediationEnabled = jsonValue.GetBool("RemediationEnabled");
     m_remediationEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeleteUnusedFMManagedResources"))
-  {
+  if (jsonValue.ValueExists("DeleteUnusedFMManagedResources")) {
     m_deleteUnusedFMManagedResources = jsonValue.GetBool("DeleteUnusedFMManagedResources");
     m_deleteUnusedFMManagedResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyStatus"))
-  {
+  if (jsonValue.ValueExists("PolicyStatus")) {
     m_policyStatus = CustomerPolicyStatusMapper::GetCustomerPolicyStatusForName(jsonValue.GetString("PolicyStatus"));
     m_policyStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PolicySummary::Jsonize() const
-{
+JsonValue PolicySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyArnHasBeenSet)
-  {
-   payload.WithString("PolicyArn", m_policyArn);
-
+  if (m_policyArnHasBeenSet) {
+    payload.WithString("PolicyArn", m_policyArn);
   }
 
-  if(m_policyIdHasBeenSet)
-  {
-   payload.WithString("PolicyId", m_policyId);
-
+  if (m_policyIdHasBeenSet) {
+    payload.WithString("PolicyId", m_policyId);
   }
 
-  if(m_policyNameHasBeenSet)
-  {
-   payload.WithString("PolicyName", m_policyName);
-
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_securityServiceTypeHasBeenSet)
-  {
-   payload.WithString("SecurityServiceType", SecurityServiceTypeMapper::GetNameForSecurityServiceType(m_securityServiceType));
+  if (m_securityServiceTypeHasBeenSet) {
+    payload.WithString("SecurityServiceType", SecurityServiceTypeMapper::GetNameForSecurityServiceType(m_securityServiceType));
   }
 
-  if(m_remediationEnabledHasBeenSet)
-  {
-   payload.WithBool("RemediationEnabled", m_remediationEnabled);
-
+  if (m_remediationEnabledHasBeenSet) {
+    payload.WithBool("RemediationEnabled", m_remediationEnabled);
   }
 
-  if(m_deleteUnusedFMManagedResourcesHasBeenSet)
-  {
-   payload.WithBool("DeleteUnusedFMManagedResources", m_deleteUnusedFMManagedResources);
-
+  if (m_deleteUnusedFMManagedResourcesHasBeenSet) {
+    payload.WithBool("DeleteUnusedFMManagedResources", m_deleteUnusedFMManagedResources);
   }
 
-  if(m_policyStatusHasBeenSet)
-  {
-   payload.WithString("PolicyStatus", CustomerPolicyStatusMapper::GetNameForCustomerPolicyStatus(m_policyStatus));
+  if (m_policyStatusHasBeenSet) {
+    payload.WithString("PolicyStatus", CustomerPolicyStatusMapper::GetNameForCustomerPolicyStatus(m_policyStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

@@ -4,69 +4,55 @@
  */
 
 #include <aws/connectcampaignsv2/model/InstanceLimitsHandling.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
+namespace InstanceLimitsHandlingMapper {
 
-namespace Aws
-{
-  namespace ConnectCampaignsV2
-  {
-    namespace Model
-    {
-      namespace InstanceLimitsHandlingMapper
-      {
+static const int OPT_IN_HASH = HashingUtils::HashString("OPT_IN");
+static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
 
-        static const int OPT_IN_HASH = HashingUtils::HashString("OPT_IN");
-        static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
+InstanceLimitsHandling GetInstanceLimitsHandlingForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OPT_IN_HASH) {
+    return InstanceLimitsHandling::OPT_IN;
+  } else if (hashCode == OPT_OUT_HASH) {
+    return InstanceLimitsHandling::OPT_OUT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<InstanceLimitsHandling>(hashCode);
+  }
 
+  return InstanceLimitsHandling::NOT_SET;
+}
 
-        InstanceLimitsHandling GetInstanceLimitsHandlingForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OPT_IN_HASH)
-          {
-            return InstanceLimitsHandling::OPT_IN;
-          }
-          else if (hashCode == OPT_OUT_HASH)
-          {
-            return InstanceLimitsHandling::OPT_OUT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<InstanceLimitsHandling>(hashCode);
-          }
+Aws::String GetNameForInstanceLimitsHandling(InstanceLimitsHandling enumValue) {
+  switch (enumValue) {
+    case InstanceLimitsHandling::NOT_SET:
+      return {};
+    case InstanceLimitsHandling::OPT_IN:
+      return "OPT_IN";
+    case InstanceLimitsHandling::OPT_OUT:
+      return "OPT_OUT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return InstanceLimitsHandling::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForInstanceLimitsHandling(InstanceLimitsHandling enumValue)
-        {
-          switch(enumValue)
-          {
-          case InstanceLimitsHandling::NOT_SET:
-            return {};
-          case InstanceLimitsHandling::OPT_IN:
-            return "OPT_IN";
-          case InstanceLimitsHandling::OPT_OUT:
-            return "OPT_OUT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace InstanceLimitsHandlingMapper
-    } // namespace Model
-  } // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace InstanceLimitsHandlingMapper
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

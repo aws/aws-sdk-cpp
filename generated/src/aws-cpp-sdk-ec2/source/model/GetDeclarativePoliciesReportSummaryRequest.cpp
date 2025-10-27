@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetDeclarativePoliciesReportSummaryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetDeclarativePoliciesReportSummaryRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetDeclarativePoliciesReportSummaryRequest::SerializePayload() const
-{
+Aws::String GetDeclarativePoliciesReportSummaryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetDeclarativePoliciesReportSummary&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_reportIdHasBeenSet)
-  {
+  if (m_reportIdHasBeenSet) {
     ss << "ReportId=" << StringUtils::URLEncode(m_reportId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetDeclarativePoliciesReportSummaryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetDeclarativePoliciesReportSummaryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetDeclarativePoliciesReportSummaryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

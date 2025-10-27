@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/GetSparqlStreamResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptunedata/model/GetSparqlStreamResult.h>
 
 #include <utility>
 
@@ -17,56 +17,43 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSparqlStreamResult::GetSparqlStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetSparqlStreamResult::GetSparqlStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetSparqlStreamResult& GetSparqlStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSparqlStreamResult& GetSparqlStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("lastEventId"))
-  {
+  if (jsonValue.ValueExists("lastEventId")) {
     Aws::Map<Aws::String, JsonView> lastEventIdJsonMap = jsonValue.GetObject("lastEventId").GetAllObjects();
-    for(auto& lastEventIdItem : lastEventIdJsonMap)
-    {
+    for (auto& lastEventIdItem : lastEventIdJsonMap) {
       m_lastEventId[lastEventIdItem.first] = lastEventIdItem.second.AsString();
     }
     m_lastEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastTrxTimestamp"))
-  {
+  if (jsonValue.ValueExists("lastTrxTimestamp")) {
     m_lastTrxTimestampInMillis = jsonValue.GetInt64("lastTrxTimestamp");
     m_lastTrxTimestampInMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("format"))
-  {
+  if (jsonValue.ValueExists("format")) {
     m_format = jsonValue.GetString("format");
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("records"))
-  {
+  if (jsonValue.ValueExists("records")) {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
-    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
-    {
+    for (unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex) {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
     m_recordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalRecords"))
-  {
+  if (jsonValue.ValueExists("totalRecords")) {
     m_totalRecords = jsonValue.GetInteger("totalRecords");
     m_totalRecordsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

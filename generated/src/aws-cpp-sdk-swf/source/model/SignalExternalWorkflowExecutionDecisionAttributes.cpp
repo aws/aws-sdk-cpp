@@ -3,93 +3,72 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/SignalExternalWorkflowExecutionDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/SignalExternalWorkflowExecutionDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-{
+SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-SignalExternalWorkflowExecutionDecisionAttributes& SignalExternalWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowId"))
-  {
+SignalExternalWorkflowExecutionDecisionAttributes& SignalExternalWorkflowExecutionDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowId")) {
     m_workflowId = jsonValue.GetString("workflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runId"))
-  {
+  if (jsonValue.ValueExists("runId")) {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signalName"))
-  {
+  if (jsonValue.ValueExists("signalName")) {
     m_signalName = jsonValue.GetString("signalName");
     m_signalNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("input"))
-  {
+  if (jsonValue.ValueExists("input")) {
     m_input = jsonValue.GetString("input");
     m_inputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("control"))
-  {
+  if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetString("control");
     m_controlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SignalExternalWorkflowExecutionDecisionAttributes::Jsonize() const
-{
+JsonValue SignalExternalWorkflowExecutionDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_runIdHasBeenSet)
-  {
-   payload.WithString("runId", m_runId);
-
+  if (m_runIdHasBeenSet) {
+    payload.WithString("runId", m_runId);
   }
 
-  if(m_signalNameHasBeenSet)
-  {
-   payload.WithString("signalName", m_signalName);
-
+  if (m_signalNameHasBeenSet) {
+    payload.WithString("signalName", m_signalName);
   }
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithString("input", m_input);
-
+  if (m_inputHasBeenSet) {
+    payload.WithString("input", m_input);
   }
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", m_control);
-
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", m_control);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

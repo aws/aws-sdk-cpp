@@ -5,12 +5,8 @@
 
 #include <aws/budgets/BudgetsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Budgets
-} // namespace Aws
+namespace Aws {
+namespace Budgets {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Budgets
+}  // namespace Aws

@@ -4,62 +4,50 @@
  */
 
 #include <aws/chime-sdk-media-pipelines/model/MediaPipelineSinkType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+namespace MediaPipelineSinkTypeMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMediaPipelines
-  {
-    namespace Model
-    {
-      namespace MediaPipelineSinkTypeMapper
-      {
+static const int S3Bucket_HASH = HashingUtils::HashString("S3Bucket");
 
-        static const int S3Bucket_HASH = HashingUtils::HashString("S3Bucket");
+MediaPipelineSinkType GetMediaPipelineSinkTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == S3Bucket_HASH) {
+    return MediaPipelineSinkType::S3Bucket;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MediaPipelineSinkType>(hashCode);
+  }
 
+  return MediaPipelineSinkType::NOT_SET;
+}
 
-        MediaPipelineSinkType GetMediaPipelineSinkTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == S3Bucket_HASH)
-          {
-            return MediaPipelineSinkType::S3Bucket;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MediaPipelineSinkType>(hashCode);
-          }
+Aws::String GetNameForMediaPipelineSinkType(MediaPipelineSinkType enumValue) {
+  switch (enumValue) {
+    case MediaPipelineSinkType::NOT_SET:
+      return {};
+    case MediaPipelineSinkType::S3Bucket:
+      return "S3Bucket";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MediaPipelineSinkType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMediaPipelineSinkType(MediaPipelineSinkType enumValue)
-        {
-          switch(enumValue)
-          {
-          case MediaPipelineSinkType::NOT_SET:
-            return {};
-          case MediaPipelineSinkType::S3Bucket:
-            return "S3Bucket";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MediaPipelineSinkTypeMapper
-    } // namespace Model
-  } // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace MediaPipelineSinkTypeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

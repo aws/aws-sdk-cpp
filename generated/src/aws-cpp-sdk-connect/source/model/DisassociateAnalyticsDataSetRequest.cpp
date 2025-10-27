@@ -12,25 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateAnalyticsDataSetRequest::SerializePayload() const
-{
+Aws::String DisassociateAnalyticsDataSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dataSetIdHasBeenSet)
-  {
-   payload.WithString("DataSetId", m_dataSetId);
-
+  if (m_dataSetIdHasBeenSet) {
+    payload.WithString("DataSetId", m_dataSetId);
   }
 
-  if(m_targetAccountIdHasBeenSet)
-  {
-   payload.WithString("TargetAccountId", m_targetAccountId);
-
+  if (m_targetAccountIdHasBeenSet) {
+    payload.WithString("TargetAccountId", m_targetAccountId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-Trait::Trait(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Trait::Trait(JsonView jsonValue) { *this = jsonValue; }
 
-Trait& Trait::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Trait& Trait::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = AttributeNameMapper::GetAttributeNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Trait::Jsonize() const
-{
+JsonValue Trait::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", AttributeNameMapper::GetNameForAttributeName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", AttributeNameMapper::GetNameForAttributeName(m_name));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

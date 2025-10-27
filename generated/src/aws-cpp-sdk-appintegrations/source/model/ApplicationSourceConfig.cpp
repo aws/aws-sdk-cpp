@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-ApplicationSourceConfig::ApplicationSourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationSourceConfig::ApplicationSourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationSourceConfig& ApplicationSourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExternalUrlConfig"))
-  {
+ApplicationSourceConfig& ApplicationSourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExternalUrlConfig")) {
     m_externalUrlConfig = jsonValue.GetObject("ExternalUrlConfig");
     m_externalUrlConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationSourceConfig::Jsonize() const
-{
+JsonValue ApplicationSourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_externalUrlConfigHasBeenSet)
-  {
-   payload.WithObject("ExternalUrlConfig", m_externalUrlConfig.Jsonize());
-
+  if (m_externalUrlConfigHasBeenSet) {
+    payload.WithObject("ExternalUrlConfig", m_externalUrlConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

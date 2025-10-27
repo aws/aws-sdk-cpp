@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediastore/model/MetricPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediastore/model/MetricPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaStore
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaStore {
+namespace Model {
 
-MetricPolicy::MetricPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricPolicy::MetricPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-MetricPolicy& MetricPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContainerLevelMetrics"))
-  {
+MetricPolicy& MetricPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContainerLevelMetrics")) {
     m_containerLevelMetrics = ContainerLevelMetricsMapper::GetContainerLevelMetricsForName(jsonValue.GetString("ContainerLevelMetrics"));
     m_containerLevelMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricPolicyRules"))
-  {
+  if (jsonValue.ValueExists("MetricPolicyRules")) {
     Aws::Utils::Array<JsonView> metricPolicyRulesJsonList = jsonValue.GetArray("MetricPolicyRules");
-    for(unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex)
-    {
+    for (unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex) {
       m_metricPolicyRules.push_back(metricPolicyRulesJsonList[metricPolicyRulesIndex].AsObject());
     }
     m_metricPolicyRulesHasBeenSet = true;
@@ -42,29 +32,24 @@ MetricPolicy& MetricPolicy::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MetricPolicy::Jsonize() const
-{
+JsonValue MetricPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerLevelMetricsHasBeenSet)
-  {
-   payload.WithString("ContainerLevelMetrics", ContainerLevelMetricsMapper::GetNameForContainerLevelMetrics(m_containerLevelMetrics));
+  if (m_containerLevelMetricsHasBeenSet) {
+    payload.WithString("ContainerLevelMetrics", ContainerLevelMetricsMapper::GetNameForContainerLevelMetrics(m_containerLevelMetrics));
   }
 
-  if(m_metricPolicyRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricPolicyRulesJsonList(m_metricPolicyRules.size());
-   for(unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex)
-   {
-     metricPolicyRulesJsonList[metricPolicyRulesIndex].AsObject(m_metricPolicyRules[metricPolicyRulesIndex].Jsonize());
-   }
-   payload.WithArray("MetricPolicyRules", std::move(metricPolicyRulesJsonList));
-
+  if (m_metricPolicyRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricPolicyRulesJsonList(m_metricPolicyRules.size());
+    for (unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex) {
+      metricPolicyRulesJsonList[metricPolicyRulesIndex].AsObject(m_metricPolicyRules[metricPolicyRulesIndex].Jsonize());
+    }
+    payload.WithArray("MetricPolicyRules", std::move(metricPolicyRulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaStore
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaStore
+}  // namespace Aws

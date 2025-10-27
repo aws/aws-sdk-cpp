@@ -5,12 +5,8 @@
 
 #include <aws/backup-gateway/BackupGatewayEndpointProvider.h>
 
-namespace Aws
-{
-namespace BackupGateway
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BackupGateway
-} // namespace Aws
+namespace Aws {
+namespace BackupGateway {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BackupGateway
+}  // namespace Aws

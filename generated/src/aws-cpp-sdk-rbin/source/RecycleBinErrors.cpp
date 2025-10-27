@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/rbin/RecycleBinErrors.h>
 #include <aws/rbin/model/ConflictException.h>
-#include <aws/rbin/model/ServiceQuotaExceededException.h>
 #include <aws/rbin/model/ResourceNotFoundException.h>
+#include <aws/rbin/model/ServiceQuotaExceededException.h>
 #include <aws/rbin/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -16,61 +16,51 @@ using namespace Aws::Utils;
 using namespace Aws::RecycleBin;
 using namespace Aws::RecycleBin::Model;
 
-namespace Aws
-{
-namespace RecycleBin
-{
-template<> AWS_RECYCLEBIN_API ConflictException RecycleBinError::GetModeledError()
-{
+namespace Aws {
+namespace RecycleBin {
+template <>
+AWS_RECYCLEBIN_API ConflictException RecycleBinError::GetModeledError() {
   assert(this->GetErrorType() == RecycleBinErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_RECYCLEBIN_API ServiceQuotaExceededException RecycleBinError::GetModeledError()
-{
+template <>
+AWS_RECYCLEBIN_API ServiceQuotaExceededException RecycleBinError::GetModeledError() {
   assert(this->GetErrorType() == RecycleBinErrors::SERVICE_QUOTA_EXCEEDED);
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_RECYCLEBIN_API ResourceNotFoundException RecycleBinError::GetModeledError()
-{
+template <>
+AWS_RECYCLEBIN_API ResourceNotFoundException RecycleBinError::GetModeledError() {
   assert(this->GetErrorType() == RecycleBinErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-template<> AWS_RECYCLEBIN_API ValidationException RecycleBinError::GetModeledError()
-{
+template <>
+AWS_RECYCLEBIN_API ValidationException RecycleBinError::GetModeledError() {
   assert(this->GetErrorType() == RecycleBinErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
 }
 
-namespace RecycleBinErrorMapper
-{
+namespace RecycleBinErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RecycleBinErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RecycleBinErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RecycleBinErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace RecycleBinErrorMapper
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace RecycleBinErrorMapper
+}  // namespace RecycleBin
+}  // namespace Aws

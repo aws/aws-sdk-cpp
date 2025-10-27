@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DescribeDatastoreResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotanalytics/model/DescribeDatastoreResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDatastoreResult::DescribeDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeDatastoreResult::DescribeDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeDatastoreResult& DescribeDatastoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeDatastoreResult& DescribeDatastoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("datastore"))
-  {
+  if (jsonValue.ValueExists("datastore")) {
     m_datastore = jsonValue.GetObject("datastore");
     m_datastoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statistics"))
-  {
+  if (jsonValue.ValueExists("statistics")) {
     m_statistics = jsonValue.GetObject("statistics");
     m_statisticsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

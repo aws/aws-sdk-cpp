@@ -12,24 +12,16 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateSigninDelegateGroupsFromAccountRequest::SerializePayload() const
-{
+Aws::String DisassociateSigninDelegateGroupsFromAccountRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_groupNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupNamesJsonList(m_groupNames.size());
-   for(unsigned groupNamesIndex = 0; groupNamesIndex < groupNamesJsonList.GetLength(); ++groupNamesIndex)
-   {
-     groupNamesJsonList[groupNamesIndex].AsString(m_groupNames[groupNamesIndex]);
-   }
-   payload.WithArray("GroupNames", std::move(groupNamesJsonList));
-
+  if (m_groupNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupNamesJsonList(m_groupNames.size());
+    for (unsigned groupNamesIndex = 0; groupNamesIndex < groupNamesJsonList.GetLength(); ++groupNamesIndex) {
+      groupNamesJsonList[groupNamesIndex].AsString(m_groupNames[groupNamesIndex]);
+    }
+    payload.WithArray("GroupNames", std::move(groupNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

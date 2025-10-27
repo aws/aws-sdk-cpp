@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualNodeTcpConnectionPool& VirtualNodeTcpConnectionPool::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxConnections"))
-  {
+VirtualNodeTcpConnectionPool& VirtualNodeTcpConnectionPool::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxConnections")) {
     m_maxConnections = jsonValue.GetInteger("maxConnections");
     m_maxConnectionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualNodeTcpConnectionPool::Jsonize() const
-{
+JsonValue VirtualNodeTcpConnectionPool::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxConnectionsHasBeenSet)
-  {
-   payload.WithInteger("maxConnections", m_maxConnections);
-
+  if (m_maxConnectionsHasBeenSet) {
+    payload.WithInteger("maxConnections", m_maxConnections);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

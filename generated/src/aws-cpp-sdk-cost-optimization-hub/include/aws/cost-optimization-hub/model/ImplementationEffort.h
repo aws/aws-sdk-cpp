@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
-  enum class ImplementationEffort
-  {
-    NOT_SET,
-    VeryLow,
-    Low,
-    Medium,
-    High,
-    VeryHigh
-  };
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class ImplementationEffort { NOT_SET, VeryLow, Low, Medium, High, VeryHigh };
 
-namespace ImplementationEffortMapper
-{
+namespace ImplementationEffortMapper {
 AWS_COSTOPTIMIZATIONHUB_API ImplementationEffort GetImplementationEffortForName(const Aws::String& name);
 
 AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForImplementationEffort(ImplementationEffort value);
-} // namespace ImplementationEffortMapper
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace ImplementationEffortMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

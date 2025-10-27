@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class AutoScalingPolicyStateChangeReasonCode
-  {
-    NOT_SET,
-    USER_REQUEST,
-    PROVISION_FAILURE,
-    CLEANUP_FAILURE
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class AutoScalingPolicyStateChangeReasonCode { NOT_SET, USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE };
 
-namespace AutoScalingPolicyStateChangeReasonCodeMapper
-{
+namespace AutoScalingPolicyStateChangeReasonCodeMapper {
 AWS_EMR_API AutoScalingPolicyStateChangeReasonCode GetAutoScalingPolicyStateChangeReasonCodeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForAutoScalingPolicyStateChangeReasonCode(AutoScalingPolicyStateChangeReasonCode value);
-} // namespace AutoScalingPolicyStateChangeReasonCodeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace AutoScalingPolicyStateChangeReasonCodeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

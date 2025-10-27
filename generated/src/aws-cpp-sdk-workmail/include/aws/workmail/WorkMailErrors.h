@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkMail
-{
-enum class WorkMailErrors
-{
-  //From Core//
+namespace Aws {
+namespace WorkMail {
+enum class WorkMailErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WorkMailErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class WorkMailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DIRECTORY_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DIRECTORY_IN_USE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DIRECTORY_SERVICE_AUTHENTICATION_FAILED,
   DIRECTORY_UNAVAILABLE,
   EMAIL_ADDRESS_IN_USE,
@@ -70,9 +67,8 @@ enum class WorkMailErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_WORKMAIL_API WorkMailError : public Aws::Client::AWSError<WorkMailErrors>
-{
-public:
+class AWS_WORKMAIL_API WorkMailError : public Aws::Client::AWSError<WorkMailErrors> {
+ public:
   WorkMailError() {}
   WorkMailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
   WorkMailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
@@ -83,10 +79,9 @@ public:
   T GetModeledError();
 };
 
-namespace WorkMailErrorMapper
-{
-  AWS_WORKMAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WorkMailErrorMapper {
+AWS_WORKMAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace WorkMail
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-featurestore-runtime/model/PutRecordRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-featurestore-runtime/model/PutRecordRequest.h>
 
 #include <utility>
 
@@ -12,41 +12,28 @@ using namespace Aws::SageMakerFeatureStoreRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRecordRequest::SerializePayload() const
-{
+Aws::String PutRecordRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_recordHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
-   for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
-   {
-     recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
-   }
-   payload.WithArray("Record", std::move(recordJsonList));
-
+  if (m_recordHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
+    for (unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex) {
+      recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
+    }
+    payload.WithArray("Record", std::move(recordJsonList));
   }
 
-  if(m_targetStoresHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetStoresJsonList(m_targetStores.size());
-   for(unsigned targetStoresIndex = 0; targetStoresIndex < targetStoresJsonList.GetLength(); ++targetStoresIndex)
-   {
-     targetStoresJsonList[targetStoresIndex].AsString(TargetStoreMapper::GetNameForTargetStore(m_targetStores[targetStoresIndex]));
-   }
-   payload.WithArray("TargetStores", std::move(targetStoresJsonList));
-
+  if (m_targetStoresHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetStoresJsonList(m_targetStores.size());
+    for (unsigned targetStoresIndex = 0; targetStoresIndex < targetStoresJsonList.GetLength(); ++targetStoresIndex) {
+      targetStoresJsonList[targetStoresIndex].AsString(TargetStoreMapper::GetNameForTargetStore(m_targetStores[targetStoresIndex]));
+    }
+    payload.WithArray("TargetStores", std::move(targetStoresJsonList));
   }
 
-  if(m_ttlDurationHasBeenSet)
-  {
-   payload.WithObject("TtlDuration", m_ttlDuration.Jsonize());
-
+  if (m_ttlDurationHasBeenSet) {
+    payload.WithObject("TtlDuration", m_ttlDuration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class BuiltInIntentSortAttribute
-  {
-    NOT_SET,
-    IntentSignature
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class BuiltInIntentSortAttribute { NOT_SET, IntentSignature };
 
-namespace BuiltInIntentSortAttributeMapper
-{
+namespace BuiltInIntentSortAttributeMapper {
 AWS_LEXMODELSV2_API BuiltInIntentSortAttribute GetBuiltInIntentSortAttributeForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForBuiltInIntentSortAttribute(BuiltInIntentSortAttribute value);
-} // namespace BuiltInIntentSortAttributeMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BuiltInIntentSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

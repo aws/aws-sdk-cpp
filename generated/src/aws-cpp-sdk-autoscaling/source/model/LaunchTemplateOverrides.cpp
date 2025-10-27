@@ -4,54 +4,42 @@
  */
 
 #include <aws/autoscaling/model/LaunchTemplateOverrides.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlNode)
-{
+LaunchTemplateOverrides& LaunchTemplateOverrides::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
-    if(!instanceTypeNode.IsNull())
-    {
+    if (!instanceTypeNode.IsNull()) {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("WeightedCapacity");
-    if(!weightedCapacityNode.IsNull())
-    {
+    if (!weightedCapacityNode.IsNull()) {
       m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
       m_weightedCapacityHasBeenSet = true;
     }
     XmlNode launchTemplateSpecificationNode = resultNode.FirstChild("LaunchTemplateSpecification");
-    if(!launchTemplateSpecificationNode.IsNull())
-    {
+    if (!launchTemplateSpecificationNode.IsNull()) {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
-    if(!instanceRequirementsNode.IsNull())
-    {
+    if (!instanceRequirementsNode.IsNull()) {
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
     }
@@ -60,58 +48,47 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_instanceTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 
-  if(m_weightedCapacityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
+  if (m_weightedCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
   }
 
-  if(m_launchTemplateSpecificationHasBeenSet)
-  {
-      Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
-      launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
-      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
+  if (m_launchTemplateSpecificationHasBeenSet) {
+    Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
+    launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
+    m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_instanceRequirementsHasBeenSet)
-  {
-      Aws::StringStream instanceRequirementsLocationAndMemberSs;
-      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
-      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
-  }
-  if(m_weightedCapacityHasBeenSet)
-  {
-      oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
-  }
-  if(m_launchTemplateSpecificationHasBeenSet)
-  {
-      Aws::String launchTemplateSpecificationLocationAndMember(location);
-      launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
-      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
-  }
-  if(m_instanceRequirementsHasBeenSet)
-  {
-      Aws::String instanceRequirementsLocationAndMember(location);
-      instanceRequirementsLocationAndMember += ".InstanceRequirements";
-      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  if (m_instanceRequirementsHasBeenSet) {
+    Aws::StringStream instanceRequirementsLocationAndMemberSs;
+    instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+    m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instanceTypeHasBeenSet) {
+    oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
+  if (m_weightedCapacityHasBeenSet) {
+    oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
+  }
+  if (m_launchTemplateSpecificationHasBeenSet) {
+    Aws::String launchTemplateSpecificationLocationAndMember(location);
+    launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
+    m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
+  }
+  if (m_instanceRequirementsHasBeenSet) {
+    Aws::String instanceRequirementsLocationAndMember(location);
+    instanceRequirementsLocationAndMember += ".InstanceRequirements";
+    m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/transcribe/TranscribeServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace TranscribeService
-} // namespace Aws
+namespace Aws {
+namespace TranscribeService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace TranscribeService
+}  // namespace Aws

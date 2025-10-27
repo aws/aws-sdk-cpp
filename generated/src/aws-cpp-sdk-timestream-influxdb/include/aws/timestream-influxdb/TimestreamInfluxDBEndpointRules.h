@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-class TimestreamInfluxDBEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace TimestreamInfluxDB {
+class TimestreamInfluxDBEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

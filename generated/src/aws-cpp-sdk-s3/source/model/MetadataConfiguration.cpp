@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/MetadataConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/MetadataConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-MetadataConfiguration::MetadataConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MetadataConfiguration::MetadataConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetadataConfiguration& MetadataConfiguration::operator =(const XmlNode& xmlNode)
-{
+MetadataConfiguration& MetadataConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode journalTableConfigurationNode = resultNode.FirstChild("JournalTableConfiguration");
-    if(!journalTableConfigurationNode.IsNull())
-    {
+    if (!journalTableConfigurationNode.IsNull()) {
       m_journalTableConfiguration = journalTableConfigurationNode;
       m_journalTableConfigurationHasBeenSet = true;
     }
     XmlNode inventoryTableConfigurationNode = resultNode.FirstChild("InventoryTableConfiguration");
-    if(!inventoryTableConfigurationNode.IsNull())
-    {
+    if (!inventoryTableConfigurationNode.IsNull()) {
       m_inventoryTableConfiguration = inventoryTableConfigurationNode;
       m_inventoryTableConfigurationHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ MetadataConfiguration& MetadataConfiguration::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void MetadataConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void MetadataConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_journalTableConfigurationHasBeenSet)
-  {
-   XmlNode journalTableConfigurationNode = parentNode.CreateChildElement("JournalTableConfiguration");
-   m_journalTableConfiguration.AddToNode(journalTableConfigurationNode);
+  if (m_journalTableConfigurationHasBeenSet) {
+    XmlNode journalTableConfigurationNode = parentNode.CreateChildElement("JournalTableConfiguration");
+    m_journalTableConfiguration.AddToNode(journalTableConfigurationNode);
   }
 
-  if(m_inventoryTableConfigurationHasBeenSet)
-  {
-   XmlNode inventoryTableConfigurationNode = parentNode.CreateChildElement("InventoryTableConfiguration");
-   m_inventoryTableConfiguration.AddToNode(inventoryTableConfigurationNode);
+  if (m_inventoryTableConfigurationHasBeenSet) {
+    XmlNode inventoryTableConfigurationNode = parentNode.CreateChildElement("InventoryTableConfiguration");
+    m_inventoryTableConfiguration.AddToNode(inventoryTableConfigurationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

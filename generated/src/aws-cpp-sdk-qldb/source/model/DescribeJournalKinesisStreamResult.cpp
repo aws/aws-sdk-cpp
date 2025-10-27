@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb/model/DescribeJournalKinesisStreamResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qldb/model/DescribeJournalKinesisStreamResult.h>
 
 #include <utility>
 
@@ -17,28 +17,23 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeJournalKinesisStreamResult::DescribeJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeJournalKinesisStreamResult::DescribeJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeJournalKinesisStreamResult& DescribeJournalKinesisStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeJournalKinesisStreamResult& DescribeJournalKinesisStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Stream"))
-  {
+  if (jsonValue.ValueExists("Stream")) {
     m_stream = jsonValue.GetObject("Stream");
     m_streamHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

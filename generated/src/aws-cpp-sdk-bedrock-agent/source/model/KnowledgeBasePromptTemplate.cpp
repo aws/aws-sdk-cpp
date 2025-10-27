@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-KnowledgeBasePromptTemplate::KnowledgeBasePromptTemplate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KnowledgeBasePromptTemplate::KnowledgeBasePromptTemplate(JsonView jsonValue) { *this = jsonValue; }
 
-KnowledgeBasePromptTemplate& KnowledgeBasePromptTemplate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("textPromptTemplate"))
-  {
+KnowledgeBasePromptTemplate& KnowledgeBasePromptTemplate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("textPromptTemplate")) {
     m_textPromptTemplate = jsonValue.GetString("textPromptTemplate");
     m_textPromptTemplateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KnowledgeBasePromptTemplate::Jsonize() const
-{
+JsonValue KnowledgeBasePromptTemplate::Jsonize() const {
   JsonValue payload;
 
-  if(m_textPromptTemplateHasBeenSet)
-  {
-   payload.WithString("textPromptTemplate", m_textPromptTemplate);
-
+  if (m_textPromptTemplateHasBeenSet) {
+    payload.WithString("textPromptTemplate", m_textPromptTemplate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
+AuthenticationConfiguration& AuthenticationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectionArn")) {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
     m_connectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("AccessRoleArn")) {
     m_accessRoleArn = jsonValue.GetString("AccessRoleArn");
     m_accessRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthenticationConfiguration::Jsonize() const
-{
+JsonValue AuthenticationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
-  if(m_accessRoleArnHasBeenSet)
-  {
-   payload.WithString("AccessRoleArn", m_accessRoleArn);
-
+  if (m_accessRoleArnHasBeenSet) {
+    payload.WithString("AccessRoleArn", m_accessRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

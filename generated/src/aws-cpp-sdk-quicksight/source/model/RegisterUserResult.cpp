@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RegisterUserResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/RegisterUserResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterUserResult::RegisterUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RegisterUserResult::RegisterUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RegisterUserResult& RegisterUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RegisterUserResult& RegisterUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("User"))
-  {
+  if (jsonValue.ValueExists("User")) {
     m_user = jsonValue.GetObject("User");
     m_userHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserInvitationUrl"))
-  {
+  if (jsonValue.ValueExists("UserInvitationUrl")) {
     m_userInvitationUrl = jsonValue.GetString("UserInvitationUrl");
     m_userInvitationUrlHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_status = static_cast<int>(result.GetResponseCode());
   m_statusHasBeenSet = true;

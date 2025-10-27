@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class AcceptanceType
-  {
-    NOT_SET,
-    ACCEPT,
-    REJECT
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class AcceptanceType { NOT_SET, ACCEPT, REJECT };
 
-namespace AcceptanceTypeMapper
-{
+namespace AcceptanceTypeMapper {
 AWS_GAMELIFT_API AcceptanceType GetAcceptanceTypeForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForAcceptanceType(AcceptanceType value);
-} // namespace AcceptanceTypeMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace AcceptanceTypeMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

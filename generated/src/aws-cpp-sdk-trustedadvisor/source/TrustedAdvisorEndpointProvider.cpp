@@ -5,12 +5,8 @@
 
 #include <aws/trustedadvisor/TrustedAdvisorEndpointProvider.h>
 
-namespace Aws
-{
-namespace TrustedAdvisor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace TrustedAdvisor
-} // namespace Aws
+namespace Aws {
+namespace TrustedAdvisor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace TrustedAdvisor
+}  // namespace Aws

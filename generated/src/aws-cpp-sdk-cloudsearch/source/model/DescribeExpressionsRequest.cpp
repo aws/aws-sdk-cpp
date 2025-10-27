@@ -10,35 +10,26 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeExpressionsRequest::SerializePayload() const
-{
+Aws::String DescribeExpressionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeExpressions&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_expressionNamesHasBeenSet)
-  {
-    if (m_expressionNames.empty())
-    {
+  if (m_expressionNamesHasBeenSet) {
+    if (m_expressionNames.empty()) {
       ss << "ExpressionNames=&";
-    }
-    else
-    {
+    } else {
       unsigned expressionNamesCount = 1;
-      for(auto& item : m_expressionNames)
-      {
-        ss << "ExpressionNames.member." << expressionNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_expressionNames) {
+        ss << "ExpressionNames.member." << expressionNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         expressionNamesCount++;
       }
     }
   }
 
-  if(m_deployedHasBeenSet)
-  {
+  if (m_deployedHasBeenSet) {
     ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeExpressionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeExpressionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeExpressionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

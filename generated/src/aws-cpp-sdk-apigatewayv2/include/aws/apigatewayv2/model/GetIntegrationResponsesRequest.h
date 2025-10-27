@@ -4,103 +4,121 @@
  */
 
 #pragma once
-#include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
+#include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace ApiGatewayV2 {
+namespace Model {
 
+/**
+ */
+class GetIntegrationResponsesRequest : public ApiGatewayV2Request {
+ public:
+  AWS_APIGATEWAYV2_API GetIntegrationResponsesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetIntegrationResponses"; }
+
+  AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
+
+  AWS_APIGATEWAYV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The API identifier.</p>
    */
-  class GetIntegrationResponsesRequest : public ApiGatewayV2Request
-  {
-  public:
-    AWS_APIGATEWAYV2_API GetIntegrationResponsesRequest() = default;
+  inline const Aws::String& GetApiId() const { return m_apiId; }
+  inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+  template <typename ApiIdT = Aws::String>
+  void SetApiId(ApiIdT&& value) {
+    m_apiIdHasBeenSet = true;
+    m_apiId = std::forward<ApiIdT>(value);
+  }
+  template <typename ApiIdT = Aws::String>
+  GetIntegrationResponsesRequest& WithApiId(ApiIdT&& value) {
+    SetApiId(std::forward<ApiIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetIntegrationResponses"; }
+  ///@{
+  /**
+   * <p>The integration ID.</p>
+   */
+  inline const Aws::String& GetIntegrationId() const { return m_integrationId; }
+  inline bool IntegrationIdHasBeenSet() const { return m_integrationIdHasBeenSet; }
+  template <typename IntegrationIdT = Aws::String>
+  void SetIntegrationId(IntegrationIdT&& value) {
+    m_integrationIdHasBeenSet = true;
+    m_integrationId = std::forward<IntegrationIdT>(value);
+  }
+  template <typename IntegrationIdT = Aws::String>
+  GetIntegrationResponsesRequest& WithIntegrationId(IntegrationIdT&& value) {
+    SetIntegrationId(std::forward<IntegrationIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The maximum number of elements to be returned for this resource.</p>
+   */
+  inline const Aws::String& GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  template <typename MaxResultsT = Aws::String>
+  void SetMaxResults(MaxResultsT&& value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = std::forward<MaxResultsT>(value);
+  }
+  template <typename MaxResultsT = Aws::String>
+  GetIntegrationResponsesRequest& WithMaxResults(MaxResultsT&& value) {
+    SetMaxResults(std::forward<MaxResultsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_APIGATEWAYV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p>The next page of elements from this collection. Not valid for the last
+   * element of the collection.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetIntegrationResponsesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_apiId;
+  bool m_apiIdHasBeenSet = false;
 
+  Aws::String m_integrationId;
+  bool m_integrationIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The API identifier.</p>
-     */
-    inline const Aws::String& GetApiId() const { return m_apiId; }
-    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    template<typename ApiIdT = Aws::String>
-    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
-    template<typename ApiIdT = Aws::String>
-    GetIntegrationResponsesRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_maxResults;
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The integration ID.</p>
-     */
-    inline const Aws::String& GetIntegrationId() const { return m_integrationId; }
-    inline bool IntegrationIdHasBeenSet() const { return m_integrationIdHasBeenSet; }
-    template<typename IntegrationIdT = Aws::String>
-    void SetIntegrationId(IntegrationIdT&& value) { m_integrationIdHasBeenSet = true; m_integrationId = std::forward<IntegrationIdT>(value); }
-    template<typename IntegrationIdT = Aws::String>
-    GetIntegrationResponsesRequest& WithIntegrationId(IntegrationIdT&& value) { SetIntegrationId(std::forward<IntegrationIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of elements to be returned for this resource.</p>
-     */
-    inline const Aws::String& GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    template<typename MaxResultsT = Aws::String>
-    void SetMaxResults(MaxResultsT&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::forward<MaxResultsT>(value); }
-    template<typename MaxResultsT = Aws::String>
-    GetIntegrationResponsesRequest& WithMaxResults(MaxResultsT&& value) { SetMaxResults(std::forward<MaxResultsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetIntegrationResponsesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_apiId;
-    bool m_apiIdHasBeenSet = false;
-
-    Aws::String m_integrationId;
-    bool m_integrationIdHasBeenSet = false;
-
-    Aws::String m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

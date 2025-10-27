@@ -4,42 +4,37 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class InstanceAttributeName
-  {
-    NOT_SET,
-    instanceType,
-    kernel,
-    ramdisk,
-    userData,
-    disableApiTermination,
-    instanceInitiatedShutdownBehavior,
-    rootDeviceName,
-    blockDeviceMapping,
-    productCodes,
-    sourceDestCheck,
-    groupSet,
-    ebsOptimized,
-    sriovNetSupport,
-    enaSupport,
-    enclaveOptions,
-    disableApiStop
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class InstanceAttributeName {
+  NOT_SET,
+  instanceType,
+  kernel,
+  ramdisk,
+  userData,
+  disableApiTermination,
+  instanceInitiatedShutdownBehavior,
+  rootDeviceName,
+  blockDeviceMapping,
+  productCodes,
+  sourceDestCheck,
+  groupSet,
+  ebsOptimized,
+  sriovNetSupport,
+  enaSupport,
+  enclaveOptions,
+  disableApiStop
+};
 
-namespace InstanceAttributeNameMapper
-{
+namespace InstanceAttributeNameMapper {
 AWS_EC2_API InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForInstanceAttributeName(InstanceAttributeName value);
-} // namespace InstanceAttributeNameMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace InstanceAttributeNameMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

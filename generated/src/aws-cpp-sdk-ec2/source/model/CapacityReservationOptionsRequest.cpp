@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CapacityReservationOptionsRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CapacityReservationOptionsRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-CapacityReservationOptionsRequest::CapacityReservationOptionsRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CapacityReservationOptionsRequest::CapacityReservationOptionsRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CapacityReservationOptionsRequest& CapacityReservationOptionsRequest::operator =(const XmlNode& xmlNode)
-{
+CapacityReservationOptionsRequest& CapacityReservationOptionsRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode usageStrategyNode = resultNode.FirstChild("UsageStrategy");
-    if(!usageStrategyNode.IsNull())
-    {
-      m_usageStrategy = FleetCapacityReservationUsageStrategyMapper::GetFleetCapacityReservationUsageStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageStrategyNode.GetText()).c_str()));
+    if (!usageStrategyNode.IsNull()) {
+      m_usageStrategy = FleetCapacityReservationUsageStrategyMapper::GetFleetCapacityReservationUsageStrategyForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageStrategyNode.GetText()).c_str()));
       m_usageStrategyHasBeenSet = true;
     }
   }
@@ -42,23 +34,25 @@ CapacityReservationOptionsRequest& CapacityReservationOptionsRequest::operator =
   return *this;
 }
 
-void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_usageStrategyHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UsageStrategy=" << StringUtils::URLEncode(FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy)) << "&";
-  }
-
-}
-
-void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_usageStrategyHasBeenSet)
-  {
-      oStream << location << ".UsageStrategy=" << StringUtils::URLEncode(FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy)) << "&";
+void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                       const char* locationValue) const {
+  if (m_usageStrategyHasBeenSet) {
+    oStream << location << index << locationValue << ".UsageStrategy="
+            << StringUtils::URLEncode(
+                   FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_usageStrategyHasBeenSet) {
+    oStream << location << ".UsageStrategy="
+            << StringUtils::URLEncode(
+                   FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

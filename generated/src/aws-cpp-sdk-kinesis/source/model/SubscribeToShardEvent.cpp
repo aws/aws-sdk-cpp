@@ -3,52 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis/model/SubscribeToShardEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis/model/SubscribeToShardEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Model
-{
+namespace Aws {
+namespace Kinesis {
+namespace Model {
 
-SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue) { *this = jsonValue; }
 
-SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Records"))
-  {
+SubscribeToShardEvent& SubscribeToShardEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Records")) {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
-    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
-    {
+    for (unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex) {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
     m_recordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContinuationSequenceNumber"))
-  {
+  if (jsonValue.ValueExists("ContinuationSequenceNumber")) {
     m_continuationSequenceNumber = jsonValue.GetString("ContinuationSequenceNumber");
     m_continuationSequenceNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MillisBehindLatest"))
-  {
+  if (jsonValue.ValueExists("MillisBehindLatest")) {
     m_millisBehindLatest = jsonValue.GetInt64("MillisBehindLatest");
     m_millisBehindLatestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChildShards"))
-  {
+  if (jsonValue.ValueExists("ChildShards")) {
     Aws::Utils::Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
-    for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
-    {
+    for (unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex) {
       m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
     }
     m_childShardsHasBeenSet = true;
@@ -56,47 +43,36 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SubscribeToShardEvent::Jsonize() const
-{
+JsonValue SubscribeToShardEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_recordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
-   for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
-   {
-     recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
-   }
-   payload.WithArray("Records", std::move(recordsJsonList));
-
+  if (m_recordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
+    for (unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex) {
+      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
+    }
+    payload.WithArray("Records", std::move(recordsJsonList));
   }
 
-  if(m_continuationSequenceNumberHasBeenSet)
-  {
-   payload.WithString("ContinuationSequenceNumber", m_continuationSequenceNumber);
-
+  if (m_continuationSequenceNumberHasBeenSet) {
+    payload.WithString("ContinuationSequenceNumber", m_continuationSequenceNumber);
   }
 
-  if(m_millisBehindLatestHasBeenSet)
-  {
-   payload.WithInt64("MillisBehindLatest", m_millisBehindLatest);
-
+  if (m_millisBehindLatestHasBeenSet) {
+    payload.WithInt64("MillisBehindLatest", m_millisBehindLatest);
   }
 
-  if(m_childShardsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> childShardsJsonList(m_childShards.size());
-   for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
-   {
-     childShardsJsonList[childShardsIndex].AsObject(m_childShards[childShardsIndex].Jsonize());
-   }
-   payload.WithArray("ChildShards", std::move(childShardsJsonList));
-
+  if (m_childShardsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> childShardsJsonList(m_childShards.size());
+    for (unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex) {
+      childShardsJsonList[childShardsIndex].AsObject(m_childShards[childShardsIndex].Jsonize());
+    }
+    payload.WithArray("ChildShards", std::move(childShardsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kinesis
+}  // namespace Aws

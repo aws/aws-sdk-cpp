@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerSideEncryptionConfiguration::Jsonize() const
-{
+JsonValue ServerSideEncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/snowball/SnowballEndpointRules.h>
+#include <aws/snowball/Snowball_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Snowball
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Snowball {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SnowballClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SnowballDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SNOWBALL_API SnowballEndpointProvider : public SnowballDefaultEpProviderBase
-{
-public:
-    using SnowballResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SNOWBALL_API SnowballEndpointProvider : public SnowballDefaultEpProviderBase {
+ public:
+  using SnowballResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SnowballEndpointProvider()
-      : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::GetRulesBlob(), Aws::Snowball::SnowballEndpointRules::RulesBlobSize)
-    {}
+  SnowballEndpointProvider()
+      : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::GetRulesBlob(),
+                                      Aws::Snowball::SnowballEndpointRules::RulesBlobSize) {}
 
-    ~SnowballEndpointProvider()
-    {
-    }
+  ~SnowballEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Snowball
+}  // namespace Aws

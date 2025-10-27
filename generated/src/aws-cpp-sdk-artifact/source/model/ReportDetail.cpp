@@ -11,242 +11,182 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Artifact
-{
-namespace Model
-{
+namespace Aws {
+namespace Artifact {
+namespace Model {
 
-ReportDetail::ReportDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportDetail::ReportDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ReportDetail& ReportDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ReportDetail& ReportDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("periodStart"))
-  {
+  if (jsonValue.ValueExists("periodStart")) {
     m_periodStart = jsonValue.GetString("periodStart");
     m_periodStartHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("periodEnd"))
-  {
+  if (jsonValue.ValueExists("periodEnd")) {
     m_periodEnd = jsonValue.GetString("periodEnd");
     m_periodEndHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedAt"))
-  {
+  if (jsonValue.ValueExists("lastModifiedAt")) {
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletedAt"))
-  {
+  if (jsonValue.ValueExists("deletedAt")) {
     m_deletedAt = jsonValue.GetString("deletedAt");
     m_deletedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = PublishedStateMapper::GetPublishedStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("series"))
-  {
+  if (jsonValue.ValueExists("series")) {
     m_series = jsonValue.GetString("series");
     m_seriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("category"))
-  {
+  if (jsonValue.ValueExists("category")) {
     m_category = jsonValue.GetString("category");
     m_categoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("companyName"))
-  {
+  if (jsonValue.ValueExists("companyName")) {
     m_companyName = jsonValue.GetString("companyName");
     m_companyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("productName"))
-  {
+  if (jsonValue.ValueExists("productName")) {
     m_productName = jsonValue.GetString("productName");
     m_productNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("termArn"))
-  {
+  if (jsonValue.ValueExists("termArn")) {
     m_termArn = jsonValue.GetString("termArn");
     m_termArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetInt64("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("acceptanceType"))
-  {
+  if (jsonValue.ValueExists("acceptanceType")) {
     m_acceptanceType = AcceptanceTypeMapper::GetAcceptanceTypeForName(jsonValue.GetString("acceptanceType"));
     m_acceptanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sequenceNumber"))
-  {
+  if (jsonValue.ValueExists("sequenceNumber")) {
     m_sequenceNumber = jsonValue.GetInt64("sequenceNumber");
     m_sequenceNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("uploadState"))
-  {
+  if (jsonValue.ValueExists("uploadState")) {
     m_uploadState = UploadStateMapper::GetUploadStateForName(jsonValue.GetString("uploadState"));
     m_uploadStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusMessage"))
-  {
+  if (jsonValue.ValueExists("statusMessage")) {
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportDetail::Jsonize() const
-{
+JsonValue ReportDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_periodStartHasBeenSet)
-  {
-   payload.WithString("periodStart", m_periodStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_periodStartHasBeenSet) {
+    payload.WithString("periodStart", m_periodStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_periodEndHasBeenSet)
-  {
-   payload.WithString("periodEnd", m_periodEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_periodEndHasBeenSet) {
+    payload.WithString("periodEnd", m_periodEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedAtHasBeenSet)
-  {
-   payload.WithString("lastModifiedAt", m_lastModifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedAtHasBeenSet) {
+    payload.WithString("lastModifiedAt", m_lastModifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_deletedAtHasBeenSet)
-  {
-   payload.WithString("deletedAt", m_deletedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_deletedAtHasBeenSet) {
+    payload.WithString("deletedAt", m_deletedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", PublishedStateMapper::GetNameForPublishedState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", PublishedStateMapper::GetNameForPublishedState(m_state));
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_seriesHasBeenSet)
-  {
-   payload.WithString("series", m_series);
-
+  if (m_seriesHasBeenSet) {
+    payload.WithString("series", m_series);
   }
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", m_category);
-
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", m_category);
   }
 
-  if(m_companyNameHasBeenSet)
-  {
-   payload.WithString("companyName", m_companyName);
-
+  if (m_companyNameHasBeenSet) {
+    payload.WithString("companyName", m_companyName);
   }
 
-  if(m_productNameHasBeenSet)
-  {
-   payload.WithString("productName", m_productName);
-
+  if (m_productNameHasBeenSet) {
+    payload.WithString("productName", m_productName);
   }
 
-  if(m_termArnHasBeenSet)
-  {
-   payload.WithString("termArn", m_termArn);
-
+  if (m_termArnHasBeenSet) {
+    payload.WithString("termArn", m_termArn);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInt64("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithInt64("version", m_version);
   }
 
-  if(m_acceptanceTypeHasBeenSet)
-  {
-   payload.WithString("acceptanceType", AcceptanceTypeMapper::GetNameForAcceptanceType(m_acceptanceType));
+  if (m_acceptanceTypeHasBeenSet) {
+    payload.WithString("acceptanceType", AcceptanceTypeMapper::GetNameForAcceptanceType(m_acceptanceType));
   }
 
-  if(m_sequenceNumberHasBeenSet)
-  {
-   payload.WithInt64("sequenceNumber", m_sequenceNumber);
-
+  if (m_sequenceNumberHasBeenSet) {
+    payload.WithInt64("sequenceNumber", m_sequenceNumber);
   }
 
-  if(m_uploadStateHasBeenSet)
-  {
-   payload.WithString("uploadState", UploadStateMapper::GetNameForUploadState(m_uploadState));
+  if (m_uploadStateHasBeenSet) {
+    payload.WithString("uploadState", UploadStateMapper::GetNameForUploadState(m_uploadState));
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("statusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("statusMessage", m_statusMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Artifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace Artifact
+}  // namespace Aws

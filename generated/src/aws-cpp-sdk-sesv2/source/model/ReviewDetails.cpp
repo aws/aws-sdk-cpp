@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/ReviewDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ReviewDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-ReviewDetails::ReviewDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReviewDetails::ReviewDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ReviewDetails& ReviewDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+ReviewDetails& ReviewDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CaseId"))
-  {
+  if (jsonValue.ValueExists("CaseId")) {
     m_caseId = jsonValue.GetString("CaseId");
     m_caseIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReviewDetails::Jsonize() const
-{
+JsonValue ReviewDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ReviewStatusMapper::GetNameForReviewStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ReviewStatusMapper::GetNameForReviewStatus(m_status));
   }
 
-  if(m_caseIdHasBeenSet)
-  {
-   payload.WithString("CaseId", m_caseId);
-
+  if (m_caseIdHasBeenSet) {
+    payload.WithString("CaseId", m_caseId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
-  enum class SyncResourceState
-  {
-    NOT_SET,
-    INITIALIZING,
-    PROCESSING,
-    DELETED,
-    IN_SYNC,
-    ERROR_
-  };
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
+enum class SyncResourceState { NOT_SET, INITIALIZING, PROCESSING, DELETED, IN_SYNC, ERROR_ };
 
-namespace SyncResourceStateMapper
-{
+namespace SyncResourceStateMapper {
 AWS_IOTTWINMAKER_API SyncResourceState GetSyncResourceStateForName(const Aws::String& name);
 
 AWS_IOTTWINMAKER_API Aws::String GetNameForSyncResourceState(SyncResourceState value);
-} // namespace SyncResourceStateMapper
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace SyncResourceStateMapper
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

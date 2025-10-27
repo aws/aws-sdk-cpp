@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-OpsItemRelatedItemAlreadyExistsException::OpsItemRelatedItemAlreadyExistsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpsItemRelatedItemAlreadyExistsException::OpsItemRelatedItemAlreadyExistsException(JsonView jsonValue) { *this = jsonValue; }
 
-OpsItemRelatedItemAlreadyExistsException& OpsItemRelatedItemAlreadyExistsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+OpsItemRelatedItemAlreadyExistsException& OpsItemRelatedItemAlreadyExistsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceUri"))
-  {
+  if (jsonValue.ValueExists("ResourceUri")) {
     m_resourceUri = jsonValue.GetString("ResourceUri");
     m_resourceUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OpsItemId"))
-  {
+  if (jsonValue.ValueExists("OpsItemId")) {
     m_opsItemId = jsonValue.GetString("OpsItemId");
     m_opsItemIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpsItemRelatedItemAlreadyExistsException::Jsonize() const
-{
+JsonValue OpsItemRelatedItemAlreadyExistsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_resourceUriHasBeenSet)
-  {
-   payload.WithString("ResourceUri", m_resourceUri);
-
+  if (m_resourceUriHasBeenSet) {
+    payload.WithString("ResourceUri", m_resourceUri);
   }
 
-  if(m_opsItemIdHasBeenSet)
-  {
-   payload.WithString("OpsItemId", m_opsItemId);
-
+  if (m_opsItemIdHasBeenSet) {
+    payload.WithString("OpsItemId", m_opsItemId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

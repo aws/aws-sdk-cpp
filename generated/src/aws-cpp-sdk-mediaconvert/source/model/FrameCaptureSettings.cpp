@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/FrameCaptureSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/FrameCaptureSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) { *this = jsonValue; }
 
-FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("framerateDenominator"))
-  {
+FrameCaptureSettings& FrameCaptureSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("framerateDenominator")) {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
     m_framerateDenominatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framerateNumerator"))
-  {
+  if (jsonValue.ValueExists("framerateNumerator")) {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
     m_framerateNumeratorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxCaptures"))
-  {
+  if (jsonValue.ValueExists("maxCaptures")) {
     m_maxCaptures = jsonValue.GetInteger("maxCaptures");
     m_maxCapturesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quality"))
-  {
+  if (jsonValue.ValueExists("quality")) {
     m_quality = jsonValue.GetInteger("quality");
     m_qualityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FrameCaptureSettings::Jsonize() const
-{
+JsonValue FrameCaptureSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_framerateDenominatorHasBeenSet)
-  {
-   payload.WithInteger("framerateDenominator", m_framerateDenominator);
-
+  if (m_framerateDenominatorHasBeenSet) {
+    payload.WithInteger("framerateDenominator", m_framerateDenominator);
   }
 
-  if(m_framerateNumeratorHasBeenSet)
-  {
-   payload.WithInteger("framerateNumerator", m_framerateNumerator);
-
+  if (m_framerateNumeratorHasBeenSet) {
+    payload.WithInteger("framerateNumerator", m_framerateNumerator);
   }
 
-  if(m_maxCapturesHasBeenSet)
-  {
-   payload.WithInteger("maxCaptures", m_maxCaptures);
-
+  if (m_maxCapturesHasBeenSet) {
+    payload.WithInteger("maxCaptures", m_maxCaptures);
   }
 
-  if(m_qualityHasBeenSet)
-  {
-   payload.WithInteger("quality", m_quality);
-
+  if (m_qualityHasBeenSet) {
+    payload.WithInteger("quality", m_quality);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Invoicing;
 
-AWSError<CoreErrors> InvoicingErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> InvoicingErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = InvoicingErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

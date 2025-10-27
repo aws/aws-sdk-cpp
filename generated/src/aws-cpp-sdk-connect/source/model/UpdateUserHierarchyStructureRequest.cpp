@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserHierarchyStructureRequest::SerializePayload() const
-{
+Aws::String UpdateUserHierarchyStructureRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hierarchyStructureHasBeenSet)
-  {
-   payload.WithObject("HierarchyStructure", m_hierarchyStructure.Jsonize());
-
+  if (m_hierarchyStructureHasBeenSet) {
+    payload.WithObject("HierarchyStructure", m_hierarchyStructure.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

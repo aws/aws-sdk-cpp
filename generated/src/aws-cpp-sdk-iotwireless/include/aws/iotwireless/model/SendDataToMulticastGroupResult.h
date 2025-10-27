@@ -4,60 +4,65 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace IoTWireless
-{
-namespace Model
-{
-  class SendDataToMulticastGroupResult
-  {
-  public:
-    AWS_IOTWIRELESS_API SendDataToMulticastGroupResult() = default;
-    AWS_IOTWIRELESS_API SendDataToMulticastGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_IOTWIRELESS_API SendDataToMulticastGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace IoTWireless {
+namespace Model {
+class SendDataToMulticastGroupResult {
+ public:
+  AWS_IOTWIRELESS_API SendDataToMulticastGroupResult() = default;
+  AWS_IOTWIRELESS_API SendDataToMulticastGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IOTWIRELESS_API SendDataToMulticastGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetMessageId() const { return m_messageId; }
-    template<typename MessageIdT = Aws::String>
-    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
-    template<typename MessageIdT = Aws::String>
-    SendDataToMulticastGroupResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetMessageId() const { return m_messageId; }
+  template <typename MessageIdT = Aws::String>
+  void SetMessageId(MessageIdT&& value) {
+    m_messageIdHasBeenSet = true;
+    m_messageId = std::forward<MessageIdT>(value);
+  }
+  template <typename MessageIdT = Aws::String>
+  SendDataToMulticastGroupResult& WithMessageId(MessageIdT&& value) {
+    SetMessageId(std::forward<MessageIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    SendDataToMulticastGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Aws::String m_messageId;
-    bool m_messageIdHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  SendDataToMulticastGroupResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_messageId;
+  bool m_messageIdHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

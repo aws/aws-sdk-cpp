@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/dataexchange/DataExchangeRequest.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-} // namespace DataExchange
-} // namespace Aws
+namespace Aws {
+namespace DataExchange {}  // namespace DataExchange
+}  // namespace Aws

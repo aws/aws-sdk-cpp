@@ -3,39 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVpcEndpointConnectionNotificationRequest::SerializePayload() const
-{
+Aws::String ModifyVpcEndpointConnectionNotificationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcEndpointConnectionNotification&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_connectionNotificationIdHasBeenSet)
-  {
+  if (m_connectionNotificationIdHasBeenSet) {
     ss << "ConnectionNotificationId=" << StringUtils::URLEncode(m_connectionNotificationId.c_str()) << "&";
   }
 
-  if(m_connectionNotificationArnHasBeenSet)
-  {
+  if (m_connectionNotificationArnHasBeenSet) {
     ss << "ConnectionNotificationArn=" << StringUtils::URLEncode(m_connectionNotificationArn.c_str()) << "&";
   }
 
-  if(m_connectionEventsHasBeenSet)
-  {
+  if (m_connectionEventsHasBeenSet) {
     unsigned connectionEventsCount = 1;
-    for(auto& item : m_connectionEvents)
-    {
-      ss << "ConnectionEvents." << connectionEventsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_connectionEvents) {
+      ss << "ConnectionEvents." << connectionEventsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       connectionEventsCount++;
     }
   }
@@ -44,8 +37,4 @@ Aws::String ModifyVpcEndpointConnectionNotificationRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  ModifyVpcEndpointConnectionNotificationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyVpcEndpointConnectionNotificationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

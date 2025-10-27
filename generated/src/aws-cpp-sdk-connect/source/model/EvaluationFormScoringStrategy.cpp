@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationFormScoringStrategy::EvaluationFormScoringStrategy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationFormScoringStrategy::EvaluationFormScoringStrategy(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationFormScoringStrategy& EvaluationFormScoringStrategy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Mode"))
-  {
+EvaluationFormScoringStrategy& EvaluationFormScoringStrategy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = EvaluationFormScoringModeMapper::GetEvaluationFormScoringModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = EvaluationFormScoringStatusMapper::GetEvaluationFormScoringStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationFormScoringStrategy::Jsonize() const
-{
+JsonValue EvaluationFormScoringStrategy::Jsonize() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", EvaluationFormScoringModeMapper::GetNameForEvaluationFormScoringMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", EvaluationFormScoringModeMapper::GetNameForEvaluationFormScoringMode(m_mode));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", EvaluationFormScoringStatusMapper::GetNameForEvaluationFormScoringStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", EvaluationFormScoringStatusMapper::GetNameForEvaluationFormScoringStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

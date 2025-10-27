@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/UpdateSolNetworkInstanceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/tnb/model/UpdateSolNetworkInstanceResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSolNetworkInstanceResult::UpdateSolNetworkInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateSolNetworkInstanceResult::UpdateSolNetworkInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateSolNetworkInstanceResult& UpdateSolNetworkInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateSolNetworkInstanceResult& UpdateSolNetworkInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nsLcmOpOccId"))
-  {
+  if (jsonValue.ValueExists("nsLcmOpOccId")) {
     m_nsLcmOpOccId = jsonValue.GetString("nsLcmOpOccId");
     m_nsLcmOpOccIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -42,12 +35,10 @@ UpdateSolNetworkInstanceResult& UpdateSolNetworkInstanceResult::operator =(const
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

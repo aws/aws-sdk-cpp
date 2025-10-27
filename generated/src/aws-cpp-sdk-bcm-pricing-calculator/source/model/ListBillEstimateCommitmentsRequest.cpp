@@ -12,39 +12,26 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListBillEstimateCommitmentsRequest::SerializePayload() const
-{
+Aws::String ListBillEstimateCommitmentsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_billEstimateIdHasBeenSet)
-  {
-   payload.WithString("billEstimateId", m_billEstimateId);
-
+  if (m_billEstimateIdHasBeenSet) {
+    payload.WithString("billEstimateId", m_billEstimateId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListBillEstimateCommitmentsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListBillEstimateCommitmentsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.ListBillEstimateCommitments"));
   return headers;
-
 }
-
-
-
-

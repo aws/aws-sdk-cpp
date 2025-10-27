@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TerminateClientVpnConnectionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/TerminateClientVpnConnectionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String TerminateClientVpnConnectionsRequest::SerializePayload() const
-{
+Aws::String TerminateClientVpnConnectionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=TerminateClientVpnConnections&";
-  if(m_clientVpnEndpointIdHasBeenSet)
-  {
+  if (m_clientVpnEndpointIdHasBeenSet) {
     ss << "ClientVpnEndpointId=" << StringUtils::URLEncode(m_clientVpnEndpointId.c_str()) << "&";
   }
 
-  if(m_connectionIdHasBeenSet)
-  {
+  if (m_connectionIdHasBeenSet) {
     ss << "ConnectionId=" << StringUtils::URLEncode(m_connectionId.c_str()) << "&";
   }
 
-  if(m_usernameHasBeenSet)
-  {
+  if (m_usernameHasBeenSet) {
     ss << "Username=" << StringUtils::URLEncode(m_username.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String TerminateClientVpnConnectionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  TerminateClientVpnConnectionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void TerminateClientVpnConnectionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

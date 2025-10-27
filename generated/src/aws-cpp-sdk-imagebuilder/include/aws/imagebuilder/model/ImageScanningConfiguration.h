@@ -6,70 +6,75 @@
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/EcrConfiguration.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
 
+/**
+ * <p>Contains settings for Image Builder image resource and container image
+ * scans.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageScanningConfiguration">AWS
+ * API Reference</a></p>
+ */
+class ImageScanningConfiguration {
+ public:
+  AWS_IMAGEBUILDER_API ImageScanningConfiguration() = default;
+  AWS_IMAGEBUILDER_API ImageScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API ImageScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains settings for Image Builder image resource and container image
-   * scans.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageScanningConfiguration">AWS
-   * API Reference</a></p>
+   * <p>A setting that indicates whether Image Builder keeps a snapshot of the
+   * vulnerability scans that Amazon Inspector runs against the build instance when
+   * you create a new image.</p>
    */
-  class ImageScanningConfiguration
-  {
-  public:
-    AWS_IMAGEBUILDER_API ImageScanningConfiguration() = default;
-    AWS_IMAGEBUILDER_API ImageScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API ImageScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetImageScanningEnabled() const { return m_imageScanningEnabled; }
+  inline bool ImageScanningEnabledHasBeenSet() const { return m_imageScanningEnabledHasBeenSet; }
+  inline void SetImageScanningEnabled(bool value) {
+    m_imageScanningEnabledHasBeenSet = true;
+    m_imageScanningEnabled = value;
+  }
+  inline ImageScanningConfiguration& WithImageScanningEnabled(bool value) {
+    SetImageScanningEnabled(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Contains Amazon ECR settings for vulnerability scans.</p>
+   */
+  inline const EcrConfiguration& GetEcrConfiguration() const { return m_ecrConfiguration; }
+  inline bool EcrConfigurationHasBeenSet() const { return m_ecrConfigurationHasBeenSet; }
+  template <typename EcrConfigurationT = EcrConfiguration>
+  void SetEcrConfiguration(EcrConfigurationT&& value) {
+    m_ecrConfigurationHasBeenSet = true;
+    m_ecrConfiguration = std::forward<EcrConfigurationT>(value);
+  }
+  template <typename EcrConfigurationT = EcrConfiguration>
+  ImageScanningConfiguration& WithEcrConfiguration(EcrConfigurationT&& value) {
+    SetEcrConfiguration(std::forward<EcrConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_imageScanningEnabled{false};
+  bool m_imageScanningEnabledHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A setting that indicates whether Image Builder keeps a snapshot of the
-     * vulnerability scans that Amazon Inspector runs against the build instance when
-     * you create a new image.</p>
-     */
-    inline bool GetImageScanningEnabled() const { return m_imageScanningEnabled; }
-    inline bool ImageScanningEnabledHasBeenSet() const { return m_imageScanningEnabledHasBeenSet; }
-    inline void SetImageScanningEnabled(bool value) { m_imageScanningEnabledHasBeenSet = true; m_imageScanningEnabled = value; }
-    inline ImageScanningConfiguration& WithImageScanningEnabled(bool value) { SetImageScanningEnabled(value); return *this;}
-    ///@}
+  EcrConfiguration m_ecrConfiguration;
+  bool m_ecrConfigurationHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Contains Amazon ECR settings for vulnerability scans.</p>
-     */
-    inline const EcrConfiguration& GetEcrConfiguration() const { return m_ecrConfiguration; }
-    inline bool EcrConfigurationHasBeenSet() const { return m_ecrConfigurationHasBeenSet; }
-    template<typename EcrConfigurationT = EcrConfiguration>
-    void SetEcrConfiguration(EcrConfigurationT&& value) { m_ecrConfigurationHasBeenSet = true; m_ecrConfiguration = std::forward<EcrConfigurationT>(value); }
-    template<typename EcrConfigurationT = EcrConfiguration>
-    ImageScanningConfiguration& WithEcrConfiguration(EcrConfigurationT&& value) { SetEcrConfiguration(std::forward<EcrConfigurationT>(value)); return *this;}
-    ///@}
-  private:
-
-    bool m_imageScanningEnabled{false};
-    bool m_imageScanningEnabledHasBeenSet = false;
-
-    EcrConfiguration m_ecrConfiguration;
-    bool m_ecrConfigurationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

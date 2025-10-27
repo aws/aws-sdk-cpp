@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-RetryConfiguration::RetryConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetryConfiguration::RetryConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RetryConfiguration& RetryConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("retryMode"))
-  {
+RetryConfiguration& RetryConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("retryMode")) {
     m_retryMode = StageRetryModeMapper::GetStageRetryModeForName(jsonValue.GetString("retryMode"));
     m_retryModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetryConfiguration::Jsonize() const
-{
+JsonValue RetryConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_retryModeHasBeenSet)
-  {
-   payload.WithString("retryMode", StageRetryModeMapper::GetNameForStageRetryMode(m_retryMode));
+  if (m_retryModeHasBeenSet) {
+    payload.WithString("retryMode", StageRetryModeMapper::GetNameForStageRetryMode(m_retryMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

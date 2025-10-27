@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/ResourcePendingMaintenanceActions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/ResourcePendingMaintenanceActions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(JsonView jsonValue) { *this = jsonValue; }
 
-ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceIdentifier"))
-  {
+ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceIdentifier")) {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
     m_resourceIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PendingMaintenanceActionDetails"))
-  {
+  if (jsonValue.ValueExists("PendingMaintenanceActionDetails")) {
     Aws::Utils::Array<JsonView> pendingMaintenanceActionDetailsJsonList = jsonValue.GetArray("PendingMaintenanceActionDetails");
-    for(unsigned pendingMaintenanceActionDetailsIndex = 0; pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength(); ++pendingMaintenanceActionDetailsIndex)
-    {
+    for (unsigned pendingMaintenanceActionDetailsIndex = 0;
+         pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength();
+         ++pendingMaintenanceActionDetailsIndex) {
       m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionDetailsJsonList[pendingMaintenanceActionDetailsIndex].AsObject());
     }
     m_pendingMaintenanceActionDetailsHasBeenSet = true;
@@ -42,30 +34,27 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
   return *this;
 }
 
-JsonValue ResourcePendingMaintenanceActions::Jsonize() const
-{
+JsonValue ResourcePendingMaintenanceActions::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
   }
 
-  if(m_pendingMaintenanceActionDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pendingMaintenanceActionDetailsJsonList(m_pendingMaintenanceActionDetails.size());
-   for(unsigned pendingMaintenanceActionDetailsIndex = 0; pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength(); ++pendingMaintenanceActionDetailsIndex)
-   {
-     pendingMaintenanceActionDetailsJsonList[pendingMaintenanceActionDetailsIndex].AsObject(m_pendingMaintenanceActionDetails[pendingMaintenanceActionDetailsIndex].Jsonize());
-   }
-   payload.WithArray("PendingMaintenanceActionDetails", std::move(pendingMaintenanceActionDetailsJsonList));
-
+  if (m_pendingMaintenanceActionDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pendingMaintenanceActionDetailsJsonList(m_pendingMaintenanceActionDetails.size());
+    for (unsigned pendingMaintenanceActionDetailsIndex = 0;
+         pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength();
+         ++pendingMaintenanceActionDetailsIndex) {
+      pendingMaintenanceActionDetailsJsonList[pendingMaintenanceActionDetailsIndex].AsObject(
+          m_pendingMaintenanceActionDetails[pendingMaintenanceActionDetailsIndex].Jsonize());
+    }
+    payload.WithArray("PendingMaintenanceActionDetails", std::move(pendingMaintenanceActionDetailsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

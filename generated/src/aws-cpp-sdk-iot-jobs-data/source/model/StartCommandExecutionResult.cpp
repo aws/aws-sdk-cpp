@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-jobs-data/model/StartCommandExecutionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot-jobs-data/model/StartCommandExecutionResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartCommandExecutionResult::StartCommandExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+StartCommandExecutionResult::StartCommandExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-StartCommandExecutionResult& StartCommandExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+StartCommandExecutionResult& StartCommandExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("executionId"))
-  {
+  if (jsonValue.ValueExists("executionId")) {
     m_executionId = jsonValue.GetString("executionId");
     m_executionIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

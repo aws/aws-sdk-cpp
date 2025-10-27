@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/InitiateJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/InitiateJobRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InitiateJobRequest::SerializePayload() const
-{
+Aws::String InitiateJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobParametersHasBeenSet)
-  {
-   payload = m_jobParameters.Jsonize();
+  if (m_jobParametersHasBeenSet) {
+    payload = m_jobParameters.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

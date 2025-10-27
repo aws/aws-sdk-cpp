@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class BlockerStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    RESOLVED
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class BlockerStatus { NOT_SET, ACTIVE, RESOLVED };
 
-namespace BlockerStatusMapper
-{
+namespace BlockerStatusMapper {
 AWS_PROTON_API BlockerStatus GetBlockerStatusForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForBlockerStatus(BlockerStatus value);
-} // namespace BlockerStatusMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace BlockerStatusMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

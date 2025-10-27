@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/WordCloudFieldWells.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/WordCloudFieldWells.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-WordCloudFieldWells::WordCloudFieldWells(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WordCloudFieldWells::WordCloudFieldWells(JsonView jsonValue) { *this = jsonValue; }
 
-WordCloudFieldWells& WordCloudFieldWells::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WordCloudAggregatedFieldWells"))
-  {
+WordCloudFieldWells& WordCloudFieldWells::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WordCloudAggregatedFieldWells")) {
     m_wordCloudAggregatedFieldWells = jsonValue.GetObject("WordCloudAggregatedFieldWells");
     m_wordCloudAggregatedFieldWellsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WordCloudFieldWells::Jsonize() const
-{
+JsonValue WordCloudFieldWells::Jsonize() const {
   JsonValue payload;
 
-  if(m_wordCloudAggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("WordCloudAggregatedFieldWells", m_wordCloudAggregatedFieldWells.Jsonize());
-
+  if (m_wordCloudAggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("WordCloudAggregatedFieldWells", m_wordCloudAggregatedFieldWells.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

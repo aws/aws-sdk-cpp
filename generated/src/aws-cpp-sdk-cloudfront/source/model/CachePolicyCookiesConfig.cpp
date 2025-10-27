@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/CachePolicyCookiesConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-CachePolicyCookiesConfig::CachePolicyCookiesConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CachePolicyCookiesConfig::CachePolicyCookiesConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CachePolicyCookiesConfig& CachePolicyCookiesConfig::operator =(const XmlNode& xmlNode)
-{
+CachePolicyCookiesConfig& CachePolicyCookiesConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cookieBehaviorNode = resultNode.FirstChild("CookieBehavior");
-    if(!cookieBehaviorNode.IsNull())
-    {
-      m_cookieBehavior = CachePolicyCookieBehaviorMapper::GetCachePolicyCookieBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cookieBehaviorNode.GetText()).c_str()));
+    if (!cookieBehaviorNode.IsNull()) {
+      m_cookieBehavior = CachePolicyCookieBehaviorMapper::GetCachePolicyCookieBehaviorForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cookieBehaviorNode.GetText()).c_str()));
       m_cookieBehaviorHasBeenSet = true;
     }
     XmlNode cookiesNode = resultNode.FirstChild("Cookies");
-    if(!cookiesNode.IsNull())
-    {
+    if (!cookiesNode.IsNull()) {
       m_cookies = cookiesNode;
       m_cookiesHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ CachePolicyCookiesConfig& CachePolicyCookiesConfig::operator =(const XmlNode& xm
   return *this;
 }
 
-void CachePolicyCookiesConfig::AddToNode(XmlNode& parentNode) const
-{
+void CachePolicyCookiesConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_cookieBehaviorHasBeenSet)
-  {
-   XmlNode cookieBehaviorNode = parentNode.CreateChildElement("CookieBehavior");
-   cookieBehaviorNode.SetText(CachePolicyCookieBehaviorMapper::GetNameForCachePolicyCookieBehavior(m_cookieBehavior));
+  if (m_cookieBehaviorHasBeenSet) {
+    XmlNode cookieBehaviorNode = parentNode.CreateChildElement("CookieBehavior");
+    cookieBehaviorNode.SetText(CachePolicyCookieBehaviorMapper::GetNameForCachePolicyCookieBehavior(m_cookieBehavior));
   }
 
-  if(m_cookiesHasBeenSet)
-  {
-   XmlNode cookiesNode = parentNode.CreateChildElement("Cookies");
-   m_cookies.AddToNode(cookiesNode);
+  if (m_cookiesHasBeenSet) {
+    XmlNode cookiesNode = parentNode.CreateChildElement("Cookies");
+    m_cookies.AddToNode(cookiesNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

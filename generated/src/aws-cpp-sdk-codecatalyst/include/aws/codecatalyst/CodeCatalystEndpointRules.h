@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-class CodeCatalystEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeCatalyst {
+class CodeCatalystEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace CodeCatalyst
+}  // namespace Aws

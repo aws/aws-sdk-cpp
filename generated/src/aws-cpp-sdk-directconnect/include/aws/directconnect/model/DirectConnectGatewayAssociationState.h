@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
-  enum class DirectConnectGatewayAssociationState
-  {
-    NOT_SET,
-    associating,
-    associated,
-    disassociating,
-    disassociated,
-    updating
-  };
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
+enum class DirectConnectGatewayAssociationState { NOT_SET, associating, associated, disassociating, disassociated, updating };
 
-namespace DirectConnectGatewayAssociationStateMapper
-{
+namespace DirectConnectGatewayAssociationStateMapper {
 AWS_DIRECTCONNECT_API DirectConnectGatewayAssociationState GetDirectConnectGatewayAssociationStateForName(const Aws::String& name);
 
 AWS_DIRECTCONNECT_API Aws::String GetNameForDirectConnectGatewayAssociationState(DirectConnectGatewayAssociationState value);
-} // namespace DirectConnectGatewayAssociationStateMapper
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace DirectConnectGatewayAssociationStateMapper
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

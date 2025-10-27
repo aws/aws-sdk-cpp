@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-class TimestreamQueryEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace TimestreamQuery {
+class TimestreamQueryEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace TimestreamQuery
+}  // namespace Aws

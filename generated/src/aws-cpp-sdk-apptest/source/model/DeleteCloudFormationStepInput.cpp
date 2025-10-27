@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-DeleteCloudFormationStepInput::DeleteCloudFormationStepInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteCloudFormationStepInput::DeleteCloudFormationStepInput(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteCloudFormationStepInput& DeleteCloudFormationStepInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stackId"))
-  {
+DeleteCloudFormationStepInput& DeleteCloudFormationStepInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stackId")) {
     m_stackId = jsonValue.GetString("stackId");
     m_stackIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeleteCloudFormationStepInput::Jsonize() const
-{
+JsonValue DeleteCloudFormationStepInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_stackIdHasBeenSet)
-  {
-   payload.WithString("stackId", m_stackId);
-
+  if (m_stackIdHasBeenSet) {
+    payload.WithString("stackId", m_stackId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

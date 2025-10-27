@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-FrameworkMappingDetails::FrameworkMappingDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FrameworkMappingDetails::FrameworkMappingDetails(JsonView jsonValue) { *this = jsonValue; }
 
-FrameworkMappingDetails& FrameworkMappingDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+FrameworkMappingDetails& FrameworkMappingDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Item"))
-  {
+  if (jsonValue.ValueExists("Item")) {
     m_item = jsonValue.GetString("Item");
     m_itemHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FrameworkMappingDetails::Jsonize() const
-{
+JsonValue FrameworkMappingDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_itemHasBeenSet)
-  {
-   payload.WithString("Item", m_item);
-
+  if (m_itemHasBeenSet) {
+    payload.WithString("Item", m_item);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

@@ -11,40 +11,28 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue) { *this = jsonValue; }
 
-BatchAttachTypedLink& BatchAttachTypedLink::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceObjectReference"))
-  {
+BatchAttachTypedLink& BatchAttachTypedLink::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceObjectReference")) {
     m_sourceObjectReference = jsonValue.GetObject("SourceObjectReference");
     m_sourceObjectReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetObjectReference"))
-  {
+  if (jsonValue.ValueExists("TargetObjectReference")) {
     m_targetObjectReference = jsonValue.GetObject("TargetObjectReference");
     m_targetObjectReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TypedLinkFacet"))
-  {
+  if (jsonValue.ValueExists("TypedLinkFacet")) {
     m_typedLinkFacet = jsonValue.GetObject("TypedLinkFacet");
     m_typedLinkFacetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attributes"))
-  {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
@@ -52,42 +40,32 @@ BatchAttachTypedLink& BatchAttachTypedLink::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BatchAttachTypedLink::Jsonize() const
-{
+JsonValue BatchAttachTypedLink::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceObjectReferenceHasBeenSet)
-  {
-   payload.WithObject("SourceObjectReference", m_sourceObjectReference.Jsonize());
-
+  if (m_sourceObjectReferenceHasBeenSet) {
+    payload.WithObject("SourceObjectReference", m_sourceObjectReference.Jsonize());
   }
 
-  if(m_targetObjectReferenceHasBeenSet)
-  {
-   payload.WithObject("TargetObjectReference", m_targetObjectReference.Jsonize());
-
+  if (m_targetObjectReferenceHasBeenSet) {
+    payload.WithObject("TargetObjectReference", m_targetObjectReference.Jsonize());
   }
 
-  if(m_typedLinkFacetHasBeenSet)
-  {
-   payload.WithObject("TypedLinkFacet", m_typedLinkFacet.Jsonize());
-
+  if (m_typedLinkFacetHasBeenSet) {
+    payload.WithObject("TypedLinkFacet", m_typedLinkFacet.Jsonize());
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
-   }
-   payload.WithArray("Attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+    }
+    payload.WithArray("Attributes", std::move(attributesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

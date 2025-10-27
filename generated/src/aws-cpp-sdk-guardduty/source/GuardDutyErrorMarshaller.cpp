@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GuardDuty;
 
-AWSError<CoreErrors> GuardDutyErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GuardDutyErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GuardDutyErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

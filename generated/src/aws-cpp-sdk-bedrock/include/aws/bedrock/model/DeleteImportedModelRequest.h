@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
+#include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
+/**
+ */
+class DeleteImportedModelRequest : public BedrockRequest {
+ public:
+  AWS_BEDROCK_API DeleteImportedModelRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteImportedModel"; }
+
+  AWS_BEDROCK_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>Name of the imported model to delete.</p>
    */
-  class DeleteImportedModelRequest : public BedrockRequest
-  {
-  public:
-    AWS_BEDROCK_API DeleteImportedModelRequest() = default;
+  inline const Aws::String& GetModelIdentifier() const { return m_modelIdentifier; }
+  inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
+  template <typename ModelIdentifierT = Aws::String>
+  void SetModelIdentifier(ModelIdentifierT&& value) {
+    m_modelIdentifierHasBeenSet = true;
+    m_modelIdentifier = std::forward<ModelIdentifierT>(value);
+  }
+  template <typename ModelIdentifierT = Aws::String>
+  DeleteImportedModelRequest& WithModelIdentifier(ModelIdentifierT&& value) {
+    SetModelIdentifier(std::forward<ModelIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_modelIdentifier;
+  bool m_modelIdentifierHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteImportedModel"; }
-
-    AWS_BEDROCK_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>Name of the imported model to delete.</p>
-     */
-    inline const Aws::String& GetModelIdentifier() const { return m_modelIdentifier; }
-    inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-    template<typename ModelIdentifierT = Aws::String>
-    void SetModelIdentifier(ModelIdentifierT&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::forward<ModelIdentifierT>(value); }
-    template<typename ModelIdentifierT = Aws::String>
-    DeleteImportedModelRequest& WithModelIdentifier(ModelIdentifierT&& value) { SetModelIdentifier(std::forward<ModelIdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_modelIdentifier;
-    bool m_modelIdentifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

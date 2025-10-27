@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-RdsDataApiConfig::RdsDataApiConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RdsDataApiConfig::RdsDataApiConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RdsDataApiConfig& RdsDataApiConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceArn"))
-  {
+RdsDataApiConfig& RdsDataApiConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceArn")) {
     m_resourceArn = jsonValue.GetString("resourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretArn"))
-  {
+  if (jsonValue.ValueExists("secretArn")) {
     m_secretArn = jsonValue.GetString("secretArn");
     m_secretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseName"))
-  {
+  if (jsonValue.ValueExists("databaseName")) {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RdsDataApiConfig::Jsonize() const
-{
+JsonValue RdsDataApiConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_secretArnHasBeenSet)
-  {
-   payload.WithString("secretArn", m_secretArn);
-
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("secretArn", m_secretArn);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("databaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("databaseName", m_databaseName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

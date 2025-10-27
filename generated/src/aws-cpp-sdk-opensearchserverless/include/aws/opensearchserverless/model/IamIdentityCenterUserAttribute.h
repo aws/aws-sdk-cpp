@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
-  enum class IamIdentityCenterUserAttribute
-  {
-    NOT_SET,
-    UserId,
-    UserName,
-    Email
-  };
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+enum class IamIdentityCenterUserAttribute { NOT_SET, UserId, UserName, Email };
 
-namespace IamIdentityCenterUserAttributeMapper
-{
+namespace IamIdentityCenterUserAttributeMapper {
 AWS_OPENSEARCHSERVERLESS_API IamIdentityCenterUserAttribute GetIamIdentityCenterUserAttributeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVERLESS_API Aws::String GetNameForIamIdentityCenterUserAttribute(IamIdentityCenterUserAttribute value);
-} // namespace IamIdentityCenterUserAttributeMapper
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace IamIdentityCenterUserAttributeMapper
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

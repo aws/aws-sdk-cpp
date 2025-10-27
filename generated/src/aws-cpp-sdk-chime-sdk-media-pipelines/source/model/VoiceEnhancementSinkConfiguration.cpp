@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-VoiceEnhancementSinkConfiguration& VoiceEnhancementSinkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Disabled"))
-  {
+VoiceEnhancementSinkConfiguration& VoiceEnhancementSinkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Disabled")) {
     m_disabled = jsonValue.GetBool("Disabled");
     m_disabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VoiceEnhancementSinkConfiguration::Jsonize() const
-{
+JsonValue VoiceEnhancementSinkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_disabledHasBeenSet)
-  {
-   payload.WithBool("Disabled", m_disabled);
-
+  if (m_disabledHasBeenSet) {
+    payload.WithBool("Disabled", m_disabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

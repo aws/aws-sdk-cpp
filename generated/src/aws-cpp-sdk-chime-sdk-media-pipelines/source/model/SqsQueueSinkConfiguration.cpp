@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-SqsQueueSinkConfiguration::SqsQueueSinkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SqsQueueSinkConfiguration::SqsQueueSinkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SqsQueueSinkConfiguration& SqsQueueSinkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InsightsTarget"))
-  {
+SqsQueueSinkConfiguration& SqsQueueSinkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InsightsTarget")) {
     m_insightsTarget = jsonValue.GetString("InsightsTarget");
     m_insightsTargetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SqsQueueSinkConfiguration::Jsonize() const
-{
+JsonValue SqsQueueSinkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_insightsTargetHasBeenSet)
-  {
-   payload.WithString("InsightsTarget", m_insightsTarget);
-
+  if (m_insightsTargetHasBeenSet) {
+    payload.WithString("InsightsTarget", m_insightsTarget);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

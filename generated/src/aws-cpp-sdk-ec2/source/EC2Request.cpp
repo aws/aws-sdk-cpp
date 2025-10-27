@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/ec2/EC2Request.h>
 
-namespace Aws
-{
-namespace EC2
-{
-} // namespace EC2
-} // namespace Aws
+namespace Aws {
+namespace EC2 {}  // namespace EC2
+}  // namespace Aws

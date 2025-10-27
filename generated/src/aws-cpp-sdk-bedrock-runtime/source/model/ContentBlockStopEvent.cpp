@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ContentBlockStopEvent::ContentBlockStopEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentBlockStopEvent::ContentBlockStopEvent(JsonView jsonValue) { *this = jsonValue; }
 
-ContentBlockStopEvent& ContentBlockStopEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentBlockIndex"))
-  {
+ContentBlockStopEvent& ContentBlockStopEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentBlockIndex")) {
     m_contentBlockIndex = jsonValue.GetInteger("contentBlockIndex");
     m_contentBlockIndexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentBlockStopEvent::Jsonize() const
-{
+JsonValue ContentBlockStopEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentBlockIndexHasBeenSet)
-  {
-   payload.WithInteger("contentBlockIndex", m_contentBlockIndex);
-
+  if (m_contentBlockIndexHasBeenSet) {
+    payload.WithInteger("contentBlockIndex", m_contentBlockIndex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

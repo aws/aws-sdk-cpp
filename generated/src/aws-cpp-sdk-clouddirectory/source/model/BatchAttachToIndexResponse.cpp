@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchAttachToIndexResponse::BatchAttachToIndexResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchAttachToIndexResponse::BatchAttachToIndexResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchAttachToIndexResponse& BatchAttachToIndexResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttachedObjectIdentifier"))
-  {
+BatchAttachToIndexResponse& BatchAttachToIndexResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttachedObjectIdentifier")) {
     m_attachedObjectIdentifier = jsonValue.GetString("AttachedObjectIdentifier");
     m_attachedObjectIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchAttachToIndexResponse::Jsonize() const
-{
+JsonValue BatchAttachToIndexResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_attachedObjectIdentifierHasBeenSet)
-  {
-   payload.WithString("AttachedObjectIdentifier", m_attachedObjectIdentifier);
-
+  if (m_attachedObjectIdentifierHasBeenSet) {
+    payload.WithString("AttachedObjectIdentifier", m_attachedObjectIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

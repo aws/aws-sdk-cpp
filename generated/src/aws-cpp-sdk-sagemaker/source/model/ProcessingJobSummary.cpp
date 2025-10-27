@@ -3,122 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ProcessingJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ProcessingJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ProcessingJobSummary::ProcessingJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProcessingJobSummary::ProcessingJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProcessingJobSummary& ProcessingJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProcessingJobName"))
-  {
+ProcessingJobSummary& ProcessingJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProcessingJobName")) {
     m_processingJobName = jsonValue.GetString("ProcessingJobName");
     m_processingJobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProcessingJobArn"))
-  {
+  if (jsonValue.ValueExists("ProcessingJobArn")) {
     m_processingJobArn = jsonValue.GetString("ProcessingJobArn");
     m_processingJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProcessingEndTime"))
-  {
+  if (jsonValue.ValueExists("ProcessingEndTime")) {
     m_processingEndTime = jsonValue.GetDouble("ProcessingEndTime");
     m_processingEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProcessingJobStatus"))
-  {
+  if (jsonValue.ValueExists("ProcessingJobStatus")) {
     m_processingJobStatus = ProcessingJobStatusMapper::GetProcessingJobStatusForName(jsonValue.GetString("ProcessingJobStatus"));
     m_processingJobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
+  if (jsonValue.ValueExists("FailureReason")) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExitMessage"))
-  {
+  if (jsonValue.ValueExists("ExitMessage")) {
     m_exitMessage = jsonValue.GetString("ExitMessage");
     m_exitMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProcessingJobSummary::Jsonize() const
-{
+JsonValue ProcessingJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_processingJobNameHasBeenSet)
-  {
-   payload.WithString("ProcessingJobName", m_processingJobName);
-
+  if (m_processingJobNameHasBeenSet) {
+    payload.WithString("ProcessingJobName", m_processingJobName);
   }
 
-  if(m_processingJobArnHasBeenSet)
-  {
-   payload.WithString("ProcessingJobArn", m_processingJobArn);
-
+  if (m_processingJobArnHasBeenSet) {
+    payload.WithString("ProcessingJobArn", m_processingJobArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_processingEndTimeHasBeenSet)
-  {
-   payload.WithDouble("ProcessingEndTime", m_processingEndTime.SecondsWithMSPrecision());
+  if (m_processingEndTimeHasBeenSet) {
+    payload.WithDouble("ProcessingEndTime", m_processingEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_processingJobStatusHasBeenSet)
-  {
-   payload.WithString("ProcessingJobStatus", ProcessingJobStatusMapper::GetNameForProcessingJobStatus(m_processingJobStatus));
+  if (m_processingJobStatusHasBeenSet) {
+    payload.WithString("ProcessingJobStatus", ProcessingJobStatusMapper::GetNameForProcessingJobStatus(m_processingJobStatus));
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("FailureReason", m_failureReason);
   }
 
-  if(m_exitMessageHasBeenSet)
-  {
-   payload.WithString("ExitMessage", m_exitMessage);
-
+  if (m_exitMessageHasBeenSet) {
+    payload.WithString("ExitMessage", m_exitMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

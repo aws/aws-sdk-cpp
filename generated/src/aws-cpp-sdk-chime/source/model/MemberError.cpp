@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-MemberError::MemberError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberError::MemberError(JsonView jsonValue) { *this = jsonValue; }
 
-MemberError& MemberError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MemberId"))
-  {
+MemberError& MemberError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MemberId")) {
     m_memberId = jsonValue.GetString("MemberId");
     m_memberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberError::Jsonize() const
-{
+JsonValue MemberError::Jsonize() const {
   JsonValue payload;
 
-  if(m_memberIdHasBeenSet)
-  {
-   payload.WithString("MemberId", m_memberId);
-
+  if (m_memberIdHasBeenSet) {
+    payload.WithString("MemberId", m_memberId);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

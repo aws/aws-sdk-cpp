@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-SourceApiAssociationConfig::SourceApiAssociationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceApiAssociationConfig::SourceApiAssociationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SourceApiAssociationConfig& SourceApiAssociationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mergeType"))
-  {
+SourceApiAssociationConfig& SourceApiAssociationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mergeType")) {
     m_mergeType = MergeTypeMapper::GetMergeTypeForName(jsonValue.GetString("mergeType"));
     m_mergeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceApiAssociationConfig::Jsonize() const
-{
+JsonValue SourceApiAssociationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_mergeTypeHasBeenSet)
-  {
-   payload.WithString("mergeType", MergeTypeMapper::GetNameForMergeType(m_mergeType));
+  if (m_mergeTypeHasBeenSet) {
+    payload.WithString("mergeType", MergeTypeMapper::GetNameForMergeType(m_mergeType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

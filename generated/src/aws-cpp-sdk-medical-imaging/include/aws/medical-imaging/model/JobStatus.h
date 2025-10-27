@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 
-namespace Aws
-{
-namespace MedicalImaging
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    IN_PROGRESS,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace MedicalImaging {
+namespace Model {
+enum class JobStatus { NOT_SET, SUBMITTED, IN_PROGRESS, COMPLETED, FAILED };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_MEDICALIMAGING_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_MEDICALIMAGING_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace MedicalImaging
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace MedicalImaging
+}  // namespace Aws

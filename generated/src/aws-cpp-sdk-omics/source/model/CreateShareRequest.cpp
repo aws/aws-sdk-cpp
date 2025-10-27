@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/CreateShareRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/CreateShareRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateShareRequest::SerializePayload() const
-{
+Aws::String CreateShareRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_principalSubscriberHasBeenSet)
-  {
-   payload.WithString("principalSubscriber", m_principalSubscriber);
-
+  if (m_principalSubscriberHasBeenSet) {
+    payload.WithString("principalSubscriber", m_principalSubscriber);
   }
 
-  if(m_shareNameHasBeenSet)
-  {
-   payload.WithString("shareName", m_shareName);
-
+  if (m_shareNameHasBeenSet) {
+    payload.WithString("shareName", m_shareName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

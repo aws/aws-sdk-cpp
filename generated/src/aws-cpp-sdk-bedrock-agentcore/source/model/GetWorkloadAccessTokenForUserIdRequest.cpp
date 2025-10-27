@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetWorkloadAccessTokenForUserIdRequest::SerializePayload() const
-{
+Aws::String GetWorkloadAccessTokenForUserIdRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workloadNameHasBeenSet)
-  {
-   payload.WithString("workloadName", m_workloadName);
-
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("userId", m_userId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

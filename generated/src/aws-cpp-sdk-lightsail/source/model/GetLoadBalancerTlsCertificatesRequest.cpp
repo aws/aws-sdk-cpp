@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetLoadBalancerTlsCertificatesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/GetLoadBalancerTlsCertificatesRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetLoadBalancerTlsCertificatesRequest::SerializePayload() const
-{
+Aws::String GetLoadBalancerTlsCertificatesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_loadBalancerNameHasBeenSet)
-  {
-   payload.WithString("loadBalancerName", m_loadBalancerName);
-
+  if (m_loadBalancerNameHasBeenSet) {
+    payload.WithString("loadBalancerName", m_loadBalancerName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetLoadBalancerTlsCertificatesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetLoadBalancerTlsCertificatesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.GetLoadBalancerTlsCertificates"));
   return headers;
-
 }
-
-
-
-

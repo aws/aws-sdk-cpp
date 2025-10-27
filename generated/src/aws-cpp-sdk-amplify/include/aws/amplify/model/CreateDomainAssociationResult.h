@@ -7,67 +7,72 @@
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/amplify/model/DomainAssociation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Amplify
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Amplify {
+namespace Model {
+/**
+ * <p> The result structure for the create domain association request.
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociationResult">AWS
+ * API Reference</a></p>
+ */
+class CreateDomainAssociationResult {
+ public:
+  AWS_AMPLIFY_API CreateDomainAssociationResult() = default;
+  AWS_AMPLIFY_API CreateDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_AMPLIFY_API CreateDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p> The result structure for the create domain association request.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociationResult">AWS
-   * API Reference</a></p>
+   * <p> Describes the structure of a domain association, which associates a custom
+   * domain with an Amplify app. </p>
    */
-  class CreateDomainAssociationResult
-  {
-  public:
-    AWS_AMPLIFY_API CreateDomainAssociationResult() = default;
-    AWS_AMPLIFY_API CreateDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_AMPLIFY_API CreateDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const DomainAssociation& GetDomainAssociation() const { return m_domainAssociation; }
+  template <typename DomainAssociationT = DomainAssociation>
+  void SetDomainAssociation(DomainAssociationT&& value) {
+    m_domainAssociationHasBeenSet = true;
+    m_domainAssociation = std::forward<DomainAssociationT>(value);
+  }
+  template <typename DomainAssociationT = DomainAssociation>
+  CreateDomainAssociationResult& WithDomainAssociation(DomainAssociationT&& value) {
+    SetDomainAssociation(std::forward<DomainAssociationT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p> Describes the structure of a domain association, which associates a custom
-     * domain with an Amplify app. </p>
-     */
-    inline const DomainAssociation& GetDomainAssociation() const { return m_domainAssociation; }
-    template<typename DomainAssociationT = DomainAssociation>
-    void SetDomainAssociation(DomainAssociationT&& value) { m_domainAssociationHasBeenSet = true; m_domainAssociation = std::forward<DomainAssociationT>(value); }
-    template<typename DomainAssociationT = DomainAssociation>
-    CreateDomainAssociationResult& WithDomainAssociation(DomainAssociationT&& value) { SetDomainAssociation(std::forward<DomainAssociationT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateDomainAssociationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DomainAssociation m_domainAssociation;
+  bool m_domainAssociationHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateDomainAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    DomainAssociation m_domainAssociation;
-    bool m_domainAssociationHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

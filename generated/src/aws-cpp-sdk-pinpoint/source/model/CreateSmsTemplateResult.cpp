@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/CreateSmsTemplateResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint/model/CreateSmsTemplateResult.h>
 
 #include <utility>
 
@@ -17,25 +17,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSmsTemplateResult::CreateSmsTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateSmsTemplateResult::CreateSmsTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateSmsTemplateResult& CreateSmsTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateSmsTemplateResult& CreateSmsTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
   m_createTemplateMessageBody = jsonValue;
   m_createTemplateMessageBodyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

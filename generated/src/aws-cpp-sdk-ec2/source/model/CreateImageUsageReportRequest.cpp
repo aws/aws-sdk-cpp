@@ -3,58 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateImageUsageReportRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateImageUsageReportRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateImageUsageReportRequest::SerializePayload() const
-{
+Aws::String CreateImageUsageReportRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateImageUsageReport&";
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_resourceTypesHasBeenSet)
-  {
+  if (m_resourceTypesHasBeenSet) {
     unsigned resourceTypesCount = 1;
-    for(auto& item : m_resourceTypes)
-    {
+    for (auto& item : m_resourceTypes) {
       item.OutputToStream(ss, "ResourceType.", resourceTypesCount, "");
       resourceTypesCount++;
     }
   }
 
-  if(m_accountIdsHasBeenSet)
-  {
+  if (m_accountIdsHasBeenSet) {
     unsigned accountIdsCount = 1;
-    for(auto& item : m_accountIds)
-    {
-      ss << "AccountId." << accountIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_accountIds) {
+      ss << "AccountId." << accountIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       accountIdsCount++;
     }
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -64,8 +53,4 @@ Aws::String CreateImageUsageReportRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateImageUsageReportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateImageUsageReportRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-LambdaFunctionInfo::LambdaFunctionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaFunctionInfo::LambdaFunctionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaFunctionInfo& LambdaFunctionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("functionName"))
-  {
+LambdaFunctionInfo& LambdaFunctionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("functionName")) {
     m_functionName = jsonValue.GetString("functionName");
     m_functionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("functionAlias"))
-  {
+  if (jsonValue.ValueExists("functionAlias")) {
     m_functionAlias = jsonValue.GetString("functionAlias");
     m_functionAliasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currentVersion"))
-  {
+  if (jsonValue.ValueExists("currentVersion")) {
     m_currentVersion = jsonValue.GetString("currentVersion");
     m_currentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetVersion"))
-  {
+  if (jsonValue.ValueExists("targetVersion")) {
     m_targetVersion = jsonValue.GetString("targetVersion");
     m_targetVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetVersionWeight"))
-  {
+  if (jsonValue.ValueExists("targetVersionWeight")) {
     m_targetVersionWeight = jsonValue.GetDouble("targetVersionWeight");
     m_targetVersionWeightHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaFunctionInfo::Jsonize() const
-{
+JsonValue LambdaFunctionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_functionNameHasBeenSet)
-  {
-   payload.WithString("functionName", m_functionName);
-
+  if (m_functionNameHasBeenSet) {
+    payload.WithString("functionName", m_functionName);
   }
 
-  if(m_functionAliasHasBeenSet)
-  {
-   payload.WithString("functionAlias", m_functionAlias);
-
+  if (m_functionAliasHasBeenSet) {
+    payload.WithString("functionAlias", m_functionAlias);
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("currentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("currentVersion", m_currentVersion);
   }
 
-  if(m_targetVersionHasBeenSet)
-  {
-   payload.WithString("targetVersion", m_targetVersion);
-
+  if (m_targetVersionHasBeenSet) {
+    payload.WithString("targetVersion", m_targetVersion);
   }
 
-  if(m_targetVersionWeightHasBeenSet)
-  {
-   payload.WithDouble("targetVersionWeight", m_targetVersionWeight);
-
+  if (m_targetVersionWeightHasBeenSet) {
+    payload.WithDouble("targetVersionWeight", m_targetVersionWeight);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

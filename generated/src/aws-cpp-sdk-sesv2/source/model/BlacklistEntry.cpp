@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/BlacklistEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/BlacklistEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-BlacklistEntry::BlacklistEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BlacklistEntry::BlacklistEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BlacklistEntry& BlacklistEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RblName"))
-  {
+BlacklistEntry& BlacklistEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RblName")) {
     m_rblName = jsonValue.GetString("RblName");
     m_rblNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ListingTime"))
-  {
+  if (jsonValue.ValueExists("ListingTime")) {
     m_listingTime = jsonValue.GetDouble("ListingTime");
     m_listingTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BlacklistEntry::Jsonize() const
-{
+JsonValue BlacklistEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_rblNameHasBeenSet)
-  {
-   payload.WithString("RblName", m_rblName);
-
+  if (m_rblNameHasBeenSet) {
+    payload.WithString("RblName", m_rblName);
   }
 
-  if(m_listingTimeHasBeenSet)
-  {
-   payload.WithDouble("ListingTime", m_listingTime.SecondsWithMSPrecision());
+  if (m_listingTimeHasBeenSet) {
+    payload.WithDouble("ListingTime", m_listingTime.SecondsWithMSPrecision());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

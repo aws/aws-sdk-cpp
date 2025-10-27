@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-WebhookAuthConfiguration& WebhookAuthConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowedIPRange"))
-  {
+WebhookAuthConfiguration& WebhookAuthConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowedIPRange")) {
     m_allowedIPRange = jsonValue.GetString("AllowedIPRange");
     m_allowedIPRangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretToken"))
-  {
+  if (jsonValue.ValueExists("SecretToken")) {
     m_secretToken = jsonValue.GetString("SecretToken");
     m_secretTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WebhookAuthConfiguration::Jsonize() const
-{
+JsonValue WebhookAuthConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedIPRangeHasBeenSet)
-  {
-   payload.WithString("AllowedIPRange", m_allowedIPRange);
-
+  if (m_allowedIPRangeHasBeenSet) {
+    payload.WithString("AllowedIPRange", m_allowedIPRange);
   }
 
-  if(m_secretTokenHasBeenSet)
-  {
-   payload.WithString("SecretToken", m_secretToken);
-
+  if (m_secretTokenHasBeenSet) {
+    payload.WithString("SecretToken", m_secretToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

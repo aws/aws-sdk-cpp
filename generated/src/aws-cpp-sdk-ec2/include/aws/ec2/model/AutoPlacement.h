@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AutoPlacement
-  {
-    NOT_SET,
-    on,
-    off
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AutoPlacement { NOT_SET, on, off };
 
-namespace AutoPlacementMapper
-{
+namespace AutoPlacementMapper {
 AWS_EC2_API AutoPlacement GetAutoPlacementForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAutoPlacement(AutoPlacement value);
-} // namespace AutoPlacementMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AutoPlacementMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

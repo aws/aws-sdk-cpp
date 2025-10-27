@@ -4,8 +4,8 @@
  */
 
 #include <aws/amplifyuibuilder/model/UpdateFormRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,29 +15,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String UpdateFormRequest::SerializePayload() const
-{
+Aws::String UpdateFormRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_updatedFormHasBeenSet)
-  {
-   payload = m_updatedForm.Jsonize();
+  if (m_updatedFormHasBeenSet) {
+    payload = m_updatedForm.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
 
-void UpdateFormRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_clientTokenHasBeenSet)
-    {
-      ss << m_clientToken;
-      uri.AddQueryStringParameter("clientToken", ss.str());
-      ss.str("");
-    }
-
+void UpdateFormRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
+    ss.str("");
+  }
 }
-
-
-

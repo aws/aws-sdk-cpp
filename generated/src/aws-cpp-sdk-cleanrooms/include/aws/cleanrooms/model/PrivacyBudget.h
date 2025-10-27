@@ -5,73 +5,78 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
-#include <aws/cleanrooms/model/DifferentialPrivacyPrivacyBudget.h>
 #include <aws/cleanrooms/model/AccessBudget.h>
+#include <aws/cleanrooms/model/DifferentialPrivacyPrivacyBudget.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CleanRooms {
+namespace Model {
 
+/**
+ * <p>The epsilon parameter value and number of each aggregation function that you
+ * can perform.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PrivacyBudget">AWS
+ * API Reference</a></p>
+ */
+class PrivacyBudget {
+ public:
+  AWS_CLEANROOMS_API PrivacyBudget() = default;
+  AWS_CLEANROOMS_API PrivacyBudget(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLEANROOMS_API PrivacyBudget& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The epsilon parameter value and number of each aggregation function that you
-   * can perform.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PrivacyBudget">AWS
-   * API Reference</a></p>
+   * <p>An object that specifies the epsilon parameter and the utility in terms of
+   * total aggregations, as well as the remaining aggregations available.</p>
    */
-  class PrivacyBudget
-  {
-  public:
-    AWS_CLEANROOMS_API PrivacyBudget() = default;
-    AWS_CLEANROOMS_API PrivacyBudget(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CLEANROOMS_API PrivacyBudget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const DifferentialPrivacyPrivacyBudget& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
+  inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
+  template <typename DifferentialPrivacyT = DifferentialPrivacyPrivacyBudget>
+  void SetDifferentialPrivacy(DifferentialPrivacyT&& value) {
+    m_differentialPrivacyHasBeenSet = true;
+    m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value);
+  }
+  template <typename DifferentialPrivacyT = DifferentialPrivacyPrivacyBudget>
+  PrivacyBudget& WithDifferentialPrivacy(DifferentialPrivacyT&& value) {
+    SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Access budget information associated with this privacy budget.</p>
+   */
+  inline const AccessBudget& GetAccessBudget() const { return m_accessBudget; }
+  inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
+  template <typename AccessBudgetT = AccessBudget>
+  void SetAccessBudget(AccessBudgetT&& value) {
+    m_accessBudgetHasBeenSet = true;
+    m_accessBudget = std::forward<AccessBudgetT>(value);
+  }
+  template <typename AccessBudgetT = AccessBudget>
+  PrivacyBudget& WithAccessBudget(AccessBudgetT&& value) {
+    SetAccessBudget(std::forward<AccessBudgetT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DifferentialPrivacyPrivacyBudget m_differentialPrivacy;
+  bool m_differentialPrivacyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An object that specifies the epsilon parameter and the utility in terms of
-     * total aggregations, as well as the remaining aggregations available.</p>
-     */
-    inline const DifferentialPrivacyPrivacyBudget& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
-    inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    template<typename DifferentialPrivacyT = DifferentialPrivacyPrivacyBudget>
-    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
-    template<typename DifferentialPrivacyT = DifferentialPrivacyPrivacyBudget>
-    PrivacyBudget& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
-    ///@}
+  AccessBudget m_accessBudget;
+  bool m_accessBudgetHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Access budget information associated with this privacy budget.</p>
-     */
-    inline const AccessBudget& GetAccessBudget() const { return m_accessBudget; }
-    inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
-    template<typename AccessBudgetT = AccessBudget>
-    void SetAccessBudget(AccessBudgetT&& value) { m_accessBudgetHasBeenSet = true; m_accessBudget = std::forward<AccessBudgetT>(value); }
-    template<typename AccessBudgetT = AccessBudget>
-    PrivacyBudget& WithAccessBudget(AccessBudgetT&& value) { SetAccessBudget(std::forward<AccessBudgetT>(value)); return *this;}
-    ///@}
-  private:
-
-    DifferentialPrivacyPrivacyBudget m_differentialPrivacy;
-    bool m_differentialPrivacyHasBeenSet = false;
-
-    AccessBudget m_accessBudget;
-    bool m_accessBudgetHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

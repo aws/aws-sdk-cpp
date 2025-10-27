@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/ReplaceNetworkAclAssociationAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/ReplaceNetworkAclAssociationAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction(JsonView jsonValue) { *this = jsonValue; }
 
-ReplaceNetworkAclAssociationAction& ReplaceNetworkAclAssociationAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+ReplaceNetworkAclAssociationAction& ReplaceNetworkAclAssociationAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationId"))
-  {
+  if (jsonValue.ValueExists("AssociationId")) {
     m_associationId = jsonValue.GetObject("AssociationId");
     m_associationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkAclId"))
-  {
+  if (jsonValue.ValueExists("NetworkAclId")) {
     m_networkAclId = jsonValue.GetObject("NetworkAclId");
     m_networkAclIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FMSCanRemediate"))
-  {
+  if (jsonValue.ValueExists("FMSCanRemediate")) {
     m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
     m_fMSCanRemediateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplaceNetworkAclAssociationAction::Jsonize() const
-{
+JsonValue ReplaceNetworkAclAssociationAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_associationIdHasBeenSet)
-  {
-   payload.WithObject("AssociationId", m_associationId.Jsonize());
-
+  if (m_associationIdHasBeenSet) {
+    payload.WithObject("AssociationId", m_associationId.Jsonize());
   }
 
-  if(m_networkAclIdHasBeenSet)
-  {
-   payload.WithObject("NetworkAclId", m_networkAclId.Jsonize());
-
+  if (m_networkAclIdHasBeenSet) {
+    payload.WithObject("NetworkAclId", m_networkAclId.Jsonize());
   }
 
-  if(m_fMSCanRemediateHasBeenSet)
-  {
-   payload.WithBool("FMSCanRemediate", m_fMSCanRemediate);
-
+  if (m_fMSCanRemediateHasBeenSet) {
+    payload.WithBool("FMSCanRemediate", m_fMSCanRemediate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

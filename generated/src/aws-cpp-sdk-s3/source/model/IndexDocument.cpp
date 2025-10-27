@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/IndexDocument.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/IndexDocument.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-IndexDocument::IndexDocument(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+IndexDocument::IndexDocument(const XmlNode& xmlNode) { *this = xmlNode; }
 
-IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
-{
+IndexDocument& IndexDocument::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode suffixNode = resultNode.FirstChild("Suffix");
-    if(!suffixNode.IsNull())
-    {
+    if (!suffixNode.IsNull()) {
       m_suffix = Aws::Utils::Xml::DecodeEscapedXmlText(suffixNode.GetText());
       m_suffixHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void IndexDocument::AddToNode(XmlNode& parentNode) const
-{
+void IndexDocument::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_suffixHasBeenSet)
-  {
-   XmlNode suffixNode = parentNode.CreateChildElement("Suffix");
-   suffixNode.SetText(m_suffix);
+  if (m_suffixHasBeenSet) {
+    XmlNode suffixNode = parentNode.CreateChildElement("Suffix");
+    suffixNode.SetText(m_suffix);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

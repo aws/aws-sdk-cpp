@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DecimalDatasetParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DecimalDatasetParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DecimalDatasetParameter::DecimalDatasetParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DecimalDatasetParameter::DecimalDatasetParameter(JsonView jsonValue) { *this = jsonValue; }
 
-DecimalDatasetParameter& DecimalDatasetParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+DecimalDatasetParameter& DecimalDatasetParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValueType"))
-  {
+  if (jsonValue.ValueExists("ValueType")) {
     m_valueType = DatasetParameterValueTypeMapper::GetDatasetParameterValueTypeForName(jsonValue.GetString("ValueType"));
     m_valueTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultValues"))
-  {
+  if (jsonValue.ValueExists("DefaultValues")) {
     m_defaultValues = jsonValue.GetObject("DefaultValues");
     m_defaultValuesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DecimalDatasetParameter::Jsonize() const
-{
+JsonValue DecimalDatasetParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueTypeHasBeenSet)
-  {
-   payload.WithString("ValueType", DatasetParameterValueTypeMapper::GetNameForDatasetParameterValueType(m_valueType));
+  if (m_valueTypeHasBeenSet) {
+    payload.WithString("ValueType", DatasetParameterValueTypeMapper::GetNameForDatasetParameterValueType(m_valueType));
   }
 
-  if(m_defaultValuesHasBeenSet)
-  {
-   payload.WithObject("DefaultValues", m_defaultValues.Jsonize());
-
+  if (m_defaultValuesHasBeenSet) {
+    payload.WithObject("DefaultValues", m_defaultValues.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

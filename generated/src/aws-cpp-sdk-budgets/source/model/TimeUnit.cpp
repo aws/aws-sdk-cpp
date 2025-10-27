@@ -4,90 +4,70 @@
  */
 
 #include <aws/budgets/model/TimeUnit.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Budgets {
+namespace Model {
+namespace TimeUnitMapper {
 
-namespace Aws
-{
-  namespace Budgets
-  {
-    namespace Model
-    {
-      namespace TimeUnitMapper
-      {
+static const int DAILY_HASH = HashingUtils::HashString("DAILY");
+static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
+static const int QUARTERLY_HASH = HashingUtils::HashString("QUARTERLY");
+static const int ANNUALLY_HASH = HashingUtils::HashString("ANNUALLY");
+static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
-        static const int DAILY_HASH = HashingUtils::HashString("DAILY");
-        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
-        static const int QUARTERLY_HASH = HashingUtils::HashString("QUARTERLY");
-        static const int ANNUALLY_HASH = HashingUtils::HashString("ANNUALLY");
-        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+TimeUnit GetTimeUnitForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DAILY_HASH) {
+    return TimeUnit::DAILY;
+  } else if (hashCode == MONTHLY_HASH) {
+    return TimeUnit::MONTHLY;
+  } else if (hashCode == QUARTERLY_HASH) {
+    return TimeUnit::QUARTERLY;
+  } else if (hashCode == ANNUALLY_HASH) {
+    return TimeUnit::ANNUALLY;
+  } else if (hashCode == CUSTOM_HASH) {
+    return TimeUnit::CUSTOM;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TimeUnit>(hashCode);
+  }
 
+  return TimeUnit::NOT_SET;
+}
 
-        TimeUnit GetTimeUnitForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DAILY_HASH)
-          {
-            return TimeUnit::DAILY;
-          }
-          else if (hashCode == MONTHLY_HASH)
-          {
-            return TimeUnit::MONTHLY;
-          }
-          else if (hashCode == QUARTERLY_HASH)
-          {
-            return TimeUnit::QUARTERLY;
-          }
-          else if (hashCode == ANNUALLY_HASH)
-          {
-            return TimeUnit::ANNUALLY;
-          }
-          else if (hashCode == CUSTOM_HASH)
-          {
-            return TimeUnit::CUSTOM;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TimeUnit>(hashCode);
-          }
+Aws::String GetNameForTimeUnit(TimeUnit enumValue) {
+  switch (enumValue) {
+    case TimeUnit::NOT_SET:
+      return {};
+    case TimeUnit::DAILY:
+      return "DAILY";
+    case TimeUnit::MONTHLY:
+      return "MONTHLY";
+    case TimeUnit::QUARTERLY:
+      return "QUARTERLY";
+    case TimeUnit::ANNUALLY:
+      return "ANNUALLY";
+    case TimeUnit::CUSTOM:
+      return "CUSTOM";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TimeUnit::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTimeUnit(TimeUnit enumValue)
-        {
-          switch(enumValue)
-          {
-          case TimeUnit::NOT_SET:
-            return {};
-          case TimeUnit::DAILY:
-            return "DAILY";
-          case TimeUnit::MONTHLY:
-            return "MONTHLY";
-          case TimeUnit::QUARTERLY:
-            return "QUARTERLY";
-          case TimeUnit::ANNUALLY:
-            return "ANNUALLY";
-          case TimeUnit::CUSTOM:
-            return "CUSTOM";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TimeUnitMapper
-    } // namespace Model
-  } // namespace Budgets
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

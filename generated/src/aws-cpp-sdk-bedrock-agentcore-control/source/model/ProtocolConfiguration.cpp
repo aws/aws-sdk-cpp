@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-ProtocolConfiguration::ProtocolConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtocolConfiguration::ProtocolConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ProtocolConfiguration& ProtocolConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serverProtocol"))
-  {
+ProtocolConfiguration& ProtocolConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serverProtocol")) {
     m_serverProtocol = ServerProtocolMapper::GetServerProtocolForName(jsonValue.GetString("serverProtocol"));
     m_serverProtocolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtocolConfiguration::Jsonize() const
-{
+JsonValue ProtocolConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_serverProtocolHasBeenSet)
-  {
-   payload.WithString("serverProtocol", ServerProtocolMapper::GetNameForServerProtocol(m_serverProtocol));
+  if (m_serverProtocolHasBeenSet) {
+    payload.WithString("serverProtocol", ServerProtocolMapper::GetNameForServerProtocol(m_serverProtocol));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

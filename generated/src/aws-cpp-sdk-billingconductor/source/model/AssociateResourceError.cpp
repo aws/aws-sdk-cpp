@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-AssociateResourceError::AssociateResourceError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociateResourceError::AssociateResourceError(JsonView jsonValue) { *this = jsonValue; }
 
-AssociateResourceError& AssociateResourceError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+AssociateResourceError& AssociateResourceError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = AssociateResourceErrorReasonMapper::GetAssociateResourceErrorReasonForName(jsonValue.GetString("Reason"));
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociateResourceError::Jsonize() const
-{
+JsonValue AssociateResourceError::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", AssociateResourceErrorReasonMapper::GetNameForAssociateResourceErrorReason(m_reason));
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", AssociateResourceErrorReasonMapper::GetNameForAssociateResourceErrorReason(m_reason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

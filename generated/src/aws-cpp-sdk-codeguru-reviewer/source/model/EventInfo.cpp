@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-EventInfo::EventInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventInfo::EventInfo(JsonView jsonValue) { *this = jsonValue; }
 
-EventInfo& EventInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+EventInfo& EventInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = jsonValue.GetString("State");
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventInfo::Jsonize() const
-{
+JsonValue EventInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", m_state);
-
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", m_state);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

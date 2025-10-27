@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fis/FIS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fis/FIS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
-  enum class AccountTargeting
-  {
-    NOT_SET,
-    single_account,
-    multi_account
-  };
+namespace Aws {
+namespace FIS {
+namespace Model {
+enum class AccountTargeting { NOT_SET, single_account, multi_account };
 
-namespace AccountTargetingMapper
-{
+namespace AccountTargetingMapper {
 AWS_FIS_API AccountTargeting GetAccountTargetingForName(const Aws::String& name);
 
 AWS_FIS_API Aws::String GetNameForAccountTargeting(AccountTargeting value);
-} // namespace AccountTargetingMapper
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace AccountTargetingMapper
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

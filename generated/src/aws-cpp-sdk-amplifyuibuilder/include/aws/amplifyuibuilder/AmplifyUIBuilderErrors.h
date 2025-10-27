@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-enum class AmplifyUIBuilderErrors
-{
-  //From Core//
+namespace Aws {
+namespace AmplifyUIBuilder {
+enum class AmplifyUIBuilderErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AmplifyUIBuilderErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class AmplifyUIBuilderErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   RESOURCE_CONFLICT,
   SERVICE_QUOTA_EXCEEDED,
   UNAUTHORIZED
 };
 
-class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderError : public Aws::Client::AWSError<AmplifyUIBuilderErrors>
-{
-public:
+class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderError : public Aws::Client::AWSError<AmplifyUIBuilderErrors> {
+ public:
   AmplifyUIBuilderError() {}
   AmplifyUIBuilderError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AmplifyUIBuilderErrors>(rhs) {}
   AmplifyUIBuilderError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AmplifyUIBuilderErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace AmplifyUIBuilderErrorMapper
-{
-  AWS_AMPLIFYUIBUILDER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AmplifyUIBuilderErrorMapper {
+AWS_AMPLIFYUIBUILDER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

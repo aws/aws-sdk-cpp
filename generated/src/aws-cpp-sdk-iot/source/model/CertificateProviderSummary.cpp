@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CertificateProviderSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/CertificateProviderSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-CertificateProviderSummary::CertificateProviderSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CertificateProviderSummary::CertificateProviderSummary(JsonView jsonValue) { *this = jsonValue; }
 
-CertificateProviderSummary& CertificateProviderSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("certificateProviderName"))
-  {
+CertificateProviderSummary& CertificateProviderSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("certificateProviderName")) {
     m_certificateProviderName = jsonValue.GetString("certificateProviderName");
     m_certificateProviderNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificateProviderArn"))
-  {
+  if (jsonValue.ValueExists("certificateProviderArn")) {
     m_certificateProviderArn = jsonValue.GetString("certificateProviderArn");
     m_certificateProviderArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CertificateProviderSummary::Jsonize() const
-{
+JsonValue CertificateProviderSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateProviderNameHasBeenSet)
-  {
-   payload.WithString("certificateProviderName", m_certificateProviderName);
-
+  if (m_certificateProviderNameHasBeenSet) {
+    payload.WithString("certificateProviderName", m_certificateProviderName);
   }
 
-  if(m_certificateProviderArnHasBeenSet)
-  {
-   payload.WithString("certificateProviderArn", m_certificateProviderArn);
-
+  if (m_certificateProviderArnHasBeenSet) {
+    payload.WithString("certificateProviderArn", m_certificateProviderArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

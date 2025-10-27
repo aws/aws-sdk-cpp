@@ -12,31 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopContactStreamingRequest::SerializePayload() const
-{
+Aws::String StopContactStreamingRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_streamingIdHasBeenSet)
-  {
-   payload.WithString("StreamingId", m_streamingId);
-
+  if (m_streamingIdHasBeenSet) {
+    payload.WithString("StreamingId", m_streamingId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

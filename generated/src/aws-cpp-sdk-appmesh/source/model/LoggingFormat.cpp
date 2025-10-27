@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-LoggingFormat::LoggingFormat(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoggingFormat::LoggingFormat(JsonView jsonValue) { *this = jsonValue; }
 
-LoggingFormat& LoggingFormat::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("json"))
-  {
+LoggingFormat& LoggingFormat::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("json")) {
     Aws::Utils::Array<JsonView> jsonJsonList = jsonValue.GetArray("json");
-    for(unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex)
-    {
+    for (unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex) {
       m_json.push_back(jsonJsonList[jsonIndex].AsObject());
     }
     m_jsonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoggingFormat::Jsonize() const
-{
+JsonValue LoggingFormat::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> jsonJsonList(m_json.size());
-   for(unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex)
-   {
-     jsonJsonList[jsonIndex].AsObject(m_json[jsonIndex].Jsonize());
-   }
-   payload.WithArray("json", std::move(jsonJsonList));
-
+  if (m_jsonHasBeenSet) {
+    Aws::Utils::Array<JsonValue> jsonJsonList(m_json.size());
+    for (unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex) {
+      jsonJsonList[jsonIndex].AsObject(m_json[jsonIndex].Jsonize());
+    }
+    payload.WithArray("json", std::move(jsonJsonList));
   }
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

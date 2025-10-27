@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class PrincipalType
-  {
-    NOT_SET,
-    USER,
-    GROUP,
-    INVITE,
-    ANONYMOUS,
-    ORGANIZATION
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class PrincipalType { NOT_SET, USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION };
 
-namespace PrincipalTypeMapper
-{
+namespace PrincipalTypeMapper {
 AWS_WORKDOCS_API PrincipalType GetPrincipalTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForPrincipalType(PrincipalType value);
-} // namespace PrincipalTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace PrincipalTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

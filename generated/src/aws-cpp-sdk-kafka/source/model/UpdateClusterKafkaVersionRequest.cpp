@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateClusterKafkaVersionRequest::SerializePayload() const
-{
+Aws::String UpdateClusterKafkaVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationInfoHasBeenSet)
-  {
-   payload.WithObject("configurationInfo", m_configurationInfo.Jsonize());
-
+  if (m_configurationInfoHasBeenSet) {
+    payload.WithObject("configurationInfo", m_configurationInfo.Jsonize());
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("currentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("currentVersion", m_currentVersion);
   }
 
-  if(m_targetKafkaVersionHasBeenSet)
-  {
-   payload.WithString("targetKafkaVersion", m_targetKafkaVersion);
-
+  if (m_targetKafkaVersionHasBeenSet) {
+    payload.WithString("targetKafkaVersion", m_targetKafkaVersion);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

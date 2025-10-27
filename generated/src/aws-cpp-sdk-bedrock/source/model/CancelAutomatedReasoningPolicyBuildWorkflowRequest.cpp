@@ -12,11 +12,4 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelAutomatedReasoningPolicyBuildWorkflowRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String CancelAutomatedReasoningPolicyBuildWorkflowRequest::SerializePayload() const { return {}; }

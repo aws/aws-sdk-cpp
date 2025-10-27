@@ -5,12 +5,8 @@
 
 #include <aws/codedeploy/CodeDeployEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeDeploy
-} // namespace Aws
+namespace Aws {
+namespace CodeDeploy {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeDeploy
+}  // namespace Aws

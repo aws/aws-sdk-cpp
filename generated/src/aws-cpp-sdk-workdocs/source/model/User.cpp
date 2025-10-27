@@ -3,198 +3,150 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/User.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workdocs/model/User.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
 
-User::User(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+User::User(JsonView jsonValue) { *this = jsonValue; }
 
-User& User::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+User& User::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Username"))
-  {
+  if (jsonValue.ValueExists("Username")) {
     m_username = jsonValue.GetString("Username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailAddress"))
-  {
+  if (jsonValue.ValueExists("EmailAddress")) {
     m_emailAddress = jsonValue.GetString("EmailAddress");
     m_emailAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GivenName"))
-  {
+  if (jsonValue.ValueExists("GivenName")) {
     m_givenName = jsonValue.GetString("GivenName");
     m_givenNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Surname"))
-  {
+  if (jsonValue.ValueExists("Surname")) {
     m_surname = jsonValue.GetString("Surname");
     m_surnameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationId"))
-  {
+  if (jsonValue.ValueExists("OrganizationId")) {
     m_organizationId = jsonValue.GetString("OrganizationId");
     m_organizationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RootFolderId"))
-  {
+  if (jsonValue.ValueExists("RootFolderId")) {
     m_rootFolderId = jsonValue.GetString("RootFolderId");
     m_rootFolderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecycleBinFolderId"))
-  {
+  if (jsonValue.ValueExists("RecycleBinFolderId")) {
     m_recycleBinFolderId = jsonValue.GetString("RecycleBinFolderId");
     m_recycleBinFolderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = UserStatusTypeMapper::GetUserStatusTypeForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModifiedTimestamp"))
-  {
+  if (jsonValue.ValueExists("ModifiedTimestamp")) {
     m_modifiedTimestamp = jsonValue.GetDouble("ModifiedTimestamp");
     m_modifiedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeZoneId"))
-  {
+  if (jsonValue.ValueExists("TimeZoneId")) {
     m_timeZoneId = jsonValue.GetString("TimeZoneId");
     m_timeZoneIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Locale"))
-  {
+  if (jsonValue.ValueExists("Locale")) {
     m_locale = LocaleTypeMapper::GetLocaleTypeForName(jsonValue.GetString("Locale"));
     m_localeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Storage"))
-  {
+  if (jsonValue.ValueExists("Storage")) {
     m_storage = jsonValue.GetObject("Storage");
     m_storageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue User::Jsonize() const
-{
+JsonValue User::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_emailAddressHasBeenSet)
-  {
-   payload.WithString("EmailAddress", m_emailAddress);
-
+  if (m_emailAddressHasBeenSet) {
+    payload.WithString("EmailAddress", m_emailAddress);
   }
 
-  if(m_givenNameHasBeenSet)
-  {
-   payload.WithString("GivenName", m_givenName);
-
+  if (m_givenNameHasBeenSet) {
+    payload.WithString("GivenName", m_givenName);
   }
 
-  if(m_surnameHasBeenSet)
-  {
-   payload.WithString("Surname", m_surname);
-
+  if (m_surnameHasBeenSet) {
+    payload.WithString("Surname", m_surname);
   }
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_rootFolderIdHasBeenSet)
-  {
-   payload.WithString("RootFolderId", m_rootFolderId);
-
+  if (m_rootFolderIdHasBeenSet) {
+    payload.WithString("RootFolderId", m_rootFolderId);
   }
 
-  if(m_recycleBinFolderIdHasBeenSet)
-  {
-   payload.WithString("RecycleBinFolderId", m_recycleBinFolderId);
-
+  if (m_recycleBinFolderIdHasBeenSet) {
+    payload.WithString("RecycleBinFolderId", m_recycleBinFolderId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", UserStatusTypeMapper::GetNameForUserStatusType(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", UserStatusTypeMapper::GetNameForUserStatusType(m_status));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", UserTypeMapper::GetNameForUserType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", UserTypeMapper::GetNameForUserType(m_type));
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_modifiedTimestampHasBeenSet)
-  {
-   payload.WithDouble("ModifiedTimestamp", m_modifiedTimestamp.SecondsWithMSPrecision());
+  if (m_modifiedTimestampHasBeenSet) {
+    payload.WithDouble("ModifiedTimestamp", m_modifiedTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_timeZoneIdHasBeenSet)
-  {
-   payload.WithString("TimeZoneId", m_timeZoneId);
-
+  if (m_timeZoneIdHasBeenSet) {
+    payload.WithString("TimeZoneId", m_timeZoneId);
   }
 
-  if(m_localeHasBeenSet)
-  {
-   payload.WithString("Locale", LocaleTypeMapper::GetNameForLocaleType(m_locale));
+  if (m_localeHasBeenSet) {
+    payload.WithString("Locale", LocaleTypeMapper::GetNameForLocaleType(m_locale));
   }
 
-  if(m_storageHasBeenSet)
-  {
-   payload.WithObject("Storage", m_storage.Jsonize());
-
+  if (m_storageHasBeenSet) {
+    payload.WithObject("Storage", m_storage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

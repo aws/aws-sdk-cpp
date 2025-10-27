@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class NumberScale
-  {
-    NOT_SET,
-    NONE,
-    AUTO,
-    THOUSANDS,
-    MILLIONS,
-    BILLIONS,
-    TRILLIONS,
-    LAKHS,
-    CRORES
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class NumberScale { NOT_SET, NONE, AUTO, THOUSANDS, MILLIONS, BILLIONS, TRILLIONS, LAKHS, CRORES };
 
-namespace NumberScaleMapper
-{
+namespace NumberScaleMapper {
 AWS_QUICKSIGHT_API NumberScale GetNumberScaleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForNumberScale(NumberScale value);
-} // namespace NumberScaleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace NumberScaleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

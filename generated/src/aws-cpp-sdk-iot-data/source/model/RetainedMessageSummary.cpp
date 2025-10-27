@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-data/model/RetainedMessageSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-data/model/RetainedMessageSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTDataPlane
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTDataPlane {
+namespace Model {
 
-RetainedMessageSummary::RetainedMessageSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetainedMessageSummary::RetainedMessageSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RetainedMessageSummary& RetainedMessageSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("topic"))
-  {
+RetainedMessageSummary& RetainedMessageSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("topic")) {
     m_topic = jsonValue.GetString("topic");
     m_topicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("payloadSize"))
-  {
+  if (jsonValue.ValueExists("payloadSize")) {
     m_payloadSize = jsonValue.GetInt64("payloadSize");
     m_payloadSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("qos"))
-  {
+  if (jsonValue.ValueExists("qos")) {
     m_qos = jsonValue.GetInteger("qos");
     m_qosHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetainedMessageSummary::Jsonize() const
-{
+JsonValue RetainedMessageSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_topicHasBeenSet)
-  {
-   payload.WithString("topic", m_topic);
-
+  if (m_topicHasBeenSet) {
+    payload.WithString("topic", m_topic);
   }
 
-  if(m_payloadSizeHasBeenSet)
-  {
-   payload.WithInt64("payloadSize", m_payloadSize);
-
+  if (m_payloadSizeHasBeenSet) {
+    payload.WithInt64("payloadSize", m_payloadSize);
   }
 
-  if(m_qosHasBeenSet)
-  {
-   payload.WithInteger("qos", m_qos);
-
+  if (m_qosHasBeenSet) {
+    payload.WithInteger("qos", m_qos);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithInt64("lastModifiedTime", m_lastModifiedTime);
-
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithInt64("lastModifiedTime", m_lastModifiedTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTDataPlane
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTDataPlane
+}  // namespace Aws

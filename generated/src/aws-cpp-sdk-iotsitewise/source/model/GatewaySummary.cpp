@@ -3,122 +3,96 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/GatewaySummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/GatewaySummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-GatewaySummary::GatewaySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewaySummary::GatewaySummary(JsonView jsonValue) { *this = jsonValue; }
 
-GatewaySummary& GatewaySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("gatewayId"))
-  {
+GatewaySummary& GatewaySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("gatewayId")) {
     m_gatewayId = jsonValue.GetString("gatewayId");
     m_gatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gatewayName"))
-  {
+  if (jsonValue.ValueExists("gatewayName")) {
     m_gatewayName = jsonValue.GetString("gatewayName");
     m_gatewayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gatewayPlatform"))
-  {
+  if (jsonValue.ValueExists("gatewayPlatform")) {
     m_gatewayPlatform = jsonValue.GetObject("gatewayPlatform");
     m_gatewayPlatformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gatewayVersion"))
-  {
+  if (jsonValue.ValueExists("gatewayVersion")) {
     m_gatewayVersion = jsonValue.GetString("gatewayVersion");
     m_gatewayVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gatewayCapabilitySummaries"))
-  {
+  if (jsonValue.ValueExists("gatewayCapabilitySummaries")) {
     Aws::Utils::Array<JsonView> gatewayCapabilitySummariesJsonList = jsonValue.GetArray("gatewayCapabilitySummaries");
-    for(unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength(); ++gatewayCapabilitySummariesIndex)
-    {
+    for (unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength();
+         ++gatewayCapabilitySummariesIndex) {
       m_gatewayCapabilitySummaries.push_back(gatewayCapabilitySummariesJsonList[gatewayCapabilitySummariesIndex].AsObject());
     }
     m_gatewayCapabilitySummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDate"))
-  {
+  if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetDouble("creationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateDate"))
-  {
+  if (jsonValue.ValueExists("lastUpdateDate")) {
     m_lastUpdateDate = jsonValue.GetDouble("lastUpdateDate");
     m_lastUpdateDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewaySummary::Jsonize() const
-{
+JsonValue GatewaySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_gatewayIdHasBeenSet)
-  {
-   payload.WithString("gatewayId", m_gatewayId);
-
+  if (m_gatewayIdHasBeenSet) {
+    payload.WithString("gatewayId", m_gatewayId);
   }
 
-  if(m_gatewayNameHasBeenSet)
-  {
-   payload.WithString("gatewayName", m_gatewayName);
-
+  if (m_gatewayNameHasBeenSet) {
+    payload.WithString("gatewayName", m_gatewayName);
   }
 
-  if(m_gatewayPlatformHasBeenSet)
-  {
-   payload.WithObject("gatewayPlatform", m_gatewayPlatform.Jsonize());
-
+  if (m_gatewayPlatformHasBeenSet) {
+    payload.WithObject("gatewayPlatform", m_gatewayPlatform.Jsonize());
   }
 
-  if(m_gatewayVersionHasBeenSet)
-  {
-   payload.WithString("gatewayVersion", m_gatewayVersion);
-
+  if (m_gatewayVersionHasBeenSet) {
+    payload.WithString("gatewayVersion", m_gatewayVersion);
   }
 
-  if(m_gatewayCapabilitySummariesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> gatewayCapabilitySummariesJsonList(m_gatewayCapabilitySummaries.size());
-   for(unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength(); ++gatewayCapabilitySummariesIndex)
-   {
-     gatewayCapabilitySummariesJsonList[gatewayCapabilitySummariesIndex].AsObject(m_gatewayCapabilitySummaries[gatewayCapabilitySummariesIndex].Jsonize());
-   }
-   payload.WithArray("gatewayCapabilitySummaries", std::move(gatewayCapabilitySummariesJsonList));
-
+  if (m_gatewayCapabilitySummariesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gatewayCapabilitySummariesJsonList(m_gatewayCapabilitySummaries.size());
+    for (unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength();
+         ++gatewayCapabilitySummariesIndex) {
+      gatewayCapabilitySummariesJsonList[gatewayCapabilitySummariesIndex].AsObject(
+          m_gatewayCapabilitySummaries[gatewayCapabilitySummariesIndex].Jsonize());
+    }
+    payload.WithArray("gatewayCapabilitySummaries", std::move(gatewayCapabilitySummariesJsonList));
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
+  if (m_creationDateHasBeenSet) {
+    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdateDateHasBeenSet)
-  {
-   payload.WithDouble("lastUpdateDate", m_lastUpdateDate.SecondsWithMSPrecision());
+  if (m_lastUpdateDateHasBeenSet) {
+    payload.WithDouble("lastUpdateDate", m_lastUpdateDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ECSServiceUtilizationMetric::ECSServiceUtilizationMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ECSServiceUtilizationMetric::ECSServiceUtilizationMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ECSServiceUtilizationMetric& ECSServiceUtilizationMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ECSServiceUtilizationMetric& ECSServiceUtilizationMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = ECSServiceMetricNameMapper::GetECSServiceMetricNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statistic"))
-  {
+  if (jsonValue.ValueExists("statistic")) {
     m_statistic = ECSServiceMetricStatisticMapper::GetECSServiceMetricStatisticForName(jsonValue.GetString("statistic"));
     m_statisticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ECSServiceUtilizationMetric::Jsonize() const
-{
+JsonValue ECSServiceUtilizationMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ECSServiceMetricNameMapper::GetNameForECSServiceMetricName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ECSServiceMetricNameMapper::GetNameForECSServiceMetricName(m_name));
   }
 
-  if(m_statisticHasBeenSet)
-  {
-   payload.WithString("statistic", ECSServiceMetricStatisticMapper::GetNameForECSServiceMetricStatistic(m_statistic));
+  if (m_statisticHasBeenSet) {
+    payload.WithString("statistic", ECSServiceMetricStatisticMapper::GetNameForECSServiceMetricStatistic(m_statistic));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

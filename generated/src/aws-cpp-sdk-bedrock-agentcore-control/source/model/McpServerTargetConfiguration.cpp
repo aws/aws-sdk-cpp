@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-McpServerTargetConfiguration::McpServerTargetConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+McpServerTargetConfiguration::McpServerTargetConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-McpServerTargetConfiguration& McpServerTargetConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endpoint"))
-  {
+McpServerTargetConfiguration& McpServerTargetConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue McpServerTargetConfiguration::Jsonize() const
-{
+JsonValue McpServerTargetConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

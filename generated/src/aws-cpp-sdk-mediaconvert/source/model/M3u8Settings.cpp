@@ -3,282 +3,213 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/M3u8Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/M3u8Settings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-M3u8Settings::M3u8Settings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+M3u8Settings::M3u8Settings(JsonView jsonValue) { *this = jsonValue; }
 
-M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audioDuration"))
-  {
+M3u8Settings& M3u8Settings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioDuration")) {
     m_audioDuration = M3u8AudioDurationMapper::GetM3u8AudioDurationForName(jsonValue.GetString("audioDuration"));
     m_audioDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioFramesPerPes"))
-  {
+  if (jsonValue.ValueExists("audioFramesPerPes")) {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
     m_audioFramesPerPesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioPids"))
-  {
+  if (jsonValue.ValueExists("audioPids")) {
     Aws::Utils::Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
-    for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
-    {
+    for (unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex) {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
     }
     m_audioPidsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioPtsOffsetDelta"))
-  {
+  if (jsonValue.ValueExists("audioPtsOffsetDelta")) {
     m_audioPtsOffsetDelta = jsonValue.GetInteger("audioPtsOffsetDelta");
     m_audioPtsOffsetDeltaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataPTSControl"))
-  {
+  if (jsonValue.ValueExists("dataPTSControl")) {
     m_dataPTSControl = M3u8DataPtsControlMapper::GetM3u8DataPtsControlForName(jsonValue.GetString("dataPTSControl"));
     m_dataPTSControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxPcrInterval"))
-  {
+  if (jsonValue.ValueExists("maxPcrInterval")) {
     m_maxPcrInterval = jsonValue.GetInteger("maxPcrInterval");
     m_maxPcrIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nielsenId3"))
-  {
+  if (jsonValue.ValueExists("nielsenId3")) {
     m_nielsenId3 = M3u8NielsenId3Mapper::GetM3u8NielsenId3ForName(jsonValue.GetString("nielsenId3"));
     m_nielsenId3HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("patInterval"))
-  {
+  if (jsonValue.ValueExists("patInterval")) {
     m_patInterval = jsonValue.GetInteger("patInterval");
     m_patIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pcrControl"))
-  {
+  if (jsonValue.ValueExists("pcrControl")) {
     m_pcrControl = M3u8PcrControlMapper::GetM3u8PcrControlForName(jsonValue.GetString("pcrControl"));
     m_pcrControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pcrPid"))
-  {
+  if (jsonValue.ValueExists("pcrPid")) {
     m_pcrPid = jsonValue.GetInteger("pcrPid");
     m_pcrPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pmtInterval"))
-  {
+  if (jsonValue.ValueExists("pmtInterval")) {
     m_pmtInterval = jsonValue.GetInteger("pmtInterval");
     m_pmtIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pmtPid"))
-  {
+  if (jsonValue.ValueExists("pmtPid")) {
     m_pmtPid = jsonValue.GetInteger("pmtPid");
     m_pmtPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateMetadataPid"))
-  {
+  if (jsonValue.ValueExists("privateMetadataPid")) {
     m_privateMetadataPid = jsonValue.GetInteger("privateMetadataPid");
     m_privateMetadataPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programNumber"))
-  {
+  if (jsonValue.ValueExists("programNumber")) {
     m_programNumber = jsonValue.GetInteger("programNumber");
     m_programNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ptsOffset"))
-  {
+  if (jsonValue.ValueExists("ptsOffset")) {
     m_ptsOffset = jsonValue.GetInteger("ptsOffset");
     m_ptsOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ptsOffsetMode"))
-  {
+  if (jsonValue.ValueExists("ptsOffsetMode")) {
     m_ptsOffsetMode = TsPtsOffsetMapper::GetTsPtsOffsetForName(jsonValue.GetString("ptsOffsetMode"));
     m_ptsOffsetModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scte35Pid"))
-  {
+  if (jsonValue.ValueExists("scte35Pid")) {
     m_scte35Pid = jsonValue.GetInteger("scte35Pid");
     m_scte35PidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scte35Source"))
-  {
+  if (jsonValue.ValueExists("scte35Source")) {
     m_scte35Source = M3u8Scte35SourceMapper::GetM3u8Scte35SourceForName(jsonValue.GetString("scte35Source"));
     m_scte35SourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timedMetadata"))
-  {
+  if (jsonValue.ValueExists("timedMetadata")) {
     m_timedMetadata = TimedMetadataMapper::GetTimedMetadataForName(jsonValue.GetString("timedMetadata"));
     m_timedMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timedMetadataPid"))
-  {
+  if (jsonValue.ValueExists("timedMetadataPid")) {
     m_timedMetadataPid = jsonValue.GetInteger("timedMetadataPid");
     m_timedMetadataPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("transportStreamId"))
-  {
+  if (jsonValue.ValueExists("transportStreamId")) {
     m_transportStreamId = jsonValue.GetInteger("transportStreamId");
     m_transportStreamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("videoPid"))
-  {
+  if (jsonValue.ValueExists("videoPid")) {
     m_videoPid = jsonValue.GetInteger("videoPid");
     m_videoPidHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue M3u8Settings::Jsonize() const
-{
+JsonValue M3u8Settings::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioDurationHasBeenSet)
-  {
-   payload.WithString("audioDuration", M3u8AudioDurationMapper::GetNameForM3u8AudioDuration(m_audioDuration));
+  if (m_audioDurationHasBeenSet) {
+    payload.WithString("audioDuration", M3u8AudioDurationMapper::GetNameForM3u8AudioDuration(m_audioDuration));
   }
 
-  if(m_audioFramesPerPesHasBeenSet)
-  {
-   payload.WithInteger("audioFramesPerPes", m_audioFramesPerPes);
-
+  if (m_audioFramesPerPesHasBeenSet) {
+    payload.WithInteger("audioFramesPerPes", m_audioFramesPerPes);
   }
 
-  if(m_audioPidsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> audioPidsJsonList(m_audioPids.size());
-   for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
-   {
-     audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
-   }
-   payload.WithArray("audioPids", std::move(audioPidsJsonList));
-
+  if (m_audioPidsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> audioPidsJsonList(m_audioPids.size());
+    for (unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex) {
+      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
+    }
+    payload.WithArray("audioPids", std::move(audioPidsJsonList));
   }
 
-  if(m_audioPtsOffsetDeltaHasBeenSet)
-  {
-   payload.WithInteger("audioPtsOffsetDelta", m_audioPtsOffsetDelta);
-
+  if (m_audioPtsOffsetDeltaHasBeenSet) {
+    payload.WithInteger("audioPtsOffsetDelta", m_audioPtsOffsetDelta);
   }
 
-  if(m_dataPTSControlHasBeenSet)
-  {
-   payload.WithString("dataPTSControl", M3u8DataPtsControlMapper::GetNameForM3u8DataPtsControl(m_dataPTSControl));
+  if (m_dataPTSControlHasBeenSet) {
+    payload.WithString("dataPTSControl", M3u8DataPtsControlMapper::GetNameForM3u8DataPtsControl(m_dataPTSControl));
   }
 
-  if(m_maxPcrIntervalHasBeenSet)
-  {
-   payload.WithInteger("maxPcrInterval", m_maxPcrInterval);
-
+  if (m_maxPcrIntervalHasBeenSet) {
+    payload.WithInteger("maxPcrInterval", m_maxPcrInterval);
   }
 
-  if(m_nielsenId3HasBeenSet)
-  {
-   payload.WithString("nielsenId3", M3u8NielsenId3Mapper::GetNameForM3u8NielsenId3(m_nielsenId3));
+  if (m_nielsenId3HasBeenSet) {
+    payload.WithString("nielsenId3", M3u8NielsenId3Mapper::GetNameForM3u8NielsenId3(m_nielsenId3));
   }
 
-  if(m_patIntervalHasBeenSet)
-  {
-   payload.WithInteger("patInterval", m_patInterval);
-
+  if (m_patIntervalHasBeenSet) {
+    payload.WithInteger("patInterval", m_patInterval);
   }
 
-  if(m_pcrControlHasBeenSet)
-  {
-   payload.WithString("pcrControl", M3u8PcrControlMapper::GetNameForM3u8PcrControl(m_pcrControl));
+  if (m_pcrControlHasBeenSet) {
+    payload.WithString("pcrControl", M3u8PcrControlMapper::GetNameForM3u8PcrControl(m_pcrControl));
   }
 
-  if(m_pcrPidHasBeenSet)
-  {
-   payload.WithInteger("pcrPid", m_pcrPid);
-
+  if (m_pcrPidHasBeenSet) {
+    payload.WithInteger("pcrPid", m_pcrPid);
   }
 
-  if(m_pmtIntervalHasBeenSet)
-  {
-   payload.WithInteger("pmtInterval", m_pmtInterval);
-
+  if (m_pmtIntervalHasBeenSet) {
+    payload.WithInteger("pmtInterval", m_pmtInterval);
   }
 
-  if(m_pmtPidHasBeenSet)
-  {
-   payload.WithInteger("pmtPid", m_pmtPid);
-
+  if (m_pmtPidHasBeenSet) {
+    payload.WithInteger("pmtPid", m_pmtPid);
   }
 
-  if(m_privateMetadataPidHasBeenSet)
-  {
-   payload.WithInteger("privateMetadataPid", m_privateMetadataPid);
-
+  if (m_privateMetadataPidHasBeenSet) {
+    payload.WithInteger("privateMetadataPid", m_privateMetadataPid);
   }
 
-  if(m_programNumberHasBeenSet)
-  {
-   payload.WithInteger("programNumber", m_programNumber);
-
+  if (m_programNumberHasBeenSet) {
+    payload.WithInteger("programNumber", m_programNumber);
   }
 
-  if(m_ptsOffsetHasBeenSet)
-  {
-   payload.WithInteger("ptsOffset", m_ptsOffset);
-
+  if (m_ptsOffsetHasBeenSet) {
+    payload.WithInteger("ptsOffset", m_ptsOffset);
   }
 
-  if(m_ptsOffsetModeHasBeenSet)
-  {
-   payload.WithString("ptsOffsetMode", TsPtsOffsetMapper::GetNameForTsPtsOffset(m_ptsOffsetMode));
+  if (m_ptsOffsetModeHasBeenSet) {
+    payload.WithString("ptsOffsetMode", TsPtsOffsetMapper::GetNameForTsPtsOffset(m_ptsOffsetMode));
   }
 
-  if(m_scte35PidHasBeenSet)
-  {
-   payload.WithInteger("scte35Pid", m_scte35Pid);
-
+  if (m_scte35PidHasBeenSet) {
+    payload.WithInteger("scte35Pid", m_scte35Pid);
   }
 
-  if(m_scte35SourceHasBeenSet)
-  {
-   payload.WithString("scte35Source", M3u8Scte35SourceMapper::GetNameForM3u8Scte35Source(m_scte35Source));
+  if (m_scte35SourceHasBeenSet) {
+    payload.WithString("scte35Source", M3u8Scte35SourceMapper::GetNameForM3u8Scte35Source(m_scte35Source));
   }
 
-  if(m_timedMetadataHasBeenSet)
-  {
-   payload.WithString("timedMetadata", TimedMetadataMapper::GetNameForTimedMetadata(m_timedMetadata));
+  if (m_timedMetadataHasBeenSet) {
+    payload.WithString("timedMetadata", TimedMetadataMapper::GetNameForTimedMetadata(m_timedMetadata));
   }
 
-  if(m_timedMetadataPidHasBeenSet)
-  {
-   payload.WithInteger("timedMetadataPid", m_timedMetadataPid);
-
+  if (m_timedMetadataPidHasBeenSet) {
+    payload.WithInteger("timedMetadataPid", m_timedMetadataPid);
   }
 
-  if(m_transportStreamIdHasBeenSet)
-  {
-   payload.WithInteger("transportStreamId", m_transportStreamId);
-
+  if (m_transportStreamIdHasBeenSet) {
+    payload.WithInteger("transportStreamId", m_transportStreamId);
   }
 
-  if(m_videoPidHasBeenSet)
-  {
-   payload.WithInteger("videoPid", m_videoPid);
-
+  if (m_videoPidHasBeenSet) {
+    payload.WithInteger("videoPid", m_videoPid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

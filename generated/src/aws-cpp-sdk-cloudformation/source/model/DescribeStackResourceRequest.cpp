@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeStackResourceRequest::SerializePayload() const
-{
+Aws::String DescribeStackResourceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeStackResource&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_logicalResourceIdHasBeenSet)
-  {
+  if (m_logicalResourceIdHasBeenSet) {
     ss << "LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DescribeStackResourceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeStackResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeStackResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

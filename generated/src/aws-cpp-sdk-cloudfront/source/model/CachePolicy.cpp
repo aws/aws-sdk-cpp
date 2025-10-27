@@ -4,48 +4,39 @@
  */
 
 #include <aws/cloudfront/model/CachePolicy.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-CachePolicy::CachePolicy(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CachePolicy::CachePolicy(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CachePolicy& CachePolicy::operator =(const XmlNode& xmlNode)
-{
+CachePolicy& CachePolicy::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
+    if (!idNode.IsNull()) {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    if(!lastModifiedTimeNode.IsNull())
-    {
-      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!lastModifiedTimeNode.IsNull()) {
+      m_lastModifiedTime =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode cachePolicyConfigNode = resultNode.FirstChild("CachePolicyConfig");
-    if(!cachePolicyConfigNode.IsNull())
-    {
+    if (!cachePolicyConfigNode.IsNull()) {
       m_cachePolicyConfig = cachePolicyConfigNode;
       m_cachePolicyConfigHasBeenSet = true;
     }
@@ -54,29 +45,24 @@ CachePolicy& CachePolicy::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CachePolicy::AddToNode(XmlNode& parentNode) const
-{
+void CachePolicy::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_idHasBeenSet)
-  {
-   XmlNode idNode = parentNode.CreateChildElement("Id");
-   idNode.SetText(m_id);
+  if (m_idHasBeenSet) {
+    XmlNode idNode = parentNode.CreateChildElement("Id");
+    idNode.SetText(m_id);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+    lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_cachePolicyConfigHasBeenSet)
-  {
-   XmlNode cachePolicyConfigNode = parentNode.CreateChildElement("CachePolicyConfig");
-   m_cachePolicyConfig.AddToNode(cachePolicyConfigNode);
+  if (m_cachePolicyConfigHasBeenSet) {
+    XmlNode cachePolicyConfigNode = parentNode.CreateChildElement("CachePolicyConfig");
+    m_cachePolicyConfig.AddToNode(cachePolicyConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

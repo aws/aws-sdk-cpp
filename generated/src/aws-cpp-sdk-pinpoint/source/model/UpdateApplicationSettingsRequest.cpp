@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/UpdateApplicationSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/UpdateApplicationSettingsRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateApplicationSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_writeApplicationSettingsRequestHasBeenSet)
-  {
-   payload = m_writeApplicationSettingsRequest.Jsonize();
+  if (m_writeApplicationSettingsRequestHasBeenSet) {
+    payload = m_writeApplicationSettingsRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

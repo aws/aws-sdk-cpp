@@ -5,12 +5,8 @@
 
 #include <aws/fms/FMSEndpointProvider.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace FMS
-} // namespace Aws
+namespace Aws {
+namespace FMS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace FMS
+}  // namespace Aws

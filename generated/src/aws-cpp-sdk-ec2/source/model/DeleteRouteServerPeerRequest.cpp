@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteRouteServerPeerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteRouteServerPeerRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteRouteServerPeerRequest::SerializePayload() const
-{
+Aws::String DeleteRouteServerPeerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteRouteServerPeer&";
-  if(m_routeServerPeerIdHasBeenSet)
-  {
+  if (m_routeServerPeerIdHasBeenSet) {
     ss << "RouteServerPeerId=" << StringUtils::URLEncode(m_routeServerPeerId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteRouteServerPeerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteRouteServerPeerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteRouteServerPeerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

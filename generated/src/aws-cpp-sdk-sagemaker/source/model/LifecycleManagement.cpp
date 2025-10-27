@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/LifecycleManagement.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker/model/LifecycleManagement.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+namespace LifecycleManagementMapper {
 
-namespace Aws
-{
-  namespace SageMaker
-  {
-    namespace Model
-    {
-      namespace LifecycleManagementMapper
-      {
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+LifecycleManagement GetLifecycleManagementForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ENABLED_HASH) {
+    return LifecycleManagement::ENABLED;
+  } else if (hashCode == DISABLED_HASH) {
+    return LifecycleManagement::DISABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LifecycleManagement>(hashCode);
+  }
 
+  return LifecycleManagement::NOT_SET;
+}
 
-        LifecycleManagement GetLifecycleManagementForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ENABLED_HASH)
-          {
-            return LifecycleManagement::ENABLED;
-          }
-          else if (hashCode == DISABLED_HASH)
-          {
-            return LifecycleManagement::DISABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LifecycleManagement>(hashCode);
-          }
+Aws::String GetNameForLifecycleManagement(LifecycleManagement enumValue) {
+  switch (enumValue) {
+    case LifecycleManagement::NOT_SET:
+      return {};
+    case LifecycleManagement::ENABLED:
+      return "ENABLED";
+    case LifecycleManagement::DISABLED:
+      return "DISABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LifecycleManagement::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLifecycleManagement(LifecycleManagement enumValue)
-        {
-          switch(enumValue)
-          {
-          case LifecycleManagement::NOT_SET:
-            return {};
-          case LifecycleManagement::ENABLED:
-            return "ENABLED";
-          case LifecycleManagement::DISABLED:
-            return "DISABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LifecycleManagementMapper
-    } // namespace Model
-  } // namespace SageMaker
-} // namespace Aws
+}  // namespace LifecycleManagementMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

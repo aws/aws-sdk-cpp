@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
-#include <aws/pinpoint/PinpointRequest.h>
-#include <aws/pinpoint/model/APNSVoipSandboxChannelRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/PinpointRequest.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/pinpoint/model/APNSVoipSandboxChannelRequest.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
+/**
+ */
+class UpdateApnsVoipSandboxChannelRequest : public PinpointRequest {
+ public:
+  AWS_PINPOINT_API UpdateApnsVoipSandboxChannelRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateApnsVoipSandboxChannel"; }
+
+  AWS_PINPOINT_API Aws::String SerializePayload() const override;
+
+  ///@{
+
+  inline const APNSVoipSandboxChannelRequest& GetAPNSVoipSandboxChannelRequest() const { return m_aPNSVoipSandboxChannelRequest; }
+  inline bool APNSVoipSandboxChannelRequestHasBeenSet() const { return m_aPNSVoipSandboxChannelRequestHasBeenSet; }
+  template <typename APNSVoipSandboxChannelRequestT = APNSVoipSandboxChannelRequest>
+  void SetAPNSVoipSandboxChannelRequest(APNSVoipSandboxChannelRequestT&& value) {
+    m_aPNSVoipSandboxChannelRequestHasBeenSet = true;
+    m_aPNSVoipSandboxChannelRequest = std::forward<APNSVoipSandboxChannelRequestT>(value);
+  }
+  template <typename APNSVoipSandboxChannelRequestT = APNSVoipSandboxChannelRequest>
+  UpdateApnsVoipSandboxChannelRequest& WithAPNSVoipSandboxChannelRequest(APNSVoipSandboxChannelRequestT&& value) {
+    SetAPNSVoipSandboxChannelRequest(std::forward<APNSVoipSandboxChannelRequestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
+   * <p>The unique identifier for the application. This identifier is displayed as
+   * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
    */
-  class UpdateApnsVoipSandboxChannelRequest : public PinpointRequest
-  {
-  public:
-    AWS_PINPOINT_API UpdateApnsVoipSandboxChannelRequest() = default;
+  inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+  inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+  template <typename ApplicationIdT = Aws::String>
+  void SetApplicationId(ApplicationIdT&& value) {
+    m_applicationIdHasBeenSet = true;
+    m_applicationId = std::forward<ApplicationIdT>(value);
+  }
+  template <typename ApplicationIdT = Aws::String>
+  UpdateApnsVoipSandboxChannelRequest& WithApplicationId(ApplicationIdT&& value) {
+    SetApplicationId(std::forward<ApplicationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  APNSVoipSandboxChannelRequest m_aPNSVoipSandboxChannelRequest;
+  bool m_aPNSVoipSandboxChannelRequestHasBeenSet = false;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateApnsVoipSandboxChannel"; }
+  Aws::String m_applicationId;
+  bool m_applicationIdHasBeenSet = false;
+};
 
-    AWS_PINPOINT_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    
-    inline const APNSVoipSandboxChannelRequest& GetAPNSVoipSandboxChannelRequest() const { return m_aPNSVoipSandboxChannelRequest; }
-    inline bool APNSVoipSandboxChannelRequestHasBeenSet() const { return m_aPNSVoipSandboxChannelRequestHasBeenSet; }
-    template<typename APNSVoipSandboxChannelRequestT = APNSVoipSandboxChannelRequest>
-    void SetAPNSVoipSandboxChannelRequest(APNSVoipSandboxChannelRequestT&& value) { m_aPNSVoipSandboxChannelRequestHasBeenSet = true; m_aPNSVoipSandboxChannelRequest = std::forward<APNSVoipSandboxChannelRequestT>(value); }
-    template<typename APNSVoipSandboxChannelRequestT = APNSVoipSandboxChannelRequest>
-    UpdateApnsVoipSandboxChannelRequest& WithAPNSVoipSandboxChannelRequest(APNSVoipSandboxChannelRequestT&& value) { SetAPNSVoipSandboxChannelRequest(std::forward<APNSVoipSandboxChannelRequestT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
-    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
-    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    template<typename ApplicationIdT = Aws::String>
-    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
-    template<typename ApplicationIdT = Aws::String>
-    UpdateApnsVoipSandboxChannelRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    APNSVoipSandboxChannelRequest m_aPNSVoipSandboxChannelRequest;
-    bool m_aPNSVoipSandboxChannelRequestHasBeenSet = false;
-
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

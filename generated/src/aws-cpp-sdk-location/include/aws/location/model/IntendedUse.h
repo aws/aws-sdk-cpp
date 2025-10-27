@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
-  enum class IntendedUse
-  {
-    NOT_SET,
-    SingleUse,
-    Storage
-  };
+namespace Aws {
+namespace LocationService {
+namespace Model {
+enum class IntendedUse { NOT_SET, SingleUse, Storage };
 
-namespace IntendedUseMapper
-{
+namespace IntendedUseMapper {
 AWS_LOCATIONSERVICE_API IntendedUse GetIntendedUseForName(const Aws::String& name);
 
 AWS_LOCATIONSERVICE_API Aws::String GetNameForIntendedUse(IntendedUse value);
-} // namespace IntendedUseMapper
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace IntendedUseMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

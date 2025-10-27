@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchDetachObject::BatchDetachObject(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDetachObject::BatchDetachObject(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDetachObject& BatchDetachObject::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParentReference"))
-  {
+BatchDetachObject& BatchDetachObject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParentReference")) {
     m_parentReference = jsonValue.GetObject("ParentReference");
     m_parentReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LinkName"))
-  {
+  if (jsonValue.ValueExists("LinkName")) {
     m_linkName = jsonValue.GetString("LinkName");
     m_linkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BatchReferenceName"))
-  {
+  if (jsonValue.ValueExists("BatchReferenceName")) {
     m_batchReferenceName = jsonValue.GetString("BatchReferenceName");
     m_batchReferenceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDetachObject::Jsonize() const
-{
+JsonValue BatchDetachObject::Jsonize() const {
   JsonValue payload;
 
-  if(m_parentReferenceHasBeenSet)
-  {
-   payload.WithObject("ParentReference", m_parentReference.Jsonize());
-
+  if (m_parentReferenceHasBeenSet) {
+    payload.WithObject("ParentReference", m_parentReference.Jsonize());
   }
 
-  if(m_linkNameHasBeenSet)
-  {
-   payload.WithString("LinkName", m_linkName);
-
+  if (m_linkNameHasBeenSet) {
+    payload.WithString("LinkName", m_linkName);
   }
 
-  if(m_batchReferenceNameHasBeenSet)
-  {
-   payload.WithString("BatchReferenceName", m_batchReferenceName);
-
+  if (m_batchReferenceNameHasBeenSet) {
+    payload.WithString("BatchReferenceName", m_batchReferenceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

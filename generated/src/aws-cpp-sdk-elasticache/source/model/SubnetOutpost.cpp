@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/SubnetOutpost.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/SubnetOutpost.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
 
-SubnetOutpost::SubnetOutpost(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SubnetOutpost::SubnetOutpost(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SubnetOutpost& SubnetOutpost::operator =(const XmlNode& xmlNode)
-{
+SubnetOutpost& SubnetOutpost::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode subnetOutpostArnNode = resultNode.FirstChild("SubnetOutpostArn");
-    if(!subnetOutpostArnNode.IsNull())
-    {
+    if (!subnetOutpostArnNode.IsNull()) {
       m_subnetOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(subnetOutpostArnNode.GetText());
       m_subnetOutpostArnHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ SubnetOutpost& SubnetOutpost::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SubnetOutpost::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_subnetOutpostArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SubnetOutpostArn=" << StringUtils::URLEncode(m_subnetOutpostArn.c_str()) << "&";
-  }
-
-}
-
-void SubnetOutpost::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_subnetOutpostArnHasBeenSet)
-  {
-      oStream << location << ".SubnetOutpostArn=" << StringUtils::URLEncode(m_subnetOutpostArn.c_str()) << "&";
+void SubnetOutpost::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_subnetOutpostArnHasBeenSet) {
+    oStream << location << index << locationValue << ".SubnetOutpostArn=" << StringUtils::URLEncode(m_subnetOutpostArn.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+void SubnetOutpost::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_subnetOutpostArnHasBeenSet) {
+    oStream << location << ".SubnetOutpostArn=" << StringUtils::URLEncode(m_subnetOutpostArn.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

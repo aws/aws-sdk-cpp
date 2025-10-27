@@ -5,12 +5,8 @@
 
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointProvider.h>
 
-namespace Aws
-{
-namespace Route53RecoveryReadiness
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Route53RecoveryReadiness
-} // namespace Aws
+namespace Aws {
+namespace Route53RecoveryReadiness {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Route53RecoveryReadiness
+}  // namespace Aws

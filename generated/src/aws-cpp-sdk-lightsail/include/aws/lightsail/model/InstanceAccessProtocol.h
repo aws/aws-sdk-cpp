@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class InstanceAccessProtocol
-  {
-    NOT_SET,
-    ssh,
-    rdp
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class InstanceAccessProtocol { NOT_SET, ssh, rdp };
 
-namespace InstanceAccessProtocolMapper
-{
+namespace InstanceAccessProtocolMapper {
 AWS_LIGHTSAIL_API InstanceAccessProtocol GetInstanceAccessProtocolForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForInstanceAccessProtocol(InstanceAccessProtocol value);
-} // namespace InstanceAccessProtocolMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace InstanceAccessProtocolMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

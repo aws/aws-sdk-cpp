@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class UserAssignment
-  {
-    NOT_SET,
-    AUTOMATIC,
-    MANUAL
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class UserAssignment { NOT_SET, AUTOMATIC, MANUAL };
 
-namespace UserAssignmentMapper
-{
+namespace UserAssignmentMapper {
 AWS_DATAZONE_API UserAssignment GetUserAssignmentForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForUserAssignment(UserAssignment value);
-} // namespace UserAssignmentMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace UserAssignmentMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

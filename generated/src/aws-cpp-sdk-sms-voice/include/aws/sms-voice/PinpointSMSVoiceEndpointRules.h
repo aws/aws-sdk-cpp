@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoice
-{
-class PinpointSMSVoiceEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace PinpointSMSVoice {
+class PinpointSMSVoiceEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace PinpointSMSVoice
-} // namespace Aws
+}  // namespace PinpointSMSVoice
+}  // namespace Aws

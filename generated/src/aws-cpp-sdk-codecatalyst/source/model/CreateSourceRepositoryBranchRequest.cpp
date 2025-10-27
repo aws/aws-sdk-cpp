@@ -12,19 +12,12 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateSourceRepositoryBranchRequest::SerializePayload() const
-{
+Aws::String CreateSourceRepositoryBranchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_headCommitIdHasBeenSet)
-  {
-   payload.WithString("headCommitId", m_headCommitId);
-
+  if (m_headCommitIdHasBeenSet) {
+    payload.WithString("headCommitId", m_headCommitId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

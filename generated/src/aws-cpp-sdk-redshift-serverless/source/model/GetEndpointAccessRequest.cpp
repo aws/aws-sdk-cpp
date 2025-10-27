@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/GetEndpointAccessRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/GetEndpointAccessRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetEndpointAccessRequest::SerializePayload() const
-{
+Aws::String GetEndpointAccessRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_endpointNameHasBeenSet)
-  {
-   payload.WithString("endpointName", m_endpointName);
-
+  if (m_endpointNameHasBeenSet) {
+    payload.WithString("endpointName", m_endpointName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetEndpointAccessRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetEndpointAccessRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.GetEndpointAccess"));
   return headers;
-
 }
-
-
-
-

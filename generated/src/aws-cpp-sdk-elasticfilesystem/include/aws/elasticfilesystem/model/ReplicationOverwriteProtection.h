@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
-  enum class ReplicationOverwriteProtection
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED,
-    REPLICATING
-  };
+namespace Aws {
+namespace EFS {
+namespace Model {
+enum class ReplicationOverwriteProtection { NOT_SET, ENABLED, DISABLED, REPLICATING };
 
-namespace ReplicationOverwriteProtectionMapper
-{
+namespace ReplicationOverwriteProtectionMapper {
 AWS_EFS_API ReplicationOverwriteProtection GetReplicationOverwriteProtectionForName(const Aws::String& name);
 
 AWS_EFS_API Aws::String GetNameForReplicationOverwriteProtection(ReplicationOverwriteProtection value);
-} // namespace ReplicationOverwriteProtectionMapper
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace ReplicationOverwriteProtectionMapper
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

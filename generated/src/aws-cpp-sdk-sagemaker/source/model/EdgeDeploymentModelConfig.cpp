@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EdgeDeploymentModelConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EdgeDeploymentModelConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EdgeDeploymentModelConfig::EdgeDeploymentModelConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdgeDeploymentModelConfig::EdgeDeploymentModelConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EdgeDeploymentModelConfig& EdgeDeploymentModelConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ModelHandle"))
-  {
+EdgeDeploymentModelConfig& EdgeDeploymentModelConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ModelHandle")) {
     m_modelHandle = jsonValue.GetString("ModelHandle");
     m_modelHandleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EdgePackagingJobName"))
-  {
+  if (jsonValue.ValueExists("EdgePackagingJobName")) {
     m_edgePackagingJobName = jsonValue.GetString("EdgePackagingJobName");
     m_edgePackagingJobNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EdgeDeploymentModelConfig::Jsonize() const
-{
+JsonValue EdgeDeploymentModelConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelHandleHasBeenSet)
-  {
-   payload.WithString("ModelHandle", m_modelHandle);
-
+  if (m_modelHandleHasBeenSet) {
+    payload.WithString("ModelHandle", m_modelHandle);
   }
 
-  if(m_edgePackagingJobNameHasBeenSet)
-  {
-   payload.WithString("EdgePackagingJobName", m_edgePackagingJobName);
-
+  if (m_edgePackagingJobNameHasBeenSet) {
+    payload.WithString("EdgePackagingJobName", m_edgePackagingJobName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

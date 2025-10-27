@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glacier/Glacier_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
-  enum class ExpressionType
-  {
-    NOT_SET,
-    SQL
-  };
+namespace Aws {
+namespace Glacier {
+namespace Model {
+enum class ExpressionType { NOT_SET, SQL };
 
-namespace ExpressionTypeMapper
-{
+namespace ExpressionTypeMapper {
 AWS_GLACIER_API ExpressionType GetExpressionTypeForName(const Aws::String& name);
 
 AWS_GLACIER_API Aws::String GetNameForExpressionType(ExpressionType value);
-} // namespace ExpressionTypeMapper
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace ExpressionTypeMapper
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

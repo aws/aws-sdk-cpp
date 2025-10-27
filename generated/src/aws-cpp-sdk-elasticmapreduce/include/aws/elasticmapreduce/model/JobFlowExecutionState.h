@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class JobFlowExecutionState
-  {
-    NOT_SET,
-    STARTING,
-    BOOTSTRAPPING,
-    RUNNING,
-    WAITING,
-    SHUTTING_DOWN,
-    TERMINATED,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class JobFlowExecutionState { NOT_SET, STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED };
 
-namespace JobFlowExecutionStateMapper
-{
+namespace JobFlowExecutionStateMapper {
 AWS_EMR_API JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState value);
-} // namespace JobFlowExecutionStateMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace JobFlowExecutionStateMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

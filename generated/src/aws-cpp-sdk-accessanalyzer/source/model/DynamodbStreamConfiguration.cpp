@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-DynamodbStreamConfiguration::DynamodbStreamConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DynamodbStreamConfiguration::DynamodbStreamConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DynamodbStreamConfiguration& DynamodbStreamConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamPolicy"))
-  {
+DynamodbStreamConfiguration& DynamodbStreamConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamPolicy")) {
     m_streamPolicy = jsonValue.GetString("streamPolicy");
     m_streamPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DynamodbStreamConfiguration::Jsonize() const
-{
+JsonValue DynamodbStreamConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamPolicyHasBeenSet)
-  {
-   payload.WithString("streamPolicy", m_streamPolicy);
-
+  if (m_streamPolicyHasBeenSet) {
+    payload.WithString("streamPolicy", m_streamPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

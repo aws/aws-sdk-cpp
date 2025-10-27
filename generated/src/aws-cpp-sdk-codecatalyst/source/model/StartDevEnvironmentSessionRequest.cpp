@@ -12,19 +12,12 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartDevEnvironmentSessionRequest::SerializePayload() const
-{
+Aws::String StartDevEnvironmentSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sessionConfigurationHasBeenSet)
-  {
-   payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
-
+  if (m_sessionConfigurationHasBeenSet) {
+    payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

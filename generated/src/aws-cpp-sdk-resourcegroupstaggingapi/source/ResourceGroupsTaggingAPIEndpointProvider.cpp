@@ -5,12 +5,8 @@
 
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointProvider.h>
 
-namespace Aws
-{
-namespace ResourceGroupsTaggingAPI
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ResourceGroupsTaggingAPI
-} // namespace Aws
+namespace Aws {
+namespace ResourceGroupsTaggingAPI {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ResourceGroupsTaggingAPI
+}  // namespace Aws

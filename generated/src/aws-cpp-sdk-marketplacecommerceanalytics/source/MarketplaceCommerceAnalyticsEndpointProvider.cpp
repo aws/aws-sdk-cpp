@@ -5,12 +5,8 @@
 
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointProvider.h>
 
-namespace Aws
-{
-namespace MarketplaceCommerceAnalytics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MarketplaceCommerceAnalytics
-} // namespace Aws
+namespace Aws {
+namespace MarketplaceCommerceAnalytics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MarketplaceCommerceAnalytics
+}  // namespace Aws

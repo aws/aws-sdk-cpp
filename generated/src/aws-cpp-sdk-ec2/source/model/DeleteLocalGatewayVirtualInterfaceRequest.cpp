@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLocalGatewayVirtualInterfaceRequest::SerializePayload() const
-{
+Aws::String DeleteLocalGatewayVirtualInterfaceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLocalGatewayVirtualInterface&";
-  if(m_localGatewayVirtualInterfaceIdHasBeenSet)
-  {
+  if (m_localGatewayVirtualInterfaceIdHasBeenSet) {
     ss << "LocalGatewayVirtualInterfaceId=" << StringUtils::URLEncode(m_localGatewayVirtualInterfaceId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteLocalGatewayVirtualInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLocalGatewayVirtualInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLocalGatewayVirtualInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/ScheduleKeyDeletionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/model/ScheduleKeyDeletionRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ScheduleKeyDeletionRequest::SerializePayload() const
-{
+Aws::String ScheduleKeyDeletionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_keyIdHasBeenSet)
-  {
-   payload.WithString("KeyId", m_keyId);
-
+  if (m_keyIdHasBeenSet) {
+    payload.WithString("KeyId", m_keyId);
   }
 
-  if(m_pendingWindowInDaysHasBeenSet)
-  {
-   payload.WithInteger("PendingWindowInDays", m_pendingWindowInDays);
-
+  if (m_pendingWindowInDaysHasBeenSet) {
+    payload.WithInteger("PendingWindowInDays", m_pendingWindowInDays);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ScheduleKeyDeletionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ScheduleKeyDeletionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.ScheduleKeyDeletion"));
   return headers;
-
 }
-
-
-
-

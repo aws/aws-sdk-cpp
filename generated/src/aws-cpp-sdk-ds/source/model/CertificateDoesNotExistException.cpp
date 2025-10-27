@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/CertificateDoesNotExistException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/CertificateDoesNotExistException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-CertificateDoesNotExistException::CertificateDoesNotExistException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CertificateDoesNotExistException::CertificateDoesNotExistException(JsonView jsonValue) { *this = jsonValue; }
 
-CertificateDoesNotExistException& CertificateDoesNotExistException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+CertificateDoesNotExistException& CertificateDoesNotExistException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestId"))
-  {
+  if (jsonValue.ValueExists("RequestId")) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CertificateDoesNotExistException::Jsonize() const
-{
+JsonValue CertificateDoesNotExistException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("RequestId", m_requestId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/groundstation/GroundStation_EXPORTS.h>
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
-  enum class EphemerisStatus
-  {
-    NOT_SET,
-    VALIDATING,
-    INVALID,
-    ERROR_,
-    ENABLED,
-    DISABLED,
-    EXPIRED
-  };
+namespace Aws {
+namespace GroundStation {
+namespace Model {
+enum class EphemerisStatus { NOT_SET, VALIDATING, INVALID, ERROR_, ENABLED, DISABLED, EXPIRED };
 
-namespace EphemerisStatusMapper
-{
+namespace EphemerisStatusMapper {
 AWS_GROUNDSTATION_API EphemerisStatus GetEphemerisStatusForName(const Aws::String& name);
 
 AWS_GROUNDSTATION_API Aws::String GetNameForEphemerisStatus(EphemerisStatus value);
-} // namespace EphemerisStatusMapper
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace EphemerisStatusMapper
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

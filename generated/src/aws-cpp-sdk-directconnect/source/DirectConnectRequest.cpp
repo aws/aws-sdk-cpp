@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/directconnect/DirectConnectRequest.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-} // namespace DirectConnect
-} // namespace Aws
+namespace Aws {
+namespace DirectConnect {}  // namespace DirectConnect
+}  // namespace Aws

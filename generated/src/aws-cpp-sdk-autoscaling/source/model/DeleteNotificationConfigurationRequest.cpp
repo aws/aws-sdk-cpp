@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
-{
+Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteNotificationConfiguration&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_topicARNHasBeenSet)
-  {
+  if (m_topicARNHasBeenSet) {
     ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteNotificationConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteNotificationConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

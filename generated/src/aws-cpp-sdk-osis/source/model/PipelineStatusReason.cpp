@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/osis/model/PipelineStatusReason.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/PipelineStatusReason.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OSIS
-{
-namespace Model
-{
+namespace Aws {
+namespace OSIS {
+namespace Model {
 
-PipelineStatusReason::PipelineStatusReason(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PipelineStatusReason::PipelineStatusReason(JsonView jsonValue) { *this = jsonValue; }
 
-PipelineStatusReason& PipelineStatusReason::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+PipelineStatusReason& PipelineStatusReason::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PipelineStatusReason::Jsonize() const
-{
+JsonValue PipelineStatusReason::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OSIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

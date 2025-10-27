@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/ScannedItemCount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/ScannedItemCount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-ScannedItemCount::ScannedItemCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScannedItemCount::ScannedItemCount(JsonView jsonValue) { *this = jsonValue; }
 
-ScannedItemCount& ScannedItemCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("totalGb"))
-  {
+ScannedItemCount& ScannedItemCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("totalGb")) {
     m_totalGb = jsonValue.GetInteger("totalGb");
     m_totalGbHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("files"))
-  {
+  if (jsonValue.ValueExists("files")) {
     m_files = jsonValue.GetInteger("files");
     m_filesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumes"))
-  {
+  if (jsonValue.ValueExists("volumes")) {
     m_volumes = jsonValue.GetInteger("volumes");
     m_volumesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScannedItemCount::Jsonize() const
-{
+JsonValue ScannedItemCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalGbHasBeenSet)
-  {
-   payload.WithInteger("totalGb", m_totalGb);
-
+  if (m_totalGbHasBeenSet) {
+    payload.WithInteger("totalGb", m_totalGb);
   }
 
-  if(m_filesHasBeenSet)
-  {
-   payload.WithInteger("files", m_files);
-
+  if (m_filesHasBeenSet) {
+    payload.WithInteger("files", m_files);
   }
 
-  if(m_volumesHasBeenSet)
-  {
-   payload.WithInteger("volumes", m_volumes);
-
+  if (m_volumesHasBeenSet) {
+    payload.WithInteger("volumes", m_volumes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

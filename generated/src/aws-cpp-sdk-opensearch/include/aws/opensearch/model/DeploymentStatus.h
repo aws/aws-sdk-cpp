@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class DeploymentStatus
-  {
-    NOT_SET,
-    PENDING_UPDATE,
-    IN_PROGRESS,
-    COMPLETED,
-    NOT_ELIGIBLE,
-    ELIGIBLE
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class DeploymentStatus { NOT_SET, PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE };
 
-namespace DeploymentStatusMapper
-{
+namespace DeploymentStatusMapper {
 AWS_OPENSEARCHSERVICE_API DeploymentStatus GetDeploymentStatusForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForDeploymentStatus(DeploymentStatus value);
-} // namespace DeploymentStatusMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace DeploymentStatusMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

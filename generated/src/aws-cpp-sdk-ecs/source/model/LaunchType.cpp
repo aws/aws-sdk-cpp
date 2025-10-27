@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/LaunchType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ecs/model/LaunchType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ECS {
+namespace Model {
+namespace LaunchTypeMapper {
 
-namespace Aws
-{
-  namespace ECS
-  {
-    namespace Model
-    {
-      namespace LaunchTypeMapper
-      {
+static const int EC2_HASH = HashingUtils::HashString("EC2");
+static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
+static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+static const int MANAGED_INSTANCES_HASH = HashingUtils::HashString("MANAGED_INSTANCES");
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
-        static const int MANAGED_INSTANCES_HASH = HashingUtils::HashString("MANAGED_INSTANCES");
+LaunchType GetLaunchTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == EC2_HASH) {
+    return LaunchType::EC2;
+  } else if (hashCode == FARGATE_HASH) {
+    return LaunchType::FARGATE;
+  } else if (hashCode == EXTERNAL_HASH) {
+    return LaunchType::EXTERNAL;
+  } else if (hashCode == MANAGED_INSTANCES_HASH) {
+    return LaunchType::MANAGED_INSTANCES;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LaunchType>(hashCode);
+  }
 
+  return LaunchType::NOT_SET;
+}
 
-        LaunchType GetLaunchTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == EC2_HASH)
-          {
-            return LaunchType::EC2;
-          }
-          else if (hashCode == FARGATE_HASH)
-          {
-            return LaunchType::FARGATE;
-          }
-          else if (hashCode == EXTERNAL_HASH)
-          {
-            return LaunchType::EXTERNAL;
-          }
-          else if (hashCode == MANAGED_INSTANCES_HASH)
-          {
-            return LaunchType::MANAGED_INSTANCES;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LaunchType>(hashCode);
-          }
+Aws::String GetNameForLaunchType(LaunchType enumValue) {
+  switch (enumValue) {
+    case LaunchType::NOT_SET:
+      return {};
+    case LaunchType::EC2:
+      return "EC2";
+    case LaunchType::FARGATE:
+      return "FARGATE";
+    case LaunchType::EXTERNAL:
+      return "EXTERNAL";
+    case LaunchType::MANAGED_INSTANCES:
+      return "MANAGED_INSTANCES";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LaunchType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLaunchType(LaunchType enumValue)
-        {
-          switch(enumValue)
-          {
-          case LaunchType::NOT_SET:
-            return {};
-          case LaunchType::EC2:
-            return "EC2";
-          case LaunchType::FARGATE:
-            return "FARGATE";
-          case LaunchType::EXTERNAL:
-            return "EXTERNAL";
-          case LaunchType::MANAGED_INSTANCES:
-            return "MANAGED_INSTANCES";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LaunchTypeMapper
-    } // namespace Model
-  } // namespace ECS
-} // namespace Aws
+}  // namespace LaunchTypeMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

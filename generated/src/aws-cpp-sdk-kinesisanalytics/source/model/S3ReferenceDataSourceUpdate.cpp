@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalytics/model/S3ReferenceDataSourceUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalytics/model/S3ReferenceDataSourceUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalytics {
+namespace Model {
 
-S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-S3ReferenceDataSourceUpdate& S3ReferenceDataSourceUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketARNUpdate"))
-  {
+S3ReferenceDataSourceUpdate& S3ReferenceDataSourceUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketARNUpdate")) {
     m_bucketARNUpdate = jsonValue.GetString("BucketARNUpdate");
     m_bucketARNUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileKeyUpdate"))
-  {
+  if (jsonValue.ValueExists("FileKeyUpdate")) {
     m_fileKeyUpdate = jsonValue.GetString("FileKeyUpdate");
     m_fileKeyUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReferenceRoleARNUpdate"))
-  {
+  if (jsonValue.ValueExists("ReferenceRoleARNUpdate")) {
     m_referenceRoleARNUpdate = jsonValue.GetString("ReferenceRoleARNUpdate");
     m_referenceRoleARNUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ReferenceDataSourceUpdate::Jsonize() const
-{
+JsonValue S3ReferenceDataSourceUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketARNUpdateHasBeenSet)
-  {
-   payload.WithString("BucketARNUpdate", m_bucketARNUpdate);
-
+  if (m_bucketARNUpdateHasBeenSet) {
+    payload.WithString("BucketARNUpdate", m_bucketARNUpdate);
   }
 
-  if(m_fileKeyUpdateHasBeenSet)
-  {
-   payload.WithString("FileKeyUpdate", m_fileKeyUpdate);
-
+  if (m_fileKeyUpdateHasBeenSet) {
+    payload.WithString("FileKeyUpdate", m_fileKeyUpdate);
   }
 
-  if(m_referenceRoleARNUpdateHasBeenSet)
-  {
-   payload.WithString("ReferenceRoleARNUpdate", m_referenceRoleARNUpdate);
-
+  if (m_referenceRoleARNUpdateHasBeenSet) {
+    payload.WithString("ReferenceRoleARNUpdate", m_referenceRoleARNUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalytics
+}  // namespace Aws

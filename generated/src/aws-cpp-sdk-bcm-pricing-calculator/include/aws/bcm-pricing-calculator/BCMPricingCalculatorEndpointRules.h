@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-class BCMPricingCalculatorEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BCMPricingCalculator {
+class BCMPricingCalculatorEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

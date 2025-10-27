@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeLoadBalancerAttributesRequest::SerializePayload() const
-{
+Aws::String DescribeLoadBalancerAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeLoadBalancerAttributes&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeLoadBalancerAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

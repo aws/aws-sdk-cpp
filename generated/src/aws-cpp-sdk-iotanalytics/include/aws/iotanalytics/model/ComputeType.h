@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
-  enum class ComputeType
-  {
-    NOT_SET,
-    ACU_1,
-    ACU_2
-  };
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
+enum class ComputeType { NOT_SET, ACU_1, ACU_2 };
 
-namespace ComputeTypeMapper
-{
+namespace ComputeTypeMapper {
 AWS_IOTANALYTICS_API ComputeType GetComputeTypeForName(const Aws::String& name);
 
 AWS_IOTANALYTICS_API Aws::String GetNameForComputeType(ComputeType value);
-} // namespace ComputeTypeMapper
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace ComputeTypeMapper
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

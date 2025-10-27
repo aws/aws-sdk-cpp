@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AssetBundleImportJobThemeOverrideParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AssetBundleImportJobThemeOverrideParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters(JsonView jsonValue) { *this = jsonValue; }
 
-AssetBundleImportJobThemeOverrideParameters& AssetBundleImportJobThemeOverrideParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ThemeId"))
-  {
+AssetBundleImportJobThemeOverrideParameters& AssetBundleImportJobThemeOverrideParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ThemeId")) {
     m_themeId = jsonValue.GetString("ThemeId");
     m_themeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetBundleImportJobThemeOverrideParameters::Jsonize() const
-{
+JsonValue AssetBundleImportJobThemeOverrideParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_themeIdHasBeenSet)
-  {
-   payload.WithString("ThemeId", m_themeId);
-
+  if (m_themeIdHasBeenSet) {
+    payload.WithString("ThemeId", m_themeId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

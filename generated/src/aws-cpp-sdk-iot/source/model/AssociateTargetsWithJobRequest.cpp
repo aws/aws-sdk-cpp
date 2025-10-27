@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AssociateTargetsWithJobRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/AssociateTargetsWithJobRequest.h>
 
 #include <utility>
 
@@ -15,41 +15,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String AssociateTargetsWithJobRequest::SerializePayload() const
-{
+Aws::String AssociateTargetsWithJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
-   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
-   {
-     targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
-   }
-   payload.WithArray("targets", std::move(targetsJsonList));
-
+  if (m_targetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
+    for (unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex) {
+      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
+    }
+    payload.WithArray("targets", std::move(targetsJsonList));
   }
 
-  if(m_commentHasBeenSet)
-  {
-   payload.WithString("comment", m_comment);
-
+  if (m_commentHasBeenSet) {
+    payload.WithString("comment", m_comment);
   }
 
   return payload.View().WriteReadable();
 }
 
-void AssociateTargetsWithJobRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_namespaceIdHasBeenSet)
-    {
-      ss << m_namespaceId;
-      uri.AddQueryStringParameter("namespaceId", ss.str());
-      ss.str("");
-    }
-
+void AssociateTargetsWithJobRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_namespaceIdHasBeenSet) {
+    ss << m_namespaceId;
+    uri.AddQueryStringParameter("namespaceId", ss.str());
+    ss.str("");
+  }
 }
-
-
-

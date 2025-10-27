@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::MediaLive;
 using namespace Aws::MediaLive::Model;
 
-namespace Aws
-{
-namespace MediaLive
-{
-template<> AWS_MEDIALIVE_API UnprocessableEntityException MediaLiveError::GetModeledError()
-{
+namespace Aws {
+namespace MediaLive {
+template <>
+AWS_MEDIALIVE_API UnprocessableEntityException MediaLiveError::GetModeledError() {
   assert(this->GetErrorType() == MediaLiveErrors::UNPROCESSABLE_ENTITY);
   return UnprocessableEntityException(this->GetJsonPayload().View());
 }
 
-namespace MediaLiveErrorMapper
-{
+namespace MediaLiveErrorMapper {
 
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
@@ -36,50 +33,31 @@ static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("Unprocess
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == BAD_GATEWAY_HASH)
-  {
+  if (hashCode == BAD_GATEWAY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::BAD_GATEWAY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
-  {
+  } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == FORBIDDEN_HASH)
-  {
+  } else if (hashCode == FORBIDDEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == GATEWAY_TIMEOUT_HASH)
-  {
+  } else if (hashCode == GATEWAY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::GATEWAY_TIMEOUT), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
-  {
+  } else if (hashCode == UNPROCESSABLE_ENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::UNPROCESSABLE_ENTITY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::INTERNAL_SERVER_ERROR), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace MediaLiveErrorMapper
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace MediaLiveErrorMapper
+}  // namespace MediaLive
+}  // namespace Aws

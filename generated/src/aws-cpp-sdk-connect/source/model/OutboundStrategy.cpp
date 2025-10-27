@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-OutboundStrategy::OutboundStrategy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutboundStrategy::OutboundStrategy(JsonView jsonValue) { *this = jsonValue; }
 
-OutboundStrategy& OutboundStrategy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+OutboundStrategy& OutboundStrategy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = OutboundStrategyTypeMapper::GetOutboundStrategyTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Config"))
-  {
+  if (jsonValue.ValueExists("Config")) {
     m_config = jsonValue.GetObject("Config");
     m_configHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutboundStrategy::Jsonize() const
-{
+JsonValue OutboundStrategy::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", OutboundStrategyTypeMapper::GetNameForOutboundStrategyType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", OutboundStrategyTypeMapper::GetNameForOutboundStrategyType(m_type));
   }
 
-  if(m_configHasBeenSet)
-  {
-   payload.WithObject("Config", m_config.Jsonize());
-
+  if (m_configHasBeenSet) {
+    payload.WithObject("Config", m_config.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

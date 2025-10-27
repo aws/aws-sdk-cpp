@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-VerticalLayoutConfiguration::VerticalLayoutConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VerticalLayoutConfiguration::VerticalLayoutConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-VerticalLayoutConfiguration& VerticalLayoutConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TileOrder"))
-  {
+VerticalLayoutConfiguration& VerticalLayoutConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TileOrder")) {
     m_tileOrder = TileOrderMapper::GetTileOrderForName(jsonValue.GetString("TileOrder"));
     m_tileOrderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TilePosition"))
-  {
+  if (jsonValue.ValueExists("TilePosition")) {
     m_tilePosition = VerticalTilePositionMapper::GetVerticalTilePositionForName(jsonValue.GetString("TilePosition"));
     m_tilePositionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TileCount"))
-  {
+  if (jsonValue.ValueExists("TileCount")) {
     m_tileCount = jsonValue.GetInteger("TileCount");
     m_tileCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TileAspectRatio"))
-  {
+  if (jsonValue.ValueExists("TileAspectRatio")) {
     m_tileAspectRatio = jsonValue.GetString("TileAspectRatio");
     m_tileAspectRatioHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VerticalLayoutConfiguration::Jsonize() const
-{
+JsonValue VerticalLayoutConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_tileOrderHasBeenSet)
-  {
-   payload.WithString("TileOrder", TileOrderMapper::GetNameForTileOrder(m_tileOrder));
+  if (m_tileOrderHasBeenSet) {
+    payload.WithString("TileOrder", TileOrderMapper::GetNameForTileOrder(m_tileOrder));
   }
 
-  if(m_tilePositionHasBeenSet)
-  {
-   payload.WithString("TilePosition", VerticalTilePositionMapper::GetNameForVerticalTilePosition(m_tilePosition));
+  if (m_tilePositionHasBeenSet) {
+    payload.WithString("TilePosition", VerticalTilePositionMapper::GetNameForVerticalTilePosition(m_tilePosition));
   }
 
-  if(m_tileCountHasBeenSet)
-  {
-   payload.WithInteger("TileCount", m_tileCount);
-
+  if (m_tileCountHasBeenSet) {
+    payload.WithInteger("TileCount", m_tileCount);
   }
 
-  if(m_tileAspectRatioHasBeenSet)
-  {
-   payload.WithString("TileAspectRatio", m_tileAspectRatio);
-
+  if (m_tileAspectRatioHasBeenSet) {
+    payload.WithString("TileAspectRatio", m_tileAspectRatio);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-GitPushFilter::GitPushFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GitPushFilter::GitPushFilter(JsonView jsonValue) { *this = jsonValue; }
 
-GitPushFilter& GitPushFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tags"))
-  {
+GitPushFilter& GitPushFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tags")) {
     m_tags = jsonValue.GetObject("tags");
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branches"))
-  {
+  if (jsonValue.ValueExists("branches")) {
     m_branches = jsonValue.GetObject("branches");
     m_branchesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filePaths"))
-  {
+  if (jsonValue.ValueExists("filePaths")) {
     m_filePaths = jsonValue.GetObject("filePaths");
     m_filePathsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GitPushFilter::Jsonize() const
-{
+JsonValue GitPushFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
-
+  if (m_tagsHasBeenSet) {
+    payload.WithObject("tags", m_tags.Jsonize());
   }
 
-  if(m_branchesHasBeenSet)
-  {
-   payload.WithObject("branches", m_branches.Jsonize());
-
+  if (m_branchesHasBeenSet) {
+    payload.WithObject("branches", m_branches.Jsonize());
   }
 
-  if(m_filePathsHasBeenSet)
-  {
-   payload.WithObject("filePaths", m_filePaths.Jsonize());
-
+  if (m_filePathsHasBeenSet) {
+    payload.WithObject("filePaths", m_filePaths.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

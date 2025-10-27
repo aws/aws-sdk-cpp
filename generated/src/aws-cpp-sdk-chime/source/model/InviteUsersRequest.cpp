@@ -12,29 +12,20 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InviteUsersRequest::SerializePayload() const
-{
+Aws::String InviteUsersRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userEmailListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userEmailListJsonList(m_userEmailList.size());
-   for(unsigned userEmailListIndex = 0; userEmailListIndex < userEmailListJsonList.GetLength(); ++userEmailListIndex)
-   {
-     userEmailListJsonList[userEmailListIndex].AsString(m_userEmailList[userEmailListIndex]);
-   }
-   payload.WithArray("UserEmailList", std::move(userEmailListJsonList));
-
+  if (m_userEmailListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userEmailListJsonList(m_userEmailList.size());
+    for (unsigned userEmailListIndex = 0; userEmailListIndex < userEmailListJsonList.GetLength(); ++userEmailListIndex) {
+      userEmailListJsonList[userEmailListIndex].AsString(m_userEmailList[userEmailListIndex]);
+    }
+    payload.WithArray("UserEmailList", std::move(userEmailListJsonList));
   }
 
-  if(m_userTypeHasBeenSet)
-  {
-   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
+  if (m_userTypeHasBeenSet) {
+    payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

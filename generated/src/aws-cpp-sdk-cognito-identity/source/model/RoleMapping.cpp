@@ -11,61 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
 
-RoleMapping::RoleMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoleMapping::RoleMapping(JsonView jsonValue) { *this = jsonValue; }
 
-RoleMapping& RoleMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+RoleMapping& RoleMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = RoleMappingTypeMapper::GetRoleMappingTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AmbiguousRoleResolution"))
-  {
-    m_ambiguousRoleResolution = AmbiguousRoleResolutionTypeMapper::GetAmbiguousRoleResolutionTypeForName(jsonValue.GetString("AmbiguousRoleResolution"));
+  if (jsonValue.ValueExists("AmbiguousRoleResolution")) {
+    m_ambiguousRoleResolution =
+        AmbiguousRoleResolutionTypeMapper::GetAmbiguousRoleResolutionTypeForName(jsonValue.GetString("AmbiguousRoleResolution"));
     m_ambiguousRoleResolutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RulesConfiguration"))
-  {
+  if (jsonValue.ValueExists("RulesConfiguration")) {
     m_rulesConfiguration = jsonValue.GetObject("RulesConfiguration");
     m_rulesConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoleMapping::Jsonize() const
-{
+JsonValue RoleMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", RoleMappingTypeMapper::GetNameForRoleMappingType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RoleMappingTypeMapper::GetNameForRoleMappingType(m_type));
   }
 
-  if(m_ambiguousRoleResolutionHasBeenSet)
-  {
-   payload.WithString("AmbiguousRoleResolution", AmbiguousRoleResolutionTypeMapper::GetNameForAmbiguousRoleResolutionType(m_ambiguousRoleResolution));
+  if (m_ambiguousRoleResolutionHasBeenSet) {
+    payload.WithString("AmbiguousRoleResolution",
+                       AmbiguousRoleResolutionTypeMapper::GetNameForAmbiguousRoleResolutionType(m_ambiguousRoleResolution));
   }
 
-  if(m_rulesConfigurationHasBeenSet)
-  {
-   payload.WithObject("RulesConfiguration", m_rulesConfiguration.Jsonize());
-
+  if (m_rulesConfigurationHasBeenSet) {
+    payload.WithObject("RulesConfiguration", m_rulesConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

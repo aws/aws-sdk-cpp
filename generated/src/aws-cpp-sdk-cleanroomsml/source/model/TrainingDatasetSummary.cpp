@@ -11,93 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TrainingDatasetSummary& TrainingDatasetSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createTime"))
-  {
+TrainingDatasetSummary& TrainingDatasetSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetString("updateTime");
     m_updateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingDatasetArn"))
-  {
+  if (jsonValue.ValueExists("trainingDatasetArn")) {
     m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
     m_trainingDatasetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TrainingDatasetStatusMapper::GetTrainingDatasetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrainingDatasetSummary::Jsonize() const
-{
+JsonValue TrainingDatasetSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createTimeHasBeenSet) {
+    payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updateTimeHasBeenSet) {
+    payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_trainingDatasetArnHasBeenSet)
-  {
-   payload.WithString("trainingDatasetArn", m_trainingDatasetArn);
-
+  if (m_trainingDatasetArnHasBeenSet) {
+    payload.WithString("trainingDatasetArn", m_trainingDatasetArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TrainingDatasetStatusMapper::GetNameForTrainingDatasetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TrainingDatasetStatusMapper::GetNameForTrainingDatasetStatus(m_status));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

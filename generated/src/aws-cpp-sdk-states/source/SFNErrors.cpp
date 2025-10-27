@@ -6,46 +6,43 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/states/SFNErrors.h>
-#include <aws/states/model/ValidationException.h>
 #include <aws/states/model/KmsInvalidStateException.h>
 #include <aws/states/model/ResourceNotFound.h>
 #include <aws/states/model/TooManyTags.h>
+#include <aws/states/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::SFN;
 using namespace Aws::SFN::Model;
 
-namespace Aws
-{
-namespace SFN
-{
-template<> AWS_SFN_API ValidationException SFNError::GetModeledError()
-{
+namespace Aws {
+namespace SFN {
+template <>
+AWS_SFN_API ValidationException SFNError::GetModeledError() {
   assert(this->GetErrorType() == SFNErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SFN_API KmsInvalidStateException SFNError::GetModeledError()
-{
+template <>
+AWS_SFN_API KmsInvalidStateException SFNError::GetModeledError() {
   assert(this->GetErrorType() == SFNErrors::KMS_INVALID_STATE);
   return KmsInvalidStateException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SFN_API ResourceNotFound SFNError::GetModeledError()
-{
+template <>
+AWS_SFN_API ResourceNotFound SFNError::GetModeledError() {
   assert(this->GetErrorType() == SFNErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFound(this->GetJsonPayload().View());
 }
 
-template<> AWS_SFN_API TooManyTags SFNError::GetModeledError()
-{
+template <>
+AWS_SFN_API TooManyTags SFNError::GetModeledError() {
   assert(this->GetErrorType() == SFNErrors::TOO_MANY_TAGS);
   return TooManyTags(this->GetJsonPayload().View());
 }
 
-namespace SFNErrorMapper
-{
+namespace SFNErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int KMS_THROTTLING_HASH = HashingUtils::HashString("KmsThrottlingException");
@@ -79,138 +76,75 @@ static const int INVALID_OUTPUT_HASH = HashingUtils::HashString("InvalidOutput")
 static const int STATE_MACHINE_ALREADY_EXISTS_HASH = HashingUtils::HashString("StateMachineAlreadyExists");
 static const int ACTIVITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("ActivityAlreadyExists");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == KMS_THROTTLING_HASH)
-  {
+  } else if (hashCode == KMS_THROTTLING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_THROTTLING), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == KMS_ACCESS_DENIED_HASH)
-  {
+  } else if (hashCode == KMS_ACCESS_DENIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_WORKER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_LOGGING_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == INVALID_LOGGING_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_LOGGING_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXECUTION_NOT_REDRIVABLE_HASH)
-  {
+  } else if (hashCode == EXECUTION_NOT_REDRIVABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_NOT_REDRIVABLE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TASK_TIMED_OUT_HASH)
-  {
+  } else if (hashCode == TASK_TIMED_OUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::TASK_TIMED_OUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_EXECUTION_INPUT_HASH)
-  {
+  } else if (hashCode == INVALID_EXECUTION_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_EXECUTION_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STATE_MACHINE_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == STATE_MACHINE_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEFINITION_HASH)
-  {
+  } else if (hashCode == INVALID_DEFINITION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_DEFINITION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == KMS_INVALID_STATE_HASH)
-  {
+  } else if (hashCode == KMS_INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_INVALID_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXECUTION_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == EXECUTION_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVITY_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == ACTIVITY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STATE_MACHINE_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == STATE_MACHINE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
-  {
+  } else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::MISSING_REQUIRED_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARN_HASH)
-  {
+  } else if (hashCode == INVALID_ARN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TASK_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == TASK_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::TASK_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ENCRYPTION_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == INVALID_ENCRYPTION_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_ENCRYPTION_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXECUTION_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == EXECUTION_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVITY_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == ACTIVITY_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NAME_HASH)
-  {
+  } else if (hashCode == INVALID_NAME_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_NAME), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH)
-  {
+  } else if (hashCode == STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_TYPE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STATE_MACHINE_DELETING_HASH)
-  {
+  } else if (hashCode == STATE_MACHINE_DELETING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_DELETING), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXECUTION_DOES_NOT_EXIST_HASH)
-  {
+  } else if (hashCode == EXECUTION_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TRACING_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == INVALID_TRACING_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_TRACING_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OUTPUT_HASH)
-  {
+  } else if (hashCode == INVALID_OUTPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_OUTPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STATE_MACHINE_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == STATE_MACHINE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVITY_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == ACTIVITY_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace SFNErrorMapper
-} // namespace SFN
-} // namespace Aws
+}  // namespace SFNErrorMapper
+}  // namespace SFN
+}  // namespace Aws

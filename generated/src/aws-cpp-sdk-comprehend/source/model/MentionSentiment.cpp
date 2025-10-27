@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-MentionSentiment::MentionSentiment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MentionSentiment::MentionSentiment(JsonView jsonValue) { *this = jsonValue; }
 
-MentionSentiment& MentionSentiment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Sentiment"))
-  {
+MentionSentiment& MentionSentiment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Sentiment")) {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("Sentiment"));
     m_sentimentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SentimentScore"))
-  {
+  if (jsonValue.ValueExists("SentimentScore")) {
     m_sentimentScore = jsonValue.GetObject("SentimentScore");
     m_sentimentScoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MentionSentiment::Jsonize() const
-{
+JsonValue MentionSentiment::Jsonize() const {
   JsonValue payload;
 
-  if(m_sentimentHasBeenSet)
-  {
-   payload.WithString("Sentiment", SentimentTypeMapper::GetNameForSentimentType(m_sentiment));
+  if (m_sentimentHasBeenSet) {
+    payload.WithString("Sentiment", SentimentTypeMapper::GetNameForSentimentType(m_sentiment));
   }
 
-  if(m_sentimentScoreHasBeenSet)
-  {
-   payload.WithObject("SentimentScore", m_sentimentScore.Jsonize());
-
+  if (m_sentimentScoreHasBeenSet) {
+    payload.WithObject("SentimentScore", m_sentimentScore.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

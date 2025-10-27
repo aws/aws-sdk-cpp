@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/DoubleRange.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/neptune/model/DoubleRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Neptune
-{
-namespace Model
-{
+namespace Aws {
+namespace Neptune {
+namespace Model {
 
-DoubleRange::DoubleRange(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DoubleRange::DoubleRange(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DoubleRange& DoubleRange::operator =(const XmlNode& xmlNode)
-{
+DoubleRange& DoubleRange::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode fromNode = resultNode.FirstChild("From");
-    if(!fromNode.IsNull())
-    {
+    if (!fromNode.IsNull()) {
       m_from = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("To");
-    if(!toNode.IsNull())
-    {
+    if (!toNode.IsNull()) {
       m_to = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ DoubleRange& DoubleRange::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DoubleRange::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_fromHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".From=" << StringUtils::URLEncode(m_from) << "&";
+void DoubleRange::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_fromHasBeenSet) {
+    oStream << location << index << locationValue << ".From=" << StringUtils::URLEncode(m_from) << "&";
   }
 
-  if(m_toHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".To=" << StringUtils::URLEncode(m_to) << "&";
-  }
-
-}
-
-void DoubleRange::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_fromHasBeenSet)
-  {
-      oStream << location << ".From=" << StringUtils::URLEncode(m_from) << "&";
-  }
-  if(m_toHasBeenSet)
-  {
-      oStream << location << ".To=" << StringUtils::URLEncode(m_to) << "&";
+  if (m_toHasBeenSet) {
+    oStream << location << index << locationValue << ".To=" << StringUtils::URLEncode(m_to) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Neptune
-} // namespace Aws
+void DoubleRange::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_fromHasBeenSet) {
+    oStream << location << ".From=" << StringUtils::URLEncode(m_from) << "&";
+  }
+  if (m_toHasBeenSet) {
+    oStream << location << ".To=" << StringUtils::URLEncode(m_to) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

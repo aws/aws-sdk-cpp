@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class AutoEnableMode
-  {
-    NOT_SET,
-    ALL,
-    NEW_,
-    NONE
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class AutoEnableMode { NOT_SET, ALL, NEW_, NONE };
 
-namespace AutoEnableModeMapper
-{
+namespace AutoEnableModeMapper {
 AWS_MACIE2_API AutoEnableMode GetAutoEnableModeForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForAutoEnableMode(AutoEnableMode value);
-} // namespace AutoEnableModeMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace AutoEnableModeMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

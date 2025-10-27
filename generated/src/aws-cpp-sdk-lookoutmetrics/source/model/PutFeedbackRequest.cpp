@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/PutFeedbackRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/PutFeedbackRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutFeedbackRequest::SerializePayload() const
-{
+Aws::String PutFeedbackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_anomalyDetectorArnHasBeenSet)
-  {
-   payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
-
+  if (m_anomalyDetectorArnHasBeenSet) {
+    payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
   }
 
-  if(m_anomalyGroupTimeSeriesFeedbackHasBeenSet)
-  {
-   payload.WithObject("AnomalyGroupTimeSeriesFeedback", m_anomalyGroupTimeSeriesFeedback.Jsonize());
-
+  if (m_anomalyGroupTimeSeriesFeedbackHasBeenSet) {
+    payload.WithObject("AnomalyGroupTimeSeriesFeedback", m_anomalyGroupTimeSeriesFeedback.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

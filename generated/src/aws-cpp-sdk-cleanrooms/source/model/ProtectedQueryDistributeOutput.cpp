@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedQueryDistributeOutput::ProtectedQueryDistributeOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedQueryDistributeOutput::ProtectedQueryDistributeOutput(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedQueryDistributeOutput& ProtectedQueryDistributeOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3"))
-  {
+ProtectedQueryDistributeOutput& ProtectedQueryDistributeOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3")) {
     m_s3 = jsonValue.GetObject("s3");
     m_s3HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memberList"))
-  {
+  if (jsonValue.ValueExists("memberList")) {
     Aws::Utils::Array<JsonView> memberListJsonList = jsonValue.GetArray("memberList");
-    for(unsigned memberListIndex = 0; memberListIndex < memberListJsonList.GetLength(); ++memberListIndex)
-    {
+    for (unsigned memberListIndex = 0; memberListIndex < memberListJsonList.GetLength(); ++memberListIndex) {
       m_memberList.push_back(memberListJsonList[memberListIndex].AsObject());
     }
     m_memberListHasBeenSet = true;
@@ -42,30 +32,24 @@ ProtectedQueryDistributeOutput& ProtectedQueryDistributeOutput::operator =(JsonV
   return *this;
 }
 
-JsonValue ProtectedQueryDistributeOutput::Jsonize() const
-{
+JsonValue ProtectedQueryDistributeOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("s3", m_s3.Jsonize());
-
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
   }
 
-  if(m_memberListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memberListJsonList(m_memberList.size());
-   for(unsigned memberListIndex = 0; memberListIndex < memberListJsonList.GetLength(); ++memberListIndex)
-   {
-     memberListJsonList[memberListIndex].AsObject(m_memberList[memberListIndex].Jsonize());
-   }
-   payload.WithArray("memberList", std::move(memberListJsonList));
-
+  if (m_memberListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memberListJsonList(m_memberList.size());
+    for (unsigned memberListIndex = 0; memberListIndex < memberListJsonList.GetLength(); ++memberListIndex) {
+      memberListJsonList[memberListIndex].AsObject(m_memberList[memberListIndex].Jsonize());
+    }
+    payload.WithArray("memberList", std::move(memberListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

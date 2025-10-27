@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ResourceGroupsTaggingAPI;
 
-namespace Aws
-{
-namespace ResourceGroupsTaggingAPI
-{
-namespace ResourceGroupsTaggingAPIErrorMapper
-{
+namespace Aws {
+namespace ResourceGroupsTaggingAPI {
+namespace ResourceGroupsTaggingAPIErrorMapper {
 
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int PAGINATION_TOKEN_EXPIRED_HASH = HashingUtils::HashString("PaginationTokenExpiredException");
@@ -24,34 +21,26 @@ static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("Concur
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("ConstraintViolationException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PAGINATION_TOKEN_EXPIRED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::PAGINATION_TOKEN_EXPIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == PAGINATION_TOKEN_EXPIRED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::PAGINATION_TOKEN_EXPIRED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::CONCURRENT_MODIFICATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONSTRAINT_VIOLATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::CONSTRAINT_VIOLATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CONSTRAINT_VIOLATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsTaggingAPIErrors::CONSTRAINT_VIOLATION),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ResourceGroupsTaggingAPIErrorMapper
-} // namespace ResourceGroupsTaggingAPI
-} // namespace Aws
+}  // namespace ResourceGroupsTaggingAPIErrorMapper
+}  // namespace ResourceGroupsTaggingAPI
+}  // namespace Aws

@@ -5,66 +5,77 @@
 
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bcm-pricing-calculator/model/BatchDeleteBillScenarioCommitmentModificationError.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace BCMPricingCalculator
-{
-namespace Model
-{
-  class BatchDeleteBillScenarioCommitmentModificationResult
-  {
-  public:
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult() = default;
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BCMPricingCalculator {
+namespace Model {
+class BatchDeleteBillScenarioCommitmentModificationResult {
+ public:
+  AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult() = default;
+  AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioCommitmentModificationResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p> Returns the list of errors reason and the commitment item keys that cannot
+   * be deleted from the Bill Scenario. </p>
+   */
+  inline const Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>& GetErrors() const { return m_errors; }
+  template <typename ErrorsT = Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>>
+  void SetErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors = std::forward<ErrorsT>(value);
+  }
+  template <typename ErrorsT = Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>>
+  BatchDeleteBillScenarioCommitmentModificationResult& WithErrors(ErrorsT&& value) {
+    SetErrors(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  template <typename ErrorsT = BatchDeleteBillScenarioCommitmentModificationError>
+  BatchDeleteBillScenarioCommitmentModificationResult& AddErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors.emplace_back(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> Returns the list of errors reason and the commitment item keys that cannot
-     * be deleted from the Bill Scenario. </p>
-     */
-    inline const Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>>
-    BatchDeleteBillScenarioCommitmentModificationResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = BatchDeleteBillScenarioCommitmentModificationError>
-    BatchDeleteBillScenarioCommitmentModificationResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    BatchDeleteBillScenarioCommitmentModificationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  BatchDeleteBillScenarioCommitmentModificationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError> m_errors;
+  bool m_errorsHasBeenSet = false;
 
-    Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError> m_errors;
-    bool m_errorsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

@@ -4,76 +4,60 @@
  */
 
 #include <aws/chime-sdk-media-pipelines/model/PartialResultsStability.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+namespace PartialResultsStabilityMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMediaPipelines
-  {
-    namespace Model
-    {
-      namespace PartialResultsStabilityMapper
-      {
+static const int high_HASH = HashingUtils::HashString("high");
+static const int medium_HASH = HashingUtils::HashString("medium");
+static const int low_HASH = HashingUtils::HashString("low");
 
-        static const int high_HASH = HashingUtils::HashString("high");
-        static const int medium_HASH = HashingUtils::HashString("medium");
-        static const int low_HASH = HashingUtils::HashString("low");
+PartialResultsStability GetPartialResultsStabilityForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == high_HASH) {
+    return PartialResultsStability::high;
+  } else if (hashCode == medium_HASH) {
+    return PartialResultsStability::medium;
+  } else if (hashCode == low_HASH) {
+    return PartialResultsStability::low;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PartialResultsStability>(hashCode);
+  }
 
+  return PartialResultsStability::NOT_SET;
+}
 
-        PartialResultsStability GetPartialResultsStabilityForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == high_HASH)
-          {
-            return PartialResultsStability::high;
-          }
-          else if (hashCode == medium_HASH)
-          {
-            return PartialResultsStability::medium;
-          }
-          else if (hashCode == low_HASH)
-          {
-            return PartialResultsStability::low;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PartialResultsStability>(hashCode);
-          }
+Aws::String GetNameForPartialResultsStability(PartialResultsStability enumValue) {
+  switch (enumValue) {
+    case PartialResultsStability::NOT_SET:
+      return {};
+    case PartialResultsStability::high:
+      return "high";
+    case PartialResultsStability::medium:
+      return "medium";
+    case PartialResultsStability::low:
+      return "low";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PartialResultsStability::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPartialResultsStability(PartialResultsStability enumValue)
-        {
-          switch(enumValue)
-          {
-          case PartialResultsStability::NOT_SET:
-            return {};
-          case PartialResultsStability::high:
-            return "high";
-          case PartialResultsStability::medium:
-            return "medium";
-          case PartialResultsStability::low:
-            return "low";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PartialResultsStabilityMapper
-    } // namespace Model
-  } // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace PartialResultsStabilityMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

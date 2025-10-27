@@ -5,12 +5,8 @@
 
 #include <aws/workspaces/WorkSpacesEndpointProvider.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WorkSpaces
-} // namespace Aws
+namespace Aws {
+namespace WorkSpaces {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WorkSpaces
+}  // namespace Aws

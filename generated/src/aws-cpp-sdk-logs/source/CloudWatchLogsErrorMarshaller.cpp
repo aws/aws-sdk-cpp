@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::CloudWatchLogs;
 
-AWSError<CoreErrors> CloudWatchLogsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> CloudWatchLogsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = CloudWatchLogsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

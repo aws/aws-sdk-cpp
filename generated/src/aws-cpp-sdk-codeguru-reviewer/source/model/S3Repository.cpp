@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-S3Repository::S3Repository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Repository::S3Repository(JsonView jsonValue) { *this = jsonValue; }
 
-S3Repository& S3Repository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+S3Repository& S3Repository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BucketName"))
-  {
+  if (jsonValue.ValueExists("BucketName")) {
     m_bucketName = jsonValue.GetString("BucketName");
     m_bucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Repository::Jsonize() const
-{
+JsonValue S3Repository::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("BucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("BucketName", m_bucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

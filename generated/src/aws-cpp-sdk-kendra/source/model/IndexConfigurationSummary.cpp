@@ -3,100 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/IndexConfigurationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/IndexConfigurationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-IndexConfigurationSummary::IndexConfigurationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IndexConfigurationSummary::IndexConfigurationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-IndexConfigurationSummary& IndexConfigurationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+IndexConfigurationSummary& IndexConfigurationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Edition"))
-  {
+  if (jsonValue.ValueExists("Edition")) {
     m_edition = IndexEditionMapper::GetIndexEditionForName(jsonValue.GetString("Edition"));
     m_editionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IndexConfigurationSummary::Jsonize() const
-{
+JsonValue IndexConfigurationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_editionHasBeenSet)
-  {
-   payload.WithString("Edition", IndexEditionMapper::GetNameForIndexEdition(m_edition));
+  if (m_editionHasBeenSet) {
+    payload.WithString("Edition", IndexEditionMapper::GetNameForIndexEdition(m_edition));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", IndexStatusMapper::GetNameForIndexStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", IndexStatusMapper::GetNameForIndexStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

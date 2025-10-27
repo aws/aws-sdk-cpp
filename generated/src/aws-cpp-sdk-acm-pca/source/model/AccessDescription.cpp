@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-AccessDescription::AccessDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessDescription::AccessDescription(JsonView jsonValue) { *this = jsonValue; }
 
-AccessDescription& AccessDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccessMethod"))
-  {
+AccessDescription& AccessDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccessMethod")) {
     m_accessMethod = jsonValue.GetObject("AccessMethod");
     m_accessMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessLocation"))
-  {
+  if (jsonValue.ValueExists("AccessLocation")) {
     m_accessLocation = jsonValue.GetObject("AccessLocation");
     m_accessLocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessDescription::Jsonize() const
-{
+JsonValue AccessDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessMethodHasBeenSet)
-  {
-   payload.WithObject("AccessMethod", m_accessMethod.Jsonize());
-
+  if (m_accessMethodHasBeenSet) {
+    payload.WithObject("AccessMethod", m_accessMethod.Jsonize());
   }
 
-  if(m_accessLocationHasBeenSet)
-  {
-   payload.WithObject("AccessLocation", m_accessLocation.Jsonize());
-
+  if (m_accessLocationHasBeenSet) {
+    payload.WithObject("AccessLocation", m_accessLocation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

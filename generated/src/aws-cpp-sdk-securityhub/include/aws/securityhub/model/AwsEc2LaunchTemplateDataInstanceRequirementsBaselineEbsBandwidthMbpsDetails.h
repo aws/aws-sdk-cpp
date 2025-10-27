@@ -6,69 +6,74 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p> The minimum and maximum baseline bandwidth to Amazon Elastic Block Store
+ * (Amazon EBS), in Mbps. For more information, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
+ * EBS–optimized instances </a> in the <i>Amazon EC2 User Guide</i>. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails">AWS
+ * API Reference</a></p>
+ */
+class AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails {
+ public:
+  AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails() = default;
+  AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& operator=(
+      Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> The minimum and maximum baseline bandwidth to Amazon Elastic Block Store
-   * (Amazon EBS), in Mbps. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-   * EBS–optimized instances </a> in the <i>Amazon EC2 User Guide</i>. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails">AWS
-   * API Reference</a></p>
+   * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
+   * there's no maximum limit. </p>
    */
-  class AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails
-  {
-  public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails() = default;
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMax() const { return m_max; }
+  inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+  inline void SetMax(int value) {
+    m_maxHasBeenSet = true;
+    m_max = value;
+  }
+  inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMax(int value) {
+    SetMax(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
+   * there's no minimum limit. </p>
+   */
+  inline int GetMin() const { return m_min; }
+  inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+  inline void SetMin(int value) {
+    m_minHasBeenSet = true;
+    m_min = value;
+  }
+  inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMin(int value) {
+    SetMin(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_max{0};
+  bool m_maxHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The maximum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no maximum limit. </p>
-     */
-    inline int GetMax() const { return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-    inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMax(int value) { SetMax(value); return *this;}
-    ///@}
+  int m_min{0};
+  bool m_minHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p> The minimum baseline bandwidth, in Mbps. If this parameter is omitted,
-     * there's no minimum limit. </p>
-     */
-    inline int GetMin() const { return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-    inline AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails& WithMin(int value) { SetMin(value); return *this;}
-    ///@}
-  private:
-
-    int m_max{0};
-    bool m_maxHasBeenSet = false;
-
-    int m_min{0};
-    bool m_minHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

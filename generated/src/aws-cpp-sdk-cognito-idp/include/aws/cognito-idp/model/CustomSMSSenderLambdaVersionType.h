@@ -7,24 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class CustomSMSSenderLambdaVersionType
-  {
-    NOT_SET,
-    V1_0
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class CustomSMSSenderLambdaVersionType { NOT_SET, V1_0 };
 
-namespace CustomSMSSenderLambdaVersionTypeMapper
-{
+namespace CustomSMSSenderLambdaVersionTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API CustomSMSSenderLambdaVersionType GetCustomSMSSenderLambdaVersionTypeForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForCustomSMSSenderLambdaVersionType(CustomSMSSenderLambdaVersionType value);
-} // namespace CustomSMSSenderLambdaVersionTypeMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace CustomSMSSenderLambdaVersionTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

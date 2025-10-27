@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-Volume::Volume(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Volume::Volume(JsonView jsonValue) { *this = jsonValue; }
 
-Volume& Volume::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("host"))
-  {
+Volume& Volume::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("host")) {
     m_host = jsonValue.GetObject("host");
     m_hostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("efsVolumeConfiguration"))
-  {
+  if (jsonValue.ValueExists("efsVolumeConfiguration")) {
     m_efsVolumeConfiguration = jsonValue.GetObject("efsVolumeConfiguration");
     m_efsVolumeConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Volume::Jsonize() const
-{
+JsonValue Volume::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostHasBeenSet)
-  {
-   payload.WithObject("host", m_host.Jsonize());
-
+  if (m_hostHasBeenSet) {
+    payload.WithObject("host", m_host.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_efsVolumeConfigurationHasBeenSet)
-  {
-   payload.WithObject("efsVolumeConfiguration", m_efsVolumeConfiguration.Jsonize());
-
+  if (m_efsVolumeConfigurationHasBeenSet) {
+    payload.WithObject("efsVolumeConfiguration", m_efsVolumeConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

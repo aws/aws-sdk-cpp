@@ -3,35 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/ce/CostExplorerErrors.h>
 #include <aws/ce/model/ResourceNotFoundException.h>
 #include <aws/ce/model/TooManyTagsException.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CostExplorer;
 using namespace Aws::CostExplorer::Model;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-template<> AWS_COSTEXPLORER_API ResourceNotFoundException CostExplorerError::GetModeledError()
-{
+namespace Aws {
+namespace CostExplorer {
+template <>
+AWS_COSTEXPLORER_API ResourceNotFoundException CostExplorerError::GetModeledError() {
   assert(this->GetErrorType() == CostExplorerErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-template<> AWS_COSTEXPLORER_API TooManyTagsException CostExplorerError::GetModeledError()
-{
+template <>
+AWS_COSTEXPLORER_API TooManyTagsException CostExplorerError::GetModeledError() {
   assert(this->GetErrorType() == CostExplorerErrors::TOO_MANY_TAGS);
   return TooManyTagsException(this->GetJsonPayload().View());
 }
 
-namespace CostExplorerErrorMapper
-{
+namespace CostExplorerErrorMapper {
 
 static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -48,70 +45,41 @@ static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailab
 static const int BACKFILL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BackfillLimitExceededException");
 static const int GENERATION_EXISTS_HASH = HashingUtils::HashString("GenerationExistsException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_CHANGED_HASH)
-  {
+  if (hashCode == REQUEST_CHANGED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == ANALYSIS_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == ANALYSIS_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::ANALYSIS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BILL_EXPIRATION_HASH)
-  {
+  } else if (hashCode == BILL_EXPIRATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILL_EXPIRATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BILLING_VIEW_HEALTH_STATUS_HASH)
-  {
+  } else if (hashCode == BILLING_VIEW_HEALTH_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILLING_VIEW_HEALTH_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNRESOLVABLE_USAGE_UNIT_HASH)
-  {
+  } else if (hashCode == UNRESOLVABLE_USAGE_UNIT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNRESOLVABLE_USAGE_UNIT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNKNOWN_SUBSCRIPTION_HASH)
-  {
+  } else if (hashCode == UNKNOWN_SUBSCRIPTION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_SUBSCRIPTION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNKNOWN_MONITOR_HASH)
-  {
+  } else if (hashCode == UNKNOWN_MONITOR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_MONITOR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DATA_UNAVAILABLE_HASH)
-  {
+  } else if (hashCode == DATA_UNAVAILABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BACKFILL_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == BACKFILL_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BACKFILL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == GENERATION_EXISTS_HASH)
-  {
+  } else if (hashCode == GENERATION_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::GENERATION_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CostExplorerErrorMapper
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace CostExplorerErrorMapper
+}  // namespace CostExplorer
+}  // namespace Aws

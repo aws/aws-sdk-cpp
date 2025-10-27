@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class FlexibleEnaQueuesSupport
-  {
-    NOT_SET,
-    unsupported,
-    supported
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class FlexibleEnaQueuesSupport { NOT_SET, unsupported, supported };
 
-namespace FlexibleEnaQueuesSupportMapper
-{
+namespace FlexibleEnaQueuesSupportMapper {
 AWS_EC2_API FlexibleEnaQueuesSupport GetFlexibleEnaQueuesSupportForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForFlexibleEnaQueuesSupport(FlexibleEnaQueuesSupport value);
-} // namespace FlexibleEnaQueuesSupportMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace FlexibleEnaQueuesSupportMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

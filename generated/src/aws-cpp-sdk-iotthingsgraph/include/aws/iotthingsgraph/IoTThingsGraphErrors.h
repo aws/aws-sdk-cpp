@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-enum class IoTThingsGraphErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTThingsGraph {
+enum class IoTThingsGraphErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTThingsGraphErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,10 @@ enum class IoTThingsGraphErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
 };
 
-class AWS_IOTTHINGSGRAPH_API IoTThingsGraphError : public Aws::Client::AWSError<IoTThingsGraphErrors>
-{
-public:
+class AWS_IOTTHINGSGRAPH_API IoTThingsGraphError : public Aws::Client::AWSError<IoTThingsGraphErrors> {
+ public:
   IoTThingsGraphError() {}
   IoTThingsGraphError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
   IoTThingsGraphError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
@@ -63,10 +58,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTThingsGraphErrorMapper
-{
-  AWS_IOTTHINGSGRAPH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTThingsGraphErrorMapper {
+AWS_IOTTHINGSGRAPH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace IoTThingsGraph
+}  // namespace Aws

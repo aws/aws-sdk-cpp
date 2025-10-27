@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class ImportExportFileFormat
-  {
-    NOT_SET,
-    LexJson,
-    TSV,
-    CSV
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class ImportExportFileFormat { NOT_SET, LexJson, TSV, CSV };
 
-namespace ImportExportFileFormatMapper
-{
+namespace ImportExportFileFormatMapper {
 AWS_LEXMODELSV2_API ImportExportFileFormat GetImportExportFileFormatForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForImportExportFileFormat(ImportExportFileFormat value);
-} // namespace ImportExportFileFormatMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace ImportExportFileFormatMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

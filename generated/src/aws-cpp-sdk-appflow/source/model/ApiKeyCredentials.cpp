@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ApiKeyCredentials::ApiKeyCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiKeyCredentials::ApiKeyCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-ApiKeyCredentials& ApiKeyCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiKey"))
-  {
+ApiKeyCredentials& ApiKeyCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiKey")) {
     m_apiKey = jsonValue.GetString("apiKey");
     m_apiKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiSecretKey"))
-  {
+  if (jsonValue.ValueExists("apiSecretKey")) {
     m_apiSecretKey = jsonValue.GetString("apiSecretKey");
     m_apiSecretKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiKeyCredentials::Jsonize() const
-{
+JsonValue ApiKeyCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("apiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("apiKey", m_apiKey);
   }
 
-  if(m_apiSecretKeyHasBeenSet)
-  {
-   payload.WithString("apiSecretKey", m_apiSecretKey);
-
+  if (m_apiSecretKeyHasBeenSet) {
+    payload.WithString("apiSecretKey", m_apiSecretKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

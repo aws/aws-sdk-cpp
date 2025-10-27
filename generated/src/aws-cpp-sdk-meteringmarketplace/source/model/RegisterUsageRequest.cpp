@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/meteringmarketplace/model/RegisterUsageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/meteringmarketplace/model/RegisterUsageRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterUsageRequest::SerializePayload() const
-{
+Aws::String RegisterUsageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_productCodeHasBeenSet)
-  {
-   payload.WithString("ProductCode", m_productCode);
-
+  if (m_productCodeHasBeenSet) {
+    payload.WithString("ProductCode", m_productCode);
   }
 
-  if(m_publicKeyVersionHasBeenSet)
-  {
-   payload.WithInteger("PublicKeyVersion", m_publicKeyVersion);
-
+  if (m_publicKeyVersionHasBeenSet) {
+    payload.WithInteger("PublicKeyVersion", m_publicKeyVersion);
   }
 
-  if(m_nonceHasBeenSet)
-  {
-   payload.WithString("Nonce", m_nonce);
-
+  if (m_nonceHasBeenSet) {
+    payload.WithString("Nonce", m_nonce);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RegisterUsageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RegisterUsageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMPMeteringService.RegisterUsage"));
   return headers;
-
 }
-
-
-
-

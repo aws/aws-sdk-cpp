@@ -3,53 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/GameSessionConnectionInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/GameSessionConnectionInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GameSessionArn"))
-  {
+GameSessionConnectionInfo& GameSessionConnectionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GameSessionArn")) {
     m_gameSessionArn = jsonValue.GetString("GameSessionArn");
     m_gameSessionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpAddress"))
-  {
+  if (jsonValue.ValueExists("IpAddress")) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsName"))
-  {
+  if (jsonValue.ValueExists("DnsName")) {
     m_dnsName = jsonValue.GetString("DnsName");
     m_dnsNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchedPlayerSessions"))
-  {
+  if (jsonValue.ValueExists("MatchedPlayerSessions")) {
     Aws::Utils::Array<JsonView> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
-    for(unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength(); ++matchedPlayerSessionsIndex)
-    {
+    for (unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength();
+         ++matchedPlayerSessionsIndex) {
       m_matchedPlayerSessions.push_back(matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject());
     }
     m_matchedPlayerSessionsHasBeenSet = true;
@@ -57,48 +45,37 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue GameSessionConnectionInfo::Jsonize() const
-{
+JsonValue GameSessionConnectionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_gameSessionArnHasBeenSet)
-  {
-   payload.WithString("GameSessionArn", m_gameSessionArn);
-
+  if (m_gameSessionArnHasBeenSet) {
+    payload.WithString("GameSessionArn", m_gameSessionArn);
   }
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
-  if(m_dnsNameHasBeenSet)
-  {
-   payload.WithString("DnsName", m_dnsName);
-
+  if (m_dnsNameHasBeenSet) {
+    payload.WithString("DnsName", m_dnsName);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_matchedPlayerSessionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> matchedPlayerSessionsJsonList(m_matchedPlayerSessions.size());
-   for(unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength(); ++matchedPlayerSessionsIndex)
-   {
-     matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject(m_matchedPlayerSessions[matchedPlayerSessionsIndex].Jsonize());
-   }
-   payload.WithArray("MatchedPlayerSessions", std::move(matchedPlayerSessionsJsonList));
-
+  if (m_matchedPlayerSessionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchedPlayerSessionsJsonList(m_matchedPlayerSessions.size());
+    for (unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength();
+         ++matchedPlayerSessionsIndex) {
+      matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject(m_matchedPlayerSessions[matchedPlayerSessionsIndex].Jsonize());
+    }
+    payload.WithArray("MatchedPlayerSessions", std::move(matchedPlayerSessionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elastictranscoder/model/ReadPipelineRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastictranscoder/model/ReadPipelineRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ReadPipelineRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String ReadPipelineRequest::SerializePayload() const { return {}; }

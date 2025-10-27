@@ -7,24 +7,16 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BackupGateway
-{
-namespace Model
-{
-  enum class GatewayType
-  {
-    NOT_SET,
-    BACKUP_VM
-  };
+namespace Aws {
+namespace BackupGateway {
+namespace Model {
+enum class GatewayType { NOT_SET, BACKUP_VM };
 
-namespace GatewayTypeMapper
-{
+namespace GatewayTypeMapper {
 AWS_BACKUPGATEWAY_API GatewayType GetGatewayTypeForName(const Aws::String& name);
 
 AWS_BACKUPGATEWAY_API Aws::String GetNameForGatewayType(GatewayType value);
-} // namespace GatewayTypeMapper
-} // namespace Model
-} // namespace BackupGateway
-} // namespace Aws
+}  // namespace GatewayTypeMapper
+}  // namespace Model
+}  // namespace BackupGateway
+}  // namespace Aws

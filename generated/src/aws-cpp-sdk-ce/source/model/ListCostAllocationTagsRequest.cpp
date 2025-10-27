@@ -12,54 +12,38 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListCostAllocationTagsRequest::SerializePayload() const
-{
+Aws::String ListCostAllocationTagsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", CostAllocationTagStatusMapper::GetNameForCostAllocationTagStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", CostAllocationTagStatusMapper::GetNameForCostAllocationTagStatus(m_status));
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
-   {
-     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
-   }
-   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
-
+  if (m_tagKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+    for (unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex) {
+      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+    }
+    payload.WithArray("TagKeys", std::move(tagKeysJsonList));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", CostAllocationTagTypeMapper::GetNameForCostAllocationTagType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", CostAllocationTagTypeMapper::GetNameForCostAllocationTagType(m_type));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListCostAllocationTagsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListCostAllocationTagsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.ListCostAllocationTags"));
   return headers;
-
 }
-
-
-
-

@@ -5,187 +5,236 @@
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
-#include <aws/codepipeline/model/ActionTypeId.h>
-#include <aws/codepipeline/model/ActionConfiguration.h>
-#include <aws/codepipeline/model/PipelineContext.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/AWSSessionCredentials.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/codepipeline/model/EncryptionKey.h>
+#include <aws/codepipeline/model/ActionConfiguration.h>
+#include <aws/codepipeline/model/ActionTypeId.h>
 #include <aws/codepipeline/model/Artifact.h>
+#include <aws/codepipeline/model/EncryptionKey.h>
+#include <aws/codepipeline/model/PipelineContext.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CodePipeline {
+namespace Model {
 
+/**
+ * <p>Represents information about the job data for a partner action.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobData">AWS
+ * API Reference</a></p>
+ */
+class ThirdPartyJobData {
+ public:
+  AWS_CODEPIPELINE_API ThirdPartyJobData() = default;
+  AWS_CODEPIPELINE_API ThirdPartyJobData(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CODEPIPELINE_API ThirdPartyJobData& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Represents information about the job data for a partner action.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobData">AWS
-   * API Reference</a></p>
+   * <p>Represents information about an action type.</p>
    */
-  class ThirdPartyJobData
-  {
-  public:
-    AWS_CODEPIPELINE_API ThirdPartyJobData() = default;
-    AWS_CODEPIPELINE_API ThirdPartyJobData(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CODEPIPELINE_API ThirdPartyJobData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const ActionTypeId& GetActionTypeId() const { return m_actionTypeId; }
+  inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
+  template <typename ActionTypeIdT = ActionTypeId>
+  void SetActionTypeId(ActionTypeIdT&& value) {
+    m_actionTypeIdHasBeenSet = true;
+    m_actionTypeId = std::forward<ActionTypeIdT>(value);
+  }
+  template <typename ActionTypeIdT = ActionTypeId>
+  ThirdPartyJobData& WithActionTypeId(ActionTypeIdT&& value) {
+    SetActionTypeId(std::forward<ActionTypeIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Represents information about an action configuration.</p>
+   */
+  inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
+  inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  void SetActionConfiguration(ActionConfigurationT&& value) {
+    m_actionConfigurationHasBeenSet = true;
+    m_actionConfiguration = std::forward<ActionConfigurationT>(value);
+  }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  ThirdPartyJobData& WithActionConfiguration(ActionConfigurationT&& value) {
+    SetActionConfiguration(std::forward<ActionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Represents information about an action type.</p>
-     */
-    inline const ActionTypeId& GetActionTypeId() const { return m_actionTypeId; }
-    inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
-    template<typename ActionTypeIdT = ActionTypeId>
-    void SetActionTypeId(ActionTypeIdT&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::forward<ActionTypeIdT>(value); }
-    template<typename ActionTypeIdT = ActionTypeId>
-    ThirdPartyJobData& WithActionTypeId(ActionTypeIdT&& value) { SetActionTypeId(std::forward<ActionTypeIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Represents information about a pipeline to a job worker.</p>  <p>Does
+   * not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
+   * ThirdParty jobs.</p>
+   */
+  inline const PipelineContext& GetPipelineContext() const { return m_pipelineContext; }
+  inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
+  template <typename PipelineContextT = PipelineContext>
+  void SetPipelineContext(PipelineContextT&& value) {
+    m_pipelineContextHasBeenSet = true;
+    m_pipelineContext = std::forward<PipelineContextT>(value);
+  }
+  template <typename PipelineContextT = PipelineContext>
+  ThirdPartyJobData& WithPipelineContext(PipelineContextT&& value) {
+    SetPipelineContext(std::forward<PipelineContextT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Represents information about an action configuration.</p>
-     */
-    inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
-    inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
-    template<typename ActionConfigurationT = ActionConfiguration>
-    void SetActionConfiguration(ActionConfigurationT&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = std::forward<ActionConfigurationT>(value); }
-    template<typename ActionConfigurationT = ActionConfiguration>
-    ThirdPartyJobData& WithActionConfiguration(ActionConfigurationT&& value) { SetActionConfiguration(std::forward<ActionConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the artifact that is worked on by the action, if any. This name
+   * might be system-generated, such as "MyApp", or it might be defined by the user
+   * when the action is created. The input artifact name must match the name of an
+   * output artifact generated by an action in an earlier action or stage of the
+   * pipeline.</p>
+   */
+  inline const Aws::Vector<Artifact>& GetInputArtifacts() const { return m_inputArtifacts; }
+  inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
+  template <typename InputArtifactsT = Aws::Vector<Artifact>>
+  void SetInputArtifacts(InputArtifactsT&& value) {
+    m_inputArtifactsHasBeenSet = true;
+    m_inputArtifacts = std::forward<InputArtifactsT>(value);
+  }
+  template <typename InputArtifactsT = Aws::Vector<Artifact>>
+  ThirdPartyJobData& WithInputArtifacts(InputArtifactsT&& value) {
+    SetInputArtifacts(std::forward<InputArtifactsT>(value));
+    return *this;
+  }
+  template <typename InputArtifactsT = Artifact>
+  ThirdPartyJobData& AddInputArtifacts(InputArtifactsT&& value) {
+    m_inputArtifactsHasBeenSet = true;
+    m_inputArtifacts.emplace_back(std::forward<InputArtifactsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Represents information about a pipeline to a job worker.</p>  <p>Does
-     * not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * ThirdParty jobs.</p> 
-     */
-    inline const PipelineContext& GetPipelineContext() const { return m_pipelineContext; }
-    inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
-    template<typename PipelineContextT = PipelineContext>
-    void SetPipelineContext(PipelineContextT&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::forward<PipelineContextT>(value); }
-    template<typename PipelineContextT = PipelineContext>
-    ThirdPartyJobData& WithPipelineContext(PipelineContextT&& value) { SetPipelineContext(std::forward<PipelineContextT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the artifact that is the result of the action, if any. This name
+   * might be system-generated, such as "MyBuiltApp", or it might be defined by the
+   * user when the action is created.</p>
+   */
+  inline const Aws::Vector<Artifact>& GetOutputArtifacts() const { return m_outputArtifacts; }
+  inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
+  template <typename OutputArtifactsT = Aws::Vector<Artifact>>
+  void SetOutputArtifacts(OutputArtifactsT&& value) {
+    m_outputArtifactsHasBeenSet = true;
+    m_outputArtifacts = std::forward<OutputArtifactsT>(value);
+  }
+  template <typename OutputArtifactsT = Aws::Vector<Artifact>>
+  ThirdPartyJobData& WithOutputArtifacts(OutputArtifactsT&& value) {
+    SetOutputArtifacts(std::forward<OutputArtifactsT>(value));
+    return *this;
+  }
+  template <typename OutputArtifactsT = Artifact>
+  ThirdPartyJobData& AddOutputArtifacts(OutputArtifactsT&& value) {
+    m_outputArtifactsHasBeenSet = true;
+    m_outputArtifacts.emplace_back(std::forward<OutputArtifactsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the artifact that is worked on by the action, if any. This name
-     * might be system-generated, such as "MyApp", or it might be defined by the user
-     * when the action is created. The input artifact name must match the name of an
-     * output artifact generated by an action in an earlier action or stage of the
-     * pipeline.</p>
-     */
-    inline const Aws::Vector<Artifact>& GetInputArtifacts() const { return m_inputArtifacts; }
-    inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
-    template<typename InputArtifactsT = Aws::Vector<Artifact>>
-    void SetInputArtifacts(InputArtifactsT&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = std::forward<InputArtifactsT>(value); }
-    template<typename InputArtifactsT = Aws::Vector<Artifact>>
-    ThirdPartyJobData& WithInputArtifacts(InputArtifactsT&& value) { SetInputArtifacts(std::forward<InputArtifactsT>(value)); return *this;}
-    template<typename InputArtifactsT = Artifact>
-    ThirdPartyJobData& AddInputArtifacts(InputArtifactsT&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace_back(std::forward<InputArtifactsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>Represents an Amazon Web Services session credentials object. These
+   * credentials are temporary credentials that are issued by Amazon Web Services
+   * Secure Token Service (STS). They can be used to access input and output
+   * artifacts in the S3 bucket used to store artifact for the pipeline in
+   * CodePipeline. </p>
+   */
+  inline const AWSSessionCredentials& GetArtifactCredentials() const { return m_artifactCredentials; }
+  inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
+  template <typename ArtifactCredentialsT = AWSSessionCredentials>
+  void SetArtifactCredentials(ArtifactCredentialsT&& value) {
+    m_artifactCredentialsHasBeenSet = true;
+    m_artifactCredentials = std::forward<ArtifactCredentialsT>(value);
+  }
+  template <typename ArtifactCredentialsT = AWSSessionCredentials>
+  ThirdPartyJobData& WithArtifactCredentials(ArtifactCredentialsT&& value) {
+    SetArtifactCredentials(std::forward<ArtifactCredentialsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the artifact that is the result of the action, if any. This name
-     * might be system-generated, such as "MyBuiltApp", or it might be defined by the
-     * user when the action is created.</p>
-     */
-    inline const Aws::Vector<Artifact>& GetOutputArtifacts() const { return m_outputArtifacts; }
-    inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
-    template<typename OutputArtifactsT = Aws::Vector<Artifact>>
-    void SetOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::forward<OutputArtifactsT>(value); }
-    template<typename OutputArtifactsT = Aws::Vector<Artifact>>
-    ThirdPartyJobData& WithOutputArtifacts(OutputArtifactsT&& value) { SetOutputArtifacts(std::forward<OutputArtifactsT>(value)); return *this;}
-    template<typename OutputArtifactsT = Artifact>
-    ThirdPartyJobData& AddOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace_back(std::forward<OutputArtifactsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A system-generated token, such as a CodeDeploy deployment ID, that a job
+   * requires to continue the job asynchronously.</p>
+   */
+  inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+  inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
+  template <typename ContinuationTokenT = Aws::String>
+  void SetContinuationToken(ContinuationTokenT&& value) {
+    m_continuationTokenHasBeenSet = true;
+    m_continuationToken = std::forward<ContinuationTokenT>(value);
+  }
+  template <typename ContinuationTokenT = Aws::String>
+  ThirdPartyJobData& WithContinuationToken(ContinuationTokenT&& value) {
+    SetContinuationToken(std::forward<ContinuationTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Represents an Amazon Web Services session credentials object. These
-     * credentials are temporary credentials that are issued by Amazon Web Services
-     * Secure Token Service (STS). They can be used to access input and output
-     * artifacts in the S3 bucket used to store artifact for the pipeline in
-     * CodePipeline. </p>
-     */
-    inline const AWSSessionCredentials& GetArtifactCredentials() const { return m_artifactCredentials; }
-    inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
-    template<typename ArtifactCredentialsT = AWSSessionCredentials>
-    void SetArtifactCredentials(ArtifactCredentialsT&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::forward<ArtifactCredentialsT>(value); }
-    template<typename ArtifactCredentialsT = AWSSessionCredentials>
-    ThirdPartyJobData& WithArtifactCredentials(ArtifactCredentialsT&& value) { SetArtifactCredentials(std::forward<ArtifactCredentialsT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+   * the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key. This is optional and might not be present.</p>
+   */
+  inline const EncryptionKey& GetEncryptionKey() const { return m_encryptionKey; }
+  inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
+  template <typename EncryptionKeyT = EncryptionKey>
+  void SetEncryptionKey(EncryptionKeyT&& value) {
+    m_encryptionKeyHasBeenSet = true;
+    m_encryptionKey = std::forward<EncryptionKeyT>(value);
+  }
+  template <typename EncryptionKeyT = EncryptionKey>
+  ThirdPartyJobData& WithEncryptionKey(EncryptionKeyT&& value) {
+    SetEncryptionKey(std::forward<EncryptionKeyT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ActionTypeId m_actionTypeId;
+  bool m_actionTypeIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A system-generated token, such as a CodeDeploy deployment ID, that a job
-     * requires to continue the job asynchronously.</p>
-     */
-    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
-    inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    template<typename ContinuationTokenT = Aws::String>
-    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
-    template<typename ContinuationTokenT = Aws::String>
-    ThirdPartyJobData& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
-    ///@}
+  ActionConfiguration m_actionConfiguration;
+  bool m_actionConfigurationHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
-     * the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web
-     * Services KMS) key. This is optional and might not be present.</p>
-     */
-    inline const EncryptionKey& GetEncryptionKey() const { return m_encryptionKey; }
-    inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    template<typename EncryptionKeyT = EncryptionKey>
-    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
-    template<typename EncryptionKeyT = EncryptionKey>
-    ThirdPartyJobData& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
-    ///@}
-  private:
+  PipelineContext m_pipelineContext;
+  bool m_pipelineContextHasBeenSet = false;
 
-    ActionTypeId m_actionTypeId;
-    bool m_actionTypeIdHasBeenSet = false;
+  Aws::Vector<Artifact> m_inputArtifacts;
+  bool m_inputArtifactsHasBeenSet = false;
 
-    ActionConfiguration m_actionConfiguration;
-    bool m_actionConfigurationHasBeenSet = false;
+  Aws::Vector<Artifact> m_outputArtifacts;
+  bool m_outputArtifactsHasBeenSet = false;
 
-    PipelineContext m_pipelineContext;
-    bool m_pipelineContextHasBeenSet = false;
+  AWSSessionCredentials m_artifactCredentials;
+  bool m_artifactCredentialsHasBeenSet = false;
 
-    Aws::Vector<Artifact> m_inputArtifacts;
-    bool m_inputArtifactsHasBeenSet = false;
+  Aws::String m_continuationToken;
+  bool m_continuationTokenHasBeenSet = false;
 
-    Aws::Vector<Artifact> m_outputArtifacts;
-    bool m_outputArtifactsHasBeenSet = false;
+  EncryptionKey m_encryptionKey;
+  bool m_encryptionKeyHasBeenSet = false;
+};
 
-    AWSSessionCredentials m_artifactCredentials;
-    bool m_artifactCredentialsHasBeenSet = false;
-
-    Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet = false;
-
-    EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

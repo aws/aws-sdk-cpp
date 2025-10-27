@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class QueueStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    PAUSED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class QueueStatus { NOT_SET, ACTIVE, PAUSED };
 
-namespace QueueStatusMapper
-{
+namespace QueueStatusMapper {
 AWS_MEDIACONVERT_API QueueStatus GetQueueStatusForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForQueueStatus(QueueStatus value);
-} // namespace QueueStatusMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace QueueStatusMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

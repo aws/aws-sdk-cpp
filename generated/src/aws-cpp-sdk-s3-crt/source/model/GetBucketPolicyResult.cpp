@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/GetBucketPolicyResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/s3-crt/model/GetBucketPolicyResult.h>
 
 #include <utility>
 
@@ -15,23 +15,18 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-{
-  *this = std::move(result);
-}
+GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
-GetBucketPolicyResult& GetBucketPolicyResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-{
+GetBucketPolicyResult& GetBucketPolicyResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
   m_policy = result.TakeOwnershipOfPayload();
   m_policyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
 
-   return *this;
+  return *this;
 }

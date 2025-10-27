@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/TimeToLiveDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/TimeToLiveDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue) { *this = jsonValue; }
 
-TimeToLiveDescription& TimeToLiveDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeToLiveStatus"))
-  {
+TimeToLiveDescription& TimeToLiveDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeToLiveStatus")) {
     m_timeToLiveStatus = TimeToLiveStatusMapper::GetTimeToLiveStatusForName(jsonValue.GetString("TimeToLiveStatus"));
     m_timeToLiveStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeToLiveDescription::Jsonize() const
-{
+JsonValue TimeToLiveDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeToLiveStatusHasBeenSet)
-  {
-   payload.WithString("TimeToLiveStatus", TimeToLiveStatusMapper::GetNameForTimeToLiveStatus(m_timeToLiveStatus));
+  if (m_timeToLiveStatusHasBeenSet) {
+    payload.WithString("TimeToLiveStatus", TimeToLiveStatusMapper::GetNameForTimeToLiveStatus(m_timeToLiveStatus));
   }
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

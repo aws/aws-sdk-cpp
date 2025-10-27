@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sdb/model/SelectRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sdb/model/SelectRequest.h>
 
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-Aws::String SelectRequest::SerializePayload() const
-{
+Aws::String SelectRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=Select&";
-  if(m_selectExpressionHasBeenSet)
-  {
+  if (m_selectExpressionHasBeenSet) {
     ss << "SelectExpression=" << StringUtils::URLEncode(m_selectExpression.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_consistentReadHasBeenSet)
-  {
+  if (m_consistentReadHasBeenSet) {
     ss << "ConsistentRead=" << std::boolalpha << m_consistentRead << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SelectRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SelectRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SelectRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

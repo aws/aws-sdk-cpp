@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-} // namespace ApplicationSignals
-} // namespace Aws
+namespace Aws {
+namespace ApplicationSignals {}  // namespace ApplicationSignals
+}  // namespace Aws

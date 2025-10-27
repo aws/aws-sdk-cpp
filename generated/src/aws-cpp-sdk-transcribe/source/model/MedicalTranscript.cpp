@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/MedicalTranscript.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/MedicalTranscript.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
 
-MedicalTranscript::MedicalTranscript(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MedicalTranscript::MedicalTranscript(JsonView jsonValue) { *this = jsonValue; }
 
-MedicalTranscript& MedicalTranscript::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TranscriptFileUri"))
-  {
+MedicalTranscript& MedicalTranscript::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TranscriptFileUri")) {
     m_transcriptFileUri = jsonValue.GetString("TranscriptFileUri");
     m_transcriptFileUriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MedicalTranscript::Jsonize() const
-{
+JsonValue MedicalTranscript::Jsonize() const {
   JsonValue payload;
 
-  if(m_transcriptFileUriHasBeenSet)
-  {
-   payload.WithString("TranscriptFileUri", m_transcriptFileUri);
-
+  if (m_transcriptFileUriHasBeenSet) {
+    payload.WithString("TranscriptFileUri", m_transcriptFileUri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

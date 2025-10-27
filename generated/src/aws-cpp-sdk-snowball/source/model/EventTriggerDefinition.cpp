@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snowball/model/EventTriggerDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/model/EventTriggerDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Model
-{
+namespace Aws {
+namespace Snowball {
+namespace Model {
 
-EventTriggerDefinition::EventTriggerDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventTriggerDefinition::EventTriggerDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-EventTriggerDefinition& EventTriggerDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventResourceARN"))
-  {
+EventTriggerDefinition& EventTriggerDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventResourceARN")) {
     m_eventResourceARN = jsonValue.GetString("EventResourceARN");
     m_eventResourceARNHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventTriggerDefinition::Jsonize() const
-{
+JsonValue EventTriggerDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventResourceARNHasBeenSet)
-  {
-   payload.WithString("EventResourceARN", m_eventResourceARN);
-
+  if (m_eventResourceARNHasBeenSet) {
+    payload.WithString("EventResourceARN", m_eventResourceARN);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Model
+}  // namespace Snowball
+}  // namespace Aws

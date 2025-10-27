@@ -12,31 +12,20 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateMergedGraphqlApiRequest::SerializePayload() const
-{
+Aws::String AssociateMergedGraphqlApiRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_mergedApiIdentifierHasBeenSet)
-  {
-   payload.WithString("mergedApiIdentifier", m_mergedApiIdentifier);
-
+  if (m_mergedApiIdentifierHasBeenSet) {
+    payload.WithString("mergedApiIdentifier", m_mergedApiIdentifier);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_sourceApiAssociationConfigHasBeenSet)
-  {
-   payload.WithObject("sourceApiAssociationConfig", m_sourceApiAssociationConfig.Jsonize());
-
+  if (m_sourceApiAssociationConfigHasBeenSet) {
+    payload.WithObject("sourceApiAssociationConfig", m_sourceApiAssociationConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class AssetRelationshipType
-  {
-    NOT_SET,
-    HIERARCHY
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class AssetRelationshipType { NOT_SET, HIERARCHY };
 
-namespace AssetRelationshipTypeMapper
-{
+namespace AssetRelationshipTypeMapper {
 AWS_IOTSITEWISE_API AssetRelationshipType GetAssetRelationshipTypeForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForAssetRelationshipType(AssetRelationshipType value);
-} // namespace AssetRelationshipTypeMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace AssetRelationshipTypeMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

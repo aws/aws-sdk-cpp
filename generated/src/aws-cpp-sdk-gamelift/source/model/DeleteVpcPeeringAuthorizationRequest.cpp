@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteVpcPeeringAuthorizationRequest::SerializePayload() const
-{
+Aws::String DeleteVpcPeeringAuthorizationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gameLiftAwsAccountIdHasBeenSet)
-  {
-   payload.WithString("GameLiftAwsAccountId", m_gameLiftAwsAccountId);
-
+  if (m_gameLiftAwsAccountIdHasBeenSet) {
+    payload.WithString("GameLiftAwsAccountId", m_gameLiftAwsAccountId);
   }
 
-  if(m_peerVpcIdHasBeenSet)
-  {
-   payload.WithString("PeerVpcId", m_peerVpcId);
-
+  if (m_peerVpcIdHasBeenSet) {
+    payload.WithString("PeerVpcId", m_peerVpcId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteVpcPeeringAuthorizationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteVpcPeeringAuthorizationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.DeleteVpcPeeringAuthorization"));
   return headers;
-
 }
-
-
-
-

@@ -3,50 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLaunchTemplateVersionsResponseSuccessItem.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeleteLaunchTemplateVersionsResponseSuccessItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-DeleteLaunchTemplateVersionsResponseSuccessItem::DeleteLaunchTemplateVersionsResponseSuccessItem(const XmlNode& xmlNode)
-{
+DeleteLaunchTemplateVersionsResponseSuccessItem::DeleteLaunchTemplateVersionsResponseSuccessItem(const XmlNode& xmlNode) {
   *this = xmlNode;
 }
 
-DeleteLaunchTemplateVersionsResponseSuccessItem& DeleteLaunchTemplateVersionsResponseSuccessItem::operator =(const XmlNode& xmlNode)
-{
+DeleteLaunchTemplateVersionsResponseSuccessItem& DeleteLaunchTemplateVersionsResponseSuccessItem::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode launchTemplateIdNode = resultNode.FirstChild("launchTemplateId");
-    if(!launchTemplateIdNode.IsNull())
-    {
+    if (!launchTemplateIdNode.IsNull()) {
       m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
-    if(!launchTemplateNameNode.IsNull())
-    {
+    if (!launchTemplateNameNode.IsNull()) {
       m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNumberNode = resultNode.FirstChild("versionNumber");
-    if(!versionNumberNode.IsNull())
-    {
-      m_versionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNumberNode.GetText()).c_str()).c_str());
+    if (!versionNumberNode.IsNull()) {
+      m_versionNumber = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNumberNode.GetText()).c_str()).c_str());
       m_versionNumberHasBeenSet = true;
     }
   }
@@ -54,41 +46,33 @@ DeleteLaunchTemplateVersionsResponseSuccessItem& DeleteLaunchTemplateVersionsRes
   return *this;
 }
 
-void DeleteLaunchTemplateVersionsResponseSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_launchTemplateIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
+void DeleteLaunchTemplateVersionsResponseSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                                     const char* locationValue) const {
+  if (m_launchTemplateIdHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
   }
 
-  if(m_launchTemplateNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
+  if (m_launchTemplateNameHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
   }
 
-  if(m_versionNumberHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VersionNumber=" << m_versionNumber << "&";
-  }
-
-}
-
-void DeleteLaunchTemplateVersionsResponseSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_launchTemplateIdHasBeenSet)
-  {
-      oStream << location << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
-  }
-  if(m_launchTemplateNameHasBeenSet)
-  {
-      oStream << location << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
-  }
-  if(m_versionNumberHasBeenSet)
-  {
-      oStream << location << ".VersionNumber=" << m_versionNumber << "&";
+  if (m_versionNumberHasBeenSet) {
+    oStream << location << index << locationValue << ".VersionNumber=" << m_versionNumber << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void DeleteLaunchTemplateVersionsResponseSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_launchTemplateIdHasBeenSet) {
+    oStream << location << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
+  }
+  if (m_launchTemplateNameHasBeenSet) {
+    oStream << location << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
+  }
+  if (m_versionNumberHasBeenSet) {
+    oStream << location << ".VersionNumber=" << m_versionNumber << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

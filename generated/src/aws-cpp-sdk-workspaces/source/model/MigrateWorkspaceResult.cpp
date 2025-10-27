@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/MigrateWorkspaceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workspaces/model/MigrateWorkspaceResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MigrateWorkspaceResult::MigrateWorkspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+MigrateWorkspaceResult::MigrateWorkspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-MigrateWorkspaceResult& MigrateWorkspaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+MigrateWorkspaceResult& MigrateWorkspaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SourceWorkspaceId"))
-  {
+  if (jsonValue.ValueExists("SourceWorkspaceId")) {
     m_sourceWorkspaceId = jsonValue.GetString("SourceWorkspaceId");
     m_sourceWorkspaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetWorkspaceId"))
-  {
+  if (jsonValue.ValueExists("TargetWorkspaceId")) {
     m_targetWorkspaceId = jsonValue.GetString("TargetWorkspaceId");
     m_targetWorkspaceIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

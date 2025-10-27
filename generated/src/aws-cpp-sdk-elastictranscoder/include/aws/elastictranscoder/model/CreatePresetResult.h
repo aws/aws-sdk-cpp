@@ -4,87 +4,98 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Preset.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ElasticTranscoder
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ElasticTranscoder {
+namespace Model {
+/**
+ * <p>The <code>CreatePresetResponse</code> structure.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePresetResponse">AWS
+ * API Reference</a></p>
+ */
+class CreatePresetResult {
+ public:
+  AWS_ELASTICTRANSCODER_API CreatePresetResult() = default;
+  AWS_ELASTICTRANSCODER_API CreatePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ELASTICTRANSCODER_API CreatePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>The <code>CreatePresetResponse</code> structure.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePresetResponse">AWS
-   * API Reference</a></p>
+   * <p>A section of the response body that provides information about the preset
+   * that is created.</p>
    */
-  class CreatePresetResult
-  {
-  public:
-    AWS_ELASTICTRANSCODER_API CreatePresetResult() = default;
-    AWS_ELASTICTRANSCODER_API CreatePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_ELASTICTRANSCODER_API CreatePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const Preset& GetPreset() const { return m_preset; }
+  template <typename PresetT = Preset>
+  void SetPreset(PresetT&& value) {
+    m_presetHasBeenSet = true;
+    m_preset = std::forward<PresetT>(value);
+  }
+  template <typename PresetT = Preset>
+  CreatePresetResult& WithPreset(PresetT&& value) {
+    SetPreset(std::forward<PresetT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>If the preset settings don't comply with the standards for the video codec
+   * but Elastic Transcoder created the preset, this message explains the reason the
+   * preset settings don't meet the standard. Elastic Transcoder created the preset
+   * because the settings might produce acceptable output.</p>
+   */
+  inline const Aws::String& GetWarning() const { return m_warning; }
+  template <typename WarningT = Aws::String>
+  void SetWarning(WarningT&& value) {
+    m_warningHasBeenSet = true;
+    m_warning = std::forward<WarningT>(value);
+  }
+  template <typename WarningT = Aws::String>
+  CreatePresetResult& WithWarning(WarningT&& value) {
+    SetWarning(std::forward<WarningT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A section of the response body that provides information about the preset
-     * that is created.</p>
-     */
-    inline const Preset& GetPreset() const { return m_preset; }
-    template<typename PresetT = Preset>
-    void SetPreset(PresetT&& value) { m_presetHasBeenSet = true; m_preset = std::forward<PresetT>(value); }
-    template<typename PresetT = Preset>
-    CreatePresetResult& WithPreset(PresetT&& value) { SetPreset(std::forward<PresetT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
-    inline const Aws::String& GetWarning() const { return m_warning; }
-    template<typename WarningT = Aws::String>
-    void SetWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning = std::forward<WarningT>(value); }
-    template<typename WarningT = Aws::String>
-    CreatePresetResult& WithWarning(WarningT&& value) { SetWarning(std::forward<WarningT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreatePresetResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Preset m_preset;
+  bool m_presetHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreatePresetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_warning;
+  bool m_warningHasBeenSet = false;
 
-    Preset m_preset;
-    bool m_presetHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_warning;
-    bool m_warningHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticTranscoder
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticTranscoder
+}  // namespace Aws

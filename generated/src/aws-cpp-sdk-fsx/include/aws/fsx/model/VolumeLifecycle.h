@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class VolumeLifecycle
-  {
-    NOT_SET,
-    CREATING,
-    CREATED,
-    DELETING,
-    FAILED,
-    MISCONFIGURED,
-    PENDING,
-    AVAILABLE
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class VolumeLifecycle { NOT_SET, CREATING, CREATED, DELETING, FAILED, MISCONFIGURED, PENDING, AVAILABLE };
 
-namespace VolumeLifecycleMapper
-{
+namespace VolumeLifecycleMapper {
 AWS_FSX_API VolumeLifecycle GetVolumeLifecycleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForVolumeLifecycle(VolumeLifecycle value);
-} // namespace VolumeLifecycleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace VolumeLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

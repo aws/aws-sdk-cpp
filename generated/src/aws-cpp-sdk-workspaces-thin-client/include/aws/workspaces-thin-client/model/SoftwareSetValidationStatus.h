@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-namespace Model
-{
-  enum class SoftwareSetValidationStatus
-  {
-    NOT_SET,
-    VALIDATED,
-    NOT_VALIDATED
-  };
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Model {
+enum class SoftwareSetValidationStatus { NOT_SET, VALIDATED, NOT_VALIDATED };
 
-namespace SoftwareSetValidationStatusMapper
-{
+namespace SoftwareSetValidationStatusMapper {
 AWS_WORKSPACESTHINCLIENT_API SoftwareSetValidationStatus GetSoftwareSetValidationStatusForName(const Aws::String& name);
 
 AWS_WORKSPACESTHINCLIENT_API Aws::String GetNameForSoftwareSetValidationStatus(SoftwareSetValidationStatus value);
-} // namespace SoftwareSetValidationStatusMapper
-} // namespace Model
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+}  // namespace SoftwareSetValidationStatusMapper
+}  // namespace Model
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

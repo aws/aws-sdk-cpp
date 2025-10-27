@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-DomainEntryPoint::DomainEntryPoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainEntryPoint::DomainEntryPoint(JsonView jsonValue) { *this = jsonValue; }
 
-DomainEntryPoint& DomainEntryPoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+DomainEntryPoint& DomainEntryPoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalConnectionName"))
-  {
+  if (jsonValue.ValueExists("externalConnectionName")) {
     m_externalConnectionName = jsonValue.GetString("externalConnectionName");
     m_externalConnectionNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainEntryPoint::Jsonize() const
-{
+JsonValue DomainEntryPoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_externalConnectionNameHasBeenSet)
-  {
-   payload.WithString("externalConnectionName", m_externalConnectionName);
-
+  if (m_externalConnectionNameHasBeenSet) {
+    payload.WithString("externalConnectionName", m_externalConnectionName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ServiceJobRetryStrategy::ServiceJobRetryStrategy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceJobRetryStrategy::ServiceJobRetryStrategy(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceJobRetryStrategy& ServiceJobRetryStrategy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attempts"))
-  {
+ServiceJobRetryStrategy& ServiceJobRetryStrategy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attempts")) {
     m_attempts = jsonValue.GetInteger("attempts");
     m_attemptsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("evaluateOnExit"))
-  {
+  if (jsonValue.ValueExists("evaluateOnExit")) {
     Aws::Utils::Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
-    for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
-    {
+    for (unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex) {
       m_evaluateOnExit.push_back(evaluateOnExitJsonList[evaluateOnExitIndex].AsObject());
     }
     m_evaluateOnExitHasBeenSet = true;
@@ -42,30 +32,24 @@ ServiceJobRetryStrategy& ServiceJobRetryStrategy::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ServiceJobRetryStrategy::Jsonize() const
-{
+JsonValue ServiceJobRetryStrategy::Jsonize() const {
   JsonValue payload;
 
-  if(m_attemptsHasBeenSet)
-  {
-   payload.WithInteger("attempts", m_attempts);
-
+  if (m_attemptsHasBeenSet) {
+    payload.WithInteger("attempts", m_attempts);
   }
 
-  if(m_evaluateOnExitHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
-   for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
-   {
-     evaluateOnExitJsonList[evaluateOnExitIndex].AsObject(m_evaluateOnExit[evaluateOnExitIndex].Jsonize());
-   }
-   payload.WithArray("evaluateOnExit", std::move(evaluateOnExitJsonList));
-
+  if (m_evaluateOnExitHasBeenSet) {
+    Aws::Utils::Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
+    for (unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex) {
+      evaluateOnExitJsonList[evaluateOnExitIndex].AsObject(m_evaluateOnExit[evaluateOnExitIndex].Jsonize());
+    }
+    payload.WithArray("evaluateOnExit", std::move(evaluateOnExitJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3tables/S3Tables_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Tables
-{
-namespace Model
-{
-  enum class IcebergCompactionStrategy
-  {
-    NOT_SET,
-    auto_,
-    binpack,
-    sort,
-    z_order
-  };
+namespace Aws {
+namespace S3Tables {
+namespace Model {
+enum class IcebergCompactionStrategy { NOT_SET, auto_, binpack, sort, z_order };
 
-namespace IcebergCompactionStrategyMapper
-{
+namespace IcebergCompactionStrategyMapper {
 AWS_S3TABLES_API IcebergCompactionStrategy GetIcebergCompactionStrategyForName(const Aws::String& name);
 
 AWS_S3TABLES_API Aws::String GetNameForIcebergCompactionStrategy(IcebergCompactionStrategy value);
-} // namespace IcebergCompactionStrategyMapper
-} // namespace Model
-} // namespace S3Tables
-} // namespace Aws
+}  // namespace IcebergCompactionStrategyMapper
+}  // namespace Model
+}  // namespace S3Tables
+}  // namespace Aws

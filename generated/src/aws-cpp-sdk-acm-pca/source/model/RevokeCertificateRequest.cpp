@@ -12,38 +12,26 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RevokeCertificateRequest::SerializePayload() const
-{
+Aws::String RevokeCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_certificateSerialHasBeenSet)
-  {
-   payload.WithString("CertificateSerial", m_certificateSerial);
-
+  if (m_certificateSerialHasBeenSet) {
+    payload.WithString("CertificateSerial", m_certificateSerial);
   }
 
-  if(m_revocationReasonHasBeenSet)
-  {
-   payload.WithString("RevocationReason", RevocationReasonMapper::GetNameForRevocationReason(m_revocationReason));
+  if (m_revocationReasonHasBeenSet) {
+    payload.WithString("RevocationReason", RevocationReasonMapper::GetNameForRevocationReason(m_revocationReason));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RevokeCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RevokeCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.RevokeCertificate"));
   return headers;
-
 }
-
-
-
-

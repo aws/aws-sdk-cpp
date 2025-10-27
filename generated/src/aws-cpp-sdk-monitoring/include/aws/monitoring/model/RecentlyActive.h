@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
-  enum class RecentlyActive
-  {
-    NOT_SET,
-    PT3H
-  };
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
+enum class RecentlyActive { NOT_SET, PT3H };
 
-namespace RecentlyActiveMapper
-{
+namespace RecentlyActiveMapper {
 AWS_CLOUDWATCH_API RecentlyActive GetRecentlyActiveForName(const Aws::String& name);
 
 AWS_CLOUDWATCH_API Aws::String GetNameForRecentlyActive(RecentlyActive value);
-} // namespace RecentlyActiveMapper
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+}  // namespace RecentlyActiveMapper
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

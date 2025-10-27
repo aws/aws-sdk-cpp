@@ -5,12 +5,8 @@
 
 #include <aws/acm/ACMEndpointProvider.h>
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ACM
-} // namespace Aws
+namespace Aws {
+namespace ACM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ACM
+}  // namespace Aws

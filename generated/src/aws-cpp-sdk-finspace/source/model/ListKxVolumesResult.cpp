@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/ListKxVolumesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/finspace/model/ListKxVolumesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListKxVolumesResult::ListKxVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListKxVolumesResult::ListKxVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListKxVolumesResult& ListKxVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListKxVolumesResult& ListKxVolumesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("kxVolumeSummaries"))
-  {
+  if (jsonValue.ValueExists("kxVolumeSummaries")) {
     Aws::Utils::Array<JsonView> kxVolumeSummariesJsonList = jsonValue.GetArray("kxVolumeSummaries");
-    for(unsigned kxVolumeSummariesIndex = 0; kxVolumeSummariesIndex < kxVolumeSummariesJsonList.GetLength(); ++kxVolumeSummariesIndex)
-    {
+    for (unsigned kxVolumeSummariesIndex = 0; kxVolumeSummariesIndex < kxVolumeSummariesJsonList.GetLength(); ++kxVolumeSummariesIndex) {
       m_kxVolumeSummaries.push_back(kxVolumeSummariesJsonList[kxVolumeSummariesIndex].AsObject());
     }
     m_kxVolumeSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

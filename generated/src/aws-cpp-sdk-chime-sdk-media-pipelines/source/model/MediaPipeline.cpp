@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaPipeline::MediaPipeline(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaPipeline::MediaPipeline(JsonView jsonValue) { *this = jsonValue; }
 
-MediaPipeline& MediaPipeline::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MediaCapturePipeline"))
-  {
+MediaPipeline& MediaPipeline::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MediaCapturePipeline")) {
     m_mediaCapturePipeline = jsonValue.GetObject("MediaCapturePipeline");
     m_mediaCapturePipelineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaLiveConnectorPipeline"))
-  {
+  if (jsonValue.ValueExists("MediaLiveConnectorPipeline")) {
     m_mediaLiveConnectorPipeline = jsonValue.GetObject("MediaLiveConnectorPipeline");
     m_mediaLiveConnectorPipelineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaConcatenationPipeline"))
-  {
+  if (jsonValue.ValueExists("MediaConcatenationPipeline")) {
     m_mediaConcatenationPipeline = jsonValue.GetObject("MediaConcatenationPipeline");
     m_mediaConcatenationPipelineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaInsightsPipeline"))
-  {
+  if (jsonValue.ValueExists("MediaInsightsPipeline")) {
     m_mediaInsightsPipeline = jsonValue.GetObject("MediaInsightsPipeline");
     m_mediaInsightsPipelineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaStreamPipeline"))
-  {
+  if (jsonValue.ValueExists("MediaStreamPipeline")) {
     m_mediaStreamPipeline = jsonValue.GetObject("MediaStreamPipeline");
     m_mediaStreamPipelineHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaPipeline::Jsonize() const
-{
+JsonValue MediaPipeline::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaCapturePipelineHasBeenSet)
-  {
-   payload.WithObject("MediaCapturePipeline", m_mediaCapturePipeline.Jsonize());
-
+  if (m_mediaCapturePipelineHasBeenSet) {
+    payload.WithObject("MediaCapturePipeline", m_mediaCapturePipeline.Jsonize());
   }
 
-  if(m_mediaLiveConnectorPipelineHasBeenSet)
-  {
-   payload.WithObject("MediaLiveConnectorPipeline", m_mediaLiveConnectorPipeline.Jsonize());
-
+  if (m_mediaLiveConnectorPipelineHasBeenSet) {
+    payload.WithObject("MediaLiveConnectorPipeline", m_mediaLiveConnectorPipeline.Jsonize());
   }
 
-  if(m_mediaConcatenationPipelineHasBeenSet)
-  {
-   payload.WithObject("MediaConcatenationPipeline", m_mediaConcatenationPipeline.Jsonize());
-
+  if (m_mediaConcatenationPipelineHasBeenSet) {
+    payload.WithObject("MediaConcatenationPipeline", m_mediaConcatenationPipeline.Jsonize());
   }
 
-  if(m_mediaInsightsPipelineHasBeenSet)
-  {
-   payload.WithObject("MediaInsightsPipeline", m_mediaInsightsPipeline.Jsonize());
-
+  if (m_mediaInsightsPipelineHasBeenSet) {
+    payload.WithObject("MediaInsightsPipeline", m_mediaInsightsPipeline.Jsonize());
   }
 
-  if(m_mediaStreamPipelineHasBeenSet)
-  {
-   payload.WithObject("MediaStreamPipeline", m_mediaStreamPipeline.Jsonize());
-
+  if (m_mediaStreamPipelineHasBeenSet) {
+    payload.WithObject("MediaStreamPipeline", m_mediaStreamPipeline.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/UpdateAuditSuppressionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/UpdateAuditSuppressionRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAuditSuppressionRequest::SerializePayload() const
-{
+Aws::String UpdateAuditSuppressionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_checkNameHasBeenSet)
-  {
-   payload.WithString("checkName", m_checkName);
-
+  if (m_checkNameHasBeenSet) {
+    payload.WithString("checkName", m_checkName);
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithObject("resourceIdentifier", m_resourceIdentifier.Jsonize());
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithObject("resourceIdentifier", m_resourceIdentifier.Jsonize());
   }
 
-  if(m_expirationDateHasBeenSet)
-  {
-   payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
+  if (m_expirationDateHasBeenSet) {
+    payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
   }
 
-  if(m_suppressIndefinitelyHasBeenSet)
-  {
-   payload.WithBool("suppressIndefinitely", m_suppressIndefinitely);
-
+  if (m_suppressIndefinitelyHasBeenSet) {
+    payload.WithBool("suppressIndefinitely", m_suppressIndefinitely);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

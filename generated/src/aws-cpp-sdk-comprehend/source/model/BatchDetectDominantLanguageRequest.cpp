@@ -12,32 +12,22 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchDetectDominantLanguageRequest::SerializePayload() const
-{
+Aws::String BatchDetectDominantLanguageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_textListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> textListJsonList(m_textList.size());
-   for(unsigned textListIndex = 0; textListIndex < textListJsonList.GetLength(); ++textListIndex)
-   {
-     textListJsonList[textListIndex].AsString(m_textList[textListIndex]);
-   }
-   payload.WithArray("TextList", std::move(textListJsonList));
-
+  if (m_textListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> textListJsonList(m_textList.size());
+    for (unsigned textListIndex = 0; textListIndex < textListJsonList.GetLength(); ++textListIndex) {
+      textListJsonList[textListIndex].AsString(m_textList[textListIndex]);
+    }
+    payload.WithArray("TextList", std::move(textListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchDetectDominantLanguageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchDetectDominantLanguageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.BatchDetectDominantLanguage"));
   return headers;
-
 }
-
-
-
-

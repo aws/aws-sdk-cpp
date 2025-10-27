@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-UpdateWebAppIdentityCenterConfig::UpdateWebAppIdentityCenterConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateWebAppIdentityCenterConfig::UpdateWebAppIdentityCenterConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateWebAppIdentityCenterConfig& UpdateWebAppIdentityCenterConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Role"))
-  {
+UpdateWebAppIdentityCenterConfig& UpdateWebAppIdentityCenterConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateWebAppIdentityCenterConfig::Jsonize() const
-{
+JsonValue UpdateWebAppIdentityCenterConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devicefarm/model/Project.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devicefarm/model/Project.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
 
-Project::Project(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Project::Project(JsonView jsonValue) { *this = jsonValue; }
 
-Project& Project::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+Project& Project::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultJobTimeoutMinutes"))
-  {
+  if (jsonValue.ValueExists("defaultJobTimeoutMinutes")) {
     m_defaultJobTimeoutMinutes = jsonValue.GetInteger("defaultJobTimeoutMinutes");
     m_defaultJobTimeoutMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("created"))
-  {
+  if (jsonValue.ValueExists("created")) {
     m_created = jsonValue.GetDouble("created");
     m_createdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcConfig"))
-  {
+  if (jsonValue.ValueExists("vpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Project::Jsonize() const
-{
+JsonValue Project::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_defaultJobTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
-
+  if (m_defaultJobTimeoutMinutesHasBeenSet) {
+    payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
   }
 
-  if(m_createdHasBeenSet)
-  {
-   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  if (m_createdHasBeenSet) {
+    payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMessagingStreamingConfigurationsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteMessagingStreamingConfigurationsRequest::SerializePayload() const { return {}; }

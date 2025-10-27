@@ -5,12 +5,8 @@
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpointProvider.h>
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

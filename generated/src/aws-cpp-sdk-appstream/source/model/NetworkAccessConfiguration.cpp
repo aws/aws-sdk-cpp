@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkAccessConfiguration& NetworkAccessConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EniPrivateIpAddress"))
-  {
+NetworkAccessConfiguration& NetworkAccessConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EniPrivateIpAddress")) {
     m_eniPrivateIpAddress = jsonValue.GetString("EniPrivateIpAddress");
     m_eniPrivateIpAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EniId"))
-  {
+  if (jsonValue.ValueExists("EniId")) {
     m_eniId = jsonValue.GetString("EniId");
     m_eniIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkAccessConfiguration::Jsonize() const
-{
+JsonValue NetworkAccessConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_eniPrivateIpAddressHasBeenSet)
-  {
-   payload.WithString("EniPrivateIpAddress", m_eniPrivateIpAddress);
-
+  if (m_eniPrivateIpAddressHasBeenSet) {
+    payload.WithString("EniPrivateIpAddress", m_eniPrivateIpAddress);
   }
 
-  if(m_eniIdHasBeenSet)
-  {
-   payload.WithString("EniId", m_eniId);
-
+  if (m_eniIdHasBeenSet) {
+    payload.WithString("EniId", m_eniId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-IdleSavingsOpportunity::IdleSavingsOpportunity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdleSavingsOpportunity::IdleSavingsOpportunity(JsonView jsonValue) { *this = jsonValue; }
 
-IdleSavingsOpportunity& IdleSavingsOpportunity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("savingsOpportunityPercentage"))
-  {
+IdleSavingsOpportunity& IdleSavingsOpportunity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("savingsOpportunityPercentage")) {
     m_savingsOpportunityPercentage = jsonValue.GetDouble("savingsOpportunityPercentage");
     m_savingsOpportunityPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("estimatedMonthlySavings"))
-  {
+  if (jsonValue.ValueExists("estimatedMonthlySavings")) {
     m_estimatedMonthlySavings = jsonValue.GetObject("estimatedMonthlySavings");
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdleSavingsOpportunity::Jsonize() const
-{
+JsonValue IdleSavingsOpportunity::Jsonize() const {
   JsonValue payload;
 
-  if(m_savingsOpportunityPercentageHasBeenSet)
-  {
-   payload.WithDouble("savingsOpportunityPercentage", m_savingsOpportunityPercentage);
-
+  if (m_savingsOpportunityPercentageHasBeenSet) {
+    payload.WithDouble("savingsOpportunityPercentage", m_savingsOpportunityPercentage);
   }
 
-  if(m_estimatedMonthlySavingsHasBeenSet)
-  {
-   payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
-
+  if (m_estimatedMonthlySavingsHasBeenSet) {
+    payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

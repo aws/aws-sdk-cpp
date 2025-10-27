@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ebs/model/ResourceNotFoundExceptionReason.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ebs/model/ResourceNotFoundExceptionReason.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EBS {
+namespace Model {
+namespace ResourceNotFoundExceptionReasonMapper {
 
-namespace Aws
-{
-  namespace EBS
-  {
-    namespace Model
-    {
-      namespace ResourceNotFoundExceptionReasonMapper
-      {
+static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SNAPSHOT_NOT_FOUND");
+static const int GRANT_NOT_FOUND_HASH = HashingUtils::HashString("GRANT_NOT_FOUND");
+static const int DEPENDENCY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DEPENDENCY_RESOURCE_NOT_FOUND");
+static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
 
-        static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SNAPSHOT_NOT_FOUND");
-        static const int GRANT_NOT_FOUND_HASH = HashingUtils::HashString("GRANT_NOT_FOUND");
-        static const int DEPENDENCY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DEPENDENCY_RESOURCE_NOT_FOUND");
-        static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
+ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SNAPSHOT_NOT_FOUND_HASH) {
+    return ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND;
+  } else if (hashCode == GRANT_NOT_FOUND_HASH) {
+    return ResourceNotFoundExceptionReason::GRANT_NOT_FOUND;
+  } else if (hashCode == DEPENDENCY_RESOURCE_NOT_FOUND_HASH) {
+    return ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND;
+  } else if (hashCode == IMAGE_NOT_FOUND_HASH) {
+    return ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResourceNotFoundExceptionReason>(hashCode);
+  }
 
+  return ResourceNotFoundExceptionReason::NOT_SET;
+}
 
-        ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SNAPSHOT_NOT_FOUND_HASH)
-          {
-            return ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND;
-          }
-          else if (hashCode == GRANT_NOT_FOUND_HASH)
-          {
-            return ResourceNotFoundExceptionReason::GRANT_NOT_FOUND;
-          }
-          else if (hashCode == DEPENDENCY_RESOURCE_NOT_FOUND_HASH)
-          {
-            return ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND;
-          }
-          else if (hashCode == IMAGE_NOT_FOUND_HASH)
-          {
-            return ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResourceNotFoundExceptionReason>(hashCode);
-          }
+Aws::String GetNameForResourceNotFoundExceptionReason(ResourceNotFoundExceptionReason enumValue) {
+  switch (enumValue) {
+    case ResourceNotFoundExceptionReason::NOT_SET:
+      return {};
+    case ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND:
+      return "SNAPSHOT_NOT_FOUND";
+    case ResourceNotFoundExceptionReason::GRANT_NOT_FOUND:
+      return "GRANT_NOT_FOUND";
+    case ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND:
+      return "DEPENDENCY_RESOURCE_NOT_FOUND";
+    case ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND:
+      return "IMAGE_NOT_FOUND";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ResourceNotFoundExceptionReason::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForResourceNotFoundExceptionReason(ResourceNotFoundExceptionReason enumValue)
-        {
-          switch(enumValue)
-          {
-          case ResourceNotFoundExceptionReason::NOT_SET:
-            return {};
-          case ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND:
-            return "SNAPSHOT_NOT_FOUND";
-          case ResourceNotFoundExceptionReason::GRANT_NOT_FOUND:
-            return "GRANT_NOT_FOUND";
-          case ResourceNotFoundExceptionReason::DEPENDENCY_RESOURCE_NOT_FOUND:
-            return "DEPENDENCY_RESOURCE_NOT_FOUND";
-          case ResourceNotFoundExceptionReason::IMAGE_NOT_FOUND:
-            return "IMAGE_NOT_FOUND";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ResourceNotFoundExceptionReasonMapper
-    } // namespace Model
-  } // namespace EBS
-} // namespace Aws
+}  // namespace ResourceNotFoundExceptionReasonMapper
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

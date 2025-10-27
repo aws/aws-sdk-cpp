@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-DeliveryChannel::DeliveryChannel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeliveryChannel::DeliveryChannel(JsonView jsonValue) { *this = jsonValue; }
 
-DeliveryChannel& DeliveryChannel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DeliveryChannel& DeliveryChannel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3BucketName"))
-  {
+  if (jsonValue.ValueExists("s3BucketName")) {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3KeyPrefix"))
-  {
+  if (jsonValue.ValueExists("s3KeyPrefix")) {
     m_s3KeyPrefix = jsonValue.GetString("s3KeyPrefix");
     m_s3KeyPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3KmsKeyArn"))
-  {
+  if (jsonValue.ValueExists("s3KmsKeyArn")) {
     m_s3KmsKeyArn = jsonValue.GetString("s3KmsKeyArn");
     m_s3KmsKeyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snsTopicARN"))
-  {
+  if (jsonValue.ValueExists("snsTopicARN")) {
     m_snsTopicARN = jsonValue.GetString("snsTopicARN");
     m_snsTopicARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configSnapshotDeliveryProperties"))
-  {
+  if (jsonValue.ValueExists("configSnapshotDeliveryProperties")) {
     m_configSnapshotDeliveryProperties = jsonValue.GetObject("configSnapshotDeliveryProperties");
     m_configSnapshotDeliveryPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeliveryChannel::Jsonize() const
-{
+JsonValue DeliveryChannel::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("s3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("s3BucketName", m_s3BucketName);
   }
 
-  if(m_s3KeyPrefixHasBeenSet)
-  {
-   payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
-
+  if (m_s3KeyPrefixHasBeenSet) {
+    payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
   }
 
-  if(m_s3KmsKeyArnHasBeenSet)
-  {
-   payload.WithString("s3KmsKeyArn", m_s3KmsKeyArn);
-
+  if (m_s3KmsKeyArnHasBeenSet) {
+    payload.WithString("s3KmsKeyArn", m_s3KmsKeyArn);
   }
 
-  if(m_snsTopicARNHasBeenSet)
-  {
-   payload.WithString("snsTopicARN", m_snsTopicARN);
-
+  if (m_snsTopicARNHasBeenSet) {
+    payload.WithString("snsTopicARN", m_snsTopicARN);
   }
 
-  if(m_configSnapshotDeliveryPropertiesHasBeenSet)
-  {
-   payload.WithObject("configSnapshotDeliveryProperties", m_configSnapshotDeliveryProperties.Jsonize());
-
+  if (m_configSnapshotDeliveryPropertiesHasBeenSet) {
+    payload.WithObject("configSnapshotDeliveryProperties", m_configSnapshotDeliveryProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

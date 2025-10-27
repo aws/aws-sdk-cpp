@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-WebRTCConnection::WebRTCConnection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WebRTCConnection::WebRTCConnection(JsonView jsonValue) { *this = jsonValue; }
 
-WebRTCConnection& WebRTCConnection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attendee"))
-  {
+WebRTCConnection& WebRTCConnection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attendee")) {
     m_attendee = jsonValue.GetObject("Attendee");
     m_attendeeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Meeting"))
-  {
+  if (jsonValue.ValueExists("Meeting")) {
     m_meeting = jsonValue.GetObject("Meeting");
     m_meetingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WebRTCConnection::Jsonize() const
-{
+JsonValue WebRTCConnection::Jsonize() const {
   JsonValue payload;
 
-  if(m_attendeeHasBeenSet)
-  {
-   payload.WithObject("Attendee", m_attendee.Jsonize());
-
+  if (m_attendeeHasBeenSet) {
+    payload.WithObject("Attendee", m_attendee.Jsonize());
   }
 
-  if(m_meetingHasBeenSet)
-  {
-   payload.WithObject("Meeting", m_meeting.Jsonize());
-
+  if (m_meetingHasBeenSet) {
+    payload.WithObject("Meeting", m_meeting.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

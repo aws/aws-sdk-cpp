@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/VpcSecurityGroupMembership.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/VpcSecurityGroupMembership.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
-VpcSecurityGroupMembership::VpcSecurityGroupMembership(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpcSecurityGroupMembership::VpcSecurityGroupMembership(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(const XmlNode& xmlNode)
-{
+VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode vpcSecurityGroupIdNode = resultNode.FirstChild("VpcSecurityGroupId");
-    if(!vpcSecurityGroupIdNode.IsNull())
-    {
+    if (!vpcSecurityGroupIdNode.IsNull()) {
       m_vpcSecurityGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcSecurityGroupIdNode.GetText());
       m_vpcSecurityGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(const XmlNode
   return *this;
 }
 
-void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_vpcSecurityGroupIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcSecurityGroupId=" << StringUtils::URLEncode(m_vpcSecurityGroupId.c_str()) << "&";
+void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                const char* locationValue) const {
+  if (m_vpcSecurityGroupIdHasBeenSet) {
+    oStream << location << index << locationValue << ".VpcSecurityGroupId=" << StringUtils::URLEncode(m_vpcSecurityGroupId.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-
-}
-
-void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_vpcSecurityGroupIdHasBeenSet)
-  {
-      oStream << location << ".VpcSecurityGroupId=" << StringUtils::URLEncode(m_vpcSecurityGroupId.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_vpcSecurityGroupIdHasBeenSet) {
+    oStream << location << ".VpcSecurityGroupId=" << StringUtils::URLEncode(m_vpcSecurityGroupId.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

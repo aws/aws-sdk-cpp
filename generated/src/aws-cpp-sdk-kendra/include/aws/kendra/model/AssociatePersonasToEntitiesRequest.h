@@ -4,92 +4,109 @@
  */
 
 #pragma once
-#include <aws/kendra/Kendra_EXPORTS.h>
-#include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/KendraRequest.h>
+#include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/model/EntityPersonaConfiguration.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
+/**
+ */
+class AssociatePersonasToEntitiesRequest : public KendraRequest {
+ public:
+  AWS_KENDRA_API AssociatePersonasToEntitiesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AssociatePersonasToEntities"; }
+
+  AWS_KENDRA_API Aws::String SerializePayload() const override;
+
+  AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The identifier of your Amazon Kendra experience.</p>
    */
-  class AssociatePersonasToEntitiesRequest : public KendraRequest
-  {
-  public:
-    AWS_KENDRA_API AssociatePersonasToEntitiesRequest() = default;
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  AssociatePersonasToEntitiesRequest& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AssociatePersonasToEntities"; }
+  ///@{
+  /**
+   * <p>The identifier of the index for your Amazon Kendra experience.</p>
+   */
+  inline const Aws::String& GetIndexId() const { return m_indexId; }
+  inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+  template <typename IndexIdT = Aws::String>
+  void SetIndexId(IndexIdT&& value) {
+    m_indexIdHasBeenSet = true;
+    m_indexId = std::forward<IndexIdT>(value);
+  }
+  template <typename IndexIdT = Aws::String>
+  AssociatePersonasToEntitiesRequest& WithIndexId(IndexIdT&& value) {
+    SetIndexId(std::forward<IndexIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_KENDRA_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The personas that define the specific permissions of users or groups in your
+   * IAM Identity Center identity source. The available personas or access roles are
+   * <code>Owner</code> and <code>Viewer</code>. For more information on these
+   * personas, see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+   * access to your search page</a>.</p>
+   */
+  inline const Aws::Vector<EntityPersonaConfiguration>& GetPersonas() const { return m_personas; }
+  inline bool PersonasHasBeenSet() const { return m_personasHasBeenSet; }
+  template <typename PersonasT = Aws::Vector<EntityPersonaConfiguration>>
+  void SetPersonas(PersonasT&& value) {
+    m_personasHasBeenSet = true;
+    m_personas = std::forward<PersonasT>(value);
+  }
+  template <typename PersonasT = Aws::Vector<EntityPersonaConfiguration>>
+  AssociatePersonasToEntitiesRequest& WithPersonas(PersonasT&& value) {
+    SetPersonas(std::forward<PersonasT>(value));
+    return *this;
+  }
+  template <typename PersonasT = EntityPersonaConfiguration>
+  AssociatePersonasToEntitiesRequest& AddPersonas(PersonasT&& value) {
+    m_personasHasBeenSet = true;
+    m_personas.emplace_back(std::forward<PersonasT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  Aws::String m_indexId;
+  bool m_indexIdHasBeenSet = false;
 
+  Aws::Vector<EntityPersonaConfiguration> m_personas;
+  bool m_personasHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    AssociatePersonasToEntitiesRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
-    inline const Aws::String& GetIndexId() const { return m_indexId; }
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    template<typename IndexIdT = Aws::String>
-    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
-    template<typename IndexIdT = Aws::String>
-    AssociatePersonasToEntitiesRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The personas that define the specific permissions of users or groups in your
-     * IAM Identity Center identity source. The available personas or access roles are
-     * <code>Owner</code> and <code>Viewer</code>. For more information on these
-     * personas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
-     * access to your search page</a>.</p>
-     */
-    inline const Aws::Vector<EntityPersonaConfiguration>& GetPersonas() const { return m_personas; }
-    inline bool PersonasHasBeenSet() const { return m_personasHasBeenSet; }
-    template<typename PersonasT = Aws::Vector<EntityPersonaConfiguration>>
-    void SetPersonas(PersonasT&& value) { m_personasHasBeenSet = true; m_personas = std::forward<PersonasT>(value); }
-    template<typename PersonasT = Aws::Vector<EntityPersonaConfiguration>>
-    AssociatePersonasToEntitiesRequest& WithPersonas(PersonasT&& value) { SetPersonas(std::forward<PersonasT>(value)); return *this;}
-    template<typename PersonasT = EntityPersonaConfiguration>
-    AssociatePersonasToEntitiesRequest& AddPersonas(PersonasT&& value) { m_personasHasBeenSet = true; m_personas.emplace_back(std::forward<PersonasT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
-
-    Aws::Vector<EntityPersonaConfiguration> m_personas;
-    bool m_personasHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPatchBaselineForPatchGroupRequest::SerializePayload() const
-{
+Aws::String GetPatchBaselineForPatchGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_patchGroupHasBeenSet)
-  {
-   payload.WithString("PatchGroup", m_patchGroup);
-
+  if (m_patchGroupHasBeenSet) {
+    payload.WithString("PatchGroup", m_patchGroup);
   }
 
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPatchBaselineForPatchGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPatchBaselineForPatchGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.GetPatchBaselineForPatchGroup"));
   return headers;
-
 }
-
-
-
-

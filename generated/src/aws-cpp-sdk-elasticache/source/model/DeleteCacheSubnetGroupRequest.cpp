@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteCacheSubnetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteCacheSubnetGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const
-{
+Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheSubnetGroup&";
-  if(m_cacheSubnetGroupNameHasBeenSet)
-  {
+  if (m_cacheSubnetGroupNameHasBeenSet) {
     ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCacheSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCacheSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

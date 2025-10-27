@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeSpotFleetInstancesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeSpotFleetInstancesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,24 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSpotFleetInstancesResponse::DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeSpotFleetInstancesResponse::DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeSpotFleetInstancesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeSpotFleetInstancesResponse")) {
     resultNode = rootNode.FirstChild("DescribeSpotFleetInstancesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode activeInstancesNode = resultNode.FirstChild("activeInstanceSet");
-    if(!activeInstancesNode.IsNull())
-    {
+    if (!activeInstancesNode.IsNull()) {
       XmlNode activeInstancesMember = activeInstancesNode.FirstChild("item");
       m_activeInstancesHasBeenSet = !activeInstancesMember.IsNull();
-      while(!activeInstancesMember.IsNull())
-      {
+      while (!activeInstancesMember.IsNull()) {
         m_activeInstances.push_back(activeInstancesMember);
         activeInstancesMember = activeInstancesMember.NextNode("item");
       }
@@ -48,14 +42,12 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
       m_activeInstancesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
-    if(!spotFleetRequestIdNode.IsNull())
-    {
+    if (!spotFleetRequestIdNode.IsNull()) {
       m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
       m_spotFleetRequestIdHasBeenSet = true;
     }
@@ -63,12 +55,11 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotFleetInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotFleetInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

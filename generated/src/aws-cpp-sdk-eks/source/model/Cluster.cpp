@@ -3,351 +3,260 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/Cluster.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/Cluster.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-Cluster::Cluster(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Cluster::Cluster(JsonView jsonValue) { *this = jsonValue; }
 
-Cluster& Cluster::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Cluster& Cluster::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpoint"))
-  {
+  if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourcesVpcConfig"))
-  {
+  if (jsonValue.ValueExists("resourcesVpcConfig")) {
     m_resourcesVpcConfig = jsonValue.GetObject("resourcesVpcConfig");
     m_resourcesVpcConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kubernetesNetworkConfig"))
-  {
+  if (jsonValue.ValueExists("kubernetesNetworkConfig")) {
     m_kubernetesNetworkConfig = jsonValue.GetObject("kubernetesNetworkConfig");
     m_kubernetesNetworkConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logging"))
-  {
+  if (jsonValue.ValueExists("logging")) {
     m_logging = jsonValue.GetObject("logging");
     m_loggingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identity"))
-  {
+  if (jsonValue.ValueExists("identity")) {
     m_identity = jsonValue.GetObject("identity");
     m_identityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificateAuthority"))
-  {
+  if (jsonValue.ValueExists("certificateAuthority")) {
     m_certificateAuthority = jsonValue.GetObject("certificateAuthority");
     m_certificateAuthorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientRequestToken"))
-  {
+  if (jsonValue.ValueExists("clientRequestToken")) {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
     m_clientRequestTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platformVersion"))
-  {
+  if (jsonValue.ValueExists("platformVersion")) {
     m_platformVersion = jsonValue.GetString("platformVersion");
     m_platformVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionConfig"))
-  {
+  if (jsonValue.ValueExists("encryptionConfig")) {
     Aws::Utils::Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
-    for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
-    {
+    for (unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex) {
       m_encryptionConfig.push_back(encryptionConfigJsonList[encryptionConfigIndex].AsObject());
     }
     m_encryptionConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorConfig"))
-  {
+  if (jsonValue.ValueExists("connectorConfig")) {
     m_connectorConfig = jsonValue.GetObject("connectorConfig");
     m_connectorConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("health"))
-  {
+  if (jsonValue.ValueExists("health")) {
     m_health = jsonValue.GetObject("health");
     m_healthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outpostConfig"))
-  {
+  if (jsonValue.ValueExists("outpostConfig")) {
     m_outpostConfig = jsonValue.GetObject("outpostConfig");
     m_outpostConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessConfig"))
-  {
+  if (jsonValue.ValueExists("accessConfig")) {
     m_accessConfig = jsonValue.GetObject("accessConfig");
     m_accessConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("upgradePolicy"))
-  {
+  if (jsonValue.ValueExists("upgradePolicy")) {
     m_upgradePolicy = jsonValue.GetObject("upgradePolicy");
     m_upgradePolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("zonalShiftConfig"))
-  {
+  if (jsonValue.ValueExists("zonalShiftConfig")) {
     m_zonalShiftConfig = jsonValue.GetObject("zonalShiftConfig");
     m_zonalShiftConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remoteNetworkConfig"))
-  {
+  if (jsonValue.ValueExists("remoteNetworkConfig")) {
     m_remoteNetworkConfig = jsonValue.GetObject("remoteNetworkConfig");
     m_remoteNetworkConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("computeConfig"))
-  {
+  if (jsonValue.ValueExists("computeConfig")) {
     m_computeConfig = jsonValue.GetObject("computeConfig");
     m_computeConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("storageConfig"))
-  {
+  if (jsonValue.ValueExists("storageConfig")) {
     m_storageConfig = jsonValue.GetObject("storageConfig");
     m_storageConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletionProtection"))
-  {
+  if (jsonValue.ValueExists("deletionProtection")) {
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Cluster::Jsonize() const
-{
+JsonValue Cluster::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_resourcesVpcConfigHasBeenSet)
-  {
-   payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
-
+  if (m_resourcesVpcConfigHasBeenSet) {
+    payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
   }
 
-  if(m_kubernetesNetworkConfigHasBeenSet)
-  {
-   payload.WithObject("kubernetesNetworkConfig", m_kubernetesNetworkConfig.Jsonize());
-
+  if (m_kubernetesNetworkConfigHasBeenSet) {
+    payload.WithObject("kubernetesNetworkConfig", m_kubernetesNetworkConfig.Jsonize());
   }
 
-  if(m_loggingHasBeenSet)
-  {
-   payload.WithObject("logging", m_logging.Jsonize());
-
+  if (m_loggingHasBeenSet) {
+    payload.WithObject("logging", m_logging.Jsonize());
   }
 
-  if(m_identityHasBeenSet)
-  {
-   payload.WithObject("identity", m_identity.Jsonize());
-
+  if (m_identityHasBeenSet) {
+    payload.WithObject("identity", m_identity.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ClusterStatusMapper::GetNameForClusterStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ClusterStatusMapper::GetNameForClusterStatus(m_status));
   }
 
-  if(m_certificateAuthorityHasBeenSet)
-  {
-   payload.WithObject("certificateAuthority", m_certificateAuthority.Jsonize());
-
+  if (m_certificateAuthorityHasBeenSet) {
+    payload.WithObject("certificateAuthority", m_certificateAuthority.Jsonize());
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
-  if(m_platformVersionHasBeenSet)
-  {
-   payload.WithString("platformVersion", m_platformVersion);
-
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("platformVersion", m_platformVersion);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
-   for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
-   {
-     encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
-   }
-   payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
-
+  if (m_encryptionConfigHasBeenSet) {
+    Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+    for (unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex) {
+      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
+    }
+    payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
   }
 
-  if(m_connectorConfigHasBeenSet)
-  {
-   payload.WithObject("connectorConfig", m_connectorConfig.Jsonize());
-
+  if (m_connectorConfigHasBeenSet) {
+    payload.WithObject("connectorConfig", m_connectorConfig.Jsonize());
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_healthHasBeenSet)
-  {
-   payload.WithObject("health", m_health.Jsonize());
-
+  if (m_healthHasBeenSet) {
+    payload.WithObject("health", m_health.Jsonize());
   }
 
-  if(m_outpostConfigHasBeenSet)
-  {
-   payload.WithObject("outpostConfig", m_outpostConfig.Jsonize());
-
+  if (m_outpostConfigHasBeenSet) {
+    payload.WithObject("outpostConfig", m_outpostConfig.Jsonize());
   }
 
-  if(m_accessConfigHasBeenSet)
-  {
-   payload.WithObject("accessConfig", m_accessConfig.Jsonize());
-
+  if (m_accessConfigHasBeenSet) {
+    payload.WithObject("accessConfig", m_accessConfig.Jsonize());
   }
 
-  if(m_upgradePolicyHasBeenSet)
-  {
-   payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
-
+  if (m_upgradePolicyHasBeenSet) {
+    payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
   }
 
-  if(m_zonalShiftConfigHasBeenSet)
-  {
-   payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
-
+  if (m_zonalShiftConfigHasBeenSet) {
+    payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
   }
 
-  if(m_remoteNetworkConfigHasBeenSet)
-  {
-   payload.WithObject("remoteNetworkConfig", m_remoteNetworkConfig.Jsonize());
-
+  if (m_remoteNetworkConfigHasBeenSet) {
+    payload.WithObject("remoteNetworkConfig", m_remoteNetworkConfig.Jsonize());
   }
 
-  if(m_computeConfigHasBeenSet)
-  {
-   payload.WithObject("computeConfig", m_computeConfig.Jsonize());
-
+  if (m_computeConfigHasBeenSet) {
+    payload.WithObject("computeConfig", m_computeConfig.Jsonize());
   }
 
-  if(m_storageConfigHasBeenSet)
-  {
-   payload.WithObject("storageConfig", m_storageConfig.Jsonize());
-
+  if (m_storageConfigHasBeenSet) {
+    payload.WithObject("storageConfig", m_storageConfig.Jsonize());
   }
 
-  if(m_deletionProtectionHasBeenSet)
-  {
-   payload.WithBool("deletionProtection", m_deletionProtection);
-
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithBool("deletionProtection", m_deletionProtection);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

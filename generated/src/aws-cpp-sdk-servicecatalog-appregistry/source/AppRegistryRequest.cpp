@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
 
-namespace Aws
-{
-namespace AppRegistry
-{
-} // namespace AppRegistry
-} // namespace Aws
+namespace Aws {
+namespace AppRegistry {}  // namespace AppRegistry
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class DataReplicationInitiationStepStatus
-  {
-    NOT_SET,
-    NOT_STARTED,
-    IN_PROGRESS,
-    SUCCEEDED,
-    FAILED,
-    SKIPPED
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class DataReplicationInitiationStepStatus { NOT_SET, NOT_STARTED, IN_PROGRESS, SUCCEEDED, FAILED, SKIPPED };
 
-namespace DataReplicationInitiationStepStatusMapper
-{
+namespace DataReplicationInitiationStepStatusMapper {
 AWS_DRS_API DataReplicationInitiationStepStatus GetDataReplicationInitiationStepStatusForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForDataReplicationInitiationStepStatus(DataReplicationInitiationStepStatus value);
-} // namespace DataReplicationInitiationStepStatusMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace DataReplicationInitiationStepStatusMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

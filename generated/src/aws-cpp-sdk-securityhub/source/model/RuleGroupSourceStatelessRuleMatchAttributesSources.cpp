@@ -3,49 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/RuleGroupSourceStatelessRuleMatchAttributesSources.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/RuleGroupSourceStatelessRuleMatchAttributesSources.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources(JsonView jsonValue)
-{
+RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-RuleGroupSourceStatelessRuleMatchAttributesSources& RuleGroupSourceStatelessRuleMatchAttributesSources::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AddressDefinition"))
-  {
+RuleGroupSourceStatelessRuleMatchAttributesSources& RuleGroupSourceStatelessRuleMatchAttributesSources::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AddressDefinition")) {
     m_addressDefinition = jsonValue.GetString("AddressDefinition");
     m_addressDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleGroupSourceStatelessRuleMatchAttributesSources::Jsonize() const
-{
+JsonValue RuleGroupSourceStatelessRuleMatchAttributesSources::Jsonize() const {
   JsonValue payload;
 
-  if(m_addressDefinitionHasBeenSet)
-  {
-   payload.WithString("AddressDefinition", m_addressDefinition);
-
+  if (m_addressDefinitionHasBeenSet) {
+    payload.WithString("AddressDefinition", m_addressDefinition);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

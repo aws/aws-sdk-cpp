@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::NetworkFirewall;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace NetworkFirewallErrorMapper
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace NetworkFirewallErrorMapper {
 
 static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
@@ -28,50 +25,31 @@ static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOpera
 static const int LOG_DESTINATION_PERMISSION_HASH = HashingUtils::HashString("LogDestinationPermissionException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INSUFFICIENT_CAPACITY_HASH)
-  {
+  if (hashCode == INSUFFICIENT_CAPACITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INSUFFICIENT_CAPACITY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_OWNER_CHECK_HASH)
-  {
+  } else if (hashCode == RESOURCE_OWNER_CHECK_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::RESOURCE_OWNER_CHECK), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_RESOURCE_POLICY_HASH)
-  {
+  } else if (hashCode == INVALID_RESOURCE_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_RESOURCE_POLICY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OPERATION_HASH)
-  {
+  } else if (hashCode == INVALID_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LOG_DESTINATION_PERMISSION_HASH)
-  {
+  } else if (hashCode == LOG_DESTINATION_PERMISSION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LOG_DESTINATION_PERMISSION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace NetworkFirewallErrorMapper
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace NetworkFirewallErrorMapper
+}  // namespace NetworkFirewall
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(JsonView jsonValue) { *this = jsonValue; }
 
-BatchRemoveFacetFromObject& BatchRemoveFacetFromObject::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SchemaFacet"))
-  {
+BatchRemoveFacetFromObject& BatchRemoveFacetFromObject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SchemaFacet")) {
     m_schemaFacet = jsonValue.GetObject("SchemaFacet");
     m_schemaFacetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectReference"))
-  {
+  if (jsonValue.ValueExists("ObjectReference")) {
     m_objectReference = jsonValue.GetObject("ObjectReference");
     m_objectReferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchRemoveFacetFromObject::Jsonize() const
-{
+JsonValue BatchRemoveFacetFromObject::Jsonize() const {
   JsonValue payload;
 
-  if(m_schemaFacetHasBeenSet)
-  {
-   payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
-
+  if (m_schemaFacetHasBeenSet) {
+    payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
   }
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

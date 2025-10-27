@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pi/model/ServiceType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/pi/model/ServiceType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace PI {
+namespace Model {
+namespace ServiceTypeMapper {
 
-namespace Aws
-{
-  namespace PI
-  {
-    namespace Model
-    {
-      namespace ServiceTypeMapper
-      {
+static const int RDS_HASH = HashingUtils::HashString("RDS");
+static const int DOCDB_HASH = HashingUtils::HashString("DOCDB");
 
-        static const int RDS_HASH = HashingUtils::HashString("RDS");
-        static const int DOCDB_HASH = HashingUtils::HashString("DOCDB");
+ServiceType GetServiceTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == RDS_HASH) {
+    return ServiceType::RDS;
+  } else if (hashCode == DOCDB_HASH) {
+    return ServiceType::DOCDB;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ServiceType>(hashCode);
+  }
 
+  return ServiceType::NOT_SET;
+}
 
-        ServiceType GetServiceTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RDS_HASH)
-          {
-            return ServiceType::RDS;
-          }
-          else if (hashCode == DOCDB_HASH)
-          {
-            return ServiceType::DOCDB;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ServiceType>(hashCode);
-          }
+Aws::String GetNameForServiceType(ServiceType enumValue) {
+  switch (enumValue) {
+    case ServiceType::NOT_SET:
+      return {};
+    case ServiceType::RDS:
+      return "RDS";
+    case ServiceType::DOCDB:
+      return "DOCDB";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ServiceType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForServiceType(ServiceType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ServiceType::NOT_SET:
-            return {};
-          case ServiceType::RDS:
-            return "RDS";
-          case ServiceType::DOCDB:
-            return "DOCDB";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ServiceTypeMapper
-    } // namespace Model
-  } // namespace PI
-} // namespace Aws
+}  // namespace ServiceTypeMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

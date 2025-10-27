@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DolbyVisionProfile
-  {
-    NOT_SET,
-    PROFILE_5,
-    PROFILE_8_1
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DolbyVisionProfile { NOT_SET, PROFILE_5, PROFILE_8_1 };
 
-namespace DolbyVisionProfileMapper
-{
+namespace DolbyVisionProfileMapper {
 AWS_MEDIACONVERT_API DolbyVisionProfile GetDolbyVisionProfileForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDolbyVisionProfile(DolbyVisionProfile value);
-} // namespace DolbyVisionProfileMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DolbyVisionProfileMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

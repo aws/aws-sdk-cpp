@@ -5,12 +5,8 @@
 
 #include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointProvider.h>
 
-namespace Aws
-{
-namespace ManagedBlockchainQuery
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ManagedBlockchainQuery
-} // namespace Aws
+namespace Aws {
+namespace ManagedBlockchainQuery {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

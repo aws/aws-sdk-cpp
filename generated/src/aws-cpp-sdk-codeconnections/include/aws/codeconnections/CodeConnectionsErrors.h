@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/codeconnections/CodeConnections_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeConnections
-{
-enum class CodeConnectionsErrors
-{
-  //From Core//
+namespace Aws {
+namespace CodeConnections {
+enum class CodeConnectionsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CodeConnectionsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CodeConnectionsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONDITIONAL_CHECK_FAILED,
   CONFLICT,
   INTERNAL_SERVER,
@@ -63,9 +60,8 @@ enum class CodeConnectionsErrors
   UPDATE_OUT_OF_SYNC
 };
 
-class AWS_CODECONNECTIONS_API CodeConnectionsError : public Aws::Client::AWSError<CodeConnectionsErrors>
-{
-public:
+class AWS_CODECONNECTIONS_API CodeConnectionsError : public Aws::Client::AWSError<CodeConnectionsErrors> {
+ public:
   CodeConnectionsError() {}
   CodeConnectionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeConnectionsErrors>(rhs) {}
   CodeConnectionsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeConnectionsErrors>(rhs) {}
@@ -76,10 +72,9 @@ public:
   T GetModeledError();
 };
 
-namespace CodeConnectionsErrorMapper
-{
-  AWS_CODECONNECTIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CodeConnectionsErrorMapper {
+AWS_CODECONNECTIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace CodeConnections
+}  // namespace Aws

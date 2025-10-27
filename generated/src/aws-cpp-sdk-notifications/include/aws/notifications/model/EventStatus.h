@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class EventStatus
-  {
-    NOT_SET,
-    HEALTHY,
-    UNHEALTHY
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class EventStatus { NOT_SET, HEALTHY, UNHEALTHY };
 
-namespace EventStatusMapper
-{
+namespace EventStatusMapper {
 AWS_NOTIFICATIONS_API EventStatus GetEventStatusForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForEventStatus(EventStatus value);
-} // namespace EventStatusMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace EventStatusMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

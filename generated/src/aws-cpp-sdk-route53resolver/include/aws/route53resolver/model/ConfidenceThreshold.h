@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
-  enum class ConfidenceThreshold
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
-  };
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
+enum class ConfidenceThreshold { NOT_SET, LOW, MEDIUM, HIGH };
 
-namespace ConfidenceThresholdMapper
-{
+namespace ConfidenceThresholdMapper {
 AWS_ROUTE53RESOLVER_API ConfidenceThreshold GetConfidenceThresholdForName(const Aws::String& name);
 
 AWS_ROUTE53RESOLVER_API Aws::String GetNameForConfidenceThreshold(ConfidenceThreshold value);
-} // namespace ConfidenceThresholdMapper
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace ConfidenceThresholdMapper
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

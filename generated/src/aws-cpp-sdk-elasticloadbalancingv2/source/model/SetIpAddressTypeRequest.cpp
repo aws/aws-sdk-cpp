@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/SetIpAddressTypeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/SetIpAddressTypeRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String SetIpAddressTypeRequest::SerializePayload() const
-{
+Aws::String SetIpAddressTypeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetIpAddressType&";
-  if(m_loadBalancerArnHasBeenSet)
-  {
+  if (m_loadBalancerArnHasBeenSet) {
     ss << "LoadBalancerArn=" << StringUtils::URLEncode(m_loadBalancerArn.c_str()) << "&";
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
+  if (m_ipAddressTypeHasBeenSet) {
     ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String SetIpAddressTypeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetIpAddressTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetIpAddressTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

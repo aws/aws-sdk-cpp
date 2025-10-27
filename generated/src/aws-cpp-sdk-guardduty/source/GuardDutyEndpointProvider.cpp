@@ -5,12 +5,8 @@
 
 #include <aws/guardduty/GuardDutyEndpointProvider.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GuardDuty
-} // namespace Aws
+namespace Aws {
+namespace GuardDuty {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GuardDuty
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/CreateBrokerResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mq/model/CreateBrokerResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBrokerResult::CreateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateBrokerResult::CreateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateBrokerResult& CreateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateBrokerResult& CreateBrokerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("brokerArn"))
-  {
+  if (jsonValue.ValueExists("brokerArn")) {
     m_brokerArn = jsonValue.GetString("brokerArn");
     m_brokerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("brokerId"))
-  {
+  if (jsonValue.ValueExists("brokerId")) {
     m_brokerId = jsonValue.GetString("brokerId");
     m_brokerIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,217 +11,158 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ReservationAggregates::ReservationAggregates(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservationAggregates::ReservationAggregates(JsonView jsonValue) { *this = jsonValue; }
 
-ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UtilizationPercentage"))
-  {
+ReservationAggregates& ReservationAggregates::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UtilizationPercentage")) {
     m_utilizationPercentage = jsonValue.GetString("UtilizationPercentage");
     m_utilizationPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UtilizationPercentageInUnits"))
-  {
+  if (jsonValue.ValueExists("UtilizationPercentageInUnits")) {
     m_utilizationPercentageInUnits = jsonValue.GetString("UtilizationPercentageInUnits");
     m_utilizationPercentageInUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PurchasedHours"))
-  {
+  if (jsonValue.ValueExists("PurchasedHours")) {
     m_purchasedHours = jsonValue.GetString("PurchasedHours");
     m_purchasedHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PurchasedUnits"))
-  {
+  if (jsonValue.ValueExists("PurchasedUnits")) {
     m_purchasedUnits = jsonValue.GetString("PurchasedUnits");
     m_purchasedUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalActualHours"))
-  {
+  if (jsonValue.ValueExists("TotalActualHours")) {
     m_totalActualHours = jsonValue.GetString("TotalActualHours");
     m_totalActualHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalActualUnits"))
-  {
+  if (jsonValue.ValueExists("TotalActualUnits")) {
     m_totalActualUnits = jsonValue.GetString("TotalActualUnits");
     m_totalActualUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnusedHours"))
-  {
+  if (jsonValue.ValueExists("UnusedHours")) {
     m_unusedHours = jsonValue.GetString("UnusedHours");
     m_unusedHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnusedUnits"))
-  {
+  if (jsonValue.ValueExists("UnusedUnits")) {
     m_unusedUnits = jsonValue.GetString("UnusedUnits");
     m_unusedUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandCostOfRIHoursUsed"))
-  {
+  if (jsonValue.ValueExists("OnDemandCostOfRIHoursUsed")) {
     m_onDemandCostOfRIHoursUsed = jsonValue.GetString("OnDemandCostOfRIHoursUsed");
     m_onDemandCostOfRIHoursUsedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetRISavings"))
-  {
+  if (jsonValue.ValueExists("NetRISavings")) {
     m_netRISavings = jsonValue.GetString("NetRISavings");
     m_netRISavingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalPotentialRISavings"))
-  {
+  if (jsonValue.ValueExists("TotalPotentialRISavings")) {
     m_totalPotentialRISavings = jsonValue.GetString("TotalPotentialRISavings");
     m_totalPotentialRISavingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AmortizedUpfrontFee"))
-  {
+  if (jsonValue.ValueExists("AmortizedUpfrontFee")) {
     m_amortizedUpfrontFee = jsonValue.GetString("AmortizedUpfrontFee");
     m_amortizedUpfrontFeeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AmortizedRecurringFee"))
-  {
+  if (jsonValue.ValueExists("AmortizedRecurringFee")) {
     m_amortizedRecurringFee = jsonValue.GetString("AmortizedRecurringFee");
     m_amortizedRecurringFeeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalAmortizedFee"))
-  {
+  if (jsonValue.ValueExists("TotalAmortizedFee")) {
     m_totalAmortizedFee = jsonValue.GetString("TotalAmortizedFee");
     m_totalAmortizedFeeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RICostForUnusedHours"))
-  {
+  if (jsonValue.ValueExists("RICostForUnusedHours")) {
     m_rICostForUnusedHours = jsonValue.GetString("RICostForUnusedHours");
     m_rICostForUnusedHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RealizedSavings"))
-  {
+  if (jsonValue.ValueExists("RealizedSavings")) {
     m_realizedSavings = jsonValue.GetString("RealizedSavings");
     m_realizedSavingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnrealizedSavings"))
-  {
+  if (jsonValue.ValueExists("UnrealizedSavings")) {
     m_unrealizedSavings = jsonValue.GetString("UnrealizedSavings");
     m_unrealizedSavingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservationAggregates::Jsonize() const
-{
+JsonValue ReservationAggregates::Jsonize() const {
   JsonValue payload;
 
-  if(m_utilizationPercentageHasBeenSet)
-  {
-   payload.WithString("UtilizationPercentage", m_utilizationPercentage);
-
+  if (m_utilizationPercentageHasBeenSet) {
+    payload.WithString("UtilizationPercentage", m_utilizationPercentage);
   }
 
-  if(m_utilizationPercentageInUnitsHasBeenSet)
-  {
-   payload.WithString("UtilizationPercentageInUnits", m_utilizationPercentageInUnits);
-
+  if (m_utilizationPercentageInUnitsHasBeenSet) {
+    payload.WithString("UtilizationPercentageInUnits", m_utilizationPercentageInUnits);
   }
 
-  if(m_purchasedHoursHasBeenSet)
-  {
-   payload.WithString("PurchasedHours", m_purchasedHours);
-
+  if (m_purchasedHoursHasBeenSet) {
+    payload.WithString("PurchasedHours", m_purchasedHours);
   }
 
-  if(m_purchasedUnitsHasBeenSet)
-  {
-   payload.WithString("PurchasedUnits", m_purchasedUnits);
-
+  if (m_purchasedUnitsHasBeenSet) {
+    payload.WithString("PurchasedUnits", m_purchasedUnits);
   }
 
-  if(m_totalActualHoursHasBeenSet)
-  {
-   payload.WithString("TotalActualHours", m_totalActualHours);
-
+  if (m_totalActualHoursHasBeenSet) {
+    payload.WithString("TotalActualHours", m_totalActualHours);
   }
 
-  if(m_totalActualUnitsHasBeenSet)
-  {
-   payload.WithString("TotalActualUnits", m_totalActualUnits);
-
+  if (m_totalActualUnitsHasBeenSet) {
+    payload.WithString("TotalActualUnits", m_totalActualUnits);
   }
 
-  if(m_unusedHoursHasBeenSet)
-  {
-   payload.WithString("UnusedHours", m_unusedHours);
-
+  if (m_unusedHoursHasBeenSet) {
+    payload.WithString("UnusedHours", m_unusedHours);
   }
 
-  if(m_unusedUnitsHasBeenSet)
-  {
-   payload.WithString("UnusedUnits", m_unusedUnits);
-
+  if (m_unusedUnitsHasBeenSet) {
+    payload.WithString("UnusedUnits", m_unusedUnits);
   }
 
-  if(m_onDemandCostOfRIHoursUsedHasBeenSet)
-  {
-   payload.WithString("OnDemandCostOfRIHoursUsed", m_onDemandCostOfRIHoursUsed);
-
+  if (m_onDemandCostOfRIHoursUsedHasBeenSet) {
+    payload.WithString("OnDemandCostOfRIHoursUsed", m_onDemandCostOfRIHoursUsed);
   }
 
-  if(m_netRISavingsHasBeenSet)
-  {
-   payload.WithString("NetRISavings", m_netRISavings);
-
+  if (m_netRISavingsHasBeenSet) {
+    payload.WithString("NetRISavings", m_netRISavings);
   }
 
-  if(m_totalPotentialRISavingsHasBeenSet)
-  {
-   payload.WithString("TotalPotentialRISavings", m_totalPotentialRISavings);
-
+  if (m_totalPotentialRISavingsHasBeenSet) {
+    payload.WithString("TotalPotentialRISavings", m_totalPotentialRISavings);
   }
 
-  if(m_amortizedUpfrontFeeHasBeenSet)
-  {
-   payload.WithString("AmortizedUpfrontFee", m_amortizedUpfrontFee);
-
+  if (m_amortizedUpfrontFeeHasBeenSet) {
+    payload.WithString("AmortizedUpfrontFee", m_amortizedUpfrontFee);
   }
 
-  if(m_amortizedRecurringFeeHasBeenSet)
-  {
-   payload.WithString("AmortizedRecurringFee", m_amortizedRecurringFee);
-
+  if (m_amortizedRecurringFeeHasBeenSet) {
+    payload.WithString("AmortizedRecurringFee", m_amortizedRecurringFee);
   }
 
-  if(m_totalAmortizedFeeHasBeenSet)
-  {
-   payload.WithString("TotalAmortizedFee", m_totalAmortizedFee);
-
+  if (m_totalAmortizedFeeHasBeenSet) {
+    payload.WithString("TotalAmortizedFee", m_totalAmortizedFee);
   }
 
-  if(m_rICostForUnusedHoursHasBeenSet)
-  {
-   payload.WithString("RICostForUnusedHours", m_rICostForUnusedHours);
-
+  if (m_rICostForUnusedHoursHasBeenSet) {
+    payload.WithString("RICostForUnusedHours", m_rICostForUnusedHours);
   }
 
-  if(m_realizedSavingsHasBeenSet)
-  {
-   payload.WithString("RealizedSavings", m_realizedSavings);
-
+  if (m_realizedSavingsHasBeenSet) {
+    payload.WithString("RealizedSavings", m_realizedSavings);
   }
 
-  if(m_unrealizedSavingsHasBeenSet)
-  {
-   payload.WithString("UnrealizedSavings", m_unrealizedSavings);
-
+  if (m_unrealizedSavingsHasBeenSet) {
+    payload.WithString("UnrealizedSavings", m_unrealizedSavings);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

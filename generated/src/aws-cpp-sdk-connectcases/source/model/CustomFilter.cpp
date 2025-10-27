@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-CustomFilter::CustomFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomFilter::CustomFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CustomFilter& CustomFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fields"))
-  {
+CustomFilter& CustomFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fields")) {
     m_fields = jsonValue.GetObject("fields");
     m_fieldsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomFilter::Jsonize() const
-{
+JsonValue CustomFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldsHasBeenSet)
-  {
-   payload.WithObject("fields", m_fields.Jsonize());
-
+  if (m_fieldsHasBeenSet) {
+    payload.WithObject("fields", m_fields.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

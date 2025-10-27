@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAF
-{
-enum class WAFErrors
-{
-  //From Core//
+namespace Aws {
+namespace WAF {
+enum class WAFErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WAFErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class WAFErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  W_A_F_BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  W_A_F_BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   W_A_F_DISALLOWED_NAME,
   W_A_F_ENTITY_MIGRATION,
   W_A_F_INTERNAL_ERROR,
@@ -68,9 +65,8 @@ enum class WAFErrors
   W_A_F_TAG_OPERATION_INTERNAL_ERROR
 };
 
-class AWS_WAF_API WAFError : public Aws::Client::AWSError<WAFErrors>
-{
-public:
+class AWS_WAF_API WAFError : public Aws::Client::AWSError<WAFErrors> {
+ public:
   WAFError() {}
   WAFError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
   WAFError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
@@ -81,10 +77,9 @@ public:
   T GetModeledError();
 };
 
-namespace WAFErrorMapper
-{
-  AWS_WAF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WAFErrorMapper {
+AWS_WAF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WAF
-} // namespace Aws
+}  // namespace WAF
+}  // namespace Aws

@@ -6,53 +6,52 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/Ec2MarketType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace deadline
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace deadline {
+namespace Model {
 
+/**
+ * <p>The details of the Amazon EC2 instance market options for a service managed
+ * fleet.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ServiceManagedEc2InstanceMarketOptions">AWS
+ * API Reference</a></p>
+ */
+class ServiceManagedEc2InstanceMarketOptions {
+ public:
+  AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions() = default;
+  AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The details of the Amazon EC2 instance market options for a service managed
-   * fleet.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ServiceManagedEc2InstanceMarketOptions">AWS
-   * API Reference</a></p>
+   * <p>The Amazon EC2 instance type.</p>
    */
-  class ServiceManagedEc2InstanceMarketOptions
-  {
-  public:
-    AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions() = default;
-    AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline Ec2MarketType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(Ec2MarketType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ServiceManagedEc2InstanceMarketOptions& WithType(Ec2MarketType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Ec2MarketType m_type{Ec2MarketType::NOT_SET};
+  bool m_typeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
-    inline Ec2MarketType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(Ec2MarketType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ServiceManagedEc2InstanceMarketOptions& WithType(Ec2MarketType value) { SetType(value); return *this;}
-    ///@}
-  private:
-
-    Ec2MarketType m_type{Ec2MarketType::NOT_SET};
-    bool m_typeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

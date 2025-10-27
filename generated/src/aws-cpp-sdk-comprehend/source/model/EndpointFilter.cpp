@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EndpointFilter::EndpointFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointFilter::EndpointFilter(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointFilter& EndpointFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ModelArn"))
-  {
+EndpointFilter& EndpointFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ModelArn")) {
     m_modelArn = jsonValue.GetString("ModelArn");
     m_modelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimeBefore"))
-  {
+  if (jsonValue.ValueExists("CreationTimeBefore")) {
     m_creationTimeBefore = jsonValue.GetDouble("CreationTimeBefore");
     m_creationTimeBeforeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimeAfter"))
-  {
+  if (jsonValue.ValueExists("CreationTimeAfter")) {
     m_creationTimeAfter = jsonValue.GetDouble("CreationTimeAfter");
     m_creationTimeAfterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointFilter::Jsonize() const
-{
+JsonValue EndpointFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelArnHasBeenSet)
-  {
-   payload.WithString("ModelArn", m_modelArn);
-
+  if (m_modelArnHasBeenSet) {
+    payload.WithString("ModelArn", m_modelArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", EndpointStatusMapper::GetNameForEndpointStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", EndpointStatusMapper::GetNameForEndpointStatus(m_status));
   }
 
-  if(m_creationTimeBeforeHasBeenSet)
-  {
-   payload.WithDouble("CreationTimeBefore", m_creationTimeBefore.SecondsWithMSPrecision());
+  if (m_creationTimeBeforeHasBeenSet) {
+    payload.WithDouble("CreationTimeBefore", m_creationTimeBefore.SecondsWithMSPrecision());
   }
 
-  if(m_creationTimeAfterHasBeenSet)
-  {
-   payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
+  if (m_creationTimeAfterHasBeenSet) {
+    payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

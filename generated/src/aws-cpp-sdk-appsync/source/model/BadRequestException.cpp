@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-BadRequestException::BadRequestException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BadRequestException::BadRequestException(JsonView jsonValue) { *this = jsonValue; }
 
-BadRequestException& BadRequestException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+BadRequestException& BadRequestException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = BadRequestReasonMapper::GetBadRequestReasonForName(jsonValue.GetString("reason"));
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detail"))
-  {
+  if (jsonValue.ValueExists("detail")) {
     m_detail = jsonValue.GetObject("detail");
     m_detailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BadRequestException::Jsonize() const
-{
+JsonValue BadRequestException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", BadRequestReasonMapper::GetNameForBadRequestReason(m_reason));
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", BadRequestReasonMapper::GetNameForBadRequestReason(m_reason));
   }
 
-  if(m_detailHasBeenSet)
-  {
-   payload.WithObject("detail", m_detail.Jsonize());
-
+  if (m_detailHasBeenSet) {
+    payload.WithObject("detail", m_detail.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

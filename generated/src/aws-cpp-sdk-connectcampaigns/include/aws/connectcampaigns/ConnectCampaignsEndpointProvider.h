@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectcampaigns/ConnectCampaignsEndpointRules.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/connectcampaigns/ConnectCampaignsEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ConnectCampaignsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using ConnectCampaignsEndpointProviderBase =
     EndpointProviderBase<ConnectCampaignsClientConfiguration, ConnectCampaignsBuiltInParameters, ConnectCampaignsClientContextParameters>;
 
 using ConnectCampaignsDefaultEpProviderBase =
-    DefaultEndpointProvider<ConnectCampaignsClientConfiguration, ConnectCampaignsBuiltInParameters, ConnectCampaignsClientContextParameters>;
+    DefaultEndpointProvider<ConnectCampaignsClientConfiguration, ConnectCampaignsBuiltInParameters,
+                            ConnectCampaignsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsEndpointProvider : public ConnectCampaignsDefaultEpProviderBase
-{
-public:
-    using ConnectCampaignsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsEndpointProvider : public ConnectCampaignsDefaultEpProviderBase {
+ public:
+  using ConnectCampaignsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ConnectCampaignsEndpointProvider()
-      : ConnectCampaignsDefaultEpProviderBase(Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::GetRulesBlob(), Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::RulesBlobSize)
-    {}
+  ConnectCampaignsEndpointProvider()
+      : ConnectCampaignsDefaultEpProviderBase(Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::GetRulesBlob(),
+                                              Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::RulesBlobSize) {}
 
-    ~ConnectCampaignsEndpointProvider()
-    {
-    }
+  ~ConnectCampaignsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ConnectCampaigns
+}  // namespace Aws

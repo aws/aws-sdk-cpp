@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class SnapshotStatus
-  {
-    NOT_SET,
-    Creating,
-    Completed,
-    Failed
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class SnapshotStatus { NOT_SET, Creating, Completed, Failed };
 
-namespace SnapshotStatusMapper
-{
+namespace SnapshotStatusMapper {
 AWS_DIRECTORYSERVICE_API SnapshotStatus GetSnapshotStatusForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForSnapshotStatus(SnapshotStatus value);
-} // namespace SnapshotStatusMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace SnapshotStatusMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

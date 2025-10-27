@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/notificationscontacts/NotificationsContactsEndpointRules.h>
+#include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace NotificationsContacts
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace NotificationsContacts {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NotificationsContactsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using NotificationsContactsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using NotificationsContactsEndpointProviderBase =
-    EndpointProviderBase<NotificationsContactsClientConfiguration, NotificationsContactsBuiltInParameters, NotificationsContactsClientContextParameters>;
+    EndpointProviderBase<NotificationsContactsClientConfiguration, NotificationsContactsBuiltInParameters,
+                         NotificationsContactsClientContextParameters>;
 
 using NotificationsContactsDefaultEpProviderBase =
-    DefaultEndpointProvider<NotificationsContactsClientConfiguration, NotificationsContactsBuiltInParameters, NotificationsContactsClientContextParameters>;
+    DefaultEndpointProvider<NotificationsContactsClientConfiguration, NotificationsContactsBuiltInParameters,
+                            NotificationsContactsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsEndpointProvider : public NotificationsContactsDefaultEpProviderBase
-{
-public:
-    using NotificationsContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsEndpointProvider : public NotificationsContactsDefaultEpProviderBase {
+ public:
+  using NotificationsContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NotificationsContactsEndpointProvider()
-      : NotificationsContactsDefaultEpProviderBase(Aws::NotificationsContacts::NotificationsContactsEndpointRules::GetRulesBlob(), Aws::NotificationsContacts::NotificationsContactsEndpointRules::RulesBlobSize)
-    {}
+  NotificationsContactsEndpointProvider()
+      : NotificationsContactsDefaultEpProviderBase(Aws::NotificationsContacts::NotificationsContactsEndpointRules::GetRulesBlob(),
+                                                   Aws::NotificationsContacts::NotificationsContactsEndpointRules::RulesBlobSize) {}
 
-    ~NotificationsContactsEndpointProvider()
-    {
-    }
+  ~NotificationsContactsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace NotificationsContacts
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace NotificationsContacts
+}  // namespace Aws

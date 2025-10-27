@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
-namespace Aws
-{
-namespace LaunchWizard
-{
-namespace Model
-{
-  enum class WorkloadStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    DISABLED,
-    DELETED
-  };
+namespace Aws {
+namespace LaunchWizard {
+namespace Model {
+enum class WorkloadStatus { NOT_SET, ACTIVE, INACTIVE, DISABLED, DELETED };
 
-namespace WorkloadStatusMapper
-{
+namespace WorkloadStatusMapper {
 AWS_LAUNCHWIZARD_API WorkloadStatus GetWorkloadStatusForName(const Aws::String& name);
 
 AWS_LAUNCHWIZARD_API Aws::String GetNameForWorkloadStatus(WorkloadStatus value);
-} // namespace WorkloadStatusMapper
-} // namespace Model
-} // namespace LaunchWizard
-} // namespace Aws
+}  // namespace WorkloadStatusMapper
+}  // namespace Model
+}  // namespace LaunchWizard
+}  // namespace Aws

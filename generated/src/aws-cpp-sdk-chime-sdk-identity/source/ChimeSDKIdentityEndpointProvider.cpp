@@ -5,12 +5,8 @@
 
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

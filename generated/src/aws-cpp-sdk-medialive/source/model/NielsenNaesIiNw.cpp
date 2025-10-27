@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/NielsenNaesIiNw.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/NielsenNaesIiNw.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-NielsenNaesIiNw::NielsenNaesIiNw(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NielsenNaesIiNw::NielsenNaesIiNw(JsonView jsonValue) { *this = jsonValue; }
 
-NielsenNaesIiNw& NielsenNaesIiNw::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("checkDigitString"))
-  {
+NielsenNaesIiNw& NielsenNaesIiNw::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("checkDigitString")) {
     m_checkDigitString = jsonValue.GetString("checkDigitString");
     m_checkDigitStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sid"))
-  {
+  if (jsonValue.ValueExists("sid")) {
     m_sid = jsonValue.GetDouble("sid");
     m_sidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timezone"))
-  {
+  if (jsonValue.ValueExists("timezone")) {
     m_timezone = NielsenWatermarkTimezonesMapper::GetNielsenWatermarkTimezonesForName(jsonValue.GetString("timezone"));
     m_timezoneHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NielsenNaesIiNw::Jsonize() const
-{
+JsonValue NielsenNaesIiNw::Jsonize() const {
   JsonValue payload;
 
-  if(m_checkDigitStringHasBeenSet)
-  {
-   payload.WithString("checkDigitString", m_checkDigitString);
-
+  if (m_checkDigitStringHasBeenSet) {
+    payload.WithString("checkDigitString", m_checkDigitString);
   }
 
-  if(m_sidHasBeenSet)
-  {
-   payload.WithDouble("sid", m_sid);
-
+  if (m_sidHasBeenSet) {
+    payload.WithDouble("sid", m_sid);
   }
 
-  if(m_timezoneHasBeenSet)
-  {
-   payload.WithString("timezone", NielsenWatermarkTimezonesMapper::GetNameForNielsenWatermarkTimezones(m_timezone));
+  if (m_timezoneHasBeenSet) {
+    payload.WithString("timezone", NielsenWatermarkTimezonesMapper::GetNameForNielsenWatermarkTimezones(m_timezone));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

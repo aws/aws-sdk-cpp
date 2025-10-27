@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-EvaluationPrecomputedInferenceSource::EvaluationPrecomputedInferenceSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationPrecomputedInferenceSource::EvaluationPrecomputedInferenceSource(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationPrecomputedInferenceSource& EvaluationPrecomputedInferenceSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inferenceSourceIdentifier"))
-  {
+EvaluationPrecomputedInferenceSource& EvaluationPrecomputedInferenceSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inferenceSourceIdentifier")) {
     m_inferenceSourceIdentifier = jsonValue.GetString("inferenceSourceIdentifier");
     m_inferenceSourceIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationPrecomputedInferenceSource::Jsonize() const
-{
+JsonValue EvaluationPrecomputedInferenceSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_inferenceSourceIdentifierHasBeenSet)
-  {
-   payload.WithString("inferenceSourceIdentifier", m_inferenceSourceIdentifier);
-
+  if (m_inferenceSourceIdentifierHasBeenSet) {
+    payload.WithString("inferenceSourceIdentifier", m_inferenceSourceIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

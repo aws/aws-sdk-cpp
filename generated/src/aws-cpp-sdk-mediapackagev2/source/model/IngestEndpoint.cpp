@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackagev2/model/IngestEndpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackagev2/model/IngestEndpoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace mediapackagev2
-{
-namespace Model
-{
+namespace Aws {
+namespace mediapackagev2 {
+namespace Model {
 
-IngestEndpoint::IngestEndpoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IngestEndpoint::IngestEndpoint(JsonView jsonValue) { *this = jsonValue; }
 
-IngestEndpoint& IngestEndpoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+IngestEndpoint& IngestEndpoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Url"))
-  {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IngestEndpoint::Jsonize() const
-{
+JsonValue IngestEndpoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace mediapackagev2
-} // namespace Aws
+}  // namespace Model
+}  // namespace mediapackagev2
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetImageBlockPublicAccessStateRequest::SerializePayload() const
-{
+Aws::String GetImageBlockPublicAccessStateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetImageBlockPublicAccessState&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetImageBlockPublicAccessStateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetImageBlockPublicAccessStateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetImageBlockPublicAccessStateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

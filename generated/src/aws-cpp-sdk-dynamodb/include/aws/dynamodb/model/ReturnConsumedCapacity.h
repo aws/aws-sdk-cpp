@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ReturnConsumedCapacity
-  {
-    NOT_SET,
-    INDEXES,
-    TOTAL,
-    NONE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ReturnConsumedCapacity { NOT_SET, INDEXES, TOTAL, NONE };
 
-namespace ReturnConsumedCapacityMapper
-{
+namespace ReturnConsumedCapacityMapper {
 AWS_DYNAMODB_API ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value);
-} // namespace ReturnConsumedCapacityMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ReturnConsumedCapacityMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class ExportType
-  {
-    NOT_SET,
-    ALEXA_SKILLS_KIT,
-    LEX
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class ExportType { NOT_SET, ALEXA_SKILLS_KIT, LEX };
 
-namespace ExportTypeMapper
-{
+namespace ExportTypeMapper {
 AWS_LEXMODELBUILDINGSERVICE_API ExportType GetExportTypeForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForExportType(ExportType value);
-} // namespace ExportTypeMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace ExportTypeMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

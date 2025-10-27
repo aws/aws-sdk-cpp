@@ -11,52 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-BedrockFoundationModelContextEnrichmentConfiguration::BedrockFoundationModelContextEnrichmentConfiguration(JsonView jsonValue)
-{
+BedrockFoundationModelContextEnrichmentConfiguration::BedrockFoundationModelContextEnrichmentConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-BedrockFoundationModelContextEnrichmentConfiguration& BedrockFoundationModelContextEnrichmentConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enrichmentStrategyConfiguration"))
-  {
+BedrockFoundationModelContextEnrichmentConfiguration& BedrockFoundationModelContextEnrichmentConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enrichmentStrategyConfiguration")) {
     m_enrichmentStrategyConfiguration = jsonValue.GetObject("enrichmentStrategyConfiguration");
     m_enrichmentStrategyConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelArn"))
-  {
+  if (jsonValue.ValueExists("modelArn")) {
     m_modelArn = jsonValue.GetString("modelArn");
     m_modelArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockFoundationModelContextEnrichmentConfiguration::Jsonize() const
-{
+JsonValue BedrockFoundationModelContextEnrichmentConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enrichmentStrategyConfigurationHasBeenSet)
-  {
-   payload.WithObject("enrichmentStrategyConfiguration", m_enrichmentStrategyConfiguration.Jsonize());
-
+  if (m_enrichmentStrategyConfigurationHasBeenSet) {
+    payload.WithObject("enrichmentStrategyConfiguration", m_enrichmentStrategyConfiguration.Jsonize());
   }
 
-  if(m_modelArnHasBeenSet)
-  {
-   payload.WithString("modelArn", m_modelArn);
-
+  if (m_modelArnHasBeenSet) {
+    payload.WithString("modelArn", m_modelArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

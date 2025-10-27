@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/RAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
-  enum class ResourceShareAssociationStatus
-  {
-    NOT_SET,
-    ASSOCIATING,
-    ASSOCIATED,
-    FAILED,
-    DISASSOCIATING,
-    DISASSOCIATED
-  };
+namespace Aws {
+namespace RAM {
+namespace Model {
+enum class ResourceShareAssociationStatus { NOT_SET, ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED };
 
-namespace ResourceShareAssociationStatusMapper
-{
+namespace ResourceShareAssociationStatusMapper {
 AWS_RAM_API ResourceShareAssociationStatus GetResourceShareAssociationStatusForName(const Aws::String& name);
 
 AWS_RAM_API Aws::String GetNameForResourceShareAssociationStatus(ResourceShareAssociationStatus value);
-} // namespace ResourceShareAssociationStatusMapper
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace ResourceShareAssociationStatusMapper
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

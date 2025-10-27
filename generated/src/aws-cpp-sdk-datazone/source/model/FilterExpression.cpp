@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/FilterExpression.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/FilterExpression.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-FilterExpression::FilterExpression(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterExpression::FilterExpression(JsonView jsonValue) { *this = jsonValue; }
 
-FilterExpression& FilterExpression::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("expression"))
-  {
+FilterExpression& FilterExpression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expression")) {
     m_expression = jsonValue.GetString("expression");
     m_expressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = FilterExpressionTypeMapper::GetFilterExpressionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FilterExpression::Jsonize() const
-{
+JsonValue FilterExpression::Jsonize() const {
   JsonValue payload;
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FilterExpressionTypeMapper::GetNameForFilterExpressionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FilterExpressionTypeMapper::GetNameForFilterExpressionType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

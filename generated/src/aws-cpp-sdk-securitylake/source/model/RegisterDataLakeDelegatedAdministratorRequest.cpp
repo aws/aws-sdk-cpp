@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securitylake/model/RegisterDataLakeDelegatedAdministratorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/RegisterDataLakeDelegatedAdministratorRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterDataLakeDelegatedAdministratorRequest::SerializePayload() const
-{
+Aws::String RegisterDataLakeDelegatedAdministratorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class ViewDialect
-  {
-    NOT_SET,
-    REDSHIFT,
-    ATHENA,
-    SPARK
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class ViewDialect { NOT_SET, REDSHIFT, ATHENA, SPARK };
 
-namespace ViewDialectMapper
-{
+namespace ViewDialectMapper {
 AWS_GLUE_API ViewDialect GetViewDialectForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForViewDialect(ViewDialect value);
-} // namespace ViewDialectMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace ViewDialectMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

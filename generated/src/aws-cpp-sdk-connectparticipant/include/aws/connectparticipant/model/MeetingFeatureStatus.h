@@ -7,25 +7,16 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
-  enum class MeetingFeatureStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    UNAVAILABLE
-  };
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
+enum class MeetingFeatureStatus { NOT_SET, AVAILABLE, UNAVAILABLE };
 
-namespace MeetingFeatureStatusMapper
-{
+namespace MeetingFeatureStatusMapper {
 AWS_CONNECTPARTICIPANT_API MeetingFeatureStatus GetMeetingFeatureStatusForName(const Aws::String& name);
 
 AWS_CONNECTPARTICIPANT_API Aws::String GetNameForMeetingFeatureStatus(MeetingFeatureStatus value);
-} // namespace MeetingFeatureStatusMapper
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace MeetingFeatureStatusMapper
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

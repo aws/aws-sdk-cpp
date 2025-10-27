@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/UpdateSubscriptionDefinitionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/UpdateSubscriptionDefinitionRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSubscriptionDefinitionRequest::SerializePayload() const
-{
+Aws::String UpdateSubscriptionDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

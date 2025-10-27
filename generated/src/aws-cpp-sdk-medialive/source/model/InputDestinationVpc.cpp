@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/InputDestinationVpc.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/InputDestinationVpc.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-InputDestinationVpc::InputDestinationVpc(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputDestinationVpc::InputDestinationVpc(JsonView jsonValue) { *this = jsonValue; }
 
-InputDestinationVpc& InputDestinationVpc::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("availabilityZone"))
-  {
+InputDestinationVpc& InputDestinationVpc::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("availabilityZone")) {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkInterfaceId"))
-  {
+  if (jsonValue.ValueExists("networkInterfaceId")) {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
     m_networkInterfaceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputDestinationVpc::Jsonize() const
-{
+JsonValue InputDestinationVpc::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("availabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("availabilityZone", m_availabilityZone);
   }
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-   payload.WithString("networkInterfaceId", m_networkInterfaceId);
-
+  if (m_networkInterfaceIdHasBeenSet) {
+    payload.WithString("networkInterfaceId", m_networkInterfaceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

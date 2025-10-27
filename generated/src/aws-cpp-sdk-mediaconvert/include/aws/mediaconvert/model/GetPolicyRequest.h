@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-  /**
-   */
-  class GetPolicyRequest : public MediaConvertRequest
-  {
-  public:
-    AWS_MEDIACONVERT_API GetPolicyRequest() = default;
+/**
+ */
+class GetPolicyRequest : public MediaConvertRequest {
+ public:
+  AWS_MEDIACONVERT_API GetPolicyRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetPolicy"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetPolicy"; }
 
-    AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
+  AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/ApplicationProvider.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/ApplicationProvider.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-ApplicationProvider::ApplicationProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationProvider::ApplicationProvider(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationProvider& ApplicationProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationProviderArn"))
-  {
+ApplicationProvider& ApplicationProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationProviderArn")) {
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
     m_applicationProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FederationProtocol"))
-  {
+  if (jsonValue.ValueExists("FederationProtocol")) {
     m_federationProtocol = FederationProtocolMapper::GetFederationProtocolForName(jsonValue.GetString("FederationProtocol"));
     m_federationProtocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayData"))
-  {
+  if (jsonValue.ValueExists("DisplayData")) {
     m_displayData = jsonValue.GetObject("DisplayData");
     m_displayDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceServerConfig"))
-  {
+  if (jsonValue.ValueExists("ResourceServerConfig")) {
     m_resourceServerConfig = jsonValue.GetObject("ResourceServerConfig");
     m_resourceServerConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationProvider::Jsonize() const
-{
+JsonValue ApplicationProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationProviderArnHasBeenSet)
-  {
-   payload.WithString("ApplicationProviderArn", m_applicationProviderArn);
-
+  if (m_applicationProviderArnHasBeenSet) {
+    payload.WithString("ApplicationProviderArn", m_applicationProviderArn);
   }
 
-  if(m_federationProtocolHasBeenSet)
-  {
-   payload.WithString("FederationProtocol", FederationProtocolMapper::GetNameForFederationProtocol(m_federationProtocol));
+  if (m_federationProtocolHasBeenSet) {
+    payload.WithString("FederationProtocol", FederationProtocolMapper::GetNameForFederationProtocol(m_federationProtocol));
   }
 
-  if(m_displayDataHasBeenSet)
-  {
-   payload.WithObject("DisplayData", m_displayData.Jsonize());
-
+  if (m_displayDataHasBeenSet) {
+    payload.WithObject("DisplayData", m_displayData.Jsonize());
   }
 
-  if(m_resourceServerConfigHasBeenSet)
-  {
-   payload.WithObject("ResourceServerConfig", m_resourceServerConfig.Jsonize());
-
+  if (m_resourceServerConfigHasBeenSet) {
+    payload.WithObject("ResourceServerConfig", m_resourceServerConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

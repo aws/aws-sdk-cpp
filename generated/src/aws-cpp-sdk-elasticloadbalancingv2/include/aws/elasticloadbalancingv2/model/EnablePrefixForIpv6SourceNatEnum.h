@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class EnablePrefixForIpv6SourceNatEnum
-  {
-    NOT_SET,
-    on,
-    off
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class EnablePrefixForIpv6SourceNatEnum { NOT_SET, on, off };
 
-namespace EnablePrefixForIpv6SourceNatEnumMapper
-{
+namespace EnablePrefixForIpv6SourceNatEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API EnablePrefixForIpv6SourceNatEnum GetEnablePrefixForIpv6SourceNatEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForEnablePrefixForIpv6SourceNatEnum(EnablePrefixForIpv6SourceNatEnum value);
-} // namespace EnablePrefixForIpv6SourceNatEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace EnablePrefixForIpv6SourceNatEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

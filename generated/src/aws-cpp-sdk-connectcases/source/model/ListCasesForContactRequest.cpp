@@ -12,31 +12,20 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListCasesForContactRequest::SerializePayload() const
-{
+Aws::String ListCasesForContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contactArnHasBeenSet)
-  {
-   payload.WithString("contactArn", m_contactArn);
-
+  if (m_contactArnHasBeenSet) {
+    payload.WithString("contactArn", m_contactArn);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

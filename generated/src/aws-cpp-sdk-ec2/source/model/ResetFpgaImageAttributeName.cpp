@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ResetFpgaImageAttributeName.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/ResetFpgaImageAttributeName.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace ResetFpgaImageAttributeNameMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace ResetFpgaImageAttributeNameMapper
-      {
+static const int loadPermission_HASH = HashingUtils::HashString("loadPermission");
 
-        static const int loadPermission_HASH = HashingUtils::HashString("loadPermission");
+ResetFpgaImageAttributeName GetResetFpgaImageAttributeNameForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == loadPermission_HASH) {
+    return ResetFpgaImageAttributeName::loadPermission;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResetFpgaImageAttributeName>(hashCode);
+  }
 
+  return ResetFpgaImageAttributeName::NOT_SET;
+}
 
-        ResetFpgaImageAttributeName GetResetFpgaImageAttributeNameForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == loadPermission_HASH)
-          {
-            return ResetFpgaImageAttributeName::loadPermission;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResetFpgaImageAttributeName>(hashCode);
-          }
+Aws::String GetNameForResetFpgaImageAttributeName(ResetFpgaImageAttributeName enumValue) {
+  switch (enumValue) {
+    case ResetFpgaImageAttributeName::NOT_SET:
+      return {};
+    case ResetFpgaImageAttributeName::loadPermission:
+      return "loadPermission";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ResetFpgaImageAttributeName::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForResetFpgaImageAttributeName(ResetFpgaImageAttributeName enumValue)
-        {
-          switch(enumValue)
-          {
-          case ResetFpgaImageAttributeName::NOT_SET:
-            return {};
-          case ResetFpgaImageAttributeName::loadPermission:
-            return "loadPermission";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ResetFpgaImageAttributeNameMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace ResetFpgaImageAttributeNameMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

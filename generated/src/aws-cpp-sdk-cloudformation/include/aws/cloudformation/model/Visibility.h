@@ -7,25 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class Visibility
-  {
-    NOT_SET,
-    PUBLIC_,
-    PRIVATE_
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class Visibility { NOT_SET, PUBLIC_, PRIVATE_ };
 
-namespace VisibilityMapper
-{
+namespace VisibilityMapper {
 AWS_CLOUDFORMATION_API Visibility GetVisibilityForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForVisibility(Visibility value);
-} // namespace VisibilityMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace VisibilityMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

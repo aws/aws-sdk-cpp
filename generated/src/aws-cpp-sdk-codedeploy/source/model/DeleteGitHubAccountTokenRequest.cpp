@@ -12,27 +12,18 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteGitHubAccountTokenRequest::SerializePayload() const
-{
+Aws::String DeleteGitHubAccountTokenRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tokenNameHasBeenSet)
-  {
-   payload.WithString("tokenName", m_tokenName);
-
+  if (m_tokenNameHasBeenSet) {
+    payload.WithString("tokenName", m_tokenName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteGitHubAccountTokenRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteGitHubAccountTokenRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeleteGitHubAccountToken"));
   return headers;
-
 }
-
-
-
-

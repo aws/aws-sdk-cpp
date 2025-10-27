@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Model
-{
-  enum class ShiftType
-  {
-    NOT_SET,
-    REGULAR,
-    OVERRIDDEN
-  };
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
+enum class ShiftType { NOT_SET, REGULAR, OVERRIDDEN };
 
-namespace ShiftTypeMapper
-{
+namespace ShiftTypeMapper {
 AWS_SSMCONTACTS_API ShiftType GetShiftTypeForName(const Aws::String& name);
 
 AWS_SSMCONTACTS_API Aws::String GetNameForShiftType(ShiftType value);
-} // namespace ShiftTypeMapper
-} // namespace Model
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace ShiftTypeMapper
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

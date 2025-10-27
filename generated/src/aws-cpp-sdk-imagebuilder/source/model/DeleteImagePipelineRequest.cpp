@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/DeleteImagePipelineRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/imagebuilder/model/DeleteImagePipelineRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteImagePipelineRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteImagePipelineRequest::SerializePayload() const { return {}; }
+
+void DeleteImagePipelineRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_imagePipelineArnHasBeenSet) {
+    ss << m_imagePipelineArn;
+    uri.AddQueryStringParameter("imagePipelineArn", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteImagePipelineRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_imagePipelineArnHasBeenSet)
-    {
-      ss << m_imagePipelineArn;
-      uri.AddQueryStringParameter("imagePipelineArn", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

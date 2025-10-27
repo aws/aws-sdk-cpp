@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class PositionConfigurationStatus
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class PositionConfigurationStatus { NOT_SET, Enabled, Disabled };
 
-namespace PositionConfigurationStatusMapper
-{
+namespace PositionConfigurationStatusMapper {
 AWS_IOTWIRELESS_API PositionConfigurationStatus GetPositionConfigurationStatusForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForPositionConfigurationStatus(PositionConfigurationStatus value);
-} // namespace PositionConfigurationStatusMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace PositionConfigurationStatusMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

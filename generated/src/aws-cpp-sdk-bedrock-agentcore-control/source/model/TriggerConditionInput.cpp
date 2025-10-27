@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-TriggerConditionInput::TriggerConditionInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TriggerConditionInput::TriggerConditionInput(JsonView jsonValue) { *this = jsonValue; }
 
-TriggerConditionInput& TriggerConditionInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messageBasedTrigger"))
-  {
+TriggerConditionInput& TriggerConditionInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messageBasedTrigger")) {
     m_messageBasedTrigger = jsonValue.GetObject("messageBasedTrigger");
     m_messageBasedTriggerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenBasedTrigger"))
-  {
+  if (jsonValue.ValueExists("tokenBasedTrigger")) {
     m_tokenBasedTrigger = jsonValue.GetObject("tokenBasedTrigger");
     m_tokenBasedTriggerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeBasedTrigger"))
-  {
+  if (jsonValue.ValueExists("timeBasedTrigger")) {
     m_timeBasedTrigger = jsonValue.GetObject("timeBasedTrigger");
     m_timeBasedTriggerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TriggerConditionInput::Jsonize() const
-{
+JsonValue TriggerConditionInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageBasedTriggerHasBeenSet)
-  {
-   payload.WithObject("messageBasedTrigger", m_messageBasedTrigger.Jsonize());
-
+  if (m_messageBasedTriggerHasBeenSet) {
+    payload.WithObject("messageBasedTrigger", m_messageBasedTrigger.Jsonize());
   }
 
-  if(m_tokenBasedTriggerHasBeenSet)
-  {
-   payload.WithObject("tokenBasedTrigger", m_tokenBasedTrigger.Jsonize());
-
+  if (m_tokenBasedTriggerHasBeenSet) {
+    payload.WithObject("tokenBasedTrigger", m_tokenBasedTrigger.Jsonize());
   }
 
-  if(m_timeBasedTriggerHasBeenSet)
-  {
-   payload.WithObject("timeBasedTrigger", m_timeBasedTrigger.Jsonize());
-
+  if (m_timeBasedTriggerHasBeenSet) {
+    payload.WithObject("timeBasedTrigger", m_timeBasedTrigger.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

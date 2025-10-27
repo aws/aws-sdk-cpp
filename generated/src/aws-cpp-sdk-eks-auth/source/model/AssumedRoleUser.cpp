@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks-auth/model/AssumedRoleUser.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks-auth/model/AssumedRoleUser.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKSAuth
-{
-namespace Model
-{
+namespace Aws {
+namespace EKSAuth {
+namespace Model {
 
-AssumedRoleUser::AssumedRoleUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssumedRoleUser::AssumedRoleUser(JsonView jsonValue) { *this = jsonValue; }
 
-AssumedRoleUser& AssumedRoleUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+AssumedRoleUser& AssumedRoleUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assumeRoleId"))
-  {
+  if (jsonValue.ValueExists("assumeRoleId")) {
     m_assumeRoleId = jsonValue.GetString("assumeRoleId");
     m_assumeRoleIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssumedRoleUser::Jsonize() const
-{
+JsonValue AssumedRoleUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_assumeRoleIdHasBeenSet)
-  {
-   payload.WithString("assumeRoleId", m_assumeRoleId);
-
+  if (m_assumeRoleIdHasBeenSet) {
+    payload.WithString("assumeRoleId", m_assumeRoleId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKSAuth
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKSAuth
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMessagingStreamingConfigurationsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetMessagingStreamingConfigurationsRequest::SerializePayload() const { return {}; }

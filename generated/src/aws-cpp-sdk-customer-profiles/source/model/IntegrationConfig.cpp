@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/IntegrationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/IntegrationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-IntegrationConfig::IntegrationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntegrationConfig::IntegrationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IntegrationConfig& IntegrationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AppflowIntegration"))
-  {
+IntegrationConfig& IntegrationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AppflowIntegration")) {
     m_appflowIntegration = jsonValue.GetObject("AppflowIntegration");
     m_appflowIntegrationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntegrationConfig::Jsonize() const
-{
+JsonValue IntegrationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_appflowIntegrationHasBeenSet)
-  {
-   payload.WithObject("AppflowIntegration", m_appflowIntegration.Jsonize());
-
+  if (m_appflowIntegrationHasBeenSet) {
+    payload.WithObject("AppflowIntegration", m_appflowIntegration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

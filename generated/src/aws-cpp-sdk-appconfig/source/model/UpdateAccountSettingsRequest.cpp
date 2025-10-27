@@ -12,19 +12,12 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateAccountSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deletionProtectionHasBeenSet)
-  {
-   payload.WithObject("DeletionProtection", m_deletionProtection.Jsonize());
-
+  if (m_deletionProtectionHasBeenSet) {
+    payload.WithObject("DeletionProtection", m_deletionProtection.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

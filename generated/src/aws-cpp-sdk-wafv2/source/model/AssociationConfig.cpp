@@ -3,58 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/AssociationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-AssociationConfig::AssociationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociationConfig::AssociationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AssociationConfig& AssociationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RequestBody"))
-  {
+AssociationConfig& AssociationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RequestBody")) {
     Aws::Map<Aws::String, JsonView> requestBodyJsonMap = jsonValue.GetObject("RequestBody").GetAllObjects();
-    for(auto& requestBodyItem : requestBodyJsonMap)
-    {
-      m_requestBody[AssociatedResourceTypeMapper::GetAssociatedResourceTypeForName(requestBodyItem.first)] = requestBodyItem.second.AsObject();
+    for (auto& requestBodyItem : requestBodyJsonMap) {
+      m_requestBody[AssociatedResourceTypeMapper::GetAssociatedResourceTypeForName(requestBodyItem.first)] =
+          requestBodyItem.second.AsObject();
     }
     m_requestBodyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociationConfig::Jsonize() const
-{
+JsonValue AssociationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestBodyHasBeenSet)
-  {
-   JsonValue requestBodyJsonMap;
-   for(auto& requestBodyItem : m_requestBody)
-   {
-     requestBodyJsonMap.WithObject(AssociatedResourceTypeMapper::GetNameForAssociatedResourceType(requestBodyItem.first), requestBodyItem.second.Jsonize());
-   }
-   payload.WithObject("RequestBody", std::move(requestBodyJsonMap));
-
+  if (m_requestBodyHasBeenSet) {
+    JsonValue requestBodyJsonMap;
+    for (auto& requestBodyItem : m_requestBody) {
+      requestBodyJsonMap.WithObject(AssociatedResourceTypeMapper::GetNameForAssociatedResourceType(requestBodyItem.first),
+                                    requestBodyItem.second.Jsonize());
+    }
+    payload.WithObject("RequestBody", std::move(requestBodyJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

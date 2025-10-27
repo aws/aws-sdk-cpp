@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteServiceSpecificCredentialRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteServiceSpecificCredentialRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteServiceSpecificCredentialRequest::SerializePayload() const
-{
+Aws::String DeleteServiceSpecificCredentialRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteServiceSpecificCredential&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_serviceSpecificCredentialIdHasBeenSet)
-  {
+  if (m_serviceSpecificCredentialIdHasBeenSet) {
     ss << "ServiceSpecificCredentialId=" << StringUtils::URLEncode(m_serviceSpecificCredentialId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteServiceSpecificCredentialRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteServiceSpecificCredentialRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteServiceSpecificCredentialRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,51 +11,39 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-CommunicationLimitsConfig::CommunicationLimitsConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CommunicationLimitsConfig::CommunicationLimitsConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CommunicationLimitsConfig& CommunicationLimitsConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allChannelSubtypes"))
-  {
+CommunicationLimitsConfig& CommunicationLimitsConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allChannelSubtypes")) {
     m_allChannelSubtypes = jsonValue.GetObject("allChannelSubtypes");
     m_allChannelSubtypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceLimitsHandling"))
-  {
-    m_instanceLimitsHandling = InstanceLimitsHandlingMapper::GetInstanceLimitsHandlingForName(jsonValue.GetString("instanceLimitsHandling"));
+  if (jsonValue.ValueExists("instanceLimitsHandling")) {
+    m_instanceLimitsHandling =
+        InstanceLimitsHandlingMapper::GetInstanceLimitsHandlingForName(jsonValue.GetString("instanceLimitsHandling"));
     m_instanceLimitsHandlingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CommunicationLimitsConfig::Jsonize() const
-{
+JsonValue CommunicationLimitsConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_allChannelSubtypesHasBeenSet)
-  {
-   payload.WithObject("allChannelSubtypes", m_allChannelSubtypes.Jsonize());
-
+  if (m_allChannelSubtypesHasBeenSet) {
+    payload.WithObject("allChannelSubtypes", m_allChannelSubtypes.Jsonize());
   }
 
-  if(m_instanceLimitsHandlingHasBeenSet)
-  {
-   payload.WithString("instanceLimitsHandling", InstanceLimitsHandlingMapper::GetNameForInstanceLimitsHandling(m_instanceLimitsHandling));
+  if (m_instanceLimitsHandlingHasBeenSet) {
+    payload.WithString("instanceLimitsHandling", InstanceLimitsHandlingMapper::GetNameForInstanceLimitsHandling(m_instanceLimitsHandling));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

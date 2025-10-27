@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class ResourceCollectionType
-  {
-    NOT_SET,
-    AWS_CLOUD_FORMATION,
-    AWS_SERVICE,
-    AWS_TAGS
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class ResourceCollectionType { NOT_SET, AWS_CLOUD_FORMATION, AWS_SERVICE, AWS_TAGS };
 
-namespace ResourceCollectionTypeMapper
-{
+namespace ResourceCollectionTypeMapper {
 AWS_DEVOPSGURU_API ResourceCollectionType GetResourceCollectionTypeForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForResourceCollectionType(ResourceCollectionType value);
-} // namespace ResourceCollectionTypeMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace ResourceCollectionTypeMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/ParallelDataConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/ParallelDataConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
+namespace Aws {
+namespace Translate {
+namespace Model {
 
-ParallelDataConfig::ParallelDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParallelDataConfig::ParallelDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ParallelDataConfig& ParallelDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+ParallelDataConfig& ParallelDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Format"))
-  {
+  if (jsonValue.ValueExists("Format")) {
     m_format = ParallelDataFormatMapper::GetParallelDataFormatForName(jsonValue.GetString("Format"));
     m_formatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParallelDataConfig::Jsonize() const
-{
+JsonValue ParallelDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("Format", ParallelDataFormatMapper::GetNameForParallelDataFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("Format", ParallelDataFormatMapper::GetNameForParallelDataFormat(m_format));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/apigateway/model/UpdateClientCertificateResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,44 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateClientCertificateResult::UpdateClientCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateClientCertificateResult::UpdateClientCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateClientCertificateResult& UpdateClientCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateClientCertificateResult& UpdateClientCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("clientCertificateId"))
-  {
+  if (jsonValue.ValueExists("clientCertificateId")) {
     m_clientCertificateId = jsonValue.GetString("clientCertificateId");
     m_clientCertificateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pemEncodedCertificate"))
-  {
+  if (jsonValue.ValueExists("pemEncodedCertificate")) {
     m_pemEncodedCertificate = jsonValue.GetString("pemEncodedCertificate");
     m_pemEncodedCertificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdDate"))
-  {
+  if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetDouble("createdDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expirationDate"))
-  {
+  if (jsonValue.ValueExists("expirationDate")) {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
     m_expirationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -62,12 +51,10 @@ UpdateClientCertificateResult& UpdateClientCertificateResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -10,35 +10,26 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String SetInstanceProtectionRequest::SerializePayload() const
-{
+Aws::String SetInstanceProtectionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetInstanceProtection&";
-  if(m_instanceIdsHasBeenSet)
-  {
-    if (m_instanceIds.empty())
-    {
+  if (m_instanceIdsHasBeenSet) {
+    if (m_instanceIds.empty()) {
       ss << "InstanceIds=&";
-    }
-    else
-    {
+    } else {
       unsigned instanceIdsCount = 1;
-      for(auto& item : m_instanceIds)
-      {
-        ss << "InstanceIds.member." << instanceIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_instanceIds) {
+        ss << "InstanceIds.member." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         instanceIdsCount++;
       }
     }
   }
 
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_protectedFromScaleInHasBeenSet)
-  {
+  if (m_protectedFromScaleInHasBeenSet) {
     ss << "ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String SetInstanceProtectionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetInstanceProtectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetInstanceProtectionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

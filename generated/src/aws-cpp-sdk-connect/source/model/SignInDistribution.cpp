@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SignInDistribution::SignInDistribution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SignInDistribution::SignInDistribution(JsonView jsonValue) { *this = jsonValue; }
 
-SignInDistribution& SignInDistribution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Region"))
-  {
+SignInDistribution& SignInDistribution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Enabled"))
-  {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SignInDistribution::Jsonize() const
-{
+JsonValue SignInDistribution::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

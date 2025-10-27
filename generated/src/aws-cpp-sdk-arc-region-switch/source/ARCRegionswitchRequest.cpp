@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/arc-region-switch/ARCRegionswitchRequest.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-} // namespace ARCRegionswitch
-} // namespace Aws
+namespace Aws {
+namespace ARCRegionswitch {}  // namespace ARCRegionswitch
+}  // namespace Aws

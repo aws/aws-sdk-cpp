@@ -4,64 +4,67 @@
  */
 
 #pragma once
-#include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/managedblockchain-query/model/ConfirmationStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ManagedBlockchainQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ManagedBlockchainQuery {
+namespace Model {
 
+/**
+ * <p>The container for the <code>ConfirmationStatusFilter</code> that filters for
+ * the <a
+ * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
+ * <i>finality</i> </a> of the results.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ConfirmationStatusFilter">AWS
+ * API Reference</a></p>
+ */
+class ConfirmationStatusFilter {
+ public:
+  AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter() = default;
+  AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The container for the <code>ConfirmationStatusFilter</code> that filters for
-   * the <a
+   * <p>The container to determine whether to list results that have only reached <a
    * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-   * <i>finality</i> </a> of the results.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ConfirmationStatusFilter">AWS
-   * API Reference</a></p>
+   * <i>finality</i> </a>. Transactions that have reached finality are always part of
+   * the response.</p>
    */
-  class ConfirmationStatusFilter
-  {
-  public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter() = default;
-    AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<ConfirmationStatus>& GetInclude() const { return m_include; }
+  inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
+  template <typename IncludeT = Aws::Vector<ConfirmationStatus>>
+  void SetInclude(IncludeT&& value) {
+    m_includeHasBeenSet = true;
+    m_include = std::forward<IncludeT>(value);
+  }
+  template <typename IncludeT = Aws::Vector<ConfirmationStatus>>
+  ConfirmationStatusFilter& WithInclude(IncludeT&& value) {
+    SetInclude(std::forward<IncludeT>(value));
+    return *this;
+  }
+  inline ConfirmationStatusFilter& AddInclude(ConfirmationStatus value) {
+    m_includeHasBeenSet = true;
+    m_include.push_back(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<ConfirmationStatus> m_include;
+  bool m_includeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The container to determine whether to list results that have only reached <a
-     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finality are always part of
-     * the response.</p>
-     */
-    inline const Aws::Vector<ConfirmationStatus>& GetInclude() const { return m_include; }
-    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    template<typename IncludeT = Aws::Vector<ConfirmationStatus>>
-    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
-    template<typename IncludeT = Aws::Vector<ConfirmationStatus>>
-    ConfirmationStatusFilter& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
-    inline ConfirmationStatusFilter& AddInclude(ConfirmationStatus value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<ConfirmationStatus> m_include;
-    bool m_includeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ManagedBlockchainQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

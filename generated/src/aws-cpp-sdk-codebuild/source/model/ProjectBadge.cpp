@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectBadge::ProjectBadge(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectBadge::ProjectBadge(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectBadge& ProjectBadge::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("badgeEnabled"))
-  {
+ProjectBadge& ProjectBadge::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("badgeEnabled")) {
     m_badgeEnabled = jsonValue.GetBool("badgeEnabled");
     m_badgeEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("badgeRequestUrl"))
-  {
+  if (jsonValue.ValueExists("badgeRequestUrl")) {
     m_badgeRequestUrl = jsonValue.GetString("badgeRequestUrl");
     m_badgeRequestUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectBadge::Jsonize() const
-{
+JsonValue ProjectBadge::Jsonize() const {
   JsonValue payload;
 
-  if(m_badgeEnabledHasBeenSet)
-  {
-   payload.WithBool("badgeEnabled", m_badgeEnabled);
-
+  if (m_badgeEnabledHasBeenSet) {
+    payload.WithBool("badgeEnabled", m_badgeEnabled);
   }
 
-  if(m_badgeRequestUrlHasBeenSet)
-  {
-   payload.WithString("badgeRequestUrl", m_badgeRequestUrl);
-
+  if (m_badgeRequestUrlHasBeenSet) {
+    payload.WithString("badgeRequestUrl", m_badgeRequestUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

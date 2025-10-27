@@ -12,38 +12,26 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeTrailsRequest::SerializePayload() const
-{
+Aws::String DescribeTrailsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_trailNameListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> trailNameListJsonList(m_trailNameList.size());
-   for(unsigned trailNameListIndex = 0; trailNameListIndex < trailNameListJsonList.GetLength(); ++trailNameListIndex)
-   {
-     trailNameListJsonList[trailNameListIndex].AsString(m_trailNameList[trailNameListIndex]);
-   }
-   payload.WithArray("trailNameList", std::move(trailNameListJsonList));
-
+  if (m_trailNameListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> trailNameListJsonList(m_trailNameList.size());
+    for (unsigned trailNameListIndex = 0; trailNameListIndex < trailNameListJsonList.GetLength(); ++trailNameListIndex) {
+      trailNameListJsonList[trailNameListIndex].AsString(m_trailNameList[trailNameListIndex]);
+    }
+    payload.WithArray("trailNameList", std::move(trailNameListJsonList));
   }
 
-  if(m_includeShadowTrailsHasBeenSet)
-  {
-   payload.WithBool("includeShadowTrails", m_includeShadowTrails);
-
+  if (m_includeShadowTrailsHasBeenSet) {
+    payload.WithBool("includeShadowTrails", m_includeShadowTrails);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeTrailsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeTrailsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails"));
   return headers;
-
 }
-
-
-
-

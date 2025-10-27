@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/BackupFailureDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/BackupFailureDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-BackupFailureDetails::BackupFailureDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackupFailureDetails::BackupFailureDetails(JsonView jsonValue) { *this = jsonValue; }
 
-BackupFailureDetails& BackupFailureDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+BackupFailureDetails& BackupFailureDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackupFailureDetails::Jsonize() const
-{
+JsonValue BackupFailureDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

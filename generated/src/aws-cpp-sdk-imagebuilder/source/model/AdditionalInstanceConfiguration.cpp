@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-AdditionalInstanceConfiguration::AdditionalInstanceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdditionalInstanceConfiguration::AdditionalInstanceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AdditionalInstanceConfiguration& AdditionalInstanceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("systemsManagerAgent"))
-  {
+AdditionalInstanceConfiguration& AdditionalInstanceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("systemsManagerAgent")) {
     m_systemsManagerAgent = jsonValue.GetObject("systemsManagerAgent");
     m_systemsManagerAgentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userDataOverride"))
-  {
+  if (jsonValue.ValueExists("userDataOverride")) {
     m_userDataOverride = jsonValue.GetString("userDataOverride");
     m_userDataOverrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdditionalInstanceConfiguration::Jsonize() const
-{
+JsonValue AdditionalInstanceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_systemsManagerAgentHasBeenSet)
-  {
-   payload.WithObject("systemsManagerAgent", m_systemsManagerAgent.Jsonize());
-
+  if (m_systemsManagerAgentHasBeenSet) {
+    payload.WithObject("systemsManagerAgent", m_systemsManagerAgent.Jsonize());
   }
 
-  if(m_userDataOverrideHasBeenSet)
-  {
-   payload.WithString("userDataOverride", m_userDataOverride);
-
+  if (m_userDataOverrideHasBeenSet) {
+    payload.WithString("userDataOverride", m_userDataOverride);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

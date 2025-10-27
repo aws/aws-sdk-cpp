@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-InternalAccessAnalysisRule::InternalAccessAnalysisRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalAccessAnalysisRule::InternalAccessAnalysisRule(JsonView jsonValue) { *this = jsonValue; }
 
-InternalAccessAnalysisRule& InternalAccessAnalysisRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inclusions"))
-  {
+InternalAccessAnalysisRule& InternalAccessAnalysisRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inclusions")) {
     Aws::Utils::Array<JsonView> inclusionsJsonList = jsonValue.GetArray("inclusions");
-    for(unsigned inclusionsIndex = 0; inclusionsIndex < inclusionsJsonList.GetLength(); ++inclusionsIndex)
-    {
+    for (unsigned inclusionsIndex = 0; inclusionsIndex < inclusionsJsonList.GetLength(); ++inclusionsIndex) {
       m_inclusions.push_back(inclusionsJsonList[inclusionsIndex].AsObject());
     }
     m_inclusionsHasBeenSet = true;
@@ -37,24 +28,20 @@ InternalAccessAnalysisRule& InternalAccessAnalysisRule::operator =(JsonView json
   return *this;
 }
 
-JsonValue InternalAccessAnalysisRule::Jsonize() const
-{
+JsonValue InternalAccessAnalysisRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_inclusionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inclusionsJsonList(m_inclusions.size());
-   for(unsigned inclusionsIndex = 0; inclusionsIndex < inclusionsJsonList.GetLength(); ++inclusionsIndex)
-   {
-     inclusionsJsonList[inclusionsIndex].AsObject(m_inclusions[inclusionsIndex].Jsonize());
-   }
-   payload.WithArray("inclusions", std::move(inclusionsJsonList));
-
+  if (m_inclusionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inclusionsJsonList(m_inclusions.size());
+    for (unsigned inclusionsIndex = 0; inclusionsIndex < inclusionsJsonList.GetLength(); ++inclusionsIndex) {
+      inclusionsJsonList[inclusionsIndex].AsObject(m_inclusions[inclusionsIndex].Jsonize());
+    }
+    payload.WithArray("inclusions", std::move(inclusionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

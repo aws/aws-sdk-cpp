@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/TransformInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/TransformInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-TransformInput::TransformInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransformInput::TransformInput(JsonView jsonValue) { *this = jsonValue; }
 
-TransformInput& TransformInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSource"))
-  {
+TransformInput& TransformInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSource")) {
     m_dataSource = jsonValue.GetObject("DataSource");
     m_dataSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentType"))
-  {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompressionType"))
-  {
+  if (jsonValue.ValueExists("CompressionType")) {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
     m_compressionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SplitType"))
-  {
+  if (jsonValue.ValueExists("SplitType")) {
     m_splitType = SplitTypeMapper::GetSplitTypeForName(jsonValue.GetString("SplitType"));
     m_splitTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransformInput::Jsonize() const
-{
+JsonValue TransformInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithObject("DataSource", m_dataSource.Jsonize());
-
+  if (m_dataSourceHasBeenSet) {
+    payload.WithObject("DataSource", m_dataSource.Jsonize());
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_compressionTypeHasBeenSet)
-  {
-   payload.WithString("CompressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
+  if (m_compressionTypeHasBeenSet) {
+    payload.WithString("CompressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
   }
 
-  if(m_splitTypeHasBeenSet)
-  {
-   payload.WithString("SplitType", SplitTypeMapper::GetNameForSplitType(m_splitType));
+  if (m_splitTypeHasBeenSet) {
+    payload.WithString("SplitType", SplitTypeMapper::GetNameForSplitType(m_splitType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-UserContextDataType::UserContextDataType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserContextDataType::UserContextDataType(JsonView jsonValue) { *this = jsonValue; }
 
-UserContextDataType& UserContextDataType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpAddress"))
-  {
+UserContextDataType& UserContextDataType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpAddress")) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncodedData"))
-  {
+  if (jsonValue.ValueExists("EncodedData")) {
     m_encodedData = jsonValue.GetString("EncodedData");
     m_encodedDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserContextDataType::Jsonize() const
-{
+JsonValue UserContextDataType::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
-  if(m_encodedDataHasBeenSet)
-  {
-   payload.WithString("EncodedData", m_encodedData);
-
+  if (m_encodedDataHasBeenSet) {
+    payload.WithString("EncodedData", m_encodedData);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

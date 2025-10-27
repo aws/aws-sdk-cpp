@@ -11,93 +11,69 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-MemoryRecordUpdateInput::MemoryRecordUpdateInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemoryRecordUpdateInput::MemoryRecordUpdateInput(JsonView jsonValue) { *this = jsonValue; }
 
-MemoryRecordUpdateInput& MemoryRecordUpdateInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("memoryRecordId"))
-  {
+MemoryRecordUpdateInput& MemoryRecordUpdateInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("memoryRecordId")) {
     m_memoryRecordId = jsonValue.GetString("memoryRecordId");
     m_memoryRecordIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timestamp"))
-  {
+  if (jsonValue.ValueExists("timestamp")) {
     m_timestamp = jsonValue.GetDouble("timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("content"))
-  {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaces"))
-  {
+  if (jsonValue.ValueExists("namespaces")) {
     Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
-    for(unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex)
-    {
+    for (unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex) {
       m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsString());
     }
     m_namespacesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memoryStrategyId"))
-  {
+  if (jsonValue.ValueExists("memoryStrategyId")) {
     m_memoryStrategyId = jsonValue.GetString("memoryStrategyId");
     m_memoryStrategyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemoryRecordUpdateInput::Jsonize() const
-{
+JsonValue MemoryRecordUpdateInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryRecordIdHasBeenSet)
-  {
-   payload.WithString("memoryRecordId", m_memoryRecordId);
-
+  if (m_memoryRecordIdHasBeenSet) {
+    payload.WithString("memoryRecordId", m_memoryRecordId);
   }
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
-  if(m_namespacesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> namespacesJsonList(m_namespaces.size());
-   for(unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex)
-   {
-     namespacesJsonList[namespacesIndex].AsString(m_namespaces[namespacesIndex]);
-   }
-   payload.WithArray("namespaces", std::move(namespacesJsonList));
-
+  if (m_namespacesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namespacesJsonList(m_namespaces.size());
+    for (unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex) {
+      namespacesJsonList[namespacesIndex].AsString(m_namespaces[namespacesIndex]);
+    }
+    payload.WithArray("namespaces", std::move(namespacesJsonList));
   }
 
-  if(m_memoryStrategyIdHasBeenSet)
-  {
-   payload.WithString("memoryStrategyId", m_memoryStrategyId);
-
+  if (m_memoryStrategyIdHasBeenSet) {
+    payload.WithString("memoryStrategyId", m_memoryStrategyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

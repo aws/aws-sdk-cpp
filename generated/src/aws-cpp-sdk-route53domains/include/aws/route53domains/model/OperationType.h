@@ -4,47 +4,42 @@
  */
 
 #pragma once
-#include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53domains/Route53Domains_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
-  enum class OperationType
-  {
-    NOT_SET,
-    REGISTER_DOMAIN,
-    DELETE_DOMAIN,
-    TRANSFER_IN_DOMAIN,
-    UPDATE_DOMAIN_CONTACT,
-    UPDATE_NAMESERVER,
-    CHANGE_PRIVACY_PROTECTION,
-    DOMAIN_LOCK,
-    ENABLE_AUTORENEW,
-    DISABLE_AUTORENEW,
-    ADD_DNSSEC,
-    REMOVE_DNSSEC,
-    EXPIRE_DOMAIN,
-    TRANSFER_OUT_DOMAIN,
-    CHANGE_DOMAIN_OWNER,
-    RENEW_DOMAIN,
-    PUSH_DOMAIN,
-    INTERNAL_TRANSFER_OUT_DOMAIN,
-    INTERNAL_TRANSFER_IN_DOMAIN,
-    RELEASE_TO_GANDI,
-    TRANSFER_ON_RENEW,
-    RESTORE_DOMAIN
-  };
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
+enum class OperationType {
+  NOT_SET,
+  REGISTER_DOMAIN,
+  DELETE_DOMAIN,
+  TRANSFER_IN_DOMAIN,
+  UPDATE_DOMAIN_CONTACT,
+  UPDATE_NAMESERVER,
+  CHANGE_PRIVACY_PROTECTION,
+  DOMAIN_LOCK,
+  ENABLE_AUTORENEW,
+  DISABLE_AUTORENEW,
+  ADD_DNSSEC,
+  REMOVE_DNSSEC,
+  EXPIRE_DOMAIN,
+  TRANSFER_OUT_DOMAIN,
+  CHANGE_DOMAIN_OWNER,
+  RENEW_DOMAIN,
+  PUSH_DOMAIN,
+  INTERNAL_TRANSFER_OUT_DOMAIN,
+  INTERNAL_TRANSFER_IN_DOMAIN,
+  RELEASE_TO_GANDI,
+  TRANSFER_ON_RENEW,
+  RESTORE_DOMAIN
+};
 
-namespace OperationTypeMapper
-{
+namespace OperationTypeMapper {
 AWS_ROUTE53DOMAINS_API OperationType GetOperationTypeForName(const Aws::String& name);
 
 AWS_ROUTE53DOMAINS_API Aws::String GetNameForOperationType(OperationType value);
-} // namespace OperationTypeMapper
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace OperationTypeMapper
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class ColorSpace
-  {
-    NOT_SET,
-    HDR10,
-    HLG_2020,
-    REC_601,
-    REC_709
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class ColorSpace { NOT_SET, HDR10, HLG_2020, REC_601, REC_709 };
 
-namespace ColorSpaceMapper
-{
+namespace ColorSpaceMapper {
 AWS_MEDIALIVE_API ColorSpace GetColorSpaceForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForColorSpace(ColorSpace value);
-} // namespace ColorSpaceMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace ColorSpaceMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/DescribeEndpointTypesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dms/model/DescribeEndpointTypesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointTypesResult::DescribeEndpointTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeEndpointTypesResult::DescribeEndpointTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Marker"))
-  {
+  if (jsonValue.ValueExists("Marker")) {
     m_marker = jsonValue.GetString("Marker");
     m_markerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SupportedEndpointTypes"))
-  {
+  if (jsonValue.ValueExists("SupportedEndpointTypes")) {
     Aws::Utils::Array<JsonView> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
-    for(unsigned supportedEndpointTypesIndex = 0; supportedEndpointTypesIndex < supportedEndpointTypesJsonList.GetLength(); ++supportedEndpointTypesIndex)
-    {
+    for (unsigned supportedEndpointTypesIndex = 0; supportedEndpointTypesIndex < supportedEndpointTypesJsonList.GetLength();
+         ++supportedEndpointTypesIndex) {
       m_supportedEndpointTypes.push_back(supportedEndpointTypesJsonList[supportedEndpointTypesIndex].AsObject());
     }
     m_supportedEndpointTypesHasBeenSet = true;
@@ -42,12 +36,10 @@ DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/ListEventBusesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/ListEventBusesRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListEventBusesRequest::SerializePayload() const
-{
+Aws::String ListEventBusesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_namePrefixHasBeenSet)
-  {
-   payload.WithString("NamePrefix", m_namePrefix);
-
+  if (m_namePrefixHasBeenSet) {
+    payload.WithString("NamePrefix", m_namePrefix);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListEventBusesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListEventBusesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSEvents.ListEventBuses"));
   return headers;
-
 }
-
-
-
-

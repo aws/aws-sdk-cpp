@@ -12,44 +12,31 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminUpdateDeviceStatusRequest::SerializePayload() const
-{
+Aws::String AdminUpdateDeviceStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_deviceKeyHasBeenSet)
-  {
-   payload.WithString("DeviceKey", m_deviceKey);
-
+  if (m_deviceKeyHasBeenSet) {
+    payload.WithString("DeviceKey", m_deviceKey);
   }
 
-  if(m_deviceRememberedStatusHasBeenSet)
-  {
-   payload.WithString("DeviceRememberedStatus", DeviceRememberedStatusTypeMapper::GetNameForDeviceRememberedStatusType(m_deviceRememberedStatus));
+  if (m_deviceRememberedStatusHasBeenSet) {
+    payload.WithString("DeviceRememberedStatus",
+                       DeviceRememberedStatusTypeMapper::GetNameForDeviceRememberedStatusType(m_deviceRememberedStatus));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminUpdateDeviceStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminUpdateDeviceStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminUpdateDeviceStatus"));
   return headers;
-
 }
-
-
-
-

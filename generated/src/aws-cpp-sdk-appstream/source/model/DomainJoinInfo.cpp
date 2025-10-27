@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-DomainJoinInfo::DomainJoinInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainJoinInfo::DomainJoinInfo(JsonView jsonValue) { *this = jsonValue; }
 
-DomainJoinInfo& DomainJoinInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DirectoryName"))
-  {
+DomainJoinInfo& DomainJoinInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DirectoryName")) {
     m_directoryName = jsonValue.GetString("DirectoryName");
     m_directoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationalUnitDistinguishedName"))
-  {
+  if (jsonValue.ValueExists("OrganizationalUnitDistinguishedName")) {
     m_organizationalUnitDistinguishedName = jsonValue.GetString("OrganizationalUnitDistinguishedName");
     m_organizationalUnitDistinguishedNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainJoinInfo::Jsonize() const
-{
+JsonValue DomainJoinInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_directoryNameHasBeenSet)
-  {
-   payload.WithString("DirectoryName", m_directoryName);
-
+  if (m_directoryNameHasBeenSet) {
+    payload.WithString("DirectoryName", m_directoryName);
   }
 
-  if(m_organizationalUnitDistinguishedNameHasBeenSet)
-  {
-   payload.WithString("OrganizationalUnitDistinguishedName", m_organizationalUnitDistinguishedName);
-
+  if (m_organizationalUnitDistinguishedNameHasBeenSet) {
+    payload.WithString("OrganizationalUnitDistinguishedName", m_organizationalUnitDistinguishedName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

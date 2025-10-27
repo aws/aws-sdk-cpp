@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-class PaymentCryptographyEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace PaymentCryptography {
+class PaymentCryptographyEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace PaymentCryptography
+}  // namespace Aws

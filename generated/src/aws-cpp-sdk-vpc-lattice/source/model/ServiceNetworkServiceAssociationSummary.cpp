@@ -3,179 +3,135 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/ServiceNetworkServiceAssociationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/ServiceNetworkServiceAssociationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceNetworkServiceAssociationSummary& ServiceNetworkServiceAssociationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ServiceNetworkServiceAssociationSummary& ServiceNetworkServiceAssociationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
+  if (jsonValue.ValueExists("status")) {
+    m_status =
+        ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBy"))
-  {
+  if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceId"))
-  {
+  if (jsonValue.ValueExists("serviceId")) {
     m_serviceId = jsonValue.GetString("serviceId");
     m_serviceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceName"))
-  {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceArn"))
-  {
+  if (jsonValue.ValueExists("serviceArn")) {
     m_serviceArn = jsonValue.GetString("serviceArn");
     m_serviceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceNetworkId"))
-  {
+  if (jsonValue.ValueExists("serviceNetworkId")) {
     m_serviceNetworkId = jsonValue.GetString("serviceNetworkId");
     m_serviceNetworkIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceNetworkName"))
-  {
+  if (jsonValue.ValueExists("serviceNetworkName")) {
     m_serviceNetworkName = jsonValue.GetString("serviceNetworkName");
     m_serviceNetworkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceNetworkArn"))
-  {
+  if (jsonValue.ValueExists("serviceNetworkArn")) {
     m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
     m_serviceNetworkArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dnsEntry"))
-  {
+  if (jsonValue.ValueExists("dnsEntry")) {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customDomainName"))
-  {
+  if (jsonValue.ValueExists("customDomainName")) {
     m_customDomainName = jsonValue.GetString("customDomainName");
     m_customDomainNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const
-{
+JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ServiceNetworkServiceAssociationStatusMapper::GetNameForServiceNetworkServiceAssociationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ServiceNetworkServiceAssociationStatusMapper::GetNameForServiceNetworkServiceAssociationStatus(m_status));
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_serviceIdHasBeenSet)
-  {
-   payload.WithString("serviceId", m_serviceId);
-
+  if (m_serviceIdHasBeenSet) {
+    payload.WithString("serviceId", m_serviceId);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
   }
 
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("serviceArn", m_serviceArn);
-
+  if (m_serviceArnHasBeenSet) {
+    payload.WithString("serviceArn", m_serviceArn);
   }
 
-  if(m_serviceNetworkIdHasBeenSet)
-  {
-   payload.WithString("serviceNetworkId", m_serviceNetworkId);
-
+  if (m_serviceNetworkIdHasBeenSet) {
+    payload.WithString("serviceNetworkId", m_serviceNetworkId);
   }
 
-  if(m_serviceNetworkNameHasBeenSet)
-  {
-   payload.WithString("serviceNetworkName", m_serviceNetworkName);
-
+  if (m_serviceNetworkNameHasBeenSet) {
+    payload.WithString("serviceNetworkName", m_serviceNetworkName);
   }
 
-  if(m_serviceNetworkArnHasBeenSet)
-  {
-   payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
-
+  if (m_serviceNetworkArnHasBeenSet) {
+    payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
   }
 
-  if(m_dnsEntryHasBeenSet)
-  {
-   payload.WithObject("dnsEntry", m_dnsEntry.Jsonize());
-
+  if (m_dnsEntryHasBeenSet) {
+    payload.WithObject("dnsEntry", m_dnsEntry.Jsonize());
   }
 
-  if(m_customDomainNameHasBeenSet)
-  {
-   payload.WithString("customDomainName", m_customDomainName);
-
+  if (m_customDomainNameHasBeenSet) {
+    payload.WithString("customDomainName", m_customDomainName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

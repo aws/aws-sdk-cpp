@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkMonitor
-{
-namespace Model
-{
-  enum class MonitorState
-  {
-    NOT_SET,
-    PENDING,
-    ACTIVE,
-    INACTIVE,
-    ERROR_,
-    DELETING
-  };
+namespace Aws {
+namespace NetworkMonitor {
+namespace Model {
+enum class MonitorState { NOT_SET, PENDING, ACTIVE, INACTIVE, ERROR_, DELETING };
 
-namespace MonitorStateMapper
-{
+namespace MonitorStateMapper {
 AWS_NETWORKMONITOR_API MonitorState GetMonitorStateForName(const Aws::String& name);
 
 AWS_NETWORKMONITOR_API Aws::String GetNameForMonitorState(MonitorState value);
-} // namespace MonitorStateMapper
-} // namespace Model
-} // namespace NetworkMonitor
-} // namespace Aws
+}  // namespace MonitorStateMapper
+}  // namespace Model
+}  // namespace NetworkMonitor
+}  // namespace Aws

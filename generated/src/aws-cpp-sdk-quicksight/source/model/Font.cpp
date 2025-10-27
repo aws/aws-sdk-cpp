@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/Font.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/Font.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-Font::Font(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Font::Font(JsonView jsonValue) { *this = jsonValue; }
 
-Font& Font::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FontFamily"))
-  {
+Font& Font::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FontFamily")) {
     m_fontFamily = jsonValue.GetString("FontFamily");
     m_fontFamilyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Font::Jsonize() const
-{
+JsonValue Font::Jsonize() const {
   JsonValue payload;
 
-  if(m_fontFamilyHasBeenSet)
-  {
-   payload.WithString("FontFamily", m_fontFamily);
-
+  if (m_fontFamilyHasBeenSet) {
+    payload.WithString("FontFamily", m_fontFamily);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

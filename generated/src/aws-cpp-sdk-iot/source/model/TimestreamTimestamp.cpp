@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/TimestreamTimestamp.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/TimestreamTimestamp.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-TimestreamTimestamp::TimestreamTimestamp(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimestreamTimestamp::TimestreamTimestamp(JsonView jsonValue) { *this = jsonValue; }
 
-TimestreamTimestamp& TimestreamTimestamp::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+TimestreamTimestamp& TimestreamTimestamp::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unit"))
-  {
+  if (jsonValue.ValueExists("unit")) {
     m_unit = jsonValue.GetString("unit");
     m_unitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimestreamTimestamp::Jsonize() const
-{
+JsonValue TimestreamTimestamp::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("unit", m_unit);
-
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", m_unit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

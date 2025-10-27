@@ -3,38 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetReservedInstancesExchangeQuoteRequest::SerializePayload() const
-{
+Aws::String GetReservedInstancesExchangeQuoteRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetReservedInstancesExchangeQuote&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_reservedInstanceIdsHasBeenSet)
-  {
+  if (m_reservedInstanceIdsHasBeenSet) {
     unsigned reservedInstanceIdsCount = 1;
-    for(auto& item : m_reservedInstanceIds)
-    {
-      ss << "ReservedInstanceId." << reservedInstanceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_reservedInstanceIds) {
+      ss << "ReservedInstanceId." << reservedInstanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       reservedInstanceIdsCount++;
     }
   }
 
-  if(m_targetConfigurationsHasBeenSet)
-  {
+  if (m_targetConfigurationsHasBeenSet) {
     unsigned targetConfigurationsCount = 1;
-    for(auto& item : m_targetConfigurations)
-    {
+    for (auto& item : m_targetConfigurations) {
       item.OutputToStream(ss, "TargetConfiguration.", targetConfigurationsCount, "");
       targetConfigurationsCount++;
     }
@@ -44,8 +37,4 @@ Aws::String GetReservedInstancesExchangeQuoteRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetReservedInstancesExchangeQuoteRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetReservedInstancesExchangeQuoteRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

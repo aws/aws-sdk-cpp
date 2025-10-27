@@ -5,12 +5,8 @@
 
 #include <aws/gamelift/GameLiftEndpointProvider.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GameLift
-} // namespace Aws
+namespace Aws {
+namespace GameLift {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GameLift
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/imagebuilder/ImagebuilderRequest.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-} // namespace imagebuilder
-} // namespace Aws
+namespace Aws {
+namespace imagebuilder {}  // namespace imagebuilder
+}  // namespace Aws

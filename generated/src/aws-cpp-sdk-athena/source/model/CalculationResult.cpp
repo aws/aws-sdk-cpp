@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-CalculationResult::CalculationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CalculationResult::CalculationResult(JsonView jsonValue) { *this = jsonValue; }
 
-CalculationResult& CalculationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StdOutS3Uri"))
-  {
+CalculationResult& CalculationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StdOutS3Uri")) {
     m_stdOutS3Uri = jsonValue.GetString("StdOutS3Uri");
     m_stdOutS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StdErrorS3Uri"))
-  {
+  if (jsonValue.ValueExists("StdErrorS3Uri")) {
     m_stdErrorS3Uri = jsonValue.GetString("StdErrorS3Uri");
     m_stdErrorS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultS3Uri"))
-  {
+  if (jsonValue.ValueExists("ResultS3Uri")) {
     m_resultS3Uri = jsonValue.GetString("ResultS3Uri");
     m_resultS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultType"))
-  {
+  if (jsonValue.ValueExists("ResultType")) {
     m_resultType = jsonValue.GetString("ResultType");
     m_resultTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CalculationResult::Jsonize() const
-{
+JsonValue CalculationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_stdOutS3UriHasBeenSet)
-  {
-   payload.WithString("StdOutS3Uri", m_stdOutS3Uri);
-
+  if (m_stdOutS3UriHasBeenSet) {
+    payload.WithString("StdOutS3Uri", m_stdOutS3Uri);
   }
 
-  if(m_stdErrorS3UriHasBeenSet)
-  {
-   payload.WithString("StdErrorS3Uri", m_stdErrorS3Uri);
-
+  if (m_stdErrorS3UriHasBeenSet) {
+    payload.WithString("StdErrorS3Uri", m_stdErrorS3Uri);
   }
 
-  if(m_resultS3UriHasBeenSet)
-  {
-   payload.WithString("ResultS3Uri", m_resultS3Uri);
-
+  if (m_resultS3UriHasBeenSet) {
+    payload.WithString("ResultS3Uri", m_resultS3Uri);
   }
 
-  if(m_resultTypeHasBeenSet)
-  {
-   payload.WithString("ResultType", m_resultType);
-
+  if (m_resultTypeHasBeenSet) {
+    payload.WithString("ResultType", m_resultType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

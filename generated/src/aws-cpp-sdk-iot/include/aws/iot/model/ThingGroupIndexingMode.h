@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class ThingGroupIndexingMode
-  {
-    NOT_SET,
-    OFF,
-    ON
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class ThingGroupIndexingMode { NOT_SET, OFF, ON };
 
-namespace ThingGroupIndexingModeMapper
-{
+namespace ThingGroupIndexingModeMapper {
 AWS_IOT_API ThingGroupIndexingMode GetThingGroupIndexingModeForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForThingGroupIndexingMode(ThingGroupIndexingMode value);
-} // namespace ThingGroupIndexingModeMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace ThingGroupIndexingModeMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

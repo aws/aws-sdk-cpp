@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SnapshotS3DestinationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SnapshotS3DestinationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SnapshotS3DestinationConfiguration& SnapshotS3DestinationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketConfiguration"))
-  {
+SnapshotS3DestinationConfiguration& SnapshotS3DestinationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketConfiguration")) {
     m_bucketConfiguration = jsonValue.GetObject("BucketConfiguration");
     m_bucketConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnapshotS3DestinationConfiguration::Jsonize() const
-{
+JsonValue SnapshotS3DestinationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketConfigurationHasBeenSet)
-  {
-   payload.WithObject("BucketConfiguration", m_bucketConfiguration.Jsonize());
-
+  if (m_bucketConfigurationHasBeenSet) {
+    payload.WithObject("BucketConfiguration", m_bucketConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

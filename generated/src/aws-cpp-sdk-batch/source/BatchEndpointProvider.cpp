@@ -5,12 +5,8 @@
 
 #include <aws/batch/BatchEndpointProvider.h>
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Batch
-} // namespace Aws
+namespace Aws {
+namespace Batch {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Batch
+}  // namespace Aws

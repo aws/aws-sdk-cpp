@@ -3,68 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SameSheetTargetVisualConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SameSheetTargetVisualConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SameSheetTargetVisualConfiguration& SameSheetTargetVisualConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetVisuals"))
-  {
+SameSheetTargetVisualConfiguration& SameSheetTargetVisualConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetVisuals")) {
     Aws::Utils::Array<JsonView> targetVisualsJsonList = jsonValue.GetArray("TargetVisuals");
-    for(unsigned targetVisualsIndex = 0; targetVisualsIndex < targetVisualsJsonList.GetLength(); ++targetVisualsIndex)
-    {
+    for (unsigned targetVisualsIndex = 0; targetVisualsIndex < targetVisualsJsonList.GetLength(); ++targetVisualsIndex) {
       m_targetVisuals.push_back(targetVisualsJsonList[targetVisualsIndex].AsString());
     }
     m_targetVisualsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetVisualOptions"))
-  {
+  if (jsonValue.ValueExists("TargetVisualOptions")) {
     m_targetVisualOptions = TargetVisualOptionsMapper::GetTargetVisualOptionsForName(jsonValue.GetString("TargetVisualOptions"));
     m_targetVisualOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SameSheetTargetVisualConfiguration::Jsonize() const
-{
+JsonValue SameSheetTargetVisualConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetVisualsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetVisualsJsonList(m_targetVisuals.size());
-   for(unsigned targetVisualsIndex = 0; targetVisualsIndex < targetVisualsJsonList.GetLength(); ++targetVisualsIndex)
-   {
-     targetVisualsJsonList[targetVisualsIndex].AsString(m_targetVisuals[targetVisualsIndex]);
-   }
-   payload.WithArray("TargetVisuals", std::move(targetVisualsJsonList));
-
+  if (m_targetVisualsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetVisualsJsonList(m_targetVisuals.size());
+    for (unsigned targetVisualsIndex = 0; targetVisualsIndex < targetVisualsJsonList.GetLength(); ++targetVisualsIndex) {
+      targetVisualsJsonList[targetVisualsIndex].AsString(m_targetVisuals[targetVisualsIndex]);
+    }
+    payload.WithArray("TargetVisuals", std::move(targetVisualsJsonList));
   }
 
-  if(m_targetVisualOptionsHasBeenSet)
-  {
-   payload.WithString("TargetVisualOptions", TargetVisualOptionsMapper::GetNameForTargetVisualOptions(m_targetVisualOptions));
+  if (m_targetVisualOptionsHasBeenSet) {
+    payload.WithString("TargetVisualOptions", TargetVisualOptionsMapper::GetNameForTargetVisualOptions(m_targetVisualOptions));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

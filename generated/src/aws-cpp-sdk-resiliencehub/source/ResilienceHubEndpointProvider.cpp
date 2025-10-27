@@ -5,12 +5,8 @@
 
 #include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ResilienceHub
-} // namespace Aws
+namespace Aws {
+namespace ResilienceHub {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ResilienceHub
+}  // namespace Aws

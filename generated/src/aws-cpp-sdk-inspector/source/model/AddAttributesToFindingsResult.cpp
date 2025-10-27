@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/AddAttributesToFindingsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/inspector/model/AddAttributesToFindingsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddAttributesToFindingsResult::AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+AddAttributesToFindingsResult::AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("failedItems"))
-  {
+  if (jsonValue.ValueExists("failedItems")) {
     Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
-    for(auto& failedItemsItem : failedItemsJsonMap)
-    {
+    for (auto& failedItemsItem : failedItemsJsonMap) {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();
     }
     m_failedItemsHasBeenSet = true;
@@ -37,12 +31,10 @@ AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

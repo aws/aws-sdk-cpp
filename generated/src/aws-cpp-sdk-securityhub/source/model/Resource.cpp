@@ -3,156 +3,117 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/Resource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-Resource::Resource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
-Resource& Resource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Resource& Resource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Partition"))
-  {
+  if (jsonValue.ValueExists("Partition")) {
     m_partition = PartitionMapper::GetPartitionForName(jsonValue.GetString("Partition"));
     m_partitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Region"))
-  {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceRole"))
-  {
+  if (jsonValue.ValueExists("ResourceRole")) {
     m_resourceRole = jsonValue.GetString("ResourceRole");
     m_resourceRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataClassification"))
-  {
+  if (jsonValue.ValueExists("DataClassification")) {
     m_dataClassification = jsonValue.GetObject("DataClassification");
     m_dataClassificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Details"))
-  {
+  if (jsonValue.ValueExists("Details")) {
     m_details = jsonValue.GetObject("Details");
     m_detailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationName"))
-  {
+  if (jsonValue.ValueExists("ApplicationName")) {
     m_applicationName = jsonValue.GetString("ApplicationName");
     m_applicationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationArn"))
-  {
+  if (jsonValue.ValueExists("ApplicationArn")) {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
     m_applicationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Resource::Jsonize() const
-{
+JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_partitionHasBeenSet)
-  {
-   payload.WithString("Partition", PartitionMapper::GetNameForPartition(m_partition));
+  if (m_partitionHasBeenSet) {
+    payload.WithString("Partition", PartitionMapper::GetNameForPartition(m_partition));
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_resourceRoleHasBeenSet)
-  {
-   payload.WithString("ResourceRole", m_resourceRole);
-
+  if (m_resourceRoleHasBeenSet) {
+    payload.WithString("ResourceRole", m_resourceRole);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_dataClassificationHasBeenSet)
-  {
-   payload.WithObject("DataClassification", m_dataClassification.Jsonize());
-
+  if (m_dataClassificationHasBeenSet) {
+    payload.WithObject("DataClassification", m_dataClassification.Jsonize());
   }
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("Details", m_details.Jsonize());
-
+  if (m_detailsHasBeenSet) {
+    payload.WithObject("Details", m_details.Jsonize());
   }
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("ApplicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("ApplicationName", m_applicationName);
   }
 
-  if(m_applicationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationArn", m_applicationArn);
-
+  if (m_applicationArnHasBeenSet) {
+    payload.WithString("ApplicationArn", m_applicationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

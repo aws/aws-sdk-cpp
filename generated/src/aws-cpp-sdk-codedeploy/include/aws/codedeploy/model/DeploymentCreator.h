@@ -7,31 +7,26 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
-  enum class DeploymentCreator
-  {
-    NOT_SET,
-    user,
-    autoscaling,
-    codeDeployRollback,
-    CodeDeploy,
-    CodeDeployAutoUpdate,
-    CloudFormation,
-    CloudFormationRollback,
-    autoscalingTermination
-  };
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
+enum class DeploymentCreator {
+  NOT_SET,
+  user,
+  autoscaling,
+  codeDeployRollback,
+  CodeDeploy,
+  CodeDeployAutoUpdate,
+  CloudFormation,
+  CloudFormationRollback,
+  autoscalingTermination
+};
 
-namespace DeploymentCreatorMapper
-{
+namespace DeploymentCreatorMapper {
 AWS_CODEDEPLOY_API DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name);
 
 AWS_CODEDEPLOY_API Aws::String GetNameForDeploymentCreator(DeploymentCreator value);
-} // namespace DeploymentCreatorMapper
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace DeploymentCreatorMapper
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

@@ -11,39 +11,27 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ProjectedMetric::ProjectedMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectedMetric::ProjectedMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ProjectedMetric& ProjectedMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timestamps"))
-  {
+  if (jsonValue.ValueExists("timestamps")) {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
-    for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
-    {
+    for (unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex) {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsDouble());
     }
     m_timestampsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsDouble());
     }
     m_valuesHasBeenSet = true;
@@ -51,40 +39,32 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ProjectedMetric::Jsonize() const
-{
+JsonValue ProjectedMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", MetricNameMapper::GetNameForMetricName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", MetricNameMapper::GetNameForMetricName(m_name));
   }
 
-  if(m_timestampsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> timestampsJsonList(m_timestamps.size());
-   for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
-   {
-     timestampsJsonList[timestampsIndex].AsDouble(m_timestamps[timestampsIndex].SecondsWithMSPrecision());
-   }
-   payload.WithArray("timestamps", std::move(timestampsJsonList));
-
+  if (m_timestampsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> timestampsJsonList(m_timestamps.size());
+    for (unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex) {
+      timestampsJsonList[timestampsIndex].AsDouble(m_timestamps[timestampsIndex].SecondsWithMSPrecision());
+    }
+    payload.WithArray("timestamps", std::move(timestampsJsonList));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsDouble(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsDouble(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class TrainingInputMode
-  {
-    NOT_SET,
-    File,
-    FastFile,
-    Pipe
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class TrainingInputMode { NOT_SET, File, FastFile, Pipe };
 
-namespace TrainingInputModeMapper
-{
+namespace TrainingInputModeMapper {
 AWS_CLEANROOMSML_API TrainingInputMode GetTrainingInputModeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForTrainingInputMode(TrainingInputMode value);
-} // namespace TrainingInputModeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace TrainingInputModeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

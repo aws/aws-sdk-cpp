@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/GatewayListItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/GatewayListItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-GatewayListItem::GatewayListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayListItem::GatewayListItem(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayListItem& GatewayListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GatewayId"))
-  {
+GatewayListItem& GatewayListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GatewayId")) {
     m_gatewayId = jsonValue.GetString("GatewayId");
     m_gatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DownlinkFrequency"))
-  {
+  if (jsonValue.ValueExists("DownlinkFrequency")) {
     m_downlinkFrequency = jsonValue.GetInteger("DownlinkFrequency");
     m_downlinkFrequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayListItem::Jsonize() const
-{
+JsonValue GatewayListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_gatewayIdHasBeenSet)
-  {
-   payload.WithString("GatewayId", m_gatewayId);
-
+  if (m_gatewayIdHasBeenSet) {
+    payload.WithString("GatewayId", m_gatewayId);
   }
 
-  if(m_downlinkFrequencyHasBeenSet)
-  {
-   payload.WithInteger("DownlinkFrequency", m_downlinkFrequency);
-
+  if (m_downlinkFrequencyHasBeenSet) {
+    payload.WithInteger("DownlinkFrequency", m_downlinkFrequency);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

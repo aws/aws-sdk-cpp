@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCapacityManagerMetricDimensionsResponse::GetCapacityManagerMetricDimensionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetCapacityManagerMetricDimensionsResponse::GetCapacityManagerMetricDimensionsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetCapacityManagerMetricDimensionsResponse& GetCapacityManagerMetricDimensionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetCapacityManagerMetricDimensionsResponse& GetCapacityManagerMetricDimensionsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetCapacityManagerMetricDimensionsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetCapacityManagerMetricDimensionsResponse")) {
     resultNode = rootNode.FirstChild("GetCapacityManagerMetricDimensionsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metricDimensionResultsNode = resultNode.FirstChild("metricDimensionResultSet");
-    if(!metricDimensionResultsNode.IsNull())
-    {
+    if (!metricDimensionResultsNode.IsNull()) {
       XmlNode metricDimensionResultsMember = metricDimensionResultsNode.FirstChild("item");
       m_metricDimensionResultsHasBeenSet = !metricDimensionResultsMember.IsNull();
-      while(!metricDimensionResultsMember.IsNull())
-      {
+      while (!metricDimensionResultsMember.IsNull()) {
         m_metricDimensionResults.push_back(metricDimensionResultsMember);
         metricDimensionResultsMember = metricDimensionResultsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ GetCapacityManagerMetricDimensionsResponse& GetCapacityManagerMetricDimensionsRe
       m_metricDimensionResultsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ GetCapacityManagerMetricDimensionsResponse& GetCapacityManagerMetricDimensionsRe
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetCapacityManagerMetricDimensionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetCapacityManagerMetricDimensionsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

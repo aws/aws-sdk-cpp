@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeHostReservationOfferingsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeHostReservationOfferingsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
-{
+Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeHostReservationOfferings&";
-  if(m_filterHasBeenSet)
-  {
+  if (m_filterHasBeenSet) {
     unsigned filterCount = 1;
-    for(auto& item : m_filter)
-    {
+    for (auto& item : m_filter) {
       item.OutputToStream(ss, "Filter.", filterCount, "");
       filterCount++;
     }
   }
 
-  if(m_maxDurationHasBeenSet)
-  {
+  if (m_maxDurationHasBeenSet) {
     ss << "MaxDuration=" << m_maxDuration << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_minDurationHasBeenSet)
-  {
+  if (m_minDurationHasBeenSet) {
     ss << "MinDuration=" << m_minDuration << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_offeringIdHasBeenSet)
-  {
+  if (m_offeringIdHasBeenSet) {
     ss << "OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeHostReservationOfferingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeHostReservationOfferingsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

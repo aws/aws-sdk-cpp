@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget(JsonView jsonValue) { *this = jsonValue; }
 
-DifferentialPrivacyPrivacyBudget& DifferentialPrivacyPrivacyBudget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aggregations"))
-  {
+DifferentialPrivacyPrivacyBudget& DifferentialPrivacyPrivacyBudget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aggregations")) {
     Aws::Utils::Array<JsonView> aggregationsJsonList = jsonValue.GetArray("aggregations");
-    for(unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex)
-    {
+    for (unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex) {
       m_aggregations.push_back(aggregationsJsonList[aggregationsIndex].AsObject());
     }
     m_aggregationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("epsilon"))
-  {
+  if (jsonValue.ValueExists("epsilon")) {
     m_epsilon = jsonValue.GetInteger("epsilon");
     m_epsilonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DifferentialPrivacyPrivacyBudget::Jsonize() const
-{
+JsonValue DifferentialPrivacyPrivacyBudget::Jsonize() const {
   JsonValue payload;
 
-  if(m_aggregationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> aggregationsJsonList(m_aggregations.size());
-   for(unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex)
-   {
-     aggregationsJsonList[aggregationsIndex].AsObject(m_aggregations[aggregationsIndex].Jsonize());
-   }
-   payload.WithArray("aggregations", std::move(aggregationsJsonList));
-
+  if (m_aggregationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aggregationsJsonList(m_aggregations.size());
+    for (unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex) {
+      aggregationsJsonList[aggregationsIndex].AsObject(m_aggregations[aggregationsIndex].Jsonize());
+    }
+    payload.WithArray("aggregations", std::move(aggregationsJsonList));
   }
 
-  if(m_epsilonHasBeenSet)
-  {
-   payload.WithInteger("epsilon", m_epsilon);
-
+  if (m_epsilonHasBeenSet) {
+    payload.WithInteger("epsilon", m_epsilon);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

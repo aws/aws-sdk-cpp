@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-AutoAdjustData::AutoAdjustData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoAdjustData::AutoAdjustData(JsonView jsonValue) { *this = jsonValue; }
 
-AutoAdjustData& AutoAdjustData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutoAdjustType"))
-  {
+AutoAdjustData& AutoAdjustData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutoAdjustType")) {
     m_autoAdjustType = AutoAdjustTypeMapper::GetAutoAdjustTypeForName(jsonValue.GetString("AutoAdjustType"));
     m_autoAdjustTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HistoricalOptions"))
-  {
+  if (jsonValue.ValueExists("HistoricalOptions")) {
     m_historicalOptions = jsonValue.GetObject("HistoricalOptions");
     m_historicalOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastAutoAdjustTime"))
-  {
+  if (jsonValue.ValueExists("LastAutoAdjustTime")) {
     m_lastAutoAdjustTime = jsonValue.GetDouble("LastAutoAdjustTime");
     m_lastAutoAdjustTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoAdjustData::Jsonize() const
-{
+JsonValue AutoAdjustData::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoAdjustTypeHasBeenSet)
-  {
-   payload.WithString("AutoAdjustType", AutoAdjustTypeMapper::GetNameForAutoAdjustType(m_autoAdjustType));
+  if (m_autoAdjustTypeHasBeenSet) {
+    payload.WithString("AutoAdjustType", AutoAdjustTypeMapper::GetNameForAutoAdjustType(m_autoAdjustType));
   }
 
-  if(m_historicalOptionsHasBeenSet)
-  {
-   payload.WithObject("HistoricalOptions", m_historicalOptions.Jsonize());
-
+  if (m_historicalOptionsHasBeenSet) {
+    payload.WithObject("HistoricalOptions", m_historicalOptions.Jsonize());
   }
 
-  if(m_lastAutoAdjustTimeHasBeenSet)
-  {
-   payload.WithDouble("LastAutoAdjustTime", m_lastAutoAdjustTime.SecondsWithMSPrecision());
+  if (m_lastAutoAdjustTimeHasBeenSet) {
+    payload.WithDouble("LastAutoAdjustTime", m_lastAutoAdjustTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

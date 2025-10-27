@@ -4,76 +4,60 @@
  */
 
 #include <aws/config/model/AggregatedSourceStatusType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ConfigService {
+namespace Model {
+namespace AggregatedSourceStatusTypeMapper {
 
-namespace Aws
-{
-  namespace ConfigService
-  {
-    namespace Model
-    {
-      namespace AggregatedSourceStatusTypeMapper
-      {
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+static const int OUTDATED_HASH = HashingUtils::HashString("OUTDATED");
 
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int OUTDATED_HASH = HashingUtils::HashString("OUTDATED");
+AggregatedSourceStatusType GetAggregatedSourceStatusTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == FAILED_HASH) {
+    return AggregatedSourceStatusType::FAILED;
+  } else if (hashCode == SUCCEEDED_HASH) {
+    return AggregatedSourceStatusType::SUCCEEDED;
+  } else if (hashCode == OUTDATED_HASH) {
+    return AggregatedSourceStatusType::OUTDATED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AggregatedSourceStatusType>(hashCode);
+  }
 
+  return AggregatedSourceStatusType::NOT_SET;
+}
 
-        AggregatedSourceStatusType GetAggregatedSourceStatusTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FAILED_HASH)
-          {
-            return AggregatedSourceStatusType::FAILED;
-          }
-          else if (hashCode == SUCCEEDED_HASH)
-          {
-            return AggregatedSourceStatusType::SUCCEEDED;
-          }
-          else if (hashCode == OUTDATED_HASH)
-          {
-            return AggregatedSourceStatusType::OUTDATED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AggregatedSourceStatusType>(hashCode);
-          }
+Aws::String GetNameForAggregatedSourceStatusType(AggregatedSourceStatusType enumValue) {
+  switch (enumValue) {
+    case AggregatedSourceStatusType::NOT_SET:
+      return {};
+    case AggregatedSourceStatusType::FAILED:
+      return "FAILED";
+    case AggregatedSourceStatusType::SUCCEEDED:
+      return "SUCCEEDED";
+    case AggregatedSourceStatusType::OUTDATED:
+      return "OUTDATED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AggregatedSourceStatusType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAggregatedSourceStatusType(AggregatedSourceStatusType enumValue)
-        {
-          switch(enumValue)
-          {
-          case AggregatedSourceStatusType::NOT_SET:
-            return {};
-          case AggregatedSourceStatusType::FAILED:
-            return "FAILED";
-          case AggregatedSourceStatusType::SUCCEEDED:
-            return "SUCCEEDED";
-          case AggregatedSourceStatusType::OUTDATED:
-            return "OUTDATED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AggregatedSourceStatusTypeMapper
-    } // namespace Model
-  } // namespace ConfigService
-} // namespace Aws
+}  // namespace AggregatedSourceStatusTypeMapper
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

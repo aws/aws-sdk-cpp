@@ -4,81 +4,94 @@
  */
 
 #pragma once
-#include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
+/**
+ */
+class GetAgentActionGroupRequest : public BedrockAgentRequest {
+ public:
+  AWS_BEDROCKAGENT_API GetAgentActionGroupRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetAgentActionGroup"; }
+
+  AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier of the agent that the action group belongs to.</p>
    */
-  class GetAgentActionGroupRequest : public BedrockAgentRequest
-  {
-  public:
-    AWS_BEDROCKAGENT_API GetAgentActionGroupRequest() = default;
+  inline const Aws::String& GetAgentId() const { return m_agentId; }
+  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+  template <typename AgentIdT = Aws::String>
+  void SetAgentId(AgentIdT&& value) {
+    m_agentIdHasBeenSet = true;
+    m_agentId = std::forward<AgentIdT>(value);
+  }
+  template <typename AgentIdT = Aws::String>
+  GetAgentActionGroupRequest& WithAgentId(AgentIdT&& value) {
+    SetAgentId(std::forward<AgentIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetAgentActionGroup"; }
+  ///@{
+  /**
+   * <p>The version of the agent that the action group belongs to.</p>
+   */
+  inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
+  inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+  template <typename AgentVersionT = Aws::String>
+  void SetAgentVersion(AgentVersionT&& value) {
+    m_agentVersionHasBeenSet = true;
+    m_agentVersion = std::forward<AgentVersionT>(value);
+  }
+  template <typename AgentVersionT = Aws::String>
+  GetAgentActionGroupRequest& WithAgentVersion(AgentVersionT&& value) {
+    SetAgentVersion(std::forward<AgentVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The unique identifier of the action group for which to get information.</p>
+   */
+  inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
+  inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
+  template <typename ActionGroupIdT = Aws::String>
+  void SetActionGroupId(ActionGroupIdT&& value) {
+    m_actionGroupIdHasBeenSet = true;
+    m_actionGroupId = std::forward<ActionGroupIdT>(value);
+  }
+  template <typename ActionGroupIdT = Aws::String>
+  GetAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) {
+    SetActionGroupId(std::forward<ActionGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_agentId;
+  bool m_agentIdHasBeenSet = false;
 
+  Aws::String m_agentVersion;
+  bool m_agentVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The unique identifier of the agent that the action group belongs to.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    GetAgentActionGroupRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_actionGroupId;
+  bool m_actionGroupIdHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The version of the agent that the action group belongs to.</p>
-     */
-    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
-    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    template<typename AgentVersionT = Aws::String>
-    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
-    template<typename AgentVersionT = Aws::String>
-    GetAgentActionGroupRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the action group for which to get information.</p>
-     */
-    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
-    inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
-    template<typename ActionGroupIdT = Aws::String>
-    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
-    template<typename ActionGroupIdT = Aws::String>
-    GetAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
-
-    Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet = false;
-
-    Aws::String m_actionGroupId;
-    bool m_actionGroupIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

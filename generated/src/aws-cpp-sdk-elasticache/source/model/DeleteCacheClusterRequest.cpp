@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteCacheClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteCacheClusterRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCacheClusterRequest::SerializePayload() const
-{
+Aws::String DeleteCacheClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheCluster&";
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_finalSnapshotIdentifierHasBeenSet)
-  {
+  if (m_finalSnapshotIdentifierHasBeenSet) {
     ss << "FinalSnapshotIdentifier=" << StringUtils::URLEncode(m_finalSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-RuleExecutionFilter::RuleExecutionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleExecutionFilter::RuleExecutionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-RuleExecutionFilter& RuleExecutionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pipelineExecutionId"))
-  {
+RuleExecutionFilter& RuleExecutionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pipelineExecutionId")) {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
     m_pipelineExecutionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestInPipelineExecution"))
-  {
+  if (jsonValue.ValueExists("latestInPipelineExecution")) {
     m_latestInPipelineExecution = jsonValue.GetObject("latestInPipelineExecution");
     m_latestInPipelineExecutionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleExecutionFilter::Jsonize() const
-{
+JsonValue RuleExecutionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_pipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
-
+  if (m_pipelineExecutionIdHasBeenSet) {
+    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
   }
 
-  if(m_latestInPipelineExecutionHasBeenSet)
-  {
-   payload.WithObject("latestInPipelineExecution", m_latestInPipelineExecution.Jsonize());
-
+  if (m_latestInPipelineExecutionHasBeenSet) {
+    payload.WithObject("latestInPipelineExecution", m_latestInPipelineExecution.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

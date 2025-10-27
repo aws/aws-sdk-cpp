@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class BotLocaleFilterName
-  {
-    NOT_SET,
-    BotLocaleName
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class BotLocaleFilterName { NOT_SET, BotLocaleName };
 
-namespace BotLocaleFilterNameMapper
-{
+namespace BotLocaleFilterNameMapper {
 AWS_LEXMODELSV2_API BotLocaleFilterName GetBotLocaleFilterNameForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForBotLocaleFilterName(BotLocaleFilterName value);
-} // namespace BotLocaleFilterNameMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BotLocaleFilterNameMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

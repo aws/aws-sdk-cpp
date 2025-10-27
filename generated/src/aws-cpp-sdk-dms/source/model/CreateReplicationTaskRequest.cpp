@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/CreateReplicationTaskRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/CreateReplicationTaskRequest.h>
 
 #include <utility>
 
@@ -12,102 +12,70 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateReplicationTaskRequest::SerializePayload() const
-{
+Aws::String CreateReplicationTaskRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationTaskIdentifierHasBeenSet)
-  {
-   payload.WithString("ReplicationTaskIdentifier", m_replicationTaskIdentifier);
-
+  if (m_replicationTaskIdentifierHasBeenSet) {
+    payload.WithString("ReplicationTaskIdentifier", m_replicationTaskIdentifier);
   }
 
-  if(m_sourceEndpointArnHasBeenSet)
-  {
-   payload.WithString("SourceEndpointArn", m_sourceEndpointArn);
-
+  if (m_sourceEndpointArnHasBeenSet) {
+    payload.WithString("SourceEndpointArn", m_sourceEndpointArn);
   }
 
-  if(m_targetEndpointArnHasBeenSet)
-  {
-   payload.WithString("TargetEndpointArn", m_targetEndpointArn);
-
+  if (m_targetEndpointArnHasBeenSet) {
+    payload.WithString("TargetEndpointArn", m_targetEndpointArn);
   }
 
-  if(m_replicationInstanceArnHasBeenSet)
-  {
-   payload.WithString("ReplicationInstanceArn", m_replicationInstanceArn);
-
+  if (m_replicationInstanceArnHasBeenSet) {
+    payload.WithString("ReplicationInstanceArn", m_replicationInstanceArn);
   }
 
-  if(m_migrationTypeHasBeenSet)
-  {
-   payload.WithString("MigrationType", MigrationTypeValueMapper::GetNameForMigrationTypeValue(m_migrationType));
+  if (m_migrationTypeHasBeenSet) {
+    payload.WithString("MigrationType", MigrationTypeValueMapper::GetNameForMigrationTypeValue(m_migrationType));
   }
 
-  if(m_tableMappingsHasBeenSet)
-  {
-   payload.WithString("TableMappings", m_tableMappings);
-
+  if (m_tableMappingsHasBeenSet) {
+    payload.WithString("TableMappings", m_tableMappings);
   }
 
-  if(m_replicationTaskSettingsHasBeenSet)
-  {
-   payload.WithString("ReplicationTaskSettings", m_replicationTaskSettings);
-
+  if (m_replicationTaskSettingsHasBeenSet) {
+    payload.WithString("ReplicationTaskSettings", m_replicationTaskSettings);
   }
 
-  if(m_cdcStartTimeHasBeenSet)
-  {
-   payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
+  if (m_cdcStartTimeHasBeenSet) {
+    payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_cdcStartPositionHasBeenSet)
-  {
-   payload.WithString("CdcStartPosition", m_cdcStartPosition);
-
+  if (m_cdcStartPositionHasBeenSet) {
+    payload.WithString("CdcStartPosition", m_cdcStartPosition);
   }
 
-  if(m_cdcStopPositionHasBeenSet)
-  {
-   payload.WithString("CdcStopPosition", m_cdcStopPosition);
-
+  if (m_cdcStopPositionHasBeenSet) {
+    payload.WithString("CdcStopPosition", m_cdcStopPosition);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_taskDataHasBeenSet)
-  {
-   payload.WithString("TaskData", m_taskData);
-
+  if (m_taskDataHasBeenSet) {
+    payload.WithString("TaskData", m_taskData);
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateReplicationTaskRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateReplicationTaskRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonDMSv20160101.CreateReplicationTask"));
   return headers;
-
 }
-
-
-
-

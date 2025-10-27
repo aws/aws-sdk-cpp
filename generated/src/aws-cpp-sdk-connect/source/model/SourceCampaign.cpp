@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SourceCampaign::SourceCampaign(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceCampaign::SourceCampaign(JsonView jsonValue) { *this = jsonValue; }
 
-SourceCampaign& SourceCampaign::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CampaignId"))
-  {
+SourceCampaign& SourceCampaign::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CampaignId")) {
     m_campaignId = jsonValue.GetString("CampaignId");
     m_campaignIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutboundRequestId"))
-  {
+  if (jsonValue.ValueExists("OutboundRequestId")) {
     m_outboundRequestId = jsonValue.GetString("OutboundRequestId");
     m_outboundRequestIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceCampaign::Jsonize() const
-{
+JsonValue SourceCampaign::Jsonize() const {
   JsonValue payload;
 
-  if(m_campaignIdHasBeenSet)
-  {
-   payload.WithString("CampaignId", m_campaignId);
-
+  if (m_campaignIdHasBeenSet) {
+    payload.WithString("CampaignId", m_campaignId);
   }
 
-  if(m_outboundRequestIdHasBeenSet)
-  {
-   payload.WithString("OutboundRequestId", m_outboundRequestId);
-
+  if (m_outboundRequestIdHasBeenSet) {
+    payload.WithString("OutboundRequestId", m_outboundRequestId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

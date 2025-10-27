@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace BackupSearch {
+namespace Model {
 
-ExportSpecification::ExportSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportSpecification::ExportSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-ExportSpecification& ExportSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3ExportSpecification"))
-  {
+ExportSpecification& ExportSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3ExportSpecification")) {
     m_s3ExportSpecification = jsonValue.GetObject("s3ExportSpecification");
     m_s3ExportSpecificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportSpecification::Jsonize() const
-{
+JsonValue ExportSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ExportSpecificationHasBeenSet)
-  {
-   payload.WithObject("s3ExportSpecification", m_s3ExportSpecification.Jsonize());
-
+  if (m_s3ExportSpecificationHasBeenSet) {
+    payload.WithObject("s3ExportSpecification", m_s3ExportSpecification.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupSearch
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-UpdateBackendAuthMFAConfig::UpdateBackendAuthMFAConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBackendAuthMFAConfig::UpdateBackendAuthMFAConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBackendAuthMFAConfig& UpdateBackendAuthMFAConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MFAMode"))
-  {
+UpdateBackendAuthMFAConfig& UpdateBackendAuthMFAConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MFAMode")) {
     m_mFAMode = MFAModeMapper::GetMFAModeForName(jsonValue.GetString("MFAMode"));
     m_mFAModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("settings"))
-  {
+  if (jsonValue.ValueExists("settings")) {
     m_settings = jsonValue.GetObject("settings");
     m_settingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBackendAuthMFAConfig::Jsonize() const
-{
+JsonValue UpdateBackendAuthMFAConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_mFAModeHasBeenSet)
-  {
-   payload.WithString("MFAMode", MFAModeMapper::GetNameForMFAMode(m_mFAMode));
+  if (m_mFAModeHasBeenSet) {
+    payload.WithString("MFAMode", MFAModeMapper::GetNameForMFAMode(m_mFAMode));
   }
 
-  if(m_settingsHasBeenSet)
-  {
-   payload.WithObject("settings", m_settings.Jsonize());
-
+  if (m_settingsHasBeenSet) {
+    payload.WithObject("settings", m_settings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

@@ -12,32 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartConfigRulesEvaluationRequest::SerializePayload() const
-{
+Aws::String StartConfigRulesEvaluationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configRuleNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
-   for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
-   {
-     configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
-   }
-   payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
-
+  if (m_configRuleNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+    for (unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex) {
+      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
+    }
+    payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartConfigRulesEvaluationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartConfigRulesEvaluationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.StartConfigRulesEvaluation"));
   return headers;
-
 }
-
-
-
-

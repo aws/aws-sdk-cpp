@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/RejectChoice.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/RejectChoice.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-RejectChoice::RejectChoice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RejectChoice::RejectChoice(JsonView jsonValue) { *this = jsonValue; }
 
-RejectChoice& RejectChoice::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("predictionChoices"))
-  {
+RejectChoice& RejectChoice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("predictionChoices")) {
     Aws::Utils::Array<JsonView> predictionChoicesJsonList = jsonValue.GetArray("predictionChoices");
-    for(unsigned predictionChoicesIndex = 0; predictionChoicesIndex < predictionChoicesJsonList.GetLength(); ++predictionChoicesIndex)
-    {
+    for (unsigned predictionChoicesIndex = 0; predictionChoicesIndex < predictionChoicesJsonList.GetLength(); ++predictionChoicesIndex) {
       m_predictionChoices.push_back(predictionChoicesJsonList[predictionChoicesIndex].AsInteger());
     }
     m_predictionChoicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("predictionTarget"))
-  {
+  if (jsonValue.ValueExists("predictionTarget")) {
     m_predictionTarget = jsonValue.GetString("predictionTarget");
     m_predictionTargetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RejectChoice::Jsonize() const
-{
+JsonValue RejectChoice::Jsonize() const {
   JsonValue payload;
 
-  if(m_predictionChoicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> predictionChoicesJsonList(m_predictionChoices.size());
-   for(unsigned predictionChoicesIndex = 0; predictionChoicesIndex < predictionChoicesJsonList.GetLength(); ++predictionChoicesIndex)
-   {
-     predictionChoicesJsonList[predictionChoicesIndex].AsInteger(m_predictionChoices[predictionChoicesIndex]);
-   }
-   payload.WithArray("predictionChoices", std::move(predictionChoicesJsonList));
-
+  if (m_predictionChoicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> predictionChoicesJsonList(m_predictionChoices.size());
+    for (unsigned predictionChoicesIndex = 0; predictionChoicesIndex < predictionChoicesJsonList.GetLength(); ++predictionChoicesIndex) {
+      predictionChoicesJsonList[predictionChoicesIndex].AsInteger(m_predictionChoices[predictionChoicesIndex]);
+    }
+    payload.WithArray("predictionChoices", std::move(predictionChoicesJsonList));
   }
 
-  if(m_predictionTargetHasBeenSet)
-  {
-   payload.WithString("predictionTarget", m_predictionTarget);
-
+  if (m_predictionTargetHasBeenSet) {
+    payload.WithString("predictionTarget", m_predictionTarget);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

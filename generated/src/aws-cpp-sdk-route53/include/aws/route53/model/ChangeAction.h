@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/Route53_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
-  enum class ChangeAction
-  {
-    NOT_SET,
-    CREATE,
-    DELETE_,
-    UPSERT
-  };
+namespace Aws {
+namespace Route53 {
+namespace Model {
+enum class ChangeAction { NOT_SET, CREATE, DELETE_, UPSERT };
 
-namespace ChangeActionMapper
-{
+namespace ChangeActionMapper {
 AWS_ROUTE53_API ChangeAction GetChangeActionForName(const Aws::String& name);
 
 AWS_ROUTE53_API Aws::String GetNameForChangeAction(ChangeAction value);
-} // namespace ChangeActionMapper
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace ChangeActionMapper
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

@@ -11,40 +11,28 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognizerMetadata::EntityRecognizerMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognizerMetadata::EntityRecognizerMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognizerMetadata& EntityRecognizerMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NumberOfTrainedDocuments"))
-  {
+EntityRecognizerMetadata& EntityRecognizerMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NumberOfTrainedDocuments")) {
     m_numberOfTrainedDocuments = jsonValue.GetInteger("NumberOfTrainedDocuments");
     m_numberOfTrainedDocumentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfTestDocuments"))
-  {
+  if (jsonValue.ValueExists("NumberOfTestDocuments")) {
     m_numberOfTestDocuments = jsonValue.GetInteger("NumberOfTestDocuments");
     m_numberOfTestDocumentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationMetrics"))
-  {
+  if (jsonValue.ValueExists("EvaluationMetrics")) {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
     m_evaluationMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EntityTypes"))
-  {
+  if (jsonValue.ValueExists("EntityTypes")) {
     Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
-    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
-    {
+    for (unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex) {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsObject());
     }
     m_entityTypesHasBeenSet = true;
@@ -52,42 +40,32 @@ EntityRecognizerMetadata& EntityRecognizerMetadata::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue EntityRecognizerMetadata::Jsonize() const
-{
+JsonValue EntityRecognizerMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfTrainedDocumentsHasBeenSet)
-  {
-   payload.WithInteger("NumberOfTrainedDocuments", m_numberOfTrainedDocuments);
-
+  if (m_numberOfTrainedDocumentsHasBeenSet) {
+    payload.WithInteger("NumberOfTrainedDocuments", m_numberOfTrainedDocuments);
   }
 
-  if(m_numberOfTestDocumentsHasBeenSet)
-  {
-   payload.WithInteger("NumberOfTestDocuments", m_numberOfTestDocuments);
-
+  if (m_numberOfTestDocumentsHasBeenSet) {
+    payload.WithInteger("NumberOfTestDocuments", m_numberOfTestDocuments);
   }
 
-  if(m_evaluationMetricsHasBeenSet)
-  {
-   payload.WithObject("EvaluationMetrics", m_evaluationMetrics.Jsonize());
-
+  if (m_evaluationMetricsHasBeenSet) {
+    payload.WithObject("EvaluationMetrics", m_evaluationMetrics.Jsonize());
   }
 
-  if(m_entityTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
-   for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
-   {
-     entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());
-   }
-   payload.WithArray("EntityTypes", std::move(entityTypesJsonList));
-
+  if (m_entityTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+    for (unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex) {
+      entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());
+    }
+    payload.WithArray("EntityTypes", std::move(entityTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

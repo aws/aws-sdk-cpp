@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/importexport/model/CreateJobRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/importexport/model/CreateJobRequest.h>
 
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateJobRequest::SerializePayload() const
-{
+Aws::String CreateJobRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateJob&";
-  if(m_jobTypeHasBeenSet)
-  {
+  if (m_jobTypeHasBeenSet) {
     ss << "JobType=" << StringUtils::URLEncode(JobTypeMapper::GetNameForJobType(m_jobType)) << "&";
   }
 
-  if(m_manifestHasBeenSet)
-  {
+  if (m_manifestHasBeenSet) {
     ss << "Manifest=" << StringUtils::URLEncode(m_manifest.c_str()) << "&";
   }
 
-  if(m_manifestAddendumHasBeenSet)
-  {
+  if (m_manifestAddendumHasBeenSet) {
     ss << "ManifestAddendum=" << StringUtils::URLEncode(m_manifestAddendum.c_str()) << "&";
   }
 
-  if(m_validateOnlyHasBeenSet)
-  {
+  if (m_validateOnlyHasBeenSet) {
     ss << "ValidateOnly=" << std::boolalpha << m_validateOnly << "&";
   }
 
-  if(m_aPIVersionHasBeenSet)
-  {
+  if (m_aPIVersionHasBeenSet) {
     ss << "APIVersion=" << StringUtils::URLEncode(m_aPIVersion.c_str()) << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateJobRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateJobRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateJobRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

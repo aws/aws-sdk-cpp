@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ContributionAnalysisFactor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ContributionAnalysisFactor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ContributionAnalysisFactor::ContributionAnalysisFactor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContributionAnalysisFactor::ContributionAnalysisFactor(JsonView jsonValue) { *this = jsonValue; }
 
-ContributionAnalysisFactor& ContributionAnalysisFactor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldName"))
-  {
+ContributionAnalysisFactor& ContributionAnalysisFactor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldName")) {
     m_fieldName = jsonValue.GetString("FieldName");
     m_fieldNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContributionAnalysisFactor::Jsonize() const
-{
+JsonValue ContributionAnalysisFactor::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldNameHasBeenSet)
-  {
-   payload.WithString("FieldName", m_fieldName);
-
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("FieldName", m_fieldName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,63 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/model/IntelligentTieringConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace S3Crt
-{
-namespace Model
-{
-  class GetBucketIntelligentTieringConfigurationResult
-  {
-  public:
-    AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult() = default;
-    AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3Crt {
+namespace Model {
+class GetBucketIntelligentTieringConfigurationResult {
+ public:
+  AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult() = default;
+  AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_S3CRT_API GetBucketIntelligentTieringConfigurationResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>Container for S3 Intelligent-Tiering configuration.</p>
+   */
+  inline const IntelligentTieringConfiguration& GetIntelligentTieringConfiguration() const { return m_intelligentTieringConfiguration; }
+  template <typename IntelligentTieringConfigurationT = IntelligentTieringConfiguration>
+  void SetIntelligentTieringConfiguration(IntelligentTieringConfigurationT&& value) {
+    m_intelligentTieringConfigurationHasBeenSet = true;
+    m_intelligentTieringConfiguration = std::forward<IntelligentTieringConfigurationT>(value);
+  }
+  template <typename IntelligentTieringConfigurationT = IntelligentTieringConfiguration>
+  GetBucketIntelligentTieringConfigurationResult& WithIntelligentTieringConfiguration(IntelligentTieringConfigurationT&& value) {
+    SetIntelligentTieringConfiguration(std::forward<IntelligentTieringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Container for S3 Intelligent-Tiering configuration.</p>
-     */
-    inline const IntelligentTieringConfiguration& GetIntelligentTieringConfiguration() const { return m_intelligentTieringConfiguration; }
-    template<typename IntelligentTieringConfigurationT = IntelligentTieringConfiguration>
-    void SetIntelligentTieringConfiguration(IntelligentTieringConfigurationT&& value) { m_intelligentTieringConfigurationHasBeenSet = true; m_intelligentTieringConfiguration = std::forward<IntelligentTieringConfigurationT>(value); }
-    template<typename IntelligentTieringConfigurationT = IntelligentTieringConfiguration>
-    GetBucketIntelligentTieringConfigurationResult& WithIntelligentTieringConfiguration(IntelligentTieringConfigurationT&& value) { SetIntelligentTieringConfiguration(std::forward<IntelligentTieringConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetBucketIntelligentTieringConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetBucketIntelligentTieringConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  IntelligentTieringConfiguration m_intelligentTieringConfiguration;
+  bool m_intelligentTieringConfigurationHasBeenSet = false;
 
-    IntelligentTieringConfiguration m_intelligentTieringConfiguration;
-    bool m_intelligentTieringConfigurationHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RemediationException::RemediationException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RemediationException::RemediationException(JsonView jsonValue) { *this = jsonValue; }
 
-RemediationException& RemediationException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigRuleName"))
-  {
+RemediationException& RemediationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigRuleName")) {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
     m_configRuleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationTime"))
-  {
+  if (jsonValue.ValueExists("ExpirationTime")) {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
     m_expirationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RemediationException::Jsonize() const
-{
+JsonValue RemediationException::Jsonize() const {
   JsonValue payload;
 
-  if(m_configRuleNameHasBeenSet)
-  {
-   payload.WithString("ConfigRuleName", m_configRuleName);
-
+  if (m_configRuleNameHasBeenSet) {
+    payload.WithString("ConfigRuleName", m_configRuleName);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_expirationTimeHasBeenSet)
-  {
-   payload.WithDouble("ExpirationTime", m_expirationTime.SecondsWithMSPrecision());
+  if (m_expirationTimeHasBeenSet) {
+    payload.WithDouble("ExpirationTime", m_expirationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

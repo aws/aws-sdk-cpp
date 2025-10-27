@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/ecr-public/ECRPublic_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/ecr-public/ECRPublicEndpointRules.h>
+#include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ECRPublic
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ECRPublic {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ECRPublicClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ECRPublicDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ECRPUBLIC_API ECRPublicEndpointProvider : public ECRPublicDefaultEpProviderBase
-{
-public:
-    using ECRPublicResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ECRPUBLIC_API ECRPublicEndpointProvider : public ECRPublicDefaultEpProviderBase {
+ public:
+  using ECRPublicResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ECRPublicEndpointProvider()
-      : ECRPublicDefaultEpProviderBase(Aws::ECRPublic::ECRPublicEndpointRules::GetRulesBlob(), Aws::ECRPublic::ECRPublicEndpointRules::RulesBlobSize)
-    {}
+  ECRPublicEndpointProvider()
+      : ECRPublicDefaultEpProviderBase(Aws::ECRPublic::ECRPublicEndpointRules::GetRulesBlob(),
+                                       Aws::ECRPublic::ECRPublicEndpointRules::RulesBlobSize) {}
 
-    ~ECRPublicEndpointProvider()
-    {
-    }
+  ~ECRPublicEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ECRPublic
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ECRPublic
+}  // namespace Aws

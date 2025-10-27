@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/ProresTelecine.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/ProresTelecine.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace ProresTelecineMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace ProresTelecineMapper
-      {
+static const int NONE_HASH = HashingUtils::HashString("NONE");
+static const int HARD_HASH = HashingUtils::HashString("HARD");
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int HARD_HASH = HashingUtils::HashString("HARD");
+ProresTelecine GetProresTelecineForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == NONE_HASH) {
+    return ProresTelecine::NONE;
+  } else if (hashCode == HARD_HASH) {
+    return ProresTelecine::HARD;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ProresTelecine>(hashCode);
+  }
 
+  return ProresTelecine::NOT_SET;
+}
 
-        ProresTelecine GetProresTelecineForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NONE_HASH)
-          {
-            return ProresTelecine::NONE;
-          }
-          else if (hashCode == HARD_HASH)
-          {
-            return ProresTelecine::HARD;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ProresTelecine>(hashCode);
-          }
+Aws::String GetNameForProresTelecine(ProresTelecine enumValue) {
+  switch (enumValue) {
+    case ProresTelecine::NOT_SET:
+      return {};
+    case ProresTelecine::NONE:
+      return "NONE";
+    case ProresTelecine::HARD:
+      return "HARD";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ProresTelecine::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForProresTelecine(ProresTelecine enumValue)
-        {
-          switch(enumValue)
-          {
-          case ProresTelecine::NOT_SET:
-            return {};
-          case ProresTelecine::NONE:
-            return "NONE";
-          case ProresTelecine::HARD:
-            return "HARD";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ProresTelecineMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace ProresTelecineMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

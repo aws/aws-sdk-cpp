@@ -4,121 +4,148 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class DescribeHostReservationsRequest : public EC2Request {
+ public:
+  AWS_EC2_API DescribeHostReservationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeHostReservations"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+   * family (for example, <code>m4</code>).</p> </li> <li> <p>
+   * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+   * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
+   * <code>state</code> - The state of the reservation (<code>payment-pending</code>
+   * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
+   * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
+   * assigned to the resource. Use the tag key in the filter name and the tag value
+   * as the filter value. For example, to find all resources that have a tag with the
+   * key <code>Owner</code> and the value <code>TeamA</code>, specify
+   * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+   * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+   * the resource. Use this filter to find all resources assigned a tag with a
+   * specific key, regardless of the tag value.</p> </li> </ul>
    */
-  class DescribeHostReservationsRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API DescribeHostReservationsRequest() = default;
+  inline const Aws::Vector<Filter>& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = Aws::Vector<Filter>>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = Aws::Vector<Filter>>
+  DescribeHostReservationsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  template <typename FilterT = Filter>
+  DescribeHostReservationsRequest& AddFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter.emplace_back(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeHostReservations"; }
+  ///@{
+  /**
+   * <p>The host reservation IDs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const { return m_hostReservationIdSet; }
+  inline bool HostReservationIdSetHasBeenSet() const { return m_hostReservationIdSetHasBeenSet; }
+  template <typename HostReservationIdSetT = Aws::Vector<Aws::String>>
+  void SetHostReservationIdSet(HostReservationIdSetT&& value) {
+    m_hostReservationIdSetHasBeenSet = true;
+    m_hostReservationIdSet = std::forward<HostReservationIdSetT>(value);
+  }
+  template <typename HostReservationIdSetT = Aws::Vector<Aws::String>>
+  DescribeHostReservationsRequest& WithHostReservationIdSet(HostReservationIdSetT&& value) {
+    SetHostReservationIdSet(std::forward<HostReservationIdSetT>(value));
+    return *this;
+  }
+  template <typename HostReservationIdSetT = Aws::String>
+  DescribeHostReservationsRequest& AddHostReservationIdSet(HostReservationIdSetT&& value) {
+    m_hostReservationIdSetHasBeenSet = true;
+    m_hostReservationIdSet.emplace_back(std::forward<HostReservationIdSetT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The maximum number of results to return for the request in a single page. The
+   * remaining results can be seen by sending another request with the returned
+   * <code>nextToken</code> value. This value can be between 5 and 500. If
+   * <code>maxResults</code> is given a larger value than 500, you receive an
+   * error.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeHostReservationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p>The token to use to retrieve the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeHostReservationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Filter> m_filter;
+  bool m_filterHasBeenSet = false;
 
-  public:
+  Aws::Vector<Aws::String> m_hostReservationIdSet;
+  bool m_hostReservationIdSetHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
-     * family (for example, <code>m4</code>).</p> </li> <li> <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
-     * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the reservation (<code>payment-pending</code>
-     * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilter() const { return m_filter; }
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    template<typename FilterT = Aws::Vector<Filter>>
-    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
-    template<typename FilterT = Aws::Vector<Filter>>
-    DescribeHostReservationsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
-    template<typename FilterT = Filter>
-    DescribeHostReservationsRequest& AddFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter.emplace_back(std::forward<FilterT>(value)); return *this; }
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The host reservation IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const { return m_hostReservationIdSet; }
-    inline bool HostReservationIdSetHasBeenSet() const { return m_hostReservationIdSetHasBeenSet; }
-    template<typename HostReservationIdSetT = Aws::Vector<Aws::String>>
-    void SetHostReservationIdSet(HostReservationIdSetT&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::forward<HostReservationIdSetT>(value); }
-    template<typename HostReservationIdSetT = Aws::Vector<Aws::String>>
-    DescribeHostReservationsRequest& WithHostReservationIdSet(HostReservationIdSetT&& value) { SetHostReservationIdSet(std::forward<HostReservationIdSetT>(value)); return *this;}
-    template<typename HostReservationIdSetT = Aws::String>
-    DescribeHostReservationsRequest& AddHostReservationIdSet(HostReservationIdSetT&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.emplace_back(std::forward<HostReservationIdSetT>(value)); return *this; }
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an
-     * error.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeHostReservationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeHostReservationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::Vector<Filter> m_filter;
-    bool m_filterHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_hostReservationIdSet;
-    bool m_hostReservationIdSetHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

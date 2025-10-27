@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-InputChannelDataSource::InputChannelDataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputChannelDataSource::InputChannelDataSource(JsonView jsonValue) { *this = jsonValue; }
 
-InputChannelDataSource& InputChannelDataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("protectedQueryInputParameters"))
-  {
+InputChannelDataSource& InputChannelDataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("protectedQueryInputParameters")) {
     m_protectedQueryInputParameters = jsonValue.GetObject("protectedQueryInputParameters");
     m_protectedQueryInputParametersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputChannelDataSource::Jsonize() const
-{
+JsonValue InputChannelDataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_protectedQueryInputParametersHasBeenSet)
-  {
-   payload.WithObject("protectedQueryInputParameters", m_protectedQueryInputParameters.Jsonize());
-
+  if (m_protectedQueryInputParametersHasBeenSet) {
+    payload.WithObject("protectedQueryInputParameters", m_protectedQueryInputParameters.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

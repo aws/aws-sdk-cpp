@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
-  enum class RouteMatrixErrorCode
-  {
-    NOT_SET,
-    RouteNotFound,
-    RouteTooLong,
-    PositionsNotFound,
-    DestinationPositionNotFound,
-    DeparturePositionNotFound,
-    OtherValidationError
-  };
+namespace Aws {
+namespace LocationService {
+namespace Model {
+enum class RouteMatrixErrorCode {
+  NOT_SET,
+  RouteNotFound,
+  RouteTooLong,
+  PositionsNotFound,
+  DestinationPositionNotFound,
+  DeparturePositionNotFound,
+  OtherValidationError
+};
 
-namespace RouteMatrixErrorCodeMapper
-{
+namespace RouteMatrixErrorCodeMapper {
 AWS_LOCATIONSERVICE_API RouteMatrixErrorCode GetRouteMatrixErrorCodeForName(const Aws::String& name);
 
 AWS_LOCATIONSERVICE_API Aws::String GetNameForRouteMatrixErrorCode(RouteMatrixErrorCode value);
-} // namespace RouteMatrixErrorCodeMapper
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace RouteMatrixErrorCodeMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Model
-{
-  enum class InstanceMetadataTagsEnum
-  {
-    NOT_SET,
-    enabled,
-    disabled
-  };
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Model {
+enum class InstanceMetadataTagsEnum { NOT_SET, enabled, disabled };
 
-namespace InstanceMetadataTagsEnumMapper
-{
+namespace InstanceMetadataTagsEnumMapper {
 AWS_WORKSPACESINSTANCES_API InstanceMetadataTagsEnum GetInstanceMetadataTagsEnumForName(const Aws::String& name);
 
 AWS_WORKSPACESINSTANCES_API Aws::String GetNameForInstanceMetadataTagsEnum(InstanceMetadataTagsEnum value);
-} // namespace InstanceMetadataTagsEnumMapper
-} // namespace Model
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace InstanceMetadataTagsEnumMapper
+}  // namespace Model
+}  // namespace WorkspacesInstances
+}  // namespace Aws

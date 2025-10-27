@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/UploadSigningCertificateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/UploadSigningCertificateRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String UploadSigningCertificateRequest::SerializePayload() const
-{
+Aws::String UploadSigningCertificateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UploadSigningCertificate&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_certificateBodyHasBeenSet)
-  {
+  if (m_certificateBodyHasBeenSet) {
     ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String UploadSigningCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UploadSigningCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UploadSigningCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

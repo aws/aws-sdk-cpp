@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RenameColumnOperation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RenameColumnOperation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RenameColumnOperation::RenameColumnOperation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RenameColumnOperation::RenameColumnOperation(JsonView jsonValue) { *this = jsonValue; }
 
-RenameColumnOperation& RenameColumnOperation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ColumnName"))
-  {
+RenameColumnOperation& RenameColumnOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ColumnName")) {
     m_columnName = jsonValue.GetString("ColumnName");
     m_columnNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NewColumnName"))
-  {
+  if (jsonValue.ValueExists("NewColumnName")) {
     m_newColumnName = jsonValue.GetString("NewColumnName");
     m_newColumnNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RenameColumnOperation::Jsonize() const
-{
+JsonValue RenameColumnOperation::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnNameHasBeenSet)
-  {
-   payload.WithString("ColumnName", m_columnName);
-
+  if (m_columnNameHasBeenSet) {
+    payload.WithString("ColumnName", m_columnName);
   }
 
-  if(m_newColumnNameHasBeenSet)
-  {
-   payload.WithString("NewColumnName", m_newColumnName);
-
+  if (m_newColumnNameHasBeenSet) {
+    payload.WithString("NewColumnName", m_newColumnName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

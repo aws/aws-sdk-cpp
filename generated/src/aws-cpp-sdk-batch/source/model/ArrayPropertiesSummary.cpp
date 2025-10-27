@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ArrayPropertiesSummary::ArrayPropertiesSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArrayPropertiesSummary::ArrayPropertiesSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ArrayPropertiesSummary& ArrayPropertiesSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("size"))
-  {
+ArrayPropertiesSummary& ArrayPropertiesSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("size")) {
     m_size = jsonValue.GetInteger("size");
     m_sizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("index"))
-  {
+  if (jsonValue.ValueExists("index")) {
     m_index = jsonValue.GetInteger("index");
     m_indexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArrayPropertiesSummary::Jsonize() const
-{
+JsonValue ArrayPropertiesSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInteger("size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInteger("size", m_size);
   }
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("index", m_index);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

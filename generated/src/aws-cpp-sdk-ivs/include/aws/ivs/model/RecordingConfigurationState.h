@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs/IVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
-  enum class RecordingConfigurationState
-  {
-    NOT_SET,
-    CREATING,
-    CREATE_FAILED,
-    ACTIVE
-  };
+namespace Aws {
+namespace IVS {
+namespace Model {
+enum class RecordingConfigurationState { NOT_SET, CREATING, CREATE_FAILED, ACTIVE };
 
-namespace RecordingConfigurationStateMapper
-{
+namespace RecordingConfigurationStateMapper {
 AWS_IVS_API RecordingConfigurationState GetRecordingConfigurationStateForName(const Aws::String& name);
 
 AWS_IVS_API Aws::String GetNameForRecordingConfigurationState(RecordingConfigurationState value);
-} // namespace RecordingConfigurationStateMapper
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace RecordingConfigurationStateMapper
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

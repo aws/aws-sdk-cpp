@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class BotStatus
-  {
-    NOT_SET,
-    Creating,
-    Available,
-    Inactive,
-    Deleting,
-    Failed,
-    Versioning,
-    Importing,
-    Updating
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class BotStatus { NOT_SET, Creating, Available, Inactive, Deleting, Failed, Versioning, Importing, Updating };
 
-namespace BotStatusMapper
-{
+namespace BotStatusMapper {
 AWS_LEXMODELSV2_API BotStatus GetBotStatusForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForBotStatus(BotStatus value);
-} // namespace BotStatusMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BotStatusMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

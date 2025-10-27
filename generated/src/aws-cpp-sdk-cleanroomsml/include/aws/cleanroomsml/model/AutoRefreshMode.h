@@ -7,25 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class AutoRefreshMode
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class AutoRefreshMode { NOT_SET, ENABLED, DISABLED };
 
-namespace AutoRefreshModeMapper
-{
+namespace AutoRefreshModeMapper {
 AWS_CLEANROOMSML_API AutoRefreshMode GetAutoRefreshModeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForAutoRefreshMode(AutoRefreshMode value);
-} // namespace AutoRefreshModeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace AutoRefreshModeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class ProductCodeMode
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class ProductCodeMode { NOT_SET, ENABLED, DISABLED };
 
-namespace ProductCodeModeMapper
-{
+namespace ProductCodeModeMapper {
 AWS_DRS_API ProductCodeMode GetProductCodeModeForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForProductCodeMode(ProductCodeMode value);
-} // namespace ProductCodeModeMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace ProductCodeModeMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

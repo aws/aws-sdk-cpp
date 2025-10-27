@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/PolicyRole.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/PolicyRole.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
+namespace Aws {
+namespace IAM {
+namespace Model {
 
-PolicyRole::PolicyRole(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PolicyRole::PolicyRole(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
-{
+PolicyRole& PolicyRole::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
-    if(!roleNameNode.IsNull())
-    {
+    if (!roleNameNode.IsNull()) {
       m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
-    if(!roleIdNode.IsNull())
-    {
+    if (!roleIdNode.IsNull()) {
       m_roleId = Aws::Utils::Xml::DecodeEscapedXmlText(roleIdNode.GetText());
       m_roleIdHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_roleNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_roleNameHasBeenSet) {
+    oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  if(m_roleIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
-  }
-
-}
-
-void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_roleNameHasBeenSet)
-  {
-      oStream << location << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
-  }
-  if(m_roleIdHasBeenSet)
-  {
-      oStream << location << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
+  if (m_roleIdHasBeenSet) {
+    oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_roleNameHasBeenSet) {
+    oStream << location << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if (m_roleIdHasBeenSet) {
+    oStream << location << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

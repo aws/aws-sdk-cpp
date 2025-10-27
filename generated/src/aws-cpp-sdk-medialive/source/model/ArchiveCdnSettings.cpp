@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ArchiveCdnSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/ArchiveCdnSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-ArchiveCdnSettings::ArchiveCdnSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArchiveCdnSettings::ArchiveCdnSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ArchiveCdnSettings& ArchiveCdnSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("archiveS3Settings"))
-  {
+ArchiveCdnSettings& ArchiveCdnSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("archiveS3Settings")) {
     m_archiveS3Settings = jsonValue.GetObject("archiveS3Settings");
     m_archiveS3SettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArchiveCdnSettings::Jsonize() const
-{
+JsonValue ArchiveCdnSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_archiveS3SettingsHasBeenSet)
-  {
-   payload.WithObject("archiveS3Settings", m_archiveS3Settings.Jsonize());
-
+  if (m_archiveS3SettingsHasBeenSet) {
+    payload.WithObject("archiveS3Settings", m_archiveS3Settings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

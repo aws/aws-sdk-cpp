@@ -3,29 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteFlowLogsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteFlowLogsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteFlowLogsRequest::SerializePayload() const
-{
+Aws::String DeleteFlowLogsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteFlowLogs&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_flowLogIdsHasBeenSet)
-  {
+  if (m_flowLogIdsHasBeenSet) {
     unsigned flowLogIdsCount = 1;
-    for(auto& item : m_flowLogIds)
-    {
-      ss << "FlowLogId." << flowLogIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_flowLogIds) {
+      ss << "FlowLogId." << flowLogIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       flowLogIdsCount++;
     }
   }
@@ -34,8 +29,4 @@ Aws::String DeleteFlowLogsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteFlowLogsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteFlowLogsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

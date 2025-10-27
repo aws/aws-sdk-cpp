@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchAttachTypedLinkResponse& BatchAttachTypedLinkResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TypedLinkSpecifier"))
-  {
+BatchAttachTypedLinkResponse& BatchAttachTypedLinkResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TypedLinkSpecifier")) {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
     m_typedLinkSpecifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchAttachTypedLinkResponse::Jsonize() const
-{
+JsonValue BatchAttachTypedLinkResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_typedLinkSpecifierHasBeenSet)
-  {
-   payload.WithObject("TypedLinkSpecifier", m_typedLinkSpecifier.Jsonize());
-
+  if (m_typedLinkSpecifierHasBeenSet) {
+    payload.WithObject("TypedLinkSpecifier", m_typedLinkSpecifier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

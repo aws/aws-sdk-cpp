@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ConfigurationDetails::ConfigurationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfigurationDetails::ConfigurationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ConfigurationDetails& ConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("directAnalysisConfigurationDetails"))
-  {
+ConfigurationDetails& ConfigurationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("directAnalysisConfigurationDetails")) {
     m_directAnalysisConfigurationDetails = jsonValue.GetObject("directAnalysisConfigurationDetails");
     m_directAnalysisConfigurationDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfigurationDetails::Jsonize() const
-{
+JsonValue ConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_directAnalysisConfigurationDetailsHasBeenSet)
-  {
-   payload.WithObject("directAnalysisConfigurationDetails", m_directAnalysisConfigurationDetails.Jsonize());
-
+  if (m_directAnalysisConfigurationDetailsHasBeenSet) {
+    payload.WithObject("directAnalysisConfigurationDetails", m_directAnalysisConfigurationDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

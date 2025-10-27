@@ -5,12 +5,8 @@
 
 #include <aws/ivschat/IvschatEndpointProvider.h>
 
-namespace Aws
-{
-namespace ivschat
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ivschat
-} // namespace Aws
+namespace Aws {
+namespace ivschat {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ivschat
+}  // namespace Aws

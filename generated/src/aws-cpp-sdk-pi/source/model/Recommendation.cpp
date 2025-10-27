@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pi/model/Recommendation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pi/model/Recommendation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
+namespace Aws {
+namespace PI {
+namespace Model {
 
-Recommendation::Recommendation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Recommendation::Recommendation(JsonView jsonValue) { *this = jsonValue; }
 
-Recommendation& Recommendation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecommendationId"))
-  {
+Recommendation& Recommendation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecommendationId")) {
     m_recommendationId = jsonValue.GetString("RecommendationId");
     m_recommendationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecommendationDescription"))
-  {
+  if (jsonValue.ValueExists("RecommendationDescription")) {
     m_recommendationDescription = jsonValue.GetString("RecommendationDescription");
     m_recommendationDescriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Recommendation::Jsonize() const
-{
+JsonValue Recommendation::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("RecommendationId", m_recommendationId);
-
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("RecommendationId", m_recommendationId);
   }
 
-  if(m_recommendationDescriptionHasBeenSet)
-  {
-   payload.WithString("RecommendationDescription", m_recommendationDescription);
-
+  if (m_recommendationDescriptionHasBeenSet) {
+    payload.WithString("RecommendationDescription", m_recommendationDescription);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

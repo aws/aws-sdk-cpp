@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListResourcesAssociatedToCustomLineItemFilter& ListResourcesAssociatedToCustomLineItemFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Relationship"))
-  {
+ListResourcesAssociatedToCustomLineItemFilter& ListResourcesAssociatedToCustomLineItemFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Relationship")) {
     m_relationship = CustomLineItemRelationshipMapper::GetCustomLineItemRelationshipForName(jsonValue.GetString("Relationship"));
     m_relationshipHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListResourcesAssociatedToCustomLineItemFilter::Jsonize() const
-{
+JsonValue ListResourcesAssociatedToCustomLineItemFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_relationshipHasBeenSet)
-  {
-   payload.WithString("Relationship", CustomLineItemRelationshipMapper::GetNameForCustomLineItemRelationship(m_relationship));
+  if (m_relationshipHasBeenSet) {
+    payload.WithString("Relationship", CustomLineItemRelationshipMapper::GetNameForCustomLineItemRelationship(m_relationship));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

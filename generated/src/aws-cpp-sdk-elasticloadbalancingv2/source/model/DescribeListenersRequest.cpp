@@ -3,47 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeListenersRequest::SerializePayload() const
-{
+Aws::String DescribeListenersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeListeners&";
-  if(m_loadBalancerArnHasBeenSet)
-  {
+  if (m_loadBalancerArnHasBeenSet) {
     ss << "LoadBalancerArn=" << StringUtils::URLEncode(m_loadBalancerArn.c_str()) << "&";
   }
 
-  if(m_listenerArnsHasBeenSet)
-  {
-    if (m_listenerArns.empty())
-    {
+  if (m_listenerArnsHasBeenSet) {
+    if (m_listenerArns.empty()) {
       ss << "ListenerArns=&";
-    }
-    else
-    {
+    } else {
       unsigned listenerArnsCount = 1;
-      for(auto& item : m_listenerArns)
-      {
-        ss << "ListenerArns.member." << listenerArnsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_listenerArns) {
+        ss << "ListenerArns.member." << listenerArnsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         listenerArnsCount++;
       }
     }
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_pageSizeHasBeenSet)
-  {
+  if (m_pageSizeHasBeenSet) {
     ss << "PageSize=" << m_pageSize << "&";
   }
 
@@ -51,8 +41,4 @@ Aws::String DescribeListenersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

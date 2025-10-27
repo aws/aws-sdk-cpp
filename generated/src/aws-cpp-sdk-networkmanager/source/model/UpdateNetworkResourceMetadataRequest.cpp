@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/UpdateNetworkResourceMetadataRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/UpdateNetworkResourceMetadataRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateNetworkResourceMetadataRequest::SerializePayload() const
-{
+Aws::String UpdateNetworkResourceMetadataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_metadataHasBeenSet)
-  {
-   JsonValue metadataJsonMap;
-   for(auto& metadataItem : m_metadata)
-   {
-     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
-   }
-   payload.WithObject("Metadata", std::move(metadataJsonMap));
-
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+    }
+    payload.WithObject("Metadata", std::move(metadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

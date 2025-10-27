@@ -3,135 +3,104 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TableConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TableConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TableConfiguration::TableConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableConfiguration::TableConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TableConfiguration& TableConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldWells"))
-  {
+TableConfiguration& TableConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldWells")) {
     m_fieldWells = jsonValue.GetObject("FieldWells");
     m_fieldWellsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SortConfiguration"))
-  {
+  if (jsonValue.ValueExists("SortConfiguration")) {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
     m_sortConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableOptions"))
-  {
+  if (jsonValue.ValueExists("TableOptions")) {
     m_tableOptions = jsonValue.GetObject("TableOptions");
     m_tableOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalOptions"))
-  {
+  if (jsonValue.ValueExists("TotalOptions")) {
     m_totalOptions = jsonValue.GetObject("TotalOptions");
     m_totalOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FieldOptions"))
-  {
+  if (jsonValue.ValueExists("FieldOptions")) {
     m_fieldOptions = jsonValue.GetObject("FieldOptions");
     m_fieldOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PaginatedReportOptions"))
-  {
+  if (jsonValue.ValueExists("PaginatedReportOptions")) {
     m_paginatedReportOptions = jsonValue.GetObject("PaginatedReportOptions");
     m_paginatedReportOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableInlineVisualizations"))
-  {
+  if (jsonValue.ValueExists("TableInlineVisualizations")) {
     Aws::Utils::Array<JsonView> tableInlineVisualizationsJsonList = jsonValue.GetArray("TableInlineVisualizations");
-    for(unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength(); ++tableInlineVisualizationsIndex)
-    {
+    for (unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength();
+         ++tableInlineVisualizationsIndex) {
       m_tableInlineVisualizations.push_back(tableInlineVisualizationsJsonList[tableInlineVisualizationsIndex].AsObject());
     }
     m_tableInlineVisualizationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Interactions"))
-  {
+  if (jsonValue.ValueExists("Interactions")) {
     m_interactions = jsonValue.GetObject("Interactions");
     m_interactionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableConfiguration::Jsonize() const
-{
+JsonValue TableConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldWellsHasBeenSet)
-  {
-   payload.WithObject("FieldWells", m_fieldWells.Jsonize());
-
+  if (m_fieldWellsHasBeenSet) {
+    payload.WithObject("FieldWells", m_fieldWells.Jsonize());
   }
 
-  if(m_sortConfigurationHasBeenSet)
-  {
-   payload.WithObject("SortConfiguration", m_sortConfiguration.Jsonize());
-
+  if (m_sortConfigurationHasBeenSet) {
+    payload.WithObject("SortConfiguration", m_sortConfiguration.Jsonize());
   }
 
-  if(m_tableOptionsHasBeenSet)
-  {
-   payload.WithObject("TableOptions", m_tableOptions.Jsonize());
-
+  if (m_tableOptionsHasBeenSet) {
+    payload.WithObject("TableOptions", m_tableOptions.Jsonize());
   }
 
-  if(m_totalOptionsHasBeenSet)
-  {
-   payload.WithObject("TotalOptions", m_totalOptions.Jsonize());
-
+  if (m_totalOptionsHasBeenSet) {
+    payload.WithObject("TotalOptions", m_totalOptions.Jsonize());
   }
 
-  if(m_fieldOptionsHasBeenSet)
-  {
-   payload.WithObject("FieldOptions", m_fieldOptions.Jsonize());
-
+  if (m_fieldOptionsHasBeenSet) {
+    payload.WithObject("FieldOptions", m_fieldOptions.Jsonize());
   }
 
-  if(m_paginatedReportOptionsHasBeenSet)
-  {
-   payload.WithObject("PaginatedReportOptions", m_paginatedReportOptions.Jsonize());
-
+  if (m_paginatedReportOptionsHasBeenSet) {
+    payload.WithObject("PaginatedReportOptions", m_paginatedReportOptions.Jsonize());
   }
 
-  if(m_tableInlineVisualizationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tableInlineVisualizationsJsonList(m_tableInlineVisualizations.size());
-   for(unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength(); ++tableInlineVisualizationsIndex)
-   {
-     tableInlineVisualizationsJsonList[tableInlineVisualizationsIndex].AsObject(m_tableInlineVisualizations[tableInlineVisualizationsIndex].Jsonize());
-   }
-   payload.WithArray("TableInlineVisualizations", std::move(tableInlineVisualizationsJsonList));
-
+  if (m_tableInlineVisualizationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tableInlineVisualizationsJsonList(m_tableInlineVisualizations.size());
+    for (unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength();
+         ++tableInlineVisualizationsIndex) {
+      tableInlineVisualizationsJsonList[tableInlineVisualizationsIndex].AsObject(
+          m_tableInlineVisualizations[tableInlineVisualizationsIndex].Jsonize());
+    }
+    payload.WithArray("TableInlineVisualizations", std::move(tableInlineVisualizationsJsonList));
   }
 
-  if(m_interactionsHasBeenSet)
-  {
-   payload.WithObject("Interactions", m_interactions.Jsonize());
-
+  if (m_interactionsHasBeenSet) {
+    payload.WithObject("Interactions", m_interactions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

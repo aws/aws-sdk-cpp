@@ -3,108 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/CreateListenerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/CreateListenerRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateListenerRequest::SerializePayload() const
-{
+Aws::String CreateListenerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateListener&";
-  if(m_loadBalancerArnHasBeenSet)
-  {
+  if (m_loadBalancerArnHasBeenSet) {
     ss << "LoadBalancerArn=" << StringUtils::URLEncode(m_loadBalancerArn.c_str()) << "&";
   }
 
-  if(m_protocolHasBeenSet)
-  {
+  if (m_protocolHasBeenSet) {
     ss << "Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
 
-  if(m_portHasBeenSet)
-  {
+  if (m_portHasBeenSet) {
     ss << "Port=" << m_port << "&";
   }
 
-  if(m_sslPolicyHasBeenSet)
-  {
+  if (m_sslPolicyHasBeenSet) {
     ss << "SslPolicy=" << StringUtils::URLEncode(m_sslPolicy.c_str()) << "&";
   }
 
-  if(m_certificatesHasBeenSet)
-  {
-    if (m_certificates.empty())
-    {
+  if (m_certificatesHasBeenSet) {
+    if (m_certificates.empty()) {
       ss << "Certificates=&";
-    }
-    else
-    {
+    } else {
       unsigned certificatesCount = 1;
-      for(auto& item : m_certificates)
-      {
+      for (auto& item : m_certificates) {
         item.OutputToStream(ss, "Certificates.member.", certificatesCount, "");
         certificatesCount++;
       }
     }
   }
 
-  if(m_defaultActionsHasBeenSet)
-  {
-    if (m_defaultActions.empty())
-    {
+  if (m_defaultActionsHasBeenSet) {
+    if (m_defaultActions.empty()) {
       ss << "DefaultActions=&";
-    }
-    else
-    {
+    } else {
       unsigned defaultActionsCount = 1;
-      for(auto& item : m_defaultActions)
-      {
+      for (auto& item : m_defaultActions) {
         item.OutputToStream(ss, "DefaultActions.member.", defaultActionsCount, "");
         defaultActionsCount++;
       }
     }
   }
 
-  if(m_alpnPolicyHasBeenSet)
-  {
-    if (m_alpnPolicy.empty())
-    {
+  if (m_alpnPolicyHasBeenSet) {
+    if (m_alpnPolicy.empty()) {
       ss << "AlpnPolicy=&";
-    }
-    else
-    {
+    } else {
       unsigned alpnPolicyCount = 1;
-      for(auto& item : m_alpnPolicy)
-      {
-        ss << "AlpnPolicy.member." << alpnPolicyCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_alpnPolicy) {
+        ss << "AlpnPolicy.member." << alpnPolicyCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         alpnPolicyCount++;
       }
     }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_mutualAuthenticationHasBeenSet)
-  {
+  if (m_mutualAuthenticationHasBeenSet) {
     m_mutualAuthentication.OutputToStream(ss, "MutualAuthentication");
   }
 
@@ -112,8 +85,4 @@ Aws::String CreateListenerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

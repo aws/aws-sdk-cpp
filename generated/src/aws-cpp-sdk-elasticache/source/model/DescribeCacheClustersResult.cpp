@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeCacheClustersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DescribeCacheClustersResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCacheClustersResult::DescribeCacheClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeCacheClustersResult::DescribeCacheClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeCacheClustersResult& DescribeCacheClustersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeCacheClustersResult& DescribeCacheClustersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCacheClustersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCacheClustersResult")) {
     resultNode = rootNode.FirstChild("DescribeCacheClustersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode cacheClustersNode = resultNode.FirstChild("CacheClusters");
-    if(!cacheClustersNode.IsNull())
-    {
+    if (!cacheClustersNode.IsNull()) {
       XmlNode cacheClustersMember = cacheClustersNode.FirstChild("CacheCluster");
       m_cacheClustersHasBeenSet = !cacheClustersMember.IsNull();
-      while(!cacheClustersMember.IsNull())
-      {
+      while (!cacheClustersMember.IsNull()) {
         m_cacheClusters.push_back(cacheClustersMember);
         cacheClustersMember = cacheClustersMember.NextNode("CacheCluster");
       }
@@ -59,7 +50,7 @@ DescribeCacheClustersResult& DescribeCacheClustersResult::operator =(const Aws::
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

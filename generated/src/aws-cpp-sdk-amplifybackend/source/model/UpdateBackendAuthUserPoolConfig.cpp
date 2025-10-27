@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBackendAuthUserPoolConfig& UpdateBackendAuthUserPoolConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("forgotPassword"))
-  {
+UpdateBackendAuthUserPoolConfig& UpdateBackendAuthUserPoolConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("forgotPassword")) {
     m_forgotPassword = jsonValue.GetObject("forgotPassword");
     m_forgotPasswordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mfa"))
-  {
+  if (jsonValue.ValueExists("mfa")) {
     m_mfa = jsonValue.GetObject("mfa");
     m_mfaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuth"))
-  {
+  if (jsonValue.ValueExists("oAuth")) {
     m_oAuth = jsonValue.GetObject("oAuth");
     m_oAuthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("passwordPolicy"))
-  {
+  if (jsonValue.ValueExists("passwordPolicy")) {
     m_passwordPolicy = jsonValue.GetObject("passwordPolicy");
     m_passwordPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verificationMessage"))
-  {
+  if (jsonValue.ValueExists("verificationMessage")) {
     m_verificationMessage = jsonValue.GetObject("verificationMessage");
     m_verificationMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBackendAuthUserPoolConfig::Jsonize() const
-{
+JsonValue UpdateBackendAuthUserPoolConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_forgotPasswordHasBeenSet)
-  {
-   payload.WithObject("forgotPassword", m_forgotPassword.Jsonize());
-
+  if (m_forgotPasswordHasBeenSet) {
+    payload.WithObject("forgotPassword", m_forgotPassword.Jsonize());
   }
 
-  if(m_mfaHasBeenSet)
-  {
-   payload.WithObject("mfa", m_mfa.Jsonize());
-
+  if (m_mfaHasBeenSet) {
+    payload.WithObject("mfa", m_mfa.Jsonize());
   }
 
-  if(m_oAuthHasBeenSet)
-  {
-   payload.WithObject("oAuth", m_oAuth.Jsonize());
-
+  if (m_oAuthHasBeenSet) {
+    payload.WithObject("oAuth", m_oAuth.Jsonize());
   }
 
-  if(m_passwordPolicyHasBeenSet)
-  {
-   payload.WithObject("passwordPolicy", m_passwordPolicy.Jsonize());
-
+  if (m_passwordPolicyHasBeenSet) {
+    payload.WithObject("passwordPolicy", m_passwordPolicy.Jsonize());
   }
 
-  if(m_verificationMessageHasBeenSet)
-  {
-   payload.WithObject("verificationMessage", m_verificationMessage.Jsonize());
-
+  if (m_verificationMessageHasBeenSet) {
+    payload.WithObject("verificationMessage", m_verificationMessage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

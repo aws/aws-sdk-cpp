@@ -12,45 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminListDevicesRequest::SerializePayload() const
-{
+Aws::String AdminListDevicesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
-  if(m_paginationTokenHasBeenSet)
-  {
-   payload.WithString("PaginationToken", m_paginationToken);
-
+  if (m_paginationTokenHasBeenSet) {
+    payload.WithString("PaginationToken", m_paginationToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminListDevicesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminListDevicesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminListDevices"));
   return headers;
-
 }
-
-
-
-

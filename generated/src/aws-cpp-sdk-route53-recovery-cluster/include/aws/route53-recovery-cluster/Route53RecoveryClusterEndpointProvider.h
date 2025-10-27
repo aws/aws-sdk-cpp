@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointRules.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Route53RecoveryCluster
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Route53RecoveryCluster {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using Route53RecoveryClusterClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using Route53RecoveryClusterBuiltInParameters = Aws::Endpoint::BuiltInParameters
  * The SDK must use service-specific type for each service per specification.
  */
 using Route53RecoveryClusterEndpointProviderBase =
-    EndpointProviderBase<Route53RecoveryClusterClientConfiguration, Route53RecoveryClusterBuiltInParameters, Route53RecoveryClusterClientContextParameters>;
+    EndpointProviderBase<Route53RecoveryClusterClientConfiguration, Route53RecoveryClusterBuiltInParameters,
+                         Route53RecoveryClusterClientContextParameters>;
 
 using Route53RecoveryClusterDefaultEpProviderBase =
-    DefaultEndpointProvider<Route53RecoveryClusterClientConfiguration, Route53RecoveryClusterBuiltInParameters, Route53RecoveryClusterClientContextParameters>;
+    DefaultEndpointProvider<Route53RecoveryClusterClientConfiguration, Route53RecoveryClusterBuiltInParameters,
+                            Route53RecoveryClusterClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterEndpointProvider : public Route53RecoveryClusterDefaultEpProviderBase
-{
-public:
-    using Route53RecoveryClusterResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterEndpointProvider : public Route53RecoveryClusterDefaultEpProviderBase {
+ public:
+  using Route53RecoveryClusterResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    Route53RecoveryClusterEndpointProvider()
-      : Route53RecoveryClusterDefaultEpProviderBase(Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::GetRulesBlob(), Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::RulesBlobSize)
-    {}
+  Route53RecoveryClusterEndpointProvider()
+      : Route53RecoveryClusterDefaultEpProviderBase(Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::GetRulesBlob(),
+                                                    Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::RulesBlobSize) {}
 
-    ~Route53RecoveryClusterEndpointProvider()
-    {
-    }
+  ~Route53RecoveryClusterEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Route53RecoveryCluster
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Route53RecoveryCluster
+}  // namespace Aws

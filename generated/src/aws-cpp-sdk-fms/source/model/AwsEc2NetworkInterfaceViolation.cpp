@@ -3,38 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/AwsEc2NetworkInterfaceViolation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/AwsEc2NetworkInterfaceViolation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-AwsEc2NetworkInterfaceViolation::AwsEc2NetworkInterfaceViolation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEc2NetworkInterfaceViolation::AwsEc2NetworkInterfaceViolation(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEc2NetworkInterfaceViolation& AwsEc2NetworkInterfaceViolation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ViolationTarget"))
-  {
+AwsEc2NetworkInterfaceViolation& AwsEc2NetworkInterfaceViolation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ViolationTarget")) {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
     m_violationTargetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViolatingSecurityGroups"))
-  {
+  if (jsonValue.ValueExists("ViolatingSecurityGroups")) {
     Aws::Utils::Array<JsonView> violatingSecurityGroupsJsonList = jsonValue.GetArray("ViolatingSecurityGroups");
-    for(unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength(); ++violatingSecurityGroupsIndex)
-    {
+    for (unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength();
+         ++violatingSecurityGroupsIndex) {
       m_violatingSecurityGroups.push_back(violatingSecurityGroupsJsonList[violatingSecurityGroupsIndex].AsString());
     }
     m_violatingSecurityGroupsHasBeenSet = true;
@@ -42,30 +33,25 @@ AwsEc2NetworkInterfaceViolation& AwsEc2NetworkInterfaceViolation::operator =(Jso
   return *this;
 }
 
-JsonValue AwsEc2NetworkInterfaceViolation::Jsonize() const
-{
+JsonValue AwsEc2NetworkInterfaceViolation::Jsonize() const {
   JsonValue payload;
 
-  if(m_violationTargetHasBeenSet)
-  {
-   payload.WithString("ViolationTarget", m_violationTarget);
-
+  if (m_violationTargetHasBeenSet) {
+    payload.WithString("ViolationTarget", m_violationTarget);
   }
 
-  if(m_violatingSecurityGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> violatingSecurityGroupsJsonList(m_violatingSecurityGroups.size());
-   for(unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength(); ++violatingSecurityGroupsIndex)
-   {
-     violatingSecurityGroupsJsonList[violatingSecurityGroupsIndex].AsString(m_violatingSecurityGroups[violatingSecurityGroupsIndex]);
-   }
-   payload.WithArray("ViolatingSecurityGroups", std::move(violatingSecurityGroupsJsonList));
-
+  if (m_violatingSecurityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> violatingSecurityGroupsJsonList(m_violatingSecurityGroups.size());
+    for (unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength();
+         ++violatingSecurityGroupsIndex) {
+      violatingSecurityGroupsJsonList[violatingSecurityGroupsIndex].AsString(m_violatingSecurityGroups[violatingSecurityGroupsIndex]);
+    }
+    payload.WithArray("ViolatingSecurityGroups", std::move(violatingSecurityGroupsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

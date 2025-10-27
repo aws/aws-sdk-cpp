@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String RegisterPublisherRequest::SerializePayload() const
-{
+Aws::String RegisterPublisherRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RegisterPublisher&";
-  if(m_acceptTermsAndConditionsHasBeenSet)
-  {
+  if (m_acceptTermsAndConditionsHasBeenSet) {
     ss << "AcceptTermsAndConditions=" << std::boolalpha << m_acceptTermsAndConditions << "&";
   }
 
-  if(m_connectionArnHasBeenSet)
-  {
+  if (m_connectionArnHasBeenSet) {
     ss << "ConnectionArn=" << StringUtils::URLEncode(m_connectionArn.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RegisterPublisherRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RegisterPublisherRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RegisterPublisherRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

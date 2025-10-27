@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
-  enum class EncryptedLogGroupStrategy
-  {
-    NOT_SET,
-    ALLOW,
-    SKIP
-  };
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+enum class EncryptedLogGroupStrategy { NOT_SET, ALLOW, SKIP };
 
-namespace EncryptedLogGroupStrategyMapper
-{
+namespace EncryptedLogGroupStrategyMapper {
 AWS_OBSERVABILITYADMIN_API EncryptedLogGroupStrategy GetEncryptedLogGroupStrategyForName(const Aws::String& name);
 
 AWS_OBSERVABILITYADMIN_API Aws::String GetNameForEncryptedLogGroupStrategy(EncryptedLogGroupStrategy value);
-} // namespace EncryptedLogGroupStrategyMapper
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace EncryptedLogGroupStrategyMapper
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaConcatenationPipelineResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMediaConcatenationPipelineResult::CreateMediaConcatenationPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateMediaConcatenationPipelineResult::CreateMediaConcatenationPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-CreateMediaConcatenationPipelineResult& CreateMediaConcatenationPipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateMediaConcatenationPipelineResult& CreateMediaConcatenationPipelineResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MediaConcatenationPipeline"))
-  {
+  if (jsonValue.ValueExists("MediaConcatenationPipeline")) {
     m_mediaConcatenationPipeline = jsonValue.GetObject("MediaConcatenationPipeline");
     m_mediaConcatenationPipelineHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

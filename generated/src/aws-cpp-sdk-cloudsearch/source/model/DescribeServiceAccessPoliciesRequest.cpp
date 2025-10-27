@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeServiceAccessPoliciesRequest::SerializePayload() const
-{
+Aws::String DescribeServiceAccessPoliciesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeServiceAccessPolicies&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_deployedHasBeenSet)
-  {
+  if (m_deployedHasBeenSet) {
     ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DescribeServiceAccessPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeServiceAccessPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeServiceAccessPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

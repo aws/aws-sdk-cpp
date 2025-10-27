@@ -12,24 +12,16 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchDeleteDelegationByAssessmentRequest::SerializePayload() const
-{
+Aws::String BatchDeleteDelegationByAssessmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_delegationIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> delegationIdsJsonList(m_delegationIds.size());
-   for(unsigned delegationIdsIndex = 0; delegationIdsIndex < delegationIdsJsonList.GetLength(); ++delegationIdsIndex)
-   {
-     delegationIdsJsonList[delegationIdsIndex].AsString(m_delegationIds[delegationIdsIndex]);
-   }
-   payload.WithArray("delegationIds", std::move(delegationIdsJsonList));
-
+  if (m_delegationIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> delegationIdsJsonList(m_delegationIds.size());
+    for (unsigned delegationIdsIndex = 0; delegationIdsIndex < delegationIdsJsonList.GetLength(); ++delegationIdsIndex) {
+      delegationIdsJsonList[delegationIdsIndex].AsString(m_delegationIds[delegationIdsIndex]);
+    }
+    payload.WithArray("delegationIds", std::move(delegationIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

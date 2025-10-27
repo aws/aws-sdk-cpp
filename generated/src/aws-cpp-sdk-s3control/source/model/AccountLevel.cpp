@@ -3,67 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/AccountLevel.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/AccountLevel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-AccountLevel::AccountLevel(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AccountLevel::AccountLevel(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccountLevel& AccountLevel::operator =(const XmlNode& xmlNode)
-{
+AccountLevel& AccountLevel::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode activityMetricsNode = resultNode.FirstChild("ActivityMetrics");
-    if(!activityMetricsNode.IsNull())
-    {
+    if (!activityMetricsNode.IsNull()) {
       m_activityMetrics = activityMetricsNode;
       m_activityMetricsHasBeenSet = true;
     }
     XmlNode bucketLevelNode = resultNode.FirstChild("BucketLevel");
-    if(!bucketLevelNode.IsNull())
-    {
+    if (!bucketLevelNode.IsNull()) {
       m_bucketLevel = bucketLevelNode;
       m_bucketLevelHasBeenSet = true;
     }
     XmlNode advancedCostOptimizationMetricsNode = resultNode.FirstChild("AdvancedCostOptimizationMetrics");
-    if(!advancedCostOptimizationMetricsNode.IsNull())
-    {
+    if (!advancedCostOptimizationMetricsNode.IsNull()) {
       m_advancedCostOptimizationMetrics = advancedCostOptimizationMetricsNode;
       m_advancedCostOptimizationMetricsHasBeenSet = true;
     }
     XmlNode advancedDataProtectionMetricsNode = resultNode.FirstChild("AdvancedDataProtectionMetrics");
-    if(!advancedDataProtectionMetricsNode.IsNull())
-    {
+    if (!advancedDataProtectionMetricsNode.IsNull()) {
       m_advancedDataProtectionMetrics = advancedDataProtectionMetricsNode;
       m_advancedDataProtectionMetricsHasBeenSet = true;
     }
     XmlNode detailedStatusCodesMetricsNode = resultNode.FirstChild("DetailedStatusCodesMetrics");
-    if(!detailedStatusCodesMetricsNode.IsNull())
-    {
+    if (!detailedStatusCodesMetricsNode.IsNull()) {
       m_detailedStatusCodesMetrics = detailedStatusCodesMetricsNode;
       m_detailedStatusCodesMetricsHasBeenSet = true;
     }
     XmlNode storageLensGroupLevelNode = resultNode.FirstChild("StorageLensGroupLevel");
-    if(!storageLensGroupLevelNode.IsNull())
-    {
+    if (!storageLensGroupLevelNode.IsNull()) {
       m_storageLensGroupLevel = storageLensGroupLevelNode;
       m_storageLensGroupLevelHasBeenSet = true;
     }
@@ -72,47 +58,39 @@ AccountLevel& AccountLevel::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AccountLevel::AddToNode(XmlNode& parentNode) const
-{
+void AccountLevel::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_activityMetricsHasBeenSet)
-  {
-   XmlNode activityMetricsNode = parentNode.CreateChildElement("ActivityMetrics");
-   m_activityMetrics.AddToNode(activityMetricsNode);
+  if (m_activityMetricsHasBeenSet) {
+    XmlNode activityMetricsNode = parentNode.CreateChildElement("ActivityMetrics");
+    m_activityMetrics.AddToNode(activityMetricsNode);
   }
 
-  if(m_bucketLevelHasBeenSet)
-  {
-   XmlNode bucketLevelNode = parentNode.CreateChildElement("BucketLevel");
-   m_bucketLevel.AddToNode(bucketLevelNode);
+  if (m_bucketLevelHasBeenSet) {
+    XmlNode bucketLevelNode = parentNode.CreateChildElement("BucketLevel");
+    m_bucketLevel.AddToNode(bucketLevelNode);
   }
 
-  if(m_advancedCostOptimizationMetricsHasBeenSet)
-  {
-   XmlNode advancedCostOptimizationMetricsNode = parentNode.CreateChildElement("AdvancedCostOptimizationMetrics");
-   m_advancedCostOptimizationMetrics.AddToNode(advancedCostOptimizationMetricsNode);
+  if (m_advancedCostOptimizationMetricsHasBeenSet) {
+    XmlNode advancedCostOptimizationMetricsNode = parentNode.CreateChildElement("AdvancedCostOptimizationMetrics");
+    m_advancedCostOptimizationMetrics.AddToNode(advancedCostOptimizationMetricsNode);
   }
 
-  if(m_advancedDataProtectionMetricsHasBeenSet)
-  {
-   XmlNode advancedDataProtectionMetricsNode = parentNode.CreateChildElement("AdvancedDataProtectionMetrics");
-   m_advancedDataProtectionMetrics.AddToNode(advancedDataProtectionMetricsNode);
+  if (m_advancedDataProtectionMetricsHasBeenSet) {
+    XmlNode advancedDataProtectionMetricsNode = parentNode.CreateChildElement("AdvancedDataProtectionMetrics");
+    m_advancedDataProtectionMetrics.AddToNode(advancedDataProtectionMetricsNode);
   }
 
-  if(m_detailedStatusCodesMetricsHasBeenSet)
-  {
-   XmlNode detailedStatusCodesMetricsNode = parentNode.CreateChildElement("DetailedStatusCodesMetrics");
-   m_detailedStatusCodesMetrics.AddToNode(detailedStatusCodesMetricsNode);
+  if (m_detailedStatusCodesMetricsHasBeenSet) {
+    XmlNode detailedStatusCodesMetricsNode = parentNode.CreateChildElement("DetailedStatusCodesMetrics");
+    m_detailedStatusCodesMetrics.AddToNode(detailedStatusCodesMetricsNode);
   }
 
-  if(m_storageLensGroupLevelHasBeenSet)
-  {
-   XmlNode storageLensGroupLevelNode = parentNode.CreateChildElement("StorageLensGroupLevel");
-   m_storageLensGroupLevel.AddToNode(storageLensGroupLevelNode);
+  if (m_storageLensGroupLevelHasBeenSet) {
+    XmlNode storageLensGroupLevelNode = parentNode.CreateChildElement("StorageLensGroupLevel");
+    m_storageLensGroupLevel.AddToNode(storageLensGroupLevelNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -12,39 +12,26 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeManagedLoginBrandingByClientRequest::SerializePayload() const
-{
+Aws::String DescribeManagedLoginBrandingByClientRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_returnMergedResourcesHasBeenSet)
-  {
-   payload.WithBool("ReturnMergedResources", m_returnMergedResources);
-
+  if (m_returnMergedResourcesHasBeenSet) {
+    payload.WithBool("ReturnMergedResources", m_returnMergedResources);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeManagedLoginBrandingByClientRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeManagedLoginBrandingByClientRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.DescribeManagedLoginBrandingByClient"));
   return headers;
-
 }
-
-
-
-

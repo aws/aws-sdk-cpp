@@ -3,11 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/UpdateAccessGrantsLocationRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/UpdateAccessGrantsLocationRequest.h>
 
 #include <utility>
 
@@ -15,47 +14,41 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-
-Aws::String UpdateAccessGrantsLocationRequest::SerializePayload() const
-{
+Aws::String UpdateAccessGrantsLocationRequest::SerializePayload() const {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("UpdateAccessGrantsLocationRequest");
 
   XmlNode parentNode = payloadDoc.GetRootElement();
   parentNode.SetAttributeValue("xmlns", "http://awss3control.amazonaws.com/doc/2018-08-20/");
 
   Aws::StringStream ss;
-  if(m_iAMRoleArnHasBeenSet)
-  {
-   XmlNode iAMRoleArnNode = parentNode.CreateChildElement("IAMRoleArn");
-   iAMRoleArnNode.SetText(m_iAMRoleArn);
+  if (m_iAMRoleArnHasBeenSet) {
+    XmlNode iAMRoleArnNode = parentNode.CreateChildElement("IAMRoleArn");
+    iAMRoleArnNode.SetText(m_iAMRoleArn);
   }
 
   return payloadDoc.ConvertToString();
 }
 
-
-Aws::Http::HeaderValueCollection UpdateAccessGrantsLocationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateAccessGrantsLocationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_accountIdHasBeenSet)
-  {
+  if (m_accountIdHasBeenSet) {
     ss << m_accountId;
-    headers.emplace("x-amz-account-id",  ss.str());
+    headers.emplace("x-amz-account-id", ss.str());
     ss.str("");
   }
 
   return headers;
 }
 
-UpdateAccessGrantsLocationRequest::EndpointParameters UpdateAccessGrantsLocationRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Static context parameters
-    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
-    // Operation context parameters
-    if (AccountIdHasBeenSet()) {
-        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-    }
-    return parameters;
+UpdateAccessGrantsLocationRequest::EndpointParameters UpdateAccessGrantsLocationRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  // Operation context parameters
+  if (AccountIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
 }

@@ -11,118 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings(JsonView jsonValue) { *this = jsonValue; }
 
-BackendAPIAppSyncAuthSettings& BackendAPIAppSyncAuthSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cognitoUserPoolId"))
-  {
+BackendAPIAppSyncAuthSettings& BackendAPIAppSyncAuthSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cognitoUserPoolId")) {
     m_cognitoUserPoolId = jsonValue.GetString("cognitoUserPoolId");
     m_cognitoUserPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expirationTime"))
-  {
+  if (jsonValue.ValueExists("expirationTime")) {
     m_expirationTime = jsonValue.GetDouble("expirationTime");
     m_expirationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDAuthTTL"))
-  {
+  if (jsonValue.ValueExists("openIDAuthTTL")) {
     m_openIDAuthTTL = jsonValue.GetString("openIDAuthTTL");
     m_openIDAuthTTLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDClientId"))
-  {
+  if (jsonValue.ValueExists("openIDClientId")) {
     m_openIDClientId = jsonValue.GetString("openIDClientId");
     m_openIDClientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDIatTTL"))
-  {
+  if (jsonValue.ValueExists("openIDIatTTL")) {
     m_openIDIatTTL = jsonValue.GetString("openIDIatTTL");
     m_openIDIatTTLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDIssueURL"))
-  {
+  if (jsonValue.ValueExists("openIDIssueURL")) {
     m_openIDIssueURL = jsonValue.GetString("openIDIssueURL");
     m_openIDIssueURLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDProviderName"))
-  {
+  if (jsonValue.ValueExists("openIDProviderName")) {
     m_openIDProviderName = jsonValue.GetString("openIDProviderName");
     m_openIDProviderNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackendAPIAppSyncAuthSettings::Jsonize() const
-{
+JsonValue BackendAPIAppSyncAuthSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_cognitoUserPoolIdHasBeenSet)
-  {
-   payload.WithString("cognitoUserPoolId", m_cognitoUserPoolId);
-
+  if (m_cognitoUserPoolIdHasBeenSet) {
+    payload.WithString("cognitoUserPoolId", m_cognitoUserPoolId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_expirationTimeHasBeenSet)
-  {
-   payload.WithDouble("expirationTime", m_expirationTime);
-
+  if (m_expirationTimeHasBeenSet) {
+    payload.WithDouble("expirationTime", m_expirationTime);
   }
 
-  if(m_openIDAuthTTLHasBeenSet)
-  {
-   payload.WithString("openIDAuthTTL", m_openIDAuthTTL);
-
+  if (m_openIDAuthTTLHasBeenSet) {
+    payload.WithString("openIDAuthTTL", m_openIDAuthTTL);
   }
 
-  if(m_openIDClientIdHasBeenSet)
-  {
-   payload.WithString("openIDClientId", m_openIDClientId);
-
+  if (m_openIDClientIdHasBeenSet) {
+    payload.WithString("openIDClientId", m_openIDClientId);
   }
 
-  if(m_openIDIatTTLHasBeenSet)
-  {
-   payload.WithString("openIDIatTTL", m_openIDIatTTL);
-
+  if (m_openIDIatTTLHasBeenSet) {
+    payload.WithString("openIDIatTTL", m_openIDIatTTL);
   }
 
-  if(m_openIDIssueURLHasBeenSet)
-  {
-   payload.WithString("openIDIssueURL", m_openIDIssueURL);
-
+  if (m_openIDIssueURLHasBeenSet) {
+    payload.WithString("openIDIssueURL", m_openIDIssueURL);
   }
 
-  if(m_openIDProviderNameHasBeenSet)
-  {
-   payload.WithString("openIDProviderName", m_openIDProviderName);
-
+  if (m_openIDProviderNameHasBeenSet) {
+    payload.WithString("openIDProviderName", m_openIDProviderName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

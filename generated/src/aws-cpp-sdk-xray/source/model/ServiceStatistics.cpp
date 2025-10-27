@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/ServiceStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/ServiceStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace XRay {
+namespace Model {
 
-ServiceStatistics::ServiceStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceStatistics::ServiceStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceStatistics& ServiceStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OkCount"))
-  {
+ServiceStatistics& ServiceStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OkCount")) {
     m_okCount = jsonValue.GetInt64("OkCount");
     m_okCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorStatistics"))
-  {
+  if (jsonValue.ValueExists("ErrorStatistics")) {
     m_errorStatistics = jsonValue.GetObject("ErrorStatistics");
     m_errorStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FaultStatistics"))
-  {
+  if (jsonValue.ValueExists("FaultStatistics")) {
     m_faultStatistics = jsonValue.GetObject("FaultStatistics");
     m_faultStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalCount"))
-  {
+  if (jsonValue.ValueExists("TotalCount")) {
     m_totalCount = jsonValue.GetInt64("TotalCount");
     m_totalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalResponseTime"))
-  {
+  if (jsonValue.ValueExists("TotalResponseTime")) {
     m_totalResponseTime = jsonValue.GetDouble("TotalResponseTime");
     m_totalResponseTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceStatistics::Jsonize() const
-{
+JsonValue ServiceStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_okCountHasBeenSet)
-  {
-   payload.WithInt64("OkCount", m_okCount);
-
+  if (m_okCountHasBeenSet) {
+    payload.WithInt64("OkCount", m_okCount);
   }
 
-  if(m_errorStatisticsHasBeenSet)
-  {
-   payload.WithObject("ErrorStatistics", m_errorStatistics.Jsonize());
-
+  if (m_errorStatisticsHasBeenSet) {
+    payload.WithObject("ErrorStatistics", m_errorStatistics.Jsonize());
   }
 
-  if(m_faultStatisticsHasBeenSet)
-  {
-   payload.WithObject("FaultStatistics", m_faultStatistics.Jsonize());
-
+  if (m_faultStatisticsHasBeenSet) {
+    payload.WithObject("FaultStatistics", m_faultStatistics.Jsonize());
   }
 
-  if(m_totalCountHasBeenSet)
-  {
-   payload.WithInt64("TotalCount", m_totalCount);
-
+  if (m_totalCountHasBeenSet) {
+    payload.WithInt64("TotalCount", m_totalCount);
   }
 
-  if(m_totalResponseTimeHasBeenSet)
-  {
-   payload.WithDouble("TotalResponseTime", m_totalResponseTime);
-
+  if (m_totalResponseTimeHasBeenSet) {
+    payload.WithDouble("TotalResponseTime", m_totalResponseTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

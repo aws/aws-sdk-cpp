@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/UntagSAMLProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/UntagSAMLProviderRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String UntagSAMLProviderRequest::SerializePayload() const
-{
+Aws::String UntagSAMLProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UntagSAMLProvider&";
-  if(m_sAMLProviderArnHasBeenSet)
-  {
+  if (m_sAMLProviderArnHasBeenSet) {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-    if (m_tagKeys.empty())
-    {
+  if (m_tagKeysHasBeenSet) {
+    if (m_tagKeys.empty()) {
       ss << "TagKeys=&";
-    }
-    else
-    {
+    } else {
       unsigned tagKeysCount = 1;
-      for(auto& item : m_tagKeys)
-      {
-        ss << "TagKeys.member." << tagKeysCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagKeys) {
+        ss << "TagKeys.member." << tagKeysCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String UntagSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UntagSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UntagSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/LayersListItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/LayersListItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-LayersListItem::LayersListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LayersListItem::LayersListItem(JsonView jsonValue) { *this = jsonValue; }
 
-LayersListItem& LayersListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LayerName"))
-  {
+LayersListItem& LayersListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LayerName")) {
     m_layerName = jsonValue.GetString("LayerName");
     m_layerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LayerArn"))
-  {
+  if (jsonValue.ValueExists("LayerArn")) {
     m_layerArn = jsonValue.GetString("LayerArn");
     m_layerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestMatchingVersion"))
-  {
+  if (jsonValue.ValueExists("LatestMatchingVersion")) {
     m_latestMatchingVersion = jsonValue.GetObject("LatestMatchingVersion");
     m_latestMatchingVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LayersListItem::Jsonize() const
-{
+JsonValue LayersListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_layerNameHasBeenSet)
-  {
-   payload.WithString("LayerName", m_layerName);
-
+  if (m_layerNameHasBeenSet) {
+    payload.WithString("LayerName", m_layerName);
   }
 
-  if(m_layerArnHasBeenSet)
-  {
-   payload.WithString("LayerArn", m_layerArn);
-
+  if (m_layerArnHasBeenSet) {
+    payload.WithString("LayerArn", m_layerArn);
   }
 
-  if(m_latestMatchingVersionHasBeenSet)
-  {
-   payload.WithObject("LatestMatchingVersion", m_latestMatchingVersion.Jsonize());
-
+  if (m_latestMatchingVersionHasBeenSet) {
+    payload.WithObject("LatestMatchingVersion", m_latestMatchingVersion.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

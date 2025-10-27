@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class OrderType
-  {
-    NOT_SET,
-    OUTPOST,
-    REPLACEMENT
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class OrderType { NOT_SET, OUTPOST, REPLACEMENT };
 
-namespace OrderTypeMapper
-{
+namespace OrderTypeMapper {
 AWS_OUTPOSTS_API OrderType GetOrderTypeForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForOrderType(OrderType value);
-} // namespace OrderTypeMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace OrderTypeMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

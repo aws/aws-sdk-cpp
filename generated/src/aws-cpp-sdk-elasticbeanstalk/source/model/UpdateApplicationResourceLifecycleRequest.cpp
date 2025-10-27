@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/UpdateApplicationResourceLifecycleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/UpdateApplicationResourceLifecycleRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateApplicationResourceLifecycleRequest::SerializePayload() const
-{
+Aws::String UpdateApplicationResourceLifecycleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateApplicationResourceLifecycle&";
-  if(m_applicationNameHasBeenSet)
-  {
+  if (m_applicationNameHasBeenSet) {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
 
-  if(m_resourceLifecycleConfigHasBeenSet)
-  {
+  if (m_resourceLifecycleConfigHasBeenSet) {
     m_resourceLifecycleConfig.OutputToStream(ss, "ResourceLifecycleConfig");
   }
 
@@ -28,8 +25,4 @@ Aws::String UpdateApplicationResourceLifecycleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateApplicationResourceLifecycleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateApplicationResourceLifecycleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

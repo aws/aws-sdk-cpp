@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class CostEstimationServiceResourceState
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class CostEstimationServiceResourceState { NOT_SET, ACTIVE, INACTIVE };
 
-namespace CostEstimationServiceResourceStateMapper
-{
+namespace CostEstimationServiceResourceStateMapper {
 AWS_DEVOPSGURU_API CostEstimationServiceResourceState GetCostEstimationServiceResourceStateForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForCostEstimationServiceResourceState(CostEstimationServiceResourceState value);
-} // namespace CostEstimationServiceResourceStateMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace CostEstimationServiceResourceStateMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

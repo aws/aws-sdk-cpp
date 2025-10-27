@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/importexport/model/GetStatusRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/importexport/model/GetStatusRequest.h>
 
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-Aws::String GetStatusRequest::SerializePayload() const
-{
+Aws::String GetStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetStatus&";
-  if(m_jobIdHasBeenSet)
-  {
+  if (m_jobIdHasBeenSet) {
     ss << "JobId=" << StringUtils::URLEncode(m_jobId.c_str()) << "&";
   }
 
-  if(m_aPIVersionHasBeenSet)
-  {
+  if (m_aPIVersionHasBeenSet) {
     ss << "APIVersion=" << StringUtils::URLEncode(m_aPIVersion.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/RateKey.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/waf-regional/model/RateKey.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
+namespace RateKeyMapper {
 
-namespace Aws
-{
-  namespace WAFRegional
-  {
-    namespace Model
-    {
-      namespace RateKeyMapper
-      {
+static const int IP_HASH = HashingUtils::HashString("IP");
 
-        static const int IP_HASH = HashingUtils::HashString("IP");
+RateKey GetRateKeyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IP_HASH) {
+    return RateKey::IP;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RateKey>(hashCode);
+  }
 
+  return RateKey::NOT_SET;
+}
 
-        RateKey GetRateKeyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IP_HASH)
-          {
-            return RateKey::IP;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RateKey>(hashCode);
-          }
+Aws::String GetNameForRateKey(RateKey enumValue) {
+  switch (enumValue) {
+    case RateKey::NOT_SET:
+      return {};
+    case RateKey::IP:
+      return "IP";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RateKey::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRateKey(RateKey enumValue)
-        {
-          switch(enumValue)
-          {
-          case RateKey::NOT_SET:
-            return {};
-          case RateKey::IP:
-            return "IP";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RateKeyMapper
-    } // namespace Model
-  } // namespace WAFRegional
-} // namespace Aws
+}  // namespace RateKeyMapper
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SingularConnectorProfileProperties::SingularConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SingularConnectorProfileProperties::SingularConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SingularConnectorProfileProperties& SingularConnectorProfileProperties::operator =(JsonView jsonValue)
-{
+SingularConnectorProfileProperties& SingularConnectorProfileProperties::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue SingularConnectorProfileProperties::Jsonize() const
-{
+JsonValue SingularConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

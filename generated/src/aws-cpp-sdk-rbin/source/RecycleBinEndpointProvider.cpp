@@ -5,12 +5,8 @@
 
 #include <aws/rbin/RecycleBinEndpointProvider.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RecycleBin
-} // namespace Aws
+namespace Aws {
+namespace RecycleBin {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RecycleBin
+}  // namespace Aws

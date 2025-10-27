@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pcs/PCS_EXPORTS.h>
 
-namespace Aws
-{
-namespace PCS
-{
-namespace Model
-{
-  enum class PurchaseOption
-  {
-    NOT_SET,
-    ONDEMAND,
-    SPOT,
-    CAPACITY_BLOCK
-  };
+namespace Aws {
+namespace PCS {
+namespace Model {
+enum class PurchaseOption { NOT_SET, ONDEMAND, SPOT, CAPACITY_BLOCK };
 
-namespace PurchaseOptionMapper
-{
+namespace PurchaseOptionMapper {
 AWS_PCS_API PurchaseOption GetPurchaseOptionForName(const Aws::String& name);
 
 AWS_PCS_API Aws::String GetNameForPurchaseOption(PurchaseOption value);
-} // namespace PurchaseOptionMapper
-} // namespace Model
-} // namespace PCS
-} // namespace Aws
+}  // namespace PurchaseOptionMapper
+}  // namespace Model
+}  // namespace PCS
+}  // namespace Aws

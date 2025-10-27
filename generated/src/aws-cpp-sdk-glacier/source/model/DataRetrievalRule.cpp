@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/DataRetrievalRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/DataRetrievalRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
+namespace Aws {
+namespace Glacier {
+namespace Model {
 
-DataRetrievalRule::DataRetrievalRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataRetrievalRule::DataRetrievalRule(JsonView jsonValue) { *this = jsonValue; }
 
-DataRetrievalRule& DataRetrievalRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Strategy"))
-  {
+DataRetrievalRule& DataRetrievalRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Strategy")) {
     m_strategy = jsonValue.GetString("Strategy");
     m_strategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BytesPerHour"))
-  {
+  if (jsonValue.ValueExists("BytesPerHour")) {
     m_bytesPerHour = jsonValue.GetInt64("BytesPerHour");
     m_bytesPerHourHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataRetrievalRule::Jsonize() const
-{
+JsonValue DataRetrievalRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_strategyHasBeenSet)
-  {
-   payload.WithString("Strategy", m_strategy);
-
+  if (m_strategyHasBeenSet) {
+    payload.WithString("Strategy", m_strategy);
   }
 
-  if(m_bytesPerHourHasBeenSet)
-  {
-   payload.WithInt64("BytesPerHour", m_bytesPerHour);
-
+  if (m_bytesPerHourHasBeenSet) {
+    payload.WithInt64("BytesPerHour", m_bytesPerHour);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

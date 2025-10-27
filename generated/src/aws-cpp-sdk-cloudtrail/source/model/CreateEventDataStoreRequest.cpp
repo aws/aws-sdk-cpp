@@ -12,90 +12,63 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateEventDataStoreRequest::SerializePayload() const
-{
+Aws::String CreateEventDataStoreRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_advancedEventSelectorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
-   for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
-   {
-     advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
-   }
-   payload.WithArray("AdvancedEventSelectors", std::move(advancedEventSelectorsJsonList));
-
+  if (m_advancedEventSelectorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+    for (unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength();
+         ++advancedEventSelectorsIndex) {
+      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
+    }
+    payload.WithArray("AdvancedEventSelectors", std::move(advancedEventSelectorsJsonList));
   }
 
-  if(m_multiRegionEnabledHasBeenSet)
-  {
-   payload.WithBool("MultiRegionEnabled", m_multiRegionEnabled);
-
+  if (m_multiRegionEnabledHasBeenSet) {
+    payload.WithBool("MultiRegionEnabled", m_multiRegionEnabled);
   }
 
-  if(m_organizationEnabledHasBeenSet)
-  {
-   payload.WithBool("OrganizationEnabled", m_organizationEnabled);
-
+  if (m_organizationEnabledHasBeenSet) {
+    payload.WithBool("OrganizationEnabled", m_organizationEnabled);
   }
 
-  if(m_retentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("RetentionPeriod", m_retentionPeriod);
-
+  if (m_retentionPeriodHasBeenSet) {
+    payload.WithInteger("RetentionPeriod", m_retentionPeriod);
   }
 
-  if(m_terminationProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
-
+  if (m_terminationProtectionEnabledHasBeenSet) {
+    payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
   }
 
-  if(m_tagsListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
-   for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
-   {
-     tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
-   }
-   payload.WithArray("TagsList", std::move(tagsListJsonList));
-
+  if (m_tagsListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
+    for (unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex) {
+      tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
+    }
+    payload.WithArray("TagsList", std::move(tagsListJsonList));
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_startIngestionHasBeenSet)
-  {
-   payload.WithBool("StartIngestion", m_startIngestion);
-
+  if (m_startIngestionHasBeenSet) {
+    payload.WithBool("StartIngestion", m_startIngestion);
   }
 
-  if(m_billingModeHasBeenSet)
-  {
-   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateEventDataStoreRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateEventDataStoreRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateEventDataStore"));
   return headers;
-
 }
-
-
-
-

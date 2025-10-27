@@ -12,56 +12,38 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeEnvironmentMembershipsRequest::SerializePayload() const
-{
+Aws::String DescribeEnvironmentMembershipsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userArnHasBeenSet)
-  {
-   payload.WithString("userArn", m_userArn);
-
+  if (m_userArnHasBeenSet) {
+    payload.WithString("userArn", m_userArn);
   }
 
-  if(m_environmentIdHasBeenSet)
-  {
-   payload.WithString("environmentId", m_environmentId);
-
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
-   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-   {
-     permissionsJsonList[permissionsIndex].AsString(PermissionsMapper::GetNameForPermissions(m_permissions[permissionsIndex]));
-   }
-   payload.WithArray("permissions", std::move(permissionsJsonList));
-
+  if (m_permissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
+      permissionsJsonList[permissionsIndex].AsString(PermissionsMapper::GetNameForPermissions(m_permissions[permissionsIndex]));
+    }
+    payload.WithArray("permissions", std::move(permissionsJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeEnvironmentMembershipsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeEnvironmentMembershipsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships"));
   return headers;
-
 }
-
-
-
-

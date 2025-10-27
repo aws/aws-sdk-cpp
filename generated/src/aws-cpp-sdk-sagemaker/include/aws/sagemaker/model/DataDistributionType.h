@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class DataDistributionType
-  {
-    NOT_SET,
-    FullyReplicated,
-    ShardedByS3Key
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class DataDistributionType { NOT_SET, FullyReplicated, ShardedByS3Key };
 
-namespace DataDistributionTypeMapper
-{
+namespace DataDistributionTypeMapper {
 AWS_SAGEMAKER_API DataDistributionType GetDataDistributionTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForDataDistributionType(DataDistributionType value);
-} // namespace DataDistributionTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace DataDistributionTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

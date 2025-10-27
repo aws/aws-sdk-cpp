@@ -12,19 +12,12 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAnalyzerRequest::SerializePayload() const
-{
+Aws::String UpdateAnalyzerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

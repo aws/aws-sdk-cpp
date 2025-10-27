@@ -4,10 +4,10 @@
  */
 
 #include <aws/accessanalyzer/model/ListAnalyzersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnalyzersResult::ListAnalyzersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAnalyzersResult::ListAnalyzersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAnalyzersResult& ListAnalyzersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAnalyzersResult& ListAnalyzersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("analyzers"))
-  {
+  if (jsonValue.ValueExists("analyzers")) {
     Aws::Utils::Array<JsonView> analyzersJsonList = jsonValue.GetArray("analyzers");
-    for(unsigned analyzersIndex = 0; analyzersIndex < analyzersJsonList.GetLength(); ++analyzersIndex)
-    {
+    for (unsigned analyzersIndex = 0; analyzersIndex < analyzersJsonList.GetLength(); ++analyzersIndex) {
       m_analyzers.push_back(analyzersJsonList[analyzersIndex].AsObject());
     }
     m_analyzersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,37 +11,27 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::SSO;
 
-namespace Aws
-{
-namespace SSO
-{
-namespace SSOErrorMapper
-{
+namespace Aws {
+namespace SSO {
+namespace SSOErrorMapper {
 
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == UNAUTHORIZED_HASH)
-  {
+  if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace SSOErrorMapper
-} // namespace SSO
-} // namespace Aws
+}  // namespace SSOErrorMapper
+}  // namespace SSO
+}  // namespace Aws

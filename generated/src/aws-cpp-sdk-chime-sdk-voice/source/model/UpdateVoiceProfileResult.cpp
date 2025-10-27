@@ -4,10 +4,10 @@
  */
 
 #include <aws/chime-sdk-voice/model/UpdateVoiceProfileResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateVoiceProfileResult::UpdateVoiceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateVoiceProfileResult::UpdateVoiceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateVoiceProfileResult& UpdateVoiceProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateVoiceProfileResult& UpdateVoiceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("VoiceProfile"))
-  {
+  if (jsonValue.ValueExists("VoiceProfile")) {
     m_voiceProfile = jsonValue.GetObject("VoiceProfile");
     m_voiceProfileHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

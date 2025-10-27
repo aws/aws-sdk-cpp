@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/Route53_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
-  enum class ChangeStatus
-  {
-    NOT_SET,
-    PENDING,
-    INSYNC
-  };
+namespace Aws {
+namespace Route53 {
+namespace Model {
+enum class ChangeStatus { NOT_SET, PENDING, INSYNC };
 
-namespace ChangeStatusMapper
-{
+namespace ChangeStatusMapper {
 AWS_ROUTE53_API ChangeStatus GetChangeStatusForName(const Aws::String& name);
 
 AWS_ROUTE53_API Aws::String GetNameForChangeStatus(ChangeStatus value);
-} // namespace ChangeStatusMapper
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace ChangeStatusMapper
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

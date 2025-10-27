@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-TriggerProperties::TriggerProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TriggerProperties::TriggerProperties(JsonView jsonValue) { *this = jsonValue; }
 
-TriggerProperties& TriggerProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Scheduled"))
-  {
+TriggerProperties& TriggerProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Scheduled")) {
     m_scheduled = jsonValue.GetObject("Scheduled");
     m_scheduledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TriggerProperties::Jsonize() const
-{
+JsonValue TriggerProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_scheduledHasBeenSet)
-  {
-   payload.WithObject("Scheduled", m_scheduled.Jsonize());
-
+  if (m_scheduledHasBeenSet) {
+    payload.WithObject("Scheduled", m_scheduled.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

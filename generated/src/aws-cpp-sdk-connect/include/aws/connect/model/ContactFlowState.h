@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class ContactFlowState
-  {
-    NOT_SET,
-    ACTIVE,
-    ARCHIVED
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class ContactFlowState { NOT_SET, ACTIVE, ARCHIVED };
 
-namespace ContactFlowStateMapper
-{
+namespace ContactFlowStateMapper {
 AWS_CONNECT_API ContactFlowState GetContactFlowStateForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForContactFlowState(ContactFlowState value);
-} // namespace ContactFlowStateMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ContactFlowStateMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

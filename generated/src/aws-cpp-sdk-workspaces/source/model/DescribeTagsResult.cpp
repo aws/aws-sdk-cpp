@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/DescribeTagsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workspaces/model/DescribeTagsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeTagsResult& DescribeTagsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TagList"))
-  {
+  if (jsonValue.ValueExists("TagList")) {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
-    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-    {
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
     }
     m_tagListHasBeenSet = true;
@@ -37,12 +31,10 @@ DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceRe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

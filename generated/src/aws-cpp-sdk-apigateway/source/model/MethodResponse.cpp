@@ -12,39 +12,27 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-MethodResponse::MethodResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MethodResponse::MethodResponse(JsonView jsonValue) { *this = jsonValue; }
 
-MethodResponse& MethodResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+MethodResponse& MethodResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = jsonValue.GetString("statusCode");
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseParameters"))
-  {
+  if (jsonValue.ValueExists("responseParameters")) {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
-    for(auto& responseParametersItem : responseParametersJsonMap)
-    {
+    for (auto& responseParametersItem : responseParametersJsonMap) {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsBool();
     }
     m_responseParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseModels"))
-  {
+  if (jsonValue.ValueExists("responseModels")) {
     Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
-    for(auto& responseModelsItem : responseModelsJsonMap)
-    {
+    for (auto& responseModelsItem : responseModelsJsonMap) {
       m_responseModels[responseModelsItem.first] = responseModelsItem.second.AsString();
     }
     m_responseModelsHasBeenSet = true;
@@ -52,41 +40,32 @@ MethodResponse& MethodResponse::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MethodResponse::Jsonize() const
-{
+JsonValue MethodResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", m_statusCode);
   }
 
-  if(m_responseParametersHasBeenSet)
-  {
-   JsonValue responseParametersJsonMap;
-   for(auto& responseParametersItem : m_responseParameters)
-   {
-     responseParametersJsonMap.WithBool(responseParametersItem.first, responseParametersItem.second);
-   }
-   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
-
+  if (m_responseParametersHasBeenSet) {
+    JsonValue responseParametersJsonMap;
+    for (auto& responseParametersItem : m_responseParameters) {
+      responseParametersJsonMap.WithBool(responseParametersItem.first, responseParametersItem.second);
+    }
+    payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
   }
 
-  if(m_responseModelsHasBeenSet)
-  {
-   JsonValue responseModelsJsonMap;
-   for(auto& responseModelsItem : m_responseModels)
-   {
-     responseModelsJsonMap.WithString(responseModelsItem.first, responseModelsItem.second);
-   }
-   payload.WithObject("responseModels", std::move(responseModelsJsonMap));
-
+  if (m_responseModelsHasBeenSet) {
+    JsonValue responseModelsJsonMap;
+    for (auto& responseModelsItem : m_responseModels) {
+      responseModelsJsonMap.WithString(responseModelsItem.first, responseModelsItem.second);
+    }
+    payload.WithObject("responseModels", std::move(responseModelsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

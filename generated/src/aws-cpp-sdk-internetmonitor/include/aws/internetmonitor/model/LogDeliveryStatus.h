@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
-  enum class LogDeliveryStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
+enum class LogDeliveryStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace LogDeliveryStatusMapper
-{
+namespace LogDeliveryStatusMapper {
 AWS_INTERNETMONITOR_API LogDeliveryStatus GetLogDeliveryStatusForName(const Aws::String& name);
 
 AWS_INTERNETMONITOR_API Aws::String GetNameForLogDeliveryStatus(LogDeliveryStatus value);
-} // namespace LogDeliveryStatusMapper
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace LogDeliveryStatusMapper
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class AnomalyResultEnum
-  {
-    NOT_SET,
-    anomalous,
-    normal
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class AnomalyResultEnum { NOT_SET, anomalous, normal };
 
-namespace AnomalyResultEnumMapper
-{
+namespace AnomalyResultEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API AnomalyResultEnum GetAnomalyResultEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForAnomalyResultEnum(AnomalyResultEnum value);
-} // namespace AnomalyResultEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace AnomalyResultEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

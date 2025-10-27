@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class BurninSubtitleApplyFontColor
-  {
-    NOT_SET,
-    WHITE_TEXT_ONLY,
-    ALL_TEXT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class BurninSubtitleApplyFontColor { NOT_SET, WHITE_TEXT_ONLY, ALL_TEXT };
 
-namespace BurninSubtitleApplyFontColorMapper
-{
+namespace BurninSubtitleApplyFontColorMapper {
 AWS_MEDIACONVERT_API BurninSubtitleApplyFontColor GetBurninSubtitleApplyFontColorForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForBurninSubtitleApplyFontColor(BurninSubtitleApplyFontColor value);
-} // namespace BurninSubtitleApplyFontColorMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace BurninSubtitleApplyFontColorMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

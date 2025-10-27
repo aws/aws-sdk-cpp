@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-SourceRevisionOverride::SourceRevisionOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceRevisionOverride::SourceRevisionOverride(JsonView jsonValue) { *this = jsonValue; }
 
-SourceRevisionOverride& SourceRevisionOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actionName"))
-  {
+SourceRevisionOverride& SourceRevisionOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionName")) {
     m_actionName = jsonValue.GetString("actionName");
     m_actionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionType"))
-  {
+  if (jsonValue.ValueExists("revisionType")) {
     m_revisionType = SourceRevisionTypeMapper::GetSourceRevisionTypeForName(jsonValue.GetString("revisionType"));
     m_revisionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionValue"))
-  {
+  if (jsonValue.ValueExists("revisionValue")) {
     m_revisionValue = jsonValue.GetString("revisionValue");
     m_revisionValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceRevisionOverride::Jsonize() const
-{
+JsonValue SourceRevisionOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("actionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("actionName", m_actionName);
   }
 
-  if(m_revisionTypeHasBeenSet)
-  {
-   payload.WithString("revisionType", SourceRevisionTypeMapper::GetNameForSourceRevisionType(m_revisionType));
+  if (m_revisionTypeHasBeenSet) {
+    payload.WithString("revisionType", SourceRevisionTypeMapper::GetNameForSourceRevisionType(m_revisionType));
   }
 
-  if(m_revisionValueHasBeenSet)
-  {
-   payload.WithString("revisionValue", m_revisionValue);
-
+  if (m_revisionValueHasBeenSet) {
+    payload.WithString("revisionValue", m_revisionValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

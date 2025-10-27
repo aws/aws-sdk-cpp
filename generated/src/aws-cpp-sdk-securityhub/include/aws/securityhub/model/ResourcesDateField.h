@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class ResourcesDateField
-  {
-    NOT_SET,
-    ResourceDetailCaptureTime,
-    ResourceCreationTime
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class ResourcesDateField { NOT_SET, ResourceDetailCaptureTime, ResourceCreationTime };
 
-namespace ResourcesDateFieldMapper
-{
+namespace ResourcesDateFieldMapper {
 AWS_SECURITYHUB_API ResourcesDateField GetResourcesDateFieldForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForResourcesDateField(ResourcesDateField value);
-} // namespace ResourcesDateFieldMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace ResourcesDateFieldMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

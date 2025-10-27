@@ -3,89 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsLambdaFunctionVpcConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsLambdaFunctionVpcConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsLambdaFunctionVpcConfig::AwsLambdaFunctionVpcConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsLambdaFunctionVpcConfig::AwsLambdaFunctionVpcConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AwsLambdaFunctionVpcConfig& AwsLambdaFunctionVpcConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SecurityGroupIds"))
-  {
+AwsLambdaFunctionVpcConfig& AwsLambdaFunctionVpcConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SecurityGroupIds")) {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetIds"))
-  {
+  if (jsonValue.ValueExists("SubnetIds")) {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
-    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-    {
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsLambdaFunctionVpcConfig::Jsonize() const
-{
+JsonValue AwsLambdaFunctionVpcConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
-
+  if (m_securityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    }
+    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
-
+  if (m_subnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+    }
+    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

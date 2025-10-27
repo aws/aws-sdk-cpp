@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/AudioSourceDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/AudioSourceDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-AudioSourceDetails::AudioSourceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioSourceDetails::AudioSourceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AudioSourceDetails& AudioSourceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mediaId"))
-  {
+AudioSourceDetails& AudioSourceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mediaId")) {
     m_mediaId = jsonValue.GetString("mediaId");
     m_mediaIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaMimeType"))
-  {
+  if (jsonValue.ValueExists("mediaMimeType")) {
     m_mediaMimeType = jsonValue.GetString("mediaMimeType");
     m_mediaMimeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimeMilliseconds"))
-  {
+  if (jsonValue.ValueExists("startTimeMilliseconds")) {
     m_startTimeMilliseconds = jsonValue.GetInt64("startTimeMilliseconds");
     m_startTimeMillisecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTimeMilliseconds"))
-  {
+  if (jsonValue.ValueExists("endTimeMilliseconds")) {
     m_endTimeMilliseconds = jsonValue.GetInt64("endTimeMilliseconds");
     m_endTimeMillisecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioExtractionType"))
-  {
+  if (jsonValue.ValueExists("audioExtractionType")) {
     m_audioExtractionType = AudioExtractionTypeMapper::GetAudioExtractionTypeForName(jsonValue.GetString("audioExtractionType"));
     m_audioExtractionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioSourceDetails::Jsonize() const
-{
+JsonValue AudioSourceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaIdHasBeenSet)
-  {
-   payload.WithString("mediaId", m_mediaId);
-
+  if (m_mediaIdHasBeenSet) {
+    payload.WithString("mediaId", m_mediaId);
   }
 
-  if(m_mediaMimeTypeHasBeenSet)
-  {
-   payload.WithString("mediaMimeType", m_mediaMimeType);
-
+  if (m_mediaMimeTypeHasBeenSet) {
+    payload.WithString("mediaMimeType", m_mediaMimeType);
   }
 
-  if(m_startTimeMillisecondsHasBeenSet)
-  {
-   payload.WithInt64("startTimeMilliseconds", m_startTimeMilliseconds);
-
+  if (m_startTimeMillisecondsHasBeenSet) {
+    payload.WithInt64("startTimeMilliseconds", m_startTimeMilliseconds);
   }
 
-  if(m_endTimeMillisecondsHasBeenSet)
-  {
-   payload.WithInt64("endTimeMilliseconds", m_endTimeMilliseconds);
-
+  if (m_endTimeMillisecondsHasBeenSet) {
+    payload.WithInt64("endTimeMilliseconds", m_endTimeMilliseconds);
   }
 
-  if(m_audioExtractionTypeHasBeenSet)
-  {
-   payload.WithString("audioExtractionType", AudioExtractionTypeMapper::GetNameForAudioExtractionType(m_audioExtractionType));
+  if (m_audioExtractionTypeHasBeenSet) {
+    payload.WithString("audioExtractionType", AudioExtractionTypeMapper::GetNameForAudioExtractionType(m_audioExtractionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ReasonCodeSummary::ReasonCodeSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReasonCodeSummary::ReasonCodeSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ReasonCodeSummary& ReasonCodeSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ReasonCodeSummary& ReasonCodeSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = FindingReasonCodeMapper::GetFindingReasonCodeForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReasonCodeSummary::Jsonize() const
-{
+JsonValue ReasonCodeSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", FindingReasonCodeMapper::GetNameForFindingReasonCode(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", FindingReasonCodeMapper::GetNameForFindingReasonCode(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -4,72 +4,77 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaLive {
+namespace Model {
 
+/**
+ * Pair of multicast url and source ip address (optional) that make up a multicast
+ * source.<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MulticastSourceUpdateRequest">AWS
+ * API Reference</a></p>
+ */
+class MulticastSourceUpdateRequest {
+ public:
+  AWS_MEDIALIVE_API MulticastSourceUpdateRequest() = default;
+  AWS_MEDIALIVE_API MulticastSourceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API MulticastSourceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Pair of multicast url and source ip address (optional) that make up a multicast
-   * source.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MulticastSourceUpdateRequest">AWS
-   * API Reference</a></p>
+   * This represents the ip address of the device sending the multicast stream.
    */
-  class MulticastSourceUpdateRequest
-  {
-  public:
-    AWS_MEDIALIVE_API MulticastSourceUpdateRequest() = default;
-    AWS_MEDIALIVE_API MulticastSourceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API MulticastSourceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetSourceIp() const { return m_sourceIp; }
+  inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
+  template <typename SourceIpT = Aws::String>
+  void SetSourceIp(SourceIpT&& value) {
+    m_sourceIpHasBeenSet = true;
+    m_sourceIp = std::forward<SourceIpT>(value);
+  }
+  template <typename SourceIpT = Aws::String>
+  MulticastSourceUpdateRequest& WithSourceIp(SourceIpT&& value) {
+    SetSourceIp(std::forward<SourceIpT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * This represents the customer's source URL where multicast stream is pulled from.
+   */
+  inline const Aws::String& GetUrl() const { return m_url; }
+  inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+  template <typename UrlT = Aws::String>
+  void SetUrl(UrlT&& value) {
+    m_urlHasBeenSet = true;
+    m_url = std::forward<UrlT>(value);
+  }
+  template <typename UrlT = Aws::String>
+  MulticastSourceUpdateRequest& WithUrl(UrlT&& value) {
+    SetUrl(std::forward<UrlT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_sourceIp;
+  bool m_sourceIpHasBeenSet = false;
 
-    ///@{
-    /**
-     * This represents the ip address of the device sending the multicast stream.
-     */
-    inline const Aws::String& GetSourceIp() const { return m_sourceIp; }
-    inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-    template<typename SourceIpT = Aws::String>
-    void SetSourceIp(SourceIpT&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::forward<SourceIpT>(value); }
-    template<typename SourceIpT = Aws::String>
-    MulticastSourceUpdateRequest& WithSourceIp(SourceIpT&& value) { SetSourceIp(std::forward<SourceIpT>(value)); return *this;}
-    ///@}
+  Aws::String m_url;
+  bool m_urlHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * This represents the customer's source URL where multicast stream is pulled from.
-     */
-    inline const Aws::String& GetUrl() const { return m_url; }
-    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    template<typename UrlT = Aws::String>
-    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
-    template<typename UrlT = Aws::String>
-    MulticastSourceUpdateRequest& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_sourceIp;
-    bool m_sourceIpHasBeenSet = false;
-
-    Aws::String m_url;
-    bool m_urlHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

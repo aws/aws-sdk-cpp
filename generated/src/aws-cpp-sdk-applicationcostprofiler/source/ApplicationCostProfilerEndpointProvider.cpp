@@ -5,12 +5,8 @@
 
 #include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointProvider.h>
 
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+namespace Aws {
+namespace ApplicationCostProfiler {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

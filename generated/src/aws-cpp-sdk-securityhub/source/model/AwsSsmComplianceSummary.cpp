@@ -3,236 +3,174 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsSsmComplianceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsSsmComplianceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsSsmComplianceSummary::AwsSsmComplianceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsSsmComplianceSummary::AwsSsmComplianceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AwsSsmComplianceSummary& AwsSsmComplianceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+AwsSsmComplianceSummary& AwsSsmComplianceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantCriticalCount"))
-  {
+  if (jsonValue.ValueExists("CompliantCriticalCount")) {
     m_compliantCriticalCount = jsonValue.GetInteger("CompliantCriticalCount");
     m_compliantCriticalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantHighCount"))
-  {
+  if (jsonValue.ValueExists("CompliantHighCount")) {
     m_compliantHighCount = jsonValue.GetInteger("CompliantHighCount");
     m_compliantHighCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantMediumCount"))
-  {
+  if (jsonValue.ValueExists("CompliantMediumCount")) {
     m_compliantMediumCount = jsonValue.GetInteger("CompliantMediumCount");
     m_compliantMediumCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutionType"))
-  {
+  if (jsonValue.ValueExists("ExecutionType")) {
     m_executionType = jsonValue.GetString("ExecutionType");
     m_executionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantCriticalCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantCriticalCount")) {
     m_nonCompliantCriticalCount = jsonValue.GetInteger("NonCompliantCriticalCount");
     m_nonCompliantCriticalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantInformationalCount"))
-  {
+  if (jsonValue.ValueExists("CompliantInformationalCount")) {
     m_compliantInformationalCount = jsonValue.GetInteger("CompliantInformationalCount");
     m_compliantInformationalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantInformationalCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantInformationalCount")) {
     m_nonCompliantInformationalCount = jsonValue.GetInteger("NonCompliantInformationalCount");
     m_nonCompliantInformationalCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantUnspecifiedCount"))
-  {
+  if (jsonValue.ValueExists("CompliantUnspecifiedCount")) {
     m_compliantUnspecifiedCount = jsonValue.GetInteger("CompliantUnspecifiedCount");
     m_compliantUnspecifiedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantLowCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantLowCount")) {
     m_nonCompliantLowCount = jsonValue.GetInteger("NonCompliantLowCount");
     m_nonCompliantLowCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantHighCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantHighCount")) {
     m_nonCompliantHighCount = jsonValue.GetInteger("NonCompliantHighCount");
     m_nonCompliantHighCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompliantLowCount"))
-  {
+  if (jsonValue.ValueExists("CompliantLowCount")) {
     m_compliantLowCount = jsonValue.GetInteger("CompliantLowCount");
     m_compliantLowCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = jsonValue.GetString("ComplianceType");
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PatchBaselineId"))
-  {
+  if (jsonValue.ValueExists("PatchBaselineId")) {
     m_patchBaselineId = jsonValue.GetString("PatchBaselineId");
     m_patchBaselineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OverallSeverity"))
-  {
+  if (jsonValue.ValueExists("OverallSeverity")) {
     m_overallSeverity = jsonValue.GetString("OverallSeverity");
     m_overallSeverityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantMediumCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantMediumCount")) {
     m_nonCompliantMediumCount = jsonValue.GetInteger("NonCompliantMediumCount");
     m_nonCompliantMediumCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantUnspecifiedCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantUnspecifiedCount")) {
     m_nonCompliantUnspecifiedCount = jsonValue.GetInteger("NonCompliantUnspecifiedCount");
     m_nonCompliantUnspecifiedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PatchGroup"))
-  {
+  if (jsonValue.ValueExists("PatchGroup")) {
     m_patchGroup = jsonValue.GetString("PatchGroup");
     m_patchGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsSsmComplianceSummary::Jsonize() const
-{
+JsonValue AwsSsmComplianceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_compliantCriticalCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantCriticalCount", m_compliantCriticalCount);
-
+  if (m_compliantCriticalCountHasBeenSet) {
+    payload.WithInteger("CompliantCriticalCount", m_compliantCriticalCount);
   }
 
-  if(m_compliantHighCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantHighCount", m_compliantHighCount);
-
+  if (m_compliantHighCountHasBeenSet) {
+    payload.WithInteger("CompliantHighCount", m_compliantHighCount);
   }
 
-  if(m_compliantMediumCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantMediumCount", m_compliantMediumCount);
-
+  if (m_compliantMediumCountHasBeenSet) {
+    payload.WithInteger("CompliantMediumCount", m_compliantMediumCount);
   }
 
-  if(m_executionTypeHasBeenSet)
-  {
-   payload.WithString("ExecutionType", m_executionType);
-
+  if (m_executionTypeHasBeenSet) {
+    payload.WithString("ExecutionType", m_executionType);
   }
 
-  if(m_nonCompliantCriticalCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantCriticalCount", m_nonCompliantCriticalCount);
-
+  if (m_nonCompliantCriticalCountHasBeenSet) {
+    payload.WithInteger("NonCompliantCriticalCount", m_nonCompliantCriticalCount);
   }
 
-  if(m_compliantInformationalCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantInformationalCount", m_compliantInformationalCount);
-
+  if (m_compliantInformationalCountHasBeenSet) {
+    payload.WithInteger("CompliantInformationalCount", m_compliantInformationalCount);
   }
 
-  if(m_nonCompliantInformationalCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantInformationalCount", m_nonCompliantInformationalCount);
-
+  if (m_nonCompliantInformationalCountHasBeenSet) {
+    payload.WithInteger("NonCompliantInformationalCount", m_nonCompliantInformationalCount);
   }
 
-  if(m_compliantUnspecifiedCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantUnspecifiedCount", m_compliantUnspecifiedCount);
-
+  if (m_compliantUnspecifiedCountHasBeenSet) {
+    payload.WithInteger("CompliantUnspecifiedCount", m_compliantUnspecifiedCount);
   }
 
-  if(m_nonCompliantLowCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantLowCount", m_nonCompliantLowCount);
-
+  if (m_nonCompliantLowCountHasBeenSet) {
+    payload.WithInteger("NonCompliantLowCount", m_nonCompliantLowCount);
   }
 
-  if(m_nonCompliantHighCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantHighCount", m_nonCompliantHighCount);
-
+  if (m_nonCompliantHighCountHasBeenSet) {
+    payload.WithInteger("NonCompliantHighCount", m_nonCompliantHighCount);
   }
 
-  if(m_compliantLowCountHasBeenSet)
-  {
-   payload.WithInteger("CompliantLowCount", m_compliantLowCount);
-
+  if (m_compliantLowCountHasBeenSet) {
+    payload.WithInteger("CompliantLowCount", m_compliantLowCount);
   }
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", m_complianceType);
-
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", m_complianceType);
   }
 
-  if(m_patchBaselineIdHasBeenSet)
-  {
-   payload.WithString("PatchBaselineId", m_patchBaselineId);
-
+  if (m_patchBaselineIdHasBeenSet) {
+    payload.WithString("PatchBaselineId", m_patchBaselineId);
   }
 
-  if(m_overallSeverityHasBeenSet)
-  {
-   payload.WithString("OverallSeverity", m_overallSeverity);
-
+  if (m_overallSeverityHasBeenSet) {
+    payload.WithString("OverallSeverity", m_overallSeverity);
   }
 
-  if(m_nonCompliantMediumCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantMediumCount", m_nonCompliantMediumCount);
-
+  if (m_nonCompliantMediumCountHasBeenSet) {
+    payload.WithInteger("NonCompliantMediumCount", m_nonCompliantMediumCount);
   }
 
-  if(m_nonCompliantUnspecifiedCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantUnspecifiedCount", m_nonCompliantUnspecifiedCount);
-
+  if (m_nonCompliantUnspecifiedCountHasBeenSet) {
+    payload.WithInteger("NonCompliantUnspecifiedCount", m_nonCompliantUnspecifiedCount);
   }
 
-  if(m_patchGroupHasBeenSet)
-  {
-   payload.WithString("PatchGroup", m_patchGroup);
-
+  if (m_patchGroupHasBeenSet) {
+    payload.WithString("PatchGroup", m_patchGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

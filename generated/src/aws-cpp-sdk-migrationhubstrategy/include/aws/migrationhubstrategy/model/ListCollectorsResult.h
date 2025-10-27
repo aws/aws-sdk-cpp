@@ -4,81 +4,97 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/model/Collector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  class ListCollectorsResult
-  {
-  public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult() = default;
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+class ListCollectorsResult {
+ public:
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult() = default;
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListCollectorsResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p> The list of all the installed collectors. </p>
+   */
+  inline const Aws::Vector<Collector>& GetCollectors() const { return m_collectors; }
+  template <typename CollectorsT = Aws::Vector<Collector>>
+  void SetCollectors(CollectorsT&& value) {
+    m_collectorsHasBeenSet = true;
+    m_collectors = std::forward<CollectorsT>(value);
+  }
+  template <typename CollectorsT = Aws::Vector<Collector>>
+  ListCollectorsResult& WithCollectors(CollectorsT&& value) {
+    SetCollectors(std::forward<CollectorsT>(value));
+    return *this;
+  }
+  template <typename CollectorsT = Collector>
+  ListCollectorsResult& AddCollectors(CollectorsT&& value) {
+    m_collectorsHasBeenSet = true;
+    m_collectors.emplace_back(std::forward<CollectorsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The list of all the installed collectors. </p>
-     */
-    inline const Aws::Vector<Collector>& GetCollectors() const { return m_collectors; }
-    template<typename CollectorsT = Aws::Vector<Collector>>
-    void SetCollectors(CollectorsT&& value) { m_collectorsHasBeenSet = true; m_collectors = std::forward<CollectorsT>(value); }
-    template<typename CollectorsT = Aws::Vector<Collector>>
-    ListCollectorsResult& WithCollectors(CollectorsT&& value) { SetCollectors(std::forward<CollectorsT>(value)); return *this;}
-    template<typename CollectorsT = Collector>
-    ListCollectorsResult& AddCollectors(CollectorsT&& value) { m_collectorsHasBeenSet = true; m_collectors.emplace_back(std::forward<CollectorsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p> The token you use to retrieve the next set of results, or null if there are
+   * no more results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListCollectorsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The token you use to retrieve the next set of results, or null if there are
-     * no more results. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListCollectorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListCollectorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListCollectorsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Collector> m_collectors;
+  bool m_collectorsHasBeenSet = false;
 
-    Aws::Vector<Collector> m_collectors;
-    bool m_collectorsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

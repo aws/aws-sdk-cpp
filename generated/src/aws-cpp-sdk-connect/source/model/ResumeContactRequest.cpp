@@ -12,31 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ResumeContactRequest::SerializePayload() const
-{
+Aws::String ResumeContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_contactFlowIdHasBeenSet)
-  {
-   payload.WithString("ContactFlowId", m_contactFlowId);
-
+  if (m_contactFlowIdHasBeenSet) {
+    payload.WithString("ContactFlowId", m_contactFlowId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

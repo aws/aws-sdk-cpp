@@ -4,10 +4,10 @@
  */
 
 #include <aws/b2bi/model/ListTransformersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTransformersResult::ListTransformersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListTransformersResult::ListTransformersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListTransformersResult& ListTransformersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTransformersResult& ListTransformersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("transformers"))
-  {
+  if (jsonValue.ValueExists("transformers")) {
     Aws::Utils::Array<JsonView> transformersJsonList = jsonValue.GetArray("transformers");
-    for(unsigned transformersIndex = 0; transformersIndex < transformersJsonList.GetLength(); ++transformersIndex)
-    {
+    for (unsigned transformersIndex = 0; transformersIndex < transformersJsonList.GetLength(); ++transformersIndex) {
       m_transformers.push_back(transformersJsonList[transformersIndex].AsObject());
     }
     m_transformersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

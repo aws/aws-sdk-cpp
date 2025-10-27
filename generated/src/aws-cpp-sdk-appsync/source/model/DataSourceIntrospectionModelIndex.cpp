@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceIntrospectionModelIndex& DataSourceIntrospectionModelIndex::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DataSourceIntrospectionModelIndex& DataSourceIntrospectionModelIndex::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fields"))
-  {
+  if (jsonValue.ValueExists("fields")) {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
-    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-    {
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsString());
     }
     m_fieldsHasBeenSet = true;
@@ -42,30 +32,24 @@ DataSourceIntrospectionModelIndex& DataSourceIntrospectionModelIndex::operator =
   return *this;
 }
 
-JsonValue DataSourceIntrospectionModelIndex::Jsonize() const
-{
+JsonValue DataSourceIntrospectionModelIndex::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsString(m_fields[fieldsIndex]);
-   }
-   payload.WithArray("fields", std::move(fieldsJsonList));
-
+  if (m_fieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      fieldsJsonList[fieldsIndex].AsString(m_fields[fieldsIndex]);
+    }
+    payload.WithArray("fields", std::move(fieldsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

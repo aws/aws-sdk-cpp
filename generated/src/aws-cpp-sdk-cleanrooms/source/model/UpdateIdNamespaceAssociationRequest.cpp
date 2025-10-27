@@ -12,31 +12,20 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateIdNamespaceAssociationRequest::SerializePayload() const
-{
+Aws::String UpdateIdNamespaceAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_idMappingConfigHasBeenSet)
-  {
-   payload.WithObject("idMappingConfig", m_idMappingConfig.Jsonize());
-
+  if (m_idMappingConfigHasBeenSet) {
+    payload.WithObject("idMappingConfig", m_idMappingConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

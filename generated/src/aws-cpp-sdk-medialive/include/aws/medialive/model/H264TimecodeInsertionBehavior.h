@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class H264TimecodeInsertionBehavior
-  {
-    NOT_SET,
-    DISABLED,
-    PIC_TIMING_SEI
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class H264TimecodeInsertionBehavior { NOT_SET, DISABLED, PIC_TIMING_SEI };
 
-namespace H264TimecodeInsertionBehaviorMapper
-{
+namespace H264TimecodeInsertionBehaviorMapper {
 AWS_MEDIALIVE_API H264TimecodeInsertionBehavior GetH264TimecodeInsertionBehaviorForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForH264TimecodeInsertionBehavior(H264TimecodeInsertionBehavior value);
-} // namespace H264TimecodeInsertionBehaviorMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace H264TimecodeInsertionBehaviorMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

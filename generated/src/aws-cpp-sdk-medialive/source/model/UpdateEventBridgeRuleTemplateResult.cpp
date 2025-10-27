@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/UpdateEventBridgeRuleTemplateResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/medialive/model/UpdateEventBridgeRuleTemplateResult.h>
 
 #include <utility>
 
@@ -17,68 +17,54 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateEventBridgeRuleTemplateResult::UpdateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateEventBridgeRuleTemplateResult::UpdateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-UpdateEventBridgeRuleTemplateResult& UpdateEventBridgeRuleTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateEventBridgeRuleTemplateResult& UpdateEventBridgeRuleTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventTargets"))
-  {
+  if (jsonValue.ValueExists("eventTargets")) {
     Aws::Utils::Array<JsonView> eventTargetsJsonList = jsonValue.GetArray("eventTargets");
-    for(unsigned eventTargetsIndex = 0; eventTargetsIndex < eventTargetsJsonList.GetLength(); ++eventTargetsIndex)
-    {
+    for (unsigned eventTargetsIndex = 0; eventTargetsIndex < eventTargetsJsonList.GetLength(); ++eventTargetsIndex) {
       m_eventTargets.push_back(eventTargetsJsonList[eventTargetsIndex].AsObject());
     }
     m_eventTargetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventType"))
-  {
+  if (jsonValue.ValueExists("eventType")) {
     m_eventType = EventBridgeRuleTemplateEventTypeMapper::GetEventBridgeRuleTemplateEventTypeForName(jsonValue.GetString("eventType"));
     m_eventTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupId"))
-  {
+  if (jsonValue.ValueExists("groupId")) {
     m_groupId = jsonValue.GetString("groupId");
     m_groupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
+  if (jsonValue.ValueExists("modifiedAt")) {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -86,12 +72,10 @@ UpdateEventBridgeRuleTemplateResult& UpdateEventBridgeRuleTemplateResult::operat
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

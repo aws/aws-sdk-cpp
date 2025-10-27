@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
 
-namespace Aws
-{
-namespace inspectorscan
-{
-enum class InspectorscanErrors
-{
-  //From Core//
+namespace Aws {
+namespace inspectorscan {
+enum class InspectorscanErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class InspectorscanErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,11 @@ enum class InspectorscanErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
-class AWS_INSPECTORSCAN_API InspectorscanError : public Aws::Client::AWSError<InspectorscanErrors>
-{
-public:
+class AWS_INSPECTORSCAN_API InspectorscanError : public Aws::Client::AWSError<InspectorscanErrors> {
+ public:
   InspectorscanError() {}
   InspectorscanError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<InspectorscanErrors>(rhs) {}
   InspectorscanError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<InspectorscanErrors>(rhs) {}
@@ -63,10 +59,9 @@ public:
   T GetModeledError();
 };
 
-namespace InspectorscanErrorMapper
-{
-  AWS_INSPECTORSCAN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace InspectorscanErrorMapper {
+AWS_INSPECTORSCAN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace inspectorscan
-} // namespace Aws
+}  // namespace inspectorscan
+}  // namespace Aws

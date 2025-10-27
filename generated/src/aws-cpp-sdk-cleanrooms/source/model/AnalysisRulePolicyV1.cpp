@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-AnalysisRulePolicyV1::AnalysisRulePolicyV1(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisRulePolicyV1::AnalysisRulePolicyV1(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisRulePolicyV1& AnalysisRulePolicyV1::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("list"))
-  {
+AnalysisRulePolicyV1& AnalysisRulePolicyV1::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("list")) {
     m_list = jsonValue.GetObject("list");
     m_listHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aggregation"))
-  {
+  if (jsonValue.ValueExists("aggregation")) {
     m_aggregation = jsonValue.GetObject("aggregation");
     m_aggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("custom"))
-  {
+  if (jsonValue.ValueExists("custom")) {
     m_custom = jsonValue.GetObject("custom");
     m_customHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idMappingTable"))
-  {
+  if (jsonValue.ValueExists("idMappingTable")) {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");
     m_idMappingTableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalysisRulePolicyV1::Jsonize() const
-{
+JsonValue AnalysisRulePolicyV1::Jsonize() const {
   JsonValue payload;
 
-  if(m_listHasBeenSet)
-  {
-   payload.WithObject("list", m_list.Jsonize());
-
+  if (m_listHasBeenSet) {
+    payload.WithObject("list", m_list.Jsonize());
   }
 
-  if(m_aggregationHasBeenSet)
-  {
-   payload.WithObject("aggregation", m_aggregation.Jsonize());
-
+  if (m_aggregationHasBeenSet) {
+    payload.WithObject("aggregation", m_aggregation.Jsonize());
   }
 
-  if(m_customHasBeenSet)
-  {
-   payload.WithObject("custom", m_custom.Jsonize());
-
+  if (m_customHasBeenSet) {
+    payload.WithObject("custom", m_custom.Jsonize());
   }
 
-  if(m_idMappingTableHasBeenSet)
-  {
-   payload.WithObject("idMappingTable", m_idMappingTable.Jsonize());
-
+  if (m_idMappingTableHasBeenSet) {
+    payload.WithObject("idMappingTable", m_idMappingTable.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

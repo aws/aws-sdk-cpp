@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-SubChannelSummary::SubChannelSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubChannelSummary::SubChannelSummary(JsonView jsonValue) { *this = jsonValue; }
 
-SubChannelSummary& SubChannelSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SubChannelId"))
-  {
+SubChannelSummary& SubChannelSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SubChannelId")) {
     m_subChannelId = jsonValue.GetString("SubChannelId");
     m_subChannelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MembershipCount"))
-  {
+  if (jsonValue.ValueExists("MembershipCount")) {
     m_membershipCount = jsonValue.GetInteger("MembershipCount");
     m_membershipCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubChannelSummary::Jsonize() const
-{
+JsonValue SubChannelSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_subChannelIdHasBeenSet)
-  {
-   payload.WithString("SubChannelId", m_subChannelId);
-
+  if (m_subChannelIdHasBeenSet) {
+    payload.WithString("SubChannelId", m_subChannelId);
   }
 
-  if(m_membershipCountHasBeenSet)
-  {
-   payload.WithInteger("MembershipCount", m_membershipCount);
-
+  if (m_membershipCountHasBeenSet) {
+    payload.WithInteger("MembershipCount", m_membershipCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

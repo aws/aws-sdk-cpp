@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class ClientAuthenticationType
-  {
-    NOT_SET,
-    SmartCard,
-    SmartCardOrPassword
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class ClientAuthenticationType { NOT_SET, SmartCard, SmartCardOrPassword };
 
-namespace ClientAuthenticationTypeMapper
-{
+namespace ClientAuthenticationTypeMapper {
 AWS_DIRECTORYSERVICE_API ClientAuthenticationType GetClientAuthenticationTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForClientAuthenticationType(ClientAuthenticationType value);
-} // namespace ClientAuthenticationTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace ClientAuthenticationTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

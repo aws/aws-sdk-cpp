@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/ContentReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/ContentReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-ContentReference::ContentReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentReference::ContentReference(JsonView jsonValue) { *this = jsonValue; }
 
-ContentReference& ContentReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentArn"))
-  {
+ContentReference& ContentReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentArn")) {
     m_contentArn = jsonValue.GetString("contentArn");
     m_contentArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentId"))
-  {
+  if (jsonValue.ValueExists("contentId")) {
     m_contentId = jsonValue.GetString("contentId");
     m_contentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseArn"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseArn")) {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentReference::Jsonize() const
-{
+JsonValue ContentReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentArnHasBeenSet)
-  {
-   payload.WithString("contentArn", m_contentArn);
-
+  if (m_contentArnHasBeenSet) {
+    payload.WithString("contentArn", m_contentArn);
   }
 
-  if(m_contentIdHasBeenSet)
-  {
-   payload.WithString("contentId", m_contentId);
-
+  if (m_contentIdHasBeenSet) {
+    payload.WithString("contentId", m_contentId);
   }
 
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
+  if (m_knowledgeBaseArnHasBeenSet) {
+    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

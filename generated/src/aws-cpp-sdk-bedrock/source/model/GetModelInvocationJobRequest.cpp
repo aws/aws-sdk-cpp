@@ -12,11 +12,4 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetModelInvocationJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetModelInvocationJobRequest::SerializePayload() const { return {}; }

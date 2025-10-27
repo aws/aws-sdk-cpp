@@ -11,104 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue) { *this = jsonValue; }
 
-AggregateEvaluationResult& AggregateEvaluationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationResultIdentifier"))
-  {
+AggregateEvaluationResult& AggregateEvaluationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationResultIdentifier")) {
     m_evaluationResultIdentifier = jsonValue.GetObject("EvaluationResultIdentifier");
     m_evaluationResultIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultRecordedTime"))
-  {
+  if (jsonValue.ValueExists("ResultRecordedTime")) {
     m_resultRecordedTime = jsonValue.GetDouble("ResultRecordedTime");
     m_resultRecordedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConfigRuleInvokedTime"))
-  {
+  if (jsonValue.ValueExists("ConfigRuleInvokedTime")) {
     m_configRuleInvokedTime = jsonValue.GetDouble("ConfigRuleInvokedTime");
     m_configRuleInvokedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Annotation"))
-  {
+  if (jsonValue.ValueExists("Annotation")) {
     m_annotation = jsonValue.GetString("Annotation");
     m_annotationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = jsonValue.GetString("AwsRegion");
     m_awsRegionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregateEvaluationResult::Jsonize() const
-{
+JsonValue AggregateEvaluationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationResultIdentifierHasBeenSet)
-  {
-   payload.WithObject("EvaluationResultIdentifier", m_evaluationResultIdentifier.Jsonize());
-
+  if (m_evaluationResultIdentifierHasBeenSet) {
+    payload.WithObject("EvaluationResultIdentifier", m_evaluationResultIdentifier.Jsonize());
   }
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
   }
 
-  if(m_resultRecordedTimeHasBeenSet)
-  {
-   payload.WithDouble("ResultRecordedTime", m_resultRecordedTime.SecondsWithMSPrecision());
+  if (m_resultRecordedTimeHasBeenSet) {
+    payload.WithDouble("ResultRecordedTime", m_resultRecordedTime.SecondsWithMSPrecision());
   }
 
-  if(m_configRuleInvokedTimeHasBeenSet)
-  {
-   payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime.SecondsWithMSPrecision());
+  if (m_configRuleInvokedTimeHasBeenSet) {
+    payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime.SecondsWithMSPrecision());
   }
 
-  if(m_annotationHasBeenSet)
-  {
-   payload.WithString("Annotation", m_annotation);
-
+  if (m_annotationHasBeenSet) {
+    payload.WithString("Annotation", m_annotation);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", m_awsRegion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

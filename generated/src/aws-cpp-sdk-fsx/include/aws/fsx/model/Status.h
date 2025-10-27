@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class Status
-  {
-    NOT_SET,
-    FAILED,
-    IN_PROGRESS,
-    PENDING,
-    COMPLETED,
-    UPDATED_OPTIMIZING,
-    OPTIMIZING,
-    PAUSED,
-    CANCELLED
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class Status { NOT_SET, FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING, OPTIMIZING, PAUSED, CANCELLED };
 
-namespace StatusMapper
-{
+namespace StatusMapper {
 AWS_FSX_API Status GetStatusForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForStatus(Status value);
-} // namespace StatusMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/SMSConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/SMSConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-SMSConfiguration::SMSConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SMSConfiguration::SMSConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SMSConfiguration& SMSConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("senderId"))
-  {
+SMSConfiguration& SMSConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("senderId")) {
     m_senderId = jsonValue.GetString("senderId");
     m_senderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("additionalMessage"))
-  {
+  if (jsonValue.ValueExists("additionalMessage")) {
     m_additionalMessage = jsonValue.GetString("additionalMessage");
     m_additionalMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recipients"))
-  {
+  if (jsonValue.ValueExists("recipients")) {
     Aws::Utils::Array<JsonView> recipientsJsonList = jsonValue.GetArray("recipients");
-    for(unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex)
-    {
+    for (unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex) {
       m_recipients.push_back(recipientsJsonList[recipientsIndex].AsObject());
     }
     m_recipientsHasBeenSet = true;
@@ -47,36 +36,28 @@ SMSConfiguration& SMSConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SMSConfiguration::Jsonize() const
-{
+JsonValue SMSConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_senderIdHasBeenSet)
-  {
-   payload.WithString("senderId", m_senderId);
-
+  if (m_senderIdHasBeenSet) {
+    payload.WithString("senderId", m_senderId);
   }
 
-  if(m_additionalMessageHasBeenSet)
-  {
-   payload.WithString("additionalMessage", m_additionalMessage);
-
+  if (m_additionalMessageHasBeenSet) {
+    payload.WithString("additionalMessage", m_additionalMessage);
   }
 
-  if(m_recipientsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recipientsJsonList(m_recipients.size());
-   for(unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex)
-   {
-     recipientsJsonList[recipientsIndex].AsObject(m_recipients[recipientsIndex].Jsonize());
-   }
-   payload.WithArray("recipients", std::move(recipientsJsonList));
-
+  if (m_recipientsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recipientsJsonList(m_recipients.size());
+    for (unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex) {
+      recipientsJsonList[recipientsIndex].AsObject(m_recipients[recipientsIndex].Jsonize());
+    }
+    payload.WithArray("recipients", std::move(recipientsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

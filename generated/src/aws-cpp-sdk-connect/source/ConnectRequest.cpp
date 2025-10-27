@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/connect/ConnectRequest.h>
 
-namespace Aws
-{
-namespace Connect
-{
-} // namespace Connect
-} // namespace Aws
+namespace Aws {
+namespace Connect {}  // namespace Connect
+}  // namespace Aws

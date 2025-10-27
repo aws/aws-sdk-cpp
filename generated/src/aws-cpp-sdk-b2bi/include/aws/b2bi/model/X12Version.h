@@ -7,29 +7,16 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
-  enum class X12Version
-  {
-    NOT_SET,
-    VERSION_4010,
-    VERSION_4030,
-    VERSION_4050,
-    VERSION_4060,
-    VERSION_5010,
-    VERSION_5010_HIPAA
-  };
+namespace Aws {
+namespace B2BI {
+namespace Model {
+enum class X12Version { NOT_SET, VERSION_4010, VERSION_4030, VERSION_4050, VERSION_4060, VERSION_5010, VERSION_5010_HIPAA };
 
-namespace X12VersionMapper
-{
+namespace X12VersionMapper {
 AWS_B2BI_API X12Version GetX12VersionForName(const Aws::String& name);
 
 AWS_B2BI_API Aws::String GetNameForX12Version(X12Version value);
-} // namespace X12VersionMapper
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace X12VersionMapper
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

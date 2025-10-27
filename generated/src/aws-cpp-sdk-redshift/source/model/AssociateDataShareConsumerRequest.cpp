@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/AssociateDataShareConsumerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/AssociateDataShareConsumerRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String AssociateDataShareConsumerRequest::SerializePayload() const
-{
+Aws::String AssociateDataShareConsumerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssociateDataShareConsumer&";
-  if(m_dataShareArnHasBeenSet)
-  {
+  if (m_dataShareArnHasBeenSet) {
     ss << "DataShareArn=" << StringUtils::URLEncode(m_dataShareArn.c_str()) << "&";
   }
 
-  if(m_associateEntireAccountHasBeenSet)
-  {
+  if (m_associateEntireAccountHasBeenSet) {
     ss << "AssociateEntireAccount=" << std::boolalpha << m_associateEntireAccount << "&";
   }
 
-  if(m_consumerArnHasBeenSet)
-  {
+  if (m_consumerArnHasBeenSet) {
     ss << "ConsumerArn=" << StringUtils::URLEncode(m_consumerArn.c_str()) << "&";
   }
 
-  if(m_consumerRegionHasBeenSet)
-  {
+  if (m_consumerRegionHasBeenSet) {
     ss << "ConsumerRegion=" << StringUtils::URLEncode(m_consumerRegion.c_str()) << "&";
   }
 
-  if(m_allowWritesHasBeenSet)
-  {
+  if (m_allowWritesHasBeenSet) {
     ss << "AllowWrites=" << std::boolalpha << m_allowWrites << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String AssociateDataShareConsumerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AssociateDataShareConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssociateDataShareConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

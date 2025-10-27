@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
-  enum class FilterField
-  {
-    NOT_SET,
-    NAME
-  };
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
+enum class FilterField { NOT_SET, NAME };
 
-namespace FilterFieldMapper
-{
+namespace FilterFieldMapper {
 AWS_CONNECTWISDOMSERVICE_API FilterField GetFilterFieldForName(const Aws::String& name);
 
 AWS_CONNECTWISDOMSERVICE_API Aws::String GetNameForFilterField(FilterField value);
-} // namespace FilterFieldMapper
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace FilterFieldMapper
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

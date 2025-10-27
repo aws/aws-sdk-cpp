@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/ExcludedRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/model/ExcludedRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-ExcludedRule::ExcludedRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExcludedRule::ExcludedRule(JsonView jsonValue) { *this = jsonValue; }
 
-ExcludedRule& ExcludedRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleId"))
-  {
+ExcludedRule& ExcludedRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleId")) {
     m_ruleId = jsonValue.GetString("RuleId");
     m_ruleIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExcludedRule::Jsonize() const
-{
+JsonValue ExcludedRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("RuleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("RuleId", m_ruleId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
-  enum class OrganizationFeatureSet
-  {
-    NOT_SET,
-    ALL,
-    CONSOLIDATED_BILLING
-  };
+namespace Aws {
+namespace Organizations {
+namespace Model {
+enum class OrganizationFeatureSet { NOT_SET, ALL, CONSOLIDATED_BILLING };
 
-namespace OrganizationFeatureSetMapper
-{
+namespace OrganizationFeatureSetMapper {
 AWS_ORGANIZATIONS_API OrganizationFeatureSet GetOrganizationFeatureSetForName(const Aws::String& name);
 
 AWS_ORGANIZATIONS_API Aws::String GetNameForOrganizationFeatureSet(OrganizationFeatureSet value);
-} // namespace OrganizationFeatureSetMapper
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace OrganizationFeatureSetMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class ManagementType
-  {
-    NOT_SET,
-    AUTO_MANAGED,
-    MANUAL,
-    DISABLED
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class ManagementType { NOT_SET, AUTO_MANAGED, MANUAL, DISABLED };
 
-namespace ManagementTypeMapper
-{
+namespace ManagementTypeMapper {
 AWS_GUARDDUTY_API ManagementType GetManagementTypeForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForManagementType(ManagementType value);
-} // namespace ManagementTypeMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace ManagementTypeMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

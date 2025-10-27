@@ -12,24 +12,16 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetCognitoEventsRequest::SerializePayload() const
-{
+Aws::String SetCognitoEventsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventsHasBeenSet)
-  {
-   JsonValue eventsJsonMap;
-   for(auto& eventsItem : m_events)
-   {
-     eventsJsonMap.WithString(eventsItem.first, eventsItem.second);
-   }
-   payload.WithObject("Events", std::move(eventsJsonMap));
-
+  if (m_eventsHasBeenSet) {
+    JsonValue eventsJsonMap;
+    for (auto& eventsItem : m_events) {
+      eventsJsonMap.WithString(eventsItem.first, eventsItem.second);
+    }
+    payload.WithObject("Events", std::move(eventsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

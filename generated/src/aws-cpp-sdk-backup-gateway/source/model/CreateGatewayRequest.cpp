@@ -12,49 +12,34 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateGatewayRequest::SerializePayload() const
-{
+Aws::String CreateGatewayRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_activationKeyHasBeenSet)
-  {
-   payload.WithString("ActivationKey", m_activationKey);
-
+  if (m_activationKeyHasBeenSet) {
+    payload.WithString("ActivationKey", m_activationKey);
   }
 
-  if(m_gatewayDisplayNameHasBeenSet)
-  {
-   payload.WithString("GatewayDisplayName", m_gatewayDisplayName);
-
+  if (m_gatewayDisplayNameHasBeenSet) {
+    payload.WithString("GatewayDisplayName", m_gatewayDisplayName);
   }
 
-  if(m_gatewayTypeHasBeenSet)
-  {
-   payload.WithString("GatewayType", GatewayTypeMapper::GetNameForGatewayType(m_gatewayType));
+  if (m_gatewayTypeHasBeenSet) {
+    payload.WithString("GatewayType", GatewayTypeMapper::GetNameForGatewayType(m_gatewayType));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateGatewayRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateGatewayRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.CreateGateway"));
   return headers;
-
 }
-
-
-
-

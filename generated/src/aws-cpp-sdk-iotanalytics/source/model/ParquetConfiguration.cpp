@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/ParquetConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/ParquetConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-ParquetConfiguration::ParquetConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParquetConfiguration::ParquetConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ParquetConfiguration& ParquetConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("schemaDefinition"))
-  {
+ParquetConfiguration& ParquetConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("schemaDefinition")) {
     m_schemaDefinition = jsonValue.GetObject("schemaDefinition");
     m_schemaDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParquetConfiguration::Jsonize() const
-{
+JsonValue ParquetConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_schemaDefinitionHasBeenSet)
-  {
-   payload.WithObject("schemaDefinition", m_schemaDefinition.Jsonize());
-
+  if (m_schemaDefinitionHasBeenSet) {
+    payload.WithObject("schemaDefinition", m_schemaDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

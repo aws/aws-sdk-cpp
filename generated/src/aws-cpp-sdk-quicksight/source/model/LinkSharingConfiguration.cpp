@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/LinkSharingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/LinkSharingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-LinkSharingConfiguration::LinkSharingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LinkSharingConfiguration::LinkSharingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LinkSharingConfiguration& LinkSharingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Permissions"))
-  {
+LinkSharingConfiguration& LinkSharingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
-    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-    {
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
     m_permissionsHasBeenSet = true;
@@ -37,24 +28,20 @@ LinkSharingConfiguration& LinkSharingConfiguration::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue LinkSharingConfiguration::Jsonize() const
-{
+JsonValue LinkSharingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
-   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-   {
-     permissionsJsonList[permissionsIndex].AsObject(m_permissions[permissionsIndex].Jsonize());
-   }
-   payload.WithArray("Permissions", std::move(permissionsJsonList));
-
+  if (m_permissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
+      permissionsJsonList[permissionsIndex].AsObject(m_permissions[permissionsIndex].Jsonize());
+    }
+    payload.WithArray("Permissions", std::move(permissionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

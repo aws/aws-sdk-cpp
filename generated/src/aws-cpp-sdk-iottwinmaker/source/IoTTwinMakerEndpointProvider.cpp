@@ -5,12 +5,8 @@
 
 #include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTTwinMaker
-} // namespace Aws
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTTwinMaker
+}  // namespace Aws

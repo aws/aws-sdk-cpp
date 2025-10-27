@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ReasoningTextBlock::ReasoningTextBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReasoningTextBlock::ReasoningTextBlock(JsonView jsonValue) { *this = jsonValue; }
 
-ReasoningTextBlock& ReasoningTextBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+ReasoningTextBlock& ReasoningTextBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signature"))
-  {
+  if (jsonValue.ValueExists("signature")) {
     m_signature = jsonValue.GetString("signature");
     m_signatureHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReasoningTextBlock::Jsonize() const
-{
+JsonValue ReasoningTextBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_signatureHasBeenSet)
-  {
-   payload.WithString("signature", m_signature);
-
+  if (m_signatureHasBeenSet) {
+    payload.WithString("signature", m_signature);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

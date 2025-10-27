@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sdb/model/BatchDeleteAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sdb/model/BatchDeleteAttributesRequest.h>
 
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-Aws::String BatchDeleteAttributesRequest::SerializePayload() const
-{
+Aws::String BatchDeleteAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=BatchDeleteAttributes&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_itemsHasBeenSet)
-  {
-    if (m_items.empty())
-    {
+  if (m_itemsHasBeenSet) {
+    if (m_items.empty()) {
       ss << "Items=&";
-    }
-    else
-    {
+    } else {
       unsigned itemsCount = 1;
-      for(auto& item : m_items)
-      {
+      for (auto& item : m_items) {
         item.OutputToStream(ss, "Item.", itemsCount, "");
         itemsCount++;
       }
@@ -40,8 +33,4 @@ Aws::String BatchDeleteAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  BatchDeleteAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void BatchDeleteAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

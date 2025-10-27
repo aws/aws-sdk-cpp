@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/groundstation/GroundStation_EXPORTS.h>
-#include <aws/groundstation/GroundStationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/groundstation/GroundStationRequest.h>
+#include <aws/groundstation/GroundStation_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
+namespace Aws {
+namespace GroundStation {
+namespace Model {
 
+/**
+ * <p/><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactRequest">AWS
+ * API Reference</a></p>
+ */
+class DescribeContactRequest : public GroundStationRequest {
+ public:
+  AWS_GROUNDSTATION_API DescribeContactRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeContact"; }
+
+  AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactRequest">AWS
-   * API Reference</a></p>
+   * <p>UUID of a contact.</p>
    */
-  class DescribeContactRequest : public GroundStationRequest
-  {
-  public:
-    AWS_GROUNDSTATION_API DescribeContactRequest() = default;
+  inline const Aws::String& GetContactId() const { return m_contactId; }
+  inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
+  template <typename ContactIdT = Aws::String>
+  void SetContactId(ContactIdT&& value) {
+    m_contactIdHasBeenSet = true;
+    m_contactId = std::forward<ContactIdT>(value);
+  }
+  template <typename ContactIdT = Aws::String>
+  DescribeContactRequest& WithContactId(ContactIdT&& value) {
+    SetContactId(std::forward<ContactIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_contactId;
+  bool m_contactIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeContact"; }
-
-    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>UUID of a contact.</p>
-     */
-    inline const Aws::String& GetContactId() const { return m_contactId; }
-    inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    template<typename ContactIdT = Aws::String>
-    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
-    template<typename ContactIdT = Aws::String>
-    DescribeContactRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_contactId;
-    bool m_contactIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

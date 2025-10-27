@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class AuthenticationType
-  {
-    NOT_SET,
-    BASIC,
-    OAUTH2,
-    CUSTOM
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class AuthenticationType { NOT_SET, BASIC, OAUTH2, CUSTOM };
 
-namespace AuthenticationTypeMapper
-{
+namespace AuthenticationTypeMapper {
 AWS_DATAZONE_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForAuthenticationType(AuthenticationType value);
-} // namespace AuthenticationTypeMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace AuthenticationTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

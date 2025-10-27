@@ -4,114 +4,139 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
-#include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSMRequest.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DocumentMetadataEnum.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
+/**
+ */
+class ListDocumentMetadataHistoryRequest : public SSMRequest {
+ public:
+  AWS_SSM_API ListDocumentMetadataHistoryRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDocumentMetadataHistory"; }
+
+  AWS_SSM_API Aws::String SerializePayload() const override;
+
+  AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the change template.</p>
    */
-  class ListDocumentMetadataHistoryRequest : public SSMRequest
-  {
-  public:
-    AWS_SSM_API ListDocumentMetadataHistoryRequest() = default;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ListDocumentMetadataHistoryRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListDocumentMetadataHistory"; }
+  ///@{
+  /**
+   * <p>The version of the change template.</p>
+   */
+  inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
+  inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+  template <typename DocumentVersionT = Aws::String>
+  void SetDocumentVersion(DocumentVersionT&& value) {
+    m_documentVersionHasBeenSet = true;
+    m_documentVersion = std::forward<DocumentVersionT>(value);
+  }
+  template <typename DocumentVersionT = Aws::String>
+  ListDocumentMetadataHistoryRequest& WithDocumentVersion(DocumentVersionT&& value) {
+    SetDocumentVersion(std::forward<DocumentVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SSM_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The type of data for which details are being requested. Currently, the only
+   * supported value is <code>DocumentReviews</code>.</p>
+   */
+  inline DocumentMetadataEnum GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  inline void SetMetadata(DocumentMetadataEnum value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = value;
+  }
+  inline ListDocumentMetadataHistoryRequest& WithMetadata(DocumentMetadataEnum value) {
+    SetMetadata(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDocumentMetadataHistoryRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum number of items to return for this call. The call also returns a
+   * token that you can specify in a subsequent call to get the next set of
+   * results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListDocumentMetadataHistoryRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the change template.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ListDocumentMetadataHistoryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  Aws::String m_documentVersion;
+  bool m_documentVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The version of the change template.</p>
-     */
-    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
-    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    template<typename DocumentVersionT = Aws::String>
-    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
-    template<typename DocumentVersionT = Aws::String>
-    ListDocumentMetadataHistoryRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
-    ///@}
+  DocumentMetadataEnum m_metadata{DocumentMetadataEnum::NOT_SET};
+  bool m_metadataHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The type of data for which details are being requested. Currently, the only
-     * supported value is <code>DocumentReviews</code>.</p>
-     */
-    inline DocumentMetadataEnum GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(DocumentMetadataEnum value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline ListDocumentMetadataHistoryRequest& WithMetadata(DocumentMetadataEnum value) { SetMetadata(value); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDocumentMetadataHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListDocumentMetadataHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet = false;
-
-    DocumentMetadataEnum m_metadata{DocumentMetadataEnum::NOT_SET};
-    bool m_metadataHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/Greengrass_EXPORTS.h>
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
-  enum class EncodingType
-  {
-    NOT_SET,
-    binary,
-    json
-  };
+namespace Aws {
+namespace Greengrass {
+namespace Model {
+enum class EncodingType { NOT_SET, binary, json };
 
-namespace EncodingTypeMapper
-{
+namespace EncodingTypeMapper {
 AWS_GREENGRASS_API EncodingType GetEncodingTypeForName(const Aws::String& name);
 
 AWS_GREENGRASS_API Aws::String GetNameForEncodingType(EncodingType value);
-} // namespace EncodingTypeMapper
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace EncodingTypeMapper
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteChangeSetRequest::SerializePayload() const
-{
+Aws::String DeleteChangeSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteChangeSet&";
-  if(m_changeSetNameHasBeenSet)
-  {
+  if (m_changeSetNameHasBeenSet) {
     ss << "ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteChangeSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteChangeSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteChangeSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

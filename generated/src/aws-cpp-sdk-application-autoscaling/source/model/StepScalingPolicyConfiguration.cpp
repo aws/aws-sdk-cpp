@@ -11,92 +11,69 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AdjustmentType"))
-  {
+StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AdjustmentType")) {
     m_adjustmentType = AdjustmentTypeMapper::GetAdjustmentTypeForName(jsonValue.GetString("AdjustmentType"));
     m_adjustmentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StepAdjustments"))
-  {
+  if (jsonValue.ValueExists("StepAdjustments")) {
     Aws::Utils::Array<JsonView> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
-    for(unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex)
-    {
+    for (unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex) {
       m_stepAdjustments.push_back(stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject());
     }
     m_stepAdjustmentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinAdjustmentMagnitude"))
-  {
+  if (jsonValue.ValueExists("MinAdjustmentMagnitude")) {
     m_minAdjustmentMagnitude = jsonValue.GetInteger("MinAdjustmentMagnitude");
     m_minAdjustmentMagnitudeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Cooldown"))
-  {
+  if (jsonValue.ValueExists("Cooldown")) {
     m_cooldown = jsonValue.GetInteger("Cooldown");
     m_cooldownHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricAggregationType"))
-  {
+  if (jsonValue.ValueExists("MetricAggregationType")) {
     m_metricAggregationType = MetricAggregationTypeMapper::GetMetricAggregationTypeForName(jsonValue.GetString("MetricAggregationType"));
     m_metricAggregationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StepScalingPolicyConfiguration::Jsonize() const
-{
+JsonValue StepScalingPolicyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_adjustmentTypeHasBeenSet)
-  {
-   payload.WithString("AdjustmentType", AdjustmentTypeMapper::GetNameForAdjustmentType(m_adjustmentType));
+  if (m_adjustmentTypeHasBeenSet) {
+    payload.WithString("AdjustmentType", AdjustmentTypeMapper::GetNameForAdjustmentType(m_adjustmentType));
   }
 
-  if(m_stepAdjustmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stepAdjustmentsJsonList(m_stepAdjustments.size());
-   for(unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex)
-   {
-     stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject(m_stepAdjustments[stepAdjustmentsIndex].Jsonize());
-   }
-   payload.WithArray("StepAdjustments", std::move(stepAdjustmentsJsonList));
-
+  if (m_stepAdjustmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepAdjustmentsJsonList(m_stepAdjustments.size());
+    for (unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex) {
+      stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject(m_stepAdjustments[stepAdjustmentsIndex].Jsonize());
+    }
+    payload.WithArray("StepAdjustments", std::move(stepAdjustmentsJsonList));
   }
 
-  if(m_minAdjustmentMagnitudeHasBeenSet)
-  {
-   payload.WithInteger("MinAdjustmentMagnitude", m_minAdjustmentMagnitude);
-
+  if (m_minAdjustmentMagnitudeHasBeenSet) {
+    payload.WithInteger("MinAdjustmentMagnitude", m_minAdjustmentMagnitude);
   }
 
-  if(m_cooldownHasBeenSet)
-  {
-   payload.WithInteger("Cooldown", m_cooldown);
-
+  if (m_cooldownHasBeenSet) {
+    payload.WithInteger("Cooldown", m_cooldown);
   }
 
-  if(m_metricAggregationTypeHasBeenSet)
-  {
-   payload.WithString("MetricAggregationType", MetricAggregationTypeMapper::GetNameForMetricAggregationType(m_metricAggregationType));
+  if (m_metricAggregationTypeHasBeenSet) {
+    payload.WithString("MetricAggregationType", MetricAggregationTypeMapper::GetNameForMetricAggregationType(m_metricAggregationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

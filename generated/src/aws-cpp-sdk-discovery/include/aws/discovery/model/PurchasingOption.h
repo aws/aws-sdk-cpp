@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
-  enum class PurchasingOption
-  {
-    NOT_SET,
-    ALL_UPFRONT,
-    PARTIAL_UPFRONT,
-    NO_UPFRONT
-  };
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
+enum class PurchasingOption { NOT_SET, ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT };
 
-namespace PurchasingOptionMapper
-{
+namespace PurchasingOptionMapper {
 AWS_APPLICATIONDISCOVERYSERVICE_API PurchasingOption GetPurchasingOptionForName(const Aws::String& name);
 
 AWS_APPLICATIONDISCOVERYSERVICE_API Aws::String GetNameForPurchasingOption(PurchasingOption value);
-} // namespace PurchasingOptionMapper
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace PurchasingOptionMapper
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

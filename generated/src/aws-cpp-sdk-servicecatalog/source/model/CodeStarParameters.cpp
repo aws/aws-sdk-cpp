@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/CodeStarParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/CodeStarParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-CodeStarParameters::CodeStarParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeStarParameters::CodeStarParameters(JsonView jsonValue) { *this = jsonValue; }
 
-CodeStarParameters& CodeStarParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
+CodeStarParameters& CodeStarParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectionArn")) {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
     m_connectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Repository"))
-  {
+  if (jsonValue.ValueExists("Repository")) {
     m_repository = jsonValue.GetString("Repository");
     m_repositoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Branch"))
-  {
+  if (jsonValue.ValueExists("Branch")) {
     m_branch = jsonValue.GetString("Branch");
     m_branchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArtifactPath"))
-  {
+  if (jsonValue.ValueExists("ArtifactPath")) {
     m_artifactPath = jsonValue.GetString("ArtifactPath");
     m_artifactPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeStarParameters::Jsonize() const
-{
+JsonValue CodeStarParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
-  if(m_repositoryHasBeenSet)
-  {
-   payload.WithString("Repository", m_repository);
-
+  if (m_repositoryHasBeenSet) {
+    payload.WithString("Repository", m_repository);
   }
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithString("Branch", m_branch);
-
+  if (m_branchHasBeenSet) {
+    payload.WithString("Branch", m_branch);
   }
 
-  if(m_artifactPathHasBeenSet)
-  {
-   payload.WithString("ArtifactPath", m_artifactPath);
-
+  if (m_artifactPathHasBeenSet) {
+    payload.WithString("ArtifactPath", m_artifactPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

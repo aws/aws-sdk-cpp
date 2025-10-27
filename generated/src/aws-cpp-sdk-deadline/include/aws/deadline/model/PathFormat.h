@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class PathFormat
-  {
-    NOT_SET,
-    windows,
-    posix
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class PathFormat { NOT_SET, windows, posix };
 
-namespace PathFormatMapper
-{
+namespace PathFormatMapper {
 AWS_DEADLINE_API PathFormat GetPathFormatForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForPathFormat(PathFormat value);
-} // namespace PathFormatMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace PathFormatMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

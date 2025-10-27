@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/VersionControlInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/VersionControlInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-VersionControlInfo::VersionControlInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VersionControlInfo::VersionControlInfo(JsonView jsonValue) { *this = jsonValue; }
 
-VersionControlInfo& VersionControlInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("versionControlConfigurationTimeStamp"))
-  {
+VersionControlInfo& VersionControlInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("versionControlConfigurationTimeStamp")) {
     m_versionControlConfigurationTimeStamp = jsonValue.GetString("versionControlConfigurationTimeStamp");
     m_versionControlConfigurationTimeStampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionControlType"))
-  {
+  if (jsonValue.ValueExists("versionControlType")) {
     m_versionControlType = VersionControlTypeMapper::GetVersionControlTypeForName(jsonValue.GetString("versionControlType"));
     m_versionControlTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VersionControlInfo::Jsonize() const
-{
+JsonValue VersionControlInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_versionControlConfigurationTimeStampHasBeenSet)
-  {
-   payload.WithString("versionControlConfigurationTimeStamp", m_versionControlConfigurationTimeStamp);
-
+  if (m_versionControlConfigurationTimeStampHasBeenSet) {
+    payload.WithString("versionControlConfigurationTimeStamp", m_versionControlConfigurationTimeStamp);
   }
 
-  if(m_versionControlTypeHasBeenSet)
-  {
-   payload.WithString("versionControlType", VersionControlTypeMapper::GetNameForVersionControlType(m_versionControlType));
+  if (m_versionControlTypeHasBeenSet) {
+    payload.WithString("versionControlType", VersionControlTypeMapper::GetNameForVersionControlType(m_versionControlType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

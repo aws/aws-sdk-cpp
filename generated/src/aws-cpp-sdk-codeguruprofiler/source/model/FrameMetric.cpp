@@ -11,71 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-FrameMetric::FrameMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FrameMetric::FrameMetric(JsonView jsonValue) { *this = jsonValue; }
 
-FrameMetric& FrameMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("frameName"))
-  {
+FrameMetric& FrameMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("frameName")) {
     m_frameName = jsonValue.GetString("frameName");
     m_frameNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("threadStates"))
-  {
+  if (jsonValue.ValueExists("threadStates")) {
     Aws::Utils::Array<JsonView> threadStatesJsonList = jsonValue.GetArray("threadStates");
-    for(unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex)
-    {
+    for (unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex) {
       m_threadStates.push_back(threadStatesJsonList[threadStatesIndex].AsString());
     }
     m_threadStatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = MetricTypeMapper::GetMetricTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FrameMetric::Jsonize() const
-{
+JsonValue FrameMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_frameNameHasBeenSet)
-  {
-   payload.WithString("frameName", m_frameName);
-
+  if (m_frameNameHasBeenSet) {
+    payload.WithString("frameName", m_frameName);
   }
 
-  if(m_threadStatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> threadStatesJsonList(m_threadStates.size());
-   for(unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex)
-   {
-     threadStatesJsonList[threadStatesIndex].AsString(m_threadStates[threadStatesIndex]);
-   }
-   payload.WithArray("threadStates", std::move(threadStatesJsonList));
-
+  if (m_threadStatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> threadStatesJsonList(m_threadStates.size());
+    for (unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex) {
+      threadStatesJsonList[threadStatesIndex].AsString(m_threadStates[threadStatesIndex]);
+    }
+    payload.WithArray("threadStates", std::move(threadStatesJsonList));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MetricTypeMapper::GetNameForMetricType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", MetricTypeMapper::GetNameForMetricType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

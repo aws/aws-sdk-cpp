@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class XavcEntropyEncoding
-  {
-    NOT_SET,
-    AUTO,
-    CABAC,
-    CAVLC
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class XavcEntropyEncoding { NOT_SET, AUTO, CABAC, CAVLC };
 
-namespace XavcEntropyEncodingMapper
-{
+namespace XavcEntropyEncodingMapper {
 AWS_MEDIACONVERT_API XavcEntropyEncoding GetXavcEntropyEncodingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForXavcEntropyEncoding(XavcEntropyEncoding value);
-} // namespace XavcEntropyEncodingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace XavcEntropyEncodingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

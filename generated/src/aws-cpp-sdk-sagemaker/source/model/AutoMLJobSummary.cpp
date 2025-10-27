@@ -3,73 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AutoMLJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AutoMLJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AutoMLJobSummary::AutoMLJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoMLJobSummary::AutoMLJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AutoMLJobSummary& AutoMLJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutoMLJobName"))
-  {
+AutoMLJobSummary& AutoMLJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutoMLJobName")) {
     m_autoMLJobName = jsonValue.GetString("AutoMLJobName");
     m_autoMLJobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutoMLJobArn"))
-  {
+  if (jsonValue.ValueExists("AutoMLJobArn")) {
     m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
     m_autoMLJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutoMLJobStatus"))
-  {
+  if (jsonValue.ValueExists("AutoMLJobStatus")) {
     m_autoMLJobStatus = AutoMLJobStatusMapper::GetAutoMLJobStatusForName(jsonValue.GetString("AutoMLJobStatus"));
     m_autoMLJobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutoMLJobSecondaryStatus"))
-  {
-    m_autoMLJobSecondaryStatus = AutoMLJobSecondaryStatusMapper::GetAutoMLJobSecondaryStatusForName(jsonValue.GetString("AutoMLJobSecondaryStatus"));
+  if (jsonValue.ValueExists("AutoMLJobSecondaryStatus")) {
+    m_autoMLJobSecondaryStatus =
+        AutoMLJobSecondaryStatusMapper::GetAutoMLJobSecondaryStatusForName(jsonValue.GetString("AutoMLJobSecondaryStatus"));
     m_autoMLJobSecondaryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
+  if (jsonValue.ValueExists("FailureReason")) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PartialFailureReasons"))
-  {
+  if (jsonValue.ValueExists("PartialFailureReasons")) {
     Aws::Utils::Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
-    for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
-    {
+    for (unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength();
+         ++partialFailureReasonsIndex) {
       m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());
     }
     m_partialFailureReasonsHasBeenSet = true;
@@ -77,67 +62,54 @@ AutoMLJobSummary& AutoMLJobSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AutoMLJobSummary::Jsonize() const
-{
+JsonValue AutoMLJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoMLJobNameHasBeenSet)
-  {
-   payload.WithString("AutoMLJobName", m_autoMLJobName);
-
+  if (m_autoMLJobNameHasBeenSet) {
+    payload.WithString("AutoMLJobName", m_autoMLJobName);
   }
 
-  if(m_autoMLJobArnHasBeenSet)
-  {
-   payload.WithString("AutoMLJobArn", m_autoMLJobArn);
-
+  if (m_autoMLJobArnHasBeenSet) {
+    payload.WithString("AutoMLJobArn", m_autoMLJobArn);
   }
 
-  if(m_autoMLJobStatusHasBeenSet)
-  {
-   payload.WithString("AutoMLJobStatus", AutoMLJobStatusMapper::GetNameForAutoMLJobStatus(m_autoMLJobStatus));
+  if (m_autoMLJobStatusHasBeenSet) {
+    payload.WithString("AutoMLJobStatus", AutoMLJobStatusMapper::GetNameForAutoMLJobStatus(m_autoMLJobStatus));
   }
 
-  if(m_autoMLJobSecondaryStatusHasBeenSet)
-  {
-   payload.WithString("AutoMLJobSecondaryStatus", AutoMLJobSecondaryStatusMapper::GetNameForAutoMLJobSecondaryStatus(m_autoMLJobSecondaryStatus));
+  if (m_autoMLJobSecondaryStatusHasBeenSet) {
+    payload.WithString("AutoMLJobSecondaryStatus",
+                       AutoMLJobSecondaryStatusMapper::GetNameForAutoMLJobSecondaryStatus(m_autoMLJobSecondaryStatus));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("FailureReason", m_failureReason);
   }
 
-  if(m_partialFailureReasonsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> partialFailureReasonsJsonList(m_partialFailureReasons.size());
-   for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
-   {
-     partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject(m_partialFailureReasons[partialFailureReasonsIndex].Jsonize());
-   }
-   payload.WithArray("PartialFailureReasons", std::move(partialFailureReasonsJsonList));
-
+  if (m_partialFailureReasonsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> partialFailureReasonsJsonList(m_partialFailureReasons.size());
+    for (unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength();
+         ++partialFailureReasonsIndex) {
+      partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject(m_partialFailureReasons[partialFailureReasonsIndex].Jsonize());
+    }
+    payload.WithArray("PartialFailureReasons", std::move(partialFailureReasonsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

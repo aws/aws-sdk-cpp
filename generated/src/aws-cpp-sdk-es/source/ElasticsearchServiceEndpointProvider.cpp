@@ -5,12 +5,8 @@
 
 #include <aws/es/ElasticsearchServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ElasticsearchService
-} // namespace Aws
+namespace Aws {
+namespace ElasticsearchService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ElasticsearchService
+}  // namespace Aws

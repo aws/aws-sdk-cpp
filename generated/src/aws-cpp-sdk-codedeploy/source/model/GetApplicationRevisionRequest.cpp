@@ -12,33 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetApplicationRevisionRequest::SerializePayload() const
-{
+Aws::String GetApplicationRevisionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithObject("revision", m_revision.Jsonize());
-
+  if (m_revisionHasBeenSet) {
+    payload.WithObject("revision", m_revision.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetApplicationRevisionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetApplicationRevisionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.GetApplicationRevision"));
   return headers;
-
 }
-
-
-
-

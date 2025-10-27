@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CapacityReservationPreference
-  {
-    NOT_SET,
-    capacity_reservations_only,
-    open,
-    none
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CapacityReservationPreference { NOT_SET, capacity_reservations_only, open, none };
 
-namespace CapacityReservationPreferenceMapper
-{
+namespace CapacityReservationPreferenceMapper {
 AWS_EC2_API CapacityReservationPreference GetCapacityReservationPreferenceForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCapacityReservationPreference(CapacityReservationPreference value);
-} // namespace CapacityReservationPreferenceMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CapacityReservationPreferenceMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

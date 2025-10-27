@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoSync
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoSync {
+namespace Model {
 
-PushSync::PushSync(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PushSync::PushSync(JsonView jsonValue) { *this = jsonValue; }
 
-PushSync& PushSync::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationArns"))
-  {
+PushSync& PushSync::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationArns")) {
     Aws::Utils::Array<JsonView> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
-    for(unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex)
-    {
+    for (unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex) {
       m_applicationArns.push_back(applicationArnsJsonList[applicationArnsIndex].AsString());
     }
     m_applicationArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PushSync::Jsonize() const
-{
+JsonValue PushSync::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> applicationArnsJsonList(m_applicationArns.size());
-   for(unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex)
-   {
-     applicationArnsJsonList[applicationArnsIndex].AsString(m_applicationArns[applicationArnsIndex]);
-   }
-   payload.WithArray("ApplicationArns", std::move(applicationArnsJsonList));
-
+  if (m_applicationArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicationArnsJsonList(m_applicationArns.size());
+    for (unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex) {
+      applicationArnsJsonList[applicationArnsIndex].AsString(m_applicationArns[applicationArnsIndex]);
+    }
+    payload.WithArray("ApplicationArns", std::move(applicationArnsJsonList));
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoSync
+}  // namespace Aws

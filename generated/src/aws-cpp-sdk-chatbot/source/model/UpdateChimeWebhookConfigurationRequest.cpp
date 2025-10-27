@@ -12,54 +12,36 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateChimeWebhookConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateChimeWebhookConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_chatConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
-
+  if (m_chatConfigurationArnHasBeenSet) {
+    payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
   }
 
-  if(m_webhookDescriptionHasBeenSet)
-  {
-   payload.WithString("WebhookDescription", m_webhookDescription);
-
+  if (m_webhookDescriptionHasBeenSet) {
+    payload.WithString("WebhookDescription", m_webhookDescription);
   }
 
-  if(m_webhookUrlHasBeenSet)
-  {
-   payload.WithString("WebhookUrl", m_webhookUrl);
-
+  if (m_webhookUrlHasBeenSet) {
+    payload.WithString("WebhookUrl", m_webhookUrl);
   }
 
-  if(m_snsTopicArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> snsTopicArnsJsonList(m_snsTopicArns.size());
-   for(unsigned snsTopicArnsIndex = 0; snsTopicArnsIndex < snsTopicArnsJsonList.GetLength(); ++snsTopicArnsIndex)
-   {
-     snsTopicArnsJsonList[snsTopicArnsIndex].AsString(m_snsTopicArns[snsTopicArnsIndex]);
-   }
-   payload.WithArray("SnsTopicArns", std::move(snsTopicArnsJsonList));
-
+  if (m_snsTopicArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> snsTopicArnsJsonList(m_snsTopicArns.size());
+    for (unsigned snsTopicArnsIndex = 0; snsTopicArnsIndex < snsTopicArnsJsonList.GetLength(); ++snsTopicArnsIndex) {
+      snsTopicArnsJsonList[snsTopicArnsIndex].AsString(m_snsTopicArns[snsTopicArnsIndex]);
+    }
+    payload.WithArray("SnsTopicArns", std::move(snsTopicArnsJsonList));
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_loggingLevelHasBeenSet)
-  {
-   payload.WithString("LoggingLevel", m_loggingLevel);
-
+  if (m_loggingLevelHasBeenSet) {
+    payload.WithString("LoggingLevel", m_loggingLevel);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

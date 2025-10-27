@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qapps/model/DescribeQAppPermissionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qapps/model/DescribeQAppPermissionsResult.h>
 
 #include <utility>
 
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeQAppPermissionsResult::DescribeQAppPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeQAppPermissionsResult::DescribeQAppPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeQAppPermissionsResult& DescribeQAppPermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeQAppPermissionsResult& DescribeQAppPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("resourceArn"))
-  {
+  if (jsonValue.ValueExists("resourceArn")) {
     m_resourceArn = jsonValue.GetString("resourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("appId"))
-  {
+  if (jsonValue.ValueExists("appId")) {
     m_appId = jsonValue.GetString("appId");
     m_appIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("permissions"))
-  {
+  if (jsonValue.ValueExists("permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
-    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-    {
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
     m_permissionsHasBeenSet = true;
@@ -47,12 +39,10 @@ DescribeQAppPermissionsResult& DescribeQAppPermissionsResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

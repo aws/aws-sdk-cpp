@@ -3,47 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/DetectorStateDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/DetectorStateDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-DetectorStateDefinition::DetectorStateDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectorStateDefinition::DetectorStateDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-DetectorStateDefinition& DetectorStateDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stateName"))
-  {
+DetectorStateDefinition& DetectorStateDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stateName")) {
     m_stateName = jsonValue.GetString("stateName");
     m_stateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("variables"))
-  {
+  if (jsonValue.ValueExists("variables")) {
     Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
-    for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
-    {
+    for (unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex) {
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
     }
     m_variablesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timers"))
-  {
+  if (jsonValue.ValueExists("timers")) {
     Aws::Utils::Array<JsonView> timersJsonList = jsonValue.GetArray("timers");
-    for(unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex)
-    {
+    for (unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex) {
       m_timers.push_back(timersJsonList[timersIndex].AsObject());
     }
     m_timersHasBeenSet = true;
@@ -51,41 +39,32 @@ DetectorStateDefinition& DetectorStateDefinition::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DetectorStateDefinition::Jsonize() const
-{
+JsonValue DetectorStateDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateNameHasBeenSet)
-  {
-   payload.WithString("stateName", m_stateName);
-
+  if (m_stateNameHasBeenSet) {
+    payload.WithString("stateName", m_stateName);
   }
 
-  if(m_variablesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
-   for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
-   {
-     variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
-   }
-   payload.WithArray("variables", std::move(variablesJsonList));
-
+  if (m_variablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
+    for (unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex) {
+      variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
+    }
+    payload.WithArray("variables", std::move(variablesJsonList));
   }
 
-  if(m_timersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> timersJsonList(m_timers.size());
-   for(unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex)
-   {
-     timersJsonList[timersIndex].AsObject(m_timers[timersIndex].Jsonize());
-   }
-   payload.WithArray("timers", std::move(timersJsonList));
-
+  if (m_timersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> timersJsonList(m_timers.size());
+    for (unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex) {
+      timersJsonList[timersIndex].AsObject(m_timers[timersIndex].Jsonize());
+    }
+    payload.WithArray("timers", std::move(timersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

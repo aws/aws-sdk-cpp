@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AttachVerifiedAccessTrustProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AttachVerifiedAccessTrustProviderRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AttachVerifiedAccessTrustProviderRequest::SerializePayload() const
-{
+Aws::String AttachVerifiedAccessTrustProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AttachVerifiedAccessTrustProvider&";
-  if(m_verifiedAccessInstanceIdHasBeenSet)
-  {
+  if (m_verifiedAccessInstanceIdHasBeenSet) {
     ss << "VerifiedAccessInstanceId=" << StringUtils::URLEncode(m_verifiedAccessInstanceId.c_str()) << "&";
   }
 
-  if(m_verifiedAccessTrustProviderIdHasBeenSet)
-  {
+  if (m_verifiedAccessTrustProviderIdHasBeenSet) {
     ss << "VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String AttachVerifiedAccessTrustProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AttachVerifiedAccessTrustProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AttachVerifiedAccessTrustProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

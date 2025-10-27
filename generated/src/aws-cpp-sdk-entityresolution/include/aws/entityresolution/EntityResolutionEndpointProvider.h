@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/entityresolution/EntityResolutionEndpointRules.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace EntityResolution {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using EntityResolutionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using EntityResolutionEndpointProviderBase =
     EndpointProviderBase<EntityResolutionClientConfiguration, EntityResolutionBuiltInParameters, EntityResolutionClientContextParameters>;
 
 using EntityResolutionDefaultEpProviderBase =
-    DefaultEndpointProvider<EntityResolutionClientConfiguration, EntityResolutionBuiltInParameters, EntityResolutionClientContextParameters>;
+    DefaultEndpointProvider<EntityResolutionClientConfiguration, EntityResolutionBuiltInParameters,
+                            EntityResolutionClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ENTITYRESOLUTION_API EntityResolutionEndpointProvider : public EntityResolutionDefaultEpProviderBase
-{
-public:
-    using EntityResolutionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ENTITYRESOLUTION_API EntityResolutionEndpointProvider : public EntityResolutionDefaultEpProviderBase {
+ public:
+  using EntityResolutionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    EntityResolutionEndpointProvider()
-      : EntityResolutionDefaultEpProviderBase(Aws::EntityResolution::EntityResolutionEndpointRules::GetRulesBlob(), Aws::EntityResolution::EntityResolutionEndpointRules::RulesBlobSize)
-    {}
+  EntityResolutionEndpointProvider()
+      : EntityResolutionDefaultEpProviderBase(Aws::EntityResolution::EntityResolutionEndpointRules::GetRulesBlob(),
+                                              Aws::EntityResolution::EntityResolutionEndpointRules::RulesBlobSize) {}
 
-    ~EntityResolutionEndpointProvider()
-    {
-    }
+  ~EntityResolutionEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace EntityResolution
+}  // namespace Aws

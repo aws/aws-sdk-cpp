@@ -3,40 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ApplySecurityGroupsToClientVpnTargetNetworkRequest::SerializePayload() const
-{
+Aws::String ApplySecurityGroupsToClientVpnTargetNetworkRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ApplySecurityGroupsToClientVpnTargetNetwork&";
-  if(m_clientVpnEndpointIdHasBeenSet)
-  {
+  if (m_clientVpnEndpointIdHasBeenSet) {
     ss << "ClientVpnEndpointId=" << StringUtils::URLEncode(m_clientVpnEndpointId.c_str()) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_securityGroupIdsHasBeenSet)
-  {
+  if (m_securityGroupIdsHasBeenSet) {
     unsigned securityGroupIdsCount = 1;
-    for(auto& item : m_securityGroupIds)
-    {
-      ss << "SecurityGroupId." << securityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_securityGroupIds) {
+      ss << "SecurityGroupId." << securityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -44,8 +37,6 @@ Aws::String ApplySecurityGroupsToClientVpnTargetNetworkRequest::SerializePayload
   return ss.str();
 }
 
-
-void  ApplySecurityGroupsToClientVpnTargetNetworkRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ApplySecurityGroupsToClientVpnTargetNetworkRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

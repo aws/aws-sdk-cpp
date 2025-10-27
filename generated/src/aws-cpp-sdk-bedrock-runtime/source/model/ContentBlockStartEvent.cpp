@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ContentBlockStartEvent::ContentBlockStartEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentBlockStartEvent::ContentBlockStartEvent(JsonView jsonValue) { *this = jsonValue; }
 
-ContentBlockStartEvent& ContentBlockStartEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("start"))
-  {
+ContentBlockStartEvent& ContentBlockStartEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetObject("start");
     m_startHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentBlockIndex"))
-  {
+  if (jsonValue.ValueExists("contentBlockIndex")) {
     m_contentBlockIndex = jsonValue.GetInteger("contentBlockIndex");
     m_contentBlockIndexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentBlockStartEvent::Jsonize() const
-{
+JsonValue ContentBlockStartEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithObject("start", m_start.Jsonize());
-
+  if (m_startHasBeenSet) {
+    payload.WithObject("start", m_start.Jsonize());
   }
 
-  if(m_contentBlockIndexHasBeenSet)
-  {
-   payload.WithInteger("contentBlockIndex", m_contentBlockIndex);
-
+  if (m_contentBlockIndexHasBeenSet) {
+    payload.WithInteger("contentBlockIndex", m_contentBlockIndex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

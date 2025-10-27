@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeDefaultClusterParametersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeDefaultClusterParametersRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeDefaultClusterParametersRequest::SerializePayload() const
-{
+Aws::String DescribeDefaultClusterParametersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeDefaultClusterParameters&";
-  if(m_parameterGroupFamilyHasBeenSet)
-  {
+  if (m_parameterGroupFamilyHasBeenSet) {
     ss << "ParameterGroupFamily=" << StringUtils::URLEncode(m_parameterGroupFamily.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeDefaultClusterParametersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeDefaultClusterParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeDefaultClusterParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

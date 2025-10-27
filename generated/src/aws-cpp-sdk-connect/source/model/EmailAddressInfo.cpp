@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EmailAddressInfo::EmailAddressInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailAddressInfo::EmailAddressInfo(JsonView jsonValue) { *this = jsonValue; }
 
-EmailAddressInfo& EmailAddressInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EmailAddress"))
-  {
+EmailAddressInfo& EmailAddressInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EmailAddress")) {
     m_emailAddress = jsonValue.GetString("EmailAddress");
     m_emailAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmailAddressInfo::Jsonize() const
-{
+JsonValue EmailAddressInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_emailAddressHasBeenSet)
-  {
-   payload.WithString("EmailAddress", m_emailAddress);
-
+  if (m_emailAddressHasBeenSet) {
+    payload.WithString("EmailAddress", m_emailAddress);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

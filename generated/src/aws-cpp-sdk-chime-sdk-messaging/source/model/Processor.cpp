@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-Processor::Processor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Processor::Processor(JsonView jsonValue) { *this = jsonValue; }
 
-Processor& Processor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Processor& Processor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Configuration"))
-  {
+  if (jsonValue.ValueExists("Configuration")) {
     m_configuration = jsonValue.GetObject("Configuration");
     m_configurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutionOrder"))
-  {
+  if (jsonValue.ValueExists("ExecutionOrder")) {
     m_executionOrder = jsonValue.GetInteger("ExecutionOrder");
     m_executionOrderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FallbackAction"))
-  {
+  if (jsonValue.ValueExists("FallbackAction")) {
     m_fallbackAction = FallbackActionMapper::GetFallbackActionForName(jsonValue.GetString("FallbackAction"));
     m_fallbackActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Processor::Jsonize() const
-{
+JsonValue Processor::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("Configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("Configuration", m_configuration.Jsonize());
   }
 
-  if(m_executionOrderHasBeenSet)
-  {
-   payload.WithInteger("ExecutionOrder", m_executionOrder);
-
+  if (m_executionOrderHasBeenSet) {
+    payload.WithInteger("ExecutionOrder", m_executionOrder);
   }
 
-  if(m_fallbackActionHasBeenSet)
-  {
-   payload.WithString("FallbackAction", FallbackActionMapper::GetNameForFallbackAction(m_fallbackAction));
+  if (m_fallbackActionHasBeenSet) {
+    payload.WithString("FallbackAction", FallbackActionMapper::GetNameForFallbackAction(m_fallbackAction));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

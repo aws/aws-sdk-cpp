@@ -12,19 +12,12 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CountTokensRequest::SerializePayload() const
-{
+Aws::String CountTokensRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithObject("input", m_input.Jsonize());
-
+  if (m_inputHasBeenSet) {
+    payload.WithObject("input", m_input.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

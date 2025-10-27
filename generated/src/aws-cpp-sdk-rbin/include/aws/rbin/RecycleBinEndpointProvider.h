@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/rbin/RecycleBinEndpointRules.h>
+#include <aws/rbin/RecycleBin_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace RecycleBin {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using RecycleBinClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using RecycleBinDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_RECYCLEBIN_API RecycleBinEndpointProvider : public RecycleBinDefaultEpProviderBase
-{
-public:
-    using RecycleBinResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_RECYCLEBIN_API RecycleBinEndpointProvider : public RecycleBinDefaultEpProviderBase {
+ public:
+  using RecycleBinResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    RecycleBinEndpointProvider()
-      : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::GetRulesBlob(), Aws::RecycleBin::RecycleBinEndpointRules::RulesBlobSize)
-    {}
+  RecycleBinEndpointProvider()
+      : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::GetRulesBlob(),
+                                        Aws::RecycleBin::RecycleBinEndpointRules::RulesBlobSize) {}
 
-    ~RecycleBinEndpointProvider()
-    {
-    }
+  ~RecycleBinEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace RecycleBin
+}  // namespace Aws

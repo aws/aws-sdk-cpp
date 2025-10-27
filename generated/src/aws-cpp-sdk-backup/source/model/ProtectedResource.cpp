@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-ProtectedResource::ProtectedResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedResource::ProtectedResource(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedResource& ProtectedResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+ProtectedResource& ProtectedResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastBackupTime"))
-  {
+  if (jsonValue.ValueExists("LastBackupTime")) {
     m_lastBackupTime = jsonValue.GetDouble("LastBackupTime");
     m_lastBackupTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceName"))
-  {
+  if (jsonValue.ValueExists("ResourceName")) {
     m_resourceName = jsonValue.GetString("ResourceName");
     m_resourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastBackupVaultArn"))
-  {
+  if (jsonValue.ValueExists("LastBackupVaultArn")) {
     m_lastBackupVaultArn = jsonValue.GetString("LastBackupVaultArn");
     m_lastBackupVaultArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastRecoveryPointArn"))
-  {
+  if (jsonValue.ValueExists("LastRecoveryPointArn")) {
     m_lastRecoveryPointArn = jsonValue.GetString("LastRecoveryPointArn");
     m_lastRecoveryPointArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedResource::Jsonize() const
-{
+JsonValue ProtectedResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_lastBackupTimeHasBeenSet)
-  {
-   payload.WithDouble("LastBackupTime", m_lastBackupTime.SecondsWithMSPrecision());
+  if (m_lastBackupTimeHasBeenSet) {
+    payload.WithDouble("LastBackupTime", m_lastBackupTime.SecondsWithMSPrecision());
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("ResourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("ResourceName", m_resourceName);
   }
 
-  if(m_lastBackupVaultArnHasBeenSet)
-  {
-   payload.WithString("LastBackupVaultArn", m_lastBackupVaultArn);
-
+  if (m_lastBackupVaultArnHasBeenSet) {
+    payload.WithString("LastBackupVaultArn", m_lastBackupVaultArn);
   }
 
-  if(m_lastRecoveryPointArnHasBeenSet)
-  {
-   payload.WithString("LastRecoveryPointArn", m_lastRecoveryPointArn);
-
+  if (m_lastRecoveryPointArnHasBeenSet) {
+    payload.WithString("LastRecoveryPointArn", m_lastRecoveryPointArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

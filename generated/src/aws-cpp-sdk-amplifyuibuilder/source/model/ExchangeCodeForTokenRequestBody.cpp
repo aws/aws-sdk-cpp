@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue) { *this = jsonValue; }
 
-ExchangeCodeForTokenRequestBody& ExchangeCodeForTokenRequestBody::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+ExchangeCodeForTokenRequestBody& ExchangeCodeForTokenRequestBody::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redirectUri"))
-  {
+  if (jsonValue.ValueExists("redirectUri")) {
     m_redirectUri = jsonValue.GetString("redirectUri");
     m_redirectUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientId"))
-  {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExchangeCodeForTokenRequestBody::Jsonize() const
-{
+JsonValue ExchangeCodeForTokenRequestBody::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_redirectUriHasBeenSet)
-  {
-   payload.WithString("redirectUri", m_redirectUri);
-
+  if (m_redirectUriHasBeenSet) {
+    payload.WithString("redirectUri", m_redirectUri);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

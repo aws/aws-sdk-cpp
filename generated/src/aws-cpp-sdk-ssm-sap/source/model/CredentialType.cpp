@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-sap/model/CredentialType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ssm-sap/model/CredentialType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+namespace CredentialTypeMapper {
 
-namespace Aws
-{
-  namespace SsmSap
-  {
-    namespace Model
-    {
-      namespace CredentialTypeMapper
-      {
+static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
 
-        static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
+CredentialType GetCredentialTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ADMIN_HASH) {
+    return CredentialType::ADMIN;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CredentialType>(hashCode);
+  }
 
+  return CredentialType::NOT_SET;
+}
 
-        CredentialType GetCredentialTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ADMIN_HASH)
-          {
-            return CredentialType::ADMIN;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CredentialType>(hashCode);
-          }
+Aws::String GetNameForCredentialType(CredentialType enumValue) {
+  switch (enumValue) {
+    case CredentialType::NOT_SET:
+      return {};
+    case CredentialType::ADMIN:
+      return "ADMIN";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CredentialType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCredentialType(CredentialType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CredentialType::NOT_SET:
-            return {};
-          case CredentialType::ADMIN:
-            return "ADMIN";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CredentialTypeMapper
-    } // namespace Model
-  } // namespace SsmSap
-} // namespace Aws
+}  // namespace CredentialTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

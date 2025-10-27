@@ -3,135 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AssociationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AssociationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AssociationSummary::AssociationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociationSummary::AssociationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AssociationSummary& AssociationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+AssociationSummary& AssociationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationArn"))
-  {
+  if (jsonValue.ValueExists("DestinationArn")) {
     m_destinationArn = jsonValue.GetString("DestinationArn");
     m_destinationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceType"))
-  {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = jsonValue.GetString("SourceType");
     m_sourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationType"))
-  {
+  if (jsonValue.ValueExists("DestinationType")) {
     m_destinationType = jsonValue.GetString("DestinationType");
     m_destinationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationType"))
-  {
+  if (jsonValue.ValueExists("AssociationType")) {
     m_associationType = AssociationEdgeTypeMapper::GetAssociationEdgeTypeForName(jsonValue.GetString("AssociationType"));
     m_associationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceName"))
-  {
+  if (jsonValue.ValueExists("SourceName")) {
     m_sourceName = jsonValue.GetString("SourceName");
     m_sourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationName"))
-  {
+  if (jsonValue.ValueExists("DestinationName")) {
     m_destinationName = jsonValue.GetString("DestinationName");
     m_destinationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
-  {
+  if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociationSummary::Jsonize() const
-{
+JsonValue AssociationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("DestinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("DestinationArn", m_destinationArn);
   }
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", m_sourceType);
-
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", m_sourceType);
   }
 
-  if(m_destinationTypeHasBeenSet)
-  {
-   payload.WithString("DestinationType", m_destinationType);
-
+  if (m_destinationTypeHasBeenSet) {
+    payload.WithString("DestinationType", m_destinationType);
   }
 
-  if(m_associationTypeHasBeenSet)
-  {
-   payload.WithString("AssociationType", AssociationEdgeTypeMapper::GetNameForAssociationEdgeType(m_associationType));
+  if (m_associationTypeHasBeenSet) {
+    payload.WithString("AssociationType", AssociationEdgeTypeMapper::GetNameForAssociationEdgeType(m_associationType));
   }
 
-  if(m_sourceNameHasBeenSet)
-  {
-   payload.WithString("SourceName", m_sourceName);
-
+  if (m_sourceNameHasBeenSet) {
+    payload.WithString("SourceName", m_sourceName);
   }
 
-  if(m_destinationNameHasBeenSet)
-  {
-   payload.WithString("DestinationName", m_destinationName);
-
+  if (m_destinationNameHasBeenSet) {
+    payload.WithString("DestinationName", m_destinationName);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithObject("CreatedBy", m_createdBy.Jsonize());
-
+  if (m_createdByHasBeenSet) {
+    payload.WithObject("CreatedBy", m_createdBy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

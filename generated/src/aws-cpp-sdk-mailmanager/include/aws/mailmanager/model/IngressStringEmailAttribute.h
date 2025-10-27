@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressStringEmailAttribute
-  {
-    NOT_SET,
-    RECIPIENT
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressStringEmailAttribute { NOT_SET, RECIPIENT };
 
-namespace IngressStringEmailAttributeMapper
-{
+namespace IngressStringEmailAttributeMapper {
 AWS_MAILMANAGER_API IngressStringEmailAttribute GetIngressStringEmailAttributeForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressStringEmailAttribute(IngressStringEmailAttribute value);
-} // namespace IngressStringEmailAttributeMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressStringEmailAttributeMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

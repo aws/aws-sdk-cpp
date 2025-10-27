@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/OperationType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/OperationType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace OperationTypeMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace OperationTypeMapper
-      {
+static const int add_HASH = HashingUtils::HashString("add");
+static const int remove_HASH = HashingUtils::HashString("remove");
 
-        static const int add_HASH = HashingUtils::HashString("add");
-        static const int remove_HASH = HashingUtils::HashString("remove");
+OperationType GetOperationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == add_HASH) {
+    return OperationType::add;
+  } else if (hashCode == remove_HASH) {
+    return OperationType::remove;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<OperationType>(hashCode);
+  }
 
+  return OperationType::NOT_SET;
+}
 
-        OperationType GetOperationTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == add_HASH)
-          {
-            return OperationType::add;
-          }
-          else if (hashCode == remove_HASH)
-          {
-            return OperationType::remove;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<OperationType>(hashCode);
-          }
+Aws::String GetNameForOperationType(OperationType enumValue) {
+  switch (enumValue) {
+    case OperationType::NOT_SET:
+      return {};
+    case OperationType::add:
+      return "add";
+    case OperationType::remove:
+      return "remove";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return OperationType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForOperationType(OperationType enumValue)
-        {
-          switch(enumValue)
-          {
-          case OperationType::NOT_SET:
-            return {};
-          case OperationType::add:
-            return "add";
-          case OperationType::remove:
-            return "remove";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace OperationTypeMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace OperationTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

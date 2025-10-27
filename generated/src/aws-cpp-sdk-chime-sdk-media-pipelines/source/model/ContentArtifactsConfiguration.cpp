@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ContentArtifactsConfiguration::ContentArtifactsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentArtifactsConfiguration::ContentArtifactsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ContentArtifactsConfiguration& ContentArtifactsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("State"))
-  {
+ContentArtifactsConfiguration& ContentArtifactsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("State")) {
     m_state = ArtifactsStateMapper::GetArtifactsStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MuxType"))
-  {
+  if (jsonValue.ValueExists("MuxType")) {
     m_muxType = ContentMuxTypeMapper::GetContentMuxTypeForName(jsonValue.GetString("MuxType"));
     m_muxTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentArtifactsConfiguration::Jsonize() const
-{
+JsonValue ContentArtifactsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ArtifactsStateMapper::GetNameForArtifactsState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ArtifactsStateMapper::GetNameForArtifactsState(m_state));
   }
 
-  if(m_muxTypeHasBeenSet)
-  {
-   payload.WithString("MuxType", ContentMuxTypeMapper::GetNameForContentMuxType(m_muxType));
+  if (m_muxTypeHasBeenSet) {
+    payload.WithString("MuxType", ContentMuxTypeMapper::GetNameForContentMuxType(m_muxType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

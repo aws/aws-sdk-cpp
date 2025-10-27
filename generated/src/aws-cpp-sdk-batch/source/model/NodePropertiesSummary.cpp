@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-NodePropertiesSummary::NodePropertiesSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodePropertiesSummary::NodePropertiesSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NodePropertiesSummary& NodePropertiesSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isMainNode"))
-  {
+NodePropertiesSummary& NodePropertiesSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isMainNode")) {
     m_isMainNode = jsonValue.GetBool("isMainNode");
     m_isMainNodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numNodes"))
-  {
+  if (jsonValue.ValueExists("numNodes")) {
     m_numNodes = jsonValue.GetInteger("numNodes");
     m_numNodesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodeIndex"))
-  {
+  if (jsonValue.ValueExists("nodeIndex")) {
     m_nodeIndex = jsonValue.GetInteger("nodeIndex");
     m_nodeIndexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NodePropertiesSummary::Jsonize() const
-{
+JsonValue NodePropertiesSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_isMainNodeHasBeenSet)
-  {
-   payload.WithBool("isMainNode", m_isMainNode);
-
+  if (m_isMainNodeHasBeenSet) {
+    payload.WithBool("isMainNode", m_isMainNode);
   }
 
-  if(m_numNodesHasBeenSet)
-  {
-   payload.WithInteger("numNodes", m_numNodes);
-
+  if (m_numNodesHasBeenSet) {
+    payload.WithInteger("numNodes", m_numNodes);
   }
 
-  if(m_nodeIndexHasBeenSet)
-  {
-   payload.WithInteger("nodeIndex", m_nodeIndex);
-
+  if (m_nodeIndexHasBeenSet) {
+    payload.WithInteger("nodeIndex", m_nodeIndex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

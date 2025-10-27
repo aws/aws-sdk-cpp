@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/ebs/EBS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EBS
-{
-class EBSEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace EBS {
+class EBSEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace EBS
-} // namespace Aws
+}  // namespace EBS
+}  // namespace Aws

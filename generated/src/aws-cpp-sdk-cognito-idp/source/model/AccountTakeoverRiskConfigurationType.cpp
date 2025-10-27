@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-AccountTakeoverRiskConfigurationType& AccountTakeoverRiskConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NotifyConfiguration"))
-  {
+AccountTakeoverRiskConfigurationType& AccountTakeoverRiskConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NotifyConfiguration")) {
     m_notifyConfiguration = jsonValue.GetObject("NotifyConfiguration");
     m_notifyConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Actions"))
-  {
+  if (jsonValue.ValueExists("Actions")) {
     m_actions = jsonValue.GetObject("Actions");
     m_actionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountTakeoverRiskConfigurationType::Jsonize() const
-{
+JsonValue AccountTakeoverRiskConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_notifyConfigurationHasBeenSet)
-  {
-   payload.WithObject("NotifyConfiguration", m_notifyConfiguration.Jsonize());
-
+  if (m_notifyConfigurationHasBeenSet) {
+    payload.WithObject("NotifyConfiguration", m_notifyConfiguration.Jsonize());
   }
 
-  if(m_actionsHasBeenSet)
-  {
-   payload.WithObject("Actions", m_actions.Jsonize());
-
+  if (m_actionsHasBeenSet) {
+    payload.WithObject("Actions", m_actions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

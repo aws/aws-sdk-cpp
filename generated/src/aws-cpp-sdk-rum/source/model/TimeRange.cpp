@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rum/model/TimeRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rum/model/TimeRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchRUM
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchRUM {
+namespace Model {
 
-TimeRange::TimeRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeRange::TimeRange(JsonView jsonValue) { *this = jsonValue; }
 
-TimeRange& TimeRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("After"))
-  {
+TimeRange& TimeRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("After")) {
     m_after = jsonValue.GetInt64("After");
     m_afterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Before"))
-  {
+  if (jsonValue.ValueExists("Before")) {
     m_before = jsonValue.GetInt64("Before");
     m_beforeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeRange::Jsonize() const
-{
+JsonValue TimeRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_afterHasBeenSet)
-  {
-   payload.WithInt64("After", m_after);
-
+  if (m_afterHasBeenSet) {
+    payload.WithInt64("After", m_after);
   }
 
-  if(m_beforeHasBeenSet)
-  {
-   payload.WithInt64("Before", m_before);
-
+  if (m_beforeHasBeenSet) {
+    payload.WithInt64("Before", m_before);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchRUM
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchRUM
+}  // namespace Aws

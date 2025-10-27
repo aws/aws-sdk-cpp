@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/LexTranscriptFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/LexTranscriptFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-LexTranscriptFilter::LexTranscriptFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LexTranscriptFilter::LexTranscriptFilter(JsonView jsonValue) { *this = jsonValue; }
 
-LexTranscriptFilter& LexTranscriptFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dateRangeFilter"))
-  {
+LexTranscriptFilter& LexTranscriptFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dateRangeFilter")) {
     m_dateRangeFilter = jsonValue.GetObject("dateRangeFilter");
     m_dateRangeFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LexTranscriptFilter::Jsonize() const
-{
+JsonValue LexTranscriptFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_dateRangeFilterHasBeenSet)
-  {
-   payload.WithObject("dateRangeFilter", m_dateRangeFilter.Jsonize());
-
+  if (m_dateRangeFilterHasBeenSet) {
+    payload.WithObject("dateRangeFilter", m_dateRangeFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

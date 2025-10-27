@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class Fmp4TimedMetadataBehavior
-  {
-    NOT_SET,
-    NO_PASSTHROUGH,
-    PASSTHROUGH
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class Fmp4TimedMetadataBehavior { NOT_SET, NO_PASSTHROUGH, PASSTHROUGH };
 
-namespace Fmp4TimedMetadataBehaviorMapper
-{
+namespace Fmp4TimedMetadataBehaviorMapper {
 AWS_MEDIALIVE_API Fmp4TimedMetadataBehavior GetFmp4TimedMetadataBehaviorForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForFmp4TimedMetadataBehavior(Fmp4TimedMetadataBehavior value);
-} // namespace Fmp4TimedMetadataBehaviorMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Fmp4TimedMetadataBehaviorMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-EBSEffectiveRecommendationPreferences::EBSEffectiveRecommendationPreferences(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EBSEffectiveRecommendationPreferences::EBSEffectiveRecommendationPreferences(JsonView jsonValue) { *this = jsonValue; }
 
-EBSEffectiveRecommendationPreferences& EBSEffectiveRecommendationPreferences::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("savingsEstimationMode"))
-  {
+EBSEffectiveRecommendationPreferences& EBSEffectiveRecommendationPreferences::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("savingsEstimationMode")) {
     m_savingsEstimationMode = jsonValue.GetObject("savingsEstimationMode");
     m_savingsEstimationModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EBSEffectiveRecommendationPreferences::Jsonize() const
-{
+JsonValue EBSEffectiveRecommendationPreferences::Jsonize() const {
   JsonValue payload;
 
-  if(m_savingsEstimationModeHasBeenSet)
-  {
-   payload.WithObject("savingsEstimationMode", m_savingsEstimationMode.Jsonize());
-
+  if (m_savingsEstimationModeHasBeenSet) {
+    payload.WithObject("savingsEstimationMode", m_savingsEstimationMode.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

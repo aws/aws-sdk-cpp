@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/CollectionType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/opensearchserverless/model/CollectionType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+namespace CollectionTypeMapper {
 
-namespace Aws
-{
-  namespace OpenSearchServerless
-  {
-    namespace Model
-    {
-      namespace CollectionTypeMapper
-      {
+static const int SEARCH_HASH = HashingUtils::HashString("SEARCH");
+static const int TIMESERIES_HASH = HashingUtils::HashString("TIMESERIES");
+static const int VECTORSEARCH_HASH = HashingUtils::HashString("VECTORSEARCH");
 
-        static const int SEARCH_HASH = HashingUtils::HashString("SEARCH");
-        static const int TIMESERIES_HASH = HashingUtils::HashString("TIMESERIES");
-        static const int VECTORSEARCH_HASH = HashingUtils::HashString("VECTORSEARCH");
+CollectionType GetCollectionTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SEARCH_HASH) {
+    return CollectionType::SEARCH;
+  } else if (hashCode == TIMESERIES_HASH) {
+    return CollectionType::TIMESERIES;
+  } else if (hashCode == VECTORSEARCH_HASH) {
+    return CollectionType::VECTORSEARCH;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CollectionType>(hashCode);
+  }
 
+  return CollectionType::NOT_SET;
+}
 
-        CollectionType GetCollectionTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SEARCH_HASH)
-          {
-            return CollectionType::SEARCH;
-          }
-          else if (hashCode == TIMESERIES_HASH)
-          {
-            return CollectionType::TIMESERIES;
-          }
-          else if (hashCode == VECTORSEARCH_HASH)
-          {
-            return CollectionType::VECTORSEARCH;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CollectionType>(hashCode);
-          }
+Aws::String GetNameForCollectionType(CollectionType enumValue) {
+  switch (enumValue) {
+    case CollectionType::NOT_SET:
+      return {};
+    case CollectionType::SEARCH:
+      return "SEARCH";
+    case CollectionType::TIMESERIES:
+      return "TIMESERIES";
+    case CollectionType::VECTORSEARCH:
+      return "VECTORSEARCH";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CollectionType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCollectionType(CollectionType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CollectionType::NOT_SET:
-            return {};
-          case CollectionType::SEARCH:
-            return "SEARCH";
-          case CollectionType::TIMESERIES:
-            return "TIMESERIES";
-          case CollectionType::VECTORSEARCH:
-            return "VECTORSEARCH";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CollectionTypeMapper
-    } // namespace Model
-  } // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace CollectionTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

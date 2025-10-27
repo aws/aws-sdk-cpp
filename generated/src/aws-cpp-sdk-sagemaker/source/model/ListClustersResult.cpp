@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ListClustersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/ListClustersResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListClustersResult::ListClustersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListClustersResult::ListClustersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListClustersResult& ListClustersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListClustersResult& ListClustersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClusterSummaries"))
-  {
+  if (jsonValue.ValueExists("ClusterSummaries")) {
     Aws::Utils::Array<JsonView> clusterSummariesJsonList = jsonValue.GetArray("ClusterSummaries");
-    for(unsigned clusterSummariesIndex = 0; clusterSummariesIndex < clusterSummariesJsonList.GetLength(); ++clusterSummariesIndex)
-    {
+    for (unsigned clusterSummariesIndex = 0; clusterSummariesIndex < clusterSummariesJsonList.GetLength(); ++clusterSummariesIndex) {
       m_clusterSummaries.push_back(clusterSummariesJsonList[clusterSummariesIndex].AsObject());
     }
     m_clusterSummariesHasBeenSet = true;
@@ -42,12 +35,10 @@ ListClustersResult& ListClustersResult::operator =(const Aws::AmazonWebServiceRe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

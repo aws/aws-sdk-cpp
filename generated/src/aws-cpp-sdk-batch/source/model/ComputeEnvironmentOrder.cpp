@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ComputeEnvironmentOrder::ComputeEnvironmentOrder(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComputeEnvironmentOrder::ComputeEnvironmentOrder(JsonView jsonValue) { *this = jsonValue; }
 
-ComputeEnvironmentOrder& ComputeEnvironmentOrder::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("order"))
-  {
+ComputeEnvironmentOrder& ComputeEnvironmentOrder::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("order")) {
     m_order = jsonValue.GetInteger("order");
     m_orderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("computeEnvironment"))
-  {
+  if (jsonValue.ValueExists("computeEnvironment")) {
     m_computeEnvironment = jsonValue.GetString("computeEnvironment");
     m_computeEnvironmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComputeEnvironmentOrder::Jsonize() const
-{
+JsonValue ComputeEnvironmentOrder::Jsonize() const {
   JsonValue payload;
 
-  if(m_orderHasBeenSet)
-  {
-   payload.WithInteger("order", m_order);
-
+  if (m_orderHasBeenSet) {
+    payload.WithInteger("order", m_order);
   }
 
-  if(m_computeEnvironmentHasBeenSet)
-  {
-   payload.WithString("computeEnvironment", m_computeEnvironment);
-
+  if (m_computeEnvironmentHasBeenSet) {
+    payload.WithString("computeEnvironment", m_computeEnvironment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

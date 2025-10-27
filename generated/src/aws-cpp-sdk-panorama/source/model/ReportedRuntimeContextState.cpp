@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/panorama/model/ReportedRuntimeContextState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/panorama/model/ReportedRuntimeContextState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
+namespace Aws {
+namespace Panorama {
+namespace Model {
 
-ReportedRuntimeContextState::ReportedRuntimeContextState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportedRuntimeContextState::ReportedRuntimeContextState(JsonView jsonValue) { *this = jsonValue; }
 
-ReportedRuntimeContextState& ReportedRuntimeContextState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DesiredState"))
-  {
+ReportedRuntimeContextState& ReportedRuntimeContextState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DesiredState")) {
     m_desiredState = DesiredStateMapper::GetDesiredStateForName(jsonValue.GetString("DesiredState"));
     m_desiredStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeviceReportedStatus"))
-  {
+  if (jsonValue.ValueExists("DeviceReportedStatus")) {
     m_deviceReportedStatus = DeviceReportedStatusMapper::GetDeviceReportedStatusForName(jsonValue.GetString("DeviceReportedStatus"));
     m_deviceReportedStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeviceReportedTime"))
-  {
+  if (jsonValue.ValueExists("DeviceReportedTime")) {
     m_deviceReportedTime = jsonValue.GetDouble("DeviceReportedTime");
     m_deviceReportedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuntimeContextName"))
-  {
+  if (jsonValue.ValueExists("RuntimeContextName")) {
     m_runtimeContextName = jsonValue.GetString("RuntimeContextName");
     m_runtimeContextNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportedRuntimeContextState::Jsonize() const
-{
+JsonValue ReportedRuntimeContextState::Jsonize() const {
   JsonValue payload;
 
-  if(m_desiredStateHasBeenSet)
-  {
-   payload.WithString("DesiredState", DesiredStateMapper::GetNameForDesiredState(m_desiredState));
+  if (m_desiredStateHasBeenSet) {
+    payload.WithString("DesiredState", DesiredStateMapper::GetNameForDesiredState(m_desiredState));
   }
 
-  if(m_deviceReportedStatusHasBeenSet)
-  {
-   payload.WithString("DeviceReportedStatus", DeviceReportedStatusMapper::GetNameForDeviceReportedStatus(m_deviceReportedStatus));
+  if (m_deviceReportedStatusHasBeenSet) {
+    payload.WithString("DeviceReportedStatus", DeviceReportedStatusMapper::GetNameForDeviceReportedStatus(m_deviceReportedStatus));
   }
 
-  if(m_deviceReportedTimeHasBeenSet)
-  {
-   payload.WithDouble("DeviceReportedTime", m_deviceReportedTime.SecondsWithMSPrecision());
+  if (m_deviceReportedTimeHasBeenSet) {
+    payload.WithDouble("DeviceReportedTime", m_deviceReportedTime.SecondsWithMSPrecision());
   }
 
-  if(m_runtimeContextNameHasBeenSet)
-  {
-   payload.WithString("RuntimeContextName", m_runtimeContextName);
-
+  if (m_runtimeContextNameHasBeenSet) {
+    payload.WithString("RuntimeContextName", m_runtimeContextName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

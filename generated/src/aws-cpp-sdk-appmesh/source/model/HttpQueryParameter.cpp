@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-HttpQueryParameter::HttpQueryParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpQueryParameter::HttpQueryParameter(JsonView jsonValue) { *this = jsonValue; }
 
-HttpQueryParameter& HttpQueryParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("match"))
-  {
+HttpQueryParameter& HttpQueryParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("match")) {
     m_match = jsonValue.GetObject("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpQueryParameter::Jsonize() const
-{
+JsonValue HttpQueryParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_matchHasBeenSet)
-  {
-   payload.WithObject("match", m_match.Jsonize());
-
+  if (m_matchHasBeenSet) {
+    payload.WithObject("match", m_match.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

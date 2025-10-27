@@ -11,239 +11,174 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ConnectorProfileCredentials::ConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectorProfileCredentials::ConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectorProfileCredentials& ConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Amplitude"))
-  {
+ConnectorProfileCredentials& ConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Amplitude")) {
     m_amplitude = jsonValue.GetObject("Amplitude");
     m_amplitudeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Datadog"))
-  {
+  if (jsonValue.ValueExists("Datadog")) {
     m_datadog = jsonValue.GetObject("Datadog");
     m_datadogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Dynatrace"))
-  {
+  if (jsonValue.ValueExists("Dynatrace")) {
     m_dynatrace = jsonValue.GetObject("Dynatrace");
     m_dynatraceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GoogleAnalytics"))
-  {
+  if (jsonValue.ValueExists("GoogleAnalytics")) {
     m_googleAnalytics = jsonValue.GetObject("GoogleAnalytics");
     m_googleAnalyticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Honeycode"))
-  {
+  if (jsonValue.ValueExists("Honeycode")) {
     m_honeycode = jsonValue.GetObject("Honeycode");
     m_honeycodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InforNexus"))
-  {
+  if (jsonValue.ValueExists("InforNexus")) {
     m_inforNexus = jsonValue.GetObject("InforNexus");
     m_inforNexusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Marketo"))
-  {
+  if (jsonValue.ValueExists("Marketo")) {
     m_marketo = jsonValue.GetObject("Marketo");
     m_marketoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Redshift"))
-  {
+  if (jsonValue.ValueExists("Redshift")) {
     m_redshift = jsonValue.GetObject("Redshift");
     m_redshiftHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Salesforce"))
-  {
+  if (jsonValue.ValueExists("Salesforce")) {
     m_salesforce = jsonValue.GetObject("Salesforce");
     m_salesforceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceNow"))
-  {
+  if (jsonValue.ValueExists("ServiceNow")) {
     m_serviceNow = jsonValue.GetObject("ServiceNow");
     m_serviceNowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Singular"))
-  {
+  if (jsonValue.ValueExists("Singular")) {
     m_singular = jsonValue.GetObject("Singular");
     m_singularHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Slack"))
-  {
+  if (jsonValue.ValueExists("Slack")) {
     m_slack = jsonValue.GetObject("Slack");
     m_slackHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Snowflake"))
-  {
+  if (jsonValue.ValueExists("Snowflake")) {
     m_snowflake = jsonValue.GetObject("Snowflake");
     m_snowflakeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Trendmicro"))
-  {
+  if (jsonValue.ValueExists("Trendmicro")) {
     m_trendmicro = jsonValue.GetObject("Trendmicro");
     m_trendmicroHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Veeva"))
-  {
+  if (jsonValue.ValueExists("Veeva")) {
     m_veeva = jsonValue.GetObject("Veeva");
     m_veevaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Zendesk"))
-  {
+  if (jsonValue.ValueExists("Zendesk")) {
     m_zendesk = jsonValue.GetObject("Zendesk");
     m_zendeskHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SAPOData"))
-  {
+  if (jsonValue.ValueExists("SAPOData")) {
     m_sAPOData = jsonValue.GetObject("SAPOData");
     m_sAPODataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomConnector"))
-  {
+  if (jsonValue.ValueExists("CustomConnector")) {
     m_customConnector = jsonValue.GetObject("CustomConnector");
     m_customConnectorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Pardot"))
-  {
+  if (jsonValue.ValueExists("Pardot")) {
     m_pardot = jsonValue.GetObject("Pardot");
     m_pardotHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectorProfileCredentials::Jsonize() const
-{
+JsonValue ConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_amplitudeHasBeenSet)
-  {
-   payload.WithObject("Amplitude", m_amplitude.Jsonize());
-
+  if (m_amplitudeHasBeenSet) {
+    payload.WithObject("Amplitude", m_amplitude.Jsonize());
   }
 
-  if(m_datadogHasBeenSet)
-  {
-   payload.WithObject("Datadog", m_datadog.Jsonize());
-
+  if (m_datadogHasBeenSet) {
+    payload.WithObject("Datadog", m_datadog.Jsonize());
   }
 
-  if(m_dynatraceHasBeenSet)
-  {
-   payload.WithObject("Dynatrace", m_dynatrace.Jsonize());
-
+  if (m_dynatraceHasBeenSet) {
+    payload.WithObject("Dynatrace", m_dynatrace.Jsonize());
   }
 
-  if(m_googleAnalyticsHasBeenSet)
-  {
-   payload.WithObject("GoogleAnalytics", m_googleAnalytics.Jsonize());
-
+  if (m_googleAnalyticsHasBeenSet) {
+    payload.WithObject("GoogleAnalytics", m_googleAnalytics.Jsonize());
   }
 
-  if(m_honeycodeHasBeenSet)
-  {
-   payload.WithObject("Honeycode", m_honeycode.Jsonize());
-
+  if (m_honeycodeHasBeenSet) {
+    payload.WithObject("Honeycode", m_honeycode.Jsonize());
   }
 
-  if(m_inforNexusHasBeenSet)
-  {
-   payload.WithObject("InforNexus", m_inforNexus.Jsonize());
-
+  if (m_inforNexusHasBeenSet) {
+    payload.WithObject("InforNexus", m_inforNexus.Jsonize());
   }
 
-  if(m_marketoHasBeenSet)
-  {
-   payload.WithObject("Marketo", m_marketo.Jsonize());
-
+  if (m_marketoHasBeenSet) {
+    payload.WithObject("Marketo", m_marketo.Jsonize());
   }
 
-  if(m_redshiftHasBeenSet)
-  {
-   payload.WithObject("Redshift", m_redshift.Jsonize());
-
+  if (m_redshiftHasBeenSet) {
+    payload.WithObject("Redshift", m_redshift.Jsonize());
   }
 
-  if(m_salesforceHasBeenSet)
-  {
-   payload.WithObject("Salesforce", m_salesforce.Jsonize());
-
+  if (m_salesforceHasBeenSet) {
+    payload.WithObject("Salesforce", m_salesforce.Jsonize());
   }
 
-  if(m_serviceNowHasBeenSet)
-  {
-   payload.WithObject("ServiceNow", m_serviceNow.Jsonize());
-
+  if (m_serviceNowHasBeenSet) {
+    payload.WithObject("ServiceNow", m_serviceNow.Jsonize());
   }
 
-  if(m_singularHasBeenSet)
-  {
-   payload.WithObject("Singular", m_singular.Jsonize());
-
+  if (m_singularHasBeenSet) {
+    payload.WithObject("Singular", m_singular.Jsonize());
   }
 
-  if(m_slackHasBeenSet)
-  {
-   payload.WithObject("Slack", m_slack.Jsonize());
-
+  if (m_slackHasBeenSet) {
+    payload.WithObject("Slack", m_slack.Jsonize());
   }
 
-  if(m_snowflakeHasBeenSet)
-  {
-   payload.WithObject("Snowflake", m_snowflake.Jsonize());
-
+  if (m_snowflakeHasBeenSet) {
+    payload.WithObject("Snowflake", m_snowflake.Jsonize());
   }
 
-  if(m_trendmicroHasBeenSet)
-  {
-   payload.WithObject("Trendmicro", m_trendmicro.Jsonize());
-
+  if (m_trendmicroHasBeenSet) {
+    payload.WithObject("Trendmicro", m_trendmicro.Jsonize());
   }
 
-  if(m_veevaHasBeenSet)
-  {
-   payload.WithObject("Veeva", m_veeva.Jsonize());
-
+  if (m_veevaHasBeenSet) {
+    payload.WithObject("Veeva", m_veeva.Jsonize());
   }
 
-  if(m_zendeskHasBeenSet)
-  {
-   payload.WithObject("Zendesk", m_zendesk.Jsonize());
-
+  if (m_zendeskHasBeenSet) {
+    payload.WithObject("Zendesk", m_zendesk.Jsonize());
   }
 
-  if(m_sAPODataHasBeenSet)
-  {
-   payload.WithObject("SAPOData", m_sAPOData.Jsonize());
-
+  if (m_sAPODataHasBeenSet) {
+    payload.WithObject("SAPOData", m_sAPOData.Jsonize());
   }
 
-  if(m_customConnectorHasBeenSet)
-  {
-   payload.WithObject("CustomConnector", m_customConnector.Jsonize());
-
+  if (m_customConnectorHasBeenSet) {
+    payload.WithObject("CustomConnector", m_customConnector.Jsonize());
   }
 
-  if(m_pardotHasBeenSet)
-  {
-   payload.WithObject("Pardot", m_pardot.Jsonize());
-
+  if (m_pardotHasBeenSet) {
+    payload.WithObject("Pardot", m_pardot.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

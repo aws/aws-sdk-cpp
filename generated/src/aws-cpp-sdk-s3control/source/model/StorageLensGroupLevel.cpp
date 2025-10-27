@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/StorageLensGroupLevel.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/StorageLensGroupLevel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-StorageLensGroupLevel::StorageLensGroupLevel(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StorageLensGroupLevel::StorageLensGroupLevel(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StorageLensGroupLevel& StorageLensGroupLevel::operator =(const XmlNode& xmlNode)
-{
+StorageLensGroupLevel& StorageLensGroupLevel::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode selectionCriteriaNode = resultNode.FirstChild("SelectionCriteria");
-    if(!selectionCriteriaNode.IsNull())
-    {
+    if (!selectionCriteriaNode.IsNull()) {
       m_selectionCriteria = selectionCriteriaNode;
       m_selectionCriteriaHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ StorageLensGroupLevel& StorageLensGroupLevel::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void StorageLensGroupLevel::AddToNode(XmlNode& parentNode) const
-{
+void StorageLensGroupLevel::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_selectionCriteriaHasBeenSet)
-  {
-   XmlNode selectionCriteriaNode = parentNode.CreateChildElement("SelectionCriteria");
-   m_selectionCriteria.AddToNode(selectionCriteriaNode);
+  if (m_selectionCriteriaHasBeenSet) {
+    XmlNode selectionCriteriaNode = parentNode.CreateChildElement("SelectionCriteria");
+    m_selectionCriteria.AddToNode(selectionCriteriaNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

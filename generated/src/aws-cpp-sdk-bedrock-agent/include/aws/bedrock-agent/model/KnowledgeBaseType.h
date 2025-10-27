@@ -7,26 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class KnowledgeBaseType
-  {
-    NOT_SET,
-    VECTOR,
-    KENDRA,
-    SQL
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class KnowledgeBaseType { NOT_SET, VECTOR, KENDRA, SQL };
 
-namespace KnowledgeBaseTypeMapper
-{
+namespace KnowledgeBaseTypeMapper {
 AWS_BEDROCKAGENT_API KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForKnowledgeBaseType(KnowledgeBaseType value);
-} // namespace KnowledgeBaseTypeMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace KnowledgeBaseTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

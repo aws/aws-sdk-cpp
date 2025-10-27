@@ -12,11 +12,4 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeRuleGroupsNamespaceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeRuleGroupsNamespaceRequest::SerializePayload() const { return {}; }

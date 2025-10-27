@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kendra-ranking/KendraRankingEndpointRules.h>
+#include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace KendraRanking
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace KendraRanking {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KendraRankingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using KendraRankingDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KENDRARANKING_API KendraRankingEndpointProvider : public KendraRankingDefaultEpProviderBase
-{
-public:
-    using KendraRankingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KENDRARANKING_API KendraRankingEndpointProvider : public KendraRankingDefaultEpProviderBase {
+ public:
+  using KendraRankingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KendraRankingEndpointProvider()
-      : KendraRankingDefaultEpProviderBase(Aws::KendraRanking::KendraRankingEndpointRules::GetRulesBlob(), Aws::KendraRanking::KendraRankingEndpointRules::RulesBlobSize)
-    {}
+  KendraRankingEndpointProvider()
+      : KendraRankingDefaultEpProviderBase(Aws::KendraRanking::KendraRankingEndpointRules::GetRulesBlob(),
+                                           Aws::KendraRanking::KendraRankingEndpointRules::RulesBlobSize) {}
 
-    ~KendraRankingEndpointProvider()
-    {
-    }
+  ~KendraRankingEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace KendraRanking
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace KendraRanking
+}  // namespace Aws

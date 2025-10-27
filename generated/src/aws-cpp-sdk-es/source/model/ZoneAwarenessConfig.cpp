@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/es/model/ZoneAwarenessConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/model/ZoneAwarenessConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
 
-ZoneAwarenessConfig::ZoneAwarenessConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ZoneAwarenessConfig::ZoneAwarenessConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ZoneAwarenessConfig& ZoneAwarenessConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityZoneCount"))
-  {
+ZoneAwarenessConfig& ZoneAwarenessConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityZoneCount")) {
     m_availabilityZoneCount = jsonValue.GetInteger("AvailabilityZoneCount");
     m_availabilityZoneCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ZoneAwarenessConfig::Jsonize() const
-{
+JsonValue ZoneAwarenessConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneCountHasBeenSet)
-  {
-   payload.WithInteger("AvailabilityZoneCount", m_availabilityZoneCount);
-
+  if (m_availabilityZoneCountHasBeenSet) {
+    payload.WithInteger("AvailabilityZoneCount", m_availabilityZoneCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

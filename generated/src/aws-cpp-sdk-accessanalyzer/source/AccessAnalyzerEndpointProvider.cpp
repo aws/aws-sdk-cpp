@@ -5,12 +5,8 @@
 
 #include <aws/accessanalyzer/AccessAnalyzerEndpointProvider.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AccessAnalyzer
-} // namespace Aws
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AccessAnalyzer
+}  // namespace Aws

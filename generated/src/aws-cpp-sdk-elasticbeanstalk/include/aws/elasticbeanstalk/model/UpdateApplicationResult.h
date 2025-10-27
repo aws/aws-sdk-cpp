@@ -7,66 +7,71 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ApplicationDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticBeanstalk {
+namespace Model {
+/**
+ * <p>Result message containing a single description of an
+ * application.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescriptionMessage">AWS
+ * API Reference</a></p>
+ */
+class UpdateApplicationResult {
+ public:
+  AWS_ELASTICBEANSTALK_API UpdateApplicationResult() = default;
+  AWS_ELASTICBEANSTALK_API UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICBEANSTALK_API UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
   /**
-   * <p>Result message containing a single description of an
-   * application.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescriptionMessage">AWS
-   * API Reference</a></p>
+   * <p> The <a>ApplicationDescription</a> of the application. </p>
    */
-  class UpdateApplicationResult
-  {
-  public:
-    AWS_ELASTICBEANSTALK_API UpdateApplicationResult() = default;
-    AWS_ELASTICBEANSTALK_API UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_ELASTICBEANSTALK_API UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  inline const ApplicationDescription& GetApplication() const { return m_application; }
+  template <typename ApplicationT = ApplicationDescription>
+  void SetApplication(ApplicationT&& value) {
+    m_applicationHasBeenSet = true;
+    m_application = std::forward<ApplicationT>(value);
+  }
+  template <typename ApplicationT = ApplicationDescription>
+  UpdateApplicationResult& WithApplication(ApplicationT&& value) {
+    SetApplication(std::forward<ApplicationT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p> The <a>ApplicationDescription</a> of the application. </p>
-     */
-    inline const ApplicationDescription& GetApplication() const { return m_application; }
-    template<typename ApplicationT = ApplicationDescription>
-    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
-    template<typename ApplicationT = ApplicationDescription>
-    UpdateApplicationResult& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
-    ///@}
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  UpdateApplicationResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ApplicationDescription m_application;
+  bool m_applicationHasBeenSet = false;
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    UpdateApplicationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ApplicationDescription m_application;
-    bool m_applicationHasBeenSet = false;
-
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFrontKeyValueStore
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFrontKeyValueStore {
+namespace Model {
 
-DeleteKeyRequestListItem::DeleteKeyRequestListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteKeyRequestListItem::DeleteKeyRequestListItem(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteKeyRequestListItem& DeleteKeyRequestListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+DeleteKeyRequestListItem& DeleteKeyRequestListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeleteKeyRequestListItem::Jsonize() const
-{
+JsonValue DeleteKeyRequestListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudFrontKeyValueStore
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFrontKeyValueStore
+}  // namespace Aws

@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/CloudWatchDimensionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/CloudWatchDimensionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DimensionName"))
-  {
+CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DimensionName")) {
     m_dimensionName = jsonValue.GetString("DimensionName");
     m_dimensionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DimensionValueSource"))
-  {
+  if (jsonValue.ValueExists("DimensionValueSource")) {
     m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(jsonValue.GetString("DimensionValueSource"));
     m_dimensionValueSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultDimensionValue"))
-  {
+  if (jsonValue.ValueExists("DefaultDimensionValue")) {
     m_defaultDimensionValue = jsonValue.GetString("DefaultDimensionValue");
     m_defaultDimensionValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchDimensionConfiguration::Jsonize() const
-{
+JsonValue CloudWatchDimensionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionNameHasBeenSet)
-  {
-   payload.WithString("DimensionName", m_dimensionName);
-
+  if (m_dimensionNameHasBeenSet) {
+    payload.WithString("DimensionName", m_dimensionName);
   }
 
-  if(m_dimensionValueSourceHasBeenSet)
-  {
-   payload.WithString("DimensionValueSource", DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource));
+  if (m_dimensionValueSourceHasBeenSet) {
+    payload.WithString("DimensionValueSource", DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource));
   }
 
-  if(m_defaultDimensionValueHasBeenSet)
-  {
-   payload.WithString("DefaultDimensionValue", m_defaultDimensionValue);
-
+  if (m_defaultDimensionValueHasBeenSet) {
+    payload.WithString("DefaultDimensionValue", m_defaultDimensionValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

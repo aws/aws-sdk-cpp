@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class FulfillmentActivityType
-  {
-    NOT_SET,
-    ReturnIntent,
-    CodeHook
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class FulfillmentActivityType { NOT_SET, ReturnIntent, CodeHook };
 
-namespace FulfillmentActivityTypeMapper
-{
+namespace FulfillmentActivityTypeMapper {
 AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivityType GetFulfillmentActivityTypeForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForFulfillmentActivityType(FulfillmentActivityType value);
-} // namespace FulfillmentActivityTypeMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace FulfillmentActivityTypeMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

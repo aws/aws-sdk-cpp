@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class JobTemplateListBy
-  {
-    NOT_SET,
-    NAME,
-    CREATION_DATE,
-    SYSTEM
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class JobTemplateListBy { NOT_SET, NAME, CREATION_DATE, SYSTEM };
 
-namespace JobTemplateListByMapper
-{
+namespace JobTemplateListByMapper {
 AWS_MEDIACONVERT_API JobTemplateListBy GetJobTemplateListByForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForJobTemplateListBy(JobTemplateListBy value);
-} // namespace JobTemplateListByMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace JobTemplateListByMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

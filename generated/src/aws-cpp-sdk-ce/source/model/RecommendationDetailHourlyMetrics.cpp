@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationDetailHourlyMetrics& RecommendationDetailHourlyMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StartTime"))
-  {
+RecommendationDetailHourlyMetrics& RecommendationDetailHourlyMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetString("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EstimatedOnDemandCost"))
-  {
+  if (jsonValue.ValueExists("EstimatedOnDemandCost")) {
     m_estimatedOnDemandCost = jsonValue.GetString("EstimatedOnDemandCost");
     m_estimatedOnDemandCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrentCoverage"))
-  {
+  if (jsonValue.ValueExists("CurrentCoverage")) {
     m_currentCoverage = jsonValue.GetString("CurrentCoverage");
     m_currentCoverageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EstimatedCoverage"))
-  {
+  if (jsonValue.ValueExists("EstimatedCoverage")) {
     m_estimatedCoverage = jsonValue.GetString("EstimatedCoverage");
     m_estimatedCoverageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EstimatedNewCommitmentUtilization"))
-  {
+  if (jsonValue.ValueExists("EstimatedNewCommitmentUtilization")) {
     m_estimatedNewCommitmentUtilization = jsonValue.GetString("EstimatedNewCommitmentUtilization");
     m_estimatedNewCommitmentUtilizationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationDetailHourlyMetrics::Jsonize() const
-{
+JsonValue RecommendationDetailHourlyMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("StartTime", m_startTime);
-
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("StartTime", m_startTime);
   }
 
-  if(m_estimatedOnDemandCostHasBeenSet)
-  {
-   payload.WithString("EstimatedOnDemandCost", m_estimatedOnDemandCost);
-
+  if (m_estimatedOnDemandCostHasBeenSet) {
+    payload.WithString("EstimatedOnDemandCost", m_estimatedOnDemandCost);
   }
 
-  if(m_currentCoverageHasBeenSet)
-  {
-   payload.WithString("CurrentCoverage", m_currentCoverage);
-
+  if (m_currentCoverageHasBeenSet) {
+    payload.WithString("CurrentCoverage", m_currentCoverage);
   }
 
-  if(m_estimatedCoverageHasBeenSet)
-  {
-   payload.WithString("EstimatedCoverage", m_estimatedCoverage);
-
+  if (m_estimatedCoverageHasBeenSet) {
+    payload.WithString("EstimatedCoverage", m_estimatedCoverage);
   }
 
-  if(m_estimatedNewCommitmentUtilizationHasBeenSet)
-  {
-   payload.WithString("EstimatedNewCommitmentUtilization", m_estimatedNewCommitmentUtilization);
-
+  if (m_estimatedNewCommitmentUtilizationHasBeenSet) {
+    payload.WithString("EstimatedNewCommitmentUtilization", m_estimatedNewCommitmentUtilization);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

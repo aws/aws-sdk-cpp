@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/ResourceIdPreference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/ResourceIdPreference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
+namespace Aws {
+namespace EFS {
+namespace Model {
 
-ResourceIdPreference::ResourceIdPreference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceIdPreference::ResourceIdPreference(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceIdPreference& ResourceIdPreference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceIdType"))
-  {
+ResourceIdPreference& ResourceIdPreference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceIdType")) {
     m_resourceIdType = ResourceIdTypeMapper::GetResourceIdTypeForName(jsonValue.GetString("ResourceIdType"));
     m_resourceIdTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Resources"))
-  {
+  if (jsonValue.ValueExists("Resources")) {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
-    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
-    {
+    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
       m_resources.push_back(ResourceMapper::GetResourceForName(resourcesJsonList[resourcesIndex].AsString()));
     }
     m_resourcesHasBeenSet = true;
@@ -42,29 +32,24 @@ ResourceIdPreference& ResourceIdPreference::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ResourceIdPreference::Jsonize() const
-{
+JsonValue ResourceIdPreference::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceIdTypeHasBeenSet)
-  {
-   payload.WithString("ResourceIdType", ResourceIdTypeMapper::GetNameForResourceIdType(m_resourceIdType));
+  if (m_resourceIdTypeHasBeenSet) {
+    payload.WithString("ResourceIdType", ResourceIdTypeMapper::GetNameForResourceIdType(m_resourceIdType));
   }
 
-  if(m_resourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
-   for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
-   {
-     resourcesJsonList[resourcesIndex].AsString(ResourceMapper::GetNameForResource(m_resources[resourcesIndex]));
-   }
-   payload.WithArray("Resources", std::move(resourcesJsonList));
-
+  if (m_resourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
+    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
+      resourcesJsonList[resourcesIndex].AsString(ResourceMapper::GetNameForResource(m_resources[resourcesIndex]));
+    }
+    payload.WithArray("Resources", std::move(resourcesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

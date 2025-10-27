@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DetachGroupPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DetachGroupPolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DetachGroupPolicyRequest::SerializePayload() const
-{
+Aws::String DetachGroupPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetachGroupPolicy&";
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DetachGroupPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetachGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetachGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

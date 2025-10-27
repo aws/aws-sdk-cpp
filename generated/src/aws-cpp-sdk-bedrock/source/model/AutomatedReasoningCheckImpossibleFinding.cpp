@@ -11,72 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningCheckImpossibleFinding::AutomatedReasoningCheckImpossibleFinding(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningCheckImpossibleFinding::AutomatedReasoningCheckImpossibleFinding(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningCheckImpossibleFinding& AutomatedReasoningCheckImpossibleFinding::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("translation"))
-  {
+AutomatedReasoningCheckImpossibleFinding& AutomatedReasoningCheckImpossibleFinding::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("translation")) {
     m_translation = jsonValue.GetObject("translation");
     m_translationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contradictingRules"))
-  {
+  if (jsonValue.ValueExists("contradictingRules")) {
     Aws::Utils::Array<JsonView> contradictingRulesJsonList = jsonValue.GetArray("contradictingRules");
-    for(unsigned contradictingRulesIndex = 0; contradictingRulesIndex < contradictingRulesJsonList.GetLength(); ++contradictingRulesIndex)
-    {
+    for (unsigned contradictingRulesIndex = 0; contradictingRulesIndex < contradictingRulesJsonList.GetLength();
+         ++contradictingRulesIndex) {
       m_contradictingRules.push_back(contradictingRulesJsonList[contradictingRulesIndex].AsObject());
     }
     m_contradictingRulesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logicWarning"))
-  {
+  if (jsonValue.ValueExists("logicWarning")) {
     m_logicWarning = jsonValue.GetObject("logicWarning");
     m_logicWarningHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningCheckImpossibleFinding::Jsonize() const
-{
+JsonValue AutomatedReasoningCheckImpossibleFinding::Jsonize() const {
   JsonValue payload;
 
-  if(m_translationHasBeenSet)
-  {
-   payload.WithObject("translation", m_translation.Jsonize());
-
+  if (m_translationHasBeenSet) {
+    payload.WithObject("translation", m_translation.Jsonize());
   }
 
-  if(m_contradictingRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contradictingRulesJsonList(m_contradictingRules.size());
-   for(unsigned contradictingRulesIndex = 0; contradictingRulesIndex < contradictingRulesJsonList.GetLength(); ++contradictingRulesIndex)
-   {
-     contradictingRulesJsonList[contradictingRulesIndex].AsObject(m_contradictingRules[contradictingRulesIndex].Jsonize());
-   }
-   payload.WithArray("contradictingRules", std::move(contradictingRulesJsonList));
-
+  if (m_contradictingRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contradictingRulesJsonList(m_contradictingRules.size());
+    for (unsigned contradictingRulesIndex = 0; contradictingRulesIndex < contradictingRulesJsonList.GetLength();
+         ++contradictingRulesIndex) {
+      contradictingRulesJsonList[contradictingRulesIndex].AsObject(m_contradictingRules[contradictingRulesIndex].Jsonize());
+    }
+    payload.WithArray("contradictingRules", std::move(contradictingRulesJsonList));
   }
 
-  if(m_logicWarningHasBeenSet)
-  {
-   payload.WithObject("logicWarning", m_logicWarning.Jsonize());
-
+  if (m_logicWarningHasBeenSet) {
+    payload.WithObject("logicWarning", m_logicWarning.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

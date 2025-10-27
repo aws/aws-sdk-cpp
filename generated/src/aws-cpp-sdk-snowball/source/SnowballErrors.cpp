@@ -14,24 +14,21 @@ using namespace Aws::Utils;
 using namespace Aws::Snowball;
 using namespace Aws::Snowball::Model;
 
-namespace Aws
-{
-namespace Snowball
-{
-template<> AWS_SNOWBALL_API ConflictException SnowballError::GetModeledError()
-{
+namespace Aws {
+namespace Snowball {
+template <>
+AWS_SNOWBALL_API ConflictException SnowballError::GetModeledError() {
   assert(this->GetErrorType() == SnowballErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SNOWBALL_API InvalidResourceException SnowballError::GetModeledError()
-{
+template <>
+AWS_SNOWBALL_API InvalidResourceException SnowballError::GetModeledError() {
   assert(this->GetErrorType() == SnowballErrors::INVALID_RESOURCE);
   return InvalidResourceException(this->GetJsonPayload().View());
 }
 
-namespace SnowballErrorMapper
-{
+namespace SnowballErrorMapper {
 
 static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
@@ -45,58 +42,36 @@ static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNext
 static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
 static const int RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReturnShippingLabelAlreadyExistsException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH)
-  {
+  if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::CLUSTER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
-  {
+  } else if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ADDRESS_HASH)
-  {
+  } else if (hashCode == INVALID_ADDRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_ADDRESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_JOB_STATE_HASH)
-  {
+  } else if (hashCode == INVALID_JOB_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_JOB_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_REQUEST_FAILED_HASH)
-  {
+  } else if (hashCode == K_M_S_REQUEST_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::K_M_S_REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EC2_REQUEST_FAILED_HASH)
-  {
+  } else if (hashCode == EC2_REQUEST_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::EC2_REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INPUT_COMBINATION_HASH)
-  {
+  } else if (hashCode == INVALID_INPUT_COMBINATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_INPUT_COMBINATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_ADDRESS_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_ADDRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::UNSUPPORTED_ADDRESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_RESOURCE_HASH)
-  {
+  } else if (hashCode == INVALID_RESOURCE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_RESOURCE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::RETURN_SHIPPING_LABEL_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::RETURN_SHIPPING_LABEL_ALREADY_EXISTS),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace SnowballErrorMapper
-} // namespace Snowball
-} // namespace Aws
+}  // namespace SnowballErrorMapper
+}  // namespace Snowball
+}  // namespace Aws

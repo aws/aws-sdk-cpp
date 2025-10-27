@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class GroupingRecommendationConfidenceLevel
-  {
-    NOT_SET,
-    High,
-    Medium
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class GroupingRecommendationConfidenceLevel { NOT_SET, High, Medium };
 
-namespace GroupingRecommendationConfidenceLevelMapper
-{
+namespace GroupingRecommendationConfidenceLevelMapper {
 AWS_RESILIENCEHUB_API GroupingRecommendationConfidenceLevel GetGroupingRecommendationConfidenceLevelForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForGroupingRecommendationConfidenceLevel(GroupingRecommendationConfidenceLevel value);
-} // namespace GroupingRecommendationConfidenceLevelMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace GroupingRecommendationConfidenceLevelMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

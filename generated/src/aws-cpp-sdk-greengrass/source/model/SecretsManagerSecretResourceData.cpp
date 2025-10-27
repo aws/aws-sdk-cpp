@@ -3,69 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/SecretsManagerSecretResourceData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/SecretsManagerSecretResourceData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-SecretsManagerSecretResourceData::SecretsManagerSecretResourceData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecretsManagerSecretResourceData::SecretsManagerSecretResourceData(JsonView jsonValue) { *this = jsonValue; }
 
-SecretsManagerSecretResourceData& SecretsManagerSecretResourceData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ARN"))
-  {
+SecretsManagerSecretResourceData& SecretsManagerSecretResourceData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");
     m_aRNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdditionalStagingLabelsToDownload"))
-  {
+  if (jsonValue.ValueExists("AdditionalStagingLabelsToDownload")) {
     Aws::Utils::Array<JsonView> additionalStagingLabelsToDownloadJsonList = jsonValue.GetArray("AdditionalStagingLabelsToDownload");
-    for(unsigned additionalStagingLabelsToDownloadIndex = 0; additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength(); ++additionalStagingLabelsToDownloadIndex)
-    {
-      m_additionalStagingLabelsToDownload.push_back(additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString());
+    for (unsigned additionalStagingLabelsToDownloadIndex = 0;
+         additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength();
+         ++additionalStagingLabelsToDownloadIndex) {
+      m_additionalStagingLabelsToDownload.push_back(
+          additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString());
     }
     m_additionalStagingLabelsToDownloadHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecretsManagerSecretResourceData::Jsonize() const
-{
+JsonValue SecretsManagerSecretResourceData::Jsonize() const {
   JsonValue payload;
 
-  if(m_aRNHasBeenSet)
-  {
-   payload.WithString("ARN", m_aRN);
-
+  if (m_aRNHasBeenSet) {
+    payload.WithString("ARN", m_aRN);
   }
 
-  if(m_additionalStagingLabelsToDownloadHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> additionalStagingLabelsToDownloadJsonList(m_additionalStagingLabelsToDownload.size());
-   for(unsigned additionalStagingLabelsToDownloadIndex = 0; additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength(); ++additionalStagingLabelsToDownloadIndex)
-   {
-     additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString(m_additionalStagingLabelsToDownload[additionalStagingLabelsToDownloadIndex]);
-   }
-   payload.WithArray("AdditionalStagingLabelsToDownload", std::move(additionalStagingLabelsToDownloadJsonList));
-
+  if (m_additionalStagingLabelsToDownloadHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalStagingLabelsToDownloadJsonList(m_additionalStagingLabelsToDownload.size());
+    for (unsigned additionalStagingLabelsToDownloadIndex = 0;
+         additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength();
+         ++additionalStagingLabelsToDownloadIndex) {
+      additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString(
+          m_additionalStagingLabelsToDownload[additionalStagingLabelsToDownloadIndex]);
+    }
+    payload.WithArray("AdditionalStagingLabelsToDownload", std::move(additionalStagingLabelsToDownloadJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

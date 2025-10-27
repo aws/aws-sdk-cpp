@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class TemplateType
-  {
-    NOT_SET,
-    ENVIRONMENT,
-    SERVICE
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class TemplateType { NOT_SET, ENVIRONMENT, SERVICE };
 
-namespace TemplateTypeMapper
-{
+namespace TemplateTypeMapper {
 AWS_PROTON_API TemplateType GetTemplateTypeForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForTemplateType(TemplateType value);
-} // namespace TemplateTypeMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace TemplateTypeMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

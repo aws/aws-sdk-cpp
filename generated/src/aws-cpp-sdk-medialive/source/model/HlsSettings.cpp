@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/HlsSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-HlsSettings::HlsSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HlsSettings::HlsSettings(JsonView jsonValue) { *this = jsonValue; }
 
-HlsSettings& HlsSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audioOnlyHlsSettings"))
-  {
+HlsSettings& HlsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioOnlyHlsSettings")) {
     m_audioOnlyHlsSettings = jsonValue.GetObject("audioOnlyHlsSettings");
     m_audioOnlyHlsSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fmp4HlsSettings"))
-  {
+  if (jsonValue.ValueExists("fmp4HlsSettings")) {
     m_fmp4HlsSettings = jsonValue.GetObject("fmp4HlsSettings");
     m_fmp4HlsSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("frameCaptureHlsSettings"))
-  {
+  if (jsonValue.ValueExists("frameCaptureHlsSettings")) {
     m_frameCaptureHlsSettings = jsonValue.GetObject("frameCaptureHlsSettings");
     m_frameCaptureHlsSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("standardHlsSettings"))
-  {
+  if (jsonValue.ValueExists("standardHlsSettings")) {
     m_standardHlsSettings = jsonValue.GetObject("standardHlsSettings");
     m_standardHlsSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HlsSettings::Jsonize() const
-{
+JsonValue HlsSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioOnlyHlsSettingsHasBeenSet)
-  {
-   payload.WithObject("audioOnlyHlsSettings", m_audioOnlyHlsSettings.Jsonize());
-
+  if (m_audioOnlyHlsSettingsHasBeenSet) {
+    payload.WithObject("audioOnlyHlsSettings", m_audioOnlyHlsSettings.Jsonize());
   }
 
-  if(m_fmp4HlsSettingsHasBeenSet)
-  {
-   payload.WithObject("fmp4HlsSettings", m_fmp4HlsSettings.Jsonize());
-
+  if (m_fmp4HlsSettingsHasBeenSet) {
+    payload.WithObject("fmp4HlsSettings", m_fmp4HlsSettings.Jsonize());
   }
 
-  if(m_frameCaptureHlsSettingsHasBeenSet)
-  {
-   payload.WithObject("frameCaptureHlsSettings", m_frameCaptureHlsSettings.Jsonize());
-
+  if (m_frameCaptureHlsSettingsHasBeenSet) {
+    payload.WithObject("frameCaptureHlsSettings", m_frameCaptureHlsSettings.Jsonize());
   }
 
-  if(m_standardHlsSettingsHasBeenSet)
-  {
-   payload.WithObject("standardHlsSettings", m_standardHlsSettings.Jsonize());
-
+  if (m_standardHlsSettingsHasBeenSet) {
+    payload.WithObject("standardHlsSettings", m_standardHlsSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

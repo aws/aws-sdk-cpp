@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsServicePlacementStrategiesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsServicePlacementStrategiesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEcsServicePlacementStrategiesDetails& AwsEcsServicePlacementStrategiesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Field"))
-  {
+AwsEcsServicePlacementStrategiesDetails& AwsEcsServicePlacementStrategiesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Field")) {
     m_field = jsonValue.GetString("Field");
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsServicePlacementStrategiesDetails::Jsonize() const
-{
+JsonValue AwsEcsServicePlacementStrategiesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithString("Field", m_field);
-
+  if (m_fieldHasBeenSet) {
+    payload.WithString("Field", m_field);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

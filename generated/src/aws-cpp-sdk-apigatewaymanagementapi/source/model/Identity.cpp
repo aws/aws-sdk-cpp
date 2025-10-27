@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayManagementApi
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayManagementApi {
+namespace Model {
 
-Identity::Identity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Identity::Identity(JsonView jsonValue) { *this = jsonValue; }
 
-Identity& Identity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceIp"))
-  {
+Identity& Identity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceIp")) {
     m_sourceIp = jsonValue.GetString("sourceIp");
     m_sourceIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userAgent"))
-  {
+  if (jsonValue.ValueExists("userAgent")) {
     m_userAgent = jsonValue.GetString("userAgent");
     m_userAgentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Identity::Jsonize() const
-{
+JsonValue Identity::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceIpHasBeenSet)
-  {
-   payload.WithString("sourceIp", m_sourceIp);
-
+  if (m_sourceIpHasBeenSet) {
+    payload.WithString("sourceIp", m_sourceIp);
   }
 
-  if(m_userAgentHasBeenSet)
-  {
-   payload.WithString("userAgent", m_userAgent);
-
+  if (m_userAgentHasBeenSet) {
+    payload.WithString("userAgent", m_userAgent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayManagementApi
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayManagementApi
+}  // namespace Aws

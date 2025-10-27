@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorRequest.h>
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-} // namespace BCMPricingCalculator
-} // namespace Aws
+namespace Aws {
+namespace BCMPricingCalculator {}  // namespace BCMPricingCalculator
+}  // namespace Aws

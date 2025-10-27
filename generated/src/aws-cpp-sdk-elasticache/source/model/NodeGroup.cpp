@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/NodeGroup.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/NodeGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
 
-NodeGroup::NodeGroup(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+NodeGroup::NodeGroup(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
-{
+NodeGroup& NodeGroup::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
-    if(!nodeGroupIdNode.IsNull())
-    {
+    if (!nodeGroupIdNode.IsNull()) {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
-    if(!primaryEndpointNode.IsNull())
-    {
+    if (!primaryEndpointNode.IsNull()) {
       m_primaryEndpoint = primaryEndpointNode;
       m_primaryEndpointHasBeenSet = true;
     }
     XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
-    if(!readerEndpointNode.IsNull())
-    {
+    if (!readerEndpointNode.IsNull()) {
       m_readerEndpoint = readerEndpointNode;
       m_readerEndpointHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
-    if(!slotsNode.IsNull())
-    {
+    if (!slotsNode.IsNull()) {
       m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
     }
     XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");
-    if(!nodeGroupMembersNode.IsNull())
-    {
+    if (!nodeGroupMembersNode.IsNull()) {
       XmlNode nodeGroupMembersMember = nodeGroupMembersNode.FirstChild("NodeGroupMember");
       m_nodeGroupMembersHasBeenSet = !nodeGroupMembersMember.IsNull();
-      while(!nodeGroupMembersMember.IsNull())
-      {
+      while (!nodeGroupMembersMember.IsNull()) {
         m_nodeGroupMembers.push_back(nodeGroupMembersMember);
         nodeGroupMembersMember = nodeGroupMembersMember.NextNode("NodeGroupMember");
       }
@@ -79,88 +64,71 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_nodeGroupIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_nodeGroupIdHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
-  if(m_primaryEndpointHasBeenSet)
-  {
-      Aws::StringStream primaryEndpointLocationAndMemberSs;
-      primaryEndpointLocationAndMemberSs << location << index << locationValue << ".PrimaryEndpoint";
-      m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
+  if (m_primaryEndpointHasBeenSet) {
+    Aws::StringStream primaryEndpointLocationAndMemberSs;
+    primaryEndpointLocationAndMemberSs << location << index << locationValue << ".PrimaryEndpoint";
+    m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
   }
 
-  if(m_readerEndpointHasBeenSet)
-  {
-      Aws::StringStream readerEndpointLocationAndMemberSs;
-      readerEndpointLocationAndMemberSs << location << index << locationValue << ".ReaderEndpoint";
-      m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMemberSs.str().c_str());
+  if (m_readerEndpointHasBeenSet) {
+    Aws::StringStream readerEndpointLocationAndMemberSs;
+    readerEndpointLocationAndMemberSs << location << index << locationValue << ".ReaderEndpoint";
+    m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMemberSs.str().c_str());
   }
 
-  if(m_slotsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
+  if (m_slotsHasBeenSet) {
+    oStream << location << index << locationValue << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
   }
 
-  if(m_nodeGroupMembersHasBeenSet)
-  {
-      unsigned nodeGroupMembersIdx = 1;
-      for(auto& item : m_nodeGroupMembers)
-      {
-        Aws::StringStream nodeGroupMembersSs;
-        nodeGroupMembersSs << location << index << locationValue << ".NodeGroupMembers.NodeGroupMember." << nodeGroupMembersIdx++;
-        item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
-      }
-  }
-
-}
-
-void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_nodeGroupIdHasBeenSet)
-  {
-      oStream << location << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-  if(m_primaryEndpointHasBeenSet)
-  {
-      Aws::String primaryEndpointLocationAndMember(location);
-      primaryEndpointLocationAndMember += ".PrimaryEndpoint";
-      m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMember.c_str());
-  }
-  if(m_readerEndpointHasBeenSet)
-  {
-      Aws::String readerEndpointLocationAndMember(location);
-      readerEndpointLocationAndMember += ".ReaderEndpoint";
-      m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMember.c_str());
-  }
-  if(m_slotsHasBeenSet)
-  {
-      oStream << location << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
-  }
-  if(m_nodeGroupMembersHasBeenSet)
-  {
-      unsigned nodeGroupMembersIdx = 1;
-      for(auto& item : m_nodeGroupMembers)
-      {
-        Aws::StringStream nodeGroupMembersSs;
-        nodeGroupMembersSs << location << ".NodeGroupMembers.NodeGroupMember." << nodeGroupMembersIdx++;
-        item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
-      }
+  if (m_nodeGroupMembersHasBeenSet) {
+    unsigned nodeGroupMembersIdx = 1;
+    for (auto& item : m_nodeGroupMembers) {
+      Aws::StringStream nodeGroupMembersSs;
+      nodeGroupMembersSs << location << index << locationValue << ".NodeGroupMembers.NodeGroupMember." << nodeGroupMembersIdx++;
+      item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_nodeGroupIdHasBeenSet) {
+    oStream << location << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if (m_primaryEndpointHasBeenSet) {
+    Aws::String primaryEndpointLocationAndMember(location);
+    primaryEndpointLocationAndMember += ".PrimaryEndpoint";
+    m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMember.c_str());
+  }
+  if (m_readerEndpointHasBeenSet) {
+    Aws::String readerEndpointLocationAndMember(location);
+    readerEndpointLocationAndMember += ".ReaderEndpoint";
+    m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMember.c_str());
+  }
+  if (m_slotsHasBeenSet) {
+    oStream << location << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
+  }
+  if (m_nodeGroupMembersHasBeenSet) {
+    unsigned nodeGroupMembersIdx = 1;
+    for (auto& item : m_nodeGroupMembers) {
+      Aws::StringStream nodeGroupMembersSs;
+      nodeGroupMembersSs << location << ".NodeGroupMembers.NodeGroupMember." << nodeGroupMembersIdx++;
+      item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

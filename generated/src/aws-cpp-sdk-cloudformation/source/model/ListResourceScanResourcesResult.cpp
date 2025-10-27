@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/ListResourceScanResourcesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourceScanResourcesResult::ListResourceScanResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListResourceScanResourcesResult::ListResourceScanResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListResourceScanResourcesResult& ListResourceScanResourcesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListResourceScanResourcesResult& ListResourceScanResourcesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListResourceScanResourcesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListResourceScanResourcesResult")) {
     resultNode = rootNode.FirstChild("ListResourceScanResourcesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
-    if(!resourcesNode.IsNull())
-    {
+    if (!resourcesNode.IsNull()) {
       XmlNode resourcesMember = resourcesNode.FirstChild("member");
       m_resourcesHasBeenSet = !resourcesMember.IsNull();
-      while(!resourcesMember.IsNull())
-      {
+      while (!resourcesMember.IsNull()) {
         m_resources.push_back(resourcesMember);
         resourcesMember = resourcesMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ ListResourceScanResourcesResult& ListResourceScanResourcesResult::operator =(con
       m_resourcesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -59,7 +50,8 @@ ListResourceScanResourcesResult& ListResourceScanResourcesResult::operator =(con
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListResourceScanResourcesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListResourceScanResourcesResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-ReturnControlPayload::ReturnControlPayload(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReturnControlPayload::ReturnControlPayload(JsonView jsonValue) { *this = jsonValue; }
 
-ReturnControlPayload& ReturnControlPayload::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("invocationInputs"))
-  {
+ReturnControlPayload& ReturnControlPayload::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("invocationInputs")) {
     Aws::Utils::Array<JsonView> invocationInputsJsonList = jsonValue.GetArray("invocationInputs");
-    for(unsigned invocationInputsIndex = 0; invocationInputsIndex < invocationInputsJsonList.GetLength(); ++invocationInputsIndex)
-    {
+    for (unsigned invocationInputsIndex = 0; invocationInputsIndex < invocationInputsJsonList.GetLength(); ++invocationInputsIndex) {
       m_invocationInputs.push_back(invocationInputsJsonList[invocationInputsIndex].AsObject());
     }
     m_invocationInputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("invocationId"))
-  {
+  if (jsonValue.ValueExists("invocationId")) {
     m_invocationId = jsonValue.GetString("invocationId");
     m_invocationIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReturnControlPayload::Jsonize() const
-{
+JsonValue ReturnControlPayload::Jsonize() const {
   JsonValue payload;
 
-  if(m_invocationInputsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> invocationInputsJsonList(m_invocationInputs.size());
-   for(unsigned invocationInputsIndex = 0; invocationInputsIndex < invocationInputsJsonList.GetLength(); ++invocationInputsIndex)
-   {
-     invocationInputsJsonList[invocationInputsIndex].AsObject(m_invocationInputs[invocationInputsIndex].Jsonize());
-   }
-   payload.WithArray("invocationInputs", std::move(invocationInputsJsonList));
-
+  if (m_invocationInputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> invocationInputsJsonList(m_invocationInputs.size());
+    for (unsigned invocationInputsIndex = 0; invocationInputsIndex < invocationInputsJsonList.GetLength(); ++invocationInputsIndex) {
+      invocationInputsJsonList[invocationInputsIndex].AsObject(m_invocationInputs[invocationInputsIndex].Jsonize());
+    }
+    payload.WithArray("invocationInputs", std::move(invocationInputsJsonList));
   }
 
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("invocationId", m_invocationId);
-
+  if (m_invocationIdHasBeenSet) {
+    payload.WithString("invocationId", m_invocationId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

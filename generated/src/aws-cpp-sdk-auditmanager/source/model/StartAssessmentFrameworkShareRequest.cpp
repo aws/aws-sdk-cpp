@@ -12,31 +12,20 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartAssessmentFrameworkShareRequest::SerializePayload() const
-{
+Aws::String StartAssessmentFrameworkShareRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationAccountHasBeenSet)
-  {
-   payload.WithString("destinationAccount", m_destinationAccount);
-
+  if (m_destinationAccountHasBeenSet) {
+    payload.WithString("destinationAccount", m_destinationAccount);
   }
 
-  if(m_destinationRegionHasBeenSet)
-  {
-   payload.WithString("destinationRegion", m_destinationRegion);
-
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("destinationRegion", m_destinationRegion);
   }
 
-  if(m_commentHasBeenSet)
-  {
-   payload.WithString("comment", m_comment);
-
+  if (m_commentHasBeenSet) {
+    payload.WithString("comment", m_comment);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

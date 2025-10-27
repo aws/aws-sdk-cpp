@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-namespace Model
-{
-  enum class DeploymentStatus
-  {
-    NOT_SET,
-    SUCCESS,
-    FAIL
-  };
+namespace Aws {
+namespace SagemakerEdgeManager {
+namespace Model {
+enum class DeploymentStatus { NOT_SET, SUCCESS, FAIL };
 
-namespace DeploymentStatusMapper
-{
+namespace DeploymentStatusMapper {
 AWS_SAGEMAKEREDGEMANAGER_API DeploymentStatus GetDeploymentStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKEREDGEMANAGER_API Aws::String GetNameForDeploymentStatus(DeploymentStatus value);
-} // namespace DeploymentStatusMapper
-} // namespace Model
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace DeploymentStatusMapper
+}  // namespace Model
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

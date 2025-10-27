@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/UsageTopAccountsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/UsageTopAccountsResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-UsageTopAccountsResult::UsageTopAccountsResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsageTopAccountsResult::UsageTopAccountsResult(JsonView jsonValue) { *this = jsonValue; }
 
-UsageTopAccountsResult& UsageTopAccountsResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("feature"))
-  {
+UsageTopAccountsResult& UsageTopAccountsResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("feature")) {
     m_feature = UsageFeatureMapper::GetUsageFeatureForName(jsonValue.GetString("feature"));
     m_featureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accounts"))
-  {
+  if (jsonValue.ValueExists("accounts")) {
     Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
-    for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
-    {
+    for (unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex) {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
     }
     m_accountsHasBeenSet = true;
@@ -42,29 +32,24 @@ UsageTopAccountsResult& UsageTopAccountsResult::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue UsageTopAccountsResult::Jsonize() const
-{
+JsonValue UsageTopAccountsResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureHasBeenSet)
-  {
-   payload.WithString("feature", UsageFeatureMapper::GetNameForUsageFeature(m_feature));
+  if (m_featureHasBeenSet) {
+    payload.WithString("feature", UsageFeatureMapper::GetNameForUsageFeature(m_feature));
   }
 
-  if(m_accountsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accountsJsonList(m_accounts.size());
-   for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
-   {
-     accountsJsonList[accountsIndex].AsObject(m_accounts[accountsIndex].Jsonize());
-   }
-   payload.WithArray("accounts", std::move(accountsJsonList));
-
+  if (m_accountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountsJsonList(m_accounts.size());
+    for (unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex) {
+      accountsJsonList[accountsIndex].AsObject(m_accounts[accountsIndex].Jsonize());
+    }
+    payload.WithArray("accounts", std::move(accountsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

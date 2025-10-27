@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RouteExclusionOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RouteExclusionOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RouteExclusionOptions::RouteExclusionOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteExclusionOptions::RouteExclusionOptions(JsonView jsonValue) { *this = jsonValue; }
 
-RouteExclusionOptions& RouteExclusionOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Countries"))
-  {
+RouteExclusionOptions& RouteExclusionOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Countries")) {
     Aws::Utils::Array<JsonView> countriesJsonList = jsonValue.GetArray("Countries");
-    for(unsigned countriesIndex = 0; countriesIndex < countriesJsonList.GetLength(); ++countriesIndex)
-    {
+    for (unsigned countriesIndex = 0; countriesIndex < countriesJsonList.GetLength(); ++countriesIndex) {
       m_countries.push_back(countriesJsonList[countriesIndex].AsString());
     }
     m_countriesHasBeenSet = true;
@@ -37,24 +28,20 @@ RouteExclusionOptions& RouteExclusionOptions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RouteExclusionOptions::Jsonize() const
-{
+JsonValue RouteExclusionOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_countriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> countriesJsonList(m_countries.size());
-   for(unsigned countriesIndex = 0; countriesIndex < countriesJsonList.GetLength(); ++countriesIndex)
-   {
-     countriesJsonList[countriesIndex].AsString(m_countries[countriesIndex]);
-   }
-   payload.WithArray("Countries", std::move(countriesJsonList));
-
+  if (m_countriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> countriesJsonList(m_countries.size());
+    for (unsigned countriesIndex = 0; countriesIndex < countriesJsonList.GetLength(); ++countriesIndex) {
+      countriesJsonList[countriesIndex].AsString(m_countries[countriesIndex]);
+    }
+    payload.WithArray("Countries", std::move(countriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/RemoveFlowVpcInterfaceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/RemoveFlowVpcInterfaceRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RemoveFlowVpcInterfaceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String RemoveFlowVpcInterfaceRequest::SerializePayload() const { return {}; }

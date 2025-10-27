@@ -12,61 +12,42 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartFileTransferRequest::SerializePayload() const
-{
+Aws::String StartFileTransferRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorIdHasBeenSet)
-  {
-   payload.WithString("ConnectorId", m_connectorId);
-
+  if (m_connectorIdHasBeenSet) {
+    payload.WithString("ConnectorId", m_connectorId);
   }
 
-  if(m_sendFilePathsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sendFilePathsJsonList(m_sendFilePaths.size());
-   for(unsigned sendFilePathsIndex = 0; sendFilePathsIndex < sendFilePathsJsonList.GetLength(); ++sendFilePathsIndex)
-   {
-     sendFilePathsJsonList[sendFilePathsIndex].AsString(m_sendFilePaths[sendFilePathsIndex]);
-   }
-   payload.WithArray("SendFilePaths", std::move(sendFilePathsJsonList));
-
+  if (m_sendFilePathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sendFilePathsJsonList(m_sendFilePaths.size());
+    for (unsigned sendFilePathsIndex = 0; sendFilePathsIndex < sendFilePathsJsonList.GetLength(); ++sendFilePathsIndex) {
+      sendFilePathsJsonList[sendFilePathsIndex].AsString(m_sendFilePaths[sendFilePathsIndex]);
+    }
+    payload.WithArray("SendFilePaths", std::move(sendFilePathsJsonList));
   }
 
-  if(m_retrieveFilePathsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> retrieveFilePathsJsonList(m_retrieveFilePaths.size());
-   for(unsigned retrieveFilePathsIndex = 0; retrieveFilePathsIndex < retrieveFilePathsJsonList.GetLength(); ++retrieveFilePathsIndex)
-   {
-     retrieveFilePathsJsonList[retrieveFilePathsIndex].AsString(m_retrieveFilePaths[retrieveFilePathsIndex]);
-   }
-   payload.WithArray("RetrieveFilePaths", std::move(retrieveFilePathsJsonList));
-
+  if (m_retrieveFilePathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> retrieveFilePathsJsonList(m_retrieveFilePaths.size());
+    for (unsigned retrieveFilePathsIndex = 0; retrieveFilePathsIndex < retrieveFilePathsJsonList.GetLength(); ++retrieveFilePathsIndex) {
+      retrieveFilePathsJsonList[retrieveFilePathsIndex].AsString(m_retrieveFilePaths[retrieveFilePathsIndex]);
+    }
+    payload.WithArray("RetrieveFilePaths", std::move(retrieveFilePathsJsonList));
   }
 
-  if(m_localDirectoryPathHasBeenSet)
-  {
-   payload.WithString("LocalDirectoryPath", m_localDirectoryPath);
-
+  if (m_localDirectoryPathHasBeenSet) {
+    payload.WithString("LocalDirectoryPath", m_localDirectoryPath);
   }
 
-  if(m_remoteDirectoryPathHasBeenSet)
-  {
-   payload.WithString("RemoteDirectoryPath", m_remoteDirectoryPath);
-
+  if (m_remoteDirectoryPathHasBeenSet) {
+    payload.WithString("RemoteDirectoryPath", m_remoteDirectoryPath);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartFileTransferRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartFileTransferRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.StartFileTransfer"));
   return headers;
-
 }
-
-
-
-

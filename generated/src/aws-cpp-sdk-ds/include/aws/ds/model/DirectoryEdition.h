@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class DirectoryEdition
-  {
-    NOT_SET,
-    Enterprise,
-    Standard,
-    Hybrid
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class DirectoryEdition { NOT_SET, Enterprise, Standard, Hybrid };
 
-namespace DirectoryEditionMapper
-{
+namespace DirectoryEditionMapper {
 AWS_DIRECTORYSERVICE_API DirectoryEdition GetDirectoryEditionForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForDirectoryEdition(DirectoryEdition value);
-} // namespace DirectoryEditionMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace DirectoryEditionMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

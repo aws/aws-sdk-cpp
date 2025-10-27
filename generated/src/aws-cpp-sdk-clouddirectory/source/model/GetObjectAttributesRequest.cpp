@@ -13,56 +13,40 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetObjectAttributesRequest::SerializePayload() const
-{
+Aws::String GetObjectAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
-  if(m_schemaFacetHasBeenSet)
-  {
-   payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
-
+  if (m_schemaFacetHasBeenSet) {
+    payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
   }
 
-  if(m_attributeNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
-   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
-   {
-     attributeNamesJsonList[attributeNamesIndex].AsString(m_attributeNames[attributeNamesIndex]);
-   }
-   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
-
+  if (m_attributeNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
+    for (unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex) {
+      attributeNamesJsonList[attributeNamesIndex].AsString(m_attributeNames[attributeNamesIndex]);
+    }
+    payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetObjectAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetObjectAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_directoryArnHasBeenSet)
-  {
+  if (m_directoryArnHasBeenSet) {
     ss << m_directoryArn;
-    headers.emplace("x-amz-data-partition",  ss.str());
+    headers.emplace("x-amz-data-partition", ss.str());
     ss.str("");
   }
 
-  if(m_consistencyLevelHasBeenSet && m_consistencyLevel != ConsistencyLevel::NOT_SET)
-  {
+  if (m_consistencyLevelHasBeenSet && m_consistencyLevel != ConsistencyLevel::NOT_SET) {
     headers.emplace("x-amz-consistency-level", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }
 
   return headers;
-
 }
-
-
-
-

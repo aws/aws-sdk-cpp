@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateVpcEndpointConnectionNotificationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateVpcEndpointConnectionNotificationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateVpcEndpointConnectionNotificationRequest::SerializePayload() const
-{
+Aws::String CreateVpcEndpointConnectionNotificationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateVpcEndpointConnectionNotification&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_serviceIdHasBeenSet)
-  {
+  if (m_serviceIdHasBeenSet) {
     ss << "ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
   }
 
-  if(m_vpcEndpointIdHasBeenSet)
-  {
+  if (m_vpcEndpointIdHasBeenSet) {
     ss << "VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
 
-  if(m_connectionNotificationArnHasBeenSet)
-  {
+  if (m_connectionNotificationArnHasBeenSet) {
     ss << "ConnectionNotificationArn=" << StringUtils::URLEncode(m_connectionNotificationArn.c_str()) << "&";
   }
 
-  if(m_connectionEventsHasBeenSet)
-  {
+  if (m_connectionEventsHasBeenSet) {
     unsigned connectionEventsCount = 1;
-    for(auto& item : m_connectionEvents)
-    {
-      ss << "ConnectionEvents." << connectionEventsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_connectionEvents) {
+      ss << "ConnectionEvents." << connectionEventsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       connectionEventsCount++;
     }
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -54,8 +45,4 @@ Aws::String CreateVpcEndpointConnectionNotificationRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  CreateVpcEndpointConnectionNotificationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateVpcEndpointConnectionNotificationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

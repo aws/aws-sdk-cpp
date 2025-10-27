@@ -7,25 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class VerifySoftwareTokenResponseType
-  {
-    NOT_SET,
-    SUCCESS,
-    ERROR_
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class VerifySoftwareTokenResponseType { NOT_SET, SUCCESS, ERROR_ };
 
-namespace VerifySoftwareTokenResponseTypeMapper
-{
+namespace VerifySoftwareTokenResponseTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResponseType GetVerifySoftwareTokenResponseTypeForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForVerifySoftwareTokenResponseType(VerifySoftwareTokenResponseType value);
-} // namespace VerifySoftwareTokenResponseTypeMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace VerifySoftwareTokenResponseTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

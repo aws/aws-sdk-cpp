@@ -5,12 +5,8 @@
 
 #include <aws/cloudtrail/CloudTrailEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudTrail
-} // namespace Aws
+namespace Aws {
+namespace CloudTrail {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudTrail
+}  // namespace Aws

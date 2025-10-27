@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-RelatedItemEventIncludedData::RelatedItemEventIncludedData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelatedItemEventIncludedData::RelatedItemEventIncludedData(JsonView jsonValue) { *this = jsonValue; }
 
-RelatedItemEventIncludedData& RelatedItemEventIncludedData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("includeContent"))
-  {
+RelatedItemEventIncludedData& RelatedItemEventIncludedData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("includeContent")) {
     m_includeContent = jsonValue.GetBool("includeContent");
     m_includeContentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RelatedItemEventIncludedData::Jsonize() const
-{
+JsonValue RelatedItemEventIncludedData::Jsonize() const {
   JsonValue payload;
 
-  if(m_includeContentHasBeenSet)
-  {
-   payload.WithBool("includeContent", m_includeContent);
-
+  if (m_includeContentHasBeenSet) {
+    payload.WithBool("includeContent", m_includeContent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

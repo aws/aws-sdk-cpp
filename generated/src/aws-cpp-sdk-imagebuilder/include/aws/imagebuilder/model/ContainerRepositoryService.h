@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class ContainerRepositoryService
-  {
-    NOT_SET,
-    ECR
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class ContainerRepositoryService { NOT_SET, ECR };
 
-namespace ContainerRepositoryServiceMapper
-{
+namespace ContainerRepositoryServiceMapper {
 AWS_IMAGEBUILDER_API ContainerRepositoryService GetContainerRepositoryServiceForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForContainerRepositoryService(ContainerRepositoryService value);
-} // namespace ContainerRepositoryServiceMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace ContainerRepositoryServiceMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

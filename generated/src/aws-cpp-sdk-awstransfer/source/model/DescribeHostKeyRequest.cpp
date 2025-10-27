@@ -12,33 +12,22 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeHostKeyRequest::SerializePayload() const
-{
+Aws::String DescribeHostKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_hostKeyIdHasBeenSet)
-  {
-   payload.WithString("HostKeyId", m_hostKeyId);
-
+  if (m_hostKeyIdHasBeenSet) {
+    payload.WithString("HostKeyId", m_hostKeyId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeHostKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeHostKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeHostKey"));
   return headers;
-
 }
-
-
-
-

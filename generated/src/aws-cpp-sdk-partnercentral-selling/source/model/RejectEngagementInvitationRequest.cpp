@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/partnercentral-selling/model/RejectEngagementInvitationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-selling/model/RejectEngagementInvitationRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RejectEngagementInvitationRequest::SerializePayload() const
-{
+Aws::String RejectEngagementInvitationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_catalogHasBeenSet)
-  {
-   payload.WithString("Catalog", m_catalog);
-
+  if (m_catalogHasBeenSet) {
+    payload.WithString("Catalog", m_catalog);
   }
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
-  if(m_rejectionReasonHasBeenSet)
-  {
-   payload.WithString("RejectionReason", m_rejectionReason);
-
+  if (m_rejectionReasonHasBeenSet) {
+    payload.WithString("RejectionReason", m_rejectionReason);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RejectEngagementInvitationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RejectEngagementInvitationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSPartnerCentralSelling.RejectEngagementInvitation"));
   return headers;
-
 }
-
-
-
-

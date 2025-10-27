@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
-  enum class RuleOrder
-  {
-    NOT_SET,
-    DEFAULT_ACTION_ORDER,
-    STRICT_ORDER
-  };
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+enum class RuleOrder { NOT_SET, DEFAULT_ACTION_ORDER, STRICT_ORDER };
 
-namespace RuleOrderMapper
-{
+namespace RuleOrderMapper {
 AWS_NETWORKFIREWALL_API RuleOrder GetRuleOrderForName(const Aws::String& name);
 
 AWS_NETWORKFIREWALL_API Aws::String GetNameForRuleOrder(RuleOrder value);
-} // namespace RuleOrderMapper
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace RuleOrderMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteSpanScooterAccessAttribute
-  {
-    NOT_SET,
-    Allowed,
-    NoThroughTraffic,
-    TollRoad
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteSpanScooterAccessAttribute { NOT_SET, Allowed, NoThroughTraffic, TollRoad };
 
-namespace RouteSpanScooterAccessAttributeMapper
-{
+namespace RouteSpanScooterAccessAttributeMapper {
 AWS_GEOROUTES_API RouteSpanScooterAccessAttribute GetRouteSpanScooterAccessAttributeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteSpanScooterAccessAttribute(RouteSpanScooterAccessAttribute value);
-} // namespace RouteSpanScooterAccessAttributeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteSpanScooterAccessAttributeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

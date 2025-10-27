@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class KafkaSaslMechanism
-  {
-    NOT_SET,
-    scram_sha_512,
-    plain
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class KafkaSaslMechanism { NOT_SET, scram_sha_512, plain };
 
-namespace KafkaSaslMechanismMapper
-{
+namespace KafkaSaslMechanismMapper {
 AWS_DATABASEMIGRATIONSERVICE_API KafkaSaslMechanism GetKafkaSaslMechanismForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForKafkaSaslMechanism(KafkaSaslMechanism value);
-} // namespace KafkaSaslMechanismMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace KafkaSaslMechanismMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

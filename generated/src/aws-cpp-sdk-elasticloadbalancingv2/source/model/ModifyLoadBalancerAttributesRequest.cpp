@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
-{
+Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyLoadBalancerAttributes&";
-  if(m_loadBalancerArnHasBeenSet)
-  {
+  if (m_loadBalancerArnHasBeenSet) {
     ss << "LoadBalancerArn=" << StringUtils::URLEncode(m_loadBalancerArn.c_str()) << "&";
   }
 
-  if(m_attributesHasBeenSet)
-  {
-    if (m_attributes.empty())
-    {
+  if (m_attributesHasBeenSet) {
+    if (m_attributes.empty()) {
       ss << "Attributes=&";
-    }
-    else
-    {
+    } else {
       unsigned attributesCount = 1;
-      for(auto& item : m_attributes)
-      {
+      for (auto& item : m_attributes) {
         item.OutputToStream(ss, "Attributes.member.", attributesCount, "");
         attributesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

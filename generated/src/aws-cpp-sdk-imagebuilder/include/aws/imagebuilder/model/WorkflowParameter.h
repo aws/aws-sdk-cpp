@@ -4,75 +4,84 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
 
+/**
+ * <p>Contains a key/value pair that sets the named workflow
+ * parameter.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/WorkflowParameter">AWS
+ * API Reference</a></p>
+ */
+class WorkflowParameter {
+ public:
+  AWS_IMAGEBUILDER_API WorkflowParameter() = default;
+  AWS_IMAGEBUILDER_API WorkflowParameter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API WorkflowParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains a key/value pair that sets the named workflow
-   * parameter.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/WorkflowParameter">AWS
-   * API Reference</a></p>
+   * <p>The name of the workflow parameter to set.</p>
    */
-  class WorkflowParameter
-  {
-  public:
-    AWS_IMAGEBUILDER_API WorkflowParameter() = default;
-    AWS_IMAGEBUILDER_API WorkflowParameter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API WorkflowParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  WorkflowParameter& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Sets the value for the named workflow parameter.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::Vector<Aws::String>>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::Vector<Aws::String>>
+  WorkflowParameter& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  template <typename ValueT = Aws::String>
+  WorkflowParameter& AddValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value.emplace_back(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the workflow parameter to set.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    WorkflowParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  Aws::Vector<Aws::String> m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Sets the value for the named workflow parameter.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::Vector<Aws::String>>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::Vector<Aws::String>>
-    WorkflowParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    template<typename ValueT = Aws::String>
-    WorkflowParameter& AddValue(ValueT&& value) { m_valueHasBeenSet = true; m_value.emplace_back(std::forward<ValueT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

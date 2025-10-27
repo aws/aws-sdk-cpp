@@ -4,49 +4,44 @@
  */
 
 #pragma once
-#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
-  enum class SchemaAttributeType
-  {
-    NOT_SET,
-    NAME,
-    NAME_FIRST,
-    NAME_MIDDLE,
-    NAME_LAST,
-    ADDRESS,
-    ADDRESS_STREET1,
-    ADDRESS_STREET2,
-    ADDRESS_STREET3,
-    ADDRESS_CITY,
-    ADDRESS_STATE,
-    ADDRESS_COUNTRY,
-    ADDRESS_POSTALCODE,
-    PHONE,
-    PHONE_NUMBER,
-    PHONE_COUNTRYCODE,
-    EMAIL_ADDRESS,
-    UNIQUE_ID,
-    DATE,
-    STRING,
-    PROVIDER_ID,
-    IPV4,
-    IPV6,
-    MAID
-  };
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
+enum class SchemaAttributeType {
+  NOT_SET,
+  NAME,
+  NAME_FIRST,
+  NAME_MIDDLE,
+  NAME_LAST,
+  ADDRESS,
+  ADDRESS_STREET1,
+  ADDRESS_STREET2,
+  ADDRESS_STREET3,
+  ADDRESS_CITY,
+  ADDRESS_STATE,
+  ADDRESS_COUNTRY,
+  ADDRESS_POSTALCODE,
+  PHONE,
+  PHONE_NUMBER,
+  PHONE_COUNTRYCODE,
+  EMAIL_ADDRESS,
+  UNIQUE_ID,
+  DATE,
+  STRING,
+  PROVIDER_ID,
+  IPV4,
+  IPV6,
+  MAID
+};
 
-namespace SchemaAttributeTypeMapper
-{
+namespace SchemaAttributeTypeMapper {
 AWS_ENTITYRESOLUTION_API SchemaAttributeType GetSchemaAttributeTypeForName(const Aws::String& name);
 
 AWS_ENTITYRESOLUTION_API Aws::String GetNameForSchemaAttributeType(SchemaAttributeType value);
-} // namespace SchemaAttributeTypeMapper
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace SchemaAttributeTypeMapper
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

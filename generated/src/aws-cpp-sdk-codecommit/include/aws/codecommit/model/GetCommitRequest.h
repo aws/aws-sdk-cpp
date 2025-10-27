@@ -4,71 +4,78 @@
  */
 
 #pragma once
-#include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
+#include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
+/**
+ * <p>Represents the input of a get commit operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommitInput">AWS
+ * API Reference</a></p>
+ */
+class GetCommitRequest : public CodeCommitRequest {
+ public:
+  AWS_CODECOMMIT_API GetCommitRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetCommit"; }
+
+  AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
+
+  AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
-   * <p>Represents the input of a get commit operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommitInput">AWS
-   * API Reference</a></p>
+   * <p>The name of the repository to which the commit was made.</p>
    */
-  class GetCommitRequest : public CodeCommitRequest
-  {
-  public:
-    AWS_CODECOMMIT_API GetCommitRequest() = default;
+  inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
+  inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+  template <typename RepositoryNameT = Aws::String>
+  void SetRepositoryName(RepositoryNameT&& value) {
+    m_repositoryNameHasBeenSet = true;
+    m_repositoryName = std::forward<RepositoryNameT>(value);
+  }
+  template <typename RepositoryNameT = Aws::String>
+  GetCommitRequest& WithRepositoryName(RepositoryNameT&& value) {
+    SetRepositoryName(std::forward<RepositoryNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetCommit"; }
+  ///@{
+  /**
+   * <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+   */
+  inline const Aws::String& GetCommitId() const { return m_commitId; }
+  inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
+  template <typename CommitIdT = Aws::String>
+  void SetCommitId(CommitIdT&& value) {
+    m_commitIdHasBeenSet = true;
+    m_commitId = std::forward<CommitIdT>(value);
+  }
+  template <typename CommitIdT = Aws::String>
+  GetCommitRequest& WithCommitId(CommitIdT&& value) {
+    SetCommitId(std::forward<CommitIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_repositoryName;
+  bool m_repositoryNameHasBeenSet = false;
 
-    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
+  Aws::String m_commitId;
+  bool m_commitIdHasBeenSet = false;
+};
 
-    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the repository to which the commit was made.</p>
-     */
-    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
-    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    template<typename RepositoryNameT = Aws::String>
-    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
-    template<typename RepositoryNameT = Aws::String>
-    GetCommitRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-     */
-    inline const Aws::String& GetCommitId() const { return m_commitId; }
-    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
-    template<typename CommitIdT = Aws::String>
-    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
-    template<typename CommitIdT = Aws::String>
-    GetCommitRequest& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet = false;
-
-    Aws::String m_commitId;
-    bool m_commitIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

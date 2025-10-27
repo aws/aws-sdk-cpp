@@ -4,56 +4,57 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
-#include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/LightsailRequest.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
+/**
+ */
+class GetDistributionLatestCacheResetRequest : public LightsailRequest {
+ public:
+  AWS_LIGHTSAIL_API GetDistributionLatestCacheResetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetDistributionLatestCacheReset"; }
+
+  AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
+
+  AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the distribution for which to return the timestamp of the last
+   * cache reset.</p> <p>Use the <code>GetDistributions</code> action to get a list
+   * of distribution names that you can specify.</p> <p>When omitted, the response
+   * includes the latest cache reset timestamp of all your distributions.</p>
    */
-  class GetDistributionLatestCacheResetRequest : public LightsailRequest
-  {
-  public:
-    AWS_LIGHTSAIL_API GetDistributionLatestCacheResetRequest() = default;
+  inline const Aws::String& GetDistributionName() const { return m_distributionName; }
+  inline bool DistributionNameHasBeenSet() const { return m_distributionNameHasBeenSet; }
+  template <typename DistributionNameT = Aws::String>
+  void SetDistributionName(DistributionNameT&& value) {
+    m_distributionNameHasBeenSet = true;
+    m_distributionName = std::forward<DistributionNameT>(value);
+  }
+  template <typename DistributionNameT = Aws::String>
+  GetDistributionLatestCacheResetRequest& WithDistributionName(DistributionNameT&& value) {
+    SetDistributionName(std::forward<DistributionNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_distributionName;
+  bool m_distributionNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetDistributionLatestCacheReset"; }
-
-    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
-
-    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the distribution for which to return the timestamp of the last
-     * cache reset.</p> <p>Use the <code>GetDistributions</code> action to get a list
-     * of distribution names that you can specify.</p> <p>When omitted, the response
-     * includes the latest cache reset timestamp of all your distributions.</p>
-     */
-    inline const Aws::String& GetDistributionName() const { return m_distributionName; }
-    inline bool DistributionNameHasBeenSet() const { return m_distributionNameHasBeenSet; }
-    template<typename DistributionNameT = Aws::String>
-    void SetDistributionName(DistributionNameT&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::forward<DistributionNameT>(value); }
-    template<typename DistributionNameT = Aws::String>
-    GetDistributionLatestCacheResetRequest& WithDistributionName(DistributionNameT&& value) { SetDistributionName(std::forward<DistributionNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

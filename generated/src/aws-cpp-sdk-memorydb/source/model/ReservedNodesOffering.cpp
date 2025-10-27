@@ -3,58 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/ReservedNodesOffering.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/memorydb/model/ReservedNodesOffering.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
 
-ReservedNodesOffering::ReservedNodesOffering(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservedNodesOffering::ReservedNodesOffering(JsonView jsonValue) { *this = jsonValue; }
 
-ReservedNodesOffering& ReservedNodesOffering::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReservedNodesOfferingId"))
-  {
+ReservedNodesOffering& ReservedNodesOffering::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReservedNodesOfferingId")) {
     m_reservedNodesOfferingId = jsonValue.GetString("ReservedNodesOfferingId");
     m_reservedNodesOfferingIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NodeType"))
-  {
+  if (jsonValue.ValueExists("NodeType")) {
     m_nodeType = jsonValue.GetString("NodeType");
     m_nodeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Duration"))
-  {
+  if (jsonValue.ValueExists("Duration")) {
     m_duration = jsonValue.GetInteger("Duration");
     m_durationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FixedPrice"))
-  {
+  if (jsonValue.ValueExists("FixedPrice")) {
     m_fixedPrice = jsonValue.GetDouble("FixedPrice");
     m_fixedPriceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OfferingType"))
-  {
+  if (jsonValue.ValueExists("OfferingType")) {
     m_offeringType = jsonValue.GetString("OfferingType");
     m_offeringTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecurringCharges"))
-  {
+  if (jsonValue.ValueExists("RecurringCharges")) {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
-    for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
-    {
+    for (unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex) {
       m_recurringCharges.push_back(recurringChargesJsonList[recurringChargesIndex].AsObject());
     }
     m_recurringChargesHasBeenSet = true;
@@ -62,54 +48,40 @@ ReservedNodesOffering& ReservedNodesOffering::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ReservedNodesOffering::Jsonize() const
-{
+JsonValue ReservedNodesOffering::Jsonize() const {
   JsonValue payload;
 
-  if(m_reservedNodesOfferingIdHasBeenSet)
-  {
-   payload.WithString("ReservedNodesOfferingId", m_reservedNodesOfferingId);
-
+  if (m_reservedNodesOfferingIdHasBeenSet) {
+    payload.WithString("ReservedNodesOfferingId", m_reservedNodesOfferingId);
   }
 
-  if(m_nodeTypeHasBeenSet)
-  {
-   payload.WithString("NodeType", m_nodeType);
-
+  if (m_nodeTypeHasBeenSet) {
+    payload.WithString("NodeType", m_nodeType);
   }
 
-  if(m_durationHasBeenSet)
-  {
-   payload.WithInteger("Duration", m_duration);
-
+  if (m_durationHasBeenSet) {
+    payload.WithInteger("Duration", m_duration);
   }
 
-  if(m_fixedPriceHasBeenSet)
-  {
-   payload.WithDouble("FixedPrice", m_fixedPrice);
-
+  if (m_fixedPriceHasBeenSet) {
+    payload.WithDouble("FixedPrice", m_fixedPrice);
   }
 
-  if(m_offeringTypeHasBeenSet)
-  {
-   payload.WithString("OfferingType", m_offeringType);
-
+  if (m_offeringTypeHasBeenSet) {
+    payload.WithString("OfferingType", m_offeringType);
   }
 
-  if(m_recurringChargesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recurringChargesJsonList(m_recurringCharges.size());
-   for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
-   {
-     recurringChargesJsonList[recurringChargesIndex].AsObject(m_recurringCharges[recurringChargesIndex].Jsonize());
-   }
-   payload.WithArray("RecurringCharges", std::move(recurringChargesJsonList));
-
+  if (m_recurringChargesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recurringChargesJsonList(m_recurringCharges.size());
+    for (unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex) {
+      recurringChargesJsonList[recurringChargesIndex].AsObject(m_recurringCharges[recurringChargesIndex].Jsonize());
+    }
+    payload.WithArray("RecurringCharges", std::move(recurringChargesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

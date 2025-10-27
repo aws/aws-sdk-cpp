@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteGlobalReplicationGroupResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DeleteGlobalReplicationGroupResult.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteGlobalReplicationGroupResult::DeleteGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteGlobalReplicationGroupResult::DeleteGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DeleteGlobalReplicationGroupResult& DeleteGlobalReplicationGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteGlobalReplicationGroupResult& DeleteGlobalReplicationGroupResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteGlobalReplicationGroupResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteGlobalReplicationGroupResult")) {
     resultNode = rootNode.FirstChild("DeleteGlobalReplicationGroupResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode globalReplicationGroupNode = resultNode.FirstChild("GlobalReplicationGroup");
-    if(!globalReplicationGroupNode.IsNull())
-    {
+    if (!globalReplicationGroupNode.IsNull()) {
       m_globalReplicationGroup = globalReplicationGroupNode;
       m_globalReplicationGroupHasBeenSet = true;
     }
@@ -46,7 +41,8 @@ DeleteGlobalReplicationGroupResult& DeleteGlobalReplicationGroupResult::operator
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DeleteGlobalReplicationGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DeleteGlobalReplicationGroupResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

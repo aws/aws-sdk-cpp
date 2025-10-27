@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/DnsEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/DnsEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-DnsEntry::DnsEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DnsEntry::DnsEntry(JsonView jsonValue) { *this = jsonValue; }
 
-DnsEntry& DnsEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainName"))
-  {
+DnsEntry& DnsEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hostedZoneId"))
-  {
+  if (jsonValue.ValueExists("hostedZoneId")) {
     m_hostedZoneId = jsonValue.GetString("hostedZoneId");
     m_hostedZoneIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DnsEntry::Jsonize() const
-{
+JsonValue DnsEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
-  if(m_hostedZoneIdHasBeenSet)
-  {
-   payload.WithString("hostedZoneId", m_hostedZoneId);
-
+  if (m_hostedZoneIdHasBeenSet) {
+    payload.WithString("hostedZoneId", m_hostedZoneId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

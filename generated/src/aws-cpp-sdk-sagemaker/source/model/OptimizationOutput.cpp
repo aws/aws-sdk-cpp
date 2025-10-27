@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/OptimizationOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/OptimizationOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-OptimizationOutput::OptimizationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OptimizationOutput::OptimizationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-OptimizationOutput& OptimizationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecommendedInferenceImage"))
-  {
+OptimizationOutput& OptimizationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecommendedInferenceImage")) {
     m_recommendedInferenceImage = jsonValue.GetString("RecommendedInferenceImage");
     m_recommendedInferenceImageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OptimizationOutput::Jsonize() const
-{
+JsonValue OptimizationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendedInferenceImageHasBeenSet)
-  {
-   payload.WithString("RecommendedInferenceImage", m_recommendedInferenceImage);
-
+  if (m_recommendedInferenceImageHasBeenSet) {
+    payload.WithString("RecommendedInferenceImage", m_recommendedInferenceImage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

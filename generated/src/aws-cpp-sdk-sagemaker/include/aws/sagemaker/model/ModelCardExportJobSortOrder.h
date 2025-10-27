@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ModelCardExportJobSortOrder
-  {
-    NOT_SET,
-    Ascending,
-    Descending
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ModelCardExportJobSortOrder { NOT_SET, Ascending, Descending };
 
-namespace ModelCardExportJobSortOrderMapper
-{
+namespace ModelCardExportJobSortOrderMapper {
 AWS_SAGEMAKER_API ModelCardExportJobSortOrder GetModelCardExportJobSortOrderForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForModelCardExportJobSortOrder(ModelCardExportJobSortOrder value);
-} // namespace ModelCardExportJobSortOrderMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ModelCardExportJobSortOrderMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Redshift;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace RedshiftErrorMapper
-{
+namespace Aws {
+namespace Redshift {
+namespace RedshiftErrorMapper {
 
 static const int AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileNotFoundFault");
 static const int TABLE_RESTORE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TableRestoreNotFoundFault");
@@ -81,7 +78,8 @@ static const int UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH = HashingUtils::Has
 static const int RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyExists");
 static const int HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateQuotaExceededFault");
 static const int HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmConfigurationQuotaExceededFault");
-static const int ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationsPerClusterLimitExceeded");
+static const int ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH =
+    HashingUtils::HashString("EndpointAuthorizationsPerClusterLimitExceeded");
 static const int SUBSCRIPTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionNotFound");
 static const int CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupQuotaExceeded");
 static const int INVALID_SCHEDULED_ACTION_FAULT_HASH = HashingUtils::HashString("InvalidScheduledAction");
@@ -132,7 +130,8 @@ static const int ACCESS_TO_SNAPSHOT_DENIED_FAULT_HASH = HashingUtils::HashString
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
 static const int AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileAlreadyExistsFault");
 static const int SNAPSHOT_COPY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyDisabledFault");
-static const int BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("BatchModifyClusterSnapshotsLimitExceededFault");
+static const int BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH =
+    HashingUtils::HashString("BatchModifyClusterSnapshotsLimitExceededFault");
 static const int CLUSTER_ON_LATEST_REVISION_FAULT_HASH = HashingUtils::HashString("ClusterOnLatestRevision");
 static const int INTEGRATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationNotFoundFault");
 static const int CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupAlreadyExists");
@@ -161,748 +160,529 @@ static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceN
 static const int CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupAlreadyExists");
 static const int RESERVED_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeNotFound");
 
-
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
 which allows constant time lookup. The chain has been broken into helper functions
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
+  if (hashCode == AUTHENTICATION_PROFILE_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == TABLE_RESTORE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == TABLE_RESTORE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TABLE_RESTORE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_S3_KEY_PREFIX_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_S3_KEY_PREFIX_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_S3_KEY_PREFIX_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_DATA_SHARE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_DATA_SHARE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_DATA_SHARE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == CLUSTER_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_TAG_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_TAG_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_TAG_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == TABLE_LIMIT_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == TABLE_LIMIT_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TABLE_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::BATCH_DELETE_REQUEST_SIZE_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_SUBNET_HASH)
-  {
+  } else if (hashCode == INVALID_SUBNET_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_TRACK_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_CLUSTER_TRACK_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_TRACK_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_ELASTIC_IP_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_ELASTIC_IP_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ELASTIC_IP_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == IPV6_CIDR_BLOCK_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == IPV6_CIDR_BLOCK_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::IPV6_CIDR_BLOCK_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINT_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == ENDPOINT_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
-  {
+  } else if (hashCode == SUBNET_ALREADY_IN_USE_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBNET_ALREADY_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CUSTOM_CNAME_ASSOCIATION_FAULT_HASH)
-  {
+  } else if (hashCode == CUSTOM_CNAME_ASSOCIATION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CUSTOM_CNAME_ASSOCIATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_CONFLICT_OPERATION_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_CONFLICT_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTEGRATION_CONFLICT_OPERATION_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_CONFLICT_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_SCHEDULE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_SCHEDULE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SCHEDULE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_SOURCE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_SOURCE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_SOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINT_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == ENDPOINT_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == CLUSTER_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_USAGE_LIMIT_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_USAGE_LIMIT_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_USAGE_LIMIT_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == DEPENDENT_SERVICE_ACCESS_DENIED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_ACCESS_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPENDENT_SERVICE_ACCESS_DENIED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_ACCESS_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_CLUSTER_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_SNAPSHOT_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_CLUSTER_SNAPSHOT_STATE_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_POLICY_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_POLICY_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_POLICY_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHORIZATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH)
-  {
+  } else if (hashCode == SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INCOMPATIBLE_ORDERABLE_OPTIONS_HASH)
-  {
+  } else if (hashCode == INCOMPATIBLE_ORDERABLE_OPTIONS_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INCOMPATIBLE_ORDERABLE_OPTIONS), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_ALREADY_ENABLED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_ALREADY_ENABLED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_COPY_ALREADY_ENABLED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_ALREADY_ENABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_OFFERING_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_OFFERING_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == UNAUTHORIZED_OPERATION_HASH)
-  {
+  } else if (hashCode == UNAUTHORIZED_OPERATION_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNAUTHORIZED_OPERATION), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_SEVERITY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::IN_PROGRESS_TABLE_RESTORE_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
-  {
+  } else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == BUCKET_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == BUCKET_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::BUCKET_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == AUTHORIZATION_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == AUTHORIZATION_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHORIZATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CONFIGURATION_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HSM_CONFIGURATION_ALREADY_EXISTS_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == REDSHIFT_IDC_APPLICATION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == REDSHIFT_IDC_APPLICATION_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNAUTHORIZED_PARTNER_INTEGRATION_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNAUTHORIZED_PARTNER_INTEGRATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATIONS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SUBSCRIPTION_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == SUBSCRIPTION_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_SCHEDULED_ACTION_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_SCHEDULED_ACTION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SCHEDULED_ACTION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_ALREADY_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_ALREADY_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH)
-  {
+  } else if (hashCode == UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNKNOWN_SNAPSHOT_COPY_REGION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::USAGE_LIMIT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_TABLE_RESTORE_ARGUMENT_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_TABLE_RESTORE_ARGUMENT_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == PARTNER_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == PARTNER_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::PARTNER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_CONFLICT_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_CONFLICT_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_CONFLICT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ACCESS_TO_CLUSTER_DENIED_FAULT_HASH)
-  {
+  } else if (hashCode == ACCESS_TO_CLUSTER_DENIED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ACCESS_TO_CLUSTER_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == UNSUPPORTED_OPTION_FAULT_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_OPTION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNSUPPORTED_OPTION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_S3_BUCKET_POLICY_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_S3_BUCKET_POLICY_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CONFLICT_POLICY_UPDATE_FAULT_HASH)
-  {
+  } else if (hashCode == CONFLICT_POLICY_UPDATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CONFLICT_POLICY_UPDATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESIZE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == RESIZE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESIZE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_NAMESPACE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_NAMESPACE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_NAMESPACE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_ENDPOINT_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_ENDPOINT_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ENDPOINT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CONFIGURATION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CONFIGURATION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_RETENTION_PERIOD_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_RETENTION_PERIOD_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_RETENTION_PERIOD_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_TARGET_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_TARGET_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_TARGET_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == CLUSTER_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SUBNET_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_SUBSCRIPTION_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_SUBSCRIPTION_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SUBSCRIPTION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_ALREADY_EXISTS_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_AUTHORIZATION_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_AUTHORIZATION_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_AUTHORIZATION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_RESERVED_NODE_STATE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_RESERVED_NODE_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_RESERVED_NODE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == DEPENDENT_SERVICE_UNAVAILABLE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_UNAVAILABLE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPENDENT_SERVICE_UNAVAILABLE_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_UNAVAILABLE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ACCESS_TO_SNAPSHOT_DENIED_FAULT_HASH)
-  {
+  } else if (hashCode == ACCESS_TO_SNAPSHOT_DENIED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ACCESS_TO_SNAPSHOT_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SNAPSHOT_COPY_DISABLED_FAULT_HASH)
-  {
+  } else if (hashCode == SNAPSHOT_COPY_DISABLED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_ON_LATEST_REVISION_FAULT_HASH)
-  {
+  } else if (hashCode == CLUSTER_ON_LATEST_REVISION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_ON_LATEST_REVISION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == USAGE_LIMIT_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == USAGE_LIMIT_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::USAGE_LIMIT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == COPY_TO_REGION_DISABLED_FAULT_HASH)
-  {
+  } else if (hashCode == COPY_TO_REGION_DISABLED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::COPY_TO_REGION_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;
 }
 
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
-  {
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
+  if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_RESTORE_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_RESTORE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_RESTORE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::S_N_S_TOPIC_ARN_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_S3_BUCKET_NAME_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_S3_BUCKET_NAME_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_S3_BUCKET_NAME_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_MIGRATED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_MIGRATED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_CLUSTER_LIMIT_EXCEEDED_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::DEPENDENT_SERVICE_REQUEST_THROTTLING_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SUBNET_GROUP_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == UNSUPPORTED_OPERATION_FAULT_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_OPERATION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNSUPPORTED_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == TAG_LIMIT_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == TAG_LIMIT_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TAG_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == REDSHIFT_IDC_APPLICATION_NOT_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_NOT_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == REDSHIFT_IDC_APPLICATION_NOT_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_NOT_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT),
+                                 RetryableType::NOT_RETRYABLE);
     return true;
-  }
-  else if (hashCode == RESERVED_NODE_NOT_FOUND_FAULT_HASH)
-  {
+  } else if (hashCode == RESERVED_NODE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;
 }
 
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
-  if (GetErrorForNameHelper0(hashCode, error))
-  {
+  if (GetErrorForNameHelper0(hashCode, error)) {
     return error;
-  }
-  else if (GetErrorForNameHelper1(hashCode, error))
-  {
+  } else if (GetErrorForNameHelper1(hashCode, error)) {
     return error;
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace RedshiftErrorMapper
-} // namespace Redshift
-} // namespace Aws
+}  // namespace RedshiftErrorMapper
+}  // namespace Redshift
+}  // namespace Aws

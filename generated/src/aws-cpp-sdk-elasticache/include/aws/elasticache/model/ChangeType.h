@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class ChangeType
-  {
-    NOT_SET,
-    immediate,
-    requires_reboot
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class ChangeType { NOT_SET, immediate, requires_reboot };
 
-namespace ChangeTypeMapper
-{
+namespace ChangeTypeMapper {
 AWS_ELASTICACHE_API ChangeType GetChangeTypeForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForChangeType(ChangeType value);
-} // namespace ChangeTypeMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace ChangeTypeMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

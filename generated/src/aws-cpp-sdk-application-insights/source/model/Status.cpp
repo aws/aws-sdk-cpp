@@ -4,90 +4,70 @@
  */
 
 #include <aws/application-insights/model/Status.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ApplicationInsights {
+namespace Model {
+namespace StatusMapper {
 
-namespace Aws
-{
-  namespace ApplicationInsights
-  {
-    namespace Model
-    {
-      namespace StatusMapper
-      {
+static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
+static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
+static const int RECOVERING_HASH = HashingUtils::HashString("RECOVERING");
 
-        static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
-        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
-        static const int RECOVERING_HASH = HashingUtils::HashString("RECOVERING");
+Status GetStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IGNORE_HASH) {
+    return Status::IGNORE;
+  } else if (hashCode == RESOLVED_HASH) {
+    return Status::RESOLVED;
+  } else if (hashCode == PENDING_HASH) {
+    return Status::PENDING;
+  } else if (hashCode == RECURRING_HASH) {
+    return Status::RECURRING;
+  } else if (hashCode == RECOVERING_HASH) {
+    return Status::RECOVERING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Status>(hashCode);
+  }
 
+  return Status::NOT_SET;
+}
 
-        Status GetStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IGNORE_HASH)
-          {
-            return Status::IGNORE;
-          }
-          else if (hashCode == RESOLVED_HASH)
-          {
-            return Status::RESOLVED;
-          }
-          else if (hashCode == PENDING_HASH)
-          {
-            return Status::PENDING;
-          }
-          else if (hashCode == RECURRING_HASH)
-          {
-            return Status::RECURRING;
-          }
-          else if (hashCode == RECOVERING_HASH)
-          {
-            return Status::RECOVERING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Status>(hashCode);
-          }
+Aws::String GetNameForStatus(Status enumValue) {
+  switch (enumValue) {
+    case Status::NOT_SET:
+      return {};
+    case Status::IGNORE:
+      return "IGNORE";
+    case Status::RESOLVED:
+      return "RESOLVED";
+    case Status::PENDING:
+      return "PENDING";
+    case Status::RECURRING:
+      return "RECURRING";
+    case Status::RECOVERING:
+      return "RECOVERING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Status::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForStatus(Status enumValue)
-        {
-          switch(enumValue)
-          {
-          case Status::NOT_SET:
-            return {};
-          case Status::IGNORE:
-            return "IGNORE";
-          case Status::RESOLVED:
-            return "RESOLVED";
-          case Status::PENDING:
-            return "PENDING";
-          case Status::RECURRING:
-            return "RECURRING";
-          case Status::RECOVERING:
-            return "RECOVERING";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace StatusMapper
-    } // namespace Model
-  } // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace ApplicationInsights
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class CommandNamespace
-  {
-    NOT_SET,
-    AWS_IoT,
-    AWS_IoT_FleetWise
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class CommandNamespace { NOT_SET, AWS_IoT, AWS_IoT_FleetWise };
 
-namespace CommandNamespaceMapper
-{
+namespace CommandNamespaceMapper {
 AWS_IOT_API CommandNamespace GetCommandNamespaceForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForCommandNamespace(CommandNamespace value);
-} // namespace CommandNamespaceMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace CommandNamespaceMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

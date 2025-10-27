@@ -3,29 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListVirtualMFADevicesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListVirtualMFADevicesRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListVirtualMFADevicesRequest::SerializePayload() const
-{
+Aws::String ListVirtualMFADevicesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListVirtualMFADevices&";
-  if(m_assignmentStatusHasBeenSet)
-  {
-    ss << "AssignmentStatus=" << StringUtils::URLEncode(AssignmentStatusTypeMapper::GetNameForAssignmentStatusType(m_assignmentStatus)) << "&";
+  if (m_assignmentStatusHasBeenSet) {
+    ss << "AssignmentStatus=" << StringUtils::URLEncode(AssignmentStatusTypeMapper::GetNameForAssignmentStatusType(m_assignmentStatus))
+       << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +30,4 @@ Aws::String ListVirtualMFADevicesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListVirtualMFADevicesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListVirtualMFADevicesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

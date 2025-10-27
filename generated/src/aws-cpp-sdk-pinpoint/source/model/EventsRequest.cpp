@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/EventsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/EventsRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-EventsRequest::EventsRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventsRequest::EventsRequest(JsonView jsonValue) { *this = jsonValue; }
 
-EventsRequest& EventsRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BatchItem"))
-  {
+EventsRequest& EventsRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BatchItem")) {
     Aws::Map<Aws::String, JsonView> batchItemJsonMap = jsonValue.GetObject("BatchItem").GetAllObjects();
-    for(auto& batchItemItem : batchItemJsonMap)
-    {
+    for (auto& batchItemItem : batchItemJsonMap) {
       m_batchItem[batchItemItem.first] = batchItemItem.second.AsObject();
     }
     m_batchItemHasBeenSet = true;
@@ -37,24 +28,20 @@ EventsRequest& EventsRequest::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EventsRequest::Jsonize() const
-{
+JsonValue EventsRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_batchItemHasBeenSet)
-  {
-   JsonValue batchItemJsonMap;
-   for(auto& batchItemItem : m_batchItem)
-   {
-     batchItemJsonMap.WithObject(batchItemItem.first, batchItemItem.second.Jsonize());
-   }
-   payload.WithObject("BatchItem", std::move(batchItemJsonMap));
-
+  if (m_batchItemHasBeenSet) {
+    JsonValue batchItemJsonMap;
+    for (auto& batchItemItem : m_batchItem) {
+      batchItemJsonMap.WithObject(batchItemItem.first, batchItemItem.second.Jsonize());
+    }
+    payload.WithObject("BatchItem", std::move(batchItemJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
 
-MagneticStoreWriteProperties::MagneticStoreWriteProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MagneticStoreWriteProperties::MagneticStoreWriteProperties(JsonView jsonValue) { *this = jsonValue; }
 
-MagneticStoreWriteProperties& MagneticStoreWriteProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableMagneticStoreWrites"))
-  {
+MagneticStoreWriteProperties& MagneticStoreWriteProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableMagneticStoreWrites")) {
     m_enableMagneticStoreWrites = jsonValue.GetBool("EnableMagneticStoreWrites");
     m_enableMagneticStoreWritesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MagneticStoreRejectedDataLocation"))
-  {
+  if (jsonValue.ValueExists("MagneticStoreRejectedDataLocation")) {
     m_magneticStoreRejectedDataLocation = jsonValue.GetObject("MagneticStoreRejectedDataLocation");
     m_magneticStoreRejectedDataLocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MagneticStoreWriteProperties::Jsonize() const
-{
+JsonValue MagneticStoreWriteProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableMagneticStoreWritesHasBeenSet)
-  {
-   payload.WithBool("EnableMagneticStoreWrites", m_enableMagneticStoreWrites);
-
+  if (m_enableMagneticStoreWritesHasBeenSet) {
+    payload.WithBool("EnableMagneticStoreWrites", m_enableMagneticStoreWrites);
   }
 
-  if(m_magneticStoreRejectedDataLocationHasBeenSet)
-  {
-   payload.WithObject("MagneticStoreRejectedDataLocation", m_magneticStoreRejectedDataLocation.Jsonize());
-
+  if (m_magneticStoreRejectedDataLocationHasBeenSet) {
+    payload.WithObject("MagneticStoreRejectedDataLocation", m_magneticStoreRejectedDataLocation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

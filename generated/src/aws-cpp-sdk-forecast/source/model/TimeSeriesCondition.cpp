@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/TimeSeriesCondition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/TimeSeriesCondition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-TimeSeriesCondition::TimeSeriesCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeSeriesCondition::TimeSeriesCondition(JsonView jsonValue) { *this = jsonValue; }
 
-TimeSeriesCondition& TimeSeriesCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+TimeSeriesCondition& TimeSeriesCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeValue"))
-  {
+  if (jsonValue.ValueExists("AttributeValue")) {
     m_attributeValue = jsonValue.GetString("AttributeValue");
     m_attributeValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Condition"))
-  {
+  if (jsonValue.ValueExists("Condition")) {
     m_condition = ConditionMapper::GetConditionForName(jsonValue.GetString("Condition"));
     m_conditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeSeriesCondition::Jsonize() const
-{
+JsonValue TimeSeriesCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_attributeValueHasBeenSet)
-  {
-   payload.WithString("AttributeValue", m_attributeValue);
-
+  if (m_attributeValueHasBeenSet) {
+    payload.WithString("AttributeValue", m_attributeValue);
   }
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("Condition", ConditionMapper::GetNameForCondition(m_condition));
+  if (m_conditionHasBeenSet) {
+    payload.WithString("Condition", ConditionMapper::GetNameForCondition(m_condition));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

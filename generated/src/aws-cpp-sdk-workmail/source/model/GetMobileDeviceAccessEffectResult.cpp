@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/GetMobileDeviceAccessEffectResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workmail/model/GetMobileDeviceAccessEffectResult.h>
 
 #include <utility>
 
@@ -17,24 +17,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Effect"))
-  {
+  if (jsonValue.ValueExists("Effect")) {
     m_effect = MobileDeviceAccessRuleEffectMapper::GetMobileDeviceAccessRuleEffectForName(jsonValue.GetString("Effect"));
     m_effectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchedRules"))
-  {
+  if (jsonValue.ValueExists("MatchedRules")) {
     Aws::Utils::Array<JsonView> matchedRulesJsonList = jsonValue.GetArray("MatchedRules");
-    for(unsigned matchedRulesIndex = 0; matchedRulesIndex < matchedRulesJsonList.GetLength(); ++matchedRulesIndex)
-    {
+    for (unsigned matchedRulesIndex = 0; matchedRulesIndex < matchedRulesJsonList.GetLength(); ++matchedRulesIndex) {
       m_matchedRules.push_back(matchedRulesJsonList[matchedRulesIndex].AsObject());
     }
     m_matchedRulesHasBeenSet = true;
@@ -42,12 +37,10 @@ GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator =
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

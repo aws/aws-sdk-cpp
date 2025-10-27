@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>
 
 #include <utility>
 
@@ -12,50 +12,34 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateVocabularyFilterRequest::SerializePayload() const
-{
+Aws::String UpdateVocabularyFilterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vocabularyFilterNameHasBeenSet)
-  {
-   payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
-
+  if (m_vocabularyFilterNameHasBeenSet) {
+    payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
   }
 
-  if(m_wordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> wordsJsonList(m_words.size());
-   for(unsigned wordsIndex = 0; wordsIndex < wordsJsonList.GetLength(); ++wordsIndex)
-   {
-     wordsJsonList[wordsIndex].AsString(m_words[wordsIndex]);
-   }
-   payload.WithArray("Words", std::move(wordsJsonList));
-
+  if (m_wordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> wordsJsonList(m_words.size());
+    for (unsigned wordsIndex = 0; wordsIndex < wordsJsonList.GetLength(); ++wordsIndex) {
+      wordsJsonList[wordsIndex].AsString(m_words[wordsIndex]);
+    }
+    payload.WithArray("Words", std::move(wordsJsonList));
   }
 
-  if(m_vocabularyFilterFileUriHasBeenSet)
-  {
-   payload.WithString("VocabularyFilterFileUri", m_vocabularyFilterFileUri);
-
+  if (m_vocabularyFilterFileUriHasBeenSet) {
+    payload.WithString("VocabularyFilterFileUri", m_vocabularyFilterFileUri);
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateVocabularyFilterRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateVocabularyFilterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Transcribe.UpdateVocabularyFilter"));
   return headers;
-
 }
-
-
-
-

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace LakeFormation
-{
-enum class LakeFormationErrors
-{
-  //From Core//
+namespace Aws {
+namespace LakeFormation {
+enum class LakeFormationErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class LakeFormationErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class LakeFormationErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   ENTITY_NOT_FOUND,
   EXPIRED,
@@ -65,9 +62,8 @@ enum class LakeFormationErrors
   WORK_UNITS_NOT_READY_YET
 };
 
-class AWS_LAKEFORMATION_API LakeFormationError : public Aws::Client::AWSError<LakeFormationErrors>
-{
-public:
+class AWS_LAKEFORMATION_API LakeFormationError : public Aws::Client::AWSError<LakeFormationErrors> {
+ public:
   LakeFormationError() {}
   LakeFormationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
   LakeFormationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
@@ -78,10 +74,9 @@ public:
   T GetModeledError();
 };
 
-namespace LakeFormationErrorMapper
-{
-  AWS_LAKEFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace LakeFormationErrorMapper {
+AWS_LAKEFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace LakeFormation
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ImportAsProvisionedProductRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ImportAsProvisionedProductRequest.h>
 
 #include <utility>
 
@@ -12,57 +12,38 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ImportAsProvisionedProductRequest::SerializePayload() const
-{
+Aws::String ImportAsProvisionedProductRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_acceptLanguageHasBeenSet)
-  {
-   payload.WithString("AcceptLanguage", m_acceptLanguage);
-
+  if (m_acceptLanguageHasBeenSet) {
+    payload.WithString("AcceptLanguage", m_acceptLanguage);
   }
 
-  if(m_productIdHasBeenSet)
-  {
-   payload.WithString("ProductId", m_productId);
-
+  if (m_productIdHasBeenSet) {
+    payload.WithString("ProductId", m_productId);
   }
 
-  if(m_provisioningArtifactIdHasBeenSet)
-  {
-   payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
-
+  if (m_provisioningArtifactIdHasBeenSet) {
+    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
   }
 
-  if(m_provisionedProductNameHasBeenSet)
-  {
-   payload.WithString("ProvisionedProductName", m_provisionedProductName);
-
+  if (m_provisionedProductNameHasBeenSet) {
+    payload.WithString("ProvisionedProductName", m_provisionedProductName);
   }
 
-  if(m_physicalIdHasBeenSet)
-  {
-   payload.WithString("PhysicalId", m_physicalId);
-
+  if (m_physicalIdHasBeenSet) {
+    payload.WithString("PhysicalId", m_physicalId);
   }
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ImportAsProvisionedProductRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ImportAsProvisionedProductRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ImportAsProvisionedProduct"));
   return headers;
-
 }
-
-
-
-

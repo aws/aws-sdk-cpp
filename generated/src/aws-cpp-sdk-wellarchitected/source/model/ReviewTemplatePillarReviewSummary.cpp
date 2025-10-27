@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ReviewTemplatePillarReviewSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/ReviewTemplatePillarReviewSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ReviewTemplatePillarReviewSummary& ReviewTemplatePillarReviewSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PillarId"))
-  {
+ReviewTemplatePillarReviewSummary& ReviewTemplatePillarReviewSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PillarId")) {
     m_pillarId = jsonValue.GetString("PillarId");
     m_pillarIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PillarName"))
-  {
+  if (jsonValue.ValueExists("PillarName")) {
     m_pillarName = jsonValue.GetString("PillarName");
     m_pillarNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Notes"))
-  {
+  if (jsonValue.ValueExists("Notes")) {
     m_notes = jsonValue.GetString("Notes");
     m_notesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuestionCounts"))
-  {
+  if (jsonValue.ValueExists("QuestionCounts")) {
     Aws::Map<Aws::String, JsonView> questionCountsJsonMap = jsonValue.GetObject("QuestionCounts").GetAllObjects();
-    for(auto& questionCountsItem : questionCountsJsonMap)
-    {
+    for (auto& questionCountsItem : questionCountsJsonMap) {
       m_questionCounts[QuestionMapper::GetQuestionForName(questionCountsItem.first)] = questionCountsItem.second.AsInteger();
     }
     m_questionCountsHasBeenSet = true;
@@ -52,42 +40,32 @@ ReviewTemplatePillarReviewSummary& ReviewTemplatePillarReviewSummary::operator =
   return *this;
 }
 
-JsonValue ReviewTemplatePillarReviewSummary::Jsonize() const
-{
+JsonValue ReviewTemplatePillarReviewSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_pillarIdHasBeenSet)
-  {
-   payload.WithString("PillarId", m_pillarId);
-
+  if (m_pillarIdHasBeenSet) {
+    payload.WithString("PillarId", m_pillarId);
   }
 
-  if(m_pillarNameHasBeenSet)
-  {
-   payload.WithString("PillarName", m_pillarName);
-
+  if (m_pillarNameHasBeenSet) {
+    payload.WithString("PillarName", m_pillarName);
   }
 
-  if(m_notesHasBeenSet)
-  {
-   payload.WithString("Notes", m_notes);
-
+  if (m_notesHasBeenSet) {
+    payload.WithString("Notes", m_notes);
   }
 
-  if(m_questionCountsHasBeenSet)
-  {
-   JsonValue questionCountsJsonMap;
-   for(auto& questionCountsItem : m_questionCounts)
-   {
-     questionCountsJsonMap.WithInteger(QuestionMapper::GetNameForQuestion(questionCountsItem.first), questionCountsItem.second);
-   }
-   payload.WithObject("QuestionCounts", std::move(questionCountsJsonMap));
-
+  if (m_questionCountsHasBeenSet) {
+    JsonValue questionCountsJsonMap;
+    for (auto& questionCountsItem : m_questionCounts) {
+      questionCountsJsonMap.WithInteger(QuestionMapper::GetNameForQuestion(questionCountsItem.first), questionCountsItem.second);
+    }
+    payload.WithObject("QuestionCounts", std::move(questionCountsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

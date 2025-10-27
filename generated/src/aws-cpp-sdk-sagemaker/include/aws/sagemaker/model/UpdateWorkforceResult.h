@@ -4,68 +4,73 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/Workforce.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
-  class UpdateWorkforceResult
-  {
-  public:
-    AWS_SAGEMAKER_API UpdateWorkforceResult() = default;
-    AWS_SAGEMAKER_API UpdateWorkforceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SAGEMAKER_API UpdateWorkforceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class UpdateWorkforceResult {
+ public:
+  AWS_SAGEMAKER_API UpdateWorkforceResult() = default;
+  AWS_SAGEMAKER_API UpdateWorkforceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API UpdateWorkforceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A single private workforce. You can create one private work force in each
+   * Amazon Web Services Region. By default, any workforce-related API operation used
+   * in a specific region will apply to the workforce created in that region. To
+   * learn how to create a private workforce, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create
+   * a Private Workforce</a>.</p>
+   */
+  inline const Workforce& GetWorkforce() const { return m_workforce; }
+  template <typename WorkforceT = Workforce>
+  void SetWorkforce(WorkforceT&& value) {
+    m_workforceHasBeenSet = true;
+    m_workforce = std::forward<WorkforceT>(value);
+  }
+  template <typename WorkforceT = Workforce>
+  UpdateWorkforceResult& WithWorkforce(WorkforceT&& value) {
+    SetWorkforce(std::forward<WorkforceT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A single private workforce. You can create one private work force in each
-     * Amazon Web Services Region. By default, any workforce-related API operation used
-     * in a specific region will apply to the workforce created in that region. To
-     * learn how to create a private workforce, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create
-     * a Private Workforce</a>.</p>
-     */
-    inline const Workforce& GetWorkforce() const { return m_workforce; }
-    template<typename WorkforceT = Workforce>
-    void SetWorkforce(WorkforceT&& value) { m_workforceHasBeenSet = true; m_workforce = std::forward<WorkforceT>(value); }
-    template<typename WorkforceT = Workforce>
-    UpdateWorkforceResult& WithWorkforce(WorkforceT&& value) { SetWorkforce(std::forward<WorkforceT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    UpdateWorkforceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateWorkforceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Workforce m_workforce;
+  bool m_workforceHasBeenSet = false;
 
-    Workforce m_workforce;
-    bool m_workforceHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

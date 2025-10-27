@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class HlsCaptionSegmentLengthControl
-  {
-    NOT_SET,
-    LARGE_SEGMENTS,
-    MATCH_VIDEO
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class HlsCaptionSegmentLengthControl { NOT_SET, LARGE_SEGMENTS, MATCH_VIDEO };
 
-namespace HlsCaptionSegmentLengthControlMapper
-{
+namespace HlsCaptionSegmentLengthControlMapper {
 AWS_MEDIACONVERT_API HlsCaptionSegmentLengthControl GetHlsCaptionSegmentLengthControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForHlsCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl value);
-} // namespace HlsCaptionSegmentLengthControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsCaptionSegmentLengthControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

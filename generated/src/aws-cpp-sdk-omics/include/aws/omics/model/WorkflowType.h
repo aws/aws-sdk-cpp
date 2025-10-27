@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class WorkflowType
-  {
-    NOT_SET,
-    PRIVATE_,
-    READY2RUN
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class WorkflowType { NOT_SET, PRIVATE_, READY2RUN };
 
-namespace WorkflowTypeMapper
-{
+namespace WorkflowTypeMapper {
 AWS_OMICS_API WorkflowType GetWorkflowTypeForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForWorkflowType(WorkflowType value);
-} // namespace WorkflowTypeMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace WorkflowTypeMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

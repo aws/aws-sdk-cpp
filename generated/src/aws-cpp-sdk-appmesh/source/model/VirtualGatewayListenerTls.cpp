@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayListenerTls& VirtualGatewayListenerTls::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("certificate"))
-  {
+VirtualGatewayListenerTls& VirtualGatewayListenerTls::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("certificate")) {
     m_certificate = jsonValue.GetObject("certificate");
     m_certificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mode"))
-  {
+  if (jsonValue.ValueExists("mode")) {
     m_mode = VirtualGatewayListenerTlsModeMapper::GetVirtualGatewayListenerTlsModeForName(jsonValue.GetString("mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validation"))
-  {
+  if (jsonValue.ValueExists("validation")) {
     m_validation = jsonValue.GetObject("validation");
     m_validationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayListenerTls::Jsonize() const
-{
+JsonValue VirtualGatewayListenerTls::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateHasBeenSet)
-  {
-   payload.WithObject("certificate", m_certificate.Jsonize());
-
+  if (m_certificateHasBeenSet) {
+    payload.WithObject("certificate", m_certificate.Jsonize());
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", VirtualGatewayListenerTlsModeMapper::GetNameForVirtualGatewayListenerTlsMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("mode", VirtualGatewayListenerTlsModeMapper::GetNameForVirtualGatewayListenerTlsMode(m_mode));
   }
 
-  if(m_validationHasBeenSet)
-  {
-   payload.WithObject("validation", m_validation.Jsonize());
-
+  if (m_validationHasBeenSet) {
+    payload.WithObject("validation", m_validation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

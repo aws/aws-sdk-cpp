@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/events/model/CreateConnectionOAuthClientRequestParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/CreateConnectionOAuthClientRequestParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
 
-CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters(JsonView jsonValue) { *this = jsonValue; }
 
-CreateConnectionOAuthClientRequestParameters& CreateConnectionOAuthClientRequestParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClientID"))
-  {
+CreateConnectionOAuthClientRequestParameters& CreateConnectionOAuthClientRequestParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClientID")) {
     m_clientID = jsonValue.GetString("ClientID");
     m_clientIDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientSecret"))
-  {
+  if (jsonValue.ValueExists("ClientSecret")) {
     m_clientSecret = jsonValue.GetString("ClientSecret");
     m_clientSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateConnectionOAuthClientRequestParameters::Jsonize() const
-{
+JsonValue CreateConnectionOAuthClientRequestParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIDHasBeenSet)
-  {
-   payload.WithString("ClientID", m_clientID);
-
+  if (m_clientIDHasBeenSet) {
+    payload.WithString("ClientID", m_clientID);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("ClientSecret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("ClientSecret", m_clientSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

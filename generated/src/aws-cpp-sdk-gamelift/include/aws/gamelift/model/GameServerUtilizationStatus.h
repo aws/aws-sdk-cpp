@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class GameServerUtilizationStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    UTILIZED
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class GameServerUtilizationStatus { NOT_SET, AVAILABLE, UTILIZED };
 
-namespace GameServerUtilizationStatusMapper
-{
+namespace GameServerUtilizationStatusMapper {
 AWS_GAMELIFT_API GameServerUtilizationStatus GetGameServerUtilizationStatusForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForGameServerUtilizationStatus(GameServerUtilizationStatus value);
-} // namespace GameServerUtilizationStatusMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace GameServerUtilizationStatusMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

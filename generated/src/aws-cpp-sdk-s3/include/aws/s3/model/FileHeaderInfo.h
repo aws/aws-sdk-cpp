@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class FileHeaderInfo
-  {
-    NOT_SET,
-    USE,
-    IGNORE,
-    NONE
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class FileHeaderInfo { NOT_SET, USE, IGNORE, NONE };
 
-namespace FileHeaderInfoMapper
-{
+namespace FileHeaderInfoMapper {
 AWS_S3_API FileHeaderInfo GetFileHeaderInfoForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForFileHeaderInfo(FileHeaderInfo value);
-} // namespace FileHeaderInfoMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace FileHeaderInfoMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

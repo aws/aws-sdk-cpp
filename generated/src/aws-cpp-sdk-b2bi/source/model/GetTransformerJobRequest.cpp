@@ -12,33 +12,22 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetTransformerJobRequest::SerializePayload() const
-{
+Aws::String GetTransformerJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transformerJobIdHasBeenSet)
-  {
-   payload.WithString("transformerJobId", m_transformerJobId);
-
+  if (m_transformerJobIdHasBeenSet) {
+    payload.WithString("transformerJobId", m_transformerJobId);
   }
 
-  if(m_transformerIdHasBeenSet)
-  {
-   payload.WithString("transformerId", m_transformerId);
-
+  if (m_transformerIdHasBeenSet) {
+    payload.WithString("transformerId", m_transformerId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetTransformerJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetTransformerJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.GetTransformerJob"));
   return headers;
-
 }
-
-
-
-

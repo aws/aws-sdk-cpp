@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/sagemaker-runtime/SageMakerRuntimeEndpointRules.h>
+#include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SageMakerRuntime
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SageMakerRuntime {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SageMakerRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using SageMakerRuntimeEndpointProviderBase =
     EndpointProviderBase<SageMakerRuntimeClientConfiguration, SageMakerRuntimeBuiltInParameters, SageMakerRuntimeClientContextParameters>;
 
 using SageMakerRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<SageMakerRuntimeClientConfiguration, SageMakerRuntimeBuiltInParameters, SageMakerRuntimeClientContextParameters>;
+    DefaultEndpointProvider<SageMakerRuntimeClientConfiguration, SageMakerRuntimeBuiltInParameters,
+                            SageMakerRuntimeClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeEndpointProvider : public SageMakerRuntimeDefaultEpProviderBase
-{
-public:
-    using SageMakerRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeEndpointProvider : public SageMakerRuntimeDefaultEpProviderBase {
+ public:
+  using SageMakerRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SageMakerRuntimeEndpointProvider()
-      : SageMakerRuntimeDefaultEpProviderBase(Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::GetRulesBlob(), Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::RulesBlobSize)
-    {}
+  SageMakerRuntimeEndpointProvider()
+      : SageMakerRuntimeDefaultEpProviderBase(Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::GetRulesBlob(),
+                                              Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::RulesBlobSize) {}
 
-    ~SageMakerRuntimeEndpointProvider()
-    {
-    }
+  ~SageMakerRuntimeEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SageMakerRuntime
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SageMakerRuntime
+}  // namespace Aws

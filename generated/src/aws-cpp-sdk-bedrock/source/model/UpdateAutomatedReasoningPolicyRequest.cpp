@@ -12,31 +12,20 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAutomatedReasoningPolicyRequest::SerializePayload() const
-{
+Aws::String UpdateAutomatedReasoningPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyDefinitionHasBeenSet)
-  {
-   payload.WithObject("policyDefinition", m_policyDefinition.Jsonize());
-
+  if (m_policyDefinitionHasBeenSet) {
+    payload.WithObject("policyDefinition", m_policyDefinition.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

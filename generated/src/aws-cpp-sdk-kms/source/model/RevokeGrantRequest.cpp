@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/RevokeGrantRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/model/RevokeGrantRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RevokeGrantRequest::SerializePayload() const
-{
+Aws::String RevokeGrantRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_keyIdHasBeenSet)
-  {
-   payload.WithString("KeyId", m_keyId);
-
+  if (m_keyIdHasBeenSet) {
+    payload.WithString("KeyId", m_keyId);
   }
 
-  if(m_grantIdHasBeenSet)
-  {
-   payload.WithString("GrantId", m_grantId);
-
+  if (m_grantIdHasBeenSet) {
+    payload.WithString("GrantId", m_grantId);
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("DryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RevokeGrantRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RevokeGrantRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.RevokeGrant"));
   return headers;
-
 }
-
-
-
-

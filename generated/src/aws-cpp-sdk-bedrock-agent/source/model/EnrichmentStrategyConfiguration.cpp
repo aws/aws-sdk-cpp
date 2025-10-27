@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-EnrichmentStrategyConfiguration::EnrichmentStrategyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnrichmentStrategyConfiguration::EnrichmentStrategyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EnrichmentStrategyConfiguration& EnrichmentStrategyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("method"))
-  {
+EnrichmentStrategyConfiguration& EnrichmentStrategyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("method")) {
     m_method = EnrichmentStrategyMethodMapper::GetEnrichmentStrategyMethodForName(jsonValue.GetString("method"));
     m_methodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EnrichmentStrategyConfiguration::Jsonize() const
-{
+JsonValue EnrichmentStrategyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_methodHasBeenSet)
-  {
-   payload.WithString("method", EnrichmentStrategyMethodMapper::GetNameForEnrichmentStrategyMethod(m_method));
+  if (m_methodHasBeenSet) {
+    payload.WithString("method", EnrichmentStrategyMethodMapper::GetNameForEnrichmentStrategyMethod(m_method));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

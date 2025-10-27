@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class FileSystemMaintenanceOperation
-  {
-    NOT_SET,
-    PATCHING,
-    BACKING_UP
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class FileSystemMaintenanceOperation { NOT_SET, PATCHING, BACKING_UP };
 
-namespace FileSystemMaintenanceOperationMapper
-{
+namespace FileSystemMaintenanceOperationMapper {
 AWS_FSX_API FileSystemMaintenanceOperation GetFileSystemMaintenanceOperationForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForFileSystemMaintenanceOperation(FileSystemMaintenanceOperation value);
-} // namespace FileSystemMaintenanceOperationMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace FileSystemMaintenanceOperationMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class PlaybackMode
-  {
-    NOT_SET,
-    LOOP,
-    LINEAR
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class PlaybackMode { NOT_SET, LOOP, LINEAR };
 
-namespace PlaybackModeMapper
-{
+namespace PlaybackModeMapper {
 AWS_MEDIATAILOR_API PlaybackMode GetPlaybackModeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForPlaybackMode(PlaybackMode value);
-} // namespace PlaybackModeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace PlaybackModeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

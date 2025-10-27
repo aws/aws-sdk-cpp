@@ -3,164 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/DataSourceRunSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/DataSourceRunSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-DataSourceRunSummary::DataSourceRunSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceRunSummary::DataSourceRunSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceRunSummary& DataSourceRunSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createdAt"))
-  {
+DataSourceRunSummary& DataSourceRunSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
+  if (jsonValue.ValueExists("dataSourceId")) {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
     m_dataSourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetObject("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lineageSummary"))
-  {
+  if (jsonValue.ValueExists("lineageSummary")) {
     m_lineageSummary = jsonValue.GetObject("lineageSummary");
     m_lineageSummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectId"))
-  {
+  if (jsonValue.ValueExists("projectId")) {
     m_projectId = jsonValue.GetString("projectId");
     m_projectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runStatisticsForAssets"))
-  {
+  if (jsonValue.ValueExists("runStatisticsForAssets")) {
     m_runStatisticsForAssets = jsonValue.GetObject("runStatisticsForAssets");
     m_runStatisticsForAssetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = DataSourceRunStatusMapper::GetDataSourceRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stoppedAt"))
-  {
+  if (jsonValue.ValueExists("stoppedAt")) {
     m_stoppedAt = jsonValue.GetString("stoppedAt");
     m_stoppedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = DataSourceRunTypeMapper::GetDataSourceRunTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceRunSummary::Jsonize() const
-{
+JsonValue DataSourceRunSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_dataSourceIdHasBeenSet)
-  {
-   payload.WithString("dataSourceId", m_dataSourceId);
-
+  if (m_dataSourceIdHasBeenSet) {
+    payload.WithString("dataSourceId", m_dataSourceId);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithObject("errorMessage", m_errorMessage.Jsonize());
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithObject("errorMessage", m_errorMessage.Jsonize());
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_lineageSummaryHasBeenSet)
-  {
-   payload.WithObject("lineageSummary", m_lineageSummary.Jsonize());
-
+  if (m_lineageSummaryHasBeenSet) {
+    payload.WithObject("lineageSummary", m_lineageSummary.Jsonize());
   }
 
-  if(m_projectIdHasBeenSet)
-  {
-   payload.WithString("projectId", m_projectId);
-
+  if (m_projectIdHasBeenSet) {
+    payload.WithString("projectId", m_projectId);
   }
 
-  if(m_runStatisticsForAssetsHasBeenSet)
-  {
-   payload.WithObject("runStatisticsForAssets", m_runStatisticsForAssets.Jsonize());
-
+  if (m_runStatisticsForAssetsHasBeenSet) {
+    payload.WithObject("runStatisticsForAssets", m_runStatisticsForAssets.Jsonize());
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startedAtHasBeenSet) {
+    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DataSourceRunStatusMapper::GetNameForDataSourceRunStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DataSourceRunStatusMapper::GetNameForDataSourceRunStatus(m_status));
   }
 
-  if(m_stoppedAtHasBeenSet)
-  {
-   payload.WithString("stoppedAt", m_stoppedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_stoppedAtHasBeenSet) {
+    payload.WithString("stoppedAt", m_stoppedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DataSourceRunTypeMapper::GetNameForDataSourceRunType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DataSourceRunTypeMapper::GetNameForDataSourceRunType(m_type));
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

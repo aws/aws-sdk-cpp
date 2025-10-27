@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
-  enum class LoggingLevel
-  {
-    NOT_SET,
-    ERROR_
-  };
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
+enum class LoggingLevel { NOT_SET, ERROR_ };
 
-namespace LoggingLevelMapper
-{
+namespace LoggingLevelMapper {
 AWS_IOTANALYTICS_API LoggingLevel GetLoggingLevelForName(const Aws::String& name);
 
 AWS_IOTANALYTICS_API Aws::String GetNameForLoggingLevel(LoggingLevel value);
-} // namespace LoggingLevelMapper
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace LoggingLevelMapper
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-SourceConfiguration::SourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceConfiguration::SourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SelectedVideoStreams"))
-  {
+SourceConfiguration& SourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SelectedVideoStreams")) {
     m_selectedVideoStreams = jsonValue.GetObject("SelectedVideoStreams");
     m_selectedVideoStreamsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceConfiguration::Jsonize() const
-{
+JsonValue SourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_selectedVideoStreamsHasBeenSet)
-  {
-   payload.WithObject("SelectedVideoStreams", m_selectedVideoStreams.Jsonize());
-
+  if (m_selectedVideoStreamsHasBeenSet) {
+    payload.WithObject("SelectedVideoStreams", m_selectedVideoStreams.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

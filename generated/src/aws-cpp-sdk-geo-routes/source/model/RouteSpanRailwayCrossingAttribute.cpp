@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RouteSpanRailwayCrossingAttribute.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/geo-routes/model/RouteSpanRailwayCrossingAttribute.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+namespace RouteSpanRailwayCrossingAttributeMapper {
 
-namespace Aws
-{
-  namespace GeoRoutes
-  {
-    namespace Model
-    {
-      namespace RouteSpanRailwayCrossingAttributeMapper
-      {
+static const int Protected_HASH = HashingUtils::HashString("Protected");
+static const int Unprotected_HASH = HashingUtils::HashString("Unprotected");
 
-        static const int Protected_HASH = HashingUtils::HashString("Protected");
-        static const int Unprotected_HASH = HashingUtils::HashString("Unprotected");
+RouteSpanRailwayCrossingAttribute GetRouteSpanRailwayCrossingAttributeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Protected_HASH) {
+    return RouteSpanRailwayCrossingAttribute::Protected;
+  } else if (hashCode == Unprotected_HASH) {
+    return RouteSpanRailwayCrossingAttribute::Unprotected;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RouteSpanRailwayCrossingAttribute>(hashCode);
+  }
 
+  return RouteSpanRailwayCrossingAttribute::NOT_SET;
+}
 
-        RouteSpanRailwayCrossingAttribute GetRouteSpanRailwayCrossingAttributeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Protected_HASH)
-          {
-            return RouteSpanRailwayCrossingAttribute::Protected;
-          }
-          else if (hashCode == Unprotected_HASH)
-          {
-            return RouteSpanRailwayCrossingAttribute::Unprotected;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RouteSpanRailwayCrossingAttribute>(hashCode);
-          }
+Aws::String GetNameForRouteSpanRailwayCrossingAttribute(RouteSpanRailwayCrossingAttribute enumValue) {
+  switch (enumValue) {
+    case RouteSpanRailwayCrossingAttribute::NOT_SET:
+      return {};
+    case RouteSpanRailwayCrossingAttribute::Protected:
+      return "Protected";
+    case RouteSpanRailwayCrossingAttribute::Unprotected:
+      return "Unprotected";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RouteSpanRailwayCrossingAttribute::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRouteSpanRailwayCrossingAttribute(RouteSpanRailwayCrossingAttribute enumValue)
-        {
-          switch(enumValue)
-          {
-          case RouteSpanRailwayCrossingAttribute::NOT_SET:
-            return {};
-          case RouteSpanRailwayCrossingAttribute::Protected:
-            return "Protected";
-          case RouteSpanRailwayCrossingAttribute::Unprotected:
-            return "Unprotected";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RouteSpanRailwayCrossingAttributeMapper
-    } // namespace Model
-  } // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteSpanRailwayCrossingAttributeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

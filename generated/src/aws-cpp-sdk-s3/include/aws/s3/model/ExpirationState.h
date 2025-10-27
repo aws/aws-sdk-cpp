@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class ExpirationState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class ExpirationState { NOT_SET, ENABLED, DISABLED };
 
-namespace ExpirationStateMapper
-{
+namespace ExpirationStateMapper {
 AWS_S3_API ExpirationState GetExpirationStateForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForExpirationState(ExpirationState value);
-} // namespace ExpirationStateMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace ExpirationStateMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

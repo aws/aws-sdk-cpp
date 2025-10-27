@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::TimestreamQuery;
 
-AWSError<CoreErrors> TimestreamQueryErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TimestreamQueryErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TimestreamQueryErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

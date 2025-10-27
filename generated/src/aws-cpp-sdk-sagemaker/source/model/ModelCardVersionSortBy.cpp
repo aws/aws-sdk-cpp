@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelCardVersionSortBy.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker/model/ModelCardVersionSortBy.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+namespace ModelCardVersionSortByMapper {
 
-namespace Aws
-{
-  namespace SageMaker
-  {
-    namespace Model
-    {
-      namespace ModelCardVersionSortByMapper
-      {
+static const int Version_HASH = HashingUtils::HashString("Version");
 
-        static const int Version_HASH = HashingUtils::HashString("Version");
+ModelCardVersionSortBy GetModelCardVersionSortByForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Version_HASH) {
+    return ModelCardVersionSortBy::Version;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ModelCardVersionSortBy>(hashCode);
+  }
 
+  return ModelCardVersionSortBy::NOT_SET;
+}
 
-        ModelCardVersionSortBy GetModelCardVersionSortByForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Version_HASH)
-          {
-            return ModelCardVersionSortBy::Version;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ModelCardVersionSortBy>(hashCode);
-          }
+Aws::String GetNameForModelCardVersionSortBy(ModelCardVersionSortBy enumValue) {
+  switch (enumValue) {
+    case ModelCardVersionSortBy::NOT_SET:
+      return {};
+    case ModelCardVersionSortBy::Version:
+      return "Version";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ModelCardVersionSortBy::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForModelCardVersionSortBy(ModelCardVersionSortBy enumValue)
-        {
-          switch(enumValue)
-          {
-          case ModelCardVersionSortBy::NOT_SET:
-            return {};
-          case ModelCardVersionSortBy::Version:
-            return "Version";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ModelCardVersionSortByMapper
-    } // namespace Model
-  } // namespace SageMaker
-} // namespace Aws
+}  // namespace ModelCardVersionSortByMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

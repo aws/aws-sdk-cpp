@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CarrierGatewayState
-  {
-    NOT_SET,
-    pending,
-    available,
-    deleting,
-    deleted
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CarrierGatewayState { NOT_SET, pending, available, deleting, deleted };
 
-namespace CarrierGatewayStateMapper
-{
+namespace CarrierGatewayStateMapper {
 AWS_EC2_API CarrierGatewayState GetCarrierGatewayStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCarrierGatewayState(CarrierGatewayState value);
-} // namespace CarrierGatewayStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CarrierGatewayStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

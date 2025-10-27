@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-class CostExplorerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CostExplorer {
+class CostExplorerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace CostExplorer
+}  // namespace Aws

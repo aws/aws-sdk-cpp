@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QApps_EXPORTS.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Model
-{
-  enum class AppRequiredCapability
-  {
-    NOT_SET,
-    FileUpload,
-    CreatorMode,
-    RetrievalMode,
-    PluginMode
-  };
+namespace Aws {
+namespace QApps {
+namespace Model {
+enum class AppRequiredCapability { NOT_SET, FileUpload, CreatorMode, RetrievalMode, PluginMode };
 
-namespace AppRequiredCapabilityMapper
-{
+namespace AppRequiredCapabilityMapper {
 AWS_QAPPS_API AppRequiredCapability GetAppRequiredCapabilityForName(const Aws::String& name);
 
 AWS_QAPPS_API Aws::String GetNameForAppRequiredCapability(AppRequiredCapability value);
-} // namespace AppRequiredCapabilityMapper
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace AppRequiredCapabilityMapper
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/DescribeWorldRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/DescribeWorldRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWorldRequest::SerializePayload() const
-{
+Aws::String DescribeWorldRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_worldHasBeenSet)
-  {
-   payload.WithString("world", m_world);
-
+  if (m_worldHasBeenSet) {
+    payload.WithString("world", m_world);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

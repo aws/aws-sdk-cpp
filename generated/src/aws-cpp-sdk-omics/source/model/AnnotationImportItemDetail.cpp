@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/AnnotationImportItemDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/AnnotationImportItemDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-AnnotationImportItemDetail::AnnotationImportItemDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnnotationImportItemDetail::AnnotationImportItemDetail(JsonView jsonValue) { *this = jsonValue; }
 
-AnnotationImportItemDetail& AnnotationImportItemDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+AnnotationImportItemDetail& AnnotationImportItemDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobStatus"))
-  {
+  if (jsonValue.ValueExists("jobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("jobStatus"));
     m_jobStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnnotationImportItemDetail::Jsonize() const
-{
+JsonValue AnnotationImportItemDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("jobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("jobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/AccountSettingsDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearchserverless/model/AccountSettingsDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
 
-AccountSettingsDetail::AccountSettingsDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountSettingsDetail::AccountSettingsDetail(JsonView jsonValue) { *this = jsonValue; }
 
-AccountSettingsDetail& AccountSettingsDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("capacityLimits"))
-  {
+AccountSettingsDetail& AccountSettingsDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("capacityLimits")) {
     m_capacityLimits = jsonValue.GetObject("capacityLimits");
     m_capacityLimitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountSettingsDetail::Jsonize() const
-{
+JsonValue AccountSettingsDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_capacityLimitsHasBeenSet)
-  {
-   payload.WithObject("capacityLimits", m_capacityLimits.Jsonize());
-
+  if (m_capacityLimitsHasBeenSet) {
+    payload.WithObject("capacityLimits", m_capacityLimits.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

@@ -4,52 +4,47 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class AutoMLMetricExtendedEnum
-  {
-    NOT_SET,
-    Accuracy,
-    MSE,
-    F1,
-    F1macro,
-    AUC,
-    RMSE,
-    MAE,
-    R2,
-    BalancedAccuracy,
-    Precision,
-    PrecisionMacro,
-    Recall,
-    RecallMacro,
-    LogLoss,
-    InferenceLatency,
-    MAPE,
-    MASE,
-    WAPE,
-    AverageWeightedQuantileLoss,
-    Rouge1,
-    Rouge2,
-    RougeL,
-    RougeLSum,
-    Perplexity,
-    ValidationLoss,
-    TrainingLoss
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class AutoMLMetricExtendedEnum {
+  NOT_SET,
+  Accuracy,
+  MSE,
+  F1,
+  F1macro,
+  AUC,
+  RMSE,
+  MAE,
+  R2,
+  BalancedAccuracy,
+  Precision,
+  PrecisionMacro,
+  Recall,
+  RecallMacro,
+  LogLoss,
+  InferenceLatency,
+  MAPE,
+  MASE,
+  WAPE,
+  AverageWeightedQuantileLoss,
+  Rouge1,
+  Rouge2,
+  RougeL,
+  RougeLSum,
+  Perplexity,
+  ValidationLoss,
+  TrainingLoss
+};
 
-namespace AutoMLMetricExtendedEnumMapper
-{
+namespace AutoMLMetricExtendedEnumMapper {
 AWS_SAGEMAKER_API AutoMLMetricExtendedEnum GetAutoMLMetricExtendedEnumForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForAutoMLMetricExtendedEnum(AutoMLMetricExtendedEnum value);
-} // namespace AutoMLMetricExtendedEnumMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace AutoMLMetricExtendedEnumMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

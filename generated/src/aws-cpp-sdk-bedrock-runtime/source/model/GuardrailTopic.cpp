@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailTopic::GuardrailTopic(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailTopic::GuardrailTopic(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailTopic& GuardrailTopic::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+GuardrailTopic& GuardrailTopic::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = GuardrailTopicTypeMapper::GetGuardrailTopicTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("action"))
-  {
+  if (jsonValue.ValueExists("action")) {
     m_action = GuardrailTopicPolicyActionMapper::GetGuardrailTopicPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detected"))
-  {
+  if (jsonValue.ValueExists("detected")) {
     m_detected = jsonValue.GetBool("detected");
     m_detectedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailTopic::Jsonize() const
-{
+JsonValue GuardrailTopic::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GuardrailTopicTypeMapper::GetNameForGuardrailTopicType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", GuardrailTopicTypeMapper::GetNameForGuardrailTopicType(m_type));
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuardrailTopicPolicyActionMapper::GetNameForGuardrailTopicPolicyAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GuardrailTopicPolicyActionMapper::GetNameForGuardrailTopicPolicyAction(m_action));
   }
 
-  if(m_detectedHasBeenSet)
-  {
-   payload.WithBool("detected", m_detected);
-
+  if (m_detectedHasBeenSet) {
+    payload.WithBool("detected", m_detected);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

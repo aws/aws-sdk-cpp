@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/AsyncRequestParameters.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/AsyncRequestParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-AsyncRequestParameters::AsyncRequestParameters(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AsyncRequestParameters::AsyncRequestParameters(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AsyncRequestParameters& AsyncRequestParameters::operator =(const XmlNode& xmlNode)
-{
+AsyncRequestParameters& AsyncRequestParameters::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode createMultiRegionAccessPointRequestNode = resultNode.FirstChild("CreateMultiRegionAccessPointRequest");
-    if(!createMultiRegionAccessPointRequestNode.IsNull())
-    {
+    if (!createMultiRegionAccessPointRequestNode.IsNull()) {
       m_createMultiRegionAccessPointRequest = createMultiRegionAccessPointRequestNode;
       m_createMultiRegionAccessPointRequestHasBeenSet = true;
     }
     XmlNode deleteMultiRegionAccessPointRequestNode = resultNode.FirstChild("DeleteMultiRegionAccessPointRequest");
-    if(!deleteMultiRegionAccessPointRequestNode.IsNull())
-    {
+    if (!deleteMultiRegionAccessPointRequestNode.IsNull()) {
       m_deleteMultiRegionAccessPointRequest = deleteMultiRegionAccessPointRequestNode;
       m_deleteMultiRegionAccessPointRequestHasBeenSet = true;
     }
     XmlNode putMultiRegionAccessPointPolicyRequestNode = resultNode.FirstChild("PutMultiRegionAccessPointPolicyRequest");
-    if(!putMultiRegionAccessPointPolicyRequestNode.IsNull())
-    {
+    if (!putMultiRegionAccessPointPolicyRequestNode.IsNull()) {
       m_putMultiRegionAccessPointPolicyRequest = putMultiRegionAccessPointPolicyRequestNode;
       m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ AsyncRequestParameters& AsyncRequestParameters::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void AsyncRequestParameters::AddToNode(XmlNode& parentNode) const
-{
+void AsyncRequestParameters::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_createMultiRegionAccessPointRequestHasBeenSet)
-  {
-   XmlNode createMultiRegionAccessPointRequestNode = parentNode.CreateChildElement("CreateMultiRegionAccessPointRequest");
-   m_createMultiRegionAccessPointRequest.AddToNode(createMultiRegionAccessPointRequestNode);
+  if (m_createMultiRegionAccessPointRequestHasBeenSet) {
+    XmlNode createMultiRegionAccessPointRequestNode = parentNode.CreateChildElement("CreateMultiRegionAccessPointRequest");
+    m_createMultiRegionAccessPointRequest.AddToNode(createMultiRegionAccessPointRequestNode);
   }
 
-  if(m_deleteMultiRegionAccessPointRequestHasBeenSet)
-  {
-   XmlNode deleteMultiRegionAccessPointRequestNode = parentNode.CreateChildElement("DeleteMultiRegionAccessPointRequest");
-   m_deleteMultiRegionAccessPointRequest.AddToNode(deleteMultiRegionAccessPointRequestNode);
+  if (m_deleteMultiRegionAccessPointRequestHasBeenSet) {
+    XmlNode deleteMultiRegionAccessPointRequestNode = parentNode.CreateChildElement("DeleteMultiRegionAccessPointRequest");
+    m_deleteMultiRegionAccessPointRequest.AddToNode(deleteMultiRegionAccessPointRequestNode);
   }
 
-  if(m_putMultiRegionAccessPointPolicyRequestHasBeenSet)
-  {
-   XmlNode putMultiRegionAccessPointPolicyRequestNode = parentNode.CreateChildElement("PutMultiRegionAccessPointPolicyRequest");
-   m_putMultiRegionAccessPointPolicyRequest.AddToNode(putMultiRegionAccessPointPolicyRequestNode);
+  if (m_putMultiRegionAccessPointPolicyRequestHasBeenSet) {
+    XmlNode putMultiRegionAccessPointPolicyRequestNode = parentNode.CreateChildElement("PutMultiRegionAccessPointPolicyRequest");
+    m_putMultiRegionAccessPointPolicyRequest.AddToNode(putMultiRegionAccessPointPolicyRequestNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

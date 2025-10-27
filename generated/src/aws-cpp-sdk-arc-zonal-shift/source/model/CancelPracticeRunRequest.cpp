@@ -12,11 +12,4 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelPracticeRunRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String CancelPracticeRunRequest::SerializePayload() const { return {}; }

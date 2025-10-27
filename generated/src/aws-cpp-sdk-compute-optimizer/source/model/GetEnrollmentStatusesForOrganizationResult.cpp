@@ -4,10 +4,10 @@
  */
 
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnrollmentStatusesForOrganizationResult::GetEnrollmentStatusesForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetEnrollmentStatusesForOrganizationResult::GetEnrollmentStatusesForOrganizationResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetEnrollmentStatusesForOrganizationResult& GetEnrollmentStatusesForOrganizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetEnrollmentStatusesForOrganizationResult& GetEnrollmentStatusesForOrganizationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accountEnrollmentStatuses"))
-  {
+  if (jsonValue.ValueExists("accountEnrollmentStatuses")) {
     Aws::Utils::Array<JsonView> accountEnrollmentStatusesJsonList = jsonValue.GetArray("accountEnrollmentStatuses");
-    for(unsigned accountEnrollmentStatusesIndex = 0; accountEnrollmentStatusesIndex < accountEnrollmentStatusesJsonList.GetLength(); ++accountEnrollmentStatusesIndex)
-    {
+    for (unsigned accountEnrollmentStatusesIndex = 0; accountEnrollmentStatusesIndex < accountEnrollmentStatusesJsonList.GetLength();
+         ++accountEnrollmentStatusesIndex) {
       m_accountEnrollmentStatuses.push_back(accountEnrollmentStatusesJsonList[accountEnrollmentStatusesIndex].AsObject());
     }
     m_accountEnrollmentStatusesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

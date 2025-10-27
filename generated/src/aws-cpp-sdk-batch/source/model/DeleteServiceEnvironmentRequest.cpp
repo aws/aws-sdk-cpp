@@ -12,19 +12,12 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteServiceEnvironmentRequest::SerializePayload() const
-{
+Aws::String DeleteServiceEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceEnvironmentHasBeenSet)
-  {
-   payload.WithString("serviceEnvironment", m_serviceEnvironment);
-
+  if (m_serviceEnvironmentHasBeenSet) {
+    payload.WithString("serviceEnvironment", m_serviceEnvironment);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

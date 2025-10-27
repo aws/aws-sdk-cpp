@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/CalculateRouteMatrixSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/CalculateRouteMatrixSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-CalculateRouteMatrixSummary::CalculateRouteMatrixSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CalculateRouteMatrixSummary::CalculateRouteMatrixSummary(JsonView jsonValue) { *this = jsonValue; }
 
-CalculateRouteMatrixSummary& CalculateRouteMatrixSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSource"))
-  {
+CalculateRouteMatrixSummary& CalculateRouteMatrixSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSource")) {
     m_dataSource = jsonValue.GetString("DataSource");
     m_dataSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RouteCount"))
-  {
+  if (jsonValue.ValueExists("RouteCount")) {
     m_routeCount = jsonValue.GetInteger("RouteCount");
     m_routeCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCount"))
-  {
+  if (jsonValue.ValueExists("ErrorCount")) {
     m_errorCount = jsonValue.GetInteger("ErrorCount");
     m_errorCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DistanceUnit"))
-  {
+  if (jsonValue.ValueExists("DistanceUnit")) {
     m_distanceUnit = DistanceUnitMapper::GetDistanceUnitForName(jsonValue.GetString("DistanceUnit"));
     m_distanceUnitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CalculateRouteMatrixSummary::Jsonize() const
-{
+JsonValue CalculateRouteMatrixSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithString("DataSource", m_dataSource);
-
+  if (m_dataSourceHasBeenSet) {
+    payload.WithString("DataSource", m_dataSource);
   }
 
-  if(m_routeCountHasBeenSet)
-  {
-   payload.WithInteger("RouteCount", m_routeCount);
-
+  if (m_routeCountHasBeenSet) {
+    payload.WithInteger("RouteCount", m_routeCount);
   }
 
-  if(m_errorCountHasBeenSet)
-  {
-   payload.WithInteger("ErrorCount", m_errorCount);
-
+  if (m_errorCountHasBeenSet) {
+    payload.WithInteger("ErrorCount", m_errorCount);
   }
 
-  if(m_distanceUnitHasBeenSet)
-  {
-   payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
+  if (m_distanceUnitHasBeenSet) {
+    payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

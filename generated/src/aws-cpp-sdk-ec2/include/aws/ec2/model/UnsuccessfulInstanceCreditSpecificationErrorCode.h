@@ -4,30 +4,26 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class UnsuccessfulInstanceCreditSpecificationErrorCode
-  {
-    NOT_SET,
-    InvalidInstanceID_Malformed,
-    InvalidInstanceID_NotFound,
-    IncorrectInstanceState,
-    InstanceCreditSpecification_NotSupported
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class UnsuccessfulInstanceCreditSpecificationErrorCode {
+  NOT_SET,
+  InvalidInstanceID_Malformed,
+  InvalidInstanceID_NotFound,
+  IncorrectInstanceState,
+  InstanceCreditSpecification_NotSupported
+};
 
-namespace UnsuccessfulInstanceCreditSpecificationErrorCodeMapper
-{
-AWS_EC2_API UnsuccessfulInstanceCreditSpecificationErrorCode GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(const Aws::String& name);
+namespace UnsuccessfulInstanceCreditSpecificationErrorCodeMapper {
+AWS_EC2_API UnsuccessfulInstanceCreditSpecificationErrorCode
+GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForUnsuccessfulInstanceCreditSpecificationErrorCode(UnsuccessfulInstanceCreditSpecificationErrorCode value);
-} // namespace UnsuccessfulInstanceCreditSpecificationErrorCodeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace UnsuccessfulInstanceCreditSpecificationErrorCodeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

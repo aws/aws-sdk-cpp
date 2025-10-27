@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class StorageVirtualMachineRootVolumeSecurityStyle
-  {
-    NOT_SET,
-    UNIX,
-    NTFS,
-    MIXED
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class StorageVirtualMachineRootVolumeSecurityStyle { NOT_SET, UNIX, NTFS, MIXED };
 
-namespace StorageVirtualMachineRootVolumeSecurityStyleMapper
-{
+namespace StorageVirtualMachineRootVolumeSecurityStyleMapper {
 AWS_FSX_API StorageVirtualMachineRootVolumeSecurityStyle GetStorageVirtualMachineRootVolumeSecurityStyleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForStorageVirtualMachineRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle value);
-} // namespace StorageVirtualMachineRootVolumeSecurityStyleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace StorageVirtualMachineRootVolumeSecurityStyleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

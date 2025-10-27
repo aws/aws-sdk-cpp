@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/ComponentParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/ComponentParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-ComponentParameter::ComponentParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComponentParameter::ComponentParameter(JsonView jsonValue) { *this = jsonValue; }
 
-ComponentParameter& ComponentParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ComponentParameter& ComponentParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("value");
-    for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
-    {
+    for (unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex) {
       m_value.push_back(valueJsonList[valueIndex].AsString());
     }
     m_valueHasBeenSet = true;
@@ -42,30 +32,24 @@ ComponentParameter& ComponentParameter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ComponentParameter::Jsonize() const
-{
+JsonValue ComponentParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valueJsonList(m_value.size());
-   for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
-   {
-     valueJsonList[valueIndex].AsString(m_value[valueIndex]);
-   }
-   payload.WithArray("value", std::move(valueJsonList));
-
+  if (m_valueHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valueJsonList(m_value.size());
+    for (unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex) {
+      valueJsonList[valueIndex].AsString(m_value[valueIndex]);
+    }
+    payload.WithArray("value", std::move(valueJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

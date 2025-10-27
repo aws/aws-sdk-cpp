@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/MobileDeviceAccessMatchedRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/MobileDeviceAccessMatchedRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
-MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule(JsonView jsonValue) { *this = jsonValue; }
 
-MobileDeviceAccessMatchedRule& MobileDeviceAccessMatchedRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MobileDeviceAccessRuleId"))
-  {
+MobileDeviceAccessMatchedRule& MobileDeviceAccessMatchedRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MobileDeviceAccessRuleId")) {
     m_mobileDeviceAccessRuleId = jsonValue.GetString("MobileDeviceAccessRuleId");
     m_mobileDeviceAccessRuleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MobileDeviceAccessMatchedRule::Jsonize() const
-{
+JsonValue MobileDeviceAccessMatchedRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_mobileDeviceAccessRuleIdHasBeenSet)
-  {
-   payload.WithString("MobileDeviceAccessRuleId", m_mobileDeviceAccessRuleId);
-
+  if (m_mobileDeviceAccessRuleIdHasBeenSet) {
+    payload.WithString("MobileDeviceAccessRuleId", m_mobileDeviceAccessRuleId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

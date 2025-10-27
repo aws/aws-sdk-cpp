@@ -5,12 +5,8 @@
 
 #include <aws/ssm/SSMEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSM
-} // namespace Aws
+namespace Aws {
+namespace SSM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSM
+}  // namespace Aws

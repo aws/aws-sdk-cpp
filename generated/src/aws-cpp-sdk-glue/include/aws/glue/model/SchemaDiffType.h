@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class SchemaDiffType
-  {
-    NOT_SET,
-    SYNTAX_DIFF
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class SchemaDiffType { NOT_SET, SYNTAX_DIFF };
 
-namespace SchemaDiffTypeMapper
-{
+namespace SchemaDiffTypeMapper {
 AWS_GLUE_API SchemaDiffType GetSchemaDiffTypeForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForSchemaDiffType(SchemaDiffType value);
-} // namespace SchemaDiffTypeMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace SchemaDiffTypeMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

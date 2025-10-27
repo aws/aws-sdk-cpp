@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BatchGetCrawlersResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glue/model/BatchGetCrawlersResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCrawlersResult::BatchGetCrawlersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetCrawlersResult::BatchGetCrawlersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetCrawlersResult& BatchGetCrawlersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetCrawlersResult& BatchGetCrawlersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Crawlers"))
-  {
+  if (jsonValue.ValueExists("Crawlers")) {
     Aws::Utils::Array<JsonView> crawlersJsonList = jsonValue.GetArray("Crawlers");
-    for(unsigned crawlersIndex = 0; crawlersIndex < crawlersJsonList.GetLength(); ++crawlersIndex)
-    {
+    for (unsigned crawlersIndex = 0; crawlersIndex < crawlersJsonList.GetLength(); ++crawlersIndex) {
       m_crawlers.push_back(crawlersJsonList[crawlersIndex].AsObject());
     }
     m_crawlersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CrawlersNotFound"))
-  {
+  if (jsonValue.ValueExists("CrawlersNotFound")) {
     Aws::Utils::Array<JsonView> crawlersNotFoundJsonList = jsonValue.GetArray("CrawlersNotFound");
-    for(unsigned crawlersNotFoundIndex = 0; crawlersNotFoundIndex < crawlersNotFoundJsonList.GetLength(); ++crawlersNotFoundIndex)
-    {
+    for (unsigned crawlersNotFoundIndex = 0; crawlersNotFoundIndex < crawlersNotFoundJsonList.GetLength(); ++crawlersNotFoundIndex) {
       m_crawlersNotFound.push_back(crawlersNotFoundJsonList[crawlersNotFoundIndex].AsString());
     }
     m_crawlersNotFoundHasBeenSet = true;
@@ -46,12 +38,10 @@ BatchGetCrawlersResult& BatchGetCrawlersResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

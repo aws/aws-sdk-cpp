@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/CollectorHealthCheck.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/CollectorHealthCheck.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-CollectorHealthCheck::CollectorHealthCheck(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CollectorHealthCheck::CollectorHealthCheck(JsonView jsonValue) { *this = jsonValue; }
 
-CollectorHealthCheck& CollectorHealthCheck::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CollectorStatus"))
-  {
+CollectorHealthCheck& CollectorHealthCheck::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CollectorStatus")) {
     m_collectorStatus = CollectorStatusMapper::GetCollectorStatusForName(jsonValue.GetString("CollectorStatus"));
     m_collectorStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocalCollectorS3Access"))
-  {
+  if (jsonValue.ValueExists("LocalCollectorS3Access")) {
     m_localCollectorS3Access = jsonValue.GetBool("LocalCollectorS3Access");
     m_localCollectorS3AccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebCollectorS3Access"))
-  {
+  if (jsonValue.ValueExists("WebCollectorS3Access")) {
     m_webCollectorS3Access = jsonValue.GetBool("WebCollectorS3Access");
     m_webCollectorS3AccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebCollectorGrantedRoleBasedAccess"))
-  {
+  if (jsonValue.ValueExists("WebCollectorGrantedRoleBasedAccess")) {
     m_webCollectorGrantedRoleBasedAccess = jsonValue.GetBool("WebCollectorGrantedRoleBasedAccess");
     m_webCollectorGrantedRoleBasedAccessHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CollectorHealthCheck::Jsonize() const
-{
+JsonValue CollectorHealthCheck::Jsonize() const {
   JsonValue payload;
 
-  if(m_collectorStatusHasBeenSet)
-  {
-   payload.WithString("CollectorStatus", CollectorStatusMapper::GetNameForCollectorStatus(m_collectorStatus));
+  if (m_collectorStatusHasBeenSet) {
+    payload.WithString("CollectorStatus", CollectorStatusMapper::GetNameForCollectorStatus(m_collectorStatus));
   }
 
-  if(m_localCollectorS3AccessHasBeenSet)
-  {
-   payload.WithBool("LocalCollectorS3Access", m_localCollectorS3Access);
-
+  if (m_localCollectorS3AccessHasBeenSet) {
+    payload.WithBool("LocalCollectorS3Access", m_localCollectorS3Access);
   }
 
-  if(m_webCollectorS3AccessHasBeenSet)
-  {
-   payload.WithBool("WebCollectorS3Access", m_webCollectorS3Access);
-
+  if (m_webCollectorS3AccessHasBeenSet) {
+    payload.WithBool("WebCollectorS3Access", m_webCollectorS3Access);
   }
 
-  if(m_webCollectorGrantedRoleBasedAccessHasBeenSet)
-  {
-   payload.WithBool("WebCollectorGrantedRoleBasedAccess", m_webCollectorGrantedRoleBasedAccess);
-
+  if (m_webCollectorGrantedRoleBasedAccessHasBeenSet) {
+    payload.WithBool("WebCollectorGrantedRoleBasedAccess", m_webCollectorGrantedRoleBasedAccess);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

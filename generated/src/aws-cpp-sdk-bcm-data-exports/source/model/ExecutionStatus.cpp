@@ -11,80 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-ExecutionStatus::ExecutionStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionStatus::ExecutionStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionStatus& ExecutionStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CompletedAt"))
-  {
+ExecutionStatus& ExecutionStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CompletedAt")) {
     m_completedAt = jsonValue.GetString("CompletedAt");
     m_completedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetString("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusCode"))
-  {
+  if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = ExecutionStatusCodeMapper::GetExecutionStatusCodeForName(jsonValue.GetString("StatusCode"));
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusReason"))
-  {
+  if (jsonValue.ValueExists("StatusReason")) {
     m_statusReason = ExecutionStatusReasonMapper::GetExecutionStatusReasonForName(jsonValue.GetString("StatusReason"));
     m_statusReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionStatus::Jsonize() const
-{
+JsonValue ExecutionStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_completedAtHasBeenSet)
-  {
-   payload.WithString("CompletedAt", m_completedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_completedAtHasBeenSet) {
+    payload.WithString("CompletedAt", m_completedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("LastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("LastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("StatusCode", ExecutionStatusCodeMapper::GetNameForExecutionStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("StatusCode", ExecutionStatusCodeMapper::GetNameForExecutionStatusCode(m_statusCode));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("StatusReason", ExecutionStatusReasonMapper::GetNameForExecutionStatusReason(m_statusReason));
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", ExecutionStatusReasonMapper::GetNameForExecutionStatusReason(m_statusReason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

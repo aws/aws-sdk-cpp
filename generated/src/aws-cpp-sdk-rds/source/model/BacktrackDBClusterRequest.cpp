@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/BacktrackDBClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/BacktrackDBClusterRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String BacktrackDBClusterRequest::SerializePayload() const
-{
+Aws::String BacktrackDBClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=BacktrackDBCluster&";
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
+  if (m_dBClusterIdentifierHasBeenSet) {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_backtrackToHasBeenSet)
-  {
+  if (m_backtrackToHasBeenSet) {
     ss << "BacktrackTo=" << StringUtils::URLEncode(m_backtrackTo.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_forceHasBeenSet)
-  {
+  if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
-  if(m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet)
-  {
+  if (m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet) {
     ss << "UseEarliestTimeOnPointInTimeUnavailable=" << std::boolalpha << m_useEarliestTimeOnPointInTimeUnavailable << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String BacktrackDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  BacktrackDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void BacktrackDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -12,33 +12,22 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteImagePermissionsRequest::SerializePayload() const
-{
+Aws::String DeleteImagePermissionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_sharedAccountIdHasBeenSet)
-  {
-   payload.WithString("SharedAccountId", m_sharedAccountId);
-
+  if (m_sharedAccountIdHasBeenSet) {
+    payload.WithString("SharedAccountId", m_sharedAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteImagePermissionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteImagePermissionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DeleteImagePermissions"));
   return headers;
-
 }
-
-
-
-

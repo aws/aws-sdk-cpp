@@ -4,50 +4,50 @@
  */
 
 #pragma once
-#include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
+#include <aws/config/ConfigService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
+/**
+ */
+class PutRetentionConfigurationRequest : public ConfigServiceRequest {
+ public:
+  AWS_CONFIGSERVICE_API PutRetentionConfigurationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutRetentionConfiguration"; }
+
+  AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Number of days Config stores your historical information.</p>
+   * <p>Currently, only applicable to the configuration item history.</p>
    */
-  class PutRetentionConfigurationRequest : public ConfigServiceRequest
-  {
-  public:
-    AWS_CONFIGSERVICE_API PutRetentionConfigurationRequest() = default;
+  inline int GetRetentionPeriodInDays() const { return m_retentionPeriodInDays; }
+  inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
+  inline void SetRetentionPeriodInDays(int value) {
+    m_retentionPeriodInDaysHasBeenSet = true;
+    m_retentionPeriodInDays = value;
+  }
+  inline PutRetentionConfigurationRequest& WithRetentionPeriodInDays(int value) {
+    SetRetentionPeriodInDays(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_retentionPeriodInDays{0};
+  bool m_retentionPeriodInDaysHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutRetentionConfiguration"; }
-
-    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
-
-    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Number of days Config stores your historical information.</p> 
-     * <p>Currently, only applicable to the configuration item history.</p> 
-     */
-    inline int GetRetentionPeriodInDays() const { return m_retentionPeriodInDays; }
-    inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
-    inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
-    inline PutRetentionConfigurationRequest& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
-    ///@}
-  private:
-
-    int m_retentionPeriodInDays{0};
-    bool m_retentionPeriodInDaysHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -6,65 +6,69 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace IoTWireless {
+namespace Model {
 
+/**
+ * <p>CDMA local ID information, which corresponds to the local identification
+ * parameters of a CDMA cell.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CdmaLocalId">AWS
+ * API Reference</a></p>
+ */
+class CdmaLocalId {
+ public:
+  AWS_IOTWIRELESS_API CdmaLocalId() = default;
+  AWS_IOTWIRELESS_API CdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTWIRELESS_API CdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>CDMA local ID information, which corresponds to the local identification
-   * parameters of a CDMA cell.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CdmaLocalId">AWS
-   * API Reference</a></p>
+   * <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a
+   * radio tower.</p>
    */
-  class CdmaLocalId
-  {
-  public:
-    AWS_IOTWIRELESS_API CdmaLocalId() = default;
-    AWS_IOTWIRELESS_API CdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTWIRELESS_API CdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetPnOffset() const { return m_pnOffset; }
+  inline bool PnOffsetHasBeenSet() const { return m_pnOffsetHasBeenSet; }
+  inline void SetPnOffset(int value) {
+    m_pnOffsetHasBeenSet = true;
+    m_pnOffset = value;
+  }
+  inline CdmaLocalId& WithPnOffset(int value) {
+    SetPnOffset(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>CDMA channel information.</p>
+   */
+  inline int GetCdmaChannel() const { return m_cdmaChannel; }
+  inline bool CdmaChannelHasBeenSet() const { return m_cdmaChannelHasBeenSet; }
+  inline void SetCdmaChannel(int value) {
+    m_cdmaChannelHasBeenSet = true;
+    m_cdmaChannel = value;
+  }
+  inline CdmaLocalId& WithCdmaChannel(int value) {
+    SetCdmaChannel(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_pnOffset{0};
+  bool m_pnOffsetHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a
-     * radio tower.</p>
-     */
-    inline int GetPnOffset() const { return m_pnOffset; }
-    inline bool PnOffsetHasBeenSet() const { return m_pnOffsetHasBeenSet; }
-    inline void SetPnOffset(int value) { m_pnOffsetHasBeenSet = true; m_pnOffset = value; }
-    inline CdmaLocalId& WithPnOffset(int value) { SetPnOffset(value); return *this;}
-    ///@}
+  int m_cdmaChannel{0};
+  bool m_cdmaChannelHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>CDMA channel information.</p>
-     */
-    inline int GetCdmaChannel() const { return m_cdmaChannel; }
-    inline bool CdmaChannelHasBeenSet() const { return m_cdmaChannelHasBeenSet; }
-    inline void SetCdmaChannel(int value) { m_cdmaChannelHasBeenSet = true; m_cdmaChannel = value; }
-    inline CdmaLocalId& WithCdmaChannel(int value) { SetCdmaChannel(value); return *this;}
-    ///@}
-  private:
-
-    int m_pnOffset{0};
-    bool m_pnOffsetHasBeenSet = false;
-
-    int m_cdmaChannel{0};
-    bool m_cdmaChannelHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/ContainerServiceRegistryLogin.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/ContainerServiceRegistryLogin.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-ContainerServiceRegistryLogin::ContainerServiceRegistryLogin(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerServiceRegistryLogin::ContainerServiceRegistryLogin(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerServiceRegistryLogin& ContainerServiceRegistryLogin::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("username"))
-  {
+ContainerServiceRegistryLogin& ContainerServiceRegistryLogin::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("username")) {
     m_username = jsonValue.GetString("username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("password"))
-  {
+  if (jsonValue.ValueExists("password")) {
     m_password = jsonValue.GetString("password");
     m_passwordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expiresAt"))
-  {
+  if (jsonValue.ValueExists("expiresAt")) {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
     m_expiresAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registry"))
-  {
+  if (jsonValue.ValueExists("registry")) {
     m_registry = jsonValue.GetString("registry");
     m_registryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerServiceRegistryLogin::Jsonize() const
-{
+JsonValue ContainerServiceRegistryLogin::Jsonize() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("password", m_password);
   }
 
-  if(m_expiresAtHasBeenSet)
-  {
-   payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
+  if (m_expiresAtHasBeenSet) {
+    payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
-  if(m_registryHasBeenSet)
-  {
-   payload.WithString("registry", m_registry);
-
+  if (m_registryHasBeenSet) {
+    payload.WithString("registry", m_registry);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

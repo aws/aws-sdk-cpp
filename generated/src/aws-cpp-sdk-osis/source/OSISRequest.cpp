@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/osis/OSISRequest.h>
 
-namespace Aws
-{
-namespace OSIS
-{
-} // namespace OSIS
-} // namespace Aws
+namespace Aws {
+namespace OSIS {}  // namespace OSIS
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListSAMLProvidersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ListSAMLProvidersResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSAMLProvidersResult::ListSAMLProvidersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListSAMLProvidersResult::ListSAMLProvidersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListSAMLProvidersResult& ListSAMLProvidersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListSAMLProvidersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListSAMLProvidersResult")) {
     resultNode = rootNode.FirstChild("ListSAMLProvidersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sAMLProviderListNode = resultNode.FirstChild("SAMLProviderList");
-    if(!sAMLProviderListNode.IsNull())
-    {
+    if (!sAMLProviderListNode.IsNull()) {
       XmlNode sAMLProviderListMember = sAMLProviderListNode.FirstChild("member");
       m_sAMLProviderListHasBeenSet = !sAMLProviderListMember.IsNull();
-      while(!sAMLProviderListMember.IsNull())
-      {
+      while (!sAMLProviderListMember.IsNull()) {
         m_sAMLProviderList.push_back(sAMLProviderListMember);
         sAMLProviderListMember = sAMLProviderListMember.NextNode("member");
       }
@@ -53,7 +45,7 @@ ListSAMLProvidersResult& ListSAMLProvidersResult::operator =(const Aws::AmazonWe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListSAMLProvidersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListSAMLProvidersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

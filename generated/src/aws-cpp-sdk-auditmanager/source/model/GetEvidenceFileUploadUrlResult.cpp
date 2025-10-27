@@ -4,10 +4,10 @@
  */
 
 #include <aws/auditmanager/model/GetEvidenceFileUploadUrlResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEvidenceFileUploadUrlResult::GetEvidenceFileUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetEvidenceFileUploadUrlResult::GetEvidenceFileUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetEvidenceFileUploadUrlResult& GetEvidenceFileUploadUrlResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetEvidenceFileUploadUrlResult& GetEvidenceFileUploadUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("evidenceFileName"))
-  {
+  if (jsonValue.ValueExists("evidenceFileName")) {
     m_evidenceFileName = jsonValue.GetString("evidenceFileName");
     m_evidenceFileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("uploadUrl"))
-  {
+  if (jsonValue.ValueExists("uploadUrl")) {
     m_uploadUrl = jsonValue.GetString("uploadUrl");
     m_uploadUrlHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

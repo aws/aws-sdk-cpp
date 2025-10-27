@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/UpdateVoiceChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/UpdateVoiceChannelRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateVoiceChannelRequest::SerializePayload() const
-{
+Aws::String UpdateVoiceChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_voiceChannelRequestHasBeenSet)
-  {
-   payload = m_voiceChannelRequest.Jsonize();
+  if (m_voiceChannelRequestHasBeenSet) {
+    payload = m_voiceChannelRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,75 +4,81 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoTRequest.h>
+#include <aws/iot/IoT_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace IoT {
+namespace Model {
 
+/**
+ * <p>The input for the AcceptCertificateTransfer operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransferRequest">AWS
+ * API Reference</a></p>
+ */
+class AcceptCertificateTransferRequest : public IoTRequest {
+ public:
+  AWS_IOT_API AcceptCertificateTransferRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AcceptCertificateTransfer"; }
+
+  AWS_IOT_API Aws::String SerializePayload() const override;
+
+  AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
-   * <p>The input for the AcceptCertificateTransfer operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransferRequest">AWS
-   * API Reference</a></p>
+   * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+   * certificate ID.)</p>
    */
-  class AcceptCertificateTransferRequest : public IoTRequest
-  {
-  public:
-    AWS_IOT_API AcceptCertificateTransferRequest() = default;
+  inline const Aws::String& GetCertificateId() const { return m_certificateId; }
+  inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+  template <typename CertificateIdT = Aws::String>
+  void SetCertificateId(CertificateIdT&& value) {
+    m_certificateIdHasBeenSet = true;
+    m_certificateId = std::forward<CertificateIdT>(value);
+  }
+  template <typename CertificateIdT = Aws::String>
+  AcceptCertificateTransferRequest& WithCertificateId(CertificateIdT&& value) {
+    SetCertificateId(std::forward<CertificateIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AcceptCertificateTransfer"; }
+  ///@{
+  /**
+   * <p>Specifies whether the certificate is active.</p>
+   */
+  inline bool GetSetAsActive() const { return m_setAsActive; }
+  inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
+  inline void SetSetAsActive(bool value) {
+    m_setAsActiveHasBeenSet = true;
+    m_setAsActive = value;
+  }
+  inline AcceptCertificateTransferRequest& WithSetAsActive(bool value) {
+    SetSetAsActive(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_certificateId;
+  bool m_certificateIdHasBeenSet = false;
 
-    AWS_IOT_API Aws::String SerializePayload() const override;
+  bool m_setAsActive{false};
+  bool m_setAsActiveHasBeenSet = false;
+};
 
-    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
-    inline const Aws::String& GetCertificateId() const { return m_certificateId; }
-    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-    template<typename CertificateIdT = Aws::String>
-    void SetCertificateId(CertificateIdT&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::forward<CertificateIdT>(value); }
-    template<typename CertificateIdT = Aws::String>
-    AcceptCertificateTransferRequest& WithCertificateId(CertificateIdT&& value) { SetCertificateId(std::forward<CertificateIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
-    inline bool GetSetAsActive() const { return m_setAsActive; }
-    inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
-    inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
-    inline AcceptCertificateTransferRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet = false;
-
-    bool m_setAsActive{false};
-    bool m_setAsActiveHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/AccessLevelFilterKey.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/servicecatalog/model/AccessLevelFilterKey.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+namespace AccessLevelFilterKeyMapper {
 
-namespace Aws
-{
-  namespace ServiceCatalog
-  {
-    namespace Model
-    {
-      namespace AccessLevelFilterKeyMapper
-      {
+static const int Account_HASH = HashingUtils::HashString("Account");
+static const int Role_HASH = HashingUtils::HashString("Role");
+static const int User_HASH = HashingUtils::HashString("User");
 
-        static const int Account_HASH = HashingUtils::HashString("Account");
-        static const int Role_HASH = HashingUtils::HashString("Role");
-        static const int User_HASH = HashingUtils::HashString("User");
+AccessLevelFilterKey GetAccessLevelFilterKeyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Account_HASH) {
+    return AccessLevelFilterKey::Account;
+  } else if (hashCode == Role_HASH) {
+    return AccessLevelFilterKey::Role;
+  } else if (hashCode == User_HASH) {
+    return AccessLevelFilterKey::User;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AccessLevelFilterKey>(hashCode);
+  }
 
+  return AccessLevelFilterKey::NOT_SET;
+}
 
-        AccessLevelFilterKey GetAccessLevelFilterKeyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Account_HASH)
-          {
-            return AccessLevelFilterKey::Account;
-          }
-          else if (hashCode == Role_HASH)
-          {
-            return AccessLevelFilterKey::Role;
-          }
-          else if (hashCode == User_HASH)
-          {
-            return AccessLevelFilterKey::User;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AccessLevelFilterKey>(hashCode);
-          }
+Aws::String GetNameForAccessLevelFilterKey(AccessLevelFilterKey enumValue) {
+  switch (enumValue) {
+    case AccessLevelFilterKey::NOT_SET:
+      return {};
+    case AccessLevelFilterKey::Account:
+      return "Account";
+    case AccessLevelFilterKey::Role:
+      return "Role";
+    case AccessLevelFilterKey::User:
+      return "User";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AccessLevelFilterKey::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAccessLevelFilterKey(AccessLevelFilterKey enumValue)
-        {
-          switch(enumValue)
-          {
-          case AccessLevelFilterKey::NOT_SET:
-            return {};
-          case AccessLevelFilterKey::Account:
-            return "Account";
-          case AccessLevelFilterKey::Role:
-            return "Role";
-          case AccessLevelFilterKey::User:
-            return "User";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AccessLevelFilterKeyMapper
-    } // namespace Model
-  } // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace AccessLevelFilterKeyMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

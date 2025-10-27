@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mq/MQ_EXPORTS.h>
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
-  enum class DayOfWeek
-  {
-    NOT_SET,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-  };
+namespace Aws {
+namespace MQ {
+namespace Model {
+enum class DayOfWeek { NOT_SET, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY };
 
-namespace DayOfWeekMapper
-{
+namespace DayOfWeekMapper {
 AWS_MQ_API DayOfWeek GetDayOfWeekForName(const Aws::String& name);
 
 AWS_MQ_API Aws::String GetNameForDayOfWeek(DayOfWeek value);
-} // namespace DayOfWeekMapper
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace DayOfWeekMapper
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

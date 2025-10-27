@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/ListHookResultsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,42 +17,33 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHookResultsResult::ListHookResultsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListHookResultsResult::ListHookResultsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListHookResultsResult& ListHookResultsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListHookResultsResult& ListHookResultsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListHookResultsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListHookResultsResult")) {
     resultNode = rootNode.FirstChild("ListHookResultsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode targetTypeNode = resultNode.FirstChild("TargetType");
-    if(!targetTypeNode.IsNull())
-    {
-      m_targetType = ListHookResultsTargetTypeMapper::GetListHookResultsTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()));
+    if (!targetTypeNode.IsNull()) {
+      m_targetType = ListHookResultsTargetTypeMapper::GetListHookResultsTargetTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()));
       m_targetTypeHasBeenSet = true;
     }
     XmlNode targetIdNode = resultNode.FirstChild("TargetId");
-    if(!targetIdNode.IsNull())
-    {
+    if (!targetIdNode.IsNull()) {
       m_targetId = Aws::Utils::Xml::DecodeEscapedXmlText(targetIdNode.GetText());
       m_targetIdHasBeenSet = true;
     }
     XmlNode hookResultsNode = resultNode.FirstChild("HookResults");
-    if(!hookResultsNode.IsNull())
-    {
+    if (!hookResultsNode.IsNull()) {
       XmlNode hookResultsMember = hookResultsNode.FirstChild("member");
       m_hookResultsHasBeenSet = !hookResultsMember.IsNull();
-      while(!hookResultsMember.IsNull())
-      {
+      while (!hookResultsMember.IsNull()) {
         m_hookResults.push_back(hookResultsMember);
         hookResultsMember = hookResultsMember.NextNode("member");
       }
@@ -60,8 +51,7 @@ ListHookResultsResult& ListHookResultsResult::operator =(const Aws::AmazonWebSer
       m_hookResultsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -71,7 +61,7 @@ ListHookResultsResult& ListHookResultsResult::operator =(const Aws::AmazonWebSer
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListHookResultsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListHookResultsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

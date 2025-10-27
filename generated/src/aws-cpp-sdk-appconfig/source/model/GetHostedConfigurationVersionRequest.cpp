@@ -12,11 +12,4 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetHostedConfigurationVersionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetHostedConfigurationVersionRequest::SerializePayload() const { return {}; }

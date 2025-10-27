@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class AttributeAction
-  {
-    NOT_SET,
-    ADD,
-    PUT,
-    DELETE_
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class AttributeAction { NOT_SET, ADD, PUT, DELETE_ };
 
-namespace AttributeActionMapper
-{
+namespace AttributeActionMapper {
 AWS_DYNAMODB_API AttributeAction GetAttributeActionForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForAttributeAction(AttributeAction value);
-} // namespace AttributeActionMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace AttributeActionMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DocDB
-{
-enum class DocDBErrors
-{
-  //From Core//
+namespace Aws {
+namespace DocDB {
+enum class DocDBErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DocDBErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class DocDBErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_NOT_FOUND_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_NOT_FOUND_FAULT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CERTIFICATE_NOT_FOUND_FAULT,
   D_B_CLUSTER_ALREADY_EXISTS_FAULT,
   D_B_CLUSTER_NOT_FOUND_FAULT,
@@ -107,9 +104,8 @@ enum class DocDBErrors
   S_N_S_TOPIC_ARN_NOT_FOUND_FAULT
 };
 
-class AWS_DOCDB_API DocDBError : public Aws::Client::AWSError<DocDBErrors>
-{
-public:
+class AWS_DOCDB_API DocDBError : public Aws::Client::AWSError<DocDBErrors> {
+ public:
   DocDBError() {}
   DocDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
   DocDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
@@ -120,10 +116,9 @@ public:
   T GetModeledError();
 };
 
-namespace DocDBErrorMapper
-{
-  AWS_DOCDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DocDBErrorMapper {
+AWS_DOCDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DocDB
-} // namespace Aws
+}  // namespace DocDB
+}  // namespace Aws

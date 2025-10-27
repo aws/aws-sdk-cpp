@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/detective/Detective_EXPORTS.h>
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
-  enum class MemberDisabledReason
-  {
-    NOT_SET,
-    VOLUME_TOO_HIGH,
-    VOLUME_UNKNOWN
-  };
+namespace Aws {
+namespace Detective {
+namespace Model {
+enum class MemberDisabledReason { NOT_SET, VOLUME_TOO_HIGH, VOLUME_UNKNOWN };
 
-namespace MemberDisabledReasonMapper
-{
+namespace MemberDisabledReasonMapper {
 AWS_DETECTIVE_API MemberDisabledReason GetMemberDisabledReasonForName(const Aws::String& name);
 
 AWS_DETECTIVE_API Aws::String GetNameForMemberDisabledReason(MemberDisabledReason value);
-} // namespace MemberDisabledReasonMapper
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace MemberDisabledReasonMapper
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

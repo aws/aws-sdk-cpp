@@ -11,82 +11,64 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-CustomDomain::CustomDomain(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomDomain::CustomDomain(JsonView jsonValue) { *this = jsonValue; }
 
-CustomDomain& CustomDomain::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DomainName"))
-  {
+CustomDomain& CustomDomain::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnableWWWSubdomain"))
-  {
+  if (jsonValue.ValueExists("EnableWWWSubdomain")) {
     m_enableWWWSubdomain = jsonValue.GetBool("EnableWWWSubdomain");
     m_enableWWWSubdomainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CertificateValidationRecords"))
-  {
+  if (jsonValue.ValueExists("CertificateValidationRecords")) {
     Aws::Utils::Array<JsonView> certificateValidationRecordsJsonList = jsonValue.GetArray("CertificateValidationRecords");
-    for(unsigned certificateValidationRecordsIndex = 0; certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex)
-    {
+    for (unsigned certificateValidationRecordsIndex = 0;
+         certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex) {
       m_certificateValidationRecords.push_back(certificateValidationRecordsJsonList[certificateValidationRecordsIndex].AsObject());
     }
     m_certificateValidationRecordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = CustomDomainAssociationStatusMapper::GetCustomDomainAssociationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomDomain::Jsonize() const
-{
+JsonValue CustomDomain::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_enableWWWSubdomainHasBeenSet)
-  {
-   payload.WithBool("EnableWWWSubdomain", m_enableWWWSubdomain);
-
+  if (m_enableWWWSubdomainHasBeenSet) {
+    payload.WithBool("EnableWWWSubdomain", m_enableWWWSubdomain);
   }
 
-  if(m_certificateValidationRecordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> certificateValidationRecordsJsonList(m_certificateValidationRecords.size());
-   for(unsigned certificateValidationRecordsIndex = 0; certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex)
-   {
-     certificateValidationRecordsJsonList[certificateValidationRecordsIndex].AsObject(m_certificateValidationRecords[certificateValidationRecordsIndex].Jsonize());
-   }
-   payload.WithArray("CertificateValidationRecords", std::move(certificateValidationRecordsJsonList));
-
+  if (m_certificateValidationRecordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificateValidationRecordsJsonList(m_certificateValidationRecords.size());
+    for (unsigned certificateValidationRecordsIndex = 0;
+         certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex) {
+      certificateValidationRecordsJsonList[certificateValidationRecordsIndex].AsObject(
+          m_certificateValidationRecords[certificateValidationRecordsIndex].Jsonize());
+    }
+    payload.WithArray("CertificateValidationRecords", std::move(certificateValidationRecordsJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", CustomDomainAssociationStatusMapper::GetNameForCustomDomainAssociationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", CustomDomainAssociationStatusMapper::GetNameForCustomDomainAssociationStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

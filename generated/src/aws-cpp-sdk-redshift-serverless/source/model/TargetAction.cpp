@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/TargetAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/TargetAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-TargetAction::TargetAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetAction::TargetAction(JsonView jsonValue) { *this = jsonValue; }
 
-TargetAction& TargetAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createSnapshot"))
-  {
+TargetAction& TargetAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createSnapshot")) {
     m_createSnapshot = jsonValue.GetObject("createSnapshot");
     m_createSnapshotHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetAction::Jsonize() const
-{
+JsonValue TargetAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_createSnapshotHasBeenSet)
-  {
-   payload.WithObject("createSnapshot", m_createSnapshot.Jsonize());
-
+  if (m_createSnapshotHasBeenSet) {
+    payload.WithObject("createSnapshot", m_createSnapshot.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

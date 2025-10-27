@@ -3,55 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateTransitGatewayVpcAttachmentRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateTransitGatewayVpcAttachmentRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateTransitGatewayVpcAttachmentRequest::SerializePayload() const
-{
+Aws::String CreateTransitGatewayVpcAttachmentRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateTransitGatewayVpcAttachment&";
-  if(m_transitGatewayIdHasBeenSet)
-  {
+  if (m_transitGatewayIdHasBeenSet) {
     ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
+  if (m_subnetIdsHasBeenSet) {
     unsigned subnetIdsCount = 1;
-    for(auto& item : m_subnetIds)
-    {
-      ss << "SubnetIds." << subnetIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_subnetIds) {
+      ss << "SubnetIds." << subnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       subnetIdsCount++;
     }
   }
 
-  if(m_optionsHasBeenSet)
-  {
+  if (m_optionsHasBeenSet) {
     m_options.OutputToStream(ss, "Options");
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecifications.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -59,8 +49,4 @@ Aws::String CreateTransitGatewayVpcAttachmentRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateTransitGatewayVpcAttachmentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateTransitGatewayVpcAttachmentRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

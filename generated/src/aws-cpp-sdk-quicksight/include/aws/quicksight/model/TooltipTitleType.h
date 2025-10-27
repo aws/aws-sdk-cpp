@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TooltipTitleType
-  {
-    NOT_SET,
-    NONE,
-    PRIMARY_VALUE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TooltipTitleType { NOT_SET, NONE, PRIMARY_VALUE };
 
-namespace TooltipTitleTypeMapper
-{
+namespace TooltipTitleTypeMapper {
 AWS_QUICKSIGHT_API TooltipTitleType GetTooltipTitleTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTooltipTitleType(TooltipTitleType value);
-} // namespace TooltipTitleTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TooltipTitleTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

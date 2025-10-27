@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class ContentCategoryType
-  {
-    NOT_SET,
-    IMAGE,
-    DOCUMENT,
-    PDF,
-    SPREADSHEET,
-    PRESENTATION,
-    AUDIO,
-    VIDEO,
-    SOURCE_CODE,
-    OTHER
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class ContentCategoryType { NOT_SET, IMAGE, DOCUMENT, PDF, SPREADSHEET, PRESENTATION, AUDIO, VIDEO, SOURCE_CODE, OTHER };
 
-namespace ContentCategoryTypeMapper
-{
+namespace ContentCategoryTypeMapper {
 AWS_WORKDOCS_API ContentCategoryType GetContentCategoryTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForContentCategoryType(ContentCategoryType value);
-} // namespace ContentCategoryTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace ContentCategoryTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

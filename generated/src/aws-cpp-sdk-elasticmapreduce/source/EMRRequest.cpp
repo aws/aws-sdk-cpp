@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/elasticmapreduce/EMRRequest.h>
 
-namespace Aws
-{
-namespace EMR
-{
-} // namespace EMR
-} // namespace Aws
+namespace Aws {
+namespace EMR {}  // namespace EMR
+}  // namespace Aws

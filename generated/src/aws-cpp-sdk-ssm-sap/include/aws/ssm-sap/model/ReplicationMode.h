@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class ReplicationMode
-  {
-    NOT_SET,
-    PRIMARY,
-    NONE,
-    SYNC,
-    SYNCMEM,
-    ASYNC
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class ReplicationMode { NOT_SET, PRIMARY, NONE, SYNC, SYNCMEM, ASYNC };
 
-namespace ReplicationModeMapper
-{
+namespace ReplicationModeMapper {
 AWS_SSMSAP_API ReplicationMode GetReplicationModeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForReplicationMode(ReplicationMode value);
-} // namespace ReplicationModeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace ReplicationModeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

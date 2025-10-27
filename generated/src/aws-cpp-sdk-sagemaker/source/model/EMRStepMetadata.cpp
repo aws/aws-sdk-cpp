@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EMRStepMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EMRStepMetadata::EMRStepMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EMRStepMetadata::EMRStepMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EMRStepMetadata& EMRStepMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClusterId"))
-  {
+EMRStepMetadata& EMRStepMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClusterId")) {
     m_clusterId = jsonValue.GetString("ClusterId");
     m_clusterIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StepId"))
-  {
+  if (jsonValue.ValueExists("StepId")) {
     m_stepId = jsonValue.GetString("StepId");
     m_stepIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StepName"))
-  {
+  if (jsonValue.ValueExists("StepName")) {
     m_stepName = jsonValue.GetString("StepName");
     m_stepNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogFilePath"))
-  {
+  if (jsonValue.ValueExists("LogFilePath")) {
     m_logFilePath = jsonValue.GetString("LogFilePath");
     m_logFilePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EMRStepMetadata::Jsonize() const
-{
+JsonValue EMRStepMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_clusterIdHasBeenSet)
-  {
-   payload.WithString("ClusterId", m_clusterId);
-
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
   }
 
-  if(m_stepIdHasBeenSet)
-  {
-   payload.WithString("StepId", m_stepId);
-
+  if (m_stepIdHasBeenSet) {
+    payload.WithString("StepId", m_stepId);
   }
 
-  if(m_stepNameHasBeenSet)
-  {
-   payload.WithString("StepName", m_stepName);
-
+  if (m_stepNameHasBeenSet) {
+    payload.WithString("StepName", m_stepName);
   }
 
-  if(m_logFilePathHasBeenSet)
-  {
-   payload.WithString("LogFilePath", m_logFilePath);
-
+  if (m_logFilePathHasBeenSet) {
+    payload.WithString("LogFilePath", m_logFilePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-contacts/model/ListPageResolutionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm-contacts/model/ListPageResolutionsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPageResolutionsResult::ListPageResolutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListPageResolutionsResult::ListPageResolutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListPageResolutionsResult& ListPageResolutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPageResolutionsResult& ListPageResolutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PageResolutions"))
-  {
+  if (jsonValue.ValueExists("PageResolutions")) {
     Aws::Utils::Array<JsonView> pageResolutionsJsonList = jsonValue.GetArray("PageResolutions");
-    for(unsigned pageResolutionsIndex = 0; pageResolutionsIndex < pageResolutionsJsonList.GetLength(); ++pageResolutionsIndex)
-    {
+    for (unsigned pageResolutionsIndex = 0; pageResolutionsIndex < pageResolutionsJsonList.GetLength(); ++pageResolutionsIndex) {
       m_pageResolutions.push_back(pageResolutionsJsonList[pageResolutionsIndex].AsObject());
     }
     m_pageResolutionsHasBeenSet = true;
@@ -42,12 +35,10 @@ ListPageResolutionsResult& ListPageResolutionsResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

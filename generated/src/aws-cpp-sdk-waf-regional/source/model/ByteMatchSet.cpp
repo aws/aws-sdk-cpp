@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/ByteMatchSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/model/ByteMatchSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-ByteMatchSet::ByteMatchSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ByteMatchSet::ByteMatchSet(JsonView jsonValue) { *this = jsonValue; }
 
-ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ByteMatchSetId"))
-  {
+ByteMatchSet& ByteMatchSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ByteMatchSetId")) {
     m_byteMatchSetId = jsonValue.GetString("ByteMatchSetId");
     m_byteMatchSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ByteMatchTuples"))
-  {
+  if (jsonValue.ValueExists("ByteMatchTuples")) {
     Aws::Utils::Array<JsonView> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
-    for(unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex)
-    {
+    for (unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex) {
       m_byteMatchTuples.push_back(byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject());
     }
     m_byteMatchTuplesHasBeenSet = true;
@@ -47,36 +36,28 @@ ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ByteMatchSet::Jsonize() const
-{
+JsonValue ByteMatchSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_byteMatchSetIdHasBeenSet)
-  {
-   payload.WithString("ByteMatchSetId", m_byteMatchSetId);
-
+  if (m_byteMatchSetIdHasBeenSet) {
+    payload.WithString("ByteMatchSetId", m_byteMatchSetId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_byteMatchTuplesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> byteMatchTuplesJsonList(m_byteMatchTuples.size());
-   for(unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex)
-   {
-     byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject(m_byteMatchTuples[byteMatchTuplesIndex].Jsonize());
-   }
-   payload.WithArray("ByteMatchTuples", std::move(byteMatchTuplesJsonList));
-
+  if (m_byteMatchTuplesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> byteMatchTuplesJsonList(m_byteMatchTuples.size());
+    for (unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex) {
+      byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject(m_byteMatchTuples[byteMatchTuplesIndex].Jsonize());
+    }
+    payload.WithArray("ByteMatchTuples", std::move(byteMatchTuplesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

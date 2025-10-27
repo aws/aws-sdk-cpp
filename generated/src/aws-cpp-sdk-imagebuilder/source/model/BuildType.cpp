@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/BuildType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/imagebuilder/model/BuildType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+namespace BuildTypeMapper {
 
-namespace Aws
-{
-  namespace imagebuilder
-  {
-    namespace Model
-    {
-      namespace BuildTypeMapper
-      {
+static const int USER_INITIATED_HASH = HashingUtils::HashString("USER_INITIATED");
+static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
+static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+static const int IMPORT_ISO_HASH = HashingUtils::HashString("IMPORT_ISO");
 
-        static const int USER_INITIATED_HASH = HashingUtils::HashString("USER_INITIATED");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
-        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
-        static const int IMPORT_ISO_HASH = HashingUtils::HashString("IMPORT_ISO");
+BuildType GetBuildTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == USER_INITIATED_HASH) {
+    return BuildType::USER_INITIATED;
+  } else if (hashCode == SCHEDULED_HASH) {
+    return BuildType::SCHEDULED;
+  } else if (hashCode == IMPORT_HASH) {
+    return BuildType::IMPORT;
+  } else if (hashCode == IMPORT_ISO_HASH) {
+    return BuildType::IMPORT_ISO;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<BuildType>(hashCode);
+  }
 
+  return BuildType::NOT_SET;
+}
 
-        BuildType GetBuildTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == USER_INITIATED_HASH)
-          {
-            return BuildType::USER_INITIATED;
-          }
-          else if (hashCode == SCHEDULED_HASH)
-          {
-            return BuildType::SCHEDULED;
-          }
-          else if (hashCode == IMPORT_HASH)
-          {
-            return BuildType::IMPORT;
-          }
-          else if (hashCode == IMPORT_ISO_HASH)
-          {
-            return BuildType::IMPORT_ISO;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BuildType>(hashCode);
-          }
+Aws::String GetNameForBuildType(BuildType enumValue) {
+  switch (enumValue) {
+    case BuildType::NOT_SET:
+      return {};
+    case BuildType::USER_INITIATED:
+      return "USER_INITIATED";
+    case BuildType::SCHEDULED:
+      return "SCHEDULED";
+    case BuildType::IMPORT:
+      return "IMPORT";
+    case BuildType::IMPORT_ISO:
+      return "IMPORT_ISO";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return BuildType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForBuildType(BuildType enumValue)
-        {
-          switch(enumValue)
-          {
-          case BuildType::NOT_SET:
-            return {};
-          case BuildType::USER_INITIATED:
-            return "USER_INITIATED";
-          case BuildType::SCHEDULED:
-            return "SCHEDULED";
-          case BuildType::IMPORT:
-            return "IMPORT";
-          case BuildType::IMPORT_ISO:
-            return "IMPORT_ISO";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace BuildTypeMapper
-    } // namespace Model
-  } // namespace imagebuilder
-} // namespace Aws
+}  // namespace BuildTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

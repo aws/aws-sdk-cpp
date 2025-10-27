@@ -12,19 +12,12 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterMarketplaceModelEndpointRequest::SerializePayload() const
-{
+Aws::String RegisterMarketplaceModelEndpointRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_modelSourceIdentifierHasBeenSet)
-  {
-   payload.WithString("modelSourceIdentifier", m_modelSourceIdentifier);
-
+  if (m_modelSourceIdentifierHasBeenSet) {
+    payload.WithString("modelSourceIdentifier", m_modelSourceIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,69 +4,55 @@
  */
 
 #include <aws/appstream/model/StreamView.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AppStream {
+namespace Model {
+namespace StreamViewMapper {
 
-namespace Aws
-{
-  namespace AppStream
-  {
-    namespace Model
-    {
-      namespace StreamViewMapper
-      {
+static const int APP_HASH = HashingUtils::HashString("APP");
+static const int DESKTOP_HASH = HashingUtils::HashString("DESKTOP");
 
-        static const int APP_HASH = HashingUtils::HashString("APP");
-        static const int DESKTOP_HASH = HashingUtils::HashString("DESKTOP");
+StreamView GetStreamViewForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == APP_HASH) {
+    return StreamView::APP;
+  } else if (hashCode == DESKTOP_HASH) {
+    return StreamView::DESKTOP;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<StreamView>(hashCode);
+  }
 
+  return StreamView::NOT_SET;
+}
 
-        StreamView GetStreamViewForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == APP_HASH)
-          {
-            return StreamView::APP;
-          }
-          else if (hashCode == DESKTOP_HASH)
-          {
-            return StreamView::DESKTOP;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StreamView>(hashCode);
-          }
+Aws::String GetNameForStreamView(StreamView enumValue) {
+  switch (enumValue) {
+    case StreamView::NOT_SET:
+      return {};
+    case StreamView::APP:
+      return "APP";
+    case StreamView::DESKTOP:
+      return "DESKTOP";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return StreamView::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForStreamView(StreamView enumValue)
-        {
-          switch(enumValue)
-          {
-          case StreamView::NOT_SET:
-            return {};
-          case StreamView::APP:
-            return "APP";
-          case StreamView::DESKTOP:
-            return "DESKTOP";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace StreamViewMapper
-    } // namespace Model
-  } // namespace AppStream
-} // namespace Aws
+}  // namespace StreamViewMapper
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

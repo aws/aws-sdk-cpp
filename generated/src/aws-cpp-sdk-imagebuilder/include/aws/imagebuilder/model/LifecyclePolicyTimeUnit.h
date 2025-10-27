@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class LifecyclePolicyTimeUnit
-  {
-    NOT_SET,
-    DAYS,
-    WEEKS,
-    MONTHS,
-    YEARS
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class LifecyclePolicyTimeUnit { NOT_SET, DAYS, WEEKS, MONTHS, YEARS };
 
-namespace LifecyclePolicyTimeUnitMapper
-{
+namespace LifecyclePolicyTimeUnitMapper {
 AWS_IMAGEBUILDER_API LifecyclePolicyTimeUnit GetLifecyclePolicyTimeUnitForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForLifecyclePolicyTimeUnit(LifecyclePolicyTimeUnit value);
-} // namespace LifecyclePolicyTimeUnitMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace LifecyclePolicyTimeUnitMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

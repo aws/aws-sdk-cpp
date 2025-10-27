@@ -5,12 +5,8 @@
 
 #include <aws/simspaceweaver/SimSpaceWeaverEndpointProvider.h>
 
-namespace Aws
-{
-namespace SimSpaceWeaver
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SimSpaceWeaver
-} // namespace Aws
+namespace Aws {
+namespace SimSpaceWeaver {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SimSpaceWeaver
+}  // namespace Aws

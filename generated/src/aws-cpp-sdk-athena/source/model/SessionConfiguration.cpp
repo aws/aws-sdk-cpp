@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-SessionConfiguration::SessionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SessionConfiguration::SessionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SessionConfiguration& SessionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExecutionRole"))
-  {
+SessionConfiguration& SessionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExecutionRole")) {
     m_executionRole = jsonValue.GetString("ExecutionRole");
     m_executionRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkingDirectory"))
-  {
+  if (jsonValue.ValueExists("WorkingDirectory")) {
     m_workingDirectory = jsonValue.GetString("WorkingDirectory");
     m_workingDirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdleTimeoutSeconds"))
-  {
+  if (jsonValue.ValueExists("IdleTimeoutSeconds")) {
     m_idleTimeoutSeconds = jsonValue.GetInt64("IdleTimeoutSeconds");
     m_idleTimeoutSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionConfiguration"))
-  {
+  if (jsonValue.ValueExists("EncryptionConfiguration")) {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SessionConfiguration::Jsonize() const
-{
+JsonValue SessionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_executionRoleHasBeenSet)
-  {
-   payload.WithString("ExecutionRole", m_executionRole);
-
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("ExecutionRole", m_executionRole);
   }
 
-  if(m_workingDirectoryHasBeenSet)
-  {
-   payload.WithString("WorkingDirectory", m_workingDirectory);
-
+  if (m_workingDirectoryHasBeenSet) {
+    payload.WithString("WorkingDirectory", m_workingDirectory);
   }
 
-  if(m_idleTimeoutSecondsHasBeenSet)
-  {
-   payload.WithInt64("IdleTimeoutSeconds", m_idleTimeoutSeconds);
-
+  if (m_idleTimeoutSecondsHasBeenSet) {
+    payload.WithInt64("IdleTimeoutSeconds", m_idleTimeoutSeconds);
   }
 
-  if(m_encryptionConfigurationHasBeenSet)
-  {
-   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
-
+  if (m_encryptionConfigurationHasBeenSet) {
+    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

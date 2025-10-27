@@ -4,30 +4,25 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class DataRepositoryTaskType
-  {
-    NOT_SET,
-    EXPORT_TO_REPOSITORY,
-    IMPORT_METADATA_FROM_REPOSITORY,
-    RELEASE_DATA_FROM_FILESYSTEM,
-    AUTO_RELEASE_DATA
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class DataRepositoryTaskType {
+  NOT_SET,
+  EXPORT_TO_REPOSITORY,
+  IMPORT_METADATA_FROM_REPOSITORY,
+  RELEASE_DATA_FROM_FILESYSTEM,
+  AUTO_RELEASE_DATA
+};
 
-namespace DataRepositoryTaskTypeMapper
-{
+namespace DataRepositoryTaskTypeMapper {
 AWS_FSX_API DataRepositoryTaskType GetDataRepositoryTaskTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForDataRepositoryTaskType(DataRepositoryTaskType value);
-} // namespace DataRepositoryTaskTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace DataRepositoryTaskTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

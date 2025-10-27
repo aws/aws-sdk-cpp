@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class BundleType
-  {
-    NOT_SET,
-    REGULAR,
-    STANDBY
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class BundleType { NOT_SET, REGULAR, STANDBY };
 
-namespace BundleTypeMapper
-{
+namespace BundleTypeMapper {
 AWS_WORKSPACES_API BundleType GetBundleTypeForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForBundleType(BundleType value);
-} // namespace BundleTypeMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace BundleTypeMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

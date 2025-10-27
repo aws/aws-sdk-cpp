@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointRules.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ChimeSDKMessagingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,26 @@ using ChimeSDKMessagingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using ChimeSDKMessagingEndpointProviderBase =
-    EndpointProviderBase<ChimeSDKMessagingClientConfiguration, ChimeSDKMessagingBuiltInParameters, ChimeSDKMessagingClientContextParameters>;
+using ChimeSDKMessagingEndpointProviderBase = EndpointProviderBase<ChimeSDKMessagingClientConfiguration, ChimeSDKMessagingBuiltInParameters,
+                                                                   ChimeSDKMessagingClientContextParameters>;
 
 using ChimeSDKMessagingDefaultEpProviderBase =
-    DefaultEndpointProvider<ChimeSDKMessagingClientConfiguration, ChimeSDKMessagingBuiltInParameters, ChimeSDKMessagingClientContextParameters>;
+    DefaultEndpointProvider<ChimeSDKMessagingClientConfiguration, ChimeSDKMessagingBuiltInParameters,
+                            ChimeSDKMessagingClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingEndpointProvider : public ChimeSDKMessagingDefaultEpProviderBase
-{
-public:
-    using ChimeSDKMessagingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingEndpointProvider : public ChimeSDKMessagingDefaultEpProviderBase {
+ public:
+  using ChimeSDKMessagingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ChimeSDKMessagingEndpointProvider()
-      : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::GetRulesBlob(), Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::RulesBlobSize)
-    {}
+  ChimeSDKMessagingEndpointProvider()
+      : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::GetRulesBlob(),
+                                               Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::RulesBlobSize) {}
 
-    ~ChimeSDKMessagingEndpointProvider()
-    {
-    }
+  ~ChimeSDKMessagingEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

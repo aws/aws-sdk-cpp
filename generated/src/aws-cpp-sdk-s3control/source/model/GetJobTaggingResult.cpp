@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/GetJobTaggingResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/GetJobTaggingResult.h>
 
 #include <utility>
 
@@ -16,25 +16,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobTaggingResult::GetJobTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetJobTaggingResult::GetJobTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetJobTaggingResult& GetJobTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetJobTaggingResult& GetJobTaggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode tagsNode = resultNode.FirstChild("Tags");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("member");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
@@ -45,15 +38,13 @@ GetJobTaggingResult& GetJobTaggingResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
-  if(hostIdIter != headers.end())
-  {
+  if (hostIdIter != headers.end()) {
     m_hostId = hostIdIter->second;
     m_hostIdHasBeenSet = true;
   }

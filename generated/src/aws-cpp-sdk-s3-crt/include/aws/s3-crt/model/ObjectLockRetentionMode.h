@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class ObjectLockRetentionMode
-  {
-    NOT_SET,
-    GOVERNANCE,
-    COMPLIANCE
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class ObjectLockRetentionMode { NOT_SET, GOVERNANCE, COMPLIANCE };
 
-namespace ObjectLockRetentionModeMapper
-{
+namespace ObjectLockRetentionModeMapper {
 AWS_S3CRT_API ObjectLockRetentionMode GetObjectLockRetentionModeForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForObjectLockRetentionMode(ObjectLockRetentionMode value);
-} // namespace ObjectLockRetentionModeMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace ObjectLockRetentionModeMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

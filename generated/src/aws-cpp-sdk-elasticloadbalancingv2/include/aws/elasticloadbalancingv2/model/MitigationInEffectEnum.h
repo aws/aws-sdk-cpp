@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class MitigationInEffectEnum
-  {
-    NOT_SET,
-    yes,
-    no
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class MitigationInEffectEnum { NOT_SET, yes, no };
 
-namespace MitigationInEffectEnumMapper
-{
+namespace MitigationInEffectEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API MitigationInEffectEnum GetMitigationInEffectEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForMitigationInEffectEnum(MitigationInEffectEnum value);
-} // namespace MitigationInEffectEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace MitigationInEffectEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

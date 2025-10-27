@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RecycleBin;
 
-AWSError<CoreErrors> RecycleBinErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RecycleBinErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RecycleBinErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

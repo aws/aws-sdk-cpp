@@ -12,11 +12,4 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PrepareFlowRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String PrepareFlowRequest::SerializePayload() const { return {}; }

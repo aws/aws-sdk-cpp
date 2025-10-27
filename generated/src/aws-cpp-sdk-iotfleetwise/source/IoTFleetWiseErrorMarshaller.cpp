@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTFleetWise;
 
-AWSError<CoreErrors> IoTFleetWiseErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTFleetWiseErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTFleetWiseErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

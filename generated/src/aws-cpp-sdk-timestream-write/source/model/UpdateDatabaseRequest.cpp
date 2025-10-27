@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/UpdateDatabaseRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/UpdateDatabaseRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateDatabaseRequest::SerializePayload() const
-{
+Aws::String UpdateDatabaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateDatabaseRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateDatabaseRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Timestream_20181101.UpdateDatabase"));
   return headers;
-
 }
-
-
-
-

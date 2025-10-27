@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-InsightSelector::InsightSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InsightSelector::InsightSelector(JsonView jsonValue) { *this = jsonValue; }
 
-InsightSelector& InsightSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InsightType"))
-  {
+InsightSelector& InsightSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InsightType")) {
     m_insightType = InsightTypeMapper::GetInsightTypeForName(jsonValue.GetString("InsightType"));
     m_insightTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InsightSelector::Jsonize() const
-{
+JsonValue InsightSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_insightTypeHasBeenSet)
-  {
-   payload.WithString("InsightType", InsightTypeMapper::GetNameForInsightType(m_insightType));
+  if (m_insightTypeHasBeenSet) {
+    payload.WithString("InsightType", InsightTypeMapper::GetNameForInsightType(m_insightType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

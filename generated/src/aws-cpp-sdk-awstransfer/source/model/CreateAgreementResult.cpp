@@ -4,10 +4,10 @@
  */
 
 #include <aws/awstransfer/model/CreateAgreementResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAgreementResult::CreateAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateAgreementResult::CreateAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateAgreementResult& CreateAgreementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateAgreementResult& CreateAgreementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AgreementId"))
-  {
+  if (jsonValue.ValueExists("AgreementId")) {
     m_agreementId = jsonValue.GetString("AgreementId");
     m_agreementIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

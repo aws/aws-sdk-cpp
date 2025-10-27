@@ -12,30 +12,20 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelFlowExecutionsRequest::SerializePayload() const
-{
+Aws::String CancelFlowExecutionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flowNameHasBeenSet)
-  {
-   payload.WithString("flowName", m_flowName);
-
+  if (m_flowNameHasBeenSet) {
+    payload.WithString("flowName", m_flowName);
   }
 
-  if(m_executionIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> executionIdsJsonList(m_executionIds.size());
-   for(unsigned executionIdsIndex = 0; executionIdsIndex < executionIdsJsonList.GetLength(); ++executionIdsIndex)
-   {
-     executionIdsJsonList[executionIdsIndex].AsString(m_executionIds[executionIdsIndex]);
-   }
-   payload.WithArray("executionIds", std::move(executionIdsJsonList));
-
+  if (m_executionIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> executionIdsJsonList(m_executionIds.size());
+    for (unsigned executionIdsIndex = 0; executionIdsIndex < executionIdsJsonList.GetLength(); ++executionIdsIndex) {
+      executionIdsJsonList[executionIdsIndex].AsString(m_executionIds[executionIdsIndex]);
+    }
+    payload.WithArray("executionIds", std::move(executionIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
-  enum class PaymentOption
-  {
-    NOT_SET,
-    AllUpfront,
-    PartialUpfront,
-    NoUpfront
-  };
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class PaymentOption { NOT_SET, AllUpfront, PartialUpfront, NoUpfront };
 
-namespace PaymentOptionMapper
-{
+namespace PaymentOptionMapper {
 AWS_COSTOPTIMIZATIONHUB_API PaymentOption GetPaymentOptionForName(const Aws::String& name);
 
 AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForPaymentOption(PaymentOption value);
-} // namespace PaymentOptionMapper
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace PaymentOptionMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Model
-{
-  enum class AccessRight
-  {
-    NOT_SET,
-    ALLOW,
-    DENY
-  };
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Model {
+enum class AccessRight { NOT_SET, ALLOW, DENY };
 
-namespace AccessRightMapper
-{
+namespace AccessRightMapper {
 AWS_PCACONNECTORAD_API AccessRight GetAccessRightForName(const Aws::String& name);
 
 AWS_PCACONNECTORAD_API Aws::String GetNameForAccessRight(AccessRight value);
-} // namespace AccessRightMapper
-} // namespace Model
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace AccessRightMapper
+}  // namespace Model
+}  // namespace PcaConnectorAd
+}  // namespace Aws

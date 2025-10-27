@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-namespace Model
-{
-  enum class PluginHealth
-  {
-    NOT_SET,
-    HEALTHY,
-    UNHEALTHY
-  };
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Model {
+enum class PluginHealth { NOT_SET, HEALTHY, UNHEALTHY };
 
-namespace PluginHealthMapper
-{
+namespace PluginHealthMapper {
 AWS_MIGRATIONHUBORCHESTRATOR_API PluginHealth GetPluginHealthForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBORCHESTRATOR_API Aws::String GetNameForPluginHealth(PluginHealth value);
-} // namespace PluginHealthMapper
-} // namespace Model
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace PluginHealthMapper
+}  // namespace Model
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

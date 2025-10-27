@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-CommonControlMappingDetails::CommonControlMappingDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CommonControlMappingDetails::CommonControlMappingDetails(JsonView jsonValue) { *this = jsonValue; }
 
-CommonControlMappingDetails& CommonControlMappingDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CommonControlArn"))
-  {
+CommonControlMappingDetails& CommonControlMappingDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CommonControlArn")) {
     m_commonControlArn = jsonValue.GetString("CommonControlArn");
     m_commonControlArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CommonControlMappingDetails::Jsonize() const
-{
+JsonValue CommonControlMappingDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_commonControlArnHasBeenSet)
-  {
-   payload.WithString("CommonControlArn", m_commonControlArn);
-
+  if (m_commonControlArnHasBeenSet) {
+    payload.WithString("CommonControlArn", m_commonControlArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

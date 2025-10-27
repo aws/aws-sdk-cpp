@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class TopicRuleDestinationStatus
-  {
-    NOT_SET,
-    ENABLED,
-    IN_PROGRESS,
-    DISABLED,
-    ERROR_,
-    DELETING
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class TopicRuleDestinationStatus { NOT_SET, ENABLED, IN_PROGRESS, DISABLED, ERROR_, DELETING };
 
-namespace TopicRuleDestinationStatusMapper
-{
+namespace TopicRuleDestinationStatusMapper {
 AWS_IOT_API TopicRuleDestinationStatus GetTopicRuleDestinationStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForTopicRuleDestinationStatus(TopicRuleDestinationStatus value);
-} // namespace TopicRuleDestinationStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace TopicRuleDestinationStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

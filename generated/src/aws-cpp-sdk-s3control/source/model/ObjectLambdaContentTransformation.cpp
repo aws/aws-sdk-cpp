@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/ObjectLambdaContentTransformation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/ObjectLambdaContentTransformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-ObjectLambdaContentTransformation::ObjectLambdaContentTransformation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ObjectLambdaContentTransformation::ObjectLambdaContentTransformation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLambdaContentTransformation& ObjectLambdaContentTransformation::operator =(const XmlNode& xmlNode)
-{
+ObjectLambdaContentTransformation& ObjectLambdaContentTransformation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode awsLambdaNode = resultNode.FirstChild("AwsLambda");
-    if(!awsLambdaNode.IsNull())
-    {
+    if (!awsLambdaNode.IsNull()) {
       m_awsLambda = awsLambdaNode;
       m_awsLambdaHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ ObjectLambdaContentTransformation& ObjectLambdaContentTransformation::operator =
   return *this;
 }
 
-void ObjectLambdaContentTransformation::AddToNode(XmlNode& parentNode) const
-{
+void ObjectLambdaContentTransformation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_awsLambdaHasBeenSet)
-  {
-   XmlNode awsLambdaNode = parentNode.CreateChildElement("AwsLambda");
-   m_awsLambda.AddToNode(awsLambdaNode);
+  if (m_awsLambdaHasBeenSet) {
+    XmlNode awsLambdaNode = parentNode.CreateChildElement("AwsLambda");
+    m_awsLambda.AddToNode(awsLambdaNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

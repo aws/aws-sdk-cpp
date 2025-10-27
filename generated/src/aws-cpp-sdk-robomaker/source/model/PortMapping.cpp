@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/PortMapping.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/PortMapping.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-PortMapping::PortMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PortMapping::PortMapping(JsonView jsonValue) { *this = jsonValue; }
 
-PortMapping& PortMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobPort"))
-  {
+PortMapping& PortMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobPort")) {
     m_jobPort = jsonValue.GetInteger("jobPort");
     m_jobPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationPort"))
-  {
+  if (jsonValue.ValueExists("applicationPort")) {
     m_applicationPort = jsonValue.GetInteger("applicationPort");
     m_applicationPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enableOnPublicIp"))
-  {
+  if (jsonValue.ValueExists("enableOnPublicIp")) {
     m_enableOnPublicIp = jsonValue.GetBool("enableOnPublicIp");
     m_enableOnPublicIpHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PortMapping::Jsonize() const
-{
+JsonValue PortMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobPortHasBeenSet)
-  {
-   payload.WithInteger("jobPort", m_jobPort);
-
+  if (m_jobPortHasBeenSet) {
+    payload.WithInteger("jobPort", m_jobPort);
   }
 
-  if(m_applicationPortHasBeenSet)
-  {
-   payload.WithInteger("applicationPort", m_applicationPort);
-
+  if (m_applicationPortHasBeenSet) {
+    payload.WithInteger("applicationPort", m_applicationPort);
   }
 
-  if(m_enableOnPublicIpHasBeenSet)
-  {
-   payload.WithBool("enableOnPublicIp", m_enableOnPublicIp);
-
+  if (m_enableOnPublicIpHasBeenSet) {
+    payload.WithBool("enableOnPublicIp", m_enableOnPublicIp);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

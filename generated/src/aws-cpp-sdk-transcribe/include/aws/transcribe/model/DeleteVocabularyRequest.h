@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
-#include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeServiceRequest.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
 
+/**
+ */
+class DeleteVocabularyRequest : public TranscribeServiceRequest {
+ public:
+  AWS_TRANSCRIBESERVICE_API DeleteVocabularyRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteVocabulary"; }
+
+  AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the custom vocabulary you want to delete. Custom vocabulary names
+   * are case sensitive.</p>
    */
-  class DeleteVocabularyRequest : public TranscribeServiceRequest
-  {
-  public:
-    AWS_TRANSCRIBESERVICE_API DeleteVocabularyRequest() = default;
+  inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
+  inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+  template <typename VocabularyNameT = Aws::String>
+  void SetVocabularyName(VocabularyNameT&& value) {
+    m_vocabularyNameHasBeenSet = true;
+    m_vocabularyName = std::forward<VocabularyNameT>(value);
+  }
+  template <typename VocabularyNameT = Aws::String>
+  DeleteVocabularyRequest& WithVocabularyName(VocabularyNameT&& value) {
+    SetVocabularyName(std::forward<VocabularyNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_vocabularyName;
+  bool m_vocabularyNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteVocabulary"; }
-
-    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
-
-    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the custom vocabulary you want to delete. Custom vocabulary names
-     * are case sensitive.</p>
-     */
-    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
-    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    template<typename VocabularyNameT = Aws::String>
-    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
-    template<typename VocabularyNameT = Aws::String>
-    DeleteVocabularyRequest& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

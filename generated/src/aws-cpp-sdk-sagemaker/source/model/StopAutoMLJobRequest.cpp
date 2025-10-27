@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/StopAutoMLJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/StopAutoMLJobRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopAutoMLJobRequest::SerializePayload() const
-{
+Aws::String StopAutoMLJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_autoMLJobNameHasBeenSet)
-  {
-   payload.WithString("AutoMLJobName", m_autoMLJobName);
-
+  if (m_autoMLJobNameHasBeenSet) {
+    payload.WithString("AutoMLJobName", m_autoMLJobName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopAutoMLJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopAutoMLJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SageMaker.StopAutoMLJob"));
   return headers;
-
 }
-
-
-
-

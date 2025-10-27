@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AnnotationConsolidationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AnnotationConsolidationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AnnotationConsolidationConfig::AnnotationConsolidationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnnotationConsolidationConfig::AnnotationConsolidationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AnnotationConsolidationConfig& AnnotationConsolidationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AnnotationConsolidationLambdaArn"))
-  {
+AnnotationConsolidationConfig& AnnotationConsolidationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AnnotationConsolidationLambdaArn")) {
     m_annotationConsolidationLambdaArn = jsonValue.GetString("AnnotationConsolidationLambdaArn");
     m_annotationConsolidationLambdaArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnnotationConsolidationConfig::Jsonize() const
-{
+JsonValue AnnotationConsolidationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_annotationConsolidationLambdaArnHasBeenSet)
-  {
-   payload.WithString("AnnotationConsolidationLambdaArn", m_annotationConsolidationLambdaArn);
-
+  if (m_annotationConsolidationLambdaArnHasBeenSet) {
+    payload.WithString("AnnotationConsolidationLambdaArn", m_annotationConsolidationLambdaArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-readiness/model/GetArchitectureRecommendationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/route53-recovery-readiness/model/GetArchitectureRecommendationsResult.h>
 
 #include <utility>
 
@@ -17,29 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetArchitectureRecommendationsResult::GetArchitectureRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetArchitectureRecommendationsResult::GetArchitectureRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("lastAuditTimestamp"))
-  {
+  if (jsonValue.ValueExists("lastAuditTimestamp")) {
     m_lastAuditTimestamp = jsonValue.GetString("lastAuditTimestamp");
     m_lastAuditTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recommendations"))
-  {
+  if (jsonValue.ValueExists("recommendations")) {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
-    for(unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex)
-    {
+    for (unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex) {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
     }
     m_recommendationsHasBeenSet = true;
@@ -47,12 +42,10 @@ GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::oper
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

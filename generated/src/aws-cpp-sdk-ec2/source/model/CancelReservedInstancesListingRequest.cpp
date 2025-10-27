@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CancelReservedInstancesListingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CancelReservedInstancesListingRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CancelReservedInstancesListingRequest::SerializePayload() const
-{
+Aws::String CancelReservedInstancesListingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CancelReservedInstancesListing&";
-  if(m_reservedInstancesListingIdHasBeenSet)
-  {
+  if (m_reservedInstancesListingIdHasBeenSet) {
     ss << "ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String CancelReservedInstancesListingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CancelReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CancelReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

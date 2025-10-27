@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rum/CloudWatchRUM_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchRUM
-{
-namespace Model
-{
-  enum class CustomEventsStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace CloudWatchRUM {
+namespace Model {
+enum class CustomEventsStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace CustomEventsStatusMapper
-{
+namespace CustomEventsStatusMapper {
 AWS_CLOUDWATCHRUM_API CustomEventsStatus GetCustomEventsStatusForName(const Aws::String& name);
 
 AWS_CLOUDWATCHRUM_API Aws::String GetNameForCustomEventsStatus(CustomEventsStatus value);
-} // namespace CustomEventsStatusMapper
-} // namespace Model
-} // namespace CloudWatchRUM
-} // namespace Aws
+}  // namespace CustomEventsStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchRUM
+}  // namespace Aws

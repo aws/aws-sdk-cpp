@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AuditSuppression.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/AuditSuppression.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-AuditSuppression::AuditSuppression(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuditSuppression::AuditSuppression(JsonView jsonValue) { *this = jsonValue; }
 
-AuditSuppression& AuditSuppression::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("checkName"))
-  {
+AuditSuppression& AuditSuppression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("checkName")) {
     m_checkName = jsonValue.GetString("checkName");
     m_checkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceIdentifier"))
-  {
+  if (jsonValue.ValueExists("resourceIdentifier")) {
     m_resourceIdentifier = jsonValue.GetObject("resourceIdentifier");
     m_resourceIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expirationDate"))
-  {
+  if (jsonValue.ValueExists("expirationDate")) {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
     m_expirationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suppressIndefinitely"))
-  {
+  if (jsonValue.ValueExists("suppressIndefinitely")) {
     m_suppressIndefinitely = jsonValue.GetBool("suppressIndefinitely");
     m_suppressIndefinitelyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuditSuppression::Jsonize() const
-{
+JsonValue AuditSuppression::Jsonize() const {
   JsonValue payload;
 
-  if(m_checkNameHasBeenSet)
-  {
-   payload.WithString("checkName", m_checkName);
-
+  if (m_checkNameHasBeenSet) {
+    payload.WithString("checkName", m_checkName);
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithObject("resourceIdentifier", m_resourceIdentifier.Jsonize());
-
+  if (m_resourceIdentifierHasBeenSet) {
+    payload.WithObject("resourceIdentifier", m_resourceIdentifier.Jsonize());
   }
 
-  if(m_expirationDateHasBeenSet)
-  {
-   payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
+  if (m_expirationDateHasBeenSet) {
+    payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
   }
 
-  if(m_suppressIndefinitelyHasBeenSet)
-  {
-   payload.WithBool("suppressIndefinitely", m_suppressIndefinitely);
-
+  if (m_suppressIndefinitelyHasBeenSet) {
+    payload.WithBool("suppressIndefinitely", m_suppressIndefinitely);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

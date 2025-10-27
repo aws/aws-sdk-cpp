@@ -11,51 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-HierarchyGroupCondition::HierarchyGroupCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HierarchyGroupCondition::HierarchyGroupCondition(JsonView jsonValue) { *this = jsonValue; }
 
-HierarchyGroupCondition& HierarchyGroupCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+HierarchyGroupCondition& HierarchyGroupCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HierarchyGroupMatchType"))
-  {
-    m_hierarchyGroupMatchType = HierarchyGroupMatchTypeMapper::GetHierarchyGroupMatchTypeForName(jsonValue.GetString("HierarchyGroupMatchType"));
+  if (jsonValue.ValueExists("HierarchyGroupMatchType")) {
+    m_hierarchyGroupMatchType =
+        HierarchyGroupMatchTypeMapper::GetHierarchyGroupMatchTypeForName(jsonValue.GetString("HierarchyGroupMatchType"));
     m_hierarchyGroupMatchTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HierarchyGroupCondition::Jsonize() const
-{
+JsonValue HierarchyGroupCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_hierarchyGroupMatchTypeHasBeenSet)
-  {
-   payload.WithString("HierarchyGroupMatchType", HierarchyGroupMatchTypeMapper::GetNameForHierarchyGroupMatchType(m_hierarchyGroupMatchType));
+  if (m_hierarchyGroupMatchTypeHasBeenSet) {
+    payload.WithString("HierarchyGroupMatchType",
+                       HierarchyGroupMatchTypeMapper::GetNameForHierarchyGroupMatchType(m_hierarchyGroupMatchType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

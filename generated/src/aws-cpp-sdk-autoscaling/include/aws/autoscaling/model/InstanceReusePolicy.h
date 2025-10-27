@@ -7,56 +7,54 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace AutoScaling {
+namespace Model {
 
+/**
+ * <p>Describes an instance reuse policy for a warm pool. </p> <p>For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
+ * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+ * Guide</i>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceReusePolicy">AWS
+ * API Reference</a></p>
+ */
+class InstanceReusePolicy {
+ public:
+  AWS_AUTOSCALING_API InstanceReusePolicy() = default;
+  AWS_AUTOSCALING_API InstanceReusePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_AUTOSCALING_API InstanceReusePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Describes an instance reuse policy for a warm pool. </p> <p>For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
-   * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceReusePolicy">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether instances in the Auto Scaling group can be returned to the
+   * warm pool on scale in. </p>
    */
-  class InstanceReusePolicy
-  {
-  public:
-    AWS_AUTOSCALING_API InstanceReusePolicy() = default;
-    AWS_AUTOSCALING_API InstanceReusePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_AUTOSCALING_API InstanceReusePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline bool GetReuseOnScaleIn() const { return m_reuseOnScaleIn; }
+  inline bool ReuseOnScaleInHasBeenSet() const { return m_reuseOnScaleInHasBeenSet; }
+  inline void SetReuseOnScaleIn(bool value) {
+    m_reuseOnScaleInHasBeenSet = true;
+    m_reuseOnScaleIn = value;
+  }
+  inline InstanceReusePolicy& WithReuseOnScaleIn(bool value) {
+    SetReuseOnScaleIn(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_reuseOnScaleIn{false};
+  bool m_reuseOnScaleInHasBeenSet = false;
+};
 
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-
-    ///@{
-    /**
-     * <p>Specifies whether instances in the Auto Scaling group can be returned to the
-     * warm pool on scale in. </p>
-     */
-    inline bool GetReuseOnScaleIn() const { return m_reuseOnScaleIn; }
-    inline bool ReuseOnScaleInHasBeenSet() const { return m_reuseOnScaleInHasBeenSet; }
-    inline void SetReuseOnScaleIn(bool value) { m_reuseOnScaleInHasBeenSet = true; m_reuseOnScaleIn = value; }
-    inline InstanceReusePolicy& WithReuseOnScaleIn(bool value) { SetReuseOnScaleIn(value); return *this;}
-    ///@}
-  private:
-
-    bool m_reuseOnScaleIn{false};
-    bool m_reuseOnScaleInHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

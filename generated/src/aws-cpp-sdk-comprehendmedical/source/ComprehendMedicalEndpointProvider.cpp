@@ -5,12 +5,8 @@
 
 #include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ComprehendMedical
-} // namespace Aws
+namespace Aws {
+namespace ComprehendMedical {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ComprehendMedical
+}  // namespace Aws

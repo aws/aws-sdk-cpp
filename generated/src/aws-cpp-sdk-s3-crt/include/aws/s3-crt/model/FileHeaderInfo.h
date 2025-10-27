@@ -4,33 +4,23 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
 #if defined(_WIN32) && defined(IGNORE)
 #undef IGNORE
 #endif
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class FileHeaderInfo
-  {
-    NOT_SET,
-    USE,
-    IGNORE,
-    NONE
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class FileHeaderInfo { NOT_SET, USE, IGNORE, NONE };
 
-namespace FileHeaderInfoMapper
-{
+namespace FileHeaderInfoMapper {
 AWS_S3CRT_API FileHeaderInfo GetFileHeaderInfoForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForFileHeaderInfo(FileHeaderInfo value);
-} // namespace FileHeaderInfoMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace FileHeaderInfoMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

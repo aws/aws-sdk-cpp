@@ -12,38 +12,26 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateExportRequest::SerializePayload() const
-{
+Aws::String CreateExportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_exportHasBeenSet)
-  {
-   payload.WithObject("Export", m_export.Jsonize());
-
+  if (m_exportHasBeenSet) {
+    payload.WithObject("Export", m_export.Jsonize());
   }
 
-  if(m_resourceTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
-   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
-   {
-     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
-   }
-   payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
-
+  if (m_resourceTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+    for (unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex) {
+      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+    }
+    payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateExportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateExportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBillingAndCostManagementDataExports.CreateExport"));
   return headers;
-
 }
-
-
-
-

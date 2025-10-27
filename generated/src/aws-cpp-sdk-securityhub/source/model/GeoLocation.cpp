@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/GeoLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/GeoLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-GeoLocation::GeoLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeoLocation::GeoLocation(JsonView jsonValue) { *this = jsonValue; }
 
-GeoLocation& GeoLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Lon"))
-  {
+GeoLocation& GeoLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Lon")) {
     m_lon = jsonValue.GetDouble("Lon");
     m_lonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Lat"))
-  {
+  if (jsonValue.ValueExists("Lat")) {
     m_lat = jsonValue.GetDouble("Lat");
     m_latHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeoLocation::Jsonize() const
-{
+JsonValue GeoLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_lonHasBeenSet)
-  {
-   payload.WithDouble("Lon", m_lon);
-
+  if (m_lonHasBeenSet) {
+    payload.WithDouble("Lon", m_lon);
   }
 
-  if(m_latHasBeenSet)
-  {
-   payload.WithDouble("Lat", m_lat);
-
+  if (m_latHasBeenSet) {
+    payload.WithDouble("Lat", m_lat);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

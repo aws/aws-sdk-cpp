@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LexModelsV2;
 
-AWSError<CoreErrors> LexModelsV2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LexModelsV2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LexModelsV2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

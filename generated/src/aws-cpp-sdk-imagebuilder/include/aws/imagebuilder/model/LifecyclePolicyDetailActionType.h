@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class LifecyclePolicyDetailActionType
-  {
-    NOT_SET,
-    DELETE_,
-    DEPRECATE,
-    DISABLE
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class LifecyclePolicyDetailActionType { NOT_SET, DELETE_, DEPRECATE, DISABLE };
 
-namespace LifecyclePolicyDetailActionTypeMapper
-{
+namespace LifecyclePolicyDetailActionTypeMapper {
 AWS_IMAGEBUILDER_API LifecyclePolicyDetailActionType GetLifecyclePolicyDetailActionTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForLifecyclePolicyDetailActionType(LifecyclePolicyDetailActionType value);
-} // namespace LifecyclePolicyDetailActionTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace LifecyclePolicyDetailActionTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

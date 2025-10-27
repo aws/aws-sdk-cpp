@@ -10,16 +10,11 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DeactivateOrganizationsAccessRequest::SerializePayload() const
-{
+Aws::String DeactivateOrganizationsAccessRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeactivateOrganizationsAccess&";
   ss << "Version=2010-05-15";
   return ss.str();
 }
 
-
-void  DeactivateOrganizationsAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeactivateOrganizationsAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

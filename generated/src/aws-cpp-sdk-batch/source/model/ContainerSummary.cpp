@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-ContainerSummary::ContainerSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerSummary::ContainerSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerSummary& ContainerSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exitCode"))
-  {
+ContainerSummary& ContainerSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exitCode")) {
     m_exitCode = jsonValue.GetInteger("exitCode");
     m_exitCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerSummary::Jsonize() const
-{
+JsonValue ContainerSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_exitCodeHasBeenSet)
-  {
-   payload.WithInteger("exitCode", m_exitCode);
-
+  if (m_exitCodeHasBeenSet) {
+    payload.WithInteger("exitCode", m_exitCode);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

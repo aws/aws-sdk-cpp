@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-} // namespace WellArchitected
-} // namespace Aws
+namespace Aws {
+namespace WellArchitected {}  // namespace WellArchitected
+}  // namespace Aws

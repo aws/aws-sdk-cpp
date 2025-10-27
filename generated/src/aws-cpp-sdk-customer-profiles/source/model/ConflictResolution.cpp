@@ -3,59 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/ConflictResolution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/ConflictResolution.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-ConflictResolution::ConflictResolution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConflictResolution::ConflictResolution(JsonView jsonValue) { *this = jsonValue; }
 
-ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConflictResolvingModel"))
-  {
-    m_conflictResolvingModel = ConflictResolvingModelMapper::GetConflictResolvingModelForName(jsonValue.GetString("ConflictResolvingModel"));
+ConflictResolution& ConflictResolution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConflictResolvingModel")) {
+    m_conflictResolvingModel =
+        ConflictResolvingModelMapper::GetConflictResolvingModelForName(jsonValue.GetString("ConflictResolvingModel"));
     m_conflictResolvingModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceName"))
-  {
+  if (jsonValue.ValueExists("SourceName")) {
     m_sourceName = jsonValue.GetString("SourceName");
     m_sourceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConflictResolution::Jsonize() const
-{
+JsonValue ConflictResolution::Jsonize() const {
   JsonValue payload;
 
-  if(m_conflictResolvingModelHasBeenSet)
-  {
-   payload.WithString("ConflictResolvingModel", ConflictResolvingModelMapper::GetNameForConflictResolvingModel(m_conflictResolvingModel));
+  if (m_conflictResolvingModelHasBeenSet) {
+    payload.WithString("ConflictResolvingModel", ConflictResolvingModelMapper::GetNameForConflictResolvingModel(m_conflictResolvingModel));
   }
 
-  if(m_sourceNameHasBeenSet)
-  {
-   payload.WithString("SourceName", m_sourceName);
-
+  if (m_sourceNameHasBeenSet) {
+    payload.WithString("SourceName", m_sourceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

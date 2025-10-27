@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-S3InputFileLocation::S3InputFileLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3InputFileLocation::S3InputFileLocation(JsonView jsonValue) { *this = jsonValue; }
 
-S3InputFileLocation& S3InputFileLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Bucket"))
-  {
+S3InputFileLocation& S3InputFileLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Bucket")) {
     m_bucket = jsonValue.GetString("Bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3InputFileLocation::Jsonize() const
-{
+JsonValue S3InputFileLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("Bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("Bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

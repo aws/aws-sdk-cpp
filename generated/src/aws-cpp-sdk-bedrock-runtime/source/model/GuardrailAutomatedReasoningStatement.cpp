@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailAutomatedReasoningStatement::GuardrailAutomatedReasoningStatement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailAutomatedReasoningStatement::GuardrailAutomatedReasoningStatement(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailAutomatedReasoningStatement& GuardrailAutomatedReasoningStatement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("logic"))
-  {
+GuardrailAutomatedReasoningStatement& GuardrailAutomatedReasoningStatement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logic")) {
     m_logic = jsonValue.GetString("logic");
     m_logicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("naturalLanguage"))
-  {
+  if (jsonValue.ValueExists("naturalLanguage")) {
     m_naturalLanguage = jsonValue.GetString("naturalLanguage");
     m_naturalLanguageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailAutomatedReasoningStatement::Jsonize() const
-{
+JsonValue GuardrailAutomatedReasoningStatement::Jsonize() const {
   JsonValue payload;
 
-  if(m_logicHasBeenSet)
-  {
-   payload.WithString("logic", m_logic);
-
+  if (m_logicHasBeenSet) {
+    payload.WithString("logic", m_logic);
   }
 
-  if(m_naturalLanguageHasBeenSet)
-  {
-   payload.WithString("naturalLanguage", m_naturalLanguage);
-
+  if (m_naturalLanguageHasBeenSet) {
+    payload.WithString("naturalLanguage", m_naturalLanguage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-GuardrailTopicsTierConfig::GuardrailTopicsTierConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailTopicsTierConfig::GuardrailTopicsTierConfig(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailTopicsTierConfig& GuardrailTopicsTierConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tierName"))
-  {
+GuardrailTopicsTierConfig& GuardrailTopicsTierConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tierName")) {
     m_tierName = GuardrailTopicsTierNameMapper::GetGuardrailTopicsTierNameForName(jsonValue.GetString("tierName"));
     m_tierNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailTopicsTierConfig::Jsonize() const
-{
+JsonValue GuardrailTopicsTierConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_tierNameHasBeenSet)
-  {
-   payload.WithString("tierName", GuardrailTopicsTierNameMapper::GetNameForGuardrailTopicsTierName(m_tierName));
+  if (m_tierNameHasBeenSet) {
+    payload.WithString("tierName", GuardrailTopicsTierNameMapper::GetNameForGuardrailTopicsTierName(m_tierName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

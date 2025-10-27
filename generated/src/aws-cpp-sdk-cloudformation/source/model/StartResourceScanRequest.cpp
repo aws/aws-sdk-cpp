@@ -10,26 +10,19 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String StartResourceScanRequest::SerializePayload() const
-{
+Aws::String StartResourceScanRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartResourceScan&";
-  if(m_clientRequestTokenHasBeenSet)
-  {
+  if (m_clientRequestTokenHasBeenSet) {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
-  if(m_scanFiltersHasBeenSet)
-  {
-    if (m_scanFilters.empty())
-    {
+  if (m_scanFiltersHasBeenSet) {
+    if (m_scanFilters.empty()) {
       ss << "ScanFilters=&";
-    }
-    else
-    {
+    } else {
       unsigned scanFiltersCount = 1;
-      for(auto& item : m_scanFilters)
-      {
+      for (auto& item : m_scanFilters) {
         item.OutputToStream(ss, "ScanFilters.member.", scanFiltersCount, "");
         scanFiltersCount++;
       }
@@ -40,8 +33,4 @@ Aws::String StartResourceScanRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartResourceScanRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartResourceScanRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

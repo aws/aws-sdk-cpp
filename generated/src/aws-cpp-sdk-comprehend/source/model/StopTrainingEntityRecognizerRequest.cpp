@@ -12,27 +12,18 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopTrainingEntityRecognizerRequest::SerializePayload() const
-{
+Aws::String StopTrainingEntityRecognizerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_entityRecognizerArnHasBeenSet)
-  {
-   payload.WithString("EntityRecognizerArn", m_entityRecognizerArn);
-
+  if (m_entityRecognizerArnHasBeenSet) {
+    payload.WithString("EntityRecognizerArn", m_entityRecognizerArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopTrainingEntityRecognizerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopTrainingEntityRecognizerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.StopTrainingEntityRecognizer"));
   return headers;
-
 }
-
-
-
-

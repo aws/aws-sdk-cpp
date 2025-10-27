@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/RowFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/RowFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-RowFilter::RowFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RowFilter::RowFilter(JsonView jsonValue) { *this = jsonValue; }
 
-RowFilter& RowFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FilterExpression"))
-  {
+RowFilter& RowFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FilterExpression")) {
     m_filterExpression = jsonValue.GetString("FilterExpression");
     m_filterExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllRowsWildcard"))
-  {
+  if (jsonValue.ValueExists("AllRowsWildcard")) {
     m_allRowsWildcard = jsonValue.GetObject("AllRowsWildcard");
     m_allRowsWildcardHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RowFilter::Jsonize() const
-{
+JsonValue RowFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterExpressionHasBeenSet)
-  {
-   payload.WithString("FilterExpression", m_filterExpression);
-
+  if (m_filterExpressionHasBeenSet) {
+    payload.WithString("FilterExpression", m_filterExpression);
   }
 
-  if(m_allRowsWildcardHasBeenSet)
-  {
-   payload.WithObject("AllRowsWildcard", m_allRowsWildcard.Jsonize());
-
+  if (m_allRowsWildcardHasBeenSet) {
+    payload.WithObject("AllRowsWildcard", m_allRowsWildcard.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

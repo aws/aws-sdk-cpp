@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-FinalResponse::FinalResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FinalResponse::FinalResponse(JsonView jsonValue) { *this = jsonValue; }
 
-FinalResponse& FinalResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+FinalResponse& FinalResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadata"))
-  {
+  if (jsonValue.ValueExists("metadata")) {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FinalResponse::Jsonize() const
-{
+JsonValue FinalResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
-
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/InternalException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/InternalException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector {
+namespace Model {
 
-InternalException::InternalException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalException::InternalException(JsonView jsonValue) { *this = jsonValue; }
 
-InternalException& InternalException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+InternalException& InternalException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("canRetry"))
-  {
+  if (jsonValue.ValueExists("canRetry")) {
     m_canRetry = jsonValue.GetBool("canRetry");
     m_canRetryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InternalException::Jsonize() const
-{
+JsonValue InternalException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_canRetryHasBeenSet)
-  {
-   payload.WithBool("canRetry", m_canRetry);
-
+  if (m_canRetryHasBeenSet) {
+    payload.WithBool("canRetry", m_canRetry);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

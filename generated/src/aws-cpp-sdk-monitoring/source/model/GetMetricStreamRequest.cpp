@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetMetricStreamRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/GetMetricStreamRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String GetMetricStreamRequest::SerializePayload() const
-{
+Aws::String GetMetricStreamRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetMetricStream&";
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetMetricStreamRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetMetricStreamRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetMetricStreamRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

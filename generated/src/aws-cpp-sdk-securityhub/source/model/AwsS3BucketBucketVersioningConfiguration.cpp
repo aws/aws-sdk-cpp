@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsS3BucketBucketVersioningConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsS3BucketBucketVersioningConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AwsS3BucketBucketVersioningConfiguration& AwsS3BucketBucketVersioningConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IsMfaDeleteEnabled"))
-  {
+AwsS3BucketBucketVersioningConfiguration& AwsS3BucketBucketVersioningConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IsMfaDeleteEnabled")) {
     m_isMfaDeleteEnabled = jsonValue.GetBool("IsMfaDeleteEnabled");
     m_isMfaDeleteEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsS3BucketBucketVersioningConfiguration::Jsonize() const
-{
+JsonValue AwsS3BucketBucketVersioningConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_isMfaDeleteEnabledHasBeenSet)
-  {
-   payload.WithBool("IsMfaDeleteEnabled", m_isMfaDeleteEnabled);
-
+  if (m_isMfaDeleteEnabledHasBeenSet) {
+    payload.WithBool("IsMfaDeleteEnabled", m_isMfaDeleteEnabled);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -12,53 +12,38 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const
-{
+Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceNamespaceHasBeenSet)
-  {
-   payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
+  if (m_serviceNamespaceHasBeenSet) {
+    payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_scalableDimensionHasBeenSet)
-  {
-   payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
+  if (m_scalableDimensionHasBeenSet) {
+    payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
   }
 
-  if(m_policyNameHasBeenSet)
-  {
-   payload.WithString("PolicyName", m_policyName);
-
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPredictiveScalingForecastRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPredictiveScalingForecastRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AnyScaleFrontendService.GetPredictiveScalingForecast"));
   return headers;
-
 }
-
-
-
-

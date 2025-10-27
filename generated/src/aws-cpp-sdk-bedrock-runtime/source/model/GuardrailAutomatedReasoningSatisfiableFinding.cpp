@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailAutomatedReasoningSatisfiableFinding::GuardrailAutomatedReasoningSatisfiableFinding(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailAutomatedReasoningSatisfiableFinding::GuardrailAutomatedReasoningSatisfiableFinding(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailAutomatedReasoningSatisfiableFinding& GuardrailAutomatedReasoningSatisfiableFinding::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("translation"))
-  {
+GuardrailAutomatedReasoningSatisfiableFinding& GuardrailAutomatedReasoningSatisfiableFinding::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("translation")) {
     m_translation = jsonValue.GetObject("translation");
     m_translationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("claimsTrueScenario"))
-  {
+  if (jsonValue.ValueExists("claimsTrueScenario")) {
     m_claimsTrueScenario = jsonValue.GetObject("claimsTrueScenario");
     m_claimsTrueScenarioHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("claimsFalseScenario"))
-  {
+  if (jsonValue.ValueExists("claimsFalseScenario")) {
     m_claimsFalseScenario = jsonValue.GetObject("claimsFalseScenario");
     m_claimsFalseScenarioHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logicWarning"))
-  {
+  if (jsonValue.ValueExists("logicWarning")) {
     m_logicWarning = jsonValue.GetObject("logicWarning");
     m_logicWarningHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailAutomatedReasoningSatisfiableFinding::Jsonize() const
-{
+JsonValue GuardrailAutomatedReasoningSatisfiableFinding::Jsonize() const {
   JsonValue payload;
 
-  if(m_translationHasBeenSet)
-  {
-   payload.WithObject("translation", m_translation.Jsonize());
-
+  if (m_translationHasBeenSet) {
+    payload.WithObject("translation", m_translation.Jsonize());
   }
 
-  if(m_claimsTrueScenarioHasBeenSet)
-  {
-   payload.WithObject("claimsTrueScenario", m_claimsTrueScenario.Jsonize());
-
+  if (m_claimsTrueScenarioHasBeenSet) {
+    payload.WithObject("claimsTrueScenario", m_claimsTrueScenario.Jsonize());
   }
 
-  if(m_claimsFalseScenarioHasBeenSet)
-  {
-   payload.WithObject("claimsFalseScenario", m_claimsFalseScenario.Jsonize());
-
+  if (m_claimsFalseScenarioHasBeenSet) {
+    payload.WithObject("claimsFalseScenario", m_claimsFalseScenario.Jsonize());
   }
 
-  if(m_logicWarningHasBeenSet)
-  {
-   payload.WithObject("logicWarning", m_logicWarning.Jsonize());
-
+  if (m_logicWarningHasBeenSet) {
+    payload.WithObject("logicWarning", m_logicWarning.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

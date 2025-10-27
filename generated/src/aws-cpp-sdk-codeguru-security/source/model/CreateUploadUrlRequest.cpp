@@ -12,19 +12,12 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUploadUrlRequest::SerializePayload() const
-{
+Aws::String CreateUploadUrlRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scanNameHasBeenSet)
-  {
-   payload.WithString("scanName", m_scanName);
-
+  if (m_scanNameHasBeenSet) {
+    payload.WithString("scanName", m_scanName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

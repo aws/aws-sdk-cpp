@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3BucketAclGrantConfiguration& S3BucketAclGrantConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("permission"))
-  {
+S3BucketAclGrantConfiguration& S3BucketAclGrantConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("permission")) {
     m_permission = AclPermissionMapper::GetAclPermissionForName(jsonValue.GetString("permission"));
     m_permissionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("grantee"))
-  {
+  if (jsonValue.ValueExists("grantee")) {
     m_grantee = jsonValue.GetObject("grantee");
     m_granteeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3BucketAclGrantConfiguration::Jsonize() const
-{
+JsonValue S3BucketAclGrantConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionHasBeenSet)
-  {
-   payload.WithString("permission", AclPermissionMapper::GetNameForAclPermission(m_permission));
+  if (m_permissionHasBeenSet) {
+    payload.WithString("permission", AclPermissionMapper::GetNameForAclPermission(m_permission));
   }
 
-  if(m_granteeHasBeenSet)
-  {
-   payload.WithObject("grantee", m_grantee.Jsonize());
-
+  if (m_granteeHasBeenSet) {
+    payload.WithObject("grantee", m_grantee.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

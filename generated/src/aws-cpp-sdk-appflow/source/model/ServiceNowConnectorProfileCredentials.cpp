@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ServiceNowConnectorProfileCredentials::ServiceNowConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceNowConnectorProfileCredentials::ServiceNowConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceNowConnectorProfileCredentials& ServiceNowConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("username"))
-  {
+ServiceNowConnectorProfileCredentials& ServiceNowConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("username")) {
     m_username = jsonValue.GetString("username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("password"))
-  {
+  if (jsonValue.ValueExists("password")) {
     m_password = jsonValue.GetString("password");
     m_passwordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuth2Credentials"))
-  {
+  if (jsonValue.ValueExists("oAuth2Credentials")) {
     m_oAuth2Credentials = jsonValue.GetObject("oAuth2Credentials");
     m_oAuth2CredentialsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceNowConnectorProfileCredentials::Jsonize() const
-{
+JsonValue ServiceNowConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("password", m_password);
   }
 
-  if(m_oAuth2CredentialsHasBeenSet)
-  {
-   payload.WithObject("oAuth2Credentials", m_oAuth2Credentials.Jsonize());
-
+  if (m_oAuth2CredentialsHasBeenSet) {
+    payload.WithObject("oAuth2Credentials", m_oAuth2Credentials.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

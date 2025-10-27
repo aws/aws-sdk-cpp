@@ -6,37 +6,30 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Appflow {
+namespace Model {
 
-  /**
-   * <p> The connector-specific profile properties required when using Singular.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SingularConnectorProfileProperties">AWS
-   * API Reference</a></p>
-   */
-  class SingularConnectorProfileProperties
-  {
-  public:
-    AWS_APPFLOW_API SingularConnectorProfileProperties() = default;
-    AWS_APPFLOW_API SingularConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPFLOW_API SingularConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
+/**
+ * <p> The connector-specific profile properties required when using Singular.
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SingularConnectorProfileProperties">AWS
+ * API Reference</a></p>
+ */
+class SingularConnectorProfileProperties {
+ public:
+  AWS_APPFLOW_API SingularConnectorProfileProperties() = default;
+  AWS_APPFLOW_API SingularConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPFLOW_API SingularConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
+};
 
-  };
-
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

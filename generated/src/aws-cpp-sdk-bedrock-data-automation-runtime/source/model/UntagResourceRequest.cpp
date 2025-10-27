@@ -12,38 +12,26 @@ using namespace Aws::BedrockDataAutomationRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UntagResourceRequest::SerializePayload() const
-{
+Aws::String UntagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("resourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("resourceARN", m_resourceARN);
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
-   {
-     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
-   }
-   payload.WithArray("tagKeys", std::move(tagKeysJsonList));
-
+  if (m_tagKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+    for (unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex) {
+      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+    }
+    payload.WithArray("tagKeys", std::move(tagKeysJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonBedrockKeystoneRuntimeService.UntagResource"));
   return headers;
-
 }
-
-
-
-

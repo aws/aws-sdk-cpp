@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/OnExitLifecycle.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/OnExitLifecycle.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-OnExitLifecycle::OnExitLifecycle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnExitLifecycle::OnExitLifecycle(JsonView jsonValue) { *this = jsonValue; }
 
-OnExitLifecycle& OnExitLifecycle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("events"))
-  {
+OnExitLifecycle& OnExitLifecycle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("events")) {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
-    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-    {
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
     m_eventsHasBeenSet = true;
@@ -37,24 +28,20 @@ OnExitLifecycle& OnExitLifecycle::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OnExitLifecycle::Jsonize() const
-{
+JsonValue OnExitLifecycle::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
-   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-   {
-     eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
-   }
-   payload.WithArray("events", std::move(eventsJsonList));
-
+  if (m_eventsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
+      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+    }
+    payload.WithArray("events", std::move(eventsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

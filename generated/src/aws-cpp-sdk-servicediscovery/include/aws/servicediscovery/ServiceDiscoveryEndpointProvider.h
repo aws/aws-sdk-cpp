@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/servicediscovery/ServiceDiscoveryEndpointRules.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ServiceDiscoveryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using ServiceDiscoveryEndpointProviderBase =
     EndpointProviderBase<ServiceDiscoveryClientConfiguration, ServiceDiscoveryBuiltInParameters, ServiceDiscoveryClientContextParameters>;
 
 using ServiceDiscoveryDefaultEpProviderBase =
-    DefaultEndpointProvider<ServiceDiscoveryClientConfiguration, ServiceDiscoveryBuiltInParameters, ServiceDiscoveryClientContextParameters>;
+    DefaultEndpointProvider<ServiceDiscoveryClientConfiguration, ServiceDiscoveryBuiltInParameters,
+                            ServiceDiscoveryClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SERVICEDISCOVERY_API ServiceDiscoveryEndpointProvider : public ServiceDiscoveryDefaultEpProviderBase
-{
-public:
-    using ServiceDiscoveryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SERVICEDISCOVERY_API ServiceDiscoveryEndpointProvider : public ServiceDiscoveryDefaultEpProviderBase {
+ public:
+  using ServiceDiscoveryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ServiceDiscoveryEndpointProvider()
-      : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::GetRulesBlob(), Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::RulesBlobSize)
-    {}
+  ServiceDiscoveryEndpointProvider()
+      : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::GetRulesBlob(),
+                                              Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::RulesBlobSize) {}
 
-    ~ServiceDiscoveryEndpointProvider()
-    {
-    }
+  ~ServiceDiscoveryEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ServiceDiscovery
+}  // namespace Aws

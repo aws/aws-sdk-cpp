@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GeoRoutes;
 
-AWSError<CoreErrors> GeoRoutesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GeoRoutesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GeoRoutesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

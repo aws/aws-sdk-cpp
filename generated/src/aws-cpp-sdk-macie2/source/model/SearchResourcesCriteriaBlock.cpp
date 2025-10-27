@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/SearchResourcesCriteriaBlock.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/SearchResourcesCriteriaBlock.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock(JsonView jsonValue) { *this = jsonValue; }
 
-SearchResourcesCriteriaBlock& SearchResourcesCriteriaBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("and"))
-  {
+SearchResourcesCriteriaBlock& SearchResourcesCriteriaBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("and")) {
     Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
-    for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
-    {
+    for (unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex) {
       m_and.push_back(andJsonList[andIndex].AsObject());
     }
     m_andHasBeenSet = true;
@@ -37,24 +28,20 @@ SearchResourcesCriteriaBlock& SearchResourcesCriteriaBlock::operator =(JsonView 
   return *this;
 }
 
-JsonValue SearchResourcesCriteriaBlock::Jsonize() const
-{
+JsonValue SearchResourcesCriteriaBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_andHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
-   for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
-   {
-     andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());
-   }
-   payload.WithArray("and", std::move(andJsonList));
-
+  if (m_andHasBeenSet) {
+    Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
+    for (unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex) {
+      andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());
+    }
+    payload.WithArray("and", std::move(andJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

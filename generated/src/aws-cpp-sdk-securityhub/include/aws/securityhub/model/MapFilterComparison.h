@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class MapFilterComparison
-  {
-    NOT_SET,
-    EQUALS,
-    NOT_EQUALS,
-    CONTAINS,
-    NOT_CONTAINS
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class MapFilterComparison { NOT_SET, EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS };
 
-namespace MapFilterComparisonMapper
-{
+namespace MapFilterComparisonMapper {
 AWS_SECURITYHUB_API MapFilterComparison GetMapFilterComparisonForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForMapFilterComparison(MapFilterComparison value);
-} // namespace MapFilterComparisonMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace MapFilterComparisonMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

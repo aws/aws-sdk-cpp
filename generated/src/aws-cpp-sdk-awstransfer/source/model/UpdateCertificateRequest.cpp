@@ -12,43 +12,30 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCertificateRequest::SerializePayload() const
-{
+Aws::String UpdateCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateIdHasBeenSet)
-  {
-   payload.WithString("CertificateId", m_certificateId);
-
+  if (m_certificateIdHasBeenSet) {
+    payload.WithString("CertificateId", m_certificateId);
   }
 
-  if(m_activeDateHasBeenSet)
-  {
-   payload.WithDouble("ActiveDate", m_activeDate.SecondsWithMSPrecision());
+  if (m_activeDateHasBeenSet) {
+    payload.WithDouble("ActiveDate", m_activeDate.SecondsWithMSPrecision());
   }
 
-  if(m_inactiveDateHasBeenSet)
-  {
-   payload.WithDouble("InactiveDate", m_inactiveDate.SecondsWithMSPrecision());
+  if (m_inactiveDateHasBeenSet) {
+    payload.WithDouble("InactiveDate", m_inactiveDate.SecondsWithMSPrecision());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.UpdateCertificate"));
   return headers;
-
 }
-
-
-
-

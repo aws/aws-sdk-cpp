@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
-{
+Aws::String CheckDNSAvailabilityRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CheckDNSAvailability&";
-  if(m_cNAMEPrefixHasBeenSet)
-  {
+  if (m_cNAMEPrefixHasBeenSet) {
     ss << "CNAMEPrefix=" << StringUtils::URLEncode(m_cNAMEPrefix.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CheckDNSAvailabilityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CheckDNSAvailabilityRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

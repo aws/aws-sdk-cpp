@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhuborchestrator/model/PluginHealth.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/migrationhuborchestrator/model/PluginHealth.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Model {
+namespace PluginHealthMapper {
 
-namespace Aws
-{
-  namespace MigrationHubOrchestrator
-  {
-    namespace Model
-    {
-      namespace PluginHealthMapper
-      {
+static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
 
-        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+PluginHealth GetPluginHealthForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == HEALTHY_HASH) {
+    return PluginHealth::HEALTHY;
+  } else if (hashCode == UNHEALTHY_HASH) {
+    return PluginHealth::UNHEALTHY;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PluginHealth>(hashCode);
+  }
 
+  return PluginHealth::NOT_SET;
+}
 
-        PluginHealth GetPluginHealthForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == HEALTHY_HASH)
-          {
-            return PluginHealth::HEALTHY;
-          }
-          else if (hashCode == UNHEALTHY_HASH)
-          {
-            return PluginHealth::UNHEALTHY;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PluginHealth>(hashCode);
-          }
+Aws::String GetNameForPluginHealth(PluginHealth enumValue) {
+  switch (enumValue) {
+    case PluginHealth::NOT_SET:
+      return {};
+    case PluginHealth::HEALTHY:
+      return "HEALTHY";
+    case PluginHealth::UNHEALTHY:
+      return "UNHEALTHY";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PluginHealth::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPluginHealth(PluginHealth enumValue)
-        {
-          switch(enumValue)
-          {
-          case PluginHealth::NOT_SET:
-            return {};
-          case PluginHealth::HEALTHY:
-            return "HEALTHY";
-          case PluginHealth::UNHEALTHY:
-            return "UNHEALTHY";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PluginHealthMapper
-    } // namespace Model
-  } // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace PluginHealthMapper
+}  // namespace Model
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

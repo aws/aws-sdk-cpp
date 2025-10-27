@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
-  enum class UsageOfAction
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
+enum class UsageOfAction { NOT_SET, ENABLED, DISABLED };
 
-namespace UsageOfActionMapper
-{
+namespace UsageOfActionMapper {
 AWS_WAFV2_API UsageOfAction GetUsageOfActionForName(const Aws::String& name);
 
 AWS_WAFV2_API Aws::String GetNameForUsageOfAction(UsageOfAction value);
-} // namespace UsageOfActionMapper
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace UsageOfActionMapper
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

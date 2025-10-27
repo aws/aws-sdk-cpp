@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pi/PI_EXPORTS.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
-  enum class ServiceType
-  {
-    NOT_SET,
-    RDS,
-    DOCDB
-  };
+namespace Aws {
+namespace PI {
+namespace Model {
+enum class ServiceType { NOT_SET, RDS, DOCDB };
 
-namespace ServiceTypeMapper
-{
+namespace ServiceTypeMapper {
 AWS_PI_API ServiceType GetServiceTypeForName(const Aws::String& name);
 
 AWS_PI_API Aws::String GetNameForServiceType(ServiceType value);
-} // namespace ServiceTypeMapper
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace ServiceTypeMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

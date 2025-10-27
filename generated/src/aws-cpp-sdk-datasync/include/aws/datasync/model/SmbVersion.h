@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class SmbVersion
-  {
-    NOT_SET,
-    AUTOMATIC,
-    SMB2,
-    SMB3,
-    SMB1,
-    SMB2_0
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class SmbVersion { NOT_SET, AUTOMATIC, SMB2, SMB3, SMB1, SMB2_0 };
 
-namespace SmbVersionMapper
-{
+namespace SmbVersionMapper {
 AWS_DATASYNC_API SmbVersion GetSmbVersionForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForSmbVersion(SmbVersion value);
-} // namespace SmbVersionMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace SmbVersionMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

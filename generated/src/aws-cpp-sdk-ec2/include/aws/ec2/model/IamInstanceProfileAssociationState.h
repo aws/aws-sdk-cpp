@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class IamInstanceProfileAssociationState
-  {
-    NOT_SET,
-    associating,
-    associated,
-    disassociating,
-    disassociated
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class IamInstanceProfileAssociationState { NOT_SET, associating, associated, disassociating, disassociated };
 
-namespace IamInstanceProfileAssociationStateMapper
-{
+namespace IamInstanceProfileAssociationStateMapper {
 AWS_EC2_API IamInstanceProfileAssociationState GetIamInstanceProfileAssociationStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForIamInstanceProfileAssociationState(IamInstanceProfileAssociationState value);
-} // namespace IamInstanceProfileAssociationStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace IamInstanceProfileAssociationStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

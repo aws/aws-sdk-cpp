@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/NewUserAgentDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/NewUserAgentDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
+namespace Aws {
+namespace Detective {
+namespace Model {
 
-NewUserAgentDetail::NewUserAgentDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NewUserAgentDetail::NewUserAgentDetail(JsonView jsonValue) { *this = jsonValue; }
 
-NewUserAgentDetail& NewUserAgentDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserAgent"))
-  {
+NewUserAgentDetail& NewUserAgentDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserAgent")) {
     m_userAgent = jsonValue.GetString("UserAgent");
     m_userAgentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsNewForEntireAccount"))
-  {
+  if (jsonValue.ValueExists("IsNewForEntireAccount")) {
     m_isNewForEntireAccount = jsonValue.GetBool("IsNewForEntireAccount");
     m_isNewForEntireAccountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NewUserAgentDetail::Jsonize() const
-{
+JsonValue NewUserAgentDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_userAgentHasBeenSet)
-  {
-   payload.WithString("UserAgent", m_userAgent);
-
+  if (m_userAgentHasBeenSet) {
+    payload.WithString("UserAgent", m_userAgent);
   }
 
-  if(m_isNewForEntireAccountHasBeenSet)
-  {
-   payload.WithBool("IsNewForEntireAccount", m_isNewForEntireAccount);
-
+  if (m_isNewForEntireAccountHasBeenSet) {
+    payload.WithBool("IsNewForEntireAccount", m_isNewForEntireAccount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

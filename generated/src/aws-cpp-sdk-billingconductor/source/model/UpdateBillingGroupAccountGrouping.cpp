@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-UpdateBillingGroupAccountGrouping::UpdateBillingGroupAccountGrouping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBillingGroupAccountGrouping::UpdateBillingGroupAccountGrouping(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBillingGroupAccountGrouping& UpdateBillingGroupAccountGrouping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutoAssociate"))
-  {
+UpdateBillingGroupAccountGrouping& UpdateBillingGroupAccountGrouping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutoAssociate")) {
     m_autoAssociate = jsonValue.GetBool("AutoAssociate");
     m_autoAssociateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBillingGroupAccountGrouping::Jsonize() const
-{
+JsonValue UpdateBillingGroupAccountGrouping::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoAssociateHasBeenSet)
-  {
-   payload.WithBool("AutoAssociate", m_autoAssociate);
-
+  if (m_autoAssociateHasBeenSet) {
+    payload.WithBool("AutoAssociate", m_autoAssociate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-NumericQuestionPropertyValueAutomation::NumericQuestionPropertyValueAutomation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NumericQuestionPropertyValueAutomation::NumericQuestionPropertyValueAutomation(JsonView jsonValue) { *this = jsonValue; }
 
-NumericQuestionPropertyValueAutomation& NumericQuestionPropertyValueAutomation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Label"))
-  {
+NumericQuestionPropertyValueAutomation& NumericQuestionPropertyValueAutomation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Label")) {
     m_label = NumericQuestionPropertyAutomationLabelMapper::GetNumericQuestionPropertyAutomationLabelForName(jsonValue.GetString("Label"));
     m_labelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NumericQuestionPropertyValueAutomation::Jsonize() const
-{
+JsonValue NumericQuestionPropertyValueAutomation::Jsonize() const {
   JsonValue payload;
 
-  if(m_labelHasBeenSet)
-  {
-   payload.WithString("Label", NumericQuestionPropertyAutomationLabelMapper::GetNameForNumericQuestionPropertyAutomationLabel(m_label));
+  if (m_labelHasBeenSet) {
+    payload.WithString("Label", NumericQuestionPropertyAutomationLabelMapper::GetNameForNumericQuestionPropertyAutomationLabel(m_label));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

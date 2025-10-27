@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/RejectRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/RejectRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-RejectRule::RejectRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RejectRule::RejectRule(JsonView jsonValue) { *this = jsonValue; }
 
-RejectRule& RejectRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rule"))
-  {
+RejectRule& RejectRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rule")) {
     m_rule = RejectRuleBehaviorMapper::GetRejectRuleBehaviorForName(jsonValue.GetString("rule"));
     m_ruleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("threshold"))
-  {
+  if (jsonValue.ValueExists("threshold")) {
     m_threshold = jsonValue.GetDouble("threshold");
     m_thresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RejectRule::Jsonize() const
-{
+JsonValue RejectRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleHasBeenSet)
-  {
-   payload.WithString("rule", RejectRuleBehaviorMapper::GetNameForRejectRuleBehavior(m_rule));
+  if (m_ruleHasBeenSet) {
+    payload.WithString("rule", RejectRuleBehaviorMapper::GetNameForRejectRuleBehavior(m_rule));
   }
 
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithDouble("threshold", m_threshold);
-
+  if (m_thresholdHasBeenSet) {
+    payload.WithDouble("threshold", m_threshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

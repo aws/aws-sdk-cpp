@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/panorama/model/NodeSignal.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/panorama/model/NodeSignal.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
+namespace Aws {
+namespace Panorama {
+namespace Model {
 
-NodeSignal::NodeSignal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodeSignal::NodeSignal(JsonView jsonValue) { *this = jsonValue; }
 
-NodeSignal& NodeSignal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NodeInstanceId"))
-  {
+NodeSignal& NodeSignal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NodeInstanceId")) {
     m_nodeInstanceId = jsonValue.GetString("NodeInstanceId");
     m_nodeInstanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Signal"))
-  {
+  if (jsonValue.ValueExists("Signal")) {
     m_signal = NodeSignalValueMapper::GetNodeSignalValueForName(jsonValue.GetString("Signal"));
     m_signalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NodeSignal::Jsonize() const
-{
+JsonValue NodeSignal::Jsonize() const {
   JsonValue payload;
 
-  if(m_nodeInstanceIdHasBeenSet)
-  {
-   payload.WithString("NodeInstanceId", m_nodeInstanceId);
-
+  if (m_nodeInstanceIdHasBeenSet) {
+    payload.WithString("NodeInstanceId", m_nodeInstanceId);
   }
 
-  if(m_signalHasBeenSet)
-  {
-   payload.WithString("Signal", NodeSignalValueMapper::GetNameForNodeSignalValue(m_signal));
+  if (m_signalHasBeenSet) {
+    payload.WithString("Signal", NodeSignalValueMapper::GetNameForNodeSignalValue(m_signal));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

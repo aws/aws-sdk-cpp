@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MotionGraphicsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MotionGraphicsSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MotionGraphicsSettings::MotionGraphicsSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MotionGraphicsSettings::MotionGraphicsSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MotionGraphicsSettings& MotionGraphicsSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("htmlMotionGraphicsSettings"))
-  {
+MotionGraphicsSettings& MotionGraphicsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("htmlMotionGraphicsSettings")) {
     m_htmlMotionGraphicsSettings = jsonValue.GetObject("htmlMotionGraphicsSettings");
     m_htmlMotionGraphicsSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MotionGraphicsSettings::Jsonize() const
-{
+JsonValue MotionGraphicsSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_htmlMotionGraphicsSettingsHasBeenSet)
-  {
-   payload.WithObject("htmlMotionGraphicsSettings", m_htmlMotionGraphicsSettings.Jsonize());
-
+  if (m_htmlMotionGraphicsSettingsHasBeenSet) {
+    payload.WithObject("htmlMotionGraphicsSettings", m_htmlMotionGraphicsSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

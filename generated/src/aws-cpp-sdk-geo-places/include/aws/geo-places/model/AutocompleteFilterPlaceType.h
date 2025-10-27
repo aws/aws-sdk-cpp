@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class AutocompleteFilterPlaceType
-  {
-    NOT_SET,
-    Locality,
-    PostalCode
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class AutocompleteFilterPlaceType { NOT_SET, Locality, PostalCode };
 
-namespace AutocompleteFilterPlaceTypeMapper
-{
+namespace AutocompleteFilterPlaceTypeMapper {
 AWS_GEOPLACES_API AutocompleteFilterPlaceType GetAutocompleteFilterPlaceTypeForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForAutocompleteFilterPlaceType(AutocompleteFilterPlaceType value);
-} // namespace AutocompleteFilterPlaceTypeMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace AutocompleteFilterPlaceTypeMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-Definition::Definition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Definition::Definition(JsonView jsonValue) { *this = jsonValue; }
 
-Definition& Definition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IamActionDefinition"))
-  {
+Definition& Definition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IamActionDefinition")) {
     m_iamActionDefinition = jsonValue.GetObject("IamActionDefinition");
     m_iamActionDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScpActionDefinition"))
-  {
+  if (jsonValue.ValueExists("ScpActionDefinition")) {
     m_scpActionDefinition = jsonValue.GetObject("ScpActionDefinition");
     m_scpActionDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SsmActionDefinition"))
-  {
+  if (jsonValue.ValueExists("SsmActionDefinition")) {
     m_ssmActionDefinition = jsonValue.GetObject("SsmActionDefinition");
     m_ssmActionDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Definition::Jsonize() const
-{
+JsonValue Definition::Jsonize() const {
   JsonValue payload;
 
-  if(m_iamActionDefinitionHasBeenSet)
-  {
-   payload.WithObject("IamActionDefinition", m_iamActionDefinition.Jsonize());
-
+  if (m_iamActionDefinitionHasBeenSet) {
+    payload.WithObject("IamActionDefinition", m_iamActionDefinition.Jsonize());
   }
 
-  if(m_scpActionDefinitionHasBeenSet)
-  {
-   payload.WithObject("ScpActionDefinition", m_scpActionDefinition.Jsonize());
-
+  if (m_scpActionDefinitionHasBeenSet) {
+    payload.WithObject("ScpActionDefinition", m_scpActionDefinition.Jsonize());
   }
 
-  if(m_ssmActionDefinitionHasBeenSet)
-  {
-   payload.WithObject("SsmActionDefinition", m_ssmActionDefinition.Jsonize());
-
+  if (m_ssmActionDefinitionHasBeenSet) {
+    payload.WithObject("SsmActionDefinition", m_ssmActionDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

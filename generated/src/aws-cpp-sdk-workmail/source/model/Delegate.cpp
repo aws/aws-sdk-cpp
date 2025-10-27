@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/Delegate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/Delegate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
-Delegate::Delegate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Delegate::Delegate(JsonView jsonValue) { *this = jsonValue; }
 
-Delegate& Delegate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+Delegate& Delegate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = MemberTypeMapper::GetMemberTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Delegate::Jsonize() const
-{
+JsonValue Delegate::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", MemberTypeMapper::GetNameForMemberType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", MemberTypeMapper::GetNameForMemberType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

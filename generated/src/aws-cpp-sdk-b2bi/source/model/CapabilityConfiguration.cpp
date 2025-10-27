@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
-CapabilityConfiguration::CapabilityConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapabilityConfiguration::CapabilityConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CapabilityConfiguration& CapabilityConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("edi"))
-  {
+CapabilityConfiguration& CapabilityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("edi")) {
     m_edi = jsonValue.GetObject("edi");
     m_ediHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapabilityConfiguration::Jsonize() const
-{
+JsonValue CapabilityConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_ediHasBeenSet)
-  {
-   payload.WithObject("edi", m_edi.Jsonize());
-
+  if (m_ediHasBeenSet) {
+    payload.WithObject("edi", m_edi.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

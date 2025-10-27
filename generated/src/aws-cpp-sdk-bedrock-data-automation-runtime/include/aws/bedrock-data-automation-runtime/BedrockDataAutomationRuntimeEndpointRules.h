@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-class BedrockDataAutomationRuntimeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+class BedrockDataAutomationRuntimeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

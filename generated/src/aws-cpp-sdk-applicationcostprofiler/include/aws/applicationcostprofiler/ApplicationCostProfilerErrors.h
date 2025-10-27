@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-enum class ApplicationCostProfilerErrors
-{
-  //From Core//
+namespace Aws {
+namespace ApplicationCostProfiler {
+enum class ApplicationCostProfilerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ApplicationCostProfilerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class ApplicationCostProfilerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerError : public Aws::Client::AWSError<ApplicationCostProfilerErrors>
-{
-public:
+class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerError : public Aws::Client::AWSError<ApplicationCostProfilerErrors> {
+ public:
   ApplicationCostProfilerError() {}
-  ApplicationCostProfilerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
-  ApplicationCostProfilerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
-  ApplicationCostProfilerError(const Aws::Client::AWSError<ApplicationCostProfilerErrors>& rhs) : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
-  ApplicationCostProfilerError(Aws::Client::AWSError<ApplicationCostProfilerErrors>&& rhs) : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
+  ApplicationCostProfilerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
+  ApplicationCostProfilerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
+  ApplicationCostProfilerError(const Aws::Client::AWSError<ApplicationCostProfilerErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
+  ApplicationCostProfilerError(Aws::Client::AWSError<ApplicationCostProfilerErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationCostProfilerErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ApplicationCostProfilerErrorMapper
-{
-  AWS_APPLICATIONCOSTPROFILER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ApplicationCostProfilerErrorMapper {
+AWS_APPLICATIONCOSTPROFILER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

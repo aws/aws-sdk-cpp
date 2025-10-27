@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/DetailsMap.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/DetailsMap.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-DetailsMap::DetailsMap(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetailsMap::DetailsMap(JsonView jsonValue) { *this = jsonValue; }
 
-DetailsMap& DetailsMap::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceShare"))
-  {
+DetailsMap& DetailsMap::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceShare")) {
     Aws::Utils::Array<JsonView> resourceShareJsonList = jsonValue.GetArray("ResourceShare");
-    for(unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex)
-    {
+    for (unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex) {
       m_resourceShare.push_back(resourceShareJsonList[resourceShareIndex].AsString());
     }
     m_resourceShareHasBeenSet = true;
@@ -37,24 +28,20 @@ DetailsMap& DetailsMap::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DetailsMap::Jsonize() const
-{
+JsonValue DetailsMap::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceShareHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceShareJsonList(m_resourceShare.size());
-   for(unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex)
-   {
-     resourceShareJsonList[resourceShareIndex].AsString(m_resourceShare[resourceShareIndex]);
-   }
-   payload.WithArray("ResourceShare", std::move(resourceShareJsonList));
-
+  if (m_resourceShareHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceShareJsonList(m_resourceShare.size());
+    for (unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex) {
+      resourceShareJsonList[resourceShareIndex].AsString(m_resourceShare[resourceShareIndex]);
+    }
+    payload.WithArray("ResourceShare", std::move(resourceShareJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

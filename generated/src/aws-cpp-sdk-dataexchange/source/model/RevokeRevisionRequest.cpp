@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/RevokeRevisionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/RevokeRevisionRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RevokeRevisionRequest::SerializePayload() const
-{
+Aws::String RevokeRevisionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_revocationCommentHasBeenSet)
-  {
-   payload.WithString("RevocationComment", m_revocationComment);
-
+  if (m_revocationCommentHasBeenSet) {
+    payload.WithString("RevocationComment", m_revocationComment);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

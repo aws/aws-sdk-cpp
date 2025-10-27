@@ -3,60 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails(JsonView jsonValue)
-{
+AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::
+    AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CapacityReservationId"))
-  {
+AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails&
+AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CapacityReservationId")) {
     m_capacityReservationId = jsonValue.GetString("CapacityReservationId");
     m_capacityReservationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CapacityReservationResourceGroupArn"))
-  {
+  if (jsonValue.ValueExists("CapacityReservationResourceGroupArn")) {
     m_capacityReservationResourceGroupArn = jsonValue.GetString("CapacityReservationResourceGroupArn");
     m_capacityReservationResourceGroupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::Jsonize() const
-{
+JsonValue AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_capacityReservationIdHasBeenSet)
-  {
-   payload.WithString("CapacityReservationId", m_capacityReservationId);
-
+  if (m_capacityReservationIdHasBeenSet) {
+    payload.WithString("CapacityReservationId", m_capacityReservationId);
   }
 
-  if(m_capacityReservationResourceGroupArnHasBeenSet)
-  {
-   payload.WithString("CapacityReservationResourceGroupArn", m_capacityReservationResourceGroupArn);
-
+  if (m_capacityReservationResourceGroupArnHasBeenSet) {
+    payload.WithString("CapacityReservationResourceGroupArn", m_capacityReservationResourceGroupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

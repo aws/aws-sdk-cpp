@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SourceFieldProperties::SourceFieldProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceFieldProperties::SourceFieldProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SourceFieldProperties& SourceFieldProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isRetrievable"))
-  {
+SourceFieldProperties& SourceFieldProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isRetrievable")) {
     m_isRetrievable = jsonValue.GetBool("isRetrievable");
     m_isRetrievableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isQueryable"))
-  {
+  if (jsonValue.ValueExists("isQueryable")) {
     m_isQueryable = jsonValue.GetBool("isQueryable");
     m_isQueryableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isTimestampFieldForIncrementalQueries"))
-  {
+  if (jsonValue.ValueExists("isTimestampFieldForIncrementalQueries")) {
     m_isTimestampFieldForIncrementalQueries = jsonValue.GetBool("isTimestampFieldForIncrementalQueries");
     m_isTimestampFieldForIncrementalQueriesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceFieldProperties::Jsonize() const
-{
+JsonValue SourceFieldProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_isRetrievableHasBeenSet)
-  {
-   payload.WithBool("isRetrievable", m_isRetrievable);
-
+  if (m_isRetrievableHasBeenSet) {
+    payload.WithBool("isRetrievable", m_isRetrievable);
   }
 
-  if(m_isQueryableHasBeenSet)
-  {
-   payload.WithBool("isQueryable", m_isQueryable);
-
+  if (m_isQueryableHasBeenSet) {
+    payload.WithBool("isQueryable", m_isQueryable);
   }
 
-  if(m_isTimestampFieldForIncrementalQueriesHasBeenSet)
-  {
-   payload.WithBool("isTimestampFieldForIncrementalQueries", m_isTimestampFieldForIncrementalQueries);
-
+  if (m_isTimestampFieldForIncrementalQueriesHasBeenSet) {
+    payload.WithBool("isTimestampFieldForIncrementalQueries", m_isTimestampFieldForIncrementalQueries);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

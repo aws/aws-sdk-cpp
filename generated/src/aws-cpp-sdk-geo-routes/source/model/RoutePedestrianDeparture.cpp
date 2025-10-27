@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RoutePedestrianDeparture.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RoutePedestrianDeparture.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RoutePedestrianDeparture::RoutePedestrianDeparture(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutePedestrianDeparture::RoutePedestrianDeparture(JsonView jsonValue) { *this = jsonValue; }
 
-RoutePedestrianDeparture& RoutePedestrianDeparture::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Place"))
-  {
+RoutePedestrianDeparture& RoutePedestrianDeparture::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Place")) {
     m_place = jsonValue.GetObject("Place");
     m_placeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Time"))
-  {
+  if (jsonValue.ValueExists("Time")) {
     m_time = jsonValue.GetString("Time");
     m_timeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutePedestrianDeparture::Jsonize() const
-{
+JsonValue RoutePedestrianDeparture::Jsonize() const {
   JsonValue payload;
 
-  if(m_placeHasBeenSet)
-  {
-   payload.WithObject("Place", m_place.Jsonize());
-
+  if (m_placeHasBeenSet) {
+    payload.WithObject("Place", m_place.Jsonize());
   }
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithString("Time", m_time);
-
+  if (m_timeHasBeenSet) {
+    payload.WithString("Time", m_time);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

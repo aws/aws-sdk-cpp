@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sts/model/GetCallerIdentityRequest.h>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetCallerIdentityRequest::SerializePayload() const
-{
+Aws::String GetCallerIdentityRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetCallerIdentity&";
   ss << "Version=2011-06-15";
   return ss.str();
 }
 
-
-void  GetCallerIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetCallerIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

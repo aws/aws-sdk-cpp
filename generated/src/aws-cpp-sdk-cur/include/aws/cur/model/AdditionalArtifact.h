@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Model
-{
-  enum class AdditionalArtifact
-  {
-    NOT_SET,
-    REDSHIFT,
-    QUICKSIGHT,
-    ATHENA
-  };
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Model {
+enum class AdditionalArtifact { NOT_SET, REDSHIFT, QUICKSIGHT, ATHENA };
 
-namespace AdditionalArtifactMapper
-{
+namespace AdditionalArtifactMapper {
 AWS_COSTANDUSAGEREPORTSERVICE_API AdditionalArtifact GetAdditionalArtifactForName(const Aws::String& name);
 
 AWS_COSTANDUSAGEREPORTSERVICE_API Aws::String GetNameForAdditionalArtifact(AdditionalArtifact value);
-} // namespace AdditionalArtifactMapper
-} // namespace Model
-} // namespace CostandUsageReportService
-} // namespace Aws
+}  // namespace AdditionalArtifactMapper
+}  // namespace Model
+}  // namespace CostandUsageReportService
+}  // namespace Aws

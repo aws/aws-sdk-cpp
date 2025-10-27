@@ -11,196 +11,166 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("canUseAsSource"))
-  {
+ConnectorConfiguration& ConnectorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("canUseAsSource")) {
     m_canUseAsSource = jsonValue.GetBool("canUseAsSource");
     m_canUseAsSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("canUseAsDestination"))
-  {
+  if (jsonValue.ValueExists("canUseAsDestination")) {
     m_canUseAsDestination = jsonValue.GetBool("canUseAsDestination");
     m_canUseAsDestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedDestinationConnectors"))
-  {
+  if (jsonValue.ValueExists("supportedDestinationConnectors")) {
     Aws::Utils::Array<JsonView> supportedDestinationConnectorsJsonList = jsonValue.GetArray("supportedDestinationConnectors");
-    for(unsigned supportedDestinationConnectorsIndex = 0; supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex)
-    {
-      m_supportedDestinationConnectors.push_back(ConnectorTypeMapper::GetConnectorTypeForName(supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString()));
+    for (unsigned supportedDestinationConnectorsIndex = 0;
+         supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex) {
+      m_supportedDestinationConnectors.push_back(ConnectorTypeMapper::GetConnectorTypeForName(
+          supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString()));
     }
     m_supportedDestinationConnectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedSchedulingFrequencies"))
-  {
+  if (jsonValue.ValueExists("supportedSchedulingFrequencies")) {
     Aws::Utils::Array<JsonView> supportedSchedulingFrequenciesJsonList = jsonValue.GetArray("supportedSchedulingFrequencies");
-    for(unsigned supportedSchedulingFrequenciesIndex = 0; supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex)
-    {
-      m_supportedSchedulingFrequencies.push_back(ScheduleFrequencyTypeMapper::GetScheduleFrequencyTypeForName(supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString()));
+    for (unsigned supportedSchedulingFrequenciesIndex = 0;
+         supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex) {
+      m_supportedSchedulingFrequencies.push_back(ScheduleFrequencyTypeMapper::GetScheduleFrequencyTypeForName(
+          supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString()));
     }
     m_supportedSchedulingFrequenciesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isPrivateLinkEnabled"))
-  {
+  if (jsonValue.ValueExists("isPrivateLinkEnabled")) {
     m_isPrivateLinkEnabled = jsonValue.GetBool("isPrivateLinkEnabled");
     m_isPrivateLinkEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isPrivateLinkEndpointUrlRequired"))
-  {
+  if (jsonValue.ValueExists("isPrivateLinkEndpointUrlRequired")) {
     m_isPrivateLinkEndpointUrlRequired = jsonValue.GetBool("isPrivateLinkEndpointUrlRequired");
     m_isPrivateLinkEndpointUrlRequiredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedTriggerTypes"))
-  {
+  if (jsonValue.ValueExists("supportedTriggerTypes")) {
     Aws::Utils::Array<JsonView> supportedTriggerTypesJsonList = jsonValue.GetArray("supportedTriggerTypes");
-    for(unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength(); ++supportedTriggerTypesIndex)
-    {
-      m_supportedTriggerTypes.push_back(TriggerTypeMapper::GetTriggerTypeForName(supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString()));
+    for (unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength();
+         ++supportedTriggerTypesIndex) {
+      m_supportedTriggerTypes.push_back(
+          TriggerTypeMapper::GetTriggerTypeForName(supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString()));
     }
     m_supportedTriggerTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorMetadata"))
-  {
+  if (jsonValue.ValueExists("connectorMetadata")) {
     m_connectorMetadata = jsonValue.GetObject("connectorMetadata");
     m_connectorMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorType"))
-  {
+  if (jsonValue.ValueExists("connectorType")) {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
     m_connectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorLabel"))
-  {
+  if (jsonValue.ValueExists("connectorLabel")) {
     m_connectorLabel = jsonValue.GetString("connectorLabel");
     m_connectorLabelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorDescription"))
-  {
+  if (jsonValue.ValueExists("connectorDescription")) {
     m_connectorDescription = jsonValue.GetString("connectorDescription");
     m_connectorDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorOwner"))
-  {
+  if (jsonValue.ValueExists("connectorOwner")) {
     m_connectorOwner = jsonValue.GetString("connectorOwner");
     m_connectorOwnerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorName"))
-  {
+  if (jsonValue.ValueExists("connectorName")) {
     m_connectorName = jsonValue.GetString("connectorName");
     m_connectorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorVersion"))
-  {
+  if (jsonValue.ValueExists("connectorVersion")) {
     m_connectorVersion = jsonValue.GetString("connectorVersion");
     m_connectorVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorArn"))
-  {
+  if (jsonValue.ValueExists("connectorArn")) {
     m_connectorArn = jsonValue.GetString("connectorArn");
     m_connectorArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorModes"))
-  {
+  if (jsonValue.ValueExists("connectorModes")) {
     Aws::Utils::Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
-    for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
-    {
+    for (unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex) {
       m_connectorModes.push_back(connectorModesJsonList[connectorModesIndex].AsString());
     }
     m_connectorModesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authenticationConfig"))
-  {
+  if (jsonValue.ValueExists("authenticationConfig")) {
     m_authenticationConfig = jsonValue.GetObject("authenticationConfig");
     m_authenticationConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorRuntimeSettings"))
-  {
+  if (jsonValue.ValueExists("connectorRuntimeSettings")) {
     Aws::Utils::Array<JsonView> connectorRuntimeSettingsJsonList = jsonValue.GetArray("connectorRuntimeSettings");
-    for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
-    {
+    for (unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength();
+         ++connectorRuntimeSettingsIndex) {
       m_connectorRuntimeSettings.push_back(connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject());
     }
     m_connectorRuntimeSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedApiVersions"))
-  {
+  if (jsonValue.ValueExists("supportedApiVersions")) {
     Aws::Utils::Array<JsonView> supportedApiVersionsJsonList = jsonValue.GetArray("supportedApiVersions");
-    for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
-    {
+    for (unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength();
+         ++supportedApiVersionsIndex) {
       m_supportedApiVersions.push_back(supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString());
     }
     m_supportedApiVersionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedOperators"))
-  {
+  if (jsonValue.ValueExists("supportedOperators")) {
     Aws::Utils::Array<JsonView> supportedOperatorsJsonList = jsonValue.GetArray("supportedOperators");
-    for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
-    {
+    for (unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength();
+         ++supportedOperatorsIndex) {
       m_supportedOperators.push_back(OperatorsMapper::GetOperatorsForName(supportedOperatorsJsonList[supportedOperatorsIndex].AsString()));
     }
     m_supportedOperatorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedWriteOperations"))
-  {
+  if (jsonValue.ValueExists("supportedWriteOperations")) {
     Aws::Utils::Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
-    for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
-    {
-      m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
+    for (unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength();
+         ++supportedWriteOperationsIndex) {
+      m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(
+          supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
     }
     m_supportedWriteOperationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorProvisioningType"))
-  {
-    m_connectorProvisioningType = ConnectorProvisioningTypeMapper::GetConnectorProvisioningTypeForName(jsonValue.GetString("connectorProvisioningType"));
+  if (jsonValue.ValueExists("connectorProvisioningType")) {
+    m_connectorProvisioningType =
+        ConnectorProvisioningTypeMapper::GetConnectorProvisioningTypeForName(jsonValue.GetString("connectorProvisioningType"));
     m_connectorProvisioningTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorProvisioningConfig"))
-  {
+  if (jsonValue.ValueExists("connectorProvisioningConfig")) {
     m_connectorProvisioningConfig = jsonValue.GetObject("connectorProvisioningConfig");
     m_connectorProvisioningConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logoURL"))
-  {
+  if (jsonValue.ValueExists("logoURL")) {
     m_logoURL = jsonValue.GetString("logoURL");
     m_logoURLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registeredAt"))
-  {
+  if (jsonValue.ValueExists("registeredAt")) {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
     m_registeredAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registeredBy"))
-  {
+  if (jsonValue.ValueExists("registeredBy")) {
     m_registeredBy = jsonValue.GetString("registeredBy");
     m_registeredByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedDataTransferTypes"))
-  {
+  if (jsonValue.ValueExists("supportedDataTransferTypes")) {
     Aws::Utils::Array<JsonView> supportedDataTransferTypesJsonList = jsonValue.GetArray("supportedDataTransferTypes");
-    for(unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength(); ++supportedDataTransferTypesIndex)
-    {
-      m_supportedDataTransferTypes.push_back(SupportedDataTransferTypeMapper::GetSupportedDataTransferTypeForName(supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString()));
+    for (unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength();
+         ++supportedDataTransferTypesIndex) {
+      m_supportedDataTransferTypes.push_back(SupportedDataTransferTypeMapper::GetSupportedDataTransferTypeForName(
+          supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString()));
     }
     m_supportedDataTransferTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedDataTransferApis"))
-  {
+  if (jsonValue.ValueExists("supportedDataTransferApis")) {
     Aws::Utils::Array<JsonView> supportedDataTransferApisJsonList = jsonValue.GetArray("supportedDataTransferApis");
-    for(unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength(); ++supportedDataTransferApisIndex)
-    {
+    for (unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength();
+         ++supportedDataTransferApisIndex) {
       m_supportedDataTransferApis.push_back(supportedDataTransferApisJsonList[supportedDataTransferApisIndex].AsObject());
     }
     m_supportedDataTransferApisHasBeenSet = true;
@@ -208,228 +178,184 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ConnectorConfiguration::Jsonize() const
-{
+JsonValue ConnectorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_canUseAsSourceHasBeenSet)
-  {
-   payload.WithBool("canUseAsSource", m_canUseAsSource);
-
+  if (m_canUseAsSourceHasBeenSet) {
+    payload.WithBool("canUseAsSource", m_canUseAsSource);
   }
 
-  if(m_canUseAsDestinationHasBeenSet)
-  {
-   payload.WithBool("canUseAsDestination", m_canUseAsDestination);
-
+  if (m_canUseAsDestinationHasBeenSet) {
+    payload.WithBool("canUseAsDestination", m_canUseAsDestination);
   }
 
-  if(m_supportedDestinationConnectorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedDestinationConnectorsJsonList(m_supportedDestinationConnectors.size());
-   for(unsigned supportedDestinationConnectorsIndex = 0; supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex)
-   {
-     supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString(ConnectorTypeMapper::GetNameForConnectorType(m_supportedDestinationConnectors[supportedDestinationConnectorsIndex]));
-   }
-   payload.WithArray("supportedDestinationConnectors", std::move(supportedDestinationConnectorsJsonList));
-
+  if (m_supportedDestinationConnectorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedDestinationConnectorsJsonList(m_supportedDestinationConnectors.size());
+    for (unsigned supportedDestinationConnectorsIndex = 0;
+         supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex) {
+      supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString(
+          ConnectorTypeMapper::GetNameForConnectorType(m_supportedDestinationConnectors[supportedDestinationConnectorsIndex]));
+    }
+    payload.WithArray("supportedDestinationConnectors", std::move(supportedDestinationConnectorsJsonList));
   }
 
-  if(m_supportedSchedulingFrequenciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedSchedulingFrequenciesJsonList(m_supportedSchedulingFrequencies.size());
-   for(unsigned supportedSchedulingFrequenciesIndex = 0; supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex)
-   {
-     supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString(ScheduleFrequencyTypeMapper::GetNameForScheduleFrequencyType(m_supportedSchedulingFrequencies[supportedSchedulingFrequenciesIndex]));
-   }
-   payload.WithArray("supportedSchedulingFrequencies", std::move(supportedSchedulingFrequenciesJsonList));
-
+  if (m_supportedSchedulingFrequenciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedSchedulingFrequenciesJsonList(m_supportedSchedulingFrequencies.size());
+    for (unsigned supportedSchedulingFrequenciesIndex = 0;
+         supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex) {
+      supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString(
+          ScheduleFrequencyTypeMapper::GetNameForScheduleFrequencyType(
+              m_supportedSchedulingFrequencies[supportedSchedulingFrequenciesIndex]));
+    }
+    payload.WithArray("supportedSchedulingFrequencies", std::move(supportedSchedulingFrequenciesJsonList));
   }
 
-  if(m_isPrivateLinkEnabledHasBeenSet)
-  {
-   payload.WithBool("isPrivateLinkEnabled", m_isPrivateLinkEnabled);
-
+  if (m_isPrivateLinkEnabledHasBeenSet) {
+    payload.WithBool("isPrivateLinkEnabled", m_isPrivateLinkEnabled);
   }
 
-  if(m_isPrivateLinkEndpointUrlRequiredHasBeenSet)
-  {
-   payload.WithBool("isPrivateLinkEndpointUrlRequired", m_isPrivateLinkEndpointUrlRequired);
-
+  if (m_isPrivateLinkEndpointUrlRequiredHasBeenSet) {
+    payload.WithBool("isPrivateLinkEndpointUrlRequired", m_isPrivateLinkEndpointUrlRequired);
   }
 
-  if(m_supportedTriggerTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedTriggerTypesJsonList(m_supportedTriggerTypes.size());
-   for(unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength(); ++supportedTriggerTypesIndex)
-   {
-     supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString(TriggerTypeMapper::GetNameForTriggerType(m_supportedTriggerTypes[supportedTriggerTypesIndex]));
-   }
-   payload.WithArray("supportedTriggerTypes", std::move(supportedTriggerTypesJsonList));
-
+  if (m_supportedTriggerTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedTriggerTypesJsonList(m_supportedTriggerTypes.size());
+    for (unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength();
+         ++supportedTriggerTypesIndex) {
+      supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString(
+          TriggerTypeMapper::GetNameForTriggerType(m_supportedTriggerTypes[supportedTriggerTypesIndex]));
+    }
+    payload.WithArray("supportedTriggerTypes", std::move(supportedTriggerTypesJsonList));
   }
 
-  if(m_connectorMetadataHasBeenSet)
-  {
-   payload.WithObject("connectorMetadata", m_connectorMetadata.Jsonize());
-
+  if (m_connectorMetadataHasBeenSet) {
+    payload.WithObject("connectorMetadata", m_connectorMetadata.Jsonize());
   }
 
-  if(m_connectorTypeHasBeenSet)
-  {
-   payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  if (m_connectorTypeHasBeenSet) {
+    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
   }
 
-  if(m_connectorLabelHasBeenSet)
-  {
-   payload.WithString("connectorLabel", m_connectorLabel);
-
+  if (m_connectorLabelHasBeenSet) {
+    payload.WithString("connectorLabel", m_connectorLabel);
   }
 
-  if(m_connectorDescriptionHasBeenSet)
-  {
-   payload.WithString("connectorDescription", m_connectorDescription);
-
+  if (m_connectorDescriptionHasBeenSet) {
+    payload.WithString("connectorDescription", m_connectorDescription);
   }
 
-  if(m_connectorOwnerHasBeenSet)
-  {
-   payload.WithString("connectorOwner", m_connectorOwner);
-
+  if (m_connectorOwnerHasBeenSet) {
+    payload.WithString("connectorOwner", m_connectorOwner);
   }
 
-  if(m_connectorNameHasBeenSet)
-  {
-   payload.WithString("connectorName", m_connectorName);
-
+  if (m_connectorNameHasBeenSet) {
+    payload.WithString("connectorName", m_connectorName);
   }
 
-  if(m_connectorVersionHasBeenSet)
-  {
-   payload.WithString("connectorVersion", m_connectorVersion);
-
+  if (m_connectorVersionHasBeenSet) {
+    payload.WithString("connectorVersion", m_connectorVersion);
   }
 
-  if(m_connectorArnHasBeenSet)
-  {
-   payload.WithString("connectorArn", m_connectorArn);
-
+  if (m_connectorArnHasBeenSet) {
+    payload.WithString("connectorArn", m_connectorArn);
   }
 
-  if(m_connectorModesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
-   for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
-   {
-     connectorModesJsonList[connectorModesIndex].AsString(m_connectorModes[connectorModesIndex]);
-   }
-   payload.WithArray("connectorModes", std::move(connectorModesJsonList));
-
+  if (m_connectorModesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
+    for (unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex) {
+      connectorModesJsonList[connectorModesIndex].AsString(m_connectorModes[connectorModesIndex]);
+    }
+    payload.WithArray("connectorModes", std::move(connectorModesJsonList));
   }
 
-  if(m_authenticationConfigHasBeenSet)
-  {
-   payload.WithObject("authenticationConfig", m_authenticationConfig.Jsonize());
-
+  if (m_authenticationConfigHasBeenSet) {
+    payload.WithObject("authenticationConfig", m_authenticationConfig.Jsonize());
   }
 
-  if(m_connectorRuntimeSettingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> connectorRuntimeSettingsJsonList(m_connectorRuntimeSettings.size());
-   for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
-   {
-     connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject(m_connectorRuntimeSettings[connectorRuntimeSettingsIndex].Jsonize());
-   }
-   payload.WithArray("connectorRuntimeSettings", std::move(connectorRuntimeSettingsJsonList));
-
+  if (m_connectorRuntimeSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> connectorRuntimeSettingsJsonList(m_connectorRuntimeSettings.size());
+    for (unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength();
+         ++connectorRuntimeSettingsIndex) {
+      connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject(
+          m_connectorRuntimeSettings[connectorRuntimeSettingsIndex].Jsonize());
+    }
+    payload.WithArray("connectorRuntimeSettings", std::move(connectorRuntimeSettingsJsonList));
   }
 
-  if(m_supportedApiVersionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedApiVersionsJsonList(m_supportedApiVersions.size());
-   for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
-   {
-     supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString(m_supportedApiVersions[supportedApiVersionsIndex]);
-   }
-   payload.WithArray("supportedApiVersions", std::move(supportedApiVersionsJsonList));
-
+  if (m_supportedApiVersionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedApiVersionsJsonList(m_supportedApiVersions.size());
+    for (unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength();
+         ++supportedApiVersionsIndex) {
+      supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString(m_supportedApiVersions[supportedApiVersionsIndex]);
+    }
+    payload.WithArray("supportedApiVersions", std::move(supportedApiVersionsJsonList));
   }
 
-  if(m_supportedOperatorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedOperatorsJsonList(m_supportedOperators.size());
-   for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
-   {
-     supportedOperatorsJsonList[supportedOperatorsIndex].AsString(OperatorsMapper::GetNameForOperators(m_supportedOperators[supportedOperatorsIndex]));
-   }
-   payload.WithArray("supportedOperators", std::move(supportedOperatorsJsonList));
-
+  if (m_supportedOperatorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedOperatorsJsonList(m_supportedOperators.size());
+    for (unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength();
+         ++supportedOperatorsIndex) {
+      supportedOperatorsJsonList[supportedOperatorsIndex].AsString(
+          OperatorsMapper::GetNameForOperators(m_supportedOperators[supportedOperatorsIndex]));
+    }
+    payload.WithArray("supportedOperators", std::move(supportedOperatorsJsonList));
   }
 
-  if(m_supportedWriteOperationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
-   for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
-   {
-     supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));
-   }
-   payload.WithArray("supportedWriteOperations", std::move(supportedWriteOperationsJsonList));
-
+  if (m_supportedWriteOperationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
+    for (unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength();
+         ++supportedWriteOperationsIndex) {
+      supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(
+          WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));
+    }
+    payload.WithArray("supportedWriteOperations", std::move(supportedWriteOperationsJsonList));
   }
 
-  if(m_connectorProvisioningTypeHasBeenSet)
-  {
-   payload.WithString("connectorProvisioningType", ConnectorProvisioningTypeMapper::GetNameForConnectorProvisioningType(m_connectorProvisioningType));
+  if (m_connectorProvisioningTypeHasBeenSet) {
+    payload.WithString("connectorProvisioningType",
+                       ConnectorProvisioningTypeMapper::GetNameForConnectorProvisioningType(m_connectorProvisioningType));
   }
 
-  if(m_connectorProvisioningConfigHasBeenSet)
-  {
-   payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
-
+  if (m_connectorProvisioningConfigHasBeenSet) {
+    payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
   }
 
-  if(m_logoURLHasBeenSet)
-  {
-   payload.WithString("logoURL", m_logoURL);
-
+  if (m_logoURLHasBeenSet) {
+    payload.WithString("logoURL", m_logoURL);
   }
 
-  if(m_registeredAtHasBeenSet)
-  {
-   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  if (m_registeredAtHasBeenSet) {
+    payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
   }
 
-  if(m_registeredByHasBeenSet)
-  {
-   payload.WithString("registeredBy", m_registeredBy);
-
+  if (m_registeredByHasBeenSet) {
+    payload.WithString("registeredBy", m_registeredBy);
   }
 
-  if(m_supportedDataTransferTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedDataTransferTypesJsonList(m_supportedDataTransferTypes.size());
-   for(unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength(); ++supportedDataTransferTypesIndex)
-   {
-     supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString(SupportedDataTransferTypeMapper::GetNameForSupportedDataTransferType(m_supportedDataTransferTypes[supportedDataTransferTypesIndex]));
-   }
-   payload.WithArray("supportedDataTransferTypes", std::move(supportedDataTransferTypesJsonList));
-
+  if (m_supportedDataTransferTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedDataTransferTypesJsonList(m_supportedDataTransferTypes.size());
+    for (unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength();
+         ++supportedDataTransferTypesIndex) {
+      supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString(
+          SupportedDataTransferTypeMapper::GetNameForSupportedDataTransferType(
+              m_supportedDataTransferTypes[supportedDataTransferTypesIndex]));
+    }
+    payload.WithArray("supportedDataTransferTypes", std::move(supportedDataTransferTypesJsonList));
   }
 
-  if(m_supportedDataTransferApisHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> supportedDataTransferApisJsonList(m_supportedDataTransferApis.size());
-   for(unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength(); ++supportedDataTransferApisIndex)
-   {
-     supportedDataTransferApisJsonList[supportedDataTransferApisIndex].AsObject(m_supportedDataTransferApis[supportedDataTransferApisIndex].Jsonize());
-   }
-   payload.WithArray("supportedDataTransferApis", std::move(supportedDataTransferApisJsonList));
-
+  if (m_supportedDataTransferApisHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedDataTransferApisJsonList(m_supportedDataTransferApis.size());
+    for (unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength();
+         ++supportedDataTransferApisIndex) {
+      supportedDataTransferApisJsonList[supportedDataTransferApisIndex].AsObject(
+          m_supportedDataTransferApis[supportedDataTransferApisIndex].Jsonize());
+    }
+    payload.WithArray("supportedDataTransferApis", std::move(supportedDataTransferApisJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

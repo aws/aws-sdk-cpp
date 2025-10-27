@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/BatchScheduleActionDeleteRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/BatchScheduleActionDeleteRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-BatchScheduleActionDeleteRequest::BatchScheduleActionDeleteRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchScheduleActionDeleteRequest::BatchScheduleActionDeleteRequest(JsonView jsonValue) { *this = jsonValue; }
 
-BatchScheduleActionDeleteRequest& BatchScheduleActionDeleteRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actionNames"))
-  {
+BatchScheduleActionDeleteRequest& BatchScheduleActionDeleteRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionNames")) {
     Aws::Utils::Array<JsonView> actionNamesJsonList = jsonValue.GetArray("actionNames");
-    for(unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex)
-    {
+    for (unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex) {
       m_actionNames.push_back(actionNamesJsonList[actionNamesIndex].AsString());
     }
     m_actionNamesHasBeenSet = true;
@@ -37,24 +28,20 @@ BatchScheduleActionDeleteRequest& BatchScheduleActionDeleteRequest::operator =(J
   return *this;
 }
 
-JsonValue BatchScheduleActionDeleteRequest::Jsonize() const
-{
+JsonValue BatchScheduleActionDeleteRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionNamesJsonList(m_actionNames.size());
-   for(unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex)
-   {
-     actionNamesJsonList[actionNamesIndex].AsString(m_actionNames[actionNamesIndex]);
-   }
-   payload.WithArray("actionNames", std::move(actionNamesJsonList));
-
+  if (m_actionNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionNamesJsonList(m_actionNames.size());
+    for (unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex) {
+      actionNamesJsonList[actionNamesIndex].AsString(m_actionNames[actionNamesIndex]);
+    }
+    payload.WithArray("actionNames", std::move(actionNamesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

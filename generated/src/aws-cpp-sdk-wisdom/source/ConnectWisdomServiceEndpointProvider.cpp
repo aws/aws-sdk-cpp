@@ -5,12 +5,8 @@
 
 #include <aws/wisdom/ConnectWisdomServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConnectWisdomService
-} // namespace Aws
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConnectWisdomService
+}  // namespace Aws

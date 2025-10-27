@@ -5,12 +5,8 @@
 
 #include <aws/wellarchitected/WellArchitectedEndpointProvider.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WellArchitected
-} // namespace Aws
+namespace Aws {
+namespace WellArchitected {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WellArchitected
+}  // namespace Aws

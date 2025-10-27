@@ -12,27 +12,18 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopQueryExecutionRequest::SerializePayload() const
-{
+Aws::String StopQueryExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryExecutionIdHasBeenSet)
-  {
-   payload.WithString("QueryExecutionId", m_queryExecutionId);
-
+  if (m_queryExecutionIdHasBeenSet) {
+    payload.WithString("QueryExecutionId", m_queryExecutionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopQueryExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopQueryExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.StopQueryExecution"));
   return headers;
-
 }
-
-
-
-

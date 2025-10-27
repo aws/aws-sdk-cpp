@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/SourceSelectionCriteria.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/SourceSelectionCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SourceSelectionCriteria& SourceSelectionCriteria::operator =(const XmlNode& xmlNode)
-{
+SourceSelectionCriteria& SourceSelectionCriteria::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sseKmsEncryptedObjectsNode = resultNode.FirstChild("SseKmsEncryptedObjects");
-    if(!sseKmsEncryptedObjectsNode.IsNull())
-    {
+    if (!sseKmsEncryptedObjectsNode.IsNull()) {
       m_sseKmsEncryptedObjects = sseKmsEncryptedObjectsNode;
       m_sseKmsEncryptedObjectsHasBeenSet = true;
     }
     XmlNode replicaModificationsNode = resultNode.FirstChild("ReplicaModifications");
-    if(!replicaModificationsNode.IsNull())
-    {
+    if (!replicaModificationsNode.IsNull()) {
       m_replicaModifications = replicaModificationsNode;
       m_replicaModificationsHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ SourceSelectionCriteria& SourceSelectionCriteria::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void SourceSelectionCriteria::AddToNode(XmlNode& parentNode) const
-{
+void SourceSelectionCriteria::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_sseKmsEncryptedObjectsHasBeenSet)
-  {
-   XmlNode sseKmsEncryptedObjectsNode = parentNode.CreateChildElement("SseKmsEncryptedObjects");
-   m_sseKmsEncryptedObjects.AddToNode(sseKmsEncryptedObjectsNode);
+  if (m_sseKmsEncryptedObjectsHasBeenSet) {
+    XmlNode sseKmsEncryptedObjectsNode = parentNode.CreateChildElement("SseKmsEncryptedObjects");
+    m_sseKmsEncryptedObjects.AddToNode(sseKmsEncryptedObjectsNode);
   }
 
-  if(m_replicaModificationsHasBeenSet)
-  {
-   XmlNode replicaModificationsNode = parentNode.CreateChildElement("ReplicaModifications");
-   m_replicaModifications.AddToNode(replicaModificationsNode);
+  if (m_replicaModificationsHasBeenSet) {
+    XmlNode replicaModificationsNode = parentNode.CreateChildElement("ReplicaModifications");
+    m_replicaModifications.AddToNode(replicaModificationsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

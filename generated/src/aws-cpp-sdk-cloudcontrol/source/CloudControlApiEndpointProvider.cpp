@@ -5,12 +5,8 @@
 
 #include <aws/cloudcontrol/CloudControlApiEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudControlApi
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudControlApi
-} // namespace Aws
+namespace Aws {
+namespace CloudControlApi {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudControlApi
+}  // namespace Aws

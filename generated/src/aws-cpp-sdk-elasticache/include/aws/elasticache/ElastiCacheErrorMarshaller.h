@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_ELASTICACHE_API ElastiCacheErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_ELASTICACHE_API ElastiCacheErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

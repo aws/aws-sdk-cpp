@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Index"))
-  {
+BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Index")) {
     m_index = jsonValue.GetInteger("Index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyPhrases"))
-  {
+  if (jsonValue.ValueExists("KeyPhrases")) {
     Aws::Utils::Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
-    for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
-    {
+    for (unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex) {
       m_keyPhrases.push_back(keyPhrasesJsonList[keyPhrasesIndex].AsObject());
     }
     m_keyPhrasesHasBeenSet = true;
@@ -42,30 +32,24 @@ BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(Jso
   return *this;
 }
 
-JsonValue BatchDetectKeyPhrasesItemResult::Jsonize() const
-{
+JsonValue BatchDetectKeyPhrasesItemResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("Index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("Index", m_index);
   }
 
-  if(m_keyPhrasesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keyPhrasesJsonList(m_keyPhrases.size());
-   for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
-   {
-     keyPhrasesJsonList[keyPhrasesIndex].AsObject(m_keyPhrases[keyPhrasesIndex].Jsonize());
-   }
-   payload.WithArray("KeyPhrases", std::move(keyPhrasesJsonList));
-
+  if (m_keyPhrasesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keyPhrasesJsonList(m_keyPhrases.size());
+    for (unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex) {
+      keyPhrasesJsonList[keyPhrasesIndex].AsObject(m_keyPhrases[keyPhrasesIndex].Jsonize());
+    }
+    payload.WithArray("KeyPhrases", std::move(keyPhrasesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

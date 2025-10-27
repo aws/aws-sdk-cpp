@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class SlotConstraint
-  {
-    NOT_SET,
-    Required,
-    Optional
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class SlotConstraint { NOT_SET, Required, Optional };
 
-namespace SlotConstraintMapper
-{
+namespace SlotConstraintMapper {
 AWS_LEXMODELBUILDINGSERVICE_API SlotConstraint GetSlotConstraintForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForSlotConstraint(SlotConstraint value);
-} // namespace SlotConstraintMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace SlotConstraintMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

@@ -12,47 +12,32 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateVpcLinkRequest::SerializePayload() const
-{
+Aws::String CreateVpcLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_targetArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetArnsJsonList(m_targetArns.size());
-   for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
-   {
-     targetArnsJsonList[targetArnsIndex].AsString(m_targetArns[targetArnsIndex]);
-   }
-   payload.WithArray("targetArns", std::move(targetArnsJsonList));
-
+  if (m_targetArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetArnsJsonList(m_targetArns.size());
+    for (unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex) {
+      targetArnsJsonList[targetArnsIndex].AsString(m_targetArns[targetArnsIndex]);
+    }
+    payload.WithArray("targetArns", std::move(targetArnsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

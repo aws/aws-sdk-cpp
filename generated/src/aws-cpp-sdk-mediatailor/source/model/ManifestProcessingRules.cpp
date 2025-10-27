@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/ManifestProcessingRules.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-ManifestProcessingRules::ManifestProcessingRules(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ManifestProcessingRules::ManifestProcessingRules(JsonView jsonValue) { *this = jsonValue; }
 
-ManifestProcessingRules& ManifestProcessingRules::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AdMarkerPassthrough"))
-  {
+ManifestProcessingRules& ManifestProcessingRules::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AdMarkerPassthrough")) {
     m_adMarkerPassthrough = jsonValue.GetObject("AdMarkerPassthrough");
     m_adMarkerPassthroughHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ManifestProcessingRules::Jsonize() const
-{
+JsonValue ManifestProcessingRules::Jsonize() const {
   JsonValue payload;
 
-  if(m_adMarkerPassthroughHasBeenSet)
-  {
-   payload.WithObject("AdMarkerPassthrough", m_adMarkerPassthrough.Jsonize());
-
+  if (m_adMarkerPassthroughHasBeenSet) {
+    payload.WithObject("AdMarkerPassthrough", m_adMarkerPassthrough.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

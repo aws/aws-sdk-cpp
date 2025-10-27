@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/QueryCompileErrorLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/QueryCompileErrorLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-QueryCompileErrorLocation::QueryCompileErrorLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryCompileErrorLocation::QueryCompileErrorLocation(JsonView jsonValue) { *this = jsonValue; }
 
-QueryCompileErrorLocation& QueryCompileErrorLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startCharOffset"))
-  {
+QueryCompileErrorLocation& QueryCompileErrorLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startCharOffset")) {
     m_startCharOffset = jsonValue.GetInteger("startCharOffset");
     m_startCharOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endCharOffset"))
-  {
+  if (jsonValue.ValueExists("endCharOffset")) {
     m_endCharOffset = jsonValue.GetInteger("endCharOffset");
     m_endCharOffsetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryCompileErrorLocation::Jsonize() const
-{
+JsonValue QueryCompileErrorLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_startCharOffsetHasBeenSet)
-  {
-   payload.WithInteger("startCharOffset", m_startCharOffset);
-
+  if (m_startCharOffsetHasBeenSet) {
+    payload.WithInteger("startCharOffset", m_startCharOffset);
   }
 
-  if(m_endCharOffsetHasBeenSet)
-  {
-   payload.WithInteger("endCharOffset", m_endCharOffset);
-
+  if (m_endCharOffsetHasBeenSet) {
+    payload.WithInteger("endCharOffset", m_endCharOffset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

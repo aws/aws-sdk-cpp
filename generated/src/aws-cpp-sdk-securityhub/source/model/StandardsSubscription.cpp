@@ -3,111 +3,87 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StandardsSubscription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/StandardsSubscription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-StandardsSubscription::StandardsSubscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StandardsSubscription::StandardsSubscription(JsonView jsonValue) { *this = jsonValue; }
 
-StandardsSubscription& StandardsSubscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StandardsSubscriptionArn"))
-  {
+StandardsSubscription& StandardsSubscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StandardsSubscriptionArn")) {
     m_standardsSubscriptionArn = jsonValue.GetString("StandardsSubscriptionArn");
     m_standardsSubscriptionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StandardsArn"))
-  {
+  if (jsonValue.ValueExists("StandardsArn")) {
     m_standardsArn = jsonValue.GetString("StandardsArn");
     m_standardsArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StandardsInput"))
-  {
+  if (jsonValue.ValueExists("StandardsInput")) {
     Aws::Map<Aws::String, JsonView> standardsInputJsonMap = jsonValue.GetObject("StandardsInput").GetAllObjects();
-    for(auto& standardsInputItem : standardsInputJsonMap)
-    {
+    for (auto& standardsInputItem : standardsInputJsonMap) {
       m_standardsInput[standardsInputItem.first] = standardsInputItem.second.AsString();
     }
     m_standardsInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StandardsStatus"))
-  {
+  if (jsonValue.ValueExists("StandardsStatus")) {
     m_standardsStatus = StandardsStatusMapper::GetStandardsStatusForName(jsonValue.GetString("StandardsStatus"));
     m_standardsStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StandardsControlsUpdatable"))
-  {
-    m_standardsControlsUpdatable = StandardsControlsUpdatableMapper::GetStandardsControlsUpdatableForName(jsonValue.GetString("StandardsControlsUpdatable"));
+  if (jsonValue.ValueExists("StandardsControlsUpdatable")) {
+    m_standardsControlsUpdatable =
+        StandardsControlsUpdatableMapper::GetStandardsControlsUpdatableForName(jsonValue.GetString("StandardsControlsUpdatable"));
     m_standardsControlsUpdatableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StandardsStatusReason"))
-  {
+  if (jsonValue.ValueExists("StandardsStatusReason")) {
     m_standardsStatusReason = jsonValue.GetObject("StandardsStatusReason");
     m_standardsStatusReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StandardsSubscription::Jsonize() const
-{
+JsonValue StandardsSubscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_standardsSubscriptionArnHasBeenSet)
-  {
-   payload.WithString("StandardsSubscriptionArn", m_standardsSubscriptionArn);
-
+  if (m_standardsSubscriptionArnHasBeenSet) {
+    payload.WithString("StandardsSubscriptionArn", m_standardsSubscriptionArn);
   }
 
-  if(m_standardsArnHasBeenSet)
-  {
-   payload.WithString("StandardsArn", m_standardsArn);
-
+  if (m_standardsArnHasBeenSet) {
+    payload.WithString("StandardsArn", m_standardsArn);
   }
 
-  if(m_standardsInputHasBeenSet)
-  {
-   JsonValue standardsInputJsonMap;
-   for(auto& standardsInputItem : m_standardsInput)
-   {
-     standardsInputJsonMap.WithString(standardsInputItem.first, standardsInputItem.second);
-   }
-   payload.WithObject("StandardsInput", std::move(standardsInputJsonMap));
-
+  if (m_standardsInputHasBeenSet) {
+    JsonValue standardsInputJsonMap;
+    for (auto& standardsInputItem : m_standardsInput) {
+      standardsInputJsonMap.WithString(standardsInputItem.first, standardsInputItem.second);
+    }
+    payload.WithObject("StandardsInput", std::move(standardsInputJsonMap));
   }
 
-  if(m_standardsStatusHasBeenSet)
-  {
-   payload.WithString("StandardsStatus", StandardsStatusMapper::GetNameForStandardsStatus(m_standardsStatus));
+  if (m_standardsStatusHasBeenSet) {
+    payload.WithString("StandardsStatus", StandardsStatusMapper::GetNameForStandardsStatus(m_standardsStatus));
   }
 
-  if(m_standardsControlsUpdatableHasBeenSet)
-  {
-   payload.WithString("StandardsControlsUpdatable", StandardsControlsUpdatableMapper::GetNameForStandardsControlsUpdatable(m_standardsControlsUpdatable));
+  if (m_standardsControlsUpdatableHasBeenSet) {
+    payload.WithString("StandardsControlsUpdatable",
+                       StandardsControlsUpdatableMapper::GetNameForStandardsControlsUpdatable(m_standardsControlsUpdatable));
   }
 
-  if(m_standardsStatusReasonHasBeenSet)
-  {
-   payload.WithObject("StandardsStatusReason", m_standardsStatusReason.Jsonize());
-
+  if (m_standardsStatusReasonHasBeenSet) {
+    payload.WithObject("StandardsStatusReason", m_standardsStatusReason.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

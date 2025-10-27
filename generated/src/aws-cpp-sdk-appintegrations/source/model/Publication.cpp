@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-Publication::Publication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Publication::Publication(JsonView jsonValue) { *this = jsonValue; }
 
-Publication& Publication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Event"))
-  {
+Publication& Publication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Event")) {
     m_event = jsonValue.GetString("Event");
     m_eventHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Schema"))
-  {
+  if (jsonValue.ValueExists("Schema")) {
     m_schema = jsonValue.GetString("Schema");
     m_schemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Publication::Jsonize() const
-{
+JsonValue Publication::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithString("Event", m_event);
-
+  if (m_eventHasBeenSet) {
+    payload.WithString("Event", m_event);
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithString("Schema", m_schema);
-
+  if (m_schemaHasBeenSet) {
+    payload.WithString("Schema", m_schema);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

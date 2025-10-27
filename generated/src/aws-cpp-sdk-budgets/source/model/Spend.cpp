@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-Spend::Spend(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Spend::Spend(JsonView jsonValue) { *this = jsonValue; }
 
-Spend& Spend::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Amount"))
-  {
+Spend& Spend::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Amount")) {
     m_amount = jsonValue.GetString("Amount");
     m_amountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = jsonValue.GetString("Unit");
     m_unitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Spend::Jsonize() const
-{
+JsonValue Spend::Jsonize() const {
   JsonValue payload;
 
-  if(m_amountHasBeenSet)
-  {
-   payload.WithString("Amount", m_amount);
-
+  if (m_amountHasBeenSet) {
+    payload.WithString("Amount", m_amount);
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", m_unit);
-
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", m_unit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/partnercentral-selling/model/ProfileNextStepsHistory.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-selling/model/ProfileNextStepsHistory.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
 
-ProfileNextStepsHistory::ProfileNextStepsHistory(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileNextStepsHistory::ProfileNextStepsHistory(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileNextStepsHistory& ProfileNextStepsHistory::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+ProfileNextStepsHistory& ProfileNextStepsHistory::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Time"))
-  {
+  if (jsonValue.ValueExists("Time")) {
     m_time = jsonValue.GetString("Time");
     m_timeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfileNextStepsHistory::Jsonize() const
-{
+JsonValue ProfileNextStepsHistory::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithString("Time", m_time.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_timeHasBeenSet) {
+    payload.WithString("Time", m_time.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

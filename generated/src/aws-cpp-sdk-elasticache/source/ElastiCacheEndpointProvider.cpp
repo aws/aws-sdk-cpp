@@ -5,12 +5,8 @@
 
 #include <aws/elasticache/ElastiCacheEndpointProvider.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ElastiCache
-} // namespace Aws
+namespace Aws {
+namespace ElastiCache {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ElastiCache
+}  // namespace Aws

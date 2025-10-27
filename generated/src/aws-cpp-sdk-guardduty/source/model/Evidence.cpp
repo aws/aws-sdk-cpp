@@ -3,33 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/Evidence.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/Evidence.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-Evidence::Evidence(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Evidence::Evidence(JsonView jsonValue) { *this = jsonValue; }
 
-Evidence& Evidence::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("threatIntelligenceDetails"))
-  {
+Evidence& Evidence::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("threatIntelligenceDetails")) {
     Aws::Utils::Array<JsonView> threatIntelligenceDetailsJsonList = jsonValue.GetArray("threatIntelligenceDetails");
-    for(unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength(); ++threatIntelligenceDetailsIndex)
-    {
+    for (unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength();
+         ++threatIntelligenceDetailsIndex) {
       m_threatIntelligenceDetails.push_back(threatIntelligenceDetailsJsonList[threatIntelligenceDetailsIndex].AsObject());
     }
     m_threatIntelligenceDetailsHasBeenSet = true;
@@ -37,24 +29,22 @@ Evidence& Evidence::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Evidence::Jsonize() const
-{
+JsonValue Evidence::Jsonize() const {
   JsonValue payload;
 
-  if(m_threatIntelligenceDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> threatIntelligenceDetailsJsonList(m_threatIntelligenceDetails.size());
-   for(unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength(); ++threatIntelligenceDetailsIndex)
-   {
-     threatIntelligenceDetailsJsonList[threatIntelligenceDetailsIndex].AsObject(m_threatIntelligenceDetails[threatIntelligenceDetailsIndex].Jsonize());
-   }
-   payload.WithArray("threatIntelligenceDetails", std::move(threatIntelligenceDetailsJsonList));
-
+  if (m_threatIntelligenceDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> threatIntelligenceDetailsJsonList(m_threatIntelligenceDetails.size());
+    for (unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength();
+         ++threatIntelligenceDetailsIndex) {
+      threatIntelligenceDetailsJsonList[threatIntelligenceDetailsIndex].AsObject(
+          m_threatIntelligenceDetails[threatIntelligenceDetailsIndex].Jsonize());
+    }
+    payload.WithArray("threatIntelligenceDetails", std::move(threatIntelligenceDetailsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

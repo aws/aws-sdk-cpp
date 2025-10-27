@@ -4,104 +4,80 @@
  */
 
 #include <aws/appstream/model/ImageState.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AppStream {
+namespace Model {
+namespace ImageStateMapper {
 
-namespace Aws
-{
-  namespace AppStream
-  {
-    namespace Model
-    {
-      namespace ImageStateMapper
-      {
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int COPYING_HASH = HashingUtils::HashString("COPYING");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+ImageState GetImageStateForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PENDING_HASH) {
+    return ImageState::PENDING;
+  } else if (hashCode == AVAILABLE_HASH) {
+    return ImageState::AVAILABLE;
+  } else if (hashCode == FAILED_HASH) {
+    return ImageState::FAILED;
+  } else if (hashCode == COPYING_HASH) {
+    return ImageState::COPYING;
+  } else if (hashCode == DELETING_HASH) {
+    return ImageState::DELETING;
+  } else if (hashCode == CREATING_HASH) {
+    return ImageState::CREATING;
+  } else if (hashCode == IMPORTING_HASH) {
+    return ImageState::IMPORTING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ImageState>(hashCode);
+  }
 
+  return ImageState::NOT_SET;
+}
 
-        ImageState GetImageStateForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PENDING_HASH)
-          {
-            return ImageState::PENDING;
-          }
-          else if (hashCode == AVAILABLE_HASH)
-          {
-            return ImageState::AVAILABLE;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return ImageState::FAILED;
-          }
-          else if (hashCode == COPYING_HASH)
-          {
-            return ImageState::COPYING;
-          }
-          else if (hashCode == DELETING_HASH)
-          {
-            return ImageState::DELETING;
-          }
-          else if (hashCode == CREATING_HASH)
-          {
-            return ImageState::CREATING;
-          }
-          else if (hashCode == IMPORTING_HASH)
-          {
-            return ImageState::IMPORTING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ImageState>(hashCode);
-          }
+Aws::String GetNameForImageState(ImageState enumValue) {
+  switch (enumValue) {
+    case ImageState::NOT_SET:
+      return {};
+    case ImageState::PENDING:
+      return "PENDING";
+    case ImageState::AVAILABLE:
+      return "AVAILABLE";
+    case ImageState::FAILED:
+      return "FAILED";
+    case ImageState::COPYING:
+      return "COPYING";
+    case ImageState::DELETING:
+      return "DELETING";
+    case ImageState::CREATING:
+      return "CREATING";
+    case ImageState::IMPORTING:
+      return "IMPORTING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ImageState::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForImageState(ImageState enumValue)
-        {
-          switch(enumValue)
-          {
-          case ImageState::NOT_SET:
-            return {};
-          case ImageState::PENDING:
-            return "PENDING";
-          case ImageState::AVAILABLE:
-            return "AVAILABLE";
-          case ImageState::FAILED:
-            return "FAILED";
-          case ImageState::COPYING:
-            return "COPYING";
-          case ImageState::DELETING:
-            return "DELETING";
-          case ImageState::CREATING:
-            return "CREATING";
-          case ImageState::IMPORTING:
-            return "IMPORTING";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ImageStateMapper
-    } // namespace Model
-  } // namespace AppStream
-} // namespace Aws
+}  // namespace ImageStateMapper
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

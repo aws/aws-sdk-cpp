@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/ParallelismConfigurationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/ParallelismConfigurationUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-ParallelismConfigurationUpdate::ParallelismConfigurationUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParallelismConfigurationUpdate::ParallelismConfigurationUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-ParallelismConfigurationUpdate& ParallelismConfigurationUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigurationTypeUpdate"))
-  {
+ParallelismConfigurationUpdate& ParallelismConfigurationUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigurationTypeUpdate")) {
     m_configurationTypeUpdate = ConfigurationTypeMapper::GetConfigurationTypeForName(jsonValue.GetString("ConfigurationTypeUpdate"));
     m_configurationTypeUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParallelismUpdate"))
-  {
+  if (jsonValue.ValueExists("ParallelismUpdate")) {
     m_parallelismUpdate = jsonValue.GetInteger("ParallelismUpdate");
     m_parallelismUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParallelismPerKPUUpdate"))
-  {
+  if (jsonValue.ValueExists("ParallelismPerKPUUpdate")) {
     m_parallelismPerKPUUpdate = jsonValue.GetInteger("ParallelismPerKPUUpdate");
     m_parallelismPerKPUUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutoScalingEnabledUpdate"))
-  {
+  if (jsonValue.ValueExists("AutoScalingEnabledUpdate")) {
     m_autoScalingEnabledUpdate = jsonValue.GetBool("AutoScalingEnabledUpdate");
     m_autoScalingEnabledUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParallelismConfigurationUpdate::Jsonize() const
-{
+JsonValue ParallelismConfigurationUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationTypeUpdateHasBeenSet)
-  {
-   payload.WithString("ConfigurationTypeUpdate", ConfigurationTypeMapper::GetNameForConfigurationType(m_configurationTypeUpdate));
+  if (m_configurationTypeUpdateHasBeenSet) {
+    payload.WithString("ConfigurationTypeUpdate", ConfigurationTypeMapper::GetNameForConfigurationType(m_configurationTypeUpdate));
   }
 
-  if(m_parallelismUpdateHasBeenSet)
-  {
-   payload.WithInteger("ParallelismUpdate", m_parallelismUpdate);
-
+  if (m_parallelismUpdateHasBeenSet) {
+    payload.WithInteger("ParallelismUpdate", m_parallelismUpdate);
   }
 
-  if(m_parallelismPerKPUUpdateHasBeenSet)
-  {
-   payload.WithInteger("ParallelismPerKPUUpdate", m_parallelismPerKPUUpdate);
-
+  if (m_parallelismPerKPUUpdateHasBeenSet) {
+    payload.WithInteger("ParallelismPerKPUUpdate", m_parallelismPerKPUUpdate);
   }
 
-  if(m_autoScalingEnabledUpdateHasBeenSet)
-  {
-   payload.WithBool("AutoScalingEnabledUpdate", m_autoScalingEnabledUpdate);
-
+  if (m_autoScalingEnabledUpdateHasBeenSet) {
+    payload.WithBool("AutoScalingEnabledUpdate", m_autoScalingEnabledUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

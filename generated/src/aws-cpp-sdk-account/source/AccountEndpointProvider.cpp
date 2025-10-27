@@ -5,12 +5,8 @@
 
 #include <aws/account/AccountEndpointProvider.h>
 
-namespace Aws
-{
-namespace Account
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Account
-} // namespace Aws
+namespace Aws {
+namespace Account {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Account
+}  // namespace Aws

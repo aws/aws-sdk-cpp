@@ -4,10 +4,10 @@
  */
 
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,19 +17,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUserAttributesResult::UpdateUserAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateUserAttributesResult::UpdateUserAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateUserAttributesResult& UpdateUserAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CodeDeliveryDetailsList"))
-  {
+  if (jsonValue.ValueExists("CodeDeliveryDetailsList")) {
     Aws::Utils::Array<JsonView> codeDeliveryDetailsListJsonList = jsonValue.GetArray("CodeDeliveryDetailsList");
-    for(unsigned codeDeliveryDetailsListIndex = 0; codeDeliveryDetailsListIndex < codeDeliveryDetailsListJsonList.GetLength(); ++codeDeliveryDetailsListIndex)
-    {
+    for (unsigned codeDeliveryDetailsListIndex = 0; codeDeliveryDetailsListIndex < codeDeliveryDetailsListJsonList.GetLength();
+         ++codeDeliveryDetailsListIndex) {
       m_codeDeliveryDetailsList.push_back(codeDeliveryDetailsListJsonList[codeDeliveryDetailsListIndex].AsObject());
     }
     m_codeDeliveryDetailsListHasBeenSet = true;
@@ -37,12 +32,10 @@ UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

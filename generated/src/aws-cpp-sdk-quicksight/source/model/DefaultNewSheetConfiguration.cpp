@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DefaultNewSheetConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DefaultNewSheetConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DefaultNewSheetConfiguration::DefaultNewSheetConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultNewSheetConfiguration::DefaultNewSheetConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultNewSheetConfiguration& DefaultNewSheetConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InteractiveLayoutConfiguration"))
-  {
+DefaultNewSheetConfiguration& DefaultNewSheetConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InteractiveLayoutConfiguration")) {
     m_interactiveLayoutConfiguration = jsonValue.GetObject("InteractiveLayoutConfiguration");
     m_interactiveLayoutConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PaginatedLayoutConfiguration"))
-  {
+  if (jsonValue.ValueExists("PaginatedLayoutConfiguration")) {
     m_paginatedLayoutConfiguration = jsonValue.GetObject("PaginatedLayoutConfiguration");
     m_paginatedLayoutConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SheetContentType"))
-  {
+  if (jsonValue.ValueExists("SheetContentType")) {
     m_sheetContentType = SheetContentTypeMapper::GetSheetContentTypeForName(jsonValue.GetString("SheetContentType"));
     m_sheetContentTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultNewSheetConfiguration::Jsonize() const
-{
+JsonValue DefaultNewSheetConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_interactiveLayoutConfigurationHasBeenSet)
-  {
-   payload.WithObject("InteractiveLayoutConfiguration", m_interactiveLayoutConfiguration.Jsonize());
-
+  if (m_interactiveLayoutConfigurationHasBeenSet) {
+    payload.WithObject("InteractiveLayoutConfiguration", m_interactiveLayoutConfiguration.Jsonize());
   }
 
-  if(m_paginatedLayoutConfigurationHasBeenSet)
-  {
-   payload.WithObject("PaginatedLayoutConfiguration", m_paginatedLayoutConfiguration.Jsonize());
-
+  if (m_paginatedLayoutConfigurationHasBeenSet) {
+    payload.WithObject("PaginatedLayoutConfiguration", m_paginatedLayoutConfiguration.Jsonize());
   }
 
-  if(m_sheetContentTypeHasBeenSet)
-  {
-   payload.WithString("SheetContentType", SheetContentTypeMapper::GetNameForSheetContentType(m_sheetContentType));
+  if (m_sheetContentTypeHasBeenSet) {
+    payload.WithString("SheetContentType", SheetContentTypeMapper::GetNameForSheetContentType(m_sheetContentType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -12,24 +12,16 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCampaignStateBatchRequest::SerializePayload() const
-{
+Aws::String GetCampaignStateBatchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_campaignIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> campaignIdsJsonList(m_campaignIds.size());
-   for(unsigned campaignIdsIndex = 0; campaignIdsIndex < campaignIdsJsonList.GetLength(); ++campaignIdsIndex)
-   {
-     campaignIdsJsonList[campaignIdsIndex].AsString(m_campaignIds[campaignIdsIndex]);
-   }
-   payload.WithArray("campaignIds", std::move(campaignIdsJsonList));
-
+  if (m_campaignIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> campaignIdsJsonList(m_campaignIds.size());
+    for (unsigned campaignIdsIndex = 0; campaignIdsIndex < campaignIdsJsonList.GetLength(); ++campaignIdsIndex) {
+      campaignIdsJsonList[campaignIdsIndex].AsString(m_campaignIds[campaignIdsIndex]);
+    }
+    payload.WithArray("campaignIds", std::move(campaignIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

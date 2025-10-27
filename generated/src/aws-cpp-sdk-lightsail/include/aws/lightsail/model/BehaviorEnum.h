@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class BehaviorEnum
-  {
-    NOT_SET,
-    dont_cache,
-    cache
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class BehaviorEnum { NOT_SET, dont_cache, cache };
 
-namespace BehaviorEnumMapper
-{
+namespace BehaviorEnumMapper {
 AWS_LIGHTSAIL_API BehaviorEnum GetBehaviorEnumForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForBehaviorEnum(BehaviorEnum value);
-} // namespace BehaviorEnumMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace BehaviorEnumMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

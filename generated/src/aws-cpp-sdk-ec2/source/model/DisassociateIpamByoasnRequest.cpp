@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisassociateIpamByoasnRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisassociateIpamByoasnRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateIpamByoasnRequest::SerializePayload() const
-{
+Aws::String DisassociateIpamByoasnRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateIpamByoasn&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_asnHasBeenSet)
-  {
+  if (m_asnHasBeenSet) {
     ss << "Asn=" << StringUtils::URLEncode(m_asn.c_str()) << "&";
   }
 
-  if(m_cidrHasBeenSet)
-  {
+  if (m_cidrHasBeenSet) {
     ss << "Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DisassociateIpamByoasnRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateIpamByoasnRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateIpamByoasnRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

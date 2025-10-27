@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRetentionConfigurationRequest::SerializePayload() const
-{
+Aws::String DeleteRetentionConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_retentionConfigurationNameHasBeenSet)
-  {
-   payload.WithString("RetentionConfigurationName", m_retentionConfigurationName);
-
+  if (m_retentionConfigurationNameHasBeenSet) {
+    payload.WithString("RetentionConfigurationName", m_retentionConfigurationName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteRetentionConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteRetentionConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteRetentionConfiguration"));
   return headers;
-
 }
-
-
-
-

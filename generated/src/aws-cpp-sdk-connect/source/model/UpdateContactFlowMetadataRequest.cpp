@@ -12,30 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateContactFlowMetadataRequest::SerializePayload() const
-{
+Aws::String UpdateContactFlowMetadataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_contactFlowStateHasBeenSet)
-  {
-   payload.WithString("ContactFlowState", ContactFlowStateMapper::GetNameForContactFlowState(m_contactFlowState));
+  if (m_contactFlowStateHasBeenSet) {
+    payload.WithString("ContactFlowState", ContactFlowStateMapper::GetNameForContactFlowState(m_contactFlowState));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

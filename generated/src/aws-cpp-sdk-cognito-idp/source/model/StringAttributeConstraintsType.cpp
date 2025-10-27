@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-StringAttributeConstraintsType::StringAttributeConstraintsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StringAttributeConstraintsType::StringAttributeConstraintsType(JsonView jsonValue) { *this = jsonValue; }
 
-StringAttributeConstraintsType& StringAttributeConstraintsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinLength"))
-  {
+StringAttributeConstraintsType& StringAttributeConstraintsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinLength")) {
     m_minLength = jsonValue.GetString("MinLength");
     m_minLengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxLength"))
-  {
+  if (jsonValue.ValueExists("MaxLength")) {
     m_maxLength = jsonValue.GetString("MaxLength");
     m_maxLengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StringAttributeConstraintsType::Jsonize() const
-{
+JsonValue StringAttributeConstraintsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_minLengthHasBeenSet)
-  {
-   payload.WithString("MinLength", m_minLength);
-
+  if (m_minLengthHasBeenSet) {
+    payload.WithString("MinLength", m_minLength);
   }
 
-  if(m_maxLengthHasBeenSet)
-  {
-   payload.WithString("MaxLength", m_maxLength);
-
+  if (m_maxLengthHasBeenSet) {
+    payload.WithString("MaxLength", m_maxLength);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

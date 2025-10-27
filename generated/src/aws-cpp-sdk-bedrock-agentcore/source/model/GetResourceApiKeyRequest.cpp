@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourceApiKeyRequest::SerializePayload() const
-{
+Aws::String GetResourceApiKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workloadIdentityTokenHasBeenSet)
-  {
-   payload.WithString("workloadIdentityToken", m_workloadIdentityToken);
-
+  if (m_workloadIdentityTokenHasBeenSet) {
+    payload.WithString("workloadIdentityToken", m_workloadIdentityToken);
   }
 
-  if(m_resourceCredentialProviderNameHasBeenSet)
-  {
-   payload.WithString("resourceCredentialProviderName", m_resourceCredentialProviderName);
-
+  if (m_resourceCredentialProviderNameHasBeenSet) {
+    payload.WithString("resourceCredentialProviderName", m_resourceCredentialProviderName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafVideoCompositionOffsets
-  {
-    NOT_SET,
-    SIGNED,
-    UNSIGNED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafVideoCompositionOffsets { NOT_SET, SIGNED, UNSIGNED };
 
-namespace CmafVideoCompositionOffsetsMapper
-{
+namespace CmafVideoCompositionOffsetsMapper {
 AWS_MEDIACONVERT_API CmafVideoCompositionOffsets GetCmafVideoCompositionOffsetsForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafVideoCompositionOffsets(CmafVideoCompositionOffsets value);
-} // namespace CmafVideoCompositionOffsetsMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafVideoCompositionOffsetsMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

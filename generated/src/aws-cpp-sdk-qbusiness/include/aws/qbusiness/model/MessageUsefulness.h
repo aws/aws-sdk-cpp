@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class MessageUsefulness
-  {
-    NOT_SET,
-    USEFUL,
-    NOT_USEFUL
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class MessageUsefulness { NOT_SET, USEFUL, NOT_USEFUL };
 
-namespace MessageUsefulnessMapper
-{
+namespace MessageUsefulnessMapper {
 AWS_QBUSINESS_API MessageUsefulness GetMessageUsefulnessForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForMessageUsefulness(MessageUsefulness value);
-} // namespace MessageUsefulnessMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace MessageUsefulnessMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

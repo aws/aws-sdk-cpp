@@ -12,18 +12,12 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDataAutomationProjectRequest::SerializePayload() const
-{
+Aws::String GetDataAutomationProjectRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_projectStageHasBeenSet)
-  {
-   payload.WithString("projectStage", DataAutomationProjectStageMapper::GetNameForDataAutomationProjectStage(m_projectStage));
+  if (m_projectStageHasBeenSet) {
+    payload.WithString("projectStage", DataAutomationProjectStageMapper::GetNameForDataAutomationProjectStage(m_projectStage));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

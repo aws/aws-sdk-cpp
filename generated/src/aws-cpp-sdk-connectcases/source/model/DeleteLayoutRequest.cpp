@@ -12,11 +12,4 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteLayoutRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteLayoutRequest::SerializePayload() const { return {}; }

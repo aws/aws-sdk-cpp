@@ -4,71 +4,78 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
-#include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchServiceRequest.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/VPCOptions.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
 
+/**
+ * <p>Modifies an Amazon OpenSearch Service-managed interface VPC
+ * endpoint.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpointRequest">AWS
+ * API Reference</a></p>
+ */
+class UpdateVpcEndpointRequest : public ElasticsearchServiceRequest {
+ public:
+  AWS_ELASTICSEARCHSERVICE_API UpdateVpcEndpointRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateVpcEndpoint"; }
+
+  AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>Modifies an Amazon OpenSearch Service-managed interface VPC
-   * endpoint.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpointRequest">AWS
-   * API Reference</a></p>
+   * <p>Unique identifier of the VPC endpoint to be updated.</p>
    */
-  class UpdateVpcEndpointRequest : public ElasticsearchServiceRequest
-  {
-  public:
-    AWS_ELASTICSEARCHSERVICE_API UpdateVpcEndpointRequest() = default;
+  inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
+  inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+  template <typename VpcEndpointIdT = Aws::String>
+  void SetVpcEndpointId(VpcEndpointIdT&& value) {
+    m_vpcEndpointIdHasBeenSet = true;
+    m_vpcEndpointId = std::forward<VpcEndpointIdT>(value);
+  }
+  template <typename VpcEndpointIdT = Aws::String>
+  UpdateVpcEndpointRequest& WithVpcEndpointId(VpcEndpointIdT&& value) {
+    SetVpcEndpointId(std::forward<VpcEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateVpcEndpoint"; }
+  ///@{
+  /**
+   * <p>The security groups and/or subnets to add, remove, or modify.</p>
+   */
+  inline const VPCOptions& GetVpcOptions() const { return m_vpcOptions; }
+  inline bool VpcOptionsHasBeenSet() const { return m_vpcOptionsHasBeenSet; }
+  template <typename VpcOptionsT = VPCOptions>
+  void SetVpcOptions(VpcOptionsT&& value) {
+    m_vpcOptionsHasBeenSet = true;
+    m_vpcOptions = std::forward<VpcOptionsT>(value);
+  }
+  template <typename VpcOptionsT = VPCOptions>
+  UpdateVpcEndpointRequest& WithVpcOptions(VpcOptionsT&& value) {
+    SetVpcOptions(std::forward<VpcOptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_vpcEndpointId;
+  bool m_vpcEndpointIdHasBeenSet = false;
 
-    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+  VPCOptions m_vpcOptions;
+  bool m_vpcOptionsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Unique identifier of the VPC endpoint to be updated.</p>
-     */
-    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
-    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    template<typename VpcEndpointIdT = Aws::String>
-    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
-    template<typename VpcEndpointIdT = Aws::String>
-    UpdateVpcEndpointRequest& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security groups and/or subnets to add, remove, or modify.</p>
-     */
-    inline const VPCOptions& GetVpcOptions() const { return m_vpcOptions; }
-    inline bool VpcOptionsHasBeenSet() const { return m_vpcOptionsHasBeenSet; }
-    template<typename VpcOptionsT = VPCOptions>
-    void SetVpcOptions(VpcOptionsT&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::forward<VpcOptionsT>(value); }
-    template<typename VpcOptionsT = VPCOptions>
-    UpdateVpcEndpointRequest& WithVpcOptions(VpcOptionsT&& value) { SetVpcOptions(std::forward<VpcOptionsT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet = false;
-
-    VPCOptions m_vpcOptions;
-    bool m_vpcOptionsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

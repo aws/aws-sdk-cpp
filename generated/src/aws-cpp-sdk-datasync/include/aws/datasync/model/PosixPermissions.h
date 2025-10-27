@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class PosixPermissions
-  {
-    NOT_SET,
-    NONE,
-    PRESERVE
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class PosixPermissions { NOT_SET, NONE, PRESERVE };
 
-namespace PosixPermissionsMapper
-{
+namespace PosixPermissionsMapper {
 AWS_DATASYNC_API PosixPermissions GetPosixPermissionsForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForPosixPermissions(PosixPermissions value);
-} // namespace PosixPermissionsMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace PosixPermissionsMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

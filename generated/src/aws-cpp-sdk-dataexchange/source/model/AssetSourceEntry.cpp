@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/AssetSourceEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/AssetSourceEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-AssetSourceEntry::AssetSourceEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetSourceEntry::AssetSourceEntry(JsonView jsonValue) { *this = jsonValue; }
 
-AssetSourceEntry& AssetSourceEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Bucket"))
-  {
+AssetSourceEntry& AssetSourceEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Bucket")) {
     m_bucket = jsonValue.GetString("Bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetSourceEntry::Jsonize() const
-{
+JsonValue AssetSourceEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("Bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("Bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

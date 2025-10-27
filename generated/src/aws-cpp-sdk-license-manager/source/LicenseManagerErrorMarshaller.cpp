@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LicenseManager;
 
-AWSError<CoreErrors> LicenseManagerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LicenseManagerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LicenseManagerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

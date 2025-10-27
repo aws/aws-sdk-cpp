@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-Tenant::Tenant(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Tenant::Tenant(JsonView jsonValue) { *this = jsonValue; }
 
-Tenant& Tenant::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tenantIdentifier"))
-  {
+Tenant& Tenant::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tenantIdentifier")) {
     m_tenantIdentifier = jsonValue.GetString("tenantIdentifier");
     m_tenantIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tenantDisplayName"))
-  {
+  if (jsonValue.ValueExists("tenantDisplayName")) {
     m_tenantDisplayName = jsonValue.GetString("tenantDisplayName");
     m_tenantDisplayNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Tenant::Jsonize() const
-{
+JsonValue Tenant::Jsonize() const {
   JsonValue payload;
 
-  if(m_tenantIdentifierHasBeenSet)
-  {
-   payload.WithString("tenantIdentifier", m_tenantIdentifier);
-
+  if (m_tenantIdentifierHasBeenSet) {
+    payload.WithString("tenantIdentifier", m_tenantIdentifier);
   }
 
-  if(m_tenantDisplayNameHasBeenSet)
-  {
-   payload.WithString("tenantDisplayName", m_tenantDisplayName);
-
+  if (m_tenantDisplayNameHasBeenSet) {
+    payload.WithString("tenantDisplayName", m_tenantDisplayName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-SourceCodeVersion::SourceCodeVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceCodeVersion::SourceCodeVersion(JsonView jsonValue) { *this = jsonValue; }
 
-SourceCodeVersion& SourceCodeVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+SourceCodeVersion& SourceCodeVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = SourceCodeVersionTypeMapper::GetSourceCodeVersionTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceCodeVersion::Jsonize() const
-{
+JsonValue SourceCodeVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", SourceCodeVersionTypeMapper::GetNameForSourceCodeVersionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", SourceCodeVersionTypeMapper::GetNameForSourceCodeVersionType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

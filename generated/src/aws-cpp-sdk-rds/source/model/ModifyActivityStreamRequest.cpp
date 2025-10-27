@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyActivityStreamRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyActivityStreamRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyActivityStreamRequest::SerializePayload() const
-{
+Aws::String ModifyActivityStreamRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyActivityStream&";
-  if(m_resourceArnHasBeenSet)
-  {
+  if (m_resourceArnHasBeenSet) {
     ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
   }
 
-  if(m_auditPolicyStateHasBeenSet)
-  {
+  if (m_auditPolicyStateHasBeenSet) {
     ss << "AuditPolicyState=" << StringUtils::URLEncode(AuditPolicyStateMapper::GetNameForAuditPolicyState(m_auditPolicyState)) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ModifyActivityStreamRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyActivityStreamRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyActivityStreamRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

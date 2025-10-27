@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/DedicatedIpPool.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/DedicatedIpPool.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-DedicatedIpPool::DedicatedIpPool(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DedicatedIpPool::DedicatedIpPool(JsonView jsonValue) { *this = jsonValue; }
 
-DedicatedIpPool& DedicatedIpPool::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PoolName"))
-  {
+DedicatedIpPool& DedicatedIpPool::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PoolName")) {
     m_poolName = jsonValue.GetString("PoolName");
     m_poolNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScalingMode"))
-  {
+  if (jsonValue.ValueExists("ScalingMode")) {
     m_scalingMode = ScalingModeMapper::GetScalingModeForName(jsonValue.GetString("ScalingMode"));
     m_scalingModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DedicatedIpPool::Jsonize() const
-{
+JsonValue DedicatedIpPool::Jsonize() const {
   JsonValue payload;
 
-  if(m_poolNameHasBeenSet)
-  {
-   payload.WithString("PoolName", m_poolName);
-
+  if (m_poolNameHasBeenSet) {
+    payload.WithString("PoolName", m_poolName);
   }
 
-  if(m_scalingModeHasBeenSet)
-  {
-   payload.WithString("ScalingMode", ScalingModeMapper::GetNameForScalingMode(m_scalingMode));
+  if (m_scalingModeHasBeenSet) {
+    payload.WithString("ScalingMode", ScalingModeMapper::GetNameForScalingMode(m_scalingMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

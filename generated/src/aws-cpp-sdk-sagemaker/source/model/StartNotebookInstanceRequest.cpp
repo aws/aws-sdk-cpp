@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartNotebookInstanceRequest::SerializePayload() const
-{
+Aws::String StartNotebookInstanceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_notebookInstanceNameHasBeenSet)
-  {
-   payload.WithString("NotebookInstanceName", m_notebookInstanceName);
-
+  if (m_notebookInstanceNameHasBeenSet) {
+    payload.WithString("NotebookInstanceName", m_notebookInstanceName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartNotebookInstanceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartNotebookInstanceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SageMaker.StartNotebookInstance"));
   return headers;
-
 }
-
-
-
-

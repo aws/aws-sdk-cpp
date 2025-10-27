@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class KeyType
-  {
-    NOT_SET,
-    rsa,
-    ed25519
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class KeyType { NOT_SET, rsa, ed25519 };
 
-namespace KeyTypeMapper
-{
+namespace KeyTypeMapper {
 AWS_EC2_API KeyType GetKeyTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForKeyType(KeyType value);
-} // namespace KeyTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace KeyTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

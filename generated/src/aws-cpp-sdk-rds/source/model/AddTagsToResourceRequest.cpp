@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/AddTagsToResourceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/AddTagsToResourceRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String AddTagsToResourceRequest::SerializePayload() const
-{
+Aws::String AddTagsToResourceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddTagsToResource&";
-  if(m_resourceNameHasBeenSet)
-  {
+  if (m_resourceNameHasBeenSet) {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -40,8 +33,4 @@ Aws::String AddTagsToResourceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddTagsToResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddTagsToResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

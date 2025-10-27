@@ -5,12 +5,8 @@
 
 #include <aws/backupsearch/BackupSearchEndpointProvider.h>
 
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BackupSearch
-} // namespace Aws
+namespace Aws {
+namespace BackupSearch {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BackupSearch
+}  // namespace Aws

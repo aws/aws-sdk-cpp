@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-HoneycodeConnectorProfileCredentials& HoneycodeConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accessToken"))
-  {
+HoneycodeConnectorProfileCredentials& HoneycodeConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accessToken")) {
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("refreshToken"))
-  {
+  if (jsonValue.ValueExists("refreshToken")) {
     m_refreshToken = jsonValue.GetString("refreshToken");
     m_refreshTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuthRequest"))
-  {
+  if (jsonValue.ValueExists("oAuthRequest")) {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
     m_oAuthRequestHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HoneycodeConnectorProfileCredentials::Jsonize() const
-{
+JsonValue HoneycodeConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("accessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("accessToken", m_accessToken);
   }
 
-  if(m_refreshTokenHasBeenSet)
-  {
-   payload.WithString("refreshToken", m_refreshToken);
-
+  if (m_refreshTokenHasBeenSet) {
+    payload.WithString("refreshToken", m_refreshToken);
   }
 
-  if(m_oAuthRequestHasBeenSet)
-  {
-   payload.WithObject("oAuthRequest", m_oAuthRequest.Jsonize());
-
+  if (m_oAuthRequestHasBeenSet) {
+    payload.WithObject("oAuthRequest", m_oAuthRequest.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

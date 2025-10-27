@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class VolumeType
-  {
-    NOT_SET,
-    ONTAP,
-    OPENZFS
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class VolumeType { NOT_SET, ONTAP, OPENZFS };
 
-namespace VolumeTypeMapper
-{
+namespace VolumeTypeMapper {
 AWS_FSX_API VolumeType GetVolumeTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForVolumeType(VolumeType value);
-} // namespace VolumeTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace VolumeTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

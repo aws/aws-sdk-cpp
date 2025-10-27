@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeCacheEngineVersionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeCacheEngineVersionsRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeCacheEngineVersionsRequest::SerializePayload() const
-{
+Aws::String DescribeCacheEngineVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeCacheEngineVersions&";
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_cacheParameterGroupFamilyHasBeenSet)
-  {
+  if (m_cacheParameterGroupFamilyHasBeenSet) {
     ss << "CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_defaultOnlyHasBeenSet)
-  {
+  if (m_defaultOnlyHasBeenSet) {
     ss << "DefaultOnly=" << std::boolalpha << m_defaultOnly << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String DescribeCacheEngineVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeCacheEngineVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeCacheEngineVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -5,12 +5,8 @@
 
 #include <aws/kinesis/KinesisEndpointProvider.h>
 
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Kinesis
-} // namespace Aws
+namespace Aws {
+namespace Kinesis {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Kinesis
+}  // namespace Aws

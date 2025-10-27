@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
-namespace Aws
-{
-namespace RolesAnywhere
-{
-class RolesAnywhereEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace RolesAnywhere {
+class RolesAnywhereEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace RolesAnywhere
-} // namespace Aws
+}  // namespace RolesAnywhere
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsMountPoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsMountPoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsMountPoint::AwsMountPoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsMountPoint::AwsMountPoint(JsonView jsonValue) { *this = jsonValue; }
 
-AwsMountPoint& AwsMountPoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceVolume"))
-  {
+AwsMountPoint& AwsMountPoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceVolume")) {
     m_sourceVolume = jsonValue.GetString("SourceVolume");
     m_sourceVolumeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainerPath"))
-  {
+  if (jsonValue.ValueExists("ContainerPath")) {
     m_containerPath = jsonValue.GetString("ContainerPath");
     m_containerPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsMountPoint::Jsonize() const
-{
+JsonValue AwsMountPoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceVolumeHasBeenSet)
-  {
-   payload.WithString("SourceVolume", m_sourceVolume);
-
+  if (m_sourceVolumeHasBeenSet) {
+    payload.WithString("SourceVolume", m_sourceVolume);
   }
 
-  if(m_containerPathHasBeenSet)
-  {
-   payload.WithString("ContainerPath", m_containerPath);
-
+  if (m_containerPathHasBeenSet) {
+    payload.WithString("ContainerPath", m_containerPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

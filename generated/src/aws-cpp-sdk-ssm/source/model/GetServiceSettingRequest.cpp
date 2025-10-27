@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/GetServiceSettingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/GetServiceSettingRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetServiceSettingRequest::SerializePayload() const
-{
+Aws::String GetServiceSettingRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_settingIdHasBeenSet)
-  {
-   payload.WithString("SettingId", m_settingId);
-
+  if (m_settingIdHasBeenSet) {
+    payload.WithString("SettingId", m_settingId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetServiceSettingRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetServiceSettingRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.GetServiceSetting"));
   return headers;
-
 }
-
-
-
-

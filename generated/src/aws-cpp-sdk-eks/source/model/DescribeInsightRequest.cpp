@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/DescribeInsightRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/DescribeInsightRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeInsightRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeInsightRequest::SerializePayload() const { return {}; }

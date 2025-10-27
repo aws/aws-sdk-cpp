@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-AnomalyInstance::AnomalyInstance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnomalyInstance::AnomalyInstance(JsonView jsonValue) { *this = jsonValue; }
 
-AnomalyInstance& AnomalyInstance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endTime"))
-  {
+AnomalyInstance& AnomalyInstance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetString("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetString("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userFeedback"))
-  {
+  if (jsonValue.ValueExists("userFeedback")) {
     m_userFeedback = jsonValue.GetObject("userFeedback");
     m_userFeedbackHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnomalyInstance::Jsonize() const
-{
+JsonValue AnomalyInstance::Jsonize() const {
   JsonValue payload;
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_endTimeHasBeenSet) {
+    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_userFeedbackHasBeenSet)
-  {
-   payload.WithObject("userFeedback", m_userFeedback.Jsonize());
-
+  if (m_userFeedbackHasBeenSet) {
+    payload.WithObject("userFeedback", m_userFeedback.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

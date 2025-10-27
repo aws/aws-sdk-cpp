@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class EvaluationFormScoringMode
-  {
-    NOT_SET,
-    QUESTION_ONLY,
-    SECTION_ONLY
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class EvaluationFormScoringMode { NOT_SET, QUESTION_ONLY, SECTION_ONLY };
 
-namespace EvaluationFormScoringModeMapper
-{
+namespace EvaluationFormScoringModeMapper {
 AWS_CONNECT_API EvaluationFormScoringMode GetEvaluationFormScoringModeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForEvaluationFormScoringMode(EvaluationFormScoringMode value);
-} // namespace EvaluationFormScoringModeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace EvaluationFormScoringModeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

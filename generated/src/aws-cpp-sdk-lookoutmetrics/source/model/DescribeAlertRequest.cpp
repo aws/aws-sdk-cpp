@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/DescribeAlertRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/DescribeAlertRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeAlertRequest::SerializePayload() const
-{
+Aws::String DescribeAlertRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_alertArnHasBeenSet)
-  {
-   payload.WithString("AlertArn", m_alertArn);
-
+  if (m_alertArnHasBeenSet) {
+    payload.WithString("AlertArn", m_alertArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

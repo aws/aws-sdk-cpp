@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class PeriodicScanFrequency
-  {
-    NOT_SET,
-    WEEKLY,
-    MONTHLY,
-    NEVER
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class PeriodicScanFrequency { NOT_SET, WEEKLY, MONTHLY, NEVER };
 
-namespace PeriodicScanFrequencyMapper
-{
+namespace PeriodicScanFrequencyMapper {
 AWS_INSPECTOR2_API PeriodicScanFrequency GetPeriodicScanFrequencyForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForPeriodicScanFrequency(PeriodicScanFrequency value);
-} // namespace PeriodicScanFrequencyMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace PeriodicScanFrequencyMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

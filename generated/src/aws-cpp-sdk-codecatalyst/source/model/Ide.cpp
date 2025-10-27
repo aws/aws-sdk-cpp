@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-Ide::Ide(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ide::Ide(JsonView jsonValue) { *this = jsonValue; }
 
-Ide& Ide::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("runtime"))
-  {
+Ide& Ide::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("runtime")) {
     m_runtime = jsonValue.GetString("runtime");
     m_runtimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ide::Jsonize() const
-{
+JsonValue Ide::Jsonize() const {
   JsonValue payload;
 
-  if(m_runtimeHasBeenSet)
-  {
-   payload.WithString("runtime", m_runtime);
-
+  if (m_runtimeHasBeenSet) {
+    payload.WithString("runtime", m_runtime);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

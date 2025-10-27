@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ExperienceEntitiesSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ExperienceEntitiesSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ExperienceEntitiesSummary::ExperienceEntitiesSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperienceEntitiesSummary::ExperienceEntitiesSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ExperienceEntitiesSummary& ExperienceEntitiesSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EntityId"))
-  {
+ExperienceEntitiesSummary& ExperienceEntitiesSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EntityId")) {
     m_entityId = jsonValue.GetString("EntityId");
     m_entityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EntityType"))
-  {
+  if (jsonValue.ValueExists("EntityType")) {
     m_entityType = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("EntityType"));
     m_entityTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayData"))
-  {
+  if (jsonValue.ValueExists("DisplayData")) {
     m_displayData = jsonValue.GetObject("DisplayData");
     m_displayDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperienceEntitiesSummary::Jsonize() const
-{
+JsonValue ExperienceEntitiesSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_entityIdHasBeenSet)
-  {
-   payload.WithString("EntityId", m_entityId);
-
+  if (m_entityIdHasBeenSet) {
+    payload.WithString("EntityId", m_entityId);
   }
 
-  if(m_entityTypeHasBeenSet)
-  {
-   payload.WithString("EntityType", EntityTypeMapper::GetNameForEntityType(m_entityType));
+  if (m_entityTypeHasBeenSet) {
+    payload.WithString("EntityType", EntityTypeMapper::GetNameForEntityType(m_entityType));
   }
 
-  if(m_displayDataHasBeenSet)
-  {
-   payload.WithObject("DisplayData", m_displayData.Jsonize());
-
+  if (m_displayDataHasBeenSet) {
+    payload.WithObject("DisplayData", m_displayData.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

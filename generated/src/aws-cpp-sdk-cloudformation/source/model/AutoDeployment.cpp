@@ -4,43 +4,35 @@
  */
 
 #include <aws/cloudformation/model/AutoDeployment.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-AutoDeployment::AutoDeployment(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AutoDeployment::AutoDeployment(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AutoDeployment& AutoDeployment::operator =(const XmlNode& xmlNode)
-{
+AutoDeployment& AutoDeployment::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode retainStacksOnAccountRemovalNode = resultNode.FirstChild("RetainStacksOnAccountRemoval");
-    if(!retainStacksOnAccountRemovalNode.IsNull())
-    {
-      m_retainStacksOnAccountRemoval = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainStacksOnAccountRemovalNode.GetText()).c_str()).c_str());
+    if (!retainStacksOnAccountRemovalNode.IsNull()) {
+      m_retainStacksOnAccountRemoval = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainStacksOnAccountRemovalNode.GetText()).c_str()).c_str());
       m_retainStacksOnAccountRemovalHasBeenSet = true;
     }
   }
@@ -48,32 +40,26 @@ AutoDeployment& AutoDeployment::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_enabledHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
+void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_enabledHasBeenSet) {
+    oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
-  if(m_retainStacksOnAccountRemovalHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval << "&";
-  }
-
-}
-
-void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_enabledHasBeenSet)
-  {
-      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
-  }
-  if(m_retainStacksOnAccountRemovalHasBeenSet)
-  {
-      oStream << location << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval << "&";
+  if (m_retainStacksOnAccountRemovalHasBeenSet) {
+    oStream << location << index << locationValue << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_enabledHasBeenSet) {
+    oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
+  }
+  if (m_retainStacksOnAccountRemovalHasBeenSet) {
+    oStream << location << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

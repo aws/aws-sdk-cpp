@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/AzureBlobSasConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/AzureBlobSasConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-AzureBlobSasConfiguration::AzureBlobSasConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AzureBlobSasConfiguration::AzureBlobSasConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AzureBlobSasConfiguration& AzureBlobSasConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Token"))
-  {
+AzureBlobSasConfiguration& AzureBlobSasConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Token")) {
     m_token = jsonValue.GetString("Token");
     m_tokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AzureBlobSasConfiguration::Jsonize() const
-{
+JsonValue AzureBlobSasConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenHasBeenSet)
-  {
-   payload.WithString("Token", m_token);
-
+  if (m_tokenHasBeenSet) {
+    payload.WithString("Token", m_token);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

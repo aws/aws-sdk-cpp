@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/ListResourceSharePermissionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/ListResourceSharePermissionsRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListResourceSharePermissionsRequest::SerializePayload() const
-{
+Aws::String ListResourceSharePermissionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceShareArnHasBeenSet)
-  {
-   payload.WithString("resourceShareArn", m_resourceShareArn);
-
+  if (m_resourceShareArnHasBeenSet) {
+    payload.WithString("resourceShareArn", m_resourceShareArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/FailoverDBClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/FailoverDBClusterRequest.h>
 
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-Aws::String FailoverDBClusterRequest::SerializePayload() const
-{
+Aws::String FailoverDBClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=FailoverDBCluster&";
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
+  if (m_dBClusterIdentifierHasBeenSet) {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_targetDBInstanceIdentifierHasBeenSet)
-  {
+  if (m_targetDBInstanceIdentifierHasBeenSet) {
     ss << "TargetDBInstanceIdentifier=" << StringUtils::URLEncode(m_targetDBInstanceIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String FailoverDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  FailoverDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void FailoverDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

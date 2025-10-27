@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-Deployment::Deployment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Deployment::Deployment(JsonView jsonValue) { *this = jsonValue; }
 
-Deployment& Deployment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoDeployed"))
-  {
+Deployment& Deployment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoDeployed")) {
     m_autoDeployed = jsonValue.GetBool("autoDeployed");
     m_autoDeployedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdDate"))
-  {
+  if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetString("createdDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentId"))
-  {
+  if (jsonValue.ValueExists("deploymentId")) {
     m_deploymentId = jsonValue.GetString("deploymentId");
     m_deploymentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentStatus"))
-  {
+  if (jsonValue.ValueExists("deploymentStatus")) {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
     m_deploymentStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentStatusMessage"))
-  {
+  if (jsonValue.ValueExists("deploymentStatusMessage")) {
     m_deploymentStatusMessage = jsonValue.GetString("deploymentStatusMessage");
     m_deploymentStatusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Deployment::Jsonize() const
-{
+JsonValue Deployment::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoDeployedHasBeenSet)
-  {
-   payload.WithBool("autoDeployed", m_autoDeployed);
-
+  if (m_autoDeployedHasBeenSet) {
+    payload.WithBool("autoDeployed", m_autoDeployed);
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdDateHasBeenSet) {
+    payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_deploymentStatusHasBeenSet)
-  {
-   payload.WithString("deploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_deploymentStatus));
+  if (m_deploymentStatusHasBeenSet) {
+    payload.WithString("deploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_deploymentStatus));
   }
 
-  if(m_deploymentStatusMessageHasBeenSet)
-  {
-   payload.WithString("deploymentStatusMessage", m_deploymentStatusMessage);
-
+  if (m_deploymentStatusMessageHasBeenSet) {
+    payload.WithString("deploymentStatusMessage", m_deploymentStatusMessage);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

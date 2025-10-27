@@ -12,19 +12,12 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateUserSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userSettingsHasBeenSet)
-  {
-   payload.WithObject("UserSettings", m_userSettings.Jsonize());
-
+  if (m_userSettingsHasBeenSet) {
+    payload.WithObject("UserSettings", m_userSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,64 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DecreaseReplicaCountRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DecreaseReplicaCountRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DecreaseReplicaCountRequest::SerializePayload() const
-{
+Aws::String DecreaseReplicaCountRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DecreaseReplicaCount&";
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_newReplicaCountHasBeenSet)
-  {
+  if (m_newReplicaCountHasBeenSet) {
     ss << "NewReplicaCount=" << m_newReplicaCount << "&";
   }
 
-  if(m_replicaConfigurationHasBeenSet)
-  {
-    if (m_replicaConfiguration.empty())
-    {
+  if (m_replicaConfigurationHasBeenSet) {
+    if (m_replicaConfiguration.empty()) {
       ss << "ReplicaConfiguration=&";
-    }
-    else
-    {
+    } else {
       unsigned replicaConfigurationCount = 1;
-      for(auto& item : m_replicaConfiguration)
-      {
+      for (auto& item : m_replicaConfiguration) {
         item.OutputToStream(ss, "ReplicaConfiguration.ConfigureShard.", replicaConfigurationCount, "");
         replicaConfigurationCount++;
       }
     }
   }
 
-  if(m_replicasToRemoveHasBeenSet)
-  {
-    if (m_replicasToRemove.empty())
-    {
+  if (m_replicasToRemoveHasBeenSet) {
+    if (m_replicasToRemove.empty()) {
       ss << "ReplicasToRemove=&";
-    }
-    else
-    {
+    } else {
       unsigned replicasToRemoveCount = 1;
-      for(auto& item : m_replicasToRemove)
-      {
-        ss << "ReplicasToRemove.member." << replicasToRemoveCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_replicasToRemove) {
+        ss << "ReplicasToRemove.member." << replicasToRemoveCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         replicasToRemoveCount++;
       }
     }
   }
 
-  if(m_applyImmediatelyHasBeenSet)
-  {
+  if (m_applyImmediatelyHasBeenSet) {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
@@ -68,8 +53,4 @@ Aws::String DecreaseReplicaCountRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DecreaseReplicaCountRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DecreaseReplicaCountRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

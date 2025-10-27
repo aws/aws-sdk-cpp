@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/SchemaChangePolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/SchemaChangePolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue) { *this = jsonValue; }
 
-SchemaChangePolicy& SchemaChangePolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UpdateBehavior"))
-  {
+SchemaChangePolicy& SchemaChangePolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UpdateBehavior")) {
     m_updateBehavior = UpdateBehaviorMapper::GetUpdateBehaviorForName(jsonValue.GetString("UpdateBehavior"));
     m_updateBehaviorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeleteBehavior"))
-  {
+  if (jsonValue.ValueExists("DeleteBehavior")) {
     m_deleteBehavior = DeleteBehaviorMapper::GetDeleteBehaviorForName(jsonValue.GetString("DeleteBehavior"));
     m_deleteBehaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SchemaChangePolicy::Jsonize() const
-{
+JsonValue SchemaChangePolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_updateBehaviorHasBeenSet)
-  {
-   payload.WithString("UpdateBehavior", UpdateBehaviorMapper::GetNameForUpdateBehavior(m_updateBehavior));
+  if (m_updateBehaviorHasBeenSet) {
+    payload.WithString("UpdateBehavior", UpdateBehaviorMapper::GetNameForUpdateBehavior(m_updateBehavior));
   }
 
-  if(m_deleteBehaviorHasBeenSet)
-  {
-   payload.WithString("DeleteBehavior", DeleteBehaviorMapper::GetNameForDeleteBehavior(m_deleteBehavior));
+  if (m_deleteBehaviorHasBeenSet) {
+    payload.WithString("DeleteBehavior", DeleteBehaviorMapper::GetNameForDeleteBehavior(m_deleteBehavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snow-device-management/model/ListDeviceResourcesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/snow-device-management/model/ListDeviceResourcesRequest.h>
 
 #include <utility>
 
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListDeviceResourcesRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListDeviceResourcesRequest::SerializePayload() const { return {}; }
+
+void ListDeviceResourcesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_typeHasBeenSet) {
+    ss << m_type;
+    uri.AddQueryStringParameter("type", ss.str());
+    ss.str("");
+  }
 }
-
-void ListDeviceResourcesRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_typeHasBeenSet)
-    {
-      ss << m_type;
-      uri.AddQueryStringParameter("type", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateDomainEndpointOptionsRequest::SerializePayload() const
-{
+Aws::String UpdateDomainEndpointOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateDomainEndpointOptions&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_domainEndpointOptionsHasBeenSet)
-  {
+  if (m_domainEndpointOptionsHasBeenSet) {
     m_domainEndpointOptions.OutputToStream(ss, "DomainEndpointOptions");
   }
 
@@ -28,8 +25,4 @@ Aws::String UpdateDomainEndpointOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateDomainEndpointOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateDomainEndpointOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-HealthCheckConfiguration::HealthCheckConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HealthCheckConfiguration::HealthCheckConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HealthCheckConfiguration& HealthCheckConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Protocol"))
-  {
+HealthCheckConfiguration& HealthCheckConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Protocol")) {
     m_protocol = HealthCheckProtocolMapper::GetHealthCheckProtocolForName(jsonValue.GetString("Protocol"));
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Interval"))
-  {
+  if (jsonValue.ValueExists("Interval")) {
     m_interval = jsonValue.GetInteger("Interval");
     m_intervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Timeout"))
-  {
+  if (jsonValue.ValueExists("Timeout")) {
     m_timeout = jsonValue.GetInteger("Timeout");
     m_timeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HealthyThreshold"))
-  {
+  if (jsonValue.ValueExists("HealthyThreshold")) {
     m_healthyThreshold = jsonValue.GetInteger("HealthyThreshold");
     m_healthyThresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnhealthyThreshold"))
-  {
+  if (jsonValue.ValueExists("UnhealthyThreshold")) {
     m_unhealthyThreshold = jsonValue.GetInteger("UnhealthyThreshold");
     m_unhealthyThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HealthCheckConfiguration::Jsonize() const
-{
+JsonValue HealthCheckConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("Protocol", HealthCheckProtocolMapper::GetNameForHealthCheckProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", HealthCheckProtocolMapper::GetNameForHealthCheckProtocol(m_protocol));
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_intervalHasBeenSet)
-  {
-   payload.WithInteger("Interval", m_interval);
-
+  if (m_intervalHasBeenSet) {
+    payload.WithInteger("Interval", m_interval);
   }
 
-  if(m_timeoutHasBeenSet)
-  {
-   payload.WithInteger("Timeout", m_timeout);
-
+  if (m_timeoutHasBeenSet) {
+    payload.WithInteger("Timeout", m_timeout);
   }
 
-  if(m_healthyThresholdHasBeenSet)
-  {
-   payload.WithInteger("HealthyThreshold", m_healthyThreshold);
-
+  if (m_healthyThresholdHasBeenSet) {
+    payload.WithInteger("HealthyThreshold", m_healthyThreshold);
   }
 
-  if(m_unhealthyThresholdHasBeenSet)
-  {
-   payload.WithInteger("UnhealthyThreshold", m_unhealthyThreshold);
-
+  if (m_unhealthyThresholdHasBeenSet) {
+    payload.WithInteger("UnhealthyThreshold", m_unhealthyThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

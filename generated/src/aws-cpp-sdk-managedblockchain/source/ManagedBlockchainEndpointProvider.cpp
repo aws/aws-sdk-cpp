@@ -5,12 +5,8 @@
 
 #include <aws/managedblockchain/ManagedBlockchainEndpointProvider.h>
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ManagedBlockchain
-} // namespace Aws
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ManagedBlockchain
+}  // namespace Aws

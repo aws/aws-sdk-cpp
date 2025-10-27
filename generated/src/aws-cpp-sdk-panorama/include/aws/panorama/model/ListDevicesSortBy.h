@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class ListDevicesSortBy
-  {
-    NOT_SET,
-    DEVICE_ID,
-    CREATED_TIME,
-    NAME,
-    DEVICE_AGGREGATED_STATUS
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class ListDevicesSortBy { NOT_SET, DEVICE_ID, CREATED_TIME, NAME, DEVICE_AGGREGATED_STATUS };
 
-namespace ListDevicesSortByMapper
-{
+namespace ListDevicesSortByMapper {
 AWS_PANORAMA_API ListDevicesSortBy GetListDevicesSortByForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForListDevicesSortBy(ListDevicesSortBy value);
-} // namespace ListDevicesSortByMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace ListDevicesSortByMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

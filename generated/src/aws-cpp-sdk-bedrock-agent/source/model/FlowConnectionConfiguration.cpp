@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FlowConnectionConfiguration::FlowConnectionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowConnectionConfiguration::FlowConnectionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FlowConnectionConfiguration& FlowConnectionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("data"))
-  {
+FlowConnectionConfiguration& FlowConnectionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("data")) {
     m_data = jsonValue.GetObject("data");
     m_dataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conditional"))
-  {
+  if (jsonValue.ValueExists("conditional")) {
     m_conditional = jsonValue.GetObject("conditional");
     m_conditionalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowConnectionConfiguration::Jsonize() const
-{
+JsonValue FlowConnectionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithObject("data", m_data.Jsonize());
-
+  if (m_dataHasBeenSet) {
+    payload.WithObject("data", m_data.Jsonize());
   }
 
-  if(m_conditionalHasBeenSet)
-  {
-   payload.WithObject("conditional", m_conditional.Jsonize());
-
+  if (m_conditionalHasBeenSet) {
+    payload.WithObject("conditional", m_conditional.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws
