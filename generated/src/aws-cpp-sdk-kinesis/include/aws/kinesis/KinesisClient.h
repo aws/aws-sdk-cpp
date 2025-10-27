@@ -986,7 +986,7 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
    * <p>Writes a single data record into an Amazon Kinesis data stream. Call
    * <code>PutRecord</code> to send data into the stream for real-time ingestion and
    * subsequent processing, one record at a time. Each shard can support writes up to
-   * 1,000 records per second, up to a maximum data write total of 1 MiB per
+   * 1,000 records per second, up to a maximum data write total of 10 MiB per
    * second.</p>  <p>When invoking this API, you must use either the
    * <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is
    * recommended that you use the <code>StreamARN</code> input parameter when you
@@ -1055,9 +1055,9 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
    * <code>StreamName</code> parameter, or both. It is recommended that you use the
    * <code>StreamARN</code> input parameter when you invoke this API.</p>
    * <p>Each <code>PutRecords</code> request can support up to 500 records. Each
-   * record in the request can be as large as 1 MiB, up to a limit of 5 MiB for the
+   * record in the request can be as large as 10 MiB, up to a limit of 10 MiB for the
    * entire request, including partition keys. Each shard can support writes up to
-   * 1,000 records per second, up to a maximum data write total of 1 MiB per
+   * 1,000 records per second, up to a maximum data write total of 1 MB per
    * second.</p> <p>You must specify the name of the stream that captures, stores,
    * and transports the data; and an array of request <code>Records</code>, with each
    * record in the array requiring a partition key and data blob. The record size
@@ -1514,6 +1514,34 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>This allows you to update the <code>MaxRecordSize</code> of a single record
+   * that you can write to, and read from a stream. You can ingest and digest single
+   * records up to 10240 KiB.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMaxRecordSizeOutcome UpdateMaxRecordSize(const Model::UpdateMaxRecordSizeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMaxRecordSize that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateMaxRecordSizeRequestT = Model::UpdateMaxRecordSizeRequest>
+  Model::UpdateMaxRecordSizeOutcomeCallable UpdateMaxRecordSizeCallable(const UpdateMaxRecordSizeRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateMaxRecordSize, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMaxRecordSize that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateMaxRecordSizeRequestT = Model::UpdateMaxRecordSizeRequest>
+  void UpdateMaxRecordSizeAsync(const UpdateMaxRecordSizeRequestT& request, const UpdateMaxRecordSizeResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateMaxRecordSize, request, handler, context);
   }
 
   /**

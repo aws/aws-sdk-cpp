@@ -93,6 +93,7 @@
 #include <aws/kinesis/model/Tag.h>
 #include <aws/kinesis/model/TagResourceRequest.h>
 #include <aws/kinesis/model/UntagResourceRequest.h>
+#include <aws/kinesis/model/UpdateMaxRecordSizeRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateShardCountResult.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>

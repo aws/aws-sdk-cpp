@@ -113,6 +113,7 @@ class StopStreamEncryptionRequest;
 class SubscribeToShardRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateMaxRecordSizeRequest;
 class UpdateShardCountRequest;
 class UpdateStreamModeRequest;
 /* End of service model forward declarations required in KinesisClient header */
@@ -151,6 +152,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOut
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateMaxRecordSizeOutcome;
 typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
 /* End of service model Outcome class definitions */
@@ -189,6 +191,7 @@ typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCall
 typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateMaxRecordSizeOutcome> UpdateMaxRecordSizeOutcomeCallable;
 typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
 typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -298,6 +301,9 @@ typedef std::function<void(const KinesisClient*, const Model::TagResourceRequest
 typedef std::function<void(const KinesisClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const KinesisClient*, const Model::UpdateMaxRecordSizeRequest&, const Model::UpdateMaxRecordSizeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateMaxRecordSizeResponseReceivedHandler;
 typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateShardCountResponseReceivedHandler;

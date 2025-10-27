@@ -42,6 +42,13 @@ static const int PolicyVersionsInUse_HASH = HashingUtils::HashString("PolicyVers
 static const int PolicyVersionsInUseQuota_HASH = HashingUtils::HashString("PolicyVersionsInUseQuota");
 static const int VersionsPerPolicyQuota_HASH = HashingUtils::HashString("VersionsPerPolicyQuota");
 static const int GlobalEndpointTokenVersion_HASH = HashingUtils::HashString("GlobalEndpointTokenVersion");
+static const int AssumeRolePolicySizeQuota_HASH = HashingUtils::HashString("AssumeRolePolicySizeQuota");
+static const int InstanceProfiles_HASH = HashingUtils::HashString("InstanceProfiles");
+static const int InstanceProfilesQuota_HASH = HashingUtils::HashString("InstanceProfilesQuota");
+static const int Providers_HASH = HashingUtils::HashString("Providers");
+static const int RolePolicySizeQuota_HASH = HashingUtils::HashString("RolePolicySizeQuota");
+static const int Roles_HASH = HashingUtils::HashString("Roles");
+static const int RolesQuota_HASH = HashingUtils::HashString("RolesQuota");
 
 SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -99,6 +106,20 @@ SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name) {
     return SummaryKeyType::VersionsPerPolicyQuota;
   } else if (hashCode == GlobalEndpointTokenVersion_HASH) {
     return SummaryKeyType::GlobalEndpointTokenVersion;
+  } else if (hashCode == AssumeRolePolicySizeQuota_HASH) {
+    return SummaryKeyType::AssumeRolePolicySizeQuota;
+  } else if (hashCode == InstanceProfiles_HASH) {
+    return SummaryKeyType::InstanceProfiles;
+  } else if (hashCode == InstanceProfilesQuota_HASH) {
+    return SummaryKeyType::InstanceProfilesQuota;
+  } else if (hashCode == Providers_HASH) {
+    return SummaryKeyType::Providers;
+  } else if (hashCode == RolePolicySizeQuota_HASH) {
+    return SummaryKeyType::RolePolicySizeQuota;
+  } else if (hashCode == Roles_HASH) {
+    return SummaryKeyType::Roles;
+  } else if (hashCode == RolesQuota_HASH) {
+    return SummaryKeyType::RolesQuota;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -167,6 +188,20 @@ Aws::String GetNameForSummaryKeyType(SummaryKeyType enumValue) {
       return "VersionsPerPolicyQuota";
     case SummaryKeyType::GlobalEndpointTokenVersion:
       return "GlobalEndpointTokenVersion";
+    case SummaryKeyType::AssumeRolePolicySizeQuota:
+      return "AssumeRolePolicySizeQuota";
+    case SummaryKeyType::InstanceProfiles:
+      return "InstanceProfiles";
+    case SummaryKeyType::InstanceProfilesQuota:
+      return "InstanceProfilesQuota";
+    case SummaryKeyType::Providers:
+      return "Providers";
+    case SummaryKeyType::RolePolicySizeQuota:
+      return "RolePolicySizeQuota";
+    case SummaryKeyType::Roles:
+      return "Roles";
+    case SummaryKeyType::RolesQuota:
+      return "RolesQuota";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

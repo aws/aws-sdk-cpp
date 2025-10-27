@@ -257,6 +257,23 @@ class StreamDescriptionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum record size of a single record in kibibyte (KiB) that you can
+   * write to, and read from a stream.</p>
+   */
+  inline int GetMaxRecordSizeInKiB() const { return m_maxRecordSizeInKiB; }
+  inline bool MaxRecordSizeInKiBHasBeenSet() const { return m_maxRecordSizeInKiBHasBeenSet; }
+  inline void SetMaxRecordSizeInKiB(int value) {
+    m_maxRecordSizeInKiBHasBeenSet = true;
+    m_maxRecordSizeInKiB = value;
+  }
+  inline StreamDescriptionSummary& WithMaxRecordSizeInKiB(int value) {
+    SetMaxRecordSizeInKiB(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
   bool m_streamNameHasBeenSet = false;
@@ -290,6 +307,9 @@ class StreamDescriptionSummary {
 
   int m_consumerCount{0};
   bool m_consumerCountHasBeenSet = false;
+
+  int m_maxRecordSizeInKiB{0};
+  bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 
 }  // namespace Model

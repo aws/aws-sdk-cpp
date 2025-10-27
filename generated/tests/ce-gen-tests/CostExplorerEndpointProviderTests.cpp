@@ -185,7 +185,7 @@ Aws::Vector<CostExplorerEndpointProviderEndpointTestCase> CostExplorerEndpointPr
   {"For region eusc-de-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eusc-de-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://ce.eusc-de-east-1.amazonaws.eu",
+    {{/*epUrl*/"https://ce.eusc-de-east-1.api.amazonwebservices.eu",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
