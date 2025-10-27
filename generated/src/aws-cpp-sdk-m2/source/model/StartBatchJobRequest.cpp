@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/StartBatchJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/StartBatchJobRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartBatchJobRequest::SerializePayload() const
-{
+Aws::String StartBatchJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_authSecretsManagerArnHasBeenSet)
-  {
-   payload.WithString("authSecretsManagerArn", m_authSecretsManagerArn);
-
+  if (m_authSecretsManagerArnHasBeenSet) {
+    payload.WithString("authSecretsManagerArn", m_authSecretsManagerArn);
   }
 
-  if(m_batchJobIdentifierHasBeenSet)
-  {
-   payload.WithObject("batchJobIdentifier", m_batchJobIdentifier.Jsonize());
-
+  if (m_batchJobIdentifierHasBeenSet) {
+    payload.WithObject("batchJobIdentifier", m_batchJobIdentifier.Jsonize());
   }
 
-  if(m_jobParamsHasBeenSet)
-  {
-   JsonValue jobParamsJsonMap;
-   for(auto& jobParamsItem : m_jobParams)
-   {
-     jobParamsJsonMap.WithString(jobParamsItem.first, jobParamsItem.second);
-   }
-   payload.WithObject("jobParams", std::move(jobParamsJsonMap));
-
+  if (m_jobParamsHasBeenSet) {
+    JsonValue jobParamsJsonMap;
+    for (auto& jobParamsItem : m_jobParams) {
+      jobParamsJsonMap.WithString(jobParamsItem.first, jobParamsItem.second);
+    }
+    payload.WithObject("jobParams", std::move(jobParamsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

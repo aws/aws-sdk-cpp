@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GameLiftStreams;
 
-AWSError<CoreErrors> GameLiftStreamsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GameLiftStreamsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GameLiftStreamsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SimpleDB;
 
-AWSError<CoreErrors> SimpleDBErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SimpleDBErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SimpleDBErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

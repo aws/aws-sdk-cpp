@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
-  enum class DatasetStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    DELETING
-  };
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
+enum class DatasetStatus { NOT_SET, CREATING, ACTIVE, DELETING };
 
-namespace DatasetStatusMapper
-{
+namespace DatasetStatusMapper {
 AWS_IOTANALYTICS_API DatasetStatus GetDatasetStatusForName(const Aws::String& name);
 
 AWS_IOTANALYTICS_API Aws::String GetNameForDatasetStatus(DatasetStatus value);
-} // namespace DatasetStatusMapper
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace DatasetStatusMapper
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

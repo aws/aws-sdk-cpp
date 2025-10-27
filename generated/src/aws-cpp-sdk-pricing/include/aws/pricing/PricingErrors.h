@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pricing
-{
-enum class PricingErrors
-{
-  //From Core//
+namespace Aws {
+namespace Pricing {
+enum class PricingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class PricingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class PricingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_NEXT_TOKEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_NEXT_TOKEN = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_ERROR,
   INVALID_NEXT_TOKEN,
   INVALID_PARAMETER,
   NOT_FOUND
 };
 
-class AWS_PRICING_API PricingError : public Aws::Client::AWSError<PricingErrors>
-{
-public:
+class AWS_PRICING_API PricingError : public Aws::Client::AWSError<PricingErrors> {
+ public:
   PricingError() {}
   PricingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
   PricingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace PricingErrorMapper
-{
-  AWS_PRICING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace PricingErrorMapper {
+AWS_PRICING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Pricing
-} // namespace Aws
+}  // namespace Pricing
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-CreatedByInfo::CreatedByInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreatedByInfo::CreatedByInfo(JsonView jsonValue) { *this = jsonValue; }
 
-CreatedByInfo& CreatedByInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectUserArn"))
-  {
+CreatedByInfo& CreatedByInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectUserArn")) {
     m_connectUserArn = jsonValue.GetString("ConnectUserArn");
     m_connectUserArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AWSIdentityArn"))
-  {
+  if (jsonValue.ValueExists("AWSIdentityArn")) {
     m_aWSIdentityArn = jsonValue.GetString("AWSIdentityArn");
     m_aWSIdentityArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreatedByInfo::Jsonize() const
-{
+JsonValue CreatedByInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectUserArnHasBeenSet)
-  {
-   payload.WithString("ConnectUserArn", m_connectUserArn);
-
+  if (m_connectUserArnHasBeenSet) {
+    payload.WithString("ConnectUserArn", m_connectUserArn);
   }
 
-  if(m_aWSIdentityArnHasBeenSet)
-  {
-   payload.WithString("AWSIdentityArn", m_aWSIdentityArn);
-
+  if (m_aWSIdentityArnHasBeenSet) {
+    payload.WithString("AWSIdentityArn", m_aWSIdentityArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

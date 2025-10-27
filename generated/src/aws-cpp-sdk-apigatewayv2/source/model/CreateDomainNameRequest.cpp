@@ -12,52 +12,38 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDomainNameRequest::SerializePayload() const
-{
+Aws::String CreateDomainNameRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
-  if(m_domainNameConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
-   for(unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength(); ++domainNameConfigurationsIndex)
-   {
-     domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("domainNameConfigurations", std::move(domainNameConfigurationsJsonList));
-
+  if (m_domainNameConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
+    for (unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength();
+         ++domainNameConfigurationsIndex) {
+      domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(
+          m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("domainNameConfigurations", std::move(domainNameConfigurationsJsonList));
   }
 
-  if(m_mutualTlsAuthenticationHasBeenSet)
-  {
-   payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
-
+  if (m_mutualTlsAuthenticationHasBeenSet) {
+    payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
   }
 
-  if(m_routingModeHasBeenSet)
-  {
-   payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
+  if (m_routingModeHasBeenSet) {
+    payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

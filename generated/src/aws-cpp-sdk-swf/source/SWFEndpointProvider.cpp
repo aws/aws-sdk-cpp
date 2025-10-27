@@ -5,12 +5,8 @@
 
 #include <aws/swf/SWFEndpointProvider.h>
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SWF
-} // namespace Aws
+namespace Aws {
+namespace SWF {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SWF
+}  // namespace Aws

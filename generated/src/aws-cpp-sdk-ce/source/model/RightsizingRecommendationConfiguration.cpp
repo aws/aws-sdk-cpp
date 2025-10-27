@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RightsizingRecommendationConfiguration& RightsizingRecommendationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecommendationTarget"))
-  {
+RightsizingRecommendationConfiguration& RightsizingRecommendationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecommendationTarget")) {
     m_recommendationTarget = RecommendationTargetMapper::GetRecommendationTargetForName(jsonValue.GetString("RecommendationTarget"));
     m_recommendationTargetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BenefitsConsidered"))
-  {
+  if (jsonValue.ValueExists("BenefitsConsidered")) {
     m_benefitsConsidered = jsonValue.GetBool("BenefitsConsidered");
     m_benefitsConsideredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RightsizingRecommendationConfiguration::Jsonize() const
-{
+JsonValue RightsizingRecommendationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationTargetHasBeenSet)
-  {
-   payload.WithString("RecommendationTarget", RecommendationTargetMapper::GetNameForRecommendationTarget(m_recommendationTarget));
+  if (m_recommendationTargetHasBeenSet) {
+    payload.WithString("RecommendationTarget", RecommendationTargetMapper::GetNameForRecommendationTarget(m_recommendationTarget));
   }
 
-  if(m_benefitsConsideredHasBeenSet)
-  {
-   payload.WithBool("BenefitsConsidered", m_benefitsConsidered);
-
+  if (m_benefitsConsideredHasBeenSet) {
+    payload.WithBool("BenefitsConsidered", m_benefitsConsidered);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

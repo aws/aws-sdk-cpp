@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/entityresolution/model/ExceedsLimitException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/entityresolution/model/ExceedsLimitException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
 
-ExceedsLimitException::ExceedsLimitException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExceedsLimitException::ExceedsLimitException(JsonView jsonValue) { *this = jsonValue; }
 
-ExceedsLimitException& ExceedsLimitException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ExceedsLimitException& ExceedsLimitException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quotaName"))
-  {
+  if (jsonValue.ValueExists("quotaName")) {
     m_quotaName = jsonValue.GetString("quotaName");
     m_quotaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quotaValue"))
-  {
+  if (jsonValue.ValueExists("quotaValue")) {
     m_quotaValue = jsonValue.GetInteger("quotaValue");
     m_quotaValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExceedsLimitException::Jsonize() const
-{
+JsonValue ExceedsLimitException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_quotaNameHasBeenSet)
-  {
-   payload.WithString("quotaName", m_quotaName);
-
+  if (m_quotaNameHasBeenSet) {
+    payload.WithString("quotaName", m_quotaName);
   }
 
-  if(m_quotaValueHasBeenSet)
-  {
-   payload.WithInteger("quotaValue", m_quotaValue);
-
+  if (m_quotaValueHasBeenSet) {
+    payload.WithInteger("quotaValue", m_quotaValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

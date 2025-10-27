@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class ComputationType
-  {
-    NOT_SET,
-    FULL,
-    INCREMENTAL
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class ComputationType { NOT_SET, FULL, INCREMENTAL };
 
-namespace ComputationTypeMapper
-{
+namespace ComputationTypeMapper {
 AWS_GLUE_API ComputationType GetComputationTypeForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForComputationType(ComputationType value);
-} // namespace ComputationTypeMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace ComputationTypeMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

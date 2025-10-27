@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/NotifyWorkersFailureStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/NotifyWorkersFailureStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Model
-{
+namespace Aws {
+namespace MTurk {
+namespace Model {
 
-NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue) { *this = jsonValue; }
 
-NotifyWorkersFailureStatus& NotifyWorkersFailureStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NotifyWorkersFailureCode"))
-  {
-    m_notifyWorkersFailureCode = NotifyWorkersFailureCodeMapper::GetNotifyWorkersFailureCodeForName(jsonValue.GetString("NotifyWorkersFailureCode"));
+NotifyWorkersFailureStatus& NotifyWorkersFailureStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NotifyWorkersFailureCode")) {
+    m_notifyWorkersFailureCode =
+        NotifyWorkersFailureCodeMapper::GetNotifyWorkersFailureCodeForName(jsonValue.GetString("NotifyWorkersFailureCode"));
     m_notifyWorkersFailureCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotifyWorkersFailureMessage"))
-  {
+  if (jsonValue.ValueExists("NotifyWorkersFailureMessage")) {
     m_notifyWorkersFailureMessage = jsonValue.GetString("NotifyWorkersFailureMessage");
     m_notifyWorkersFailureMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkerId"))
-  {
+  if (jsonValue.ValueExists("WorkerId")) {
     m_workerId = jsonValue.GetString("WorkerId");
     m_workerIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotifyWorkersFailureStatus::Jsonize() const
-{
+JsonValue NotifyWorkersFailureStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_notifyWorkersFailureCodeHasBeenSet)
-  {
-   payload.WithString("NotifyWorkersFailureCode", NotifyWorkersFailureCodeMapper::GetNameForNotifyWorkersFailureCode(m_notifyWorkersFailureCode));
+  if (m_notifyWorkersFailureCodeHasBeenSet) {
+    payload.WithString("NotifyWorkersFailureCode",
+                       NotifyWorkersFailureCodeMapper::GetNameForNotifyWorkersFailureCode(m_notifyWorkersFailureCode));
   }
 
-  if(m_notifyWorkersFailureMessageHasBeenSet)
-  {
-   payload.WithString("NotifyWorkersFailureMessage", m_notifyWorkersFailureMessage);
-
+  if (m_notifyWorkersFailureMessageHasBeenSet) {
+    payload.WithString("NotifyWorkersFailureMessage", m_notifyWorkersFailureMessage);
   }
 
-  if(m_workerIdHasBeenSet)
-  {
-   payload.WithString("WorkerId", m_workerId);
-
+  if (m_workerIdHasBeenSet) {
+    payload.WithString("WorkerId", m_workerId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

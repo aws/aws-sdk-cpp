@@ -12,24 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateViewContentRequest::SerializePayload() const
-{
+Aws::String UpdateViewContentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ViewStatusMapper::GetNameForViewStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ViewStatusMapper::GetNameForViewStatus(m_status));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("Content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("Content", m_content.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

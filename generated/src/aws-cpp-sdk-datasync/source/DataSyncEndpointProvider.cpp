@@ -5,12 +5,8 @@
 
 #include <aws/datasync/DataSyncEndpointProvider.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DataSync
-} // namespace Aws
+namespace Aws {
+namespace DataSync {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DataSync
+}  // namespace Aws

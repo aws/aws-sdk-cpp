@@ -4,10 +4,10 @@
  */
 
 #include <aws/ce/model/GetSavingsPlansPurchaseRecommendationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,38 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSavingsPlansPurchaseRecommendationResult::GetSavingsPlansPurchaseRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSavingsPlansPurchaseRecommendationResult::GetSavingsPlansPurchaseRecommendationResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetSavingsPlansPurchaseRecommendationResult& GetSavingsPlansPurchaseRecommendationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSavingsPlansPurchaseRecommendationResult& GetSavingsPlansPurchaseRecommendationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Metadata"))
-  {
+  if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetObject("Metadata");
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendation"))
-  {
+  if (jsonValue.ValueExists("SavingsPlansPurchaseRecommendation")) {
     m_savingsPlansPurchaseRecommendation = jsonValue.GetObject("SavingsPlansPurchaseRecommendation");
     m_savingsPlansPurchaseRecommendationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageToken"))
-  {
+  if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

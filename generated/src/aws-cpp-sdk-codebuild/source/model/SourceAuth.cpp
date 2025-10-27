@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-SourceAuth::SourceAuth(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceAuth::SourceAuth(JsonView jsonValue) { *this = jsonValue; }
 
-SourceAuth& SourceAuth::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+SourceAuth& SourceAuth::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = SourceAuthTypeMapper::GetSourceAuthTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resource"))
-  {
+  if (jsonValue.ValueExists("resource")) {
     m_resource = jsonValue.GetString("resource");
     m_resourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceAuth::Jsonize() const
-{
+JsonValue SourceAuth::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SourceAuthTypeMapper::GetNameForSourceAuthType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", SourceAuthTypeMapper::GetNameForSourceAuthType(m_type));
   }
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithString("resource", m_resource);
-
+  if (m_resourceHasBeenSet) {
+    payload.WithString("resource", m_resource);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

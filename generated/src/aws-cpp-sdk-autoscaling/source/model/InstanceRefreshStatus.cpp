@@ -4,125 +4,95 @@
  */
 
 #include <aws/autoscaling/model/InstanceRefreshStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
+namespace InstanceRefreshStatusMapper {
 
-namespace Aws
-{
-  namespace AutoScaling
-  {
-    namespace Model
-    {
-      namespace InstanceRefreshStatusMapper
-      {
+static const int Pending_HASH = HashingUtils::HashString("Pending");
+static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+static const int Successful_HASH = HashingUtils::HashString("Successful");
+static const int Failed_HASH = HashingUtils::HashString("Failed");
+static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
+static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
+static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
+static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
+static const int Baking_HASH = HashingUtils::HashString("Baking");
 
-        static const int Pending_HASH = HashingUtils::HashString("Pending");
-        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-        static const int Successful_HASH = HashingUtils::HashString("Successful");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelling_HASH = HashingUtils::HashString("Cancelling");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
-        static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
-        static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
-        static const int Baking_HASH = HashingUtils::HashString("Baking");
+InstanceRefreshStatus GetInstanceRefreshStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Pending_HASH) {
+    return InstanceRefreshStatus::Pending;
+  } else if (hashCode == InProgress_HASH) {
+    return InstanceRefreshStatus::InProgress;
+  } else if (hashCode == Successful_HASH) {
+    return InstanceRefreshStatus::Successful;
+  } else if (hashCode == Failed_HASH) {
+    return InstanceRefreshStatus::Failed;
+  } else if (hashCode == Cancelling_HASH) {
+    return InstanceRefreshStatus::Cancelling;
+  } else if (hashCode == Cancelled_HASH) {
+    return InstanceRefreshStatus::Cancelled;
+  } else if (hashCode == RollbackInProgress_HASH) {
+    return InstanceRefreshStatus::RollbackInProgress;
+  } else if (hashCode == RollbackFailed_HASH) {
+    return InstanceRefreshStatus::RollbackFailed;
+  } else if (hashCode == RollbackSuccessful_HASH) {
+    return InstanceRefreshStatus::RollbackSuccessful;
+  } else if (hashCode == Baking_HASH) {
+    return InstanceRefreshStatus::Baking;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<InstanceRefreshStatus>(hashCode);
+  }
 
+  return InstanceRefreshStatus::NOT_SET;
+}
 
-        InstanceRefreshStatus GetInstanceRefreshStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Pending_HASH)
-          {
-            return InstanceRefreshStatus::Pending;
-          }
-          else if (hashCode == InProgress_HASH)
-          {
-            return InstanceRefreshStatus::InProgress;
-          }
-          else if (hashCode == Successful_HASH)
-          {
-            return InstanceRefreshStatus::Successful;
-          }
-          else if (hashCode == Failed_HASH)
-          {
-            return InstanceRefreshStatus::Failed;
-          }
-          else if (hashCode == Cancelling_HASH)
-          {
-            return InstanceRefreshStatus::Cancelling;
-          }
-          else if (hashCode == Cancelled_HASH)
-          {
-            return InstanceRefreshStatus::Cancelled;
-          }
-          else if (hashCode == RollbackInProgress_HASH)
-          {
-            return InstanceRefreshStatus::RollbackInProgress;
-          }
-          else if (hashCode == RollbackFailed_HASH)
-          {
-            return InstanceRefreshStatus::RollbackFailed;
-          }
-          else if (hashCode == RollbackSuccessful_HASH)
-          {
-            return InstanceRefreshStatus::RollbackSuccessful;
-          }
-          else if (hashCode == Baking_HASH)
-          {
-            return InstanceRefreshStatus::Baking;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<InstanceRefreshStatus>(hashCode);
-          }
+Aws::String GetNameForInstanceRefreshStatus(InstanceRefreshStatus enumValue) {
+  switch (enumValue) {
+    case InstanceRefreshStatus::NOT_SET:
+      return {};
+    case InstanceRefreshStatus::Pending:
+      return "Pending";
+    case InstanceRefreshStatus::InProgress:
+      return "InProgress";
+    case InstanceRefreshStatus::Successful:
+      return "Successful";
+    case InstanceRefreshStatus::Failed:
+      return "Failed";
+    case InstanceRefreshStatus::Cancelling:
+      return "Cancelling";
+    case InstanceRefreshStatus::Cancelled:
+      return "Cancelled";
+    case InstanceRefreshStatus::RollbackInProgress:
+      return "RollbackInProgress";
+    case InstanceRefreshStatus::RollbackFailed:
+      return "RollbackFailed";
+    case InstanceRefreshStatus::RollbackSuccessful:
+      return "RollbackSuccessful";
+    case InstanceRefreshStatus::Baking:
+      return "Baking";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return InstanceRefreshStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForInstanceRefreshStatus(InstanceRefreshStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case InstanceRefreshStatus::NOT_SET:
-            return {};
-          case InstanceRefreshStatus::Pending:
-            return "Pending";
-          case InstanceRefreshStatus::InProgress:
-            return "InProgress";
-          case InstanceRefreshStatus::Successful:
-            return "Successful";
-          case InstanceRefreshStatus::Failed:
-            return "Failed";
-          case InstanceRefreshStatus::Cancelling:
-            return "Cancelling";
-          case InstanceRefreshStatus::Cancelled:
-            return "Cancelled";
-          case InstanceRefreshStatus::RollbackInProgress:
-            return "RollbackInProgress";
-          case InstanceRefreshStatus::RollbackFailed:
-            return "RollbackFailed";
-          case InstanceRefreshStatus::RollbackSuccessful:
-            return "RollbackSuccessful";
-          case InstanceRefreshStatus::Baking:
-            return "Baking";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace InstanceRefreshStatusMapper
-    } // namespace Model
-  } // namespace AutoScaling
-} // namespace Aws
+}  // namespace InstanceRefreshStatusMapper
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

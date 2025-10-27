@@ -4,52 +4,53 @@
  */
 
 #pragma once
-#include <aws/polly/Polly_EXPORTS.h>
-#include <aws/polly/PollyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/polly/PollyRequest.h>
+#include <aws/polly/Polly_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Model
-{
+namespace Aws {
+namespace Polly {
+namespace Model {
 
+/**
+ */
+class DeleteLexiconRequest : public PollyRequest {
+ public:
+  AWS_POLLY_API DeleteLexiconRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteLexicon"; }
+
+  AWS_POLLY_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the lexicon to delete. Must be an existing lexicon in the
+   * region.</p>
    */
-  class DeleteLexiconRequest : public PollyRequest
-  {
-  public:
-    AWS_POLLY_API DeleteLexiconRequest() = default;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DeleteLexiconRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteLexicon"; }
-
-    AWS_POLLY_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the lexicon to delete. Must be an existing lexicon in the
-     * region.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DeleteLexiconRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Polly
-} // namespace Aws
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

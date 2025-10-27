@@ -12,19 +12,12 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutModelInvocationLoggingConfigurationRequest::SerializePayload() const
-{
+Aws::String PutModelInvocationLoggingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_loggingConfigHasBeenSet)
-  {
-   payload.WithObject("loggingConfig", m_loggingConfig.Jsonize());
-
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("loggingConfig", m_loggingConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

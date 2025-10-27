@@ -5,12 +5,8 @@
 
 #include <aws/aiops/AIOpsEndpointProvider.h>
 
-namespace Aws
-{
-namespace AIOps
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AIOps
-} // namespace Aws
+namespace Aws {
+namespace AIOps {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AIOps
+}  // namespace Aws

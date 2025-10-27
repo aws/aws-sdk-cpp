@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class ConnectionType
-  {
-    NOT_SET,
-    STATIC_IP,
-    DHCP
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class ConnectionType { NOT_SET, STATIC_IP, DHCP };
 
-namespace ConnectionTypeMapper
-{
+namespace ConnectionTypeMapper {
 AWS_PANORAMA_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace ConnectionTypeMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

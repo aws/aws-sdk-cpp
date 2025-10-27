@@ -7,25 +7,16 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
-  enum class UpdatePlanExecutionStepAction
-  {
-    NOT_SET,
-    switchToUngraceful,
-    skip
-  };
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
+enum class UpdatePlanExecutionStepAction { NOT_SET, switchToUngraceful, skip };
 
-namespace UpdatePlanExecutionStepActionMapper
-{
+namespace UpdatePlanExecutionStepActionMapper {
 AWS_ARCREGIONSWITCH_API UpdatePlanExecutionStepAction GetUpdatePlanExecutionStepActionForName(const Aws::String& name);
 
 AWS_ARCREGIONSWITCH_API Aws::String GetNameForUpdatePlanExecutionStepAction(UpdatePlanExecutionStepAction value);
-} // namespace UpdatePlanExecutionStepActionMapper
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace UpdatePlanExecutionStepActionMapper
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

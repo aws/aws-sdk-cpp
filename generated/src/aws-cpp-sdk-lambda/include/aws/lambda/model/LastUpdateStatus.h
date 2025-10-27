@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class LastUpdateStatus
-  {
-    NOT_SET,
-    Successful,
-    Failed,
-    InProgress
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class LastUpdateStatus { NOT_SET, Successful, Failed, InProgress };
 
-namespace LastUpdateStatusMapper
-{
+namespace LastUpdateStatusMapper {
 AWS_LAMBDA_API LastUpdateStatus GetLastUpdateStatusForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForLastUpdateStatus(LastUpdateStatus value);
-} // namespace LastUpdateStatusMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace LastUpdateStatusMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

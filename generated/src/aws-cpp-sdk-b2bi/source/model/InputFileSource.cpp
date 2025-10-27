@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
-InputFileSource::InputFileSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputFileSource::InputFileSource(JsonView jsonValue) { *this = jsonValue; }
 
-InputFileSource& InputFileSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileContent"))
-  {
+InputFileSource& InputFileSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileContent")) {
     m_fileContent = jsonValue.GetString("fileContent");
     m_fileContentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputFileSource::Jsonize() const
-{
+JsonValue InputFileSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileContentHasBeenSet)
-  {
-   payload.WithString("fileContent", m_fileContent);
-
+  if (m_fileContentHasBeenSet) {
+    payload.WithString("fileContent", m_fileContent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

@@ -12,55 +12,38 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeRecommendationExportJobsRequest::SerializePayload() const
-{
+Aws::String DescribeRecommendationExportJobsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> jobIdsJsonList(m_jobIds.size());
-   for(unsigned jobIdsIndex = 0; jobIdsIndex < jobIdsJsonList.GetLength(); ++jobIdsIndex)
-   {
-     jobIdsJsonList[jobIdsIndex].AsString(m_jobIds[jobIdsIndex]);
-   }
-   payload.WithArray("jobIds", std::move(jobIdsJsonList));
-
+  if (m_jobIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> jobIdsJsonList(m_jobIds.size());
+    for (unsigned jobIdsIndex = 0; jobIdsIndex < jobIdsJsonList.GetLength(); ++jobIdsIndex) {
+      jobIdsJsonList[jobIdsIndex].AsString(m_jobIds[jobIdsIndex]);
+    }
+    payload.WithArray("jobIds", std::move(jobIdsJsonList));
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
-
+  if (m_filtersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
+      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    }
+    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeRecommendationExportJobsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeRecommendationExportJobsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.DescribeRecommendationExportJobs"));
   return headers;
-
 }
-
-
-
-

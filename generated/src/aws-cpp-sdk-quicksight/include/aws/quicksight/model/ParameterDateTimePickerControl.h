@@ -4,103 +4,120 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DateTimePickerControlDisplayOptions.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>A control from a date parameter that specifies date and time.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterDateTimePickerControl">AWS
+ * API Reference</a></p>
+ */
+class ParameterDateTimePickerControl {
+ public:
+  AWS_QUICKSIGHT_API ParameterDateTimePickerControl() = default;
+  AWS_QUICKSIGHT_API ParameterDateTimePickerControl(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API ParameterDateTimePickerControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A control from a date parameter that specifies date and time.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterDateTimePickerControl">AWS
-   * API Reference</a></p>
+   * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
    */
-  class ParameterDateTimePickerControl
-  {
-  public:
-    AWS_QUICKSIGHT_API ParameterDateTimePickerControl() = default;
-    AWS_QUICKSIGHT_API ParameterDateTimePickerControl(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API ParameterDateTimePickerControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetParameterControlId() const { return m_parameterControlId; }
+  inline bool ParameterControlIdHasBeenSet() const { return m_parameterControlIdHasBeenSet; }
+  template <typename ParameterControlIdT = Aws::String>
+  void SetParameterControlId(ParameterControlIdT&& value) {
+    m_parameterControlIdHasBeenSet = true;
+    m_parameterControlId = std::forward<ParameterControlIdT>(value);
+  }
+  template <typename ParameterControlIdT = Aws::String>
+  ParameterDateTimePickerControl& WithParameterControlId(ParameterControlIdT&& value) {
+    SetParameterControlId(std::forward<ParameterControlIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
+   */
+  inline const Aws::String& GetTitle() const { return m_title; }
+  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+  template <typename TitleT = Aws::String>
+  void SetTitle(TitleT&& value) {
+    m_titleHasBeenSet = true;
+    m_title = std::forward<TitleT>(value);
+  }
+  template <typename TitleT = Aws::String>
+  ParameterDateTimePickerControl& WithTitle(TitleT&& value) {
+    SetTitle(std::forward<TitleT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
-    inline const Aws::String& GetParameterControlId() const { return m_parameterControlId; }
-    inline bool ParameterControlIdHasBeenSet() const { return m_parameterControlIdHasBeenSet; }
-    template<typename ParameterControlIdT = Aws::String>
-    void SetParameterControlId(ParameterControlIdT&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::forward<ParameterControlIdT>(value); }
-    template<typename ParameterControlIdT = Aws::String>
-    ParameterDateTimePickerControl& WithParameterControlId(ParameterControlIdT&& value) { SetParameterControlId(std::forward<ParameterControlIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
+   */
+  inline const Aws::String& GetSourceParameterName() const { return m_sourceParameterName; }
+  inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
+  template <typename SourceParameterNameT = Aws::String>
+  void SetSourceParameterName(SourceParameterNameT&& value) {
+    m_sourceParameterNameHasBeenSet = true;
+    m_sourceParameterName = std::forward<SourceParameterNameT>(value);
+  }
+  template <typename SourceParameterNameT = Aws::String>
+  ParameterDateTimePickerControl& WithSourceParameterName(SourceParameterNameT&& value) {
+    SetSourceParameterName(std::forward<SourceParameterNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    ParameterDateTimePickerControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The display options of a control.</p>
+   */
+  inline const DateTimePickerControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
+  inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
+  template <typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
+  void SetDisplayOptions(DisplayOptionsT&& value) {
+    m_displayOptionsHasBeenSet = true;
+    m_displayOptions = std::forward<DisplayOptionsT>(value);
+  }
+  template <typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
+  ParameterDateTimePickerControl& WithDisplayOptions(DisplayOptionsT&& value) {
+    SetDisplayOptions(std::forward<DisplayOptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_parameterControlId;
+  bool m_parameterControlIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
-    inline const Aws::String& GetSourceParameterName() const { return m_sourceParameterName; }
-    inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
-    template<typename SourceParameterNameT = Aws::String>
-    void SetSourceParameterName(SourceParameterNameT&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::forward<SourceParameterNameT>(value); }
-    template<typename SourceParameterNameT = Aws::String>
-    ParameterDateTimePickerControl& WithSourceParameterName(SourceParameterNameT&& value) { SetSourceParameterName(std::forward<SourceParameterNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_title;
+  bool m_titleHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The display options of a control.</p>
-     */
-    inline const DateTimePickerControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
-    inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    template<typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
-    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
-    template<typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
-    ParameterDateTimePickerControl& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_sourceParameterName;
+  bool m_sourceParameterNameHasBeenSet = false;
 
-    Aws::String m_parameterControlId;
-    bool m_parameterControlIdHasBeenSet = false;
+  DateTimePickerControlDisplayOptions m_displayOptions;
+  bool m_displayOptionsHasBeenSet = false;
+};
 
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
-
-    Aws::String m_sourceParameterName;
-    bool m_sourceParameterNameHasBeenSet = false;
-
-    DateTimePickerControlDisplayOptions m_displayOptions;
-    bool m_displayOptionsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

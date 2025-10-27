@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class AfdSignaling
-  {
-    NOT_SET,
-    AUTO,
-    FIXED,
-    NONE
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class AfdSignaling { NOT_SET, AUTO, FIXED, NONE };
 
-namespace AfdSignalingMapper
-{
+namespace AfdSignalingMapper {
 AWS_MEDIALIVE_API AfdSignaling GetAfdSignalingForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForAfdSignaling(AfdSignaling value);
-} // namespace AfdSignalingMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace AfdSignalingMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

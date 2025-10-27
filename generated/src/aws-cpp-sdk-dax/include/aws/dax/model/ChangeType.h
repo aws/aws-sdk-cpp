@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dax/DAX_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dax/DAX_EXPORTS.h>
 
-namespace Aws
-{
-namespace DAX
-{
-namespace Model
-{
-  enum class ChangeType
-  {
-    NOT_SET,
-    IMMEDIATE,
-    REQUIRES_REBOOT
-  };
+namespace Aws {
+namespace DAX {
+namespace Model {
+enum class ChangeType { NOT_SET, IMMEDIATE, REQUIRES_REBOOT };
 
-namespace ChangeTypeMapper
-{
+namespace ChangeTypeMapper {
 AWS_DAX_API ChangeType GetChangeTypeForName(const Aws::String& name);
 
 AWS_DAX_API Aws::String GetNameForChangeType(ChangeType value);
-} // namespace ChangeTypeMapper
-} // namespace Model
-} // namespace DAX
-} // namespace Aws
+}  // namespace ChangeTypeMapper
+}  // namespace Model
+}  // namespace DAX
+}  // namespace Aws

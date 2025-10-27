@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrorMarshaller.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::BCMRecommendedActions;
 
-AWSError<CoreErrors> BCMRecommendedActionsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> BCMRecommendedActionsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = BCMRecommendedActionsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

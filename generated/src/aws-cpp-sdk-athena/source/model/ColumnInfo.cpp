@@ -11,139 +11,102 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-ColumnInfo::ColumnInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnInfo::ColumnInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnInfo& ColumnInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CatalogName"))
-  {
+ColumnInfo& ColumnInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CatalogName")) {
     m_catalogName = jsonValue.GetString("CatalogName");
     m_catalogNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SchemaName"))
-  {
+  if (jsonValue.ValueExists("SchemaName")) {
     m_schemaName = jsonValue.GetString("SchemaName");
     m_schemaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableName"))
-  {
+  if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Label"))
-  {
+  if (jsonValue.ValueExists("Label")) {
     m_label = jsonValue.GetString("Label");
     m_labelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Precision"))
-  {
+  if (jsonValue.ValueExists("Precision")) {
     m_precision = jsonValue.GetInteger("Precision");
     m_precisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Scale"))
-  {
+  if (jsonValue.ValueExists("Scale")) {
     m_scale = jsonValue.GetInteger("Scale");
     m_scaleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Nullable"))
-  {
+  if (jsonValue.ValueExists("Nullable")) {
     m_nullable = ColumnNullableMapper::GetColumnNullableForName(jsonValue.GetString("Nullable"));
     m_nullableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CaseSensitive"))
-  {
+  if (jsonValue.ValueExists("CaseSensitive")) {
     m_caseSensitive = jsonValue.GetBool("CaseSensitive");
     m_caseSensitiveHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnInfo::Jsonize() const
-{
+JsonValue ColumnInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogNameHasBeenSet)
-  {
-   payload.WithString("CatalogName", m_catalogName);
-
+  if (m_catalogNameHasBeenSet) {
+    payload.WithString("CatalogName", m_catalogName);
   }
 
-  if(m_schemaNameHasBeenSet)
-  {
-   payload.WithString("SchemaName", m_schemaName);
-
+  if (m_schemaNameHasBeenSet) {
+    payload.WithString("SchemaName", m_schemaName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_labelHasBeenSet)
-  {
-   payload.WithString("Label", m_label);
-
+  if (m_labelHasBeenSet) {
+    payload.WithString("Label", m_label);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_precisionHasBeenSet)
-  {
-   payload.WithInteger("Precision", m_precision);
-
+  if (m_precisionHasBeenSet) {
+    payload.WithInteger("Precision", m_precision);
   }
 
-  if(m_scaleHasBeenSet)
-  {
-   payload.WithInteger("Scale", m_scale);
-
+  if (m_scaleHasBeenSet) {
+    payload.WithInteger("Scale", m_scale);
   }
 
-  if(m_nullableHasBeenSet)
-  {
-   payload.WithString("Nullable", ColumnNullableMapper::GetNameForColumnNullable(m_nullable));
+  if (m_nullableHasBeenSet) {
+    payload.WithString("Nullable", ColumnNullableMapper::GetNameForColumnNullable(m_nullable));
   }
 
-  if(m_caseSensitiveHasBeenSet)
-  {
-   payload.WithBool("CaseSensitive", m_caseSensitive);
-
+  if (m_caseSensitiveHasBeenSet) {
+    payload.WithBool("CaseSensitive", m_caseSensitive);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

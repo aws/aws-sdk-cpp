@@ -11,61 +11,47 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ParticipantTimerConfiguration::ParticipantTimerConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParticipantTimerConfiguration::ParticipantTimerConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ParticipantTimerConfiguration& ParticipantTimerConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParticipantRole"))
-  {
-    m_participantRole = TimerEligibleParticipantRolesMapper::GetTimerEligibleParticipantRolesForName(jsonValue.GetString("ParticipantRole"));
+ParticipantTimerConfiguration& ParticipantTimerConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParticipantRole")) {
+    m_participantRole =
+        TimerEligibleParticipantRolesMapper::GetTimerEligibleParticipantRolesForName(jsonValue.GetString("ParticipantRole"));
     m_participantRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimerType"))
-  {
+  if (jsonValue.ValueExists("TimerType")) {
     m_timerType = ParticipantTimerTypeMapper::GetParticipantTimerTypeForName(jsonValue.GetString("TimerType"));
     m_timerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimerValue"))
-  {
+  if (jsonValue.ValueExists("TimerValue")) {
     m_timerValue = jsonValue.GetObject("TimerValue");
     m_timerValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParticipantTimerConfiguration::Jsonize() const
-{
+JsonValue ParticipantTimerConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_participantRoleHasBeenSet)
-  {
-   payload.WithString("ParticipantRole", TimerEligibleParticipantRolesMapper::GetNameForTimerEligibleParticipantRoles(m_participantRole));
+  if (m_participantRoleHasBeenSet) {
+    payload.WithString("ParticipantRole", TimerEligibleParticipantRolesMapper::GetNameForTimerEligibleParticipantRoles(m_participantRole));
   }
 
-  if(m_timerTypeHasBeenSet)
-  {
-   payload.WithString("TimerType", ParticipantTimerTypeMapper::GetNameForParticipantTimerType(m_timerType));
+  if (m_timerTypeHasBeenSet) {
+    payload.WithString("TimerType", ParticipantTimerTypeMapper::GetNameForParticipantTimerType(m_timerType));
   }
 
-  if(m_timerValueHasBeenSet)
-  {
-   payload.WithObject("TimerValue", m_timerValue.Jsonize());
-
+  if (m_timerValueHasBeenSet) {
+    payload.WithObject("TimerValue", m_timerValue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

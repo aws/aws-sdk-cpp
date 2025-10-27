@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-MessageMetadata::MessageMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MessageMetadata::MessageMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-MessageMetadata& MessageMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MessageId"))
-  {
+MessageMetadata& MessageMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MessageId")) {
     m_messageId = jsonValue.GetString("MessageId");
     m_messageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Receipts"))
-  {
+  if (jsonValue.ValueExists("Receipts")) {
     Aws::Utils::Array<JsonView> receiptsJsonList = jsonValue.GetArray("Receipts");
-    for(unsigned receiptsIndex = 0; receiptsIndex < receiptsJsonList.GetLength(); ++receiptsIndex)
-    {
+    for (unsigned receiptsIndex = 0; receiptsIndex < receiptsJsonList.GetLength(); ++receiptsIndex) {
       m_receipts.push_back(receiptsJsonList[receiptsIndex].AsObject());
     }
     m_receiptsHasBeenSet = true;
@@ -42,30 +32,24 @@ MessageMetadata& MessageMetadata::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MessageMetadata::Jsonize() const
-{
+JsonValue MessageMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageIdHasBeenSet)
-  {
-   payload.WithString("MessageId", m_messageId);
-
+  if (m_messageIdHasBeenSet) {
+    payload.WithString("MessageId", m_messageId);
   }
 
-  if(m_receiptsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> receiptsJsonList(m_receipts.size());
-   for(unsigned receiptsIndex = 0; receiptsIndex < receiptsJsonList.GetLength(); ++receiptsIndex)
-   {
-     receiptsJsonList[receiptsIndex].AsObject(m_receipts[receiptsIndex].Jsonize());
-   }
-   payload.WithArray("Receipts", std::move(receiptsJsonList));
-
+  if (m_receiptsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> receiptsJsonList(m_receipts.size());
+    for (unsigned receiptsIndex = 0; receiptsIndex < receiptsJsonList.GetLength(); ++receiptsIndex) {
+      receiptsJsonList[receiptsIndex].AsObject(m_receipts[receiptsIndex].Jsonize());
+    }
+    payload.WithArray("Receipts", std::move(receiptsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

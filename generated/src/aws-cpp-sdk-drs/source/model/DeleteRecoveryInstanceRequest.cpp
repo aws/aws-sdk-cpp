@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRecoveryInstanceRequest::SerializePayload() const
-{
+Aws::String DeleteRecoveryInstanceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_recoveryInstanceIDHasBeenSet)
-  {
-   payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
-
+  if (m_recoveryInstanceIDHasBeenSet) {
+    payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-ReportDeliveryChannel::ReportDeliveryChannel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportDeliveryChannel::ReportDeliveryChannel(JsonView jsonValue) { *this = jsonValue; }
 
-ReportDeliveryChannel& ReportDeliveryChannel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3BucketName"))
-  {
+ReportDeliveryChannel& ReportDeliveryChannel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3KeyPrefix"))
-  {
+  if (jsonValue.ValueExists("S3KeyPrefix")) {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
     m_s3KeyPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Formats"))
-  {
+  if (jsonValue.ValueExists("Formats")) {
     Aws::Utils::Array<JsonView> formatsJsonList = jsonValue.GetArray("Formats");
-    for(unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex)
-    {
+    for (unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex) {
       m_formats.push_back(formatsJsonList[formatsIndex].AsString());
     }
     m_formatsHasBeenSet = true;
@@ -47,36 +36,28 @@ ReportDeliveryChannel& ReportDeliveryChannel::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ReportDeliveryChannel::Jsonize() const
-{
+JsonValue ReportDeliveryChannel::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
-  if(m_s3KeyPrefixHasBeenSet)
-  {
-   payload.WithString("S3KeyPrefix", m_s3KeyPrefix);
-
+  if (m_s3KeyPrefixHasBeenSet) {
+    payload.WithString("S3KeyPrefix", m_s3KeyPrefix);
   }
 
-  if(m_formatsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> formatsJsonList(m_formats.size());
-   for(unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex)
-   {
-     formatsJsonList[formatsIndex].AsString(m_formats[formatsIndex]);
-   }
-   payload.WithArray("Formats", std::move(formatsJsonList));
-
+  if (m_formatsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> formatsJsonList(m_formats.size());
+    for (unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex) {
+      formatsJsonList[formatsIndex].AsString(m_formats[formatsIndex]);
+    }
+    payload.WithArray("Formats", std::move(formatsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

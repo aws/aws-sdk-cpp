@@ -3,58 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsIamInstanceProfile.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsIamInstanceProfile.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsIamInstanceProfile::AwsIamInstanceProfile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsIamInstanceProfile::AwsIamInstanceProfile(JsonView jsonValue) { *this = jsonValue; }
 
-AwsIamInstanceProfile& AwsIamInstanceProfile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+AwsIamInstanceProfile& AwsIamInstanceProfile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateDate"))
-  {
+  if (jsonValue.ValueExists("CreateDate")) {
     m_createDate = jsonValue.GetString("CreateDate");
     m_createDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceProfileId"))
-  {
+  if (jsonValue.ValueExists("InstanceProfileId")) {
     m_instanceProfileId = jsonValue.GetString("InstanceProfileId");
     m_instanceProfileIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceProfileName"))
-  {
+  if (jsonValue.ValueExists("InstanceProfileName")) {
     m_instanceProfileName = jsonValue.GetString("InstanceProfileName");
     m_instanceProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Roles"))
-  {
+  if (jsonValue.ValueExists("Roles")) {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
-    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
-    {
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
     }
     m_rolesHasBeenSet = true;
@@ -62,54 +48,40 @@ AwsIamInstanceProfile& AwsIamInstanceProfile::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AwsIamInstanceProfile::Jsonize() const
-{
+JsonValue AwsIamInstanceProfile::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_createDateHasBeenSet)
-  {
-   payload.WithString("CreateDate", m_createDate);
-
+  if (m_createDateHasBeenSet) {
+    payload.WithString("CreateDate", m_createDate);
   }
 
-  if(m_instanceProfileIdHasBeenSet)
-  {
-   payload.WithString("InstanceProfileId", m_instanceProfileId);
-
+  if (m_instanceProfileIdHasBeenSet) {
+    payload.WithString("InstanceProfileId", m_instanceProfileId);
   }
 
-  if(m_instanceProfileNameHasBeenSet)
-  {
-   payload.WithString("InstanceProfileName", m_instanceProfileName);
-
+  if (m_instanceProfileNameHasBeenSet) {
+    payload.WithString("InstanceProfileName", m_instanceProfileName);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_rolesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
-   for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
-   {
-     rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
-   }
-   payload.WithArray("Roles", std::move(rolesJsonList));
-
+  if (m_rolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
+    }
+    payload.WithArray("Roles", std::move(rolesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

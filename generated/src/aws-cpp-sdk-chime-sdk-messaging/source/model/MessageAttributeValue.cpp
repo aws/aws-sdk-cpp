@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-MessageAttributeValue::MessageAttributeValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MessageAttributeValue::MessageAttributeValue(JsonView jsonValue) { *this = jsonValue; }
 
-MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StringValues"))
-  {
+MessageAttributeValue& MessageAttributeValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StringValues")) {
     Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("StringValues");
-    for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
-    {
+    for (unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex) {
       m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());
     }
     m_stringValuesHasBeenSet = true;
@@ -37,24 +28,20 @@ MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MessageAttributeValue::Jsonize() const
-{
+JsonValue MessageAttributeValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_stringValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
-   for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
-   {
-     stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);
-   }
-   payload.WithArray("StringValues", std::move(stringValuesJsonList));
-
+  if (m_stringValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+    for (unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex) {
+      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);
+    }
+    payload.WithArray("StringValues", std::move(stringValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

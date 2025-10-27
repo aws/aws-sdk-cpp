@@ -12,71 +12,48 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConfigurationProfileRequest::SerializePayload() const
-{
+Aws::String CreateConfigurationProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_locationUriHasBeenSet)
-  {
-   payload.WithString("LocationUri", m_locationUri);
-
+  if (m_locationUriHasBeenSet) {
+    payload.WithString("LocationUri", m_locationUri);
   }
 
-  if(m_retrievalRoleArnHasBeenSet)
-  {
-   payload.WithString("RetrievalRoleArn", m_retrievalRoleArn);
-
+  if (m_retrievalRoleArnHasBeenSet) {
+    payload.WithString("RetrievalRoleArn", m_retrievalRoleArn);
   }
 
-  if(m_validatorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> validatorsJsonList(m_validators.size());
-   for(unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex)
-   {
-     validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());
-   }
-   payload.WithArray("Validators", std::move(validatorsJsonList));
-
+  if (m_validatorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validatorsJsonList(m_validators.size());
+    for (unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex) {
+      validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());
+    }
+    payload.WithArray("Validators", std::move(validatorsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_kmsKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
-
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class DayOfWeek
-  {
-    NOT_SET,
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class DayOfWeek { NOT_SET, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
 
-namespace DayOfWeekMapper
-{
+namespace DayOfWeekMapper {
 AWS_GEOROUTES_API DayOfWeek GetDayOfWeekForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForDayOfWeek(DayOfWeek value);
-} // namespace DayOfWeekMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace DayOfWeekMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

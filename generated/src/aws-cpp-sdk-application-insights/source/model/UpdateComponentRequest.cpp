@@ -12,50 +12,34 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateComponentRequest::SerializePayload() const
-{
+Aws::String UpdateComponentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("ComponentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("ComponentName", m_componentName);
   }
 
-  if(m_newComponentNameHasBeenSet)
-  {
-   payload.WithString("NewComponentName", m_newComponentName);
-
+  if (m_newComponentNameHasBeenSet) {
+    payload.WithString("NewComponentName", m_newComponentName);
   }
 
-  if(m_resourceListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceListJsonList(m_resourceList.size());
-   for(unsigned resourceListIndex = 0; resourceListIndex < resourceListJsonList.GetLength(); ++resourceListIndex)
-   {
-     resourceListJsonList[resourceListIndex].AsString(m_resourceList[resourceListIndex]);
-   }
-   payload.WithArray("ResourceList", std::move(resourceListJsonList));
-
+  if (m_resourceListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceListJsonList(m_resourceList.size());
+    for (unsigned resourceListIndex = 0; resourceListIndex < resourceListJsonList.GetLength(); ++resourceListIndex) {
+      resourceListJsonList[resourceListIndex].AsString(m_resourceList[resourceListIndex]);
+    }
+    payload.WithArray("ResourceList", std::move(resourceListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateComponentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateComponentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateComponent"));
   return headers;
-
 }
-
-
-
-

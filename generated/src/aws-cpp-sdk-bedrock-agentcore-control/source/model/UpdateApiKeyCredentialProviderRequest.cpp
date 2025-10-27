@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateApiKeyCredentialProviderRequest::SerializePayload() const
-{
+Aws::String UpdateApiKeyCredentialProviderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("apiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("apiKey", m_apiKey);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

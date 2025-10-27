@@ -12,25 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePhoneNumberMetadataRequest::SerializePayload() const
-{
+Aws::String UpdatePhoneNumberMetadataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_phoneNumberDescriptionHasBeenSet)
-  {
-   payload.WithString("PhoneNumberDescription", m_phoneNumberDescription);
-
+  if (m_phoneNumberDescriptionHasBeenSet) {
+    payload.WithString("PhoneNumberDescription", m_phoneNumberDescription);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

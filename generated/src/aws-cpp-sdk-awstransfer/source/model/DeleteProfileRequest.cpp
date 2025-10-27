@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProfileRequest::SerializePayload() const
-{
+Aws::String DeleteProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("ProfileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("ProfileId", m_profileId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteProfileRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteProfileRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DeleteProfile"));
   return headers;
-
 }
-
-
-
-

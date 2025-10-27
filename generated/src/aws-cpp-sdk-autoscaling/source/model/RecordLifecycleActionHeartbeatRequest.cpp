@@ -10,27 +10,22 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
-{
+Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RecordLifecycleActionHeartbeat&";
-  if(m_lifecycleHookNameHasBeenSet)
-  {
+  if (m_lifecycleHookNameHasBeenSet) {
     ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
   }
 
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_lifecycleActionTokenHasBeenSet)
-  {
+  if (m_lifecycleActionTokenHasBeenSet) {
     ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RecordLifecycleActionHeartbeatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RecordLifecycleActionHeartbeatRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

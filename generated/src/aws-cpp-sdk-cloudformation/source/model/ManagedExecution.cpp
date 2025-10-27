@@ -4,36 +4,27 @@
  */
 
 #include <aws/cloudformation/model/ManagedExecution.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-ManagedExecution::ManagedExecution(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ManagedExecution::ManagedExecution(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ManagedExecution& ManagedExecution::operator =(const XmlNode& xmlNode)
-{
+ManagedExecution& ManagedExecution::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode activeNode = resultNode.FirstChild("Active");
-    if(!activeNode.IsNull())
-    {
+    if (!activeNode.IsNull()) {
       m_active = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activeNode.GetText()).c_str()).c_str());
       m_activeHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ ManagedExecution& ManagedExecution::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ManagedExecution::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_activeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Active=" << std::boolalpha << m_active << "&";
-  }
-
-}
-
-void ManagedExecution::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_activeHasBeenSet)
-  {
-      oStream << location << ".Active=" << std::boolalpha << m_active << "&";
+void ManagedExecution::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_activeHasBeenSet) {
+    oStream << location << index << locationValue << ".Active=" << std::boolalpha << m_active << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void ManagedExecution::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_activeHasBeenSet) {
+    oStream << location << ".Active=" << std::boolalpha << m_active << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

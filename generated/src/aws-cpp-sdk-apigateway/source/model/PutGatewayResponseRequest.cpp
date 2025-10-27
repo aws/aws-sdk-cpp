@@ -12,41 +12,28 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutGatewayResponseRequest::SerializePayload() const
-{
+Aws::String PutGatewayResponseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", m_statusCode);
   }
 
-  if(m_responseParametersHasBeenSet)
-  {
-   JsonValue responseParametersJsonMap;
-   for(auto& responseParametersItem : m_responseParameters)
-   {
-     responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
-   }
-   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
-
+  if (m_responseParametersHasBeenSet) {
+    JsonValue responseParametersJsonMap;
+    for (auto& responseParametersItem : m_responseParameters) {
+      responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
+    }
+    payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
   }
 
-  if(m_responseTemplatesHasBeenSet)
-  {
-   JsonValue responseTemplatesJsonMap;
-   for(auto& responseTemplatesItem : m_responseTemplates)
-   {
-     responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
-   }
-   payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
-
+  if (m_responseTemplatesHasBeenSet) {
+    JsonValue responseTemplatesJsonMap;
+    for (auto& responseTemplatesItem : m_responseTemplates) {
+      responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
+    }
+    payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

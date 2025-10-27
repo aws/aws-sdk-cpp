@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DomainMembership.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DomainMembership.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-DomainMembership::DomainMembership(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DomainMembership::DomainMembership(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
-{
+DomainMembership& DomainMembership::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode domainNode = resultNode.FirstChild("Domain");
-    if(!domainNode.IsNull())
-    {
+    if (!domainNode.IsNull()) {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode fQDNNode = resultNode.FirstChild("FQDN");
-    if(!fQDNNode.IsNull())
-    {
+    if (!fQDNNode.IsNull()) {
       m_fQDN = Aws::Utils::Xml::DecodeEscapedXmlText(fQDNNode.GetText());
       m_fQDNHasBeenSet = true;
     }
     XmlNode iAMRoleNameNode = resultNode.FirstChild("IAMRoleName");
-    if(!iAMRoleNameNode.IsNull())
-    {
+    if (!iAMRoleNameNode.IsNull()) {
       m_iAMRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleNameNode.GetText());
       m_iAMRoleNameHasBeenSet = true;
     }
     XmlNode oUNode = resultNode.FirstChild("OU");
-    if(!oUNode.IsNull())
-    {
+    if (!oUNode.IsNull()) {
       m_oU = Aws::Utils::Xml::DecodeEscapedXmlText(oUNode.GetText());
       m_oUHasBeenSet = true;
     }
     XmlNode authSecretArnNode = resultNode.FirstChild("AuthSecretArn");
-    if(!authSecretArnNode.IsNull())
-    {
+    if (!authSecretArnNode.IsNull()) {
       m_authSecretArn = Aws::Utils::Xml::DecodeEscapedXmlText(authSecretArnNode.GetText());
       m_authSecretArnHasBeenSet = true;
     }
     XmlNode dnsIpsNode = resultNode.FirstChild("DnsIps");
-    if(!dnsIpsNode.IsNull())
-    {
+    if (!dnsIpsNode.IsNull()) {
       XmlNode dnsIpsMember = dnsIpsNode.FirstChild("member");
       m_dnsIpsHasBeenSet = !dnsIpsMember.IsNull();
-      while(!dnsIpsMember.IsNull())
-      {
+      while (!dnsIpsMember.IsNull()) {
         m_dnsIps.push_back(dnsIpsMember.GetText());
         dnsIpsMember = dnsIpsMember.NextNode("member");
       }
@@ -85,85 +69,67 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_domainHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_domainHasBeenSet) {
+    oStream << location << index << locationValue << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
-  if(m_fQDNHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FQDN=" << StringUtils::URLEncode(m_fQDN.c_str()) << "&";
+  if (m_fQDNHasBeenSet) {
+    oStream << location << index << locationValue << ".FQDN=" << StringUtils::URLEncode(m_fQDN.c_str()) << "&";
   }
 
-  if(m_iAMRoleNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IAMRoleName=" << StringUtils::URLEncode(m_iAMRoleName.c_str()) << "&";
+  if (m_iAMRoleNameHasBeenSet) {
+    oStream << location << index << locationValue << ".IAMRoleName=" << StringUtils::URLEncode(m_iAMRoleName.c_str()) << "&";
   }
 
-  if(m_oUHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OU=" << StringUtils::URLEncode(m_oU.c_str()) << "&";
+  if (m_oUHasBeenSet) {
+    oStream << location << index << locationValue << ".OU=" << StringUtils::URLEncode(m_oU.c_str()) << "&";
   }
 
-  if(m_authSecretArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AuthSecretArn=" << StringUtils::URLEncode(m_authSecretArn.c_str()) << "&";
+  if (m_authSecretArnHasBeenSet) {
+    oStream << location << index << locationValue << ".AuthSecretArn=" << StringUtils::URLEncode(m_authSecretArn.c_str()) << "&";
   }
 
-  if(m_dnsIpsHasBeenSet)
-  {
-      unsigned dnsIpsIdx = 1;
-      for(auto& item : m_dnsIps)
-      {
-        oStream << location << index << locationValue << ".DnsIps.member." << dnsIpsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_domainHasBeenSet)
-  {
-      oStream << location << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-  if(m_fQDNHasBeenSet)
-  {
-      oStream << location << ".FQDN=" << StringUtils::URLEncode(m_fQDN.c_str()) << "&";
-  }
-  if(m_iAMRoleNameHasBeenSet)
-  {
-      oStream << location << ".IAMRoleName=" << StringUtils::URLEncode(m_iAMRoleName.c_str()) << "&";
-  }
-  if(m_oUHasBeenSet)
-  {
-      oStream << location << ".OU=" << StringUtils::URLEncode(m_oU.c_str()) << "&";
-  }
-  if(m_authSecretArnHasBeenSet)
-  {
-      oStream << location << ".AuthSecretArn=" << StringUtils::URLEncode(m_authSecretArn.c_str()) << "&";
-  }
-  if(m_dnsIpsHasBeenSet)
-  {
-      unsigned dnsIpsIdx = 1;
-      for(auto& item : m_dnsIps)
-      {
-        oStream << location << ".DnsIps.member." << dnsIpsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_dnsIpsHasBeenSet) {
+    unsigned dnsIpsIdx = 1;
+    for (auto& item : m_dnsIps) {
+      oStream << location << index << locationValue << ".DnsIps.member." << dnsIpsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_domainHasBeenSet) {
+    oStream << location << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if (m_fQDNHasBeenSet) {
+    oStream << location << ".FQDN=" << StringUtils::URLEncode(m_fQDN.c_str()) << "&";
+  }
+  if (m_iAMRoleNameHasBeenSet) {
+    oStream << location << ".IAMRoleName=" << StringUtils::URLEncode(m_iAMRoleName.c_str()) << "&";
+  }
+  if (m_oUHasBeenSet) {
+    oStream << location << ".OU=" << StringUtils::URLEncode(m_oU.c_str()) << "&";
+  }
+  if (m_authSecretArnHasBeenSet) {
+    oStream << location << ".AuthSecretArn=" << StringUtils::URLEncode(m_authSecretArn.c_str()) << "&";
+  }
+  if (m_dnsIpsHasBeenSet) {
+    unsigned dnsIpsIdx = 1;
+    for (auto& item : m_dnsIps) {
+      oStream << location << ".DnsIps.member." << dnsIpsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

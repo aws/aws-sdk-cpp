@@ -5,12 +5,8 @@
 
 #include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointProvider.h>
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

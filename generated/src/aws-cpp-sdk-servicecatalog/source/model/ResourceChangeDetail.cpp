@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ResourceChangeDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ResourceChangeDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceChangeDetail& ResourceChangeDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Target"))
-  {
+ResourceChangeDetail& ResourceChangeDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Target")) {
     m_target = jsonValue.GetObject("Target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Evaluation"))
-  {
+  if (jsonValue.ValueExists("Evaluation")) {
     m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("Evaluation"));
     m_evaluationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CausingEntity"))
-  {
+  if (jsonValue.ValueExists("CausingEntity")) {
     m_causingEntity = jsonValue.GetString("CausingEntity");
     m_causingEntityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceChangeDetail::Jsonize() const
-{
+JsonValue ResourceChangeDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("Target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("Target", m_target.Jsonize());
   }
 
-  if(m_evaluationHasBeenSet)
-  {
-   payload.WithString("Evaluation", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluation));
+  if (m_evaluationHasBeenSet) {
+    payload.WithString("Evaluation", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluation));
   }
 
-  if(m_causingEntityHasBeenSet)
-  {
-   payload.WithString("CausingEntity", m_causingEntity);
-
+  if (m_causingEntityHasBeenSet) {
+    payload.WithString("CausingEntity", m_causingEntity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

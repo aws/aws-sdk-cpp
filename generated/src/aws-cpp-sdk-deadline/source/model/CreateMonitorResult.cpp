@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/CreateMonitorResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/deadline/model/CreateMonitorResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateMonitorResult& CreateMonitorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateMonitorResult& CreateMonitorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("monitorId"))
-  {
+  if (jsonValue.ValueExists("monitorId")) {
     m_monitorId = jsonValue.GetString("monitorId");
     m_monitorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identityCenterApplicationArn"))
-  {
+  if (jsonValue.ValueExists("identityCenterApplicationArn")) {
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
     m_identityCenterApplicationArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

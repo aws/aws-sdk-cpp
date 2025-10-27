@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Model
-{
-  enum class Algorithm
-  {
-    NOT_SET,
-    sgd
-  };
+namespace Aws {
+namespace MachineLearning {
+namespace Model {
+enum class Algorithm { NOT_SET, sgd };
 
-namespace AlgorithmMapper
-{
+namespace AlgorithmMapper {
 AWS_MACHINELEARNING_API Algorithm GetAlgorithmForName(const Aws::String& name);
 
 AWS_MACHINELEARNING_API Aws::String GetNameForAlgorithm(Algorithm value);
-} // namespace AlgorithmMapper
-} // namespace Model
-} // namespace MachineLearning
-} // namespace Aws
+}  // namespace AlgorithmMapper
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

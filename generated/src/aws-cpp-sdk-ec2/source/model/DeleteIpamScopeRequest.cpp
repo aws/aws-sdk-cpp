@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteIpamScopeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteIpamScopeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIpamScopeRequest::SerializePayload() const
-{
+Aws::String DeleteIpamScopeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIpamScope&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamScopeIdHasBeenSet)
-  {
+  if (m_ipamScopeIdHasBeenSet) {
     ss << "IpamScopeId=" << StringUtils::URLEncode(m_ipamScopeId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteIpamScopeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteIpamScopeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteIpamScopeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

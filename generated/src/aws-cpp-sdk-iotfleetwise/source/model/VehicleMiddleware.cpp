@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/VehicleMiddleware.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/VehicleMiddleware.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-VehicleMiddleware::VehicleMiddleware(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VehicleMiddleware::VehicleMiddleware(JsonView jsonValue) { *this = jsonValue; }
 
-VehicleMiddleware& VehicleMiddleware::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+VehicleMiddleware& VehicleMiddleware::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocolName"))
-  {
+  if (jsonValue.ValueExists("protocolName")) {
     m_protocolName = VehicleMiddlewareProtocolMapper::GetVehicleMiddlewareProtocolForName(jsonValue.GetString("protocolName"));
     m_protocolNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VehicleMiddleware::Jsonize() const
-{
+JsonValue VehicleMiddleware::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_protocolNameHasBeenSet)
-  {
-   payload.WithString("protocolName", VehicleMiddlewareProtocolMapper::GetNameForVehicleMiddlewareProtocol(m_protocolName));
+  if (m_protocolNameHasBeenSet) {
+    payload.WithString("protocolName", VehicleMiddlewareProtocolMapper::GetNameForVehicleMiddlewareProtocol(m_protocolName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

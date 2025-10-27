@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobResultConfigurationInput::ProtectedJobResultConfigurationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobResultConfigurationInput::ProtectedJobResultConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobResultConfigurationInput& ProtectedJobResultConfigurationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("outputConfiguration"))
-  {
+ProtectedJobResultConfigurationInput& ProtectedJobResultConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("outputConfiguration")) {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
     m_outputConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobResultConfigurationInput::Jsonize() const
-{
+JsonValue ProtectedJobResultConfigurationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputConfigurationHasBeenSet)
-  {
-   payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
-
+  if (m_outputConfigurationHasBeenSet) {
+    payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

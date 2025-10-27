@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListPoliciesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListPoliciesRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListPoliciesRequest::SerializePayload() const
-{
+Aws::String ListPoliciesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListPolicies&";
-  if(m_scopeHasBeenSet)
-  {
+  if (m_scopeHasBeenSet) {
     ss << "Scope=" << StringUtils::URLEncode(PolicyScopeTypeMapper::GetNameForPolicyScopeType(m_scope)) << "&";
   }
 
-  if(m_onlyAttachedHasBeenSet)
-  {
+  if (m_onlyAttachedHasBeenSet) {
     ss << "OnlyAttached=" << std::boolalpha << m_onlyAttached << "&";
   }
 
-  if(m_pathPrefixHasBeenSet)
-  {
+  if (m_pathPrefixHasBeenSet) {
     ss << "PathPrefix=" << StringUtils::URLEncode(m_pathPrefix.c_str()) << "&";
   }
 
-  if(m_policyUsageFilterHasBeenSet)
-  {
+  if (m_policyUsageFilterHasBeenSet) {
     ss << "PolicyUsageFilter=" << StringUtils::URLEncode(PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter)) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String ListPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

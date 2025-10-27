@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/SlotMigration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/memorydb/model/SlotMigration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
 
-SlotMigration::SlotMigration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlotMigration::SlotMigration(JsonView jsonValue) { *this = jsonValue; }
 
-SlotMigration& SlotMigration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProgressPercentage"))
-  {
+SlotMigration& SlotMigration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProgressPercentage")) {
     m_progressPercentage = jsonValue.GetDouble("ProgressPercentage");
     m_progressPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SlotMigration::Jsonize() const
-{
+JsonValue SlotMigration::Jsonize() const {
   JsonValue payload;
 
-  if(m_progressPercentageHasBeenSet)
-  {
-   payload.WithDouble("ProgressPercentage", m_progressPercentage);
-
+  if (m_progressPercentageHasBeenSet) {
+    payload.WithDouble("ProgressPercentage", m_progressPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-ThrottlingException::ThrottlingException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThrottlingException::ThrottlingException(JsonView jsonValue) { *this = jsonValue; }
 
-ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ThrottlingException& ThrottlingException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetryAfterSeconds"))
-  {
+  if (jsonValue.ValueExists("RetryAfterSeconds")) {
     m_retryAfterSeconds = jsonValue.GetInteger("RetryAfterSeconds");
     m_retryAfterSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThrottlingException::Jsonize() const
-{
+JsonValue ThrottlingException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_retryAfterSecondsHasBeenSet)
-  {
-   payload.WithInteger("RetryAfterSeconds", m_retryAfterSeconds);
-
+  if (m_retryAfterSecondsHasBeenSet) {
+    payload.WithInteger("RetryAfterSeconds", m_retryAfterSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

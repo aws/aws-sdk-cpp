@@ -5,12 +5,8 @@
 
 #include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PinpointEmail
-} // namespace Aws
+namespace Aws {
+namespace PinpointEmail {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PinpointEmail
+}  // namespace Aws

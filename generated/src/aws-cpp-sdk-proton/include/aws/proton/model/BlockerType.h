@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class BlockerType
-  {
-    NOT_SET,
-    AUTOMATED
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class BlockerType { NOT_SET, AUTOMATED };
 
-namespace BlockerTypeMapper
-{
+namespace BlockerTypeMapper {
 AWS_PROTON_API BlockerType GetBlockerTypeForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForBlockerType(BlockerType value);
-} // namespace BlockerTypeMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace BlockerTypeMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

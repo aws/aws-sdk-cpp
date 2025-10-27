@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationCostProfiler {
+namespace Model {
 
-SourceS3Location::SourceS3Location(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceS3Location::SourceS3Location(JsonView jsonValue) { *this = jsonValue; }
 
-SourceS3Location& SourceS3Location::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+SourceS3Location& SourceS3Location::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("key"))
-  {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("region"))
-  {
+  if (jsonValue.ValueExists("region")) {
     m_region = S3BucketRegionMapper::GetS3BucketRegionForName(jsonValue.GetString("region"));
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceS3Location::Jsonize() const
-{
+JsonValue SourceS3Location::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", S3BucketRegionMapper::GetNameForS3BucketRegion(m_region));
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", S3BucketRegionMapper::GetNameForS3BucketRegion(m_region));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

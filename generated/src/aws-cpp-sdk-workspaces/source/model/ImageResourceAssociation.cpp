@@ -3,111 +3,88 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/ImageResourceAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/ImageResourceAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-ImageResourceAssociation::ImageResourceAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageResourceAssociation::ImageResourceAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-ImageResourceAssociation& ImageResourceAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AssociatedResourceId"))
-  {
+ImageResourceAssociation& ImageResourceAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AssociatedResourceId")) {
     m_associatedResourceId = jsonValue.GetString("AssociatedResourceId");
     m_associatedResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociatedResourceType"))
-  {
-    m_associatedResourceType = ImageAssociatedResourceTypeMapper::GetImageAssociatedResourceTypeForName(jsonValue.GetString("AssociatedResourceType"));
+  if (jsonValue.ValueExists("AssociatedResourceType")) {
+    m_associatedResourceType =
+        ImageAssociatedResourceTypeMapper::GetImageAssociatedResourceTypeForName(jsonValue.GetString("AssociatedResourceType"));
     m_associatedResourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Created"))
-  {
+  if (jsonValue.ValueExists("Created")) {
     m_created = jsonValue.GetDouble("Created");
     m_createdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImageId"))
-  {
+  if (jsonValue.ValueExists("ImageId")) {
     m_imageId = jsonValue.GetString("ImageId");
     m_imageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = AssociationStateMapper::GetAssociationStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateReason"))
-  {
+  if (jsonValue.ValueExists("StateReason")) {
     m_stateReason = jsonValue.GetObject("StateReason");
     m_stateReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageResourceAssociation::Jsonize() const
-{
+JsonValue ImageResourceAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_associatedResourceIdHasBeenSet)
-  {
-   payload.WithString("AssociatedResourceId", m_associatedResourceId);
-
+  if (m_associatedResourceIdHasBeenSet) {
+    payload.WithString("AssociatedResourceId", m_associatedResourceId);
   }
 
-  if(m_associatedResourceTypeHasBeenSet)
-  {
-   payload.WithString("AssociatedResourceType", ImageAssociatedResourceTypeMapper::GetNameForImageAssociatedResourceType(m_associatedResourceType));
+  if (m_associatedResourceTypeHasBeenSet) {
+    payload.WithString("AssociatedResourceType",
+                       ImageAssociatedResourceTypeMapper::GetNameForImageAssociatedResourceType(m_associatedResourceType));
   }
 
-  if(m_createdHasBeenSet)
-  {
-   payload.WithDouble("Created", m_created.SecondsWithMSPrecision());
+  if (m_createdHasBeenSet) {
+    payload.WithDouble("Created", m_created.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
-  if(m_imageIdHasBeenSet)
-  {
-   payload.WithString("ImageId", m_imageId);
-
+  if (m_imageIdHasBeenSet) {
+    payload.WithString("ImageId", m_imageId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", AssociationStateMapper::GetNameForAssociationState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", AssociationStateMapper::GetNameForAssociationState(m_state));
   }
 
-  if(m_stateReasonHasBeenSet)
-  {
-   payload.WithObject("StateReason", m_stateReason.Jsonize());
-
+  if (m_stateReasonHasBeenSet) {
+    payload.WithObject("StateReason", m_stateReason.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

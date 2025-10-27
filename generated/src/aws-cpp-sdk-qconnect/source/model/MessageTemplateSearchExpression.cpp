@@ -3,89 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/MessageTemplateSearchExpression.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/MessageTemplateSearchExpression.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-MessageTemplateSearchExpression::MessageTemplateSearchExpression(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MessageTemplateSearchExpression::MessageTemplateSearchExpression(JsonView jsonValue) { *this = jsonValue; }
 
-MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("queries"))
-  {
+MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("queries")) {
     Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
-    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-    {
+    for (unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex) {
       m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
     }
     m_queriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filters"))
-  {
+  if (jsonValue.ValueExists("filters")) {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
-    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-    {
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
     }
     m_filtersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("orderOnField"))
-  {
+  if (jsonValue.ValueExists("orderOnField")) {
     m_orderOnField = jsonValue.GetObject("orderOnField");
     m_orderOnFieldHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MessageTemplateSearchExpression::Jsonize() const
-{
+JsonValue MessageTemplateSearchExpression::Jsonize() const {
   JsonValue payload;
 
-  if(m_queriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
-   for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-   {
-     queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
-   }
-   payload.WithArray("queries", std::move(queriesJsonList));
-
+  if (m_queriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
+    for (unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex) {
+      queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
+    }
+    payload.WithArray("queries", std::move(queriesJsonList));
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
-
+  if (m_filtersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
+      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    }
+    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
-  if(m_orderOnFieldHasBeenSet)
-  {
-   payload.WithObject("orderOnField", m_orderOnField.Jsonize());
-
+  if (m_orderOnFieldHasBeenSet) {
+    payload.WithObject("orderOnField", m_orderOnField.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

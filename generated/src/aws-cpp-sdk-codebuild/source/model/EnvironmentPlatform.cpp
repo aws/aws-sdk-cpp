@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue) { *this = jsonValue; }
 
-EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("platform"))
-  {
+EnvironmentPlatform& EnvironmentPlatform::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("platform")) {
     m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("platform"));
     m_platformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("languages"))
-  {
+  if (jsonValue.ValueExists("languages")) {
     Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("languages");
-    for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
-    {
+    for (unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex) {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());
     }
     m_languagesHasBeenSet = true;
@@ -42,29 +32,24 @@ EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EnvironmentPlatform::Jsonize() const
-{
+JsonValue EnvironmentPlatform::Jsonize() const {
   JsonValue payload;
 
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  if (m_platformHasBeenSet) {
+    payload.WithString("platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
   }
 
-  if(m_languagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> languagesJsonList(m_languages.size());
-   for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
-   {
-     languagesJsonList[languagesIndex].AsObject(m_languages[languagesIndex].Jsonize());
-   }
-   payload.WithArray("languages", std::move(languagesJsonList));
-
+  if (m_languagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> languagesJsonList(m_languages.size());
+    for (unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex) {
+      languagesJsonList[languagesIndex].AsObject(m_languages[languagesIndex].Jsonize());
+    }
+    payload.WithArray("languages", std::move(languagesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

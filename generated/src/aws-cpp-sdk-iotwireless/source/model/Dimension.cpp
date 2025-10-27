@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/Dimension.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/Dimension.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-Dimension::Dimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Dimension::Dimension(JsonView jsonValue) { *this = jsonValue; }
 
-Dimension& Dimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Dimension& Dimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = DimensionNameMapper::GetDimensionNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Dimension::Jsonize() const
-{
+JsonValue Dimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", DimensionNameMapper::GetNameForDimensionName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", DimensionNameMapper::GetNameForDimensionName(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

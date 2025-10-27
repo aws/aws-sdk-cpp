@@ -5,12 +5,8 @@
 
 #include <aws/config/ConfigServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConfigService
-} // namespace Aws
+namespace Aws {
+namespace ConfigService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConfigService
+}  // namespace Aws

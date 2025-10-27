@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/DailySchedule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/DailySchedule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-DailySchedule::DailySchedule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DailySchedule::DailySchedule(JsonView jsonValue) { *this = jsonValue; }
 
-DailySchedule& DailySchedule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startTime"))
-  {
+DailySchedule& DailySchedule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetObject("startTime");
     m_startTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DailySchedule::Jsonize() const
-{
+JsonValue DailySchedule::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithObject("startTime", m_startTime.Jsonize());
-
+  if (m_startTimeHasBeenSet) {
+    payload.WithObject("startTime", m_startTime.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

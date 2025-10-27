@@ -4,85 +4,96 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/VpcEndpointStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace OpenSearchServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace OpenSearchServerless {
+namespace Model {
 
+/**
+ * <p>The VPC endpoint object.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/VpcEndpointSummary">AWS
+ * API Reference</a></p>
+ */
+class VpcEndpointSummary {
+ public:
+  AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary() = default;
+  AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The VPC endpoint object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/VpcEndpointSummary">AWS
-   * API Reference</a></p>
+   * <p>The unique identifier of the endpoint.</p>
    */
-  class VpcEndpointSummary
-  {
-  public:
-    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary() = default;
-    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  VpcEndpointSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The name of the endpoint.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  VpcEndpointSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The unique identifier of the endpoint.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    VpcEndpointSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The current status of the endpoint.</p>
+   */
+  inline VpcEndpointStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(VpcEndpointStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline VpcEndpointSummary& WithStatus(VpcEndpointStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the endpoint.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    VpcEndpointSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
-    inline VpcEndpointStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(VpcEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline VpcEndpointSummary& WithStatus(VpcEndpointStatus value) { SetStatus(value); return *this;}
-    ///@}
-  private:
+  VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+};
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

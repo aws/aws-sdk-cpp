@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class XavcTemporalAdaptiveQuantization
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class XavcTemporalAdaptiveQuantization { NOT_SET, DISABLED, ENABLED };
 
-namespace XavcTemporalAdaptiveQuantizationMapper
-{
+namespace XavcTemporalAdaptiveQuantizationMapper {
 AWS_MEDIACONVERT_API XavcTemporalAdaptiveQuantization GetXavcTemporalAdaptiveQuantizationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForXavcTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization value);
-} // namespace XavcTemporalAdaptiveQuantizationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace XavcTemporalAdaptiveQuantizationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

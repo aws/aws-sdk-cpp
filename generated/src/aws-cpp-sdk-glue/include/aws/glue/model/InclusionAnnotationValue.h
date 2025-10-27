@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class InclusionAnnotationValue
-  {
-    NOT_SET,
-    INCLUDE,
-    EXCLUDE
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class InclusionAnnotationValue { NOT_SET, INCLUDE, EXCLUDE };
 
-namespace InclusionAnnotationValueMapper
-{
+namespace InclusionAnnotationValueMapper {
 AWS_GLUE_API InclusionAnnotationValue GetInclusionAnnotationValueForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForInclusionAnnotationValue(InclusionAnnotationValue value);
-} // namespace InclusionAnnotationValueMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace InclusionAnnotationValueMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

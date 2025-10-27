@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
-  enum class FederationProtocol
-  {
-    NOT_SET,
-    SAML,
-    OAUTH
-  };
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
+enum class FederationProtocol { NOT_SET, SAML, OAUTH };
 
-namespace FederationProtocolMapper
-{
+namespace FederationProtocolMapper {
 AWS_SSOADMIN_API FederationProtocol GetFederationProtocolForName(const Aws::String& name);
 
 AWS_SSOADMIN_API Aws::String GetNameForFederationProtocol(FederationProtocol value);
-} // namespace FederationProtocolMapper
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace FederationProtocolMapper
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

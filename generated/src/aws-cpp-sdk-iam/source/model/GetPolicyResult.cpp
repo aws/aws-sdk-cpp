@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetPolicyResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/GetPolicyResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetPolicyResult& GetPolicyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetPolicyResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetPolicyResult")) {
     resultNode = rootNode.FirstChild("GetPolicyResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode policyNode = resultNode.FirstChild("Policy");
-    if(!policyNode.IsNull())
-    {
+    if (!policyNode.IsNull()) {
       m_policy = policyNode;
       m_policyHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

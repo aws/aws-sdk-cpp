@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-AmplitudeMetadata::AmplitudeMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmplitudeMetadata::AmplitudeMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-AmplitudeMetadata& AmplitudeMetadata::operator =(JsonView jsonValue)
-{
+AmplitudeMetadata& AmplitudeMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue AmplitudeMetadata::Jsonize() const
-{
+JsonValue AmplitudeMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

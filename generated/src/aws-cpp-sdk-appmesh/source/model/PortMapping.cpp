@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-PortMapping::PortMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PortMapping::PortMapping(JsonView jsonValue) { *this = jsonValue; }
 
-PortMapping& PortMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("port"))
-  {
+PortMapping& PortMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
-  {
+  if (jsonValue.ValueExists("protocol")) {
     m_protocol = PortProtocolMapper::GetPortProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PortMapping::Jsonize() const
-{
+JsonValue PortMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", PortProtocolMapper::GetNameForPortProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", PortProtocolMapper::GetNameForPortProtocol(m_protocol));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

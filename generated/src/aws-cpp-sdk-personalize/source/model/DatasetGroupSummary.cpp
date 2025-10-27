@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/DatasetGroupSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/DatasetGroupSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetGroupSummary& DatasetGroupSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DatasetGroupSummary& DatasetGroupSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datasetGroupArn"))
-  {
+  if (jsonValue.ValueExists("datasetGroupArn")) {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
     m_datasetGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domain"))
-  {
+  if (jsonValue.ValueExists("domain")) {
     m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("domain"));
     m_domainHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetGroupSummary::Jsonize() const
-{
+JsonValue DatasetGroupSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_datasetGroupArnHasBeenSet)
-  {
-   payload.WithString("datasetGroupArn", m_datasetGroupArn);
-
+  if (m_datasetGroupArnHasBeenSet) {
+    payload.WithString("datasetGroupArn", m_datasetGroupArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
+  if (m_domainHasBeenSet) {
+    payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

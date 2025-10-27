@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/sqs/SQS_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_SQS_API SQSErrorMarshaller : public Aws::Client::JsonErrorMarshallerQueryCompatible
-{
-public:
+class AWS_SQS_API SQSErrorMarshaller : public Aws::Client::JsonErrorMarshallerQueryCompatible {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

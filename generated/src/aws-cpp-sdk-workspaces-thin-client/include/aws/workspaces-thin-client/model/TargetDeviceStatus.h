@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-namespace Model
-{
-  enum class TargetDeviceStatus
-  {
-    NOT_SET,
-    DEREGISTERED,
-    ARCHIVED
-  };
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Model {
+enum class TargetDeviceStatus { NOT_SET, DEREGISTERED, ARCHIVED };
 
-namespace TargetDeviceStatusMapper
-{
+namespace TargetDeviceStatusMapper {
 AWS_WORKSPACESTHINCLIENT_API TargetDeviceStatus GetTargetDeviceStatusForName(const Aws::String& name);
 
 AWS_WORKSPACESTHINCLIENT_API Aws::String GetNameForTargetDeviceStatus(TargetDeviceStatus value);
-} // namespace TargetDeviceStatusMapper
-} // namespace Model
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+}  // namespace TargetDeviceStatusMapper
+}  // namespace Model
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

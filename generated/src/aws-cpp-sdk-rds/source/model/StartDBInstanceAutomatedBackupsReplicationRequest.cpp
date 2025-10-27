@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/StartDBInstanceAutomatedBackupsReplicationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/StartDBInstanceAutomatedBackupsReplicationRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String StartDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const
-{
+Aws::String StartDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartDBInstanceAutomatedBackupsReplication&";
-  if(m_sourceDBInstanceArnHasBeenSet)
-  {
+  if (m_sourceDBInstanceArnHasBeenSet) {
     ss << "SourceDBInstanceArn=" << StringUtils::URLEncode(m_sourceDBInstanceArn.c_str()) << "&";
   }
 
-  if(m_backupRetentionPeriodHasBeenSet)
-  {
+  if (m_backupRetentionPeriodHasBeenSet) {
     ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_preSignedUrlHasBeenSet)
-  {
+  if (m_preSignedUrlHasBeenSet) {
     ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String StartDBInstanceAutomatedBackupsReplicationRequest::SerializePayload(
   return ss.str();
 }
 
-
-void  StartDBInstanceAutomatedBackupsReplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartDBInstanceAutomatedBackupsReplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

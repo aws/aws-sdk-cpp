@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class H265GopBReference
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class H265GopBReference { NOT_SET, DISABLED, ENABLED };
 
-namespace H265GopBReferenceMapper
-{
+namespace H265GopBReferenceMapper {
 AWS_MEDIACONVERT_API H265GopBReference GetH265GopBReferenceForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForH265GopBReference(H265GopBReference value);
-} // namespace H265GopBReferenceMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace H265GopBReferenceMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

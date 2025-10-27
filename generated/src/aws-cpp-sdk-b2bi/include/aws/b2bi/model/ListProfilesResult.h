@@ -5,82 +5,97 @@
 
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/b2bi/model/ProfileSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace B2BI
-{
-namespace Model
-{
-  class ListProfilesResult
-  {
-  public:
-    AWS_B2BI_API ListProfilesResult() = default;
-    AWS_B2BI_API ListProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_B2BI_API ListProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace B2BI {
+namespace Model {
+class ListProfilesResult {
+ public:
+  AWS_B2BI_API ListProfilesResult() = default;
+  AWS_B2BI_API ListProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_B2BI_API ListProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Returns an array of <code>ProfileSummary</code> objects.</p>
+   */
+  inline const Aws::Vector<ProfileSummary>& GetProfiles() const { return m_profiles; }
+  template <typename ProfilesT = Aws::Vector<ProfileSummary>>
+  void SetProfiles(ProfilesT&& value) {
+    m_profilesHasBeenSet = true;
+    m_profiles = std::forward<ProfilesT>(value);
+  }
+  template <typename ProfilesT = Aws::Vector<ProfileSummary>>
+  ListProfilesResult& WithProfiles(ProfilesT&& value) {
+    SetProfiles(std::forward<ProfilesT>(value));
+    return *this;
+  }
+  template <typename ProfilesT = ProfileSummary>
+  ListProfilesResult& AddProfiles(ProfilesT&& value) {
+    m_profilesHasBeenSet = true;
+    m_profiles.emplace_back(std::forward<ProfilesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Returns an array of <code>ProfileSummary</code> objects.</p>
-     */
-    inline const Aws::Vector<ProfileSummary>& GetProfiles() const { return m_profiles; }
-    template<typename ProfilesT = Aws::Vector<ProfileSummary>>
-    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
-    template<typename ProfilesT = Aws::Vector<ProfileSummary>>
-    ListProfilesResult& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
-    template<typename ProfilesT = ProfileSummary>
-    ListProfilesResult& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>When additional results are obtained from the command, a
+   * <code>NextToken</code> parameter is returned in the output. You can then pass
+   * the <code>NextToken</code> parameter in a subsequent command to continue listing
+   * additional resources.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListProfilesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>When additional results are obtained from the command, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional resources.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListProfilesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<ProfileSummary> m_profiles;
+  bool m_profilesHasBeenSet = false;
 
-    Aws::Vector<ProfileSummary> m_profiles;
-    bool m_profilesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MeetingEventsConcatenationConfiguration& MeetingEventsConcatenationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("State"))
-  {
+MeetingEventsConcatenationConfiguration& MeetingEventsConcatenationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("State")) {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MeetingEventsConcatenationConfiguration::Jsonize() const
-{
+JsonValue MeetingEventsConcatenationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ArtifactsConcatenationStateMapper::GetNameForArtifactsConcatenationState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ArtifactsConcatenationStateMapper::GetNameForArtifactsConcatenationState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/SampleUtteranceGenerationSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/SampleUtteranceGenerationSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-SampleUtteranceGenerationSpecification& SampleUtteranceGenerationSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+SampleUtteranceGenerationSpecification& SampleUtteranceGenerationSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bedrockModelSpecification"))
-  {
+  if (jsonValue.ValueExists("bedrockModelSpecification")) {
     m_bedrockModelSpecification = jsonValue.GetObject("bedrockModelSpecification");
     m_bedrockModelSpecificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SampleUtteranceGenerationSpecification::Jsonize() const
-{
+JsonValue SampleUtteranceGenerationSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_bedrockModelSpecificationHasBeenSet)
-  {
-   payload.WithObject("bedrockModelSpecification", m_bedrockModelSpecification.Jsonize());
-
+  if (m_bedrockModelSpecificationHasBeenSet) {
+    payload.WithObject("bedrockModelSpecification", m_bedrockModelSpecification.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

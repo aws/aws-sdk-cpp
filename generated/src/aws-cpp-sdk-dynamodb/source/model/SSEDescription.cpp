@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/SSEDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-SSEDescription::SSEDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SSEDescription::SSEDescription(JsonView jsonValue) { *this = jsonValue; }
 
-SSEDescription& SSEDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+SSEDescription& SSEDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = SSEStatusMapper::GetSSEStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SSEType"))
-  {
+  if (jsonValue.ValueExists("SSEType")) {
     m_sSEType = SSETypeMapper::GetSSETypeForName(jsonValue.GetString("SSEType"));
     m_sSETypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KMSMasterKeyArn"))
-  {
+  if (jsonValue.ValueExists("KMSMasterKeyArn")) {
     m_kMSMasterKeyArn = jsonValue.GetString("KMSMasterKeyArn");
     m_kMSMasterKeyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InaccessibleEncryptionDateTime"))
-  {
+  if (jsonValue.ValueExists("InaccessibleEncryptionDateTime")) {
     m_inaccessibleEncryptionDateTime = jsonValue.GetDouble("InaccessibleEncryptionDateTime");
     m_inaccessibleEncryptionDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SSEDescription::Jsonize() const
-{
+JsonValue SSEDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", SSEStatusMapper::GetNameForSSEStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", SSEStatusMapper::GetNameForSSEStatus(m_status));
   }
 
-  if(m_sSETypeHasBeenSet)
-  {
-   payload.WithString("SSEType", SSETypeMapper::GetNameForSSEType(m_sSEType));
+  if (m_sSETypeHasBeenSet) {
+    payload.WithString("SSEType", SSETypeMapper::GetNameForSSEType(m_sSEType));
   }
 
-  if(m_kMSMasterKeyArnHasBeenSet)
-  {
-   payload.WithString("KMSMasterKeyArn", m_kMSMasterKeyArn);
-
+  if (m_kMSMasterKeyArnHasBeenSet) {
+    payload.WithString("KMSMasterKeyArn", m_kMSMasterKeyArn);
   }
 
-  if(m_inaccessibleEncryptionDateTimeHasBeenSet)
-  {
-   payload.WithDouble("InaccessibleEncryptionDateTime", m_inaccessibleEncryptionDateTime.SecondsWithMSPrecision());
+  if (m_inaccessibleEncryptionDateTimeHasBeenSet) {
+    payload.WithDouble("InaccessibleEncryptionDateTime", m_inaccessibleEncryptionDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

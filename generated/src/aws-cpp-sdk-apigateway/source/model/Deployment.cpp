@@ -12,44 +12,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-Deployment::Deployment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Deployment::Deployment(JsonView jsonValue) { *this = jsonValue; }
 
-Deployment& Deployment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+Deployment& Deployment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdDate"))
-  {
+  if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetDouble("createdDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiSummary"))
-  {
+  if (jsonValue.ValueExists("apiSummary")) {
     Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
-    for(auto& apiSummaryItem : apiSummaryJsonMap)
-    {
+    for (auto& apiSummaryItem : apiSummaryJsonMap) {
       Aws::Map<Aws::String, JsonView> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
       Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshotMap;
-      for(auto& mapOfMethodSnapshotItem : mapOfMethodSnapshotJsonMap)
-      {
+      for (auto& mapOfMethodSnapshotItem : mapOfMethodSnapshotJsonMap) {
         mapOfMethodSnapshotMap[mapOfMethodSnapshotItem.first] = mapOfMethodSnapshotItem.second.AsObject();
       }
       m_apiSummary[apiSummaryItem.first] = std::move(mapOfMethodSnapshotMap);
@@ -59,46 +46,36 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Deployment::Jsonize() const
-{
+JsonValue Deployment::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
+  if (m_createdDateHasBeenSet) {
+    payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
-  if(m_apiSummaryHasBeenSet)
-  {
-   JsonValue apiSummaryJsonMap;
-   for(auto& apiSummaryItem : m_apiSummary)
-   {
-     JsonValue mapOfMethodSnapshotJsonMap;
-     for(auto& mapOfMethodSnapshotItem : apiSummaryItem.second)
-     {
-       mapOfMethodSnapshotJsonMap.WithObject(mapOfMethodSnapshotItem.first, mapOfMethodSnapshotItem.second.Jsonize());
-     }
-     apiSummaryJsonMap.WithObject(apiSummaryItem.first, std::move(mapOfMethodSnapshotJsonMap));
-   }
-   payload.WithObject("apiSummary", std::move(apiSummaryJsonMap));
-
+  if (m_apiSummaryHasBeenSet) {
+    JsonValue apiSummaryJsonMap;
+    for (auto& apiSummaryItem : m_apiSummary) {
+      JsonValue mapOfMethodSnapshotJsonMap;
+      for (auto& mapOfMethodSnapshotItem : apiSummaryItem.second) {
+        mapOfMethodSnapshotJsonMap.WithObject(mapOfMethodSnapshotItem.first, mapOfMethodSnapshotItem.second.Jsonize());
+      }
+      apiSummaryJsonMap.WithObject(apiSummaryItem.first, std::move(mapOfMethodSnapshotJsonMap));
+    }
+    payload.WithObject("apiSummary", std::move(apiSummaryJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

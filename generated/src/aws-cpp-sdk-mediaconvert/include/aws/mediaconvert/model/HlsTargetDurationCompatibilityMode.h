@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class HlsTargetDurationCompatibilityMode
-  {
-    NOT_SET,
-    LEGACY,
-    SPEC_COMPLIANT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class HlsTargetDurationCompatibilityMode { NOT_SET, LEGACY, SPEC_COMPLIANT };
 
-namespace HlsTargetDurationCompatibilityModeMapper
-{
+namespace HlsTargetDurationCompatibilityModeMapper {
 AWS_MEDIACONVERT_API HlsTargetDurationCompatibilityMode GetHlsTargetDurationCompatibilityModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForHlsTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode value);
-} // namespace HlsTargetDurationCompatibilityModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsTargetDurationCompatibilityModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

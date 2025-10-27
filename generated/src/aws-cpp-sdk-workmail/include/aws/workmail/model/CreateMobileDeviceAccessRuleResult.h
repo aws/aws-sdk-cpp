@@ -4,62 +4,67 @@
  */
 
 #pragma once
-#include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/WorkMail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace WorkMail
-{
-namespace Model
-{
-  class CreateMobileDeviceAccessRuleResult
-  {
-  public:
-    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult() = default;
-    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace WorkMail {
+namespace Model {
+class CreateMobileDeviceAccessRuleResult {
+ public:
+  AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult() = default;
+  AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The identifier for the newly created mobile device access rule.</p>
+   */
+  inline const Aws::String& GetMobileDeviceAccessRuleId() const { return m_mobileDeviceAccessRuleId; }
+  template <typename MobileDeviceAccessRuleIdT = Aws::String>
+  void SetMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) {
+    m_mobileDeviceAccessRuleIdHasBeenSet = true;
+    m_mobileDeviceAccessRuleId = std::forward<MobileDeviceAccessRuleIdT>(value);
+  }
+  template <typename MobileDeviceAccessRuleIdT = Aws::String>
+  CreateMobileDeviceAccessRuleResult& WithMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) {
+    SetMobileDeviceAccessRuleId(std::forward<MobileDeviceAccessRuleIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier for the newly created mobile device access rule.</p>
-     */
-    inline const Aws::String& GetMobileDeviceAccessRuleId() const { return m_mobileDeviceAccessRuleId; }
-    template<typename MobileDeviceAccessRuleIdT = Aws::String>
-    void SetMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = std::forward<MobileDeviceAccessRuleIdT>(value); }
-    template<typename MobileDeviceAccessRuleIdT = Aws::String>
-    CreateMobileDeviceAccessRuleResult& WithMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) { SetMobileDeviceAccessRuleId(std::forward<MobileDeviceAccessRuleIdT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateMobileDeviceAccessRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateMobileDeviceAccessRuleResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_mobileDeviceAccessRuleId;
+  bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
 
-    Aws::String m_mobileDeviceAccessRuleId;
-    bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

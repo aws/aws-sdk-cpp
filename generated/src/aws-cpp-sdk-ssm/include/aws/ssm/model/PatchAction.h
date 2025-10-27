@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class PatchAction
-  {
-    NOT_SET,
-    ALLOW_AS_DEPENDENCY,
-    BLOCK
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class PatchAction { NOT_SET, ALLOW_AS_DEPENDENCY, BLOCK };
 
-namespace PatchActionMapper
-{
+namespace PatchActionMapper {
 AWS_SSM_API PatchAction GetPatchActionForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForPatchAction(PatchAction value);
-} // namespace PatchActionMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace PatchActionMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

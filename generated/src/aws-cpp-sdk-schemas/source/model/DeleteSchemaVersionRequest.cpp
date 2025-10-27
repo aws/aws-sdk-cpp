@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/schemas/model/DeleteSchemaVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/schemas/model/DeleteSchemaVersionRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSchemaVersionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteSchemaVersionRequest::SerializePayload() const { return {}; }

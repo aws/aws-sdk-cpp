@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snow-device-management/model/ListTasksResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/snow-device-management/model/ListTasksResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTasksResult::ListTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListTasksResult::ListTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTasksResult& ListTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tasks"))
-  {
+  if (jsonValue.ValueExists("tasks")) {
     Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
-    for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
-    {
+    for (unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex) {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
     }
     m_tasksHasBeenSet = true;
@@ -42,12 +35,10 @@ ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<J
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

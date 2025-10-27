@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class JobType
-  {
-    NOT_SET,
-    LAUNCH,
-    TERMINATE
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class JobType { NOT_SET, LAUNCH, TERMINATE };
 
-namespace JobTypeMapper
-{
+namespace JobTypeMapper {
 AWS_MGN_API JobType GetJobTypeForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForJobType(JobType value);
-} // namespace JobTypeMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace JobTypeMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-UserIdentityInfoLite::UserIdentityInfoLite(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserIdentityInfoLite::UserIdentityInfoLite(JsonView jsonValue) { *this = jsonValue; }
 
-UserIdentityInfoLite& UserIdentityInfoLite::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirstName"))
-  {
+UserIdentityInfoLite& UserIdentityInfoLite::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirstName")) {
     m_firstName = jsonValue.GetString("FirstName");
     m_firstNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastName"))
-  {
+  if (jsonValue.ValueExists("LastName")) {
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserIdentityInfoLite::Jsonize() const
-{
+JsonValue UserIdentityInfoLite::Jsonize() const {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("FirstName", m_firstName);
-
+  if (m_firstNameHasBeenSet) {
+    payload.WithString("FirstName", m_firstName);
   }
 
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("LastName", m_lastName);
-
+  if (m_lastNameHasBeenSet) {
+    payload.WithString("LastName", m_lastName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

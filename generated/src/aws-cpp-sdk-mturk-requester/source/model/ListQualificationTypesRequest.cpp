@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/ListQualificationTypesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/ListQualificationTypesRequest.h>
 
 #include <utility>
 
@@ -12,51 +12,34 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListQualificationTypesRequest::SerializePayload() const
-{
+Aws::String ListQualificationTypesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryHasBeenSet)
-  {
-   payload.WithString("Query", m_query);
-
+  if (m_queryHasBeenSet) {
+    payload.WithString("Query", m_query);
   }
 
-  if(m_mustBeRequestableHasBeenSet)
-  {
-   payload.WithBool("MustBeRequestable", m_mustBeRequestable);
-
+  if (m_mustBeRequestableHasBeenSet) {
+    payload.WithBool("MustBeRequestable", m_mustBeRequestable);
   }
 
-  if(m_mustBeOwnedByCallerHasBeenSet)
-  {
-   payload.WithBool("MustBeOwnedByCaller", m_mustBeOwnedByCaller);
-
+  if (m_mustBeOwnedByCallerHasBeenSet) {
+    payload.WithBool("MustBeOwnedByCaller", m_mustBeOwnedByCaller);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListQualificationTypesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListQualificationTypesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MTurkRequesterServiceV20170117.ListQualificationTypes"));
   return headers;
-
 }
-
-
-
-

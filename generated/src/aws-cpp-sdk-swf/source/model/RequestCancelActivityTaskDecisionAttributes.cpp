@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/RequestCancelActivityTaskDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/RequestCancelActivityTaskDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-RequestCancelActivityTaskDecisionAttributes& RequestCancelActivityTaskDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("activityId"))
-  {
+RequestCancelActivityTaskDecisionAttributes& RequestCancelActivityTaskDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("activityId")) {
     m_activityId = jsonValue.GetString("activityId");
     m_activityIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestCancelActivityTaskDecisionAttributes::Jsonize() const
-{
+JsonValue RequestCancelActivityTaskDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_activityIdHasBeenSet)
-  {
-   payload.WithString("activityId", m_activityId);
-
+  if (m_activityIdHasBeenSet) {
+    payload.WithString("activityId", m_activityId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

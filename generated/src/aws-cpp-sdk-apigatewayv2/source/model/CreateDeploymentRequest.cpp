@@ -12,25 +12,16 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDeploymentRequest::SerializePayload() const
-{
+Aws::String CreateDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

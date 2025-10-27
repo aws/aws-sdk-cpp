@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class AddressType
-  {
-    NOT_SET,
-    SHIPPING_ADDRESS,
-    OPERATING_ADDRESS
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class AddressType { NOT_SET, SHIPPING_ADDRESS, OPERATING_ADDRESS };
 
-namespace AddressTypeMapper
-{
+namespace AddressTypeMapper {
 AWS_OUTPOSTS_API AddressType GetAddressTypeForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForAddressType(AddressType value);
-} // namespace AddressTypeMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace AddressTypeMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

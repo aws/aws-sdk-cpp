@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/MemberLogPublishingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/MemberLogPublishingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
 
-MemberLogPublishingConfiguration::MemberLogPublishingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberLogPublishingConfiguration::MemberLogPublishingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MemberLogPublishingConfiguration& MemberLogPublishingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Fabric"))
-  {
+MemberLogPublishingConfiguration& MemberLogPublishingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Fabric")) {
     m_fabric = jsonValue.GetObject("Fabric");
     m_fabricHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberLogPublishingConfiguration::Jsonize() const
-{
+JsonValue MemberLogPublishingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fabricHasBeenSet)
-  {
-   payload.WithObject("Fabric", m_fabric.Jsonize());
-
+  if (m_fabricHasBeenSet) {
+    payload.WithObject("Fabric", m_fabric.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/NodeFrameworkAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/NodeFrameworkAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
 
-NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-NodeFrameworkAttributes& NodeFrameworkAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Fabric"))
-  {
+NodeFrameworkAttributes& NodeFrameworkAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Fabric")) {
     m_fabric = jsonValue.GetObject("Fabric");
     m_fabricHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Ethereum"))
-  {
+  if (jsonValue.ValueExists("Ethereum")) {
     m_ethereum = jsonValue.GetObject("Ethereum");
     m_ethereumHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NodeFrameworkAttributes::Jsonize() const
-{
+JsonValue NodeFrameworkAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_fabricHasBeenSet)
-  {
-   payload.WithObject("Fabric", m_fabric.Jsonize());
-
+  if (m_fabricHasBeenSet) {
+    payload.WithObject("Fabric", m_fabric.Jsonize());
   }
 
-  if(m_ethereumHasBeenSet)
-  {
-   payload.WithObject("Ethereum", m_ethereum.Jsonize());
-
+  if (m_ethereumHasBeenSet) {
+    payload.WithObject("Ethereum", m_ethereum.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

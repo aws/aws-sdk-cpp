@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkMonitor
-{
-class NetworkMonitorEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace NetworkMonitor {
+class NetworkMonitorEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace NetworkMonitor
-} // namespace Aws
+}  // namespace NetworkMonitor
+}  // namespace Aws

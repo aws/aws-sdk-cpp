@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/LoRaWANGatewayCurrentVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/LoRaWANGatewayCurrentVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion(JsonView jsonValue) { *this = jsonValue; }
 
-LoRaWANGatewayCurrentVersion& LoRaWANGatewayCurrentVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CurrentVersion"))
-  {
+LoRaWANGatewayCurrentVersion& LoRaWANGatewayCurrentVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CurrentVersion")) {
     m_currentVersion = jsonValue.GetObject("CurrentVersion");
     m_currentVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoRaWANGatewayCurrentVersion::Jsonize() const
-{
+JsonValue LoRaWANGatewayCurrentVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithObject("CurrentVersion", m_currentVersion.Jsonize());
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithObject("CurrentVersion", m_currentVersion.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

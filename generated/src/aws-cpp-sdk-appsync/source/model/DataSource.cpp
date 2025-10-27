@@ -11,171 +11,126 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-DataSource::DataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSource::DataSource(JsonView jsonValue) { *this = jsonValue; }
 
-DataSource& DataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dataSourceArn"))
-  {
+DataSource& DataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("dataSourceArn");
     m_dataSourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceRoleArn"))
-  {
+  if (jsonValue.ValueExists("serviceRoleArn")) {
     m_serviceRoleArn = jsonValue.GetString("serviceRoleArn");
     m_serviceRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dynamodbConfig"))
-  {
+  if (jsonValue.ValueExists("dynamodbConfig")) {
     m_dynamodbConfig = jsonValue.GetObject("dynamodbConfig");
     m_dynamodbConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaConfig"))
-  {
+  if (jsonValue.ValueExists("lambdaConfig")) {
     m_lambdaConfig = jsonValue.GetObject("lambdaConfig");
     m_lambdaConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("elasticsearchConfig"))
-  {
+  if (jsonValue.ValueExists("elasticsearchConfig")) {
     m_elasticsearchConfig = jsonValue.GetObject("elasticsearchConfig");
     m_elasticsearchConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openSearchServiceConfig"))
-  {
+  if (jsonValue.ValueExists("openSearchServiceConfig")) {
     m_openSearchServiceConfig = jsonValue.GetObject("openSearchServiceConfig");
     m_openSearchServiceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("httpConfig"))
-  {
+  if (jsonValue.ValueExists("httpConfig")) {
     m_httpConfig = jsonValue.GetObject("httpConfig");
     m_httpConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relationalDatabaseConfig"))
-  {
+  if (jsonValue.ValueExists("relationalDatabaseConfig")) {
     m_relationalDatabaseConfig = jsonValue.GetObject("relationalDatabaseConfig");
     m_relationalDatabaseConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventBridgeConfig"))
-  {
+  if (jsonValue.ValueExists("eventBridgeConfig")) {
     m_eventBridgeConfig = jsonValue.GetObject("eventBridgeConfig");
     m_eventBridgeConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricsConfig"))
-  {
+  if (jsonValue.ValueExists("metricsConfig")) {
     m_metricsConfig = DataSourceLevelMetricsConfigMapper::GetDataSourceLevelMetricsConfigForName(jsonValue.GetString("metricsConfig"));
     m_metricsConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSource::Jsonize() const
-{
+JsonValue DataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceArnHasBeenSet)
-  {
-   payload.WithString("dataSourceArn", m_dataSourceArn);
-
+  if (m_dataSourceArnHasBeenSet) {
+    payload.WithString("dataSourceArn", m_dataSourceArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
   }
 
-  if(m_serviceRoleArnHasBeenSet)
-  {
-   payload.WithString("serviceRoleArn", m_serviceRoleArn);
-
+  if (m_serviceRoleArnHasBeenSet) {
+    payload.WithString("serviceRoleArn", m_serviceRoleArn);
   }
 
-  if(m_dynamodbConfigHasBeenSet)
-  {
-   payload.WithObject("dynamodbConfig", m_dynamodbConfig.Jsonize());
-
+  if (m_dynamodbConfigHasBeenSet) {
+    payload.WithObject("dynamodbConfig", m_dynamodbConfig.Jsonize());
   }
 
-  if(m_lambdaConfigHasBeenSet)
-  {
-   payload.WithObject("lambdaConfig", m_lambdaConfig.Jsonize());
-
+  if (m_lambdaConfigHasBeenSet) {
+    payload.WithObject("lambdaConfig", m_lambdaConfig.Jsonize());
   }
 
-  if(m_elasticsearchConfigHasBeenSet)
-  {
-   payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
-
+  if (m_elasticsearchConfigHasBeenSet) {
+    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
   }
 
-  if(m_openSearchServiceConfigHasBeenSet)
-  {
-   payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
-
+  if (m_openSearchServiceConfigHasBeenSet) {
+    payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
   }
 
-  if(m_httpConfigHasBeenSet)
-  {
-   payload.WithObject("httpConfig", m_httpConfig.Jsonize());
-
+  if (m_httpConfigHasBeenSet) {
+    payload.WithObject("httpConfig", m_httpConfig.Jsonize());
   }
 
-  if(m_relationalDatabaseConfigHasBeenSet)
-  {
-   payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
-
+  if (m_relationalDatabaseConfigHasBeenSet) {
+    payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
   }
 
-  if(m_eventBridgeConfigHasBeenSet)
-  {
-   payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
-
+  if (m_eventBridgeConfigHasBeenSet) {
+    payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
   }
 
-  if(m_metricsConfigHasBeenSet)
-  {
-   payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

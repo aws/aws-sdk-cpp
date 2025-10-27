@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elastictranscoder/model/Timing.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastictranscoder/model/Timing.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticTranscoder
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticTranscoder {
+namespace Model {
 
-Timing::Timing(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Timing::Timing(JsonView jsonValue) { *this = jsonValue; }
 
-Timing& Timing::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SubmitTimeMillis"))
-  {
+Timing& Timing::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SubmitTimeMillis")) {
     m_submitTimeMillis = jsonValue.GetInt64("SubmitTimeMillis");
     m_submitTimeMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTimeMillis"))
-  {
+  if (jsonValue.ValueExists("StartTimeMillis")) {
     m_startTimeMillis = jsonValue.GetInt64("StartTimeMillis");
     m_startTimeMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FinishTimeMillis"))
-  {
+  if (jsonValue.ValueExists("FinishTimeMillis")) {
     m_finishTimeMillis = jsonValue.GetInt64("FinishTimeMillis");
     m_finishTimeMillisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Timing::Jsonize() const
-{
+JsonValue Timing::Jsonize() const {
   JsonValue payload;
 
-  if(m_submitTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("SubmitTimeMillis", m_submitTimeMillis);
-
+  if (m_submitTimeMillisHasBeenSet) {
+    payload.WithInt64("SubmitTimeMillis", m_submitTimeMillis);
   }
 
-  if(m_startTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("StartTimeMillis", m_startTimeMillis);
-
+  if (m_startTimeMillisHasBeenSet) {
+    payload.WithInt64("StartTimeMillis", m_startTimeMillis);
   }
 
-  if(m_finishTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("FinishTimeMillis", m_finishTimeMillis);
-
+  if (m_finishTimeMillisHasBeenSet) {
+    payload.WithInt64("FinishTimeMillis", m_finishTimeMillis);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ElasticTranscoder
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticTranscoder
+}  // namespace Aws

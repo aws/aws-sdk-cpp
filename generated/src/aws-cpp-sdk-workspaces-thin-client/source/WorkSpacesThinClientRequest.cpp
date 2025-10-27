@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/workspaces-thin-client/WorkSpacesThinClientRequest.h>
 
-namespace Aws
-{
-namespace WorkSpacesThinClient
-{
-} // namespace WorkSpacesThinClient
-} // namespace Aws
+namespace Aws {
+namespace WorkSpacesThinClient {}  // namespace WorkSpacesThinClient
+}  // namespace Aws

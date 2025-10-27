@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class HlsAudioOnlyContainer
-  {
-    NOT_SET,
-    AUTOMATIC,
-    M2TS
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class HlsAudioOnlyContainer { NOT_SET, AUTOMATIC, M2TS };
 
-namespace HlsAudioOnlyContainerMapper
-{
+namespace HlsAudioOnlyContainerMapper {
 AWS_MEDIACONVERT_API HlsAudioOnlyContainer GetHlsAudioOnlyContainerForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForHlsAudioOnlyContainer(HlsAudioOnlyContainer value);
-} // namespace HlsAudioOnlyContainerMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsAudioOnlyContainerMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

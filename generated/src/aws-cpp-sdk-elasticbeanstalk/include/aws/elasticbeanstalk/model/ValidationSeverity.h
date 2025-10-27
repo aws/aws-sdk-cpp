@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class ValidationSeverity
-  {
-    NOT_SET,
-    error,
-    warning
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class ValidationSeverity { NOT_SET, error, warning };
 
-namespace ValidationSeverityMapper
-{
+namespace ValidationSeverityMapper {
 AWS_ELASTICBEANSTALK_API ValidationSeverity GetValidationSeverityForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForValidationSeverity(ValidationSeverity value);
-} // namespace ValidationSeverityMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ValidationSeverityMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

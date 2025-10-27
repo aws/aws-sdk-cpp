@@ -4,10 +4,10 @@
  */
 
 #include <aws/athena/model/ListNotebookSessionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListNotebookSessionsResult::ListNotebookSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListNotebookSessionsResult::ListNotebookSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListNotebookSessionsResult& ListNotebookSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListNotebookSessionsResult& ListNotebookSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NotebookSessionsList"))
-  {
+  if (jsonValue.ValueExists("NotebookSessionsList")) {
     Aws::Utils::Array<JsonView> notebookSessionsListJsonList = jsonValue.GetArray("NotebookSessionsList");
-    for(unsigned notebookSessionsListIndex = 0; notebookSessionsListIndex < notebookSessionsListJsonList.GetLength(); ++notebookSessionsListIndex)
-    {
+    for (unsigned notebookSessionsListIndex = 0; notebookSessionsListIndex < notebookSessionsListJsonList.GetLength();
+         ++notebookSessionsListIndex) {
       m_notebookSessionsList.push_back(notebookSessionsListJsonList[notebookSessionsListIndex].AsObject());
     }
     m_notebookSessionsListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTJobsDataPlane
-{
-class IoTJobsDataPlaneEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IoTJobsDataPlane {
+class IoTJobsDataPlaneEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IoTJobsDataPlane
-} // namespace Aws
+}  // namespace IoTJobsDataPlane
+}  // namespace Aws

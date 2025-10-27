@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ContentConcatenationConfiguration::ContentConcatenationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentConcatenationConfiguration::ContentConcatenationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ContentConcatenationConfiguration& ContentConcatenationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("State"))
-  {
+ContentConcatenationConfiguration& ContentConcatenationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("State")) {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentConcatenationConfiguration::Jsonize() const
-{
+JsonValue ContentConcatenationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ArtifactsConcatenationStateMapper::GetNameForArtifactsConcatenationState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ArtifactsConcatenationStateMapper::GetNameForArtifactsConcatenationState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

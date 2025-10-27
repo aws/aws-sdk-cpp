@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/S3Object.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/S3Object.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-S3Object::S3Object(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Object::S3Object(JsonView jsonValue) { *this = jsonValue; }
 
-S3Object& S3Object::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+S3Object& S3Object::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("key"))
-  {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("etag"))
-  {
+  if (jsonValue.ValueExists("etag")) {
     m_etag = jsonValue.GetString("etag");
     m_etagHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Object::Jsonize() const
-{
+JsonValue S3Object::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_etagHasBeenSet)
-  {
-   payload.WithString("etag", m_etag);
-
+  if (m_etagHasBeenSet) {
+    payload.WithString("etag", m_etag);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

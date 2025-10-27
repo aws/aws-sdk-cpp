@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVpcAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVpcAttributeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVpcAttributeRequest::SerializePayload() const
-{
+Aws::String ModifyVpcAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcAttribute&";
-  if(m_enableDnsHostnamesHasBeenSet)
-  {
+  if (m_enableDnsHostnamesHasBeenSet) {
     m_enableDnsHostnames.OutputToStream(ss, "EnableDnsHostnames");
   }
 
-  if(m_enableDnsSupportHasBeenSet)
-  {
+  if (m_enableDnsSupportHasBeenSet) {
     m_enableDnsSupport.OutputToStream(ss, "EnableDnsSupport");
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_enableNetworkAddressUsageMetricsHasBeenSet)
-  {
+  if (m_enableNetworkAddressUsageMetricsHasBeenSet) {
     m_enableNetworkAddressUsageMetrics.OutputToStream(ss, "EnableNetworkAddressUsageMetrics");
   }
 
@@ -38,8 +33,4 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyVpcAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyVpcAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

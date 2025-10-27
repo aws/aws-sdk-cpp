@@ -3,126 +3,96 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AddonIssueCode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/eks/model/AddonIssueCode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EKS {
+namespace Model {
+namespace AddonIssueCodeMapper {
 
-namespace Aws
-{
-  namespace EKS
-  {
-    namespace Model
-    {
-      namespace AddonIssueCodeMapper
-      {
+static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
+static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
+static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
+static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
+static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
+static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
+static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
+static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
+static const int AddonSubscriptionNeeded_HASH = HashingUtils::HashString("AddonSubscriptionNeeded");
+static const int AddonPermissionFailure_HASH = HashingUtils::HashString("AddonPermissionFailure");
 
-        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-        static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
-        static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
-        static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
-        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
-        static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
-        static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
-        static const int AddonSubscriptionNeeded_HASH = HashingUtils::HashString("AddonSubscriptionNeeded");
-        static const int AddonPermissionFailure_HASH = HashingUtils::HashString("AddonPermissionFailure");
+AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == AccessDenied_HASH) {
+    return AddonIssueCode::AccessDenied;
+  } else if (hashCode == InternalFailure_HASH) {
+    return AddonIssueCode::InternalFailure;
+  } else if (hashCode == ClusterUnreachable_HASH) {
+    return AddonIssueCode::ClusterUnreachable;
+  } else if (hashCode == InsufficientNumberOfReplicas_HASH) {
+    return AddonIssueCode::InsufficientNumberOfReplicas;
+  } else if (hashCode == ConfigurationConflict_HASH) {
+    return AddonIssueCode::ConfigurationConflict;
+  } else if (hashCode == AdmissionRequestDenied_HASH) {
+    return AddonIssueCode::AdmissionRequestDenied;
+  } else if (hashCode == UnsupportedAddonModification_HASH) {
+    return AddonIssueCode::UnsupportedAddonModification;
+  } else if (hashCode == K8sResourceNotFound_HASH) {
+    return AddonIssueCode::K8sResourceNotFound;
+  } else if (hashCode == AddonSubscriptionNeeded_HASH) {
+    return AddonIssueCode::AddonSubscriptionNeeded;
+  } else if (hashCode == AddonPermissionFailure_HASH) {
+    return AddonIssueCode::AddonPermissionFailure;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AddonIssueCode>(hashCode);
+  }
 
+  return AddonIssueCode::NOT_SET;
+}
 
-        AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AccessDenied_HASH)
-          {
-            return AddonIssueCode::AccessDenied;
-          }
-          else if (hashCode == InternalFailure_HASH)
-          {
-            return AddonIssueCode::InternalFailure;
-          }
-          else if (hashCode == ClusterUnreachable_HASH)
-          {
-            return AddonIssueCode::ClusterUnreachable;
-          }
-          else if (hashCode == InsufficientNumberOfReplicas_HASH)
-          {
-            return AddonIssueCode::InsufficientNumberOfReplicas;
-          }
-          else if (hashCode == ConfigurationConflict_HASH)
-          {
-            return AddonIssueCode::ConfigurationConflict;
-          }
-          else if (hashCode == AdmissionRequestDenied_HASH)
-          {
-            return AddonIssueCode::AdmissionRequestDenied;
-          }
-          else if (hashCode == UnsupportedAddonModification_HASH)
-          {
-            return AddonIssueCode::UnsupportedAddonModification;
-          }
-          else if (hashCode == K8sResourceNotFound_HASH)
-          {
-            return AddonIssueCode::K8sResourceNotFound;
-          }
-          else if (hashCode == AddonSubscriptionNeeded_HASH)
-          {
-            return AddonIssueCode::AddonSubscriptionNeeded;
-          }
-          else if (hashCode == AddonPermissionFailure_HASH)
-          {
-            return AddonIssueCode::AddonPermissionFailure;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AddonIssueCode>(hashCode);
-          }
+Aws::String GetNameForAddonIssueCode(AddonIssueCode enumValue) {
+  switch (enumValue) {
+    case AddonIssueCode::NOT_SET:
+      return {};
+    case AddonIssueCode::AccessDenied:
+      return "AccessDenied";
+    case AddonIssueCode::InternalFailure:
+      return "InternalFailure";
+    case AddonIssueCode::ClusterUnreachable:
+      return "ClusterUnreachable";
+    case AddonIssueCode::InsufficientNumberOfReplicas:
+      return "InsufficientNumberOfReplicas";
+    case AddonIssueCode::ConfigurationConflict:
+      return "ConfigurationConflict";
+    case AddonIssueCode::AdmissionRequestDenied:
+      return "AdmissionRequestDenied";
+    case AddonIssueCode::UnsupportedAddonModification:
+      return "UnsupportedAddonModification";
+    case AddonIssueCode::K8sResourceNotFound:
+      return "K8sResourceNotFound";
+    case AddonIssueCode::AddonSubscriptionNeeded:
+      return "AddonSubscriptionNeeded";
+    case AddonIssueCode::AddonPermissionFailure:
+      return "AddonPermissionFailure";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AddonIssueCode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAddonIssueCode(AddonIssueCode enumValue)
-        {
-          switch(enumValue)
-          {
-          case AddonIssueCode::NOT_SET:
-            return {};
-          case AddonIssueCode::AccessDenied:
-            return "AccessDenied";
-          case AddonIssueCode::InternalFailure:
-            return "InternalFailure";
-          case AddonIssueCode::ClusterUnreachable:
-            return "ClusterUnreachable";
-          case AddonIssueCode::InsufficientNumberOfReplicas:
-            return "InsufficientNumberOfReplicas";
-          case AddonIssueCode::ConfigurationConflict:
-            return "ConfigurationConflict";
-          case AddonIssueCode::AdmissionRequestDenied:
-            return "AdmissionRequestDenied";
-          case AddonIssueCode::UnsupportedAddonModification:
-            return "UnsupportedAddonModification";
-          case AddonIssueCode::K8sResourceNotFound:
-            return "K8sResourceNotFound";
-          case AddonIssueCode::AddonSubscriptionNeeded:
-            return "AddonSubscriptionNeeded";
-          case AddonIssueCode::AddonPermissionFailure:
-            return "AddonPermissionFailure";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AddonIssueCodeMapper
-    } // namespace Model
-  } // namespace EKS
-} // namespace Aws
+}  // namespace AddonIssueCodeMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

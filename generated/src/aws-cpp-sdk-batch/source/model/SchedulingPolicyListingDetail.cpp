@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-SchedulingPolicyListingDetail::SchedulingPolicyListingDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SchedulingPolicyListingDetail::SchedulingPolicyListingDetail(JsonView jsonValue) { *this = jsonValue; }
 
-SchedulingPolicyListingDetail& SchedulingPolicyListingDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+SchedulingPolicyListingDetail& SchedulingPolicyListingDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SchedulingPolicyListingDetail::Jsonize() const
-{
+JsonValue SchedulingPolicyListingDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

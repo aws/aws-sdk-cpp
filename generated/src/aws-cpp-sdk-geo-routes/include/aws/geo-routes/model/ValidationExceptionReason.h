@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    UnknownOperation,
-    Missing,
-    CannotParse,
-    FieldValidationFailed,
-    Other,
-    UnknownField
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class ValidationExceptionReason { NOT_SET, UnknownOperation, Missing, CannotParse, FieldValidationFailed, Other, UnknownField };
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_GEOROUTES_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

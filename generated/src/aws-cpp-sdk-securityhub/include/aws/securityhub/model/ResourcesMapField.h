@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class ResourcesMapField
-  {
-    NOT_SET,
-    ResourceTags
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class ResourcesMapField { NOT_SET, ResourceTags };
 
-namespace ResourcesMapFieldMapper
-{
+namespace ResourcesMapFieldMapper {
 AWS_SECURITYHUB_API ResourcesMapField GetResourcesMapFieldForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForResourcesMapField(ResourcesMapField value);
-} // namespace ResourcesMapFieldMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace ResourcesMapFieldMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

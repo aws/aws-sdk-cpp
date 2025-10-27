@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/DefaultIntegerHyperParameterRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/DefaultIntegerHyperParameterRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-DefaultIntegerHyperParameterRange::DefaultIntegerHyperParameterRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultIntegerHyperParameterRange::DefaultIntegerHyperParameterRange(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultIntegerHyperParameterRange& DefaultIntegerHyperParameterRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DefaultIntegerHyperParameterRange& DefaultIntegerHyperParameterRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minValue"))
-  {
+  if (jsonValue.ValueExists("minValue")) {
     m_minValue = jsonValue.GetInteger("minValue");
     m_minValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxValue"))
-  {
+  if (jsonValue.ValueExists("maxValue")) {
     m_maxValue = jsonValue.GetInteger("maxValue");
     m_maxValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isTunable"))
-  {
+  if (jsonValue.ValueExists("isTunable")) {
     m_isTunable = jsonValue.GetBool("isTunable");
     m_isTunableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultIntegerHyperParameterRange::Jsonize() const
-{
+JsonValue DefaultIntegerHyperParameterRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_minValueHasBeenSet)
-  {
-   payload.WithInteger("minValue", m_minValue);
-
+  if (m_minValueHasBeenSet) {
+    payload.WithInteger("minValue", m_minValue);
   }
 
-  if(m_maxValueHasBeenSet)
-  {
-   payload.WithInteger("maxValue", m_maxValue);
-
+  if (m_maxValueHasBeenSet) {
+    payload.WithInteger("maxValue", m_maxValue);
   }
 
-  if(m_isTunableHasBeenSet)
-  {
-   payload.WithBool("isTunable", m_isTunable);
-
+  if (m_isTunableHasBeenSet) {
+    payload.WithBool("isTunable", m_isTunable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

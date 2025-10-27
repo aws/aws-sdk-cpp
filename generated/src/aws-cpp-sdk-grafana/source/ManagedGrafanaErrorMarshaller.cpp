@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ManagedGrafana;
 
-AWSError<CoreErrors> ManagedGrafanaErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ManagedGrafanaErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ManagedGrafanaErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

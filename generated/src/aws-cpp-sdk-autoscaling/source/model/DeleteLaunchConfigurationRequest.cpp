@@ -10,12 +10,10 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
-{
+Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLaunchConfiguration&";
-  if(m_launchConfigurationNameHasBeenSet)
-  {
+  if (m_launchConfigurationNameHasBeenSet) {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLaunchConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLaunchConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

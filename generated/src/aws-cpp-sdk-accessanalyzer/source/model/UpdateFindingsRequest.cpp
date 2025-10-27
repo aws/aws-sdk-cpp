@@ -12,47 +12,32 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFindingsRequest::SerializePayload() const
-{
+Aws::String UpdateFindingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_analyzerArnHasBeenSet)
-  {
-   payload.WithString("analyzerArn", m_analyzerArn);
-
+  if (m_analyzerArnHasBeenSet) {
+    payload.WithString("analyzerArn", m_analyzerArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FindingStatusUpdateMapper::GetNameForFindingStatusUpdate(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", FindingStatusUpdateMapper::GetNameForFindingStatusUpdate(m_status));
   }
 
-  if(m_idsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
-   for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
-   {
-     idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
-   }
-   payload.WithArray("ids", std::move(idsJsonList));
-
+  if (m_idsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
+      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
+    }
+    payload.WithArray("ids", std::move(idsJsonList));
   }
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

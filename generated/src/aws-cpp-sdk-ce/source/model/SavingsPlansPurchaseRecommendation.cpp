@@ -11,111 +11,92 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountScope"))
-  {
+SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountScope")) {
     m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
     m_accountScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SavingsPlansType"))
-  {
+  if (jsonValue.ValueExists("SavingsPlansType")) {
     m_savingsPlansType = SupportedSavingsPlansTypeMapper::GetSupportedSavingsPlansTypeForName(jsonValue.GetString("SavingsPlansType"));
     m_savingsPlansTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TermInYears"))
-  {
+  if (jsonValue.ValueExists("TermInYears")) {
     m_termInYears = TermInYearsMapper::GetTermInYearsForName(jsonValue.GetString("TermInYears"));
     m_termInYearsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PaymentOption"))
-  {
+  if (jsonValue.ValueExists("PaymentOption")) {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
     m_paymentOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LookbackPeriodInDays"))
-  {
+  if (jsonValue.ValueExists("LookbackPeriodInDays")) {
     m_lookbackPeriodInDays = LookbackPeriodInDaysMapper::GetLookbackPeriodInDaysForName(jsonValue.GetString("LookbackPeriodInDays"));
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendationDetails"))
-  {
-    Aws::Utils::Array<JsonView> savingsPlansPurchaseRecommendationDetailsJsonList = jsonValue.GetArray("SavingsPlansPurchaseRecommendationDetails");
-    for(unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0; savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength(); ++savingsPlansPurchaseRecommendationDetailsIndex)
-    {
-      m_savingsPlansPurchaseRecommendationDetails.push_back(savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject());
+  if (jsonValue.ValueExists("SavingsPlansPurchaseRecommendationDetails")) {
+    Aws::Utils::Array<JsonView> savingsPlansPurchaseRecommendationDetailsJsonList =
+        jsonValue.GetArray("SavingsPlansPurchaseRecommendationDetails");
+    for (unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0;
+         savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength();
+         ++savingsPlansPurchaseRecommendationDetailsIndex) {
+      m_savingsPlansPurchaseRecommendationDetails.push_back(
+          savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject());
     }
     m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendationSummary"))
-  {
+  if (jsonValue.ValueExists("SavingsPlansPurchaseRecommendationSummary")) {
     m_savingsPlansPurchaseRecommendationSummary = jsonValue.GetObject("SavingsPlansPurchaseRecommendationSummary");
     m_savingsPlansPurchaseRecommendationSummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansPurchaseRecommendation::Jsonize() const
-{
+JsonValue SavingsPlansPurchaseRecommendation::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountScopeHasBeenSet)
-  {
-   payload.WithString("AccountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
+  if (m_accountScopeHasBeenSet) {
+    payload.WithString("AccountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
   }
 
-  if(m_savingsPlansTypeHasBeenSet)
-  {
-   payload.WithString("SavingsPlansType", SupportedSavingsPlansTypeMapper::GetNameForSupportedSavingsPlansType(m_savingsPlansType));
+  if (m_savingsPlansTypeHasBeenSet) {
+    payload.WithString("SavingsPlansType", SupportedSavingsPlansTypeMapper::GetNameForSupportedSavingsPlansType(m_savingsPlansType));
   }
 
-  if(m_termInYearsHasBeenSet)
-  {
-   payload.WithString("TermInYears", TermInYearsMapper::GetNameForTermInYears(m_termInYears));
+  if (m_termInYearsHasBeenSet) {
+    payload.WithString("TermInYears", TermInYearsMapper::GetNameForTermInYears(m_termInYears));
   }
 
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("PaymentOption", PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption));
+  if (m_paymentOptionHasBeenSet) {
+    payload.WithString("PaymentOption", PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption));
   }
 
-  if(m_lookbackPeriodInDaysHasBeenSet)
-  {
-   payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
+  if (m_lookbackPeriodInDaysHasBeenSet) {
+    payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
   }
 
-  if(m_savingsPlansPurchaseRecommendationDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> savingsPlansPurchaseRecommendationDetailsJsonList(m_savingsPlansPurchaseRecommendationDetails.size());
-   for(unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0; savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength(); ++savingsPlansPurchaseRecommendationDetailsIndex)
-   {
-     savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject(m_savingsPlansPurchaseRecommendationDetails[savingsPlansPurchaseRecommendationDetailsIndex].Jsonize());
-   }
-   payload.WithArray("SavingsPlansPurchaseRecommendationDetails", std::move(savingsPlansPurchaseRecommendationDetailsJsonList));
-
+  if (m_savingsPlansPurchaseRecommendationDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> savingsPlansPurchaseRecommendationDetailsJsonList(m_savingsPlansPurchaseRecommendationDetails.size());
+    for (unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0;
+         savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength();
+         ++savingsPlansPurchaseRecommendationDetailsIndex) {
+      savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject(
+          m_savingsPlansPurchaseRecommendationDetails[savingsPlansPurchaseRecommendationDetailsIndex].Jsonize());
+    }
+    payload.WithArray("SavingsPlansPurchaseRecommendationDetails", std::move(savingsPlansPurchaseRecommendationDetailsJsonList));
   }
 
-  if(m_savingsPlansPurchaseRecommendationSummaryHasBeenSet)
-  {
-   payload.WithObject("SavingsPlansPurchaseRecommendationSummary", m_savingsPlansPurchaseRecommendationSummary.Jsonize());
-
+  if (m_savingsPlansPurchaseRecommendationSummaryHasBeenSet) {
+    payload.WithObject("SavingsPlansPurchaseRecommendationSummary", m_savingsPlansPurchaseRecommendationSummary.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

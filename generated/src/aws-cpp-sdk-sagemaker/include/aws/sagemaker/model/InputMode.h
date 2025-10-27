@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class InputMode
-  {
-    NOT_SET,
-    Pipe,
-    File
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class InputMode { NOT_SET, Pipe, File };
 
-namespace InputModeMapper
-{
+namespace InputModeMapper {
 AWS_SAGEMAKER_API InputMode GetInputModeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForInputMode(InputMode value);
-} // namespace InputModeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace InputModeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

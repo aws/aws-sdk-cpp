@@ -3,132 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb/model/JournalS3ExportDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb/model/JournalS3ExportDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QLDB
-{
-namespace Model
-{
+namespace Aws {
+namespace QLDB {
+namespace Model {
 
-JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue) { *this = jsonValue; }
 
-JournalS3ExportDescription& JournalS3ExportDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LedgerName"))
-  {
+JournalS3ExportDescription& JournalS3ExportDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LedgerName")) {
     m_ledgerName = jsonValue.GetString("LedgerName");
     m_ledgerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportId"))
-  {
+  if (jsonValue.ValueExists("ExportId")) {
     m_exportId = jsonValue.GetString("ExportId");
     m_exportIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportCreationTime"))
-  {
+  if (jsonValue.ValueExists("ExportCreationTime")) {
     m_exportCreationTime = jsonValue.GetDouble("ExportCreationTime");
     m_exportCreationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InclusiveStartTime"))
-  {
+  if (jsonValue.ValueExists("InclusiveStartTime")) {
     m_inclusiveStartTime = jsonValue.GetDouble("InclusiveStartTime");
     m_inclusiveStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExclusiveEndTime"))
-  {
+  if (jsonValue.ValueExists("ExclusiveEndTime")) {
     m_exclusiveEndTime = jsonValue.GetDouble("ExclusiveEndTime");
     m_exclusiveEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3ExportConfiguration"))
-  {
+  if (jsonValue.ValueExists("S3ExportConfiguration")) {
     m_s3ExportConfiguration = jsonValue.GetObject("S3ExportConfiguration");
     m_s3ExportConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputFormat"))
-  {
+  if (jsonValue.ValueExists("OutputFormat")) {
     m_outputFormat = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("OutputFormat"));
     m_outputFormatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JournalS3ExportDescription::Jsonize() const
-{
+JsonValue JournalS3ExportDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_ledgerNameHasBeenSet)
-  {
-   payload.WithString("LedgerName", m_ledgerName);
-
+  if (m_ledgerNameHasBeenSet) {
+    payload.WithString("LedgerName", m_ledgerName);
   }
 
-  if(m_exportIdHasBeenSet)
-  {
-   payload.WithString("ExportId", m_exportId);
-
+  if (m_exportIdHasBeenSet) {
+    payload.WithString("ExportId", m_exportId);
   }
 
-  if(m_exportCreationTimeHasBeenSet)
-  {
-   payload.WithDouble("ExportCreationTime", m_exportCreationTime.SecondsWithMSPrecision());
+  if (m_exportCreationTimeHasBeenSet) {
+    payload.WithDouble("ExportCreationTime", m_exportCreationTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ExportStatusMapper::GetNameForExportStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ExportStatusMapper::GetNameForExportStatus(m_status));
   }
 
-  if(m_inclusiveStartTimeHasBeenSet)
-  {
-   payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
+  if (m_inclusiveStartTimeHasBeenSet) {
+    payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_exclusiveEndTimeHasBeenSet)
-  {
-   payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
+  if (m_exclusiveEndTimeHasBeenSet) {
+    payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_s3ExportConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
-
+  if (m_s3ExportConfigurationHasBeenSet) {
+    payload.WithObject("S3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_outputFormatHasBeenSet)
-  {
-   payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
+  if (m_outputFormatHasBeenSet) {
+    payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QLDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace QLDB
+}  // namespace Aws

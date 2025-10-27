@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServerlessApplicationRepository
-{
-class ServerlessApplicationRepositoryEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ServerlessApplicationRepository {
+class ServerlessApplicationRepositoryEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ServerlessApplicationRepository
-} // namespace Aws
+}  // namespace ServerlessApplicationRepository
+}  // namespace Aws

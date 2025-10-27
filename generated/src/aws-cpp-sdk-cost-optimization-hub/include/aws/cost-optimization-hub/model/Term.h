@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
-  enum class Term
-  {
-    NOT_SET,
-    OneYear,
-    ThreeYears
-  };
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class Term { NOT_SET, OneYear, ThreeYears };
 
-namespace TermMapper
-{
+namespace TermMapper {
 AWS_COSTOPTIMIZATIONHUB_API Term GetTermForName(const Aws::String& name);
 
 AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForTerm(Term value);
-} // namespace TermMapper
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace TermMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

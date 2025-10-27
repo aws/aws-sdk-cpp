@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceMetering
-{
-enum class MarketplaceMeteringErrors
-{
-  //From Core//
+namespace Aws {
+namespace MarketplaceMetering {
+enum class MarketplaceMeteringErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MarketplaceMeteringErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class MarketplaceMeteringErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CUSTOMER_NOT_ENTITLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CUSTOMER_NOT_ENTITLED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DISABLED_API,
   DUPLICATE_REQUEST,
   EXPIRED_TOKEN,
@@ -66,23 +63,24 @@ enum class MarketplaceMeteringErrors
   TIMESTAMP_OUT_OF_BOUNDS
 };
 
-class AWS_MARKETPLACEMETERING_API MarketplaceMeteringError : public Aws::Client::AWSError<MarketplaceMeteringErrors>
-{
-public:
+class AWS_MARKETPLACEMETERING_API MarketplaceMeteringError : public Aws::Client::AWSError<MarketplaceMeteringErrors> {
+ public:
   MarketplaceMeteringError() {}
-  MarketplaceMeteringError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
+  MarketplaceMeteringError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
   MarketplaceMeteringError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
-  MarketplaceMeteringError(const Aws::Client::AWSError<MarketplaceMeteringErrors>& rhs) : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
-  MarketplaceMeteringError(Aws::Client::AWSError<MarketplaceMeteringErrors>&& rhs) : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
+  MarketplaceMeteringError(const Aws::Client::AWSError<MarketplaceMeteringErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
+  MarketplaceMeteringError(Aws::Client::AWSError<MarketplaceMeteringErrors>&& rhs)
+      : Aws::Client::AWSError<MarketplaceMeteringErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MarketplaceMeteringErrorMapper
-{
-  AWS_MARKETPLACEMETERING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MarketplaceMeteringErrorMapper {
+AWS_MARKETPLACEMETERING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MarketplaceMetering
-} // namespace Aws
+}  // namespace MarketplaceMetering
+}  // namespace Aws

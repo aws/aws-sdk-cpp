@@ -11,45 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-StartCodegenJobData::StartCodegenJobData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartCodegenJobData::StartCodegenJobData(JsonView jsonValue) { *this = jsonValue; }
 
-StartCodegenJobData& StartCodegenJobData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("renderConfig"))
-  {
+StartCodegenJobData& StartCodegenJobData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("renderConfig")) {
     m_renderConfig = jsonValue.GetObject("renderConfig");
     m_renderConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("genericDataSchema"))
-  {
+  if (jsonValue.ValueExists("genericDataSchema")) {
     m_genericDataSchema = jsonValue.GetObject("genericDataSchema");
     m_genericDataSchemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoGenerateForms"))
-  {
+  if (jsonValue.ValueExists("autoGenerateForms")) {
     m_autoGenerateForms = jsonValue.GetBool("autoGenerateForms");
     m_autoGenerateFormsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("features"))
-  {
+  if (jsonValue.ValueExists("features")) {
     m_features = jsonValue.GetObject("features");
     m_featuresHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -57,48 +44,36 @@ StartCodegenJobData& StartCodegenJobData::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue StartCodegenJobData::Jsonize() const
-{
+JsonValue StartCodegenJobData::Jsonize() const {
   JsonValue payload;
 
-  if(m_renderConfigHasBeenSet)
-  {
-   payload.WithObject("renderConfig", m_renderConfig.Jsonize());
-
+  if (m_renderConfigHasBeenSet) {
+    payload.WithObject("renderConfig", m_renderConfig.Jsonize());
   }
 
-  if(m_genericDataSchemaHasBeenSet)
-  {
-   payload.WithObject("genericDataSchema", m_genericDataSchema.Jsonize());
-
+  if (m_genericDataSchemaHasBeenSet) {
+    payload.WithObject("genericDataSchema", m_genericDataSchema.Jsonize());
   }
 
-  if(m_autoGenerateFormsHasBeenSet)
-  {
-   payload.WithBool("autoGenerateForms", m_autoGenerateForms);
-
+  if (m_autoGenerateFormsHasBeenSet) {
+    payload.WithBool("autoGenerateForms", m_autoGenerateForms);
   }
 
-  if(m_featuresHasBeenSet)
-  {
-   payload.WithObject("features", m_features.Jsonize());
-
+  if (m_featuresHasBeenSet) {
+    payload.WithObject("features", m_features.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

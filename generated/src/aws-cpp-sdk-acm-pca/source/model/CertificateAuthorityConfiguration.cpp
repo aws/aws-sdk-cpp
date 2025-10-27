@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyAlgorithm"))
-  {
+CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyAlgorithm")) {
     m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
     m_keyAlgorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SigningAlgorithm"))
-  {
+  if (jsonValue.ValueExists("SigningAlgorithm")) {
     m_signingAlgorithm = SigningAlgorithmMapper::GetSigningAlgorithmForName(jsonValue.GetString("SigningAlgorithm"));
     m_signingAlgorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subject"))
-  {
+  if (jsonValue.ValueExists("Subject")) {
     m_subject = jsonValue.GetObject("Subject");
     m_subjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CsrExtensions"))
-  {
+  if (jsonValue.ValueExists("CsrExtensions")) {
     m_csrExtensions = jsonValue.GetObject("CsrExtensions");
     m_csrExtensionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CertificateAuthorityConfiguration::Jsonize() const
-{
+JsonValue CertificateAuthorityConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyAlgorithmHasBeenSet)
-  {
-   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
+  if (m_keyAlgorithmHasBeenSet) {
+    payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
   }
 
-  if(m_signingAlgorithmHasBeenSet)
-  {
-   payload.WithString("SigningAlgorithm", SigningAlgorithmMapper::GetNameForSigningAlgorithm(m_signingAlgorithm));
+  if (m_signingAlgorithmHasBeenSet) {
+    payload.WithString("SigningAlgorithm", SigningAlgorithmMapper::GetNameForSigningAlgorithm(m_signingAlgorithm));
   }
 
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithObject("Subject", m_subject.Jsonize());
-
+  if (m_subjectHasBeenSet) {
+    payload.WithObject("Subject", m_subject.Jsonize());
   }
 
-  if(m_csrExtensionsHasBeenSet)
-  {
-   payload.WithObject("CsrExtensions", m_csrExtensions.Jsonize());
-
+  if (m_csrExtensionsHasBeenSet) {
+    payload.WithObject("CsrExtensions", m_csrExtensions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

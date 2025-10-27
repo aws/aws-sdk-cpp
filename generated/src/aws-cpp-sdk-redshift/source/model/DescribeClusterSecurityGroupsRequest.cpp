@@ -3,63 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeClusterSecurityGroupsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeClusterSecurityGroupsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeClusterSecurityGroupsRequest::SerializePayload() const
-{
+Aws::String DescribeClusterSecurityGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeClusterSecurityGroups&";
-  if(m_clusterSecurityGroupNameHasBeenSet)
-  {
+  if (m_clusterSecurityGroupNameHasBeenSet) {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_tagKeysHasBeenSet)
-  {
-    if (m_tagKeys.empty())
-    {
+  if (m_tagKeysHasBeenSet) {
+    if (m_tagKeys.empty()) {
       ss << "TagKeys=&";
-    }
-    else
-    {
+    } else {
       unsigned tagKeysCount = 1;
-      for(auto& item : m_tagKeys)
-      {
-        ss << "TagKeys.TagKey." << tagKeysCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagKeys) {
+        ss << "TagKeys.TagKey." << tagKeysCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
     }
   }
 
-  if(m_tagValuesHasBeenSet)
-  {
-    if (m_tagValues.empty())
-    {
+  if (m_tagValuesHasBeenSet) {
+    if (m_tagValues.empty()) {
       ss << "TagValues=&";
-    }
-    else
-    {
+    } else {
       unsigned tagValuesCount = 1;
-      for(auto& item : m_tagValues)
-      {
-        ss << "TagValues.TagValue." << tagValuesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_tagValues) {
+        ss << "TagValues.TagValue." << tagValuesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         tagValuesCount++;
       }
     }
@@ -69,8 +53,4 @@ Aws::String DescribeClusterSecurityGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeClusterSecurityGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeClusterSecurityGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

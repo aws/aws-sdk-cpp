@@ -5,12 +5,8 @@
 
 #include <aws/textract/TextractEndpointProvider.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Textract
-} // namespace Aws
+namespace Aws {
+namespace Textract {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Textract
+}  // namespace Aws

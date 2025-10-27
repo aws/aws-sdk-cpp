@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AxisScale.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AxisScale.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AxisScale::AxisScale(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AxisScale::AxisScale(JsonView jsonValue) { *this = jsonValue; }
 
-AxisScale& AxisScale::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Linear"))
-  {
+AxisScale& AxisScale::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Linear")) {
     m_linear = jsonValue.GetObject("Linear");
     m_linearHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Logarithmic"))
-  {
+  if (jsonValue.ValueExists("Logarithmic")) {
     m_logarithmic = jsonValue.GetObject("Logarithmic");
     m_logarithmicHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AxisScale::Jsonize() const
-{
+JsonValue AxisScale::Jsonize() const {
   JsonValue payload;
 
-  if(m_linearHasBeenSet)
-  {
-   payload.WithObject("Linear", m_linear.Jsonize());
-
+  if (m_linearHasBeenSet) {
+    payload.WithObject("Linear", m_linear.Jsonize());
   }
 
-  if(m_logarithmicHasBeenSet)
-  {
-   payload.WithObject("Logarithmic", m_logarithmic.Jsonize());
-
+  if (m_logarithmicHasBeenSet) {
+    payload.WithObject("Logarithmic", m_logarithmic.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

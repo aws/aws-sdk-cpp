@@ -4,62 +4,50 @@
  */
 
 #include <aws/bedrock/model/QueryTransformationType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+namespace QueryTransformationTypeMapper {
 
-namespace Aws
-{
-  namespace Bedrock
-  {
-    namespace Model
-    {
-      namespace QueryTransformationTypeMapper
-      {
+static const int QUERY_DECOMPOSITION_HASH = HashingUtils::HashString("QUERY_DECOMPOSITION");
 
-        static const int QUERY_DECOMPOSITION_HASH = HashingUtils::HashString("QUERY_DECOMPOSITION");
+QueryTransformationType GetQueryTransformationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == QUERY_DECOMPOSITION_HASH) {
+    return QueryTransformationType::QUERY_DECOMPOSITION;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<QueryTransformationType>(hashCode);
+  }
 
+  return QueryTransformationType::NOT_SET;
+}
 
-        QueryTransformationType GetQueryTransformationTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == QUERY_DECOMPOSITION_HASH)
-          {
-            return QueryTransformationType::QUERY_DECOMPOSITION;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<QueryTransformationType>(hashCode);
-          }
+Aws::String GetNameForQueryTransformationType(QueryTransformationType enumValue) {
+  switch (enumValue) {
+    case QueryTransformationType::NOT_SET:
+      return {};
+    case QueryTransformationType::QUERY_DECOMPOSITION:
+      return "QUERY_DECOMPOSITION";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return QueryTransformationType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForQueryTransformationType(QueryTransformationType enumValue)
-        {
-          switch(enumValue)
-          {
-          case QueryTransformationType::NOT_SET:
-            return {};
-          case QueryTransformationType::QUERY_DECOMPOSITION:
-            return "QUERY_DECOMPOSITION";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace QueryTransformationTypeMapper
-    } // namespace Model
-  } // namespace Bedrock
-} // namespace Aws
+}  // namespace QueryTransformationTypeMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

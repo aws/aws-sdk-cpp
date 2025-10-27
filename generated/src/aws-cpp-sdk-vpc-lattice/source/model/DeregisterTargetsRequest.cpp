@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/DeregisterTargetsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/DeregisterTargetsRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterTargetsRequest::SerializePayload() const
-{
+Aws::String DeregisterTargetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
-   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
-   {
-     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
-   }
-   payload.WithArray("targets", std::move(targetsJsonList));
-
+  if (m_targetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
+    for (unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex) {
+      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+    }
+    payload.WithArray("targets", std::move(targetsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ListControlDisplayOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ListControlDisplayOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue) { *this = jsonValue; }
 
-ListControlDisplayOptions& ListControlDisplayOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SearchOptions"))
-  {
+ListControlDisplayOptions& ListControlDisplayOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SearchOptions")) {
     m_searchOptions = jsonValue.GetObject("SearchOptions");
     m_searchOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectAllOptions"))
-  {
+  if (jsonValue.ValueExists("SelectAllOptions")) {
     m_selectAllOptions = jsonValue.GetObject("SelectAllOptions");
     m_selectAllOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TitleOptions"))
-  {
+  if (jsonValue.ValueExists("TitleOptions")) {
     m_titleOptions = jsonValue.GetObject("TitleOptions");
     m_titleOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InfoIconLabelOptions"))
-  {
+  if (jsonValue.ValueExists("InfoIconLabelOptions")) {
     m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
     m_infoIconLabelOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListControlDisplayOptions::Jsonize() const
-{
+JsonValue ListControlDisplayOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_searchOptionsHasBeenSet)
-  {
-   payload.WithObject("SearchOptions", m_searchOptions.Jsonize());
-
+  if (m_searchOptionsHasBeenSet) {
+    payload.WithObject("SearchOptions", m_searchOptions.Jsonize());
   }
 
-  if(m_selectAllOptionsHasBeenSet)
-  {
-   payload.WithObject("SelectAllOptions", m_selectAllOptions.Jsonize());
-
+  if (m_selectAllOptionsHasBeenSet) {
+    payload.WithObject("SelectAllOptions", m_selectAllOptions.Jsonize());
   }
 
-  if(m_titleOptionsHasBeenSet)
-  {
-   payload.WithObject("TitleOptions", m_titleOptions.Jsonize());
-
+  if (m_titleOptionsHasBeenSet) {
+    payload.WithObject("TitleOptions", m_titleOptions.Jsonize());
   }
 
-  if(m_infoIconLabelOptionsHasBeenSet)
-  {
-   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
-
+  if (m_infoIconLabelOptionsHasBeenSet) {
+    payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

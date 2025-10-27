@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/CapacityConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/CapacityConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-CapacityConfiguration::CapacityConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapacityConfiguration::CapacityConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CapacityConfiguration& CapacityConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("nodeType"))
-  {
+CapacityConfiguration& CapacityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("nodeType")) {
     m_nodeType = jsonValue.GetString("nodeType");
     m_nodeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodeCount"))
-  {
+  if (jsonValue.ValueExists("nodeCount")) {
     m_nodeCount = jsonValue.GetInteger("nodeCount");
     m_nodeCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapacityConfiguration::Jsonize() const
-{
+JsonValue CapacityConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nodeTypeHasBeenSet)
-  {
-   payload.WithString("nodeType", m_nodeType);
-
+  if (m_nodeTypeHasBeenSet) {
+    payload.WithString("nodeType", m_nodeType);
   }
 
-  if(m_nodeCountHasBeenSet)
-  {
-   payload.WithInteger("nodeCount", m_nodeCount);
-
+  if (m_nodeCountHasBeenSet) {
+    payload.WithInteger("nodeCount", m_nodeCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

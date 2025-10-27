@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ClusterEventResourceType
-  {
-    NOT_SET,
-    Cluster,
-    InstanceGroup,
-    Instance
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ClusterEventResourceType { NOT_SET, Cluster, InstanceGroup, Instance };
 
-namespace ClusterEventResourceTypeMapper
-{
+namespace ClusterEventResourceTypeMapper {
 AWS_SAGEMAKER_API ClusterEventResourceType GetClusterEventResourceTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForClusterEventResourceType(ClusterEventResourceType value);
-} // namespace ClusterEventResourceTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ClusterEventResourceTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

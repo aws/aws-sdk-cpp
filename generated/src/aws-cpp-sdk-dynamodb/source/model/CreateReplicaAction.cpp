@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/CreateReplicaAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/CreateReplicaAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-CreateReplicaAction::CreateReplicaAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateReplicaAction::CreateReplicaAction(JsonView jsonValue) { *this = jsonValue; }
 
-CreateReplicaAction& CreateReplicaAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RegionName"))
-  {
+CreateReplicaAction& CreateReplicaAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RegionName")) {
     m_regionName = jsonValue.GetString("RegionName");
     m_regionNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateReplicaAction::Jsonize() const
-{
+JsonValue CreateReplicaAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionNameHasBeenSet)
-  {
-   payload.WithString("RegionName", m_regionName);
-
+  if (m_regionNameHasBeenSet) {
+    payload.WithString("RegionName", m_regionName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

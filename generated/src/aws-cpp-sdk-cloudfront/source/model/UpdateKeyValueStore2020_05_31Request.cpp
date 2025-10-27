@@ -4,10 +4,9 @@
  */
 
 #include <aws/cloudfront/model/UpdateKeyValueStore2020_05_31Request.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -15,33 +14,27 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-
-Aws::String UpdateKeyValueStore2020_05_31Request::SerializePayload() const
-{
+Aws::String UpdateKeyValueStore2020_05_31Request::SerializePayload() const {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("UpdateKeyValueStoreRequest");
 
   XmlNode parentNode = payloadDoc.GetRootElement();
   parentNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
   Aws::StringStream ss;
-  if(m_commentHasBeenSet)
-  {
-   XmlNode commentNode = parentNode.CreateChildElement("Comment");
-   commentNode.SetText(m_comment);
+  if (m_commentHasBeenSet) {
+    XmlNode commentNode = parentNode.CreateChildElement("Comment");
+    commentNode.SetText(m_comment);
   }
 
   return payloadDoc.ConvertToString();
 }
 
-
-Aws::Http::HeaderValueCollection UpdateKeyValueStore2020_05_31Request::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateKeyValueStore2020_05_31Request::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_ifMatchHasBeenSet)
-  {
+  if (m_ifMatchHasBeenSet) {
     ss << m_ifMatch;
-    headers.emplace("if-match",  ss.str());
+    headers.emplace("if-match", ss.str());
     ss.str("");
   }
 

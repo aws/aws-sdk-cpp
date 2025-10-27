@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-BucketInfo::BucketInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BucketInfo::BucketInfo(JsonView jsonValue) { *this = jsonValue; }
 
-BucketInfo& BucketInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("buckets"))
-  {
+BucketInfo& BucketInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("buckets")) {
     Aws::Utils::Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
-    for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
-    {
+    for (unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex) {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());
     }
     m_bucketsHasBeenSet = true;
@@ -37,24 +28,20 @@ BucketInfo& BucketInfo::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BucketInfo::Jsonize() const
-{
+JsonValue BucketInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> bucketsJsonList(m_buckets.size());
-   for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
-   {
-     bucketsJsonList[bucketsIndex].AsObject(m_buckets[bucketsIndex].Jsonize());
-   }
-   payload.WithArray("buckets", std::move(bucketsJsonList));
-
+  if (m_bucketsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> bucketsJsonList(m_buckets.size());
+    for (unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex) {
+      bucketsJsonList[bucketsIndex].AsObject(m_buckets[bucketsIndex].Jsonize());
+    }
+    payload.WithArray("buckets", std::move(bucketsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

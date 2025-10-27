@@ -12,33 +12,22 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEntitlementRequest::SerializePayload() const
-{
+Aws::String DeleteEntitlementRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("StackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("StackName", m_stackName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteEntitlementRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteEntitlementRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DeleteEntitlement"));
   return headers;
-
 }
-
-
-
-

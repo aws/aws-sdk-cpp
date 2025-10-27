@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class OrderBy
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class OrderBy { NOT_SET, ASC, DESC };
 
-namespace OrderByMapper
-{
+namespace OrderByMapper {
 AWS_GUARDDUTY_API OrderBy GetOrderByForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForOrderBy(OrderBy value);
-} // namespace OrderByMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace OrderByMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

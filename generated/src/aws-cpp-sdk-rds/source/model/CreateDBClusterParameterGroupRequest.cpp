@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateDBClusterParameterGroupRequest::SerializePayload() const
-{
+Aws::String CreateDBClusterParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateDBClusterParameterGroup&";
-  if(m_dBClusterParameterGroupNameHasBeenSet)
-  {
+  if (m_dBClusterParameterGroupNameHasBeenSet) {
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
 
-  if(m_dBParameterGroupFamilyHasBeenSet)
-  {
+  if (m_dBParameterGroupFamilyHasBeenSet) {
     ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -50,8 +41,4 @@ Aws::String CreateDBClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

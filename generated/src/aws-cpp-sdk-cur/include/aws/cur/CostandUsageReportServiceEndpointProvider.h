@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/cur/CostandUsageReportServiceEndpointRules.h>
+#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using CostandUsageReportServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,27 @@ using CostandUsageReportServiceBuiltInParameters = Aws::Endpoint::BuiltInParamet
  * The SDK must use service-specific type for each service per specification.
  */
 using CostandUsageReportServiceEndpointProviderBase =
-    EndpointProviderBase<CostandUsageReportServiceClientConfiguration, CostandUsageReportServiceBuiltInParameters, CostandUsageReportServiceClientContextParameters>;
+    EndpointProviderBase<CostandUsageReportServiceClientConfiguration, CostandUsageReportServiceBuiltInParameters,
+                         CostandUsageReportServiceClientContextParameters>;
 
 using CostandUsageReportServiceDefaultEpProviderBase =
-    DefaultEndpointProvider<CostandUsageReportServiceClientConfiguration, CostandUsageReportServiceBuiltInParameters, CostandUsageReportServiceClientContextParameters>;
+    DefaultEndpointProvider<CostandUsageReportServiceClientConfiguration, CostandUsageReportServiceBuiltInParameters,
+                            CostandUsageReportServiceClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceEndpointProvider : public CostandUsageReportServiceDefaultEpProviderBase
-{
-public:
-    using CostandUsageReportServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceEndpointProvider : public CostandUsageReportServiceDefaultEpProviderBase {
+ public:
+  using CostandUsageReportServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    CostandUsageReportServiceEndpointProvider()
-      : CostandUsageReportServiceDefaultEpProviderBase(Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::GetRulesBlob(), Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::RulesBlobSize)
-    {}
+  CostandUsageReportServiceEndpointProvider()
+      : CostandUsageReportServiceDefaultEpProviderBase(
+            Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::GetRulesBlob(),
+            Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::RulesBlobSize) {}
 
-    ~CostandUsageReportServiceEndpointProvider()
-    {
-    }
+  ~CostandUsageReportServiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace CostandUsageReportService
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace CostandUsageReportService
+}  // namespace Aws

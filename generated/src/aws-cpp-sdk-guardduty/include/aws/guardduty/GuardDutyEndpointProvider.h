@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/guardduty/GuardDutyEndpointRules.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GuardDutyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GuardDutyDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GUARDDUTY_API GuardDutyEndpointProvider : public GuardDutyDefaultEpProviderBase
-{
-public:
-    using GuardDutyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GUARDDUTY_API GuardDutyEndpointProvider : public GuardDutyDefaultEpProviderBase {
+ public:
+  using GuardDutyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GuardDutyEndpointProvider()
-      : GuardDutyDefaultEpProviderBase(Aws::GuardDuty::GuardDutyEndpointRules::GetRulesBlob(), Aws::GuardDuty::GuardDutyEndpointRules::RulesBlobSize)
-    {}
+  GuardDutyEndpointProvider()
+      : GuardDutyDefaultEpProviderBase(Aws::GuardDuty::GuardDutyEndpointRules::GetRulesBlob(),
+                                       Aws::GuardDuty::GuardDutyEndpointRules::RulesBlobSize) {}
 
-    ~GuardDutyEndpointProvider()
-    {
-    }
+  ~GuardDutyEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GuardDuty
+}  // namespace Aws

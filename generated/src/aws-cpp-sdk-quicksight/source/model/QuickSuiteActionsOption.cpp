@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/QuickSuiteActionsOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/QuickSuiteActionsOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-QuickSuiteActionsOption::QuickSuiteActionsOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickSuiteActionsOption::QuickSuiteActionsOption(JsonView jsonValue) { *this = jsonValue; }
 
-QuickSuiteActionsOption& QuickSuiteActionsOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityStatus"))
-  {
+QuickSuiteActionsOption& QuickSuiteActionsOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityStatus")) {
     m_availabilityStatus = DashboardBehaviorMapper::GetDashboardBehaviorForName(jsonValue.GetString("AvailabilityStatus"));
     m_availabilityStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickSuiteActionsOption::Jsonize() const
-{
+JsonValue QuickSuiteActionsOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityStatusHasBeenSet)
-  {
-   payload.WithString("AvailabilityStatus", DashboardBehaviorMapper::GetNameForDashboardBehavior(m_availabilityStatus));
+  if (m_availabilityStatusHasBeenSet) {
+    payload.WithString("AvailabilityStatus", DashboardBehaviorMapper::GetNameForDashboardBehavior(m_availabilityStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/BatchSuccessfulResultModel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/BatchSuccessfulResultModel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-BatchSuccessfulResultModel::BatchSuccessfulResultModel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchSuccessfulResultModel::BatchSuccessfulResultModel(JsonView jsonValue) { *this = jsonValue; }
 
-BatchSuccessfulResultModel& BatchSuccessfulResultModel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+BatchSuccessfulResultModel& BatchSuccessfulResultModel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = jsonValue.GetString("state");
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchSuccessfulResultModel::Jsonize() const
-{
+JsonValue BatchSuccessfulResultModel::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", m_state);
-
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", m_state);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

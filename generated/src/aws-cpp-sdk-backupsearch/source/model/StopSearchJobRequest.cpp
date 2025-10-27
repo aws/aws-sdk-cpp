@@ -12,11 +12,4 @@ using namespace Aws::BackupSearch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopSearchJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StopSearchJobRequest::SerializePayload() const { return {}; }

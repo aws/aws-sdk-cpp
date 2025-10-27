@@ -12,11 +12,4 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDataAutomationProjectRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteDataAutomationProjectRequest::SerializePayload() const { return {}; }

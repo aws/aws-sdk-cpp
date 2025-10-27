@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/UniqueValuesComputation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/UniqueValuesComputation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-UniqueValuesComputation::UniqueValuesComputation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UniqueValuesComputation::UniqueValuesComputation(JsonView jsonValue) { *this = jsonValue; }
 
-UniqueValuesComputation& UniqueValuesComputation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComputationId"))
-  {
+UniqueValuesComputation& UniqueValuesComputation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComputationId")) {
     m_computationId = jsonValue.GetString("ComputationId");
     m_computationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Category"))
-  {
+  if (jsonValue.ValueExists("Category")) {
     m_category = jsonValue.GetObject("Category");
     m_categoryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UniqueValuesComputation::Jsonize() const
-{
+JsonValue UniqueValuesComputation::Jsonize() const {
   JsonValue payload;
 
-  if(m_computationIdHasBeenSet)
-  {
-   payload.WithString("ComputationId", m_computationId);
-
+  if (m_computationIdHasBeenSet) {
+    payload.WithString("ComputationId", m_computationId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithObject("Category", m_category.Jsonize());
-
+  if (m_categoryHasBeenSet) {
+    payload.WithObject("Category", m_category.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-FlowTraceNodeInputExecutionChainItem::FlowTraceNodeInputExecutionChainItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowTraceNodeInputExecutionChainItem::FlowTraceNodeInputExecutionChainItem(JsonView jsonValue) { *this = jsonValue; }
 
-FlowTraceNodeInputExecutionChainItem& FlowTraceNodeInputExecutionChainItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("nodeName"))
-  {
+FlowTraceNodeInputExecutionChainItem& FlowTraceNodeInputExecutionChainItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("nodeName")) {
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("index"))
-  {
+  if (jsonValue.ValueExists("index")) {
     m_index = jsonValue.GetInteger("index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = FlowControlNodeTypeMapper::GetFlowControlNodeTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowTraceNodeInputExecutionChainItem::Jsonize() const
-{
+JsonValue FlowTraceNodeInputExecutionChainItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_nodeNameHasBeenSet)
-  {
-   payload.WithString("nodeName", m_nodeName);
-
+  if (m_nodeNameHasBeenSet) {
+    payload.WithString("nodeName", m_nodeName);
   }
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("index", m_index);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FlowControlNodeTypeMapper::GetNameForFlowControlNodeType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FlowControlNodeTypeMapper::GetNameForFlowControlNodeType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

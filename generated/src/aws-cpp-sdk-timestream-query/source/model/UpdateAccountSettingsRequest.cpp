@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/UpdateAccountSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/UpdateAccountSettingsRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,26 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateAccountSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_maxQueryTCUHasBeenSet)
-  {
-   payload.WithInteger("MaxQueryTCU", m_maxQueryTCU);
-
+  if (m_maxQueryTCUHasBeenSet) {
+    payload.WithInteger("MaxQueryTCU", m_maxQueryTCU);
   }
 
-  if(m_queryPricingModelHasBeenSet)
-  {
-   payload.WithString("QueryPricingModel", QueryPricingModelMapper::GetNameForQueryPricingModel(m_queryPricingModel));
+  if (m_queryPricingModelHasBeenSet) {
+    payload.WithString("QueryPricingModel", QueryPricingModelMapper::GetNameForQueryPricingModel(m_queryPricingModel));
   }
 
-  if(m_queryComputeHasBeenSet)
-  {
-   payload.WithObject("QueryCompute", m_queryCompute.Jsonize());
-
+  if (m_queryComputeHasBeenSet) {
+    payload.WithObject("QueryCompute", m_queryCompute.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateAccountSettingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateAccountSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Timestream_20181101.UpdateAccountSettings"));
   return headers;
-
 }
-
-
-
-

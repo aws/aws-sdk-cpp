@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-UpsolverS3OutputFormatConfig::UpsolverS3OutputFormatConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpsolverS3OutputFormatConfig::UpsolverS3OutputFormatConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpsolverS3OutputFormatConfig& UpsolverS3OutputFormatConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileType"))
-  {
+UpsolverS3OutputFormatConfig& UpsolverS3OutputFormatConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileType")) {
     m_fileType = FileTypeMapper::GetFileTypeForName(jsonValue.GetString("fileType"));
     m_fileTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("prefixConfig"))
-  {
+  if (jsonValue.ValueExists("prefixConfig")) {
     m_prefixConfig = jsonValue.GetObject("prefixConfig");
     m_prefixConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("aggregationConfig"))
-  {
+  if (jsonValue.ValueExists("aggregationConfig")) {
     m_aggregationConfig = jsonValue.GetObject("aggregationConfig");
     m_aggregationConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpsolverS3OutputFormatConfig::Jsonize() const
-{
+JsonValue UpsolverS3OutputFormatConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileTypeHasBeenSet)
-  {
-   payload.WithString("fileType", FileTypeMapper::GetNameForFileType(m_fileType));
+  if (m_fileTypeHasBeenSet) {
+    payload.WithString("fileType", FileTypeMapper::GetNameForFileType(m_fileType));
   }
 
-  if(m_prefixConfigHasBeenSet)
-  {
-   payload.WithObject("prefixConfig", m_prefixConfig.Jsonize());
-
+  if (m_prefixConfigHasBeenSet) {
+    payload.WithObject("prefixConfig", m_prefixConfig.Jsonize());
   }
 
-  if(m_aggregationConfigHasBeenSet)
-  {
-   payload.WithObject("aggregationConfig", m_aggregationConfig.Jsonize());
-
+  if (m_aggregationConfigHasBeenSet) {
+    payload.WithObject("aggregationConfig", m_aggregationConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

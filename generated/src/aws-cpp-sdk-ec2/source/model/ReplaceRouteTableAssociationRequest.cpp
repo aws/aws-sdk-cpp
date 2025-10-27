@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReplaceRouteTableAssociationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReplaceRouteTableAssociationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const
-{
+Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReplaceRouteTableAssociation&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_associationIdHasBeenSet)
-  {
+  if (m_associationIdHasBeenSet) {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
-  if(m_routeTableIdHasBeenSet)
-  {
+  if (m_routeTableIdHasBeenSet) {
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReplaceRouteTableAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReplaceRouteTableAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

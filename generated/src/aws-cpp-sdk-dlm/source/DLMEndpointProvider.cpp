@@ -5,12 +5,8 @@
 
 #include <aws/dlm/DLMEndpointProvider.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DLM
-} // namespace Aws
+namespace Aws {
+namespace DLM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DLM
+}  // namespace Aws

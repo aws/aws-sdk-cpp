@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/ResourceRecord.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ResourceRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-ResourceRecord::ResourceRecord(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ResourceRecord::ResourceRecord(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResourceRecord& ResourceRecord::operator =(const XmlNode& xmlNode)
-{
+ResourceRecord& ResourceRecord::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(!valueNode.IsNull())
-    {
+    if (!valueNode.IsNull()) {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ ResourceRecord& ResourceRecord::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ResourceRecord::AddToNode(XmlNode& parentNode) const
-{
+void ResourceRecord::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_valueHasBeenSet)
-  {
-   XmlNode valueNode = parentNode.CreateChildElement("Value");
-   valueNode.SetText(m_value);
+  if (m_valueHasBeenSet) {
+    XmlNode valueNode = parentNode.CreateChildElement("Value");
+    valueNode.SetText(m_value);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

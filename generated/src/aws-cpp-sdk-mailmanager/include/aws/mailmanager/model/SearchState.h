@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class SearchState
-  {
-    NOT_SET,
-    QUEUED,
-    RUNNING,
-    COMPLETED,
-    FAILED,
-    CANCELLED
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class SearchState { NOT_SET, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLED };
 
-namespace SearchStateMapper
-{
+namespace SearchStateMapper {
 AWS_MAILMANAGER_API SearchState GetSearchStateForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForSearchState(SearchState value);
-} // namespace SearchStateMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace SearchStateMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

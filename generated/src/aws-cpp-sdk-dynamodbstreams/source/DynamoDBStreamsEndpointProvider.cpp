@@ -5,12 +5,8 @@
 
 #include <aws/dynamodbstreams/DynamoDBStreamsEndpointProvider.h>
 
-namespace Aws
-{
-namespace DynamoDBStreams
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DynamoDBStreams
-} // namespace Aws
+namespace Aws {
+namespace DynamoDBStreams {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DynamoDBStreams
+}  // namespace Aws

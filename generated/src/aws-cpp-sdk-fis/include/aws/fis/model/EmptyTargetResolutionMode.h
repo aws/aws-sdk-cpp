@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fis/FIS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fis/FIS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
-  enum class EmptyTargetResolutionMode
-  {
-    NOT_SET,
-    fail,
-    skip
-  };
+namespace Aws {
+namespace FIS {
+namespace Model {
+enum class EmptyTargetResolutionMode { NOT_SET, fail, skip };
 
-namespace EmptyTargetResolutionModeMapper
-{
+namespace EmptyTargetResolutionModeMapper {
 AWS_FIS_API EmptyTargetResolutionMode GetEmptyTargetResolutionModeForName(const Aws::String& name);
 
 AWS_FIS_API Aws::String GetNameForEmptyTargetResolutionMode(EmptyTargetResolutionMode value);
-} // namespace EmptyTargetResolutionModeMapper
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace EmptyTargetResolutionModeMapper
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

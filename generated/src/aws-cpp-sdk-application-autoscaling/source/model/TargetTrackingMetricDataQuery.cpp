@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(JsonView jsonValue) { *this = jsonValue; }
 
-TargetTrackingMetricDataQuery& TargetTrackingMetricDataQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Expression"))
-  {
+TargetTrackingMetricDataQuery& TargetTrackingMetricDataQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Expression")) {
     m_expression = jsonValue.GetString("Expression");
     m_expressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Label"))
-  {
+  if (jsonValue.ValueExists("Label")) {
     m_label = jsonValue.GetString("Label");
     m_labelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricStat"))
-  {
+  if (jsonValue.ValueExists("MetricStat")) {
     m_metricStat = jsonValue.GetObject("MetricStat");
     m_metricStatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReturnData"))
-  {
+  if (jsonValue.ValueExists("ReturnData")) {
     m_returnData = jsonValue.GetBool("ReturnData");
     m_returnDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetTrackingMetricDataQuery::Jsonize() const
-{
+JsonValue TargetTrackingMetricDataQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("Expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("Expression", m_expression);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_labelHasBeenSet)
-  {
-   payload.WithString("Label", m_label);
-
+  if (m_labelHasBeenSet) {
+    payload.WithString("Label", m_label);
   }
 
-  if(m_metricStatHasBeenSet)
-  {
-   payload.WithObject("MetricStat", m_metricStat.Jsonize());
-
+  if (m_metricStatHasBeenSet) {
+    payload.WithObject("MetricStat", m_metricStat.Jsonize());
   }
 
-  if(m_returnDataHasBeenSet)
-  {
-   payload.WithBool("ReturnData", m_returnData);
-
+  if (m_returnDataHasBeenSet) {
+    payload.WithBool("ReturnData", m_returnData);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

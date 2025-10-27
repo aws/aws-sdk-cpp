@@ -3,125 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/FunctionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/FunctionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-FunctionConfiguration::FunctionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EncodingType"))
-  {
+FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EncodingType")) {
     m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(jsonValue.GetString("EncodingType"));
     m_encodingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Environment"))
-  {
+  if (jsonValue.ValueExists("Environment")) {
     m_environment = jsonValue.GetObject("Environment");
     m_environmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecArgs"))
-  {
+  if (jsonValue.ValueExists("ExecArgs")) {
     m_execArgs = jsonValue.GetString("ExecArgs");
     m_execArgsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Executable"))
-  {
+  if (jsonValue.ValueExists("Executable")) {
     m_executable = jsonValue.GetString("Executable");
     m_executableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MemorySize"))
-  {
+  if (jsonValue.ValueExists("MemorySize")) {
     m_memorySize = jsonValue.GetInteger("MemorySize");
     m_memorySizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Pinned"))
-  {
+  if (jsonValue.ValueExists("Pinned")) {
     m_pinned = jsonValue.GetBool("Pinned");
     m_pinnedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Timeout"))
-  {
+  if (jsonValue.ValueExists("Timeout")) {
     m_timeout = jsonValue.GetInteger("Timeout");
     m_timeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FunctionRuntimeOverride"))
-  {
+  if (jsonValue.ValueExists("FunctionRuntimeOverride")) {
     m_functionRuntimeOverride = jsonValue.GetString("FunctionRuntimeOverride");
     m_functionRuntimeOverrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FunctionConfiguration::Jsonize() const
-{
+JsonValue FunctionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_encodingTypeHasBeenSet)
-  {
-   payload.WithString("EncodingType", EncodingTypeMapper::GetNameForEncodingType(m_encodingType));
+  if (m_encodingTypeHasBeenSet) {
+    payload.WithString("EncodingType", EncodingTypeMapper::GetNameForEncodingType(m_encodingType));
   }
 
-  if(m_environmentHasBeenSet)
-  {
-   payload.WithObject("Environment", m_environment.Jsonize());
-
+  if (m_environmentHasBeenSet) {
+    payload.WithObject("Environment", m_environment.Jsonize());
   }
 
-  if(m_execArgsHasBeenSet)
-  {
-   payload.WithString("ExecArgs", m_execArgs);
-
+  if (m_execArgsHasBeenSet) {
+    payload.WithString("ExecArgs", m_execArgs);
   }
 
-  if(m_executableHasBeenSet)
-  {
-   payload.WithString("Executable", m_executable);
-
+  if (m_executableHasBeenSet) {
+    payload.WithString("Executable", m_executable);
   }
 
-  if(m_memorySizeHasBeenSet)
-  {
-   payload.WithInteger("MemorySize", m_memorySize);
-
+  if (m_memorySizeHasBeenSet) {
+    payload.WithInteger("MemorySize", m_memorySize);
   }
 
-  if(m_pinnedHasBeenSet)
-  {
-   payload.WithBool("Pinned", m_pinned);
-
+  if (m_pinnedHasBeenSet) {
+    payload.WithBool("Pinned", m_pinned);
   }
 
-  if(m_timeoutHasBeenSet)
-  {
-   payload.WithInteger("Timeout", m_timeout);
-
+  if (m_timeoutHasBeenSet) {
+    payload.WithInteger("Timeout", m_timeout);
   }
 
-  if(m_functionRuntimeOverrideHasBeenSet)
-  {
-   payload.WithString("FunctionRuntimeOverride", m_functionRuntimeOverride);
-
+  if (m_functionRuntimeOverrideHasBeenSet) {
+    payload.WithString("FunctionRuntimeOverride", m_functionRuntimeOverride);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

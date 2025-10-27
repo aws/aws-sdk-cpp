@@ -11,70 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DatasetFilter::DatasetFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetFilter::DatasetFilter(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetFilter& DatasetFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+DatasetFilter& DatasetFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatasetType"))
-  {
+  if (jsonValue.ValueExists("DatasetType")) {
     m_datasetType = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("DatasetType"));
     m_datasetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimeAfter"))
-  {
+  if (jsonValue.ValueExists("CreationTimeAfter")) {
     m_creationTimeAfter = jsonValue.GetDouble("CreationTimeAfter");
     m_creationTimeAfterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimeBefore"))
-  {
+  if (jsonValue.ValueExists("CreationTimeBefore")) {
     m_creationTimeBefore = jsonValue.GetDouble("CreationTimeBefore");
     m_creationTimeBeforeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetFilter::Jsonize() const
-{
+JsonValue DatasetFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", DatasetStatusMapper::GetNameForDatasetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", DatasetStatusMapper::GetNameForDatasetStatus(m_status));
   }
 
-  if(m_datasetTypeHasBeenSet)
-  {
-   payload.WithString("DatasetType", DatasetTypeMapper::GetNameForDatasetType(m_datasetType));
+  if (m_datasetTypeHasBeenSet) {
+    payload.WithString("DatasetType", DatasetTypeMapper::GetNameForDatasetType(m_datasetType));
   }
 
-  if(m_creationTimeAfterHasBeenSet)
-  {
-   payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
+  if (m_creationTimeAfterHasBeenSet) {
+    payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
   }
 
-  if(m_creationTimeBeforeHasBeenSet)
-  {
-   payload.WithDouble("CreationTimeBefore", m_creationTimeBefore.SecondsWithMSPrecision());
+  if (m_creationTimeBeforeHasBeenSet) {
+    payload.WithDouble("CreationTimeBefore", m_creationTimeBefore.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

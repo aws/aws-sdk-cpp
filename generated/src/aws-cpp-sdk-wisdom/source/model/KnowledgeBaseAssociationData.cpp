@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/KnowledgeBaseAssociationData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/KnowledgeBaseAssociationData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-KnowledgeBaseAssociationData::KnowledgeBaseAssociationData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KnowledgeBaseAssociationData::KnowledgeBaseAssociationData(JsonView jsonValue) { *this = jsonValue; }
 
-KnowledgeBaseAssociationData& KnowledgeBaseAssociationData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("knowledgeBaseArn"))
-  {
+KnowledgeBaseAssociationData& KnowledgeBaseAssociationData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("knowledgeBaseArn")) {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
+  if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KnowledgeBaseAssociationData::Jsonize() const
-{
+JsonValue KnowledgeBaseAssociationData::Jsonize() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
+  if (m_knowledgeBaseArnHasBeenSet) {
+    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

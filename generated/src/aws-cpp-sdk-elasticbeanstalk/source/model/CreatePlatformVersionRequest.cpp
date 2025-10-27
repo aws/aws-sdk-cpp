@@ -3,65 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/CreatePlatformVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/CreatePlatformVersionRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String CreatePlatformVersionRequest::SerializePayload() const
-{
+Aws::String CreatePlatformVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreatePlatformVersion&";
-  if(m_platformNameHasBeenSet)
-  {
+  if (m_platformNameHasBeenSet) {
     ss << "PlatformName=" << StringUtils::URLEncode(m_platformName.c_str()) << "&";
   }
 
-  if(m_platformVersionHasBeenSet)
-  {
+  if (m_platformVersionHasBeenSet) {
     ss << "PlatformVersion=" << StringUtils::URLEncode(m_platformVersion.c_str()) << "&";
   }
 
-  if(m_platformDefinitionBundleHasBeenSet)
-  {
+  if (m_platformDefinitionBundleHasBeenSet) {
     m_platformDefinitionBundle.OutputToStream(ss, "PlatformDefinitionBundle");
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_optionSettingsHasBeenSet)
-  {
-    if (m_optionSettings.empty())
-    {
+  if (m_optionSettingsHasBeenSet) {
+    if (m_optionSettings.empty()) {
       ss << "OptionSettings=&";
-    }
-    else
-    {
+    } else {
       unsigned optionSettingsCount = 1;
-      for(auto& item : m_optionSettings)
-      {
+      for (auto& item : m_optionSettings) {
         item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
         optionSettingsCount++;
       }
     }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
@@ -72,8 +57,4 @@ Aws::String CreatePlatformVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreatePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreatePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

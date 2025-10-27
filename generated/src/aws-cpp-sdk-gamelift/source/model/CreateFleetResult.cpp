@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/CreateFleetResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/gamelift/model/CreateFleetResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateFleetResult& CreateFleetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FleetAttributes"))
-  {
+  if (jsonValue.ValueExists("FleetAttributes")) {
     m_fleetAttributes = jsonValue.GetObject("FleetAttributes");
     m_fleetAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocationStates"))
-  {
+  if (jsonValue.ValueExists("LocationStates")) {
     Aws::Utils::Array<JsonView> locationStatesJsonList = jsonValue.GetArray("LocationStates");
-    for(unsigned locationStatesIndex = 0; locationStatesIndex < locationStatesJsonList.GetLength(); ++locationStatesIndex)
-    {
+    for (unsigned locationStatesIndex = 0; locationStatesIndex < locationStatesJsonList.GetLength(); ++locationStatesIndex) {
       m_locationStates.push_back(locationStatesJsonList[locationStatesIndex].AsObject());
     }
     m_locationStatesHasBeenSet = true;
@@ -42,12 +35,10 @@ CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

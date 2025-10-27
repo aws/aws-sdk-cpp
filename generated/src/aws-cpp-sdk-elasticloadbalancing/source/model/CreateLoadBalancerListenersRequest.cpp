@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/CreateLoadBalancerListenersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/CreateLoadBalancerListenersRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const
-{
+Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateLoadBalancerListeners&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_listenersHasBeenSet)
-  {
-    if (m_listeners.empty())
-    {
+  if (m_listenersHasBeenSet) {
+    if (m_listeners.empty()) {
       ss << "Listeners=&";
-    }
-    else
-    {
+    } else {
       unsigned listenersCount = 1;
-      for(auto& item : m_listeners)
-      {
+      for (auto& item : m_listeners) {
         item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
         listenersCount++;
       }
@@ -40,8 +33,4 @@ Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateLoadBalancerListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateLoadBalancerListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

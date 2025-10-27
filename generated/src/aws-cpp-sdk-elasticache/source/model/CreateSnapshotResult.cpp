@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/CreateSnapshotResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/CreateSnapshotResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSnapshotResult::CreateSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateSnapshotResult::CreateSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateSnapshotResult& CreateSnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateSnapshotResult& CreateSnapshotResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateSnapshotResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateSnapshotResult")) {
     resultNode = rootNode.FirstChild("CreateSnapshotResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode snapshotNode = resultNode.FirstChild("Snapshot");
-    if(!snapshotNode.IsNull())
-    {
+    if (!snapshotNode.IsNull()) {
       m_snapshot = snapshotNode;
       m_snapshotHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ CreateSnapshotResult& CreateSnapshotResult::operator =(const Aws::AmazonWebServi
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CreateSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CreateSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

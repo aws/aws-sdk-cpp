@@ -7,24 +7,16 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class SortAsyncInvocationBy
-  {
-    NOT_SET,
-    SubmissionTime
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class SortAsyncInvocationBy { NOT_SET, SubmissionTime };
 
-namespace SortAsyncInvocationByMapper
-{
+namespace SortAsyncInvocationByMapper {
 AWS_BEDROCKRUNTIME_API SortAsyncInvocationBy GetSortAsyncInvocationByForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForSortAsyncInvocationBy(SortAsyncInvocationBy value);
-} // namespace SortAsyncInvocationByMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace SortAsyncInvocationByMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

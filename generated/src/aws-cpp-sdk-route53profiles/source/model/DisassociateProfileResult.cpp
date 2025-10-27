@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53profiles/model/DisassociateProfileResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/route53profiles/model/DisassociateProfileResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateProfileResult::DisassociateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DisassociateProfileResult::DisassociateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DisassociateProfileResult& DisassociateProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DisassociateProfileResult& DisassociateProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ProfileAssociation"))
-  {
+  if (jsonValue.ValueExists("ProfileAssociation")) {
     m_profileAssociation = jsonValue.GetObject("ProfileAssociation");
     m_profileAssociationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

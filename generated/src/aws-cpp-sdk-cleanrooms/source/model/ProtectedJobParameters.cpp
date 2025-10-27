@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobParameters::ProtectedJobParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobParameters::ProtectedJobParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobParameters& ProtectedJobParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("analysisTemplateArn"))
-  {
+ProtectedJobParameters& ProtectedJobParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("analysisTemplateArn")) {
     m_analysisTemplateArn = jsonValue.GetString("analysisTemplateArn");
     m_analysisTemplateArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobParameters::Jsonize() const
-{
+JsonValue ProtectedJobParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_analysisTemplateArnHasBeenSet)
-  {
-   payload.WithString("analysisTemplateArn", m_analysisTemplateArn);
-
+  if (m_analysisTemplateArnHasBeenSet) {
+    payload.WithString("analysisTemplateArn", m_analysisTemplateArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

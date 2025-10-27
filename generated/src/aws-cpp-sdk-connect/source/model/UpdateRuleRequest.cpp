@@ -12,41 +12,28 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRuleRequest::SerializePayload() const
-{
+Aws::String UpdateRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_functionHasBeenSet)
-  {
-   payload.WithString("Function", m_function);
-
+  if (m_functionHasBeenSet) {
+    payload.WithString("Function", m_function);
   }
 
-  if(m_actionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-   {
-     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
-   }
-   payload.WithArray("Actions", std::move(actionsJsonList));
-
+  if (m_actionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
+      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+    }
+    payload.WithArray("Actions", std::move(actionsJsonList));
   }
 
-  if(m_publishStatusHasBeenSet)
-  {
-   payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
+  if (m_publishStatusHasBeenSet) {
+    payload.WithString("PublishStatus", RulePublishStatusMapper::GetNameForRulePublishStatus(m_publishStatus));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

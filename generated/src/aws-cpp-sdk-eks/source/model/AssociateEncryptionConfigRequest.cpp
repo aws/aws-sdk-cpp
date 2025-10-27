@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AssociateEncryptionConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AssociateEncryptionConfigRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateEncryptionConfigRequest::SerializePayload() const
-{
+Aws::String AssociateEncryptionConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
-   for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
-   {
-     encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
-   }
-   payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
-
+  if (m_encryptionConfigHasBeenSet) {
+    Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+    for (unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex) {
+      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
+    }
+    payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

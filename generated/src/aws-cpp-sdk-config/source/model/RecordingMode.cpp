@@ -11,30 +11,21 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RecordingMode::RecordingMode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordingMode::RecordingMode(JsonView jsonValue) { *this = jsonValue; }
 
-RecordingMode& RecordingMode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("recordingFrequency"))
-  {
+RecordingMode& RecordingMode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("recordingFrequency")) {
     m_recordingFrequency = RecordingFrequencyMapper::GetRecordingFrequencyForName(jsonValue.GetString("recordingFrequency"));
     m_recordingFrequencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recordingModeOverrides"))
-  {
+  if (jsonValue.ValueExists("recordingModeOverrides")) {
     Aws::Utils::Array<JsonView> recordingModeOverridesJsonList = jsonValue.GetArray("recordingModeOverrides");
-    for(unsigned recordingModeOverridesIndex = 0; recordingModeOverridesIndex < recordingModeOverridesJsonList.GetLength(); ++recordingModeOverridesIndex)
-    {
+    for (unsigned recordingModeOverridesIndex = 0; recordingModeOverridesIndex < recordingModeOverridesJsonList.GetLength();
+         ++recordingModeOverridesIndex) {
       m_recordingModeOverrides.push_back(recordingModeOverridesJsonList[recordingModeOverridesIndex].AsObject());
     }
     m_recordingModeOverridesHasBeenSet = true;
@@ -42,29 +33,25 @@ RecordingMode& RecordingMode::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RecordingMode::Jsonize() const
-{
+JsonValue RecordingMode::Jsonize() const {
   JsonValue payload;
 
-  if(m_recordingFrequencyHasBeenSet)
-  {
-   payload.WithString("recordingFrequency", RecordingFrequencyMapper::GetNameForRecordingFrequency(m_recordingFrequency));
+  if (m_recordingFrequencyHasBeenSet) {
+    payload.WithString("recordingFrequency", RecordingFrequencyMapper::GetNameForRecordingFrequency(m_recordingFrequency));
   }
 
-  if(m_recordingModeOverridesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordingModeOverridesJsonList(m_recordingModeOverrides.size());
-   for(unsigned recordingModeOverridesIndex = 0; recordingModeOverridesIndex < recordingModeOverridesJsonList.GetLength(); ++recordingModeOverridesIndex)
-   {
-     recordingModeOverridesJsonList[recordingModeOverridesIndex].AsObject(m_recordingModeOverrides[recordingModeOverridesIndex].Jsonize());
-   }
-   payload.WithArray("recordingModeOverrides", std::move(recordingModeOverridesJsonList));
-
+  if (m_recordingModeOverridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordingModeOverridesJsonList(m_recordingModeOverrides.size());
+    for (unsigned recordingModeOverridesIndex = 0; recordingModeOverridesIndex < recordingModeOverridesJsonList.GetLength();
+         ++recordingModeOverridesIndex) {
+      recordingModeOverridesJsonList[recordingModeOverridesIndex].AsObject(m_recordingModeOverrides[recordingModeOverridesIndex].Jsonize());
+    }
+    payload.WithArray("recordingModeOverrides", std::move(recordingModeOverridesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -7,30 +7,16 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudHSM
-{
-namespace Model
-{
-  enum class HsmStatus
-  {
-    NOT_SET,
-    PENDING,
-    RUNNING,
-    UPDATING,
-    SUSPENDED,
-    TERMINATING,
-    TERMINATED,
-    DEGRADED
-  };
+namespace Aws {
+namespace CloudHSM {
+namespace Model {
+enum class HsmStatus { NOT_SET, PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED };
 
-namespace HsmStatusMapper
-{
+namespace HsmStatusMapper {
 AWS_CLOUDHSM_API HsmStatus GetHsmStatusForName(const Aws::String& name);
 
 AWS_CLOUDHSM_API Aws::String GetNameForHsmStatus(HsmStatus value);
-} // namespace HsmStatusMapper
-} // namespace Model
-} // namespace CloudHSM
-} // namespace Aws
+}  // namespace HsmStatusMapper
+}  // namespace Model
+}  // namespace CloudHSM
+}  // namespace Aws

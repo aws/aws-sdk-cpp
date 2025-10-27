@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-NamedQuery::NamedQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NamedQuery::NamedQuery(JsonView jsonValue) { *this = jsonValue; }
 
-NamedQuery& NamedQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+NamedQuery& NamedQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Database"))
-  {
+  if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryString"))
-  {
+  if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
     m_queryStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NamedQueryId"))
-  {
+  if (jsonValue.ValueExists("NamedQueryId")) {
     m_namedQueryId = jsonValue.GetString("NamedQueryId");
     m_namedQueryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkGroup"))
-  {
+  if (jsonValue.ValueExists("WorkGroup")) {
     m_workGroup = jsonValue.GetString("WorkGroup");
     m_workGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NamedQuery::Jsonize() const
-{
+JsonValue NamedQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("Database", m_database);
-
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
-  if(m_queryStringHasBeenSet)
-  {
-   payload.WithString("QueryString", m_queryString);
-
+  if (m_queryStringHasBeenSet) {
+    payload.WithString("QueryString", m_queryString);
   }
 
-  if(m_namedQueryIdHasBeenSet)
-  {
-   payload.WithString("NamedQueryId", m_namedQueryId);
-
+  if (m_namedQueryIdHasBeenSet) {
+    payload.WithString("NamedQueryId", m_namedQueryId);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

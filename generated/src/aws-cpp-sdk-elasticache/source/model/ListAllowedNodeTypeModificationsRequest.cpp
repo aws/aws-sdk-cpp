@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
-{
+Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListAllowedNodeTypeModifications&";
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListAllowedNodeTypeModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListAllowedNodeTypeModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

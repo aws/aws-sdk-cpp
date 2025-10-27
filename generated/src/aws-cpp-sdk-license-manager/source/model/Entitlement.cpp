@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/Entitlement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/Entitlement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-Entitlement::Entitlement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Entitlement::Entitlement(JsonView jsonValue) { *this = jsonValue; }
 
-Entitlement& Entitlement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Entitlement& Entitlement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxCount"))
-  {
+  if (jsonValue.ValueExists("MaxCount")) {
     m_maxCount = jsonValue.GetInt64("MaxCount");
     m_maxCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Overage"))
-  {
+  if (jsonValue.ValueExists("Overage")) {
     m_overage = jsonValue.GetBool("Overage");
     m_overageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = EntitlementUnitMapper::GetEntitlementUnitForName(jsonValue.GetString("Unit"));
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowCheckIn"))
-  {
+  if (jsonValue.ValueExists("AllowCheckIn")) {
     m_allowCheckIn = jsonValue.GetBool("AllowCheckIn");
     m_allowCheckInHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Entitlement::Jsonize() const
-{
+JsonValue Entitlement::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_maxCountHasBeenSet)
-  {
-   payload.WithInt64("MaxCount", m_maxCount);
-
+  if (m_maxCountHasBeenSet) {
+    payload.WithInt64("MaxCount", m_maxCount);
   }
 
-  if(m_overageHasBeenSet)
-  {
-   payload.WithBool("Overage", m_overage);
-
+  if (m_overageHasBeenSet) {
+    payload.WithBool("Overage", m_overage);
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", EntitlementUnitMapper::GetNameForEntitlementUnit(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", EntitlementUnitMapper::GetNameForEntitlementUnit(m_unit));
   }
 
-  if(m_allowCheckInHasBeenSet)
-  {
-   payload.WithBool("AllowCheckIn", m_allowCheckIn);
-
+  if (m_allowCheckInHasBeenSet) {
+    payload.WithBool("AllowCheckIn", m_allowCheckIn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

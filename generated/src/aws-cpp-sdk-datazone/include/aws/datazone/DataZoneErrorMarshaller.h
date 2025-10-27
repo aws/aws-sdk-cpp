@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_DATAZONE_API DataZoneErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_DATAZONE_API DataZoneErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

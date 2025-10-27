@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/CloudWatchLogsDestinationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/CloudWatchLogsDestinationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-CloudWatchLogsDestinationConfig::CloudWatchLogsDestinationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchLogsDestinationConfig::CloudWatchLogsDestinationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchLogsDestinationConfig& CloudWatchLogsDestinationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("logGroup"))
-  {
+CloudWatchLogsDestinationConfig& CloudWatchLogsDestinationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logGroup")) {
     m_logGroup = jsonValue.GetString("logGroup");
     m_logGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchLogsDestinationConfig::Jsonize() const
-{
+JsonValue CloudWatchLogsDestinationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_logGroupHasBeenSet)
-  {
-   payload.WithString("logGroup", m_logGroup);
-
+  if (m_logGroupHasBeenSet) {
+    payload.WithString("logGroup", m_logGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

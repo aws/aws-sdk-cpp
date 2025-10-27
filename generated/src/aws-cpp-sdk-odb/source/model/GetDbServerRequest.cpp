@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/odb/model/GetDbServerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/odb/model/GetDbServerRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::odb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDbServerRequest::SerializePayload() const
-{
+Aws::String GetDbServerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cloudExadataInfrastructureIdHasBeenSet)
-  {
-   payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
-
+  if (m_cloudExadataInfrastructureIdHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
   }
 
-  if(m_dbServerIdHasBeenSet)
-  {
-   payload.WithString("dbServerId", m_dbServerId);
-
+  if (m_dbServerIdHasBeenSet) {
+    payload.WithString("dbServerId", m_dbServerId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetDbServerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetDbServerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Odb.GetDbServer"));
   return headers;
-
 }
-
-
-
-

@@ -12,19 +12,12 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteBackendAuthRequest::SerializePayload() const
-{
+Aws::String DeleteBackendAuthRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("resourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

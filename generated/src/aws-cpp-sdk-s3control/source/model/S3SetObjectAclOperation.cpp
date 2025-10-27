@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/S3SetObjectAclOperation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/S3SetObjectAclOperation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-S3SetObjectAclOperation::S3SetObjectAclOperation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+S3SetObjectAclOperation::S3SetObjectAclOperation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-S3SetObjectAclOperation& S3SetObjectAclOperation::operator =(const XmlNode& xmlNode)
-{
+S3SetObjectAclOperation& S3SetObjectAclOperation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode accessControlPolicyNode = resultNode.FirstChild("AccessControlPolicy");
-    if(!accessControlPolicyNode.IsNull())
-    {
+    if (!accessControlPolicyNode.IsNull()) {
       m_accessControlPolicy = accessControlPolicyNode;
       m_accessControlPolicyHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ S3SetObjectAclOperation& S3SetObjectAclOperation::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void S3SetObjectAclOperation::AddToNode(XmlNode& parentNode) const
-{
+void S3SetObjectAclOperation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_accessControlPolicyHasBeenSet)
-  {
-   XmlNode accessControlPolicyNode = parentNode.CreateChildElement("AccessControlPolicy");
-   m_accessControlPolicy.AddToNode(accessControlPolicyNode);
+  if (m_accessControlPolicyHasBeenSet) {
+    XmlNode accessControlPolicyNode = parentNode.CreateChildElement("AccessControlPolicy");
+    m_accessControlPolicy.AddToNode(accessControlPolicyNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

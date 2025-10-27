@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableCapacityManagerResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/EnableCapacityManagerResponse.h>
 
 #include <utility>
 
@@ -17,45 +17,38 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableCapacityManagerResponse::EnableCapacityManagerResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+EnableCapacityManagerResponse::EnableCapacityManagerResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-EnableCapacityManagerResponse& EnableCapacityManagerResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+EnableCapacityManagerResponse& EnableCapacityManagerResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableCapacityManagerResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableCapacityManagerResponse")) {
     resultNode = rootNode.FirstChild("EnableCapacityManagerResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode capacityManagerStatusNode = resultNode.FirstChild("capacityManagerStatus");
-    if(!capacityManagerStatusNode.IsNull())
-    {
-      m_capacityManagerStatus = CapacityManagerStatusMapper::GetCapacityManagerStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityManagerStatusNode.GetText()).c_str()));
+    if (!capacityManagerStatusNode.IsNull()) {
+      m_capacityManagerStatus = CapacityManagerStatusMapper::GetCapacityManagerStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityManagerStatusNode.GetText()).c_str()));
       m_capacityManagerStatusHasBeenSet = true;
     }
     XmlNode organizationsAccessNode = resultNode.FirstChild("organizationsAccess");
-    if(!organizationsAccessNode.IsNull())
-    {
-      m_organizationsAccess = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(organizationsAccessNode.GetText()).c_str()).c_str());
+    if (!organizationsAccessNode.IsNull()) {
+      m_organizationsAccess = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(organizationsAccessNode.GetText()).c_str()).c_str());
       m_organizationsAccessHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableCapacityManagerResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableCapacityManagerResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

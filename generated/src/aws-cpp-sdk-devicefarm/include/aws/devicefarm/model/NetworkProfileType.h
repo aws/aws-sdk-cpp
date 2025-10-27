@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
-  enum class NetworkProfileType
-  {
-    NOT_SET,
-    CURATED,
-    PRIVATE_
-  };
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+enum class NetworkProfileType { NOT_SET, CURATED, PRIVATE_ };
 
-namespace NetworkProfileTypeMapper
-{
+namespace NetworkProfileTypeMapper {
 AWS_DEVICEFARM_API NetworkProfileType GetNetworkProfileTypeForName(const Aws::String& name);
 
 AWS_DEVICEFARM_API Aws::String GetNameForNetworkProfileType(NetworkProfileType value);
-} // namespace NetworkProfileTypeMapper
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace NetworkProfileTypeMapper
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

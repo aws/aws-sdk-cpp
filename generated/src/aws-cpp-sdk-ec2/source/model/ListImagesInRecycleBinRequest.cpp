@@ -3,40 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ListImagesInRecycleBinRequest::SerializePayload() const
-{
+Aws::String ListImagesInRecycleBinRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListImagesInRecycleBin&";
-  if(m_imageIdsHasBeenSet)
-  {
+  if (m_imageIdsHasBeenSet) {
     unsigned imageIdsCount = 1;
-    for(auto& item : m_imageIds)
-    {
-      ss << "ImageId." << imageIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_imageIds) {
+      ss << "ImageId." << imageIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       imageIdsCount++;
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -44,8 +37,4 @@ Aws::String ListImagesInRecycleBinRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListImagesInRecycleBinRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListImagesInRecycleBinRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

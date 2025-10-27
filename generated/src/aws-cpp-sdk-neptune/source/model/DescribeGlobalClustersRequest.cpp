@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/DescribeGlobalClustersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/DescribeGlobalClustersRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeGlobalClustersRequest::SerializePayload() const
-{
+Aws::String DescribeGlobalClustersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeGlobalClusters&";
-  if(m_globalClusterIdentifierHasBeenSet)
-  {
+  if (m_globalClusterIdentifierHasBeenSet) {
     ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeGlobalClustersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeGlobalClustersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeGlobalClustersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

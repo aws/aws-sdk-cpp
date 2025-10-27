@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class StatusType
-  {
-    NOT_SET,
-    passed,
-    failed,
-    insufficient_data,
-    initializing
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class StatusType { NOT_SET, passed, failed, insufficient_data, initializing };
 
-namespace StatusTypeMapper
-{
+namespace StatusTypeMapper {
 AWS_EC2_API StatusType GetStatusTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForStatusType(StatusType value);
-} // namespace StatusTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace StatusTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

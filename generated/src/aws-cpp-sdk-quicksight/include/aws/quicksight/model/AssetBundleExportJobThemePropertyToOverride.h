@@ -4,27 +4,20 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class AssetBundleExportJobThemePropertyToOverride
-  {
-    NOT_SET,
-    Name
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class AssetBundleExportJobThemePropertyToOverride { NOT_SET, Name };
 
-namespace AssetBundleExportJobThemePropertyToOverrideMapper
-{
-AWS_QUICKSIGHT_API AssetBundleExportJobThemePropertyToOverride GetAssetBundleExportJobThemePropertyToOverrideForName(const Aws::String& name);
+namespace AssetBundleExportJobThemePropertyToOverrideMapper {
+AWS_QUICKSIGHT_API AssetBundleExportJobThemePropertyToOverride
+GetAssetBundleExportJobThemePropertyToOverrideForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForAssetBundleExportJobThemePropertyToOverride(AssetBundleExportJobThemePropertyToOverride value);
-} // namespace AssetBundleExportJobThemePropertyToOverrideMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace AssetBundleExportJobThemePropertyToOverrideMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

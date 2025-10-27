@@ -12,48 +12,32 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateBillingGroupRequest::SerializePayload() const
-{
+Aws::String UpdateBillingGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", BillingGroupStatusMapper::GetNameForBillingGroupStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", BillingGroupStatusMapper::GetNameForBillingGroupStatus(m_status));
   }
 
-  if(m_computationPreferenceHasBeenSet)
-  {
-   payload.WithObject("ComputationPreference", m_computationPreference.Jsonize());
-
+  if (m_computationPreferenceHasBeenSet) {
+    payload.WithObject("ComputationPreference", m_computationPreference.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_accountGroupingHasBeenSet)
-  {
-   payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
-
+  if (m_accountGroupingHasBeenSet) {
+    payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

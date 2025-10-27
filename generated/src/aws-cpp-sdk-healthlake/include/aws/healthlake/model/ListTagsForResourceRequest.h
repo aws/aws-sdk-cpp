@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/healthlake/HealthLake_EXPORTS.h>
-#include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/healthlake/HealthLakeRequest.h>
+#include <aws/healthlake/HealthLake_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace HealthLake
-{
-namespace Model
-{
+namespace Aws {
+namespace HealthLake {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public HealthLakeRequest {
+ public:
+  AWS_HEALTHLAKE_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
+
+  AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the data store to which tags are being
+   * added.</p>
    */
-  class ListTagsForResourceRequest : public HealthLakeRequest
-  {
-  public:
-    AWS_HEALTHLAKE_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+  inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+  template <typename ResourceARNT = Aws::String>
+  void SetResourceARN(ResourceARNT&& value) {
+    m_resourceARNHasBeenSet = true;
+    m_resourceARN = std::forward<ResourceARNT>(value);
+  }
+  template <typename ResourceARNT = Aws::String>
+  ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) {
+    SetResourceARN(std::forward<ResourceARNT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceARN;
+  bool m_resourceARNHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
-
-    AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
-
-    AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data store to which tags are being
-     * added.</p>
-     */
-    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
-    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    template<typename ResourceARNT = Aws::String>
-    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
-    template<typename ResourceARNT = Aws::String>
-    ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace HealthLake
-} // namespace Aws
+}  // namespace Model
+}  // namespace HealthLake
+}  // namespace Aws

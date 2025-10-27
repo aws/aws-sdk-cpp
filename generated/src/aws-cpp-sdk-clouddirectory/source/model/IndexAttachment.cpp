@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-IndexAttachment::IndexAttachment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IndexAttachment::IndexAttachment(JsonView jsonValue) { *this = jsonValue; }
 
-IndexAttachment& IndexAttachment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IndexedAttributes"))
-  {
+IndexAttachment& IndexAttachment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IndexedAttributes")) {
     Aws::Utils::Array<JsonView> indexedAttributesJsonList = jsonValue.GetArray("IndexedAttributes");
-    for(unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex)
-    {
+    for (unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex) {
       m_indexedAttributes.push_back(indexedAttributesJsonList[indexedAttributesIndex].AsObject());
     }
     m_indexedAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectIdentifier"))
-  {
+  if (jsonValue.ValueExists("ObjectIdentifier")) {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
     m_objectIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IndexAttachment::Jsonize() const
-{
+JsonValue IndexAttachment::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexedAttributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> indexedAttributesJsonList(m_indexedAttributes.size());
-   for(unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex)
-   {
-     indexedAttributesJsonList[indexedAttributesIndex].AsObject(m_indexedAttributes[indexedAttributesIndex].Jsonize());
-   }
-   payload.WithArray("IndexedAttributes", std::move(indexedAttributesJsonList));
-
+  if (m_indexedAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> indexedAttributesJsonList(m_indexedAttributes.size());
+    for (unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex) {
+      indexedAttributesJsonList[indexedAttributesIndex].AsObject(m_indexedAttributes[indexedAttributesIndex].Jsonize());
+    }
+    payload.WithArray("IndexedAttributes", std::move(indexedAttributesJsonList));
   }
 
-  if(m_objectIdentifierHasBeenSet)
-  {
-   payload.WithString("ObjectIdentifier", m_objectIdentifier);
-
+  if (m_objectIdentifierHasBeenSet) {
+    payload.WithString("ObjectIdentifier", m_objectIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

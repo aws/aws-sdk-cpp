@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackageVod
-{
-class MediaPackageVodEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MediaPackageVod {
+class MediaPackageVodEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MediaPackageVod
-} // namespace Aws
+}  // namespace MediaPackageVod
+}  // namespace Aws

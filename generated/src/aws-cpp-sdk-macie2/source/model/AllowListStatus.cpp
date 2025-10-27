@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/AllowListStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/AllowListStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-AllowListStatus::AllowListStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AllowListStatus::AllowListStatus(JsonView jsonValue) { *this = jsonValue; }
 
-AllowListStatus& AllowListStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+AllowListStatus& AllowListStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = AllowListStatusCodeMapper::GetAllowListStatusCodeForName(jsonValue.GetString("code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AllowListStatus::Jsonize() const
-{
+JsonValue AllowListStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", AllowListStatusCodeMapper::GetNameForAllowListStatusCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", AllowListStatusCodeMapper::GetNameForAllowListStatusCode(m_code));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

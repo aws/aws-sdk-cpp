@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class TransitGatewayRegistrationState
-  {
-    NOT_SET,
-    PENDING,
-    AVAILABLE,
-    DELETING,
-    DELETED,
-    FAILED
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class TransitGatewayRegistrationState { NOT_SET, PENDING, AVAILABLE, DELETING, DELETED, FAILED };
 
-namespace TransitGatewayRegistrationStateMapper
-{
+namespace TransitGatewayRegistrationStateMapper {
 AWS_NETWORKMANAGER_API TransitGatewayRegistrationState GetTransitGatewayRegistrationStateForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForTransitGatewayRegistrationState(TransitGatewayRegistrationState value);
-} // namespace TransitGatewayRegistrationStateMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace TransitGatewayRegistrationStateMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

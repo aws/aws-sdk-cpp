@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/CreateEmailTemplateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/CreateEmailTemplateRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateEmailTemplateRequest::SerializePayload() const
-{
+Aws::String CreateEmailTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("TemplateName", m_templateName);
-
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("TemplateName", m_templateName);
   }
 
-  if(m_templateContentHasBeenSet)
-  {
-   payload.WithObject("TemplateContent", m_templateContent.Jsonize());
-
+  if (m_templateContentHasBeenSet) {
+    payload.WithObject("TemplateContent", m_templateContent.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

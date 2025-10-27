@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/codestar-connections/CodeStarconnectionsRequest.h>
+#include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CodeStarconnections
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeStarconnections {
+namespace Model {
 
+/**
+ */
+class DeleteRepositoryLinkRequest : public CodeStarconnectionsRequest {
+ public:
+  AWS_CODESTARCONNECTIONS_API DeleteRepositoryLinkRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteRepositoryLink"; }
+
+  AWS_CODESTARCONNECTIONS_API Aws::String SerializePayload() const override;
+
+  AWS_CODESTARCONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the repository link to be deleted.</p>
    */
-  class DeleteRepositoryLinkRequest : public CodeStarconnectionsRequest
-  {
-  public:
-    AWS_CODESTARCONNECTIONS_API DeleteRepositoryLinkRequest() = default;
+  inline const Aws::String& GetRepositoryLinkId() const { return m_repositoryLinkId; }
+  inline bool RepositoryLinkIdHasBeenSet() const { return m_repositoryLinkIdHasBeenSet; }
+  template <typename RepositoryLinkIdT = Aws::String>
+  void SetRepositoryLinkId(RepositoryLinkIdT&& value) {
+    m_repositoryLinkIdHasBeenSet = true;
+    m_repositoryLinkId = std::forward<RepositoryLinkIdT>(value);
+  }
+  template <typename RepositoryLinkIdT = Aws::String>
+  DeleteRepositoryLinkRequest& WithRepositoryLinkId(RepositoryLinkIdT&& value) {
+    SetRepositoryLinkId(std::forward<RepositoryLinkIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_repositoryLinkId;
+  bool m_repositoryLinkIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteRepositoryLink"; }
-
-    AWS_CODESTARCONNECTIONS_API Aws::String SerializePayload() const override;
-
-    AWS_CODESTARCONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the repository link to be deleted.</p>
-     */
-    inline const Aws::String& GetRepositoryLinkId() const { return m_repositoryLinkId; }
-    inline bool RepositoryLinkIdHasBeenSet() const { return m_repositoryLinkIdHasBeenSet; }
-    template<typename RepositoryLinkIdT = Aws::String>
-    void SetRepositoryLinkId(RepositoryLinkIdT&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::forward<RepositoryLinkIdT>(value); }
-    template<typename RepositoryLinkIdT = Aws::String>
-    DeleteRepositoryLinkRequest& WithRepositoryLinkId(RepositoryLinkIdT&& value) { SetRepositoryLinkId(std::forward<RepositoryLinkIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_repositoryLinkId;
-    bool m_repositoryLinkIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeStarconnections
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeStarconnections
+}  // namespace Aws

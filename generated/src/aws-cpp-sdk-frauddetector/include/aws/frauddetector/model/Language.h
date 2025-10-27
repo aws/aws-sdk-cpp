@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class Language
-  {
-    NOT_SET,
-    DETECTORPL
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class Language { NOT_SET, DETECTORPL };
 
-namespace LanguageMapper
-{
+namespace LanguageMapper {
 AWS_FRAUDDETECTOR_API Language GetLanguageForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForLanguage(Language value);
-} // namespace LanguageMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace LanguageMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

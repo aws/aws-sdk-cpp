@@ -3,33 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/CustomActionSetParametersOperation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/CustomActionSetParametersOperation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-CustomActionSetParametersOperation::CustomActionSetParametersOperation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomActionSetParametersOperation::CustomActionSetParametersOperation(JsonView jsonValue) { *this = jsonValue; }
 
-CustomActionSetParametersOperation& CustomActionSetParametersOperation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParameterValueConfigurations"))
-  {
+CustomActionSetParametersOperation& CustomActionSetParametersOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParameterValueConfigurations")) {
     Aws::Utils::Array<JsonView> parameterValueConfigurationsJsonList = jsonValue.GetArray("ParameterValueConfigurations");
-    for(unsigned parameterValueConfigurationsIndex = 0; parameterValueConfigurationsIndex < parameterValueConfigurationsJsonList.GetLength(); ++parameterValueConfigurationsIndex)
-    {
+    for (unsigned parameterValueConfigurationsIndex = 0;
+         parameterValueConfigurationsIndex < parameterValueConfigurationsJsonList.GetLength(); ++parameterValueConfigurationsIndex) {
       m_parameterValueConfigurations.push_back(parameterValueConfigurationsJsonList[parameterValueConfigurationsIndex].AsObject());
     }
     m_parameterValueConfigurationsHasBeenSet = true;
@@ -37,24 +29,22 @@ CustomActionSetParametersOperation& CustomActionSetParametersOperation::operator
   return *this;
 }
 
-JsonValue CustomActionSetParametersOperation::Jsonize() const
-{
+JsonValue CustomActionSetParametersOperation::Jsonize() const {
   JsonValue payload;
 
-  if(m_parameterValueConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> parameterValueConfigurationsJsonList(m_parameterValueConfigurations.size());
-   for(unsigned parameterValueConfigurationsIndex = 0; parameterValueConfigurationsIndex < parameterValueConfigurationsJsonList.GetLength(); ++parameterValueConfigurationsIndex)
-   {
-     parameterValueConfigurationsJsonList[parameterValueConfigurationsIndex].AsObject(m_parameterValueConfigurations[parameterValueConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("ParameterValueConfigurations", std::move(parameterValueConfigurationsJsonList));
-
+  if (m_parameterValueConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parameterValueConfigurationsJsonList(m_parameterValueConfigurations.size());
+    for (unsigned parameterValueConfigurationsIndex = 0;
+         parameterValueConfigurationsIndex < parameterValueConfigurationsJsonList.GetLength(); ++parameterValueConfigurationsIndex) {
+      parameterValueConfigurationsJsonList[parameterValueConfigurationsIndex].AsObject(
+          m_parameterValueConfigurations[parameterValueConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("ParameterValueConfigurations", std::move(parameterValueConfigurationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

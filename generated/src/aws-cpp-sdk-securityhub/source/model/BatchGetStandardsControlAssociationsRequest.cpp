@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/BatchGetStandardsControlAssociationsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/BatchGetStandardsControlAssociationsRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,18 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetStandardsControlAssociationsRequest::SerializePayload() const
-{
+Aws::String BatchGetStandardsControlAssociationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_standardsControlAssociationIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> standardsControlAssociationIdsJsonList(m_standardsControlAssociationIds.size());
-   for(unsigned standardsControlAssociationIdsIndex = 0; standardsControlAssociationIdsIndex < standardsControlAssociationIdsJsonList.GetLength(); ++standardsControlAssociationIdsIndex)
-   {
-     standardsControlAssociationIdsJsonList[standardsControlAssociationIdsIndex].AsObject(m_standardsControlAssociationIds[standardsControlAssociationIdsIndex].Jsonize());
-   }
-   payload.WithArray("StandardsControlAssociationIds", std::move(standardsControlAssociationIdsJsonList));
-
+  if (m_standardsControlAssociationIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> standardsControlAssociationIdsJsonList(m_standardsControlAssociationIds.size());
+    for (unsigned standardsControlAssociationIdsIndex = 0;
+         standardsControlAssociationIdsIndex < standardsControlAssociationIdsJsonList.GetLength(); ++standardsControlAssociationIdsIndex) {
+      standardsControlAssociationIdsJsonList[standardsControlAssociationIdsIndex].AsObject(
+          m_standardsControlAssociationIds[standardsControlAssociationIdsIndex].Jsonize());
+    }
+    payload.WithArray("StandardsControlAssociationIds", std::move(standardsControlAssociationIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

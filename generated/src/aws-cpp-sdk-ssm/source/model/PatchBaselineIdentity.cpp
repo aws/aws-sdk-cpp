@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/PatchBaselineIdentity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/PatchBaselineIdentity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue) { *this = jsonValue; }
 
-PatchBaselineIdentity& PatchBaselineIdentity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BaselineId"))
-  {
+PatchBaselineIdentity& PatchBaselineIdentity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BaselineId")) {
     m_baselineId = jsonValue.GetString("BaselineId");
     m_baselineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BaselineName"))
-  {
+  if (jsonValue.ValueExists("BaselineName")) {
     m_baselineName = jsonValue.GetString("BaselineName");
     m_baselineNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OperatingSystem"))
-  {
+  if (jsonValue.ValueExists("OperatingSystem")) {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
     m_operatingSystemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BaselineDescription"))
-  {
+  if (jsonValue.ValueExists("BaselineDescription")) {
     m_baselineDescription = jsonValue.GetString("BaselineDescription");
     m_baselineDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultBaseline"))
-  {
+  if (jsonValue.ValueExists("DefaultBaseline")) {
     m_defaultBaseline = jsonValue.GetBool("DefaultBaseline");
     m_defaultBaselineHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PatchBaselineIdentity::Jsonize() const
-{
+JsonValue PatchBaselineIdentity::Jsonize() const {
   JsonValue payload;
 
-  if(m_baselineIdHasBeenSet)
-  {
-   payload.WithString("BaselineId", m_baselineId);
-
+  if (m_baselineIdHasBeenSet) {
+    payload.WithString("BaselineId", m_baselineId);
   }
 
-  if(m_baselineNameHasBeenSet)
-  {
-   payload.WithString("BaselineName", m_baselineName);
-
+  if (m_baselineNameHasBeenSet) {
+    payload.WithString("BaselineName", m_baselineName);
   }
 
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
-  if(m_baselineDescriptionHasBeenSet)
-  {
-   payload.WithString("BaselineDescription", m_baselineDescription);
-
+  if (m_baselineDescriptionHasBeenSet) {
+    payload.WithString("BaselineDescription", m_baselineDescription);
   }
 
-  if(m_defaultBaselineHasBeenSet)
-  {
-   payload.WithBool("DefaultBaseline", m_defaultBaseline);
-
+  if (m_defaultBaselineHasBeenSet) {
+    payload.WithBool("DefaultBaseline", m_defaultBaseline);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/CreateSlotTypeVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/model/CreateSlotTypeVersionRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateSlotTypeVersionRequest::SerializePayload() const
-{
+Aws::String CreateSlotTypeVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_checksumHasBeenSet)
-  {
-   payload.WithString("checksum", m_checksum);
-
+  if (m_checksumHasBeenSet) {
+    payload.WithString("checksum", m_checksum);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

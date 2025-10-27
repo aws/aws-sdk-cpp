@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/JourneyEmailMessage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/JourneyEmailMessage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-JourneyEmailMessage::JourneyEmailMessage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JourneyEmailMessage::JourneyEmailMessage(JsonView jsonValue) { *this = jsonValue; }
 
-JourneyEmailMessage& JourneyEmailMessage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FromAddress"))
-  {
+JourneyEmailMessage& JourneyEmailMessage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FromAddress")) {
     m_fromAddress = jsonValue.GetString("FromAddress");
     m_fromAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JourneyEmailMessage::Jsonize() const
-{
+JsonValue JourneyEmailMessage::Jsonize() const {
   JsonValue payload;
 
-  if(m_fromAddressHasBeenSet)
-  {
-   payload.WithString("FromAddress", m_fromAddress);
-
+  if (m_fromAddressHasBeenSet) {
+    payload.WithString("FromAddress", m_fromAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

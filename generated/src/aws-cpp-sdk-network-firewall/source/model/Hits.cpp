@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/Hits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/Hits.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-Hits::Hits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Hits::Hits(JsonView jsonValue) { *this = jsonValue; }
 
-Hits& Hits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Count"))
-  {
+Hits& Hits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Hits::Jsonize() const
-{
+JsonValue Hits::Jsonize() const {
   JsonValue payload;
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

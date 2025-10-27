@@ -11,63 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisTranscriptItemWithContent::RealTimeContactAnalysisTranscriptItemWithContent(JsonView jsonValue)
-{
+RealTimeContactAnalysisTranscriptItemWithContent::RealTimeContactAnalysisTranscriptItemWithContent(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-RealTimeContactAnalysisTranscriptItemWithContent& RealTimeContactAnalysisTranscriptItemWithContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Content"))
-  {
+RealTimeContactAnalysisTranscriptItemWithContent& RealTimeContactAnalysisTranscriptItemWithContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CharacterOffsets"))
-  {
+  if (jsonValue.ValueExists("CharacterOffsets")) {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
     m_characterOffsetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisTranscriptItemWithContent::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisTranscriptItemWithContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_characterOffsetsHasBeenSet)
-  {
-   payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
-
+  if (m_characterOffsetsHasBeenSet) {
+    payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/CapacityLimits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearchserverless/model/CapacityLimits.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
 
-CapacityLimits::CapacityLimits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapacityLimits::CapacityLimits(JsonView jsonValue) { *this = jsonValue; }
 
-CapacityLimits& CapacityLimits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxIndexingCapacityInOCU"))
-  {
+CapacityLimits& CapacityLimits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxIndexingCapacityInOCU")) {
     m_maxIndexingCapacityInOCU = jsonValue.GetInteger("maxIndexingCapacityInOCU");
     m_maxIndexingCapacityInOCUHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxSearchCapacityInOCU"))
-  {
+  if (jsonValue.ValueExists("maxSearchCapacityInOCU")) {
     m_maxSearchCapacityInOCU = jsonValue.GetInteger("maxSearchCapacityInOCU");
     m_maxSearchCapacityInOCUHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapacityLimits::Jsonize() const
-{
+JsonValue CapacityLimits::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxIndexingCapacityInOCUHasBeenSet)
-  {
-   payload.WithInteger("maxIndexingCapacityInOCU", m_maxIndexingCapacityInOCU);
-
+  if (m_maxIndexingCapacityInOCUHasBeenSet) {
+    payload.WithInteger("maxIndexingCapacityInOCU", m_maxIndexingCapacityInOCU);
   }
 
-  if(m_maxSearchCapacityInOCUHasBeenSet)
-  {
-   payload.WithInteger("maxSearchCapacityInOCU", m_maxSearchCapacityInOCU);
-
+  if (m_maxSearchCapacityInOCUHasBeenSet) {
+    payload.WithInteger("maxSearchCapacityInOCU", m_maxSearchCapacityInOCU);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

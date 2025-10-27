@@ -3,111 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/DataSourceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/DataSourceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-DataSourceSummary::DataSourceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceSummary::DataSourceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DataSourceSummary& DataSourceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = jsonValue.GetString("LanguageCode");
     m_languageCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceSummary::Jsonize() const
-{
+JsonValue DataSourceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", m_languageCode);
-
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", m_languageCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

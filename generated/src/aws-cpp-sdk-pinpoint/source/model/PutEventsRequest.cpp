@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/PutEventsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/PutEventsRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutEventsRequest::SerializePayload() const
-{
+Aws::String PutEventsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventsRequestHasBeenSet)
-  {
-   payload = m_eventsRequest.Jsonize();
+  if (m_eventsRequestHasBeenSet) {
+    payload = m_eventsRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

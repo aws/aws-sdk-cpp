@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateInvocationRequest::SerializePayload() const
-{
+Aws::String CreateInvocationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("invocationId", m_invocationId);
-
+  if (m_invocationIdHasBeenSet) {
+    payload.WithString("invocationId", m_invocationId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

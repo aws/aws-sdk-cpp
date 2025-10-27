@@ -5,12 +5,8 @@
 
 #include <aws/eks/EKSEndpointProvider.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EKS
-} // namespace Aws
+namespace Aws {
+namespace EKS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EKS
+}  // namespace Aws

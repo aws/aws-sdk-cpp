@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DeleteReceiptRuleSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DeleteReceiptRuleSetRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteReceiptRuleSetRequest::SerializePayload() const
-{
+Aws::String DeleteReceiptRuleSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteReceiptRuleSet&";
-  if(m_ruleSetNameHasBeenSet)
-  {
+  if (m_ruleSetNameHasBeenSet) {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

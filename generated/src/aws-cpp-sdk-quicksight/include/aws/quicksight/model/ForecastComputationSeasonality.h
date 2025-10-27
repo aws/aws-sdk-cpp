@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ForecastComputationSeasonality
-  {
-    NOT_SET,
-    AUTOMATIC,
-    CUSTOM
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ForecastComputationSeasonality { NOT_SET, AUTOMATIC, CUSTOM };
 
-namespace ForecastComputationSeasonalityMapper
-{
+namespace ForecastComputationSeasonalityMapper {
 AWS_QUICKSIGHT_API ForecastComputationSeasonality GetForecastComputationSeasonalityForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForForecastComputationSeasonality(ForecastComputationSeasonality value);
-} // namespace ForecastComputationSeasonalityMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ForecastComputationSeasonalityMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

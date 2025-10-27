@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/CodeConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/CodeConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-CodeConfiguration::CodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeConfiguration::CodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CodeConfiguration& CodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3Bucket"))
-  {
+CodeConfiguration& CodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3Bucket")) {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Key"))
-  {
+  if (jsonValue.ValueExists("s3Key")) {
     m_s3Key = jsonValue.GetString("s3Key");
     m_s3KeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3ObjectVersion"))
-  {
+  if (jsonValue.ValueExists("s3ObjectVersion")) {
     m_s3ObjectVersion = jsonValue.GetString("s3ObjectVersion");
     m_s3ObjectVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeConfiguration::Jsonize() const
-{
+JsonValue CodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithString("s3Bucket", m_s3Bucket);
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithString("s3Bucket", m_s3Bucket);
   }
 
-  if(m_s3KeyHasBeenSet)
-  {
-   payload.WithString("s3Key", m_s3Key);
-
+  if (m_s3KeyHasBeenSet) {
+    payload.WithString("s3Key", m_s3Key);
   }
 
-  if(m_s3ObjectVersionHasBeenSet)
-  {
-   payload.WithString("s3ObjectVersion", m_s3ObjectVersion);
-
+  if (m_s3ObjectVersionHasBeenSet) {
+    payload.WithString("s3ObjectVersion", m_s3ObjectVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

@@ -11,40 +11,29 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("promptTemplate"))
-  {
+ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("promptTemplate")) {
     m_promptTemplate = jsonValue.GetObject("promptTemplate");
     m_promptTemplateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("guardrailConfiguration"))
-  {
+  if (jsonValue.ValueExists("guardrailConfiguration")) {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
     m_guardrailConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kbInferenceConfig"))
-  {
+  if (jsonValue.ValueExists("kbInferenceConfig")) {
     m_kbInferenceConfig = jsonValue.GetObject("kbInferenceConfig");
     m_kbInferenceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("additionalModelRequestFields"))
-  {
-    Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
-    for(auto& additionalModelRequestFieldsItem : additionalModelRequestFieldsJsonMap)
-    {
+  if (jsonValue.ValueExists("additionalModelRequestFields")) {
+    Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap =
+        jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
+    for (auto& additionalModelRequestFieldsItem : additionalModelRequestFieldsJsonMap) {
       m_additionalModelRequestFields[additionalModelRequestFieldsItem.first] = additionalModelRequestFieldsItem.second.AsObject();
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
@@ -52,42 +41,33 @@ ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::
   return *this;
 }
 
-JsonValue ExternalSourcesGenerationConfiguration::Jsonize() const
-{
+JsonValue ExternalSourcesGenerationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_promptTemplateHasBeenSet)
-  {
-   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
-
+  if (m_promptTemplateHasBeenSet) {
+    payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
   }
 
-  if(m_guardrailConfigurationHasBeenSet)
-  {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
+  if (m_guardrailConfigurationHasBeenSet) {
+    payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
   }
 
-  if(m_kbInferenceConfigHasBeenSet)
-  {
-   payload.WithObject("kbInferenceConfig", m_kbInferenceConfig.Jsonize());
-
+  if (m_kbInferenceConfigHasBeenSet) {
+    payload.WithObject("kbInferenceConfig", m_kbInferenceConfig.Jsonize());
   }
 
-  if(m_additionalModelRequestFieldsHasBeenSet)
-  {
-   JsonValue additionalModelRequestFieldsJsonMap;
-   for(auto& additionalModelRequestFieldsItem : m_additionalModelRequestFields)
-   {
-     additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first, additionalModelRequestFieldsItem.second.View());
-   }
-   payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
-
+  if (m_additionalModelRequestFieldsHasBeenSet) {
+    JsonValue additionalModelRequestFieldsJsonMap;
+    for (auto& additionalModelRequestFieldsItem : m_additionalModelRequestFields) {
+      additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first,
+                                                     additionalModelRequestFieldsItem.second.View());
+    }
+    payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

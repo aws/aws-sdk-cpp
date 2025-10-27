@@ -3,48 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/LoRaWANConnectionStatusEventNotificationConfigurations.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/LoRaWANConnectionStatusEventNotificationConfigurations.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-LoRaWANConnectionStatusEventNotificationConfigurations::LoRaWANConnectionStatusEventNotificationConfigurations(JsonView jsonValue)
-{
+LoRaWANConnectionStatusEventNotificationConfigurations::LoRaWANConnectionStatusEventNotificationConfigurations(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-LoRaWANConnectionStatusEventNotificationConfigurations& LoRaWANConnectionStatusEventNotificationConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GatewayEuiEventTopic"))
-  {
-    m_gatewayEuiEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("GatewayEuiEventTopic"));
+LoRaWANConnectionStatusEventNotificationConfigurations& LoRaWANConnectionStatusEventNotificationConfigurations::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("GatewayEuiEventTopic")) {
+    m_gatewayEuiEventTopic =
+        EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("GatewayEuiEventTopic"));
     m_gatewayEuiEventTopicHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoRaWANConnectionStatusEventNotificationConfigurations::Jsonize() const
-{
+JsonValue LoRaWANConnectionStatusEventNotificationConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_gatewayEuiEventTopicHasBeenSet)
-  {
-   payload.WithString("GatewayEuiEventTopic", EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_gatewayEuiEventTopic));
+  if (m_gatewayEuiEventTopicHasBeenSet) {
+    payload.WithString("GatewayEuiEventTopic",
+                       EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_gatewayEuiEventTopic));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

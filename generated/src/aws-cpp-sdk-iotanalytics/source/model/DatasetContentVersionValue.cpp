@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DatasetContentVersionValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/DatasetContentVersionValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-DatasetContentVersionValue::DatasetContentVersionValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetContentVersionValue::DatasetContentVersionValue(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetContentVersionValue& DatasetContentVersionValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("datasetName"))
-  {
+DatasetContentVersionValue& DatasetContentVersionValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("datasetName")) {
     m_datasetName = jsonValue.GetString("datasetName");
     m_datasetNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetContentVersionValue::Jsonize() const
-{
+JsonValue DatasetContentVersionValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_datasetNameHasBeenSet)
-  {
-   payload.WithString("datasetName", m_datasetName);
-
+  if (m_datasetNameHasBeenSet) {
+    payload.WithString("datasetName", m_datasetName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

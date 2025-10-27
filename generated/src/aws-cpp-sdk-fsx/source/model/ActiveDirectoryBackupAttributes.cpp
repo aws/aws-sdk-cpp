@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-ActiveDirectoryBackupAttributes& ActiveDirectoryBackupAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DomainName"))
-  {
+ActiveDirectoryBackupAttributes& ActiveDirectoryBackupAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActiveDirectoryId"))
-  {
+  if (jsonValue.ValueExists("ActiveDirectoryId")) {
     m_activeDirectoryId = jsonValue.GetString("ActiveDirectoryId");
     m_activeDirectoryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceARN"))
-  {
+  if (jsonValue.ValueExists("ResourceARN")) {
     m_resourceARN = jsonValue.GetString("ResourceARN");
     m_resourceARNHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActiveDirectoryBackupAttributes::Jsonize() const
-{
+JsonValue ActiveDirectoryBackupAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_activeDirectoryIdHasBeenSet)
-  {
-   payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
-
+  if (m_activeDirectoryIdHasBeenSet) {
+    payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
   }
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("ResourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("ResourceARN", m_resourceARN);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -7,30 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class ActionCategory
-  {
-    NOT_SET,
-    Source,
-    Build,
-    Deploy,
-    Test,
-    Invoke,
-    Approval,
-    Compute
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class ActionCategory { NOT_SET, Source, Build, Deploy, Test, Invoke, Approval, Compute };
 
-namespace ActionCategoryMapper
-{
+namespace ActionCategoryMapper {
 AWS_CODEPIPELINE_API ActionCategory GetActionCategoryForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForActionCategory(ActionCategory value);
-} // namespace ActionCategoryMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace ActionCategoryMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

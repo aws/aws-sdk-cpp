@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-serverless/model/AutoStopConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
 
-AutoStopConfig::AutoStopConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoStopConfig::AutoStopConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AutoStopConfig& AutoStopConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+AutoStopConfig& AutoStopConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idleTimeoutMinutes"))
-  {
+  if (jsonValue.ValueExists("idleTimeoutMinutes")) {
     m_idleTimeoutMinutes = jsonValue.GetInteger("idleTimeoutMinutes");
     m_idleTimeoutMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoStopConfig::Jsonize() const
-{
+JsonValue AutoStopConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_idleTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("idleTimeoutMinutes", m_idleTimeoutMinutes);
-
+  if (m_idleTimeoutMinutesHasBeenSet) {
+    payload.WithInteger("idleTimeoutMinutes", m_idleTimeoutMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

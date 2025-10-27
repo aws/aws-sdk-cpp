@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-enum class TextractErrors
-{
-  //From Core//
+namespace Aws {
+namespace Textract {
+enum class TextractErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class TextractErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class TextractErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_DOCUMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_DOCUMENT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   DOCUMENT_TOO_LARGE,
   HUMAN_LOOP_QUOTA_EXCEEDED,
@@ -62,9 +59,8 @@ enum class TextractErrors
   UNSUPPORTED_DOCUMENT
 };
 
-class AWS_TEXTRACT_API TextractError : public Aws::Client::AWSError<TextractErrors>
-{
-public:
+class AWS_TEXTRACT_API TextractError : public Aws::Client::AWSError<TextractErrors> {
+ public:
   TextractError() {}
   TextractError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
   TextractError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
@@ -75,10 +71,9 @@ public:
   T GetModeledError();
 };
 
-namespace TextractErrorMapper
-{
-  AWS_TEXTRACT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace TextractErrorMapper {
+AWS_TEXTRACT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Textract
-} // namespace Aws
+}  // namespace Textract
+}  // namespace Aws

@@ -3,44 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterMaintenanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/ModifyClusterMaintenanceRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterMaintenanceRequest::SerializePayload() const
-{
+Aws::String ModifyClusterMaintenanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterMaintenance&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_deferMaintenanceHasBeenSet)
-  {
+  if (m_deferMaintenanceHasBeenSet) {
     ss << "DeferMaintenance=" << std::boolalpha << m_deferMaintenance << "&";
   }
 
-  if(m_deferMaintenanceIdentifierHasBeenSet)
-  {
+  if (m_deferMaintenanceIdentifierHasBeenSet) {
     ss << "DeferMaintenanceIdentifier=" << StringUtils::URLEncode(m_deferMaintenanceIdentifier.c_str()) << "&";
   }
 
-  if(m_deferMaintenanceStartTimeHasBeenSet)
-  {
-    ss << "DeferMaintenanceStartTime=" << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_deferMaintenanceStartTimeHasBeenSet) {
+    ss << "DeferMaintenanceStartTime="
+       << StringUtils::URLEncode(m_deferMaintenanceStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_deferMaintenanceEndTimeHasBeenSet)
-  {
-    ss << "DeferMaintenanceEndTime=" << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_deferMaintenanceEndTimeHasBeenSet) {
+    ss << "DeferMaintenanceEndTime="
+       << StringUtils::URLEncode(m_deferMaintenanceEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_deferMaintenanceDurationHasBeenSet)
-  {
+  if (m_deferMaintenanceDurationHasBeenSet) {
     ss << "DeferMaintenanceDuration=" << m_deferMaintenanceDuration << "&";
   }
 
@@ -48,8 +43,4 @@ Aws::String ModifyClusterMaintenanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyClusterMaintenanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyClusterMaintenanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

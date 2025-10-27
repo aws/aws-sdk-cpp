@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/security-ir/SecurityIREndpointRules.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SecurityIR {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SecurityIRClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SecurityIRDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SECURITYIR_API SecurityIREndpointProvider : public SecurityIRDefaultEpProviderBase
-{
-public:
-    using SecurityIRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SECURITYIR_API SecurityIREndpointProvider : public SecurityIRDefaultEpProviderBase {
+ public:
+  using SecurityIRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SecurityIREndpointProvider()
-      : SecurityIRDefaultEpProviderBase(Aws::SecurityIR::SecurityIREndpointRules::GetRulesBlob(), Aws::SecurityIR::SecurityIREndpointRules::RulesBlobSize)
-    {}
+  SecurityIREndpointProvider()
+      : SecurityIRDefaultEpProviderBase(Aws::SecurityIR::SecurityIREndpointRules::GetRulesBlob(),
+                                        Aws::SecurityIR::SecurityIREndpointRules::RulesBlobSize) {}
 
-    ~SecurityIREndpointProvider()
-    {
-    }
+  ~SecurityIREndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SecurityIR
+}  // namespace Aws

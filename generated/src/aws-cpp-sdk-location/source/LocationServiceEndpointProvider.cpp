@@ -5,12 +5,8 @@
 
 #include <aws/location/LocationServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LocationService
-} // namespace Aws
+namespace Aws {
+namespace LocationService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LocationService
+}  // namespace Aws

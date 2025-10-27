@@ -12,25 +12,16 @@ using namespace Aws::AppMesh::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateMeshRequest::SerializePayload() const
-{
+Aws::String UpdateMeshRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_specHasBeenSet)
-  {
-   payload.WithObject("spec", m_spec.Jsonize());
-
+  if (m_specHasBeenSet) {
+    payload.WithObject("spec", m_spec.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

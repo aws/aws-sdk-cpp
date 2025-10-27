@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteLoginProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteLoginProfileRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLoginProfileRequest::SerializePayload() const
-{
+Aws::String DeleteLoginProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLoginProfile&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteLoginProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
 
-KubernetesResourceType::KubernetesResourceType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KubernetesResourceType::KubernetesResourceType(JsonView jsonValue) { *this = jsonValue; }
 
-KubernetesResourceType& KubernetesResourceType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiVersion"))
-  {
+KubernetesResourceType& KubernetesResourceType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiVersion")) {
     m_apiVersion = jsonValue.GetString("apiVersion");
     m_apiVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kind"))
-  {
+  if (jsonValue.ValueExists("kind")) {
     m_kind = jsonValue.GetString("kind");
     m_kindHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KubernetesResourceType::Jsonize() const
-{
+JsonValue KubernetesResourceType::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiVersionHasBeenSet)
-  {
-   payload.WithString("apiVersion", m_apiVersion);
-
+  if (m_apiVersionHasBeenSet) {
+    payload.WithString("apiVersion", m_apiVersion);
   }
 
-  if(m_kindHasBeenSet)
-  {
-   payload.WithString("kind", m_kind);
-
+  if (m_kindHasBeenSet) {
+    payload.WithString("kind", m_kind);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

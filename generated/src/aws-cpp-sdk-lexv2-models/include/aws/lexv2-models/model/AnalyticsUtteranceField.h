@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class AnalyticsUtteranceField
-  {
-    NOT_SET,
-    UtteranceText,
-    UtteranceState
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class AnalyticsUtteranceField { NOT_SET, UtteranceText, UtteranceState };
 
-namespace AnalyticsUtteranceFieldMapper
-{
+namespace AnalyticsUtteranceFieldMapper {
 AWS_LEXMODELSV2_API AnalyticsUtteranceField GetAnalyticsUtteranceFieldForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForAnalyticsUtteranceField(AnalyticsUtteranceField value);
-} // namespace AnalyticsUtteranceFieldMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace AnalyticsUtteranceFieldMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

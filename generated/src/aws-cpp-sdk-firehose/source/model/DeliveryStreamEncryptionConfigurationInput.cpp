@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/firehose/model/DeliveryStreamEncryptionConfigurationInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/model/DeliveryStreamEncryptionConfigurationInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Firehose {
+namespace Model {
 
-DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
-DeliveryStreamEncryptionConfigurationInput& DeliveryStreamEncryptionConfigurationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyARN"))
-  {
+DeliveryStreamEncryptionConfigurationInput& DeliveryStreamEncryptionConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyARN")) {
     m_keyARN = jsonValue.GetString("KeyARN");
     m_keyARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyType"))
-  {
+  if (jsonValue.ValueExists("KeyType")) {
     m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
     m_keyTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeliveryStreamEncryptionConfigurationInput::Jsonize() const
-{
+JsonValue DeliveryStreamEncryptionConfigurationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyARNHasBeenSet)
-  {
-   payload.WithString("KeyARN", m_keyARN);
-
+  if (m_keyARNHasBeenSet) {
+    payload.WithString("KeyARN", m_keyARN);
   }
 
-  if(m_keyTypeHasBeenSet)
-  {
-   payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
+  if (m_keyTypeHasBeenSet) {
+    payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

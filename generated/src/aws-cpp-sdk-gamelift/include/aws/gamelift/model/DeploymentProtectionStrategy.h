@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class DeploymentProtectionStrategy
-  {
-    NOT_SET,
-    WITH_PROTECTION,
-    IGNORE_PROTECTION
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class DeploymentProtectionStrategy { NOT_SET, WITH_PROTECTION, IGNORE_PROTECTION };
 
-namespace DeploymentProtectionStrategyMapper
-{
+namespace DeploymentProtectionStrategyMapper {
 AWS_GAMELIFT_API DeploymentProtectionStrategy GetDeploymentProtectionStrategyForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForDeploymentProtectionStrategy(DeploymentProtectionStrategy value);
-} // namespace DeploymentProtectionStrategyMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace DeploymentProtectionStrategyMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

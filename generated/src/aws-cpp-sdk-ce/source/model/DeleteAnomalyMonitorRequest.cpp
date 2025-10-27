@@ -12,27 +12,18 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAnomalyMonitorRequest::SerializePayload() const
-{
+Aws::String DeleteAnomalyMonitorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_monitorArnHasBeenSet)
-  {
-   payload.WithString("MonitorArn", m_monitorArn);
-
+  if (m_monitorArnHasBeenSet) {
+    payload.WithString("MonitorArn", m_monitorArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteAnomalyMonitorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteAnomalyMonitorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.DeleteAnomalyMonitor"));
   return headers;
-
 }
-
-
-
-

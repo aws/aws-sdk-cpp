@@ -11,118 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SAPODataConnectorProfileProperties::SAPODataConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SAPODataConnectorProfileProperties::SAPODataConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SAPODataConnectorProfileProperties& SAPODataConnectorProfileProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("applicationHostUrl"))
-  {
+SAPODataConnectorProfileProperties& SAPODataConnectorProfileProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("applicationHostUrl")) {
     m_applicationHostUrl = jsonValue.GetString("applicationHostUrl");
     m_applicationHostUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationServicePath"))
-  {
+  if (jsonValue.ValueExists("applicationServicePath")) {
     m_applicationServicePath = jsonValue.GetString("applicationServicePath");
     m_applicationServicePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("portNumber"))
-  {
+  if (jsonValue.ValueExists("portNumber")) {
     m_portNumber = jsonValue.GetInteger("portNumber");
     m_portNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientNumber"))
-  {
+  if (jsonValue.ValueExists("clientNumber")) {
     m_clientNumber = jsonValue.GetString("clientNumber");
     m_clientNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logonLanguage"))
-  {
+  if (jsonValue.ValueExists("logonLanguage")) {
     m_logonLanguage = jsonValue.GetString("logonLanguage");
     m_logonLanguageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateLinkServiceName"))
-  {
+  if (jsonValue.ValueExists("privateLinkServiceName")) {
     m_privateLinkServiceName = jsonValue.GetString("privateLinkServiceName");
     m_privateLinkServiceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuthProperties"))
-  {
+  if (jsonValue.ValueExists("oAuthProperties")) {
     m_oAuthProperties = jsonValue.GetObject("oAuthProperties");
     m_oAuthPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("disableSSO"))
-  {
+  if (jsonValue.ValueExists("disableSSO")) {
     m_disableSSO = jsonValue.GetBool("disableSSO");
     m_disableSSOHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SAPODataConnectorProfileProperties::Jsonize() const
-{
+JsonValue SAPODataConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationHostUrlHasBeenSet)
-  {
-   payload.WithString("applicationHostUrl", m_applicationHostUrl);
-
+  if (m_applicationHostUrlHasBeenSet) {
+    payload.WithString("applicationHostUrl", m_applicationHostUrl);
   }
 
-  if(m_applicationServicePathHasBeenSet)
-  {
-   payload.WithString("applicationServicePath", m_applicationServicePath);
-
+  if (m_applicationServicePathHasBeenSet) {
+    payload.WithString("applicationServicePath", m_applicationServicePath);
   }
 
-  if(m_portNumberHasBeenSet)
-  {
-   payload.WithInteger("portNumber", m_portNumber);
-
+  if (m_portNumberHasBeenSet) {
+    payload.WithInteger("portNumber", m_portNumber);
   }
 
-  if(m_clientNumberHasBeenSet)
-  {
-   payload.WithString("clientNumber", m_clientNumber);
-
+  if (m_clientNumberHasBeenSet) {
+    payload.WithString("clientNumber", m_clientNumber);
   }
 
-  if(m_logonLanguageHasBeenSet)
-  {
-   payload.WithString("logonLanguage", m_logonLanguage);
-
+  if (m_logonLanguageHasBeenSet) {
+    payload.WithString("logonLanguage", m_logonLanguage);
   }
 
-  if(m_privateLinkServiceNameHasBeenSet)
-  {
-   payload.WithString("privateLinkServiceName", m_privateLinkServiceName);
-
+  if (m_privateLinkServiceNameHasBeenSet) {
+    payload.WithString("privateLinkServiceName", m_privateLinkServiceName);
   }
 
-  if(m_oAuthPropertiesHasBeenSet)
-  {
-   payload.WithObject("oAuthProperties", m_oAuthProperties.Jsonize());
-
+  if (m_oAuthPropertiesHasBeenSet) {
+    payload.WithObject("oAuthProperties", m_oAuthProperties.Jsonize());
   }
 
-  if(m_disableSSOHasBeenSet)
-  {
-   payload.WithBool("disableSSO", m_disableSSO);
-
+  if (m_disableSSOHasBeenSet) {
+    payload.WithBool("disableSSO", m_disableSSO);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

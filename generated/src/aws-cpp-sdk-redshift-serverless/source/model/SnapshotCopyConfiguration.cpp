@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/SnapshotCopyConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/SnapshotCopyConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-SnapshotCopyConfiguration::SnapshotCopyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapshotCopyConfiguration::SnapshotCopyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SnapshotCopyConfiguration& SnapshotCopyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destinationKmsKeyId"))
-  {
+SnapshotCopyConfiguration& SnapshotCopyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationKmsKeyId")) {
     m_destinationKmsKeyId = jsonValue.GetString("destinationKmsKeyId");
     m_destinationKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationRegion"))
-  {
+  if (jsonValue.ValueExists("destinationRegion")) {
     m_destinationRegion = jsonValue.GetString("destinationRegion");
     m_destinationRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceName"))
-  {
+  if (jsonValue.ValueExists("namespaceName")) {
     m_namespaceName = jsonValue.GetString("namespaceName");
     m_namespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotCopyConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("snapshotCopyConfigurationArn")) {
     m_snapshotCopyConfigurationArn = jsonValue.GetString("snapshotCopyConfigurationArn");
     m_snapshotCopyConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotCopyConfigurationId"))
-  {
+  if (jsonValue.ValueExists("snapshotCopyConfigurationId")) {
     m_snapshotCopyConfigurationId = jsonValue.GetString("snapshotCopyConfigurationId");
     m_snapshotCopyConfigurationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotRetentionPeriod"))
-  {
+  if (jsonValue.ValueExists("snapshotRetentionPeriod")) {
     m_snapshotRetentionPeriod = jsonValue.GetInteger("snapshotRetentionPeriod");
     m_snapshotRetentionPeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnapshotCopyConfiguration::Jsonize() const
-{
+JsonValue SnapshotCopyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("destinationKmsKeyId", m_destinationKmsKeyId);
-
+  if (m_destinationKmsKeyIdHasBeenSet) {
+    payload.WithString("destinationKmsKeyId", m_destinationKmsKeyId);
   }
 
-  if(m_destinationRegionHasBeenSet)
-  {
-   payload.WithString("destinationRegion", m_destinationRegion);
-
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("destinationRegion", m_destinationRegion);
   }
 
-  if(m_namespaceNameHasBeenSet)
-  {
-   payload.WithString("namespaceName", m_namespaceName);
-
+  if (m_namespaceNameHasBeenSet) {
+    payload.WithString("namespaceName", m_namespaceName);
   }
 
-  if(m_snapshotCopyConfigurationArnHasBeenSet)
-  {
-   payload.WithString("snapshotCopyConfigurationArn", m_snapshotCopyConfigurationArn);
-
+  if (m_snapshotCopyConfigurationArnHasBeenSet) {
+    payload.WithString("snapshotCopyConfigurationArn", m_snapshotCopyConfigurationArn);
   }
 
-  if(m_snapshotCopyConfigurationIdHasBeenSet)
-  {
-   payload.WithString("snapshotCopyConfigurationId", m_snapshotCopyConfigurationId);
-
+  if (m_snapshotCopyConfigurationIdHasBeenSet) {
+    payload.WithString("snapshotCopyConfigurationId", m_snapshotCopyConfigurationId);
   }
 
-  if(m_snapshotRetentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("snapshotRetentionPeriod", m_snapshotRetentionPeriod);
-
+  if (m_snapshotRetentionPeriodHasBeenSet) {
+    payload.WithInteger("snapshotRetentionPeriod", m_snapshotRetentionPeriod);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

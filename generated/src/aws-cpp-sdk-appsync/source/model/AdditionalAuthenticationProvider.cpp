@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView jsonValue) { *this = jsonValue; }
 
-AdditionalAuthenticationProvider& AdditionalAuthenticationProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authenticationType"))
-  {
+AdditionalAuthenticationProvider& AdditionalAuthenticationProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authenticationType")) {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("openIDConnectConfig"))
-  {
+  if (jsonValue.ValueExists("openIDConnectConfig")) {
     m_openIDConnectConfig = jsonValue.GetObject("openIDConnectConfig");
     m_openIDConnectConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userPoolConfig"))
-  {
+  if (jsonValue.ValueExists("userPoolConfig")) {
     m_userPoolConfig = jsonValue.GetObject("userPoolConfig");
     m_userPoolConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
-  {
+  if (jsonValue.ValueExists("lambdaAuthorizerConfig")) {
     m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdditionalAuthenticationProvider::Jsonize() const
-{
+JsonValue AdditionalAuthenticationProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
-  if(m_openIDConnectConfigHasBeenSet)
-  {
-   payload.WithObject("openIDConnectConfig", m_openIDConnectConfig.Jsonize());
-
+  if (m_openIDConnectConfigHasBeenSet) {
+    payload.WithObject("openIDConnectConfig", m_openIDConnectConfig.Jsonize());
   }
 
-  if(m_userPoolConfigHasBeenSet)
-  {
-   payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
-
+  if (m_userPoolConfigHasBeenSet) {
+    payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
   }
 
-  if(m_lambdaAuthorizerConfigHasBeenSet)
-  {
-   payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
-
+  if (m_lambdaAuthorizerConfigHasBeenSet) {
+    payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

@@ -3,144 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/TestSetSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/TestSetSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-TestSetSummary::TestSetSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestSetSummary::TestSetSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TestSetSummary& TestSetSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("testSetId"))
-  {
+TestSetSummary& TestSetSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("testSetId")) {
     m_testSetId = jsonValue.GetString("testSetId");
     m_testSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testSetName"))
-  {
+  if (jsonValue.ValueExists("testSetName")) {
     m_testSetName = jsonValue.GetString("testSetName");
     m_testSetNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modality"))
-  {
+  if (jsonValue.ValueExists("modality")) {
     m_modality = TestSetModalityMapper::GetTestSetModalityForName(jsonValue.GetString("modality"));
     m_modalityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TestSetStatusMapper::GetTestSetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numTurns"))
-  {
+  if (jsonValue.ValueExists("numTurns")) {
     m_numTurns = jsonValue.GetInteger("numTurns");
     m_numTurnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("storageLocation"))
-  {
+  if (jsonValue.ValueExists("storageLocation")) {
     m_storageLocation = jsonValue.GetObject("storageLocation");
     m_storageLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestSetSummary::Jsonize() const
-{
+JsonValue TestSetSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_testSetIdHasBeenSet)
-  {
-   payload.WithString("testSetId", m_testSetId);
-
+  if (m_testSetIdHasBeenSet) {
+    payload.WithString("testSetId", m_testSetId);
   }
 
-  if(m_testSetNameHasBeenSet)
-  {
-   payload.WithString("testSetName", m_testSetName);
-
+  if (m_testSetNameHasBeenSet) {
+    payload.WithString("testSetName", m_testSetName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_modalityHasBeenSet)
-  {
-   payload.WithString("modality", TestSetModalityMapper::GetNameForTestSetModality(m_modality));
+  if (m_modalityHasBeenSet) {
+    payload.WithString("modality", TestSetModalityMapper::GetNameForTestSetModality(m_modality));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TestSetStatusMapper::GetNameForTestSetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TestSetStatusMapper::GetNameForTestSetStatus(m_status));
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_numTurnsHasBeenSet)
-  {
-   payload.WithInteger("numTurns", m_numTurns);
-
+  if (m_numTurnsHasBeenSet) {
+    payload.WithInteger("numTurns", m_numTurns);
   }
 
-  if(m_storageLocationHasBeenSet)
-  {
-   payload.WithObject("storageLocation", m_storageLocation.Jsonize());
-
+  if (m_storageLocationHasBeenSet) {
+    payload.WithObject("storageLocation", m_storageLocation.Jsonize());
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

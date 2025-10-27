@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/NodegroupResources.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/NodegroupResources.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-NodegroupResources::NodegroupResources(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodegroupResources::NodegroupResources(JsonView jsonValue) { *this = jsonValue; }
 
-NodegroupResources& NodegroupResources::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoScalingGroups"))
-  {
+NodegroupResources& NodegroupResources::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoScalingGroups")) {
     Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
-    for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
-    {
+    for (unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex) {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject());
     }
     m_autoScalingGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remoteAccessSecurityGroup"))
-  {
+  if (jsonValue.ValueExists("remoteAccessSecurityGroup")) {
     m_remoteAccessSecurityGroup = jsonValue.GetString("remoteAccessSecurityGroup");
     m_remoteAccessSecurityGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NodegroupResources::Jsonize() const
-{
+JsonValue NodegroupResources::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoScalingGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
-   for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
-   {
-     autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject(m_autoScalingGroups[autoScalingGroupsIndex].Jsonize());
-   }
-   payload.WithArray("autoScalingGroups", std::move(autoScalingGroupsJsonList));
-
+  if (m_autoScalingGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
+    for (unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex) {
+      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject(m_autoScalingGroups[autoScalingGroupsIndex].Jsonize());
+    }
+    payload.WithArray("autoScalingGroups", std::move(autoScalingGroupsJsonList));
   }
 
-  if(m_remoteAccessSecurityGroupHasBeenSet)
-  {
-   payload.WithString("remoteAccessSecurityGroup", m_remoteAccessSecurityGroup);
-
+  if (m_remoteAccessSecurityGroupHasBeenSet) {
+    payload.WithString("remoteAccessSecurityGroup", m_remoteAccessSecurityGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

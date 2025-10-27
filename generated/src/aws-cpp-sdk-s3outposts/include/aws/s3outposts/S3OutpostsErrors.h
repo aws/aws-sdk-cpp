@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Outposts
-{
-enum class S3OutpostsErrors
-{
-  //From Core//
+namespace Aws {
+namespace S3Outposts {
+enum class S3OutpostsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class S3OutpostsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class S3OutpostsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   OUTPOST_OFFLINE
 };
 
-class AWS_S3OUTPOSTS_API S3OutpostsError : public Aws::Client::AWSError<S3OutpostsErrors>
-{
-public:
+class AWS_S3OUTPOSTS_API S3OutpostsError : public Aws::Client::AWSError<S3OutpostsErrors> {
+ public:
   S3OutpostsError() {}
   S3OutpostsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3OutpostsErrors>(rhs) {}
   S3OutpostsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3OutpostsErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace S3OutpostsErrorMapper
-{
-  AWS_S3OUTPOSTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace S3OutpostsErrorMapper {
+AWS_S3OUTPOSTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace S3Outposts
-} // namespace Aws
+}  // namespace S3Outposts
+}  // namespace Aws

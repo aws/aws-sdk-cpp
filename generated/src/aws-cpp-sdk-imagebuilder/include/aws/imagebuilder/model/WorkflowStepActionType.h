@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class WorkflowStepActionType
-  {
-    NOT_SET,
-    RESUME,
-    STOP
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class WorkflowStepActionType { NOT_SET, RESUME, STOP };
 
-namespace WorkflowStepActionTypeMapper
-{
+namespace WorkflowStepActionTypeMapper {
 AWS_IMAGEBUILDER_API WorkflowStepActionType GetWorkflowStepActionTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForWorkflowStepActionType(WorkflowStepActionType value);
-} // namespace WorkflowStepActionTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace WorkflowStepActionTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

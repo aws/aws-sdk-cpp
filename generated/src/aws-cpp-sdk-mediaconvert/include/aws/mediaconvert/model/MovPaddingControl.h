@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MovPaddingControl
-  {
-    NOT_SET,
-    OMNEON,
-    NONE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MovPaddingControl { NOT_SET, OMNEON, NONE };
 
-namespace MovPaddingControlMapper
-{
+namespace MovPaddingControlMapper {
 AWS_MEDIACONVERT_API MovPaddingControl GetMovPaddingControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMovPaddingControl(MovPaddingControl value);
-} // namespace MovPaddingControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MovPaddingControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

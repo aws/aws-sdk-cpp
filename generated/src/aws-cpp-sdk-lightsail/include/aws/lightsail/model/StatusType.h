@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class StatusType
-  {
-    NOT_SET,
-    Active,
-    Inactive
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class StatusType { NOT_SET, Active, Inactive };
 
-namespace StatusTypeMapper
-{
+namespace StatusTypeMapper {
 AWS_LIGHTSAIL_API StatusType GetStatusTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForStatusType(StatusType value);
-} // namespace StatusTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace StatusTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/DescribePoolsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribePoolsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePoolsResult::DescribePoolsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribePoolsResult::DescribePoolsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribePoolsResult& DescribePoolsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribePoolsResult& DescribePoolsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Pools"))
-  {
+  if (jsonValue.ValueExists("Pools")) {
     Aws::Utils::Array<JsonView> poolsJsonList = jsonValue.GetArray("Pools");
-    for(unsigned poolsIndex = 0; poolsIndex < poolsJsonList.GetLength(); ++poolsIndex)
-    {
+    for (unsigned poolsIndex = 0; poolsIndex < poolsJsonList.GetLength(); ++poolsIndex) {
       m_pools.push_back(poolsJsonList[poolsIndex].AsObject());
     }
     m_poolsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

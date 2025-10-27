@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-Qualifier::Qualifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Qualifier::Qualifier(JsonView jsonValue) { *this = jsonValue; }
 
-Qualifier& Qualifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CpsUri"))
-  {
+Qualifier& Qualifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CpsUri")) {
     m_cpsUri = jsonValue.GetString("CpsUri");
     m_cpsUriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Qualifier::Jsonize() const
-{
+JsonValue Qualifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_cpsUriHasBeenSet)
-  {
-   payload.WithString("CpsUri", m_cpsUri);
-
+  if (m_cpsUriHasBeenSet) {
+    payload.WithString("CpsUri", m_cpsUri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

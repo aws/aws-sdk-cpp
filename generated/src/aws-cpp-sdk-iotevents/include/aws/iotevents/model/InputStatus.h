@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/IoTEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
-  enum class InputStatus
-  {
-    NOT_SET,
-    CREATING,
-    UPDATING,
-    ACTIVE,
-    DELETING
-  };
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
+enum class InputStatus { NOT_SET, CREATING, UPDATING, ACTIVE, DELETING };
 
-namespace InputStatusMapper
-{
+namespace InputStatusMapper {
 AWS_IOTEVENTS_API InputStatus GetInputStatusForName(const Aws::String& name);
 
 AWS_IOTEVENTS_API Aws::String GetNameForInputStatus(InputStatus value);
-} // namespace InputStatusMapper
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace InputStatusMapper
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

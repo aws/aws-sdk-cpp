@@ -12,19 +12,12 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterJobDefinitionRequest::SerializePayload() const
-{
+Aws::String DeregisterJobDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobDefinitionHasBeenSet)
-  {
-   payload.WithString("jobDefinition", m_jobDefinition);
-
+  if (m_jobDefinitionHasBeenSet) {
+    payload.WithString("jobDefinition", m_jobDefinition);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

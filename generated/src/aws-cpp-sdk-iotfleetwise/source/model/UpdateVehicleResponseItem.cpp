@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/UpdateVehicleResponseItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/UpdateVehicleResponseItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-UpdateVehicleResponseItem::UpdateVehicleResponseItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateVehicleResponseItem::UpdateVehicleResponseItem(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateVehicleResponseItem& UpdateVehicleResponseItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vehicleName"))
-  {
+UpdateVehicleResponseItem& UpdateVehicleResponseItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vehicleName")) {
     m_vehicleName = jsonValue.GetString("vehicleName");
     m_vehicleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateVehicleResponseItem::Jsonize() const
-{
+JsonValue UpdateVehicleResponseItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_vehicleNameHasBeenSet)
-  {
-   payload.WithString("vehicleName", m_vehicleName);
-
+  if (m_vehicleNameHasBeenSet) {
+    payload.WithString("vehicleName", m_vehicleName);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

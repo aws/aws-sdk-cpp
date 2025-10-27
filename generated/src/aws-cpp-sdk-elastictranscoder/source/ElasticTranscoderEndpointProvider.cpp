@@ -5,12 +5,8 @@
 
 #include <aws/elastictranscoder/ElasticTranscoderEndpointProvider.h>
 
-namespace Aws
-{
-namespace ElasticTranscoder
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ElasticTranscoder
-} // namespace Aws
+namespace Aws {
+namespace ElasticTranscoder {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ElasticTranscoder
+}  // namespace Aws

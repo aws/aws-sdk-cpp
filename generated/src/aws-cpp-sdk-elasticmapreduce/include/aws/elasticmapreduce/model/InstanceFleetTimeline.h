@@ -4,90 +4,101 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace EMR {
+namespace Model {
 
+/**
+ * <p>Provides historical timestamps for the instance fleet, including the time of
+ * creation, the time it became ready to run jobs, and the time of termination.</p>
+ *  <p>The instance fleet configuration is available only in Amazon EMR
+ * releases 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetTimeline">AWS
+ * API Reference</a></p>
+ */
+class InstanceFleetTimeline {
+ public:
+  AWS_EMR_API InstanceFleetTimeline() = default;
+  AWS_EMR_API InstanceFleetTimeline(Aws::Utils::Json::JsonView jsonValue);
+  AWS_EMR_API InstanceFleetTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides historical timestamps for the instance fleet, including the time of
-   * creation, the time it became ready to run jobs, and the time of termination.</p>
-   *  <p>The instance fleet configuration is available only in Amazon EMR
-   * releases 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetTimeline">AWS
-   * API Reference</a></p>
+   * <p>The time and date the instance fleet was created.</p>
    */
-  class InstanceFleetTimeline
-  {
-  public:
-    AWS_EMR_API InstanceFleetTimeline() = default;
-    AWS_EMR_API InstanceFleetTimeline(Aws::Utils::Json::JsonView jsonValue);
-    AWS_EMR_API InstanceFleetTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  InstanceFleetTimeline& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The time and date the instance fleet was ready to run jobs.</p>
+   */
+  inline const Aws::Utils::DateTime& GetReadyDateTime() const { return m_readyDateTime; }
+  inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
+  template <typename ReadyDateTimeT = Aws::Utils::DateTime>
+  void SetReadyDateTime(ReadyDateTimeT&& value) {
+    m_readyDateTimeHasBeenSet = true;
+    m_readyDateTime = std::forward<ReadyDateTimeT>(value);
+  }
+  template <typename ReadyDateTimeT = Aws::Utils::DateTime>
+  InstanceFleetTimeline& WithReadyDateTime(ReadyDateTimeT&& value) {
+    SetReadyDateTime(std::forward<ReadyDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time and date the instance fleet was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
-    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    InstanceFleetTimeline& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time and date the instance fleet terminated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndDateTime() const { return m_endDateTime; }
+  inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
+  template <typename EndDateTimeT = Aws::Utils::DateTime>
+  void SetEndDateTime(EndDateTimeT&& value) {
+    m_endDateTimeHasBeenSet = true;
+    m_endDateTime = std::forward<EndDateTimeT>(value);
+  }
+  template <typename EndDateTimeT = Aws::Utils::DateTime>
+  InstanceFleetTimeline& WithEndDateTime(EndDateTimeT&& value) {
+    SetEndDateTime(std::forward<EndDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_creationDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time and date the instance fleet was ready to run jobs.</p>
-     */
-    inline const Aws::Utils::DateTime& GetReadyDateTime() const { return m_readyDateTime; }
-    inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
-    template<typename ReadyDateTimeT = Aws::Utils::DateTime>
-    void SetReadyDateTime(ReadyDateTimeT&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::forward<ReadyDateTimeT>(value); }
-    template<typename ReadyDateTimeT = Aws::Utils::DateTime>
-    InstanceFleetTimeline& WithReadyDateTime(ReadyDateTimeT&& value) { SetReadyDateTime(std::forward<ReadyDateTimeT>(value)); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_readyDateTime{};
+  bool m_readyDateTimeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time and date the instance fleet terminated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndDateTime() const { return m_endDateTime; }
-    inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-    template<typename EndDateTimeT = Aws::Utils::DateTime>
-    void SetEndDateTime(EndDateTimeT&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::forward<EndDateTimeT>(value); }
-    template<typename EndDateTimeT = Aws::Utils::DateTime>
-    InstanceFleetTimeline& WithEndDateTime(EndDateTimeT&& value) { SetEndDateTime(std::forward<EndDateTimeT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::Utils::DateTime m_endDateTime{};
+  bool m_endDateTimeHasBeenSet = false;
+};
 
-    Aws::Utils::DateTime m_creationDateTime{};
-    bool m_creationDateTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_readyDateTime{};
-    bool m_readyDateTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_endDateTime{};
-    bool m_endDateTimeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

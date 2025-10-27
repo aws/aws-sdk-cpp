@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/IcmpTypeCode.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/IcmpTypeCode.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-IcmpTypeCode::IcmpTypeCode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IcmpTypeCode::IcmpTypeCode(JsonView jsonValue) { *this = jsonValue; }
 
-IcmpTypeCode& IcmpTypeCode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+IcmpTypeCode& IcmpTypeCode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetInteger("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetInteger("code");
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IcmpTypeCode::Jsonize() const
-{
+JsonValue IcmpTypeCode::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithInteger("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithInteger("type", m_type);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithInteger("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithInteger("code", m_code);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

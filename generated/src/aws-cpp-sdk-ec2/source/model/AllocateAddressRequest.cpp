@@ -3,59 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AllocateAddressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AllocateAddressRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AllocateAddressRequest::SerializePayload() const
-{
+Aws::String AllocateAddressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AllocateAddress&";
-  if(m_domainHasBeenSet)
-  {
+  if (m_domainHasBeenSet) {
     ss << "Domain=" << StringUtils::URLEncode(DomainTypeMapper::GetNameForDomainType(m_domain)) << "&";
   }
 
-  if(m_addressHasBeenSet)
-  {
+  if (m_addressHasBeenSet) {
     ss << "Address=" << StringUtils::URLEncode(m_address.c_str()) << "&";
   }
 
-  if(m_publicIpv4PoolHasBeenSet)
-  {
+  if (m_publicIpv4PoolHasBeenSet) {
     ss << "PublicIpv4Pool=" << StringUtils::URLEncode(m_publicIpv4Pool.c_str()) << "&";
   }
 
-  if(m_networkBorderGroupHasBeenSet)
-  {
+  if (m_networkBorderGroupHasBeenSet) {
     ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
-  if(m_customerOwnedIpv4PoolHasBeenSet)
-  {
+  if (m_customerOwnedIpv4PoolHasBeenSet) {
     ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_ipamPoolIdHasBeenSet)
-  {
+  if (m_ipamPoolIdHasBeenSet) {
     ss << "IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -63,8 +53,4 @@ Aws::String AllocateAddressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AllocateAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AllocateAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

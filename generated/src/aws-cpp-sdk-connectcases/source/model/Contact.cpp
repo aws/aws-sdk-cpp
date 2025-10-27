@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-Contact::Contact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Contact::Contact(JsonView jsonValue) { *this = jsonValue; }
 
-Contact& Contact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contactArn"))
-  {
+Contact& Contact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contactArn")) {
     m_contactArn = jsonValue.GetString("contactArn");
     m_contactArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Contact::Jsonize() const
-{
+JsonValue Contact::Jsonize() const {
   JsonValue payload;
 
-  if(m_contactArnHasBeenSet)
-  {
-   payload.WithString("contactArn", m_contactArn);
-
+  if (m_contactArnHasBeenSet) {
+    payload.WithString("contactArn", m_contactArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

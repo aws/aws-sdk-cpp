@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
 
-IdentityPoolShortDescription::IdentityPoolShortDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdentityPoolShortDescription::IdentityPoolShortDescription(JsonView jsonValue) { *this = jsonValue; }
 
-IdentityPoolShortDescription& IdentityPoolShortDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IdentityPoolId"))
-  {
+IdentityPoolShortDescription& IdentityPoolShortDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IdentityPoolId")) {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
     m_identityPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdentityPoolName"))
-  {
+  if (jsonValue.ValueExists("IdentityPoolName")) {
     m_identityPoolName = jsonValue.GetString("IdentityPoolName");
     m_identityPoolNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdentityPoolShortDescription::Jsonize() const
-{
+JsonValue IdentityPoolShortDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_identityPoolNameHasBeenSet)
-  {
-   payload.WithString("IdentityPoolName", m_identityPoolName);
-
+  if (m_identityPoolNameHasBeenSet) {
+    payload.WithString("IdentityPoolName", m_identityPoolName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

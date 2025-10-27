@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/DeleteFeatureRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/DeleteFeatureRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFeatureRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteFeatureRequest::SerializePayload() const { return {}; }

@@ -4,10 +4,10 @@
  */
 
 #include <aws/accessanalyzer/model/ListAccessPreviewsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccessPreviewsResult::ListAccessPreviewsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAccessPreviewsResult::ListAccessPreviewsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAccessPreviewsResult& ListAccessPreviewsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAccessPreviewsResult& ListAccessPreviewsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accessPreviews"))
-  {
+  if (jsonValue.ValueExists("accessPreviews")) {
     Aws::Utils::Array<JsonView> accessPreviewsJsonList = jsonValue.GetArray("accessPreviews");
-    for(unsigned accessPreviewsIndex = 0; accessPreviewsIndex < accessPreviewsJsonList.GetLength(); ++accessPreviewsIndex)
-    {
+    for (unsigned accessPreviewsIndex = 0; accessPreviewsIndex < accessPreviewsJsonList.GetLength(); ++accessPreviewsIndex) {
       m_accessPreviews.push_back(accessPreviewsJsonList[accessPreviewsIndex].AsObject());
     }
     m_accessPreviewsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,61 +4,66 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/ApplicationResponse.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Pinpoint
-{
-namespace Model
-{
-  class CreateAppResult
-  {
-  public:
-    AWS_PINPOINT_API CreateAppResult() = default;
-    AWS_PINPOINT_API CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_PINPOINT_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Pinpoint {
+namespace Model {
+class CreateAppResult {
+ public:
+  AWS_PINPOINT_API CreateAppResult() = default;
+  AWS_PINPOINT_API CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PINPOINT_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const ApplicationResponse& GetApplicationResponse() const { return m_applicationResponse; }
-    template<typename ApplicationResponseT = ApplicationResponse>
-    void SetApplicationResponse(ApplicationResponseT&& value) { m_applicationResponseHasBeenSet = true; m_applicationResponse = std::forward<ApplicationResponseT>(value); }
-    template<typename ApplicationResponseT = ApplicationResponse>
-    CreateAppResult& WithApplicationResponse(ApplicationResponseT&& value) { SetApplicationResponse(std::forward<ApplicationResponseT>(value)); return *this;}
-    ///@}
+  inline const ApplicationResponse& GetApplicationResponse() const { return m_applicationResponse; }
+  template <typename ApplicationResponseT = ApplicationResponse>
+  void SetApplicationResponse(ApplicationResponseT&& value) {
+    m_applicationResponseHasBeenSet = true;
+    m_applicationResponse = std::forward<ApplicationResponseT>(value);
+  }
+  template <typename ApplicationResponseT = ApplicationResponse>
+  CreateAppResult& WithApplicationResponse(ApplicationResponseT&& value) {
+    SetApplicationResponse(std::forward<ApplicationResponseT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    ApplicationResponse m_applicationResponse;
-    bool m_applicationResponseHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateAppResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ApplicationResponse m_applicationResponse;
+  bool m_applicationResponseHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAnomalySubscriptionRequest::SerializePayload() const
-{
+Aws::String DeleteAnomalySubscriptionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_subscriptionArnHasBeenSet)
-  {
-   payload.WithString("SubscriptionArn", m_subscriptionArn);
-
+  if (m_subscriptionArnHasBeenSet) {
+    payload.WithString("SubscriptionArn", m_subscriptionArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteAnomalySubscriptionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteAnomalySubscriptionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.DeleteAnomalySubscription"));
   return headers;
-
 }
-
-
-
-

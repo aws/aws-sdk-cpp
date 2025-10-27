@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class ManagedDraining
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class ManagedDraining { NOT_SET, ENABLED, DISABLED };
 
-namespace ManagedDrainingMapper
-{
+namespace ManagedDrainingMapper {
 AWS_ECS_API ManagedDraining GetManagedDrainingForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForManagedDraining(ManagedDraining value);
-} // namespace ManagedDrainingMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace ManagedDrainingMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

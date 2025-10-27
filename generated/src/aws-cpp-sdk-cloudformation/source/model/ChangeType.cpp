@@ -4,62 +4,50 @@
  */
 
 #include <aws/cloudformation/model/ChangeType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+namespace ChangeTypeMapper {
 
-namespace Aws
-{
-  namespace CloudFormation
-  {
-    namespace Model
-    {
-      namespace ChangeTypeMapper
-      {
+static const int Resource_HASH = HashingUtils::HashString("Resource");
 
-        static const int Resource_HASH = HashingUtils::HashString("Resource");
+ChangeType GetChangeTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Resource_HASH) {
+    return ChangeType::Resource;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChangeType>(hashCode);
+  }
 
+  return ChangeType::NOT_SET;
+}
 
-        ChangeType GetChangeTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Resource_HASH)
-          {
-            return ChangeType::Resource;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChangeType>(hashCode);
-          }
+Aws::String GetNameForChangeType(ChangeType enumValue) {
+  switch (enumValue) {
+    case ChangeType::NOT_SET:
+      return {};
+    case ChangeType::Resource:
+      return "Resource";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChangeType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChangeType(ChangeType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChangeType::NOT_SET:
-            return {};
-          case ChangeType::Resource:
-            return "Resource";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChangeTypeMapper
-    } // namespace Model
-  } // namespace CloudFormation
-} // namespace Aws
+}  // namespace ChangeTypeMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

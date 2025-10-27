@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/ListDevicesForWirelessDeviceImportTaskResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/ListDevicesForWirelessDeviceImportTaskResult.h>
 
 #include <utility>
 
@@ -17,29 +17,26 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDevicesForWirelessDeviceImportTaskResult::ListDevicesForWirelessDeviceImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDevicesForWirelessDeviceImportTaskResult::ListDevicesForWirelessDeviceImportTaskResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListDevicesForWirelessDeviceImportTaskResult& ListDevicesForWirelessDeviceImportTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDevicesForWirelessDeviceImportTaskResult& ListDevicesForWirelessDeviceImportTaskResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationName"))
-  {
+  if (jsonValue.ValueExists("DestinationName")) {
     m_destinationName = jsonValue.GetString("DestinationName");
     m_destinationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportedWirelessDeviceList"))
-  {
+  if (jsonValue.ValueExists("ImportedWirelessDeviceList")) {
     Aws::Utils::Array<JsonView> importedWirelessDeviceListJsonList = jsonValue.GetArray("ImportedWirelessDeviceList");
-    for(unsigned importedWirelessDeviceListIndex = 0; importedWirelessDeviceListIndex < importedWirelessDeviceListJsonList.GetLength(); ++importedWirelessDeviceListIndex)
-    {
+    for (unsigned importedWirelessDeviceListIndex = 0; importedWirelessDeviceListIndex < importedWirelessDeviceListJsonList.GetLength();
+         ++importedWirelessDeviceListIndex) {
       m_importedWirelessDeviceList.push_back(importedWirelessDeviceListJsonList[importedWirelessDeviceListIndex].AsObject());
     }
     m_importedWirelessDeviceListHasBeenSet = true;
@@ -47,12 +44,10 @@ ListDevicesForWirelessDeviceImportTaskResult& ListDevicesForWirelessDeviceImport
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

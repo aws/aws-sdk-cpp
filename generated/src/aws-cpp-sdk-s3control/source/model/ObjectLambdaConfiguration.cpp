@@ -3,66 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/ObjectLambdaConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/ObjectLambdaConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator =(const XmlNode& xmlNode)
-{
+ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode supportingAccessPointNode = resultNode.FirstChild("SupportingAccessPoint");
-    if(!supportingAccessPointNode.IsNull())
-    {
+    if (!supportingAccessPointNode.IsNull()) {
       m_supportingAccessPoint = Aws::Utils::Xml::DecodeEscapedXmlText(supportingAccessPointNode.GetText());
       m_supportingAccessPointHasBeenSet = true;
     }
     XmlNode cloudWatchMetricsEnabledNode = resultNode.FirstChild("CloudWatchMetricsEnabled");
-    if(!cloudWatchMetricsEnabledNode.IsNull())
-    {
-      m_cloudWatchMetricsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cloudWatchMetricsEnabledNode.GetText()).c_str()).c_str());
+    if (!cloudWatchMetricsEnabledNode.IsNull()) {
+      m_cloudWatchMetricsEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cloudWatchMetricsEnabledNode.GetText()).c_str()).c_str());
       m_cloudWatchMetricsEnabledHasBeenSet = true;
     }
     XmlNode allowedFeaturesNode = resultNode.FirstChild("AllowedFeatures");
-    if(!allowedFeaturesNode.IsNull())
-    {
+    if (!allowedFeaturesNode.IsNull()) {
       XmlNode allowedFeaturesMember = allowedFeaturesNode.FirstChild("AllowedFeature");
       m_allowedFeaturesHasBeenSet = !allowedFeaturesMember.IsNull();
-      while(!allowedFeaturesMember.IsNull())
-      {
-        m_allowedFeatures.push_back(ObjectLambdaAllowedFeatureMapper::GetObjectLambdaAllowedFeatureForName(StringUtils::Trim(allowedFeaturesMember.GetText().c_str())));
+      while (!allowedFeaturesMember.IsNull()) {
+        m_allowedFeatures.push_back(ObjectLambdaAllowedFeatureMapper::GetObjectLambdaAllowedFeatureForName(
+            StringUtils::Trim(allowedFeaturesMember.GetText().c_str())));
         allowedFeaturesMember = allowedFeaturesMember.NextNode("AllowedFeature");
       }
 
       m_allowedFeaturesHasBeenSet = true;
     }
     XmlNode transformationConfigurationsNode = resultNode.FirstChild("TransformationConfigurations");
-    if(!transformationConfigurationsNode.IsNull())
-    {
+    if (!transformationConfigurationsNode.IsNull()) {
       XmlNode transformationConfigurationsMember = transformationConfigurationsNode.FirstChild("TransformationConfiguration");
       m_transformationConfigurationsHasBeenSet = !transformationConfigurationsMember.IsNull();
-      while(!transformationConfigurationsMember.IsNull())
-      {
+      while (!transformationConfigurationsMember.IsNull()) {
         m_transformationConfigurations.push_back(transformationConfigurationsMember);
         transformationConfigurationsMember = transformationConfigurationsMember.NextNode("TransformationConfiguration");
       }
@@ -74,45 +62,37 @@ ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator =(const XmlNode& 
   return *this;
 }
 
-void ObjectLambdaConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void ObjectLambdaConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_supportingAccessPointHasBeenSet)
-  {
-   XmlNode supportingAccessPointNode = parentNode.CreateChildElement("SupportingAccessPoint");
-   supportingAccessPointNode.SetText(m_supportingAccessPoint);
+  if (m_supportingAccessPointHasBeenSet) {
+    XmlNode supportingAccessPointNode = parentNode.CreateChildElement("SupportingAccessPoint");
+    supportingAccessPointNode.SetText(m_supportingAccessPoint);
   }
 
-  if(m_cloudWatchMetricsEnabledHasBeenSet)
-  {
-   XmlNode cloudWatchMetricsEnabledNode = parentNode.CreateChildElement("CloudWatchMetricsEnabled");
-   ss << std::boolalpha << m_cloudWatchMetricsEnabled;
-   cloudWatchMetricsEnabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_cloudWatchMetricsEnabledHasBeenSet) {
+    XmlNode cloudWatchMetricsEnabledNode = parentNode.CreateChildElement("CloudWatchMetricsEnabled");
+    ss << std::boolalpha << m_cloudWatchMetricsEnabled;
+    cloudWatchMetricsEnabledNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_allowedFeaturesHasBeenSet)
-  {
-   XmlNode allowedFeaturesParentNode = parentNode.CreateChildElement("AllowedFeatures");
-   for(const auto& item : m_allowedFeatures)
-   {
-     XmlNode allowedFeaturesNode = allowedFeaturesParentNode.CreateChildElement("AllowedFeature");
-     allowedFeaturesNode.SetText(ObjectLambdaAllowedFeatureMapper::GetNameForObjectLambdaAllowedFeature(item));
-   }
+  if (m_allowedFeaturesHasBeenSet) {
+    XmlNode allowedFeaturesParentNode = parentNode.CreateChildElement("AllowedFeatures");
+    for (const auto& item : m_allowedFeatures) {
+      XmlNode allowedFeaturesNode = allowedFeaturesParentNode.CreateChildElement("AllowedFeature");
+      allowedFeaturesNode.SetText(ObjectLambdaAllowedFeatureMapper::GetNameForObjectLambdaAllowedFeature(item));
+    }
   }
 
-  if(m_transformationConfigurationsHasBeenSet)
-  {
-   XmlNode transformationConfigurationsParentNode = parentNode.CreateChildElement("TransformationConfigurations");
-   for(const auto& item : m_transformationConfigurations)
-   {
-     XmlNode transformationConfigurationsNode = transformationConfigurationsParentNode.CreateChildElement("TransformationConfiguration");
-     item.AddToNode(transformationConfigurationsNode);
-   }
+  if (m_transformationConfigurationsHasBeenSet) {
+    XmlNode transformationConfigurationsParentNode = parentNode.CreateChildElement("TransformationConfigurations");
+    for (const auto& item : m_transformationConfigurations) {
+      XmlNode transformationConfigurationsNode = transformationConfigurationsParentNode.CreateChildElement("TransformationConfiguration");
+      item.AddToNode(transformationConfigurationsNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

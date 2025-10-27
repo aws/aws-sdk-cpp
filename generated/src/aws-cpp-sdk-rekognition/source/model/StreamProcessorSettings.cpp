@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StreamProcessorSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StreamProcessorSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue) { *this = jsonValue; }
 
-StreamProcessorSettings& StreamProcessorSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FaceSearch"))
-  {
+StreamProcessorSettings& StreamProcessorSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FaceSearch")) {
     m_faceSearch = jsonValue.GetObject("FaceSearch");
     m_faceSearchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectedHome"))
-  {
+  if (jsonValue.ValueExists("ConnectedHome")) {
     m_connectedHome = jsonValue.GetObject("ConnectedHome");
     m_connectedHomeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamProcessorSettings::Jsonize() const
-{
+JsonValue StreamProcessorSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_faceSearchHasBeenSet)
-  {
-   payload.WithObject("FaceSearch", m_faceSearch.Jsonize());
-
+  if (m_faceSearchHasBeenSet) {
+    payload.WithObject("FaceSearch", m_faceSearch.Jsonize());
   }
 
-  if(m_connectedHomeHasBeenSet)
-  {
-   payload.WithObject("ConnectedHome", m_connectedHome.Jsonize());
-
+  if (m_connectedHomeHasBeenSet) {
+    payload.WithObject("ConnectedHome", m_connectedHome.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

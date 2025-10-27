@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class WirelessGatewayEvent
-  {
-    NOT_SET,
-    CUPS_Request,
-    Certificate
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class WirelessGatewayEvent { NOT_SET, CUPS_Request, Certificate };
 
-namespace WirelessGatewayEventMapper
-{
+namespace WirelessGatewayEventMapper {
 AWS_IOTWIRELESS_API WirelessGatewayEvent GetWirelessGatewayEventForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForWirelessGatewayEvent(WirelessGatewayEvent value);
-} // namespace WirelessGatewayEventMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace WirelessGatewayEventMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

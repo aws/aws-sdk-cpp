@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ManagedBlockchain;
 
-AWSError<CoreErrors> ManagedBlockchainErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ManagedBlockchainErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ManagedBlockchainErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

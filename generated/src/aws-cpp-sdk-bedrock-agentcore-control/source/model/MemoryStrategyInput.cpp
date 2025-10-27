@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-MemoryStrategyInput::MemoryStrategyInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemoryStrategyInput::MemoryStrategyInput(JsonView jsonValue) { *this = jsonValue; }
 
-MemoryStrategyInput& MemoryStrategyInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("semanticMemoryStrategy"))
-  {
+MemoryStrategyInput& MemoryStrategyInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("semanticMemoryStrategy")) {
     m_semanticMemoryStrategy = jsonValue.GetObject("semanticMemoryStrategy");
     m_semanticMemoryStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("summaryMemoryStrategy"))
-  {
+  if (jsonValue.ValueExists("summaryMemoryStrategy")) {
     m_summaryMemoryStrategy = jsonValue.GetObject("summaryMemoryStrategy");
     m_summaryMemoryStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userPreferenceMemoryStrategy"))
-  {
+  if (jsonValue.ValueExists("userPreferenceMemoryStrategy")) {
     m_userPreferenceMemoryStrategy = jsonValue.GetObject("userPreferenceMemoryStrategy");
     m_userPreferenceMemoryStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customMemoryStrategy"))
-  {
+  if (jsonValue.ValueExists("customMemoryStrategy")) {
     m_customMemoryStrategy = jsonValue.GetObject("customMemoryStrategy");
     m_customMemoryStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemoryStrategyInput::Jsonize() const
-{
+JsonValue MemoryStrategyInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_semanticMemoryStrategyHasBeenSet)
-  {
-   payload.WithObject("semanticMemoryStrategy", m_semanticMemoryStrategy.Jsonize());
-
+  if (m_semanticMemoryStrategyHasBeenSet) {
+    payload.WithObject("semanticMemoryStrategy", m_semanticMemoryStrategy.Jsonize());
   }
 
-  if(m_summaryMemoryStrategyHasBeenSet)
-  {
-   payload.WithObject("summaryMemoryStrategy", m_summaryMemoryStrategy.Jsonize());
-
+  if (m_summaryMemoryStrategyHasBeenSet) {
+    payload.WithObject("summaryMemoryStrategy", m_summaryMemoryStrategy.Jsonize());
   }
 
-  if(m_userPreferenceMemoryStrategyHasBeenSet)
-  {
-   payload.WithObject("userPreferenceMemoryStrategy", m_userPreferenceMemoryStrategy.Jsonize());
-
+  if (m_userPreferenceMemoryStrategyHasBeenSet) {
+    payload.WithObject("userPreferenceMemoryStrategy", m_userPreferenceMemoryStrategy.Jsonize());
   }
 
-  if(m_customMemoryStrategyHasBeenSet)
-  {
-   payload.WithObject("customMemoryStrategy", m_customMemoryStrategy.Jsonize());
-
+  if (m_customMemoryStrategyHasBeenSet) {
+    payload.WithObject("customMemoryStrategy", m_customMemoryStrategy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

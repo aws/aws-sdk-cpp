@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/ItemResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/ItemResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-ItemResponse::ItemResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ItemResponse::ItemResponse(JsonView jsonValue) { *this = jsonValue; }
 
-ItemResponse& ItemResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointItemResponse"))
-  {
+ItemResponse& ItemResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointItemResponse")) {
     m_endpointItemResponse = jsonValue.GetObject("EndpointItemResponse");
     m_endpointItemResponseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventsItemResponse"))
-  {
+  if (jsonValue.ValueExists("EventsItemResponse")) {
     Aws::Map<Aws::String, JsonView> eventsItemResponseJsonMap = jsonValue.GetObject("EventsItemResponse").GetAllObjects();
-    for(auto& eventsItemResponseItem : eventsItemResponseJsonMap)
-    {
+    for (auto& eventsItemResponseItem : eventsItemResponseJsonMap) {
       m_eventsItemResponse[eventsItemResponseItem.first] = eventsItemResponseItem.second.AsObject();
     }
     m_eventsItemResponseHasBeenSet = true;
@@ -42,30 +32,24 @@ ItemResponse& ItemResponse::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ItemResponse::Jsonize() const
-{
+JsonValue ItemResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointItemResponseHasBeenSet)
-  {
-   payload.WithObject("EndpointItemResponse", m_endpointItemResponse.Jsonize());
-
+  if (m_endpointItemResponseHasBeenSet) {
+    payload.WithObject("EndpointItemResponse", m_endpointItemResponse.Jsonize());
   }
 
-  if(m_eventsItemResponseHasBeenSet)
-  {
-   JsonValue eventsItemResponseJsonMap;
-   for(auto& eventsItemResponseItem : m_eventsItemResponse)
-   {
-     eventsItemResponseJsonMap.WithObject(eventsItemResponseItem.first, eventsItemResponseItem.second.Jsonize());
-   }
-   payload.WithObject("EventsItemResponse", std::move(eventsItemResponseJsonMap));
-
+  if (m_eventsItemResponseHasBeenSet) {
+    JsonValue eventsItemResponseJsonMap;
+    for (auto& eventsItemResponseItem : m_eventsItemResponse) {
+      eventsItemResponseJsonMap.WithObject(eventsItemResponseItem.first, eventsItemResponseItem.second.Jsonize());
+    }
+    payload.WithObject("EventsItemResponse", std::move(eventsItemResponseJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

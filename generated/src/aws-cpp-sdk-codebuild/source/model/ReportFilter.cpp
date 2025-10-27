@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ReportFilter::ReportFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportFilter::ReportFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ReportFilter& ReportFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+ReportFilter& ReportFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = ReportStatusTypeMapper::GetReportStatusTypeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportFilter::Jsonize() const
-{
+JsonValue ReportFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ReportStatusTypeMapper::GetNameForReportStatusType(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ReportStatusTypeMapper::GetNameForReportStatusType(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

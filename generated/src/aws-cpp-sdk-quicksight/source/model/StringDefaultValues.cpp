@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/StringDefaultValues.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/StringDefaultValues.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-StringDefaultValues::StringDefaultValues(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StringDefaultValues::StringDefaultValues(JsonView jsonValue) { *this = jsonValue; }
 
-StringDefaultValues& StringDefaultValues::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DynamicValue"))
-  {
+StringDefaultValues& StringDefaultValues::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DynamicValue")) {
     m_dynamicValue = jsonValue.GetObject("DynamicValue");
     m_dynamicValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StaticValues"))
-  {
+  if (jsonValue.ValueExists("StaticValues")) {
     Aws::Utils::Array<JsonView> staticValuesJsonList = jsonValue.GetArray("StaticValues");
-    for(unsigned staticValuesIndex = 0; staticValuesIndex < staticValuesJsonList.GetLength(); ++staticValuesIndex)
-    {
+    for (unsigned staticValuesIndex = 0; staticValuesIndex < staticValuesJsonList.GetLength(); ++staticValuesIndex) {
       m_staticValues.push_back(staticValuesJsonList[staticValuesIndex].AsString());
     }
     m_staticValuesHasBeenSet = true;
@@ -42,30 +32,24 @@ StringDefaultValues& StringDefaultValues::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue StringDefaultValues::Jsonize() const
-{
+JsonValue StringDefaultValues::Jsonize() const {
   JsonValue payload;
 
-  if(m_dynamicValueHasBeenSet)
-  {
-   payload.WithObject("DynamicValue", m_dynamicValue.Jsonize());
-
+  if (m_dynamicValueHasBeenSet) {
+    payload.WithObject("DynamicValue", m_dynamicValue.Jsonize());
   }
 
-  if(m_staticValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> staticValuesJsonList(m_staticValues.size());
-   for(unsigned staticValuesIndex = 0; staticValuesIndex < staticValuesJsonList.GetLength(); ++staticValuesIndex)
-   {
-     staticValuesJsonList[staticValuesIndex].AsString(m_staticValues[staticValuesIndex]);
-   }
-   payload.WithArray("StaticValues", std::move(staticValuesJsonList));
-
+  if (m_staticValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> staticValuesJsonList(m_staticValues.size());
+    for (unsigned staticValuesIndex = 0; staticValuesIndex < staticValuesJsonList.GetLength(); ++staticValuesIndex) {
+      staticValuesJsonList[staticValuesIndex].AsString(m_staticValues[staticValuesIndex]);
+    }
+    payload.WithArray("StaticValues", std::move(staticValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

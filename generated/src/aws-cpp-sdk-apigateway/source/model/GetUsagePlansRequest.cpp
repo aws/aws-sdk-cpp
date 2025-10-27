@@ -4,8 +4,8 @@
  */
 
 #include <aws/apigateway/model/GetUsagePlansRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetUsagePlansRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetUsagePlansRequest::SerializePayload() const { return {}; }
+
+void GetUsagePlansRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_positionHasBeenSet) {
+    ss << m_position;
+    uri.AddQueryStringParameter("position", ss.str());
+    ss.str("");
+  }
+
+  if (m_keyIdHasBeenSet) {
+    ss << m_keyId;
+    uri.AddQueryStringParameter("keyId", ss.str());
+    ss.str("");
+  }
+
+  if (m_limitHasBeenSet) {
+    ss << m_limit;
+    uri.AddQueryStringParameter("limit", ss.str());
+    ss.str("");
+  }
 }
-
-void GetUsagePlansRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_positionHasBeenSet)
-    {
-      ss << m_position;
-      uri.AddQueryStringParameter("position", ss.str());
-      ss.str("");
-    }
-
-    if(m_keyIdHasBeenSet)
-    {
-      ss << m_keyId;
-      uri.AddQueryStringParameter("keyId", ss.str());
-      ss.str("");
-    }
-
-    if(m_limitHasBeenSet)
-    {
-      ss << m_limit;
-      uri.AddQueryStringParameter("limit", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

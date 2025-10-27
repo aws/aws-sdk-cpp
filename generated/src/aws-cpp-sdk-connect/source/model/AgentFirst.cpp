@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-AgentFirst::AgentFirst(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentFirst::AgentFirst(JsonView jsonValue) { *this = jsonValue; }
 
-AgentFirst& AgentFirst::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Preview"))
-  {
+AgentFirst& AgentFirst::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Preview")) {
     m_preview = jsonValue.GetObject("Preview");
     m_previewHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentFirst::Jsonize() const
-{
+JsonValue AgentFirst::Jsonize() const {
   JsonValue payload;
 
-  if(m_previewHasBeenSet)
-  {
-   payload.WithObject("Preview", m_preview.Jsonize());
-
+  if (m_previewHasBeenSet) {
+    payload.WithObject("Preview", m_preview.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

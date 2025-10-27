@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ResourceCatalogSortOrder
-  {
-    NOT_SET,
-    Ascending,
-    Descending
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ResourceCatalogSortOrder { NOT_SET, Ascending, Descending };
 
-namespace ResourceCatalogSortOrderMapper
-{
+namespace ResourceCatalogSortOrderMapper {
 AWS_SAGEMAKER_API ResourceCatalogSortOrder GetResourceCatalogSortOrderForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForResourceCatalogSortOrder(ResourceCatalogSortOrder value);
-} // namespace ResourceCatalogSortOrderMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ResourceCatalogSortOrderMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

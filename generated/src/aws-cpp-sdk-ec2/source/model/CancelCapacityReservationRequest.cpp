@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CancelCapacityReservationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CancelCapacityReservationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CancelCapacityReservationRequest::SerializePayload() const
-{
+Aws::String CancelCapacityReservationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CancelCapacityReservation&";
-  if(m_capacityReservationIdHasBeenSet)
-  {
+  if (m_capacityReservationIdHasBeenSet) {
     ss << "CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String CancelCapacityReservationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CancelCapacityReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CancelCapacityReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-CurrentRevision::CurrentRevision(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CurrentRevision::CurrentRevision(JsonView jsonValue) { *this = jsonValue; }
 
-CurrentRevision& CurrentRevision::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("revision"))
-  {
+CurrentRevision& CurrentRevision::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("changeIdentifier"))
-  {
+  if (jsonValue.ValueExists("changeIdentifier")) {
     m_changeIdentifier = jsonValue.GetString("changeIdentifier");
     m_changeIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("created"))
-  {
+  if (jsonValue.ValueExists("created")) {
     m_created = jsonValue.GetDouble("created");
     m_createdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionSummary"))
-  {
+  if (jsonValue.ValueExists("revisionSummary")) {
     m_revisionSummary = jsonValue.GetString("revisionSummary");
     m_revisionSummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CurrentRevision::Jsonize() const
-{
+JsonValue CurrentRevision::Jsonize() const {
   JsonValue payload;
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithString("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
-  if(m_changeIdentifierHasBeenSet)
-  {
-   payload.WithString("changeIdentifier", m_changeIdentifier);
-
+  if (m_changeIdentifierHasBeenSet) {
+    payload.WithString("changeIdentifier", m_changeIdentifier);
   }
 
-  if(m_createdHasBeenSet)
-  {
-   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  if (m_createdHasBeenSet) {
+    payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
-  if(m_revisionSummaryHasBeenSet)
-  {
-   payload.WithString("revisionSummary", m_revisionSummary);
-
+  if (m_revisionSummaryHasBeenSet) {
+    payload.WithString("revisionSummary", m_revisionSummary);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class AnalyticsIntentMetricName
-  {
-    NOT_SET,
-    Count,
-    Success,
-    Failure,
-    Switched,
-    Dropped
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class AnalyticsIntentMetricName { NOT_SET, Count, Success, Failure, Switched, Dropped };
 
-namespace AnalyticsIntentMetricNameMapper
-{
+namespace AnalyticsIntentMetricNameMapper {
 AWS_LEXMODELSV2_API AnalyticsIntentMetricName GetAnalyticsIntentMetricNameForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForAnalyticsIntentMetricName(AnalyticsIntentMetricName value);
-} // namespace AnalyticsIntentMetricNameMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace AnalyticsIntentMetricNameMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

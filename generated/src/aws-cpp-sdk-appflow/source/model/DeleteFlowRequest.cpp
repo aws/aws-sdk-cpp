@@ -12,25 +12,16 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFlowRequest::SerializePayload() const
-{
+Aws::String DeleteFlowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flowNameHasBeenSet)
-  {
-   payload.WithString("flowName", m_flowName);
-
+  if (m_flowNameHasBeenSet) {
+    payload.WithString("flowName", m_flowName);
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
-   payload.WithBool("forceDelete", m_forceDelete);
-
+  if (m_forceDeleteHasBeenSet) {
+    payload.WithBool("forceDelete", m_forceDelete);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

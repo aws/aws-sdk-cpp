@@ -12,112 +12,76 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
-{
+Aws::String StartOutboundVoiceContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_referencesHasBeenSet)
-  {
-   JsonValue referencesJsonMap;
-   for(auto& referencesItem : m_references)
-   {
-     referencesJsonMap.WithObject(referencesItem.first, referencesItem.second.Jsonize());
-   }
-   payload.WithObject("References", std::move(referencesJsonMap));
-
+  if (m_referencesHasBeenSet) {
+    JsonValue referencesJsonMap;
+    for (auto& referencesItem : m_references) {
+      referencesJsonMap.WithObject(referencesItem.first, referencesItem.second.Jsonize());
+    }
+    payload.WithObject("References", std::move(referencesJsonMap));
   }
 
-  if(m_relatedContactIdHasBeenSet)
-  {
-   payload.WithString("RelatedContactId", m_relatedContactId);
-
+  if (m_relatedContactIdHasBeenSet) {
+    payload.WithString("RelatedContactId", m_relatedContactId);
   }
 
-  if(m_destinationPhoneNumberHasBeenSet)
-  {
-   payload.WithString("DestinationPhoneNumber", m_destinationPhoneNumber);
-
+  if (m_destinationPhoneNumberHasBeenSet) {
+    payload.WithString("DestinationPhoneNumber", m_destinationPhoneNumber);
   }
 
-  if(m_contactFlowIdHasBeenSet)
-  {
-   payload.WithString("ContactFlowId", m_contactFlowId);
-
+  if (m_contactFlowIdHasBeenSet) {
+    payload.WithString("ContactFlowId", m_contactFlowId);
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_sourcePhoneNumberHasBeenSet)
-  {
-   payload.WithString("SourcePhoneNumber", m_sourcePhoneNumber);
-
+  if (m_sourcePhoneNumberHasBeenSet) {
+    payload.WithString("SourcePhoneNumber", m_sourcePhoneNumber);
   }
 
-  if(m_queueIdHasBeenSet)
-  {
-   payload.WithString("QueueId", m_queueId);
-
+  if (m_queueIdHasBeenSet) {
+    payload.WithString("QueueId", m_queueId);
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
-  if(m_answerMachineDetectionConfigHasBeenSet)
-  {
-   payload.WithObject("AnswerMachineDetectionConfig", m_answerMachineDetectionConfig.Jsonize());
-
+  if (m_answerMachineDetectionConfigHasBeenSet) {
+    payload.WithObject("AnswerMachineDetectionConfig", m_answerMachineDetectionConfig.Jsonize());
   }
 
-  if(m_campaignIdHasBeenSet)
-  {
-   payload.WithString("CampaignId", m_campaignId);
-
+  if (m_campaignIdHasBeenSet) {
+    payload.WithString("CampaignId", m_campaignId);
   }
 
-  if(m_trafficTypeHasBeenSet)
-  {
-   payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
+  if (m_trafficTypeHasBeenSet) {
+    payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
   }
 
-  if(m_outboundStrategyHasBeenSet)
-  {
-   payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
-
+  if (m_outboundStrategyHasBeenSet) {
+    payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

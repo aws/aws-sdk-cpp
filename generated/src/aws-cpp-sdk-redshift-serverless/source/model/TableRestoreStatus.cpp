@@ -3,213 +3,158 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/TableRestoreStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/TableRestoreStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-TableRestoreStatus::TableRestoreStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableRestoreStatus::TableRestoreStatus(JsonView jsonValue) { *this = jsonValue; }
 
-TableRestoreStatus& TableRestoreStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+TableRestoreStatus& TableRestoreStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespaceName"))
-  {
+  if (jsonValue.ValueExists("namespaceName")) {
     m_namespaceName = jsonValue.GetString("namespaceName");
     m_namespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("newTableName"))
-  {
+  if (jsonValue.ValueExists("newTableName")) {
     m_newTableName = jsonValue.GetString("newTableName");
     m_newTableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("progressInMegaBytes"))
-  {
+  if (jsonValue.ValueExists("progressInMegaBytes")) {
     m_progressInMegaBytes = jsonValue.GetInt64("progressInMegaBytes");
     m_progressInMegaBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recoveryPointId"))
-  {
+  if (jsonValue.ValueExists("recoveryPointId")) {
     m_recoveryPointId = jsonValue.GetString("recoveryPointId");
     m_recoveryPointIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("requestTime"))
-  {
+  if (jsonValue.ValueExists("requestTime")) {
     m_requestTime = jsonValue.GetDouble("requestTime");
     m_requestTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotName"))
-  {
+  if (jsonValue.ValueExists("snapshotName")) {
     m_snapshotName = jsonValue.GetString("snapshotName");
     m_snapshotNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceDatabaseName"))
-  {
+  if (jsonValue.ValueExists("sourceDatabaseName")) {
     m_sourceDatabaseName = jsonValue.GetString("sourceDatabaseName");
     m_sourceDatabaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceSchemaName"))
-  {
+  if (jsonValue.ValueExists("sourceSchemaName")) {
     m_sourceSchemaName = jsonValue.GetString("sourceSchemaName");
     m_sourceSchemaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceTableName"))
-  {
+  if (jsonValue.ValueExists("sourceTableName")) {
     m_sourceTableName = jsonValue.GetString("sourceTableName");
     m_sourceTableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableRestoreRequestId"))
-  {
+  if (jsonValue.ValueExists("tableRestoreRequestId")) {
     m_tableRestoreRequestId = jsonValue.GetString("tableRestoreRequestId");
     m_tableRestoreRequestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetDatabaseName"))
-  {
+  if (jsonValue.ValueExists("targetDatabaseName")) {
     m_targetDatabaseName = jsonValue.GetString("targetDatabaseName");
     m_targetDatabaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetSchemaName"))
-  {
+  if (jsonValue.ValueExists("targetSchemaName")) {
     m_targetSchemaName = jsonValue.GetString("targetSchemaName");
     m_targetSchemaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalDataInMegaBytes"))
-  {
+  if (jsonValue.ValueExists("totalDataInMegaBytes")) {
     m_totalDataInMegaBytes = jsonValue.GetInt64("totalDataInMegaBytes");
     m_totalDataInMegaBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workgroupName"))
-  {
+  if (jsonValue.ValueExists("workgroupName")) {
     m_workgroupName = jsonValue.GetString("workgroupName");
     m_workgroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableRestoreStatus::Jsonize() const
-{
+JsonValue TableRestoreStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_namespaceNameHasBeenSet)
-  {
-   payload.WithString("namespaceName", m_namespaceName);
-
+  if (m_namespaceNameHasBeenSet) {
+    payload.WithString("namespaceName", m_namespaceName);
   }
 
-  if(m_newTableNameHasBeenSet)
-  {
-   payload.WithString("newTableName", m_newTableName);
-
+  if (m_newTableNameHasBeenSet) {
+    payload.WithString("newTableName", m_newTableName);
   }
 
-  if(m_progressInMegaBytesHasBeenSet)
-  {
-   payload.WithInt64("progressInMegaBytes", m_progressInMegaBytes);
-
+  if (m_progressInMegaBytesHasBeenSet) {
+    payload.WithInt64("progressInMegaBytes", m_progressInMegaBytes);
   }
 
-  if(m_recoveryPointIdHasBeenSet)
-  {
-   payload.WithString("recoveryPointId", m_recoveryPointId);
-
+  if (m_recoveryPointIdHasBeenSet) {
+    payload.WithString("recoveryPointId", m_recoveryPointId);
   }
 
-  if(m_requestTimeHasBeenSet)
-  {
-   payload.WithDouble("requestTime", m_requestTime.SecondsWithMSPrecision());
+  if (m_requestTimeHasBeenSet) {
+    payload.WithDouble("requestTime", m_requestTime.SecondsWithMSPrecision());
   }
 
-  if(m_snapshotNameHasBeenSet)
-  {
-   payload.WithString("snapshotName", m_snapshotName);
-
+  if (m_snapshotNameHasBeenSet) {
+    payload.WithString("snapshotName", m_snapshotName);
   }
 
-  if(m_sourceDatabaseNameHasBeenSet)
-  {
-   payload.WithString("sourceDatabaseName", m_sourceDatabaseName);
-
+  if (m_sourceDatabaseNameHasBeenSet) {
+    payload.WithString("sourceDatabaseName", m_sourceDatabaseName);
   }
 
-  if(m_sourceSchemaNameHasBeenSet)
-  {
-   payload.WithString("sourceSchemaName", m_sourceSchemaName);
-
+  if (m_sourceSchemaNameHasBeenSet) {
+    payload.WithString("sourceSchemaName", m_sourceSchemaName);
   }
 
-  if(m_sourceTableNameHasBeenSet)
-  {
-   payload.WithString("sourceTableName", m_sourceTableName);
-
+  if (m_sourceTableNameHasBeenSet) {
+    payload.WithString("sourceTableName", m_sourceTableName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_tableRestoreRequestIdHasBeenSet)
-  {
-   payload.WithString("tableRestoreRequestId", m_tableRestoreRequestId);
-
+  if (m_tableRestoreRequestIdHasBeenSet) {
+    payload.WithString("tableRestoreRequestId", m_tableRestoreRequestId);
   }
 
-  if(m_targetDatabaseNameHasBeenSet)
-  {
-   payload.WithString("targetDatabaseName", m_targetDatabaseName);
-
+  if (m_targetDatabaseNameHasBeenSet) {
+    payload.WithString("targetDatabaseName", m_targetDatabaseName);
   }
 
-  if(m_targetSchemaNameHasBeenSet)
-  {
-   payload.WithString("targetSchemaName", m_targetSchemaName);
-
+  if (m_targetSchemaNameHasBeenSet) {
+    payload.WithString("targetSchemaName", m_targetSchemaName);
   }
 
-  if(m_totalDataInMegaBytesHasBeenSet)
-  {
-   payload.WithInt64("totalDataInMegaBytes", m_totalDataInMegaBytes);
-
+  if (m_totalDataInMegaBytesHasBeenSet) {
+    payload.WithInt64("totalDataInMegaBytes", m_totalDataInMegaBytes);
   }
 
-  if(m_workgroupNameHasBeenSet)
-  {
-   payload.WithString("workgroupName", m_workgroupName);
-
+  if (m_workgroupNameHasBeenSet) {
+    payload.WithString("workgroupName", m_workgroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

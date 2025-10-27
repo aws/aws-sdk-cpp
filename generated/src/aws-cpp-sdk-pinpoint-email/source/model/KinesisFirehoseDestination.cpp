@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/KinesisFirehoseDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/KinesisFirehoseDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
-KinesisFirehoseDestination::KinesisFirehoseDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisFirehoseDestination::KinesisFirehoseDestination(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisFirehoseDestination& KinesisFirehoseDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IamRoleArn"))
-  {
+KinesisFirehoseDestination& KinesisFirehoseDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IamRoleArn")) {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
     m_iamRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeliveryStreamArn"))
-  {
+  if (jsonValue.ValueExists("DeliveryStreamArn")) {
     m_deliveryStreamArn = jsonValue.GetString("DeliveryStreamArn");
     m_deliveryStreamArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisFirehoseDestination::Jsonize() const
-{
+JsonValue KinesisFirehoseDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_deliveryStreamArnHasBeenSet)
-  {
-   payload.WithString("DeliveryStreamArn", m_deliveryStreamArn);
-
+  if (m_deliveryStreamArnHasBeenSet) {
+    payload.WithString("DeliveryStreamArn", m_deliveryStreamArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class FreeTrialInfoErrorCode
-  {
-    NOT_SET,
-    ACCESS_DENIED,
-    INTERNAL_ERROR
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class FreeTrialInfoErrorCode { NOT_SET, ACCESS_DENIED, INTERNAL_ERROR };
 
-namespace FreeTrialInfoErrorCodeMapper
-{
+namespace FreeTrialInfoErrorCodeMapper {
 AWS_INSPECTOR2_API FreeTrialInfoErrorCode GetFreeTrialInfoErrorCodeForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForFreeTrialInfoErrorCode(FreeTrialInfoErrorCode value);
-} // namespace FreeTrialInfoErrorCodeMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace FreeTrialInfoErrorCodeMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

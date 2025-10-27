@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourceEvaluationSummaryRequest::SerializePayload() const
-{
+Aws::String GetResourceEvaluationSummaryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceEvaluationIdHasBeenSet)
-  {
-   payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
-
+  if (m_resourceEvaluationIdHasBeenSet) {
+    payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetResourceEvaluationSummaryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetResourceEvaluationSummaryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.GetResourceEvaluationSummary"));
   return headers;
-
 }
-
-
-
-

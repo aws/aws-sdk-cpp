@@ -11,116 +11,85 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ContactDataRequest::ContactDataRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactDataRequest::ContactDataRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ContactDataRequest& ContactDataRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SystemEndpoint"))
-  {
+ContactDataRequest& ContactDataRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SystemEndpoint")) {
     m_systemEndpoint = jsonValue.GetObject("SystemEndpoint");
     m_systemEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomerEndpoint"))
-  {
+  if (jsonValue.ValueExists("CustomerEndpoint")) {
     m_customerEndpoint = jsonValue.GetObject("CustomerEndpoint");
     m_customerEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestIdentifier"))
-  {
+  if (jsonValue.ValueExists("RequestIdentifier")) {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
     m_requestIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueueId"))
-  {
+  if (jsonValue.ValueExists("QueueId")) {
     m_queueId = jsonValue.GetString("QueueId");
     m_queueIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attributes"))
-  {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Campaign"))
-  {
+  if (jsonValue.ValueExists("Campaign")) {
     m_campaign = jsonValue.GetObject("Campaign");
     m_campaignHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutboundStrategy"))
-  {
+  if (jsonValue.ValueExists("OutboundStrategy")) {
     m_outboundStrategy = jsonValue.GetObject("OutboundStrategy");
     m_outboundStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContactDataRequest::Jsonize() const
-{
+JsonValue ContactDataRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_systemEndpointHasBeenSet)
-  {
-   payload.WithObject("SystemEndpoint", m_systemEndpoint.Jsonize());
-
+  if (m_systemEndpointHasBeenSet) {
+    payload.WithObject("SystemEndpoint", m_systemEndpoint.Jsonize());
   }
 
-  if(m_customerEndpointHasBeenSet)
-  {
-   payload.WithObject("CustomerEndpoint", m_customerEndpoint.Jsonize());
-
+  if (m_customerEndpointHasBeenSet) {
+    payload.WithObject("CustomerEndpoint", m_customerEndpoint.Jsonize());
   }
 
-  if(m_requestIdentifierHasBeenSet)
-  {
-   payload.WithString("RequestIdentifier", m_requestIdentifier);
-
+  if (m_requestIdentifierHasBeenSet) {
+    payload.WithString("RequestIdentifier", m_requestIdentifier);
   }
 
-  if(m_queueIdHasBeenSet)
-  {
-   payload.WithString("QueueId", m_queueId);
-
+  if (m_queueIdHasBeenSet) {
+    payload.WithString("QueueId", m_queueId);
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
-  if(m_campaignHasBeenSet)
-  {
-   payload.WithObject("Campaign", m_campaign.Jsonize());
-
+  if (m_campaignHasBeenSet) {
+    payload.WithObject("Campaign", m_campaign.Jsonize());
   }
 
-  if(m_outboundStrategyHasBeenSet)
-  {
-   payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
-
+  if (m_outboundStrategyHasBeenSet) {
+    payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/QuickResponseOrderField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/QuickResponseOrderField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-QuickResponseOrderField::QuickResponseOrderField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickResponseOrderField::QuickResponseOrderField(JsonView jsonValue) { *this = jsonValue; }
 
-QuickResponseOrderField& QuickResponseOrderField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+QuickResponseOrderField& QuickResponseOrderField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("order"))
-  {
+  if (jsonValue.ValueExists("order")) {
     m_order = OrderMapper::GetOrderForName(jsonValue.GetString("order"));
     m_orderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickResponseOrderField::Jsonize() const
-{
+JsonValue QuickResponseOrderField::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_orderHasBeenSet)
-  {
-   payload.WithString("order", OrderMapper::GetNameForOrder(m_order));
+  if (m_orderHasBeenSet) {
+    payload.WithString("order", OrderMapper::GetNameForOrder(m_order));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

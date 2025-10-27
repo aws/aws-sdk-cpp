@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class ScanningConfigurationFailureCode
-  {
-    NOT_SET,
-    REPOSITORY_NOT_FOUND
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class ScanningConfigurationFailureCode { NOT_SET, REPOSITORY_NOT_FOUND };
 
-namespace ScanningConfigurationFailureCodeMapper
-{
+namespace ScanningConfigurationFailureCodeMapper {
 AWS_ECR_API ScanningConfigurationFailureCode GetScanningConfigurationFailureCodeForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForScanningConfigurationFailureCode(ScanningConfigurationFailureCode value);
-} // namespace ScanningConfigurationFailureCodeMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace ScanningConfigurationFailureCodeMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

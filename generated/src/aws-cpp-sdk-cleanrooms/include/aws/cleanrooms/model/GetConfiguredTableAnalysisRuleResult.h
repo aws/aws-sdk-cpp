@@ -7,60 +7,66 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ConfiguredTableAnalysisRule.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CleanRooms
-{
-namespace Model
-{
-  class GetConfiguredTableAnalysisRuleResult
-  {
-  public:
-    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult() = default;
-    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CleanRooms {
+namespace Model {
+class GetConfiguredTableAnalysisRuleResult {
+ public:
+  AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult() = default;
+  AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The entire analysis rule output.</p>
+   */
+  inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const { return m_analysisRule; }
+  template <typename AnalysisRuleT = ConfiguredTableAnalysisRule>
+  void SetAnalysisRule(AnalysisRuleT&& value) {
+    m_analysisRuleHasBeenSet = true;
+    m_analysisRule = std::forward<AnalysisRuleT>(value);
+  }
+  template <typename AnalysisRuleT = ConfiguredTableAnalysisRule>
+  GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(AnalysisRuleT&& value) {
+    SetAnalysisRule(std::forward<AnalysisRuleT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The entire analysis rule output.</p>
-     */
-    inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const { return m_analysisRule; }
-    template<typename AnalysisRuleT = ConfiguredTableAnalysisRule>
-    void SetAnalysisRule(AnalysisRuleT&& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = std::forward<AnalysisRuleT>(value); }
-    template<typename AnalysisRuleT = ConfiguredTableAnalysisRule>
-    GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(AnalysisRuleT&& value) { SetAnalysisRule(std::forward<AnalysisRuleT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetConfiguredTableAnalysisRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetConfiguredTableAnalysisRuleResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ConfiguredTableAnalysisRule m_analysisRule;
+  bool m_analysisRuleHasBeenSet = false;
 
-    ConfiguredTableAnalysisRule m_analysisRule;
-    bool m_analysisRuleHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

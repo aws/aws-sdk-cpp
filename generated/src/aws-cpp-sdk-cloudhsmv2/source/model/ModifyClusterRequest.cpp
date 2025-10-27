@@ -12,39 +12,26 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterRequest::SerializePayload() const
-{
+Aws::String ModifyClusterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hsmTypeHasBeenSet)
-  {
-   payload.WithString("HsmType", m_hsmType);
-
+  if (m_hsmTypeHasBeenSet) {
+    payload.WithString("HsmType", m_hsmType);
   }
 
-  if(m_backupRetentionPolicyHasBeenSet)
-  {
-   payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
-
+  if (m_backupRetentionPolicyHasBeenSet) {
+    payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
   }
 
-  if(m_clusterIdHasBeenSet)
-  {
-   payload.WithString("ClusterId", m_clusterId);
-
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ModifyClusterRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ModifyClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.ModifyCluster"));
   return headers;
-
 }
-
-
-
-

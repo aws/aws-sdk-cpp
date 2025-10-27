@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VerifiedAccessEndpointType
-  {
-    NOT_SET,
-    load_balancer,
-    network_interface,
-    rds,
-    cidr
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VerifiedAccessEndpointType { NOT_SET, load_balancer, network_interface, rds, cidr };
 
-namespace VerifiedAccessEndpointTypeMapper
-{
+namespace VerifiedAccessEndpointTypeMapper {
 AWS_EC2_API VerifiedAccessEndpointType GetVerifiedAccessEndpointTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVerifiedAccessEndpointType(VerifiedAccessEndpointType value);
-} // namespace VerifiedAccessEndpointTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VerifiedAccessEndpointTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

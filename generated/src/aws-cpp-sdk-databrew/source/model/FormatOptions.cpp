@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/FormatOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/FormatOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-FormatOptions::FormatOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormatOptions::FormatOptions(JsonView jsonValue) { *this = jsonValue; }
 
-FormatOptions& FormatOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Json"))
-  {
+FormatOptions& FormatOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Json")) {
     m_json = jsonValue.GetObject("Json");
     m_jsonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Excel"))
-  {
+  if (jsonValue.ValueExists("Excel")) {
     m_excel = jsonValue.GetObject("Excel");
     m_excelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Csv"))
-  {
+  if (jsonValue.ValueExists("Csv")) {
     m_csv = jsonValue.GetObject("Csv");
     m_csvHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormatOptions::Jsonize() const
-{
+JsonValue FormatOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonHasBeenSet)
-  {
-   payload.WithObject("Json", m_json.Jsonize());
-
+  if (m_jsonHasBeenSet) {
+    payload.WithObject("Json", m_json.Jsonize());
   }
 
-  if(m_excelHasBeenSet)
-  {
-   payload.WithObject("Excel", m_excel.Jsonize());
-
+  if (m_excelHasBeenSet) {
+    payload.WithObject("Excel", m_excel.Jsonize());
   }
 
-  if(m_csvHasBeenSet)
-  {
-   payload.WithObject("Csv", m_csv.Jsonize());
-
+  if (m_csvHasBeenSet) {
+    payload.WithObject("Csv", m_csv.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

@@ -4,43 +4,35 @@
  */
 
 #include <aws/cloudfront/model/ResponseHeadersPolicyFrameOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResponseHeadersPolicyFrameOptions& ResponseHeadersPolicyFrameOptions::operator =(const XmlNode& xmlNode)
-{
+ResponseHeadersPolicyFrameOptions& ResponseHeadersPolicyFrameOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode overrideNode = resultNode.FirstChild("Override");
-    if(!overrideNode.IsNull())
-    {
-      m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
+    if (!overrideNode.IsNull()) {
+      m_override =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
     }
     XmlNode frameOptionNode = resultNode.FirstChild("FrameOption");
-    if(!frameOptionNode.IsNull())
-    {
-      m_frameOption = FrameOptionsListMapper::GetFrameOptionsListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frameOptionNode.GetText()).c_str()));
+    if (!frameOptionNode.IsNull()) {
+      m_frameOption = FrameOptionsListMapper::GetFrameOptionsListForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frameOptionNode.GetText()).c_str()));
       m_frameOptionHasBeenSet = true;
     }
   }
@@ -48,25 +40,21 @@ ResponseHeadersPolicyFrameOptions& ResponseHeadersPolicyFrameOptions::operator =
   return *this;
 }
 
-void ResponseHeadersPolicyFrameOptions::AddToNode(XmlNode& parentNode) const
-{
+void ResponseHeadersPolicyFrameOptions::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_overrideHasBeenSet)
-  {
-   XmlNode overrideNode = parentNode.CreateChildElement("Override");
-   ss << std::boolalpha << m_override;
-   overrideNode.SetText(ss.str());
-   ss.str("");
+  if (m_overrideHasBeenSet) {
+    XmlNode overrideNode = parentNode.CreateChildElement("Override");
+    ss << std::boolalpha << m_override;
+    overrideNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_frameOptionHasBeenSet)
-  {
-   XmlNode frameOptionNode = parentNode.CreateChildElement("FrameOption");
-   frameOptionNode.SetText(FrameOptionsListMapper::GetNameForFrameOptionsList(m_frameOption));
+  if (m_frameOptionHasBeenSet) {
+    XmlNode frameOptionNode = parentNode.CreateChildElement("FrameOption");
+    frameOptionNode.SetText(FrameOptionsListMapper::GetNameForFrameOptionsList(m_frameOption));
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

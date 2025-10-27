@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
-  enum class PinBlockFormatForPinData
-  {
-    NOT_SET,
-    ISO_FORMAT_0,
-    ISO_FORMAT_1,
-    ISO_FORMAT_3,
-    ISO_FORMAT_4
-  };
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
+enum class PinBlockFormatForPinData { NOT_SET, ISO_FORMAT_0, ISO_FORMAT_1, ISO_FORMAT_3, ISO_FORMAT_4 };
 
-namespace PinBlockFormatForPinDataMapper
-{
+namespace PinBlockFormatForPinDataMapper {
 AWS_PAYMENTCRYPTOGRAPHYDATA_API PinBlockFormatForPinData GetPinBlockFormatForPinDataForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::String GetNameForPinBlockFormatForPinData(PinBlockFormatForPinData value);
-} // namespace PinBlockFormatForPinDataMapper
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace PinBlockFormatForPinDataMapper
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

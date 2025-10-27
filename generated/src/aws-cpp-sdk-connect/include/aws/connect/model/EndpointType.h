@@ -7,28 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class EndpointType
-  {
-    NOT_SET,
-    TELEPHONE_NUMBER,
-    VOIP,
-    CONTACT_FLOW,
-    CONNECT_PHONENUMBER_ARN,
-    EMAIL_ADDRESS
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class EndpointType { NOT_SET, TELEPHONE_NUMBER, VOIP, CONTACT_FLOW, CONNECT_PHONENUMBER_ARN, EMAIL_ADDRESS };
 
-namespace EndpointTypeMapper
-{
+namespace EndpointTypeMapper {
 AWS_CONNECT_API EndpointType GetEndpointTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForEndpointType(EndpointType value);
-} // namespace EndpointTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace EndpointTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

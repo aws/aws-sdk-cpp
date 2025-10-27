@@ -12,44 +12,30 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCredentialsForIdentityRequest::SerializePayload() const
-{
+Aws::String GetCredentialsForIdentityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityIdHasBeenSet)
-  {
-   payload.WithString("IdentityId", m_identityId);
-
+  if (m_identityIdHasBeenSet) {
+    payload.WithString("IdentityId", m_identityId);
   }
 
-  if(m_loginsHasBeenSet)
-  {
-   JsonValue loginsJsonMap;
-   for(auto& loginsItem : m_logins)
-   {
-     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-   }
-   payload.WithObject("Logins", std::move(loginsJsonMap));
-
+  if (m_loginsHasBeenSet) {
+    JsonValue loginsJsonMap;
+    for (auto& loginsItem : m_logins) {
+      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+    }
+    payload.WithObject("Logins", std::move(loginsJsonMap));
   }
 
-  if(m_customRoleArnHasBeenSet)
-  {
-   payload.WithString("CustomRoleArn", m_customRoleArn);
-
+  if (m_customRoleArnHasBeenSet) {
+    payload.WithString("CustomRoleArn", m_customRoleArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCredentialsForIdentityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCredentialsForIdentityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetCredentialsForIdentity"));
   return headers;
-
 }
-
-
-
-

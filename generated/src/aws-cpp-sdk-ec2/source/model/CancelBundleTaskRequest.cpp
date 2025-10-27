@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CancelBundleTaskRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CancelBundleTaskRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CancelBundleTaskRequest::SerializePayload() const
-{
+Aws::String CancelBundleTaskRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CancelBundleTask&";
-  if(m_bundleIdHasBeenSet)
-  {
+  if (m_bundleIdHasBeenSet) {
     ss << "BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String CancelBundleTaskRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CancelBundleTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CancelBundleTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

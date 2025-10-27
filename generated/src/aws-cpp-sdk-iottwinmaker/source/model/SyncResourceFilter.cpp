@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/SyncResourceFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/SyncResourceFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-SyncResourceFilter::SyncResourceFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SyncResourceFilter::SyncResourceFilter(JsonView jsonValue) { *this = jsonValue; }
 
-SyncResourceFilter& SyncResourceFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("state"))
-  {
+SyncResourceFilter& SyncResourceFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("state")) {
     m_state = SyncResourceStateMapper::GetSyncResourceStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = SyncResourceTypeMapper::GetSyncResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
-  {
+  if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalId"))
-  {
+  if (jsonValue.ValueExists("externalId")) {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SyncResourceFilter::Jsonize() const
-{
+JsonValue SyncResourceFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", SyncResourceStateMapper::GetNameForSyncResourceState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", SyncResourceStateMapper::GetNameForSyncResourceState(m_state));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", SyncResourceTypeMapper::GetNameForSyncResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", SyncResourceTypeMapper::GetNameForSyncResourceType(m_resourceType));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("externalId", m_externalId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubConfig
-{
-namespace Model
-{
-  enum class TargetType
-  {
-    NOT_SET,
-    ACCOUNT
-  };
+namespace Aws {
+namespace MigrationHubConfig {
+namespace Model {
+enum class TargetType { NOT_SET, ACCOUNT };
 
-namespace TargetTypeMapper
-{
+namespace TargetTypeMapper {
 AWS_MIGRATIONHUBCONFIG_API TargetType GetTargetTypeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBCONFIG_API Aws::String GetNameForTargetType(TargetType value);
-} // namespace TargetTypeMapper
-} // namespace Model
-} // namespace MigrationHubConfig
-} // namespace Aws
+}  // namespace TargetTypeMapper
+}  // namespace Model
+}  // namespace MigrationHubConfig
+}  // namespace Aws

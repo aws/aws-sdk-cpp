@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteCacheParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteCacheParameterGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const
-{
+Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheParameterGroup&";
-  if(m_cacheParameterGroupNameHasBeenSet)
-  {
+  if (m_cacheParameterGroupNameHasBeenSet) {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

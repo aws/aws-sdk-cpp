@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelSortKey.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker/model/ModelSortKey.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+namespace ModelSortKeyMapper {
 
-namespace Aws
-{
-  namespace SageMaker
-  {
-    namespace Model
-    {
-      namespace ModelSortKeyMapper
-      {
+static const int Name_HASH = HashingUtils::HashString("Name");
+static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
 
-        static const int Name_HASH = HashingUtils::HashString("Name");
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+ModelSortKey GetModelSortKeyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Name_HASH) {
+    return ModelSortKey::Name;
+  } else if (hashCode == CreationTime_HASH) {
+    return ModelSortKey::CreationTime;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ModelSortKey>(hashCode);
+  }
 
+  return ModelSortKey::NOT_SET;
+}
 
-        ModelSortKey GetModelSortKeyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Name_HASH)
-          {
-            return ModelSortKey::Name;
-          }
-          else if (hashCode == CreationTime_HASH)
-          {
-            return ModelSortKey::CreationTime;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ModelSortKey>(hashCode);
-          }
+Aws::String GetNameForModelSortKey(ModelSortKey enumValue) {
+  switch (enumValue) {
+    case ModelSortKey::NOT_SET:
+      return {};
+    case ModelSortKey::Name:
+      return "Name";
+    case ModelSortKey::CreationTime:
+      return "CreationTime";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ModelSortKey::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForModelSortKey(ModelSortKey enumValue)
-        {
-          switch(enumValue)
-          {
-          case ModelSortKey::NOT_SET:
-            return {};
-          case ModelSortKey::Name:
-            return "Name";
-          case ModelSortKey::CreationTime:
-            return "CreationTime";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ModelSortKeyMapper
-    } // namespace Model
-  } // namespace SageMaker
-} // namespace Aws
+}  // namespace ModelSortKeyMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

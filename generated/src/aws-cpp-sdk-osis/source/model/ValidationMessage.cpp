@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/osis/model/ValidationMessage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/ValidationMessage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OSIS
-{
-namespace Model
-{
+namespace Aws {
+namespace OSIS {
+namespace Model {
 
-ValidationMessage::ValidationMessage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationMessage::ValidationMessage(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationMessage& ValidationMessage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ValidationMessage& ValidationMessage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationMessage::Jsonize() const
-{
+JsonValue ValidationMessage::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OSIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

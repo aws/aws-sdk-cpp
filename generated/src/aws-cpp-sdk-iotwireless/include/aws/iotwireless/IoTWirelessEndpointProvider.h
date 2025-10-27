@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iotwireless/IoTWirelessEndpointRules.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTWirelessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTWirelessDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTWIRELESS_API IoTWirelessEndpointProvider : public IoTWirelessDefaultEpProviderBase
-{
-public:
-    using IoTWirelessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTWIRELESS_API IoTWirelessEndpointProvider : public IoTWirelessDefaultEpProviderBase {
+ public:
+  using IoTWirelessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTWirelessEndpointProvider()
-      : IoTWirelessDefaultEpProviderBase(Aws::IoTWireless::IoTWirelessEndpointRules::GetRulesBlob(), Aws::IoTWireless::IoTWirelessEndpointRules::RulesBlobSize)
-    {}
+  IoTWirelessEndpointProvider()
+      : IoTWirelessDefaultEpProviderBase(Aws::IoTWireless::IoTWirelessEndpointRules::GetRulesBlob(),
+                                         Aws::IoTWireless::IoTWirelessEndpointRules::RulesBlobSize) {}
 
-    ~IoTWirelessEndpointProvider()
-    {
-    }
+  ~IoTWirelessEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTWireless
+}  // namespace Aws

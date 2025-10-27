@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class DataFormat
-  {
-    NOT_SET,
-    CSV,
-    JSON
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class DataFormat { NOT_SET, CSV, JSON };
 
-namespace DataFormatMapper
-{
+namespace DataFormatMapper {
 AWS_SESV2_API DataFormat GetDataFormatForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForDataFormat(DataFormat value);
-} // namespace DataFormatMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace DataFormatMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

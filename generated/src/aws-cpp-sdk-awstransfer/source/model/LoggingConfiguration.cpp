@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LoggingRole"))
-  {
+LoggingConfiguration& LoggingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LoggingRole")) {
     m_loggingRole = jsonValue.GetString("LoggingRole");
     m_loggingRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogGroupName"))
-  {
+  if (jsonValue.ValueExists("LogGroupName")) {
     m_logGroupName = jsonValue.GetString("LogGroupName");
     m_logGroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoggingConfiguration::Jsonize() const
-{
+JsonValue LoggingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_loggingRoleHasBeenSet)
-  {
-   payload.WithString("LoggingRole", m_loggingRole);
-
+  if (m_loggingRoleHasBeenSet) {
+    payload.WithString("LoggingRole", m_loggingRole);
   }
 
-  if(m_logGroupNameHasBeenSet)
-  {
-   payload.WithString("LogGroupName", m_logGroupName);
-
+  if (m_logGroupNameHasBeenSet) {
+    payload.WithString("LogGroupName", m_logGroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis/model/EnhancedMetrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis/model/EnhancedMetrics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Model
-{
+namespace Aws {
+namespace Kinesis {
+namespace Model {
 
-EnhancedMetrics::EnhancedMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnhancedMetrics::EnhancedMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-EnhancedMetrics& EnhancedMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ShardLevelMetrics"))
-  {
+EnhancedMetrics& EnhancedMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ShardLevelMetrics")) {
     Aws::Utils::Array<JsonView> shardLevelMetricsJsonList = jsonValue.GetArray("ShardLevelMetrics");
-    for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
-    {
+    for (unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex) {
       m_shardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString()));
     }
     m_shardLevelMetricsHasBeenSet = true;
@@ -37,24 +28,21 @@ EnhancedMetrics& EnhancedMetrics::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EnhancedMetrics::Jsonize() const
-{
+JsonValue EnhancedMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_shardLevelMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
-   for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
-   {
-     shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString(MetricsNameMapper::GetNameForMetricsName(m_shardLevelMetrics[shardLevelMetricsIndex]));
-   }
-   payload.WithArray("ShardLevelMetrics", std::move(shardLevelMetricsJsonList));
-
+  if (m_shardLevelMetricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
+    for (unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex) {
+      shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString(
+          MetricsNameMapper::GetNameForMetricsName(m_shardLevelMetrics[shardLevelMetricsIndex]));
+    }
+    payload.WithArray("ShardLevelMetrics", std::move(shardLevelMetricsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kinesis
+}  // namespace Aws

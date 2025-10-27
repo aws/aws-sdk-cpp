@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class TextType
-  {
-    NOT_SET,
-    HANDWRITING,
-    PRINTED
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class TextType { NOT_SET, HANDWRITING, PRINTED };
 
-namespace TextTypeMapper
-{
+namespace TextTypeMapper {
 AWS_TEXTRACT_API TextType GetTextTypeForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForTextType(TextType value);
-} // namespace TextTypeMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace TextTypeMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

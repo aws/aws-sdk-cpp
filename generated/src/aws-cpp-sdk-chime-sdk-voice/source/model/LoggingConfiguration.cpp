@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableSIPLogs"))
-  {
+LoggingConfiguration& LoggingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableSIPLogs")) {
     m_enableSIPLogs = jsonValue.GetBool("EnableSIPLogs");
     m_enableSIPLogsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnableMediaMetricLogs"))
-  {
+  if (jsonValue.ValueExists("EnableMediaMetricLogs")) {
     m_enableMediaMetricLogs = jsonValue.GetBool("EnableMediaMetricLogs");
     m_enableMediaMetricLogsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoggingConfiguration::Jsonize() const
-{
+JsonValue LoggingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableSIPLogsHasBeenSet)
-  {
-   payload.WithBool("EnableSIPLogs", m_enableSIPLogs);
-
+  if (m_enableSIPLogsHasBeenSet) {
+    payload.WithBool("EnableSIPLogs", m_enableSIPLogs);
   }
 
-  if(m_enableMediaMetricLogsHasBeenSet)
-  {
-   payload.WithBool("EnableMediaMetricLogs", m_enableMediaMetricLogs);
-
+  if (m_enableMediaMetricLogsHasBeenSet) {
+    payload.WithBool("EnableMediaMetricLogs", m_enableMediaMetricLogs);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

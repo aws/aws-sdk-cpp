@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DeleteLoadBalancerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DeleteLoadBalancerRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLoadBalancerRequest::SerializePayload() const
-{
+Aws::String DeleteLoadBalancerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLoadBalancer&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

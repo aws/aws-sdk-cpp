@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/swf/SWFRequest.h>
 
-namespace Aws
-{
-namespace SWF
-{
-} // namespace SWF
-} // namespace Aws
+namespace Aws {
+namespace SWF {}  // namespace SWF
+}  // namespace Aws

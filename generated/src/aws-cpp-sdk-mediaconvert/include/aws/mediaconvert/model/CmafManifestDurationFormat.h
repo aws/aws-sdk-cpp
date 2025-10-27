@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafManifestDurationFormat
-  {
-    NOT_SET,
-    FLOATING_POINT,
-    INTEGER
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafManifestDurationFormat { NOT_SET, FLOATING_POINT, INTEGER };
 
-namespace CmafManifestDurationFormatMapper
-{
+namespace CmafManifestDurationFormatMapper {
 AWS_MEDIACONVERT_API CmafManifestDurationFormat GetCmafManifestDurationFormatForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafManifestDurationFormat(CmafManifestDurationFormat value);
-} // namespace CmafManifestDurationFormatMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafManifestDurationFormatMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

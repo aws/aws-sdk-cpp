@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class RebootInputDeviceForce
-  {
-    NOT_SET,
-    NO,
-    YES
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class RebootInputDeviceForce { NOT_SET, NO, YES };
 
-namespace RebootInputDeviceForceMapper
-{
+namespace RebootInputDeviceForceMapper {
 AWS_MEDIALIVE_API RebootInputDeviceForce GetRebootInputDeviceForceForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForRebootInputDeviceForce(RebootInputDeviceForce value);
-} // namespace RebootInputDeviceForceMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace RebootInputDeviceForceMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
-  enum class CurrencyCode
-  {
-    NOT_SET,
-    USD
-  };
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+enum class CurrencyCode { NOT_SET, USD };
 
-namespace CurrencyCodeMapper
-{
+namespace CurrencyCodeMapper {
 AWS_DEVICEFARM_API CurrencyCode GetCurrencyCodeForName(const Aws::String& name);
 
 AWS_DEVICEFARM_API Aws::String GetNameForCurrencyCode(CurrencyCode value);
-} // namespace CurrencyCodeMapper
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace CurrencyCodeMapper
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

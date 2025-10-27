@@ -4,37 +4,32 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteVehicleIncidentType
-  {
-    NOT_SET,
-    Accident,
-    Congestion,
-    Construction,
-    DisabledVehicle,
-    LaneRestriction,
-    MassTransit,
-    Other,
-    PlannedEvent,
-    RoadClosure,
-    RoadHazard,
-    Weather
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteVehicleIncidentType {
+  NOT_SET,
+  Accident,
+  Congestion,
+  Construction,
+  DisabledVehicle,
+  LaneRestriction,
+  MassTransit,
+  Other,
+  PlannedEvent,
+  RoadClosure,
+  RoadHazard,
+  Weather
+};
 
-namespace RouteVehicleIncidentTypeMapper
-{
+namespace RouteVehicleIncidentTypeMapper {
 AWS_GEOROUTES_API RouteVehicleIncidentType GetRouteVehicleIncidentTypeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteVehicleIncidentType(RouteVehicleIncidentType value);
-} // namespace RouteVehicleIncidentTypeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteVehicleIncidentTypeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

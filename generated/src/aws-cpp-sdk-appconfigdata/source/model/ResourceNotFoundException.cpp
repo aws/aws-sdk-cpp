@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfigData
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfigData {
+namespace Model {
 
-ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReferencedBy"))
-  {
+  if (jsonValue.ValueExists("ReferencedBy")) {
     Aws::Map<Aws::String, JsonView> referencedByJsonMap = jsonValue.GetObject("ReferencedBy").GetAllObjects();
-    for(auto& referencedByItem : referencedByJsonMap)
-    {
+    for (auto& referencedByItem : referencedByJsonMap) {
       m_referencedBy[referencedByItem.first] = referencedByItem.second.AsString();
     }
     m_referencedByHasBeenSet = true;
@@ -47,35 +36,28 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue ResourceNotFoundException::Jsonize() const
-{
+JsonValue ResourceNotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_referencedByHasBeenSet)
-  {
-   JsonValue referencedByJsonMap;
-   for(auto& referencedByItem : m_referencedBy)
-   {
-     referencedByJsonMap.WithString(referencedByItem.first, referencedByItem.second);
-   }
-   payload.WithObject("ReferencedBy", std::move(referencedByJsonMap));
-
+  if (m_referencedByHasBeenSet) {
+    JsonValue referencedByJsonMap;
+    for (auto& referencedByItem : m_referencedBy) {
+      referencedByJsonMap.WithString(referencedByItem.first, referencedByItem.second);
+    }
+    payload.WithObject("ReferencedBy", std::move(referencedByJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfigData
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfigData
+}  // namespace Aws

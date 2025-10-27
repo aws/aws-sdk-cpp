@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ElastiCache;
 
-AWSError<CoreErrors> ElastiCacheErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ElastiCacheErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ElastiCacheErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

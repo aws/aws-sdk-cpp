@@ -3,344 +3,261 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/TaskSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/TaskSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-TaskSet::TaskSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskSet::TaskSet(JsonView jsonValue) { *this = jsonValue; }
 
-TaskSet& TaskSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+TaskSet& TaskSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskSetArn"))
-  {
+  if (jsonValue.ValueExists("taskSetArn")) {
     m_taskSetArn = jsonValue.GetString("taskSetArn");
     m_taskSetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceArn"))
-  {
+  if (jsonValue.ValueExists("serviceArn")) {
     m_serviceArn = jsonValue.GetString("serviceArn");
     m_serviceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clusterArn"))
-  {
+  if (jsonValue.ValueExists("clusterArn")) {
     m_clusterArn = jsonValue.GetString("clusterArn");
     m_clusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedBy"))
-  {
+  if (jsonValue.ValueExists("startedBy")) {
     m_startedBy = jsonValue.GetString("startedBy");
     m_startedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalId"))
-  {
+  if (jsonValue.ValueExists("externalId")) {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskDefinition"))
-  {
+  if (jsonValue.ValueExists("taskDefinition")) {
     m_taskDefinition = jsonValue.GetString("taskDefinition");
     m_taskDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("computedDesiredCount"))
-  {
+  if (jsonValue.ValueExists("computedDesiredCount")) {
     m_computedDesiredCount = jsonValue.GetInteger("computedDesiredCount");
     m_computedDesiredCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pendingCount"))
-  {
+  if (jsonValue.ValueExists("pendingCount")) {
     m_pendingCount = jsonValue.GetInteger("pendingCount");
     m_pendingCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runningCount"))
-  {
+  if (jsonValue.ValueExists("runningCount")) {
     m_runningCount = jsonValue.GetInteger("runningCount");
     m_runningCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("launchType"))
-  {
+  if (jsonValue.ValueExists("launchType")) {
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
     m_launchTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("capacityProviderStrategy"))
-  {
+  if (jsonValue.ValueExists("capacityProviderStrategy")) {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
-    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
-    {
+    for (unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength();
+         ++capacityProviderStrategyIndex) {
       m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platformVersion"))
-  {
+  if (jsonValue.ValueExists("platformVersion")) {
     m_platformVersion = jsonValue.GetString("platformVersion");
     m_platformVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platformFamily"))
-  {
+  if (jsonValue.ValueExists("platformFamily")) {
     m_platformFamily = jsonValue.GetString("platformFamily");
     m_platformFamilyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkConfiguration"))
-  {
+  if (jsonValue.ValueExists("networkConfiguration")) {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
     m_networkConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("loadBalancers"))
-  {
+  if (jsonValue.ValueExists("loadBalancers")) {
     Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
-    for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
-    {
+    for (unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex) {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
     }
     m_loadBalancersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceRegistries"))
-  {
+  if (jsonValue.ValueExists("serviceRegistries")) {
     Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
-    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
-    {
+    for (unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex) {
       m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
     }
     m_serviceRegistriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scale"))
-  {
+  if (jsonValue.ValueExists("scale")) {
     m_scale = jsonValue.GetObject("scale");
     m_scaleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stabilityStatus"))
-  {
+  if (jsonValue.ValueExists("stabilityStatus")) {
     m_stabilityStatus = StabilityStatusMapper::GetStabilityStatusForName(jsonValue.GetString("stabilityStatus"));
     m_stabilityStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stabilityStatusAt"))
-  {
+  if (jsonValue.ValueExists("stabilityStatusAt")) {
     m_stabilityStatusAt = jsonValue.GetDouble("stabilityStatusAt");
     m_stabilityStatusAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fargateEphemeralStorage"))
-  {
+  if (jsonValue.ValueExists("fargateEphemeralStorage")) {
     m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
     m_fargateEphemeralStorageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TaskSet::Jsonize() const
-{
+JsonValue TaskSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_taskSetArnHasBeenSet)
-  {
-   payload.WithString("taskSetArn", m_taskSetArn);
-
+  if (m_taskSetArnHasBeenSet) {
+    payload.WithString("taskSetArn", m_taskSetArn);
   }
 
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("serviceArn", m_serviceArn);
-
+  if (m_serviceArnHasBeenSet) {
+    payload.WithString("serviceArn", m_serviceArn);
   }
 
-  if(m_clusterArnHasBeenSet)
-  {
-   payload.WithString("clusterArn", m_clusterArn);
-
+  if (m_clusterArnHasBeenSet) {
+    payload.WithString("clusterArn", m_clusterArn);
   }
 
-  if(m_startedByHasBeenSet)
-  {
-   payload.WithString("startedBy", m_startedBy);
-
+  if (m_startedByHasBeenSet) {
+    payload.WithString("startedBy", m_startedBy);
   }
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("externalId", m_externalId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_taskDefinitionHasBeenSet)
-  {
-   payload.WithString("taskDefinition", m_taskDefinition);
-
+  if (m_taskDefinitionHasBeenSet) {
+    payload.WithString("taskDefinition", m_taskDefinition);
   }
 
-  if(m_computedDesiredCountHasBeenSet)
-  {
-   payload.WithInteger("computedDesiredCount", m_computedDesiredCount);
-
+  if (m_computedDesiredCountHasBeenSet) {
+    payload.WithInteger("computedDesiredCount", m_computedDesiredCount);
   }
 
-  if(m_pendingCountHasBeenSet)
-  {
-   payload.WithInteger("pendingCount", m_pendingCount);
-
+  if (m_pendingCountHasBeenSet) {
+    payload.WithInteger("pendingCount", m_pendingCount);
   }
 
-  if(m_runningCountHasBeenSet)
-  {
-   payload.WithInteger("runningCount", m_runningCount);
-
+  if (m_runningCountHasBeenSet) {
+    payload.WithInteger("runningCount", m_runningCount);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_launchTypeHasBeenSet)
-  {
-   payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  if (m_launchTypeHasBeenSet) {
+    payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
-  if(m_capacityProviderStrategyHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
-   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
-   {
-     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
-   }
-   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
-
+  if (m_capacityProviderStrategyHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+    for (unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength();
+         ++capacityProviderStrategyIndex) {
+      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(
+          m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+    }
+    payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
   }
 
-  if(m_platformVersionHasBeenSet)
-  {
-   payload.WithString("platformVersion", m_platformVersion);
-
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("platformVersion", m_platformVersion);
   }
 
-  if(m_platformFamilyHasBeenSet)
-  {
-   payload.WithString("platformFamily", m_platformFamily);
-
+  if (m_platformFamilyHasBeenSet) {
+    payload.WithString("platformFamily", m_platformFamily);
   }
 
-  if(m_networkConfigurationHasBeenSet)
-  {
-   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
-
+  if (m_networkConfigurationHasBeenSet) {
+    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
   }
 
-  if(m_loadBalancersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
-   for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
-   {
-     loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
-   }
-   payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
-
+  if (m_loadBalancersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+    for (unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex) {
+      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
+    }
+    payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
   }
 
-  if(m_serviceRegistriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
-   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
-   {
-     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
-   }
-   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
-
+  if (m_serviceRegistriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+    for (unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex) {
+      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+    }
+    payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
   }
 
-  if(m_scaleHasBeenSet)
-  {
-   payload.WithObject("scale", m_scale.Jsonize());
-
+  if (m_scaleHasBeenSet) {
+    payload.WithObject("scale", m_scale.Jsonize());
   }
 
-  if(m_stabilityStatusHasBeenSet)
-  {
-   payload.WithString("stabilityStatus", StabilityStatusMapper::GetNameForStabilityStatus(m_stabilityStatus));
+  if (m_stabilityStatusHasBeenSet) {
+    payload.WithString("stabilityStatus", StabilityStatusMapper::GetNameForStabilityStatus(m_stabilityStatus));
   }
 
-  if(m_stabilityStatusAtHasBeenSet)
-  {
-   payload.WithDouble("stabilityStatusAt", m_stabilityStatusAt.SecondsWithMSPrecision());
+  if (m_stabilityStatusAtHasBeenSet) {
+    payload.WithDouble("stabilityStatusAt", m_stabilityStatusAt.SecondsWithMSPrecision());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
-  if(m_fargateEphemeralStorageHasBeenSet)
-  {
-   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
-
+  if (m_fargateEphemeralStorageHasBeenSet) {
+    payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

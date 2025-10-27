@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-enum class TaxSettingsErrors
-{
-  //From Core//
+namespace Aws {
+namespace TaxSettings {
+enum class TaxSettingsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class TaxSettingsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class TaxSettingsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ATTACHMENT_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTACHMENT_UPLOAD = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CASE_CREATION_LIMIT_EXCEEDED,
   CONFLICT,
   INTERNAL_SERVER
 };
 
-class AWS_TAXSETTINGS_API TaxSettingsError : public Aws::Client::AWSError<TaxSettingsErrors>
-{
-public:
+class AWS_TAXSETTINGS_API TaxSettingsError : public Aws::Client::AWSError<TaxSettingsErrors> {
+ public:
   TaxSettingsError() {}
   TaxSettingsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TaxSettingsErrors>(rhs) {}
   TaxSettingsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TaxSettingsErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace TaxSettingsErrorMapper
-{
-  AWS_TAXSETTINGS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace TaxSettingsErrorMapper {
+AWS_TAXSETTINGS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace TaxSettings
+}  // namespace Aws

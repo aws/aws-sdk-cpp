@@ -3,49 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyFleetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyFleetRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyFleetRequest::SerializePayload() const
-{
+Aws::String ModifyFleetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyFleet&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_excessCapacityTerminationPolicyHasBeenSet)
-  {
-    ss << "ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
+  if (m_excessCapacityTerminationPolicyHasBeenSet) {
+    ss << "ExcessCapacityTerminationPolicy="
+       << StringUtils::URLEncode(
+              FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy))
+       << "&";
   }
 
-  if(m_launchTemplateConfigsHasBeenSet)
-  {
+  if (m_launchTemplateConfigsHasBeenSet) {
     unsigned launchTemplateConfigsCount = 1;
-    for(auto& item : m_launchTemplateConfigs)
-    {
+    for (auto& item : m_launchTemplateConfigs) {
       item.OutputToStream(ss, "LaunchTemplateConfig.", launchTemplateConfigsCount, "");
       launchTemplateConfigsCount++;
     }
   }
 
-  if(m_fleetIdHasBeenSet)
-  {
+  if (m_fleetIdHasBeenSet) {
     ss << "FleetId=" << StringUtils::URLEncode(m_fleetId.c_str()) << "&";
   }
 
-  if(m_targetCapacitySpecificationHasBeenSet)
-  {
+  if (m_targetCapacitySpecificationHasBeenSet) {
     m_targetCapacitySpecification.OutputToStream(ss, "TargetCapacitySpecification");
   }
 
-  if(m_contextHasBeenSet)
-  {
+  if (m_contextHasBeenSet) {
     ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
@@ -53,8 +48,4 @@ Aws::String ModifyFleetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyFleetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyFleetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

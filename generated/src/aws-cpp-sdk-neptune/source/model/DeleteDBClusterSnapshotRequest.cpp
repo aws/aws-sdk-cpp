@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/DeleteDBClusterSnapshotRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDBClusterSnapshotRequest::SerializePayload() const
-{
+Aws::String DeleteDBClusterSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDBClusterSnapshot&";
-  if(m_dBClusterSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBClusterSnapshotIdentifierHasBeenSet) {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDBClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

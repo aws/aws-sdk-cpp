@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualServiceSpec::VirtualServiceSpec(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualServiceSpec::VirtualServiceSpec(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualServiceSpec& VirtualServiceSpec::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("provider"))
-  {
+VirtualServiceSpec& VirtualServiceSpec::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("provider")) {
     m_provider = jsonValue.GetObject("provider");
     m_providerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualServiceSpec::Jsonize() const
-{
+JsonValue VirtualServiceSpec::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerHasBeenSet)
-  {
-   payload.WithObject("provider", m_provider.Jsonize());
-
+  if (m_providerHasBeenSet) {
+    payload.WithObject("provider", m_provider.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-PropertyValidationException::PropertyValidationException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PropertyValidationException::PropertyValidationException(JsonView jsonValue) { *this = jsonValue; }
 
-PropertyValidationException& PropertyValidationException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+PropertyValidationException& PropertyValidationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PropertyList"))
-  {
+  if (jsonValue.ValueExists("PropertyList")) {
     Aws::Utils::Array<JsonView> propertyListJsonList = jsonValue.GetArray("PropertyList");
-    for(unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex)
-    {
+    for (unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex) {
       m_propertyList.push_back(propertyListJsonList[propertyListIndex].AsObject());
     }
     m_propertyListHasBeenSet = true;
@@ -42,30 +32,24 @@ PropertyValidationException& PropertyValidationException::operator =(JsonView js
   return *this;
 }
 
-JsonValue PropertyValidationException::Jsonize() const
-{
+JsonValue PropertyValidationException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_propertyListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertyListJsonList(m_propertyList.size());
-   for(unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex)
-   {
-     propertyListJsonList[propertyListIndex].AsObject(m_propertyList[propertyListIndex].Jsonize());
-   }
-   payload.WithArray("PropertyList", std::move(propertyListJsonList));
-
+  if (m_propertyListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> propertyListJsonList(m_propertyList.size());
+    for (unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex) {
+      propertyListJsonList[propertyListIndex].AsObject(m_propertyList[propertyListIndex].Jsonize());
+    }
+    payload.WithArray("PropertyList", std::move(propertyListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -8,16 +8,13 @@
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_CONNECTCONTACTLENS_API ConnectContactLensErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_CONNECTCONTACTLENS_API ConnectContactLensErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

@@ -13,53 +13,40 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InvokeCodeInterpreterRequest::SerializePayload() const
-{
+Aws::String InvokeCodeInterpreterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ToolNameMapper::GetNameForToolName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ToolNameMapper::GetNameForToolName(m_name));
   }
 
-  if(m_argumentsHasBeenSet)
-  {
-   payload.WithObject("arguments", m_arguments.Jsonize());
-
+  if (m_argumentsHasBeenSet) {
+    payload.WithObject("arguments", m_arguments.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection InvokeCodeInterpreterRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection InvokeCodeInterpreterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_sessionIdHasBeenSet)
-  {
+  if (m_sessionIdHasBeenSet) {
     ss << m_sessionId;
-    headers.emplace("x-amzn-code-interpreter-session-id",  ss.str());
+    headers.emplace("x-amzn-code-interpreter-session-id", ss.str());
     ss.str("");
   }
 
-  if(m_traceIdHasBeenSet)
-  {
+  if (m_traceIdHasBeenSet) {
     ss << m_traceId;
-    headers.emplace("x-amzn-trace-id",  ss.str());
+    headers.emplace("x-amzn-trace-id", ss.str());
     ss.str("");
   }
 
-  if(m_traceParentHasBeenSet)
-  {
+  if (m_traceParentHasBeenSet) {
     ss << m_traceParent;
-    headers.emplace("traceparent",  ss.str());
+    headers.emplace("traceparent", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

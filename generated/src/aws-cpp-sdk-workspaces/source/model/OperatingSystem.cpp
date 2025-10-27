@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/OperatingSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/OperatingSystem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-OperatingSystem::OperatingSystem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OperatingSystem::OperatingSystem(JsonView jsonValue) { *this = jsonValue; }
 
-OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+OperatingSystem& OperatingSystem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = OperatingSystemTypeMapper::GetOperatingSystemTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OperatingSystem::Jsonize() const
-{
+JsonValue OperatingSystem::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", OperatingSystemTypeMapper::GetNameForOperatingSystemType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", OperatingSystemTypeMapper::GetNameForOperatingSystemType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

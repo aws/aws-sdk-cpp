@@ -7,24 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class OperationResultFilterName
-  {
-    NOT_SET,
-    OPERATION_RESULT_STATUS
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class OperationResultFilterName { NOT_SET, OPERATION_RESULT_STATUS };
 
-namespace OperationResultFilterNameMapper
-{
+namespace OperationResultFilterNameMapper {
 AWS_CLOUDFORMATION_API OperationResultFilterName GetOperationResultFilterNameForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForOperationResultFilterName(OperationResultFilterName value);
-} // namespace OperationResultFilterNameMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace OperationResultFilterNameMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

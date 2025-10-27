@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDSDataService
-{
-enum class RDSDataServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace RDSDataService {
+enum class RDSDataServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RDSDataServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class RDSDataServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DATABASE_ERROR,
   DATABASE_NOT_FOUND,
   DATABASE_RESUMING,
@@ -64,9 +61,8 @@ enum class RDSDataServiceErrors
   UNSUPPORTED_RESULT
 };
 
-class AWS_RDSDATASERVICE_API RDSDataServiceError : public Aws::Client::AWSError<RDSDataServiceErrors>
-{
-public:
+class AWS_RDSDATASERVICE_API RDSDataServiceError : public Aws::Client::AWSError<RDSDataServiceErrors> {
+ public:
   RDSDataServiceError() {}
   RDSDataServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
   RDSDataServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
@@ -77,10 +73,9 @@ public:
   T GetModeledError();
 };
 
-namespace RDSDataServiceErrorMapper
-{
-  AWS_RDSDATASERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RDSDataServiceErrorMapper {
+AWS_RDSDATASERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RDSDataService
-} // namespace Aws
+}  // namespace RDSDataService
+}  // namespace Aws

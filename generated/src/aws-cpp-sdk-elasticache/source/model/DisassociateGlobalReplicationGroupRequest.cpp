@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DisassociateGlobalReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DisassociateGlobalReplicationGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateGlobalReplicationGroupRequest::SerializePayload() const
-{
+Aws::String DisassociateGlobalReplicationGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateGlobalReplicationGroup&";
-  if(m_globalReplicationGroupIdHasBeenSet)
-  {
+  if (m_globalReplicationGroupIdHasBeenSet) {
     ss << "GlobalReplicationGroupId=" << StringUtils::URLEncode(m_globalReplicationGroupId.c_str()) << "&";
   }
 
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_replicationGroupRegionHasBeenSet)
-  {
+  if (m_replicationGroupRegionHasBeenSet) {
     ss << "ReplicationGroupRegion=" << StringUtils::URLEncode(m_replicationGroupRegion.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DisassociateGlobalReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

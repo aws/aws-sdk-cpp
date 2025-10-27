@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class FolderFilterAttribute
-  {
-    NOT_SET,
-    PARENT_FOLDER_ARN,
-    DIRECT_QUICKSIGHT_OWNER,
-    DIRECT_QUICKSIGHT_SOLE_OWNER,
-    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
-    QUICKSIGHT_OWNER,
-    QUICKSIGHT_VIEWER_OR_OWNER,
-    FOLDER_NAME
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class FolderFilterAttribute {
+  NOT_SET,
+  PARENT_FOLDER_ARN,
+  DIRECT_QUICKSIGHT_OWNER,
+  DIRECT_QUICKSIGHT_SOLE_OWNER,
+  DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+  QUICKSIGHT_OWNER,
+  QUICKSIGHT_VIEWER_OR_OWNER,
+  FOLDER_NAME
+};
 
-namespace FolderFilterAttributeMapper
-{
+namespace FolderFilterAttributeMapper {
 AWS_QUICKSIGHT_API FolderFilterAttribute GetFolderFilterAttributeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForFolderFilterAttribute(FolderFilterAttribute value);
-} // namespace FolderFilterAttributeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace FolderFilterAttributeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

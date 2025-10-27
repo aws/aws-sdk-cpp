@@ -3,125 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/EbsInstanceBlockDeviceSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/EbsInstanceBlockDeviceSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("encrypted"))
-  {
+EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("encrypted")) {
     m_encrypted = jsonValue.GetBool("encrypted");
     m_encryptedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deleteOnTermination"))
-  {
+  if (jsonValue.ValueExists("deleteOnTermination")) {
     m_deleteOnTermination = jsonValue.GetBool("deleteOnTermination");
     m_deleteOnTerminationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iops"))
-  {
+  if (jsonValue.ValueExists("iops")) {
     m_iops = jsonValue.GetInteger("iops");
     m_iopsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotId"))
-  {
+  if (jsonValue.ValueExists("snapshotId")) {
     m_snapshotId = jsonValue.GetString("snapshotId");
     m_snapshotIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeSize"))
-  {
+  if (jsonValue.ValueExists("volumeSize")) {
     m_volumeSize = jsonValue.GetInteger("volumeSize");
     m_volumeSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeType"))
-  {
+  if (jsonValue.ValueExists("volumeType")) {
     m_volumeType = EbsVolumeTypeMapper::GetEbsVolumeTypeForName(jsonValue.GetString("volumeType"));
     m_volumeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("throughput"))
-  {
+  if (jsonValue.ValueExists("throughput")) {
     m_throughput = jsonValue.GetInteger("throughput");
     m_throughputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EbsInstanceBlockDeviceSpecification::Jsonize() const
-{
+JsonValue EbsInstanceBlockDeviceSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptedHasBeenSet)
-  {
-   payload.WithBool("encrypted", m_encrypted);
-
+  if (m_encryptedHasBeenSet) {
+    payload.WithBool("encrypted", m_encrypted);
   }
 
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-   payload.WithBool("deleteOnTermination", m_deleteOnTermination);
-
+  if (m_deleteOnTerminationHasBeenSet) {
+    payload.WithBool("deleteOnTermination", m_deleteOnTermination);
   }
 
-  if(m_iopsHasBeenSet)
-  {
-   payload.WithInteger("iops", m_iops);
-
+  if (m_iopsHasBeenSet) {
+    payload.WithInteger("iops", m_iops);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_snapshotIdHasBeenSet)
-  {
-   payload.WithString("snapshotId", m_snapshotId);
-
+  if (m_snapshotIdHasBeenSet) {
+    payload.WithString("snapshotId", m_snapshotId);
   }
 
-  if(m_volumeSizeHasBeenSet)
-  {
-   payload.WithInteger("volumeSize", m_volumeSize);
-
+  if (m_volumeSizeHasBeenSet) {
+    payload.WithInteger("volumeSize", m_volumeSize);
   }
 
-  if(m_volumeTypeHasBeenSet)
-  {
-   payload.WithString("volumeType", EbsVolumeTypeMapper::GetNameForEbsVolumeType(m_volumeType));
+  if (m_volumeTypeHasBeenSet) {
+    payload.WithString("volumeType", EbsVolumeTypeMapper::GetNameForEbsVolumeType(m_volumeType));
   }
 
-  if(m_throughputHasBeenSet)
-  {
-   payload.WithInteger("throughput", m_throughput);
-
+  if (m_throughputHasBeenSet) {
+    payload.WithInteger("throughput", m_throughput);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

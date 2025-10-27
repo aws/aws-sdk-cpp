@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/CreateInputRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/CreateInputRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateInputRequest::SerializePayload() const
-{
+Aws::String CreateInputRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inputNameHasBeenSet)
-  {
-   payload.WithString("inputName", m_inputName);
-
+  if (m_inputNameHasBeenSet) {
+    payload.WithString("inputName", m_inputName);
   }
 
-  if(m_inputDescriptionHasBeenSet)
-  {
-   payload.WithString("inputDescription", m_inputDescription);
-
+  if (m_inputDescriptionHasBeenSet) {
+    payload.WithString("inputDescription", m_inputDescription);
   }
 
-  if(m_inputDefinitionHasBeenSet)
-  {
-   payload.WithObject("inputDefinition", m_inputDefinition.Jsonize());
-
+  if (m_inputDefinitionHasBeenSet) {
+    payload.WithObject("inputDefinition", m_inputDefinition.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

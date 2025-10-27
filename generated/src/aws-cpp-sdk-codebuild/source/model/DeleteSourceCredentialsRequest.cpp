@@ -12,27 +12,18 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSourceCredentialsRequest::SerializePayload() const
-{
+Aws::String DeleteSourceCredentialsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteSourceCredentialsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteSourceCredentialsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.DeleteSourceCredentials"));
   return headers;
-
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class DataIdentifierSeverity
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class DataIdentifierSeverity { NOT_SET, LOW, MEDIUM, HIGH };
 
-namespace DataIdentifierSeverityMapper
-{
+namespace DataIdentifierSeverityMapper {
 AWS_MACIE2_API DataIdentifierSeverity GetDataIdentifierSeverityForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForDataIdentifierSeverity(DataIdentifierSeverity value);
-} // namespace DataIdentifierSeverityMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace DataIdentifierSeverityMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

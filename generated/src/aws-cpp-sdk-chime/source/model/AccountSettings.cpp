@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-AccountSettings::AccountSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountSettings::AccountSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AccountSettings& AccountSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DisableRemoteControl"))
-  {
+AccountSettings& AccountSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DisableRemoteControl")) {
     m_disableRemoteControl = jsonValue.GetBool("DisableRemoteControl");
     m_disableRemoteControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnableDialOut"))
-  {
+  if (jsonValue.ValueExists("EnableDialOut")) {
     m_enableDialOut = jsonValue.GetBool("EnableDialOut");
     m_enableDialOutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountSettings::Jsonize() const
-{
+JsonValue AccountSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_disableRemoteControlHasBeenSet)
-  {
-   payload.WithBool("DisableRemoteControl", m_disableRemoteControl);
-
+  if (m_disableRemoteControlHasBeenSet) {
+    payload.WithBool("DisableRemoteControl", m_disableRemoteControl);
   }
 
-  if(m_enableDialOutHasBeenSet)
-  {
-   payload.WithBool("EnableDialOut", m_enableDialOut);
-
+  if (m_enableDialOutHasBeenSet) {
+    payload.WithBool("EnableDialOut", m_enableDialOut);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DisableOrganizationsRootSessionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DisableOrganizationsRootSessionsRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableOrganizationsRootSessionsRequest::SerializePayload() const
-{
+Aws::String DisableOrganizationsRootSessionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableOrganizationsRootSessions&";
   ss << "Version=2010-05-08";
   return ss.str();
 }
 
-
-void  DisableOrganizationsRootSessionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableOrganizationsRootSessionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

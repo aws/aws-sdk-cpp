@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class GroupFilterAttribute
-  {
-    NOT_SET,
-    GROUP_NAME
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class GroupFilterAttribute { NOT_SET, GROUP_NAME };
 
-namespace GroupFilterAttributeMapper
-{
+namespace GroupFilterAttributeMapper {
 AWS_QUICKSIGHT_API GroupFilterAttribute GetGroupFilterAttributeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForGroupFilterAttribute(GroupFilterAttribute value);
-} // namespace GroupFilterAttributeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace GroupFilterAttributeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

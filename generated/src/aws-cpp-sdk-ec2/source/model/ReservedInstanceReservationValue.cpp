@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReservedInstanceReservationValue.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/ReservedInstanceReservationValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReservedInstanceReservationValue& ReservedInstanceReservationValue::operator =(const XmlNode& xmlNode)
-{
+ReservedInstanceReservationValue& ReservedInstanceReservationValue::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode reservationValueNode = resultNode.FirstChild("reservationValue");
-    if(!reservationValueNode.IsNull())
-    {
+    if (!reservationValueNode.IsNull()) {
       m_reservationValue = reservationValueNode;
       m_reservationValueHasBeenSet = true;
     }
     XmlNode reservedInstanceIdNode = resultNode.FirstChild("reservedInstanceId");
-    if(!reservedInstanceIdNode.IsNull())
-    {
+    if (!reservedInstanceIdNode.IsNull()) {
       m_reservedInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstanceIdNode.GetText());
       m_reservedInstanceIdHasBeenSet = true;
     }
@@ -48,36 +38,30 @@ ReservedInstanceReservationValue& ReservedInstanceReservationValue::operator =(c
   return *this;
 }
 
-void ReservedInstanceReservationValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_reservationValueHasBeenSet)
-  {
-      Aws::StringStream reservationValueLocationAndMemberSs;
-      reservationValueLocationAndMemberSs << location << index << locationValue << ".ReservationValue";
-      m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMemberSs.str().c_str());
+void ReservedInstanceReservationValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_reservationValueHasBeenSet) {
+    Aws::StringStream reservationValueLocationAndMemberSs;
+    reservationValueLocationAndMemberSs << location << index << locationValue << ".ReservationValue";
+    m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMemberSs.str().c_str());
   }
 
-  if(m_reservedInstanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedInstanceId=" << StringUtils::URLEncode(m_reservedInstanceId.c_str()) << "&";
-  }
-
-}
-
-void ReservedInstanceReservationValue::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_reservationValueHasBeenSet)
-  {
-      Aws::String reservationValueLocationAndMember(location);
-      reservationValueLocationAndMember += ".ReservationValue";
-      m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMember.c_str());
-  }
-  if(m_reservedInstanceIdHasBeenSet)
-  {
-      oStream << location << ".ReservedInstanceId=" << StringUtils::URLEncode(m_reservedInstanceId.c_str()) << "&";
+  if (m_reservedInstanceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ReservedInstanceId=" << StringUtils::URLEncode(m_reservedInstanceId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void ReservedInstanceReservationValue::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_reservationValueHasBeenSet) {
+    Aws::String reservationValueLocationAndMember(location);
+    reservationValueLocationAndMember += ".ReservationValue";
+    m_reservationValue.OutputToStream(oStream, reservationValueLocationAndMember.c_str());
+  }
+  if (m_reservedInstanceIdHasBeenSet) {
+    oStream << location << ".ReservedInstanceId=" << StringUtils::URLEncode(m_reservedInstanceId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

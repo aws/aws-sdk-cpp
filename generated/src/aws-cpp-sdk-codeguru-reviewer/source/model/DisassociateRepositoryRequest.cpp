@@ -12,11 +12,4 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateRepositoryRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DisassociateRepositoryRequest::SerializePayload() const { return {}; }

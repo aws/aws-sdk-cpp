@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/repostspace/Repostspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace repostspace
-{
-namespace Model
-{
-  enum class TierLevel
-  {
-    NOT_SET,
-    BASIC,
-    STANDARD
-  };
+namespace Aws {
+namespace repostspace {
+namespace Model {
+enum class TierLevel { NOT_SET, BASIC, STANDARD };
 
-namespace TierLevelMapper
-{
+namespace TierLevelMapper {
 AWS_REPOSTSPACE_API TierLevel GetTierLevelForName(const Aws::String& name);
 
 AWS_REPOSTSPACE_API Aws::String GetNameForTierLevel(TierLevel value);
-} // namespace TierLevelMapper
-} // namespace Model
-} // namespace repostspace
-} // namespace Aws
+}  // namespace TierLevelMapper
+}  // namespace Model
+}  // namespace repostspace
+}  // namespace Aws

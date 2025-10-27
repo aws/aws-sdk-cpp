@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class HubContentType
-  {
-    NOT_SET,
-    Model,
-    Notebook,
-    ModelReference
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class HubContentType { NOT_SET, Model, Notebook, ModelReference };
 
-namespace HubContentTypeMapper
-{
+namespace HubContentTypeMapper {
 AWS_SAGEMAKER_API HubContentType GetHubContentTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForHubContentType(HubContentType value);
-} // namespace HubContentTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace HubContentTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ArtifactLocation::ArtifactLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArtifactLocation::ArtifactLocation(JsonView jsonValue) { *this = jsonValue; }
 
-ArtifactLocation& ArtifactLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ArtifactLocation& ArtifactLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = ArtifactLocationTypeMapper::GetArtifactLocationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Location"))
-  {
+  if (jsonValue.ValueExists("s3Location")) {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArtifactLocation::Jsonize() const
-{
+JsonValue ArtifactLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ArtifactLocationTypeMapper::GetNameForArtifactLocationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ArtifactLocationTypeMapper::GetNameForArtifactLocationType(m_type));
   }
 
-  if(m_s3LocationHasBeenSet)
-  {
-   payload.WithObject("s3Location", m_s3Location.Jsonize());
-
+  if (m_s3LocationHasBeenSet) {
+    payload.WithObject("s3Location", m_s3Location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

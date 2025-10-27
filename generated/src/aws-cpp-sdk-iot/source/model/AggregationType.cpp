@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AggregationType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/AggregationType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-AggregationType::AggregationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregationType::AggregationType(JsonView jsonValue) { *this = jsonValue; }
 
-AggregationType& AggregationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+AggregationType& AggregationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = AggregationTypeNameMapper::GetAggregationTypeNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ AggregationType& AggregationType::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AggregationType::Jsonize() const
-{
+JsonValue AggregationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", AggregationTypeNameMapper::GetNameForAggregationTypeName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", AggregationTypeNameMapper::GetNameForAggregationTypeName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

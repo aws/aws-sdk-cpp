@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeClustersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/DescribeClustersResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeClustersResult& DescribeClustersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClustersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClustersResult")) {
     resultNode = rootNode.FirstChild("DescribeClustersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode clustersNode = resultNode.FirstChild("Clusters");
-    if(!clustersNode.IsNull())
-    {
+    if (!clustersNode.IsNull()) {
       XmlNode clustersMember = clustersNode.FirstChild("Cluster");
       m_clustersHasBeenSet = !clustersMember.IsNull();
-      while(!clustersMember.IsNull())
-      {
+      while (!clustersMember.IsNull()) {
         m_clusters.push_back(clustersMember);
         clustersMember = clustersMember.NextNode("Cluster");
       }
@@ -59,7 +50,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

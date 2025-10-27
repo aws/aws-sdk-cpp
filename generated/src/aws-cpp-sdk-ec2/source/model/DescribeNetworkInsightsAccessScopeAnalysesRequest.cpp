@@ -3,65 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeNetworkInsightsAccessScopeAnalysesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeNetworkInsightsAccessScopeAnalysesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeNetworkInsightsAccessScopeAnalysesRequest::SerializePayload() const
-{
+Aws::String DescribeNetworkInsightsAccessScopeAnalysesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeNetworkInsightsAccessScopeAnalyses&";
-  if(m_networkInsightsAccessScopeAnalysisIdsHasBeenSet)
-  {
+  if (m_networkInsightsAccessScopeAnalysisIdsHasBeenSet) {
     unsigned networkInsightsAccessScopeAnalysisIdsCount = 1;
-    for(auto& item : m_networkInsightsAccessScopeAnalysisIds)
-    {
+    for (auto& item : m_networkInsightsAccessScopeAnalysisIds) {
       ss << "NetworkInsightsAccessScopeAnalysisId." << networkInsightsAccessScopeAnalysisIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+         << StringUtils::URLEncode(item.c_str()) << "&";
       networkInsightsAccessScopeAnalysisIdsCount++;
     }
   }
 
-  if(m_networkInsightsAccessScopeIdHasBeenSet)
-  {
+  if (m_networkInsightsAccessScopeIdHasBeenSet) {
     ss << "NetworkInsightsAccessScopeId=" << StringUtils::URLEncode(m_networkInsightsAccessScopeId.c_str()) << "&";
   }
 
-  if(m_analysisStartTimeBeginHasBeenSet)
-  {
-    ss << "AnalysisStartTimeBegin=" << StringUtils::URLEncode(m_analysisStartTimeBegin.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_analysisStartTimeBeginHasBeenSet) {
+    ss << "AnalysisStartTimeBegin="
+       << StringUtils::URLEncode(m_analysisStartTimeBegin.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_analysisStartTimeEndHasBeenSet)
-  {
-    ss << "AnalysisStartTimeEnd=" << StringUtils::URLEncode(m_analysisStartTimeEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_analysisStartTimeEndHasBeenSet) {
+    ss << "AnalysisStartTimeEnd=" << StringUtils::URLEncode(m_analysisStartTimeEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+       << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -69,8 +60,4 @@ Aws::String DescribeNetworkInsightsAccessScopeAnalysesRequest::SerializePayload(
   return ss.str();
 }
 
-
-void  DescribeNetworkInsightsAccessScopeAnalysesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeNetworkInsightsAccessScopeAnalysesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

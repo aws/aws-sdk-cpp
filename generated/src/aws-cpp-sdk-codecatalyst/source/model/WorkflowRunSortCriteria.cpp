@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-WorkflowRunSortCriteria::WorkflowRunSortCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkflowRunSortCriteria::WorkflowRunSortCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-WorkflowRunSortCriteria& WorkflowRunSortCriteria::operator =(JsonView jsonValue)
-{
+WorkflowRunSortCriteria& WorkflowRunSortCriteria::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue WorkflowRunSortCriteria::Jsonize() const
-{
+JsonValue WorkflowRunSortCriteria::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

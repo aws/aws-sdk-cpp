@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
 
-CognitoIdentityProvider::CognitoIdentityProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CognitoIdentityProvider::CognitoIdentityProvider(JsonView jsonValue) { *this = jsonValue; }
 
-CognitoIdentityProvider& CognitoIdentityProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProviderName"))
-  {
+CognitoIdentityProvider& CognitoIdentityProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProviderName")) {
     m_providerName = jsonValue.GetString("ProviderName");
     m_providerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientId"))
-  {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerSideTokenCheck"))
-  {
+  if (jsonValue.ValueExists("ServerSideTokenCheck")) {
     m_serverSideTokenCheck = jsonValue.GetBool("ServerSideTokenCheck");
     m_serverSideTokenCheckHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CognitoIdentityProvider::Jsonize() const
-{
+JsonValue CognitoIdentityProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerNameHasBeenSet)
-  {
-   payload.WithString("ProviderName", m_providerName);
-
+  if (m_providerNameHasBeenSet) {
+    payload.WithString("ProviderName", m_providerName);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_serverSideTokenCheckHasBeenSet)
-  {
-   payload.WithBool("ServerSideTokenCheck", m_serverSideTokenCheck);
-
+  if (m_serverSideTokenCheckHasBeenSet) {
+    payload.WithBool("ServerSideTokenCheck", m_serverSideTokenCheck);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

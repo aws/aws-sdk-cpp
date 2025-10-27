@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-ErrorsListItem::ErrorsListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorsListItem::ErrorsListItem(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorsListItem& ErrorsListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Page"))
-  {
+ErrorsListItem& ErrorsListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Page")) {
     m_page = jsonValue.GetInteger("Page");
     m_pageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = PageBasedErrorCodeMapper::GetPageBasedErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorsListItem::Jsonize() const
-{
+JsonValue ErrorsListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_pageHasBeenSet)
-  {
-   payload.WithInteger("Page", m_page);
-
+  if (m_pageHasBeenSet) {
+    payload.WithInteger("Page", m_page);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", PageBasedErrorCodeMapper::GetNameForPageBasedErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", PageBasedErrorCodeMapper::GetNameForPageBasedErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

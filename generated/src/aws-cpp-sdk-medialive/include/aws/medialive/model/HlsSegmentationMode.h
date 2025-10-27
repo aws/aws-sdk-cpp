@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsSegmentationMode
-  {
-    NOT_SET,
-    USE_INPUT_SEGMENTATION,
-    USE_SEGMENT_DURATION
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsSegmentationMode { NOT_SET, USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION };
 
-namespace HlsSegmentationModeMapper
-{
+namespace HlsSegmentationModeMapper {
 AWS_MEDIALIVE_API HlsSegmentationMode GetHlsSegmentationModeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsSegmentationMode(HlsSegmentationMode value);
-} // namespace HlsSegmentationModeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsSegmentationModeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

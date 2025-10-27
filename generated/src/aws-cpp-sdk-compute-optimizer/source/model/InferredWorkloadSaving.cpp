@@ -11,61 +11,49 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-InferredWorkloadSaving::InferredWorkloadSaving(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferredWorkloadSaving::InferredWorkloadSaving(JsonView jsonValue) { *this = jsonValue; }
 
-InferredWorkloadSaving& InferredWorkloadSaving::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inferredWorkloadTypes"))
-  {
+InferredWorkloadSaving& InferredWorkloadSaving::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inferredWorkloadTypes")) {
     Aws::Utils::Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
-    for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
-    {
-      m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
+    for (unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength();
+         ++inferredWorkloadTypesIndex) {
+      m_inferredWorkloadTypes.push_back(
+          InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
     }
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("estimatedMonthlySavings"))
-  {
+  if (jsonValue.ValueExists("estimatedMonthlySavings")) {
     m_estimatedMonthlySavings = jsonValue.GetObject("estimatedMonthlySavings");
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferredWorkloadSaving::Jsonize() const
-{
+JsonValue InferredWorkloadSaving::Jsonize() const {
   JsonValue payload;
 
-  if(m_inferredWorkloadTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
-   for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
-   {
-     inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
-   }
-   payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
-
+  if (m_inferredWorkloadTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
+    for (unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength();
+         ++inferredWorkloadTypesIndex) {
+      inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(
+          InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
+    }
+    payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
   }
 
-  if(m_estimatedMonthlySavingsHasBeenSet)
-  {
-   payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
-
+  if (m_estimatedMonthlySavingsHasBeenSet) {
+    payload.WithObject("estimatedMonthlySavings", m_estimatedMonthlySavings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

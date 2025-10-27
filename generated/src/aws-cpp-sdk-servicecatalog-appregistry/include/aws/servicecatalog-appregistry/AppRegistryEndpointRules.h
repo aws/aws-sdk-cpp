@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 
-namespace Aws
-{
-namespace AppRegistry
-{
-class AppRegistryEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace AppRegistry {
+class AppRegistryEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace AppRegistry
+}  // namespace Aws

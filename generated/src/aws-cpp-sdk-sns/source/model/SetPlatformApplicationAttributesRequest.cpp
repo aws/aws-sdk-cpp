@@ -3,31 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String SetPlatformApplicationAttributesRequest::SerializePayload() const
-{
+Aws::String SetPlatformApplicationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetPlatformApplicationAttributes&";
-  if(m_platformApplicationArnHasBeenSet)
-  {
+  if (m_platformApplicationArnHasBeenSet) {
     ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
   }
 
-  if(m_attributesHasBeenSet)
-  {
+  if (m_attributesHasBeenSet) {
     unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
+    for (auto& item : m_attributes) {
+      ss << "Attributes.entry." << attributesCount << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "Attributes.entry." << attributesCount << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
     }
   }
@@ -36,8 +30,4 @@ Aws::String SetPlatformApplicationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetPlatformApplicationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetPlatformApplicationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

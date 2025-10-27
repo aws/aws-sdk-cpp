@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/Edge.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/Edge.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-Edge::Edge(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Edge::Edge(JsonView jsonValue) { *this = jsonValue; }
 
-Edge& Edge::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+Edge& Edge::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationArn"))
-  {
+  if (jsonValue.ValueExists("DestinationArn")) {
     m_destinationArn = jsonValue.GetString("DestinationArn");
     m_destinationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationType"))
-  {
+  if (jsonValue.ValueExists("AssociationType")) {
     m_associationType = AssociationEdgeTypeMapper::GetAssociationEdgeTypeForName(jsonValue.GetString("AssociationType"));
     m_associationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Edge::Jsonize() const
-{
+JsonValue Edge::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("DestinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("DestinationArn", m_destinationArn);
   }
 
-  if(m_associationTypeHasBeenSet)
-  {
-   payload.WithString("AssociationType", AssociationEdgeTypeMapper::GetNameForAssociationEdgeType(m_associationType));
+  if (m_associationTypeHasBeenSet) {
+    payload.WithString("AssociationType", AssociationEdgeTypeMapper::GetNameForAssociationEdgeType(m_associationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

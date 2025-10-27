@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/FleetMetricNameAndArn.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/FleetMetricNameAndArn.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-FleetMetricNameAndArn::FleetMetricNameAndArn(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FleetMetricNameAndArn::FleetMetricNameAndArn(JsonView jsonValue) { *this = jsonValue; }
 
-FleetMetricNameAndArn& FleetMetricNameAndArn::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("metricName"))
-  {
+FleetMetricNameAndArn& FleetMetricNameAndArn::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metricName")) {
     m_metricName = jsonValue.GetString("metricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricArn"))
-  {
+  if (jsonValue.ValueExists("metricArn")) {
     m_metricArn = jsonValue.GetString("metricArn");
     m_metricArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FleetMetricNameAndArn::Jsonize() const
-{
+JsonValue FleetMetricNameAndArn::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("metricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("metricName", m_metricName);
   }
 
-  if(m_metricArnHasBeenSet)
-  {
-   payload.WithString("metricArn", m_metricArn);
-
+  if (m_metricArnHasBeenSet) {
+    payload.WithString("metricArn", m_metricArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

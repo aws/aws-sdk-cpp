@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/PartnerEventSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/PartnerEventSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-PartnerEventSource::PartnerEventSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PartnerEventSource::PartnerEventSource(JsonView jsonValue) { *this = jsonValue; }
 
-PartnerEventSource& PartnerEventSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+PartnerEventSource& PartnerEventSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PartnerEventSource::Jsonize() const
-{
+JsonValue PartnerEventSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

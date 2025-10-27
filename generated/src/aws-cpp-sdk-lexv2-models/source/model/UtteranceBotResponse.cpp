@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/UtteranceBotResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/UtteranceBotResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-UtteranceBotResponse::UtteranceBotResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UtteranceBotResponse::UtteranceBotResponse(JsonView jsonValue) { *this = jsonValue; }
 
-UtteranceBotResponse& UtteranceBotResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+UtteranceBotResponse& UtteranceBotResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = UtteranceContentTypeMapper::GetUtteranceContentTypeForName(jsonValue.GetString("contentType"));
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imageResponseCard"))
-  {
+  if (jsonValue.ValueExists("imageResponseCard")) {
     m_imageResponseCard = jsonValue.GetObject("imageResponseCard");
     m_imageResponseCardHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UtteranceBotResponse::Jsonize() const
-{
+JsonValue UtteranceBotResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", UtteranceContentTypeMapper::GetNameForUtteranceContentType(m_contentType));
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", UtteranceContentTypeMapper::GetNameForUtteranceContentType(m_contentType));
   }
 
-  if(m_imageResponseCardHasBeenSet)
-  {
-   payload.WithObject("imageResponseCard", m_imageResponseCard.Jsonize());
-
+  if (m_imageResponseCardHasBeenSet) {
+    payload.WithObject("imageResponseCard", m_imageResponseCard.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

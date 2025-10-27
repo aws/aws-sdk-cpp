@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MpdKlvMetadata
-  {
-    NOT_SET,
-    NONE,
-    PASSTHROUGH
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MpdKlvMetadata { NOT_SET, NONE, PASSTHROUGH };
 
-namespace MpdKlvMetadataMapper
-{
+namespace MpdKlvMetadataMapper {
 AWS_MEDIACONVERT_API MpdKlvMetadata GetMpdKlvMetadataForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMpdKlvMetadata(MpdKlvMetadata value);
-} // namespace MpdKlvMetadataMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MpdKlvMetadataMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class PackageVersionStatus
-  {
-    NOT_SET,
-    REGISTER_PENDING,
-    REGISTER_COMPLETED,
-    FAILED,
-    DELETING
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class PackageVersionStatus { NOT_SET, REGISTER_PENDING, REGISTER_COMPLETED, FAILED, DELETING };
 
-namespace PackageVersionStatusMapper
-{
+namespace PackageVersionStatusMapper {
 AWS_PANORAMA_API PackageVersionStatus GetPackageVersionStatusForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForPackageVersionStatus(PackageVersionStatus value);
-} // namespace PackageVersionStatusMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace PackageVersionStatusMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationResultIdentifier& EvaluationResultIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationResultQualifier"))
-  {
+EvaluationResultIdentifier& EvaluationResultIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationResultQualifier")) {
     m_evaluationResultQualifier = jsonValue.GetObject("EvaluationResultQualifier");
     m_evaluationResultQualifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrderingTimestamp"))
-  {
+  if (jsonValue.ValueExists("OrderingTimestamp")) {
     m_orderingTimestamp = jsonValue.GetDouble("OrderingTimestamp");
     m_orderingTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceEvaluationId"))
-  {
+  if (jsonValue.ValueExists("ResourceEvaluationId")) {
     m_resourceEvaluationId = jsonValue.GetString("ResourceEvaluationId");
     m_resourceEvaluationIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationResultIdentifier::Jsonize() const
-{
+JsonValue EvaluationResultIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationResultQualifierHasBeenSet)
-  {
-   payload.WithObject("EvaluationResultQualifier", m_evaluationResultQualifier.Jsonize());
-
+  if (m_evaluationResultQualifierHasBeenSet) {
+    payload.WithObject("EvaluationResultQualifier", m_evaluationResultQualifier.Jsonize());
   }
 
-  if(m_orderingTimestampHasBeenSet)
-  {
-   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
+  if (m_orderingTimestampHasBeenSet) {
+    payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_resourceEvaluationIdHasBeenSet)
-  {
-   payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
-
+  if (m_resourceEvaluationIdHasBeenSet) {
+    payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

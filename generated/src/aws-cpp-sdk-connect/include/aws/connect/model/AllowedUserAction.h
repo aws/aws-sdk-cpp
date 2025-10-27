@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class AllowedUserAction
-  {
-    NOT_SET,
-    CALL,
-    DISCARD
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class AllowedUserAction { NOT_SET, CALL, DISCARD };
 
-namespace AllowedUserActionMapper
-{
+namespace AllowedUserActionMapper {
 AWS_CONNECT_API AllowedUserAction GetAllowedUserActionForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForAllowedUserAction(AllowedUserAction value);
-} // namespace AllowedUserActionMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace AllowedUserActionMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

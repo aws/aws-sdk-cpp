@@ -12,33 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRemediationConfigurationRequest::SerializePayload() const
-{
+Aws::String DeleteRemediationConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configRuleNameHasBeenSet)
-  {
-   payload.WithString("ConfigRuleName", m_configRuleName);
-
+  if (m_configRuleNameHasBeenSet) {
+    payload.WithString("ConfigRuleName", m_configRuleName);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteRemediationConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteRemediationConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteRemediationConfiguration"));
   return headers;
-
 }
-
-
-
-

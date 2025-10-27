@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableAlarmActionsRequest::SerializePayload() const
-{
+Aws::String DisableAlarmActionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableAlarmActions&";
-  if(m_alarmNamesHasBeenSet)
-  {
-    if (m_alarmNames.empty())
-    {
+  if (m_alarmNamesHasBeenSet) {
+    if (m_alarmNames.empty()) {
       ss << "AlarmNames=&";
-    }
-    else
-    {
+    } else {
       unsigned alarmNamesCount = 1;
-      for(auto& item : m_alarmNames)
-      {
-        ss << "AlarmNames.member." << alarmNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_alarmNames) {
+        ss << "AlarmNames.member." << alarmNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         alarmNamesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String DisableAlarmActionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableAlarmActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableAlarmActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

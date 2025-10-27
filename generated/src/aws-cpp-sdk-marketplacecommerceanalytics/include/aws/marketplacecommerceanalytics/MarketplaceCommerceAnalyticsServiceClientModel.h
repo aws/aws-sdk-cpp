@@ -6,75 +6,73 @@
 #pragma once
 
 /* Generic header includes */
-#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrors.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointProvider.h>
-#include <future>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrors.h>
+
 #include <functional>
+#include <future>
 /* End of generic header includes */
 
 /* Service model headers required in MarketplaceCommerceAnalyticsClient header */
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetResult.h>
 /* End of service model headers required in MarketplaceCommerceAnalyticsClient header */
 
-namespace Aws
-{
-  namespace Http
-  {
-    class HttpClient;
-    class HttpClientFactory;
-  } // namespace Http
+namespace Aws {
+namespace Http {
+class HttpClient;
+class HttpClientFactory;
+}  // namespace Http
 
-  namespace Utils
-  {
-    template< typename R, typename E> class Outcome;
+namespace Utils {
+template <typename R, typename E>
+class Outcome;
 
-    namespace Threading
-    {
-      class Executor;
-    } // namespace Threading
-  } // namespace Utils
+namespace Threading {
+class Executor;
+}  // namespace Threading
+}  // namespace Utils
 
-  namespace Auth
-  {
-    class AWSCredentials;
-    class AWSCredentialsProvider;
-  } // namespace Auth
+namespace Auth {
+class AWSCredentials;
+class AWSCredentialsProvider;
+}  // namespace Auth
 
-  namespace Client
-  {
-    class RetryStrategy;
-  } // namespace Client
+namespace Client {
+class RetryStrategy;
+}  // namespace Client
 
-  namespace MarketplaceCommerceAnalytics
-  {
-    using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
-    using MarketplaceCommerceAnalyticsEndpointProviderBase = Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProviderBase;
-    using MarketplaceCommerceAnalyticsEndpointProvider = Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProvider;
+namespace MarketplaceCommerceAnalytics {
+using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
+using MarketplaceCommerceAnalyticsEndpointProviderBase =
+    Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProviderBase;
+using MarketplaceCommerceAnalyticsEndpointProvider =
+    Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProvider;
 
-    namespace Model
-    {
-      /* Service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
-      class GenerateDataSetRequest;
-      /* End of service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
+namespace Model {
+/* Service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
+class GenerateDataSetRequest;
+/* End of service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
 
-      /* Service model Outcome class definitions */
-      typedef Aws::Utils::Outcome<GenerateDataSetResult, MarketplaceCommerceAnalyticsError> GenerateDataSetOutcome;
-      /* End of service model Outcome class definitions */
+/* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<GenerateDataSetResult, MarketplaceCommerceAnalyticsError> GenerateDataSetOutcome;
+/* End of service model Outcome class definitions */
 
-      /* Service model Outcome callable definitions */
-      typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
-      /* End of service model Outcome callable definitions */
-    } // namespace Model
+/* Service model Outcome callable definitions */
+typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
+/* End of service model Outcome callable definitions */
+}  // namespace Model
 
-    class MarketplaceCommerceAnalyticsClient;
+class MarketplaceCommerceAnalyticsClient;
 
-    /* Service model async handlers definitions */
-    typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::GenerateDataSetRequest&, const Model::GenerateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataSetResponseReceivedHandler;
-    /* End of service model async handlers definitions */
-  } // namespace MarketplaceCommerceAnalytics
-} // namespace Aws
+/* Service model async handlers definitions */
+typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::GenerateDataSetRequest&,
+                           const Model::GenerateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GenerateDataSetResponseReceivedHandler;
+/* End of service model async handlers definitions */
+}  // namespace MarketplaceCommerceAnalytics
+}  // namespace Aws

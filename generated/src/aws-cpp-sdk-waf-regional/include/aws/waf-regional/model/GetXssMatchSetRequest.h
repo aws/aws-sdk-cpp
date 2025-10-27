@@ -4,58 +4,59 @@
  */
 
 #pragma once
-#include <aws/waf-regional/WAFRegional_EXPORTS.h>
-#include <aws/waf-regional/WAFRegionalRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf-regional/WAFRegionalRequest.h>
+#include <aws/waf-regional/WAFRegional_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
+/**
+ * <p>A request to get an <a>XssMatchSet</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSetRequest">AWS
+ * API Reference</a></p>
+ */
+class GetXssMatchSetRequest : public WAFRegionalRequest {
+ public:
+  AWS_WAFREGIONAL_API GetXssMatchSetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetXssMatchSet"; }
+
+  AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
+
+  AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
-   * <p>A request to get an <a>XssMatchSet</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSetRequest">AWS
-   * API Reference</a></p>
+   * <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
+   * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by
+   * <a>ListXssMatchSets</a>.</p>
    */
-  class GetXssMatchSetRequest : public WAFRegionalRequest
-  {
-  public:
-    AWS_WAFREGIONAL_API GetXssMatchSetRequest() = default;
+  inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
+  inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
+  template <typename XssMatchSetIdT = Aws::String>
+  void SetXssMatchSetId(XssMatchSetIdT&& value) {
+    m_xssMatchSetIdHasBeenSet = true;
+    m_xssMatchSetId = std::forward<XssMatchSetIdT>(value);
+  }
+  template <typename XssMatchSetIdT = Aws::String>
+  GetXssMatchSetRequest& WithXssMatchSetId(XssMatchSetIdT&& value) {
+    SetXssMatchSetId(std::forward<XssMatchSetIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_xssMatchSetId;
+  bool m_xssMatchSetIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetXssMatchSet"; }
-
-    AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
-
-    AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
-     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by
-     * <a>ListXssMatchSets</a>.</p>
-     */
-    inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
-    inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
-    template<typename XssMatchSetIdT = Aws::String>
-    void SetXssMatchSetId(XssMatchSetIdT&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::forward<XssMatchSetIdT>(value); }
-    template<typename XssMatchSetIdT = Aws::String>
-    GetXssMatchSetRequest& WithXssMatchSetId(XssMatchSetIdT&& value) { SetXssMatchSetId(std::forward<XssMatchSetIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_xssMatchSetId;
-    bool m_xssMatchSetIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

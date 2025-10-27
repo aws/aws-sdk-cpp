@@ -7,25 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class GraphQLApiType
-  {
-    NOT_SET,
-    GRAPHQL,
-    MERGED
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class GraphQLApiType { NOT_SET, GRAPHQL, MERGED };
 
-namespace GraphQLApiTypeMapper
-{
+namespace GraphQLApiTypeMapper {
 AWS_APPSYNC_API GraphQLApiType GetGraphQLApiTypeForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForGraphQLApiType(GraphQLApiType value);
-} // namespace GraphQLApiTypeMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace GraphQLApiTypeMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue) { *this = jsonValue; }
 
-BatchListPolicyAttachments& BatchListPolicyAttachments::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyReference"))
-  {
+BatchListPolicyAttachments& BatchListPolicyAttachments::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyReference")) {
     m_policyReference = jsonValue.GetObject("PolicyReference");
     m_policyReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxResults"))
-  {
+  if (jsonValue.ValueExists("MaxResults")) {
     m_maxResults = jsonValue.GetInteger("MaxResults");
     m_maxResultsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchListPolicyAttachments::Jsonize() const
-{
+JsonValue BatchListPolicyAttachments::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyReferenceHasBeenSet)
-  {
-   payload.WithObject("PolicyReference", m_policyReference.Jsonize());
-
+  if (m_policyReferenceHasBeenSet) {
+    payload.WithObject("PolicyReference", m_policyReference.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

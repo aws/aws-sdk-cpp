@@ -5,12 +5,8 @@
 
 #include <aws/snow-device-management/SnowDeviceManagementEndpointProvider.h>
 
-namespace Aws
-{
-namespace SnowDeviceManagement
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SnowDeviceManagement
-} // namespace Aws
+namespace Aws {
+namespace SnowDeviceManagement {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SnowDeviceManagement
+}  // namespace Aws

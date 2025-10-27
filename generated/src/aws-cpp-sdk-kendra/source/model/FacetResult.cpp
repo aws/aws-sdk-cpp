@@ -3,79 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/FacetResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/FacetResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-FacetResult::FacetResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FacetResult::FacetResult(JsonView jsonValue) { *this = jsonValue; }
 
-FacetResult& FacetResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DocumentAttributeKey"))
-  {
+FacetResult& FacetResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentAttributeKey")) {
     m_documentAttributeKey = jsonValue.GetString("DocumentAttributeKey");
     m_documentAttributeKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentAttributeValueType"))
-  {
-    m_documentAttributeValueType = DocumentAttributeValueTypeMapper::GetDocumentAttributeValueTypeForName(jsonValue.GetString("DocumentAttributeValueType"));
+  if (jsonValue.ValueExists("DocumentAttributeValueType")) {
+    m_documentAttributeValueType =
+        DocumentAttributeValueTypeMapper::GetDocumentAttributeValueTypeForName(jsonValue.GetString("DocumentAttributeValueType"));
     m_documentAttributeValueTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentAttributeValueCountPairs"))
-  {
+  if (jsonValue.ValueExists("DocumentAttributeValueCountPairs")) {
     Aws::Utils::Array<JsonView> documentAttributeValueCountPairsJsonList = jsonValue.GetArray("DocumentAttributeValueCountPairs");
-    for(unsigned documentAttributeValueCountPairsIndex = 0; documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength(); ++documentAttributeValueCountPairsIndex)
-    {
-      m_documentAttributeValueCountPairs.push_back(documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject());
+    for (unsigned documentAttributeValueCountPairsIndex = 0;
+         documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength();
+         ++documentAttributeValueCountPairsIndex) {
+      m_documentAttributeValueCountPairs.push_back(
+          documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject());
     }
     m_documentAttributeValueCountPairsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FacetResult::Jsonize() const
-{
+JsonValue FacetResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentAttributeKeyHasBeenSet)
-  {
-   payload.WithString("DocumentAttributeKey", m_documentAttributeKey);
-
+  if (m_documentAttributeKeyHasBeenSet) {
+    payload.WithString("DocumentAttributeKey", m_documentAttributeKey);
   }
 
-  if(m_documentAttributeValueTypeHasBeenSet)
-  {
-   payload.WithString("DocumentAttributeValueType", DocumentAttributeValueTypeMapper::GetNameForDocumentAttributeValueType(m_documentAttributeValueType));
+  if (m_documentAttributeValueTypeHasBeenSet) {
+    payload.WithString("DocumentAttributeValueType",
+                       DocumentAttributeValueTypeMapper::GetNameForDocumentAttributeValueType(m_documentAttributeValueType));
   }
 
-  if(m_documentAttributeValueCountPairsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> documentAttributeValueCountPairsJsonList(m_documentAttributeValueCountPairs.size());
-   for(unsigned documentAttributeValueCountPairsIndex = 0; documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength(); ++documentAttributeValueCountPairsIndex)
-   {
-     documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject(m_documentAttributeValueCountPairs[documentAttributeValueCountPairsIndex].Jsonize());
-   }
-   payload.WithArray("DocumentAttributeValueCountPairs", std::move(documentAttributeValueCountPairsJsonList));
-
+  if (m_documentAttributeValueCountPairsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> documentAttributeValueCountPairsJsonList(m_documentAttributeValueCountPairs.size());
+    for (unsigned documentAttributeValueCountPairsIndex = 0;
+         documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength();
+         ++documentAttributeValueCountPairsIndex) {
+      documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject(
+          m_documentAttributeValueCountPairs[documentAttributeValueCountPairsIndex].Jsonize());
+    }
+    payload.WithArray("DocumentAttributeValueCountPairs", std::move(documentAttributeValueCountPairsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

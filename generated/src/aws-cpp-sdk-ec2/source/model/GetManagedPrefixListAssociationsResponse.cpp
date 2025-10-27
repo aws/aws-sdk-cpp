@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedPrefixListAssociationsResponse::GetManagedPrefixListAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetManagedPrefixListAssociationsResponse::GetManagedPrefixListAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetManagedPrefixListAssociationsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetManagedPrefixListAssociationsResponse")) {
     resultNode = rootNode.FirstChild("GetManagedPrefixListAssociationsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode prefixListAssociationsNode = resultNode.FirstChild("prefixListAssociationSet");
-    if(!prefixListAssociationsNode.IsNull())
-    {
+    if (!prefixListAssociationsNode.IsNull()) {
       XmlNode prefixListAssociationsMember = prefixListAssociationsNode.FirstChild("item");
       m_prefixListAssociationsHasBeenSet = !prefixListAssociationsMember.IsNull();
-      while(!prefixListAssociationsMember.IsNull())
-      {
+      while (!prefixListAssociationsMember.IsNull()) {
         m_prefixListAssociations.push_back(prefixListAssociationsMember);
         prefixListAssociationsMember = prefixListAssociationsMember.NextNode("item");
       }
@@ -48,8 +43,7 @@ GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsRespon
       m_prefixListAssociationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +51,12 @@ GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsRespon
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetManagedPrefixListAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetManagedPrefixListAssociationsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

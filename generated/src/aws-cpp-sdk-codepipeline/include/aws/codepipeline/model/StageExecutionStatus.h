@@ -7,30 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class StageExecutionStatus
-  {
-    NOT_SET,
-    Cancelled,
-    InProgress,
-    Failed,
-    Stopped,
-    Stopping,
-    Succeeded,
-    Skipped
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class StageExecutionStatus { NOT_SET, Cancelled, InProgress, Failed, Stopped, Stopping, Succeeded, Skipped };
 
-namespace StageExecutionStatusMapper
-{
+namespace StageExecutionStatusMapper {
 AWS_CODEPIPELINE_API StageExecutionStatus GetStageExecutionStatusForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForStageExecutionStatus(StageExecutionStatus value);
-} // namespace StageExecutionStatusMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace StageExecutionStatusMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

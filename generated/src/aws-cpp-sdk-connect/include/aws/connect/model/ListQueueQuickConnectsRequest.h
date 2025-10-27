@@ -4,104 +4,122 @@
  */
 
 #pragma once
-#include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/ConnectRequest.h>
+#include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace Connect {
+namespace Model {
 
+/**
+ */
+class ListQueueQuickConnectsRequest : public ConnectRequest {
+ public:
+  AWS_CONNECT_API ListQueueQuickConnectsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListQueueQuickConnects"; }
+
+  AWS_CONNECT_API Aws::String SerializePayload() const override;
+
+  AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The identifier of the Amazon Connect instance. You can <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+   * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
    */
-  class ListQueueQuickConnectsRequest : public ConnectRequest
-  {
-  public:
-    AWS_CONNECT_API ListQueueQuickConnectsRequest() = default;
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  ListQueueQuickConnectsRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListQueueQuickConnects"; }
+  ///@{
+  /**
+   * <p>The identifier for the queue.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  ListQueueQuickConnectsRequest& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_CONNECT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListQueueQuickConnectsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p>The maximum number of results to return per page. The default MaxResult size
+   * is 100.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListQueueQuickConnectsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceId;
+  bool m_instanceIdHasBeenSet = false;
 
+  Aws::String m_queueId;
+  bool m_queueIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    ListQueueQuickConnectsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The identifier for the queue.</p>
-     */
-    inline const Aws::String& GetQueueId() const { return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    template<typename QueueIdT = Aws::String>
-    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
-    template<typename QueueIdT = Aws::String>
-    ListQueueQuickConnectsRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListQueueQuickConnectsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return per page. The default MaxResult size
-     * is 100.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListQueueQuickConnectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/ReservationPlanSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/ReservationPlanSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-ReservationPlanSettings::ReservationPlanSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservationPlanSettings::ReservationPlanSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ReservationPlanSettings& ReservationPlanSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("commitment"))
-  {
+ReservationPlanSettings& ReservationPlanSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("commitment")) {
     m_commitment = CommitmentMapper::GetCommitmentForName(jsonValue.GetString("commitment"));
     m_commitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("renewalType"))
-  {
+  if (jsonValue.ValueExists("renewalType")) {
     m_renewalType = RenewalTypeMapper::GetRenewalTypeForName(jsonValue.GetString("renewalType"));
     m_renewalTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reservedSlots"))
-  {
+  if (jsonValue.ValueExists("reservedSlots")) {
     m_reservedSlots = jsonValue.GetInteger("reservedSlots");
     m_reservedSlotsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservationPlanSettings::Jsonize() const
-{
+JsonValue ReservationPlanSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_commitmentHasBeenSet)
-  {
-   payload.WithString("commitment", CommitmentMapper::GetNameForCommitment(m_commitment));
+  if (m_commitmentHasBeenSet) {
+    payload.WithString("commitment", CommitmentMapper::GetNameForCommitment(m_commitment));
   }
 
-  if(m_renewalTypeHasBeenSet)
-  {
-   payload.WithString("renewalType", RenewalTypeMapper::GetNameForRenewalType(m_renewalType));
+  if (m_renewalTypeHasBeenSet) {
+    payload.WithString("renewalType", RenewalTypeMapper::GetNameForRenewalType(m_renewalType));
   }
 
-  if(m_reservedSlotsHasBeenSet)
-  {
-   payload.WithInteger("reservedSlots", m_reservedSlots);
-
+  if (m_reservedSlotsHasBeenSet) {
+    payload.WithInteger("reservedSlots", m_reservedSlots);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

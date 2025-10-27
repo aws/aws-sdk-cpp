@@ -3,82 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/AssetModelPropertySummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/AssetModelPropertySummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-AssetModelPropertySummary::AssetModelPropertySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetModelPropertySummary::AssetModelPropertySummary(JsonView jsonValue) { *this = jsonValue; }
 
-AssetModelPropertySummary& AssetModelPropertySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+AssetModelPropertySummary& AssetModelPropertySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalId"))
-  {
+  if (jsonValue.ValueExists("externalId")) {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataType"))
-  {
+  if (jsonValue.ValueExists("dataType")) {
     m_dataType = PropertyDataTypeMapper::GetPropertyDataTypeForName(jsonValue.GetString("dataType"));
     m_dataTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataTypeSpec"))
-  {
+  if (jsonValue.ValueExists("dataTypeSpec")) {
     m_dataTypeSpec = jsonValue.GetString("dataTypeSpec");
     m_dataTypeSpecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unit"))
-  {
+  if (jsonValue.ValueExists("unit")) {
     m_unit = jsonValue.GetString("unit");
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetObject("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assetModelCompositeModelId"))
-  {
+  if (jsonValue.ValueExists("assetModelCompositeModelId")) {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");
     m_assetModelCompositeModelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("path");
-    for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
-    {
+    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
       m_path.push_back(pathJsonList[pathIndex].AsObject());
     }
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("interfaceSummaries"))
-  {
+  if (jsonValue.ValueExists("interfaceSummaries")) {
     Aws::Utils::Array<JsonView> interfaceSummariesJsonList = jsonValue.GetArray("interfaceSummaries");
-    for(unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength(); ++interfaceSummariesIndex)
-    {
+    for (unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength();
+         ++interfaceSummariesIndex) {
       m_interfaceSummaries.push_back(interfaceSummariesJsonList[interfaceSummariesIndex].AsObject());
     }
     m_interfaceSummariesHasBeenSet = true;
@@ -86,82 +68,61 @@ AssetModelPropertySummary& AssetModelPropertySummary::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue AssetModelPropertySummary::Jsonize() const
-{
+JsonValue AssetModelPropertySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("externalId", m_externalId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_dataTypeHasBeenSet)
-  {
-   payload.WithString("dataType", PropertyDataTypeMapper::GetNameForPropertyDataType(m_dataType));
+  if (m_dataTypeHasBeenSet) {
+    payload.WithString("dataType", PropertyDataTypeMapper::GetNameForPropertyDataType(m_dataType));
   }
 
-  if(m_dataTypeSpecHasBeenSet)
-  {
-   payload.WithString("dataTypeSpec", m_dataTypeSpec);
-
+  if (m_dataTypeSpecHasBeenSet) {
+    payload.WithString("dataTypeSpec", m_dataTypeSpec);
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("unit", m_unit);
-
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", m_unit);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("type", m_type.Jsonize());
   }
 
-  if(m_assetModelCompositeModelIdHasBeenSet)
-  {
-   payload.WithString("assetModelCompositeModelId", m_assetModelCompositeModelId);
-
+  if (m_assetModelCompositeModelIdHasBeenSet) {
+    payload.WithString("assetModelCompositeModelId", m_assetModelCompositeModelId);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
-   for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
-   {
-     pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
-   }
-   payload.WithArray("path", std::move(pathJsonList));
-
+  if (m_pathHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
+    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
+      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
+    }
+    payload.WithArray("path", std::move(pathJsonList));
   }
 
-  if(m_interfaceSummariesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> interfaceSummariesJsonList(m_interfaceSummaries.size());
-   for(unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength(); ++interfaceSummariesIndex)
-   {
-     interfaceSummariesJsonList[interfaceSummariesIndex].AsObject(m_interfaceSummaries[interfaceSummariesIndex].Jsonize());
-   }
-   payload.WithArray("interfaceSummaries", std::move(interfaceSummariesJsonList));
-
+  if (m_interfaceSummariesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> interfaceSummariesJsonList(m_interfaceSummaries.size());
+    for (unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength();
+         ++interfaceSummariesIndex) {
+      interfaceSummariesJsonList[interfaceSummariesIndex].AsObject(m_interfaceSummaries[interfaceSummariesIndex].Jsonize());
+    }
+    payload.WithArray("interfaceSummaries", std::move(interfaceSummariesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

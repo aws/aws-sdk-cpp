@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissionsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNetworkInterfacePermissionsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNetworkInterfacePermissionsResponse")) {
     resultNode = rootNode.FirstChild("DescribeNetworkInterfacePermissionsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode networkInterfacePermissionsNode = resultNode.FirstChild("networkInterfacePermissions");
-    if(!networkInterfacePermissionsNode.IsNull())
-    {
+    if (!networkInterfacePermissionsNode.IsNull()) {
       XmlNode networkInterfacePermissionsMember = networkInterfacePermissionsNode.FirstChild("item");
       m_networkInterfacePermissionsHasBeenSet = !networkInterfacePermissionsMember.IsNull();
-      while(!networkInterfacePermissionsMember.IsNull())
-      {
+      while (!networkInterfacePermissionsMember.IsNull()) {
         m_networkInterfacePermissions.push_back(networkInterfacePermissionsMember);
         networkInterfacePermissionsMember = networkInterfacePermissionsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissions
       m_networkInterfacePermissionsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissions
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInterfacePermissionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInterfacePermissionsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

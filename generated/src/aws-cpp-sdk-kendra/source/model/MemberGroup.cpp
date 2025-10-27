@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/MemberGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/MemberGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-MemberGroup::MemberGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberGroup::MemberGroup(JsonView jsonValue) { *this = jsonValue; }
 
-MemberGroup& MemberGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupId"))
-  {
+MemberGroup& MemberGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataSourceId"))
-  {
+  if (jsonValue.ValueExists("DataSourceId")) {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
     m_dataSourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberGroup::Jsonize() const
-{
+JsonValue MemberGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupIdHasBeenSet)
-  {
-   payload.WithString("GroupId", m_groupId);
-
+  if (m_groupIdHasBeenSet) {
+    payload.WithString("GroupId", m_groupId);
   }
 
-  if(m_dataSourceIdHasBeenSet)
-  {
-   payload.WithString("DataSourceId", m_dataSourceId);
-
+  if (m_dataSourceIdHasBeenSet) {
+    payload.WithString("DataSourceId", m_dataSourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

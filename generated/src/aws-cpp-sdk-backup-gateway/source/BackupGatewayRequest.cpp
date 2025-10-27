@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/backup-gateway/BackupGatewayRequest.h>
 
-namespace Aws
-{
-namespace BackupGateway
-{
-} // namespace BackupGateway
-} // namespace Aws
+namespace Aws {
+namespace BackupGateway {}  // namespace BackupGateway
+}  // namespace Aws

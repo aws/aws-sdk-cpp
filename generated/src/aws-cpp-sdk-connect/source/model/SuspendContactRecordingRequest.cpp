@@ -12,36 +12,24 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SuspendContactRecordingRequest::SerializePayload() const
-{
+Aws::String SuspendContactRecordingRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_initialContactIdHasBeenSet)
-  {
-   payload.WithString("InitialContactId", m_initialContactId);
-
+  if (m_initialContactIdHasBeenSet) {
+    payload.WithString("InitialContactId", m_initialContactId);
   }
 
-  if(m_contactRecordingTypeHasBeenSet)
-  {
-   payload.WithString("ContactRecordingType", ContactRecordingTypeMapper::GetNameForContactRecordingType(m_contactRecordingType));
+  if (m_contactRecordingTypeHasBeenSet) {
+    payload.WithString("ContactRecordingType", ContactRecordingTypeMapper::GetNameForContactRecordingType(m_contactRecordingType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

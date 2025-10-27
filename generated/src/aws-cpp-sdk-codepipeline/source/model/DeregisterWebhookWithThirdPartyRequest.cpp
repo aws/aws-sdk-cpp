@@ -12,27 +12,18 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterWebhookWithThirdPartyRequest::SerializePayload() const
-{
+Aws::String DeregisterWebhookWithThirdPartyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_webhookNameHasBeenSet)
-  {
-   payload.WithString("webhookName", m_webhookName);
-
+  if (m_webhookNameHasBeenSet) {
+    payload.WithString("webhookName", m_webhookName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeregisterWebhookWithThirdPartyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeregisterWebhookWithThirdPartyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.DeregisterWebhookWithThirdParty"));
   return headers;
-
 }
-
-
-
-

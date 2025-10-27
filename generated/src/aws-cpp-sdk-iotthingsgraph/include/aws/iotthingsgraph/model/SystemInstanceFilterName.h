@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Model
-{
-  enum class SystemInstanceFilterName
-  {
-    NOT_SET,
-    SYSTEM_TEMPLATE_ID,
-    STATUS,
-    GREENGRASS_GROUP_NAME
-  };
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Model {
+enum class SystemInstanceFilterName { NOT_SET, SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME };
 
-namespace SystemInstanceFilterNameMapper
-{
+namespace SystemInstanceFilterNameMapper {
 AWS_IOTTHINGSGRAPH_API SystemInstanceFilterName GetSystemInstanceFilterNameForName(const Aws::String& name);
 
 AWS_IOTTHINGSGRAPH_API Aws::String GetNameForSystemInstanceFilterName(SystemInstanceFilterName value);
-} // namespace SystemInstanceFilterNameMapper
-} // namespace Model
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace SystemInstanceFilterNameMapper
+}  // namespace Model
+}  // namespace IoTThingsGraph
+}  // namespace Aws

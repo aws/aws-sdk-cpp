@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 
-namespace Aws
-{
-namespace RTBFabric
-{
-namespace Model
-{
-  enum class ResponderErrorMaskingLoggingType
-  {
-    NOT_SET,
-    NONE,
-    METRIC,
-    RESPONSE
-  };
+namespace Aws {
+namespace RTBFabric {
+namespace Model {
+enum class ResponderErrorMaskingLoggingType { NOT_SET, NONE, METRIC, RESPONSE };
 
-namespace ResponderErrorMaskingLoggingTypeMapper
-{
+namespace ResponderErrorMaskingLoggingTypeMapper {
 AWS_RTBFABRIC_API ResponderErrorMaskingLoggingType GetResponderErrorMaskingLoggingTypeForName(const Aws::String& name);
 
 AWS_RTBFABRIC_API Aws::String GetNameForResponderErrorMaskingLoggingType(ResponderErrorMaskingLoggingType value);
-} // namespace ResponderErrorMaskingLoggingTypeMapper
-} // namespace Model
-} // namespace RTBFabric
-} // namespace Aws
+}  // namespace ResponderErrorMaskingLoggingTypeMapper
+}  // namespace Model
+}  // namespace RTBFabric
+}  // namespace Aws

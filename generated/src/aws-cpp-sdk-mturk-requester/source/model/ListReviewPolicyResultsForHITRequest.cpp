@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/ListReviewPolicyResultsForHITRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/ListReviewPolicyResultsForHITRequest.h>
 
 #include <utility>
 
@@ -12,62 +12,43 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListReviewPolicyResultsForHITRequest::SerializePayload() const
-{
+Aws::String ListReviewPolicyResultsForHITRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hITIdHasBeenSet)
-  {
-   payload.WithString("HITId", m_hITId);
-
+  if (m_hITIdHasBeenSet) {
+    payload.WithString("HITId", m_hITId);
   }
 
-  if(m_policyLevelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policyLevelsJsonList(m_policyLevels.size());
-   for(unsigned policyLevelsIndex = 0; policyLevelsIndex < policyLevelsJsonList.GetLength(); ++policyLevelsIndex)
-   {
-     policyLevelsJsonList[policyLevelsIndex].AsString(ReviewPolicyLevelMapper::GetNameForReviewPolicyLevel(m_policyLevels[policyLevelsIndex]));
-   }
-   payload.WithArray("PolicyLevels", std::move(policyLevelsJsonList));
-
+  if (m_policyLevelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policyLevelsJsonList(m_policyLevels.size());
+    for (unsigned policyLevelsIndex = 0; policyLevelsIndex < policyLevelsJsonList.GetLength(); ++policyLevelsIndex) {
+      policyLevelsJsonList[policyLevelsIndex].AsString(
+          ReviewPolicyLevelMapper::GetNameForReviewPolicyLevel(m_policyLevels[policyLevelsIndex]));
+    }
+    payload.WithArray("PolicyLevels", std::move(policyLevelsJsonList));
   }
 
-  if(m_retrieveActionsHasBeenSet)
-  {
-   payload.WithBool("RetrieveActions", m_retrieveActions);
-
+  if (m_retrieveActionsHasBeenSet) {
+    payload.WithBool("RetrieveActions", m_retrieveActions);
   }
 
-  if(m_retrieveResultsHasBeenSet)
-  {
-   payload.WithBool("RetrieveResults", m_retrieveResults);
-
+  if (m_retrieveResultsHasBeenSet) {
+    payload.WithBool("RetrieveResults", m_retrieveResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListReviewPolicyResultsForHITRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListReviewPolicyResultsForHITRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT"));
   return headers;
-
 }
-
-
-
-

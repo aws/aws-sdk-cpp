@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-ControlMapping::ControlMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ControlMapping::ControlMapping(JsonView jsonValue) { *this = jsonValue; }
 
-ControlMapping& ControlMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ControlArn"))
-  {
+ControlMapping& ControlMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ControlArn")) {
     m_controlArn = jsonValue.GetString("ControlArn");
     m_controlArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MappingType"))
-  {
+  if (jsonValue.ValueExists("MappingType")) {
     m_mappingType = MappingTypeMapper::GetMappingTypeForName(jsonValue.GetString("MappingType"));
     m_mappingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mapping"))
-  {
+  if (jsonValue.ValueExists("Mapping")) {
     m_mapping = jsonValue.GetObject("Mapping");
     m_mappingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ControlMapping::Jsonize() const
-{
+JsonValue ControlMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_controlArnHasBeenSet)
-  {
-   payload.WithString("ControlArn", m_controlArn);
-
+  if (m_controlArnHasBeenSet) {
+    payload.WithString("ControlArn", m_controlArn);
   }
 
-  if(m_mappingTypeHasBeenSet)
-  {
-   payload.WithString("MappingType", MappingTypeMapper::GetNameForMappingType(m_mappingType));
+  if (m_mappingTypeHasBeenSet) {
+    payload.WithString("MappingType", MappingTypeMapper::GetNameForMappingType(m_mappingType));
   }
 
-  if(m_mappingHasBeenSet)
-  {
-   payload.WithObject("Mapping", m_mapping.Jsonize());
-
+  if (m_mappingHasBeenSet) {
+    payload.WithObject("Mapping", m_mapping.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rtbfabric/model/DeleteLinkResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rtbfabric/model/DeleteLinkResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLinkResult::DeleteLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DeleteLinkResult::DeleteLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DeleteLinkResult& DeleteLinkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteLinkResult& DeleteLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("linkId"))
-  {
+  if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");
     m_linkIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = LinkStatusMapper::GetLinkStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

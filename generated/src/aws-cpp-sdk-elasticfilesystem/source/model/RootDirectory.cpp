@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/RootDirectory.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/RootDirectory.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
+namespace Aws {
+namespace EFS {
+namespace Model {
 
-RootDirectory::RootDirectory(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RootDirectory::RootDirectory(JsonView jsonValue) { *this = jsonValue; }
 
-RootDirectory& RootDirectory::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Path"))
-  {
+RootDirectory& RootDirectory::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationInfo"))
-  {
+  if (jsonValue.ValueExists("CreationInfo")) {
     m_creationInfo = jsonValue.GetObject("CreationInfo");
     m_creationInfoHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RootDirectory::Jsonize() const
-{
+JsonValue RootDirectory::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_creationInfoHasBeenSet)
-  {
-   payload.WithObject("CreationInfo", m_creationInfo.Jsonize());
-
+  if (m_creationInfoHasBeenSet) {
+    payload.WithObject("CreationInfo", m_creationInfo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

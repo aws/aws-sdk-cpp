@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/Hdr10Plus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/Hdr10Plus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-Hdr10Plus::Hdr10Plus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Hdr10Plus::Hdr10Plus(JsonView jsonValue) { *this = jsonValue; }
 
-Hdr10Plus& Hdr10Plus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("masteringMonitorNits"))
-  {
+Hdr10Plus& Hdr10Plus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("masteringMonitorNits")) {
     m_masteringMonitorNits = jsonValue.GetInteger("masteringMonitorNits");
     m_masteringMonitorNitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetMonitorNits"))
-  {
+  if (jsonValue.ValueExists("targetMonitorNits")) {
     m_targetMonitorNits = jsonValue.GetInteger("targetMonitorNits");
     m_targetMonitorNitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Hdr10Plus::Jsonize() const
-{
+JsonValue Hdr10Plus::Jsonize() const {
   JsonValue payload;
 
-  if(m_masteringMonitorNitsHasBeenSet)
-  {
-   payload.WithInteger("masteringMonitorNits", m_masteringMonitorNits);
-
+  if (m_masteringMonitorNitsHasBeenSet) {
+    payload.WithInteger("masteringMonitorNits", m_masteringMonitorNits);
   }
 
-  if(m_targetMonitorNitsHasBeenSet)
-  {
-   payload.WithInteger("targetMonitorNits", m_targetMonitorNits);
-
+  if (m_targetMonitorNitsHasBeenSet) {
+    payload.WithInteger("targetMonitorNits", m_targetMonitorNits);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

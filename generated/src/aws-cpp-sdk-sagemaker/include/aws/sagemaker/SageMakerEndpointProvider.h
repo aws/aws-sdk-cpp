@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/sagemaker/SageMakerEndpointRules.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SageMaker {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SageMakerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using SageMakerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SAGEMAKER_API SageMakerEndpointProvider : public SageMakerDefaultEpProviderBase
-{
-public:
-    using SageMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SAGEMAKER_API SageMakerEndpointProvider : public SageMakerDefaultEpProviderBase {
+ public:
+  using SageMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SageMakerEndpointProvider()
-      : SageMakerDefaultEpProviderBase(Aws::SageMaker::SageMakerEndpointRules::GetRulesBlob(), Aws::SageMaker::SageMakerEndpointRules::RulesBlobSize)
-    {}
+  SageMakerEndpointProvider()
+      : SageMakerDefaultEpProviderBase(Aws::SageMaker::SageMakerEndpointRules::GetRulesBlob(),
+                                       Aws::SageMaker::SageMakerEndpointRules::RulesBlobSize) {}
 
-    ~SageMakerEndpointProvider()
-    {
-    }
+  ~SageMakerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SageMaker
+}  // namespace Aws

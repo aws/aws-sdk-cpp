@@ -10,22 +10,18 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String SetInstanceHealthRequest::SerializePayload() const
-{
+Aws::String SetInstanceHealthRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetInstanceHealth&";
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_healthStatusHasBeenSet)
-  {
+  if (m_healthStatusHasBeenSet) {
     ss << "HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
   }
 
-  if(m_shouldRespectGracePeriodHasBeenSet)
-  {
+  if (m_shouldRespectGracePeriodHasBeenSet) {
     ss << "ShouldRespectGracePeriod=" << std::boolalpha << m_shouldRespectGracePeriod << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SetInstanceHealthRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetInstanceHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetInstanceHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

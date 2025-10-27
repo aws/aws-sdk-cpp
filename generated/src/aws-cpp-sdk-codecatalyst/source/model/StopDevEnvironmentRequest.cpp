@@ -12,11 +12,4 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopDevEnvironmentRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StopDevEnvironmentRequest::SerializePayload() const { return {}; }

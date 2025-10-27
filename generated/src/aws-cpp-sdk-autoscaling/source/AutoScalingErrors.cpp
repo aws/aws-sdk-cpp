@@ -3,20 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/autoscaling/AutoScalingErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/autoscaling/AutoScalingErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::AutoScaling;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace AutoScalingErrorMapper
-{
+namespace Aws {
+namespace AutoScaling {
+namespace AutoScalingErrorMapper {
 
 static const int INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("InstanceRefreshInProgress");
 static const int ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AlreadyExists");
@@ -29,54 +26,37 @@ static const int IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH = HashingUtils::HashSt
 static const int ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ActiveInstanceRefreshNotFound");
 static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INSTANCE_REFRESH_IN_PROGRESS_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ALREADY_EXISTS_FAULT_HASH)
-  {
+  if (hashCode == INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INSTANCE_REFRESH_IN_PROGRESS_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ALREADY_EXISTS_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_CONTENTION_FAULT_HASH)
-  {
+  } else if (hashCode == RESOURCE_CONTENTION_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_LINKED_ROLE_FAILURE_HASH)
-  {
+  } else if (hashCode == SERVICE_LINKED_ROLE_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SERVICE_LINKED_ROLE_FAILURE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IRREVERSIBLE_INSTANCE_REFRESH_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_FAULT_HASH)
-  {
+  } else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IRREVERSIBLE_INSTANCE_REFRESH_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_IN_USE_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace AutoScalingErrorMapper
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace AutoScalingErrorMapper
+}  // namespace AutoScaling
+}  // namespace Aws

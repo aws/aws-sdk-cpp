@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/TestWindowSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/TestWindowSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-TestWindowSummary::TestWindowSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestWindowSummary::TestWindowSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TestWindowSummary& TestWindowSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TestWindowStart"))
-  {
+TestWindowSummary& TestWindowSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TestWindowStart")) {
     m_testWindowStart = jsonValue.GetDouble("TestWindowStart");
     m_testWindowStartHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TestWindowEnd"))
-  {
+  if (jsonValue.ValueExists("TestWindowEnd")) {
     m_testWindowEnd = jsonValue.GetDouble("TestWindowEnd");
     m_testWindowEndHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestWindowSummary::Jsonize() const
-{
+JsonValue TestWindowSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_testWindowStartHasBeenSet)
-  {
-   payload.WithDouble("TestWindowStart", m_testWindowStart.SecondsWithMSPrecision());
+  if (m_testWindowStartHasBeenSet) {
+    payload.WithDouble("TestWindowStart", m_testWindowStart.SecondsWithMSPrecision());
   }
 
-  if(m_testWindowEndHasBeenSet)
-  {
-   payload.WithDouble("TestWindowEnd", m_testWindowEnd.SecondsWithMSPrecision());
+  if (m_testWindowEndHasBeenSet) {
+    payload.WithDouble("TestWindowEnd", m_testWindowEnd.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

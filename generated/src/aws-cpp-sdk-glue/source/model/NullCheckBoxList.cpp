@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/NullCheckBoxList.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/NullCheckBoxList.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-NullCheckBoxList::NullCheckBoxList(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NullCheckBoxList::NullCheckBoxList(JsonView jsonValue) { *this = jsonValue; }
 
-NullCheckBoxList& NullCheckBoxList::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IsEmpty"))
-  {
+NullCheckBoxList& NullCheckBoxList::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IsEmpty")) {
     m_isEmpty = jsonValue.GetBool("IsEmpty");
     m_isEmptyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsNullString"))
-  {
+  if (jsonValue.ValueExists("IsNullString")) {
     m_isNullString = jsonValue.GetBool("IsNullString");
     m_isNullStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsNegOne"))
-  {
+  if (jsonValue.ValueExists("IsNegOne")) {
     m_isNegOne = jsonValue.GetBool("IsNegOne");
     m_isNegOneHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NullCheckBoxList::Jsonize() const
-{
+JsonValue NullCheckBoxList::Jsonize() const {
   JsonValue payload;
 
-  if(m_isEmptyHasBeenSet)
-  {
-   payload.WithBool("IsEmpty", m_isEmpty);
-
+  if (m_isEmptyHasBeenSet) {
+    payload.WithBool("IsEmpty", m_isEmpty);
   }
 
-  if(m_isNullStringHasBeenSet)
-  {
-   payload.WithBool("IsNullString", m_isNullString);
-
+  if (m_isNullStringHasBeenSet) {
+    payload.WithBool("IsNullString", m_isNullString);
   }
 
-  if(m_isNegOneHasBeenSet)
-  {
-   payload.WithBool("IsNegOne", m_isNegOne);
-
+  if (m_isNegOneHasBeenSet) {
+    payload.WithBool("IsNegOne", m_isNegOne);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

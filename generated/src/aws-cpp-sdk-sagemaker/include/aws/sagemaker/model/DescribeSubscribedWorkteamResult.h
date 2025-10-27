@@ -4,64 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/SubscribedWorkteam.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
-  class DescribeSubscribedWorkteamResult
-  {
-  public:
-    AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult() = default;
-    AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class DescribeSubscribedWorkteamResult {
+ public:
+  AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult() = default;
+  AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A <code>Workteam</code> instance that contains information about the work
+   * team.</p>
+   */
+  inline const SubscribedWorkteam& GetSubscribedWorkteam() const { return m_subscribedWorkteam; }
+  template <typename SubscribedWorkteamT = SubscribedWorkteam>
+  void SetSubscribedWorkteam(SubscribedWorkteamT&& value) {
+    m_subscribedWorkteamHasBeenSet = true;
+    m_subscribedWorkteam = std::forward<SubscribedWorkteamT>(value);
+  }
+  template <typename SubscribedWorkteamT = SubscribedWorkteam>
+  DescribeSubscribedWorkteamResult& WithSubscribedWorkteam(SubscribedWorkteamT&& value) {
+    SetSubscribedWorkteam(std::forward<SubscribedWorkteamT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A <code>Workteam</code> instance that contains information about the work
-     * team.</p>
-     */
-    inline const SubscribedWorkteam& GetSubscribedWorkteam() const { return m_subscribedWorkteam; }
-    template<typename SubscribedWorkteamT = SubscribedWorkteam>
-    void SetSubscribedWorkteam(SubscribedWorkteamT&& value) { m_subscribedWorkteamHasBeenSet = true; m_subscribedWorkteam = std::forward<SubscribedWorkteamT>(value); }
-    template<typename SubscribedWorkteamT = SubscribedWorkteam>
-    DescribeSubscribedWorkteamResult& WithSubscribedWorkteam(SubscribedWorkteamT&& value) { SetSubscribedWorkteam(std::forward<SubscribedWorkteamT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeSubscribedWorkteamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeSubscribedWorkteamResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  SubscribedWorkteam m_subscribedWorkteam;
+  bool m_subscribedWorkteamHasBeenSet = false;
 
-    SubscribedWorkteam m_subscribedWorkteam;
-    bool m_subscribedWorkteamHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

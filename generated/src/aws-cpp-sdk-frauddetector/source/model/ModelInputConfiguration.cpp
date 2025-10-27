@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/ModelInputConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventTypeName"))
-  {
+ModelInputConfiguration& ModelInputConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventTypeName")) {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
     m_eventTypeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("format"))
-  {
+  if (jsonValue.ValueExists("format")) {
     m_format = ModelInputDataFormatMapper::GetModelInputDataFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("useEventVariables"))
-  {
+  if (jsonValue.ValueExists("useEventVariables")) {
     m_useEventVariables = jsonValue.GetBool("useEventVariables");
     m_useEventVariablesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jsonInputTemplate"))
-  {
+  if (jsonValue.ValueExists("jsonInputTemplate")) {
     m_jsonInputTemplate = jsonValue.GetString("jsonInputTemplate");
     m_jsonInputTemplateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("csvInputTemplate"))
-  {
+  if (jsonValue.ValueExists("csvInputTemplate")) {
     m_csvInputTemplate = jsonValue.GetString("csvInputTemplate");
     m_csvInputTemplateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelInputConfiguration::Jsonize() const
-{
+JsonValue ModelInputConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventTypeNameHasBeenSet)
-  {
-   payload.WithString("eventTypeName", m_eventTypeName);
-
+  if (m_eventTypeNameHasBeenSet) {
+    payload.WithString("eventTypeName", m_eventTypeName);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", ModelInputDataFormatMapper::GetNameForModelInputDataFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", ModelInputDataFormatMapper::GetNameForModelInputDataFormat(m_format));
   }
 
-  if(m_useEventVariablesHasBeenSet)
-  {
-   payload.WithBool("useEventVariables", m_useEventVariables);
-
+  if (m_useEventVariablesHasBeenSet) {
+    payload.WithBool("useEventVariables", m_useEventVariables);
   }
 
-  if(m_jsonInputTemplateHasBeenSet)
-  {
-   payload.WithString("jsonInputTemplate", m_jsonInputTemplate);
-
+  if (m_jsonInputTemplateHasBeenSet) {
+    payload.WithString("jsonInputTemplate", m_jsonInputTemplate);
   }
 
-  if(m_csvInputTemplateHasBeenSet)
-  {
-   payload.WithString("csvInputTemplate", m_csvInputTemplate);
-
+  if (m_csvInputTemplateHasBeenSet) {
+    payload.WithString("csvInputTemplate", m_csvInputTemplate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

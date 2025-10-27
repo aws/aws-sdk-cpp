@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
-  enum class LoaContentType
-  {
-    NOT_SET,
-    application_pdf
-  };
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
+enum class LoaContentType { NOT_SET, application_pdf };
 
-namespace LoaContentTypeMapper
-{
+namespace LoaContentTypeMapper {
 AWS_DIRECTCONNECT_API LoaContentType GetLoaContentTypeForName(const Aws::String& name);
 
 AWS_DIRECTCONNECT_API Aws::String GetNameForLoaContentType(LoaContentType value);
-} // namespace LoaContentTypeMapper
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace LoaContentTypeMapper
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
-namespace Aws
-{
-namespace kendra
-{
-class KendraEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace kendra {
+class KendraEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace kendra
-} // namespace Aws
+}  // namespace kendra
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/UploadSSHPublicKeyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/UploadSSHPublicKeyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String UploadSSHPublicKeyRequest::SerializePayload() const
-{
+Aws::String UploadSSHPublicKeyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UploadSSHPublicKey&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_sSHPublicKeyBodyHasBeenSet)
-  {
+  if (m_sSHPublicKeyBodyHasBeenSet) {
     ss << "SSHPublicKeyBody=" << StringUtils::URLEncode(m_sSHPublicKeyBody.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String UploadSSHPublicKeyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UploadSSHPublicKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UploadSSHPublicKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

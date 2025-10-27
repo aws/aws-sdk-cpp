@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-JobConfig::JobConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobConfig::JobConfig(JsonView jsonValue) { *this = jsonValue; }
 
-JobConfig& JobConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("buildComputeType"))
-  {
+JobConfig& JobConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("buildComputeType")) {
     m_buildComputeType = BuildComputeTypeMapper::GetBuildComputeTypeForName(jsonValue.GetString("buildComputeType"));
     m_buildComputeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobConfig::Jsonize() const
-{
+JsonValue JobConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_buildComputeTypeHasBeenSet)
-  {
-   payload.WithString("buildComputeType", BuildComputeTypeMapper::GetNameForBuildComputeType(m_buildComputeType));
+  if (m_buildComputeTypeHasBeenSet) {
+    payload.WithString("buildComputeType", BuildComputeTypeMapper::GetNameForBuildComputeType(m_buildComputeType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

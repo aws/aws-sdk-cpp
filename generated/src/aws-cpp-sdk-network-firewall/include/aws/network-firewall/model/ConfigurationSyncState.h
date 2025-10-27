@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
-  enum class ConfigurationSyncState
-  {
-    NOT_SET,
-    PENDING,
-    IN_SYNC,
-    CAPACITY_CONSTRAINED
-  };
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+enum class ConfigurationSyncState { NOT_SET, PENDING, IN_SYNC, CAPACITY_CONSTRAINED };
 
-namespace ConfigurationSyncStateMapper
-{
+namespace ConfigurationSyncStateMapper {
 AWS_NETWORKFIREWALL_API ConfigurationSyncState GetConfigurationSyncStateForName(const Aws::String& name);
 
 AWS_NETWORKFIREWALL_API Aws::String GetNameForConfigurationSyncState(ConfigurationSyncState value);
-} // namespace ConfigurationSyncStateMapper
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace ConfigurationSyncStateMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

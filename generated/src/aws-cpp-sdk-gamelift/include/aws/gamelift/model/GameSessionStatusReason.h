@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class GameSessionStatusReason
-  {
-    NOT_SET,
-    INTERRUPTED,
-    TRIGGERED_ON_PROCESS_TERMINATE,
-    FORCE_TERMINATED
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class GameSessionStatusReason { NOT_SET, INTERRUPTED, TRIGGERED_ON_PROCESS_TERMINATE, FORCE_TERMINATED };
 
-namespace GameSessionStatusReasonMapper
-{
+namespace GameSessionStatusReasonMapper {
 AWS_GAMELIFT_API GameSessionStatusReason GetGameSessionStatusReasonForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForGameSessionStatusReason(GameSessionStatusReason value);
-} // namespace GameSessionStatusReasonMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace GameSessionStatusReasonMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

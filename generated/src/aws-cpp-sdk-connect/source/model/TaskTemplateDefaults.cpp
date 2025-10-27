@@ -11,25 +11,17 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TaskTemplateDefaults::TaskTemplateDefaults(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskTemplateDefaults::TaskTemplateDefaults(JsonView jsonValue) { *this = jsonValue; }
 
-TaskTemplateDefaults& TaskTemplateDefaults::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultFieldValues"))
-  {
+TaskTemplateDefaults& TaskTemplateDefaults::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultFieldValues")) {
     Aws::Utils::Array<JsonView> defaultFieldValuesJsonList = jsonValue.GetArray("DefaultFieldValues");
-    for(unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength(); ++defaultFieldValuesIndex)
-    {
+    for (unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength();
+         ++defaultFieldValuesIndex) {
       m_defaultFieldValues.push_back(defaultFieldValuesJsonList[defaultFieldValuesIndex].AsObject());
     }
     m_defaultFieldValuesHasBeenSet = true;
@@ -37,24 +29,21 @@ TaskTemplateDefaults& TaskTemplateDefaults::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TaskTemplateDefaults::Jsonize() const
-{
+JsonValue TaskTemplateDefaults::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultFieldValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> defaultFieldValuesJsonList(m_defaultFieldValues.size());
-   for(unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength(); ++defaultFieldValuesIndex)
-   {
-     defaultFieldValuesJsonList[defaultFieldValuesIndex].AsObject(m_defaultFieldValues[defaultFieldValuesIndex].Jsonize());
-   }
-   payload.WithArray("DefaultFieldValues", std::move(defaultFieldValuesJsonList));
-
+  if (m_defaultFieldValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> defaultFieldValuesJsonList(m_defaultFieldValues.size());
+    for (unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength();
+         ++defaultFieldValuesIndex) {
+      defaultFieldValuesJsonList[defaultFieldValuesIndex].AsObject(m_defaultFieldValues[defaultFieldValuesIndex].Jsonize());
+    }
+    payload.WithArray("DefaultFieldValues", std::move(defaultFieldValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

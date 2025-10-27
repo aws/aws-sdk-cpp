@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DebugRuleEvaluationStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/DebugRuleEvaluationStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-DebugRuleEvaluationStatus::DebugRuleEvaluationStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DebugRuleEvaluationStatus::DebugRuleEvaluationStatus(JsonView jsonValue) { *this = jsonValue; }
 
-DebugRuleEvaluationStatus& DebugRuleEvaluationStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleConfigurationName"))
-  {
+DebugRuleEvaluationStatus& DebugRuleEvaluationStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleConfigurationName")) {
     m_ruleConfigurationName = jsonValue.GetString("RuleConfigurationName");
     m_ruleConfigurationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleEvaluationJobArn"))
-  {
+  if (jsonValue.ValueExists("RuleEvaluationJobArn")) {
     m_ruleEvaluationJobArn = jsonValue.GetString("RuleEvaluationJobArn");
     m_ruleEvaluationJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleEvaluationStatus"))
-  {
+  if (jsonValue.ValueExists("RuleEvaluationStatus")) {
     m_ruleEvaluationStatus = RuleEvaluationStatusMapper::GetRuleEvaluationStatusForName(jsonValue.GetString("RuleEvaluationStatus"));
     m_ruleEvaluationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusDetails"))
-  {
+  if (jsonValue.ValueExists("StatusDetails")) {
     m_statusDetails = jsonValue.GetString("StatusDetails");
     m_statusDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DebugRuleEvaluationStatus::Jsonize() const
-{
+JsonValue DebugRuleEvaluationStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleConfigurationNameHasBeenSet)
-  {
-   payload.WithString("RuleConfigurationName", m_ruleConfigurationName);
-
+  if (m_ruleConfigurationNameHasBeenSet) {
+    payload.WithString("RuleConfigurationName", m_ruleConfigurationName);
   }
 
-  if(m_ruleEvaluationJobArnHasBeenSet)
-  {
-   payload.WithString("RuleEvaluationJobArn", m_ruleEvaluationJobArn);
-
+  if (m_ruleEvaluationJobArnHasBeenSet) {
+    payload.WithString("RuleEvaluationJobArn", m_ruleEvaluationJobArn);
   }
 
-  if(m_ruleEvaluationStatusHasBeenSet)
-  {
-   payload.WithString("RuleEvaluationStatus", RuleEvaluationStatusMapper::GetNameForRuleEvaluationStatus(m_ruleEvaluationStatus));
+  if (m_ruleEvaluationStatusHasBeenSet) {
+    payload.WithString("RuleEvaluationStatus", RuleEvaluationStatusMapper::GetNameForRuleEvaluationStatus(m_ruleEvaluationStatus));
   }
 
-  if(m_statusDetailsHasBeenSet)
-  {
-   payload.WithString("StatusDetails", m_statusDetails);
-
+  if (m_statusDetailsHasBeenSet) {
+    payload.WithString("StatusDetails", m_statusDetails);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

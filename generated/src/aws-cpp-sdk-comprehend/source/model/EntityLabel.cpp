@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityLabel::EntityLabel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityLabel::EntityLabel(JsonView jsonValue) { *this = jsonValue; }
 
-EntityLabel& EntityLabel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+EntityLabel& EntityLabel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = PiiEntityTypeMapper::GetPiiEntityTypeForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityLabel::Jsonize() const
-{
+JsonValue EntityLabel::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", PiiEntityTypeMapper::GetNameForPiiEntityType(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", PiiEntityTypeMapper::GetNameForPiiEntityType(m_name));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

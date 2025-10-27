@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/RecommendationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/RecommendationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-RecommendationSettings::RecommendationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationSettings::RecommendationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationSettings& RecommendationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceSizingType"))
-  {
+RecommendationSettings& RecommendationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceSizingType")) {
     m_instanceSizingType = jsonValue.GetString("InstanceSizingType");
     m_instanceSizingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkloadType"))
-  {
+  if (jsonValue.ValueExists("WorkloadType")) {
     m_workloadType = jsonValue.GetString("WorkloadType");
     m_workloadTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationSettings::Jsonize() const
-{
+JsonValue RecommendationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceSizingTypeHasBeenSet)
-  {
-   payload.WithString("InstanceSizingType", m_instanceSizingType);
-
+  if (m_instanceSizingTypeHasBeenSet) {
+    payload.WithString("InstanceSizingType", m_instanceSizingType);
   }
 
-  if(m_workloadTypeHasBeenSet)
-  {
-   payload.WithString("WorkloadType", m_workloadType);
-
+  if (m_workloadTypeHasBeenSet) {
+    payload.WithString("WorkloadType", m_workloadType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

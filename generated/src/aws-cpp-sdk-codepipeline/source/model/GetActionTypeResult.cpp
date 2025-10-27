@@ -4,10 +4,10 @@
  */
 
 #include <aws/codepipeline/model/GetActionTypeResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetActionTypeResult::GetActionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetActionTypeResult::GetActionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetActionTypeResult& GetActionTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetActionTypeResult& GetActionTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("actionType"))
-  {
+  if (jsonValue.ValueExists("actionType")) {
     m_actionType = jsonValue.GetObject("actionType");
     m_actionTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

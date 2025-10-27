@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
-  enum class TerminologyDataFormat
-  {
-    NOT_SET,
-    CSV,
-    TMX,
-    TSV
-  };
+namespace Aws {
+namespace Translate {
+namespace Model {
+enum class TerminologyDataFormat { NOT_SET, CSV, TMX, TSV };
 
-namespace TerminologyDataFormatMapper
-{
+namespace TerminologyDataFormatMapper {
 AWS_TRANSLATE_API TerminologyDataFormat GetTerminologyDataFormatForName(const Aws::String& name);
 
 AWS_TRANSLATE_API Aws::String GetNameForTerminologyDataFormat(TerminologyDataFormat value);
-} // namespace TerminologyDataFormatMapper
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace TerminologyDataFormatMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

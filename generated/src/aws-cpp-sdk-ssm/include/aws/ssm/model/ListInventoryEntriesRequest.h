@@ -4,119 +4,148 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
-#include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/SSMRequest.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/InventoryFilter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
+/**
+ */
+class ListInventoryEntriesRequest : public SSMRequest {
+ public:
+  AWS_SSM_API ListInventoryEntriesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListInventoryEntries"; }
+
+  AWS_SSM_API Aws::String SerializePayload() const override;
+
+  AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The managed node ID for which you want inventory information.</p>
    */
-  class ListInventoryEntriesRequest : public SSMRequest
-  {
-  public:
-    AWS_SSM_API ListInventoryEntriesRequest() = default;
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  ListInventoryEntriesRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListInventoryEntries"; }
+  ///@{
+  /**
+   * <p>The type of inventory item for which you want information.</p>
+   */
+  inline const Aws::String& GetTypeName() const { return m_typeName; }
+  inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+  template <typename TypeNameT = Aws::String>
+  void SetTypeName(TypeNameT&& value) {
+    m_typeNameHasBeenSet = true;
+    m_typeName = std::forward<TypeNameT>(value);
+  }
+  template <typename TypeNameT = Aws::String>
+  ListInventoryEntriesRequest& WithTypeName(TypeNameT&& value) {
+    SetTypeName(std::forward<TypeNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SSM_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>One or more filters. Use a filter to return a more specific list of
+   * results.</p>
+   */
+  inline const Aws::Vector<InventoryFilter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<InventoryFilter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<InventoryFilter>>
+  ListInventoryEntriesRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = InventoryFilter>
+  ListInventoryEntriesRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListInventoryEntriesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum number of items to return for this call. The call also returns a
+   * token that you can specify in a subsequent call to get the next set of
+   * results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListInventoryEntriesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceId;
+  bool m_instanceIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The managed node ID for which you want inventory information.</p>
-     */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    ListInventoryEntriesRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_typeName;
+  bool m_typeNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The type of inventory item for which you want information.</p>
-     */
-    inline const Aws::String& GetTypeName() const { return m_typeName; }
-    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    template<typename TypeNameT = Aws::String>
-    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
-    template<typename TypeNameT = Aws::String>
-    ListInventoryEntriesRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
-    ///@}
+  Aws::Vector<InventoryFilter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
-     */
-    inline const Aws::Vector<InventoryFilter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<InventoryFilter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<InventoryFilter>>
-    ListInventoryEntriesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = InventoryFilter>
-    ListInventoryEntriesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListInventoryEntriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListInventoryEntriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    Aws::String m_typeName;
-    bool m_typeNameHasBeenSet = false;
-
-    Aws::Vector<InventoryFilter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

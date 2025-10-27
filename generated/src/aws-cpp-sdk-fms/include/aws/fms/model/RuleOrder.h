@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class RuleOrder
-  {
-    NOT_SET,
-    STRICT_ORDER,
-    DEFAULT_ACTION_ORDER
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class RuleOrder { NOT_SET, STRICT_ORDER, DEFAULT_ACTION_ORDER };
 
-namespace RuleOrderMapper
-{
+namespace RuleOrderMapper {
 AWS_FMS_API RuleOrder GetRuleOrderForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForRuleOrder(RuleOrder value);
-} // namespace RuleOrderMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace RuleOrderMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

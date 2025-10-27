@@ -12,33 +12,22 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeObservationRequest::SerializePayload() const
-{
+Aws::String DescribeObservationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_observationIdHasBeenSet)
-  {
-   payload.WithString("ObservationId", m_observationId);
-
+  if (m_observationIdHasBeenSet) {
+    payload.WithString("ObservationId", m_observationId);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeObservationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeObservationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.DescribeObservation"));
   return headers;
-
 }
-
-
-
-

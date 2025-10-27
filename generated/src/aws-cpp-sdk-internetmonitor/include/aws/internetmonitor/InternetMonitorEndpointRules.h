@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-class InternetMonitorEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace InternetMonitor {
+class InternetMonitorEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace InternetMonitor
+}  // namespace Aws

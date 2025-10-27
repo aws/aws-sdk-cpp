@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/SummaryMetricConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/SummaryMetricConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-SummaryMetricConfiguration::SummaryMetricConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SummaryMetricConfiguration::SummaryMetricConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SummaryMetricConfiguration& SummaryMetricConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+SummaryMetricConfiguration& SummaryMetricConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = SummaryMetricConfigurationStatusMapper::GetSummaryMetricConfigurationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SummaryMetricConfiguration::Jsonize() const
-{
+JsonValue SummaryMetricConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", SummaryMetricConfigurationStatusMapper::GetNameForSummaryMetricConfigurationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", SummaryMetricConfigurationStatusMapper::GetNameForSummaryMetricConfigurationStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

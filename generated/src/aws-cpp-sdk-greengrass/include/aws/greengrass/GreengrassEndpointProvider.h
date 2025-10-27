@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/greengrass/GreengrassEndpointRules.h>
+#include <aws/greengrass/Greengrass_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Greengrass {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GreengrassClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GreengrassDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GREENGRASS_API GreengrassEndpointProvider : public GreengrassDefaultEpProviderBase
-{
-public:
-    using GreengrassResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GREENGRASS_API GreengrassEndpointProvider : public GreengrassDefaultEpProviderBase {
+ public:
+  using GreengrassResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GreengrassEndpointProvider()
-      : GreengrassDefaultEpProviderBase(Aws::Greengrass::GreengrassEndpointRules::GetRulesBlob(), Aws::Greengrass::GreengrassEndpointRules::RulesBlobSize)
-    {}
+  GreengrassEndpointProvider()
+      : GreengrassDefaultEpProviderBase(Aws::Greengrass::GreengrassEndpointRules::GetRulesBlob(),
+                                        Aws::Greengrass::GreengrassEndpointRules::RulesBlobSize) {}
 
-    ~GreengrassEndpointProvider()
-    {
-    }
+  ~GreengrassEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Greengrass
+}  // namespace Aws

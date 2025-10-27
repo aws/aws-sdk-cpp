@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class ComplianceQueryOperatorType
-  {
-    NOT_SET,
-    EQUAL,
-    NOT_EQUAL,
-    BEGIN_WITH,
-    LESS_THAN,
-    GREATER_THAN
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class ComplianceQueryOperatorType { NOT_SET, EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN };
 
-namespace ComplianceQueryOperatorTypeMapper
-{
+namespace ComplianceQueryOperatorTypeMapper {
 AWS_SSM_API ComplianceQueryOperatorType GetComplianceQueryOperatorTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForComplianceQueryOperatorType(ComplianceQueryOperatorType value);
-} // namespace ComplianceQueryOperatorTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace ComplianceQueryOperatorTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

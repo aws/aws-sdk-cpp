@@ -7,73 +7,78 @@
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/geo-routes/model/RouteFerryOverviewSummary.h>
 #include <aws/geo-routes/model/RouteFerryTravelOnlySummary.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GeoRoutes {
+namespace Model {
 
+/**
+ * <p>Summarized details for the leg including travel steps only. The Distance for
+ * the travel only portion of the journey is the same as the Distance within the
+ * Overview summary.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteFerrySummary">AWS
+ * API Reference</a></p>
+ */
+class RouteFerrySummary {
+ public:
+  AWS_GEOROUTES_API RouteFerrySummary() = default;
+  AWS_GEOROUTES_API RouteFerrySummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API RouteFerrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Summarized details for the leg including before travel, travel and after
+   * travel steps.</p>
+   */
+  inline const RouteFerryOverviewSummary& GetOverview() const { return m_overview; }
+  inline bool OverviewHasBeenSet() const { return m_overviewHasBeenSet; }
+  template <typename OverviewT = RouteFerryOverviewSummary>
+  void SetOverview(OverviewT&& value) {
+    m_overviewHasBeenSet = true;
+    m_overview = std::forward<OverviewT>(value);
+  }
+  template <typename OverviewT = RouteFerryOverviewSummary>
+  RouteFerrySummary& WithOverview(OverviewT&& value) {
+    SetOverview(std::forward<OverviewT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Summarized details for the leg including travel steps only. The Distance for
-   * the travel only portion of the journey is the same as the Distance within the
-   * Overview summary.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteFerrySummary">AWS
-   * API Reference</a></p>
+   * the travel only portion of the journey is in meters</p>
    */
-  class RouteFerrySummary
-  {
-  public:
-    AWS_GEOROUTES_API RouteFerrySummary() = default;
-    AWS_GEOROUTES_API RouteFerrySummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOROUTES_API RouteFerrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const RouteFerryTravelOnlySummary& GetTravelOnly() const { return m_travelOnly; }
+  inline bool TravelOnlyHasBeenSet() const { return m_travelOnlyHasBeenSet; }
+  template <typename TravelOnlyT = RouteFerryTravelOnlySummary>
+  void SetTravelOnly(TravelOnlyT&& value) {
+    m_travelOnlyHasBeenSet = true;
+    m_travelOnly = std::forward<TravelOnlyT>(value);
+  }
+  template <typename TravelOnlyT = RouteFerryTravelOnlySummary>
+  RouteFerrySummary& WithTravelOnly(TravelOnlyT&& value) {
+    SetTravelOnly(std::forward<TravelOnlyT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  RouteFerryOverviewSummary m_overview;
+  bool m_overviewHasBeenSet = false;
 
+  RouteFerryTravelOnlySummary m_travelOnly;
+  bool m_travelOnlyHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Summarized details for the leg including before travel, travel and after
-     * travel steps.</p>
-     */
-    inline const RouteFerryOverviewSummary& GetOverview() const { return m_overview; }
-    inline bool OverviewHasBeenSet() const { return m_overviewHasBeenSet; }
-    template<typename OverviewT = RouteFerryOverviewSummary>
-    void SetOverview(OverviewT&& value) { m_overviewHasBeenSet = true; m_overview = std::forward<OverviewT>(value); }
-    template<typename OverviewT = RouteFerryOverviewSummary>
-    RouteFerrySummary& WithOverview(OverviewT&& value) { SetOverview(std::forward<OverviewT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Summarized details for the leg including travel steps only. The Distance for
-     * the travel only portion of the journey is in meters</p>
-     */
-    inline const RouteFerryTravelOnlySummary& GetTravelOnly() const { return m_travelOnly; }
-    inline bool TravelOnlyHasBeenSet() const { return m_travelOnlyHasBeenSet; }
-    template<typename TravelOnlyT = RouteFerryTravelOnlySummary>
-    void SetTravelOnly(TravelOnlyT&& value) { m_travelOnlyHasBeenSet = true; m_travelOnly = std::forward<TravelOnlyT>(value); }
-    template<typename TravelOnlyT = RouteFerryTravelOnlySummary>
-    RouteFerrySummary& WithTravelOnly(TravelOnlyT&& value) { SetTravelOnly(std::forward<TravelOnlyT>(value)); return *this;}
-    ///@}
-  private:
-
-    RouteFerryOverviewSummary m_overview;
-    bool m_overviewHasBeenSet = false;
-
-    RouteFerryTravelOnlySummary m_travelOnly;
-    bool m_travelOnlyHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

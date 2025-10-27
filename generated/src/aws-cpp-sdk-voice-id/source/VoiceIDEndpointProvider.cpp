@@ -5,12 +5,8 @@
 
 #include <aws/voice-id/VoiceIDEndpointProvider.h>
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace VoiceID
-} // namespace Aws
+namespace Aws {
+namespace VoiceID {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace VoiceID
+}  // namespace Aws

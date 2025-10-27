@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/DataSourceType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/DataSourceType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-DataSourceType::DataSourceType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceType::DataSourceType(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceType& DataSourceType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3GlueDataCatalog"))
-  {
+DataSourceType& DataSourceType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3GlueDataCatalog")) {
     m_s3GlueDataCatalog = jsonValue.GetObject("S3GlueDataCatalog");
     m_s3GlueDataCatalogHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceType::Jsonize() const
-{
+JsonValue DataSourceType::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3GlueDataCatalogHasBeenSet)
-  {
-   payload.WithObject("S3GlueDataCatalog", m_s3GlueDataCatalog.Jsonize());
-
+  if (m_s3GlueDataCatalogHasBeenSet) {
+    payload.WithObject("S3GlueDataCatalog", m_s3GlueDataCatalog.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

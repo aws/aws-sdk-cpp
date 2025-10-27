@@ -4,104 +4,131 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/sesv2/SESV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sesv2/model/Topic.h>
+#include <aws/sesv2/SESV2Request.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/Tag.h>
+#include <aws/sesv2/model/Topic.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
+/**
+ */
+class CreateContactListRequest : public SESV2Request {
+ public:
+  AWS_SESV2_API CreateContactListRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateContactList"; }
+
+  AWS_SESV2_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the contact list.</p>
    */
-  class CreateContactListRequest : public SESV2Request
-  {
-  public:
-    AWS_SESV2_API CreateContactListRequest() = default;
+  inline const Aws::String& GetContactListName() const { return m_contactListName; }
+  inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
+  template <typename ContactListNameT = Aws::String>
+  void SetContactListName(ContactListNameT&& value) {
+    m_contactListNameHasBeenSet = true;
+    m_contactListName = std::forward<ContactListNameT>(value);
+  }
+  template <typename ContactListNameT = Aws::String>
+  CreateContactListRequest& WithContactListName(ContactListNameT&& value) {
+    SetContactListName(std::forward<ContactListNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateContactList"; }
+  ///@{
+  /**
+   * <p>An interest group, theme, or label within a list. A contact list can have
+   * multiple topics.</p>
+   */
+  inline const Aws::Vector<Topic>& GetTopics() const { return m_topics; }
+  inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
+  template <typename TopicsT = Aws::Vector<Topic>>
+  void SetTopics(TopicsT&& value) {
+    m_topicsHasBeenSet = true;
+    m_topics = std::forward<TopicsT>(value);
+  }
+  template <typename TopicsT = Aws::Vector<Topic>>
+  CreateContactListRequest& WithTopics(TopicsT&& value) {
+    SetTopics(std::forward<TopicsT>(value));
+    return *this;
+  }
+  template <typename TopicsT = Topic>
+  CreateContactListRequest& AddTopics(TopicsT&& value) {
+    m_topicsHasBeenSet = true;
+    m_topics.emplace_back(std::forward<TopicsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SESV2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A description of what the contact list is about.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateContactListRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The tags associated with a contact list.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateContactListRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateContactListRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_contactListName;
+  bool m_contactListNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the contact list.</p>
-     */
-    inline const Aws::String& GetContactListName() const { return m_contactListName; }
-    inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-    template<typename ContactListNameT = Aws::String>
-    void SetContactListName(ContactListNameT&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::forward<ContactListNameT>(value); }
-    template<typename ContactListNameT = Aws::String>
-    CreateContactListRequest& WithContactListName(ContactListNameT&& value) { SetContactListName(std::forward<ContactListNameT>(value)); return *this;}
-    ///@}
+  Aws::Vector<Topic> m_topics;
+  bool m_topicsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An interest group, theme, or label within a list. A contact list can have
-     * multiple topics.</p>
-     */
-    inline const Aws::Vector<Topic>& GetTopics() const { return m_topics; }
-    inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
-    template<typename TopicsT = Aws::Vector<Topic>>
-    void SetTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics = std::forward<TopicsT>(value); }
-    template<typename TopicsT = Aws::Vector<Topic>>
-    CreateContactListRequest& WithTopics(TopicsT&& value) { SetTopics(std::forward<TopicsT>(value)); return *this;}
-    template<typename TopicsT = Topic>
-    CreateContactListRequest& AddTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics.emplace_back(std::forward<TopicsT>(value)); return *this; }
-    ///@}
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A description of what the contact list is about.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateContactListRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The tags associated with a contact list.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    CreateContactListRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    CreateContactListRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet = false;
-
-    Aws::Vector<Topic> m_topics;
-    bool m_topicsHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

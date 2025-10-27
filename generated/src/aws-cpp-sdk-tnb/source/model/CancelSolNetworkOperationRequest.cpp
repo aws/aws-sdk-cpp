@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/CancelSolNetworkOperationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/CancelSolNetworkOperationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelSolNetworkOperationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String CancelSolNetworkOperationRequest::SerializePayload() const { return {}; }

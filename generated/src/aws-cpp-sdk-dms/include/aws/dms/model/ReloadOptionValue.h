@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class ReloadOptionValue
-  {
-    NOT_SET,
-    data_reload,
-    validate_only
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class ReloadOptionValue { NOT_SET, data_reload, validate_only };
 
-namespace ReloadOptionValueMapper
-{
+namespace ReloadOptionValueMapper {
 AWS_DATABASEMIGRATIONSERVICE_API ReloadOptionValue GetReloadOptionValueForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForReloadOptionValue(ReloadOptionValue value);
-} // namespace ReloadOptionValueMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace ReloadOptionValueMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

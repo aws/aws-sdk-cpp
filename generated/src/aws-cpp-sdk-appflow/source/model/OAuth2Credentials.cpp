@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-OAuth2Credentials::OAuth2Credentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OAuth2Credentials::OAuth2Credentials(JsonView jsonValue) { *this = jsonValue; }
 
-OAuth2Credentials& OAuth2Credentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientId"))
-  {
+OAuth2Credentials& OAuth2Credentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientSecret"))
-  {
+  if (jsonValue.ValueExists("clientSecret")) {
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessToken"))
-  {
+  if (jsonValue.ValueExists("accessToken")) {
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("refreshToken"))
-  {
+  if (jsonValue.ValueExists("refreshToken")) {
     m_refreshToken = jsonValue.GetString("refreshToken");
     m_refreshTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuthRequest"))
-  {
+  if (jsonValue.ValueExists("oAuthRequest")) {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
     m_oAuthRequestHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OAuth2Credentials::Jsonize() const
-{
+JsonValue OAuth2Credentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("clientSecret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("clientSecret", m_clientSecret);
   }
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("accessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("accessToken", m_accessToken);
   }
 
-  if(m_refreshTokenHasBeenSet)
-  {
-   payload.WithString("refreshToken", m_refreshToken);
-
+  if (m_refreshTokenHasBeenSet) {
+    payload.WithString("refreshToken", m_refreshToken);
   }
 
-  if(m_oAuthRequestHasBeenSet)
-  {
-   payload.WithObject("oAuthRequest", m_oAuthRequest.Jsonize());
-
+  if (m_oAuthRequestHasBeenSet) {
+    payload.WithObject("oAuthRequest", m_oAuthRequest.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

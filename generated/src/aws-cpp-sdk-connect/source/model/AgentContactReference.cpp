@@ -11,102 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-AgentContactReference::AgentContactReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentContactReference::AgentContactReference(JsonView jsonValue) { *this = jsonValue; }
 
-AgentContactReference& AgentContactReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContactId"))
-  {
+AgentContactReference& AgentContactReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactId")) {
     m_contactId = jsonValue.GetString("ContactId");
     m_contactIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Channel"))
-  {
+  if (jsonValue.ValueExists("Channel")) {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
     m_channelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InitiationMethod"))
-  {
+  if (jsonValue.ValueExists("InitiationMethod")) {
     m_initiationMethod = ContactInitiationMethodMapper::GetContactInitiationMethodForName(jsonValue.GetString("InitiationMethod"));
     m_initiationMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AgentContactState"))
-  {
+  if (jsonValue.ValueExists("AgentContactState")) {
     m_agentContactState = ContactStateMapper::GetContactStateForName(jsonValue.GetString("AgentContactState"));
     m_agentContactStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateStartTimestamp"))
-  {
+  if (jsonValue.ValueExists("StateStartTimestamp")) {
     m_stateStartTimestamp = jsonValue.GetDouble("StateStartTimestamp");
     m_stateStartTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectedToAgentTimestamp"))
-  {
+  if (jsonValue.ValueExists("ConnectedToAgentTimestamp")) {
     m_connectedToAgentTimestamp = jsonValue.GetDouble("ConnectedToAgentTimestamp");
     m_connectedToAgentTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Queue"))
-  {
+  if (jsonValue.ValueExists("Queue")) {
     m_queue = jsonValue.GetObject("Queue");
     m_queueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentContactReference::Jsonize() const
-{
+JsonValue AgentContactReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_channelHasBeenSet)
-  {
-   payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
+  if (m_channelHasBeenSet) {
+    payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
   }
 
-  if(m_initiationMethodHasBeenSet)
-  {
-   payload.WithString("InitiationMethod", ContactInitiationMethodMapper::GetNameForContactInitiationMethod(m_initiationMethod));
+  if (m_initiationMethodHasBeenSet) {
+    payload.WithString("InitiationMethod", ContactInitiationMethodMapper::GetNameForContactInitiationMethod(m_initiationMethod));
   }
 
-  if(m_agentContactStateHasBeenSet)
-  {
-   payload.WithString("AgentContactState", ContactStateMapper::GetNameForContactState(m_agentContactState));
+  if (m_agentContactStateHasBeenSet) {
+    payload.WithString("AgentContactState", ContactStateMapper::GetNameForContactState(m_agentContactState));
   }
 
-  if(m_stateStartTimestampHasBeenSet)
-  {
-   payload.WithDouble("StateStartTimestamp", m_stateStartTimestamp.SecondsWithMSPrecision());
+  if (m_stateStartTimestampHasBeenSet) {
+    payload.WithDouble("StateStartTimestamp", m_stateStartTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_connectedToAgentTimestampHasBeenSet)
-  {
-   payload.WithDouble("ConnectedToAgentTimestamp", m_connectedToAgentTimestamp.SecondsWithMSPrecision());
+  if (m_connectedToAgentTimestampHasBeenSet) {
+    payload.WithDouble("ConnectedToAgentTimestamp", m_connectedToAgentTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_queueHasBeenSet)
-  {
-   payload.WithObject("Queue", m_queue.Jsonize());
-
+  if (m_queueHasBeenSet) {
+    payload.WithObject("Queue", m_queue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

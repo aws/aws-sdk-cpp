@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/GetQueryLoggingConfigRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/GetQueryLoggingConfigRequest.h>
 
 #include <utility>
 
@@ -14,10 +14,4 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-
-Aws::String GetQueryLoggingConfigRequest::SerializePayload() const
-{
-  return {};
-}
-
-
+Aws::String GetQueryLoggingConfigRequest::SerializePayload() const { return {}; }

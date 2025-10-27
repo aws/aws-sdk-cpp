@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/mediapackage-vod/MediaPackageVodEndpointRules.h>
+#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MediaPackageVod
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MediaPackageVod {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MediaPackageVodClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MediaPackageVodDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MEDIAPACKAGEVOD_API MediaPackageVodEndpointProvider : public MediaPackageVodDefaultEpProviderBase
-{
-public:
-    using MediaPackageVodResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MEDIAPACKAGEVOD_API MediaPackageVodEndpointProvider : public MediaPackageVodDefaultEpProviderBase {
+ public:
+  using MediaPackageVodResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MediaPackageVodEndpointProvider()
-      : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::GetRulesBlob(), Aws::MediaPackageVod::MediaPackageVodEndpointRules::RulesBlobSize)
-    {}
+  MediaPackageVodEndpointProvider()
+      : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::GetRulesBlob(),
+                                             Aws::MediaPackageVod::MediaPackageVodEndpointRules::RulesBlobSize) {}
 
-    ~MediaPackageVodEndpointProvider()
-    {
-    }
+  ~MediaPackageVodEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MediaPackageVod
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MediaPackageVod
+}  // namespace Aws

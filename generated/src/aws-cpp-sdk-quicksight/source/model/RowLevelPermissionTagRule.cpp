@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RowLevelPermissionTagRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RowLevelPermissionTagRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RowLevelPermissionTagRule::RowLevelPermissionTagRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RowLevelPermissionTagRule::RowLevelPermissionTagRule(JsonView jsonValue) { *this = jsonValue; }
 
-RowLevelPermissionTagRule& RowLevelPermissionTagRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TagKey"))
-  {
+RowLevelPermissionTagRule& RowLevelPermissionTagRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TagKey")) {
     m_tagKey = jsonValue.GetString("TagKey");
     m_tagKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnName"))
-  {
+  if (jsonValue.ValueExists("ColumnName")) {
     m_columnName = jsonValue.GetString("ColumnName");
     m_columnNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagMultiValueDelimiter"))
-  {
+  if (jsonValue.ValueExists("TagMultiValueDelimiter")) {
     m_tagMultiValueDelimiter = jsonValue.GetString("TagMultiValueDelimiter");
     m_tagMultiValueDelimiterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchAllValue"))
-  {
+  if (jsonValue.ValueExists("MatchAllValue")) {
     m_matchAllValue = jsonValue.GetString("MatchAllValue");
     m_matchAllValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RowLevelPermissionTagRule::Jsonize() const
-{
+JsonValue RowLevelPermissionTagRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagKeyHasBeenSet)
-  {
-   payload.WithString("TagKey", m_tagKey);
-
+  if (m_tagKeyHasBeenSet) {
+    payload.WithString("TagKey", m_tagKey);
   }
 
-  if(m_columnNameHasBeenSet)
-  {
-   payload.WithString("ColumnName", m_columnName);
-
+  if (m_columnNameHasBeenSet) {
+    payload.WithString("ColumnName", m_columnName);
   }
 
-  if(m_tagMultiValueDelimiterHasBeenSet)
-  {
-   payload.WithString("TagMultiValueDelimiter", m_tagMultiValueDelimiter);
-
+  if (m_tagMultiValueDelimiterHasBeenSet) {
+    payload.WithString("TagMultiValueDelimiter", m_tagMultiValueDelimiter);
   }
 
-  if(m_matchAllValueHasBeenSet)
-  {
-   payload.WithString("MatchAllValue", m_matchAllValue);
-
+  if (m_matchAllValueHasBeenSet) {
+    payload.WithString("MatchAllValue", m_matchAllValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

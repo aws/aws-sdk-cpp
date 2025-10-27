@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-WebDataSourceConfiguration::WebDataSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WebDataSourceConfiguration::WebDataSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-WebDataSourceConfiguration& WebDataSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceConfiguration"))
-  {
+WebDataSourceConfiguration& WebDataSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceConfiguration")) {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
     m_sourceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("crawlerConfiguration"))
-  {
+  if (jsonValue.ValueExists("crawlerConfiguration")) {
     m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
     m_crawlerConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WebDataSourceConfiguration::Jsonize() const
-{
+JsonValue WebDataSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
-
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
-  if(m_crawlerConfigurationHasBeenSet)
-  {
-   payload.WithObject("crawlerConfiguration", m_crawlerConfiguration.Jsonize());
-
+  if (m_crawlerConfigurationHasBeenSet) {
+    payload.WithObject("crawlerConfiguration", m_crawlerConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

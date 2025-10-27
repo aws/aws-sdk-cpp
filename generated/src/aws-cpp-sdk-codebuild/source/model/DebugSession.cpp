@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-DebugSession::DebugSession(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DebugSession::DebugSession(JsonView jsonValue) { *this = jsonValue; }
 
-DebugSession& DebugSession::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sessionEnabled"))
-  {
+DebugSession& DebugSession::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sessionEnabled")) {
     m_sessionEnabled = jsonValue.GetBool("sessionEnabled");
     m_sessionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionTarget"))
-  {
+  if (jsonValue.ValueExists("sessionTarget")) {
     m_sessionTarget = jsonValue.GetString("sessionTarget");
     m_sessionTargetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DebugSession::Jsonize() const
-{
+JsonValue DebugSession::Jsonize() const {
   JsonValue payload;
 
-  if(m_sessionEnabledHasBeenSet)
-  {
-   payload.WithBool("sessionEnabled", m_sessionEnabled);
-
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("sessionEnabled", m_sessionEnabled);
   }
 
-  if(m_sessionTargetHasBeenSet)
-  {
-   payload.WithString("sessionTarget", m_sessionTarget);
-
+  if (m_sessionTargetHasBeenSet) {
+    payload.WithString("sessionTarget", m_sessionTarget);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/ObjectLambdaAccessPoint.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/ObjectLambdaAccessPoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLambdaAccessPoint& ObjectLambdaAccessPoint::operator =(const XmlNode& xmlNode)
-{
+ObjectLambdaAccessPoint& ObjectLambdaAccessPoint::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode objectLambdaAccessPointArnNode = resultNode.FirstChild("ObjectLambdaAccessPointArn");
-    if(!objectLambdaAccessPointArnNode.IsNull())
-    {
+    if (!objectLambdaAccessPointArnNode.IsNull()) {
       m_objectLambdaAccessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectLambdaAccessPointArnNode.GetText());
       m_objectLambdaAccessPointArnHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
-    if(!aliasNode.IsNull())
-    {
+    if (!aliasNode.IsNull()) {
       m_alias = aliasNode;
       m_aliasHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ ObjectLambdaAccessPoint& ObjectLambdaAccessPoint::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void ObjectLambdaAccessPoint::AddToNode(XmlNode& parentNode) const
-{
+void ObjectLambdaAccessPoint::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_objectLambdaAccessPointArnHasBeenSet)
-  {
-   XmlNode objectLambdaAccessPointArnNode = parentNode.CreateChildElement("ObjectLambdaAccessPointArn");
-   objectLambdaAccessPointArnNode.SetText(m_objectLambdaAccessPointArn);
+  if (m_objectLambdaAccessPointArnHasBeenSet) {
+    XmlNode objectLambdaAccessPointArnNode = parentNode.CreateChildElement("ObjectLambdaAccessPointArn");
+    objectLambdaAccessPointArnNode.SetText(m_objectLambdaAccessPointArn);
   }
 
-  if(m_aliasHasBeenSet)
-  {
-   XmlNode aliasNode = parentNode.CreateChildElement("Alias");
-   m_alias.AddToNode(aliasNode);
+  if (m_aliasHasBeenSet) {
+    XmlNode aliasNode = parentNode.CreateChildElement("Alias");
+    m_alias.AddToNode(aliasNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

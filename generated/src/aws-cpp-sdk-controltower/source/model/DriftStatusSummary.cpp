@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlTower {
+namespace Model {
 
-DriftStatusSummary::DriftStatusSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DriftStatusSummary::DriftStatusSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DriftStatusSummary& DriftStatusSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("driftStatus"))
-  {
+DriftStatusSummary& DriftStatusSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("driftStatus")) {
     m_driftStatus = DriftStatusMapper::GetDriftStatusForName(jsonValue.GetString("driftStatus"));
     m_driftStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DriftStatusSummary::Jsonize() const
-{
+JsonValue DriftStatusSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_driftStatusHasBeenSet)
-  {
-   payload.WithString("driftStatus", DriftStatusMapper::GetNameForDriftStatus(m_driftStatus));
+  if (m_driftStatusHasBeenSet) {
+    payload.WithString("driftStatus", DriftStatusMapper::GetNameForDriftStatus(m_driftStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailWordPolicyAssessment::GuardrailWordPolicyAssessment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailWordPolicyAssessment::GuardrailWordPolicyAssessment(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailWordPolicyAssessment& GuardrailWordPolicyAssessment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customWords"))
-  {
+GuardrailWordPolicyAssessment& GuardrailWordPolicyAssessment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customWords")) {
     Aws::Utils::Array<JsonView> customWordsJsonList = jsonValue.GetArray("customWords");
-    for(unsigned customWordsIndex = 0; customWordsIndex < customWordsJsonList.GetLength(); ++customWordsIndex)
-    {
+    for (unsigned customWordsIndex = 0; customWordsIndex < customWordsJsonList.GetLength(); ++customWordsIndex) {
       m_customWords.push_back(customWordsJsonList[customWordsIndex].AsObject());
     }
     m_customWordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("managedWordLists"))
-  {
+  if (jsonValue.ValueExists("managedWordLists")) {
     Aws::Utils::Array<JsonView> managedWordListsJsonList = jsonValue.GetArray("managedWordLists");
-    for(unsigned managedWordListsIndex = 0; managedWordListsIndex < managedWordListsJsonList.GetLength(); ++managedWordListsIndex)
-    {
+    for (unsigned managedWordListsIndex = 0; managedWordListsIndex < managedWordListsJsonList.GetLength(); ++managedWordListsIndex) {
       m_managedWordLists.push_back(managedWordListsJsonList[managedWordListsIndex].AsObject());
     }
     m_managedWordListsHasBeenSet = true;
@@ -46,35 +35,28 @@ GuardrailWordPolicyAssessment& GuardrailWordPolicyAssessment::operator =(JsonVie
   return *this;
 }
 
-JsonValue GuardrailWordPolicyAssessment::Jsonize() const
-{
+JsonValue GuardrailWordPolicyAssessment::Jsonize() const {
   JsonValue payload;
 
-  if(m_customWordsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customWordsJsonList(m_customWords.size());
-   for(unsigned customWordsIndex = 0; customWordsIndex < customWordsJsonList.GetLength(); ++customWordsIndex)
-   {
-     customWordsJsonList[customWordsIndex].AsObject(m_customWords[customWordsIndex].Jsonize());
-   }
-   payload.WithArray("customWords", std::move(customWordsJsonList));
-
+  if (m_customWordsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customWordsJsonList(m_customWords.size());
+    for (unsigned customWordsIndex = 0; customWordsIndex < customWordsJsonList.GetLength(); ++customWordsIndex) {
+      customWordsJsonList[customWordsIndex].AsObject(m_customWords[customWordsIndex].Jsonize());
+    }
+    payload.WithArray("customWords", std::move(customWordsJsonList));
   }
 
-  if(m_managedWordListsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> managedWordListsJsonList(m_managedWordLists.size());
-   for(unsigned managedWordListsIndex = 0; managedWordListsIndex < managedWordListsJsonList.GetLength(); ++managedWordListsIndex)
-   {
-     managedWordListsJsonList[managedWordListsIndex].AsObject(m_managedWordLists[managedWordListsIndex].Jsonize());
-   }
-   payload.WithArray("managedWordLists", std::move(managedWordListsJsonList));
-
+  if (m_managedWordListsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> managedWordListsJsonList(m_managedWordLists.size());
+    for (unsigned managedWordListsIndex = 0; managedWordListsIndex < managedWordListsJsonList.GetLength(); ++managedWordListsIndex) {
+      managedWordListsJsonList[managedWordListsIndex].AsObject(m_managedWordLists[managedWordListsIndex].Jsonize());
+    }
+    payload.WithArray("managedWordLists", std::move(managedWordListsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

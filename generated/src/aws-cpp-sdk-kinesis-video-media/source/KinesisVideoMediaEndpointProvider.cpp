@@ -5,12 +5,8 @@
 
 #include <aws/kinesis-video-media/KinesisVideoMediaEndpointProvider.h>
 
-namespace Aws
-{
-namespace KinesisVideoMedia
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KinesisVideoMedia
-} // namespace Aws
+namespace Aws {
+namespace KinesisVideoMedia {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KinesisVideoMedia
+}  // namespace Aws

@@ -3,91 +3,71 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/AudioDurationCorrection.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/AudioDurationCorrection.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace AudioDurationCorrectionMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace AudioDurationCorrectionMapper
-      {
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+static const int TRACK_HASH = HashingUtils::HashString("TRACK");
+static const int FRAME_HASH = HashingUtils::HashString("FRAME");
+static const int FORCE_HASH = HashingUtils::HashString("FORCE");
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
-        static const int TRACK_HASH = HashingUtils::HashString("TRACK");
-        static const int FRAME_HASH = HashingUtils::HashString("FRAME");
-        static const int FORCE_HASH = HashingUtils::HashString("FORCE");
+AudioDurationCorrection GetAudioDurationCorrectionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DISABLED_HASH) {
+    return AudioDurationCorrection::DISABLED;
+  } else if (hashCode == AUTO_HASH) {
+    return AudioDurationCorrection::AUTO;
+  } else if (hashCode == TRACK_HASH) {
+    return AudioDurationCorrection::TRACK;
+  } else if (hashCode == FRAME_HASH) {
+    return AudioDurationCorrection::FRAME;
+  } else if (hashCode == FORCE_HASH) {
+    return AudioDurationCorrection::FORCE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AudioDurationCorrection>(hashCode);
+  }
 
+  return AudioDurationCorrection::NOT_SET;
+}
 
-        AudioDurationCorrection GetAudioDurationCorrectionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DISABLED_HASH)
-          {
-            return AudioDurationCorrection::DISABLED;
-          }
-          else if (hashCode == AUTO_HASH)
-          {
-            return AudioDurationCorrection::AUTO;
-          }
-          else if (hashCode == TRACK_HASH)
-          {
-            return AudioDurationCorrection::TRACK;
-          }
-          else if (hashCode == FRAME_HASH)
-          {
-            return AudioDurationCorrection::FRAME;
-          }
-          else if (hashCode == FORCE_HASH)
-          {
-            return AudioDurationCorrection::FORCE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AudioDurationCorrection>(hashCode);
-          }
+Aws::String GetNameForAudioDurationCorrection(AudioDurationCorrection enumValue) {
+  switch (enumValue) {
+    case AudioDurationCorrection::NOT_SET:
+      return {};
+    case AudioDurationCorrection::DISABLED:
+      return "DISABLED";
+    case AudioDurationCorrection::AUTO:
+      return "AUTO";
+    case AudioDurationCorrection::TRACK:
+      return "TRACK";
+    case AudioDurationCorrection::FRAME:
+      return "FRAME";
+    case AudioDurationCorrection::FORCE:
+      return "FORCE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AudioDurationCorrection::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAudioDurationCorrection(AudioDurationCorrection enumValue)
-        {
-          switch(enumValue)
-          {
-          case AudioDurationCorrection::NOT_SET:
-            return {};
-          case AudioDurationCorrection::DISABLED:
-            return "DISABLED";
-          case AudioDurationCorrection::AUTO:
-            return "AUTO";
-          case AudioDurationCorrection::TRACK:
-            return "TRACK";
-          case AudioDurationCorrection::FRAME:
-            return "FRAME";
-          case AudioDurationCorrection::FORCE:
-            return "FORCE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AudioDurationCorrectionMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace AudioDurationCorrectionMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

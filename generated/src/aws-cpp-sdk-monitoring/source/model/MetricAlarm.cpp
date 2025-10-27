@@ -3,71 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/MetricAlarm.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/MetricAlarm.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-MetricAlarm::MetricAlarm(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MetricAlarm::MetricAlarm(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
-{
+MetricAlarm& MetricAlarm::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
-    if(!alarmNameNode.IsNull())
-    {
+    if (!alarmNameNode.IsNull()) {
       m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmArnNode = resultNode.FirstChild("AlarmArn");
-    if(!alarmArnNode.IsNull())
-    {
+    if (!alarmArnNode.IsNull()) {
       m_alarmArn = Aws::Utils::Xml::DecodeEscapedXmlText(alarmArnNode.GetText());
       m_alarmArnHasBeenSet = true;
     }
     XmlNode alarmDescriptionNode = resultNode.FirstChild("AlarmDescription");
-    if(!alarmDescriptionNode.IsNull())
-    {
+    if (!alarmDescriptionNode.IsNull()) {
       m_alarmDescription = Aws::Utils::Xml::DecodeEscapedXmlText(alarmDescriptionNode.GetText());
       m_alarmDescriptionHasBeenSet = true;
     }
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
-    if(!alarmConfigurationUpdatedTimestampNode.IsNull())
-    {
-      m_alarmConfigurationUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmConfigurationUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!alarmConfigurationUpdatedTimestampNode.IsNull()) {
+      m_alarmConfigurationUpdatedTimestamp = DateTime(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmConfigurationUpdatedTimestampNode.GetText()).c_str()).c_str(),
+          Aws::Utils::DateFormat::ISO_8601);
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode actionsEnabledNode = resultNode.FirstChild("ActionsEnabled");
-    if(!actionsEnabledNode.IsNull())
-    {
-      m_actionsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsEnabledNode.GetText()).c_str()).c_str());
+    if (!actionsEnabledNode.IsNull()) {
+      m_actionsEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsEnabledNode.GetText()).c_str()).c_str());
       m_actionsEnabledHasBeenSet = true;
     }
     XmlNode oKActionsNode = resultNode.FirstChild("OKActions");
-    if(!oKActionsNode.IsNull())
-    {
+    if (!oKActionsNode.IsNull()) {
       XmlNode oKActionsMember = oKActionsNode.FirstChild("member");
       m_oKActionsHasBeenSet = !oKActionsMember.IsNull();
-      while(!oKActionsMember.IsNull())
-      {
+      while (!oKActionsMember.IsNull()) {
         m_oKActions.push_back(oKActionsMember.GetText());
         oKActionsMember = oKActionsMember.NextNode("member");
       }
@@ -75,12 +63,10 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_oKActionsHasBeenSet = true;
     }
     XmlNode alarmActionsNode = resultNode.FirstChild("AlarmActions");
-    if(!alarmActionsNode.IsNull())
-    {
+    if (!alarmActionsNode.IsNull()) {
       XmlNode alarmActionsMember = alarmActionsNode.FirstChild("member");
       m_alarmActionsHasBeenSet = !alarmActionsMember.IsNull();
-      while(!alarmActionsMember.IsNull())
-      {
+      while (!alarmActionsMember.IsNull()) {
         m_alarmActions.push_back(alarmActionsMember.GetText());
         alarmActionsMember = alarmActionsMember.NextNode("member");
       }
@@ -88,12 +74,10 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_alarmActionsHasBeenSet = true;
     }
     XmlNode insufficientDataActionsNode = resultNode.FirstChild("InsufficientDataActions");
-    if(!insufficientDataActionsNode.IsNull())
-    {
+    if (!insufficientDataActionsNode.IsNull()) {
       XmlNode insufficientDataActionsMember = insufficientDataActionsNode.FirstChild("member");
       m_insufficientDataActionsHasBeenSet = !insufficientDataActionsMember.IsNull();
-      while(!insufficientDataActionsMember.IsNull())
-      {
+      while (!insufficientDataActionsMember.IsNull()) {
         m_insufficientDataActions.push_back(insufficientDataActionsMember.GetText());
         insufficientDataActionsMember = insufficientDataActionsMember.NextNode("member");
       }
@@ -101,60 +85,54 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_insufficientDataActionsHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
-    if(!stateValueNode.IsNull())
-    {
-      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
+    if (!stateValueNode.IsNull()) {
+      m_stateValue = StateValueMapper::GetStateValueForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
-    if(!stateReasonNode.IsNull())
-    {
+    if (!stateReasonNode.IsNull()) {
       m_stateReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonNode.GetText());
       m_stateReasonHasBeenSet = true;
     }
     XmlNode stateReasonDataNode = resultNode.FirstChild("StateReasonData");
-    if(!stateReasonDataNode.IsNull())
-    {
+    if (!stateReasonDataNode.IsNull()) {
       m_stateReasonData = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonDataNode.GetText());
       m_stateReasonDataHasBeenSet = true;
     }
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
-    if(!stateUpdatedTimestampNode.IsNull())
-    {
-      m_stateUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!stateUpdatedTimestampNode.IsNull()) {
+      m_stateUpdatedTimestamp =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateUpdatedTimestampNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(!metricNameNode.IsNull())
-    {
+    if (!metricNameNode.IsNull()) {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
-    if(!namespaceNode.IsNull())
-    {
+    if (!namespaceNode.IsNull()) {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
-    if(!statisticNode.IsNull())
-    {
-      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
+    if (!statisticNode.IsNull()) {
+      m_statistic =
+          StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode extendedStatisticNode = resultNode.FirstChild("ExtendedStatistic");
-    if(!extendedStatisticNode.IsNull())
-    {
+    if (!extendedStatisticNode.IsNull()) {
       m_extendedStatistic = Aws::Utils::Xml::DecodeEscapedXmlText(extendedStatisticNode.GetText());
       m_extendedStatisticHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
-    if(!dimensionsNode.IsNull())
-    {
+    if (!dimensionsNode.IsNull()) {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
       m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
-      while(!dimensionsMember.IsNull())
-      {
+      while (!dimensionsMember.IsNull()) {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
@@ -162,60 +140,56 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_dimensionsHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
-    if(!periodNode.IsNull())
-    {
-      m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+    if (!periodNode.IsNull()) {
+      m_period =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(!unitNode.IsNull())
-    {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
+    if (!unitNode.IsNull()) {
+      m_unit =
+          StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
     }
     XmlNode evaluationPeriodsNode = resultNode.FirstChild("EvaluationPeriods");
-    if(!evaluationPeriodsNode.IsNull())
-    {
-      m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationPeriodsNode.GetText()).c_str()).c_str());
+    if (!evaluationPeriodsNode.IsNull()) {
+      m_evaluationPeriods = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationPeriodsNode.GetText()).c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
     }
     XmlNode datapointsToAlarmNode = resultNode.FirstChild("DatapointsToAlarm");
-    if(!datapointsToAlarmNode.IsNull())
-    {
-      m_datapointsToAlarm = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datapointsToAlarmNode.GetText()).c_str()).c_str());
+    if (!datapointsToAlarmNode.IsNull()) {
+      m_datapointsToAlarm = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datapointsToAlarmNode.GetText()).c_str()).c_str());
       m_datapointsToAlarmHasBeenSet = true;
     }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
-    if(!thresholdNode.IsNull())
-    {
-      m_threshold = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(thresholdNode.GetText()).c_str()).c_str());
+    if (!thresholdNode.IsNull()) {
+      m_threshold =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(thresholdNode.GetText()).c_str()).c_str());
       m_thresholdHasBeenSet = true;
     }
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
-    if(!comparisonOperatorNode.IsNull())
-    {
-      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
+    if (!comparisonOperatorNode.IsNull()) {
+      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
       m_comparisonOperatorHasBeenSet = true;
     }
     XmlNode treatMissingDataNode = resultNode.FirstChild("TreatMissingData");
-    if(!treatMissingDataNode.IsNull())
-    {
+    if (!treatMissingDataNode.IsNull()) {
       m_treatMissingData = Aws::Utils::Xml::DecodeEscapedXmlText(treatMissingDataNode.GetText());
       m_treatMissingDataHasBeenSet = true;
     }
     XmlNode evaluateLowSampleCountPercentileNode = resultNode.FirstChild("EvaluateLowSampleCountPercentile");
-    if(!evaluateLowSampleCountPercentileNode.IsNull())
-    {
+    if (!evaluateLowSampleCountPercentileNode.IsNull()) {
       m_evaluateLowSampleCountPercentile = Aws::Utils::Xml::DecodeEscapedXmlText(evaluateLowSampleCountPercentileNode.GetText());
       m_evaluateLowSampleCountPercentileHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
-    if(!metricsNode.IsNull())
-    {
+    if (!metricsNode.IsNull()) {
       XmlNode metricsMember = metricsNode.FirstChild("member");
       m_metricsHasBeenSet = !metricsMember.IsNull();
-      while(!metricsMember.IsNull())
-      {
+      while (!metricsMember.IsNull()) {
         m_metrics.push_back(metricsMember);
         metricsMember = metricsMember.NextNode("member");
       }
@@ -223,21 +197,21 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_metricsHasBeenSet = true;
     }
     XmlNode thresholdMetricIdNode = resultNode.FirstChild("ThresholdMetricId");
-    if(!thresholdMetricIdNode.IsNull())
-    {
+    if (!thresholdMetricIdNode.IsNull()) {
       m_thresholdMetricId = Aws::Utils::Xml::DecodeEscapedXmlText(thresholdMetricIdNode.GetText());
       m_thresholdMetricIdHasBeenSet = true;
     }
     XmlNode evaluationStateNode = resultNode.FirstChild("EvaluationState");
-    if(!evaluationStateNode.IsNull())
-    {
-      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()));
+    if (!evaluationStateNode.IsNull()) {
+      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()));
       m_evaluationStateHasBeenSet = true;
     }
     XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
-    if(!stateTransitionedTimestampNode.IsNull())
-    {
-      m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!stateTransitionedTimestampNode.IsNull()) {
+      m_stateTransitionedTimestamp =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_stateTransitionedTimestampHasBeenSet = true;
     }
   }
@@ -245,323 +219,271 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_alarmNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_alarmNameHasBeenSet) {
+    oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
 
-  if(m_alarmArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
+  if (m_alarmArnHasBeenSet) {
+    oStream << location << index << locationValue << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
   }
 
-  if(m_alarmDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
+  if (m_alarmDescriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
   }
 
-  if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_alarmConfigurationUpdatedTimestampHasBeenSet) {
+    oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp="
+            << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_actionsEnabledHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
+  if (m_actionsEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
   }
 
-  if(m_oKActionsHasBeenSet)
-  {
-      unsigned oKActionsIdx = 1;
-      for(auto& item : m_oKActions)
-      {
-        oStream << location << index << locationValue << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_oKActionsHasBeenSet) {
+    unsigned oKActionsIdx = 1;
+    for (auto& item : m_oKActions) {
+      oStream << location << index << locationValue << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
   }
 
-  if(m_alarmActionsHasBeenSet)
-  {
-      unsigned alarmActionsIdx = 1;
-      for(auto& item : m_alarmActions)
-      {
-        oStream << location << index << locationValue << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_alarmActionsHasBeenSet) {
+    unsigned alarmActionsIdx = 1;
+    for (auto& item : m_alarmActions) {
+      oStream << location << index << locationValue << ".AlarmActions.member." << alarmActionsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_insufficientDataActionsHasBeenSet)
-  {
-      unsigned insufficientDataActionsIdx = 1;
-      for(auto& item : m_insufficientDataActions)
-      {
-        oStream << location << index << locationValue << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_insufficientDataActionsHasBeenSet) {
+    unsigned insufficientDataActionsIdx = 1;
+    for (auto& item : m_insufficientDataActions) {
+      oStream << location << index << locationValue << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_stateValueHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
+  if (m_stateValueHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
-  if(m_stateReasonHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
+  if (m_stateReasonHasBeenSet) {
+    oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
 
-  if(m_stateReasonDataHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
+  if (m_stateReasonDataHasBeenSet) {
+    oStream << location << index << locationValue << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
   }
 
-  if(m_stateUpdatedTimestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_stateUpdatedTimestampHasBeenSet) {
+    oStream << location << index << locationValue << ".StateUpdatedTimestamp="
+            << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_metricNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  if (m_metricNameHasBeenSet) {
+    oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
 
-  if(m_namespaceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  if (m_namespaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
 
-  if(m_statisticHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
+  if (m_statisticHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
   }
 
-  if(m_extendedStatisticHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
+  if (m_extendedStatisticHasBeenSet) {
+    oStream << location << index << locationValue << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
   }
 
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
-        item.OutputToStream(oStream, dimensionsSs.str().c_str());
-      }
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      Aws::StringStream dimensionsSs;
+      dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
+      item.OutputToStream(oStream, dimensionsSs.str().c_str());
+    }
   }
 
-  if(m_periodHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Period=" << m_period << "&";
+  if (m_periodHasBeenSet) {
+    oStream << location << index << locationValue << ".Period=" << m_period << "&";
   }
 
-  if(m_unitHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
+  if (m_unitHasBeenSet) {
+    oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit))
+            << "&";
   }
 
-  if(m_evaluationPeriodsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
+  if (m_evaluationPeriodsHasBeenSet) {
+    oStream << location << index << locationValue << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
 
-  if(m_datapointsToAlarmHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
+  if (m_datapointsToAlarmHasBeenSet) {
+    oStream << location << index << locationValue << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
   }
 
-  if(m_thresholdHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
+  if (m_thresholdHasBeenSet) {
+    oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
 
-  if(m_comparisonOperatorHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
+  if (m_comparisonOperatorHasBeenSet) {
+    oStream << location << index << locationValue << ".ComparisonOperator="
+            << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
   }
 
-  if(m_treatMissingDataHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+  if (m_treatMissingDataHasBeenSet) {
+    oStream << location << index << locationValue << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
   }
 
-  if(m_evaluateLowSampleCountPercentileHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
+  if (m_evaluateLowSampleCountPercentileHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
   }
 
-  if(m_metricsHasBeenSet)
-  {
-      unsigned metricsIdx = 1;
-      for(auto& item : m_metrics)
-      {
-        Aws::StringStream metricsSs;
-        metricsSs << location << index << locationValue << ".Metrics.member." << metricsIdx++;
-        item.OutputToStream(oStream, metricsSs.str().c_str());
-      }
+  if (m_metricsHasBeenSet) {
+    unsigned metricsIdx = 1;
+    for (auto& item : m_metrics) {
+      Aws::StringStream metricsSs;
+      metricsSs << location << index << locationValue << ".Metrics.member." << metricsIdx++;
+      item.OutputToStream(oStream, metricsSs.str().c_str());
+    }
   }
 
-  if(m_thresholdMetricIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
+  if (m_thresholdMetricIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
   }
 
-  if(m_evaluationStateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
+  if (m_evaluationStateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
   }
 
-  if(m_stateTransitionedTimestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-}
-
-void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_alarmNameHasBeenSet)
-  {
-      oStream << location << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
-  }
-  if(m_alarmArnHasBeenSet)
-  {
-      oStream << location << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
-  }
-  if(m_alarmDescriptionHasBeenSet)
-  {
-      oStream << location << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
-  }
-  if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
-  {
-      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_actionsEnabledHasBeenSet)
-  {
-      oStream << location << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
-  }
-  if(m_oKActionsHasBeenSet)
-  {
-      unsigned oKActionsIdx = 1;
-      for(auto& item : m_oKActions)
-      {
-        oStream << location << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_alarmActionsHasBeenSet)
-  {
-      unsigned alarmActionsIdx = 1;
-      for(auto& item : m_alarmActions)
-      {
-        oStream << location << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_insufficientDataActionsHasBeenSet)
-  {
-      unsigned insufficientDataActionsIdx = 1;
-      for(auto& item : m_insufficientDataActions)
-      {
-        oStream << location << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_stateValueHasBeenSet)
-  {
-      oStream << location << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
-  }
-  if(m_stateReasonHasBeenSet)
-  {
-      oStream << location << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
-  }
-  if(m_stateReasonDataHasBeenSet)
-  {
-      oStream << location << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
-  }
-  if(m_stateUpdatedTimestampHasBeenSet)
-  {
-      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_metricNameHasBeenSet)
-  {
-      oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
-  }
-  if(m_namespaceHasBeenSet)
-  {
-      oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
-  }
-  if(m_statisticHasBeenSet)
-  {
-      oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
-  }
-  if(m_extendedStatisticHasBeenSet)
-  {
-      oStream << location << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
-  }
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        Aws::StringStream dimensionsSs;
-        dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
-        item.OutputToStream(oStream, dimensionsSs.str().c_str());
-      }
-  }
-  if(m_periodHasBeenSet)
-  {
-      oStream << location << ".Period=" << m_period << "&";
-  }
-  if(m_unitHasBeenSet)
-  {
-      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
-  }
-  if(m_evaluationPeriodsHasBeenSet)
-  {
-      oStream << location << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
-  }
-  if(m_datapointsToAlarmHasBeenSet)
-  {
-      oStream << location << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
-  }
-  if(m_thresholdHasBeenSet)
-  {
-      oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
-  }
-  if(m_comparisonOperatorHasBeenSet)
-  {
-      oStream << location << ".ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
-  }
-  if(m_treatMissingDataHasBeenSet)
-  {
-      oStream << location << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
-  }
-  if(m_evaluateLowSampleCountPercentileHasBeenSet)
-  {
-      oStream << location << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
-  }
-  if(m_metricsHasBeenSet)
-  {
-      unsigned metricsIdx = 1;
-      for(auto& item : m_metrics)
-      {
-        Aws::StringStream metricsSs;
-        metricsSs << location << ".Metrics.member." << metricsIdx++;
-        item.OutputToStream(oStream, metricsSs.str().c_str());
-      }
-  }
-  if(m_thresholdMetricIdHasBeenSet)
-  {
-      oStream << location << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
-  }
-  if(m_evaluationStateHasBeenSet)
-  {
-      oStream << location << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
-  }
-  if(m_stateTransitionedTimestampHasBeenSet)
-  {
-      oStream << location << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_stateTransitionedTimestampHasBeenSet) {
+    oStream << location << index << locationValue << ".StateTransitionedTimestamp="
+            << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_alarmNameHasBeenSet) {
+    oStream << location << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+  }
+  if (m_alarmArnHasBeenSet) {
+    oStream << location << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
+  }
+  if (m_alarmDescriptionHasBeenSet) {
+    oStream << location << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
+  }
+  if (m_alarmConfigurationUpdatedTimestampHasBeenSet) {
+    oStream << location << ".AlarmConfigurationUpdatedTimestamp="
+            << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_actionsEnabledHasBeenSet) {
+    oStream << location << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
+  }
+  if (m_oKActionsHasBeenSet) {
+    unsigned oKActionsIdx = 1;
+    for (auto& item : m_oKActions) {
+      oStream << location << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_alarmActionsHasBeenSet) {
+    unsigned alarmActionsIdx = 1;
+    for (auto& item : m_alarmActions) {
+      oStream << location << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_insufficientDataActionsHasBeenSet) {
+    unsigned insufficientDataActionsIdx = 1;
+    for (auto& item : m_insufficientDataActions) {
+      oStream << location << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_stateValueHasBeenSet) {
+    oStream << location << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
+  }
+  if (m_stateReasonHasBeenSet) {
+    oStream << location << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
+  }
+  if (m_stateReasonDataHasBeenSet) {
+    oStream << location << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
+  }
+  if (m_stateUpdatedTimestampHasBeenSet) {
+    oStream << location << ".StateUpdatedTimestamp="
+            << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_metricNameHasBeenSet) {
+    oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
+  if (m_namespaceHasBeenSet) {
+    oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+  }
+  if (m_statisticHasBeenSet) {
+    oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
+  }
+  if (m_extendedStatisticHasBeenSet) {
+    oStream << location << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
+  }
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      Aws::StringStream dimensionsSs;
+      dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
+      item.OutputToStream(oStream, dimensionsSs.str().c_str());
+    }
+  }
+  if (m_periodHasBeenSet) {
+    oStream << location << ".Period=" << m_period << "&";
+  }
+  if (m_unitHasBeenSet) {
+    oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
+  }
+  if (m_evaluationPeriodsHasBeenSet) {
+    oStream << location << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
+  }
+  if (m_datapointsToAlarmHasBeenSet) {
+    oStream << location << ".DatapointsToAlarm=" << m_datapointsToAlarm << "&";
+  }
+  if (m_thresholdHasBeenSet) {
+    oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
+  }
+  if (m_comparisonOperatorHasBeenSet) {
+    oStream << location << ".ComparisonOperator="
+            << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
+  }
+  if (m_treatMissingDataHasBeenSet) {
+    oStream << location << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+  }
+  if (m_evaluateLowSampleCountPercentileHasBeenSet) {
+    oStream << location << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str())
+            << "&";
+  }
+  if (m_metricsHasBeenSet) {
+    unsigned metricsIdx = 1;
+    for (auto& item : m_metrics) {
+      Aws::StringStream metricsSs;
+      metricsSs << location << ".Metrics.member." << metricsIdx++;
+      item.OutputToStream(oStream, metricsSs.str().c_str());
+    }
+  }
+  if (m_thresholdMetricIdHasBeenSet) {
+    oStream << location << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
+  }
+  if (m_evaluationStateHasBeenSet) {
+    oStream << location
+            << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
+  }
+  if (m_stateTransitionedTimestampHasBeenSet) {
+    oStream << location << ".StateTransitionedTimestamp="
+            << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

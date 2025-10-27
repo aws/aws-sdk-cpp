@@ -4,69 +4,55 @@
  */
 
 #include <aws/cognito-identity/model/RoleMappingType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CognitoIdentity {
+namespace Model {
+namespace RoleMappingTypeMapper {
 
-namespace Aws
-{
-  namespace CognitoIdentity
-  {
-    namespace Model
-    {
-      namespace RoleMappingTypeMapper
-      {
+static const int Token_HASH = HashingUtils::HashString("Token");
+static const int Rules_HASH = HashingUtils::HashString("Rules");
 
-        static const int Token_HASH = HashingUtils::HashString("Token");
-        static const int Rules_HASH = HashingUtils::HashString("Rules");
+RoleMappingType GetRoleMappingTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Token_HASH) {
+    return RoleMappingType::Token;
+  } else if (hashCode == Rules_HASH) {
+    return RoleMappingType::Rules;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RoleMappingType>(hashCode);
+  }
 
+  return RoleMappingType::NOT_SET;
+}
 
-        RoleMappingType GetRoleMappingTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Token_HASH)
-          {
-            return RoleMappingType::Token;
-          }
-          else if (hashCode == Rules_HASH)
-          {
-            return RoleMappingType::Rules;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RoleMappingType>(hashCode);
-          }
+Aws::String GetNameForRoleMappingType(RoleMappingType enumValue) {
+  switch (enumValue) {
+    case RoleMappingType::NOT_SET:
+      return {};
+    case RoleMappingType::Token:
+      return "Token";
+    case RoleMappingType::Rules:
+      return "Rules";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RoleMappingType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRoleMappingType(RoleMappingType enumValue)
-        {
-          switch(enumValue)
-          {
-          case RoleMappingType::NOT_SET:
-            return {};
-          case RoleMappingType::Token:
-            return "Token";
-          case RoleMappingType::Rules:
-            return "Rules";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RoleMappingTypeMapper
-    } // namespace Model
-  } // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace RoleMappingTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentity
+}  // namespace Aws

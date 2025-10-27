@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/AccessControlPolicy.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/AccessControlPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
-{
+AccessControlPolicy& AccessControlPolicy::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
-    if(!grantsNode.IsNull())
-    {
+    if (!grantsNode.IsNull()) {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");
       m_grantsHasBeenSet = !grantsMember.IsNull();
-      while(!grantsMember.IsNull())
-      {
+      while (!grantsMember.IsNull()) {
         m_grants.push_back(grantsMember);
         grantsMember = grantsMember.NextNode("Grant");
       }
@@ -45,8 +35,7 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
       m_grantsHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(!ownerNode.IsNull())
-    {
+    if (!ownerNode.IsNull()) {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
     }
@@ -55,27 +44,22 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AccessControlPolicy::AddToNode(XmlNode& parentNode) const
-{
+void AccessControlPolicy::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_grantsHasBeenSet)
-  {
-   XmlNode grantsParentNode = parentNode.CreateChildElement("AccessControlList");
-   for(const auto& item : m_grants)
-   {
-     XmlNode grantsNode = grantsParentNode.CreateChildElement("Grant");
-     item.AddToNode(grantsNode);
-   }
+  if (m_grantsHasBeenSet) {
+    XmlNode grantsParentNode = parentNode.CreateChildElement("AccessControlList");
+    for (const auto& item : m_grants) {
+      XmlNode grantsNode = grantsParentNode.CreateChildElement("Grant");
+      item.AddToNode(grantsNode);
+    }
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   XmlNode ownerNode = parentNode.CreateChildElement("Owner");
-   m_owner.AddToNode(ownerNode);
+  if (m_ownerHasBeenSet) {
+    XmlNode ownerNode = parentNode.CreateChildElement("Owner");
+    m_owner.AddToNode(ownerNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

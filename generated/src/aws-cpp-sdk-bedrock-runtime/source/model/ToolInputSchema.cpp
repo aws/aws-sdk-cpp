@@ -11,43 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ToolInputSchema::ToolInputSchema(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ToolInputSchema::ToolInputSchema(JsonView jsonValue) { *this = jsonValue; }
 
-ToolInputSchema& ToolInputSchema::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("json"))
-  {
+ToolInputSchema& ToolInputSchema::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("json")) {
     m_json = jsonValue.GetObject("json");
     m_jsonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ToolInputSchema::Jsonize() const
-{
+JsonValue ToolInputSchema::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonHasBeenSet)
-  {
-    if(!m_json.View().IsNull())
-    {
-       payload.WithObject("json", JsonValue(m_json.View()));
+  if (m_jsonHasBeenSet) {
+    if (!m_json.View().IsNull()) {
+      payload.WithObject("json", JsonValue(m_json.View()));
     }
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

@@ -3,62 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/KafkaAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/KafkaAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-KafkaAction::KafkaAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KafkaAction::KafkaAction(JsonView jsonValue) { *this = jsonValue; }
 
-KafkaAction& KafkaAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destinationArn"))
-  {
+KafkaAction& KafkaAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationArn")) {
     m_destinationArn = jsonValue.GetString("destinationArn");
     m_destinationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("topic"))
-  {
+  if (jsonValue.ValueExists("topic")) {
     m_topic = jsonValue.GetString("topic");
     m_topicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("key"))
-  {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("partition"))
-  {
+  if (jsonValue.ValueExists("partition")) {
     m_partition = jsonValue.GetString("partition");
     m_partitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientProperties"))
-  {
+  if (jsonValue.ValueExists("clientProperties")) {
     Aws::Map<Aws::String, JsonView> clientPropertiesJsonMap = jsonValue.GetObject("clientProperties").GetAllObjects();
-    for(auto& clientPropertiesItem : clientPropertiesJsonMap)
-    {
+    for (auto& clientPropertiesItem : clientPropertiesJsonMap) {
       m_clientProperties[clientPropertiesItem.first] = clientPropertiesItem.second.AsString();
     }
     m_clientPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("headers"))
-  {
+  if (jsonValue.ValueExists("headers")) {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
-    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
-    {
+    for (unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex) {
       m_headers.push_back(headersJsonList[headersIndex].AsObject());
     }
     m_headersHasBeenSet = true;
@@ -66,59 +51,44 @@ KafkaAction& KafkaAction::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue KafkaAction::Jsonize() const
-{
+JsonValue KafkaAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("destinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("destinationArn", m_destinationArn);
   }
 
-  if(m_topicHasBeenSet)
-  {
-   payload.WithString("topic", m_topic);
-
+  if (m_topicHasBeenSet) {
+    payload.WithString("topic", m_topic);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_partitionHasBeenSet)
-  {
-   payload.WithString("partition", m_partition);
-
+  if (m_partitionHasBeenSet) {
+    payload.WithString("partition", m_partition);
   }
 
-  if(m_clientPropertiesHasBeenSet)
-  {
-   JsonValue clientPropertiesJsonMap;
-   for(auto& clientPropertiesItem : m_clientProperties)
-   {
-     clientPropertiesJsonMap.WithString(clientPropertiesItem.first, clientPropertiesItem.second);
-   }
-   payload.WithObject("clientProperties", std::move(clientPropertiesJsonMap));
-
+  if (m_clientPropertiesHasBeenSet) {
+    JsonValue clientPropertiesJsonMap;
+    for (auto& clientPropertiesItem : m_clientProperties) {
+      clientPropertiesJsonMap.WithString(clientPropertiesItem.first, clientPropertiesItem.second);
+    }
+    payload.WithObject("clientProperties", std::move(clientPropertiesJsonMap));
   }
 
-  if(m_headersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
-   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
-   {
-     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
-   }
-   payload.WithArray("headers", std::move(headersJsonList));
-
+  if (m_headersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+    for (unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex) {
+      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+    }
+    payload.WithArray("headers", std::move(headersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

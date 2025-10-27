@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScalingPlans {
+namespace Model {
 
-Datapoint::Datapoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Datapoint::Datapoint(JsonView jsonValue) { *this = jsonValue; }
 
-Datapoint& Datapoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Timestamp"))
-  {
+Datapoint& Datapoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Timestamp")) {
     m_timestamp = jsonValue.GetDouble("Timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Datapoint::Jsonize() const
-{
+JsonValue Datapoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AutoScalingPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScalingPlans
+}  // namespace Aws

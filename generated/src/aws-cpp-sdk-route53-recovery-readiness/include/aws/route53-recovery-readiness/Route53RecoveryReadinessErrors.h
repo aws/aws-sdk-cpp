@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53RecoveryReadiness
-{
-enum class Route53RecoveryReadinessErrors
-{
-  //From Core//
+namespace Aws {
+namespace Route53RecoveryReadiness {
+enum class Route53RecoveryReadinessErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class Route53RecoveryReadinessErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class Route53RecoveryReadinessErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
 
-class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessError : public Aws::Client::AWSError<Route53RecoveryReadinessErrors>
-{
-public:
+class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessError : public Aws::Client::AWSError<Route53RecoveryReadinessErrors> {
+ public:
   Route53RecoveryReadinessError() {}
-  Route53RecoveryReadinessError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
-  Route53RecoveryReadinessError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
-  Route53RecoveryReadinessError(const Aws::Client::AWSError<Route53RecoveryReadinessErrors>& rhs) : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
-  Route53RecoveryReadinessError(Aws::Client::AWSError<Route53RecoveryReadinessErrors>&& rhs) : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
+  Route53RecoveryReadinessError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
+  Route53RecoveryReadinessError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
+  Route53RecoveryReadinessError(const Aws::Client::AWSError<Route53RecoveryReadinessErrors>& rhs)
+      : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
+  Route53RecoveryReadinessError(Aws::Client::AWSError<Route53RecoveryReadinessErrors>&& rhs)
+      : Aws::Client::AWSError<Route53RecoveryReadinessErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace Route53RecoveryReadinessErrorMapper
-{
-  AWS_ROUTE53RECOVERYREADINESS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace Route53RecoveryReadinessErrorMapper {
+AWS_ROUTE53RECOVERYREADINESS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Route53RecoveryReadiness
-} // namespace Aws
+}  // namespace Route53RecoveryReadiness
+}  // namespace Aws

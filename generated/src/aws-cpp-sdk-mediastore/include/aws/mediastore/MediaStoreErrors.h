@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaStore
-{
-enum class MediaStoreErrors
-{
-  //From Core//
+namespace Aws {
+namespace MediaStore {
+enum class MediaStoreErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MediaStoreErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class MediaStoreErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONTAINER_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONTAINER_IN_USE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONTAINER_NOT_FOUND,
   CORS_POLICY_NOT_FOUND,
   LIMIT_EXCEEDED,
   POLICY_NOT_FOUND
 };
 
-class AWS_MEDIASTORE_API MediaStoreError : public Aws::Client::AWSError<MediaStoreErrors>
-{
-public:
+class AWS_MEDIASTORE_API MediaStoreError : public Aws::Client::AWSError<MediaStoreErrors> {
+ public:
   MediaStoreError() {}
   MediaStoreError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaStoreErrors>(rhs) {}
   MediaStoreError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaStoreErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace MediaStoreErrorMapper
-{
-  AWS_MEDIASTORE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MediaStoreErrorMapper {
+AWS_MEDIASTORE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MediaStore
-} // namespace Aws
+}  // namespace MediaStore
+}  // namespace Aws

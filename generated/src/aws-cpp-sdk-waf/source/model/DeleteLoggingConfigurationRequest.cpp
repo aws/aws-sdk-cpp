@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/model/DeleteLoggingConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteLoggingConfigurationRequest::SerializePayload() const
-{
+Aws::String DeleteLoggingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteLoggingConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteLoggingConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSWAF_20150824.DeleteLoggingConfiguration"));
   return headers;
-
 }
-
-
-
-

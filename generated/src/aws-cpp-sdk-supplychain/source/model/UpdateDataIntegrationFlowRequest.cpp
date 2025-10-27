@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/supplychain/model/UpdateDataIntegrationFlowRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/supplychain/model/UpdateDataIntegrationFlowRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateDataIntegrationFlowRequest::SerializePayload() const
-{
+Aws::String UpdateDataIntegrationFlowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
-   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-   {
-     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
-   }
-   payload.WithArray("sources", std::move(sourcesJsonList));
-
+  if (m_sourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
+      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+    }
+    payload.WithArray("sources", std::move(sourcesJsonList));
   }
 
-  if(m_transformationHasBeenSet)
-  {
-   payload.WithObject("transformation", m_transformation.Jsonize());
-
+  if (m_transformationHasBeenSet) {
+    payload.WithObject("transformation", m_transformation.Jsonize());
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("target", m_target.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/AdminAccount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/AdminAccount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-AdminAccount::AdminAccount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdminAccount::AdminAccount(JsonView jsonValue) { *this = jsonValue; }
 
-AdminAccount& AdminAccount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+AdminAccount& AdminAccount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = AdminStatusMapper::GetAdminStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdminAccount::Jsonize() const
-{
+JsonValue AdminAccount::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AdminStatusMapper::GetNameForAdminStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AdminStatusMapper::GetNameForAdminStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

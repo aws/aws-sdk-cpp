@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class PoolOriginationIdentitiesFilterName
-  {
-    NOT_SET,
-    iso_country_code,
-    number_capability
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class PoolOriginationIdentitiesFilterName { NOT_SET, iso_country_code, number_capability };
 
-namespace PoolOriginationIdentitiesFilterNameMapper
-{
+namespace PoolOriginationIdentitiesFilterNameMapper {
 AWS_PINPOINTSMSVOICEV2_API PoolOriginationIdentitiesFilterName GetPoolOriginationIdentitiesFilterNameForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForPoolOriginationIdentitiesFilterName(PoolOriginationIdentitiesFilterName value);
-} // namespace PoolOriginationIdentitiesFilterNameMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace PoolOriginationIdentitiesFilterNameMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

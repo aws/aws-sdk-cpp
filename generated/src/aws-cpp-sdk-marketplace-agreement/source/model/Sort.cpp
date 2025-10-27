@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-agreement/model/Sort.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/Sort.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Model
-{
+namespace Aws {
+namespace AgreementService {
+namespace Model {
 
-Sort::Sort(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Sort::Sort(JsonView jsonValue) { *this = jsonValue; }
 
-Sort& Sort::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sortBy"))
-  {
+Sort& Sort::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sortBy")) {
     m_sortBy = jsonValue.GetString("sortBy");
     m_sortByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Sort::Jsonize() const
-{
+JsonValue Sort::Jsonize() const {
   JsonValue payload;
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", m_sortBy);
-
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", m_sortBy);
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AgreementService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

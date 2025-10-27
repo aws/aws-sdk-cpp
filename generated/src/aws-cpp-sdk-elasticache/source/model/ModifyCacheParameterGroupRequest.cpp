@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
-{
+Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyCacheParameterGroup&";
-  if(m_cacheParameterGroupNameHasBeenSet)
-  {
+  if (m_cacheParameterGroupNameHasBeenSet) {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
-  if(m_parameterNameValuesHasBeenSet)
-  {
-    if (m_parameterNameValues.empty())
-    {
+  if (m_parameterNameValuesHasBeenSet) {
+    if (m_parameterNameValues.empty()) {
       ss << "ParameterNameValues=&";
-    }
-    else
-    {
+    } else {
       unsigned parameterNameValuesCount = 1;
-      for(auto& item : m_parameterNameValues)
-      {
+      for (auto& item : m_parameterNameValues) {
         item.OutputToStream(ss, "ParameterNameValues.ParameterNameValue.", parameterNameValuesCount, "");
         parameterNameValuesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

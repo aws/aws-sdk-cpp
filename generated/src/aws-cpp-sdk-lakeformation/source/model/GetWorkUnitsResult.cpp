@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/GetWorkUnitsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lakeformation/model/GetWorkUnitsResult.h>
 
 #include <utility>
 
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkUnitsResult::GetWorkUnitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetWorkUnitsResult::GetWorkUnitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetWorkUnitsResult& GetWorkUnitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetWorkUnitsResult& GetWorkUnitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryId"))
-  {
+  if (jsonValue.ValueExists("QueryId")) {
     m_queryId = jsonValue.GetString("QueryId");
     m_queryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkUnitRanges"))
-  {
+  if (jsonValue.ValueExists("WorkUnitRanges")) {
     Aws::Utils::Array<JsonView> workUnitRangesJsonList = jsonValue.GetArray("WorkUnitRanges");
-    for(unsigned workUnitRangesIndex = 0; workUnitRangesIndex < workUnitRangesJsonList.GetLength(); ++workUnitRangesIndex)
-    {
+    for (unsigned workUnitRangesIndex = 0; workUnitRangesIndex < workUnitRangesJsonList.GetLength(); ++workUnitRangesIndex) {
       m_workUnitRanges.push_back(workUnitRangesJsonList[workUnitRangesIndex].AsObject());
     }
     m_workUnitRangesHasBeenSet = true;
@@ -47,12 +39,10 @@ GetWorkUnitsResult& GetWorkUnitsResult::operator =(const Aws::AmazonWebServiceRe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,69 +4,55 @@
  */
 
 #include <aws/codedeploy/model/TargetLabel.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
+namespace TargetLabelMapper {
 
-namespace Aws
-{
-  namespace CodeDeploy
-  {
-    namespace Model
-    {
-      namespace TargetLabelMapper
-      {
+static const int Blue_HASH = HashingUtils::HashString("Blue");
+static const int Green_HASH = HashingUtils::HashString("Green");
 
-        static const int Blue_HASH = HashingUtils::HashString("Blue");
-        static const int Green_HASH = HashingUtils::HashString("Green");
+TargetLabel GetTargetLabelForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Blue_HASH) {
+    return TargetLabel::Blue;
+  } else if (hashCode == Green_HASH) {
+    return TargetLabel::Green;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TargetLabel>(hashCode);
+  }
 
+  return TargetLabel::NOT_SET;
+}
 
-        TargetLabel GetTargetLabelForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Blue_HASH)
-          {
-            return TargetLabel::Blue;
-          }
-          else if (hashCode == Green_HASH)
-          {
-            return TargetLabel::Green;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TargetLabel>(hashCode);
-          }
+Aws::String GetNameForTargetLabel(TargetLabel enumValue) {
+  switch (enumValue) {
+    case TargetLabel::NOT_SET:
+      return {};
+    case TargetLabel::Blue:
+      return "Blue";
+    case TargetLabel::Green:
+      return "Green";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TargetLabel::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTargetLabel(TargetLabel enumValue)
-        {
-          switch(enumValue)
-          {
-          case TargetLabel::NOT_SET:
-            return {};
-          case TargetLabel::Blue:
-            return "Blue";
-          case TargetLabel::Green:
-            return "Green";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TargetLabelMapper
-    } // namespace Model
-  } // namespace CodeDeploy
-} // namespace Aws
+}  // namespace TargetLabelMapper
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

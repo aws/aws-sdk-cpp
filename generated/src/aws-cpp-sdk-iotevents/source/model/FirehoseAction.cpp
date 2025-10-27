@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/FirehoseAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/FirehoseAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-FirehoseAction::FirehoseAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FirehoseAction::FirehoseAction(JsonView jsonValue) { *this = jsonValue; }
 
-FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deliveryStreamName"))
-  {
+FirehoseAction& FirehoseAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deliveryStreamName")) {
     m_deliveryStreamName = jsonValue.GetString("deliveryStreamName");
     m_deliveryStreamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("separator"))
-  {
+  if (jsonValue.ValueExists("separator")) {
     m_separator = jsonValue.GetString("separator");
     m_separatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("payload"))
-  {
+  if (jsonValue.ValueExists("payload")) {
     m_payload = jsonValue.GetObject("payload");
     m_payloadHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FirehoseAction::Jsonize() const
-{
+JsonValue FirehoseAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_deliveryStreamNameHasBeenSet)
-  {
-   payload.WithString("deliveryStreamName", m_deliveryStreamName);
-
+  if (m_deliveryStreamNameHasBeenSet) {
+    payload.WithString("deliveryStreamName", m_deliveryStreamName);
   }
 
-  if(m_separatorHasBeenSet)
-  {
-   payload.WithString("separator", m_separator);
-
+  if (m_separatorHasBeenSet) {
+    payload.WithString("separator", m_separator);
   }
 
-  if(m_payloadHasBeenSet)
-  {
-   payload.WithObject("payload", m_payload.Jsonize());
-
+  if (m_payloadHasBeenSet) {
+    payload.WithObject("payload", m_payload.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

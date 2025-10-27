@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/UpdateAccessConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/UpdateAccessConfigRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-UpdateAccessConfigRequest::UpdateAccessConfigRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateAccessConfigRequest::UpdateAccessConfigRequest(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateAccessConfigRequest& UpdateAccessConfigRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authenticationMode"))
-  {
+UpdateAccessConfigRequest& UpdateAccessConfigRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authenticationMode")) {
     m_authenticationMode = AuthenticationModeMapper::GetAuthenticationModeForName(jsonValue.GetString("authenticationMode"));
     m_authenticationModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateAccessConfigRequest::Jsonize() const
-{
+JsonValue UpdateAccessConfigRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_authenticationModeHasBeenSet)
-  {
-   payload.WithString("authenticationMode", AuthenticationModeMapper::GetNameForAuthenticationMode(m_authenticationMode));
+  if (m_authenticationModeHasBeenSet) {
+    payload.WithString("authenticationMode", AuthenticationModeMapper::GetNameForAuthenticationMode(m_authenticationMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

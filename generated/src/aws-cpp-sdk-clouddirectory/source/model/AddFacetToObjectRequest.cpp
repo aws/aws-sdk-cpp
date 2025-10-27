@@ -13,51 +13,37 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AddFacetToObjectRequest::SerializePayload() const
-{
+Aws::String AddFacetToObjectRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_schemaFacetHasBeenSet)
-  {
-   payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
-
+  if (m_schemaFacetHasBeenSet) {
+    payload.WithObject("SchemaFacet", m_schemaFacet.Jsonize());
   }
 
-  if(m_objectAttributeListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
-   for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
-   {
-     objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());
-   }
-   payload.WithArray("ObjectAttributeList", std::move(objectAttributeListJsonList));
-
+  if (m_objectAttributeListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
+    for (unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength();
+         ++objectAttributeListIndex) {
+      objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());
+    }
+    payload.WithArray("ObjectAttributeList", std::move(objectAttributeListJsonList));
   }
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AddFacetToObjectRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AddFacetToObjectRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_directoryArnHasBeenSet)
-  {
+  if (m_directoryArnHasBeenSet) {
     ss << m_directoryArn;
-    headers.emplace("x-amz-data-partition",  ss.str());
+    headers.emplace("x-amz-data-partition", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

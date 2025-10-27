@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-DatadogMetadata::DatadogMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatadogMetadata::DatadogMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DatadogMetadata& DatadogMetadata::operator =(JsonView jsonValue)
-{
+DatadogMetadata& DatadogMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue DatadogMetadata::Jsonize() const
-{
+JsonValue DatadogMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

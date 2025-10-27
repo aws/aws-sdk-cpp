@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteExpressionRequest::SerializePayload() const
-{
+Aws::String DeleteExpressionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteExpression&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_expressionNameHasBeenSet)
-  {
+  if (m_expressionNameHasBeenSet) {
     ss << "ExpressionName=" << StringUtils::URLEncode(m_expressionName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteExpressionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteExpressionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteExpressionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

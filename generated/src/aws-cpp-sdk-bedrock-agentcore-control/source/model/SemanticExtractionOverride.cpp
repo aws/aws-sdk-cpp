@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-SemanticExtractionOverride::SemanticExtractionOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SemanticExtractionOverride::SemanticExtractionOverride(JsonView jsonValue) { *this = jsonValue; }
 
-SemanticExtractionOverride& SemanticExtractionOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("appendToPrompt"))
-  {
+SemanticExtractionOverride& SemanticExtractionOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("appendToPrompt")) {
     m_appendToPrompt = jsonValue.GetString("appendToPrompt");
     m_appendToPromptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelId"))
-  {
+  if (jsonValue.ValueExists("modelId")) {
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SemanticExtractionOverride::Jsonize() const
-{
+JsonValue SemanticExtractionOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_appendToPromptHasBeenSet)
-  {
-   payload.WithString("appendToPrompt", m_appendToPrompt);
-
+  if (m_appendToPromptHasBeenSet) {
+    payload.WithString("appendToPrompt", m_appendToPrompt);
   }
 
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
+  if (m_modelIdHasBeenSet) {
+    payload.WithString("modelId", m_modelId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

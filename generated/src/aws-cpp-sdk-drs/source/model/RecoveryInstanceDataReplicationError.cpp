@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/RecoveryInstanceDataReplicationError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/RecoveryInstanceDataReplicationError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-RecoveryInstanceDataReplicationError::RecoveryInstanceDataReplicationError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecoveryInstanceDataReplicationError::RecoveryInstanceDataReplicationError(JsonView jsonValue) { *this = jsonValue; }
 
-RecoveryInstanceDataReplicationError& RecoveryInstanceDataReplicationError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("error"))
-  {
+RecoveryInstanceDataReplicationError& RecoveryInstanceDataReplicationError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("error")) {
     m_error = FailbackReplicationErrorMapper::GetFailbackReplicationErrorForName(jsonValue.GetString("error"));
     m_errorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rawError"))
-  {
+  if (jsonValue.ValueExists("rawError")) {
     m_rawError = jsonValue.GetString("rawError");
     m_rawErrorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecoveryInstanceDataReplicationError::Jsonize() const
-{
+JsonValue RecoveryInstanceDataReplicationError::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", FailbackReplicationErrorMapper::GetNameForFailbackReplicationError(m_error));
+  if (m_errorHasBeenSet) {
+    payload.WithString("error", FailbackReplicationErrorMapper::GetNameForFailbackReplicationError(m_error));
   }
 
-  if(m_rawErrorHasBeenSet)
-  {
-   payload.WithString("rawError", m_rawError);
-
+  if (m_rawErrorHasBeenSet) {
+    payload.WithString("rawError", m_rawError);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

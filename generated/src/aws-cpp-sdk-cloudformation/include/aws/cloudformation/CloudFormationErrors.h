@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudformation/CloudFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-enum class CloudFormationErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudFormation {
+enum class CloudFormationErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudFormationErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudFormationErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CHANGE_SET_NOT_FOUND,
   CONCURRENT_RESOURCES_LIMIT_EXCEEDED,
   CREATED_BUT_MODIFIED,
@@ -78,9 +75,8 @@ enum class CloudFormationErrors
   TYPE_NOT_FOUND
 };
 
-class AWS_CLOUDFORMATION_API CloudFormationError : public Aws::Client::AWSError<CloudFormationErrors>
-{
-public:
+class AWS_CLOUDFORMATION_API CloudFormationError : public Aws::Client::AWSError<CloudFormationErrors> {
+ public:
   CloudFormationError() {}
   CloudFormationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudFormationErrors>(rhs) {}
   CloudFormationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudFormationErrors>(rhs) {}
@@ -91,10 +87,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudFormationErrorMapper
-{
-  AWS_CLOUDFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudFormationErrorMapper {
+AWS_CLOUDFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace CloudFormation
+}  // namespace Aws

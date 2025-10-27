@@ -5,12 +5,8 @@
 
 #include <aws/ssm-guiconnect/SSMGuiConnectEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSMGuiConnect
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSMGuiConnect
-} // namespace Aws
+namespace Aws {
+namespace SSMGuiConnect {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSMGuiConnect
+}  // namespace Aws

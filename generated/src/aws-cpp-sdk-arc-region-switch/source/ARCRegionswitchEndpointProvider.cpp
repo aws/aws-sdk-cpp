@@ -5,12 +5,8 @@
 
 #include <aws/arc-region-switch/ARCRegionswitchEndpointProvider.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ARCRegionswitch
-} // namespace Aws
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ARCRegionswitch
+}  // namespace Aws

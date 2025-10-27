@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::mediapackagev2;
 
-AWSError<CoreErrors> Mediapackagev2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> Mediapackagev2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = Mediapackagev2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

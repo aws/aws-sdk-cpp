@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/UsageRecord.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/UsageRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-UsageRecord::UsageRecord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsageRecord::UsageRecord(JsonView jsonValue) { *this = jsonValue; }
 
-UsageRecord& UsageRecord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+UsageRecord& UsageRecord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("automatedDiscoveryFreeTrialStartDate"))
-  {
+  if (jsonValue.ValueExists("automatedDiscoveryFreeTrialStartDate")) {
     m_automatedDiscoveryFreeTrialStartDate = jsonValue.GetString("automatedDiscoveryFreeTrialStartDate");
     m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("freeTrialStartDate"))
-  {
+  if (jsonValue.ValueExists("freeTrialStartDate")) {
     m_freeTrialStartDate = jsonValue.GetString("freeTrialStartDate");
     m_freeTrialStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("usage"))
-  {
+  if (jsonValue.ValueExists("usage")) {
     Aws::Utils::Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
-    for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
-    {
+    for (unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex) {
       m_usage.push_back(usageJsonList[usageIndex].AsObject());
     }
     m_usageHasBeenSet = true;
@@ -52,40 +40,33 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue UsageRecord::Jsonize() const
-{
+JsonValue UsageRecord::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_automatedDiscoveryFreeTrialStartDateHasBeenSet)
-  {
-   payload.WithString("automatedDiscoveryFreeTrialStartDate", m_automatedDiscoveryFreeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_automatedDiscoveryFreeTrialStartDateHasBeenSet) {
+    payload.WithString("automatedDiscoveryFreeTrialStartDate",
+                       m_automatedDiscoveryFreeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_freeTrialStartDateHasBeenSet)
-  {
-   payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_freeTrialStartDateHasBeenSet) {
+    payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_usageHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
-   for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
-   {
-     usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());
-   }
-   payload.WithArray("usage", std::move(usageJsonList));
-
+  if (m_usageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
+    for (unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex) {
+      usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());
+    }
+    payload.WithArray("usage", std::move(usageJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

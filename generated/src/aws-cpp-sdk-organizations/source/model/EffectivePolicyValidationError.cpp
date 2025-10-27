@@ -3,48 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/EffectivePolicyValidationError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/organizations/model/EffectivePolicyValidationError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
+namespace Aws {
+namespace Organizations {
+namespace Model {
 
-EffectivePolicyValidationError::EffectivePolicyValidationError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EffectivePolicyValidationError::EffectivePolicyValidationError(JsonView jsonValue) { *this = jsonValue; }
 
-EffectivePolicyValidationError& EffectivePolicyValidationError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+EffectivePolicyValidationError& EffectivePolicyValidationError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PathToError"))
-  {
+  if (jsonValue.ValueExists("PathToError")) {
     m_pathToError = jsonValue.GetString("PathToError");
     m_pathToErrorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContributingPolicies"))
-  {
+  if (jsonValue.ValueExists("ContributingPolicies")) {
     Aws::Utils::Array<JsonView> contributingPoliciesJsonList = jsonValue.GetArray("ContributingPolicies");
-    for(unsigned contributingPoliciesIndex = 0; contributingPoliciesIndex < contributingPoliciesJsonList.GetLength(); ++contributingPoliciesIndex)
-    {
+    for (unsigned contributingPoliciesIndex = 0; contributingPoliciesIndex < contributingPoliciesJsonList.GetLength();
+         ++contributingPoliciesIndex) {
       m_contributingPolicies.push_back(contributingPoliciesJsonList[contributingPoliciesIndex].AsString());
     }
     m_contributingPoliciesHasBeenSet = true;
@@ -52,42 +41,33 @@ EffectivePolicyValidationError& EffectivePolicyValidationError::operator =(JsonV
   return *this;
 }
 
-JsonValue EffectivePolicyValidationError::Jsonize() const
-{
+JsonValue EffectivePolicyValidationError::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_pathToErrorHasBeenSet)
-  {
-   payload.WithString("PathToError", m_pathToError);
-
+  if (m_pathToErrorHasBeenSet) {
+    payload.WithString("PathToError", m_pathToError);
   }
 
-  if(m_contributingPoliciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contributingPoliciesJsonList(m_contributingPolicies.size());
-   for(unsigned contributingPoliciesIndex = 0; contributingPoliciesIndex < contributingPoliciesJsonList.GetLength(); ++contributingPoliciesIndex)
-   {
-     contributingPoliciesJsonList[contributingPoliciesIndex].AsString(m_contributingPolicies[contributingPoliciesIndex]);
-   }
-   payload.WithArray("ContributingPolicies", std::move(contributingPoliciesJsonList));
-
+  if (m_contributingPoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contributingPoliciesJsonList(m_contributingPolicies.size());
+    for (unsigned contributingPoliciesIndex = 0; contributingPoliciesIndex < contributingPoliciesJsonList.GetLength();
+         ++contributingPoliciesIndex) {
+      contributingPoliciesJsonList[contributingPoliciesIndex].AsString(m_contributingPolicies[contributingPoliciesIndex]);
+    }
+    payload.WithArray("ContributingPolicies", std::move(contributingPoliciesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

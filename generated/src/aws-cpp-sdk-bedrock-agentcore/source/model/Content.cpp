@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-Content::Content(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Content::Content(JsonView jsonValue) { *this = jsonValue; }
 
-Content& Content::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+Content& Content::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Content::Jsonize() const
-{
+JsonValue Content::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

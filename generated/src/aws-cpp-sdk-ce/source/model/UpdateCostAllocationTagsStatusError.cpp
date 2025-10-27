@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-UpdateCostAllocationTagsStatusError::UpdateCostAllocationTagsStatusError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateCostAllocationTagsStatusError::UpdateCostAllocationTagsStatusError(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateCostAllocationTagsStatusError& UpdateCostAllocationTagsStatusError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TagKey"))
-  {
+UpdateCostAllocationTagsStatusError& UpdateCostAllocationTagsStatusError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TagKey")) {
     m_tagKey = jsonValue.GetString("TagKey");
     m_tagKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Code"))
-  {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateCostAllocationTagsStatusError::Jsonize() const
-{
+JsonValue UpdateCostAllocationTagsStatusError::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagKeyHasBeenSet)
-  {
-   payload.WithString("TagKey", m_tagKey);
-
+  if (m_tagKeyHasBeenSet) {
+    payload.WithString("TagKey", m_tagKey);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

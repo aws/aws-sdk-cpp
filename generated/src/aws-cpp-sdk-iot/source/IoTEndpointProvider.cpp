@@ -5,12 +5,8 @@
 
 #include <aws/iot/IoTEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoT
-} // namespace Aws
+namespace Aws {
+namespace IoT {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoT
+}  // namespace Aws

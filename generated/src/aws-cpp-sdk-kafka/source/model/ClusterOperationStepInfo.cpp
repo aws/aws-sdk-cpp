@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/ClusterOperationStepInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/ClusterOperationStepInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-ClusterOperationStepInfo::ClusterOperationStepInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterOperationStepInfo::ClusterOperationStepInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterOperationStepInfo& ClusterOperationStepInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stepStatus"))
-  {
+ClusterOperationStepInfo& ClusterOperationStepInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stepStatus")) {
     m_stepStatus = jsonValue.GetString("stepStatus");
     m_stepStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterOperationStepInfo::Jsonize() const
-{
+JsonValue ClusterOperationStepInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepStatusHasBeenSet)
-  {
-   payload.WithString("stepStatus", m_stepStatus);
-
+  if (m_stepStatusHasBeenSet) {
+    payload.WithString("stepStatus", m_stepStatus);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

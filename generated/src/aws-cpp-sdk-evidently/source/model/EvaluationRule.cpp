@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/EvaluationRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/EvaluationRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-EvaluationRule::EvaluationRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationRule::EvaluationRule(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationRule& EvaluationRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+EvaluationRule& EvaluationRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationRule::Jsonize() const
-{
+JsonValue EvaluationRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

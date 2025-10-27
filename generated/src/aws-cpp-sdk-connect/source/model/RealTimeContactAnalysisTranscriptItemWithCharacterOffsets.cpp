@@ -11,52 +11,41 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets(JsonView jsonValue)
-{
+RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-RealTimeContactAnalysisTranscriptItemWithCharacterOffsets& RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+RealTimeContactAnalysisTranscriptItemWithCharacterOffsets& RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CharacterOffsets"))
-  {
+  if (jsonValue.ValueExists("CharacterOffsets")) {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
     m_characterOffsetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_characterOffsetsHasBeenSet)
-  {
-   payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
-
+  if (m_characterOffsetsHasBeenSet) {
+    payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

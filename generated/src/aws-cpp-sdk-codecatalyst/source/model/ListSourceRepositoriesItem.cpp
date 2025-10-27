@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-ListSourceRepositoriesItem::ListSourceRepositoriesItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListSourceRepositoriesItem::ListSourceRepositoriesItem(JsonView jsonValue) { *this = jsonValue; }
 
-ListSourceRepositoriesItem& ListSourceRepositoriesItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ListSourceRepositoriesItem& ListSourceRepositoriesItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdTime"))
-  {
+  if (jsonValue.ValueExists("createdTime")) {
     m_createdTime = jsonValue.GetString("createdTime");
     m_createdTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListSourceRepositoriesItem::Jsonize() const
-{
+JsonValue ListSourceRepositoriesItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithString("lastUpdatedTime", m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithString("lastUpdatedTime", m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimeHasBeenSet) {
+    payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

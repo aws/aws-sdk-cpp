@@ -4,78 +4,89 @@
  */
 
 #pragma once
-#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
+#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/MFAOptionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cognito-idp/model/MFAOptionType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
+/**
+ * <p>Represents the request to set user settings.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettingsRequest">AWS
+ * API Reference</a></p>
+ */
+class SetUserSettingsRequest : public CognitoIdentityProviderRequest {
+ public:
+  AWS_COGNITOIDENTITYPROVIDER_API SetUserSettingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "SetUserSettings"; }
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
-   * <p>Represents the request to set user settings.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettingsRequest">AWS
-   * API Reference</a></p>
+   * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+   * user. Must include a scope claim for
+   * <code>aws.cognito.signin.user.admin</code>.</p>
    */
-  class SetUserSettingsRequest : public CognitoIdentityProviderRequest
-  {
-  public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetUserSettingsRequest() = default;
+  inline const Aws::String& GetAccessToken() const { return m_accessToken; }
+  inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+  template <typename AccessTokenT = Aws::String>
+  void SetAccessToken(AccessTokenT&& value) {
+    m_accessTokenHasBeenSet = true;
+    m_accessToken = std::forward<AccessTokenT>(value);
+  }
+  template <typename AccessTokenT = Aws::String>
+  SetUserSettingsRequest& WithAccessToken(AccessTokenT&& value) {
+    SetAccessToken(std::forward<AccessTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "SetUserSettings"; }
+  ///@{
+  /**
+   * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+   * delivery.</p>
+   */
+  inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const { return m_mFAOptions; }
+  inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
+  template <typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+  void SetMFAOptions(MFAOptionsT&& value) {
+    m_mFAOptionsHasBeenSet = true;
+    m_mFAOptions = std::forward<MFAOptionsT>(value);
+  }
+  template <typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+  SetUserSettingsRequest& WithMFAOptions(MFAOptionsT&& value) {
+    SetMFAOptions(std::forward<MFAOptionsT>(value));
+    return *this;
+  }
+  template <typename MFAOptionsT = MFAOptionType>
+  SetUserSettingsRequest& AddMFAOptions(MFAOptionsT&& value) {
+    m_mFAOptionsHasBeenSet = true;
+    m_mFAOptions.emplace_back(std::forward<MFAOptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_accessToken;
+  bool m_accessTokenHasBeenSet = false;
 
-    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
+  Aws::Vector<MFAOptionType> m_mFAOptions;
+  bool m_mFAOptionsHasBeenSet = false;
+};
 
-    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
-     * user. Must include a scope claim for
-     * <code>aws.cognito.signin.user.admin</code>.</p>
-     */
-    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
-    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    template<typename AccessTokenT = Aws::String>
-    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
-    template<typename AccessTokenT = Aws::String>
-    SetUserSettingsRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
-    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const { return m_mFAOptions; }
-    inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
-    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
-    void SetMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::forward<MFAOptionsT>(value); }
-    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
-    SetUserSettingsRequest& WithMFAOptions(MFAOptionsT&& value) { SetMFAOptions(std::forward<MFAOptionsT>(value)); return *this;}
-    template<typename MFAOptionsT = MFAOptionType>
-    SetUserSettingsRequest& AddMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.emplace_back(std::forward<MFAOptionsT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet = false;
-
-    Aws::Vector<MFAOptionType> m_mFAOptions;
-    bool m_mFAOptionsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

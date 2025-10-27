@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
-  enum class ProductCodeType
-  {
-    NOT_SET,
-    marketplace
-  };
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+enum class ProductCodeType { NOT_SET, marketplace };
 
-namespace ProductCodeTypeMapper
-{
+namespace ProductCodeTypeMapper {
 AWS_LICENSEMANAGER_API ProductCodeType GetProductCodeTypeForName(const Aws::String& name);
 
 AWS_LICENSEMANAGER_API Aws::String GetNameForProductCodeType(ProductCodeType value);
-} // namespace ProductCodeTypeMapper
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace ProductCodeTypeMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

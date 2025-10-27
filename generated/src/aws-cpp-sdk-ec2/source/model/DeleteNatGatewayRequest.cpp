@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteNatGatewayRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteNatGatewayRequest::SerializePayload() const
-{
+Aws::String DeleteNatGatewayRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteNatGateway&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_natGatewayIdHasBeenSet)
-  {
+  if (m_natGatewayIdHasBeenSet) {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteNatGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteNatGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteNatGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

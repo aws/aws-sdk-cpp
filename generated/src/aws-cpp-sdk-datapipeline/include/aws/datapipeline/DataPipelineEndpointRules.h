@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataPipeline
-{
-class DataPipelineEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DataPipeline {
+class DataPipelineEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DataPipeline
-} // namespace Aws
+}  // namespace DataPipeline
+}  // namespace Aws

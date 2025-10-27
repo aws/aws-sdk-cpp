@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/AddUserToGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/AddUserToGroupRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String AddUserToGroupRequest::SerializePayload() const
-{
+Aws::String AddUserToGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddUserToGroup&";
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AddUserToGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddUserToGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddUserToGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AvailabilityZoneState
-  {
-    NOT_SET,
-    available,
-    information,
-    impaired,
-    unavailable,
-    constrained
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AvailabilityZoneState { NOT_SET, available, information, impaired, unavailable, constrained };
 
-namespace AvailabilityZoneStateMapper
-{
+namespace AvailabilityZoneStateMapper {
 AWS_EC2_API AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState value);
-} // namespace AvailabilityZoneStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AvailabilityZoneStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

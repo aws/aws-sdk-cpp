@@ -11,72 +11,56 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-PackageGroupOriginRestriction::PackageGroupOriginRestriction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageGroupOriginRestriction::PackageGroupOriginRestriction(JsonView jsonValue) { *this = jsonValue; }
 
-PackageGroupOriginRestriction& PackageGroupOriginRestriction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mode"))
-  {
+PackageGroupOriginRestriction& PackageGroupOriginRestriction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mode")) {
     m_mode = PackageGroupOriginRestrictionModeMapper::GetPackageGroupOriginRestrictionModeForName(jsonValue.GetString("mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("effectiveMode"))
-  {
-    m_effectiveMode = PackageGroupOriginRestrictionModeMapper::GetPackageGroupOriginRestrictionModeForName(jsonValue.GetString("effectiveMode"));
+  if (jsonValue.ValueExists("effectiveMode")) {
+    m_effectiveMode =
+        PackageGroupOriginRestrictionModeMapper::GetPackageGroupOriginRestrictionModeForName(jsonValue.GetString("effectiveMode"));
     m_effectiveModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inheritedFrom"))
-  {
+  if (jsonValue.ValueExists("inheritedFrom")) {
     m_inheritedFrom = jsonValue.GetObject("inheritedFrom");
     m_inheritedFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositoriesCount"))
-  {
+  if (jsonValue.ValueExists("repositoriesCount")) {
     m_repositoriesCount = jsonValue.GetInt64("repositoriesCount");
     m_repositoriesCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageGroupOriginRestriction::Jsonize() const
-{
+JsonValue PackageGroupOriginRestriction::Jsonize() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", PackageGroupOriginRestrictionModeMapper::GetNameForPackageGroupOriginRestrictionMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("mode", PackageGroupOriginRestrictionModeMapper::GetNameForPackageGroupOriginRestrictionMode(m_mode));
   }
 
-  if(m_effectiveModeHasBeenSet)
-  {
-   payload.WithString("effectiveMode", PackageGroupOriginRestrictionModeMapper::GetNameForPackageGroupOriginRestrictionMode(m_effectiveMode));
+  if (m_effectiveModeHasBeenSet) {
+    payload.WithString("effectiveMode",
+                       PackageGroupOriginRestrictionModeMapper::GetNameForPackageGroupOriginRestrictionMode(m_effectiveMode));
   }
 
-  if(m_inheritedFromHasBeenSet)
-  {
-   payload.WithObject("inheritedFrom", m_inheritedFrom.Jsonize());
-
+  if (m_inheritedFromHasBeenSet) {
+    payload.WithObject("inheritedFrom", m_inheritedFrom.Jsonize());
   }
 
-  if(m_repositoriesCountHasBeenSet)
-  {
-   payload.WithInt64("repositoriesCount", m_repositoriesCount);
-
+  if (m_repositoriesCountHasBeenSet) {
+    payload.WithInt64("repositoriesCount", m_repositoriesCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

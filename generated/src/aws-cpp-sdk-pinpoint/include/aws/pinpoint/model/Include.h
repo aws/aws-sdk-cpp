@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
-  enum class Include
-  {
-    NOT_SET,
-    ALL,
-    ANY,
-    NONE
-  };
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
+enum class Include { NOT_SET, ALL, ANY, NONE };
 
-namespace IncludeMapper
-{
+namespace IncludeMapper {
 AWS_PINPOINT_API Include GetIncludeForName(const Aws::String& name);
 
 AWS_PINPOINT_API Aws::String GetNameForInclude(Include value);
-} // namespace IncludeMapper
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace IncludeMapper
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

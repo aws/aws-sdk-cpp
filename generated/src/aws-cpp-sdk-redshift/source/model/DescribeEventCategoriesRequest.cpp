@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeEventCategoriesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeEventCategoriesRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeEventCategoriesRequest::SerializePayload() const
-{
+Aws::String DescribeEventCategoriesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeEventCategories&";
-  if(m_sourceTypeHasBeenSet)
-  {
+  if (m_sourceTypeHasBeenSet) {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeEventCategoriesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeEventCategoriesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

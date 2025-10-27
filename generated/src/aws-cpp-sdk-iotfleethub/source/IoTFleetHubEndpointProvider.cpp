@@ -5,12 +5,8 @@
 
 #include <aws/iotfleethub/IoTFleetHubEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTFleetHub
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTFleetHub
-} // namespace Aws
+namespace Aws {
+namespace IoTFleetHub {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTFleetHub
+}  // namespace Aws

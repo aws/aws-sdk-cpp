@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/supplychain/model/DataIntegrationFlowS3Options.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/supplychain/model/DataIntegrationFlowS3Options.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SupplyChain
-{
-namespace Model
-{
+namespace Aws {
+namespace SupplyChain {
+namespace Model {
 
-DataIntegrationFlowS3Options::DataIntegrationFlowS3Options(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataIntegrationFlowS3Options::DataIntegrationFlowS3Options(JsonView jsonValue) { *this = jsonValue; }
 
-DataIntegrationFlowS3Options& DataIntegrationFlowS3Options::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileType"))
-  {
+DataIntegrationFlowS3Options& DataIntegrationFlowS3Options::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileType")) {
     m_fileType = DataIntegrationFlowFileTypeMapper::GetDataIntegrationFlowFileTypeForName(jsonValue.GetString("fileType"));
     m_fileTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataIntegrationFlowS3Options::Jsonize() const
-{
+JsonValue DataIntegrationFlowS3Options::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileTypeHasBeenSet)
-  {
-   payload.WithString("fileType", DataIntegrationFlowFileTypeMapper::GetNameForDataIntegrationFlowFileType(m_fileType));
+  if (m_fileTypeHasBeenSet) {
+    payload.WithString("fileType", DataIntegrationFlowFileTypeMapper::GetNameForDataIntegrationFlowFileType(m_fileType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SupplyChain
-} // namespace Aws
+}  // namespace Model
+}  // namespace SupplyChain
+}  // namespace Aws

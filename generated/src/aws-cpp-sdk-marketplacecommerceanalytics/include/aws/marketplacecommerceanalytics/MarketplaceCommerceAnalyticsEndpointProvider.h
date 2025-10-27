@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointRules.h>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MarketplaceCommerceAnalytics
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MarketplaceCommerceAnalytics {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MarketplaceCommerceAnalyticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,28 @@ using MarketplaceCommerceAnalyticsBuiltInParameters = Aws::Endpoint::BuiltInPara
  * The SDK must use service-specific type for each service per specification.
  */
 using MarketplaceCommerceAnalyticsEndpointProviderBase =
-    EndpointProviderBase<MarketplaceCommerceAnalyticsClientConfiguration, MarketplaceCommerceAnalyticsBuiltInParameters, MarketplaceCommerceAnalyticsClientContextParameters>;
+    EndpointProviderBase<MarketplaceCommerceAnalyticsClientConfiguration, MarketplaceCommerceAnalyticsBuiltInParameters,
+                         MarketplaceCommerceAnalyticsClientContextParameters>;
 
 using MarketplaceCommerceAnalyticsDefaultEpProviderBase =
-    DefaultEndpointProvider<MarketplaceCommerceAnalyticsClientConfiguration, MarketplaceCommerceAnalyticsBuiltInParameters, MarketplaceCommerceAnalyticsClientContextParameters>;
+    DefaultEndpointProvider<MarketplaceCommerceAnalyticsClientConfiguration, MarketplaceCommerceAnalyticsBuiltInParameters,
+                            MarketplaceCommerceAnalyticsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsEndpointProvider : public MarketplaceCommerceAnalyticsDefaultEpProviderBase
-{
-public:
-    using MarketplaceCommerceAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsEndpointProvider
+    : public MarketplaceCommerceAnalyticsDefaultEpProviderBase {
+ public:
+  using MarketplaceCommerceAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MarketplaceCommerceAnalyticsEndpointProvider()
-      : MarketplaceCommerceAnalyticsDefaultEpProviderBase(Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::GetRulesBlob(), Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::RulesBlobSize)
-    {}
+  MarketplaceCommerceAnalyticsEndpointProvider()
+      : MarketplaceCommerceAnalyticsDefaultEpProviderBase(
+            Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::GetRulesBlob(),
+            Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::RulesBlobSize) {}
 
-    ~MarketplaceCommerceAnalyticsEndpointProvider()
-    {
-    }
+  ~MarketplaceCommerceAnalyticsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MarketplaceCommerceAnalytics
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MarketplaceCommerceAnalytics
+}  // namespace Aws

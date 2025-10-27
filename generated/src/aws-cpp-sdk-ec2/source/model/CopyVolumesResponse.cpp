@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CopyVolumesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CopyVolumesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyVolumesResponse::CopyVolumesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CopyVolumesResponse::CopyVolumesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CopyVolumesResponse& CopyVolumesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CopyVolumesResponse& CopyVolumesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CopyVolumesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CopyVolumesResponse")) {
     resultNode = rootNode.FirstChild("CopyVolumesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode volumesNode = resultNode.FirstChild("volumeSet");
-    if(!volumesNode.IsNull())
-    {
+    if (!volumesNode.IsNull()) {
       XmlNode volumesMember = volumesNode.FirstChild("item");
       m_volumesHasBeenSet = !volumesMember.IsNull();
-      while(!volumesMember.IsNull())
-      {
+      while (!volumesMember.IsNull()) {
         m_volumes.push_back(volumesMember);
         volumesMember = volumesMember.NextNode("item");
       }
@@ -51,12 +43,11 @@ CopyVolumesResponse& CopyVolumesResponse::operator =(const Aws::AmazonWebService
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CopyVolumesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CopyVolumesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

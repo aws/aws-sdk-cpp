@@ -6,64 +6,68 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>A collection of default EBS storage settings that apply to spaces created
+ * within a domain or user profile.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DefaultEbsStorageSettings">AWS
+ * API Reference</a></p>
+ */
+class DefaultEbsStorageSettings {
+ public:
+  AWS_SAGEMAKER_API DefaultEbsStorageSettings() = default;
+  AWS_SAGEMAKER_API DefaultEbsStorageSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API DefaultEbsStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A collection of default EBS storage settings that apply to spaces created
-   * within a domain or user profile.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DefaultEbsStorageSettings">AWS
-   * API Reference</a></p>
+   * <p>The default size of the EBS storage volume for a space.</p>
    */
-  class DefaultEbsStorageSettings
-  {
-  public:
-    AWS_SAGEMAKER_API DefaultEbsStorageSettings() = default;
-    AWS_SAGEMAKER_API DefaultEbsStorageSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API DefaultEbsStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetDefaultEbsVolumeSizeInGb() const { return m_defaultEbsVolumeSizeInGb; }
+  inline bool DefaultEbsVolumeSizeInGbHasBeenSet() const { return m_defaultEbsVolumeSizeInGbHasBeenSet; }
+  inline void SetDefaultEbsVolumeSizeInGb(int value) {
+    m_defaultEbsVolumeSizeInGbHasBeenSet = true;
+    m_defaultEbsVolumeSizeInGb = value;
+  }
+  inline DefaultEbsStorageSettings& WithDefaultEbsVolumeSizeInGb(int value) {
+    SetDefaultEbsVolumeSizeInGb(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum size of the EBS storage volume for a space.</p>
+   */
+  inline int GetMaximumEbsVolumeSizeInGb() const { return m_maximumEbsVolumeSizeInGb; }
+  inline bool MaximumEbsVolumeSizeInGbHasBeenSet() const { return m_maximumEbsVolumeSizeInGbHasBeenSet; }
+  inline void SetMaximumEbsVolumeSizeInGb(int value) {
+    m_maximumEbsVolumeSizeInGbHasBeenSet = true;
+    m_maximumEbsVolumeSizeInGb = value;
+  }
+  inline DefaultEbsStorageSettings& WithMaximumEbsVolumeSizeInGb(int value) {
+    SetMaximumEbsVolumeSizeInGb(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_defaultEbsVolumeSizeInGb{0};
+  bool m_defaultEbsVolumeSizeInGbHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The default size of the EBS storage volume for a space.</p>
-     */
-    inline int GetDefaultEbsVolumeSizeInGb() const { return m_defaultEbsVolumeSizeInGb; }
-    inline bool DefaultEbsVolumeSizeInGbHasBeenSet() const { return m_defaultEbsVolumeSizeInGbHasBeenSet; }
-    inline void SetDefaultEbsVolumeSizeInGb(int value) { m_defaultEbsVolumeSizeInGbHasBeenSet = true; m_defaultEbsVolumeSizeInGb = value; }
-    inline DefaultEbsStorageSettings& WithDefaultEbsVolumeSizeInGb(int value) { SetDefaultEbsVolumeSizeInGb(value); return *this;}
-    ///@}
+  int m_maximumEbsVolumeSizeInGb{0};
+  bool m_maximumEbsVolumeSizeInGbHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum size of the EBS storage volume for a space.</p>
-     */
-    inline int GetMaximumEbsVolumeSizeInGb() const { return m_maximumEbsVolumeSizeInGb; }
-    inline bool MaximumEbsVolumeSizeInGbHasBeenSet() const { return m_maximumEbsVolumeSizeInGbHasBeenSet; }
-    inline void SetMaximumEbsVolumeSizeInGb(int value) { m_maximumEbsVolumeSizeInGbHasBeenSet = true; m_maximumEbsVolumeSizeInGb = value; }
-    inline DefaultEbsStorageSettings& WithMaximumEbsVolumeSizeInGb(int value) { SetMaximumEbsVolumeSizeInGb(value); return *this;}
-    ///@}
-  private:
-
-    int m_defaultEbsVolumeSizeInGb{0};
-    bool m_defaultEbsVolumeSizeInGbHasBeenSet = false;
-
-    int m_maximumEbsVolumeSizeInGb{0};
-    bool m_maximumEbsVolumeSizeInGbHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/FilterConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/FilterConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-FilterConfiguration::FilterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterConfiguration::FilterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowedLocations"))
-  {
+FilterConfiguration& FilterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowedLocations")) {
     Aws::Utils::Array<JsonView> allowedLocationsJsonList = jsonValue.GetArray("AllowedLocations");
-    for(unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex)
-    {
+    for (unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex) {
       m_allowedLocations.push_back(allowedLocationsJsonList[allowedLocationsIndex].AsString());
     }
     m_allowedLocationsHasBeenSet = true;
@@ -37,24 +28,20 @@ FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FilterConfiguration::Jsonize() const
-{
+JsonValue FilterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedLocationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedLocationsJsonList(m_allowedLocations.size());
-   for(unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex)
-   {
-     allowedLocationsJsonList[allowedLocationsIndex].AsString(m_allowedLocations[allowedLocationsIndex]);
-   }
-   payload.WithArray("AllowedLocations", std::move(allowedLocationsJsonList));
-
+  if (m_allowedLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedLocationsJsonList(m_allowedLocations.size());
+    for (unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex) {
+      allowedLocationsJsonList[allowedLocationsIndex].AsString(m_allowedLocations[allowedLocationsIndex]);
+    }
+    payload.WithArray("AllowedLocations", std::move(allowedLocationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

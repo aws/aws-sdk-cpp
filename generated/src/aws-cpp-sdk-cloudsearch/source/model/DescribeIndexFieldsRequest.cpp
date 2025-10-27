@@ -10,35 +10,26 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeIndexFieldsRequest::SerializePayload() const
-{
+Aws::String DescribeIndexFieldsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeIndexFields&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_fieldNamesHasBeenSet)
-  {
-    if (m_fieldNames.empty())
-    {
+  if (m_fieldNamesHasBeenSet) {
+    if (m_fieldNames.empty()) {
       ss << "FieldNames=&";
-    }
-    else
-    {
+    } else {
       unsigned fieldNamesCount = 1;
-      for(auto& item : m_fieldNames)
-      {
-        ss << "FieldNames.member." << fieldNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_fieldNames) {
+        ss << "FieldNames.member." << fieldNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         fieldNamesCount++;
       }
     }
   }
 
-  if(m_deployedHasBeenSet)
-  {
+  if (m_deployedHasBeenSet) {
     ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeIndexFieldsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeIndexFieldsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeIndexFieldsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

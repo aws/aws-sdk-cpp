@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-AggregatedProfileTime::AggregatedProfileTime(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregatedProfileTime::AggregatedProfileTime(JsonView jsonValue) { *this = jsonValue; }
 
-AggregatedProfileTime& AggregatedProfileTime::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("period"))
-  {
+AggregatedProfileTime& AggregatedProfileTime::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("period")) {
     m_period = AggregationPeriodMapper::GetAggregationPeriodForName(jsonValue.GetString("period"));
     m_periodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("start"))
-  {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetString("start");
     m_startHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregatedProfileTime::Jsonize() const
-{
+JsonValue AggregatedProfileTime::Jsonize() const {
   JsonValue payload;
 
-  if(m_periodHasBeenSet)
-  {
-   payload.WithString("period", AggregationPeriodMapper::GetNameForAggregationPeriod(m_period));
+  if (m_periodHasBeenSet) {
+    payload.WithString("period", AggregationPeriodMapper::GetNameForAggregationPeriod(m_period));
   }
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithString("start", m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startHasBeenSet) {
+    payload.WithString("start", m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

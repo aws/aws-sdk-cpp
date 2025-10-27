@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class DesiredWorkerStatus
-  {
-    NOT_SET,
-    STOPPED
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class DesiredWorkerStatus { NOT_SET, STOPPED };
 
-namespace DesiredWorkerStatusMapper
-{
+namespace DesiredWorkerStatusMapper {
 AWS_DEADLINE_API DesiredWorkerStatus GetDesiredWorkerStatusForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForDesiredWorkerStatus(DesiredWorkerStatus value);
-} // namespace DesiredWorkerStatusMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace DesiredWorkerStatusMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

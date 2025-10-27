@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rum/model/PutRumMetricsDestinationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rum/model/PutRumMetricsDestinationRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRumMetricsDestinationRequest::SerializePayload() const
-{
+Aws::String PutRumMetricsDestinationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("Destination", MetricDestinationMapper::GetNameForMetricDestination(m_destination));
+  if (m_destinationHasBeenSet) {
+    payload.WithString("Destination", MetricDestinationMapper::GetNameForMetricDestination(m_destination));
   }
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("DestinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("DestinationArn", m_destinationArn);
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

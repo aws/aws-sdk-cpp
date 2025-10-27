@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class FleetReplacementStrategy
-  {
-    NOT_SET,
-    launch,
-    launch_before_terminate
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class FleetReplacementStrategy { NOT_SET, launch, launch_before_terminate };
 
-namespace FleetReplacementStrategyMapper
-{
+namespace FleetReplacementStrategyMapper {
 AWS_EC2_API FleetReplacementStrategy GetFleetReplacementStrategyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForFleetReplacementStrategy(FleetReplacementStrategy value);
-} // namespace FleetReplacementStrategyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace FleetReplacementStrategyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

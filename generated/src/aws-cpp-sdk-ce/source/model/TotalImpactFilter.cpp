@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-TotalImpactFilter::TotalImpactFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TotalImpactFilter::TotalImpactFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TotalImpactFilter& TotalImpactFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NumericOperator"))
-  {
+TotalImpactFilter& TotalImpactFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NumericOperator")) {
     m_numericOperator = NumericOperatorMapper::GetNumericOperatorForName(jsonValue.GetString("NumericOperator"));
     m_numericOperatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartValue"))
-  {
+  if (jsonValue.ValueExists("StartValue")) {
     m_startValue = jsonValue.GetDouble("StartValue");
     m_startValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndValue"))
-  {
+  if (jsonValue.ValueExists("EndValue")) {
     m_endValue = jsonValue.GetDouble("EndValue");
     m_endValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TotalImpactFilter::Jsonize() const
-{
+JsonValue TotalImpactFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_numericOperatorHasBeenSet)
-  {
-   payload.WithString("NumericOperator", NumericOperatorMapper::GetNameForNumericOperator(m_numericOperator));
+  if (m_numericOperatorHasBeenSet) {
+    payload.WithString("NumericOperator", NumericOperatorMapper::GetNameForNumericOperator(m_numericOperator));
   }
 
-  if(m_startValueHasBeenSet)
-  {
-   payload.WithDouble("StartValue", m_startValue);
-
+  if (m_startValueHasBeenSet) {
+    payload.WithDouble("StartValue", m_startValue);
   }
 
-  if(m_endValueHasBeenSet)
-  {
-   payload.WithDouble("EndValue", m_endValue);
-
+  if (m_endValueHasBeenSet) {
+    payload.WithDouble("EndValue", m_endValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

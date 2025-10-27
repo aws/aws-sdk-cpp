@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognizerEvaluationMetrics::EntityRecognizerEvaluationMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognizerEvaluationMetrics::EntityRecognizerEvaluationMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognizerEvaluationMetrics& EntityRecognizerEvaluationMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Precision"))
-  {
+EntityRecognizerEvaluationMetrics& EntityRecognizerEvaluationMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Precision")) {
     m_precision = jsonValue.GetDouble("Precision");
     m_precisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Recall"))
-  {
+  if (jsonValue.ValueExists("Recall")) {
     m_recall = jsonValue.GetDouble("Recall");
     m_recallHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("F1Score"))
-  {
+  if (jsonValue.ValueExists("F1Score")) {
     m_f1Score = jsonValue.GetDouble("F1Score");
     m_f1ScoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityRecognizerEvaluationMetrics::Jsonize() const
-{
+JsonValue EntityRecognizerEvaluationMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_precisionHasBeenSet)
-  {
-   payload.WithDouble("Precision", m_precision);
-
+  if (m_precisionHasBeenSet) {
+    payload.WithDouble("Precision", m_precision);
   }
 
-  if(m_recallHasBeenSet)
-  {
-   payload.WithDouble("Recall", m_recall);
-
+  if (m_recallHasBeenSet) {
+    payload.WithDouble("Recall", m_recall);
   }
 
-  if(m_f1ScoreHasBeenSet)
-  {
-   payload.WithDouble("F1Score", m_f1Score);
-
+  if (m_f1ScoreHasBeenSet) {
+    payload.WithDouble("F1Score", m_f1Score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

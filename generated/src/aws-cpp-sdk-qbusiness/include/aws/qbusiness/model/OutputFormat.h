@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class OutputFormat
-  {
-    NOT_SET,
-    RAW,
-    EXTRACTED
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class OutputFormat { NOT_SET, RAW, EXTRACTED };
 
-namespace OutputFormatMapper
-{
+namespace OutputFormatMapper {
 AWS_QBUSINESS_API OutputFormat GetOutputFormatForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForOutputFormat(OutputFormat value);
-} // namespace OutputFormatMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace OutputFormatMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/ListTagsForResourceRequest.h>
 
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-Aws::String ListTagsForResourceRequest::SerializePayload() const
-{
+Aws::String ListTagsForResourceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListTagsForResource&";
-  if(m_resourceNameHasBeenSet)
-  {
+  if (m_resourceNameHasBeenSet) {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.Filter.", filtersCount, "");
         filtersCount++;
       }
@@ -40,8 +33,4 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListTagsForResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListTagsForResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

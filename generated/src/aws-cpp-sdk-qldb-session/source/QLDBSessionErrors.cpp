@@ -6,32 +6,29 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/qldb-session/QLDBSessionErrors.h>
-#include <aws/qldb-session/model/InvalidSessionException.h>
 #include <aws/qldb-session/model/BadRequestException.h>
+#include <aws/qldb-session/model/InvalidSessionException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::QLDBSession;
 using namespace Aws::QLDBSession::Model;
 
-namespace Aws
-{
-namespace QLDBSession
-{
-template<> AWS_QLDBSESSION_API InvalidSessionException QLDBSessionError::GetModeledError()
-{
+namespace Aws {
+namespace QLDBSession {
+template <>
+AWS_QLDBSESSION_API InvalidSessionException QLDBSessionError::GetModeledError() {
   assert(this->GetErrorType() == QLDBSessionErrors::INVALID_SESSION);
   return InvalidSessionException(this->GetJsonPayload().View());
 }
 
-template<> AWS_QLDBSESSION_API BadRequestException QLDBSessionError::GetModeledError()
-{
+template <>
+AWS_QLDBSESSION_API BadRequestException QLDBSessionError::GetModeledError() {
   assert(this->GetErrorType() == QLDBSessionErrors::BAD_REQUEST);
   return BadRequestException(this->GetJsonPayload().View());
 }
 
-namespace QLDBSessionErrorMapper
-{
+namespace QLDBSessionErrorMapper {
 
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_SESSION_HASH = HashingUtils::HashString("InvalidSessionException");
@@ -40,38 +37,25 @@ static const int CAPACITY_EXCEEDED_HASH = HashingUtils::HashString("CapacityExce
 static const int OCC_CONFLICT_HASH = HashingUtils::HashString("OccConflictException");
 static const int RATE_EXCEEDED_HASH = HashingUtils::HashString("RateExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_SESSION_HASH)
-  {
+  } else if (hashCode == INVALID_SESSION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::INVALID_SESSION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CAPACITY_EXCEEDED_HASH)
-  {
+  } else if (hashCode == CAPACITY_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::CAPACITY_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OCC_CONFLICT_HASH)
-  {
+  } else if (hashCode == OCC_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::OCC_CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RATE_EXCEEDED_HASH)
-  {
+  } else if (hashCode == RATE_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::RATE_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace QLDBSessionErrorMapper
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace QLDBSessionErrorMapper
+}  // namespace QLDBSession
+}  // namespace Aws

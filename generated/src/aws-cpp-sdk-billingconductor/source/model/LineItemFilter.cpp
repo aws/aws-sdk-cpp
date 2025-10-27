@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-LineItemFilter::LineItemFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LineItemFilter::LineItemFilter(JsonView jsonValue) { *this = jsonValue; }
 
-LineItemFilter& LineItemFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attribute"))
-  {
+LineItemFilter& LineItemFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attribute")) {
     m_attribute = LineItemFilterAttributeNameMapper::GetLineItemFilterAttributeNameForName(jsonValue.GetString("Attribute"));
     m_attributeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchOption"))
-  {
+  if (jsonValue.ValueExists("MatchOption")) {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("MatchOption"));
     m_matchOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(LineItemFilterValueMapper::GetLineItemFilterValueForName(valuesJsonList[valuesIndex].AsString()));
     }
     m_valuesHasBeenSet = true;
@@ -47,34 +36,28 @@ LineItemFilter& LineItemFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue LineItemFilter::Jsonize() const
-{
+JsonValue LineItemFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", LineItemFilterAttributeNameMapper::GetNameForLineItemFilterAttributeName(m_attribute));
+  if (m_attributeHasBeenSet) {
+    payload.WithString("Attribute", LineItemFilterAttributeNameMapper::GetNameForLineItemFilterAttributeName(m_attribute));
   }
 
-  if(m_matchOptionHasBeenSet)
-  {
-   payload.WithString("MatchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
+  if (m_matchOptionHasBeenSet) {
+    payload.WithString("MatchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(LineItemFilterValueMapper::GetNameForLineItemFilterValue(m_values[valuesIndex]));
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(LineItemFilterValueMapper::GetNameForLineItemFilterValue(m_values[valuesIndex]));
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

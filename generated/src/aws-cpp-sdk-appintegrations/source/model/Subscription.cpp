@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-Subscription::Subscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Subscription::Subscription(JsonView jsonValue) { *this = jsonValue; }
 
-Subscription& Subscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Event"))
-  {
+Subscription& Subscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Event")) {
     m_event = jsonValue.GetString("Event");
     m_eventHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Subscription::Jsonize() const
-{
+JsonValue Subscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithString("Event", m_event);
-
+  if (m_eventHasBeenSet) {
+    payload.WithString("Event", m_event);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

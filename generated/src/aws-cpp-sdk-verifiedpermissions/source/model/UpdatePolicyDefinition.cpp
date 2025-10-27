@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/UpdatePolicyDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-UpdatePolicyDefinition::UpdatePolicyDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdatePolicyDefinition::UpdatePolicyDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-UpdatePolicyDefinition& UpdatePolicyDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("static"))
-  {
+UpdatePolicyDefinition& UpdatePolicyDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("static")) {
     m_static = jsonValue.GetObject("static");
     m_staticHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdatePolicyDefinition::Jsonize() const
-{
+JsonValue UpdatePolicyDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_staticHasBeenSet)
-  {
-   payload.WithObject("static", m_static.Jsonize());
-
+  if (m_staticHasBeenSet) {
+    payload.WithObject("static", m_static.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

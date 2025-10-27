@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/Greengrass_EXPORTS.h>
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
-  enum class SoftwareToUpdate
-  {
-    NOT_SET,
-    core,
-    ota_agent
-  };
+namespace Aws {
+namespace Greengrass {
+namespace Model {
+enum class SoftwareToUpdate { NOT_SET, core, ota_agent };
 
-namespace SoftwareToUpdateMapper
-{
+namespace SoftwareToUpdateMapper {
 AWS_GREENGRASS_API SoftwareToUpdate GetSoftwareToUpdateForName(const Aws::String& name);
 
 AWS_GREENGRASS_API Aws::String GetNameForSoftwareToUpdate(SoftwareToUpdate value);
-} // namespace SoftwareToUpdateMapper
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace SoftwareToUpdateMapper
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/StopDBInstanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/StopDBInstanceRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String StopDBInstanceRequest::SerializePayload() const
-{
+Aws::String StopDBInstanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StopDBInstance&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_dBSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBSnapshotIdentifierHasBeenSet) {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String StopDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StopDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StopDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

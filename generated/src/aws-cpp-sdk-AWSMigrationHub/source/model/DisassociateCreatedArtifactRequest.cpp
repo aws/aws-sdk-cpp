@@ -12,45 +12,30 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateCreatedArtifactRequest::SerializePayload() const
-{
+Aws::String DisassociateCreatedArtifactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
-
+  if (m_progressUpdateStreamHasBeenSet) {
+    payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
   }
 
-  if(m_migrationTaskNameHasBeenSet)
-  {
-   payload.WithString("MigrationTaskName", m_migrationTaskName);
-
+  if (m_migrationTaskNameHasBeenSet) {
+    payload.WithString("MigrationTaskName", m_migrationTaskName);
   }
 
-  if(m_createdArtifactNameHasBeenSet)
-  {
-   payload.WithString("CreatedArtifactName", m_createdArtifactName);
-
+  if (m_createdArtifactNameHasBeenSet) {
+    payload.WithString("CreatedArtifactName", m_createdArtifactName);
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("DryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DisassociateCreatedArtifactRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DisassociateCreatedArtifactRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMigrationHub.DisassociateCreatedArtifact"));
   return headers;
-
 }
-
-
-
-

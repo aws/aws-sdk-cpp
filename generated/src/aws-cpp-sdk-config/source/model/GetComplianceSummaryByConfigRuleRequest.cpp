@@ -12,19 +12,10 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetComplianceSummaryByConfigRuleRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String GetComplianceSummaryByConfigRuleRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection GetComplianceSummaryByConfigRuleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetComplianceSummaryByConfigRuleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.GetComplianceSummaryByConfigRule"));
   return headers;
-
 }
-
-
-
-

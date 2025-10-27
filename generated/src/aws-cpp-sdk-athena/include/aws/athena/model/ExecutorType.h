@@ -7,26 +7,16 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
-  enum class ExecutorType
-  {
-    NOT_SET,
-    COORDINATOR,
-    GATEWAY,
-    WORKER
-  };
+namespace Aws {
+namespace Athena {
+namespace Model {
+enum class ExecutorType { NOT_SET, COORDINATOR, GATEWAY, WORKER };
 
-namespace ExecutorTypeMapper
-{
+namespace ExecutorTypeMapper {
 AWS_ATHENA_API ExecutorType GetExecutorTypeForName(const Aws::String& name);
 
 AWS_ATHENA_API Aws::String GetNameForExecutorType(ExecutorType value);
-} // namespace ExecutorTypeMapper
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace ExecutorTypeMapper
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

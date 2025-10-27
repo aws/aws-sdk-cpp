@@ -4,69 +4,55 @@
  */
 
 #include <aws/appsync/model/ResolverKind.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AppSync {
+namespace Model {
+namespace ResolverKindMapper {
 
-namespace Aws
-{
-  namespace AppSync
-  {
-    namespace Model
-    {
-      namespace ResolverKindMapper
-      {
+static const int UNIT_HASH = HashingUtils::HashString("UNIT");
+static const int PIPELINE_HASH = HashingUtils::HashString("PIPELINE");
 
-        static const int UNIT_HASH = HashingUtils::HashString("UNIT");
-        static const int PIPELINE_HASH = HashingUtils::HashString("PIPELINE");
+ResolverKind GetResolverKindForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == UNIT_HASH) {
+    return ResolverKind::UNIT;
+  } else if (hashCode == PIPELINE_HASH) {
+    return ResolverKind::PIPELINE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResolverKind>(hashCode);
+  }
 
+  return ResolverKind::NOT_SET;
+}
 
-        ResolverKind GetResolverKindForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == UNIT_HASH)
-          {
-            return ResolverKind::UNIT;
-          }
-          else if (hashCode == PIPELINE_HASH)
-          {
-            return ResolverKind::PIPELINE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResolverKind>(hashCode);
-          }
+Aws::String GetNameForResolverKind(ResolverKind enumValue) {
+  switch (enumValue) {
+    case ResolverKind::NOT_SET:
+      return {};
+    case ResolverKind::UNIT:
+      return "UNIT";
+    case ResolverKind::PIPELINE:
+      return "PIPELINE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ResolverKind::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForResolverKind(ResolverKind enumValue)
-        {
-          switch(enumValue)
-          {
-          case ResolverKind::NOT_SET:
-            return {};
-          case ResolverKind::UNIT:
-            return "UNIT";
-          case ResolverKind::PIPELINE:
-            return "PIPELINE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ResolverKindMapper
-    } // namespace Model
-  } // namespace AppSync
-} // namespace Aws
+}  // namespace ResolverKindMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

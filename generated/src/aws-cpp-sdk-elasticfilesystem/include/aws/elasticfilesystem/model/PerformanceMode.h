@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
-  enum class PerformanceMode
-  {
-    NOT_SET,
-    generalPurpose,
-    maxIO
-  };
+namespace Aws {
+namespace EFS {
+namespace Model {
+enum class PerformanceMode { NOT_SET, generalPurpose, maxIO };
 
-namespace PerformanceModeMapper
-{
+namespace PerformanceModeMapper {
 AWS_EFS_API PerformanceMode GetPerformanceModeForName(const Aws::String& name);
 
 AWS_EFS_API Aws::String GetNameForPerformanceMode(PerformanceMode value);
-} // namespace PerformanceModeMapper
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace PerformanceModeMapper
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormInputBindingPropertiesValue::FormInputBindingPropertiesValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormInputBindingPropertiesValue::FormInputBindingPropertiesValue(JsonView jsonValue) { *this = jsonValue; }
 
-FormInputBindingPropertiesValue& FormInputBindingPropertiesValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FormInputBindingPropertiesValue& FormInputBindingPropertiesValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bindingProperties"))
-  {
+  if (jsonValue.ValueExists("bindingProperties")) {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
     m_bindingPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormInputBindingPropertiesValue::Jsonize() const
-{
+JsonValue FormInputBindingPropertiesValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_bindingPropertiesHasBeenSet)
-  {
-   payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
-
+  if (m_bindingPropertiesHasBeenSet) {
+    payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

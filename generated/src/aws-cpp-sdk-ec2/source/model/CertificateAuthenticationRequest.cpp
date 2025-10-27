@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CertificateAuthenticationRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CertificateAuthenticationRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-CertificateAuthenticationRequest::CertificateAuthenticationRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CertificateAuthenticationRequest::CertificateAuthenticationRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CertificateAuthenticationRequest& CertificateAuthenticationRequest::operator =(const XmlNode& xmlNode)
-{
+CertificateAuthenticationRequest& CertificateAuthenticationRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode clientRootCertificateChainArnNode = resultNode.FirstChild("ClientRootCertificateChainArn");
-    if(!clientRootCertificateChainArnNode.IsNull())
-    {
+    if (!clientRootCertificateChainArnNode.IsNull()) {
       m_clientRootCertificateChainArn = Aws::Utils::Xml::DecodeEscapedXmlText(clientRootCertificateChainArnNode.GetText());
       m_clientRootCertificateChainArnHasBeenSet = true;
     }
@@ -42,23 +33,20 @@ CertificateAuthenticationRequest& CertificateAuthenticationRequest::operator =(c
   return *this;
 }
 
-void CertificateAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_clientRootCertificateChainArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ClientRootCertificateChainArn=" << StringUtils::URLEncode(m_clientRootCertificateChainArn.c_str()) << "&";
-  }
-
-}
-
-void CertificateAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_clientRootCertificateChainArnHasBeenSet)
-  {
-      oStream << location << ".ClientRootCertificateChainArn=" << StringUtils::URLEncode(m_clientRootCertificateChainArn.c_str()) << "&";
+void CertificateAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_clientRootCertificateChainArnHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ClientRootCertificateChainArn=" << StringUtils::URLEncode(m_clientRootCertificateChainArn.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void CertificateAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_clientRootCertificateChainArnHasBeenSet) {
+    oStream << location << ".ClientRootCertificateChainArn=" << StringUtils::URLEncode(m_clientRootCertificateChainArn.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

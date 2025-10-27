@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/proton/model/TemplateSyncConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/proton/model/TemplateSyncConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
+namespace Aws {
+namespace Proton {
+namespace Model {
 
-TemplateSyncConfig::TemplateSyncConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateSyncConfig::TemplateSyncConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateSyncConfig& TemplateSyncConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("branch"))
-  {
+TemplateSyncConfig& TemplateSyncConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("branch")) {
     m_branch = jsonValue.GetString("branch");
     m_branchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositoryProvider"))
-  {
+  if (jsonValue.ValueExists("repositoryProvider")) {
     m_repositoryProvider = RepositoryProviderMapper::GetRepositoryProviderForName(jsonValue.GetString("repositoryProvider"));
     m_repositoryProviderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subdirectory"))
-  {
+  if (jsonValue.ValueExists("subdirectory")) {
     m_subdirectory = jsonValue.GetString("subdirectory");
     m_subdirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateName"))
-  {
+  if (jsonValue.ValueExists("templateName")) {
     m_templateName = jsonValue.GetString("templateName");
     m_templateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateType"))
-  {
+  if (jsonValue.ValueExists("templateType")) {
     m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("templateType"));
     m_templateTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateSyncConfig::Jsonize() const
-{
+JsonValue TemplateSyncConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithString("branch", m_branch);
-
+  if (m_branchHasBeenSet) {
+    payload.WithString("branch", m_branch);
   }
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_repositoryProviderHasBeenSet)
-  {
-   payload.WithString("repositoryProvider", RepositoryProviderMapper::GetNameForRepositoryProvider(m_repositoryProvider));
+  if (m_repositoryProviderHasBeenSet) {
+    payload.WithString("repositoryProvider", RepositoryProviderMapper::GetNameForRepositoryProvider(m_repositoryProvider));
   }
 
-  if(m_subdirectoryHasBeenSet)
-  {
-   payload.WithString("subdirectory", m_subdirectory);
-
+  if (m_subdirectoryHasBeenSet) {
+    payload.WithString("subdirectory", m_subdirectory);
   }
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("templateName", m_templateName);
-
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("templateName", m_templateName);
   }
 
-  if(m_templateTypeHasBeenSet)
-  {
-   payload.WithString("templateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+  if (m_templateTypeHasBeenSet) {
+    payload.WithString("templateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

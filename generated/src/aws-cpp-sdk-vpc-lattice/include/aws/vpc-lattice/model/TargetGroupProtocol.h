@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
-  enum class TargetGroupProtocol
-  {
-    NOT_SET,
-    HTTP,
-    HTTPS,
-    TCP
-  };
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
+enum class TargetGroupProtocol { NOT_SET, HTTP, HTTPS, TCP };
 
-namespace TargetGroupProtocolMapper
-{
+namespace TargetGroupProtocolMapper {
 AWS_VPCLATTICE_API TargetGroupProtocol GetTargetGroupProtocolForName(const Aws::String& name);
 
 AWS_VPCLATTICE_API Aws::String GetNameForTargetGroupProtocol(TargetGroupProtocol value);
-} // namespace TargetGroupProtocolMapper
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace TargetGroupProtocolMapper
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

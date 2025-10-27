@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class MeasurementSystem
-  {
-    NOT_SET,
-    Metric,
-    Imperial
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class MeasurementSystem { NOT_SET, Metric, Imperial };
 
-namespace MeasurementSystemMapper
-{
+namespace MeasurementSystemMapper {
 AWS_GEOROUTES_API MeasurementSystem GetMeasurementSystemForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForMeasurementSystem(MeasurementSystem value);
-} // namespace MeasurementSystemMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace MeasurementSystemMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

@@ -3,98 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/IpamPoolAllocationResourceType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/IpamPoolAllocationResourceType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace IpamPoolAllocationResourceTypeMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace IpamPoolAllocationResourceTypeMapper
-      {
+static const int ipam_pool_HASH = HashingUtils::HashString("ipam-pool");
+static const int vpc_HASH = HashingUtils::HashString("vpc");
+static const int ec2_public_ipv4_pool_HASH = HashingUtils::HashString("ec2-public-ipv4-pool");
+static const int custom_HASH = HashingUtils::HashString("custom");
+static const int subnet_HASH = HashingUtils::HashString("subnet");
+static const int eip_HASH = HashingUtils::HashString("eip");
 
-        static const int ipam_pool_HASH = HashingUtils::HashString("ipam-pool");
-        static const int vpc_HASH = HashingUtils::HashString("vpc");
-        static const int ec2_public_ipv4_pool_HASH = HashingUtils::HashString("ec2-public-ipv4-pool");
-        static const int custom_HASH = HashingUtils::HashString("custom");
-        static const int subnet_HASH = HashingUtils::HashString("subnet");
-        static const int eip_HASH = HashingUtils::HashString("eip");
+IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ipam_pool_HASH) {
+    return IpamPoolAllocationResourceType::ipam_pool;
+  } else if (hashCode == vpc_HASH) {
+    return IpamPoolAllocationResourceType::vpc;
+  } else if (hashCode == ec2_public_ipv4_pool_HASH) {
+    return IpamPoolAllocationResourceType::ec2_public_ipv4_pool;
+  } else if (hashCode == custom_HASH) {
+    return IpamPoolAllocationResourceType::custom;
+  } else if (hashCode == subnet_HASH) {
+    return IpamPoolAllocationResourceType::subnet;
+  } else if (hashCode == eip_HASH) {
+    return IpamPoolAllocationResourceType::eip;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IpamPoolAllocationResourceType>(hashCode);
+  }
 
+  return IpamPoolAllocationResourceType::NOT_SET;
+}
 
-        IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ipam_pool_HASH)
-          {
-            return IpamPoolAllocationResourceType::ipam_pool;
-          }
-          else if (hashCode == vpc_HASH)
-          {
-            return IpamPoolAllocationResourceType::vpc;
-          }
-          else if (hashCode == ec2_public_ipv4_pool_HASH)
-          {
-            return IpamPoolAllocationResourceType::ec2_public_ipv4_pool;
-          }
-          else if (hashCode == custom_HASH)
-          {
-            return IpamPoolAllocationResourceType::custom;
-          }
-          else if (hashCode == subnet_HASH)
-          {
-            return IpamPoolAllocationResourceType::subnet;
-          }
-          else if (hashCode == eip_HASH)
-          {
-            return IpamPoolAllocationResourceType::eip;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<IpamPoolAllocationResourceType>(hashCode);
-          }
+Aws::String GetNameForIpamPoolAllocationResourceType(IpamPoolAllocationResourceType enumValue) {
+  switch (enumValue) {
+    case IpamPoolAllocationResourceType::NOT_SET:
+      return {};
+    case IpamPoolAllocationResourceType::ipam_pool:
+      return "ipam-pool";
+    case IpamPoolAllocationResourceType::vpc:
+      return "vpc";
+    case IpamPoolAllocationResourceType::ec2_public_ipv4_pool:
+      return "ec2-public-ipv4-pool";
+    case IpamPoolAllocationResourceType::custom:
+      return "custom";
+    case IpamPoolAllocationResourceType::subnet:
+      return "subnet";
+    case IpamPoolAllocationResourceType::eip:
+      return "eip";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return IpamPoolAllocationResourceType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForIpamPoolAllocationResourceType(IpamPoolAllocationResourceType enumValue)
-        {
-          switch(enumValue)
-          {
-          case IpamPoolAllocationResourceType::NOT_SET:
-            return {};
-          case IpamPoolAllocationResourceType::ipam_pool:
-            return "ipam-pool";
-          case IpamPoolAllocationResourceType::vpc:
-            return "vpc";
-          case IpamPoolAllocationResourceType::ec2_public_ipv4_pool:
-            return "ec2-public-ipv4-pool";
-          case IpamPoolAllocationResourceType::custom:
-            return "custom";
-          case IpamPoolAllocationResourceType::subnet:
-            return "subnet";
-          case IpamPoolAllocationResourceType::eip:
-            return "eip";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace IpamPoolAllocationResourceTypeMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace IpamPoolAllocationResourceTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

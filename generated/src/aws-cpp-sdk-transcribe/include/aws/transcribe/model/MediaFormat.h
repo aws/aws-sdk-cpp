@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class MediaFormat
-  {
-    NOT_SET,
-    mp3,
-    mp4,
-    wav,
-    flac,
-    ogg,
-    amr,
-    webm,
-    m4a
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class MediaFormat { NOT_SET, mp3, mp4, wav, flac, ogg, amr, webm, m4a };
 
-namespace MediaFormatMapper
-{
+namespace MediaFormatMapper {
 AWS_TRANSCRIBESERVICE_API MediaFormat GetMediaFormatForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForMediaFormat(MediaFormat value);
-} // namespace MediaFormatMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace MediaFormatMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

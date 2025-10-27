@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/osis/model/EncryptionAtRestOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/EncryptionAtRestOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OSIS
-{
-namespace Model
-{
+namespace Aws {
+namespace OSIS {
+namespace Model {
 
-EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionAtRestOptions& EncryptionAtRestOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyArn"))
-  {
+EncryptionAtRestOptions& EncryptionAtRestOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionAtRestOptions::Jsonize() const
-{
+JsonValue EncryptionAtRestOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("KmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OSIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

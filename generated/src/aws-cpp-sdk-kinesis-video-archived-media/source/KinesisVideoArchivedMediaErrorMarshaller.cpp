@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::KinesisVideoArchivedMedia;
 
-AWSError<CoreErrors> KinesisVideoArchivedMediaErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KinesisVideoArchivedMediaErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KinesisVideoArchivedMediaErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

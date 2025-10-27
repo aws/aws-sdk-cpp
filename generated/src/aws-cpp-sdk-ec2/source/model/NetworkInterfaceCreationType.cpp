@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/NetworkInterfaceCreationType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/NetworkInterfaceCreationType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace NetworkInterfaceCreationTypeMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace NetworkInterfaceCreationTypeMapper
-      {
+static const int efa_HASH = HashingUtils::HashString("efa");
+static const int efa_only_HASH = HashingUtils::HashString("efa-only");
+static const int branch_HASH = HashingUtils::HashString("branch");
+static const int trunk_HASH = HashingUtils::HashString("trunk");
 
-        static const int efa_HASH = HashingUtils::HashString("efa");
-        static const int efa_only_HASH = HashingUtils::HashString("efa-only");
-        static const int branch_HASH = HashingUtils::HashString("branch");
-        static const int trunk_HASH = HashingUtils::HashString("trunk");
+NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == efa_HASH) {
+    return NetworkInterfaceCreationType::efa;
+  } else if (hashCode == efa_only_HASH) {
+    return NetworkInterfaceCreationType::efa_only;
+  } else if (hashCode == branch_HASH) {
+    return NetworkInterfaceCreationType::branch;
+  } else if (hashCode == trunk_HASH) {
+    return NetworkInterfaceCreationType::trunk;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<NetworkInterfaceCreationType>(hashCode);
+  }
 
+  return NetworkInterfaceCreationType::NOT_SET;
+}
 
-        NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == efa_HASH)
-          {
-            return NetworkInterfaceCreationType::efa;
-          }
-          else if (hashCode == efa_only_HASH)
-          {
-            return NetworkInterfaceCreationType::efa_only;
-          }
-          else if (hashCode == branch_HASH)
-          {
-            return NetworkInterfaceCreationType::branch;
-          }
-          else if (hashCode == trunk_HASH)
-          {
-            return NetworkInterfaceCreationType::trunk;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NetworkInterfaceCreationType>(hashCode);
-          }
+Aws::String GetNameForNetworkInterfaceCreationType(NetworkInterfaceCreationType enumValue) {
+  switch (enumValue) {
+    case NetworkInterfaceCreationType::NOT_SET:
+      return {};
+    case NetworkInterfaceCreationType::efa:
+      return "efa";
+    case NetworkInterfaceCreationType::efa_only:
+      return "efa-only";
+    case NetworkInterfaceCreationType::branch:
+      return "branch";
+    case NetworkInterfaceCreationType::trunk:
+      return "trunk";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return NetworkInterfaceCreationType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForNetworkInterfaceCreationType(NetworkInterfaceCreationType enumValue)
-        {
-          switch(enumValue)
-          {
-          case NetworkInterfaceCreationType::NOT_SET:
-            return {};
-          case NetworkInterfaceCreationType::efa:
-            return "efa";
-          case NetworkInterfaceCreationType::efa_only:
-            return "efa-only";
-          case NetworkInterfaceCreationType::branch:
-            return "branch";
-          case NetworkInterfaceCreationType::trunk:
-            return "trunk";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace NetworkInterfaceCreationTypeMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace NetworkInterfaceCreationTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

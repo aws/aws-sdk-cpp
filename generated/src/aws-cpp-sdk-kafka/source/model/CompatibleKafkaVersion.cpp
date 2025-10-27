@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/CompatibleKafkaVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/CompatibleKafkaVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-CompatibleKafkaVersion::CompatibleKafkaVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompatibleKafkaVersion::CompatibleKafkaVersion(JsonView jsonValue) { *this = jsonValue; }
 
-CompatibleKafkaVersion& CompatibleKafkaVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceVersion"))
-  {
+CompatibleKafkaVersion& CompatibleKafkaVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceVersion")) {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
     m_sourceVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetVersions"))
-  {
+  if (jsonValue.ValueExists("targetVersions")) {
     Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("targetVersions");
-    for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
-    {
+    for (unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex) {
       m_targetVersions.push_back(targetVersionsJsonList[targetVersionsIndex].AsString());
     }
     m_targetVersionsHasBeenSet = true;
@@ -42,30 +32,24 @@ CompatibleKafkaVersion& CompatibleKafkaVersion::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CompatibleKafkaVersion::Jsonize() const
-{
+JsonValue CompatibleKafkaVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceVersionHasBeenSet)
-  {
-   payload.WithString("sourceVersion", m_sourceVersion);
-
+  if (m_sourceVersionHasBeenSet) {
+    payload.WithString("sourceVersion", m_sourceVersion);
   }
 
-  if(m_targetVersionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
-   for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
-   {
-     targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);
-   }
-   payload.WithArray("targetVersions", std::move(targetVersionsJsonList));
-
+  if (m_targetVersionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
+    for (unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex) {
+      targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);
+    }
+    payload.WithArray("targetVersions", std::move(targetVersionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

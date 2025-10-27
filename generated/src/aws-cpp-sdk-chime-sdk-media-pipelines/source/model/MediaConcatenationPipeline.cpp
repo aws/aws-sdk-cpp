@@ -11,122 +11,92 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaConcatenationPipeline::MediaConcatenationPipeline(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaConcatenationPipeline::MediaConcatenationPipeline(JsonView jsonValue) { *this = jsonValue; }
 
-MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MediaPipelineId"))
-  {
+MediaConcatenationPipeline& MediaConcatenationPipeline::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MediaPipelineId")) {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
     m_mediaPipelineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaPipelineArn"))
-  {
+  if (jsonValue.ValueExists("MediaPipelineArn")) {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
     m_mediaPipelineArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sources"))
-  {
+  if (jsonValue.ValueExists("Sources")) {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
+    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
     m_sourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sinks"))
-  {
+  if (jsonValue.ValueExists("Sinks")) {
     Aws::Utils::Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
-    for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
-    {
+    for (unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex) {
       m_sinks.push_back(sinksJsonList[sinksIndex].AsObject());
     }
     m_sinksHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaConcatenationPipeline::Jsonize() const
-{
+JsonValue MediaConcatenationPipeline::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaPipelineIdHasBeenSet)
-  {
-   payload.WithString("MediaPipelineId", m_mediaPipelineId);
-
+  if (m_mediaPipelineIdHasBeenSet) {
+    payload.WithString("MediaPipelineId", m_mediaPipelineId);
   }
 
-  if(m_mediaPipelineArnHasBeenSet)
-  {
-   payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
-
+  if (m_mediaPipelineArnHasBeenSet) {
+    payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
   }
 
-  if(m_sourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
-   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-   {
-     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
-   }
-   payload.WithArray("Sources", std::move(sourcesJsonList));
-
+  if (m_sourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
+      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+    }
+    payload.WithArray("Sources", std::move(sourcesJsonList));
   }
 
-  if(m_sinksHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
-   for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
-   {
-     sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());
-   }
-   payload.WithArray("Sinks", std::move(sinksJsonList));
-
+  if (m_sinksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
+    for (unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex) {
+      sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());
+    }
+    payload.WithArray("Sinks", std::move(sinksJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", MediaPipelineStatusMapper::GetNameForMediaPipelineStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", MediaPipelineStatusMapper::GetNameForMediaPipelineStatus(m_status));
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

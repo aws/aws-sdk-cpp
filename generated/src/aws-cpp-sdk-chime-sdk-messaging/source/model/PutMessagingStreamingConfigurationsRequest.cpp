@@ -12,24 +12,18 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutMessagingStreamingConfigurationsRequest::SerializePayload() const
-{
+Aws::String PutMessagingStreamingConfigurationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_streamingConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> streamingConfigurationsJsonList(m_streamingConfigurations.size());
-   for(unsigned streamingConfigurationsIndex = 0; streamingConfigurationsIndex < streamingConfigurationsJsonList.GetLength(); ++streamingConfigurationsIndex)
-   {
-     streamingConfigurationsJsonList[streamingConfigurationsIndex].AsObject(m_streamingConfigurations[streamingConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("StreamingConfigurations", std::move(streamingConfigurationsJsonList));
-
+  if (m_streamingConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> streamingConfigurationsJsonList(m_streamingConfigurations.size());
+    for (unsigned streamingConfigurationsIndex = 0; streamingConfigurationsIndex < streamingConfigurationsJsonList.GetLength();
+         ++streamingConfigurationsIndex) {
+      streamingConfigurationsJsonList[streamingConfigurationsIndex].AsObject(
+          m_streamingConfigurations[streamingConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("StreamingConfigurations", std::move(streamingConfigurationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

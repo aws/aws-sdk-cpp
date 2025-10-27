@@ -12,11 +12,4 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBackupSelectionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetBackupSelectionRequest::SerializePayload() const { return {}; }

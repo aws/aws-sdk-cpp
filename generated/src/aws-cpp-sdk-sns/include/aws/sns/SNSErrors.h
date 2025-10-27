@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
-namespace Aws
-{
-namespace SNS
-{
-enum class SNSErrors
-{
-  //From Core//
+namespace Aws {
+namespace SNS {
+enum class SNSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SNSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SNSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ERROR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BATCH_ENTRY_IDS_NOT_DISTINCT,
   BATCH_REQUEST_TOO_LONG,
   CONCURRENT_ACCESS,
@@ -79,9 +76,8 @@ enum class SNSErrors
   VERIFICATION
 };
 
-class AWS_SNS_API SNSError : public Aws::Client::AWSError<SNSErrors>
-{
-public:
+class AWS_SNS_API SNSError : public Aws::Client::AWSError<SNSErrors> {
+ public:
   SNSError() {}
   SNSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
   SNSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
@@ -92,10 +88,9 @@ public:
   T GetModeledError();
 };
 
-namespace SNSErrorMapper
-{
-  AWS_SNS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SNSErrorMapper {
+AWS_SNS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SNS
-} // namespace Aws
+}  // namespace SNS
+}  // namespace Aws

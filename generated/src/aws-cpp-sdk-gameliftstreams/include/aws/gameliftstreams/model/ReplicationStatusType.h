@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLiftStreams
-{
-namespace Model
-{
-  enum class ReplicationStatusType
-  {
-    NOT_SET,
-    REPLICATING,
-    COMPLETED
-  };
+namespace Aws {
+namespace GameLiftStreams {
+namespace Model {
+enum class ReplicationStatusType { NOT_SET, REPLICATING, COMPLETED };
 
-namespace ReplicationStatusTypeMapper
-{
+namespace ReplicationStatusTypeMapper {
 AWS_GAMELIFTSTREAMS_API ReplicationStatusType GetReplicationStatusTypeForName(const Aws::String& name);
 
 AWS_GAMELIFTSTREAMS_API Aws::String GetNameForReplicationStatusType(ReplicationStatusType value);
-} // namespace ReplicationStatusTypeMapper
-} // namespace Model
-} // namespace GameLiftStreams
-} // namespace Aws
+}  // namespace ReplicationStatusTypeMapper
+}  // namespace Model
+}  // namespace GameLiftStreams
+}  // namespace Aws

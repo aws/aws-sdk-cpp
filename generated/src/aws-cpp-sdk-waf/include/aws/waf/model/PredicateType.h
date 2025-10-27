@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
-  enum class PredicateType
-  {
-    NOT_SET,
-    IPMatch,
-    ByteMatch,
-    SqlInjectionMatch,
-    GeoMatch,
-    SizeConstraint,
-    XssMatch,
-    RegexMatch
-  };
+namespace Aws {
+namespace WAF {
+namespace Model {
+enum class PredicateType { NOT_SET, IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch };
 
-namespace PredicateTypeMapper
-{
+namespace PredicateTypeMapper {
 AWS_WAF_API PredicateType GetPredicateTypeForName(const Aws::String& name);
 
 AWS_WAF_API Aws::String GetNameForPredicateType(PredicateType value);
-} // namespace PredicateTypeMapper
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace PredicateTypeMapper
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

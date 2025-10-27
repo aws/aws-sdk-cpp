@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/MediaAnalysisOperationsConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/MediaAnalysisOperationsConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig(JsonView jsonValue) { *this = jsonValue; }
 
-MediaAnalysisOperationsConfig& MediaAnalysisOperationsConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DetectModerationLabels"))
-  {
+MediaAnalysisOperationsConfig& MediaAnalysisOperationsConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DetectModerationLabels")) {
     m_detectModerationLabels = jsonValue.GetObject("DetectModerationLabels");
     m_detectModerationLabelsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaAnalysisOperationsConfig::Jsonize() const
-{
+JsonValue MediaAnalysisOperationsConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_detectModerationLabelsHasBeenSet)
-  {
-   payload.WithObject("DetectModerationLabels", m_detectModerationLabels.Jsonize());
-
+  if (m_detectModerationLabelsHasBeenSet) {
+    payload.WithObject("DetectModerationLabels", m_detectModerationLabels.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

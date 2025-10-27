@@ -12,11 +12,4 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetWorkflowRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetWorkflowRequest::SerializePayload() const { return {}; }

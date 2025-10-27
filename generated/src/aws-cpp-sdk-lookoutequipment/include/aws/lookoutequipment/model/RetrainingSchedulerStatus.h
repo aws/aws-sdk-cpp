@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
-  enum class RetrainingSchedulerStatus
-  {
-    NOT_SET,
-    PENDING,
-    RUNNING,
-    STOPPING,
-    STOPPED
-  };
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
+enum class RetrainingSchedulerStatus { NOT_SET, PENDING, RUNNING, STOPPING, STOPPED };
 
-namespace RetrainingSchedulerStatusMapper
-{
+namespace RetrainingSchedulerStatusMapper {
 AWS_LOOKOUTEQUIPMENT_API RetrainingSchedulerStatus GetRetrainingSchedulerStatusForName(const Aws::String& name);
 
 AWS_LOOKOUTEQUIPMENT_API Aws::String GetNameForRetrainingSchedulerStatus(RetrainingSchedulerStatus value);
-} // namespace RetrainingSchedulerStatusMapper
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace RetrainingSchedulerStatusMapper
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

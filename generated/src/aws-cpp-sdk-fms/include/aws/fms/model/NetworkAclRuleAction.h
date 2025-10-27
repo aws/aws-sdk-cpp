@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class NetworkAclRuleAction
-  {
-    NOT_SET,
-    allow,
-    deny
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class NetworkAclRuleAction { NOT_SET, allow, deny };
 
-namespace NetworkAclRuleActionMapper
-{
+namespace NetworkAclRuleActionMapper {
 AWS_FMS_API NetworkAclRuleAction GetNetworkAclRuleActionForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForNetworkAclRuleAction(NetworkAclRuleAction value);
-} // namespace NetworkAclRuleActionMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace NetworkAclRuleActionMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

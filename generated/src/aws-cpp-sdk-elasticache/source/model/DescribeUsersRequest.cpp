@@ -3,51 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeUsersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeUsersRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeUsersRequest::SerializePayload() const
-{
+Aws::String DescribeUsersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeUsers&";
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_userIdHasBeenSet)
-  {
+  if (m_userIdHasBeenSet) {
     ss << "UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.member.", filtersCount, "");
         filtersCount++;
       }
     }
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -55,8 +45,4 @@ Aws::String DescribeUsersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeUsersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeUsersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

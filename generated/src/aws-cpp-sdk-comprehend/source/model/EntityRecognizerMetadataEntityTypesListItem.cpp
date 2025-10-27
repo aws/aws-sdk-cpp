@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognizerMetadataEntityTypesListItem& EntityRecognizerMetadataEntityTypesListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+EntityRecognizerMetadataEntityTypesListItem& EntityRecognizerMetadataEntityTypesListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationMetrics"))
-  {
+  if (jsonValue.ValueExists("EvaluationMetrics")) {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
     m_evaluationMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfTrainMentions"))
-  {
+  if (jsonValue.ValueExists("NumberOfTrainMentions")) {
     m_numberOfTrainMentions = jsonValue.GetInteger("NumberOfTrainMentions");
     m_numberOfTrainMentionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityRecognizerMetadataEntityTypesListItem::Jsonize() const
-{
+JsonValue EntityRecognizerMetadataEntityTypesListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_evaluationMetricsHasBeenSet)
-  {
-   payload.WithObject("EvaluationMetrics", m_evaluationMetrics.Jsonize());
-
+  if (m_evaluationMetricsHasBeenSet) {
+    payload.WithObject("EvaluationMetrics", m_evaluationMetrics.Jsonize());
   }
 
-  if(m_numberOfTrainMentionsHasBeenSet)
-  {
-   payload.WithInteger("NumberOfTrainMentions", m_numberOfTrainMentions);
-
+  if (m_numberOfTrainMentionsHasBeenSet) {
+    payload.WithInteger("NumberOfTrainMentions", m_numberOfTrainMentions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rbin/model/LockConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rbin/model/LockConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Model
-{
+namespace Aws {
+namespace RecycleBin {
+namespace Model {
 
-LockConfiguration::LockConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LockConfiguration::LockConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LockConfiguration& LockConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UnlockDelay"))
-  {
+LockConfiguration& LockConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UnlockDelay")) {
     m_unlockDelay = jsonValue.GetObject("UnlockDelay");
     m_unlockDelayHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LockConfiguration::Jsonize() const
-{
+JsonValue LockConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_unlockDelayHasBeenSet)
-  {
-   payload.WithObject("UnlockDelay", m_unlockDelay.Jsonize());
-
+  if (m_unlockDelayHasBeenSet) {
+    payload.WithObject("UnlockDelay", m_unlockDelay.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace Model
+}  // namespace RecycleBin
+}  // namespace Aws

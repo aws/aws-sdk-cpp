@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
+#include <aws/kinesis/Kinesis_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Model
-{
+namespace Aws {
+namespace Kinesis {
+namespace Model {
 
-  /**
-   */
-  class DescribeLimitsRequest : public KinesisRequest
-  {
-  public:
-    AWS_KINESIS_API DescribeLimitsRequest() = default;
+/**
+ */
+class DescribeLimitsRequest : public KinesisRequest {
+ public:
+  AWS_KINESIS_API DescribeLimitsRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeLimits"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeLimits"; }
 
-    AWS_KINESIS_API Aws::String SerializePayload() const override;
+  AWS_KINESIS_API Aws::String SerializePayload() const override;
 
-    AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kinesis
+}  // namespace Aws

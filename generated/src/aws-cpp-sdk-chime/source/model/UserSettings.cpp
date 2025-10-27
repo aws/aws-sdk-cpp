@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-UserSettings::UserSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserSettings::UserSettings(JsonView jsonValue) { *this = jsonValue; }
 
-UserSettings& UserSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Telephony"))
-  {
+UserSettings& UserSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Telephony")) {
     m_telephony = jsonValue.GetObject("Telephony");
     m_telephonyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserSettings::Jsonize() const
-{
+JsonValue UserSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_telephonyHasBeenSet)
-  {
-   payload.WithObject("Telephony", m_telephony.Jsonize());
-
+  if (m_telephonyHasBeenSet) {
+    payload.WithObject("Telephony", m_telephony.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

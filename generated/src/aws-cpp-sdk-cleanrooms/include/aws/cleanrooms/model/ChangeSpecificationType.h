@@ -7,24 +7,16 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class ChangeSpecificationType
-  {
-    NOT_SET,
-    MEMBER
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class ChangeSpecificationType { NOT_SET, MEMBER };
 
-namespace ChangeSpecificationTypeMapper
-{
+namespace ChangeSpecificationTypeMapper {
 AWS_CLEANROOMS_API ChangeSpecificationType GetChangeSpecificationTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForChangeSpecificationType(ChangeSpecificationType value);
-} // namespace ChangeSpecificationTypeMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace ChangeSpecificationTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -11,50 +11,36 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-AuthenticationConfig::AuthenticationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthenticationConfig::AuthenticationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AuthenticationConfig& AuthenticationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isBasicAuthSupported"))
-  {
+AuthenticationConfig& AuthenticationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isBasicAuthSupported")) {
     m_isBasicAuthSupported = jsonValue.GetBool("isBasicAuthSupported");
     m_isBasicAuthSupportedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isApiKeyAuthSupported"))
-  {
+  if (jsonValue.ValueExists("isApiKeyAuthSupported")) {
     m_isApiKeyAuthSupported = jsonValue.GetBool("isApiKeyAuthSupported");
     m_isApiKeyAuthSupportedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isOAuth2Supported"))
-  {
+  if (jsonValue.ValueExists("isOAuth2Supported")) {
     m_isOAuth2Supported = jsonValue.GetBool("isOAuth2Supported");
     m_isOAuth2SupportedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isCustomAuthSupported"))
-  {
+  if (jsonValue.ValueExists("isCustomAuthSupported")) {
     m_isCustomAuthSupported = jsonValue.GetBool("isCustomAuthSupported");
     m_isCustomAuthSupportedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuth2Defaults"))
-  {
+  if (jsonValue.ValueExists("oAuth2Defaults")) {
     m_oAuth2Defaults = jsonValue.GetObject("oAuth2Defaults");
     m_oAuth2DefaultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customAuthConfigs"))
-  {
+  if (jsonValue.ValueExists("customAuthConfigs")) {
     Aws::Utils::Array<JsonView> customAuthConfigsJsonList = jsonValue.GetArray("customAuthConfigs");
-    for(unsigned customAuthConfigsIndex = 0; customAuthConfigsIndex < customAuthConfigsJsonList.GetLength(); ++customAuthConfigsIndex)
-    {
+    for (unsigned customAuthConfigsIndex = 0; customAuthConfigsIndex < customAuthConfigsJsonList.GetLength(); ++customAuthConfigsIndex) {
       m_customAuthConfigs.push_back(customAuthConfigsJsonList[customAuthConfigsIndex].AsObject());
     }
     m_customAuthConfigsHasBeenSet = true;
@@ -62,54 +48,40 @@ AuthenticationConfig& AuthenticationConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AuthenticationConfig::Jsonize() const
-{
+JsonValue AuthenticationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_isBasicAuthSupportedHasBeenSet)
-  {
-   payload.WithBool("isBasicAuthSupported", m_isBasicAuthSupported);
-
+  if (m_isBasicAuthSupportedHasBeenSet) {
+    payload.WithBool("isBasicAuthSupported", m_isBasicAuthSupported);
   }
 
-  if(m_isApiKeyAuthSupportedHasBeenSet)
-  {
-   payload.WithBool("isApiKeyAuthSupported", m_isApiKeyAuthSupported);
-
+  if (m_isApiKeyAuthSupportedHasBeenSet) {
+    payload.WithBool("isApiKeyAuthSupported", m_isApiKeyAuthSupported);
   }
 
-  if(m_isOAuth2SupportedHasBeenSet)
-  {
-   payload.WithBool("isOAuth2Supported", m_isOAuth2Supported);
-
+  if (m_isOAuth2SupportedHasBeenSet) {
+    payload.WithBool("isOAuth2Supported", m_isOAuth2Supported);
   }
 
-  if(m_isCustomAuthSupportedHasBeenSet)
-  {
-   payload.WithBool("isCustomAuthSupported", m_isCustomAuthSupported);
-
+  if (m_isCustomAuthSupportedHasBeenSet) {
+    payload.WithBool("isCustomAuthSupported", m_isCustomAuthSupported);
   }
 
-  if(m_oAuth2DefaultsHasBeenSet)
-  {
-   payload.WithObject("oAuth2Defaults", m_oAuth2Defaults.Jsonize());
-
+  if (m_oAuth2DefaultsHasBeenSet) {
+    payload.WithObject("oAuth2Defaults", m_oAuth2Defaults.Jsonize());
   }
 
-  if(m_customAuthConfigsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customAuthConfigsJsonList(m_customAuthConfigs.size());
-   for(unsigned customAuthConfigsIndex = 0; customAuthConfigsIndex < customAuthConfigsJsonList.GetLength(); ++customAuthConfigsIndex)
-   {
-     customAuthConfigsJsonList[customAuthConfigsIndex].AsObject(m_customAuthConfigs[customAuthConfigsIndex].Jsonize());
-   }
-   payload.WithArray("customAuthConfigs", std::move(customAuthConfigsJsonList));
-
+  if (m_customAuthConfigsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customAuthConfigsJsonList(m_customAuthConfigs.size());
+    for (unsigned customAuthConfigsIndex = 0; customAuthConfigsIndex < customAuthConfigsJsonList.GetLength(); ++customAuthConfigsIndex) {
+      customAuthConfigsJsonList[customAuthConfigsIndex].AsObject(m_customAuthConfigs[customAuthConfigsIndex].Jsonize());
+    }
+    payload.WithArray("customAuthConfigs", std::move(customAuthConfigsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

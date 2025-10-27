@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-MembershipProtectedQueryResultConfiguration::MembershipProtectedQueryResultConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MembershipProtectedQueryResultConfiguration::MembershipProtectedQueryResultConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MembershipProtectedQueryResultConfiguration& MembershipProtectedQueryResultConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("outputConfiguration"))
-  {
+MembershipProtectedQueryResultConfiguration& MembershipProtectedQueryResultConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("outputConfiguration")) {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
     m_outputConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MembershipProtectedQueryResultConfiguration::Jsonize() const
-{
+JsonValue MembershipProtectedQueryResultConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputConfigurationHasBeenSet)
-  {
-   payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
-
+  if (m_outputConfigurationHasBeenSet) {
+    payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class FreeTrialStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class FreeTrialStatus { NOT_SET, ACTIVE, INACTIVE };
 
-namespace FreeTrialStatusMapper
-{
+namespace FreeTrialStatusMapper {
 AWS_INSPECTOR2_API FreeTrialStatus GetFreeTrialStatusForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForFreeTrialStatus(FreeTrialStatus value);
-} // namespace FreeTrialStatusMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace FreeTrialStatusMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

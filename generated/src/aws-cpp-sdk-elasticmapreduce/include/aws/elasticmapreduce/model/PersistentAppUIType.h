@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class PersistentAppUIType
-  {
-    NOT_SET,
-    SHS,
-    TEZ,
-    YTS
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class PersistentAppUIType { NOT_SET, SHS, TEZ, YTS };
 
-namespace PersistentAppUITypeMapper
-{
+namespace PersistentAppUITypeMapper {
 AWS_EMR_API PersistentAppUIType GetPersistentAppUITypeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForPersistentAppUIType(PersistentAppUIType value);
-} // namespace PersistentAppUITypeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace PersistentAppUITypeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

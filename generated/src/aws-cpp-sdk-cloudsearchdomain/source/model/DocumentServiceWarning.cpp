@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-DocumentServiceWarning::DocumentServiceWarning(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentServiceWarning::DocumentServiceWarning(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentServiceWarning& DocumentServiceWarning::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+DocumentServiceWarning& DocumentServiceWarning::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentServiceWarning::Jsonize() const
-{
+JsonValue DocumentServiceWarning::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

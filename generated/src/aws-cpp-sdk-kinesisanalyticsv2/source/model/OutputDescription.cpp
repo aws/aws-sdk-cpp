@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/OutputDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/OutputDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-OutputDescription::OutputDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputDescription::OutputDescription(JsonView jsonValue) { *this = jsonValue; }
 
-OutputDescription& OutputDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OutputId"))
-  {
+OutputDescription& OutputDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OutputId")) {
     m_outputId = jsonValue.GetString("OutputId");
     m_outputIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KinesisStreamsOutputDescription"))
-  {
+  if (jsonValue.ValueExists("KinesisStreamsOutputDescription")) {
     m_kinesisStreamsOutputDescription = jsonValue.GetObject("KinesisStreamsOutputDescription");
     m_kinesisStreamsOutputDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KinesisFirehoseOutputDescription"))
-  {
+  if (jsonValue.ValueExists("KinesisFirehoseOutputDescription")) {
     m_kinesisFirehoseOutputDescription = jsonValue.GetObject("KinesisFirehoseOutputDescription");
     m_kinesisFirehoseOutputDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LambdaOutputDescription"))
-  {
+  if (jsonValue.ValueExists("LambdaOutputDescription")) {
     m_lambdaOutputDescription = jsonValue.GetObject("LambdaOutputDescription");
     m_lambdaOutputDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationSchema"))
-  {
+  if (jsonValue.ValueExists("DestinationSchema")) {
     m_destinationSchema = jsonValue.GetObject("DestinationSchema");
     m_destinationSchemaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputDescription::Jsonize() const
-{
+JsonValue OutputDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputIdHasBeenSet)
-  {
-   payload.WithString("OutputId", m_outputId);
-
+  if (m_outputIdHasBeenSet) {
+    payload.WithString("OutputId", m_outputId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_kinesisStreamsOutputDescriptionHasBeenSet)
-  {
-   payload.WithObject("KinesisStreamsOutputDescription", m_kinesisStreamsOutputDescription.Jsonize());
-
+  if (m_kinesisStreamsOutputDescriptionHasBeenSet) {
+    payload.WithObject("KinesisStreamsOutputDescription", m_kinesisStreamsOutputDescription.Jsonize());
   }
 
-  if(m_kinesisFirehoseOutputDescriptionHasBeenSet)
-  {
-   payload.WithObject("KinesisFirehoseOutputDescription", m_kinesisFirehoseOutputDescription.Jsonize());
-
+  if (m_kinesisFirehoseOutputDescriptionHasBeenSet) {
+    payload.WithObject("KinesisFirehoseOutputDescription", m_kinesisFirehoseOutputDescription.Jsonize());
   }
 
-  if(m_lambdaOutputDescriptionHasBeenSet)
-  {
-   payload.WithObject("LambdaOutputDescription", m_lambdaOutputDescription.Jsonize());
-
+  if (m_lambdaOutputDescriptionHasBeenSet) {
+    payload.WithObject("LambdaOutputDescription", m_lambdaOutputDescription.Jsonize());
   }
 
-  if(m_destinationSchemaHasBeenSet)
-  {
-   payload.WithObject("DestinationSchema", m_destinationSchema.Jsonize());
-
+  if (m_destinationSchemaHasBeenSet) {
+    payload.WithObject("DestinationSchema", m_destinationSchema.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

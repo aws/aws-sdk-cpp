@@ -4,76 +4,60 @@
  */
 
 #include <aws/cleanrooms/model/MemberAbility.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+namespace MemberAbilityMapper {
 
-namespace Aws
-{
-  namespace CleanRooms
-  {
-    namespace Model
-    {
-      namespace MemberAbilityMapper
-      {
+static const int CAN_QUERY_HASH = HashingUtils::HashString("CAN_QUERY");
+static const int CAN_RECEIVE_RESULTS_HASH = HashingUtils::HashString("CAN_RECEIVE_RESULTS");
+static const int CAN_RUN_JOB_HASH = HashingUtils::HashString("CAN_RUN_JOB");
 
-        static const int CAN_QUERY_HASH = HashingUtils::HashString("CAN_QUERY");
-        static const int CAN_RECEIVE_RESULTS_HASH = HashingUtils::HashString("CAN_RECEIVE_RESULTS");
-        static const int CAN_RUN_JOB_HASH = HashingUtils::HashString("CAN_RUN_JOB");
+MemberAbility GetMemberAbilityForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CAN_QUERY_HASH) {
+    return MemberAbility::CAN_QUERY;
+  } else if (hashCode == CAN_RECEIVE_RESULTS_HASH) {
+    return MemberAbility::CAN_RECEIVE_RESULTS;
+  } else if (hashCode == CAN_RUN_JOB_HASH) {
+    return MemberAbility::CAN_RUN_JOB;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<MemberAbility>(hashCode);
+  }
 
+  return MemberAbility::NOT_SET;
+}
 
-        MemberAbility GetMemberAbilityForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CAN_QUERY_HASH)
-          {
-            return MemberAbility::CAN_QUERY;
-          }
-          else if (hashCode == CAN_RECEIVE_RESULTS_HASH)
-          {
-            return MemberAbility::CAN_RECEIVE_RESULTS;
-          }
-          else if (hashCode == CAN_RUN_JOB_HASH)
-          {
-            return MemberAbility::CAN_RUN_JOB;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MemberAbility>(hashCode);
-          }
+Aws::String GetNameForMemberAbility(MemberAbility enumValue) {
+  switch (enumValue) {
+    case MemberAbility::NOT_SET:
+      return {};
+    case MemberAbility::CAN_QUERY:
+      return "CAN_QUERY";
+    case MemberAbility::CAN_RECEIVE_RESULTS:
+      return "CAN_RECEIVE_RESULTS";
+    case MemberAbility::CAN_RUN_JOB:
+      return "CAN_RUN_JOB";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return MemberAbility::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForMemberAbility(MemberAbility enumValue)
-        {
-          switch(enumValue)
-          {
-          case MemberAbility::NOT_SET:
-            return {};
-          case MemberAbility::CAN_QUERY:
-            return "CAN_QUERY";
-          case MemberAbility::CAN_RECEIVE_RESULTS:
-            return "CAN_RECEIVE_RESULTS";
-          case MemberAbility::CAN_RUN_JOB:
-            return "CAN_RUN_JOB";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace MemberAbilityMapper
-    } // namespace Model
-  } // namespace CleanRooms
-} // namespace Aws
+}  // namespace MemberAbilityMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/MetadataTableConfigurationResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/MetadataTableConfigurationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-MetadataTableConfigurationResult::MetadataTableConfigurationResult(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MetadataTableConfigurationResult::MetadataTableConfigurationResult(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetadataTableConfigurationResult& MetadataTableConfigurationResult::operator =(const XmlNode& xmlNode)
-{
+MetadataTableConfigurationResult& MetadataTableConfigurationResult::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode s3TablesDestinationResultNode = resultNode.FirstChild("S3TablesDestinationResult");
-    if(!s3TablesDestinationResultNode.IsNull())
-    {
+    if (!s3TablesDestinationResultNode.IsNull()) {
       m_s3TablesDestinationResult = s3TablesDestinationResultNode;
       m_s3TablesDestinationResultHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ MetadataTableConfigurationResult& MetadataTableConfigurationResult::operator =(c
   return *this;
 }
 
-void MetadataTableConfigurationResult::AddToNode(XmlNode& parentNode) const
-{
+void MetadataTableConfigurationResult::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_s3TablesDestinationResultHasBeenSet)
-  {
-   XmlNode s3TablesDestinationResultNode = parentNode.CreateChildElement("S3TablesDestinationResult");
-   m_s3TablesDestinationResult.AddToNode(s3TablesDestinationResultNode);
+  if (m_s3TablesDestinationResultHasBeenSet) {
+    XmlNode s3TablesDestinationResultNode = parentNode.CreateChildElement("S3TablesDestinationResult");
+    m_s3TablesDestinationResult.AddToNode(s3TablesDestinationResultNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

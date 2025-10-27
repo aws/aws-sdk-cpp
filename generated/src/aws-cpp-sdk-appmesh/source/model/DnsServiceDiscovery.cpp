@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) { *this = jsonValue; }
 
-DnsServiceDiscovery& DnsServiceDiscovery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hostname"))
-  {
+DnsServiceDiscovery& DnsServiceDiscovery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hostname")) {
     m_hostname = jsonValue.GetString("hostname");
     m_hostnameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipPreference"))
-  {
+  if (jsonValue.ValueExists("ipPreference")) {
     m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
     m_ipPreferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseType"))
-  {
+  if (jsonValue.ValueExists("responseType")) {
     m_responseType = DnsResponseTypeMapper::GetDnsResponseTypeForName(jsonValue.GetString("responseType"));
     m_responseTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DnsServiceDiscovery::Jsonize() const
-{
+JsonValue DnsServiceDiscovery::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostnameHasBeenSet)
-  {
-   payload.WithString("hostname", m_hostname);
-
+  if (m_hostnameHasBeenSet) {
+    payload.WithString("hostname", m_hostname);
   }
 
-  if(m_ipPreferenceHasBeenSet)
-  {
-   payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
+  if (m_ipPreferenceHasBeenSet) {
+    payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
   }
 
-  if(m_responseTypeHasBeenSet)
-  {
-   payload.WithString("responseType", DnsResponseTypeMapper::GetNameForDnsResponseType(m_responseType));
+  if (m_responseTypeHasBeenSet) {
+    payload.WithString("responseType", DnsResponseTypeMapper::GetNameForDnsResponseType(m_responseType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/ListSubscriptionsByTopicRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/ListSubscriptionsByTopicRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String ListSubscriptionsByTopicRequest::SerializePayload() const
-{
+Aws::String ListSubscriptionsByTopicRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListSubscriptionsByTopic&";
-  if(m_topicArnHasBeenSet)
-  {
+  if (m_topicArnHasBeenSet) {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListSubscriptionsByTopicRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListSubscriptionsByTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListSubscriptionsByTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

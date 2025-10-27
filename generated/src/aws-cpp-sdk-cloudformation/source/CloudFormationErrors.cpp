@@ -3,20 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/cloudformation/CloudFormationErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/cloudformation/CloudFormationErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CloudFormation;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace CloudFormationErrorMapper
-{
+namespace Aws {
+namespace CloudFormation {
+namespace CloudFormationErrorMapper {
 
 static const int STACK_SET_NOT_FOUND_HASH = HashingUtils::HashString("StackSetNotFoundException");
 static const int STACK_REFACTOR_NOT_FOUND_HASH = HashingUtils::HashString("StackRefactorNotFoundException");
@@ -48,130 +45,72 @@ static const int CREATED_BUT_MODIFIED_HASH = HashingUtils::HashString("CreatedBu
 static const int RESOURCE_SCAN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceScanLimitExceeded");
 static const int NAME_ALREADY_EXISTS_HASH = HashingUtils::HashString("NameAlreadyExistsException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == STACK_SET_NOT_FOUND_HASH)
-  {
+  if (hashCode == STACK_SET_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_SET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STACK_REFACTOR_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == STACK_REFACTOR_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_REFACTOR_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == C_F_N_REGISTRY_HASH)
-  {
+  } else if (hashCode == C_F_N_REGISTRY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::C_F_N_REGISTRY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == HOOK_RESULT_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == HOOK_RESULT_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::HOOK_RESULT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == OPERATION_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::OPERATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_SCAN_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == RESOURCE_SCAN_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::RESOURCE_SCAN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
-  {
+  } else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INSUFFICIENT_CAPABILITIES), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_SCAN_IN_PROGRESS_HASH)
-  {
+  } else if (hashCode == RESOURCE_SCAN_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::RESOURCE_SCAN_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_RESOURCES_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::CONCURRENT_RESOURCES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OPERATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_RESOURCES_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::CONCURRENT_RESOURCES_LIMIT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOKEN_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == TOKEN_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::TOKEN_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STACK_SET_NOT_EMPTY_HASH)
-  {
+  } else if (hashCode == STACK_SET_NOT_EMPTY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_SET_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_STATE_TRANSITION_HASH)
-  {
+  } else if (hashCode == INVALID_STATE_TRANSITION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_STATE_TRANSITION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STACK_INSTANCE_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == STACK_INSTANCE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_INSTANCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TYPE_CONFIGURATION_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == TYPE_CONFIGURATION_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::TYPE_CONFIGURATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_STATUS_CHECK_FAILED_HASH)
-  {
+  } else if (hashCode == OPERATION_STATUS_CHECK_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::OPERATION_STATUS_CHECK_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
-  {
+  } else if (hashCode == OPERATION_IN_PROGRESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::OPERATION_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CHANGE_SET_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == CHANGE_SET_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::CHANGE_SET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_ID_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == OPERATION_ID_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::OPERATION_ID_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STALE_REQUEST_HASH)
-  {
+  } else if (hashCode == STALE_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STALE_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == GENERATED_TEMPLATE_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == GENERATED_TEMPLATE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::GENERATED_TEMPLATE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TYPE_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == TYPE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::TYPE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_CHANGE_SET_STATUS_HASH)
-  {
+  } else if (hashCode == INVALID_CHANGE_SET_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_CHANGE_SET_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STACK_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == STACK_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CREATED_BUT_MODIFIED_HASH)
-  {
+  } else if (hashCode == CREATED_BUT_MODIFIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::CREATED_BUT_MODIFIED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_SCAN_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == RESOURCE_SCAN_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::RESOURCE_SCAN_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NAME_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == NAME_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::NAME_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CloudFormationErrorMapper
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace CloudFormationErrorMapper
+}  // namespace CloudFormation
+}  // namespace Aws

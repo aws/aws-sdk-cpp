@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/savingsplans/model/SavingsPlanFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/savingsplans/model/SavingsPlanFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SavingsPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace SavingsPlans {
+namespace Model {
 
-SavingsPlanFilter::SavingsPlanFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlanFilter::SavingsPlanFilter(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlanFilter& SavingsPlanFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SavingsPlanFilter& SavingsPlanFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = SavingsPlansFilterNameMapper::GetSavingsPlansFilterNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ SavingsPlanFilter& SavingsPlanFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SavingsPlanFilter::Jsonize() const
-{
+JsonValue SavingsPlanFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", SavingsPlansFilterNameMapper::GetNameForSavingsPlansFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", SavingsPlansFilterNameMapper::GetNameForSavingsPlansFilterName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SavingsPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace SavingsPlans
+}  // namespace Aws

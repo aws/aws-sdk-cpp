@@ -3,53 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/CopyDBClusterSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/CopyDBClusterSnapshotRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String CopyDBClusterSnapshotRequest::SerializePayload() const
-{
+Aws::String CopyDBClusterSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CopyDBClusterSnapshot&";
-  if(m_sourceDBClusterSnapshotIdentifierHasBeenSet)
-  {
+  if (m_sourceDBClusterSnapshotIdentifierHasBeenSet) {
     ss << "SourceDBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_targetDBClusterSnapshotIdentifierHasBeenSet)
-  {
+  if (m_targetDBClusterSnapshotIdentifierHasBeenSet) {
     ss << "TargetDBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_preSignedUrlHasBeenSet)
-  {
+  if (m_preSignedUrlHasBeenSet) {
     ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
-  if(m_copyTagsHasBeenSet)
-  {
+  if (m_copyTagsHasBeenSet) {
     ss << "CopyTags=" << std::boolalpha << m_copyTags << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -60,8 +49,4 @@ Aws::String CopyDBClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CopyDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CopyDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

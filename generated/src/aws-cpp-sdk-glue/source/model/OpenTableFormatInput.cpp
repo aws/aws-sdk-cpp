@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/OpenTableFormatInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/OpenTableFormatInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-OpenTableFormatInput::OpenTableFormatInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenTableFormatInput::OpenTableFormatInput(JsonView jsonValue) { *this = jsonValue; }
 
-OpenTableFormatInput& OpenTableFormatInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IcebergInput"))
-  {
+OpenTableFormatInput& OpenTableFormatInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IcebergInput")) {
     m_icebergInput = jsonValue.GetObject("IcebergInput");
     m_icebergInputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenTableFormatInput::Jsonize() const
-{
+JsonValue OpenTableFormatInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_icebergInputHasBeenSet)
-  {
-   payload.WithObject("IcebergInput", m_icebergInput.Jsonize());
-
+  if (m_icebergInputHasBeenSet) {
+    payload.WithObject("IcebergInput", m_icebergInput.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

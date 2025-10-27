@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-CodeConfiguration::CodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeConfiguration::CodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CodeConfiguration& CodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigurationSource"))
-  {
+CodeConfiguration& CodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigurationSource")) {
     m_configurationSource = ConfigurationSourceMapper::GetConfigurationSourceForName(jsonValue.GetString("ConfigurationSource"));
     m_configurationSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeConfigurationValues"))
-  {
+  if (jsonValue.ValueExists("CodeConfigurationValues")) {
     m_codeConfigurationValues = jsonValue.GetObject("CodeConfigurationValues");
     m_codeConfigurationValuesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeConfiguration::Jsonize() const
-{
+JsonValue CodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationSourceHasBeenSet)
-  {
-   payload.WithString("ConfigurationSource", ConfigurationSourceMapper::GetNameForConfigurationSource(m_configurationSource));
+  if (m_configurationSourceHasBeenSet) {
+    payload.WithString("ConfigurationSource", ConfigurationSourceMapper::GetNameForConfigurationSource(m_configurationSource));
   }
 
-  if(m_codeConfigurationValuesHasBeenSet)
-  {
-   payload.WithObject("CodeConfigurationValues", m_codeConfigurationValues.Jsonize());
-
+  if (m_codeConfigurationValuesHasBeenSet) {
+    payload.WithObject("CodeConfigurationValues", m_codeConfigurationValues.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

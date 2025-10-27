@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-EgressConfiguration::EgressConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EgressConfiguration::EgressConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EgressConfiguration& EgressConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EgressType"))
-  {
+EgressConfiguration& EgressConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EgressType")) {
     m_egressType = EgressTypeMapper::GetEgressTypeForName(jsonValue.GetString("EgressType"));
     m_egressTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcConnectorArn"))
-  {
+  if (jsonValue.ValueExists("VpcConnectorArn")) {
     m_vpcConnectorArn = jsonValue.GetString("VpcConnectorArn");
     m_vpcConnectorArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EgressConfiguration::Jsonize() const
-{
+JsonValue EgressConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_egressTypeHasBeenSet)
-  {
-   payload.WithString("EgressType", EgressTypeMapper::GetNameForEgressType(m_egressType));
+  if (m_egressTypeHasBeenSet) {
+    payload.WithString("EgressType", EgressTypeMapper::GetNameForEgressType(m_egressType));
   }
 
-  if(m_vpcConnectorArnHasBeenSet)
-  {
-   payload.WithString("VpcConnectorArn", m_vpcConnectorArn);
-
+  if (m_vpcConnectorArnHasBeenSet) {
+    payload.WithString("VpcConnectorArn", m_vpcConnectorArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

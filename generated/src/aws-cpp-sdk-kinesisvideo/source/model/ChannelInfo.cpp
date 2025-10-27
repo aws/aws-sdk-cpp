@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/ChannelInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/ChannelInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-ChannelInfo::ChannelInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelInfo::ChannelInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelInfo& ChannelInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ChannelName"))
-  {
+ChannelInfo& ChannelInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ChannelName")) {
     m_channelName = jsonValue.GetString("ChannelName");
     m_channelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChannelARN"))
-  {
+  if (jsonValue.ValueExists("ChannelARN")) {
     m_channelARN = jsonValue.GetString("ChannelARN");
     m_channelARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChannelType"))
-  {
+  if (jsonValue.ValueExists("ChannelType")) {
     m_channelType = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("ChannelType"));
     m_channelTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChannelStatus"))
-  {
+  if (jsonValue.ValueExists("ChannelStatus")) {
     m_channelStatus = StatusMapper::GetStatusForName(jsonValue.GetString("ChannelStatus"));
     m_channelStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SingleMasterConfiguration"))
-  {
+  if (jsonValue.ValueExists("SingleMasterConfiguration")) {
     m_singleMasterConfiguration = jsonValue.GetObject("SingleMasterConfiguration");
     m_singleMasterConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelInfo::Jsonize() const
-{
+JsonValue ChannelInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelNameHasBeenSet)
-  {
-   payload.WithString("ChannelName", m_channelName);
-
+  if (m_channelNameHasBeenSet) {
+    payload.WithString("ChannelName", m_channelName);
   }
 
-  if(m_channelARNHasBeenSet)
-  {
-   payload.WithString("ChannelARN", m_channelARN);
-
+  if (m_channelARNHasBeenSet) {
+    payload.WithString("ChannelARN", m_channelARN);
   }
 
-  if(m_channelTypeHasBeenSet)
-  {
-   payload.WithString("ChannelType", ChannelTypeMapper::GetNameForChannelType(m_channelType));
+  if (m_channelTypeHasBeenSet) {
+    payload.WithString("ChannelType", ChannelTypeMapper::GetNameForChannelType(m_channelType));
   }
 
-  if(m_channelStatusHasBeenSet)
-  {
-   payload.WithString("ChannelStatus", StatusMapper::GetNameForStatus(m_channelStatus));
+  if (m_channelStatusHasBeenSet) {
+    payload.WithString("ChannelStatus", StatusMapper::GetNameForStatus(m_channelStatus));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_singleMasterConfigurationHasBeenSet)
-  {
-   payload.WithObject("SingleMasterConfiguration", m_singleMasterConfiguration.Jsonize());
-
+  if (m_singleMasterConfigurationHasBeenSet) {
+    payload.WithObject("SingleMasterConfiguration", m_singleMasterConfiguration.Jsonize());
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", m_version);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

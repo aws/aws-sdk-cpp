@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MxfProfile
-  {
-    NOT_SET,
-    D_10,
-    XDCAM,
-    OP1A,
-    XAVC,
-    XDCAM_RDD9
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MxfProfile { NOT_SET, D_10, XDCAM, OP1A, XAVC, XDCAM_RDD9 };
 
-namespace MxfProfileMapper
-{
+namespace MxfProfileMapper {
 AWS_MEDIACONVERT_API MxfProfile GetMxfProfileForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMxfProfile(MxfProfile value);
-} // namespace MxfProfileMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MxfProfileMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

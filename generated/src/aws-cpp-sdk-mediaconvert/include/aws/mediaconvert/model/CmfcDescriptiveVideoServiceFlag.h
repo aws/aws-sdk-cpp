@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmfcDescriptiveVideoServiceFlag
-  {
-    NOT_SET,
-    DONT_FLAG,
-    FLAG
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmfcDescriptiveVideoServiceFlag { NOT_SET, DONT_FLAG, FLAG };
 
-namespace CmfcDescriptiveVideoServiceFlagMapper
-{
+namespace CmfcDescriptiveVideoServiceFlagMapper {
 AWS_MEDIACONVERT_API CmfcDescriptiveVideoServiceFlag GetCmfcDescriptiveVideoServiceFlagForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmfcDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag value);
-} // namespace CmfcDescriptiveVideoServiceFlagMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmfcDescriptiveVideoServiceFlagMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

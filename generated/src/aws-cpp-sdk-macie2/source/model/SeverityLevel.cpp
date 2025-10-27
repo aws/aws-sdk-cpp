@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/SeverityLevel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/SeverityLevel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-SeverityLevel::SeverityLevel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SeverityLevel::SeverityLevel(JsonView jsonValue) { *this = jsonValue; }
 
-SeverityLevel& SeverityLevel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("occurrencesThreshold"))
-  {
+SeverityLevel& SeverityLevel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("occurrencesThreshold")) {
     m_occurrencesThreshold = jsonValue.GetInt64("occurrencesThreshold");
     m_occurrencesThresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("severity"))
-  {
+  if (jsonValue.ValueExists("severity")) {
     m_severity = DataIdentifierSeverityMapper::GetDataIdentifierSeverityForName(jsonValue.GetString("severity"));
     m_severityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SeverityLevel::Jsonize() const
-{
+JsonValue SeverityLevel::Jsonize() const {
   JsonValue payload;
 
-  if(m_occurrencesThresholdHasBeenSet)
-  {
-   payload.WithInt64("occurrencesThreshold", m_occurrencesThreshold);
-
+  if (m_occurrencesThresholdHasBeenSet) {
+    payload.WithInt64("occurrencesThreshold", m_occurrencesThreshold);
   }
 
-  if(m_severityHasBeenSet)
-  {
-   payload.WithString("severity", DataIdentifierSeverityMapper::GetNameForDataIdentifierSeverity(m_severity));
+  if (m_severityHasBeenSet) {
+    payload.WithString("severity", DataIdentifierSeverityMapper::GetNameForDataIdentifierSeverity(m_severity));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

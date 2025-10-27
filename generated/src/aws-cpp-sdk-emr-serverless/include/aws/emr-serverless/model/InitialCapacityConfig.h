@@ -6,67 +6,72 @@
 #pragma once
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/WorkerResourceConfig.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace EMRServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace EMRServerless {
+namespace Model {
 
+/**
+ * <p>The initial capacity configuration per worker.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/InitialCapacityConfig">AWS
+ * API Reference</a></p>
+ */
+class InitialCapacityConfig {
+ public:
+  AWS_EMRSERVERLESS_API InitialCapacityConfig() = default;
+  AWS_EMRSERVERLESS_API InitialCapacityConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_EMRSERVERLESS_API InitialCapacityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The initial capacity configuration per worker.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/InitialCapacityConfig">AWS
-   * API Reference</a></p>
+   * <p>The number of workers in the initial capacity configuration.</p>
    */
-  class InitialCapacityConfig
-  {
-  public:
-    AWS_EMRSERVERLESS_API InitialCapacityConfig() = default;
-    AWS_EMRSERVERLESS_API InitialCapacityConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_EMRSERVERLESS_API InitialCapacityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetWorkerCount() const { return m_workerCount; }
+  inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
+  inline void SetWorkerCount(long long value) {
+    m_workerCountHasBeenSet = true;
+    m_workerCount = value;
+  }
+  inline InitialCapacityConfig& WithWorkerCount(long long value) {
+    SetWorkerCount(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The resource configuration of the initial capacity configuration.</p>
+   */
+  inline const WorkerResourceConfig& GetWorkerConfiguration() const { return m_workerConfiguration; }
+  inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
+  template <typename WorkerConfigurationT = WorkerResourceConfig>
+  void SetWorkerConfiguration(WorkerConfigurationT&& value) {
+    m_workerConfigurationHasBeenSet = true;
+    m_workerConfiguration = std::forward<WorkerConfigurationT>(value);
+  }
+  template <typename WorkerConfigurationT = WorkerResourceConfig>
+  InitialCapacityConfig& WithWorkerConfiguration(WorkerConfigurationT&& value) {
+    SetWorkerConfiguration(std::forward<WorkerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_workerCount{0};
+  bool m_workerCountHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of workers in the initial capacity configuration.</p>
-     */
-    inline long long GetWorkerCount() const { return m_workerCount; }
-    inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
-    inline void SetWorkerCount(long long value) { m_workerCountHasBeenSet = true; m_workerCount = value; }
-    inline InitialCapacityConfig& WithWorkerCount(long long value) { SetWorkerCount(value); return *this;}
-    ///@}
+  WorkerResourceConfig m_workerConfiguration;
+  bool m_workerConfigurationHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The resource configuration of the initial capacity configuration.</p>
-     */
-    inline const WorkerResourceConfig& GetWorkerConfiguration() const { return m_workerConfiguration; }
-    inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
-    template<typename WorkerConfigurationT = WorkerResourceConfig>
-    void SetWorkerConfiguration(WorkerConfigurationT&& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = std::forward<WorkerConfigurationT>(value); }
-    template<typename WorkerConfigurationT = WorkerResourceConfig>
-    InitialCapacityConfig& WithWorkerConfiguration(WorkerConfigurationT&& value) { SetWorkerConfiguration(std::forward<WorkerConfigurationT>(value)); return *this;}
-    ///@}
-  private:
-
-    long long m_workerCount{0};
-    bool m_workerCountHasBeenSet = false;
-
-    WorkerResourceConfig m_workerConfiguration;
-    bool m_workerConfigurationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

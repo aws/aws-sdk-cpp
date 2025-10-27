@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-UnusedAction::UnusedAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnusedAction::UnusedAction(JsonView jsonValue) { *this = jsonValue; }
 
-UnusedAction& UnusedAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("action"))
-  {
+UnusedAction& UnusedAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
     m_action = jsonValue.GetString("action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastAccessed"))
-  {
+  if (jsonValue.ValueExists("lastAccessed")) {
     m_lastAccessed = jsonValue.GetString("lastAccessed");
     m_lastAccessedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnusedAction::Jsonize() const
-{
+JsonValue UnusedAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", m_action);
-
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", m_action);
   }
 
-  if(m_lastAccessedHasBeenSet)
-  {
-   payload.WithString("lastAccessed", m_lastAccessed.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastAccessedHasBeenSet) {
+    payload.WithString("lastAccessed", m_lastAccessed.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

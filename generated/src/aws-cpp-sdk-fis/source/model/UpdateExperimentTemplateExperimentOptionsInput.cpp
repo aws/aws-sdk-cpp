@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/UpdateExperimentTemplateExperimentOptionsInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/UpdateExperimentTemplateExperimentOptionsInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
+namespace Aws {
+namespace FIS {
+namespace Model {
 
-UpdateExperimentTemplateExperimentOptionsInput::UpdateExperimentTemplateExperimentOptionsInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateExperimentTemplateExperimentOptionsInput::UpdateExperimentTemplateExperimentOptionsInput(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateExperimentTemplateExperimentOptionsInput& UpdateExperimentTemplateExperimentOptionsInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("emptyTargetResolutionMode"))
-  {
-    m_emptyTargetResolutionMode = EmptyTargetResolutionModeMapper::GetEmptyTargetResolutionModeForName(jsonValue.GetString("emptyTargetResolutionMode"));
+UpdateExperimentTemplateExperimentOptionsInput& UpdateExperimentTemplateExperimentOptionsInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("emptyTargetResolutionMode")) {
+    m_emptyTargetResolutionMode =
+        EmptyTargetResolutionModeMapper::GetEmptyTargetResolutionModeForName(jsonValue.GetString("emptyTargetResolutionMode"));
     m_emptyTargetResolutionModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateExperimentTemplateExperimentOptionsInput::Jsonize() const
-{
+JsonValue UpdateExperimentTemplateExperimentOptionsInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_emptyTargetResolutionModeHasBeenSet)
-  {
-   payload.WithString("emptyTargetResolutionMode", EmptyTargetResolutionModeMapper::GetNameForEmptyTargetResolutionMode(m_emptyTargetResolutionMode));
+  if (m_emptyTargetResolutionModeHasBeenSet) {
+    payload.WithString("emptyTargetResolutionMode",
+                       EmptyTargetResolutionModeMapper::GetNameForEmptyTargetResolutionMode(m_emptyTargetResolutionMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

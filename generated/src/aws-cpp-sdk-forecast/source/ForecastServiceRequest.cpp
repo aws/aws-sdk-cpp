@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/forecast/ForecastServiceRequest.h>
 
-namespace Aws
-{
-namespace ForecastService
-{
-} // namespace ForecastService
-} // namespace Aws
+namespace Aws {
+namespace ForecastService {}  // namespace ForecastService
+}  // namespace Aws

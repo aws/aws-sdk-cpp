@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sts/STSRequest.h>
 
-namespace Aws
-{
-namespace STS
-{
-} // namespace STS
-} // namespace Aws
+namespace Aws {
+namespace STS {}  // namespace STS
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-InputArtifact::InputArtifact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputArtifact::InputArtifact(JsonView jsonValue) { *this = jsonValue; }
 
-InputArtifact& InputArtifact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+InputArtifact& InputArtifact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputArtifact::Jsonize() const
-{
+JsonValue InputArtifact::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

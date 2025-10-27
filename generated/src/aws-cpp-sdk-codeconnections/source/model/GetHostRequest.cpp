@@ -12,27 +12,18 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetHostRequest::SerializePayload() const
-{
+Aws::String GetHostRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hostArnHasBeenSet)
-  {
-   payload.WithString("HostArn", m_hostArn);
-
+  if (m_hostArnHasBeenSet) {
+    payload.WithString("HostArn", m_hostArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetHostRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetHostRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.GetHost"));
   return headers;
-
 }
-
-
-
-

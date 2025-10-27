@@ -11,113 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-IntegrationResponse::IntegrationResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntegrationResponse::IntegrationResponse(JsonView jsonValue) { *this = jsonValue; }
 
-IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentHandlingStrategy"))
-  {
-    m_contentHandlingStrategy = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandlingStrategy"));
+IntegrationResponse& IntegrationResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentHandlingStrategy")) {
+    m_contentHandlingStrategy =
+        ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandlingStrategy"));
     m_contentHandlingStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("integrationResponseId"))
-  {
+  if (jsonValue.ValueExists("integrationResponseId")) {
     m_integrationResponseId = jsonValue.GetString("integrationResponseId");
     m_integrationResponseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("integrationResponseKey"))
-  {
+  if (jsonValue.ValueExists("integrationResponseKey")) {
     m_integrationResponseKey = jsonValue.GetString("integrationResponseKey");
     m_integrationResponseKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseParameters"))
-  {
+  if (jsonValue.ValueExists("responseParameters")) {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
-    for(auto& responseParametersItem : responseParametersJsonMap)
-    {
+    for (auto& responseParametersItem : responseParametersJsonMap) {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
     }
     m_responseParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseTemplates"))
-  {
+  if (jsonValue.ValueExists("responseTemplates")) {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
-    for(auto& responseTemplatesItem : responseTemplatesJsonMap)
-    {
+    for (auto& responseTemplatesItem : responseTemplatesJsonMap) {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();
     }
     m_responseTemplatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateSelectionExpression"))
-  {
+  if (jsonValue.ValueExists("templateSelectionExpression")) {
     m_templateSelectionExpression = jsonValue.GetString("templateSelectionExpression");
     m_templateSelectionExpressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntegrationResponse::Jsonize() const
-{
+JsonValue IntegrationResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHandlingStrategyHasBeenSet)
-  {
-   payload.WithString("contentHandlingStrategy", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandlingStrategy));
+  if (m_contentHandlingStrategyHasBeenSet) {
+    payload.WithString("contentHandlingStrategy",
+                       ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandlingStrategy));
   }
 
-  if(m_integrationResponseIdHasBeenSet)
-  {
-   payload.WithString("integrationResponseId", m_integrationResponseId);
-
+  if (m_integrationResponseIdHasBeenSet) {
+    payload.WithString("integrationResponseId", m_integrationResponseId);
   }
 
-  if(m_integrationResponseKeyHasBeenSet)
-  {
-   payload.WithString("integrationResponseKey", m_integrationResponseKey);
-
+  if (m_integrationResponseKeyHasBeenSet) {
+    payload.WithString("integrationResponseKey", m_integrationResponseKey);
   }
 
-  if(m_responseParametersHasBeenSet)
-  {
-   JsonValue responseParametersJsonMap;
-   for(auto& responseParametersItem : m_responseParameters)
-   {
-     responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
-   }
-   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
-
+  if (m_responseParametersHasBeenSet) {
+    JsonValue responseParametersJsonMap;
+    for (auto& responseParametersItem : m_responseParameters) {
+      responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
+    }
+    payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
   }
 
-  if(m_responseTemplatesHasBeenSet)
-  {
-   JsonValue responseTemplatesJsonMap;
-   for(auto& responseTemplatesItem : m_responseTemplates)
-   {
-     responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
-   }
-   payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
-
+  if (m_responseTemplatesHasBeenSet) {
+    JsonValue responseTemplatesJsonMap;
+    for (auto& responseTemplatesItem : m_responseTemplates) {
+      responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
+    }
+    payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
   }
 
-  if(m_templateSelectionExpressionHasBeenSet)
-  {
-   payload.WithString("templateSelectionExpression", m_templateSelectionExpression);
-
+  if (m_templateSelectionExpressionHasBeenSet) {
+    payload.WithString("templateSelectionExpression", m_templateSelectionExpression);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

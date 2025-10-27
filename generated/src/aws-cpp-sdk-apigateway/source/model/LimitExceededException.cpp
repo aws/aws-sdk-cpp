@@ -12,41 +12,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-LimitExceededException::LimitExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LimitExceededException::LimitExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-LimitExceededException& LimitExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+LimitExceededException& LimitExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LimitExceededException::Jsonize() const
-{
+JsonValue LimitExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

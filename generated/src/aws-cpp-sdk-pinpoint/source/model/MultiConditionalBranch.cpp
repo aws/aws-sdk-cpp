@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/MultiConditionalBranch.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/MultiConditionalBranch.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-MultiConditionalBranch::MultiConditionalBranch(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiConditionalBranch::MultiConditionalBranch(JsonView jsonValue) { *this = jsonValue; }
 
-MultiConditionalBranch& MultiConditionalBranch::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Condition"))
-  {
+MultiConditionalBranch& MultiConditionalBranch::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Condition")) {
     m_condition = jsonValue.GetObject("Condition");
     m_conditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextActivity"))
-  {
+  if (jsonValue.ValueExists("NextActivity")) {
     m_nextActivity = jsonValue.GetString("NextActivity");
     m_nextActivityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiConditionalBranch::Jsonize() const
-{
+JsonValue MultiConditionalBranch::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithObject("Condition", m_condition.Jsonize());
-
+  if (m_conditionHasBeenSet) {
+    payload.WithObject("Condition", m_condition.Jsonize());
   }
 
-  if(m_nextActivityHasBeenSet)
-  {
-   payload.WithString("NextActivity", m_nextActivity);
-
+  if (m_nextActivityHasBeenSet) {
+    payload.WithString("NextActivity", m_nextActivity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

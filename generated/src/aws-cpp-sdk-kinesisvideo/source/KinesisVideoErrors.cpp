@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::KinesisVideo;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace KinesisVideoErrorMapper
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace KinesisVideoErrorMapper {
 
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int INVALID_RESOURCE_FORMAT_HASH = HashingUtils::HashString("InvalidResourceFormatException");
@@ -32,66 +29,41 @@ static const int STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH = HashingUtils::HashSt
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == VERSION_MISMATCH_HASH)
-  {
+  if (hashCode == VERSION_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::VERSION_MISMATCH), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_RESOURCE_FORMAT_HASH)
-  {
+  } else if (hashCode == INVALID_RESOURCE_FORMAT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_RESOURCE_FORMAT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_CHANNEL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DEVICE_STREAM_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == DEVICE_STREAM_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::DEVICE_STREAM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_DEVICE_HASH)
-  {
+  } else if (hashCode == INVALID_DEVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_DEVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::TAGS_PER_RESOURCE_EXCEEDED_LIMIT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::TAGS_PER_RESOURCE_EXCEEDED_LIMIT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NO_DATA_RETENTION_HASH)
-  {
+  } else if (hashCode == NO_DATA_RETENTION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NO_DATA_RETENTION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_AUTHORIZED_HASH)
-  {
+  } else if (hashCode == NOT_AUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::STREAM_EDGE_CONFIGURATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
-  {
+  } else if (hashCode == STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::STREAM_EDGE_CONFIGURATION_NOT_FOUND),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace KinesisVideoErrorMapper
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace KinesisVideoErrorMapper
+}  // namespace KinesisVideo
+}  // namespace Aws

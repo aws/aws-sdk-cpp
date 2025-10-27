@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/WaveAggregatedStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/WaveAggregatedStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
+namespace Aws {
+namespace mgn {
+namespace Model {
 
-WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue) { *this = jsonValue; }
 
-WaveAggregatedStatus& WaveAggregatedStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("healthStatus"))
-  {
+WaveAggregatedStatus& WaveAggregatedStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("healthStatus")) {
     m_healthStatus = WaveHealthStatusMapper::GetWaveHealthStatusForName(jsonValue.GetString("healthStatus"));
     m_healthStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdateDateTime")) {
     m_lastUpdateDateTime = jsonValue.GetString("lastUpdateDateTime");
     m_lastUpdateDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("progressStatus"))
-  {
+  if (jsonValue.ValueExists("progressStatus")) {
     m_progressStatus = WaveProgressStatusMapper::GetWaveProgressStatusForName(jsonValue.GetString("progressStatus"));
     m_progressStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("replicationStartedDateTime"))
-  {
+  if (jsonValue.ValueExists("replicationStartedDateTime")) {
     m_replicationStartedDateTime = jsonValue.GetString("replicationStartedDateTime");
     m_replicationStartedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalApplications"))
-  {
+  if (jsonValue.ValueExists("totalApplications")) {
     m_totalApplications = jsonValue.GetInt64("totalApplications");
     m_totalApplicationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WaveAggregatedStatus::Jsonize() const
-{
+JsonValue WaveAggregatedStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_healthStatusHasBeenSet)
-  {
-   payload.WithString("healthStatus", WaveHealthStatusMapper::GetNameForWaveHealthStatus(m_healthStatus));
+  if (m_healthStatusHasBeenSet) {
+    payload.WithString("healthStatus", WaveHealthStatusMapper::GetNameForWaveHealthStatus(m_healthStatus));
   }
 
-  if(m_lastUpdateDateTimeHasBeenSet)
-  {
-   payload.WithString("lastUpdateDateTime", m_lastUpdateDateTime);
-
+  if (m_lastUpdateDateTimeHasBeenSet) {
+    payload.WithString("lastUpdateDateTime", m_lastUpdateDateTime);
   }
 
-  if(m_progressStatusHasBeenSet)
-  {
-   payload.WithString("progressStatus", WaveProgressStatusMapper::GetNameForWaveProgressStatus(m_progressStatus));
+  if (m_progressStatusHasBeenSet) {
+    payload.WithString("progressStatus", WaveProgressStatusMapper::GetNameForWaveProgressStatus(m_progressStatus));
   }
 
-  if(m_replicationStartedDateTimeHasBeenSet)
-  {
-   payload.WithString("replicationStartedDateTime", m_replicationStartedDateTime);
-
+  if (m_replicationStartedDateTimeHasBeenSet) {
+    payload.WithString("replicationStartedDateTime", m_replicationStartedDateTime);
   }
 
-  if(m_totalApplicationsHasBeenSet)
-  {
-   payload.WithInt64("totalApplications", m_totalApplications);
-
+  if (m_totalApplicationsHasBeenSet) {
+    payload.WithInt64("totalApplications", m_totalApplications);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

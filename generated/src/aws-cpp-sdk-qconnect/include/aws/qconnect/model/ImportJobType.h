@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class ImportJobType
-  {
-    NOT_SET,
-    QUICK_RESPONSES
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class ImportJobType { NOT_SET, QUICK_RESPONSES };
 
-namespace ImportJobTypeMapper
-{
+namespace ImportJobTypeMapper {
 AWS_QCONNECT_API ImportJobType GetImportJobTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForImportJobType(ImportJobType value);
-} // namespace ImportJobTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace ImportJobTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

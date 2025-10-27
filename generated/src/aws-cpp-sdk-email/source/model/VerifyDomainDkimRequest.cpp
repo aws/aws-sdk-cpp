@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/VerifyDomainDkimRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/VerifyDomainDkimRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String VerifyDomainDkimRequest::SerializePayload() const
-{
+Aws::String VerifyDomainDkimRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=VerifyDomainDkim&";
-  if(m_domainHasBeenSet)
-  {
+  if (m_domainHasBeenSet) {
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String VerifyDomainDkimRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  VerifyDomainDkimRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void VerifyDomainDkimRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

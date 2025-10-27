@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregatorFilters::AggregatorFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregatorFilters::AggregatorFilters(JsonView jsonValue) { *this = jsonValue; }
 
-AggregatorFilters& AggregatorFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+AggregatorFilters& AggregatorFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetObject("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServicePrincipal"))
-  {
+  if (jsonValue.ValueExists("ServicePrincipal")) {
     m_servicePrincipal = jsonValue.GetObject("ServicePrincipal");
     m_servicePrincipalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregatorFilters::Jsonize() const
-{
+JsonValue AggregatorFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithObject("ResourceType", m_resourceType.Jsonize());
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithObject("ResourceType", m_resourceType.Jsonize());
   }
 
-  if(m_servicePrincipalHasBeenSet)
-  {
-   payload.WithObject("ServicePrincipal", m_servicePrincipal.Jsonize());
-
+  if (m_servicePrincipalHasBeenSet) {
+    payload.WithObject("ServicePrincipal", m_servicePrincipal.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

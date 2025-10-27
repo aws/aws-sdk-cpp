@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/FpgaInfo.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/FpgaInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-FpgaInfo::FpgaInfo(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+FpgaInfo::FpgaInfo(const XmlNode& xmlNode) { *this = xmlNode; }
 
-FpgaInfo& FpgaInfo::operator =(const XmlNode& xmlNode)
-{
+FpgaInfo& FpgaInfo::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode fpgasNode = resultNode.FirstChild("fpgas");
-    if(!fpgasNode.IsNull())
-    {
+    if (!fpgasNode.IsNull()) {
       XmlNode fpgasMember = fpgasNode.FirstChild("item");
       m_fpgasHasBeenSet = !fpgasMember.IsNull();
-      while(!fpgasMember.IsNull())
-      {
+      while (!fpgasMember.IsNull()) {
         m_fpgas.push_back(fpgasMember);
         fpgasMember = fpgasMember.NextNode("item");
       }
@@ -45,9 +35,9 @@ FpgaInfo& FpgaInfo::operator =(const XmlNode& xmlNode)
       m_fpgasHasBeenSet = true;
     }
     XmlNode totalFpgaMemoryInMiBNode = resultNode.FirstChild("totalFpgaMemoryInMiB");
-    if(!totalFpgaMemoryInMiBNode.IsNull())
-    {
-      m_totalFpgaMemoryInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalFpgaMemoryInMiBNode.GetText()).c_str()).c_str());
+    if (!totalFpgaMemoryInMiBNode.IsNull()) {
+      m_totalFpgaMemoryInMiB = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalFpgaMemoryInMiBNode.GetText()).c_str()).c_str());
       m_totalFpgaMemoryInMiBHasBeenSet = true;
     }
   }
@@ -55,44 +45,35 @@ FpgaInfo& FpgaInfo::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void FpgaInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_fpgasHasBeenSet)
-  {
-      unsigned fpgasIdx = 1;
-      for(auto& item : m_fpgas)
-      {
-        Aws::StringStream fpgasSs;
-        fpgasSs << location << index << locationValue << ".Fpgas." << fpgasIdx++;
-        item.OutputToStream(oStream, fpgasSs.str().c_str());
-      }
+void FpgaInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_fpgasHasBeenSet) {
+    unsigned fpgasIdx = 1;
+    for (auto& item : m_fpgas) {
+      Aws::StringStream fpgasSs;
+      fpgasSs << location << index << locationValue << ".Fpgas." << fpgasIdx++;
+      item.OutputToStream(oStream, fpgasSs.str().c_str());
+    }
   }
 
-  if(m_totalFpgaMemoryInMiBHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TotalFpgaMemoryInMiB=" << m_totalFpgaMemoryInMiB << "&";
-  }
-
-}
-
-void FpgaInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_fpgasHasBeenSet)
-  {
-      unsigned fpgasIdx = 1;
-      for(auto& item : m_fpgas)
-      {
-        Aws::StringStream fpgasSs;
-        fpgasSs << location << ".Fpgas." << fpgasIdx++;
-        item.OutputToStream(oStream, fpgasSs.str().c_str());
-      }
-  }
-  if(m_totalFpgaMemoryInMiBHasBeenSet)
-  {
-      oStream << location << ".TotalFpgaMemoryInMiB=" << m_totalFpgaMemoryInMiB << "&";
+  if (m_totalFpgaMemoryInMiBHasBeenSet) {
+    oStream << location << index << locationValue << ".TotalFpgaMemoryInMiB=" << m_totalFpgaMemoryInMiB << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void FpgaInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_fpgasHasBeenSet) {
+    unsigned fpgasIdx = 1;
+    for (auto& item : m_fpgas) {
+      Aws::StringStream fpgasSs;
+      fpgasSs << location << ".Fpgas." << fpgasIdx++;
+      item.OutputToStream(oStream, fpgasSs.str().c_str());
+    }
+  }
+  if (m_totalFpgaMemoryInMiBHasBeenSet) {
+    oStream << location << ".TotalFpgaMemoryInMiB=" << m_totalFpgaMemoryInMiB << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

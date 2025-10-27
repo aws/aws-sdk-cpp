@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/AmiProductSort.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/AmiProductSort.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-AmiProductSort::AmiProductSort(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmiProductSort::AmiProductSort(JsonView jsonValue) { *this = jsonValue; }
 
-AmiProductSort& AmiProductSort::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SortBy"))
-  {
+AmiProductSort& AmiProductSort::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SortBy")) {
     m_sortBy = AmiProductSortByMapper::GetAmiProductSortByForName(jsonValue.GetString("SortBy"));
     m_sortByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SortOrder"))
-  {
+  if (jsonValue.ValueExists("SortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
     m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AmiProductSort::Jsonize() const
-{
+JsonValue AmiProductSort::Jsonize() const {
   JsonValue payload;
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("SortBy", AmiProductSortByMapper::GetNameForAmiProductSortBy(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("SortBy", AmiProductSortByMapper::GetNameForAmiProductSortBy(m_sortBy));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

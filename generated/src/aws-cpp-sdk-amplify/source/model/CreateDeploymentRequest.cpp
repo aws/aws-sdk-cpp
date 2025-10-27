@@ -12,24 +12,16 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDeploymentRequest::SerializePayload() const
-{
+Aws::String CreateDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_fileMapHasBeenSet)
-  {
-   JsonValue fileMapJsonMap;
-   for(auto& fileMapItem : m_fileMap)
-   {
-     fileMapJsonMap.WithString(fileMapItem.first, fileMapItem.second);
-   }
-   payload.WithObject("fileMap", std::move(fileMapJsonMap));
-
+  if (m_fileMapHasBeenSet) {
+    JsonValue fileMapJsonMap;
+    for (auto& fileMapItem : m_fileMap) {
+      fileMapJsonMap.WithString(fileMapItem.first, fileMapItem.second);
+    }
+    payload.WithObject("fileMap", std::move(fileMapJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

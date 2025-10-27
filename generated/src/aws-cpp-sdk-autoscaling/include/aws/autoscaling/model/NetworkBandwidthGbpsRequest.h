@@ -7,74 +7,78 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace AutoScaling {
+namespace Model {
 
+/**
+ * <p>Specifies the minimum and maximum for the <code>NetworkBandwidthGbps</code>
+ * object when you specify <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+ * for an Auto Scaling group.</p>  <p>Setting the minimum bandwidth does not
+ * guarantee that your instance will achieve the minimum bandwidth. Amazon EC2 will
+ * identify instance types that support the specified minimum bandwidth, but the
+ * actual bandwidth of your instance might go below the specified minimum at times.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth">Available
+ * instance bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+ * <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/NetworkBandwidthGbpsRequest">AWS
+ * API Reference</a></p>
+ */
+class NetworkBandwidthGbpsRequest {
+ public:
+  AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest() = default;
+  AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Specifies the minimum and maximum for the <code>NetworkBandwidthGbps</code>
-   * object when you specify <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
-   * for an Auto Scaling group.</p>  <p>Setting the minimum bandwidth does not
-   * guarantee that your instance will achieve the minimum bandwidth. Amazon EC2 will
-   * identify instance types that support the specified minimum bandwidth, but the
-   * actual bandwidth of your instance might go below the specified minimum at times.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth">Available
-   * instance bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
-   * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/NetworkBandwidthGbpsRequest">AWS
-   * API Reference</a></p>
+   * <p>The minimum amount of network bandwidth, in gigabits per second (Gbps).</p>
    */
-  class NetworkBandwidthGbpsRequest
-  {
-  public:
-    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest() = default;
-    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline double GetMin() const { return m_min; }
+  inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+  inline void SetMin(double value) {
+    m_minHasBeenSet = true;
+    m_min = value;
+  }
+  inline NetworkBandwidthGbpsRequest& WithMin(double value) {
+    SetMin(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+   */
+  inline double GetMax() const { return m_max; }
+  inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+  inline void SetMax(double value) {
+    m_maxHasBeenSet = true;
+    m_max = value;
+  }
+  inline NetworkBandwidthGbpsRequest& WithMax(double value) {
+    SetMax(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_min{0.0};
+  bool m_minHasBeenSet = false;
 
+  double m_max{0.0};
+  bool m_maxHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The minimum amount of network bandwidth, in gigabits per second (Gbps).</p>
-     */
-    inline double GetMin() const { return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-    inline NetworkBandwidthGbpsRequest& WithMin(double value) { SetMin(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
-     */
-    inline double GetMax() const { return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-    inline NetworkBandwidthGbpsRequest& WithMax(double value) { SetMax(value); return *this;}
-    ///@}
-  private:
-
-    double m_min{0.0};
-    bool m_minHasBeenSet = false;
-
-    double m_max{0.0};
-    bool m_maxHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

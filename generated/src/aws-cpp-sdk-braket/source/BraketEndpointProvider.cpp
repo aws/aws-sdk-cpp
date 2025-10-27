@@ -5,12 +5,8 @@
 
 #include <aws/braket/BraketEndpointProvider.h>
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Braket
-} // namespace Aws
+namespace Aws {
+namespace Braket {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Braket
+}  // namespace Aws

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    IN_PROGRESS,
-    COMPLETED,
-    COMPLETED_WITH_ERROR,
-    FAILED,
-    STOP_REQUESTED,
-    STOPPED
-  };
+namespace Aws {
+namespace Translate {
+namespace Model {
+enum class JobStatus { NOT_SET, SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_TRANSLATE_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_TRANSLATE_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

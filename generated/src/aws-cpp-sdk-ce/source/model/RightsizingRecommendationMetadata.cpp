@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-RightsizingRecommendationMetadata::RightsizingRecommendationMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RightsizingRecommendationMetadata::RightsizingRecommendationMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-RightsizingRecommendationMetadata& RightsizingRecommendationMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecommendationId"))
-  {
+RightsizingRecommendationMetadata& RightsizingRecommendationMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecommendationId")) {
     m_recommendationId = jsonValue.GetString("RecommendationId");
     m_recommendationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GenerationTimestamp"))
-  {
+  if (jsonValue.ValueExists("GenerationTimestamp")) {
     m_generationTimestamp = jsonValue.GetString("GenerationTimestamp");
     m_generationTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LookbackPeriodInDays"))
-  {
+  if (jsonValue.ValueExists("LookbackPeriodInDays")) {
     m_lookbackPeriodInDays = LookbackPeriodInDaysMapper::GetLookbackPeriodInDaysForName(jsonValue.GetString("LookbackPeriodInDays"));
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdditionalMetadata"))
-  {
+  if (jsonValue.ValueExists("AdditionalMetadata")) {
     m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
     m_additionalMetadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RightsizingRecommendationMetadata::Jsonize() const
-{
+JsonValue RightsizingRecommendationMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("RecommendationId", m_recommendationId);
-
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("RecommendationId", m_recommendationId);
   }
 
-  if(m_generationTimestampHasBeenSet)
-  {
-   payload.WithString("GenerationTimestamp", m_generationTimestamp);
-
+  if (m_generationTimestampHasBeenSet) {
+    payload.WithString("GenerationTimestamp", m_generationTimestamp);
   }
 
-  if(m_lookbackPeriodInDaysHasBeenSet)
-  {
-   payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
+  if (m_lookbackPeriodInDaysHasBeenSet) {
+    payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
   }
 
-  if(m_additionalMetadataHasBeenSet)
-  {
-   payload.WithString("AdditionalMetadata", m_additionalMetadata);
-
+  if (m_additionalMetadataHasBeenSet) {
+    payload.WithString("AdditionalMetadata", m_additionalMetadata);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

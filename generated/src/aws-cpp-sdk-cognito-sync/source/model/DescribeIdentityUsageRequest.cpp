@@ -12,11 +12,4 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeIdentityUsageRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeIdentityUsageRequest::SerializePayload() const { return {}; }

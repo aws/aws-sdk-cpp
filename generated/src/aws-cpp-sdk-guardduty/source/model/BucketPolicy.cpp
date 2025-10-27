@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/BucketPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/BucketPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-BucketPolicy::BucketPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BucketPolicy::BucketPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-BucketPolicy& BucketPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowsPublicReadAccess"))
-  {
+BucketPolicy& BucketPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowsPublicReadAccess")) {
     m_allowsPublicReadAccess = jsonValue.GetBool("allowsPublicReadAccess");
     m_allowsPublicReadAccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowsPublicWriteAccess"))
-  {
+  if (jsonValue.ValueExists("allowsPublicWriteAccess")) {
     m_allowsPublicWriteAccess = jsonValue.GetBool("allowsPublicWriteAccess");
     m_allowsPublicWriteAccessHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BucketPolicy::Jsonize() const
-{
+JsonValue BucketPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowsPublicReadAccessHasBeenSet)
-  {
-   payload.WithBool("allowsPublicReadAccess", m_allowsPublicReadAccess);
-
+  if (m_allowsPublicReadAccessHasBeenSet) {
+    payload.WithBool("allowsPublicReadAccess", m_allowsPublicReadAccess);
   }
 
-  if(m_allowsPublicWriteAccessHasBeenSet)
-  {
-   payload.WithBool("allowsPublicWriteAccess", m_allowsPublicWriteAccess);
-
+  if (m_allowsPublicWriteAccessHasBeenSet) {
+    payload.WithBool("allowsPublicWriteAccess", m_allowsPublicWriteAccess);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

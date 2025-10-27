@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/SampleChannelDataRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotanalytics/model/SampleChannelDataRequest.h>
 
 #include <utility>
 
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String SampleChannelDataRequest::SerializePayload() const
-{
-  return {};
+Aws::String SampleChannelDataRequest::SerializePayload() const { return {}; }
+
+void SampleChannelDataRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_maxMessagesHasBeenSet) {
+    ss << m_maxMessages;
+    uri.AddQueryStringParameter("maxMessages", ss.str());
+    ss.str("");
+  }
+
+  if (m_startTimeHasBeenSet) {
+    ss << m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("startTime", ss.str());
+    ss.str("");
+  }
+
+  if (m_endTimeHasBeenSet) {
+    ss << m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("endTime", ss.str());
+    ss.str("");
+  }
 }
-
-void SampleChannelDataRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_maxMessagesHasBeenSet)
-    {
-      ss << m_maxMessages;
-      uri.AddQueryStringParameter("maxMessages", ss.str());
-      ss.str("");
-    }
-
-    if(m_startTimeHasBeenSet)
-    {
-      ss << m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("startTime", ss.str());
-      ss.str("");
-    }
-
-    if(m_endTimeHasBeenSet)
-    {
-      ss << m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("endTime", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 
-namespace Aws
-{
-namespace BackupSearch
-{
-class BackupSearchEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BackupSearch {
+class BackupSearchEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace BackupSearch
+}  // namespace Aws

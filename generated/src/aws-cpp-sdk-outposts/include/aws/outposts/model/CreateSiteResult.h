@@ -4,61 +4,66 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/Site.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Outposts
-{
-namespace Model
-{
-  class CreateSiteResult
-  {
-  public:
-    AWS_OUTPOSTS_API CreateSiteResult() = default;
-    AWS_OUTPOSTS_API CreateSiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_OUTPOSTS_API CreateSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Outposts {
+namespace Model {
+class CreateSiteResult {
+ public:
+  AWS_OUTPOSTS_API CreateSiteResult() = default;
+  AWS_OUTPOSTS_API CreateSiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_OUTPOSTS_API CreateSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const Site& GetSite() const { return m_site; }
-    template<typename SiteT = Site>
-    void SetSite(SiteT&& value) { m_siteHasBeenSet = true; m_site = std::forward<SiteT>(value); }
-    template<typename SiteT = Site>
-    CreateSiteResult& WithSite(SiteT&& value) { SetSite(std::forward<SiteT>(value)); return *this;}
-    ///@}
+  inline const Site& GetSite() const { return m_site; }
+  template <typename SiteT = Site>
+  void SetSite(SiteT&& value) {
+    m_siteHasBeenSet = true;
+    m_site = std::forward<SiteT>(value);
+  }
+  template <typename SiteT = Site>
+  CreateSiteResult& WithSite(SiteT&& value) {
+    SetSite(std::forward<SiteT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateSiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Site m_site;
-    bool m_siteHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateSiteResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Site m_site;
+  bool m_siteHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

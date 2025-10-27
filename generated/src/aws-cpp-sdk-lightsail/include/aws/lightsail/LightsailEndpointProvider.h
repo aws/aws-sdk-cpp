@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/lightsail/LightsailEndpointRules.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Lightsail {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LightsailClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using LightsailDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LIGHTSAIL_API LightsailEndpointProvider : public LightsailDefaultEpProviderBase
-{
-public:
-    using LightsailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LIGHTSAIL_API LightsailEndpointProvider : public LightsailDefaultEpProviderBase {
+ public:
+  using LightsailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LightsailEndpointProvider()
-      : LightsailDefaultEpProviderBase(Aws::Lightsail::LightsailEndpointRules::GetRulesBlob(), Aws::Lightsail::LightsailEndpointRules::RulesBlobSize)
-    {}
+  LightsailEndpointProvider()
+      : LightsailDefaultEpProviderBase(Aws::Lightsail::LightsailEndpointRules::GetRulesBlob(),
+                                       Aws::Lightsail::LightsailEndpointRules::RulesBlobSize) {}
 
-    ~LightsailEndpointProvider()
-    {
-    }
+  ~LightsailEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Lightsail
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class AacSpec
-  {
-    NOT_SET,
-    MPEG2,
-    MPEG4
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class AacSpec { NOT_SET, MPEG2, MPEG4 };
 
-namespace AacSpecMapper
-{
+namespace AacSpecMapper {
 AWS_MEDIALIVE_API AacSpec GetAacSpecForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForAacSpec(AacSpec value);
-} // namespace AacSpecMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace AacSpecMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,82 +4,97 @@
  */
 
 #pragma once
-#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/redshift-serverless/model/ScheduledActionAssociation.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace RedshiftServerless
-{
-namespace Model
-{
-  class ListScheduledActionsResult
-  {
-  public:
-    AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult() = default;
-    AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace RedshiftServerless {
+namespace Model {
+class ListScheduledActionsResult {
+ public:
+  AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult() = default;
+  AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>If nextToken is returned, there are more results available. The value of
+   * nextToken is a unique pagination token for each page. Make the call again using
+   * the returned token to retrieve the next page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListScheduledActionsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListScheduledActionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>All of the returned scheduled action association objects.</p>
+   */
+  inline const Aws::Vector<ScheduledActionAssociation>& GetScheduledActions() const { return m_scheduledActions; }
+  template <typename ScheduledActionsT = Aws::Vector<ScheduledActionAssociation>>
+  void SetScheduledActions(ScheduledActionsT&& value) {
+    m_scheduledActionsHasBeenSet = true;
+    m_scheduledActions = std::forward<ScheduledActionsT>(value);
+  }
+  template <typename ScheduledActionsT = Aws::Vector<ScheduledActionAssociation>>
+  ListScheduledActionsResult& WithScheduledActions(ScheduledActionsT&& value) {
+    SetScheduledActions(std::forward<ScheduledActionsT>(value));
+    return *this;
+  }
+  template <typename ScheduledActionsT = ScheduledActionAssociation>
+  ListScheduledActionsResult& AddScheduledActions(ScheduledActionsT&& value) {
+    m_scheduledActionsHasBeenSet = true;
+    m_scheduledActions.emplace_back(std::forward<ScheduledActionsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
-    inline const Aws::Vector<ScheduledActionAssociation>& GetScheduledActions() const { return m_scheduledActions; }
-    template<typename ScheduledActionsT = Aws::Vector<ScheduledActionAssociation>>
-    void SetScheduledActions(ScheduledActionsT&& value) { m_scheduledActionsHasBeenSet = true; m_scheduledActions = std::forward<ScheduledActionsT>(value); }
-    template<typename ScheduledActionsT = Aws::Vector<ScheduledActionAssociation>>
-    ListScheduledActionsResult& WithScheduledActions(ScheduledActionsT&& value) { SetScheduledActions(std::forward<ScheduledActionsT>(value)); return *this;}
-    template<typename ScheduledActionsT = ScheduledActionAssociation>
-    ListScheduledActionsResult& AddScheduledActions(ScheduledActionsT&& value) { m_scheduledActionsHasBeenSet = true; m_scheduledActions.emplace_back(std::forward<ScheduledActionsT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListScheduledActionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListScheduledActionsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::Vector<ScheduledActionAssociation> m_scheduledActions;
+  bool m_scheduledActionsHasBeenSet = false;
 
-    Aws::Vector<ScheduledActionAssociation> m_scheduledActions;
-    bool m_scheduledActionsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

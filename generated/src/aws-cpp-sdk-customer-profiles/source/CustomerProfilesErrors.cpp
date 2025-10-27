@@ -11,32 +11,24 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CustomerProfiles;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace CustomerProfilesErrorMapper
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace CustomerProfilesErrorMapper {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CustomerProfilesErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CustomerProfilesErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CustomerProfilesErrorMapper
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace CustomerProfilesErrorMapper
+}  // namespace CustomerProfiles
+}  // namespace Aws

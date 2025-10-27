@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-SubDomainSetting::SubDomainSetting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubDomainSetting::SubDomainSetting(JsonView jsonValue) { *this = jsonValue; }
 
-SubDomainSetting& SubDomainSetting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("prefix"))
-  {
+SubDomainSetting& SubDomainSetting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("prefix")) {
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchName"))
-  {
+  if (jsonValue.ValueExists("branchName")) {
     m_branchName = jsonValue.GetString("branchName");
     m_branchNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubDomainSetting::Jsonize() const
-{
+JsonValue SubDomainSetting::Jsonize() const {
   JsonValue payload;
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("prefix", m_prefix);
   }
 
-  if(m_branchNameHasBeenSet)
-  {
-   payload.WithString("branchName", m_branchName);
-
+  if (m_branchNameHasBeenSet) {
+    payload.WithString("branchName", m_branchName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

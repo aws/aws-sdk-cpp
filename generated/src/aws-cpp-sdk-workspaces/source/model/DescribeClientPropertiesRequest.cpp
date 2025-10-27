@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeClientPropertiesRequest::SerializePayload() const
-{
+Aws::String DescribeClientPropertiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
-   }
-   payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
-
+  if (m_resourceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
+      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
+    }
+    payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeClientPropertiesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeClientPropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.DescribeClientProperties"));
   return headers;
-
 }
-
-
-
-

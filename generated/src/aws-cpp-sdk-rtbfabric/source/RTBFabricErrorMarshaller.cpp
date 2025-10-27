@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RTBFabric;
 
-AWSError<CoreErrors> RTBFabricErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RTBFabricErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RTBFabricErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

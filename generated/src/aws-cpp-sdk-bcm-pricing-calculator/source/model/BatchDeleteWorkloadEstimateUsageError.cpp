@@ -11,62 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-BatchDeleteWorkloadEstimateUsageError::BatchDeleteWorkloadEstimateUsageError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDeleteWorkloadEstimateUsageError::BatchDeleteWorkloadEstimateUsageError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDeleteWorkloadEstimateUsageError& BatchDeleteWorkloadEstimateUsageError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+BatchDeleteWorkloadEstimateUsageError& BatchDeleteWorkloadEstimateUsageError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = WorkloadEstimateUpdateUsageErrorCodeMapper::GetWorkloadEstimateUpdateUsageErrorCodeForName(jsonValue.GetString("errorCode"));
+  if (jsonValue.ValueExists("errorCode")) {
+    m_errorCode =
+        WorkloadEstimateUpdateUsageErrorCodeMapper::GetWorkloadEstimateUpdateUsageErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDeleteWorkloadEstimateUsageError::Jsonize() const
-{
+JsonValue BatchDeleteWorkloadEstimateUsageError::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", WorkloadEstimateUpdateUsageErrorCodeMapper::GetNameForWorkloadEstimateUpdateUsageErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode",
+                       WorkloadEstimateUpdateUsageErrorCodeMapper::GetNameForWorkloadEstimateUpdateUsageErrorCode(m_errorCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

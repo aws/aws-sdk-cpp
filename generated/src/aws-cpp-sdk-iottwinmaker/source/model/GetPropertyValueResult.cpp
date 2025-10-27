@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/GetPropertyValueResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iottwinmaker/model/GetPropertyValueResult.h>
 
 #include <utility>
 
@@ -17,42 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPropertyValueResult::GetPropertyValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetPropertyValueResult::GetPropertyValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetPropertyValueResult& GetPropertyValueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetPropertyValueResult& GetPropertyValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("propertyValues"))
-  {
+  if (jsonValue.ValueExists("propertyValues")) {
     Aws::Map<Aws::String, JsonView> propertyValuesJsonMap = jsonValue.GetObject("propertyValues").GetAllObjects();
-    for(auto& propertyValuesItem : propertyValuesJsonMap)
-    {
+    for (auto& propertyValuesItem : propertyValuesJsonMap) {
       m_propertyValues[propertyValuesItem.first] = propertyValuesItem.second.AsObject();
     }
     m_propertyValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tabularPropertyValues"))
-  {
+  if (jsonValue.ValueExists("tabularPropertyValues")) {
     Aws::Utils::Array<JsonView> tabularPropertyValuesJsonList = jsonValue.GetArray("tabularPropertyValues");
-    for(unsigned tabularPropertyValuesIndex = 0; tabularPropertyValuesIndex < tabularPropertyValuesJsonList.GetLength(); ++tabularPropertyValuesIndex)
-    {
+    for (unsigned tabularPropertyValuesIndex = 0; tabularPropertyValuesIndex < tabularPropertyValuesJsonList.GetLength();
+         ++tabularPropertyValuesIndex) {
       Aws::Utils::Array<JsonView> tabularPropertyValueJsonList = tabularPropertyValuesJsonList[tabularPropertyValuesIndex].AsArray();
       Aws::Vector<Aws::Map<Aws::String, DataValue>> tabularPropertyValueList;
       tabularPropertyValueList.reserve((size_t)tabularPropertyValueJsonList.GetLength());
-      for(unsigned tabularPropertyValueIndex = 0; tabularPropertyValueIndex < tabularPropertyValueJsonList.GetLength(); ++tabularPropertyValueIndex)
-      {
+      for (unsigned tabularPropertyValueIndex = 0; tabularPropertyValueIndex < tabularPropertyValueJsonList.GetLength();
+           ++tabularPropertyValueIndex) {
         Aws::Map<Aws::String, JsonView> propertyTableValueJsonMap = tabularPropertyValueJsonList[tabularPropertyValueIndex].GetAllObjects();
         Aws::Map<Aws::String, DataValue> propertyTableValueMap;
-        for(auto& propertyTableValueItem : propertyTableValueJsonMap)
-        {
+        for (auto& propertyTableValueItem : propertyTableValueJsonMap) {
           propertyTableValueMap[propertyTableValueItem.first] = propertyTableValueItem.second.AsObject();
         }
         tabularPropertyValueList.push_back(std::move(propertyTableValueMap));
@@ -64,12 +55,10 @@ GetPropertyValueResult& GetPropertyValueResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

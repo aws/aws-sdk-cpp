@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/RequestCancelActivityTaskFailedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/RequestCancelActivityTaskFailedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-RequestCancelActivityTaskFailedEventAttributes& RequestCancelActivityTaskFailedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("activityId"))
-  {
+RequestCancelActivityTaskFailedEventAttributes& RequestCancelActivityTaskFailedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("activityId")) {
     m_activityId = jsonValue.GetString("activityId");
     m_activityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cause"))
-  {
+  if (jsonValue.ValueExists("cause")) {
     m_cause = RequestCancelActivityTaskFailedCauseMapper::GetRequestCancelActivityTaskFailedCauseForName(jsonValue.GetString("cause"));
     m_causeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestCancelActivityTaskFailedEventAttributes::Jsonize() const
-{
+JsonValue RequestCancelActivityTaskFailedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_activityIdHasBeenSet)
-  {
-   payload.WithString("activityId", m_activityId);
-
+  if (m_activityIdHasBeenSet) {
+    payload.WithString("activityId", m_activityId);
   }
 
-  if(m_causeHasBeenSet)
-  {
-   payload.WithString("cause", RequestCancelActivityTaskFailedCauseMapper::GetNameForRequestCancelActivityTaskFailedCause(m_cause));
+  if (m_causeHasBeenSet) {
+    payload.WithString("cause", RequestCancelActivityTaskFailedCauseMapper::GetNameForRequestCancelActivityTaskFailedCause(m_cause));
   }
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

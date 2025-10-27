@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/scheduler/Scheduler_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/scheduler/Scheduler_EXPORTS.h>
 
-namespace Aws
-{
-namespace Scheduler
-{
-namespace Model
-{
-  enum class ScheduleState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Scheduler {
+namespace Model {
+enum class ScheduleState { NOT_SET, ENABLED, DISABLED };
 
-namespace ScheduleStateMapper
-{
+namespace ScheduleStateMapper {
 AWS_SCHEDULER_API ScheduleState GetScheduleStateForName(const Aws::String& name);
 
 AWS_SCHEDULER_API Aws::String GetNameForScheduleState(ScheduleState value);
-} // namespace ScheduleStateMapper
-} // namespace Model
-} // namespace Scheduler
-} // namespace Aws
+}  // namespace ScheduleStateMapper
+}  // namespace Model
+}  // namespace Scheduler
+}  // namespace Aws

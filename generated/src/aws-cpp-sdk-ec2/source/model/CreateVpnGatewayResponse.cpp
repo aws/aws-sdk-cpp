@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateVpnGatewayResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateVpnGatewayResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVpnGatewayResponse::CreateVpnGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateVpnGatewayResponse::CreateVpnGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateVpnGatewayResponse& CreateVpnGatewayResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateVpnGatewayResponse& CreateVpnGatewayResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateVpnGatewayResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateVpnGatewayResponse")) {
     resultNode = rootNode.FirstChild("CreateVpnGatewayResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode vpnGatewayNode = resultNode.FirstChild("vpnGateway");
-    if(!vpnGatewayNode.IsNull())
-    {
+    if (!vpnGatewayNode.IsNull()) {
       m_vpnGateway = vpnGatewayNode;
       m_vpnGatewayHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ CreateVpnGatewayResponse& CreateVpnGatewayResponse::operator =(const Aws::Amazon
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateVpnGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateVpnGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

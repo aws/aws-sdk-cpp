@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class LocationFilter
-  {
-    NOT_SET,
-    AWS,
-    CUSTOM
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class LocationFilter { NOT_SET, AWS, CUSTOM };
 
-namespace LocationFilterMapper
-{
+namespace LocationFilterMapper {
 AWS_GAMELIFT_API LocationFilter GetLocationFilterForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForLocationFilter(LocationFilter value);
-} // namespace LocationFilterMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace LocationFilterMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

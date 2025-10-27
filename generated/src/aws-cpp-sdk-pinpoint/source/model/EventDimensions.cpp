@@ -3,47 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/EventDimensions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/EventDimensions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-EventDimensions::EventDimensions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventDimensions::EventDimensions(JsonView jsonValue) { *this = jsonValue; }
 
-EventDimensions& EventDimensions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attributes"))
-  {
+EventDimensions& EventDimensions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsObject();
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventType"))
-  {
+  if (jsonValue.ValueExists("EventType")) {
     m_eventType = jsonValue.GetObject("EventType");
     m_eventTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metrics"))
-  {
+  if (jsonValue.ValueExists("Metrics")) {
     Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
-    for(auto& metricsItem : metricsJsonMap)
-    {
+    for (auto& metricsItem : metricsJsonMap) {
       m_metrics[metricsItem.first] = metricsItem.second.AsObject();
     }
     m_metricsHasBeenSet = true;
@@ -51,41 +39,32 @@ EventDimensions& EventDimensions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EventDimensions::Jsonize() const
-{
+JsonValue EventDimensions::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithObject(attributesItem.first, attributesItem.second.Jsonize());
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithObject(attributesItem.first, attributesItem.second.Jsonize());
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-   payload.WithObject("EventType", m_eventType.Jsonize());
-
+  if (m_eventTypeHasBeenSet) {
+    payload.WithObject("EventType", m_eventType.Jsonize());
   }
 
-  if(m_metricsHasBeenSet)
-  {
-   JsonValue metricsJsonMap;
-   for(auto& metricsItem : m_metrics)
-   {
-     metricsJsonMap.WithObject(metricsItem.first, metricsItem.second.Jsonize());
-   }
-   payload.WithObject("Metrics", std::move(metricsJsonMap));
-
+  if (m_metricsHasBeenSet) {
+    JsonValue metricsJsonMap;
+    for (auto& metricsItem : m_metrics) {
+      metricsJsonMap.WithObject(metricsItem.first, metricsItem.second.Jsonize());
+    }
+    payload.WithObject("Metrics", std::move(metricsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

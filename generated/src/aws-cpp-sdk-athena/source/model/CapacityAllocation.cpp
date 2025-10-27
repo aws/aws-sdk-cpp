@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-CapacityAllocation::CapacityAllocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapacityAllocation::CapacityAllocation(JsonView jsonValue) { *this = jsonValue; }
 
-CapacityAllocation& CapacityAllocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+CapacityAllocation& CapacityAllocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = CapacityAllocationStatusMapper::GetCapacityAllocationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestTime"))
-  {
+  if (jsonValue.ValueExists("RequestTime")) {
     m_requestTime = jsonValue.GetDouble("RequestTime");
     m_requestTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestCompletionTime"))
-  {
+  if (jsonValue.ValueExists("RequestCompletionTime")) {
     m_requestCompletionTime = jsonValue.GetDouble("RequestCompletionTime");
     m_requestCompletionTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapacityAllocation::Jsonize() const
-{
+JsonValue CapacityAllocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", CapacityAllocationStatusMapper::GetNameForCapacityAllocationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", CapacityAllocationStatusMapper::GetNameForCapacityAllocationStatus(m_status));
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
-  if(m_requestTimeHasBeenSet)
-  {
-   payload.WithDouble("RequestTime", m_requestTime.SecondsWithMSPrecision());
+  if (m_requestTimeHasBeenSet) {
+    payload.WithDouble("RequestTime", m_requestTime.SecondsWithMSPrecision());
   }
 
-  if(m_requestCompletionTimeHasBeenSet)
-  {
-   payload.WithDouble("RequestCompletionTime", m_requestCompletionTime.SecondsWithMSPrecision());
+  if (m_requestCompletionTimeHasBeenSet) {
+    payload.WithDouble("RequestCompletionTime", m_requestCompletionTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

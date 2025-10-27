@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const
-{
+Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteNetworkInterface&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
+  if (m_networkInterfaceIdHasBeenSet) {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

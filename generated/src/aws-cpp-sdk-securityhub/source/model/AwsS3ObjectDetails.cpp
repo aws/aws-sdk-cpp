@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsS3ObjectDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsS3ObjectDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsS3ObjectDetails::AwsS3ObjectDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsS3ObjectDetails::AwsS3ObjectDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsS3ObjectDetails& AwsS3ObjectDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LastModified"))
-  {
+AwsS3ObjectDetails& AwsS3ObjectDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LastModified")) {
     m_lastModified = jsonValue.GetString("LastModified");
     m_lastModifiedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ETag"))
-  {
+  if (jsonValue.ValueExists("ETag")) {
     m_eTag = jsonValue.GetString("ETag");
     m_eTagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionId"))
-  {
+  if (jsonValue.ValueExists("VersionId")) {
     m_versionId = jsonValue.GetString("VersionId");
     m_versionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentType"))
-  {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerSideEncryption"))
-  {
+  if (jsonValue.ValueExists("ServerSideEncryption")) {
     m_serverSideEncryption = jsonValue.GetString("ServerSideEncryption");
     m_serverSideEncryptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SSEKMSKeyId"))
-  {
+  if (jsonValue.ValueExists("SSEKMSKeyId")) {
     m_sSEKMSKeyId = jsonValue.GetString("SSEKMSKeyId");
     m_sSEKMSKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsS3ObjectDetails::Jsonize() const
-{
+JsonValue AwsS3ObjectDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_lastModifiedHasBeenSet)
-  {
-   payload.WithString("LastModified", m_lastModified);
-
+  if (m_lastModifiedHasBeenSet) {
+    payload.WithString("LastModified", m_lastModified);
   }
 
-  if(m_eTagHasBeenSet)
-  {
-   payload.WithString("ETag", m_eTag);
-
+  if (m_eTagHasBeenSet) {
+    payload.WithString("ETag", m_eTag);
   }
 
-  if(m_versionIdHasBeenSet)
-  {
-   payload.WithString("VersionId", m_versionId);
-
+  if (m_versionIdHasBeenSet) {
+    payload.WithString("VersionId", m_versionId);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_serverSideEncryptionHasBeenSet)
-  {
-   payload.WithString("ServerSideEncryption", m_serverSideEncryption);
-
+  if (m_serverSideEncryptionHasBeenSet) {
+    payload.WithString("ServerSideEncryption", m_serverSideEncryption);
   }
 
-  if(m_sSEKMSKeyIdHasBeenSet)
-  {
-   payload.WithString("SSEKMSKeyId", m_sSEKMSKeyId);
-
+  if (m_sSEKMSKeyIdHasBeenSet) {
+    payload.WithString("SSEKMSKeyId", m_sSEKMSKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

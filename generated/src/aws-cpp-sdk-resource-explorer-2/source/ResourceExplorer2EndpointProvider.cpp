@@ -5,12 +5,8 @@
 
 #include <aws/resource-explorer-2/ResourceExplorer2EndpointProvider.h>
 
-namespace Aws
-{
-namespace ResourceExplorer2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ResourceExplorer2
-} // namespace Aws
+namespace Aws {
+namespace ResourceExplorer2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ResourceExplorer2
+}  // namespace Aws

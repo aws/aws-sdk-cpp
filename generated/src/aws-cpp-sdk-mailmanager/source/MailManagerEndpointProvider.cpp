@@ -5,12 +5,8 @@
 
 #include <aws/mailmanager/MailManagerEndpointProvider.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MailManager
-} // namespace Aws
+namespace Aws {
+namespace MailManager {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MailManager
+}  // namespace Aws

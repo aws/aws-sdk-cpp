@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class IsolineOptimizationObjective
-  {
-    NOT_SET,
-    AccurateCalculation,
-    BalancedCalculation,
-    FastCalculation
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class IsolineOptimizationObjective { NOT_SET, AccurateCalculation, BalancedCalculation, FastCalculation };
 
-namespace IsolineOptimizationObjectiveMapper
-{
+namespace IsolineOptimizationObjectiveMapper {
 AWS_GEOROUTES_API IsolineOptimizationObjective GetIsolineOptimizationObjectiveForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForIsolineOptimizationObjective(IsolineOptimizationObjective value);
-} // namespace IsolineOptimizationObjectiveMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace IsolineOptimizationObjectiveMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

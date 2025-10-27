@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class ApplicationMode
-  {
-    NOT_SET,
-    ALL,
-    KNOWN,
-    UNKNOWN
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class ApplicationMode { NOT_SET, ALL, KNOWN, UNKNOWN };
 
-namespace ApplicationModeMapper
-{
+namespace ApplicationModeMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationMode GetApplicationModeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForApplicationMode(ApplicationMode value);
-} // namespace ApplicationModeMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace ApplicationModeMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

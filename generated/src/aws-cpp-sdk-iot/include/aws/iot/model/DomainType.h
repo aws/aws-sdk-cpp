@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class DomainType
-  {
-    NOT_SET,
-    ENDPOINT,
-    AWS_MANAGED,
-    CUSTOMER_MANAGED
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class DomainType { NOT_SET, ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED };
 
-namespace DomainTypeMapper
-{
+namespace DomainTypeMapper {
 AWS_IOT_API DomainType GetDomainTypeForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForDomainType(DomainType value);
-} // namespace DomainTypeMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace DomainTypeMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

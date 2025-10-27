@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/es/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/model/RevokeVpcEndpointAccessRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RevokeVpcEndpointAccessRequest::SerializePayload() const
-{
+Aws::String RevokeVpcEndpointAccessRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountHasBeenSet)
-  {
-   payload.WithString("Account", m_account);
-
+  if (m_accountHasBeenSet) {
+    payload.WithString("Account", m_account);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -12,73 +12,50 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAppBlockRequest::SerializePayload() const
-{
+Aws::String CreateAppBlockRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_sourceS3LocationHasBeenSet)
-  {
-   payload.WithObject("SourceS3Location", m_sourceS3Location.Jsonize());
-
+  if (m_sourceS3LocationHasBeenSet) {
+    payload.WithObject("SourceS3Location", m_sourceS3Location.Jsonize());
   }
 
-  if(m_setupScriptDetailsHasBeenSet)
-  {
-   payload.WithObject("SetupScriptDetails", m_setupScriptDetails.Jsonize());
-
+  if (m_setupScriptDetailsHasBeenSet) {
+    payload.WithObject("SetupScriptDetails", m_setupScriptDetails.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_postSetupScriptDetailsHasBeenSet)
-  {
-   payload.WithObject("PostSetupScriptDetails", m_postSetupScriptDetails.Jsonize());
-
+  if (m_postSetupScriptDetailsHasBeenSet) {
+    payload.WithObject("PostSetupScriptDetails", m_postSetupScriptDetails.Jsonize());
   }
 
-  if(m_packagingTypeHasBeenSet)
-  {
-   payload.WithString("PackagingType", PackagingTypeMapper::GetNameForPackagingType(m_packagingType));
+  if (m_packagingTypeHasBeenSet) {
+    payload.WithString("PackagingType", PackagingTypeMapper::GetNameForPackagingType(m_packagingType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateAppBlockRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateAppBlockRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateAppBlock"));
   return headers;
-
 }
-
-
-
-

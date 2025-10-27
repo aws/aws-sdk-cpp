@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/AppflowIntegrationWorkflowMetrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/AppflowIntegrationWorkflowMetrics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-AppflowIntegrationWorkflowMetrics& AppflowIntegrationWorkflowMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecordsProcessed"))
-  {
+AppflowIntegrationWorkflowMetrics& AppflowIntegrationWorkflowMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecordsProcessed")) {
     m_recordsProcessed = jsonValue.GetInt64("RecordsProcessed");
     m_recordsProcessedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StepsCompleted"))
-  {
+  if (jsonValue.ValueExists("StepsCompleted")) {
     m_stepsCompleted = jsonValue.GetInt64("StepsCompleted");
     m_stepsCompletedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalSteps"))
-  {
+  if (jsonValue.ValueExists("TotalSteps")) {
     m_totalSteps = jsonValue.GetInt64("TotalSteps");
     m_totalStepsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppflowIntegrationWorkflowMetrics::Jsonize() const
-{
+JsonValue AppflowIntegrationWorkflowMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_recordsProcessedHasBeenSet)
-  {
-   payload.WithInt64("RecordsProcessed", m_recordsProcessed);
-
+  if (m_recordsProcessedHasBeenSet) {
+    payload.WithInt64("RecordsProcessed", m_recordsProcessed);
   }
 
-  if(m_stepsCompletedHasBeenSet)
-  {
-   payload.WithInt64("StepsCompleted", m_stepsCompleted);
-
+  if (m_stepsCompletedHasBeenSet) {
+    payload.WithInt64("StepsCompleted", m_stepsCompleted);
   }
 
-  if(m_totalStepsHasBeenSet)
-  {
-   payload.WithInt64("TotalSteps", m_totalSteps);
-
+  if (m_totalStepsHasBeenSet) {
+    payload.WithInt64("TotalSteps", m_totalSteps);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

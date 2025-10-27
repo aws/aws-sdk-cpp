@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/UpdateMapRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/UpdateMapRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateMapRequest::SerializePayload() const
-{
+Aws::String UpdateMapRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_configurationUpdateHasBeenSet)
-  {
-   payload.WithObject("ConfigurationUpdate", m_configurationUpdate.Jsonize());
-
+  if (m_configurationUpdateHasBeenSet) {
+    payload.WithObject("ConfigurationUpdate", m_configurationUpdate.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

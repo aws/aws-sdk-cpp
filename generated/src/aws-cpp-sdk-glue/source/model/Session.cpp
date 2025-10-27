@@ -3,263 +3,197 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/Session.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/Session.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-Session::Session(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Session::Session(JsonView jsonValue) { *this = jsonValue; }
 
-Session& Session::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+Session& Session::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedOn"))
-  {
+  if (jsonValue.ValueExists("CreatedOn")) {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
     m_createdOnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Command"))
-  {
+  if (jsonValue.ValueExists("Command")) {
     m_command = jsonValue.GetObject("Command");
     m_commandHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultArguments"))
-  {
+  if (jsonValue.ValueExists("DefaultArguments")) {
     Aws::Map<Aws::String, JsonView> defaultArgumentsJsonMap = jsonValue.GetObject("DefaultArguments").GetAllObjects();
-    for(auto& defaultArgumentsItem : defaultArgumentsJsonMap)
-    {
+    for (auto& defaultArgumentsItem : defaultArgumentsJsonMap) {
       m_defaultArguments[defaultArgumentsItem.first] = defaultArgumentsItem.second.AsString();
     }
     m_defaultArgumentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Connections"))
-  {
+  if (jsonValue.ValueExists("Connections")) {
     m_connections = jsonValue.GetObject("Connections");
     m_connectionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Progress"))
-  {
+  if (jsonValue.ValueExists("Progress")) {
     m_progress = jsonValue.GetDouble("Progress");
     m_progressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxCapacity"))
-  {
+  if (jsonValue.ValueExists("MaxCapacity")) {
     m_maxCapacity = jsonValue.GetDouble("MaxCapacity");
     m_maxCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityConfiguration"))
-  {
+  if (jsonValue.ValueExists("SecurityConfiguration")) {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
     m_securityConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlueVersion"))
-  {
+  if (jsonValue.ValueExists("GlueVersion")) {
     m_glueVersion = jsonValue.GetString("GlueVersion");
     m_glueVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfWorkers"))
-  {
+  if (jsonValue.ValueExists("NumberOfWorkers")) {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
     m_numberOfWorkersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkerType"))
-  {
+  if (jsonValue.ValueExists("WorkerType")) {
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
     m_workerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedOn"))
-  {
+  if (jsonValue.ValueExists("CompletedOn")) {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
     m_completedOnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutionTime"))
-  {
+  if (jsonValue.ValueExists("ExecutionTime")) {
     m_executionTime = jsonValue.GetDouble("ExecutionTime");
     m_executionTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DPUSeconds"))
-  {
+  if (jsonValue.ValueExists("DPUSeconds")) {
     m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
     m_dPUSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdleTimeout"))
-  {
+  if (jsonValue.ValueExists("IdleTimeout")) {
     m_idleTimeout = jsonValue.GetInteger("IdleTimeout");
     m_idleTimeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProfileName"))
-  {
+  if (jsonValue.ValueExists("ProfileName")) {
     m_profileName = jsonValue.GetString("ProfileName");
     m_profileNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Session::Jsonize() const
-{
+JsonValue Session::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_createdOnHasBeenSet)
-  {
-   payload.WithDouble("CreatedOn", m_createdOn.SecondsWithMSPrecision());
+  if (m_createdOnHasBeenSet) {
+    payload.WithDouble("CreatedOn", m_createdOn.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", SessionStatusMapper::GetNameForSessionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", SessionStatusMapper::GetNameForSessionStatus(m_status));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_commandHasBeenSet)
-  {
-   payload.WithObject("Command", m_command.Jsonize());
-
+  if (m_commandHasBeenSet) {
+    payload.WithObject("Command", m_command.Jsonize());
   }
 
-  if(m_defaultArgumentsHasBeenSet)
-  {
-   JsonValue defaultArgumentsJsonMap;
-   for(auto& defaultArgumentsItem : m_defaultArguments)
-   {
-     defaultArgumentsJsonMap.WithString(defaultArgumentsItem.first, defaultArgumentsItem.second);
-   }
-   payload.WithObject("DefaultArguments", std::move(defaultArgumentsJsonMap));
-
+  if (m_defaultArgumentsHasBeenSet) {
+    JsonValue defaultArgumentsJsonMap;
+    for (auto& defaultArgumentsItem : m_defaultArguments) {
+      defaultArgumentsJsonMap.WithString(defaultArgumentsItem.first, defaultArgumentsItem.second);
+    }
+    payload.WithObject("DefaultArguments", std::move(defaultArgumentsJsonMap));
   }
 
-  if(m_connectionsHasBeenSet)
-  {
-   payload.WithObject("Connections", m_connections.Jsonize());
-
+  if (m_connectionsHasBeenSet) {
+    payload.WithObject("Connections", m_connections.Jsonize());
   }
 
-  if(m_progressHasBeenSet)
-  {
-   payload.WithDouble("Progress", m_progress);
-
+  if (m_progressHasBeenSet) {
+    payload.WithDouble("Progress", m_progress);
   }
 
-  if(m_maxCapacityHasBeenSet)
-  {
-   payload.WithDouble("MaxCapacity", m_maxCapacity);
-
+  if (m_maxCapacityHasBeenSet) {
+    payload.WithDouble("MaxCapacity", m_maxCapacity);
   }
 
-  if(m_securityConfigurationHasBeenSet)
-  {
-   payload.WithString("SecurityConfiguration", m_securityConfiguration);
-
+  if (m_securityConfigurationHasBeenSet) {
+    payload.WithString("SecurityConfiguration", m_securityConfiguration);
   }
 
-  if(m_glueVersionHasBeenSet)
-  {
-   payload.WithString("GlueVersion", m_glueVersion);
-
+  if (m_glueVersionHasBeenSet) {
+    payload.WithString("GlueVersion", m_glueVersion);
   }
 
-  if(m_numberOfWorkersHasBeenSet)
-  {
-   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
-
+  if (m_numberOfWorkersHasBeenSet) {
+    payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
   }
 
-  if(m_workerTypeHasBeenSet)
-  {
-   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  if (m_workerTypeHasBeenSet) {
+    payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
   }
 
-  if(m_completedOnHasBeenSet)
-  {
-   payload.WithDouble("CompletedOn", m_completedOn.SecondsWithMSPrecision());
+  if (m_completedOnHasBeenSet) {
+    payload.WithDouble("CompletedOn", m_completedOn.SecondsWithMSPrecision());
   }
 
-  if(m_executionTimeHasBeenSet)
-  {
-   payload.WithDouble("ExecutionTime", m_executionTime);
-
+  if (m_executionTimeHasBeenSet) {
+    payload.WithDouble("ExecutionTime", m_executionTime);
   }
 
-  if(m_dPUSecondsHasBeenSet)
-  {
-   payload.WithDouble("DPUSeconds", m_dPUSeconds);
-
+  if (m_dPUSecondsHasBeenSet) {
+    payload.WithDouble("DPUSeconds", m_dPUSeconds);
   }
 
-  if(m_idleTimeoutHasBeenSet)
-  {
-   payload.WithInteger("IdleTimeout", m_idleTimeout);
-
+  if (m_idleTimeoutHasBeenSet) {
+    payload.WithInteger("IdleTimeout", m_idleTimeout);
   }
 
-  if(m_profileNameHasBeenSet)
-  {
-   payload.WithString("ProfileName", m_profileName);
-
+  if (m_profileNameHasBeenSet) {
+    payload.WithString("ProfileName", m_profileName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

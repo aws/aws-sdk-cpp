@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-WebhookFilterRule::WebhookFilterRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WebhookFilterRule::WebhookFilterRule(JsonView jsonValue) { *this = jsonValue; }
 
-WebhookFilterRule& WebhookFilterRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jsonPath"))
-  {
+WebhookFilterRule& WebhookFilterRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jsonPath")) {
     m_jsonPath = jsonValue.GetString("jsonPath");
     m_jsonPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("matchEquals"))
-  {
+  if (jsonValue.ValueExists("matchEquals")) {
     m_matchEquals = jsonValue.GetString("matchEquals");
     m_matchEqualsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WebhookFilterRule::Jsonize() const
-{
+JsonValue WebhookFilterRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_jsonPathHasBeenSet)
-  {
-   payload.WithString("jsonPath", m_jsonPath);
-
+  if (m_jsonPathHasBeenSet) {
+    payload.WithString("jsonPath", m_jsonPath);
   }
 
-  if(m_matchEqualsHasBeenSet)
-  {
-   payload.WithString("matchEquals", m_matchEquals);
-
+  if (m_matchEqualsHasBeenSet) {
+    payload.WithString("matchEquals", m_matchEquals);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

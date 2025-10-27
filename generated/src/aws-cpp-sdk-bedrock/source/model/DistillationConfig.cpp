@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-DistillationConfig::DistillationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DistillationConfig::DistillationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DistillationConfig& DistillationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("teacherModelConfig"))
-  {
+DistillationConfig& DistillationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("teacherModelConfig")) {
     m_teacherModelConfig = jsonValue.GetObject("teacherModelConfig");
     m_teacherModelConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DistillationConfig::Jsonize() const
-{
+JsonValue DistillationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_teacherModelConfigHasBeenSet)
-  {
-   payload.WithObject("teacherModelConfig", m_teacherModelConfig.Jsonize());
-
+  if (m_teacherModelConfigHasBeenSet) {
+    payload.WithObject("teacherModelConfig", m_teacherModelConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

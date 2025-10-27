@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class SegmentReferenceResourceType
-  {
-    NOT_SET,
-    EXPERIMENT,
-    LAUNCH
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class SegmentReferenceResourceType { NOT_SET, EXPERIMENT, LAUNCH };
 
-namespace SegmentReferenceResourceTypeMapper
-{
+namespace SegmentReferenceResourceTypeMapper {
 AWS_CLOUDWATCHEVIDENTLY_API SegmentReferenceResourceType GetSegmentReferenceResourceTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForSegmentReferenceResourceType(SegmentReferenceResourceType value);
-} // namespace SegmentReferenceResourceTypeMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace SegmentReferenceResourceTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-BlockerDeclaration::BlockerDeclaration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BlockerDeclaration::BlockerDeclaration(JsonView jsonValue) { *this = jsonValue; }
 
-BlockerDeclaration& BlockerDeclaration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+BlockerDeclaration& BlockerDeclaration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = BlockerTypeMapper::GetBlockerTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BlockerDeclaration::Jsonize() const
-{
+JsonValue BlockerDeclaration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", BlockerTypeMapper::GetNameForBlockerType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", BlockerTypeMapper::GetNameForBlockerType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

@@ -7,61 +7,66 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/auditmanager/model/Control.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace AuditManager
-{
-namespace Model
-{
-  class GetControlResult
-  {
-  public:
-    AWS_AUDITMANAGER_API GetControlResult() = default;
-    AWS_AUDITMANAGER_API GetControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_AUDITMANAGER_API GetControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AuditManager {
+namespace Model {
+class GetControlResult {
+ public:
+  AWS_AUDITMANAGER_API GetControlResult() = default;
+  AWS_AUDITMANAGER_API GetControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_AUDITMANAGER_API GetControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p> The details of the control that the <code>GetControl</code> API returned.
+   * </p>
+   */
+  inline const Control& GetControl() const { return m_control; }
+  template <typename ControlT = Control>
+  void SetControl(ControlT&& value) {
+    m_controlHasBeenSet = true;
+    m_control = std::forward<ControlT>(value);
+  }
+  template <typename ControlT = Control>
+  GetControlResult& WithControl(ControlT&& value) {
+    SetControl(std::forward<ControlT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The details of the control that the <code>GetControl</code> API returned.
-     * </p>
-     */
-    inline const Control& GetControl() const { return m_control; }
-    template<typename ControlT = Control>
-    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
-    template<typename ControlT = Control>
-    GetControlResult& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetControlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetControlResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Control m_control;
+  bool m_controlHasBeenSet = false;
 
-    Control m_control;
-    bool m_controlHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

@@ -6,64 +6,68 @@
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ConnectWisdomService {
+namespace Model {
 
+/**
+ * <p>Offset specification to describe highlighting of document excerpts for
+ * rendering search results and recommendations.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/Highlight">AWS
+ * API Reference</a></p>
+ */
+class Highlight {
+ public:
+  AWS_CONNECTWISDOMSERVICE_API Highlight() = default;
+  AWS_CONNECTWISDOMSERVICE_API Highlight(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTWISDOMSERVICE_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Offset specification to describe highlighting of document excerpts for
-   * rendering search results and recommendations.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/Highlight">AWS
-   * API Reference</a></p>
+   * <p>The offset for the start of the highlight.</p>
    */
-  class Highlight
-  {
-  public:
-    AWS_CONNECTWISDOMSERVICE_API Highlight() = default;
-    AWS_CONNECTWISDOMSERVICE_API Highlight(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTWISDOMSERVICE_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetBeginOffsetInclusive() const { return m_beginOffsetInclusive; }
+  inline bool BeginOffsetInclusiveHasBeenSet() const { return m_beginOffsetInclusiveHasBeenSet; }
+  inline void SetBeginOffsetInclusive(int value) {
+    m_beginOffsetInclusiveHasBeenSet = true;
+    m_beginOffsetInclusive = value;
+  }
+  inline Highlight& WithBeginOffsetInclusive(int value) {
+    SetBeginOffsetInclusive(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The offset for the end of the highlight.</p>
+   */
+  inline int GetEndOffsetExclusive() const { return m_endOffsetExclusive; }
+  inline bool EndOffsetExclusiveHasBeenSet() const { return m_endOffsetExclusiveHasBeenSet; }
+  inline void SetEndOffsetExclusive(int value) {
+    m_endOffsetExclusiveHasBeenSet = true;
+    m_endOffsetExclusive = value;
+  }
+  inline Highlight& WithEndOffsetExclusive(int value) {
+    SetEndOffsetExclusive(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_beginOffsetInclusive{0};
+  bool m_beginOffsetInclusiveHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The offset for the start of the highlight.</p>
-     */
-    inline int GetBeginOffsetInclusive() const { return m_beginOffsetInclusive; }
-    inline bool BeginOffsetInclusiveHasBeenSet() const { return m_beginOffsetInclusiveHasBeenSet; }
-    inline void SetBeginOffsetInclusive(int value) { m_beginOffsetInclusiveHasBeenSet = true; m_beginOffsetInclusive = value; }
-    inline Highlight& WithBeginOffsetInclusive(int value) { SetBeginOffsetInclusive(value); return *this;}
-    ///@}
+  int m_endOffsetExclusive{0};
+  bool m_endOffsetExclusiveHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The offset for the end of the highlight.</p>
-     */
-    inline int GetEndOffsetExclusive() const { return m_endOffsetExclusive; }
-    inline bool EndOffsetExclusiveHasBeenSet() const { return m_endOffsetExclusiveHasBeenSet; }
-    inline void SetEndOffsetExclusive(int value) { m_endOffsetExclusiveHasBeenSet = true; m_endOffsetExclusive = value; }
-    inline Highlight& WithEndOffsetExclusive(int value) { SetEndOffsetExclusive(value); return *this;}
-    ///@}
-  private:
-
-    int m_beginOffsetInclusive{0};
-    bool m_beginOffsetInclusiveHasBeenSet = false;
-
-    int m_endOffsetExclusive{0};
-    bool m_endOffsetExclusiveHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/ListSolNetworkPackageMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/ListSolNetworkPackageMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
+namespace Aws {
+namespace tnb {
+namespace Model {
 
-ListSolNetworkPackageMetadata::ListSolNetworkPackageMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListSolNetworkPackageMetadata::ListSolNetworkPackageMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ListSolNetworkPackageMetadata& ListSolNetworkPackageMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createdAt"))
-  {
+ListSolNetworkPackageMetadata& ListSolNetworkPackageMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModified"))
-  {
+  if (jsonValue.ValueExists("lastModified")) {
     m_lastModified = jsonValue.GetString("lastModified");
     m_lastModifiedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListSolNetworkPackageMetadata::Jsonize() const
-{
+JsonValue ListSolNetworkPackageMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedHasBeenSet)
-  {
-   payload.WithString("lastModified", m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedHasBeenSet) {
+    payload.WithString("lastModified", m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

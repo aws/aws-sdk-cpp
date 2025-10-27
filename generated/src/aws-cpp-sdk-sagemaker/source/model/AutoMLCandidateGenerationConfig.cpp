@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AutoMLCandidateGenerationConfig& AutoMLCandidateGenerationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FeatureSpecificationS3Uri"))
-  {
+AutoMLCandidateGenerationConfig& AutoMLCandidateGenerationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FeatureSpecificationS3Uri")) {
     m_featureSpecificationS3Uri = jsonValue.GetString("FeatureSpecificationS3Uri");
     m_featureSpecificationS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AlgorithmsConfig"))
-  {
+  if (jsonValue.ValueExists("AlgorithmsConfig")) {
     Aws::Utils::Array<JsonView> algorithmsConfigJsonList = jsonValue.GetArray("AlgorithmsConfig");
-    for(unsigned algorithmsConfigIndex = 0; algorithmsConfigIndex < algorithmsConfigJsonList.GetLength(); ++algorithmsConfigIndex)
-    {
+    for (unsigned algorithmsConfigIndex = 0; algorithmsConfigIndex < algorithmsConfigJsonList.GetLength(); ++algorithmsConfigIndex) {
       m_algorithmsConfig.push_back(algorithmsConfigJsonList[algorithmsConfigIndex].AsObject());
     }
     m_algorithmsConfigHasBeenSet = true;
@@ -42,30 +32,24 @@ AutoMLCandidateGenerationConfig& AutoMLCandidateGenerationConfig::operator =(Jso
   return *this;
 }
 
-JsonValue AutoMLCandidateGenerationConfig::Jsonize() const
-{
+JsonValue AutoMLCandidateGenerationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureSpecificationS3UriHasBeenSet)
-  {
-   payload.WithString("FeatureSpecificationS3Uri", m_featureSpecificationS3Uri);
-
+  if (m_featureSpecificationS3UriHasBeenSet) {
+    payload.WithString("FeatureSpecificationS3Uri", m_featureSpecificationS3Uri);
   }
 
-  if(m_algorithmsConfigHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> algorithmsConfigJsonList(m_algorithmsConfig.size());
-   for(unsigned algorithmsConfigIndex = 0; algorithmsConfigIndex < algorithmsConfigJsonList.GetLength(); ++algorithmsConfigIndex)
-   {
-     algorithmsConfigJsonList[algorithmsConfigIndex].AsObject(m_algorithmsConfig[algorithmsConfigIndex].Jsonize());
-   }
-   payload.WithArray("AlgorithmsConfig", std::move(algorithmsConfigJsonList));
-
+  if (m_algorithmsConfigHasBeenSet) {
+    Aws::Utils::Array<JsonValue> algorithmsConfigJsonList(m_algorithmsConfig.size());
+    for (unsigned algorithmsConfigIndex = 0; algorithmsConfigIndex < algorithmsConfigJsonList.GetLength(); ++algorithmsConfigIndex) {
+      algorithmsConfigJsonList[algorithmsConfigIndex].AsObject(m_algorithmsConfig[algorithmsConfigIndex].Jsonize());
+    }
+    payload.WithArray("AlgorithmsConfig", std::move(algorithmsConfigJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

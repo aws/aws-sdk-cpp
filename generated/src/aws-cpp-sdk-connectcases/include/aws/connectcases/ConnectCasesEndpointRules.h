@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConnectCases
-{
-class ConnectCasesEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ConnectCases {
+class ConnectCasesEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace ConnectCases
+}  // namespace Aws

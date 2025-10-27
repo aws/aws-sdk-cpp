@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-TaskPropertiesOverride::TaskPropertiesOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskPropertiesOverride::TaskPropertiesOverride(JsonView jsonValue) { *this = jsonValue; }
 
-TaskPropertiesOverride& TaskPropertiesOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("containers"))
-  {
+TaskPropertiesOverride& TaskPropertiesOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("containers")) {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
-    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
-    {
+    for (unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex) {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
     }
     m_containersHasBeenSet = true;
@@ -37,24 +28,20 @@ TaskPropertiesOverride& TaskPropertiesOverride::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TaskPropertiesOverride::Jsonize() const
-{
+JsonValue TaskPropertiesOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_containersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
-   for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
-   {
-     containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
-   }
-   payload.WithArray("containers", std::move(containersJsonList));
-
+  if (m_containersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
+    for (unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex) {
+      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
+    }
+    payload.WithArray("containers", std::move(containersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

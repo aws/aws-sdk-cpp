@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-InferenceProfileModelSource::InferenceProfileModelSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceProfileModelSource::InferenceProfileModelSource(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceProfileModelSource& InferenceProfileModelSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("copyFrom"))
-  {
+InferenceProfileModelSource& InferenceProfileModelSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("copyFrom")) {
     m_copyFrom = jsonValue.GetString("copyFrom");
     m_copyFromHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferenceProfileModelSource::Jsonize() const
-{
+JsonValue InferenceProfileModelSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_copyFromHasBeenSet)
-  {
-   payload.WithString("copyFrom", m_copyFrom);
-
+  if (m_copyFromHasBeenSet) {
+    payload.WithString("copyFrom", m_copyFrom);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

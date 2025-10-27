@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class AIPromptAPIFormat
-  {
-    NOT_SET,
-    ANTHROPIC_CLAUDE_MESSAGES,
-    ANTHROPIC_CLAUDE_TEXT_COMPLETIONS,
-    MESSAGES,
-    TEXT_COMPLETIONS
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class AIPromptAPIFormat { NOT_SET, ANTHROPIC_CLAUDE_MESSAGES, ANTHROPIC_CLAUDE_TEXT_COMPLETIONS, MESSAGES, TEXT_COMPLETIONS };
 
-namespace AIPromptAPIFormatMapper
-{
+namespace AIPromptAPIFormatMapper {
 AWS_QCONNECT_API AIPromptAPIFormat GetAIPromptAPIFormatForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForAIPromptAPIFormat(AIPromptAPIFormat value);
-} // namespace AIPromptAPIFormatMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace AIPromptAPIFormatMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

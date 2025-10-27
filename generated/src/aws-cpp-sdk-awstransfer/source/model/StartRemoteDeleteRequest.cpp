@@ -12,33 +12,22 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartRemoteDeleteRequest::SerializePayload() const
-{
+Aws::String StartRemoteDeleteRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorIdHasBeenSet)
-  {
-   payload.WithString("ConnectorId", m_connectorId);
-
+  if (m_connectorIdHasBeenSet) {
+    payload.WithString("ConnectorId", m_connectorId);
   }
 
-  if(m_deletePathHasBeenSet)
-  {
-   payload.WithString("DeletePath", m_deletePath);
-
+  if (m_deletePathHasBeenSet) {
+    payload.WithString("DeletePath", m_deletePath);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartRemoteDeleteRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartRemoteDeleteRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.StartRemoteDelete"));
   return headers;
-
 }
-
-
-
-

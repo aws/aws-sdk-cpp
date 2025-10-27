@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateApprovalRuleTemplateDescriptionRequest::SerializePayload() const
-{
+Aws::String UpdateApprovalRuleTemplateDescriptionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_approvalRuleTemplateNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
-
+  if (m_approvalRuleTemplateNameHasBeenSet) {
+    payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
   }
 
-  if(m_approvalRuleTemplateDescriptionHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateDescription", m_approvalRuleTemplateDescription);
-
+  if (m_approvalRuleTemplateDescriptionHasBeenSet) {
+    payload.WithString("approvalRuleTemplateDescription", m_approvalRuleTemplateDescription);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateApprovalRuleTemplateDescriptionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateApprovalRuleTemplateDescriptionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.UpdateApprovalRuleTemplateDescription"));
   return headers;
-
 }
-
-
-
-

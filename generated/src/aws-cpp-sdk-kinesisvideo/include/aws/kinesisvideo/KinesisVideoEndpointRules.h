@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-class KinesisVideoEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace KinesisVideo {
+class KinesisVideoEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace KinesisVideo
+}  // namespace Aws

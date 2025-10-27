@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-agreement/model/Dimension.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/Dimension.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Model
-{
+namespace Aws {
+namespace AgreementService {
+namespace Model {
 
-Dimension::Dimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Dimension::Dimension(JsonView jsonValue) { *this = jsonValue; }
 
-Dimension& Dimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dimensionKey"))
-  {
+Dimension& Dimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensionKey")) {
     m_dimensionKey = jsonValue.GetString("dimensionKey");
     m_dimensionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dimensionValue"))
-  {
+  if (jsonValue.ValueExists("dimensionValue")) {
     m_dimensionValue = jsonValue.GetInteger("dimensionValue");
     m_dimensionValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Dimension::Jsonize() const
-{
+JsonValue Dimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionKeyHasBeenSet)
-  {
-   payload.WithString("dimensionKey", m_dimensionKey);
-
+  if (m_dimensionKeyHasBeenSet) {
+    payload.WithString("dimensionKey", m_dimensionKey);
   }
 
-  if(m_dimensionValueHasBeenSet)
-  {
-   payload.WithInteger("dimensionValue", m_dimensionValue);
-
+  if (m_dimensionValueHasBeenSet) {
+    payload.WithInteger("dimensionValue", m_dimensionValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AgreementService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

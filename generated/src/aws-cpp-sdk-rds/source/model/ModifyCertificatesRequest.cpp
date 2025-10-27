@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyCertificatesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyCertificatesRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyCertificatesRequest::SerializePayload() const
-{
+Aws::String ModifyCertificatesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyCertificates&";
-  if(m_certificateIdentifierHasBeenSet)
-  {
+  if (m_certificateIdentifierHasBeenSet) {
     ss << "CertificateIdentifier=" << StringUtils::URLEncode(m_certificateIdentifier.c_str()) << "&";
   }
 
-  if(m_removeCustomerOverrideHasBeenSet)
-  {
+  if (m_removeCustomerOverrideHasBeenSet) {
     ss << "RemoveCustomerOverride=" << std::boolalpha << m_removeCustomerOverride << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ModifyCertificatesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

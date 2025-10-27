@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTWireless;
 
-AWSError<CoreErrors> IoTWirelessErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTWirelessErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTWirelessErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

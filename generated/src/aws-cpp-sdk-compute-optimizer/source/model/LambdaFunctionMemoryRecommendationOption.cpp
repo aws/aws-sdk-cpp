@@ -11,94 +11,72 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rank"))
-  {
+LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rank")) {
     m_rank = jsonValue.GetInteger("rank");
     m_rankHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memorySize"))
-  {
+  if (jsonValue.ValueExists("memorySize")) {
     m_memorySize = jsonValue.GetInteger("memorySize");
     m_memorySizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectedUtilizationMetrics"))
-  {
+  if (jsonValue.ValueExists("projectedUtilizationMetrics")) {
     Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
-    for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
-    {
+    for (unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength();
+         ++projectedUtilizationMetricsIndex) {
       m_projectedUtilizationMetrics.push_back(projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject());
     }
     m_projectedUtilizationMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("savingsOpportunity"))
-  {
+  if (jsonValue.ValueExists("savingsOpportunity")) {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
     m_savingsOpportunityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
-  {
+  if (jsonValue.ValueExists("savingsOpportunityAfterDiscounts")) {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaFunctionMemoryRecommendationOption::Jsonize() const
-{
+JsonValue LambdaFunctionMemoryRecommendationOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_rankHasBeenSet)
-  {
-   payload.WithInteger("rank", m_rank);
-
+  if (m_rankHasBeenSet) {
+    payload.WithInteger("rank", m_rank);
   }
 
-  if(m_memorySizeHasBeenSet)
-  {
-   payload.WithInteger("memorySize", m_memorySize);
-
+  if (m_memorySizeHasBeenSet) {
+    payload.WithInteger("memorySize", m_memorySize);
   }
 
-  if(m_projectedUtilizationMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
-   for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
-   {
-     projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject(m_projectedUtilizationMetrics[projectedUtilizationMetricsIndex].Jsonize());
-   }
-   payload.WithArray("projectedUtilizationMetrics", std::move(projectedUtilizationMetricsJsonList));
-
+  if (m_projectedUtilizationMetricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
+    for (unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength();
+         ++projectedUtilizationMetricsIndex) {
+      projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject(
+          m_projectedUtilizationMetrics[projectedUtilizationMetricsIndex].Jsonize());
+    }
+    payload.WithArray("projectedUtilizationMetrics", std::move(projectedUtilizationMetricsJsonList));
   }
 
-  if(m_savingsOpportunityHasBeenSet)
-  {
-   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
-
+  if (m_savingsOpportunityHasBeenSet) {
+    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
   }
 
-  if(m_savingsOpportunityAfterDiscountsHasBeenSet)
-  {
-   payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
-
+  if (m_savingsOpportunityAfterDiscountsHasBeenSet) {
+    payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

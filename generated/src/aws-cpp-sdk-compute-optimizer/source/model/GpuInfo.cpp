@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-GpuInfo::GpuInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GpuInfo::GpuInfo(JsonView jsonValue) { *this = jsonValue; }
 
-GpuInfo& GpuInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("gpus"))
-  {
+GpuInfo& GpuInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("gpus")) {
     Aws::Utils::Array<JsonView> gpusJsonList = jsonValue.GetArray("gpus");
-    for(unsigned gpusIndex = 0; gpusIndex < gpusJsonList.GetLength(); ++gpusIndex)
-    {
+    for (unsigned gpusIndex = 0; gpusIndex < gpusJsonList.GetLength(); ++gpusIndex) {
       m_gpus.push_back(gpusJsonList[gpusIndex].AsObject());
     }
     m_gpusHasBeenSet = true;
@@ -37,24 +28,20 @@ GpuInfo& GpuInfo::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue GpuInfo::Jsonize() const
-{
+JsonValue GpuInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_gpusHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> gpusJsonList(m_gpus.size());
-   for(unsigned gpusIndex = 0; gpusIndex < gpusJsonList.GetLength(); ++gpusIndex)
-   {
-     gpusJsonList[gpusIndex].AsObject(m_gpus[gpusIndex].Jsonize());
-   }
-   payload.WithArray("gpus", std::move(gpusJsonList));
-
+  if (m_gpusHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gpusJsonList(m_gpus.size());
+    for (unsigned gpusIndex = 0; gpusIndex < gpusJsonList.GetLength(); ++gpusIndex) {
+      gpusJsonList[gpusIndex].AsObject(m_gpus[gpusIndex].Jsonize());
+    }
+    payload.WithArray("gpus", std::move(gpusJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

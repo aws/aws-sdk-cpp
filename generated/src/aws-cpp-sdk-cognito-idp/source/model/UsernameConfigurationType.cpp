@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-UsernameConfigurationType::UsernameConfigurationType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsernameConfigurationType::UsernameConfigurationType(JsonView jsonValue) { *this = jsonValue; }
 
-UsernameConfigurationType& UsernameConfigurationType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CaseSensitive"))
-  {
+UsernameConfigurationType& UsernameConfigurationType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CaseSensitive")) {
     m_caseSensitive = jsonValue.GetBool("CaseSensitive");
     m_caseSensitiveHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UsernameConfigurationType::Jsonize() const
-{
+JsonValue UsernameConfigurationType::Jsonize() const {
   JsonValue payload;
 
-  if(m_caseSensitiveHasBeenSet)
-  {
-   payload.WithBool("CaseSensitive", m_caseSensitive);
-
+  if (m_caseSensitiveHasBeenSet) {
+    payload.WithBool("CaseSensitive", m_caseSensitive);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

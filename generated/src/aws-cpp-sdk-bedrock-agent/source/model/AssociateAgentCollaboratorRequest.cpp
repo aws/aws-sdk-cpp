@@ -12,42 +12,29 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateAgentCollaboratorRequest::SerializePayload() const
-{
+Aws::String AssociateAgentCollaboratorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_agentDescriptorHasBeenSet)
-  {
-   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
-
+  if (m_agentDescriptorHasBeenSet) {
+    payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
   }
 
-  if(m_collaboratorNameHasBeenSet)
-  {
-   payload.WithString("collaboratorName", m_collaboratorName);
-
+  if (m_collaboratorNameHasBeenSet) {
+    payload.WithString("collaboratorName", m_collaboratorName);
   }
 
-  if(m_collaborationInstructionHasBeenSet)
-  {
-   payload.WithString("collaborationInstruction", m_collaborationInstruction);
-
+  if (m_collaborationInstructionHasBeenSet) {
+    payload.WithString("collaborationInstruction", m_collaborationInstruction);
   }
 
-  if(m_relayConversationHistoryHasBeenSet)
-  {
-   payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
+  if (m_relayConversationHistoryHasBeenSet) {
+    payload.WithString("relayConversationHistory",
+                       RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

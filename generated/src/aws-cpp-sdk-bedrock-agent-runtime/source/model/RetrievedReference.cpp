@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RetrievedReference::RetrievedReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrievedReference::RetrievedReference(JsonView jsonValue) { *this = jsonValue; }
 
-RetrievedReference& RetrievedReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+RetrievedReference& RetrievedReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("location"))
-  {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadata"))
-  {
+  if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
-    for(auto& metadataItem : metadataJsonMap)
-    {
+    for (auto& metadataItem : metadataJsonMap) {
       m_metadata[metadataItem.first] = metadataItem.second.AsObject();
     }
     m_metadataHasBeenSet = true;
@@ -47,36 +36,28 @@ RetrievedReference& RetrievedReference::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RetrievedReference::Jsonize() const
-{
+JsonValue RetrievedReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("location", m_location.Jsonize());
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   JsonValue metadataJsonMap;
-   for(auto& metadataItem : m_metadata)
-   {
-     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.View());
-   }
-   payload.WithObject("metadata", std::move(metadataJsonMap));
-
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.View());
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

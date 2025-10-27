@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-enum class KinesisAnalyticsV2Errors
-{
-  //From Core//
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+enum class KinesisAnalyticsV2Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KinesisAnalyticsV2Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class KinesisAnalyticsV2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CODE_VALIDATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_VALIDATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   INVALID_APPLICATION_CONFIGURATION,
   INVALID_ARGUMENT,
@@ -60,23 +57,23 @@ enum class KinesisAnalyticsV2Errors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Error : public Aws::Client::AWSError<KinesisAnalyticsV2Errors>
-{
-public:
+class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Error : public Aws::Client::AWSError<KinesisAnalyticsV2Errors> {
+ public:
   KinesisAnalyticsV2Error() {}
-  KinesisAnalyticsV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+  KinesisAnalyticsV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
   KinesisAnalyticsV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
-  KinesisAnalyticsV2Error(const Aws::Client::AWSError<KinesisAnalyticsV2Errors>& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+  KinesisAnalyticsV2Error(const Aws::Client::AWSError<KinesisAnalyticsV2Errors>& rhs)
+      : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
   KinesisAnalyticsV2Error(Aws::Client::AWSError<KinesisAnalyticsV2Errors>&& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace KinesisAnalyticsV2ErrorMapper
-{
-  AWS_KINESISANALYTICSV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KinesisAnalyticsV2ErrorMapper {
+AWS_KINESISANALYTICSV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

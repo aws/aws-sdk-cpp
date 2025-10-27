@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Model
-{
-  enum class ResourceItemStatus
-  {
-    NOT_SET,
-    SUCCESS,
-    FAILED,
-    IN_PROGRESS,
-    SKIPPED
-  };
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
+enum class ResourceItemStatus { NOT_SET, SUCCESS, FAILED, IN_PROGRESS, SKIPPED };
 
-namespace ResourceItemStatusMapper
-{
+namespace ResourceItemStatusMapper {
 AWS_APPREGISTRY_API ResourceItemStatus GetResourceItemStatusForName(const Aws::String& name);
 
 AWS_APPREGISTRY_API Aws::String GetNameForResourceItemStatus(ResourceItemStatus value);
-} // namespace ResourceItemStatusMapper
-} // namespace Model
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace ResourceItemStatusMapper
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

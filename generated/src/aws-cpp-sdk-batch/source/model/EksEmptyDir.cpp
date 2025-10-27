@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-EksEmptyDir::EksEmptyDir(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EksEmptyDir::EksEmptyDir(JsonView jsonValue) { *this = jsonValue; }
 
-EksEmptyDir& EksEmptyDir::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("medium"))
-  {
+EksEmptyDir& EksEmptyDir::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("medium")) {
     m_medium = jsonValue.GetString("medium");
     m_mediumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sizeLimit"))
-  {
+  if (jsonValue.ValueExists("sizeLimit")) {
     m_sizeLimit = jsonValue.GetString("sizeLimit");
     m_sizeLimitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EksEmptyDir::Jsonize() const
-{
+JsonValue EksEmptyDir::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediumHasBeenSet)
-  {
-   payload.WithString("medium", m_medium);
-
+  if (m_mediumHasBeenSet) {
+    payload.WithString("medium", m_medium);
   }
 
-  if(m_sizeLimitHasBeenSet)
-  {
-   payload.WithString("sizeLimit", m_sizeLimit);
-
+  if (m_sizeLimitHasBeenSet) {
+    payload.WithString("sizeLimit", m_sizeLimit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

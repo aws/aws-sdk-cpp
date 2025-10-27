@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/IssueDetected.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/IssueDetected.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
 
-IssueDetected::IssueDetected(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IssueDetected::IssueDetected(JsonView jsonValue) { *this = jsonValue; }
 
-IssueDetected& IssueDetected::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CharacterOffsets"))
-  {
+IssueDetected& IssueDetected::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CharacterOffsets")) {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
     m_characterOffsetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IssueDetected::Jsonize() const
-{
+JsonValue IssueDetected::Jsonize() const {
   JsonValue payload;
 
-  if(m_characterOffsetsHasBeenSet)
-  {
-   payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
-
+  if (m_characterOffsetsHasBeenSet) {
+    payload.WithObject("CharacterOffsets", m_characterOffsets.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

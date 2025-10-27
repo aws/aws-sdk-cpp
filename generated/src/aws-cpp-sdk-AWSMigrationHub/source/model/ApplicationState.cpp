@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-ApplicationState::ApplicationState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationState::ApplicationState(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationState& ApplicationState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationId"))
-  {
+ApplicationState& ApplicationState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationStatus"))
-  {
+  if (jsonValue.ValueExists("ApplicationStatus")) {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));
     m_applicationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationState::Jsonize() const
-{
+JsonValue ApplicationState::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
-  if(m_applicationStatusHasBeenSet)
-  {
-   payload.WithString("ApplicationStatus", ApplicationStatusMapper::GetNameForApplicationStatus(m_applicationStatus));
+  if (m_applicationStatusHasBeenSet) {
+    payload.WithString("ApplicationStatus", ApplicationStatusMapper::GetNameForApplicationStatus(m_applicationStatus));
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

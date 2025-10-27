@@ -5,12 +5,8 @@
 
 #include <aws/redshift-data/RedshiftDataAPIServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace RedshiftDataAPIService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RedshiftDataAPIService
-} // namespace Aws
+namespace Aws {
+namespace RedshiftDataAPIService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RedshiftDataAPIService
+}  // namespace Aws

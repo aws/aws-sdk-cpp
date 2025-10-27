@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String SearchTransitGatewayMulticastGroupsRequest::SerializePayload() const
-{
+Aws::String SearchTransitGatewayMulticastGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SearchTransitGatewayMulticastGroups&";
-  if(m_transitGatewayMulticastDomainIdHasBeenSet)
-  {
+  if (m_transitGatewayMulticastDomainIdHasBeenSet) {
     ss << "TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String SearchTransitGatewayMulticastGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SearchTransitGatewayMulticastGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SearchTransitGatewayMulticastGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

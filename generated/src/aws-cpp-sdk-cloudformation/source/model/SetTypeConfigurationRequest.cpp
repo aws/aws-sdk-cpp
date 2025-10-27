@@ -10,32 +10,26 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String SetTypeConfigurationRequest::SerializePayload() const
-{
+Aws::String SetTypeConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetTypeConfiguration&";
-  if(m_typeArnHasBeenSet)
-  {
+  if (m_typeArnHasBeenSet) {
     ss << "TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
   }
 
-  if(m_configurationHasBeenSet)
-  {
+  if (m_configurationHasBeenSet) {
     ss << "Configuration=" << StringUtils::URLEncode(m_configuration.c_str()) << "&";
   }
 
-  if(m_configurationAliasHasBeenSet)
-  {
+  if (m_configurationAliasHasBeenSet) {
     ss << "ConfigurationAlias=" << StringUtils::URLEncode(m_configurationAlias.c_str()) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String SetTypeConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetTypeConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetTypeConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

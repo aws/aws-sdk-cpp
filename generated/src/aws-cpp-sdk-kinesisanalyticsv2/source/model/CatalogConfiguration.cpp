@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/CatalogConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/CatalogConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-CatalogConfiguration::CatalogConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CatalogConfiguration::CatalogConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CatalogConfiguration& CatalogConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GlueDataCatalogConfiguration"))
-  {
+CatalogConfiguration& CatalogConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GlueDataCatalogConfiguration")) {
     m_glueDataCatalogConfiguration = jsonValue.GetObject("GlueDataCatalogConfiguration");
     m_glueDataCatalogConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CatalogConfiguration::Jsonize() const
-{
+JsonValue CatalogConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_glueDataCatalogConfigurationHasBeenSet)
-  {
-   payload.WithObject("GlueDataCatalogConfiguration", m_glueDataCatalogConfiguration.Jsonize());
-
+  if (m_glueDataCatalogConfigurationHasBeenSet) {
+    payload.WithObject("GlueDataCatalogConfiguration", m_glueDataCatalogConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

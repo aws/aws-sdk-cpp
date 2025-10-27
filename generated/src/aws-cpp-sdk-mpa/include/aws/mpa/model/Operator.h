@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mpa/MPA_EXPORTS.h>
 
-namespace Aws
-{
-namespace MPA
-{
-namespace Model
-{
-  enum class Operator
-  {
-    NOT_SET,
-    EQ,
-    NE,
-    GT,
-    LT,
-    GTE,
-    LTE,
-    CONTAINS,
-    NOT_CONTAINS,
-    BETWEEN
-  };
+namespace Aws {
+namespace MPA {
+namespace Model {
+enum class Operator { NOT_SET, EQ, NE, GT, LT, GTE, LTE, CONTAINS, NOT_CONTAINS, BETWEEN };
 
-namespace OperatorMapper
-{
+namespace OperatorMapper {
 AWS_MPA_API Operator GetOperatorForName(const Aws::String& name);
 
 AWS_MPA_API Aws::String GetNameForOperator(Operator value);
-} // namespace OperatorMapper
-} // namespace Model
-} // namespace MPA
-} // namespace Aws
+}  // namespace OperatorMapper
+}  // namespace Model
+}  // namespace MPA
+}  // namespace Aws

@@ -7,27 +7,16 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
-  enum class MetricType
-  {
-    NOT_SET,
-    ASGAverageCPUUtilization,
-    ASGAverageNetworkIn,
-    ASGAverageNetworkOut,
-    ALBRequestCountPerTarget
-  };
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
+enum class MetricType { NOT_SET, ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget };
 
-namespace MetricTypeMapper
-{
+namespace MetricTypeMapper {
 AWS_AUTOSCALING_API MetricType GetMetricTypeForName(const Aws::String& name);
 
 AWS_AUTOSCALING_API Aws::String GetNameForMetricType(MetricType value);
-} // namespace MetricTypeMapper
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace MetricTypeMapper
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-BedrockDataAutomationConfiguration::BedrockDataAutomationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BedrockDataAutomationConfiguration::BedrockDataAutomationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BedrockDataAutomationConfiguration& BedrockDataAutomationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("parsingModality"))
-  {
+BedrockDataAutomationConfiguration& BedrockDataAutomationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("parsingModality")) {
     m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
     m_parsingModalityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockDataAutomationConfiguration::Jsonize() const
-{
+JsonValue BedrockDataAutomationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_parsingModalityHasBeenSet)
-  {
-   payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
+  if (m_parsingModalityHasBeenSet) {
+    payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

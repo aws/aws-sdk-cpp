@@ -7,25 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class EBSFinding
-  {
-    NOT_SET,
-    Optimized,
-    NotOptimized
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class EBSFinding { NOT_SET, Optimized, NotOptimized };
 
-namespace EBSFindingMapper
-{
+namespace EBSFindingMapper {
 AWS_COMPUTEOPTIMIZER_API EBSFinding GetEBSFindingForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForEBSFinding(EBSFinding value);
-} // namespace EBSFindingMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace EBSFindingMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

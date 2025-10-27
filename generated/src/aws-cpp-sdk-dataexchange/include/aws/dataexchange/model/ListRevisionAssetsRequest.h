@@ -4,101 +4,119 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
-#include <aws/dataexchange/DataExchangeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchangeRequest.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace DataExchange {
+namespace Model {
 
+/**
+ */
+class ListRevisionAssetsRequest : public DataExchangeRequest {
+ public:
+  AWS_DATAEXCHANGE_API ListRevisionAssetsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListRevisionAssets"; }
+
+  AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
+
+  AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The unique identifier for a data set.</p>
    */
-  class ListRevisionAssetsRequest : public DataExchangeRequest
-  {
-  public:
-    AWS_DATAEXCHANGE_API ListRevisionAssetsRequest() = default;
+  inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
+  inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
+  template <typename DataSetIdT = Aws::String>
+  void SetDataSetId(DataSetIdT&& value) {
+    m_dataSetIdHasBeenSet = true;
+    m_dataSetId = std::forward<DataSetIdT>(value);
+  }
+  template <typename DataSetIdT = Aws::String>
+  ListRevisionAssetsRequest& WithDataSetId(DataSetIdT&& value) {
+    SetDataSetId(std::forward<DataSetIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListRevisionAssets"; }
+  ///@{
+  /**
+   * <p>The maximum number of results returned by a single call.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListRevisionAssetsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The token value retrieved from a previous call to access the next page of
+   * results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListRevisionAssetsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p>The unique identifier for a revision.</p>
+   */
+  inline const Aws::String& GetRevisionId() const { return m_revisionId; }
+  inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
+  template <typename RevisionIdT = Aws::String>
+  void SetRevisionId(RevisionIdT&& value) {
+    m_revisionIdHasBeenSet = true;
+    m_revisionId = std::forward<RevisionIdT>(value);
+  }
+  template <typename RevisionIdT = Aws::String>
+  ListRevisionAssetsRequest& WithRevisionId(RevisionIdT&& value) {
+    SetRevisionId(std::forward<RevisionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_dataSetId;
+  bool m_dataSetIdHasBeenSet = false;
 
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
-    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
-    inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    template<typename DataSetIdT = Aws::String>
-    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
-    template<typename DataSetIdT = Aws::String>
-    ListRevisionAssetsRequest& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of results returned by a single call.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListRevisionAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  Aws::String m_revisionId;
+  bool m_revisionIdHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListRevisionAssetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
-    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
-    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    template<typename RevisionIdT = Aws::String>
-    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
-    template<typename RevisionIdT = Aws::String>
-    ListRevisionAssetsRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

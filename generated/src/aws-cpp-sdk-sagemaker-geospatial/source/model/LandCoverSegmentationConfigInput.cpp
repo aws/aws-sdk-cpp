@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/LandCoverSegmentationConfigInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/LandCoverSegmentationConfigInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-LandCoverSegmentationConfigInput::LandCoverSegmentationConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LandCoverSegmentationConfigInput::LandCoverSegmentationConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-LandCoverSegmentationConfigInput& LandCoverSegmentationConfigInput::operator =(JsonView jsonValue)
-{
+LandCoverSegmentationConfigInput& LandCoverSegmentationConfigInput::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue LandCoverSegmentationConfigInput::Jsonize() const
-{
+JsonValue LandCoverSegmentationConfigInput::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

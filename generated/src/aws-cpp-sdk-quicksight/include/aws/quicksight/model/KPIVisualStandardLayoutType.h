@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class KPIVisualStandardLayoutType
-  {
-    NOT_SET,
-    CLASSIC,
-    VERTICAL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class KPIVisualStandardLayoutType { NOT_SET, CLASSIC, VERTICAL };
 
-namespace KPIVisualStandardLayoutTypeMapper
-{
+namespace KPIVisualStandardLayoutTypeMapper {
 AWS_QUICKSIGHT_API KPIVisualStandardLayoutType GetKPIVisualStandardLayoutTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForKPIVisualStandardLayoutType(KPIVisualStandardLayoutType value);
-} // namespace KPIVisualStandardLayoutTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace KPIVisualStandardLayoutTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

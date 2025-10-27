@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-TextToSqlKnowledgeBaseConfiguration::TextToSqlKnowledgeBaseConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextToSqlKnowledgeBaseConfiguration::TextToSqlKnowledgeBaseConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TextToSqlKnowledgeBaseConfiguration& TextToSqlKnowledgeBaseConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("knowledgeBaseArn"))
-  {
+TextToSqlKnowledgeBaseConfiguration& TextToSqlKnowledgeBaseConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("knowledgeBaseArn")) {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextToSqlKnowledgeBaseConfiguration::Jsonize() const
-{
+JsonValue TextToSqlKnowledgeBaseConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
+  if (m_knowledgeBaseArnHasBeenSet) {
+    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

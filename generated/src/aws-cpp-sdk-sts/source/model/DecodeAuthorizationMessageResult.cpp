@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/DecodeAuthorizationMessageResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sts/model/DecodeAuthorizationMessageResult.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DecodeAuthorizationMessageResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DecodeAuthorizationMessageResult")) {
     resultNode = rootNode.FirstChild("DecodeAuthorizationMessageResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode decodedMessageNode = resultNode.FirstChild("DecodedMessage");
-    if(!decodedMessageNode.IsNull())
-    {
+    if (!decodedMessageNode.IsNull()) {
       m_decodedMessage = Aws::Utils::Xml::DecodeEscapedXmlText(decodedMessageNode.GetText());
       m_decodedMessageHasBeenSet = true;
     }
@@ -46,7 +41,7 @@ DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(c
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::STS::Model::DecodeAuthorizationMessageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::STS::Model::DecodeAuthorizationMessageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

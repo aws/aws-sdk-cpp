@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-ParameterDetail::ParameterDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterDetail::ParameterDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterDetail& ParameterDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+ParameterDetail& ParameterDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("required"))
-  {
+  if (jsonValue.ValueExists("required")) {
     m_required = jsonValue.GetBool("required");
     m_requiredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterDetail::Jsonize() const
-{
+JsonValue ParameterDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TypeMapper::GetNameForType(m_type));
   }
 
-  if(m_requiredHasBeenSet)
-  {
-   payload.WithBool("required", m_required);
-
+  if (m_requiredHasBeenSet) {
+    payload.WithBool("required", m_required);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

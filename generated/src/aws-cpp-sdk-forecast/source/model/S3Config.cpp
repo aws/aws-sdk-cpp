@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/S3Config.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/S3Config.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-S3Config::S3Config(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Config::S3Config(JsonView jsonValue) { *this = jsonValue; }
 
-S3Config& S3Config::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Path"))
-  {
+S3Config& S3Config::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KMSKeyArn"))
-  {
+  if (jsonValue.ValueExists("KMSKeyArn")) {
     m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
     m_kMSKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Config::Jsonize() const
-{
+JsonValue S3Config::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_kMSKeyArnHasBeenSet)
-  {
-   payload.WithString("KMSKeyArn", m_kMSKeyArn);
-
+  if (m_kMSKeyArnHasBeenSet) {
+    payload.WithString("KMSKeyArn", m_kMSKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

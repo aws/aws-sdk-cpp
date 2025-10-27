@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/AacRateControlMode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/medialive/model/AacRateControlMode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+namespace AacRateControlModeMapper {
 
-namespace Aws
-{
-  namespace MediaLive
-  {
-    namespace Model
-    {
-      namespace AacRateControlModeMapper
-      {
+static const int CBR_HASH = HashingUtils::HashString("CBR");
+static const int VBR_HASH = HashingUtils::HashString("VBR");
 
-        static const int CBR_HASH = HashingUtils::HashString("CBR");
-        static const int VBR_HASH = HashingUtils::HashString("VBR");
+AacRateControlMode GetAacRateControlModeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CBR_HASH) {
+    return AacRateControlMode::CBR;
+  } else if (hashCode == VBR_HASH) {
+    return AacRateControlMode::VBR;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AacRateControlMode>(hashCode);
+  }
 
+  return AacRateControlMode::NOT_SET;
+}
 
-        AacRateControlMode GetAacRateControlModeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CBR_HASH)
-          {
-            return AacRateControlMode::CBR;
-          }
-          else if (hashCode == VBR_HASH)
-          {
-            return AacRateControlMode::VBR;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AacRateControlMode>(hashCode);
-          }
+Aws::String GetNameForAacRateControlMode(AacRateControlMode enumValue) {
+  switch (enumValue) {
+    case AacRateControlMode::NOT_SET:
+      return {};
+    case AacRateControlMode::CBR:
+      return "CBR";
+    case AacRateControlMode::VBR:
+      return "VBR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AacRateControlMode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAacRateControlMode(AacRateControlMode enumValue)
-        {
-          switch(enumValue)
-          {
-          case AacRateControlMode::NOT_SET:
-            return {};
-          case AacRateControlMode::CBR:
-            return "CBR";
-          case AacRateControlMode::VBR:
-            return "VBR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AacRateControlModeMapper
-    } // namespace Model
-  } // namespace MediaLive
-} // namespace Aws
+}  // namespace AacRateControlModeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class ReservedInstancePaymentOption
-  {
-    NOT_SET,
-    ALL_UPFRONT,
-    PARTIAL_UPFRONT,
-    NO_UPFRONT
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class ReservedInstancePaymentOption { NOT_SET, ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT };
 
-namespace ReservedInstancePaymentOptionMapper
-{
+namespace ReservedInstancePaymentOptionMapper {
 AWS_OPENSEARCHSERVICE_API ReservedInstancePaymentOption GetReservedInstancePaymentOptionForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForReservedInstancePaymentOption(ReservedInstancePaymentOption value);
-} // namespace ReservedInstancePaymentOptionMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace ReservedInstancePaymentOptionMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

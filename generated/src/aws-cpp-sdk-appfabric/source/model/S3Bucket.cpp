@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-S3Bucket::S3Bucket(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Bucket::S3Bucket(JsonView jsonValue) { *this = jsonValue; }
 
-S3Bucket& S3Bucket::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketName"))
-  {
+S3Bucket& S3Bucket::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("prefix"))
-  {
+  if (jsonValue.ValueExists("prefix")) {
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Bucket::Jsonize() const
-{
+JsonValue S3Bucket::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("prefix", m_prefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

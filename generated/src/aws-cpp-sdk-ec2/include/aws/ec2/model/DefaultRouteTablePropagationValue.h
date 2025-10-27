@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class DefaultRouteTablePropagationValue
-  {
-    NOT_SET,
-    enable,
-    disable
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class DefaultRouteTablePropagationValue { NOT_SET, enable, disable };
 
-namespace DefaultRouteTablePropagationValueMapper
-{
+namespace DefaultRouteTablePropagationValueMapper {
 AWS_EC2_API DefaultRouteTablePropagationValue GetDefaultRouteTablePropagationValueForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForDefaultRouteTablePropagationValue(DefaultRouteTablePropagationValue value);
-} // namespace DefaultRouteTablePropagationValueMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace DefaultRouteTablePropagationValueMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

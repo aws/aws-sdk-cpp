@@ -7,27 +7,16 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
-  enum class CpuManufacturer
-  {
-    NOT_SET,
-    intel,
-    amd,
-    amazon_web_services,
-    apple
-  };
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
+enum class CpuManufacturer { NOT_SET, intel, amd, amazon_web_services, apple };
 
-namespace CpuManufacturerMapper
-{
+namespace CpuManufacturerMapper {
 AWS_AUTOSCALING_API CpuManufacturer GetCpuManufacturerForName(const Aws::String& name);
 
 AWS_AUTOSCALING_API Aws::String GetNameForCpuManufacturer(CpuManufacturer value);
-} // namespace CpuManufacturerMapper
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace CpuManufacturerMapper
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

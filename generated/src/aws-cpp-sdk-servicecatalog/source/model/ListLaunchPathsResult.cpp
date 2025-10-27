@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ListLaunchPathsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/servicecatalog/model/ListLaunchPathsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLaunchPathsResult::ListLaunchPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListLaunchPathsResult::ListLaunchPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListLaunchPathsResult& ListLaunchPathsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListLaunchPathsResult& ListLaunchPathsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("LaunchPathSummaries"))
-  {
+  if (jsonValue.ValueExists("LaunchPathSummaries")) {
     Aws::Utils::Array<JsonView> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");
-    for(unsigned launchPathSummariesIndex = 0; launchPathSummariesIndex < launchPathSummariesJsonList.GetLength(); ++launchPathSummariesIndex)
-    {
+    for (unsigned launchPathSummariesIndex = 0; launchPathSummariesIndex < launchPathSummariesJsonList.GetLength();
+         ++launchPathSummariesIndex) {
       m_launchPathSummaries.push_back(launchPathSummariesJsonList[launchPathSummariesIndex].AsObject());
     }
     m_launchPathSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageToken"))
-  {
+  if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

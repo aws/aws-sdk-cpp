@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class AIAgentAssociationConfigurationType
-  {
-    NOT_SET,
-    KNOWLEDGE_BASE
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class AIAgentAssociationConfigurationType { NOT_SET, KNOWLEDGE_BASE };
 
-namespace AIAgentAssociationConfigurationTypeMapper
-{
+namespace AIAgentAssociationConfigurationTypeMapper {
 AWS_QCONNECT_API AIAgentAssociationConfigurationType GetAIAgentAssociationConfigurationTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForAIAgentAssociationConfigurationType(AIAgentAssociationConfigurationType value);
-} // namespace AIAgentAssociationConfigurationTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace AIAgentAssociationConfigurationTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

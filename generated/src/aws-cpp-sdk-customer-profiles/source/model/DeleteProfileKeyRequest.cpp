@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/DeleteProfileKeyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/DeleteProfileKeyRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProfileKeyRequest::SerializePayload() const
-{
+Aws::String DeleteProfileKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("ProfileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("ProfileId", m_profileId);
   }
 
-  if(m_keyNameHasBeenSet)
-  {
-   payload.WithString("KeyName", m_keyName);
-
+  if (m_keyNameHasBeenSet) {
+    payload.WithString("KeyName", m_keyName);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

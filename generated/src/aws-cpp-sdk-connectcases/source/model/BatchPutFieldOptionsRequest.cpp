@@ -12,24 +12,16 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchPutFieldOptionsRequest::SerializePayload() const
-{
+Aws::String BatchPutFieldOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_optionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
-   for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
-   {
-     optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());
-   }
-   payload.WithArray("options", std::move(optionsJsonList));
-
+  if (m_optionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
+    for (unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex) {
+      optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());
+    }
+    payload.WithArray("options", std::move(optionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

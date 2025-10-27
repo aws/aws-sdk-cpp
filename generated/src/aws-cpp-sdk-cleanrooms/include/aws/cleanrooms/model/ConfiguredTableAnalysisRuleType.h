@@ -7,26 +7,16 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class ConfiguredTableAnalysisRuleType
-  {
-    NOT_SET,
-    AGGREGATION,
-    LIST,
-    CUSTOM
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class ConfiguredTableAnalysisRuleType { NOT_SET, AGGREGATION, LIST, CUSTOM };
 
-namespace ConfiguredTableAnalysisRuleTypeMapper
-{
+namespace ConfiguredTableAnalysisRuleTypeMapper {
 AWS_CLEANROOMS_API ConfiguredTableAnalysisRuleType GetConfiguredTableAnalysisRuleTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForConfiguredTableAnalysisRuleType(ConfiguredTableAnalysisRuleType value);
-} // namespace ConfiguredTableAnalysisRuleTypeMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace ConfiguredTableAnalysisRuleTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

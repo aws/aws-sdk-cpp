@@ -3,68 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/signer/model/EncryptionAlgorithmOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signer/model/EncryptionAlgorithmOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace signer
-{
-namespace Model
-{
+namespace Aws {
+namespace signer {
+namespace Model {
 
-EncryptionAlgorithmOptions::EncryptionAlgorithmOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionAlgorithmOptions::EncryptionAlgorithmOptions(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionAlgorithmOptions& EncryptionAlgorithmOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowedValues"))
-  {
+EncryptionAlgorithmOptions& EncryptionAlgorithmOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowedValues")) {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
-    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
-    {
-      m_allowedValues.push_back(EncryptionAlgorithmMapper::GetEncryptionAlgorithmForName(allowedValuesJsonList[allowedValuesIndex].AsString()));
+    for (unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex) {
+      m_allowedValues.push_back(
+          EncryptionAlgorithmMapper::GetEncryptionAlgorithmForName(allowedValuesJsonList[allowedValuesIndex].AsString()));
     }
     m_allowedValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultValue"))
-  {
+  if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = EncryptionAlgorithmMapper::GetEncryptionAlgorithmForName(jsonValue.GetString("defaultValue"));
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionAlgorithmOptions::Jsonize() const
-{
+JsonValue EncryptionAlgorithmOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
-   for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
-   {
-     allowedValuesJsonList[allowedValuesIndex].AsString(EncryptionAlgorithmMapper::GetNameForEncryptionAlgorithm(m_allowedValues[allowedValuesIndex]));
-   }
-   payload.WithArray("allowedValues", std::move(allowedValuesJsonList));
-
+  if (m_allowedValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+    for (unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex) {
+      allowedValuesJsonList[allowedValuesIndex].AsString(
+          EncryptionAlgorithmMapper::GetNameForEncryptionAlgorithm(m_allowedValues[allowedValuesIndex]));
+    }
+    payload.WithArray("allowedValues", std::move(allowedValuesJsonList));
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("defaultValue", EncryptionAlgorithmMapper::GetNameForEncryptionAlgorithm(m_defaultValue));
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", EncryptionAlgorithmMapper::GetNameForEncryptionAlgorithm(m_defaultValue));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace signer
-} // namespace Aws
+}  // namespace Model
+}  // namespace signer
+}  // namespace Aws

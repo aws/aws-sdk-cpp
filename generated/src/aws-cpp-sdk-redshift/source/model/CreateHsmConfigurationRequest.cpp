@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/CreateHsmConfigurationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/CreateHsmConfigurationRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateHsmConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateHsmConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateHsmConfiguration&";
-  if(m_hsmConfigurationIdentifierHasBeenSet)
-  {
+  if (m_hsmConfigurationIdentifierHasBeenSet) {
     ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_hsmIpAddressHasBeenSet)
-  {
+  if (m_hsmIpAddressHasBeenSet) {
     ss << "HsmIpAddress=" << StringUtils::URLEncode(m_hsmIpAddress.c_str()) << "&";
   }
 
-  if(m_hsmPartitionNameHasBeenSet)
-  {
+  if (m_hsmPartitionNameHasBeenSet) {
     ss << "HsmPartitionName=" << StringUtils::URLEncode(m_hsmPartitionName.c_str()) << "&";
   }
 
-  if(m_hsmPartitionPasswordHasBeenSet)
-  {
+  if (m_hsmPartitionPasswordHasBeenSet) {
     ss << "HsmPartitionPassword=" << StringUtils::URLEncode(m_hsmPartitionPassword.c_str()) << "&";
   }
 
-  if(m_hsmServerPublicCertificateHasBeenSet)
-  {
+  if (m_hsmServerPublicCertificateHasBeenSet) {
     ss << "HsmServerPublicCertificate=" << StringUtils::URLEncode(m_hsmServerPublicCertificate.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -65,8 +53,4 @@ Aws::String CreateHsmConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateHsmConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateHsmConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetTokenVaultCMKRequest::SerializePayload() const
-{
+Aws::String SetTokenVaultCMKRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tokenVaultIdHasBeenSet)
-  {
-   payload.WithString("tokenVaultId", m_tokenVaultId);
-
+  if (m_tokenVaultIdHasBeenSet) {
+    payload.WithString("tokenVaultId", m_tokenVaultId);
   }
 
-  if(m_kmsConfigurationHasBeenSet)
-  {
-   payload.WithObject("kmsConfiguration", m_kmsConfiguration.Jsonize());
-
+  if (m_kmsConfigurationHasBeenSet) {
+    payload.WithObject("kmsConfiguration", m_kmsConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

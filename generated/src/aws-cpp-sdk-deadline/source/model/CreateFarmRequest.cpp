@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/CreateFarmRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/deadline/model/CreateFarmRequest.h>
 
 #include <utility>
 
@@ -13,57 +13,40 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateFarmRequest::SerializePayload() const
-{
+Aws::String CreateFarmRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateFarmRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateFarmRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amz-client-token",  ss.str());
+    headers.emplace("x-amz-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

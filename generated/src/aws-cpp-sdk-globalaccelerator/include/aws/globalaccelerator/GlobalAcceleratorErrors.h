@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-enum class GlobalAcceleratorErrors
-{
-  //From Core//
+namespace Aws {
+namespace GlobalAccelerator {
+enum class GlobalAcceleratorErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class GlobalAcceleratorErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class GlobalAcceleratorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCELERATOR_NOT_DISABLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCELERATOR_NOT_DISABLED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACCELERATOR_NOT_FOUND,
   ASSOCIATED_ENDPOINT_GROUP_FOUND,
   ASSOCIATED_LISTENER_FOUND,
@@ -68,9 +65,8 @@ enum class GlobalAcceleratorErrors
   TRANSACTION_IN_PROGRESS
 };
 
-class AWS_GLOBALACCELERATOR_API GlobalAcceleratorError : public Aws::Client::AWSError<GlobalAcceleratorErrors>
-{
-public:
+class AWS_GLOBALACCELERATOR_API GlobalAcceleratorError : public Aws::Client::AWSError<GlobalAcceleratorErrors> {
+ public:
   GlobalAcceleratorError() {}
   GlobalAcceleratorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GlobalAcceleratorErrors>(rhs) {}
   GlobalAcceleratorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GlobalAcceleratorErrors>(rhs) {}
@@ -81,10 +77,9 @@ public:
   T GetModeledError();
 };
 
-namespace GlobalAcceleratorErrorMapper
-{
-  AWS_GLOBALACCELERATOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace GlobalAcceleratorErrorMapper {
+AWS_GLOBALACCELERATOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace GlobalAccelerator
+}  // namespace Aws

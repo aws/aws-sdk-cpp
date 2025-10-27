@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class ReplicationStatus
-  {
-    NOT_SET,
-    COMPLETED,
-    PENDING,
-    FAILED,
-    REPLICA
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class ReplicationStatus { NOT_SET, COMPLETED, PENDING, FAILED, REPLICA };
 
-namespace ReplicationStatusMapper
-{
+namespace ReplicationStatusMapper {
 AWS_S3_API ReplicationStatus GetReplicationStatusForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForReplicationStatus(ReplicationStatus value);
-} // namespace ReplicationStatusMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace ReplicationStatusMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

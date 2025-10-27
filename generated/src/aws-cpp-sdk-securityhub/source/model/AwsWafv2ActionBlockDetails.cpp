@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafv2ActionBlockDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafv2ActionBlockDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafv2ActionBlockDetails& AwsWafv2ActionBlockDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CustomResponse"))
-  {
+AwsWafv2ActionBlockDetails& AwsWafv2ActionBlockDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CustomResponse")) {
     m_customResponse = jsonValue.GetObject("CustomResponse");
     m_customResponseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafv2ActionBlockDetails::Jsonize() const
-{
+JsonValue AwsWafv2ActionBlockDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_customResponseHasBeenSet)
-  {
-   payload.WithObject("CustomResponse", m_customResponse.Jsonize());
-
+  if (m_customResponseHasBeenSet) {
+    payload.WithObject("CustomResponse", m_customResponse.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

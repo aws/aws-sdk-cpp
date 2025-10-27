@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressPointStatusToUpdate
-  {
-    NOT_SET,
-    ACTIVE,
-    CLOSED
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressPointStatusToUpdate { NOT_SET, ACTIVE, CLOSED };
 
-namespace IngressPointStatusToUpdateMapper
-{
+namespace IngressPointStatusToUpdateMapper {
 AWS_MAILMANAGER_API IngressPointStatusToUpdate GetIngressPointStatusToUpdateForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressPointStatusToUpdate(IngressPointStatusToUpdate value);
-} // namespace IngressPointStatusToUpdateMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressPointStatusToUpdateMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

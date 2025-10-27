@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartInstanceOnboardingJobRequest::SerializePayload() const
-{
+Aws::String StartInstanceOnboardingJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
-
+  if (m_encryptionConfigHasBeenSet) {
+    payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DescribeEndpointsMode
-  {
-    NOT_SET,
-    DEFAULT,
-    GET_ONLY
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DescribeEndpointsMode { NOT_SET, DEFAULT, GET_ONLY };
 
-namespace DescribeEndpointsModeMapper
-{
+namespace DescribeEndpointsModeMapper {
 AWS_MEDIACONVERT_API DescribeEndpointsMode GetDescribeEndpointsModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDescribeEndpointsMode(DescribeEndpointsMode value);
-} // namespace DescribeEndpointsModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DescribeEndpointsModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

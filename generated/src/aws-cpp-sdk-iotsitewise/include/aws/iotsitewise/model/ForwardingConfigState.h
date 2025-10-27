@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class ForwardingConfigState
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class ForwardingConfigState { NOT_SET, DISABLED, ENABLED };
 
-namespace ForwardingConfigStateMapper
-{
+namespace ForwardingConfigStateMapper {
 AWS_IOTSITEWISE_API ForwardingConfigState GetForwardingConfigStateForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForForwardingConfigState(ForwardingConfigState value);
-} // namespace ForwardingConfigStateMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace ForwardingConfigStateMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

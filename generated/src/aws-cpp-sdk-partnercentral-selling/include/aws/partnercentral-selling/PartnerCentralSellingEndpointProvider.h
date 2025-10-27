@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/partnercentral-selling/PartnerCentralSellingEndpointRules.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using PartnerCentralSellingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using PartnerCentralSellingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using PartnerCentralSellingEndpointProviderBase =
-    EndpointProviderBase<PartnerCentralSellingClientConfiguration, PartnerCentralSellingBuiltInParameters, PartnerCentralSellingClientContextParameters>;
+    EndpointProviderBase<PartnerCentralSellingClientConfiguration, PartnerCentralSellingBuiltInParameters,
+                         PartnerCentralSellingClientContextParameters>;
 
 using PartnerCentralSellingDefaultEpProviderBase =
-    DefaultEndpointProvider<PartnerCentralSellingClientConfiguration, PartnerCentralSellingBuiltInParameters, PartnerCentralSellingClientContextParameters>;
+    DefaultEndpointProvider<PartnerCentralSellingClientConfiguration, PartnerCentralSellingBuiltInParameters,
+                            PartnerCentralSellingClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingEndpointProvider : public PartnerCentralSellingDefaultEpProviderBase
-{
-public:
-    using PartnerCentralSellingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingEndpointProvider : public PartnerCentralSellingDefaultEpProviderBase {
+ public:
+  using PartnerCentralSellingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    PartnerCentralSellingEndpointProvider()
-      : PartnerCentralSellingDefaultEpProviderBase(Aws::PartnerCentralSelling::PartnerCentralSellingEndpointRules::GetRulesBlob(), Aws::PartnerCentralSelling::PartnerCentralSellingEndpointRules::RulesBlobSize)
-    {}
+  PartnerCentralSellingEndpointProvider()
+      : PartnerCentralSellingDefaultEpProviderBase(Aws::PartnerCentralSelling::PartnerCentralSellingEndpointRules::GetRulesBlob(),
+                                                   Aws::PartnerCentralSelling::PartnerCentralSellingEndpointRules::RulesBlobSize) {}
 
-    ~PartnerCentralSellingEndpointProvider()
-    {
-    }
+  ~PartnerCentralSellingEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/CriteriaForJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/CriteriaForJob.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-CriteriaForJob::CriteriaForJob(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CriteriaForJob::CriteriaForJob(JsonView jsonValue) { *this = jsonValue; }
 
-CriteriaForJob& CriteriaForJob::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("simpleCriterion"))
-  {
+CriteriaForJob& CriteriaForJob::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("simpleCriterion")) {
     m_simpleCriterion = jsonValue.GetObject("simpleCriterion");
     m_simpleCriterionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tagCriterion"))
-  {
+  if (jsonValue.ValueExists("tagCriterion")) {
     m_tagCriterion = jsonValue.GetObject("tagCriterion");
     m_tagCriterionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CriteriaForJob::Jsonize() const
-{
+JsonValue CriteriaForJob::Jsonize() const {
   JsonValue payload;
 
-  if(m_simpleCriterionHasBeenSet)
-  {
-   payload.WithObject("simpleCriterion", m_simpleCriterion.Jsonize());
-
+  if (m_simpleCriterionHasBeenSet) {
+    payload.WithObject("simpleCriterion", m_simpleCriterion.Jsonize());
   }
 
-  if(m_tagCriterionHasBeenSet)
-  {
-   payload.WithObject("tagCriterion", m_tagCriterion.Jsonize());
-
+  if (m_tagCriterionHasBeenSet) {
+    payload.WithObject("tagCriterion", m_tagCriterion.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

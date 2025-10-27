@@ -3,159 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/Activity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/Activity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-Activity::Activity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Activity::Activity(JsonView jsonValue) { *this = jsonValue; }
 
-Activity& Activity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CUSTOM"))
-  {
+Activity& Activity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CUSTOM")) {
     m_cUSTOM = jsonValue.GetObject("CUSTOM");
     m_cUSTOMHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConditionalSplit"))
-  {
+  if (jsonValue.ValueExists("ConditionalSplit")) {
     m_conditionalSplit = jsonValue.GetObject("ConditionalSplit");
     m_conditionalSplitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EMAIL"))
-  {
+  if (jsonValue.ValueExists("EMAIL")) {
     m_eMAIL = jsonValue.GetObject("EMAIL");
     m_eMAILHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Holdout"))
-  {
+  if (jsonValue.ValueExists("Holdout")) {
     m_holdout = jsonValue.GetObject("Holdout");
     m_holdoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiCondition"))
-  {
+  if (jsonValue.ValueExists("MultiCondition")) {
     m_multiCondition = jsonValue.GetObject("MultiCondition");
     m_multiConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PUSH"))
-  {
+  if (jsonValue.ValueExists("PUSH")) {
     m_pUSH = jsonValue.GetObject("PUSH");
     m_pUSHHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RandomSplit"))
-  {
+  if (jsonValue.ValueExists("RandomSplit")) {
     m_randomSplit = jsonValue.GetObject("RandomSplit");
     m_randomSplitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SMS"))
-  {
+  if (jsonValue.ValueExists("SMS")) {
     m_sMS = jsonValue.GetObject("SMS");
     m_sMSHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Wait"))
-  {
+  if (jsonValue.ValueExists("Wait")) {
     m_wait = jsonValue.GetObject("Wait");
     m_waitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactCenter"))
-  {
+  if (jsonValue.ValueExists("ContactCenter")) {
     m_contactCenter = jsonValue.GetObject("ContactCenter");
     m_contactCenterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Activity::Jsonize() const
-{
+JsonValue Activity::Jsonize() const {
   JsonValue payload;
 
-  if(m_cUSTOMHasBeenSet)
-  {
-   payload.WithObject("CUSTOM", m_cUSTOM.Jsonize());
-
+  if (m_cUSTOMHasBeenSet) {
+    payload.WithObject("CUSTOM", m_cUSTOM.Jsonize());
   }
 
-  if(m_conditionalSplitHasBeenSet)
-  {
-   payload.WithObject("ConditionalSplit", m_conditionalSplit.Jsonize());
-
+  if (m_conditionalSplitHasBeenSet) {
+    payload.WithObject("ConditionalSplit", m_conditionalSplit.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_eMAILHasBeenSet)
-  {
-   payload.WithObject("EMAIL", m_eMAIL.Jsonize());
-
+  if (m_eMAILHasBeenSet) {
+    payload.WithObject("EMAIL", m_eMAIL.Jsonize());
   }
 
-  if(m_holdoutHasBeenSet)
-  {
-   payload.WithObject("Holdout", m_holdout.Jsonize());
-
+  if (m_holdoutHasBeenSet) {
+    payload.WithObject("Holdout", m_holdout.Jsonize());
   }
 
-  if(m_multiConditionHasBeenSet)
-  {
-   payload.WithObject("MultiCondition", m_multiCondition.Jsonize());
-
+  if (m_multiConditionHasBeenSet) {
+    payload.WithObject("MultiCondition", m_multiCondition.Jsonize());
   }
 
-  if(m_pUSHHasBeenSet)
-  {
-   payload.WithObject("PUSH", m_pUSH.Jsonize());
-
+  if (m_pUSHHasBeenSet) {
+    payload.WithObject("PUSH", m_pUSH.Jsonize());
   }
 
-  if(m_randomSplitHasBeenSet)
-  {
-   payload.WithObject("RandomSplit", m_randomSplit.Jsonize());
-
+  if (m_randomSplitHasBeenSet) {
+    payload.WithObject("RandomSplit", m_randomSplit.Jsonize());
   }
 
-  if(m_sMSHasBeenSet)
-  {
-   payload.WithObject("SMS", m_sMS.Jsonize());
-
+  if (m_sMSHasBeenSet) {
+    payload.WithObject("SMS", m_sMS.Jsonize());
   }
 
-  if(m_waitHasBeenSet)
-  {
-   payload.WithObject("Wait", m_wait.Jsonize());
-
+  if (m_waitHasBeenSet) {
+    payload.WithObject("Wait", m_wait.Jsonize());
   }
 
-  if(m_contactCenterHasBeenSet)
-  {
-   payload.WithObject("ContactCenter", m_contactCenter.Jsonize());
-
+  if (m_contactCenterHasBeenSet) {
+    payload.WithObject("ContactCenter", m_contactCenter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

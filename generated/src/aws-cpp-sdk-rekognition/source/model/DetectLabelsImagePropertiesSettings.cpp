@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/DetectLabelsImagePropertiesSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/DetectLabelsImagePropertiesSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DetectLabelsImagePropertiesSettings& DetectLabelsImagePropertiesSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxDominantColors"))
-  {
+DetectLabelsImagePropertiesSettings& DetectLabelsImagePropertiesSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxDominantColors")) {
     m_maxDominantColors = jsonValue.GetInteger("MaxDominantColors");
     m_maxDominantColorsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DetectLabelsImagePropertiesSettings::Jsonize() const
-{
+JsonValue DetectLabelsImagePropertiesSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxDominantColorsHasBeenSet)
-  {
-   payload.WithInteger("MaxDominantColors", m_maxDominantColors);
-
+  if (m_maxDominantColorsHasBeenSet) {
+    payload.WithInteger("MaxDominantColors", m_maxDominantColors);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

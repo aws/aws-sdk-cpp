@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/ListPartsRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/ListPartsRequest.h>
 
 #include <utility>
 
@@ -17,10 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-
-bool ListPartsRequest::HasEmbeddedError(Aws::IOStream &body,
-  const Aws::Http::HeaderValueCollection &header) const
-{
+bool ListPartsRequest::HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
   // Header is unused
   AWS_UNREFERENCED_PARAM(header);
 
@@ -37,103 +33,85 @@ bool ListPartsRequest::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 
-Aws::String ListPartsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListPartsRequest::SerializePayload() const { return {}; }
+
+void ListPartsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_maxPartsHasBeenSet) {
+    ss << m_maxParts;
+    uri.AddQueryStringParameter("max-parts", ss.str());
+    ss.str("");
+  }
+
+  if (m_partNumberMarkerHasBeenSet) {
+    ss << m_partNumberMarker;
+    uri.AddQueryStringParameter("part-number-marker", ss.str());
+    ss.str("");
+  }
+
+  if (m_uploadIdHasBeenSet) {
+    ss << m_uploadId;
+    uri.AddQueryStringParameter("uploadId", ss.str());
+    ss.str("");
+  }
+
+  if (!m_customizedAccessLogTag.empty()) {
+    // only accept customized LogTag which starts with "x-"
+    Aws::Map<Aws::String, Aws::String> collectedLogTags;
+    for (const auto& entry : m_customizedAccessLogTag) {
+      if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-") {
+        collectedLogTags.emplace(entry.first, entry.second);
+      }
+    }
+
+    if (!collectedLogTags.empty()) {
+      uri.AddQueryStringParameter(collectedLogTags);
+    }
+  }
 }
 
-void ListPartsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_maxPartsHasBeenSet)
-    {
-      ss << m_maxParts;
-      uri.AddQueryStringParameter("max-parts", ss.str());
-      ss.str("");
-    }
-
-    if(m_partNumberMarkerHasBeenSet)
-    {
-      ss << m_partNumberMarker;
-      uri.AddQueryStringParameter("part-number-marker", ss.str());
-      ss.str("");
-    }
-
-    if(m_uploadIdHasBeenSet)
-    {
-      ss << m_uploadId;
-      uri.AddQueryStringParameter("uploadId", ss.str());
-      ss.str("");
-    }
-
-    if(!m_customizedAccessLogTag.empty())
-    {
-        // only accept customized LogTag which starts with "x-"
-        Aws::Map<Aws::String, Aws::String> collectedLogTags;
-        for(const auto& entry: m_customizedAccessLogTag)
-        {
-            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
-            {
-                collectedLogTags.emplace(entry.first, entry.second);
-            }
-        }
-
-        if (!collectedLogTags.empty())
-        {
-            uri.AddQueryStringParameter(collectedLogTags);
-        }
-    }
-}
-
-Aws::Http::HeaderValueCollection ListPartsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListPartsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
-  {
+  if (m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET) {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
-  if(m_expectedBucketOwnerHasBeenSet)
-  {
+  if (m_expectedBucketOwnerHasBeenSet) {
     ss << m_expectedBucketOwner;
-    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    headers.emplace("x-amz-expected-bucket-owner", ss.str());
     ss.str("");
   }
 
-  if(m_sSECustomerAlgorithmHasBeenSet)
-  {
+  if (m_sSECustomerAlgorithmHasBeenSet) {
     ss << m_sSECustomerAlgorithm;
-    headers.emplace("x-amz-server-side-encryption-customer-algorithm",  ss.str());
+    headers.emplace("x-amz-server-side-encryption-customer-algorithm", ss.str());
     ss.str("");
   }
 
-  if(m_sSECustomerKeyHasBeenSet)
-  {
+  if (m_sSECustomerKeyHasBeenSet) {
     ss << m_sSECustomerKey;
-    headers.emplace("x-amz-server-side-encryption-customer-key",  ss.str());
+    headers.emplace("x-amz-server-side-encryption-customer-key", ss.str());
     ss.str("");
   }
 
-  if(m_sSECustomerKeyMD5HasBeenSet)
-  {
+  if (m_sSECustomerKeyMD5HasBeenSet) {
     ss << m_sSECustomerKeyMD5;
-    headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
+    headers.emplace("x-amz-server-side-encryption-customer-key-md5", ss.str());
     ss.str("");
   }
 
   return headers;
 }
 
-ListPartsRequest::EndpointParameters ListPartsRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Operation context parameters
-    if (BucketHasBeenSet()) {
-        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-    }
-    if (KeyHasBeenSet()) {
-        parameters.emplace_back(Aws::String("Key"), this->GetKey(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-    }
-    return parameters;
+ListPartsRequest::EndpointParameters ListPartsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (BucketHasBeenSet()) {
+    parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (KeyHasBeenSet()) {
+    parameters.emplace_back(Aws::String("Key"), this->GetKey(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
 }

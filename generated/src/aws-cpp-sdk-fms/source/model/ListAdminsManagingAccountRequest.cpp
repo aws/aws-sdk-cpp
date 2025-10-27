@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/ListAdminsManagingAccountRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/ListAdminsManagingAccountRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListAdminsManagingAccountRequest::SerializePayload() const
-{
+Aws::String ListAdminsManagingAccountRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListAdminsManagingAccountRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListAdminsManagingAccountRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSFMS_20180101.ListAdminsManagingAccount"));
   return headers;
-
 }
-
-
-
-

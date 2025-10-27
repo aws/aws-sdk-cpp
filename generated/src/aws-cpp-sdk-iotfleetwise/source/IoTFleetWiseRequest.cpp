@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-} // namespace IoTFleetWise
-} // namespace Aws
+namespace Aws {
+namespace IoTFleetWise {}  // namespace IoTFleetWise
+}  // namespace Aws

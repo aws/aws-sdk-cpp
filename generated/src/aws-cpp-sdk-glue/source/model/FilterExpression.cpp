@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/FilterExpression.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/FilterExpression.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-FilterExpression::FilterExpression(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterExpression::FilterExpression(JsonView jsonValue) { *this = jsonValue; }
 
-FilterExpression& FilterExpression::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Operation"))
-  {
+FilterExpression& FilterExpression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Operation")) {
     m_operation = FilterOperationMapper::GetFilterOperationForName(jsonValue.GetString("Operation"));
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Negated"))
-  {
+  if (jsonValue.ValueExists("Negated")) {
     m_negated = jsonValue.GetBool("Negated");
     m_negatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
@@ -47,35 +36,28 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FilterExpression::Jsonize() const
-{
+JsonValue FilterExpression::Jsonize() const {
   JsonValue payload;
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", FilterOperationMapper::GetNameForFilterOperation(m_operation));
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", FilterOperationMapper::GetNameForFilterOperation(m_operation));
   }
 
-  if(m_negatedHasBeenSet)
-  {
-   payload.WithBool("Negated", m_negated);
-
+  if (m_negatedHasBeenSet) {
+    payload.WithBool("Negated", m_negated);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/ColumnError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/ColumnError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-ColumnError::ColumnError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnError::ColumnError(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnError& ColumnError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ColumnName"))
-  {
+ColumnError& ColumnError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ColumnName")) {
     m_columnName = jsonValue.GetString("ColumnName");
     m_columnNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
-  {
+  if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnError::Jsonize() const
-{
+JsonValue ColumnError::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnNameHasBeenSet)
-  {
-   payload.WithString("ColumnName", m_columnName);
-
+  if (m_columnNameHasBeenSet) {
+    payload.WithString("ColumnName", m_columnName);
   }
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

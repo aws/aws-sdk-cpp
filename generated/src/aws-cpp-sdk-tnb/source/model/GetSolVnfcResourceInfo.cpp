@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/GetSolVnfcResourceInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/GetSolVnfcResourceInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
+namespace Aws {
+namespace tnb {
+namespace Model {
 
-GetSolVnfcResourceInfo::GetSolVnfcResourceInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GetSolVnfcResourceInfo::GetSolVnfcResourceInfo(JsonView jsonValue) { *this = jsonValue; }
 
-GetSolVnfcResourceInfo& GetSolVnfcResourceInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("metadata"))
-  {
+GetSolVnfcResourceInfo& GetSolVnfcResourceInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metadata")) {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GetSolVnfcResourceInfo::Jsonize() const
-{
+JsonValue GetSolVnfcResourceInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
-
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

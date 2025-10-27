@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointRules.h>
+#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MarketplaceCatalogClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using MarketplaceCatalogBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using MarketplaceCatalogEndpointProviderBase =
-    EndpointProviderBase<MarketplaceCatalogClientConfiguration, MarketplaceCatalogBuiltInParameters, MarketplaceCatalogClientContextParameters>;
+    EndpointProviderBase<MarketplaceCatalogClientConfiguration, MarketplaceCatalogBuiltInParameters,
+                         MarketplaceCatalogClientContextParameters>;
 
 using MarketplaceCatalogDefaultEpProviderBase =
-    DefaultEndpointProvider<MarketplaceCatalogClientConfiguration, MarketplaceCatalogBuiltInParameters, MarketplaceCatalogClientContextParameters>;
+    DefaultEndpointProvider<MarketplaceCatalogClientConfiguration, MarketplaceCatalogBuiltInParameters,
+                            MarketplaceCatalogClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MARKETPLACECATALOG_API MarketplaceCatalogEndpointProvider : public MarketplaceCatalogDefaultEpProviderBase
-{
-public:
-    using MarketplaceCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MARKETPLACECATALOG_API MarketplaceCatalogEndpointProvider : public MarketplaceCatalogDefaultEpProviderBase {
+ public:
+  using MarketplaceCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MarketplaceCatalogEndpointProvider()
-      : MarketplaceCatalogDefaultEpProviderBase(Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::GetRulesBlob(), Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::RulesBlobSize)
-    {}
+  MarketplaceCatalogEndpointProvider()
+      : MarketplaceCatalogDefaultEpProviderBase(Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::GetRulesBlob(),
+                                                Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::RulesBlobSize) {}
 
-    ~MarketplaceCatalogEndpointProvider()
-    {
-    }
+  ~MarketplaceCatalogEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

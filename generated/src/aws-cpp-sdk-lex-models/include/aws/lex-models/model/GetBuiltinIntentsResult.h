@@ -4,84 +4,100 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/model/BuiltinIntentMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  class GetBuiltinIntentsResult
-  {
-  public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult() = default;
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace LexModelBuildingService {
+namespace Model {
+class GetBuiltinIntentsResult {
+ public:
+  AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult() = default;
+  AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent
+   * in the response.</p>
+   */
+  inline const Aws::Vector<BuiltinIntentMetadata>& GetIntents() const { return m_intents; }
+  template <typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
+  void SetIntents(IntentsT&& value) {
+    m_intentsHasBeenSet = true;
+    m_intents = std::forward<IntentsT>(value);
+  }
+  template <typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
+  GetBuiltinIntentsResult& WithIntents(IntentsT&& value) {
+    SetIntents(std::forward<IntentsT>(value));
+    return *this;
+  }
+  template <typename IntentsT = BuiltinIntentMetadata>
+  GetBuiltinIntentsResult& AddIntents(IntentsT&& value) {
+    m_intentsHasBeenSet = true;
+    m_intents.emplace_back(std::forward<IntentsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent
-     * in the response.</p>
-     */
-    inline const Aws::Vector<BuiltinIntentMetadata>& GetIntents() const { return m_intents; }
-    template<typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
-    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
-    template<typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
-    GetBuiltinIntentsResult& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
-    template<typename IntentsT = BuiltinIntentMetadata>
-    GetBuiltinIntentsResult& AddIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents.emplace_back(std::forward<IntentsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A pagination token that fetches the next page of intents. If the response to
+   * this API call is truncated, Amazon Lex returns a pagination token in the
+   * response. To fetch the next page of intents, specify the pagination token in the
+   * next request.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetBuiltinIntentsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A pagination token that fetches the next page of intents. If the response to
-     * this API call is truncated, Amazon Lex returns a pagination token in the
-     * response. To fetch the next page of intents, specify the pagination token in the
-     * next request.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetBuiltinIntentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetBuiltinIntentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetBuiltinIntentsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<BuiltinIntentMetadata> m_intents;
+  bool m_intentsHasBeenSet = false;
 
-    Aws::Vector<BuiltinIntentMetadata> m_intents;
-    bool m_intentsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

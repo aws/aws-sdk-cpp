@@ -12,42 +12,28 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePushNotificationRegistrationRequest::SerializePayload() const
-{
+Aws::String CreatePushNotificationRegistrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_pinpointAppArnHasBeenSet)
-  {
-   payload.WithString("PinpointAppArn", m_pinpointAppArn);
-
+  if (m_pinpointAppArnHasBeenSet) {
+    payload.WithString("PinpointAppArn", m_pinpointAppArn);
   }
 
-  if(m_deviceTokenHasBeenSet)
-  {
-   payload.WithString("DeviceToken", m_deviceToken);
-
+  if (m_deviceTokenHasBeenSet) {
+    payload.WithString("DeviceToken", m_deviceToken);
   }
 
-  if(m_deviceTypeHasBeenSet)
-  {
-   payload.WithString("DeviceType", DeviceTypeMapper::GetNameForDeviceType(m_deviceType));
+  if (m_deviceTypeHasBeenSet) {
+    payload.WithString("DeviceType", DeviceTypeMapper::GetNameForDeviceType(m_deviceType));
   }
 
-  if(m_contactConfigurationHasBeenSet)
-  {
-   payload.WithObject("ContactConfiguration", m_contactConfiguration.Jsonize());
-
+  if (m_contactConfigurationHasBeenSet) {
+    payload.WithObject("ContactConfiguration", m_contactConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CloudWatchDimensionConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/CloudWatchDimensionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(const XmlNode& xmlNode)
-{
+CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dimensionNameNode = resultNode.FirstChild("DimensionName");
-    if(!dimensionNameNode.IsNull())
-    {
+    if (!dimensionNameNode.IsNull()) {
       m_dimensionName = Aws::Utils::Xml::DecodeEscapedXmlText(dimensionNameNode.GetText());
       m_dimensionNameHasBeenSet = true;
     }
     XmlNode dimensionValueSourceNode = resultNode.FirstChild("DimensionValueSource");
-    if(!dimensionValueSourceNode.IsNull())
-    {
-      m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dimensionValueSourceNode.GetText()).c_str()));
+    if (!dimensionValueSourceNode.IsNull()) {
+      m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dimensionValueSourceNode.GetText()).c_str()));
       m_dimensionValueSourceHasBeenSet = true;
     }
     XmlNode defaultDimensionValueNode = resultNode.FirstChild("DefaultDimensionValue");
-    if(!defaultDimensionValueNode.IsNull())
-    {
+    if (!defaultDimensionValueNode.IsNull()) {
       m_defaultDimensionValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultDimensionValueNode.GetText());
       m_defaultDimensionValueHasBeenSet = true;
     }
@@ -54,41 +44,36 @@ CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(c
   return *this;
 }
 
-void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_dimensionNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DimensionName=" << StringUtils::URLEncode(m_dimensionName.c_str()) << "&";
+void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_dimensionNameHasBeenSet) {
+    oStream << location << index << locationValue << ".DimensionName=" << StringUtils::URLEncode(m_dimensionName.c_str()) << "&";
   }
 
-  if(m_dimensionValueSourceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DimensionValueSource=" << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
+  if (m_dimensionValueSourceHasBeenSet) {
+    oStream << location << index << locationValue << ".DimensionValueSource="
+            << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
   }
 
-  if(m_defaultDimensionValueHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultDimensionValue=" << StringUtils::URLEncode(m_defaultDimensionValue.c_str()) << "&";
-  }
-
-}
-
-void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_dimensionNameHasBeenSet)
-  {
-      oStream << location << ".DimensionName=" << StringUtils::URLEncode(m_dimensionName.c_str()) << "&";
-  }
-  if(m_dimensionValueSourceHasBeenSet)
-  {
-      oStream << location << ".DimensionValueSource=" << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
-  }
-  if(m_defaultDimensionValueHasBeenSet)
-  {
-      oStream << location << ".DefaultDimensionValue=" << StringUtils::URLEncode(m_defaultDimensionValue.c_str()) << "&";
+  if (m_defaultDimensionValueHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultDimensionValue=" << StringUtils::URLEncode(m_defaultDimensionValue.c_str())
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_dimensionNameHasBeenSet) {
+    oStream << location << ".DimensionName=" << StringUtils::URLEncode(m_dimensionName.c_str()) << "&";
+  }
+  if (m_dimensionValueSourceHasBeenSet) {
+    oStream << location << ".DimensionValueSource="
+            << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
+  }
+  if (m_defaultDimensionValueHasBeenSet) {
+    oStream << location << ".DefaultDimensionValue=" << StringUtils::URLEncode(m_defaultDimensionValue.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

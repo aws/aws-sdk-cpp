@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/DeleteTransformerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/DeleteTransformerRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteTransformerRequest::SerializePayload() const
-{
+Aws::String DeleteTransformerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_logGroupIdentifierHasBeenSet)
-  {
-   payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
-
+  if (m_logGroupIdentifierHasBeenSet) {
+    payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteTransformerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteTransformerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DeleteTransformer"));
   return headers;
-
 }
-
-
-
-

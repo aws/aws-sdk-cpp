@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-AudioExtractionCategoryTypeConfiguration::AudioExtractionCategoryTypeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioExtractionCategoryTypeConfiguration::AudioExtractionCategoryTypeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AudioExtractionCategoryTypeConfiguration& AudioExtractionCategoryTypeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("transcript"))
-  {
+AudioExtractionCategoryTypeConfiguration& AudioExtractionCategoryTypeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("transcript")) {
     m_transcript = jsonValue.GetObject("transcript");
     m_transcriptHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioExtractionCategoryTypeConfiguration::Jsonize() const
-{
+JsonValue AudioExtractionCategoryTypeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_transcriptHasBeenSet)
-  {
-   payload.WithObject("transcript", m_transcript.Jsonize());
-
+  if (m_transcriptHasBeenSet) {
+    payload.WithObject("transcript", m_transcript.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

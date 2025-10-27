@@ -3,42 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ResponseInspectionStatusCode.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/ResponseInspectionStatusCode.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-ResponseInspectionStatusCode::ResponseInspectionStatusCode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResponseInspectionStatusCode::ResponseInspectionStatusCode(JsonView jsonValue) { *this = jsonValue; }
 
-ResponseInspectionStatusCode& ResponseInspectionStatusCode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SuccessCodes"))
-  {
+ResponseInspectionStatusCode& ResponseInspectionStatusCode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SuccessCodes")) {
     Aws::Utils::Array<JsonView> successCodesJsonList = jsonValue.GetArray("SuccessCodes");
-    for(unsigned successCodesIndex = 0; successCodesIndex < successCodesJsonList.GetLength(); ++successCodesIndex)
-    {
+    for (unsigned successCodesIndex = 0; successCodesIndex < successCodesJsonList.GetLength(); ++successCodesIndex) {
       m_successCodes.push_back(successCodesJsonList[successCodesIndex].AsInteger());
     }
     m_successCodesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureCodes"))
-  {
+  if (jsonValue.ValueExists("FailureCodes")) {
     Aws::Utils::Array<JsonView> failureCodesJsonList = jsonValue.GetArray("FailureCodes");
-    for(unsigned failureCodesIndex = 0; failureCodesIndex < failureCodesJsonList.GetLength(); ++failureCodesIndex)
-    {
+    for (unsigned failureCodesIndex = 0; failureCodesIndex < failureCodesJsonList.GetLength(); ++failureCodesIndex) {
       m_failureCodes.push_back(failureCodesJsonList[failureCodesIndex].AsInteger());
     }
     m_failureCodesHasBeenSet = true;
@@ -46,35 +35,28 @@ ResponseInspectionStatusCode& ResponseInspectionStatusCode::operator =(JsonView 
   return *this;
 }
 
-JsonValue ResponseInspectionStatusCode::Jsonize() const
-{
+JsonValue ResponseInspectionStatusCode::Jsonize() const {
   JsonValue payload;
 
-  if(m_successCodesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> successCodesJsonList(m_successCodes.size());
-   for(unsigned successCodesIndex = 0; successCodesIndex < successCodesJsonList.GetLength(); ++successCodesIndex)
-   {
-     successCodesJsonList[successCodesIndex].AsInteger(m_successCodes[successCodesIndex]);
-   }
-   payload.WithArray("SuccessCodes", std::move(successCodesJsonList));
-
+  if (m_successCodesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> successCodesJsonList(m_successCodes.size());
+    for (unsigned successCodesIndex = 0; successCodesIndex < successCodesJsonList.GetLength(); ++successCodesIndex) {
+      successCodesJsonList[successCodesIndex].AsInteger(m_successCodes[successCodesIndex]);
+    }
+    payload.WithArray("SuccessCodes", std::move(successCodesJsonList));
   }
 
-  if(m_failureCodesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> failureCodesJsonList(m_failureCodes.size());
-   for(unsigned failureCodesIndex = 0; failureCodesIndex < failureCodesJsonList.GetLength(); ++failureCodesIndex)
-   {
-     failureCodesJsonList[failureCodesIndex].AsInteger(m_failureCodes[failureCodesIndex]);
-   }
-   payload.WithArray("FailureCodes", std::move(failureCodesJsonList));
-
+  if (m_failureCodesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> failureCodesJsonList(m_failureCodes.size());
+    for (unsigned failureCodesIndex = 0; failureCodesIndex < failureCodesJsonList.GetLength(); ++failureCodesIndex) {
+      failureCodesJsonList[failureCodesIndex].AsInteger(m_failureCodes[failureCodesIndex]);
+    }
+    payload.WithArray("FailureCodes", std::move(failureCodesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

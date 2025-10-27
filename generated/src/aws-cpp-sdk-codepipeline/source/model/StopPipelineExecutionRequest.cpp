@@ -12,45 +12,30 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopPipelineExecutionRequest::SerializePayload() const
-{
+Aws::String StopPipelineExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineNameHasBeenSet)
-  {
-   payload.WithString("pipelineName", m_pipelineName);
-
+  if (m_pipelineNameHasBeenSet) {
+    payload.WithString("pipelineName", m_pipelineName);
   }
 
-  if(m_pipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
-
+  if (m_pipelineExecutionIdHasBeenSet) {
+    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
   }
 
-  if(m_abandonHasBeenSet)
-  {
-   payload.WithBool("abandon", m_abandon);
-
+  if (m_abandonHasBeenSet) {
+    payload.WithBool("abandon", m_abandon);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopPipelineExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopPipelineExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.StopPipelineExecution"));
   return headers;
-
 }
-
-
-
-

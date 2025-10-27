@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class JobScheduleDayOfTheWeek
-  {
-    NOT_SET,
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class JobScheduleDayOfTheWeek { NOT_SET, SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY };
 
-namespace JobScheduleDayOfTheWeekMapper
-{
+namespace JobScheduleDayOfTheWeekMapper {
 AWS_CUSTOMERPROFILES_API JobScheduleDayOfTheWeek GetJobScheduleDayOfTheWeekForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForJobScheduleDayOfTheWeek(JobScheduleDayOfTheWeek value);
-} // namespace JobScheduleDayOfTheWeekMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace JobScheduleDayOfTheWeekMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

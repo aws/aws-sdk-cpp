@@ -10,45 +10,34 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
-{
+Aws::String DescribeScalingActivitiesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeScalingActivities&";
-  if(m_activityIdsHasBeenSet)
-  {
-    if (m_activityIds.empty())
-    {
+  if (m_activityIdsHasBeenSet) {
+    if (m_activityIds.empty()) {
       ss << "ActivityIds=&";
-    }
-    else
-    {
+    } else {
       unsigned activityIdsCount = 1;
-      for(auto& item : m_activityIds)
-      {
-        ss << "ActivityIds.member." << activityIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_activityIds) {
+        ss << "ActivityIds.member." << activityIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         activityIdsCount++;
       }
     }
   }
 
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_includeDeletedGroupsHasBeenSet)
-  {
+  if (m_includeDeletedGroupsHasBeenSet) {
     ss << "IncludeDeletedGroups=" << std::boolalpha << m_includeDeletedGroups << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -56,8 +45,4 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeScalingActivitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeScalingActivitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

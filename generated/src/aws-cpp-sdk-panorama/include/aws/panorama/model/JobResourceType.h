@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class JobResourceType
-  {
-    NOT_SET,
-    PACKAGE
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class JobResourceType { NOT_SET, PACKAGE };
 
-namespace JobResourceTypeMapper
-{
+namespace JobResourceTypeMapper {
 AWS_PANORAMA_API JobResourceType GetJobResourceTypeForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForJobResourceType(JobResourceType value);
-} // namespace JobResourceTypeMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace JobResourceTypeMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

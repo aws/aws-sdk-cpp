@@ -12,45 +12,30 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeTestCasesRequest::SerializePayload() const
-{
+Aws::String DescribeTestCasesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_reportArnHasBeenSet)
-  {
-   payload.WithString("reportArn", m_reportArn);
-
+  if (m_reportArnHasBeenSet) {
+    payload.WithString("reportArn", m_reportArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("filter", m_filter.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeTestCasesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeTestCasesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.DescribeTestCases"));
   return headers;
-
 }
-
-
-
-

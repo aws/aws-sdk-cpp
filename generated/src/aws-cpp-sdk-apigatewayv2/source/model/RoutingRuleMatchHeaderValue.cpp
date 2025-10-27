@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-RoutingRuleMatchHeaderValue::RoutingRuleMatchHeaderValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingRuleMatchHeaderValue::RoutingRuleMatchHeaderValue(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingRuleMatchHeaderValue& RoutingRuleMatchHeaderValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("header"))
-  {
+RoutingRuleMatchHeaderValue& RoutingRuleMatchHeaderValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("header")) {
     m_header = jsonValue.GetString("header");
     m_headerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("valueGlob"))
-  {
+  if (jsonValue.ValueExists("valueGlob")) {
     m_valueGlob = jsonValue.GetString("valueGlob");
     m_valueGlobHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingRuleMatchHeaderValue::Jsonize() const
-{
+JsonValue RoutingRuleMatchHeaderValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_headerHasBeenSet)
-  {
-   payload.WithString("header", m_header);
-
+  if (m_headerHasBeenSet) {
+    payload.WithString("header", m_header);
   }
 
-  if(m_valueGlobHasBeenSet)
-  {
-   payload.WithString("valueGlob", m_valueGlob);
-
+  if (m_valueGlobHasBeenSet) {
+    payload.WithString("valueGlob", m_valueGlob);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

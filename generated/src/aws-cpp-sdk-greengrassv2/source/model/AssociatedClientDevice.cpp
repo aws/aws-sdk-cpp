@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/AssociatedClientDevice.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/AssociatedClientDevice.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-AssociatedClientDevice::AssociatedClientDevice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociatedClientDevice::AssociatedClientDevice(JsonView jsonValue) { *this = jsonValue; }
 
-AssociatedClientDevice& AssociatedClientDevice::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("thingName"))
-  {
+AssociatedClientDevice& AssociatedClientDevice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("thingName")) {
     m_thingName = jsonValue.GetString("thingName");
     m_thingNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationTimestamp"))
-  {
+  if (jsonValue.ValueExists("associationTimestamp")) {
     m_associationTimestamp = jsonValue.GetDouble("associationTimestamp");
     m_associationTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociatedClientDevice::Jsonize() const
-{
+JsonValue AssociatedClientDevice::Jsonize() const {
   JsonValue payload;
 
-  if(m_thingNameHasBeenSet)
-  {
-   payload.WithString("thingName", m_thingName);
-
+  if (m_thingNameHasBeenSet) {
+    payload.WithString("thingName", m_thingName);
   }
 
-  if(m_associationTimestampHasBeenSet)
-  {
-   payload.WithDouble("associationTimestamp", m_associationTimestamp.SecondsWithMSPrecision());
+  if (m_associationTimestampHasBeenSet) {
+    payload.WithDouble("associationTimestamp", m_associationTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

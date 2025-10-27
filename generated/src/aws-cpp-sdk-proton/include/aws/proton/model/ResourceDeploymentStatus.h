@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class ResourceDeploymentStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    FAILED,
-    SUCCEEDED
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class ResourceDeploymentStatus { NOT_SET, IN_PROGRESS, FAILED, SUCCEEDED };
 
-namespace ResourceDeploymentStatusMapper
-{
+namespace ResourceDeploymentStatusMapper {
 AWS_PROTON_API ResourceDeploymentStatus GetResourceDeploymentStatusForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForResourceDeploymentStatus(ResourceDeploymentStatus value);
-} // namespace ResourceDeploymentStatusMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace ResourceDeploymentStatusMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

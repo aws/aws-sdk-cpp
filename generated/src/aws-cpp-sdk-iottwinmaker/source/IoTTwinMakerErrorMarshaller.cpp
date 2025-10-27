@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTTwinMaker;
 
-AWSError<CoreErrors> IoTTwinMakerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTTwinMakerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTTwinMakerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -7,25 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class FlowConnectionType
-  {
-    NOT_SET,
-    Data,
-    Conditional
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class FlowConnectionType { NOT_SET, Data, Conditional };
 
-namespace FlowConnectionTypeMapper
-{
+namespace FlowConnectionTypeMapper {
 AWS_BEDROCKAGENT_API FlowConnectionType GetFlowConnectionTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForFlowConnectionType(FlowConnectionType value);
-} // namespace FlowConnectionTypeMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace FlowConnectionTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

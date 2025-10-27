@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/ThreatsDetectedItemCount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/ThreatsDetectedItemCount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-ThreatsDetectedItemCount::ThreatsDetectedItemCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThreatsDetectedItemCount::ThreatsDetectedItemCount(JsonView jsonValue) { *this = jsonValue; }
 
-ThreatsDetectedItemCount& ThreatsDetectedItemCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("files"))
-  {
+ThreatsDetectedItemCount& ThreatsDetectedItemCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("files")) {
     m_files = jsonValue.GetInteger("files");
     m_filesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThreatsDetectedItemCount::Jsonize() const
-{
+JsonValue ThreatsDetectedItemCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_filesHasBeenSet)
-  {
-   payload.WithInteger("files", m_files);
-
+  if (m_filesHasBeenSet) {
+    payload.WithInteger("files", m_files);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

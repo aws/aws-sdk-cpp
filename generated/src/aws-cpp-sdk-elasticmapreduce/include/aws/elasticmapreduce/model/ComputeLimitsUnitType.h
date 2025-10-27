@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class ComputeLimitsUnitType
-  {
-    NOT_SET,
-    InstanceFleetUnits,
-    Instances,
-    VCPU
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class ComputeLimitsUnitType { NOT_SET, InstanceFleetUnits, Instances, VCPU };
 
-namespace ComputeLimitsUnitTypeMapper
-{
+namespace ComputeLimitsUnitTypeMapper {
 AWS_EMR_API ComputeLimitsUnitType GetComputeLimitsUnitTypeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForComputeLimitsUnitType(ComputeLimitsUnitType value);
-} // namespace ComputeLimitsUnitTypeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace ComputeLimitsUnitTypeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/NeighborConnectionDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/model/NeighborConnectionDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
 
-NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue) { *this = jsonValue; }
 
-NeighborConnectionDetail& NeighborConnectionDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceServerId"))
-  {
+NeighborConnectionDetail& NeighborConnectionDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceServerId")) {
     m_sourceServerId = jsonValue.GetString("sourceServerId");
     m_sourceServerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationServerId"))
-  {
+  if (jsonValue.ValueExists("destinationServerId")) {
     m_destinationServerId = jsonValue.GetString("destinationServerId");
     m_destinationServerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationPort"))
-  {
+  if (jsonValue.ValueExists("destinationPort")) {
     m_destinationPort = jsonValue.GetInteger("destinationPort");
     m_destinationPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("transportProtocol"))
-  {
+  if (jsonValue.ValueExists("transportProtocol")) {
     m_transportProtocol = jsonValue.GetString("transportProtocol");
     m_transportProtocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectionsCount"))
-  {
+  if (jsonValue.ValueExists("connectionsCount")) {
     m_connectionsCount = jsonValue.GetInt64("connectionsCount");
     m_connectionsCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NeighborConnectionDetail::Jsonize() const
-{
+JsonValue NeighborConnectionDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceServerIdHasBeenSet)
-  {
-   payload.WithString("sourceServerId", m_sourceServerId);
-
+  if (m_sourceServerIdHasBeenSet) {
+    payload.WithString("sourceServerId", m_sourceServerId);
   }
 
-  if(m_destinationServerIdHasBeenSet)
-  {
-   payload.WithString("destinationServerId", m_destinationServerId);
-
+  if (m_destinationServerIdHasBeenSet) {
+    payload.WithString("destinationServerId", m_destinationServerId);
   }
 
-  if(m_destinationPortHasBeenSet)
-  {
-   payload.WithInteger("destinationPort", m_destinationPort);
-
+  if (m_destinationPortHasBeenSet) {
+    payload.WithInteger("destinationPort", m_destinationPort);
   }
 
-  if(m_transportProtocolHasBeenSet)
-  {
-   payload.WithString("transportProtocol", m_transportProtocol);
-
+  if (m_transportProtocolHasBeenSet) {
+    payload.WithString("transportProtocol", m_transportProtocol);
   }
 
-  if(m_connectionsCountHasBeenSet)
-  {
-   payload.WithInt64("connectionsCount", m_connectionsCount);
-
+  if (m_connectionsCountHasBeenSet) {
+    payload.WithInt64("connectionsCount", m_connectionsCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

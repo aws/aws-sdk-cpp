@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-UnusedAccessTypeStatistics::UnusedAccessTypeStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnusedAccessTypeStatistics::UnusedAccessTypeStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-UnusedAccessTypeStatistics& UnusedAccessTypeStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unusedAccessType"))
-  {
+UnusedAccessTypeStatistics& UnusedAccessTypeStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unusedAccessType")) {
     m_unusedAccessType = jsonValue.GetString("unusedAccessType");
     m_unusedAccessTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("total"))
-  {
+  if (jsonValue.ValueExists("total")) {
     m_total = jsonValue.GetInteger("total");
     m_totalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnusedAccessTypeStatistics::Jsonize() const
-{
+JsonValue UnusedAccessTypeStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_unusedAccessTypeHasBeenSet)
-  {
-   payload.WithString("unusedAccessType", m_unusedAccessType);
-
+  if (m_unusedAccessTypeHasBeenSet) {
+    payload.WithString("unusedAccessType", m_unusedAccessType);
   }
 
-  if(m_totalHasBeenSet)
-  {
-   payload.WithInteger("total", m_total);
-
+  if (m_totalHasBeenSet) {
+    payload.WithInteger("total", m_total);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

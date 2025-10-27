@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AssetBundleImportJobDataSourceCredentials.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AssetBundleImportJobDataSourceCredentials.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-AssetBundleImportJobDataSourceCredentials& AssetBundleImportJobDataSourceCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CredentialPair"))
-  {
+AssetBundleImportJobDataSourceCredentials& AssetBundleImportJobDataSourceCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CredentialPair")) {
     m_credentialPair = jsonValue.GetObject("CredentialPair");
     m_credentialPairHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretArn"))
-  {
+  if (jsonValue.ValueExists("SecretArn")) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetBundleImportJobDataSourceCredentials::Jsonize() const
-{
+JsonValue AssetBundleImportJobDataSourceCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_credentialPairHasBeenSet)
-  {
-   payload.WithObject("CredentialPair", m_credentialPair.Jsonize());
-
+  if (m_credentialPairHasBeenSet) {
+    payload.WithObject("CredentialPair", m_credentialPair.Jsonize());
   }
 
-  if(m_secretArnHasBeenSet)
-  {
-   payload.WithString("SecretArn", m_secretArn);
-
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

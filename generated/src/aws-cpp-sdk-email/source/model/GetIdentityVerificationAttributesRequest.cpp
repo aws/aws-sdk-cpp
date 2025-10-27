@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/GetIdentityVerificationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/GetIdentityVerificationAttributesRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String GetIdentityVerificationAttributesRequest::SerializePayload() const
-{
+Aws::String GetIdentityVerificationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetIdentityVerificationAttributes&";
-  if(m_identitiesHasBeenSet)
-  {
-    if (m_identities.empty())
-    {
+  if (m_identitiesHasBeenSet) {
+    if (m_identities.empty()) {
       ss << "Identities=&";
-    }
-    else
-    {
+    } else {
       unsigned identitiesCount = 1;
-      for(auto& item : m_identities)
-      {
-        ss << "Identities.member." << identitiesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_identities) {
+        ss << "Identities.member." << identitiesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         identitiesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String GetIdentityVerificationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetIdentityVerificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetIdentityVerificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

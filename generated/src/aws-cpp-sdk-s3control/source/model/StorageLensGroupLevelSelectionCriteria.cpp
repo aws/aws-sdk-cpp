@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/StorageLensGroupLevelSelectionCriteria.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/StorageLensGroupLevelSelectionCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::operator =(const XmlNode& xmlNode)
-{
+StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode includeNode = resultNode.FirstChild("Include");
-    if(!includeNode.IsNull())
-    {
+    if (!includeNode.IsNull()) {
       XmlNode includeMember = includeNode.FirstChild("Arn");
       m_includeHasBeenSet = !includeMember.IsNull();
-      while(!includeMember.IsNull())
-      {
+      while (!includeMember.IsNull()) {
         m_include.push_back(includeMember.GetText());
         includeMember = includeMember.NextNode("Arn");
       }
@@ -45,12 +35,10 @@ StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::
       m_includeHasBeenSet = true;
     }
     XmlNode excludeNode = resultNode.FirstChild("Exclude");
-    if(!excludeNode.IsNull())
-    {
+    if (!excludeNode.IsNull()) {
       XmlNode excludeMember = excludeNode.FirstChild("Arn");
       m_excludeHasBeenSet = !excludeMember.IsNull();
-      while(!excludeMember.IsNull())
-      {
+      while (!excludeMember.IsNull()) {
         m_exclude.push_back(excludeMember.GetText());
         excludeMember = excludeMember.NextNode("Arn");
       }
@@ -62,31 +50,25 @@ StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::
   return *this;
 }
 
-void StorageLensGroupLevelSelectionCriteria::AddToNode(XmlNode& parentNode) const
-{
+void StorageLensGroupLevelSelectionCriteria::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_includeHasBeenSet)
-  {
-   XmlNode includeParentNode = parentNode.CreateChildElement("Include");
-   for(const auto& item : m_include)
-   {
-     XmlNode includeNode = includeParentNode.CreateChildElement("Arn");
-     includeNode.SetText(item);
-   }
+  if (m_includeHasBeenSet) {
+    XmlNode includeParentNode = parentNode.CreateChildElement("Include");
+    for (const auto& item : m_include) {
+      XmlNode includeNode = includeParentNode.CreateChildElement("Arn");
+      includeNode.SetText(item);
+    }
   }
 
-  if(m_excludeHasBeenSet)
-  {
-   XmlNode excludeParentNode = parentNode.CreateChildElement("Exclude");
-   for(const auto& item : m_exclude)
-   {
-     XmlNode excludeNode = excludeParentNode.CreateChildElement("Arn");
-     excludeNode.SetText(item);
-   }
+  if (m_excludeHasBeenSet) {
+    XmlNode excludeParentNode = parentNode.CreateChildElement("Exclude");
+    for (const auto& item : m_exclude) {
+      XmlNode excludeNode = excludeParentNode.CreateChildElement("Arn");
+      excludeNode.SetText(item);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

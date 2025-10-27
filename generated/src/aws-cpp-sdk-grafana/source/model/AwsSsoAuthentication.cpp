@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/grafana/model/AwsSsoAuthentication.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/grafana/model/AwsSsoAuthentication.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedGrafana
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedGrafana {
+namespace Model {
 
-AwsSsoAuthentication::AwsSsoAuthentication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsSsoAuthentication::AwsSsoAuthentication(JsonView jsonValue) { *this = jsonValue; }
 
-AwsSsoAuthentication& AwsSsoAuthentication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ssoClientId"))
-  {
+AwsSsoAuthentication& AwsSsoAuthentication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ssoClientId")) {
     m_ssoClientId = jsonValue.GetString("ssoClientId");
     m_ssoClientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsSsoAuthentication::Jsonize() const
-{
+JsonValue AwsSsoAuthentication::Jsonize() const {
   JsonValue payload;
 
-  if(m_ssoClientIdHasBeenSet)
-  {
-   payload.WithString("ssoClientId", m_ssoClientId);
-
+  if (m_ssoClientIdHasBeenSet) {
+    payload.WithString("ssoClientId", m_ssoClientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedGrafana
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedGrafana
+}  // namespace Aws

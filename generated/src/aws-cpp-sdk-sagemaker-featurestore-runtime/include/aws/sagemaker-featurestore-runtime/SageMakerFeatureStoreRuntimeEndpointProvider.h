@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpointRules.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SageMakerFeatureStoreRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,28 @@ using SageMakerFeatureStoreRuntimeBuiltInParameters = Aws::Endpoint::BuiltInPara
  * The SDK must use service-specific type for each service per specification.
  */
 using SageMakerFeatureStoreRuntimeEndpointProviderBase =
-    EndpointProviderBase<SageMakerFeatureStoreRuntimeClientConfiguration, SageMakerFeatureStoreRuntimeBuiltInParameters, SageMakerFeatureStoreRuntimeClientContextParameters>;
+    EndpointProviderBase<SageMakerFeatureStoreRuntimeClientConfiguration, SageMakerFeatureStoreRuntimeBuiltInParameters,
+                         SageMakerFeatureStoreRuntimeClientContextParameters>;
 
 using SageMakerFeatureStoreRuntimeDefaultEpProviderBase =
-    DefaultEndpointProvider<SageMakerFeatureStoreRuntimeClientConfiguration, SageMakerFeatureStoreRuntimeBuiltInParameters, SageMakerFeatureStoreRuntimeClientContextParameters>;
+    DefaultEndpointProvider<SageMakerFeatureStoreRuntimeClientConfiguration, SageMakerFeatureStoreRuntimeBuiltInParameters,
+                            SageMakerFeatureStoreRuntimeClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeEndpointProvider : public SageMakerFeatureStoreRuntimeDefaultEpProviderBase
-{
-public:
-    using SageMakerFeatureStoreRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeEndpointProvider
+    : public SageMakerFeatureStoreRuntimeDefaultEpProviderBase {
+ public:
+  using SageMakerFeatureStoreRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SageMakerFeatureStoreRuntimeEndpointProvider()
-      : SageMakerFeatureStoreRuntimeDefaultEpProviderBase(Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::GetRulesBlob(), Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::RulesBlobSize)
-    {}
+  SageMakerFeatureStoreRuntimeEndpointProvider()
+      : SageMakerFeatureStoreRuntimeDefaultEpProviderBase(
+            Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::GetRulesBlob(),
+            Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::RulesBlobSize) {}
 
-    ~SageMakerFeatureStoreRuntimeEndpointProvider()
-    {
-    }
+  ~SageMakerFeatureStoreRuntimeEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

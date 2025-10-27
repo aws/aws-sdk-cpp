@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class MacieStatus
-  {
-    NOT_SET,
-    PAUSED,
-    ENABLED
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class MacieStatus { NOT_SET, PAUSED, ENABLED };
 
-namespace MacieStatusMapper
-{
+namespace MacieStatusMapper {
 AWS_MACIE2_API MacieStatus GetMacieStatusForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForMacieStatus(MacieStatus value);
-} // namespace MacieStatusMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace MacieStatusMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

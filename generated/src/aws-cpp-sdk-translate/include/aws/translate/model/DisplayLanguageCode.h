@@ -4,36 +4,19 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
-  enum class DisplayLanguageCode
-  {
-    NOT_SET,
-    de,
-    en,
-    es,
-    fr,
-    it,
-    ja,
-    ko,
-    pt,
-    zh,
-    zh_TW
-  };
+namespace Aws {
+namespace Translate {
+namespace Model {
+enum class DisplayLanguageCode { NOT_SET, de, en, es, fr, it, ja, ko, pt, zh, zh_TW };
 
-namespace DisplayLanguageCodeMapper
-{
+namespace DisplayLanguageCodeMapper {
 AWS_TRANSLATE_API DisplayLanguageCode GetDisplayLanguageCodeForName(const Aws::String& name);
 
 AWS_TRANSLATE_API Aws::String GetNameForDisplayLanguageCode(DisplayLanguageCode value);
-} // namespace DisplayLanguageCodeMapper
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace DisplayLanguageCodeMapper
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteClusterParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteClusterParameterGroupRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const
-{
+Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterParameterGroup&";
-  if(m_parameterGroupNameHasBeenSet)
-  {
+  if (m_parameterGroupNameHasBeenSet) {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

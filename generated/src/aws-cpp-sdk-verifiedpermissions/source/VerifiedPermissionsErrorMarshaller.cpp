@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::VerifiedPermissions;
 
-AWSError<CoreErrors> VerifiedPermissionsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> VerifiedPermissionsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = VerifiedPermissionsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

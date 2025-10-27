@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SupportedFieldTypeDetails::SupportedFieldTypeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SupportedFieldTypeDetails::SupportedFieldTypeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-SupportedFieldTypeDetails& SupportedFieldTypeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("v1"))
-  {
+SupportedFieldTypeDetails& SupportedFieldTypeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("v1")) {
     m_v1 = jsonValue.GetObject("v1");
     m_v1HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SupportedFieldTypeDetails::Jsonize() const
-{
+JsonValue SupportedFieldTypeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_v1HasBeenSet)
-  {
-   payload.WithObject("v1", m_v1.Jsonize());
-
+  if (m_v1HasBeenSet) {
+    payload.WithObject("v1", m_v1.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

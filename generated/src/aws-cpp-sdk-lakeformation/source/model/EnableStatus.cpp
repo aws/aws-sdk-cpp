@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/EnableStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/lakeformation/model/EnableStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
+namespace EnableStatusMapper {
 
-namespace Aws
-{
-  namespace LakeFormation
-  {
-    namespace Model
-    {
-      namespace EnableStatusMapper
-      {
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+EnableStatus GetEnableStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ENABLED_HASH) {
+    return EnableStatus::ENABLED;
+  } else if (hashCode == DISABLED_HASH) {
+    return EnableStatus::DISABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<EnableStatus>(hashCode);
+  }
 
+  return EnableStatus::NOT_SET;
+}
 
-        EnableStatus GetEnableStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ENABLED_HASH)
-          {
-            return EnableStatus::ENABLED;
-          }
-          else if (hashCode == DISABLED_HASH)
-          {
-            return EnableStatus::DISABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EnableStatus>(hashCode);
-          }
+Aws::String GetNameForEnableStatus(EnableStatus enumValue) {
+  switch (enumValue) {
+    case EnableStatus::NOT_SET:
+      return {};
+    case EnableStatus::ENABLED:
+      return "ENABLED";
+    case EnableStatus::DISABLED:
+      return "DISABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return EnableStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForEnableStatus(EnableStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case EnableStatus::NOT_SET:
-            return {};
-          case EnableStatus::ENABLED:
-            return "ENABLED";
-          case EnableStatus::DISABLED:
-            return "DISABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace EnableStatusMapper
-    } // namespace Model
-  } // namespace LakeFormation
-} // namespace Aws
+}  // namespace EnableStatusMapper
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

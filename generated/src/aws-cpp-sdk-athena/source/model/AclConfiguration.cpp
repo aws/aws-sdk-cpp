@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-AclConfiguration::AclConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AclConfiguration::AclConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AclConfiguration& AclConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3AclOption"))
-  {
+AclConfiguration& AclConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3AclOption")) {
     m_s3AclOption = S3AclOptionMapper::GetS3AclOptionForName(jsonValue.GetString("S3AclOption"));
     m_s3AclOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AclConfiguration::Jsonize() const
-{
+JsonValue AclConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3AclOptionHasBeenSet)
-  {
-   payload.WithString("S3AclOption", S3AclOptionMapper::GetNameForS3AclOption(m_s3AclOption));
+  if (m_s3AclOptionHasBeenSet) {
+    payload.WithString("S3AclOption", S3AclOptionMapper::GetNameForS3AclOption(m_s3AclOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

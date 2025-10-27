@@ -3,113 +3,90 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/DirectConnectGatewayAttachment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directconnect/model/DirectConnectGatewayAttachment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
 
-DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue) { *this = jsonValue; }
 
-DirectConnectGatewayAttachment& DirectConnectGatewayAttachment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("directConnectGatewayId"))
-  {
+DirectConnectGatewayAttachment& DirectConnectGatewayAttachment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("directConnectGatewayId")) {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
     m_directConnectGatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("virtualInterfaceId"))
-  {
+  if (jsonValue.ValueExists("virtualInterfaceId")) {
     m_virtualInterfaceId = jsonValue.GetString("virtualInterfaceId");
     m_virtualInterfaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("virtualInterfaceRegion"))
-  {
+  if (jsonValue.ValueExists("virtualInterfaceRegion")) {
     m_virtualInterfaceRegion = jsonValue.GetString("virtualInterfaceRegion");
     m_virtualInterfaceRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("virtualInterfaceOwnerAccount"))
-  {
+  if (jsonValue.ValueExists("virtualInterfaceOwnerAccount")) {
     m_virtualInterfaceOwnerAccount = jsonValue.GetString("virtualInterfaceOwnerAccount");
     m_virtualInterfaceOwnerAccountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attachmentState"))
-  {
-    m_attachmentState = DirectConnectGatewayAttachmentStateMapper::GetDirectConnectGatewayAttachmentStateForName(jsonValue.GetString("attachmentState"));
+  if (jsonValue.ValueExists("attachmentState")) {
+    m_attachmentState =
+        DirectConnectGatewayAttachmentStateMapper::GetDirectConnectGatewayAttachmentStateForName(jsonValue.GetString("attachmentState"));
     m_attachmentStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attachmentType"))
-  {
-    m_attachmentType = DirectConnectGatewayAttachmentTypeMapper::GetDirectConnectGatewayAttachmentTypeForName(jsonValue.GetString("attachmentType"));
+  if (jsonValue.ValueExists("attachmentType")) {
+    m_attachmentType =
+        DirectConnectGatewayAttachmentTypeMapper::GetDirectConnectGatewayAttachmentTypeForName(jsonValue.GetString("attachmentType"));
     m_attachmentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stateChangeError"))
-  {
+  if (jsonValue.ValueExists("stateChangeError")) {
     m_stateChangeError = jsonValue.GetString("stateChangeError");
     m_stateChangeErrorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DirectConnectGatewayAttachment::Jsonize() const
-{
+JsonValue DirectConnectGatewayAttachment::Jsonize() const {
   JsonValue payload;
 
-  if(m_directConnectGatewayIdHasBeenSet)
-  {
-   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
-
+  if (m_directConnectGatewayIdHasBeenSet) {
+    payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
   }
 
-  if(m_virtualInterfaceIdHasBeenSet)
-  {
-   payload.WithString("virtualInterfaceId", m_virtualInterfaceId);
-
+  if (m_virtualInterfaceIdHasBeenSet) {
+    payload.WithString("virtualInterfaceId", m_virtualInterfaceId);
   }
 
-  if(m_virtualInterfaceRegionHasBeenSet)
-  {
-   payload.WithString("virtualInterfaceRegion", m_virtualInterfaceRegion);
-
+  if (m_virtualInterfaceRegionHasBeenSet) {
+    payload.WithString("virtualInterfaceRegion", m_virtualInterfaceRegion);
   }
 
-  if(m_virtualInterfaceOwnerAccountHasBeenSet)
-  {
-   payload.WithString("virtualInterfaceOwnerAccount", m_virtualInterfaceOwnerAccount);
-
+  if (m_virtualInterfaceOwnerAccountHasBeenSet) {
+    payload.WithString("virtualInterfaceOwnerAccount", m_virtualInterfaceOwnerAccount);
   }
 
-  if(m_attachmentStateHasBeenSet)
-  {
-   payload.WithString("attachmentState", DirectConnectGatewayAttachmentStateMapper::GetNameForDirectConnectGatewayAttachmentState(m_attachmentState));
+  if (m_attachmentStateHasBeenSet) {
+    payload.WithString("attachmentState",
+                       DirectConnectGatewayAttachmentStateMapper::GetNameForDirectConnectGatewayAttachmentState(m_attachmentState));
   }
 
-  if(m_attachmentTypeHasBeenSet)
-  {
-   payload.WithString("attachmentType", DirectConnectGatewayAttachmentTypeMapper::GetNameForDirectConnectGatewayAttachmentType(m_attachmentType));
+  if (m_attachmentTypeHasBeenSet) {
+    payload.WithString("attachmentType",
+                       DirectConnectGatewayAttachmentTypeMapper::GetNameForDirectConnectGatewayAttachmentType(m_attachmentType));
   }
 
-  if(m_stateChangeErrorHasBeenSet)
-  {
-   payload.WithString("stateChangeError", m_stateChangeError);
-
+  if (m_stateChangeErrorHasBeenSet) {
+    payload.WithString("stateChangeError", m_stateChangeError);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

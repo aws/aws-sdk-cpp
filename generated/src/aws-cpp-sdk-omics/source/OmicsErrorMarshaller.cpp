@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Omics;
 
-AWSError<CoreErrors> OmicsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> OmicsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = OmicsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -6,61 +6,66 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace BackupGateway
-{
-namespace Model
-{
-  class PutMaintenanceStartTimeResult
-  {
-  public:
-    AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult() = default;
-    AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BackupGateway {
+namespace Model {
+class PutMaintenanceStartTimeResult {
+ public:
+  AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult() = default;
+  AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance
+   * start time.</p>
+   */
+  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
+  template <typename GatewayArnT = Aws::String>
+  void SetGatewayArn(GatewayArnT&& value) {
+    m_gatewayArnHasBeenSet = true;
+    m_gatewayArn = std::forward<GatewayArnT>(value);
+  }
+  template <typename GatewayArnT = Aws::String>
+  PutMaintenanceStartTimeResult& WithGatewayArn(GatewayArnT&& value) {
+    SetGatewayArn(std::forward<GatewayArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance
-     * start time.</p>
-     */
-    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
-    template<typename GatewayArnT = Aws::String>
-    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
-    template<typename GatewayArnT = Aws::String>
-    PutMaintenanceStartTimeResult& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    PutMaintenanceStartTimeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  PutMaintenanceStartTimeResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_gatewayArn;
+  bool m_gatewayArnHasBeenSet = false;
 
-    Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BackupGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupGateway
+}  // namespace Aws

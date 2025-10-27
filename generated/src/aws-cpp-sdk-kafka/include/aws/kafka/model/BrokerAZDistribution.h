@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
-  enum class BrokerAZDistribution
-  {
-    NOT_SET,
-    DEFAULT
-  };
+namespace Aws {
+namespace Kafka {
+namespace Model {
+enum class BrokerAZDistribution { NOT_SET, DEFAULT };
 
-namespace BrokerAZDistributionMapper
-{
+namespace BrokerAZDistributionMapper {
 AWS_KAFKA_API BrokerAZDistribution GetBrokerAZDistributionForName(const Aws::String& name);
 
 AWS_KAFKA_API Aws::String GetNameForBrokerAZDistribution(BrokerAZDistribution value);
-} // namespace BrokerAZDistributionMapper
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace BrokerAZDistributionMapper
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

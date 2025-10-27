@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateNetworkInterfacePermissionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateNetworkInterfacePermissionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateNetworkInterfacePermissionRequest::SerializePayload() const
-{
+Aws::String CreateNetworkInterfacePermissionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateNetworkInterfacePermission&";
-  if(m_networkInterfaceIdHasBeenSet)
-  {
+  if (m_networkInterfaceIdHasBeenSet) {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
-  if(m_awsAccountIdHasBeenSet)
-  {
+  if (m_awsAccountIdHasBeenSet) {
     ss << "AwsAccountId=" << StringUtils::URLEncode(m_awsAccountId.c_str()) << "&";
   }
 
-  if(m_awsServiceHasBeenSet)
-  {
+  if (m_awsServiceHasBeenSet) {
     ss << "AwsService=" << StringUtils::URLEncode(m_awsService.c_str()) << "&";
   }
 
-  if(m_permissionHasBeenSet)
-  {
+  if (m_permissionHasBeenSet) {
     ss << "Permission=" << StringUtils::URLEncode(InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission)) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateNetworkInterfacePermissionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateNetworkInterfacePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateNetworkInterfacePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

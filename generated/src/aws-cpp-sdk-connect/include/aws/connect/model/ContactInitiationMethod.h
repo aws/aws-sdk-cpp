@@ -7,35 +7,30 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class ContactInitiationMethod
-  {
-    NOT_SET,
-    INBOUND,
-    OUTBOUND,
-    TRANSFER,
-    QUEUE_TRANSFER,
-    CALLBACK,
-    API,
-    DISCONNECT,
-    MONITOR,
-    EXTERNAL_OUTBOUND,
-    WEBRTC_API,
-    AGENT_REPLY,
-    FLOW
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class ContactInitiationMethod {
+  NOT_SET,
+  INBOUND,
+  OUTBOUND,
+  TRANSFER,
+  QUEUE_TRANSFER,
+  CALLBACK,
+  API,
+  DISCONNECT,
+  MONITOR,
+  EXTERNAL_OUTBOUND,
+  WEBRTC_API,
+  AGENT_REPLY,
+  FLOW
+};
 
-namespace ContactInitiationMethodMapper
-{
+namespace ContactInitiationMethodMapper {
 AWS_CONNECT_API ContactInitiationMethod GetContactInitiationMethodForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForContactInitiationMethod(ContactInitiationMethod value);
-} // namespace ContactInitiationMethodMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ContactInitiationMethodMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

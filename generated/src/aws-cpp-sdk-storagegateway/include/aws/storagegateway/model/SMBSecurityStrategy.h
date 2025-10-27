@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class SMBSecurityStrategy
-  {
-    NOT_SET,
-    ClientSpecified,
-    MandatorySigning,
-    MandatoryEncryption,
-    MandatoryEncryptionNoAes128
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class SMBSecurityStrategy { NOT_SET, ClientSpecified, MandatorySigning, MandatoryEncryption, MandatoryEncryptionNoAes128 };
 
-namespace SMBSecurityStrategyMapper
-{
+namespace SMBSecurityStrategyMapper {
 AWS_STORAGEGATEWAY_API SMBSecurityStrategy GetSMBSecurityStrategyForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForSMBSecurityStrategy(SMBSecurityStrategy value);
-} // namespace SMBSecurityStrategyMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace SMBSecurityStrategyMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

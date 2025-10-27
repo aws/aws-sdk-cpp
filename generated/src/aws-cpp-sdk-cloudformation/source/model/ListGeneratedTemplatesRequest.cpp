@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListGeneratedTemplatesRequest::SerializePayload() const
-{
+Aws::String ListGeneratedTemplatesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListGeneratedTemplates&";
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListGeneratedTemplatesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListGeneratedTemplatesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListGeneratedTemplatesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

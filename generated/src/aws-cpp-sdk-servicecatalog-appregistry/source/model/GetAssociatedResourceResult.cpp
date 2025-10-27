@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
 
 #include <utility>
 
@@ -17,42 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssociatedResourceResult::GetAssociatedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAssociatedResourceResult::GetAssociatedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAssociatedResourceResult& GetAssociatedResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAssociatedResourceResult& GetAssociatedResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("resource"))
-  {
+  if (jsonValue.ValueExists("resource")) {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("options"))
-  {
+  if (jsonValue.ValueExists("options")) {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
-    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
-    {
+    for (unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex) {
       m_options.push_back(AssociationOptionMapper::GetAssociationOptionForName(optionsJsonList[optionsIndex].AsString()));
     }
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationTagResult"))
-  {
+  if (jsonValue.ValueExists("applicationTagResult")) {
     m_applicationTagResult = jsonValue.GetObject("applicationTagResult");
     m_applicationTagResultHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

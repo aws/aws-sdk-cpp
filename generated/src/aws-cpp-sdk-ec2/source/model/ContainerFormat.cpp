@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ContainerFormat.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/ContainerFormat.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace ContainerFormatMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace ContainerFormatMapper
-      {
+static const int ova_HASH = HashingUtils::HashString("ova");
 
-        static const int ova_HASH = HashingUtils::HashString("ova");
+ContainerFormat GetContainerFormatForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ova_HASH) {
+    return ContainerFormat::ova;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ContainerFormat>(hashCode);
+  }
 
+  return ContainerFormat::NOT_SET;
+}
 
-        ContainerFormat GetContainerFormatForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ova_HASH)
-          {
-            return ContainerFormat::ova;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ContainerFormat>(hashCode);
-          }
+Aws::String GetNameForContainerFormat(ContainerFormat enumValue) {
+  switch (enumValue) {
+    case ContainerFormat::NOT_SET:
+      return {};
+    case ContainerFormat::ova:
+      return "ova";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ContainerFormat::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
-        {
-          switch(enumValue)
-          {
-          case ContainerFormat::NOT_SET:
-            return {};
-          case ContainerFormat::ova:
-            return "ova";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ContainerFormatMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace ContainerFormatMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

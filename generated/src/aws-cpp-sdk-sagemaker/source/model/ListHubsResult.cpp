@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ListHubsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/ListHubsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHubsResult::ListHubsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListHubsResult::ListHubsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListHubsResult& ListHubsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListHubsResult& ListHubsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("HubSummaries"))
-  {
+  if (jsonValue.ValueExists("HubSummaries")) {
     Aws::Utils::Array<JsonView> hubSummariesJsonList = jsonValue.GetArray("HubSummaries");
-    for(unsigned hubSummariesIndex = 0; hubSummariesIndex < hubSummariesJsonList.GetLength(); ++hubSummariesIndex)
-    {
+    for (unsigned hubSummariesIndex = 0; hubSummariesIndex < hubSummariesJsonList.GetLength(); ++hubSummariesIndex) {
       m_hubSummaries.push_back(hubSummariesJsonList[hubSummariesIndex].AsObject());
     }
     m_hubSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

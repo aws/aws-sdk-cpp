@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
 
-ExecutionApprovalConfiguration::ExecutionApprovalConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionApprovalConfiguration::ExecutionApprovalConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionApprovalConfiguration& ExecutionApprovalConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timeoutMinutes"))
-  {
+ExecutionApprovalConfiguration& ExecutionApprovalConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timeoutMinutes")) {
     m_timeoutMinutes = jsonValue.GetInteger("timeoutMinutes");
     m_timeoutMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRole"))
-  {
+  if (jsonValue.ValueExists("approvalRole")) {
     m_approvalRole = jsonValue.GetString("approvalRole");
     m_approvalRoleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionApprovalConfiguration::Jsonize() const
-{
+JsonValue ExecutionApprovalConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("timeoutMinutes", m_timeoutMinutes);
-
+  if (m_timeoutMinutesHasBeenSet) {
+    payload.WithInteger("timeoutMinutes", m_timeoutMinutes);
   }
 
-  if(m_approvalRoleHasBeenSet)
-  {
-   payload.WithString("approvalRole", m_approvalRole);
-
+  if (m_approvalRoleHasBeenSet) {
+    payload.WithString("approvalRole", m_approvalRole);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

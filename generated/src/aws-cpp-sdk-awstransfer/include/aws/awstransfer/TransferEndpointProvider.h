@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/awstransfer/TransferEndpointRules.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/awstransfer/TransferEndpointRules.h>
-
-
-namespace Aws
-{
-namespace Transfer
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Transfer {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using TransferClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using TransferDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_TRANSFER_API TransferEndpointProvider : public TransferDefaultEpProviderBase
-{
-public:
-    using TransferResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_TRANSFER_API TransferEndpointProvider : public TransferDefaultEpProviderBase {
+ public:
+  using TransferResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    TransferEndpointProvider()
-      : TransferDefaultEpProviderBase(Aws::Transfer::TransferEndpointRules::GetRulesBlob(), Aws::Transfer::TransferEndpointRules::RulesBlobSize)
-    {}
+  TransferEndpointProvider()
+      : TransferDefaultEpProviderBase(Aws::Transfer::TransferEndpointRules::GetRulesBlob(),
+                                      Aws::Transfer::TransferEndpointRules::RulesBlobSize) {}
 
-    ~TransferEndpointProvider()
-    {
-    }
+  ~TransferEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Transfer
+}  // namespace Aws

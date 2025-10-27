@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-ApiAssociation::ApiAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiAssociation::ApiAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-ApiAssociation& ApiAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainName"))
-  {
+ApiAssociation& ApiAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiId"))
-  {
+  if (jsonValue.ValueExists("apiId")) {
     m_apiId = jsonValue.GetString("apiId");
     m_apiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationStatus"))
-  {
+  if (jsonValue.ValueExists("associationStatus")) {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("associationStatus"));
     m_associationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentDetail"))
-  {
+  if (jsonValue.ValueExists("deploymentDetail")) {
     m_deploymentDetail = jsonValue.GetString("deploymentDetail");
     m_deploymentDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiAssociation::Jsonize() const
-{
+JsonValue ApiAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("apiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("apiId", m_apiId);
   }
 
-  if(m_associationStatusHasBeenSet)
-  {
-   payload.WithString("associationStatus", AssociationStatusMapper::GetNameForAssociationStatus(m_associationStatus));
+  if (m_associationStatusHasBeenSet) {
+    payload.WithString("associationStatus", AssociationStatusMapper::GetNameForAssociationStatus(m_associationStatus));
   }
 
-  if(m_deploymentDetailHasBeenSet)
-  {
-   payload.WithString("deploymentDetail", m_deploymentDetail);
-
+  if (m_deploymentDetailHasBeenSet) {
+    payload.WithString("deploymentDetail", m_deploymentDetail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

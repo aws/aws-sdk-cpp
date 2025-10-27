@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class IcebergS3BackupMode
-  {
-    NOT_SET,
-    FailedDataOnly,
-    AllData
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class IcebergS3BackupMode { NOT_SET, FailedDataOnly, AllData };
 
-namespace IcebergS3BackupModeMapper
-{
+namespace IcebergS3BackupModeMapper {
 AWS_FIREHOSE_API IcebergS3BackupMode GetIcebergS3BackupModeForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForIcebergS3BackupMode(IcebergS3BackupMode value);
-} // namespace IcebergS3BackupModeMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace IcebergS3BackupModeMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

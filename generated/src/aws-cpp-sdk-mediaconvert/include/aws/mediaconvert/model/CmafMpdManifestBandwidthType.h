@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafMpdManifestBandwidthType
-  {
-    NOT_SET,
-    AVERAGE,
-    MAX
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafMpdManifestBandwidthType { NOT_SET, AVERAGE, MAX };
 
-namespace CmafMpdManifestBandwidthTypeMapper
-{
+namespace CmafMpdManifestBandwidthTypeMapper {
 AWS_MEDIACONVERT_API CmafMpdManifestBandwidthType GetCmafMpdManifestBandwidthTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafMpdManifestBandwidthType(CmafMpdManifestBandwidthType value);
-} // namespace CmafMpdManifestBandwidthTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafMpdManifestBandwidthTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

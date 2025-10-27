@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetMetricWidgetImageResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 
 #include <utility>
 
@@ -18,26 +18,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMetricWidgetImageResult::GetMetricWidgetImageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetMetricWidgetImageResult::GetMetricWidgetImageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetMetricWidgetImageResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetMetricWidgetImageResult")) {
     resultNode = rootNode.FirstChild("GetMetricWidgetImageResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metricWidgetImageNode = resultNode.FirstChild("MetricWidgetImage");
-    if(!metricWidgetImageNode.IsNull())
-    {
+    if (!metricWidgetImageNode.IsNull()) {
       m_metricWidgetImage = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(metricWidgetImageNode.GetText()));
       m_metricWidgetImageHasBeenSet = true;
     }
@@ -47,7 +40,7 @@ GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator =(const Aws::Am
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricWidgetImageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricWidgetImageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

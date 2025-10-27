@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/Ami.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/Ami.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-Ami::Ami(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ami::Ami(JsonView jsonValue) { *this = jsonValue; }
 
-Ami& Ami::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("region"))
-  {
+Ami& Ami::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("image"))
-  {
+  if (jsonValue.ValueExists("image")) {
     m_image = jsonValue.GetString("image");
     m_imageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = jsonValue.GetObject("state");
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accountId"))
-  {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ami::Jsonize() const
-{
+JsonValue Ami::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
-  if(m_imageHasBeenSet)
-  {
-   payload.WithString("image", m_image);
-
+  if (m_imageHasBeenSet) {
+    payload.WithString("image", m_image);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithObject("state", m_state.Jsonize());
-
+  if (m_stateHasBeenSet) {
+    payload.WithObject("state", m_state.Jsonize());
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
-  enum class VirtualInterfaceState
-  {
-    NOT_SET,
-    confirming,
-    verifying,
-    pending,
-    available,
-    down,
-    testing,
-    deleting,
-    deleted,
-    rejected,
-    unknown
-  };
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
+enum class VirtualInterfaceState {
+  NOT_SET,
+  confirming,
+  verifying,
+  pending,
+  available,
+  down,
+  testing,
+  deleting,
+  deleted,
+  rejected,
+  unknown
+};
 
-namespace VirtualInterfaceStateMapper
-{
+namespace VirtualInterfaceStateMapper {
 AWS_DIRECTCONNECT_API VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name);
 
 AWS_DIRECTCONNECT_API Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState value);
-} // namespace VirtualInterfaceStateMapper
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace VirtualInterfaceStateMapper
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

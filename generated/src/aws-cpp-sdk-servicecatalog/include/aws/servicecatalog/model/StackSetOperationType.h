@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class StackSetOperationType
-  {
-    NOT_SET,
-    CREATE,
-    UPDATE,
-    DELETE_
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class StackSetOperationType { NOT_SET, CREATE, UPDATE, DELETE_ };
 
-namespace StackSetOperationTypeMapper
-{
+namespace StackSetOperationTypeMapper {
 AWS_SERVICECATALOG_API StackSetOperationType GetStackSetOperationTypeForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForStackSetOperationType(StackSetOperationType value);
-} // namespace StackSetOperationTypeMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace StackSetOperationTypeMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

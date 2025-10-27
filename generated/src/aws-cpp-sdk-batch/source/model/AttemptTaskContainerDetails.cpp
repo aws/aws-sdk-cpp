@@ -11,45 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-AttemptTaskContainerDetails::AttemptTaskContainerDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttemptTaskContainerDetails::AttemptTaskContainerDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AttemptTaskContainerDetails& AttemptTaskContainerDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exitCode"))
-  {
+AttemptTaskContainerDetails& AttemptTaskContainerDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exitCode")) {
     m_exitCode = jsonValue.GetInteger("exitCode");
     m_exitCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logStreamName"))
-  {
+  if (jsonValue.ValueExists("logStreamName")) {
     m_logStreamName = jsonValue.GetString("logStreamName");
     m_logStreamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkInterfaces"))
-  {
+  if (jsonValue.ValueExists("networkInterfaces")) {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
-    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
-    {
+    for (unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex) {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
     }
     m_networkInterfacesHasBeenSet = true;
@@ -57,48 +44,36 @@ AttemptTaskContainerDetails& AttemptTaskContainerDetails::operator =(JsonView js
   return *this;
 }
 
-JsonValue AttemptTaskContainerDetails::Jsonize() const
-{
+JsonValue AttemptTaskContainerDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_exitCodeHasBeenSet)
-  {
-   payload.WithInteger("exitCode", m_exitCode);
-
+  if (m_exitCodeHasBeenSet) {
+    payload.WithInteger("exitCode", m_exitCode);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
-  if(m_logStreamNameHasBeenSet)
-  {
-   payload.WithString("logStreamName", m_logStreamName);
-
+  if (m_logStreamNameHasBeenSet) {
+    payload.WithString("logStreamName", m_logStreamName);
   }
 
-  if(m_networkInterfacesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
-   for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
-   {
-     networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
-   }
-   payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
-
+  if (m_networkInterfacesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+    for (unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex) {
+      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
+    }
+    payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

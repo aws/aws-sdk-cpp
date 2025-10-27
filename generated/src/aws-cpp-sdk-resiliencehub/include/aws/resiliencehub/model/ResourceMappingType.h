@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ResourceMappingType
-  {
-    NOT_SET,
-    CfnStack,
-    Resource,
-    AppRegistryApp,
-    ResourceGroup,
-    Terraform,
-    EKS
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ResourceMappingType { NOT_SET, CfnStack, Resource, AppRegistryApp, ResourceGroup, Terraform, EKS };
 
-namespace ResourceMappingTypeMapper
-{
+namespace ResourceMappingTypeMapper {
 AWS_RESILIENCEHUB_API ResourceMappingType GetResourceMappingTypeForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForResourceMappingType(ResourceMappingType value);
-} // namespace ResourceMappingTypeMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ResourceMappingTypeMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

@@ -4,68 +4,73 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
-  /**
-   * <p>The account doesn't have permission to perform this action.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InvalidAccessException">AWS
-   * API Reference</a></p>
-   */
-  class InvalidAccessException
-  {
-  public:
-    AWS_SECURITYHUB_API InvalidAccessException() = default;
-    AWS_SECURITYHUB_API InvalidAccessException(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API InvalidAccessException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+/**
+ * <p>The account doesn't have permission to perform this action.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InvalidAccessException">AWS
+ * API Reference</a></p>
+ */
+class InvalidAccessException {
+ public:
+  AWS_SECURITYHUB_API InvalidAccessException() = default;
+  AWS_SECURITYHUB_API InvalidAccessException(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API InvalidAccessException& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    InvalidAccessException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  InvalidAccessException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    template<typename CodeT = Aws::String>
-    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
-    template<typename CodeT = Aws::String>
-    InvalidAccessException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  InvalidAccessException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
 
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
-  };
+  Aws::String m_code;
+  bool m_codeHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

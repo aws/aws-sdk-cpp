@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class RelationshipType
-  {
-    NOT_SET,
-    VALUE,
-    CHILD,
-    COMPLEX_FEATURES,
-    MERGED_CELL,
-    TITLE,
-    ANSWER,
-    TABLE,
-    TABLE_TITLE,
-    TABLE_FOOTER
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class RelationshipType { NOT_SET, VALUE, CHILD, COMPLEX_FEATURES, MERGED_CELL, TITLE, ANSWER, TABLE, TABLE_TITLE, TABLE_FOOTER };
 
-namespace RelationshipTypeMapper
-{
+namespace RelationshipTypeMapper {
 AWS_TEXTRACT_API RelationshipType GetRelationshipTypeForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForRelationshipType(RelationshipType value);
-} // namespace RelationshipTypeMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace RelationshipTypeMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

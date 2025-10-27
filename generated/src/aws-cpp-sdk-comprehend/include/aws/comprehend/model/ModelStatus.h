@@ -7,31 +7,16 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
-  enum class ModelStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    TRAINING,
-    DELETING,
-    STOP_REQUESTED,
-    STOPPED,
-    IN_ERROR,
-    TRAINED,
-    TRAINED_WITH_WARNING
-  };
+namespace Aws {
+namespace Comprehend {
+namespace Model {
+enum class ModelStatus { NOT_SET, SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED, TRAINED_WITH_WARNING };
 
-namespace ModelStatusMapper
-{
+namespace ModelStatusMapper {
 AWS_COMPREHEND_API ModelStatus GetModelStatusForName(const Aws::String& name);
 
 AWS_COMPREHEND_API Aws::String GetNameForModelStatus(ModelStatus value);
-} // namespace ModelStatusMapper
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace ModelStatusMapper
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

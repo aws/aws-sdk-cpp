@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class AggregateType
-  {
-    NOT_SET,
-    AVERAGE,
-    COUNT,
-    MAXIMUM,
-    MINIMUM,
-    SUM,
-    STANDARD_DEVIATION
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class AggregateType { NOT_SET, AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION };
 
-namespace AggregateTypeMapper
-{
+namespace AggregateTypeMapper {
 AWS_IOTSITEWISE_API AggregateType GetAggregateTypeForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForAggregateType(AggregateType value);
-} // namespace AggregateTypeMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace AggregateTypeMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-StreamingConfigurations::StreamingConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamingConfigurations::StreamingConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-StreamingConfigurations& StreamingConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamFinalResponse"))
-  {
+StreamingConfigurations& StreamingConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamFinalResponse")) {
     m_streamFinalResponse = jsonValue.GetBool("streamFinalResponse");
     m_streamFinalResponseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applyGuardrailInterval"))
-  {
+  if (jsonValue.ValueExists("applyGuardrailInterval")) {
     m_applyGuardrailInterval = jsonValue.GetInteger("applyGuardrailInterval");
     m_applyGuardrailIntervalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamingConfigurations::Jsonize() const
-{
+JsonValue StreamingConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamFinalResponseHasBeenSet)
-  {
-   payload.WithBool("streamFinalResponse", m_streamFinalResponse);
-
+  if (m_streamFinalResponseHasBeenSet) {
+    payload.WithBool("streamFinalResponse", m_streamFinalResponse);
   }
 
-  if(m_applyGuardrailIntervalHasBeenSet)
-  {
-   payload.WithInteger("applyGuardrailInterval", m_applyGuardrailInterval);
-
+  if (m_applyGuardrailIntervalHasBeenSet) {
+    payload.WithInteger("applyGuardrailInterval", m_applyGuardrailInterval);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

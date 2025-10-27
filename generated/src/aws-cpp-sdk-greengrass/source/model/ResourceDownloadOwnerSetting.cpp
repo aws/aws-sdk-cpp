@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/ResourceDownloadOwnerSetting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/ResourceDownloadOwnerSetting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceDownloadOwnerSetting& ResourceDownloadOwnerSetting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupOwner"))
-  {
+ResourceDownloadOwnerSetting& ResourceDownloadOwnerSetting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupOwner")) {
     m_groupOwner = jsonValue.GetString("GroupOwner");
     m_groupOwnerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupPermission"))
-  {
+  if (jsonValue.ValueExists("GroupPermission")) {
     m_groupPermission = PermissionMapper::GetPermissionForName(jsonValue.GetString("GroupPermission"));
     m_groupPermissionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceDownloadOwnerSetting::Jsonize() const
-{
+JsonValue ResourceDownloadOwnerSetting::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupOwnerHasBeenSet)
-  {
-   payload.WithString("GroupOwner", m_groupOwner);
-
+  if (m_groupOwnerHasBeenSet) {
+    payload.WithString("GroupOwner", m_groupOwner);
   }
 
-  if(m_groupPermissionHasBeenSet)
-  {
-   payload.WithString("GroupPermission", PermissionMapper::GetNameForPermission(m_groupPermission));
+  if (m_groupPermissionHasBeenSet) {
+    payload.WithString("GroupPermission", PermissionMapper::GetNameForPermission(m_groupPermission));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

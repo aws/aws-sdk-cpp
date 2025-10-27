@@ -12,33 +12,22 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteBillingViewRequest::SerializePayload() const
-{
+Aws::String DeleteBillingViewRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_forceHasBeenSet)
-  {
-   payload.WithBool("force", m_force);
-
+  if (m_forceHasBeenSet) {
+    payload.WithBool("force", m_force);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteBillingViewRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteBillingViewRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBilling.DeleteBillingView"));
   return headers;
-
 }
-
-
-
-

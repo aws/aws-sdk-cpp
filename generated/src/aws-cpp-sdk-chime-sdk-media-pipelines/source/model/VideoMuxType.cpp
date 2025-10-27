@@ -4,62 +4,50 @@
  */
 
 #include <aws/chime-sdk-media-pipelines/model/VideoMuxType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+namespace VideoMuxTypeMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMediaPipelines
-  {
-    namespace Model
-    {
-      namespace VideoMuxTypeMapper
-      {
+static const int VideoOnly_HASH = HashingUtils::HashString("VideoOnly");
 
-        static const int VideoOnly_HASH = HashingUtils::HashString("VideoOnly");
+VideoMuxType GetVideoMuxTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == VideoOnly_HASH) {
+    return VideoMuxType::VideoOnly;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VideoMuxType>(hashCode);
+  }
 
+  return VideoMuxType::NOT_SET;
+}
 
-        VideoMuxType GetVideoMuxTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == VideoOnly_HASH)
-          {
-            return VideoMuxType::VideoOnly;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VideoMuxType>(hashCode);
-          }
+Aws::String GetNameForVideoMuxType(VideoMuxType enumValue) {
+  switch (enumValue) {
+    case VideoMuxType::NOT_SET:
+      return {};
+    case VideoMuxType::VideoOnly:
+      return "VideoOnly";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VideoMuxType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVideoMuxType(VideoMuxType enumValue)
-        {
-          switch(enumValue)
-          {
-          case VideoMuxType::NOT_SET:
-            return {};
-          case VideoMuxType::VideoOnly:
-            return "VideoOnly";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VideoMuxTypeMapper
-    } // namespace Model
-  } // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace VideoMuxTypeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

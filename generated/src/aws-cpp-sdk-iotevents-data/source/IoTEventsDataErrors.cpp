@@ -11,27 +11,21 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::IoTEventsData;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace IoTEventsDataErrorMapper
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace IoTEventsDataErrorMapper {
 
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_REQUEST_HASH)
-  {
+  if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsDataErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTEventsDataErrorMapper
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace IoTEventsDataErrorMapper
+}  // namespace IoTEventsData
+}  // namespace Aws

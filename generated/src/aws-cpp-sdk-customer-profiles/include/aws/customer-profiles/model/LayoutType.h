@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class LayoutType
-  {
-    NOT_SET,
-    PROFILE_EXPLORER
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class LayoutType { NOT_SET, PROFILE_EXPLORER };
 
-namespace LayoutTypeMapper
-{
+namespace LayoutTypeMapper {
 AWS_CUSTOMERPROFILES_API LayoutType GetLayoutTypeForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForLayoutType(LayoutType value);
-} // namespace LayoutTypeMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace LayoutTypeMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

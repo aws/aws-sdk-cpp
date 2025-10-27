@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SectionBasedLayoutCanvasSizeOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SectionBasedLayoutCanvasSizeOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions(JsonView jsonValue) { *this = jsonValue; }
 
-SectionBasedLayoutCanvasSizeOptions& SectionBasedLayoutCanvasSizeOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PaperCanvasSizeOptions"))
-  {
+SectionBasedLayoutCanvasSizeOptions& SectionBasedLayoutCanvasSizeOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PaperCanvasSizeOptions")) {
     m_paperCanvasSizeOptions = jsonValue.GetObject("PaperCanvasSizeOptions");
     m_paperCanvasSizeOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SectionBasedLayoutCanvasSizeOptions::Jsonize() const
-{
+JsonValue SectionBasedLayoutCanvasSizeOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_paperCanvasSizeOptionsHasBeenSet)
-  {
-   payload.WithObject("PaperCanvasSizeOptions", m_paperCanvasSizeOptions.Jsonize());
-
+  if (m_paperCanvasSizeOptionsHasBeenSet) {
+    payload.WithObject("PaperCanvasSizeOptions", m_paperCanvasSizeOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

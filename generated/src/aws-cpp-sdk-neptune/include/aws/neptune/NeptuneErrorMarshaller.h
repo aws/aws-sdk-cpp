@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/neptune/Neptune_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_NEPTUNE_API NeptuneErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_NEPTUNE_API NeptuneErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class Status
-  {
-    NOT_SET,
-    BUILDING,
-    READY,
-    READY_BASIC_TESTING,
-    FAILED,
-    NOT_BUILT
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class Status { NOT_SET, BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT };
 
-namespace StatusMapper
-{
+namespace StatusMapper {
 AWS_LEXMODELBUILDINGSERVICE_API Status GetStatusForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForStatus(Status value);
-} // namespace StatusMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

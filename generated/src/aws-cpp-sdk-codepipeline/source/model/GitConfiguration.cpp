@@ -11,39 +11,27 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-GitConfiguration::GitConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GitConfiguration::GitConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceActionName"))
-  {
+GitConfiguration& GitConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceActionName")) {
     m_sourceActionName = jsonValue.GetString("sourceActionName");
     m_sourceActionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("push"))
-  {
+  if (jsonValue.ValueExists("push")) {
     Aws::Utils::Array<JsonView> pushJsonList = jsonValue.GetArray("push");
-    for(unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex)
-    {
+    for (unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex) {
       m_push.push_back(pushJsonList[pushIndex].AsObject());
     }
     m_pushHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pullRequest"))
-  {
+  if (jsonValue.ValueExists("pullRequest")) {
     Aws::Utils::Array<JsonView> pullRequestJsonList = jsonValue.GetArray("pullRequest");
-    for(unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex)
-    {
+    for (unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex) {
       m_pullRequest.push_back(pullRequestJsonList[pullRequestIndex].AsObject());
     }
     m_pullRequestHasBeenSet = true;
@@ -51,41 +39,32 @@ GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue GitConfiguration::Jsonize() const
-{
+JsonValue GitConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceActionNameHasBeenSet)
-  {
-   payload.WithString("sourceActionName", m_sourceActionName);
-
+  if (m_sourceActionNameHasBeenSet) {
+    payload.WithString("sourceActionName", m_sourceActionName);
   }
 
-  if(m_pushHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pushJsonList(m_push.size());
-   for(unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex)
-   {
-     pushJsonList[pushIndex].AsObject(m_push[pushIndex].Jsonize());
-   }
-   payload.WithArray("push", std::move(pushJsonList));
-
+  if (m_pushHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pushJsonList(m_push.size());
+    for (unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex) {
+      pushJsonList[pushIndex].AsObject(m_push[pushIndex].Jsonize());
+    }
+    payload.WithArray("push", std::move(pushJsonList));
   }
 
-  if(m_pullRequestHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pullRequestJsonList(m_pullRequest.size());
-   for(unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex)
-   {
-     pullRequestJsonList[pullRequestIndex].AsObject(m_pullRequest[pullRequestIndex].Jsonize());
-   }
-   payload.WithArray("pullRequest", std::move(pullRequestJsonList));
-
+  if (m_pullRequestHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pullRequestJsonList(m_pullRequest.size());
+    for (unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex) {
+      pullRequestJsonList[pullRequestIndex].AsObject(m_pullRequest[pullRequestIndex].Jsonize());
+    }
+    payload.WithArray("pullRequest", std::move(pullRequestJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

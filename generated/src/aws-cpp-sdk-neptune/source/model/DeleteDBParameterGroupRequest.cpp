@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/DeleteDBParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/DeleteDBParameterGroupRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDBParameterGroupRequest::SerializePayload() const
-{
+Aws::String DeleteDBParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDBParameterGroup&";
-  if(m_dBParameterGroupNameHasBeenSet)
-  {
+  if (m_dBParameterGroupNameHasBeenSet) {
     ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDBParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDBParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDBParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

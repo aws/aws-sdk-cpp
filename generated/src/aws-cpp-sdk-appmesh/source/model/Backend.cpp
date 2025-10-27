@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-Backend::Backend(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Backend::Backend(JsonView jsonValue) { *this = jsonValue; }
 
-Backend& Backend::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("virtualService"))
-  {
+Backend& Backend::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("virtualService")) {
     m_virtualService = jsonValue.GetObject("virtualService");
     m_virtualServiceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Backend::Jsonize() const
-{
+JsonValue Backend::Jsonize() const {
   JsonValue payload;
 
-  if(m_virtualServiceHasBeenSet)
-  {
-   payload.WithObject("virtualService", m_virtualService.Jsonize());
-
+  if (m_virtualServiceHasBeenSet) {
+    payload.WithObject("virtualService", m_virtualService.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

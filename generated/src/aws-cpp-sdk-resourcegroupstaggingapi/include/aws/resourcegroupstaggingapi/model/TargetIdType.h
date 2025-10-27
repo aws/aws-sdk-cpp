@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroupsTaggingAPI
-{
-namespace Model
-{
-  enum class TargetIdType
-  {
-    NOT_SET,
-    ACCOUNT,
-    OU,
-    ROOT
-  };
+namespace Aws {
+namespace ResourceGroupsTaggingAPI {
+namespace Model {
+enum class TargetIdType { NOT_SET, ACCOUNT, OU, ROOT };
 
-namespace TargetIdTypeMapper
-{
+namespace TargetIdTypeMapper {
 AWS_RESOURCEGROUPSTAGGINGAPI_API TargetIdType GetTargetIdTypeForName(const Aws::String& name);
 
 AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::String GetNameForTargetIdType(TargetIdType value);
-} // namespace TargetIdTypeMapper
-} // namespace Model
-} // namespace ResourceGroupsTaggingAPI
-} // namespace Aws
+}  // namespace TargetIdTypeMapper
+}  // namespace Model
+}  // namespace ResourceGroupsTaggingAPI
+}  // namespace Aws

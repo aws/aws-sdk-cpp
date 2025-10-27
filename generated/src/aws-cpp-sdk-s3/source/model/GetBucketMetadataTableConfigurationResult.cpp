@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/GetBucketMetadataTableConfigurationResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/GetBucketMetadataTableConfigurationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GetBucketMetadataTableConfigurationResult& GetBucketMetadataTableConfigurationResult::operator =(const XmlNode& xmlNode)
-{
+GetBucketMetadataTableConfigurationResult& GetBucketMetadataTableConfigurationResult::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metadataTableConfigurationResultNode = resultNode.FirstChild("MetadataTableConfigurationResult");
-    if(!metadataTableConfigurationResultNode.IsNull())
-    {
+    if (!metadataTableConfigurationResultNode.IsNull()) {
       m_metadataTableConfigurationResult = metadataTableConfigurationResultNode;
       m_metadataTableConfigurationResultHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
-    if(!errorNode.IsNull())
-    {
+    if (!errorNode.IsNull()) {
       m_error = errorNode;
       m_errorHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ GetBucketMetadataTableConfigurationResult& GetBucketMetadataTableConfigurationRe
   return *this;
 }
 
-void GetBucketMetadataTableConfigurationResult::AddToNode(XmlNode& parentNode) const
-{
+void GetBucketMetadataTableConfigurationResult::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_metadataTableConfigurationResultHasBeenSet)
-  {
-   XmlNode metadataTableConfigurationResultNode = parentNode.CreateChildElement("MetadataTableConfigurationResult");
-   m_metadataTableConfigurationResult.AddToNode(metadataTableConfigurationResultNode);
+  if (m_metadataTableConfigurationResultHasBeenSet) {
+    XmlNode metadataTableConfigurationResultNode = parentNode.CreateChildElement("MetadataTableConfigurationResult");
+    m_metadataTableConfigurationResult.AddToNode(metadataTableConfigurationResultNode);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   XmlNode statusNode = parentNode.CreateChildElement("Status");
-   statusNode.SetText(m_status);
+  if (m_statusHasBeenSet) {
+    XmlNode statusNode = parentNode.CreateChildElement("Status");
+    statusNode.SetText(m_status);
   }
 
-  if(m_errorHasBeenSet)
-  {
-   XmlNode errorNode = parentNode.CreateChildElement("Error");
-   m_error.AddToNode(errorNode);
+  if (m_errorHasBeenSet) {
+    XmlNode errorNode = parentNode.CreateChildElement("Error");
+    m_error.AddToNode(errorNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

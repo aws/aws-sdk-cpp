@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListCustomLineItemVersionsFilter& ListCustomLineItemVersionsFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BillingPeriodRange"))
-  {
+ListCustomLineItemVersionsFilter& ListCustomLineItemVersionsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BillingPeriodRange")) {
     m_billingPeriodRange = jsonValue.GetObject("BillingPeriodRange");
     m_billingPeriodRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListCustomLineItemVersionsFilter::Jsonize() const
-{
+JsonValue ListCustomLineItemVersionsFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_billingPeriodRangeHasBeenSet)
-  {
-   payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
-
+  if (m_billingPeriodRangeHasBeenSet) {
+    payload.WithObject("BillingPeriodRange", m_billingPeriodRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

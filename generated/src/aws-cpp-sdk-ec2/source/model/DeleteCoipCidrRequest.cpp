@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteCoipCidrRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteCoipCidrRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCoipCidrRequest::SerializePayload() const
-{
+Aws::String DeleteCoipCidrRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCoipCidr&";
-  if(m_cidrHasBeenSet)
-  {
+  if (m_cidrHasBeenSet) {
     ss << "Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
 
-  if(m_coipPoolIdHasBeenSet)
-  {
+  if (m_coipPoolIdHasBeenSet) {
     ss << "CoipPoolId=" << StringUtils::URLEncode(m_coipPoolId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteCoipCidrRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCoipCidrRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCoipCidrRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

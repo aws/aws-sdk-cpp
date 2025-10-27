@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/AttributesResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/AttributesResource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-AttributesResource::AttributesResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttributesResource::AttributesResource(JsonView jsonValue) { *this = jsonValue; }
 
-AttributesResource& AttributesResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationId"))
-  {
+AttributesResource& AttributesResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeType"))
-  {
+  if (jsonValue.ValueExists("AttributeType")) {
     m_attributeType = jsonValue.GetString("AttributeType");
     m_attributeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attributes"))
-  {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsString());
     }
     m_attributesHasBeenSet = true;
@@ -47,36 +36,28 @@ AttributesResource& AttributesResource::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AttributesResource::Jsonize() const
-{
+JsonValue AttributesResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
-  if(m_attributeTypeHasBeenSet)
-  {
-   payload.WithString("AttributeType", m_attributeType);
-
+  if (m_attributeTypeHasBeenSet) {
+    payload.WithString("AttributeType", m_attributeType);
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsString(m_attributes[attributesIndex]);
-   }
-   payload.WithArray("Attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsString(m_attributes[attributesIndex]);
+    }
+    payload.WithArray("Attributes", std::move(attributesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

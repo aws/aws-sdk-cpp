@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/NetworkEthereumAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/NetworkEthereumAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
 
-NetworkEthereumAttributes::NetworkEthereumAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkEthereumAttributes::NetworkEthereumAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkEthereumAttributes& NetworkEthereumAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ChainId"))
-  {
+NetworkEthereumAttributes& NetworkEthereumAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ChainId")) {
     m_chainId = jsonValue.GetString("ChainId");
     m_chainIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkEthereumAttributes::Jsonize() const
-{
+JsonValue NetworkEthereumAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_chainIdHasBeenSet)
-  {
-   payload.WithString("ChainId", m_chainId);
-
+  if (m_chainIdHasBeenSet) {
+    payload.WithString("ChainId", m_chainId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

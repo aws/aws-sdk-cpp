@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex/model/IntentConfidence.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex/model/IntentConfidence.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexRuntimeService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexRuntimeService {
+namespace Model {
 
-IntentConfidence::IntentConfidence(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntentConfidence::IntentConfidence(JsonView jsonValue) { *this = jsonValue; }
 
-IntentConfidence& IntentConfidence::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("score"))
-  {
+IntentConfidence& IntentConfidence::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("score")) {
     m_score = jsonValue.GetDouble("score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntentConfidence::Jsonize() const
-{
+JsonValue IntentConfidence::Jsonize() const {
   JsonValue payload;
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexRuntimeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeService
+}  // namespace Aws

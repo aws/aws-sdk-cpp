@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mailmanager/model/GetTrafficPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mailmanager/model/GetTrafficPolicyRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetTrafficPolicyRequest::SerializePayload() const
-{
+Aws::String GetTrafficPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_trafficPolicyIdHasBeenSet)
-  {
-   payload.WithString("TrafficPolicyId", m_trafficPolicyId);
-
+  if (m_trafficPolicyIdHasBeenSet) {
+    payload.WithString("TrafficPolicyId", m_trafficPolicyId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetTrafficPolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetTrafficPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.GetTrafficPolicy"));
   return headers;
-
 }
-
-
-
-

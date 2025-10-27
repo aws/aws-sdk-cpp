@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-SuggestionMatch::SuggestionMatch(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuggestionMatch::SuggestionMatch(JsonView jsonValue) { *this = jsonValue; }
 
-SuggestionMatch& SuggestionMatch::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("suggestion"))
-  {
+SuggestionMatch& SuggestionMatch::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("suggestion")) {
     m_suggestion = jsonValue.GetString("suggestion");
     m_suggestionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("score"))
-  {
+  if (jsonValue.ValueExists("score")) {
     m_score = jsonValue.GetInt64("score");
     m_scoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuggestionMatch::Jsonize() const
-{
+JsonValue SuggestionMatch::Jsonize() const {
   JsonValue payload;
 
-  if(m_suggestionHasBeenSet)
-  {
-   payload.WithString("suggestion", m_suggestion);
-
+  if (m_suggestionHasBeenSet) {
+    payload.WithString("suggestion", m_suggestion);
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithInt64("score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithInt64("score", m_score);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

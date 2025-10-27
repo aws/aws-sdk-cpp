@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::PersonalizeRuntime;
 
-AWSError<CoreErrors> PersonalizeRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PersonalizeRuntimeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PersonalizeRuntimeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

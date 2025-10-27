@@ -12,39 +12,26 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateImagePermissionsRequest::SerializePayload() const
-{
+Aws::String UpdateImagePermissionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_sharedAccountIdHasBeenSet)
-  {
-   payload.WithString("SharedAccountId", m_sharedAccountId);
-
+  if (m_sharedAccountIdHasBeenSet) {
+    payload.WithString("SharedAccountId", m_sharedAccountId);
   }
 
-  if(m_imagePermissionsHasBeenSet)
-  {
-   payload.WithObject("ImagePermissions", m_imagePermissions.Jsonize());
-
+  if (m_imagePermissionsHasBeenSet) {
+    payload.WithObject("ImagePermissions", m_imagePermissions.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateImagePermissionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateImagePermissionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.UpdateImagePermissions"));
   return headers;
-
 }
-
-
-
-

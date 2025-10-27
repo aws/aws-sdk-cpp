@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
-  enum class ProtectionGroupAggregation
-  {
-    NOT_SET,
-    SUM,
-    MEAN,
-    MAX
-  };
+namespace Aws {
+namespace Shield {
+namespace Model {
+enum class ProtectionGroupAggregation { NOT_SET, SUM, MEAN, MAX };
 
-namespace ProtectionGroupAggregationMapper
-{
+namespace ProtectionGroupAggregationMapper {
 AWS_SHIELD_API ProtectionGroupAggregation GetProtectionGroupAggregationForName(const Aws::String& name);
 
 AWS_SHIELD_API Aws::String GetNameForProtectionGroupAggregation(ProtectionGroupAggregation value);
-} // namespace ProtectionGroupAggregationMapper
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace ProtectionGroupAggregationMapper
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

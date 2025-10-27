@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-enum class CognitoIdentityErrors
-{
-  //From Core//
+namespace Aws {
+namespace CognitoIdentity {
+enum class CognitoIdentityErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CognitoIdentityErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CognitoIdentityErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEVELOPER_USER_ALREADY_REGISTERED,
   EXTERNAL_SERVICE,
   INTERNAL_ERROR,
@@ -59,9 +56,8 @@ enum class CognitoIdentityErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_COGNITOIDENTITY_API CognitoIdentityError : public Aws::Client::AWSError<CognitoIdentityErrors>
-{
-public:
+class AWS_COGNITOIDENTITY_API CognitoIdentityError : public Aws::Client::AWSError<CognitoIdentityErrors> {
+ public:
   CognitoIdentityError() {}
   CognitoIdentityError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
   CognitoIdentityError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace CognitoIdentityErrorMapper
-{
-  AWS_COGNITOIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CognitoIdentityErrorMapper {
+AWS_COGNITOIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CognitoIdentity
-} // namespace Aws
+}  // namespace CognitoIdentity
+}  // namespace Aws

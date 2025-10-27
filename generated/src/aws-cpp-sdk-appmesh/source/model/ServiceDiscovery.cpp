@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-ServiceDiscovery::ServiceDiscovery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceDiscovery::ServiceDiscovery(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceDiscovery& ServiceDiscovery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("awsCloudMap"))
-  {
+ServiceDiscovery& ServiceDiscovery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("awsCloudMap")) {
     m_awsCloudMap = jsonValue.GetObject("awsCloudMap");
     m_awsCloudMapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dns"))
-  {
+  if (jsonValue.ValueExists("dns")) {
     m_dns = jsonValue.GetObject("dns");
     m_dnsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceDiscovery::Jsonize() const
-{
+JsonValue ServiceDiscovery::Jsonize() const {
   JsonValue payload;
 
-  if(m_awsCloudMapHasBeenSet)
-  {
-   payload.WithObject("awsCloudMap", m_awsCloudMap.Jsonize());
-
+  if (m_awsCloudMapHasBeenSet) {
+    payload.WithObject("awsCloudMap", m_awsCloudMap.Jsonize());
   }
 
-  if(m_dnsHasBeenSet)
-  {
-   payload.WithObject("dns", m_dns.Jsonize());
-
+  if (m_dnsHasBeenSet) {
+    payload.WithObject("dns", m_dns.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

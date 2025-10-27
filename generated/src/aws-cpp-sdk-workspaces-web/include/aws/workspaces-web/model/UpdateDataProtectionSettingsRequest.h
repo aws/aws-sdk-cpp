@@ -4,119 +4,144 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/workspaces-web/WorkSpacesWebRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/workspaces-web/model/InlineRedactionConfiguration.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/InlineRedactionConfiguration.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+#include <utility>
 
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+
+/**
+ */
+class UpdateDataProtectionSettingsRequest : public WorkSpacesWebRequest {
+ public:
+  AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateDataProtectionSettings"; }
+
+  AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ARN of the data protection settings.</p>
    */
-  class UpdateDataProtectionSettingsRequest : public WorkSpacesWebRequest
-  {
-  public:
-    AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsRequest() = default;
+  inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
+  inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
+  template <typename DataProtectionSettingsArnT = Aws::String>
+  void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) {
+    m_dataProtectionSettingsArnHasBeenSet = true;
+    m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value);
+  }
+  template <typename DataProtectionSettingsArnT = Aws::String>
+  UpdateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) {
+    SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateDataProtectionSettings"; }
+  ///@{
+  /**
+   * <p>The inline redaction configuration of the data protection settings that will
+   * be applied to all sessions.</p>
+   */
+  inline const InlineRedactionConfiguration& GetInlineRedactionConfiguration() const { return m_inlineRedactionConfiguration; }
+  inline bool InlineRedactionConfigurationHasBeenSet() const { return m_inlineRedactionConfigurationHasBeenSet; }
+  template <typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
+  void SetInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) {
+    m_inlineRedactionConfigurationHasBeenSet = true;
+    m_inlineRedactionConfiguration = std::forward<InlineRedactionConfigurationT>(value);
+  }
+  template <typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
+  UpdateDataProtectionSettingsRequest& WithInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) {
+    SetInlineRedactionConfiguration(std::forward<InlineRedactionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The display name of the data protection settings.</p>
+   */
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
+  }
+  template <typename DisplayNameT = Aws::String>
+  UpdateDataProtectionSettingsRequest& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The description of the data protection settings.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateDataProtectionSettingsRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the data protection settings.</p>
-     */
-    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
-    inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    UpdateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request. Idempotency ensures that an API request completes
+   * only once. With an idempotent request, if the original request completes
+   * successfully, subsequent retries with the same client token return the result
+   * from the original successful request. </p> <p>If you do not specify a client
+   * token, one is automatically generated by the Amazon Web Services SDK.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateDataProtectionSettingsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_dataProtectionSettingsArn;
+  bool m_dataProtectionSettingsArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The inline redaction configuration of the data protection settings that will
-     * be applied to all sessions.</p>
-     */
-    inline const InlineRedactionConfiguration& GetInlineRedactionConfiguration() const { return m_inlineRedactionConfiguration; }
-    inline bool InlineRedactionConfigurationHasBeenSet() const { return m_inlineRedactionConfigurationHasBeenSet; }
-    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
-    void SetInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { m_inlineRedactionConfigurationHasBeenSet = true; m_inlineRedactionConfiguration = std::forward<InlineRedactionConfigurationT>(value); }
-    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
-    UpdateDataProtectionSettingsRequest& WithInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { SetInlineRedactionConfiguration(std::forward<InlineRedactionConfigurationT>(value)); return *this;}
-    ///@}
+  InlineRedactionConfiguration m_inlineRedactionConfiguration;
+  bool m_inlineRedactionConfigurationHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The display name of the data protection settings.</p>
-     */
-    inline const Aws::String& GetDisplayName() const { return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    template<typename DisplayNameT = Aws::String>
-    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
-    template<typename DisplayNameT = Aws::String>
-    UpdateDataProtectionSettingsRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_displayName;
+  bool m_displayNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The description of the data protection settings.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateDataProtectionSettingsRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. Idempotency ensures that an API request completes
-     * only once. With an idempotent request, if the original request completes
-     * successfully, subsequent retries with the same client token return the result
-     * from the original successful request. </p> <p>If you do not specify a client
-     * token, one is automatically generated by the Amazon Web Services SDK.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateDataProtectionSettingsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+};
 
-    Aws::String m_dataProtectionSettingsArn;
-    bool m_dataProtectionSettingsArnHasBeenSet = false;
-
-    InlineRedactionConfiguration m_inlineRedactionConfiguration;
-    bool m_inlineRedactionConfigurationHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

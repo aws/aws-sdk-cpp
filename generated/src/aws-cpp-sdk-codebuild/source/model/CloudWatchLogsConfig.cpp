@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-CloudWatchLogsConfig::CloudWatchLogsConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchLogsConfig::CloudWatchLogsConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchLogsConfig& CloudWatchLogsConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+CloudWatchLogsConfig& CloudWatchLogsConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = LogsConfigStatusTypeMapper::GetLogsConfigStatusTypeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupName"))
-  {
+  if (jsonValue.ValueExists("groupName")) {
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamName"))
-  {
+  if (jsonValue.ValueExists("streamName")) {
     m_streamName = jsonValue.GetString("streamName");
     m_streamNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchLogsConfig::Jsonize() const
-{
+JsonValue CloudWatchLogsConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", LogsConfigStatusTypeMapper::GetNameForLogsConfigStatusType(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", LogsConfigStatusTypeMapper::GetNameForLogsConfigStatusType(m_status));
   }
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("groupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("groupName", m_groupName);
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("streamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("streamName", m_streamName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

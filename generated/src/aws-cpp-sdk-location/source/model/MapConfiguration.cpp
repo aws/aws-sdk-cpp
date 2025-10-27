@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/MapConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-MapConfiguration::MapConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MapConfiguration::MapConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Style"))
-  {
+MapConfiguration& MapConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Style")) {
     m_style = jsonValue.GetString("Style");
     m_styleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PoliticalView"))
-  {
+  if (jsonValue.ValueExists("PoliticalView")) {
     m_politicalView = jsonValue.GetString("PoliticalView");
     m_politicalViewHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomLayers"))
-  {
+  if (jsonValue.ValueExists("CustomLayers")) {
     Aws::Utils::Array<JsonView> customLayersJsonList = jsonValue.GetArray("CustomLayers");
-    for(unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex)
-    {
+    for (unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex) {
       m_customLayers.push_back(customLayersJsonList[customLayersIndex].AsString());
     }
     m_customLayersHasBeenSet = true;
@@ -47,36 +36,28 @@ MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MapConfiguration::Jsonize() const
-{
+JsonValue MapConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_styleHasBeenSet)
-  {
-   payload.WithString("Style", m_style);
-
+  if (m_styleHasBeenSet) {
+    payload.WithString("Style", m_style);
   }
 
-  if(m_politicalViewHasBeenSet)
-  {
-   payload.WithString("PoliticalView", m_politicalView);
-
+  if (m_politicalViewHasBeenSet) {
+    payload.WithString("PoliticalView", m_politicalView);
   }
 
-  if(m_customLayersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customLayersJsonList(m_customLayers.size());
-   for(unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex)
-   {
-     customLayersJsonList[customLayersIndex].AsString(m_customLayers[customLayersIndex]);
-   }
-   payload.WithArray("CustomLayers", std::move(customLayersJsonList));
-
+  if (m_customLayersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customLayersJsonList(m_customLayers.size());
+    for (unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex) {
+      customLayersJsonList[customLayersIndex].AsString(m_customLayers[customLayersIndex]);
+    }
+    payload.WithArray("CustomLayers", std::move(customLayersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

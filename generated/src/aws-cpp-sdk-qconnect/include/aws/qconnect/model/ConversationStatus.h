@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class ConversationStatus
-  {
-    NOT_SET,
-    CLOSED,
-    READY,
-    PROCESSING
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class ConversationStatus { NOT_SET, CLOSED, READY, PROCESSING };
 
-namespace ConversationStatusMapper
-{
+namespace ConversationStatusMapper {
 AWS_QCONNECT_API ConversationStatus GetConversationStatusForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForConversationStatus(ConversationStatus value);
-} // namespace ConversationStatusMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace ConversationStatusMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

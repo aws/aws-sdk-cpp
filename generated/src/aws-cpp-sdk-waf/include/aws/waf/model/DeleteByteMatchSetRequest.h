@@ -4,70 +4,77 @@
  */
 
 #pragma once
-#include <aws/waf/WAF_EXPORTS.h>
-#include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAFRequest.h>
+#include <aws/waf/WAF_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace WAF {
+namespace Model {
 
+/**
+ */
+class DeleteByteMatchSetRequest : public WAFRequest {
+ public:
+  AWS_WAF_API DeleteByteMatchSetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteByteMatchSet"; }
+
+  AWS_WAF_API Aws::String SerializePayload() const override;
+
+  AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
+   * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
+   * by <a>ListByteMatchSets</a>.</p>
    */
-  class DeleteByteMatchSetRequest : public WAFRequest
-  {
-  public:
-    AWS_WAF_API DeleteByteMatchSetRequest() = default;
+  inline const Aws::String& GetByteMatchSetId() const { return m_byteMatchSetId; }
+  inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+  template <typename ByteMatchSetIdT = Aws::String>
+  void SetByteMatchSetId(ByteMatchSetIdT&& value) {
+    m_byteMatchSetIdHasBeenSet = true;
+    m_byteMatchSetId = std::forward<ByteMatchSetIdT>(value);
+  }
+  template <typename ByteMatchSetIdT = Aws::String>
+  DeleteByteMatchSetRequest& WithByteMatchSetId(ByteMatchSetIdT&& value) {
+    SetByteMatchSetId(std::forward<ByteMatchSetIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteByteMatchSet"; }
+  ///@{
+  /**
+   * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+   */
+  inline const Aws::String& GetChangeToken() const { return m_changeToken; }
+  inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+  template <typename ChangeTokenT = Aws::String>
+  void SetChangeToken(ChangeTokenT&& value) {
+    m_changeTokenHasBeenSet = true;
+    m_changeToken = std::forward<ChangeTokenT>(value);
+  }
+  template <typename ChangeTokenT = Aws::String>
+  DeleteByteMatchSetRequest& WithChangeToken(ChangeTokenT&& value) {
+    SetChangeToken(std::forward<ChangeTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_byteMatchSetId;
+  bool m_byteMatchSetIdHasBeenSet = false;
 
-    AWS_WAF_API Aws::String SerializePayload() const override;
+  Aws::String m_changeToken;
+  bool m_changeTokenHasBeenSet = false;
+};
 
-    AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
-     * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
-     * by <a>ListByteMatchSets</a>.</p>
-     */
-    inline const Aws::String& GetByteMatchSetId() const { return m_byteMatchSetId; }
-    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
-    template<typename ByteMatchSetIdT = Aws::String>
-    void SetByteMatchSetId(ByteMatchSetIdT&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::forward<ByteMatchSetIdT>(value); }
-    template<typename ByteMatchSetIdT = Aws::String>
-    DeleteByteMatchSetRequest& WithByteMatchSetId(ByteMatchSetIdT&& value) { SetByteMatchSetId(std::forward<ByteMatchSetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
-    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
-    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    template<typename ChangeTokenT = Aws::String>
-    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
-    template<typename ChangeTokenT = Aws::String>
-    DeleteByteMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_byteMatchSetId;
-    bool m_byteMatchSetIdHasBeenSet = false;
-
-    Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

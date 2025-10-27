@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/WorkflowExecution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/WorkflowExecution.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-WorkflowExecution::WorkflowExecution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkflowExecution::WorkflowExecution(JsonView jsonValue) { *this = jsonValue; }
 
-WorkflowExecution& WorkflowExecution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowId"))
-  {
+WorkflowExecution& WorkflowExecution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowId")) {
     m_workflowId = jsonValue.GetString("workflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runId"))
-  {
+  if (jsonValue.ValueExists("runId")) {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkflowExecution::Jsonize() const
-{
+JsonValue WorkflowExecution::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_runIdHasBeenSet)
-  {
-   payload.WithString("runId", m_runId);
-
+  if (m_runIdHasBeenSet) {
+    payload.WithString("runId", m_runId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

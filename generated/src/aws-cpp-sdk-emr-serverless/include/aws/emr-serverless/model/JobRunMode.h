@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Model
-{
-  enum class JobRunMode
-  {
-    NOT_SET,
-    BATCH,
-    STREAMING
-  };
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
+enum class JobRunMode { NOT_SET, BATCH, STREAMING };
 
-namespace JobRunModeMapper
-{
+namespace JobRunModeMapper {
 AWS_EMRSERVERLESS_API JobRunMode GetJobRunModeForName(const Aws::String& name);
 
 AWS_EMRSERVERLESS_API Aws::String GetNameForJobRunMode(JobRunMode value);
-} // namespace JobRunModeMapper
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace JobRunModeMapper
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

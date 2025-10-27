@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-enum class ApplicationDiscoveryServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace ApplicationDiscoveryService {
+enum class ApplicationDiscoveryServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ApplicationDiscoveryServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ApplicationDiscoveryServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ERROR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT_ERROR,
   HOME_REGION_NOT_SET,
   INVALID_PARAMETER,
@@ -57,23 +54,26 @@ enum class ApplicationDiscoveryServiceErrors
   SERVER_INTERNAL_ERROR
 };
 
-class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceError : public Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>
-{
-public:
+class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceError
+    : public Aws::Client::AWSError<ApplicationDiscoveryServiceErrors> {
+ public:
   ApplicationDiscoveryServiceError() {}
-  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
-  ApplicationDiscoveryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
-  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
-  ApplicationDiscoveryServiceError(Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>&& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ApplicationDiscoveryServiceErrorMapper
-{
-  AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ApplicationDiscoveryServiceErrorMapper {
+AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

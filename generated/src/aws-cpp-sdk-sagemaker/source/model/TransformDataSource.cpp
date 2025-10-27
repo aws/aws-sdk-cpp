@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/TransformDataSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/TransformDataSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-TransformDataSource::TransformDataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransformDataSource::TransformDataSource(JsonView jsonValue) { *this = jsonValue; }
 
-TransformDataSource& TransformDataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3DataSource"))
-  {
+TransformDataSource& TransformDataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3DataSource")) {
     m_s3DataSource = jsonValue.GetObject("S3DataSource");
     m_s3DataSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransformDataSource::Jsonize() const
-{
+JsonValue TransformDataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DataSourceHasBeenSet)
-  {
-   payload.WithObject("S3DataSource", m_s3DataSource.Jsonize());
-
+  if (m_s3DataSourceHasBeenSet) {
+    payload.WithObject("S3DataSource", m_s3DataSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

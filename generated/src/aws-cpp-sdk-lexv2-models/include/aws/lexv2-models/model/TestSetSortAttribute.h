@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class TestSetSortAttribute
-  {
-    NOT_SET,
-    TestSetName,
-    LastUpdatedDateTime
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class TestSetSortAttribute { NOT_SET, TestSetName, LastUpdatedDateTime };
 
-namespace TestSetSortAttributeMapper
-{
+namespace TestSetSortAttributeMapper {
 AWS_LEXMODELSV2_API TestSetSortAttribute GetTestSetSortAttributeForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForTestSetSortAttribute(TestSetSortAttribute value);
-} // namespace TestSetSortAttributeMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace TestSetSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

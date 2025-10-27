@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/Child.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/organizations/model/Child.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
+namespace Aws {
+namespace Organizations {
+namespace Model {
 
-Child::Child(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Child::Child(JsonView jsonValue) { *this = jsonValue; }
 
-Child& Child::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+Child& Child::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ChildTypeMapper::GetChildTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Child::Jsonize() const
-{
+JsonValue Child::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChildTypeMapper::GetNameForChildType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChildTypeMapper::GetNameForChildType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

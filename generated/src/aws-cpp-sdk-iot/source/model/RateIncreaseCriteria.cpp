@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/RateIncreaseCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/RateIncreaseCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-RateIncreaseCriteria::RateIncreaseCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RateIncreaseCriteria::RateIncreaseCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-RateIncreaseCriteria& RateIncreaseCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfNotifiedThings"))
-  {
+RateIncreaseCriteria& RateIncreaseCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfNotifiedThings")) {
     m_numberOfNotifiedThings = jsonValue.GetInteger("numberOfNotifiedThings");
     m_numberOfNotifiedThingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numberOfSucceededThings"))
-  {
+  if (jsonValue.ValueExists("numberOfSucceededThings")) {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
     m_numberOfSucceededThingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RateIncreaseCriteria::Jsonize() const
-{
+JsonValue RateIncreaseCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfNotifiedThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
-
+  if (m_numberOfNotifiedThingsHasBeenSet) {
+    payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
   }
 
-  if(m_numberOfSucceededThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
-
+  if (m_numberOfSucceededThingsHasBeenSet) {
+    payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

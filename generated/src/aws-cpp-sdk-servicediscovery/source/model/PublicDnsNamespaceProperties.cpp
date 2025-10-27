@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/PublicDnsNamespaceProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/PublicDnsNamespaceProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-PublicDnsNamespaceProperties::PublicDnsNamespaceProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PublicDnsNamespaceProperties::PublicDnsNamespaceProperties(JsonView jsonValue) { *this = jsonValue; }
 
-PublicDnsNamespaceProperties& PublicDnsNamespaceProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DnsProperties"))
-  {
+PublicDnsNamespaceProperties& PublicDnsNamespaceProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DnsProperties")) {
     m_dnsProperties = jsonValue.GetObject("DnsProperties");
     m_dnsPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PublicDnsNamespaceProperties::Jsonize() const
-{
+JsonValue PublicDnsNamespaceProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_dnsPropertiesHasBeenSet)
-  {
-   payload.WithObject("DnsProperties", m_dnsProperties.Jsonize());
-
+  if (m_dnsPropertiesHasBeenSet) {
+    payload.WithObject("DnsProperties", m_dnsProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

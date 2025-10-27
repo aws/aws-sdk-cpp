@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-AppBlockBuilderAppBlockAssociation::AppBlockBuilderAppBlockAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppBlockBuilderAppBlockAssociation::AppBlockBuilderAppBlockAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-AppBlockBuilderAppBlockAssociation& AppBlockBuilderAppBlockAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AppBlockArn"))
-  {
+AppBlockBuilderAppBlockAssociation& AppBlockBuilderAppBlockAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AppBlockArn")) {
     m_appBlockArn = jsonValue.GetString("AppBlockArn");
     m_appBlockArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AppBlockBuilderName"))
-  {
+  if (jsonValue.ValueExists("AppBlockBuilderName")) {
     m_appBlockBuilderName = jsonValue.GetString("AppBlockBuilderName");
     m_appBlockBuilderNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppBlockBuilderAppBlockAssociation::Jsonize() const
-{
+JsonValue AppBlockBuilderAppBlockAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_appBlockArnHasBeenSet)
-  {
-   payload.WithString("AppBlockArn", m_appBlockArn);
-
+  if (m_appBlockArnHasBeenSet) {
+    payload.WithString("AppBlockArn", m_appBlockArn);
   }
 
-  if(m_appBlockBuilderNameHasBeenSet)
-  {
-   payload.WithString("AppBlockBuilderName", m_appBlockBuilderName);
-
+  if (m_appBlockBuilderNameHasBeenSet) {
+    payload.WithString("AppBlockBuilderName", m_appBlockBuilderName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

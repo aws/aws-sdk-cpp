@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class AssistantStatus
-  {
-    NOT_SET,
-    CREATE_IN_PROGRESS,
-    CREATE_FAILED,
-    ACTIVE,
-    DELETE_IN_PROGRESS,
-    DELETE_FAILED,
-    DELETED
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class AssistantStatus { NOT_SET, CREATE_IN_PROGRESS, CREATE_FAILED, ACTIVE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETED };
 
-namespace AssistantStatusMapper
-{
+namespace AssistantStatusMapper {
 AWS_QCONNECT_API AssistantStatus GetAssistantStatusForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForAssistantStatus(AssistantStatus value);
-} // namespace AssistantStatusMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace AssistantStatusMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

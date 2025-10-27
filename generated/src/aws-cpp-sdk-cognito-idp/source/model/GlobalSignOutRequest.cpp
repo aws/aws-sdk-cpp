@@ -12,27 +12,18 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GlobalSignOutRequest::SerializePayload() const
-{
+Aws::String GlobalSignOutRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GlobalSignOutRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GlobalSignOutRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.GlobalSignOut"));
   return headers;
-
 }
-
-
-
-

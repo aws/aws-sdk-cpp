@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/dax/DAXRequest.h>
 
-namespace Aws
-{
-namespace DAX
-{
-} // namespace DAX
-} // namespace Aws
+namespace Aws {
+namespace DAX {}  // namespace DAX
+}  // namespace Aws

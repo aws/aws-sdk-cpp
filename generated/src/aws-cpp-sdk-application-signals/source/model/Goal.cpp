@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-Goal::Goal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Goal::Goal(JsonView jsonValue) { *this = jsonValue; }
 
-Goal& Goal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Interval"))
-  {
+Goal& Goal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Interval")) {
     m_interval = jsonValue.GetObject("Interval");
     m_intervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttainmentGoal"))
-  {
+  if (jsonValue.ValueExists("AttainmentGoal")) {
     m_attainmentGoal = jsonValue.GetDouble("AttainmentGoal");
     m_attainmentGoalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WarningThreshold"))
-  {
+  if (jsonValue.ValueExists("WarningThreshold")) {
     m_warningThreshold = jsonValue.GetDouble("WarningThreshold");
     m_warningThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Goal::Jsonize() const
-{
+JsonValue Goal::Jsonize() const {
   JsonValue payload;
 
-  if(m_intervalHasBeenSet)
-  {
-   payload.WithObject("Interval", m_interval.Jsonize());
-
+  if (m_intervalHasBeenSet) {
+    payload.WithObject("Interval", m_interval.Jsonize());
   }
 
-  if(m_attainmentGoalHasBeenSet)
-  {
-   payload.WithDouble("AttainmentGoal", m_attainmentGoal);
-
+  if (m_attainmentGoalHasBeenSet) {
+    payload.WithDouble("AttainmentGoal", m_attainmentGoal);
   }
 
-  if(m_warningThresholdHasBeenSet)
-  {
-   payload.WithDouble("WarningThreshold", m_warningThreshold);
-
+  if (m_warningThresholdHasBeenSet) {
+    payload.WithDouble("WarningThreshold", m_warningThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

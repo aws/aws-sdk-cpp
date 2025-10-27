@@ -6,54 +6,53 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/S3ObjectLockLegalHoldStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3Control {
+namespace Model {
 
+/**
+ * <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch
+ * Operations job.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectLockLegalHold">AWS
+ * API Reference</a></p>
+ */
+class S3ObjectLockLegalHold {
+ public:
+  AWS_S3CONTROL_API S3ObjectLockLegalHold() = default;
+  AWS_S3CONTROL_API S3ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_S3CONTROL_API S3ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch
-   * Operations job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectLockLegalHold">AWS
-   * API Reference</a></p>
+   * <p>The Object Lock legal hold status to be applied to all objects in the Batch
+   * Operations job.</p>
    */
-  class S3ObjectLockLegalHold
-  {
-  public:
-    AWS_S3CONTROL_API S3ObjectLockLegalHold() = default;
-    AWS_S3CONTROL_API S3ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_S3CONTROL_API S3ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline S3ObjectLockLegalHoldStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(S3ObjectLockLegalHoldStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline S3ObjectLockLegalHold& WithStatus(S3ObjectLockLegalHoldStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  S3ObjectLockLegalHoldStatus m_status{S3ObjectLockLegalHoldStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+};
 
-    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
-
-
-    ///@{
-    /**
-     * <p>The Object Lock legal hold status to be applied to all objects in the Batch
-     * Operations job.</p>
-     */
-    inline S3ObjectLockLegalHoldStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(S3ObjectLockLegalHoldStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline S3ObjectLockLegalHold& WithStatus(S3ObjectLockLegalHoldStatus value) { SetStatus(value); return *this;}
-    ///@}
-  private:
-
-    S3ObjectLockLegalHoldStatus m_status{S3ObjectLockLegalHoldStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

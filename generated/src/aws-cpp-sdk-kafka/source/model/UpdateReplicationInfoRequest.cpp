@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/UpdateReplicationInfoRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/UpdateReplicationInfoRequest.h>
 
 #include <utility>
 
@@ -12,43 +12,28 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateReplicationInfoRequest::SerializePayload() const
-{
+Aws::String UpdateReplicationInfoRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_consumerGroupReplicationHasBeenSet)
-  {
-   payload.WithObject("consumerGroupReplication", m_consumerGroupReplication.Jsonize());
-
+  if (m_consumerGroupReplicationHasBeenSet) {
+    payload.WithObject("consumerGroupReplication", m_consumerGroupReplication.Jsonize());
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("currentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("currentVersion", m_currentVersion);
   }
 
-  if(m_sourceKafkaClusterArnHasBeenSet)
-  {
-   payload.WithString("sourceKafkaClusterArn", m_sourceKafkaClusterArn);
-
+  if (m_sourceKafkaClusterArnHasBeenSet) {
+    payload.WithString("sourceKafkaClusterArn", m_sourceKafkaClusterArn);
   }
 
-  if(m_targetKafkaClusterArnHasBeenSet)
-  {
-   payload.WithString("targetKafkaClusterArn", m_targetKafkaClusterArn);
-
+  if (m_targetKafkaClusterArnHasBeenSet) {
+    payload.WithString("targetKafkaClusterArn", m_targetKafkaClusterArn);
   }
 
-  if(m_topicReplicationHasBeenSet)
-  {
-   payload.WithObject("topicReplication", m_topicReplication.Jsonize());
-
+  if (m_topicReplicationHasBeenSet) {
+    payload.WithObject("topicReplication", m_topicReplication.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

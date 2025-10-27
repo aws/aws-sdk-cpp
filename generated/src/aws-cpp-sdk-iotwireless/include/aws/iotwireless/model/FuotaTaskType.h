@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class FuotaTaskType
-  {
-    NOT_SET,
-    LoRaWAN
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class FuotaTaskType { NOT_SET, LoRaWAN };
 
-namespace FuotaTaskTypeMapper
-{
+namespace FuotaTaskTypeMapper {
 AWS_IOTWIRELESS_API FuotaTaskType GetFuotaTaskTypeForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForFuotaTaskType(FuotaTaskType value);
-} // namespace FuotaTaskTypeMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace FuotaTaskTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

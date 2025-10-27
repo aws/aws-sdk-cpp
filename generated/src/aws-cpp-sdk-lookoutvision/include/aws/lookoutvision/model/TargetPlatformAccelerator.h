@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
-  enum class TargetPlatformAccelerator
-  {
-    NOT_SET,
-    NVIDIA
-  };
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
+enum class TargetPlatformAccelerator { NOT_SET, NVIDIA };
 
-namespace TargetPlatformAcceleratorMapper
-{
+namespace TargetPlatformAcceleratorMapper {
 AWS_LOOKOUTFORVISION_API TargetPlatformAccelerator GetTargetPlatformAcceleratorForName(const Aws::String& name);
 
 AWS_LOOKOUTFORVISION_API Aws::String GetNameForTargetPlatformAccelerator(TargetPlatformAccelerator value);
-} // namespace TargetPlatformAcceleratorMapper
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace TargetPlatformAcceleratorMapper
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

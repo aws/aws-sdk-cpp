@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/DescribeSnapshotScheduleRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/DescribeSnapshotScheduleRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeSnapshotScheduleRequest::SerializePayload() const
-{
+Aws::String DescribeSnapshotScheduleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_volumeARNHasBeenSet)
-  {
-   payload.WithString("VolumeARN", m_volumeARN);
-
+  if (m_volumeARNHasBeenSet) {
+    payload.WithString("VolumeARN", m_volumeARN);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeSnapshotScheduleRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeSnapshotScheduleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StorageGateway_20130630.DescribeSnapshotSchedule"));
   return headers;
-
 }
-
-
-
-

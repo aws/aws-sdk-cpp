@@ -4,56 +4,55 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticLoadBalancing
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticLoadBalancing {
+namespace Model {
 
+/**
+ * <p>Information about the <code>CrossZoneLoadBalancing</code>
+ * attribute.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CrossZoneLoadBalancing">AWS
+ * API Reference</a></p>
+ */
+class CrossZoneLoadBalancing {
+ public:
+  AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing() = default;
+  AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index,
+                                                   const char* locationValue) const;
+  AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Information about the <code>CrossZoneLoadBalancing</code>
-   * attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CrossZoneLoadBalancing">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether cross-zone load balancing is enabled for the load
+   * balancer.</p>
    */
-  class CrossZoneLoadBalancing
-  {
-  public:
-    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing() = default;
-    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline CrossZoneLoadBalancing& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
+};
 
-    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-
-    ///@{
-    /**
-     * <p>Specifies whether cross-zone load balancing is enabled for the load
-     * balancer.</p>
-     */
-    inline bool GetEnabled() const { return m_enabled; }
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-    inline CrossZoneLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enabled{false};
-    bool m_enabledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

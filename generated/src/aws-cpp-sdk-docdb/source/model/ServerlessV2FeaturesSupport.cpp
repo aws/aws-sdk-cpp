@@ -3,44 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/ServerlessV2FeaturesSupport.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/ServerlessV2FeaturesSupport.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
-ServerlessV2FeaturesSupport::ServerlessV2FeaturesSupport(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ServerlessV2FeaturesSupport::ServerlessV2FeaturesSupport(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ServerlessV2FeaturesSupport& ServerlessV2FeaturesSupport::operator =(const XmlNode& xmlNode)
-{
+ServerlessV2FeaturesSupport& ServerlessV2FeaturesSupport::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode minCapacityNode = resultNode.FirstChild("MinCapacity");
-    if(!minCapacityNode.IsNull())
-    {
-      m_minCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minCapacityNode.GetText()).c_str()).c_str());
+    if (!minCapacityNode.IsNull()) {
+      m_minCapacity =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minCapacityNode.GetText()).c_str()).c_str());
       m_minCapacityHasBeenSet = true;
     }
     XmlNode maxCapacityNode = resultNode.FirstChild("MaxCapacity");
-    if(!maxCapacityNode.IsNull())
-    {
-      m_maxCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityNode.GetText()).c_str()).c_str());
+    if (!maxCapacityNode.IsNull()) {
+      m_maxCapacity =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityNode.GetText()).c_str()).c_str());
       m_maxCapacityHasBeenSet = true;
     }
   }
@@ -48,32 +40,26 @@ ServerlessV2FeaturesSupport& ServerlessV2FeaturesSupport::operator =(const XmlNo
   return *this;
 }
 
-void ServerlessV2FeaturesSupport::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_minCapacityHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
+void ServerlessV2FeaturesSupport::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_minCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
   }
 
-  if(m_maxCapacityHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
-  }
-
-}
-
-void ServerlessV2FeaturesSupport::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_minCapacityHasBeenSet)
-  {
-      oStream << location << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
-  }
-  if(m_maxCapacityHasBeenSet)
-  {
-      oStream << location << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
+  if (m_maxCapacityHasBeenSet) {
+    oStream << location << index << locationValue << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
   }
 }
 
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+void ServerlessV2FeaturesSupport::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_minCapacityHasBeenSet) {
+    oStream << location << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
+  }
+  if (m_maxCapacityHasBeenSet) {
+    oStream << location << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

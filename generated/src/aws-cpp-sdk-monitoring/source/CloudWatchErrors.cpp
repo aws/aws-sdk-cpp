@@ -6,32 +6,29 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/monitoring/CloudWatchErrors.h>
-#include <aws/monitoring/model/ResourceNotFoundException.h>
 #include <aws/monitoring/model/DashboardInvalidInputError.h>
+#include <aws/monitoring/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CloudWatch;
 using namespace Aws::CloudWatch::Model;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-template<> AWS_CLOUDWATCH_API ResourceNotFoundException CloudWatchError::GetModeledError()
-{
+namespace Aws {
+namespace CloudWatch {
+template <>
+AWS_CLOUDWATCH_API ResourceNotFoundException CloudWatchError::GetModeledError() {
   assert(this->GetErrorType() == CloudWatchErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetXmlPayload().GetRootElement());
 }
 
-template<> AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetModeledError()
-{
+template <>
+AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetModeledError() {
   assert(this->GetErrorType() == CloudWatchErrors::DASHBOARD_INVALID_INPUT);
   return DashboardInvalidInputError(this->GetXmlPayload().GetRootElement());
 }
 
-namespace CloudWatchErrorMapper
-{
+namespace CloudWatchErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
@@ -44,54 +41,33 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
-  {
+  } else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::MISSING_REQUIRED_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DASHBOARD_INVALID_INPUT_HASH)
-  {
+  } else if (hashCode == DASHBOARD_INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::DASHBOARD_INVALID_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DASHBOARD_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == DASHBOARD_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::DASHBOARD_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_FORMAT_FAULT_HASH)
-  {
+  } else if (hashCode == INVALID_FORMAT_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INVALID_FORMAT_FAULT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_FAULT_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INTERNAL_SERVICE_FAULT), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CloudWatchErrorMapper
-} // namespace CloudWatch
-} // namespace Aws
+}  // namespace CloudWatchErrorMapper
+}  // namespace CloudWatch
+}  // namespace Aws

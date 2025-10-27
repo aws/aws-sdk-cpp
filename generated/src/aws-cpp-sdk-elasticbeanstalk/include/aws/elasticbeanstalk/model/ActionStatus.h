@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class ActionStatus
-  {
-    NOT_SET,
-    Scheduled,
-    Pending,
-    Running,
-    Unknown
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class ActionStatus { NOT_SET, Scheduled, Pending, Running, Unknown };
 
-namespace ActionStatusMapper
-{
+namespace ActionStatusMapper {
 AWS_ELASTICBEANSTALK_API ActionStatus GetActionStatusForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForActionStatus(ActionStatus value);
-} // namespace ActionStatusMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ActionStatusMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

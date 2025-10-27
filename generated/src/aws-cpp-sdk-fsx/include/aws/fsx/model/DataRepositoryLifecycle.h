@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class DataRepositoryLifecycle
-  {
-    NOT_SET,
-    CREATING,
-    AVAILABLE,
-    MISCONFIGURED,
-    UPDATING,
-    DELETING,
-    FAILED
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class DataRepositoryLifecycle { NOT_SET, CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING, FAILED };
 
-namespace DataRepositoryLifecycleMapper
-{
+namespace DataRepositoryLifecycleMapper {
 AWS_FSX_API DataRepositoryLifecycle GetDataRepositoryLifecycleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForDataRepositoryLifecycle(DataRepositoryLifecycle value);
-} // namespace DataRepositoryLifecycleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace DataRepositoryLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

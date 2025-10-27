@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/BatchAssociateScramSecretResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kafka/model/BatchAssociateScramSecretResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchAssociateScramSecretResult::BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchAssociateScramSecretResult::BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchAssociateScramSecretResult& BatchAssociateScramSecretResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchAssociateScramSecretResult& BatchAssociateScramSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("clusterArn"))
-  {
+  if (jsonValue.ValueExists("clusterArn")) {
     m_clusterArn = jsonValue.GetString("clusterArn");
     m_clusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unprocessedScramSecrets"))
-  {
+  if (jsonValue.ValueExists("unprocessedScramSecrets")) {
     Aws::Utils::Array<JsonView> unprocessedScramSecretsJsonList = jsonValue.GetArray("unprocessedScramSecrets");
-    for(unsigned unprocessedScramSecretsIndex = 0; unprocessedScramSecretsIndex < unprocessedScramSecretsJsonList.GetLength(); ++unprocessedScramSecretsIndex)
-    {
+    for (unsigned unprocessedScramSecretsIndex = 0; unprocessedScramSecretsIndex < unprocessedScramSecretsJsonList.GetLength();
+         ++unprocessedScramSecretsIndex) {
       m_unprocessedScramSecrets.push_back(unprocessedScramSecretsJsonList[unprocessedScramSecretsIndex].AsObject());
     }
     m_unprocessedScramSecretsHasBeenSet = true;
@@ -42,12 +36,10 @@ BatchAssociateScramSecretResult& BatchAssociateScramSecretResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

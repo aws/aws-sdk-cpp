@@ -3,200 +3,150 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/BatchInferenceJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/BatchInferenceJob.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-BatchInferenceJob::BatchInferenceJob(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) { *this = jsonValue; }
 
-BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobName"))
-  {
+BatchInferenceJob& BatchInferenceJob::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobName")) {
     m_jobName = jsonValue.GetString("jobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("batchInferenceJobArn"))
-  {
+  if (jsonValue.ValueExists("batchInferenceJobArn")) {
     m_batchInferenceJobArn = jsonValue.GetString("batchInferenceJobArn");
     m_batchInferenceJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterArn"))
-  {
+  if (jsonValue.ValueExists("filterArn")) {
     m_filterArn = jsonValue.GetString("filterArn");
     m_filterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("solutionVersionArn"))
-  {
+  if (jsonValue.ValueExists("solutionVersionArn")) {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
     m_solutionVersionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numResults"))
-  {
+  if (jsonValue.ValueExists("numResults")) {
     m_numResults = jsonValue.GetInteger("numResults");
     m_numResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobInput"))
-  {
+  if (jsonValue.ValueExists("jobInput")) {
     m_jobInput = jsonValue.GetObject("jobInput");
     m_jobInputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobOutput"))
-  {
+  if (jsonValue.ValueExists("jobOutput")) {
     m_jobOutput = jsonValue.GetObject("jobOutput");
     m_jobOutputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("batchInferenceJobConfig"))
-  {
+  if (jsonValue.ValueExists("batchInferenceJobConfig")) {
     m_batchInferenceJobConfig = jsonValue.GetObject("batchInferenceJobConfig");
     m_batchInferenceJobConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("batchInferenceJobMode"))
-  {
+  if (jsonValue.ValueExists("batchInferenceJobMode")) {
     m_batchInferenceJobMode = BatchInferenceJobModeMapper::GetBatchInferenceJobModeForName(jsonValue.GetString("batchInferenceJobMode"));
     m_batchInferenceJobModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("themeGenerationConfig"))
-  {
+  if (jsonValue.ValueExists("themeGenerationConfig")) {
     m_themeGenerationConfig = jsonValue.GetObject("themeGenerationConfig");
     m_themeGenerationConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchInferenceJob::Jsonize() const
-{
+JsonValue BatchInferenceJob::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("jobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("jobName", m_jobName);
   }
 
-  if(m_batchInferenceJobArnHasBeenSet)
-  {
-   payload.WithString("batchInferenceJobArn", m_batchInferenceJobArn);
-
+  if (m_batchInferenceJobArnHasBeenSet) {
+    payload.WithString("batchInferenceJobArn", m_batchInferenceJobArn);
   }
 
-  if(m_filterArnHasBeenSet)
-  {
-   payload.WithString("filterArn", m_filterArn);
-
+  if (m_filterArnHasBeenSet) {
+    payload.WithString("filterArn", m_filterArn);
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
-  if(m_solutionVersionArnHasBeenSet)
-  {
-   payload.WithString("solutionVersionArn", m_solutionVersionArn);
-
+  if (m_solutionVersionArnHasBeenSet) {
+    payload.WithString("solutionVersionArn", m_solutionVersionArn);
   }
 
-  if(m_numResultsHasBeenSet)
-  {
-   payload.WithInteger("numResults", m_numResults);
-
+  if (m_numResultsHasBeenSet) {
+    payload.WithInteger("numResults", m_numResults);
   }
 
-  if(m_jobInputHasBeenSet)
-  {
-   payload.WithObject("jobInput", m_jobInput.Jsonize());
-
+  if (m_jobInputHasBeenSet) {
+    payload.WithObject("jobInput", m_jobInput.Jsonize());
   }
 
-  if(m_jobOutputHasBeenSet)
-  {
-   payload.WithObject("jobOutput", m_jobOutput.Jsonize());
-
+  if (m_jobOutputHasBeenSet) {
+    payload.WithObject("jobOutput", m_jobOutput.Jsonize());
   }
 
-  if(m_batchInferenceJobConfigHasBeenSet)
-  {
-   payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
-
+  if (m_batchInferenceJobConfigHasBeenSet) {
+    payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_batchInferenceJobModeHasBeenSet)
-  {
-   payload.WithString("batchInferenceJobMode", BatchInferenceJobModeMapper::GetNameForBatchInferenceJobMode(m_batchInferenceJobMode));
+  if (m_batchInferenceJobModeHasBeenSet) {
+    payload.WithString("batchInferenceJobMode", BatchInferenceJobModeMapper::GetNameForBatchInferenceJobMode(m_batchInferenceJobMode));
   }
 
-  if(m_themeGenerationConfigHasBeenSet)
-  {
-   payload.WithObject("themeGenerationConfig", m_themeGenerationConfig.Jsonize());
-
+  if (m_themeGenerationConfigHasBeenSet) {
+    payload.WithObject("themeGenerationConfig", m_themeGenerationConfig.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

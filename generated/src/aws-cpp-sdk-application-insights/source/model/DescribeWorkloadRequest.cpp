@@ -12,45 +12,30 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWorkloadRequest::SerializePayload() const
-{
+Aws::String DescribeWorkloadRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("ComponentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("ComponentName", m_componentName);
   }
 
-  if(m_workloadIdHasBeenSet)
-  {
-   payload.WithString("WorkloadId", m_workloadId);
-
+  if (m_workloadIdHasBeenSet) {
+    payload.WithString("WorkloadId", m_workloadId);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeWorkloadRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeWorkloadRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.DescribeWorkload"));
   return headers;
-
 }
-
-
-
-

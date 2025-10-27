@@ -7,24 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class QueryTransformationMode
-  {
-    NOT_SET,
-    TEXT_TO_SQL
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class QueryTransformationMode { NOT_SET, TEXT_TO_SQL };
 
-namespace QueryTransformationModeMapper
-{
+namespace QueryTransformationModeMapper {
 AWS_BEDROCKAGENTRUNTIME_API QueryTransformationMode GetQueryTransformationModeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForQueryTransformationMode(QueryTransformationMode value);
-} // namespace QueryTransformationModeMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace QueryTransformationModeMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

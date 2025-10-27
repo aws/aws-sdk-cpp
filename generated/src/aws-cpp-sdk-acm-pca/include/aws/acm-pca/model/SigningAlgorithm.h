@@ -7,30 +7,25 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class SigningAlgorithm
-  {
-    NOT_SET,
-    SHA256WITHECDSA,
-    SHA384WITHECDSA,
-    SHA512WITHECDSA,
-    SHA256WITHRSA,
-    SHA384WITHRSA,
-    SHA512WITHRSA,
-    SM3WITHSM2
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class SigningAlgorithm {
+  NOT_SET,
+  SHA256WITHECDSA,
+  SHA384WITHECDSA,
+  SHA512WITHECDSA,
+  SHA256WITHRSA,
+  SHA384WITHRSA,
+  SHA512WITHRSA,
+  SM3WITHSM2
+};
 
-namespace SigningAlgorithmMapper
-{
+namespace SigningAlgorithmMapper {
 AWS_ACMPCA_API SigningAlgorithm GetSigningAlgorithmForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForSigningAlgorithm(SigningAlgorithm value);
-} // namespace SigningAlgorithmMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace SigningAlgorithmMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

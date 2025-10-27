@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/ErrorReportConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/ErrorReportConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
-ErrorReportConfiguration::ErrorReportConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorReportConfiguration::ErrorReportConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorReportConfiguration& ErrorReportConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Configuration"))
-  {
+ErrorReportConfiguration& ErrorReportConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Configuration")) {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
     m_s3ConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorReportConfiguration::Jsonize() const
-{
+JsonValue ErrorReportConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
-
+  if (m_s3ConfigurationHasBeenSet) {
+    payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

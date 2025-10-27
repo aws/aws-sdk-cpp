@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/healthlake/HealthLake_EXPORTS.h>
 
-namespace Aws
-{
-namespace HealthLake
-{
-namespace Model
-{
-  enum class CmkType
-  {
-    NOT_SET,
-    CUSTOMER_MANAGED_KMS_KEY,
-    AWS_OWNED_KMS_KEY
-  };
+namespace Aws {
+namespace HealthLake {
+namespace Model {
+enum class CmkType { NOT_SET, CUSTOMER_MANAGED_KMS_KEY, AWS_OWNED_KMS_KEY };
 
-namespace CmkTypeMapper
-{
+namespace CmkTypeMapper {
 AWS_HEALTHLAKE_API CmkType GetCmkTypeForName(const Aws::String& name);
 
 AWS_HEALTHLAKE_API Aws::String GetNameForCmkType(CmkType value);
-} // namespace CmkTypeMapper
-} // namespace Model
-} // namespace HealthLake
-} // namespace Aws
+}  // namespace CmkTypeMapper
+}  // namespace Model
+}  // namespace HealthLake
+}  // namespace Aws

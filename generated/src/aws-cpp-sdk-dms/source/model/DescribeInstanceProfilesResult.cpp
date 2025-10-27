@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/DescribeInstanceProfilesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dms/model/DescribeInstanceProfilesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceProfilesResult::DescribeInstanceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeInstanceProfilesResult::DescribeInstanceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeInstanceProfilesResult& DescribeInstanceProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeInstanceProfilesResult& DescribeInstanceProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Marker"))
-  {
+  if (jsonValue.ValueExists("Marker")) {
     m_marker = jsonValue.GetString("Marker");
     m_markerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceProfiles"))
-  {
+  if (jsonValue.ValueExists("InstanceProfiles")) {
     Aws::Utils::Array<JsonView> instanceProfilesJsonList = jsonValue.GetArray("InstanceProfiles");
-    for(unsigned instanceProfilesIndex = 0; instanceProfilesIndex < instanceProfilesJsonList.GetLength(); ++instanceProfilesIndex)
-    {
+    for (unsigned instanceProfilesIndex = 0; instanceProfilesIndex < instanceProfilesJsonList.GetLength(); ++instanceProfilesIndex) {
       m_instanceProfiles.push_back(instanceProfilesJsonList[instanceProfilesIndex].AsObject());
     }
     m_instanceProfilesHasBeenSet = true;
@@ -42,12 +35,10 @@ DescribeInstanceProfilesResult& DescribeInstanceProfilesResult::operator =(const
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

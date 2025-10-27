@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/EphemeralStorage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-EphemeralStorage::EphemeralStorage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EphemeralStorage::EphemeralStorage(JsonView jsonValue) { *this = jsonValue; }
 
-EphemeralStorage& EphemeralStorage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Size"))
-  {
+EphemeralStorage& EphemeralStorage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Size")) {
     m_size = jsonValue.GetInteger("Size");
     m_sizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EphemeralStorage::Jsonize() const
-{
+JsonValue EphemeralStorage::Jsonize() const {
   JsonValue payload;
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInteger("Size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInteger("Size", m_size);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

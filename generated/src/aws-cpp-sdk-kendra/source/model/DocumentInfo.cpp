@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/DocumentInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/DocumentInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-DocumentInfo::DocumentInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentInfo::DocumentInfo(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentInfo& DocumentInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DocumentId"))
-  {
+DocumentInfo& DocumentInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentId")) {
     m_documentId = jsonValue.GetString("DocumentId");
     m_documentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attributes"))
-  {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
@@ -42,30 +32,24 @@ DocumentInfo& DocumentInfo::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DocumentInfo::Jsonize() const
-{
+JsonValue DocumentInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentIdHasBeenSet)
-  {
-   payload.WithString("DocumentId", m_documentId);
-
+  if (m_documentIdHasBeenSet) {
+    payload.WithString("DocumentId", m_documentId);
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
-   }
-   payload.WithArray("Attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+    }
+    payload.WithArray("Attributes", std::move(attributesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ContributorInsightsMode
-  {
-    NOT_SET,
-    ACCESSED_AND_THROTTLED_KEYS,
-    THROTTLED_KEYS
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ContributorInsightsMode { NOT_SET, ACCESSED_AND_THROTTLED_KEYS, THROTTLED_KEYS };
 
-namespace ContributorInsightsModeMapper
-{
+namespace ContributorInsightsModeMapper {
 AWS_DYNAMODB_API ContributorInsightsMode GetContributorInsightsModeForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForContributorInsightsMode(ContributorInsightsMode value);
-} // namespace ContributorInsightsModeMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ContributorInsightsModeMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

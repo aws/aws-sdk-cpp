@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class DatasetSourceType
-  {
-    NOT_SET,
-    KENDRA
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class DatasetSourceType { NOT_SET, KENDRA };
 
-namespace DatasetSourceTypeMapper
-{
+namespace DatasetSourceTypeMapper {
 AWS_IOTSITEWISE_API DatasetSourceType GetDatasetSourceTypeForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForDatasetSourceType(DatasetSourceType value);
-} // namespace DatasetSourceTypeMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace DatasetSourceTypeMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

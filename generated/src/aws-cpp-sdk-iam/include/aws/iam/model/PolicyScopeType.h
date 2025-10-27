@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
-  enum class PolicyScopeType
-  {
-    NOT_SET,
-    All,
-    AWS,
-    Local
-  };
+namespace Aws {
+namespace IAM {
+namespace Model {
+enum class PolicyScopeType { NOT_SET, All, AWS, Local };
 
-namespace PolicyScopeTypeMapper
-{
+namespace PolicyScopeTypeMapper {
 AWS_IAM_API PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name);
 
 AWS_IAM_API Aws::String GetNameForPolicyScopeType(PolicyScopeType value);
-} // namespace PolicyScopeTypeMapper
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace PolicyScopeTypeMapper
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

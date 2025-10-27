@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-SuspendedState::SuspendedState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuspendedState::SuspendedState(JsonView jsonValue) { *this = jsonValue; }
 
-SuspendedState& SuspendedState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DynamicScalingInSuspended"))
-  {
+SuspendedState& SuspendedState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DynamicScalingInSuspended")) {
     m_dynamicScalingInSuspended = jsonValue.GetBool("DynamicScalingInSuspended");
     m_dynamicScalingInSuspendedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DynamicScalingOutSuspended"))
-  {
+  if (jsonValue.ValueExists("DynamicScalingOutSuspended")) {
     m_dynamicScalingOutSuspended = jsonValue.GetBool("DynamicScalingOutSuspended");
     m_dynamicScalingOutSuspendedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduledScalingSuspended"))
-  {
+  if (jsonValue.ValueExists("ScheduledScalingSuspended")) {
     m_scheduledScalingSuspended = jsonValue.GetBool("ScheduledScalingSuspended");
     m_scheduledScalingSuspendedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuspendedState::Jsonize() const
-{
+JsonValue SuspendedState::Jsonize() const {
   JsonValue payload;
 
-  if(m_dynamicScalingInSuspendedHasBeenSet)
-  {
-   payload.WithBool("DynamicScalingInSuspended", m_dynamicScalingInSuspended);
-
+  if (m_dynamicScalingInSuspendedHasBeenSet) {
+    payload.WithBool("DynamicScalingInSuspended", m_dynamicScalingInSuspended);
   }
 
-  if(m_dynamicScalingOutSuspendedHasBeenSet)
-  {
-   payload.WithBool("DynamicScalingOutSuspended", m_dynamicScalingOutSuspended);
-
+  if (m_dynamicScalingOutSuspendedHasBeenSet) {
+    payload.WithBool("DynamicScalingOutSuspended", m_dynamicScalingOutSuspended);
   }
 
-  if(m_scheduledScalingSuspendedHasBeenSet)
-  {
-   payload.WithBool("ScheduledScalingSuspended", m_scheduledScalingSuspended);
-
+  if (m_scheduledScalingSuspendedHasBeenSet) {
+    payload.WithBool("ScheduledScalingSuspended", m_scheduledScalingSuspended);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

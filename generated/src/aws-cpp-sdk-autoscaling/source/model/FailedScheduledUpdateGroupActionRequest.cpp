@@ -4,48 +4,37 @@
  */
 
 #include <aws/autoscaling/model/FailedScheduledUpdateGroupActionRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-FailedScheduledUpdateGroupActionRequest& FailedScheduledUpdateGroupActionRequest::operator =(const XmlNode& xmlNode)
-{
+FailedScheduledUpdateGroupActionRequest& FailedScheduledUpdateGroupActionRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
-    if(!scheduledActionNameNode.IsNull())
-    {
+    if (!scheduledActionNameNode.IsNull()) {
       m_scheduledActionName = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionNameNode.GetText());
       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
-    if(!errorCodeNode.IsNull())
-    {
+    if (!errorCodeNode.IsNull()) {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
-    if(!errorMessageNode.IsNull())
-    {
+    if (!errorMessageNode.IsNull()) {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
     }
@@ -54,41 +43,34 @@ FailedScheduledUpdateGroupActionRequest& FailedScheduledUpdateGroupActionRequest
   return *this;
 }
 
-void FailedScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_scheduledActionNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+void FailedScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                             const char* locationValue) const {
+  if (m_scheduledActionNameHasBeenSet) {
+    oStream << location << index << locationValue << ".ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str())
+            << "&";
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ErrorCode=" << StringUtils::URLEncode(m_errorCode.c_str()) << "&";
+  if (m_errorCodeHasBeenSet) {
+    oStream << location << index << locationValue << ".ErrorCode=" << StringUtils::URLEncode(m_errorCode.c_str()) << "&";
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ErrorMessage=" << StringUtils::URLEncode(m_errorMessage.c_str()) << "&";
-  }
-
-}
-
-void FailedScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_scheduledActionNameHasBeenSet)
-  {
-      oStream << location << ".ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
-  }
-  if(m_errorCodeHasBeenSet)
-  {
-      oStream << location << ".ErrorCode=" << StringUtils::URLEncode(m_errorCode.c_str()) << "&";
-  }
-  if(m_errorMessageHasBeenSet)
-  {
-      oStream << location << ".ErrorMessage=" << StringUtils::URLEncode(m_errorMessage.c_str()) << "&";
+  if (m_errorMessageHasBeenSet) {
+    oStream << location << index << locationValue << ".ErrorMessage=" << StringUtils::URLEncode(m_errorMessage.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void FailedScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_scheduledActionNameHasBeenSet) {
+    oStream << location << ".ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
+  }
+  if (m_errorCodeHasBeenSet) {
+    oStream << location << ".ErrorCode=" << StringUtils::URLEncode(m_errorCode.c_str()) << "&";
+  }
+  if (m_errorMessageHasBeenSet) {
+    oStream << location << ".ErrorMessage=" << StringUtils::URLEncode(m_errorMessage.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

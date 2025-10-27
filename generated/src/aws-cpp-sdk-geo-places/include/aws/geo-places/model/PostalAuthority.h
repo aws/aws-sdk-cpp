@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class PostalAuthority
-  {
-    NOT_SET,
-    Usps
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class PostalAuthority { NOT_SET, Usps };
 
-namespace PostalAuthorityMapper
-{
+namespace PostalAuthorityMapper {
 AWS_GEOPLACES_API PostalAuthority GetPostalAuthorityForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForPostalAuthority(PostalAuthority value);
-} // namespace PostalAuthorityMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace PostalAuthorityMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

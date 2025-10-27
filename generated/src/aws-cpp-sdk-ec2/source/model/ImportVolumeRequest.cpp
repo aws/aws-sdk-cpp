@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ImportVolumeRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ImportVolumeRequest::SerializePayload() const
-{
+Aws::String ImportVolumeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ImportVolume&";
-  if(m_availabilityZoneIdHasBeenSet)
-  {
+  if (m_availabilityZoneIdHasBeenSet) {
     ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
+  if (m_availabilityZoneHasBeenSet) {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_imageHasBeenSet)
-  {
+  if (m_imageHasBeenSet) {
     m_image.OutputToStream(ss, "Image");
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_volumeHasBeenSet)
-  {
+  if (m_volumeHasBeenSet) {
     m_volume.OutputToStream(ss, "Volume");
   }
 
@@ -48,8 +41,4 @@ Aws::String ImportVolumeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ImportVolumeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ImportVolumeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

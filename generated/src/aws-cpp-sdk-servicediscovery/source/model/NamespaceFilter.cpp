@@ -3,78 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/NamespaceFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/NamespaceFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-NamespaceFilter::NamespaceFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NamespaceFilter::NamespaceFilter(JsonView jsonValue) { *this = jsonValue; }
 
-NamespaceFilter& NamespaceFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+NamespaceFilter& NamespaceFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = NamespaceFilterNameMapper::GetNamespaceFilterNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Condition"))
-  {
+  if (jsonValue.ValueExists("Condition")) {
     m_condition = FilterConditionMapper::GetFilterConditionForName(jsonValue.GetString("Condition"));
     m_conditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NamespaceFilter::Jsonize() const
-{
+JsonValue NamespaceFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", NamespaceFilterNameMapper::GetNameForNamespaceFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", NamespaceFilterNameMapper::GetNameForNamespaceFilterName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("Condition", FilterConditionMapper::GetNameForFilterCondition(m_condition));
+  if (m_conditionHasBeenSet) {
+    payload.WithString("Condition", FilterConditionMapper::GetNameForFilterCondition(m_condition));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

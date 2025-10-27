@@ -12,32 +12,22 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DetectSentimentRequest::SerializePayload() const
-{
+Aws::String DetectSentimentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectSentimentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DetectSentimentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DetectSentiment"));
   return headers;
-
 }
-
-
-
-

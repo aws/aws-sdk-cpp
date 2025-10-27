@@ -12,27 +12,18 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourceRequestStatusRequest::SerializePayload() const
-{
+Aws::String GetResourceRequestStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_requestTokenHasBeenSet)
-  {
-   payload.WithString("RequestToken", m_requestToken);
-
+  if (m_requestTokenHasBeenSet) {
+    payload.WithString("RequestToken", m_requestToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetResourceRequestStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetResourceRequestStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CloudApiService.GetResourceRequestStatus"));
   return headers;
-
 }
-
-
-
-

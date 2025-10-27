@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class StandbyWorkspaceRelationshipType
-  {
-    NOT_SET,
-    PRIMARY,
-    STANDBY
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class StandbyWorkspaceRelationshipType { NOT_SET, PRIMARY, STANDBY };
 
-namespace StandbyWorkspaceRelationshipTypeMapper
-{
+namespace StandbyWorkspaceRelationshipTypeMapper {
 AWS_WORKSPACES_API StandbyWorkspaceRelationshipType GetStandbyWorkspaceRelationshipTypeForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForStandbyWorkspaceRelationshipType(StandbyWorkspaceRelationshipType value);
-} // namespace StandbyWorkspaceRelationshipTypeMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace StandbyWorkspaceRelationshipTypeMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

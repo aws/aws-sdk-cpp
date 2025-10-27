@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
-  enum class LFPermission
-  {
-    NOT_SET,
-    DESCRIBE,
-    SELECT
-  };
+namespace Aws {
+namespace DataExchange {
+namespace Model {
+enum class LFPermission { NOT_SET, DESCRIBE, SELECT };
 
-namespace LFPermissionMapper
-{
+namespace LFPermissionMapper {
 AWS_DATAEXCHANGE_API LFPermission GetLFPermissionForName(const Aws::String& name);
 
 AWS_DATAEXCHANGE_API Aws::String GetNameForLFPermission(LFPermission value);
-} // namespace LFPermissionMapper
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace LFPermissionMapper
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

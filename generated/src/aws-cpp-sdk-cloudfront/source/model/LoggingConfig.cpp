@@ -4,54 +4,44 @@
  */
 
 #include <aws/cloudfront/model/LoggingConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-LoggingConfig::LoggingConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LoggingConfig::LoggingConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
-{
+LoggingConfig& LoggingConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode includeCookiesNode = resultNode.FirstChild("IncludeCookies");
-    if(!includeCookiesNode.IsNull())
-    {
-      m_includeCookies = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeCookiesNode.GetText()).c_str()).c_str());
+    if (!includeCookiesNode.IsNull()) {
+      m_includeCookies = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeCookiesNode.GetText()).c_str()).c_str());
       m_includeCookiesHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(!bucketNode.IsNull())
-    {
+    if (!bucketNode.IsNull()) {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(!prefixNode.IsNull())
-    {
+    if (!prefixNode.IsNull()) {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
     }
@@ -60,39 +50,33 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LoggingConfig::AddToNode(XmlNode& parentNode) const
-{
+void LoggingConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_enabledHasBeenSet)
-  {
-   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-   ss << std::boolalpha << m_enabled;
-   enabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_enabledHasBeenSet) {
+    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+    ss << std::boolalpha << m_enabled;
+    enabledNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_includeCookiesHasBeenSet)
-  {
-   XmlNode includeCookiesNode = parentNode.CreateChildElement("IncludeCookies");
-   ss << std::boolalpha << m_includeCookies;
-   includeCookiesNode.SetText(ss.str());
-   ss.str("");
+  if (m_includeCookiesHasBeenSet) {
+    XmlNode includeCookiesNode = parentNode.CreateChildElement("IncludeCookies");
+    ss << std::boolalpha << m_includeCookies;
+    includeCookiesNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_bucketHasBeenSet)
-  {
-   XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-   bucketNode.SetText(m_bucket);
+  if (m_bucketHasBeenSet) {
+    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
+    bucketNode.SetText(m_bucket);
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-   prefixNode.SetText(m_prefix);
+  if (m_prefixHasBeenSet) {
+    XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
+    prefixNode.SetText(m_prefix);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

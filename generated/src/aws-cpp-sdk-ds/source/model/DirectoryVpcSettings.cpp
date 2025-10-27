@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DirectoryVpcSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/DirectoryVpcSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcId"))
-  {
+DirectoryVpcSettings& DirectoryVpcSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetIds"))
-  {
+  if (jsonValue.ValueExists("SubnetIds")) {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
-    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-    {
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
@@ -42,30 +32,24 @@ DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DirectoryVpcSettings::Jsonize() const
-{
+JsonValue DirectoryVpcSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
-
+  if (m_subnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+    }
+    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

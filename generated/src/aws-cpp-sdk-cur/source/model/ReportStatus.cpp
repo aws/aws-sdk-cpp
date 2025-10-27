@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cur/model/ReportStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cur/model/ReportStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Model
-{
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Model {
 
-ReportStatus::ReportStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportStatus::ReportStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ReportStatus& ReportStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lastDelivery"))
-  {
+ReportStatus& ReportStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lastDelivery")) {
     m_lastDelivery = jsonValue.GetString("lastDelivery");
     m_lastDeliveryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastStatus"))
-  {
+  if (jsonValue.ValueExists("lastStatus")) {
     m_lastStatus = LastStatusMapper::GetLastStatusForName(jsonValue.GetString("lastStatus"));
     m_lastStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportStatus::Jsonize() const
-{
+JsonValue ReportStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_lastDeliveryHasBeenSet)
-  {
-   payload.WithString("lastDelivery", m_lastDelivery);
-
+  if (m_lastDeliveryHasBeenSet) {
+    payload.WithString("lastDelivery", m_lastDelivery);
   }
 
-  if(m_lastStatusHasBeenSet)
-  {
-   payload.WithString("lastStatus", LastStatusMapper::GetNameForLastStatus(m_lastStatus));
+  if (m_lastStatusHasBeenSet) {
+    payload.WithString("lastStatus", LastStatusMapper::GetNameForLastStatus(m_lastStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostandUsageReportService
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostandUsageReportService
+}  // namespace Aws

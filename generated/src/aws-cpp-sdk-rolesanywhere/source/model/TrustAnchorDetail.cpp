@@ -3,133 +3,103 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rolesanywhere/model/TrustAnchorDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rolesanywhere/model/TrustAnchorDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RolesAnywhere
-{
-namespace Model
-{
+namespace Aws {
+namespace RolesAnywhere {
+namespace Model {
 
-TrustAnchorDetail::TrustAnchorDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrustAnchorDetail::TrustAnchorDetail(JsonView jsonValue) { *this = jsonValue; }
 
-TrustAnchorDetail& TrustAnchorDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createdAt"))
-  {
+TrustAnchorDetail& TrustAnchorDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enabled"))
-  {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("notificationSettings"))
-  {
+  if (jsonValue.ValueExists("notificationSettings")) {
     Aws::Utils::Array<JsonView> notificationSettingsJsonList = jsonValue.GetArray("notificationSettings");
-    for(unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength(); ++notificationSettingsIndex)
-    {
+    for (unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength();
+         ++notificationSettingsIndex) {
       m_notificationSettings.push_back(notificationSettingsJsonList[notificationSettingsIndex].AsObject());
     }
     m_notificationSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trustAnchorArn"))
-  {
+  if (jsonValue.ValueExists("trustAnchorArn")) {
     m_trustAnchorArn = jsonValue.GetString("trustAnchorArn");
     m_trustAnchorArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trustAnchorId"))
-  {
+  if (jsonValue.ValueExists("trustAnchorId")) {
     m_trustAnchorId = jsonValue.GetString("trustAnchorId");
     m_trustAnchorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrustAnchorDetail::Jsonize() const
-{
+JsonValue TrustAnchorDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_notificationSettingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> notificationSettingsJsonList(m_notificationSettings.size());
-   for(unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength(); ++notificationSettingsIndex)
-   {
-     notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
-   }
-   payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
-
+  if (m_notificationSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> notificationSettingsJsonList(m_notificationSettings.size());
+    for (unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength();
+         ++notificationSettingsIndex) {
+      notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
+    }
+    payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
-  if(m_trustAnchorArnHasBeenSet)
-  {
-   payload.WithString("trustAnchorArn", m_trustAnchorArn);
-
+  if (m_trustAnchorArnHasBeenSet) {
+    payload.WithString("trustAnchorArn", m_trustAnchorArn);
   }
 
-  if(m_trustAnchorIdHasBeenSet)
-  {
-   payload.WithString("trustAnchorId", m_trustAnchorId);
-
+  if (m_trustAnchorIdHasBeenSet) {
+    payload.WithString("trustAnchorId", m_trustAnchorId);
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedAtHasBeenSet) {
+    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RolesAnywhere
-} // namespace Aws
+}  // namespace Model
+}  // namespace RolesAnywhere
+}  // namespace Aws

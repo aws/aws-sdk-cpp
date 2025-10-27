@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/DomainStats.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/DomainStats.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-DomainStats::DomainStats(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainStats::DomainStats(JsonView jsonValue) { *this = jsonValue; }
 
-DomainStats& DomainStats::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProfileCount"))
-  {
+DomainStats& DomainStats::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProfileCount")) {
     m_profileCount = jsonValue.GetInt64("ProfileCount");
     m_profileCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MeteringProfileCount"))
-  {
+  if (jsonValue.ValueExists("MeteringProfileCount")) {
     m_meteringProfileCount = jsonValue.GetInt64("MeteringProfileCount");
     m_meteringProfileCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectCount"))
-  {
+  if (jsonValue.ValueExists("ObjectCount")) {
     m_objectCount = jsonValue.GetInt64("ObjectCount");
     m_objectCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalSize"))
-  {
+  if (jsonValue.ValueExists("TotalSize")) {
     m_totalSize = jsonValue.GetInt64("TotalSize");
     m_totalSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainStats::Jsonize() const
-{
+JsonValue DomainStats::Jsonize() const {
   JsonValue payload;
 
-  if(m_profileCountHasBeenSet)
-  {
-   payload.WithInt64("ProfileCount", m_profileCount);
-
+  if (m_profileCountHasBeenSet) {
+    payload.WithInt64("ProfileCount", m_profileCount);
   }
 
-  if(m_meteringProfileCountHasBeenSet)
-  {
-   payload.WithInt64("MeteringProfileCount", m_meteringProfileCount);
-
+  if (m_meteringProfileCountHasBeenSet) {
+    payload.WithInt64("MeteringProfileCount", m_meteringProfileCount);
   }
 
-  if(m_objectCountHasBeenSet)
-  {
-   payload.WithInt64("ObjectCount", m_objectCount);
-
+  if (m_objectCountHasBeenSet) {
+    payload.WithInt64("ObjectCount", m_objectCount);
   }
 
-  if(m_totalSizeHasBeenSet)
-  {
-   payload.WithInt64("TotalSize", m_totalSize);
-
+  if (m_totalSizeHasBeenSet) {
+    payload.WithInt64("TotalSize", m_totalSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

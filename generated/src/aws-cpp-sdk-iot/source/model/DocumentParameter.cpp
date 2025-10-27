@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/DocumentParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/DocumentParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-DocumentParameter::DocumentParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentParameter::DocumentParameter(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentParameter& DocumentParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+DocumentParameter& DocumentParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("regex"))
-  {
+  if (jsonValue.ValueExists("regex")) {
     m_regex = jsonValue.GetString("regex");
     m_regexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("example"))
-  {
+  if (jsonValue.ValueExists("example")) {
     m_example = jsonValue.GetString("example");
     m_exampleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("optional"))
-  {
+  if (jsonValue.ValueExists("optional")) {
     m_optional = jsonValue.GetBool("optional");
     m_optionalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentParameter::Jsonize() const
-{
+JsonValue DocumentParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_regexHasBeenSet)
-  {
-   payload.WithString("regex", m_regex);
-
+  if (m_regexHasBeenSet) {
+    payload.WithString("regex", m_regex);
   }
 
-  if(m_exampleHasBeenSet)
-  {
-   payload.WithString("example", m_example);
-
+  if (m_exampleHasBeenSet) {
+    payload.WithString("example", m_example);
   }
 
-  if(m_optionalHasBeenSet)
-  {
-   payload.WithBool("optional", m_optional);
-
+  if (m_optionalHasBeenSet) {
+    payload.WithBool("optional", m_optional);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

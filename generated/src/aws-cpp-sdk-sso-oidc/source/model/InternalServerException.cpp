@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-oidc/model/InternalServerException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-oidc/model/InternalServerException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOOIDC
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOOIDC {
+namespace Model {
 
-InternalServerException::InternalServerException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InternalServerException::InternalServerException(JsonView jsonValue) { *this = jsonValue; }
 
-InternalServerException& InternalServerException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("error"))
-  {
+InternalServerException& InternalServerException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("error")) {
     m_error = jsonValue.GetString("error");
     m_errorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("error_description"))
-  {
+  if (jsonValue.ValueExists("error_description")) {
     m_error_description = jsonValue.GetString("error_description");
     m_error_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InternalServerException::Jsonize() const
-{
+JsonValue InternalServerException::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
-
+  if (m_errorHasBeenSet) {
+    payload.WithString("error", m_error);
   }
 
-  if(m_error_descriptionHasBeenSet)
-  {
-   payload.WithString("error_description", m_error_description);
-
+  if (m_error_descriptionHasBeenSet) {
+    payload.WithString("error_description", m_error_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOOIDC
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOOIDC
+}  // namespace Aws

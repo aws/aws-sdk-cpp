@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ProresParControl
-  {
-    NOT_SET,
-    INITIALIZE_FROM_SOURCE,
-    SPECIFIED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ProresParControl { NOT_SET, INITIALIZE_FROM_SOURCE, SPECIFIED };
 
-namespace ProresParControlMapper
-{
+namespace ProresParControlMapper {
 AWS_MEDIACONVERT_API ProresParControl GetProresParControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForProresParControl(ProresParControl value);
-} // namespace ProresParControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ProresParControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

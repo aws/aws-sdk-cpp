@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/TimeSeriesForecastingSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/TimeSeriesForecastingSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-TimeSeriesForecastingSettings::TimeSeriesForecastingSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeSeriesForecastingSettings::TimeSeriesForecastingSettings(JsonView jsonValue) { *this = jsonValue; }
 
-TimeSeriesForecastingSettings& TimeSeriesForecastingSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+TimeSeriesForecastingSettings& TimeSeriesForecastingSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AmazonForecastRoleArn"))
-  {
+  if (jsonValue.ValueExists("AmazonForecastRoleArn")) {
     m_amazonForecastRoleArn = jsonValue.GetString("AmazonForecastRoleArn");
     m_amazonForecastRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeSeriesForecastingSettings::Jsonize() const
-{
+JsonValue TimeSeriesForecastingSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
   }
 
-  if(m_amazonForecastRoleArnHasBeenSet)
-  {
-   payload.WithString("AmazonForecastRoleArn", m_amazonForecastRoleArn);
-
+  if (m_amazonForecastRoleArnHasBeenSet) {
+    payload.WithString("AmazonForecastRoleArn", m_amazonForecastRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

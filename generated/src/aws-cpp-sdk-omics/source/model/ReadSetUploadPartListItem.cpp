@@ -3,101 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/ReadSetUploadPartListItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/ReadSetUploadPartListItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-ReadSetUploadPartListItem::ReadSetUploadPartListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReadSetUploadPartListItem::ReadSetUploadPartListItem(JsonView jsonValue) { *this = jsonValue; }
 
-ReadSetUploadPartListItem& ReadSetUploadPartListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("partNumber"))
-  {
+ReadSetUploadPartListItem& ReadSetUploadPartListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("partNumber")) {
     m_partNumber = jsonValue.GetInteger("partNumber");
     m_partNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("partSize"))
-  {
+  if (jsonValue.ValueExists("partSize")) {
     m_partSize = jsonValue.GetInt64("partSize");
     m_partSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("partSource"))
-  {
+  if (jsonValue.ValueExists("partSource")) {
     m_partSource = ReadSetPartSourceMapper::GetReadSetPartSourceForName(jsonValue.GetString("partSource"));
     m_partSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("checksum"))
-  {
+  if (jsonValue.ValueExists("checksum")) {
     m_checksum = jsonValue.GetString("checksum");
     m_checksumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReadSetUploadPartListItem::Jsonize() const
-{
+JsonValue ReadSetUploadPartListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_partNumberHasBeenSet)
-  {
-   payload.WithInteger("partNumber", m_partNumber);
-
+  if (m_partNumberHasBeenSet) {
+    payload.WithInteger("partNumber", m_partNumber);
   }
 
-  if(m_partSizeHasBeenSet)
-  {
-   payload.WithInt64("partSize", m_partSize);
-
+  if (m_partSizeHasBeenSet) {
+    payload.WithInt64("partSize", m_partSize);
   }
 
-  if(m_partSourceHasBeenSet)
-  {
-   payload.WithString("partSource", ReadSetPartSourceMapper::GetNameForReadSetPartSource(m_partSource));
+  if (m_partSourceHasBeenSet) {
+    payload.WithString("partSource", ReadSetPartSourceMapper::GetNameForReadSetPartSource(m_partSource));
   }
 
-  if(m_checksumHasBeenSet)
-  {
-   payload.WithString("checksum", m_checksum);
-
+  if (m_checksumHasBeenSet) {
+    payload.WithString("checksum", m_checksum);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithString("lastUpdatedTime", m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithString("lastUpdatedTime", m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

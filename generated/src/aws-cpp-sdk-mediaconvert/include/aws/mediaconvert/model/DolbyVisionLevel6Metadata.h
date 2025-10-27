@@ -6,67 +6,71 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the
+ * MaxCLL and MaxFALL values in your input with new values.<p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVisionLevel6Metadata">AWS
+ * API Reference</a></p>
+ */
+class DolbyVisionLevel6Metadata {
+ public:
+  AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata() = default;
+  AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the
-   * MaxCLL and MaxFALL values in your input with new values.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVisionLevel6Metadata">AWS
-   * API Reference</a></p>
+   * Maximum Content Light Level. Static HDR metadata that corresponds to the
+   * brightest pixel in the entire stream. Measured in nits.
    */
-  class DolbyVisionLevel6Metadata
-  {
-  public:
-    AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata() = default;
-    AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMaxCll() const { return m_maxCll; }
+  inline bool MaxCllHasBeenSet() const { return m_maxCllHasBeenSet; }
+  inline void SetMaxCll(int value) {
+    m_maxCllHasBeenSet = true;
+    m_maxCll = value;
+  }
+  inline DolbyVisionLevel6Metadata& WithMaxCll(int value) {
+    SetMaxCll(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
+   * highest frame-average brightness in the entire stream. Measured in nits.
+   */
+  inline int GetMaxFall() const { return m_maxFall; }
+  inline bool MaxFallHasBeenSet() const { return m_maxFallHasBeenSet; }
+  inline void SetMaxFall(int value) {
+    m_maxFallHasBeenSet = true;
+    m_maxFall = value;
+  }
+  inline DolbyVisionLevel6Metadata& WithMaxFall(int value) {
+    SetMaxFall(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxCll{0};
+  bool m_maxCllHasBeenSet = false;
 
-    ///@{
-    /**
-     * Maximum Content Light Level. Static HDR metadata that corresponds to the
-     * brightest pixel in the entire stream. Measured in nits.
-     */
-    inline int GetMaxCll() const { return m_maxCll; }
-    inline bool MaxCllHasBeenSet() const { return m_maxCllHasBeenSet; }
-    inline void SetMaxCll(int value) { m_maxCllHasBeenSet = true; m_maxCll = value; }
-    inline DolbyVisionLevel6Metadata& WithMaxCll(int value) { SetMaxCll(value); return *this;}
-    ///@}
+  int m_maxFall{0};
+  bool m_maxFallHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
-     * highest frame-average brightness in the entire stream. Measured in nits.
-     */
-    inline int GetMaxFall() const { return m_maxFall; }
-    inline bool MaxFallHasBeenSet() const { return m_maxFallHasBeenSet; }
-    inline void SetMaxFall(int value) { m_maxFallHasBeenSet = true; m_maxFall = value; }
-    inline DolbyVisionLevel6Metadata& WithMaxFall(int value) { SetMaxFall(value); return *this;}
-    ///@}
-  private:
-
-    int m_maxCll{0};
-    bool m_maxCllHasBeenSet = false;
-
-    int m_maxFall{0};
-    bool m_maxFallHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/AccessKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/AccessKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-AccessKey::AccessKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessKey::AccessKey(JsonView jsonValue) { *this = jsonValue; }
 
-AccessKey& AccessKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accessKeyId"))
-  {
+AccessKey& AccessKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accessKeyId")) {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
     m_accessKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretAccessKey"))
-  {
+  if (jsonValue.ValueExists("secretAccessKey")) {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
     m_secretAccessKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUsed"))
-  {
+  if (jsonValue.ValueExists("lastUsed")) {
     m_lastUsed = jsonValue.GetObject("lastUsed");
     m_lastUsedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessKey::Jsonize() const
-{
+JsonValue AccessKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessKeyIdHasBeenSet)
-  {
-   payload.WithString("accessKeyId", m_accessKeyId);
-
+  if (m_accessKeyIdHasBeenSet) {
+    payload.WithString("accessKeyId", m_accessKeyId);
   }
 
-  if(m_secretAccessKeyHasBeenSet)
-  {
-   payload.WithString("secretAccessKey", m_secretAccessKey);
-
+  if (m_secretAccessKeyHasBeenSet) {
+    payload.WithString("secretAccessKey", m_secretAccessKey);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusTypeMapper::GetNameForStatusType(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusTypeMapper::GetNameForStatusType(m_status));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUsedHasBeenSet)
-  {
-   payload.WithObject("lastUsed", m_lastUsed.Jsonize());
-
+  if (m_lastUsedHasBeenSet) {
+    payload.WithObject("lastUsed", m_lastUsed.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

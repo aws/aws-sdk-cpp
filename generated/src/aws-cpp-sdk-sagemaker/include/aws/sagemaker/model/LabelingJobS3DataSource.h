@@ -4,69 +4,68 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>The Amazon S3 location of the input data objects.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobS3DataSource">AWS
+ * API Reference</a></p>
+ */
+class LabelingJobS3DataSource {
+ public:
+  AWS_SAGEMAKER_API LabelingJobS3DataSource() = default;
+  AWS_SAGEMAKER_API LabelingJobS3DataSource(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API LabelingJobS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The Amazon S3 location of the input data objects.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobS3DataSource">AWS
-   * API Reference</a></p>
+   * <p>The Amazon S3 location of the manifest file that describes the input data
+   * objects. </p> <p>The input manifest file referenced in
+   * <code>ManifestS3Uri</code> must contain one of the following keys:
+   * <code>source-ref</code> or <code>source</code>. The value of the keys are
+   * interpreted as follows:</p> <ul> <li> <p> <code>source-ref</code>: The source of
+   * the object is the Amazon S3 object specified in the value. Use this value when
+   * the object is a binary object, such as an image.</p> </li> <li> <p>
+   * <code>source</code>: The source of the object is the value. Use this value when
+   * the object is a text value.</p> </li> </ul> <p>If you are a new user of Ground
+   * Truth, it is recommended you review <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use
+   * an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how
+   * to create an input manifest file.</p>
    */
-  class LabelingJobS3DataSource
-  {
-  public:
-    AWS_SAGEMAKER_API LabelingJobS3DataSource() = default;
-    AWS_SAGEMAKER_API LabelingJobS3DataSource(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API LabelingJobS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetManifestS3Uri() const { return m_manifestS3Uri; }
+  inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
+  template <typename ManifestS3UriT = Aws::String>
+  void SetManifestS3Uri(ManifestS3UriT&& value) {
+    m_manifestS3UriHasBeenSet = true;
+    m_manifestS3Uri = std::forward<ManifestS3UriT>(value);
+  }
+  template <typename ManifestS3UriT = Aws::String>
+  LabelingJobS3DataSource& WithManifestS3Uri(ManifestS3UriT&& value) {
+    SetManifestS3Uri(std::forward<ManifestS3UriT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_manifestS3Uri;
+  bool m_manifestS3UriHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The Amazon S3 location of the manifest file that describes the input data
-     * objects. </p> <p>The input manifest file referenced in
-     * <code>ManifestS3Uri</code> must contain one of the following keys:
-     * <code>source-ref</code> or <code>source</code>. The value of the keys are
-     * interpreted as follows:</p> <ul> <li> <p> <code>source-ref</code>: The source of
-     * the object is the Amazon S3 object specified in the value. Use this value when
-     * the object is a binary object, such as an image.</p> </li> <li> <p>
-     * <code>source</code>: The source of the object is the value. Use this value when
-     * the object is a text value.</p> </li> </ul> <p>If you are a new user of Ground
-     * Truth, it is recommended you review <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use
-     * an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how
-     * to create an input manifest file.</p>
-     */
-    inline const Aws::String& GetManifestS3Uri() const { return m_manifestS3Uri; }
-    inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
-    template<typename ManifestS3UriT = Aws::String>
-    void SetManifestS3Uri(ManifestS3UriT&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::forward<ManifestS3UriT>(value); }
-    template<typename ManifestS3UriT = Aws::String>
-    LabelingJobS3DataSource& WithManifestS3Uri(ManifestS3UriT&& value) { SetManifestS3Uri(std::forward<ManifestS3UriT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_manifestS3Uri;
-    bool m_manifestS3UriHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::IoTEvents;
 using namespace Aws::IoTEvents::Model;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-template<> AWS_IOTEVENTS_API ResourceAlreadyExistsException IoTEventsError::GetModeledError()
-{
+namespace Aws {
+namespace IoTEvents {
+template <>
+AWS_IOTEVENTS_API ResourceAlreadyExistsException IoTEventsError::GetModeledError() {
   assert(this->GetErrorType() == IoTEventsErrors::RESOURCE_ALREADY_EXISTS);
   return ResourceAlreadyExistsException(this->GetJsonPayload().View());
 }
 
-namespace IoTEventsErrorMapper
-{
+namespace IoTEventsErrorMapper {
 
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -32,34 +29,23 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
-  {
+  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTEventsErrorMapper
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace IoTEventsErrorMapper
+}  // namespace IoTEvents
+}  // namespace Aws

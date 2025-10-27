@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ExperimentSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ExperimentSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ExperimentSource::ExperimentSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentSource::ExperimentSource(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentSource& ExperimentSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+ExperimentSource& ExperimentSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceType"))
-  {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = jsonValue.GetString("SourceType");
     m_sourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentSource::Jsonize() const
-{
+JsonValue ExperimentSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", m_sourceType);
-
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", m_sourceType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

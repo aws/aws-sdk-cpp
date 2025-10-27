@@ -7,25 +7,16 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
-  enum class PreserveContentType
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Transfer {
+namespace Model {
+enum class PreserveContentType { NOT_SET, ENABLED, DISABLED };
 
-namespace PreserveContentTypeMapper
-{
+namespace PreserveContentTypeMapper {
 AWS_TRANSFER_API PreserveContentType GetPreserveContentTypeForName(const Aws::String& name);
 
 AWS_TRANSFER_API Aws::String GetNameForPreserveContentType(PreserveContentType value);
-} // namespace PreserveContentTypeMapper
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace PreserveContentTypeMapper
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

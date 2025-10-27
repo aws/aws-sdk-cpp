@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue) { *this = jsonValue; }
 
-BrokerEBSVolumeInfo& BrokerEBSVolumeInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kafkaBrokerNodeId"))
-  {
+BrokerEBSVolumeInfo& BrokerEBSVolumeInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kafkaBrokerNodeId")) {
     m_kafkaBrokerNodeId = jsonValue.GetString("kafkaBrokerNodeId");
     m_kafkaBrokerNodeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("provisionedThroughput"))
-  {
+  if (jsonValue.ValueExists("provisionedThroughput")) {
     m_provisionedThroughput = jsonValue.GetObject("provisionedThroughput");
     m_provisionedThroughputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeSizeGB"))
-  {
+  if (jsonValue.ValueExists("volumeSizeGB")) {
     m_volumeSizeGB = jsonValue.GetInteger("volumeSizeGB");
     m_volumeSizeGBHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BrokerEBSVolumeInfo::Jsonize() const
-{
+JsonValue BrokerEBSVolumeInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_kafkaBrokerNodeIdHasBeenSet)
-  {
-   payload.WithString("kafkaBrokerNodeId", m_kafkaBrokerNodeId);
-
+  if (m_kafkaBrokerNodeIdHasBeenSet) {
+    payload.WithString("kafkaBrokerNodeId", m_kafkaBrokerNodeId);
   }
 
-  if(m_provisionedThroughputHasBeenSet)
-  {
-   payload.WithObject("provisionedThroughput", m_provisionedThroughput.Jsonize());
-
+  if (m_provisionedThroughputHasBeenSet) {
+    payload.WithObject("provisionedThroughput", m_provisionedThroughput.Jsonize());
   }
 
-  if(m_volumeSizeGBHasBeenSet)
-  {
-   payload.WithInteger("volumeSizeGB", m_volumeSizeGB);
-
+  if (m_volumeSizeGBHasBeenSet) {
+    payload.WithInteger("volumeSizeGB", m_volumeSizeGB);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

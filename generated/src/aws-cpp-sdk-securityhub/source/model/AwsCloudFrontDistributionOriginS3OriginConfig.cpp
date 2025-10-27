@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCloudFrontDistributionOriginS3OriginConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginS3OriginConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCloudFrontDistributionOriginS3OriginConfig& AwsCloudFrontDistributionOriginS3OriginConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OriginAccessIdentity"))
-  {
+AwsCloudFrontDistributionOriginS3OriginConfig& AwsCloudFrontDistributionOriginS3OriginConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OriginAccessIdentity")) {
     m_originAccessIdentity = jsonValue.GetString("OriginAccessIdentity");
     m_originAccessIdentityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCloudFrontDistributionOriginS3OriginConfig::Jsonize() const
-{
+JsonValue AwsCloudFrontDistributionOriginS3OriginConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_originAccessIdentityHasBeenSet)
-  {
-   payload.WithString("OriginAccessIdentity", m_originAccessIdentity);
-
+  if (m_originAccessIdentityHasBeenSet) {
+    payload.WithString("OriginAccessIdentity", m_originAccessIdentity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

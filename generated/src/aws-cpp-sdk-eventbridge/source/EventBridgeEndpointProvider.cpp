@@ -5,12 +5,8 @@
 
 #include <aws/eventbridge/EventBridgeEndpointProvider.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EventBridge
-} // namespace Aws
+namespace Aws {
+namespace EventBridge {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EventBridge
+}  // namespace Aws

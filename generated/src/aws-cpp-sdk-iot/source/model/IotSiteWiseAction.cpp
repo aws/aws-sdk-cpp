@@ -3,69 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/IotSiteWiseAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/IotSiteWiseAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue) { *this = jsonValue; }
 
-IotSiteWiseAction& IotSiteWiseAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("putAssetPropertyValueEntries"))
-  {
+IotSiteWiseAction& IotSiteWiseAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("putAssetPropertyValueEntries")) {
     Aws::Utils::Array<JsonView> putAssetPropertyValueEntriesJsonList = jsonValue.GetArray("putAssetPropertyValueEntries");
-    for(unsigned putAssetPropertyValueEntriesIndex = 0; putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex)
-    {
+    for (unsigned putAssetPropertyValueEntriesIndex = 0;
+         putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex) {
       m_putAssetPropertyValueEntries.push_back(putAssetPropertyValueEntriesJsonList[putAssetPropertyValueEntriesIndex].AsObject());
     }
     m_putAssetPropertyValueEntriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IotSiteWiseAction::Jsonize() const
-{
+JsonValue IotSiteWiseAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_putAssetPropertyValueEntriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> putAssetPropertyValueEntriesJsonList(m_putAssetPropertyValueEntries.size());
-   for(unsigned putAssetPropertyValueEntriesIndex = 0; putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex)
-   {
-     putAssetPropertyValueEntriesJsonList[putAssetPropertyValueEntriesIndex].AsObject(m_putAssetPropertyValueEntries[putAssetPropertyValueEntriesIndex].Jsonize());
-   }
-   payload.WithArray("putAssetPropertyValueEntries", std::move(putAssetPropertyValueEntriesJsonList));
-
+  if (m_putAssetPropertyValueEntriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> putAssetPropertyValueEntriesJsonList(m_putAssetPropertyValueEntries.size());
+    for (unsigned putAssetPropertyValueEntriesIndex = 0;
+         putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex) {
+      putAssetPropertyValueEntriesJsonList[putAssetPropertyValueEntriesIndex].AsObject(
+          m_putAssetPropertyValueEntries[putAssetPropertyValueEntriesIndex].Jsonize());
+    }
+    payload.WithArray("putAssetPropertyValueEntries", std::move(putAssetPropertyValueEntriesJsonList));
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

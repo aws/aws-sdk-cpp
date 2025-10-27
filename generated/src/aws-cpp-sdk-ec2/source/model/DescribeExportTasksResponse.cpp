@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeExportTasksResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeExportTasksResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeExportTasksResponse::DescribeExportTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeExportTasksResponse::DescribeExportTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeExportTasksResponse& DescribeExportTasksResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeExportTasksResponse& DescribeExportTasksResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeExportTasksResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeExportTasksResponse")) {
     resultNode = rootNode.FirstChild("DescribeExportTasksResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode exportTasksNode = resultNode.FirstChild("exportTaskSet");
-    if(!exportTasksNode.IsNull())
-    {
+    if (!exportTasksNode.IsNull()) {
       XmlNode exportTasksMember = exportTasksNode.FirstChild("item");
       m_exportTasksHasBeenSet = !exportTasksMember.IsNull();
-      while(!exportTasksMember.IsNull())
-      {
+      while (!exportTasksMember.IsNull()) {
         m_exportTasks.push_back(exportTasksMember);
         exportTasksMember = exportTasksMember.NextNode("item");
       }
@@ -51,12 +43,11 @@ DescribeExportTasksResponse& DescribeExportTasksResponse::operator =(const Aws::
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeExportTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeExportTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

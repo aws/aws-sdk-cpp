@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class HubNetworkMode
-  {
-    NOT_SET,
-    STANDARD,
-    NETWORK_WIDE_EXCLUSION
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class HubNetworkMode { NOT_SET, STANDARD, NETWORK_WIDE_EXCLUSION };
 
-namespace HubNetworkModeMapper
-{
+namespace HubNetworkModeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API HubNetworkMode GetHubNetworkModeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForHubNetworkMode(HubNetworkMode value);
-} // namespace HubNetworkModeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace HubNetworkModeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

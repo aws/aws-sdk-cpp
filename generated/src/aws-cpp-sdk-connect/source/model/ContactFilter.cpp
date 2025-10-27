@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ContactFilter::ContactFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactFilter::ContactFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ContactFilter& ContactFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContactStates"))
-  {
+ContactFilter& ContactFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactStates")) {
     Aws::Utils::Array<JsonView> contactStatesJsonList = jsonValue.GetArray("ContactStates");
-    for(unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex)
-    {
+    for (unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex) {
       m_contactStates.push_back(ContactStateMapper::GetContactStateForName(contactStatesJsonList[contactStatesIndex].AsString()));
     }
     m_contactStatesHasBeenSet = true;
@@ -37,24 +28,20 @@ ContactFilter& ContactFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ContactFilter::Jsonize() const
-{
+JsonValue ContactFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_contactStatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contactStatesJsonList(m_contactStates.size());
-   for(unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex)
-   {
-     contactStatesJsonList[contactStatesIndex].AsString(ContactStateMapper::GetNameForContactState(m_contactStates[contactStatesIndex]));
-   }
-   payload.WithArray("ContactStates", std::move(contactStatesJsonList));
-
+  if (m_contactStatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contactStatesJsonList(m_contactStates.size());
+    for (unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex) {
+      contactStatesJsonList[contactStatesIndex].AsString(ContactStateMapper::GetNameForContactState(m_contactStates[contactStatesIndex]));
+    }
+    payload.WithArray("ContactStates", std::move(contactStatesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

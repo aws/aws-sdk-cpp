@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
-  enum class ChangeType
-  {
-    NOT_SET,
-    PUT,
-    DELETE_
-  };
+namespace Aws {
+namespace finspace {
+namespace Model {
+enum class ChangeType { NOT_SET, PUT, DELETE_ };
 
-namespace ChangeTypeMapper
-{
+namespace ChangeTypeMapper {
 AWS_FINSPACE_API ChangeType GetChangeTypeForName(const Aws::String& name);
 
 AWS_FINSPACE_API Aws::String GetNameForChangeType(ChangeType value);
-} // namespace ChangeTypeMapper
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace ChangeTypeMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

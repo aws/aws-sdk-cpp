@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/ListCidrCollectionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ListCidrCollectionsResult.h>
 
 #include <utility>
 
@@ -16,31 +16,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCidrCollectionsResult::ListCidrCollectionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListCidrCollectionsResult::ListCidrCollectionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListCidrCollectionsResult& ListCidrCollectionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListCidrCollectionsResult& ListCidrCollectionsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode cidrCollectionsNode = resultNode.FirstChild("CidrCollections");
-    if(!cidrCollectionsNode.IsNull())
-    {
+    if (!cidrCollectionsNode.IsNull()) {
       XmlNode cidrCollectionsMember = cidrCollectionsNode.FirstChild("member");
       m_cidrCollectionsHasBeenSet = !cidrCollectionsMember.IsNull();
-      while(!cidrCollectionsMember.IsNull())
-      {
+      while (!cidrCollectionsMember.IsNull()) {
         m_cidrCollections.push_back(cidrCollectionsMember);
         cidrCollectionsMember = cidrCollectionsMember.NextNode("member");
       }
@@ -51,8 +43,7 @@ ListCidrCollectionsResult& ListCidrCollectionsResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

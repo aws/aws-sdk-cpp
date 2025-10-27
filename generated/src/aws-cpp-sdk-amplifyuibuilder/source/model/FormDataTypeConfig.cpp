@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormDataTypeConfig::FormDataTypeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormDataTypeConfig::FormDataTypeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-FormDataTypeConfig& FormDataTypeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dataSourceType"))
-  {
+FormDataTypeConfig& FormDataTypeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dataSourceType")) {
     m_dataSourceType = FormDataSourceTypeMapper::GetFormDataSourceTypeForName(jsonValue.GetString("dataSourceType"));
     m_dataSourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataTypeName"))
-  {
+  if (jsonValue.ValueExists("dataTypeName")) {
     m_dataTypeName = jsonValue.GetString("dataTypeName");
     m_dataTypeNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormDataTypeConfig::Jsonize() const
-{
+JsonValue FormDataTypeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceTypeHasBeenSet)
-  {
-   payload.WithString("dataSourceType", FormDataSourceTypeMapper::GetNameForFormDataSourceType(m_dataSourceType));
+  if (m_dataSourceTypeHasBeenSet) {
+    payload.WithString("dataSourceType", FormDataSourceTypeMapper::GetNameForFormDataSourceType(m_dataSourceType));
   }
 
-  if(m_dataTypeNameHasBeenSet)
-  {
-   payload.WithString("dataTypeName", m_dataTypeName);
-
+  if (m_dataTypeNameHasBeenSet) {
+    payload.WithString("dataTypeName", m_dataTypeName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

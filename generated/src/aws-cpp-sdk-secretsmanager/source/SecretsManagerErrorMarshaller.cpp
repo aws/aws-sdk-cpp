@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SecretsManager;
 
-AWSError<CoreErrors> SecretsManagerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SecretsManagerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SecretsManagerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

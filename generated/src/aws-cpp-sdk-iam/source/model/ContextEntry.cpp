@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ContextEntry.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ContextEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
+namespace Aws {
+namespace IAM {
+namespace Model {
 
-ContextEntry::ContextEntry(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ContextEntry::ContextEntry(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
-{
+ContextEntry& ContextEntry::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode contextKeyNameNode = resultNode.FirstChild("ContextKeyName");
-    if(!contextKeyNameNode.IsNull())
-    {
+    if (!contextKeyNameNode.IsNull()) {
       m_contextKeyName = Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyNameNode.GetText());
       m_contextKeyNameHasBeenSet = true;
     }
     XmlNode contextKeyValuesNode = resultNode.FirstChild("ContextKeyValues");
-    if(!contextKeyValuesNode.IsNull())
-    {
+    if (!contextKeyValuesNode.IsNull()) {
       XmlNode contextKeyValuesMember = contextKeyValuesNode.FirstChild("member");
       m_contextKeyValuesHasBeenSet = !contextKeyValuesMember.IsNull();
-      while(!contextKeyValuesMember.IsNull())
-      {
+      while (!contextKeyValuesMember.IsNull()) {
         m_contextKeyValues.push_back(contextKeyValuesMember.GetText());
         contextKeyValuesMember = contextKeyValuesMember.NextNode("member");
       }
@@ -51,9 +40,9 @@ ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
       m_contextKeyValuesHasBeenSet = true;
     }
     XmlNode contextKeyTypeNode = resultNode.FirstChild("ContextKeyType");
-    if(!contextKeyTypeNode.IsNull())
-    {
-      m_contextKeyType = ContextKeyTypeEnumMapper::GetContextKeyTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyTypeNode.GetText()).c_str()));
+    if (!contextKeyTypeNode.IsNull()) {
+      m_contextKeyType = ContextKeyTypeEnumMapper::GetContextKeyTypeEnumForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyTypeNode.GetText()).c_str()));
       m_contextKeyTypeHasBeenSet = true;
     }
   }
@@ -61,49 +50,43 @@ ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_contextKeyNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ContextKeyName=" << StringUtils::URLEncode(m_contextKeyName.c_str()) << "&";
+void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_contextKeyNameHasBeenSet) {
+    oStream << location << index << locationValue << ".ContextKeyName=" << StringUtils::URLEncode(m_contextKeyName.c_str()) << "&";
   }
 
-  if(m_contextKeyValuesHasBeenSet)
-  {
-      unsigned contextKeyValuesIdx = 1;
-      for(auto& item : m_contextKeyValues)
-      {
-        oStream << location << index << locationValue << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_contextKeyValuesHasBeenSet) {
+    unsigned contextKeyValuesIdx = 1;
+    for (auto& item : m_contextKeyValues) {
+      oStream << location << index << locationValue << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_contextKeyTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ContextKeyType=" << StringUtils::URLEncode(ContextKeyTypeEnumMapper::GetNameForContextKeyTypeEnum(m_contextKeyType)) << "&";
-  }
-
-}
-
-void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_contextKeyNameHasBeenSet)
-  {
-      oStream << location << ".ContextKeyName=" << StringUtils::URLEncode(m_contextKeyName.c_str()) << "&";
-  }
-  if(m_contextKeyValuesHasBeenSet)
-  {
-      unsigned contextKeyValuesIdx = 1;
-      for(auto& item : m_contextKeyValues)
-      {
-        oStream << location << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_contextKeyTypeHasBeenSet)
-  {
-      oStream << location << ".ContextKeyType=" << StringUtils::URLEncode(ContextKeyTypeEnumMapper::GetNameForContextKeyTypeEnum(m_contextKeyType)) << "&";
+  if (m_contextKeyTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ContextKeyType=" << StringUtils::URLEncode(ContextKeyTypeEnumMapper::GetNameForContextKeyTypeEnum(m_contextKeyType))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_contextKeyNameHasBeenSet) {
+    oStream << location << ".ContextKeyName=" << StringUtils::URLEncode(m_contextKeyName.c_str()) << "&";
+  }
+  if (m_contextKeyValuesHasBeenSet) {
+    unsigned contextKeyValuesIdx = 1;
+    for (auto& item : m_contextKeyValues) {
+      oStream << location << ".ContextKeyValues.member." << contextKeyValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_contextKeyTypeHasBeenSet) {
+    oStream << location
+            << ".ContextKeyType=" << StringUtils::URLEncode(ContextKeyTypeEnumMapper::GetNameForContextKeyTypeEnum(m_contextKeyType))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/observabilityadmin/ObservabilityAdminEndpointProvider.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ObservabilityAdmin
-} // namespace Aws
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

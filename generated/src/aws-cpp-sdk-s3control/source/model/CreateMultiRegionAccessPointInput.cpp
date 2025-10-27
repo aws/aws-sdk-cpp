@@ -3,53 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/CreateMultiRegionAccessPointInput.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/CreateMultiRegionAccessPointInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CreateMultiRegionAccessPointInput& CreateMultiRegionAccessPointInput::operator =(const XmlNode& xmlNode)
-{
+CreateMultiRegionAccessPointInput& CreateMultiRegionAccessPointInput::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode publicAccessBlockNode = resultNode.FirstChild("PublicAccessBlock");
-    if(!publicAccessBlockNode.IsNull())
-    {
+    if (!publicAccessBlockNode.IsNull()) {
       m_publicAccessBlock = publicAccessBlockNode;
       m_publicAccessBlockHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
-    if(!regionsNode.IsNull())
-    {
+    if (!regionsNode.IsNull()) {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
       m_regionsHasBeenSet = !regionsMember.IsNull();
-      while(!regionsMember.IsNull())
-      {
+      while (!regionsMember.IsNull()) {
         m_regions.push_back(regionsMember);
         regionsMember = regionsMember.NextNode("Region");
       }
@@ -61,33 +49,27 @@ CreateMultiRegionAccessPointInput& CreateMultiRegionAccessPointInput::operator =
   return *this;
 }
 
-void CreateMultiRegionAccessPointInput::AddToNode(XmlNode& parentNode) const
-{
+void CreateMultiRegionAccessPointInput::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_publicAccessBlockHasBeenSet)
-  {
-   XmlNode publicAccessBlockNode = parentNode.CreateChildElement("PublicAccessBlock");
-   m_publicAccessBlock.AddToNode(publicAccessBlockNode);
+  if (m_publicAccessBlockHasBeenSet) {
+    XmlNode publicAccessBlockNode = parentNode.CreateChildElement("PublicAccessBlock");
+    m_publicAccessBlock.AddToNode(publicAccessBlockNode);
   }
 
-  if(m_regionsHasBeenSet)
-  {
-   XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
-   for(const auto& item : m_regions)
-   {
-     XmlNode regionsNode = regionsParentNode.CreateChildElement("Region");
-     item.AddToNode(regionsNode);
-   }
+  if (m_regionsHasBeenSet) {
+    XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
+    for (const auto& item : m_regions) {
+      XmlNode regionsNode = regionsParentNode.CreateChildElement("Region");
+      item.AddToNode(regionsNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

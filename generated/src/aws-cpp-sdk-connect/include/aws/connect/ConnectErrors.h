@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/connect/Connect_EXPORTS.h>
 
-namespace Aws
-{
-namespace Connect
-{
-enum class ConnectErrors
-{
-  //From Core//
+namespace Aws {
+namespace Connect {
+enum class ConnectErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ConnectErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONDITIONAL_OPERATION_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONDITIONAL_OPERATION_FAILED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   CONTACT_FLOW_NOT_PUBLISHED,
   CONTACT_NOT_FOUND,
@@ -72,9 +69,8 @@ enum class ConnectErrors
   USER_NOT_FOUND
 };
 
-class AWS_CONNECT_API ConnectError : public Aws::Client::AWSError<ConnectErrors>
-{
-public:
+class AWS_CONNECT_API ConnectError : public Aws::Client::AWSError<ConnectErrors> {
+ public:
   ConnectError() {}
   ConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
   ConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
@@ -85,10 +81,9 @@ public:
   T GetModeledError();
 };
 
-namespace ConnectErrorMapper
-{
-  AWS_CONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ConnectErrorMapper {
+AWS_CONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Connect
-} // namespace Aws
+}  // namespace Connect
+}  // namespace Aws

@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/SmbMountOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/SmbMountOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-SmbMountOptions::SmbMountOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SmbMountOptions::SmbMountOptions(JsonView jsonValue) { *this = jsonValue; }
 
-SmbMountOptions& SmbMountOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Version"))
-  {
+SmbMountOptions& SmbMountOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Version")) {
     m_version = SmbVersionMapper::GetSmbVersionForName(jsonValue.GetString("Version"));
     m_versionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SmbMountOptions::Jsonize() const
-{
+JsonValue SmbMountOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", SmbVersionMapper::GetNameForSmbVersion(m_version));
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", SmbVersionMapper::GetNameForSmbVersion(m_version));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

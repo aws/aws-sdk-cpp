@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/UpdateApplicationPortalOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/UpdateApplicationPortalOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-UpdateApplicationPortalOptions::UpdateApplicationPortalOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateApplicationPortalOptions::UpdateApplicationPortalOptions(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateApplicationPortalOptions& UpdateApplicationPortalOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SignInOptions"))
-  {
+UpdateApplicationPortalOptions& UpdateApplicationPortalOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SignInOptions")) {
     m_signInOptions = jsonValue.GetObject("SignInOptions");
     m_signInOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateApplicationPortalOptions::Jsonize() const
-{
+JsonValue UpdateApplicationPortalOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_signInOptionsHasBeenSet)
-  {
-   payload.WithObject("SignInOptions", m_signInOptions.Jsonize());
-
+  if (m_signInOptionsHasBeenSet) {
+    payload.WithObject("SignInOptions", m_signInOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

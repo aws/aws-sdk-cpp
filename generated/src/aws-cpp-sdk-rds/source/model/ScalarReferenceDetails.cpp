@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ScalarReferenceDetails.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/ScalarReferenceDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-ScalarReferenceDetails::ScalarReferenceDetails(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ScalarReferenceDetails::ScalarReferenceDetails(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ScalarReferenceDetails& ScalarReferenceDetails::operator =(const XmlNode& xmlNode)
-{
+ScalarReferenceDetails& ScalarReferenceDetails::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(!valueNode.IsNull())
-    {
+    if (!valueNode.IsNull()) {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ ScalarReferenceDetails& ScalarReferenceDetails::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void ScalarReferenceDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_valueHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
-  }
-
-}
-
-void ScalarReferenceDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_valueHasBeenSet)
-  {
-      oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+void ScalarReferenceDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_valueHasBeenSet) {
+    oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void ScalarReferenceDetails::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_valueHasBeenSet) {
+    oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

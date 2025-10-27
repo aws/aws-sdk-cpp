@@ -11,103 +11,76 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-UserSearchCriteria::UserSearchCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserSearchCriteria::UserSearchCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-UserSearchCriteria& UserSearchCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OrConditions"))
-  {
+UserSearchCriteria& UserSearchCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OrConditions")) {
     Aws::Utils::Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
-    for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
-    {
+    for (unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex) {
       m_orConditions.push_back(orConditionsJsonList[orConditionsIndex].AsObject());
     }
     m_orConditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AndConditions"))
-  {
+  if (jsonValue.ValueExists("AndConditions")) {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
-    for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
-    {
+    for (unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex) {
       m_andConditions.push_back(andConditionsJsonList[andConditionsIndex].AsObject());
     }
     m_andConditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StringCondition"))
-  {
+  if (jsonValue.ValueExists("StringCondition")) {
     m_stringCondition = jsonValue.GetObject("StringCondition");
     m_stringConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ListCondition"))
-  {
+  if (jsonValue.ValueExists("ListCondition")) {
     m_listCondition = jsonValue.GetObject("ListCondition");
     m_listConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HierarchyGroupCondition"))
-  {
+  if (jsonValue.ValueExists("HierarchyGroupCondition")) {
     m_hierarchyGroupCondition = jsonValue.GetObject("HierarchyGroupCondition");
     m_hierarchyGroupConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserSearchCriteria::Jsonize() const
-{
+JsonValue UserSearchCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_orConditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> orConditionsJsonList(m_orConditions.size());
-   for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
-   {
-     orConditionsJsonList[orConditionsIndex].AsObject(m_orConditions[orConditionsIndex].Jsonize());
-   }
-   payload.WithArray("OrConditions", std::move(orConditionsJsonList));
-
+  if (m_orConditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orConditionsJsonList(m_orConditions.size());
+    for (unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex) {
+      orConditionsJsonList[orConditionsIndex].AsObject(m_orConditions[orConditionsIndex].Jsonize());
+    }
+    payload.WithArray("OrConditions", std::move(orConditionsJsonList));
   }
 
-  if(m_andConditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> andConditionsJsonList(m_andConditions.size());
-   for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
-   {
-     andConditionsJsonList[andConditionsIndex].AsObject(m_andConditions[andConditionsIndex].Jsonize());
-   }
-   payload.WithArray("AndConditions", std::move(andConditionsJsonList));
-
+  if (m_andConditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> andConditionsJsonList(m_andConditions.size());
+    for (unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex) {
+      andConditionsJsonList[andConditionsIndex].AsObject(m_andConditions[andConditionsIndex].Jsonize());
+    }
+    payload.WithArray("AndConditions", std::move(andConditionsJsonList));
   }
 
-  if(m_stringConditionHasBeenSet)
-  {
-   payload.WithObject("StringCondition", m_stringCondition.Jsonize());
-
+  if (m_stringConditionHasBeenSet) {
+    payload.WithObject("StringCondition", m_stringCondition.Jsonize());
   }
 
-  if(m_listConditionHasBeenSet)
-  {
-   payload.WithObject("ListCondition", m_listCondition.Jsonize());
-
+  if (m_listConditionHasBeenSet) {
+    payload.WithObject("ListCondition", m_listCondition.Jsonize());
   }
 
-  if(m_hierarchyGroupConditionHasBeenSet)
-  {
-   payload.WithObject("HierarchyGroupCondition", m_hierarchyGroupCondition.Jsonize());
-
+  if (m_hierarchyGroupConditionHasBeenSet) {
+    payload.WithObject("HierarchyGroupCondition", m_hierarchyGroupCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/FilterCriterion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/FilterCriterion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-FilterCriterion::FilterCriterion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterCriterion::FilterCriterion(JsonView jsonValue) { *this = jsonValue; }
 
-FilterCriterion& FilterCriterion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("criterionKey"))
-  {
+FilterCriterion& FilterCriterion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("criterionKey")) {
     m_criterionKey = CriterionKeyMapper::GetCriterionKeyForName(jsonValue.GetString("criterionKey"));
     m_criterionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterCondition"))
-  {
+  if (jsonValue.ValueExists("filterCondition")) {
     m_filterCondition = jsonValue.GetObject("filterCondition");
     m_filterConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FilterCriterion::Jsonize() const
-{
+JsonValue FilterCriterion::Jsonize() const {
   JsonValue payload;
 
-  if(m_criterionKeyHasBeenSet)
-  {
-   payload.WithString("criterionKey", CriterionKeyMapper::GetNameForCriterionKey(m_criterionKey));
+  if (m_criterionKeyHasBeenSet) {
+    payload.WithString("criterionKey", CriterionKeyMapper::GetNameForCriterionKey(m_criterionKey));
   }
 
-  if(m_filterConditionHasBeenSet)
-  {
-   payload.WithObject("filterCondition", m_filterCondition.Jsonize());
-
+  if (m_filterConditionHasBeenSet) {
+    payload.WithObject("filterCondition", m_filterCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

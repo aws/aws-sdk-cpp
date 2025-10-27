@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/comprehend/Comprehend_EXPORTS.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-enum class ComprehendErrors
-{
-  //From Core//
+namespace Aws {
+namespace Comprehend {
+enum class ComprehendErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ComprehendErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ComprehendErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_SIZE_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_SIZE_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   INTERNAL_SERVER,
   INVALID_FILTER,
@@ -64,9 +61,8 @@ enum class ComprehendErrors
   UNSUPPORTED_LANGUAGE
 };
 
-class AWS_COMPREHEND_API ComprehendError : public Aws::Client::AWSError<ComprehendErrors>
-{
-public:
+class AWS_COMPREHEND_API ComprehendError : public Aws::Client::AWSError<ComprehendErrors> {
+ public:
   ComprehendError() {}
   ComprehendError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
   ComprehendError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
@@ -77,10 +73,9 @@ public:
   T GetModeledError();
 };
 
-namespace ComprehendErrorMapper
-{
-  AWS_COMPREHEND_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ComprehendErrorMapper {
+AWS_COMPREHEND_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Comprehend
+}  // namespace Aws

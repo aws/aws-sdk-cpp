@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/EventNotificationPartnerType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/iotwireless/model/EventNotificationPartnerType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+namespace EventNotificationPartnerTypeMapper {
 
-namespace Aws
-{
-  namespace IoTWireless
-  {
-    namespace Model
-    {
-      namespace EventNotificationPartnerTypeMapper
-      {
+static const int Sidewalk_HASH = HashingUtils::HashString("Sidewalk");
 
-        static const int Sidewalk_HASH = HashingUtils::HashString("Sidewalk");
+EventNotificationPartnerType GetEventNotificationPartnerTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Sidewalk_HASH) {
+    return EventNotificationPartnerType::Sidewalk;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<EventNotificationPartnerType>(hashCode);
+  }
 
+  return EventNotificationPartnerType::NOT_SET;
+}
 
-        EventNotificationPartnerType GetEventNotificationPartnerTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Sidewalk_HASH)
-          {
-            return EventNotificationPartnerType::Sidewalk;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EventNotificationPartnerType>(hashCode);
-          }
+Aws::String GetNameForEventNotificationPartnerType(EventNotificationPartnerType enumValue) {
+  switch (enumValue) {
+    case EventNotificationPartnerType::NOT_SET:
+      return {};
+    case EventNotificationPartnerType::Sidewalk:
+      return "Sidewalk";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return EventNotificationPartnerType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForEventNotificationPartnerType(EventNotificationPartnerType enumValue)
-        {
-          switch(enumValue)
-          {
-          case EventNotificationPartnerType::NOT_SET:
-            return {};
-          case EventNotificationPartnerType::Sidewalk:
-            return "Sidewalk";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace EventNotificationPartnerTypeMapper
-    } // namespace Model
-  } // namespace IoTWireless
-} // namespace Aws
+}  // namespace EventNotificationPartnerTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

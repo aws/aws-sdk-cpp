@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AppSortKey.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker/model/AppSortKey.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+namespace AppSortKeyMapper {
 
-namespace Aws
-{
-  namespace SageMaker
-  {
-    namespace Model
-    {
-      namespace AppSortKeyMapper
-      {
+static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
 
-        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
+AppSortKey GetAppSortKeyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CreationTime_HASH) {
+    return AppSortKey::CreationTime;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AppSortKey>(hashCode);
+  }
 
+  return AppSortKey::NOT_SET;
+}
 
-        AppSortKey GetAppSortKeyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CreationTime_HASH)
-          {
-            return AppSortKey::CreationTime;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AppSortKey>(hashCode);
-          }
+Aws::String GetNameForAppSortKey(AppSortKey enumValue) {
+  switch (enumValue) {
+    case AppSortKey::NOT_SET:
+      return {};
+    case AppSortKey::CreationTime:
+      return "CreationTime";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AppSortKey::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAppSortKey(AppSortKey enumValue)
-        {
-          switch(enumValue)
-          {
-          case AppSortKey::NOT_SET:
-            return {};
-          case AppSortKey::CreationTime:
-            return "CreationTime";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AppSortKeyMapper
-    } // namespace Model
-  } // namespace SageMaker
-} // namespace Aws
+}  // namespace AppSortKeyMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

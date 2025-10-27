@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,23 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayPeeringAttachmentResponse::CreateTransitGatewayPeeringAttachmentResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateTransitGatewayPeeringAttachmentResponse::CreateTransitGatewayPeeringAttachmentResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-CreateTransitGatewayPeeringAttachmentResponse& CreateTransitGatewayPeeringAttachmentResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateTransitGatewayPeeringAttachmentResponse& CreateTransitGatewayPeeringAttachmentResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateTransitGatewayPeeringAttachmentResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateTransitGatewayPeeringAttachmentResponse")) {
     resultNode = rootNode.FirstChild("CreateTransitGatewayPeeringAttachmentResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode transitGatewayPeeringAttachmentNode = resultNode.FirstChild("transitGatewayPeeringAttachment");
-    if(!transitGatewayPeeringAttachmentNode.IsNull())
-    {
+    if (!transitGatewayPeeringAttachmentNode.IsNull()) {
       m_transitGatewayPeeringAttachment = transitGatewayPeeringAttachmentNode;
       m_transitGatewayPeeringAttachmentHasBeenSet = true;
     }
@@ -44,12 +41,12 @@ CreateTransitGatewayPeeringAttachmentResponse& CreateTransitGatewayPeeringAttach
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTransitGatewayPeeringAttachmentResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTransitGatewayPeeringAttachmentResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

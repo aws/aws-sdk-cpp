@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/firehose/model/DeleteDeliveryStreamRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/model/DeleteDeliveryStreamRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDeliveryStreamRequest::SerializePayload() const
-{
+Aws::String DeleteDeliveryStreamRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deliveryStreamNameHasBeenSet)
-  {
-   payload.WithString("DeliveryStreamName", m_deliveryStreamName);
-
+  if (m_deliveryStreamNameHasBeenSet) {
+    payload.WithString("DeliveryStreamName", m_deliveryStreamName);
   }
 
-  if(m_allowForceDeleteHasBeenSet)
-  {
-   payload.WithBool("AllowForceDelete", m_allowForceDelete);
-
+  if (m_allowForceDeleteHasBeenSet) {
+    payload.WithBool("AllowForceDelete", m_allowForceDelete);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDeliveryStreamRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDeliveryStreamRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.DeleteDeliveryStream"));
   return headers;
-
 }
-
-
-
-

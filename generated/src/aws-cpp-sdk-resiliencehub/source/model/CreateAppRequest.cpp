@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/CreateAppRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/CreateAppRequest.h>
 
 #include <utility>
 
@@ -12,76 +12,53 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAppRequest::SerializePayload() const
-{
+Aws::String CreateAppRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assessmentScheduleHasBeenSet)
-  {
-   payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
+  if (m_assessmentScheduleHasBeenSet) {
+    payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
   }
 
-  if(m_awsApplicationArnHasBeenSet)
-  {
-   payload.WithString("awsApplicationArn", m_awsApplicationArn);
-
+  if (m_awsApplicationArnHasBeenSet) {
+    payload.WithString("awsApplicationArn", m_awsApplicationArn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_eventSubscriptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventSubscriptionsJsonList(m_eventSubscriptions.size());
-   for(unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength(); ++eventSubscriptionsIndex)
-   {
-     eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject(m_eventSubscriptions[eventSubscriptionsIndex].Jsonize());
-   }
-   payload.WithArray("eventSubscriptions", std::move(eventSubscriptionsJsonList));
-
+  if (m_eventSubscriptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventSubscriptionsJsonList(m_eventSubscriptions.size());
+    for (unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength();
+         ++eventSubscriptionsIndex) {
+      eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject(m_eventSubscriptions[eventSubscriptionsIndex].Jsonize());
+    }
+    payload.WithArray("eventSubscriptions", std::move(eventSubscriptionsJsonList));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_permissionModelHasBeenSet)
-  {
-   payload.WithObject("permissionModel", m_permissionModel.Jsonize());
-
+  if (m_permissionModelHasBeenSet) {
+    payload.WithObject("permissionModel", m_permissionModel.Jsonize());
   }
 
-  if(m_policyArnHasBeenSet)
-  {
-   payload.WithString("policyArn", m_policyArn);
-
+  if (m_policyArnHasBeenSet) {
+    payload.WithString("policyArn", m_policyArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

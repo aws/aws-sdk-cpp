@@ -3,286 +3,214 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/InstancePatchState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/InstancePatchState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-InstancePatchState::InstancePatchState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstancePatchState::InstancePatchState(JsonView jsonValue) { *this = jsonValue; }
 
-InstancePatchState& InstancePatchState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+InstancePatchState& InstancePatchState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PatchGroup"))
-  {
+  if (jsonValue.ValueExists("PatchGroup")) {
     m_patchGroup = jsonValue.GetString("PatchGroup");
     m_patchGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BaselineId"))
-  {
+  if (jsonValue.ValueExists("BaselineId")) {
     m_baselineId = jsonValue.GetString("BaselineId");
     m_baselineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotId"))
-  {
+  if (jsonValue.ValueExists("SnapshotId")) {
     m_snapshotId = jsonValue.GetString("SnapshotId");
     m_snapshotIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstallOverrideList"))
-  {
+  if (jsonValue.ValueExists("InstallOverrideList")) {
     m_installOverrideList = jsonValue.GetString("InstallOverrideList");
     m_installOverrideListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerInformation"))
-  {
+  if (jsonValue.ValueExists("OwnerInformation")) {
     m_ownerInformation = jsonValue.GetString("OwnerInformation");
     m_ownerInformationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstalledCount"))
-  {
+  if (jsonValue.ValueExists("InstalledCount")) {
     m_installedCount = jsonValue.GetInteger("InstalledCount");
     m_installedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstalledOtherCount"))
-  {
+  if (jsonValue.ValueExists("InstalledOtherCount")) {
     m_installedOtherCount = jsonValue.GetInteger("InstalledOtherCount");
     m_installedOtherCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstalledPendingRebootCount"))
-  {
+  if (jsonValue.ValueExists("InstalledPendingRebootCount")) {
     m_installedPendingRebootCount = jsonValue.GetInteger("InstalledPendingRebootCount");
     m_installedPendingRebootCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstalledRejectedCount"))
-  {
+  if (jsonValue.ValueExists("InstalledRejectedCount")) {
     m_installedRejectedCount = jsonValue.GetInteger("InstalledRejectedCount");
     m_installedRejectedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MissingCount"))
-  {
+  if (jsonValue.ValueExists("MissingCount")) {
     m_missingCount = jsonValue.GetInteger("MissingCount");
     m_missingCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailedCount"))
-  {
+  if (jsonValue.ValueExists("FailedCount")) {
     m_failedCount = jsonValue.GetInteger("FailedCount");
     m_failedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnreportedNotApplicableCount"))
-  {
+  if (jsonValue.ValueExists("UnreportedNotApplicableCount")) {
     m_unreportedNotApplicableCount = jsonValue.GetInteger("UnreportedNotApplicableCount");
     m_unreportedNotApplicableCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotApplicableCount"))
-  {
+  if (jsonValue.ValueExists("NotApplicableCount")) {
     m_notApplicableCount = jsonValue.GetInteger("NotApplicableCount");
     m_notApplicableCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvailableSecurityUpdateCount"))
-  {
+  if (jsonValue.ValueExists("AvailableSecurityUpdateCount")) {
     m_availableSecurityUpdateCount = jsonValue.GetInteger("AvailableSecurityUpdateCount");
     m_availableSecurityUpdateCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OperationStartTime"))
-  {
+  if (jsonValue.ValueExists("OperationStartTime")) {
     m_operationStartTime = jsonValue.GetDouble("OperationStartTime");
     m_operationStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OperationEndTime"))
-  {
+  if (jsonValue.ValueExists("OperationEndTime")) {
     m_operationEndTime = jsonValue.GetDouble("OperationEndTime");
     m_operationEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operation"))
-  {
+  if (jsonValue.ValueExists("Operation")) {
     m_operation = PatchOperationTypeMapper::GetPatchOperationTypeForName(jsonValue.GetString("Operation"));
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastNoRebootInstallOperationTime"))
-  {
+  if (jsonValue.ValueExists("LastNoRebootInstallOperationTime")) {
     m_lastNoRebootInstallOperationTime = jsonValue.GetDouble("LastNoRebootInstallOperationTime");
     m_lastNoRebootInstallOperationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RebootOption"))
-  {
+  if (jsonValue.ValueExists("RebootOption")) {
     m_rebootOption = RebootOptionMapper::GetRebootOptionForName(jsonValue.GetString("RebootOption"));
     m_rebootOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CriticalNonCompliantCount"))
-  {
+  if (jsonValue.ValueExists("CriticalNonCompliantCount")) {
     m_criticalNonCompliantCount = jsonValue.GetInteger("CriticalNonCompliantCount");
     m_criticalNonCompliantCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityNonCompliantCount"))
-  {
+  if (jsonValue.ValueExists("SecurityNonCompliantCount")) {
     m_securityNonCompliantCount = jsonValue.GetInteger("SecurityNonCompliantCount");
     m_securityNonCompliantCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OtherNonCompliantCount"))
-  {
+  if (jsonValue.ValueExists("OtherNonCompliantCount")) {
     m_otherNonCompliantCount = jsonValue.GetInteger("OtherNonCompliantCount");
     m_otherNonCompliantCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstancePatchState::Jsonize() const
-{
+JsonValue InstancePatchState::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_patchGroupHasBeenSet)
-  {
-   payload.WithString("PatchGroup", m_patchGroup);
-
+  if (m_patchGroupHasBeenSet) {
+    payload.WithString("PatchGroup", m_patchGroup);
   }
 
-  if(m_baselineIdHasBeenSet)
-  {
-   payload.WithString("BaselineId", m_baselineId);
-
+  if (m_baselineIdHasBeenSet) {
+    payload.WithString("BaselineId", m_baselineId);
   }
 
-  if(m_snapshotIdHasBeenSet)
-  {
-   payload.WithString("SnapshotId", m_snapshotId);
-
+  if (m_snapshotIdHasBeenSet) {
+    payload.WithString("SnapshotId", m_snapshotId);
   }
 
-  if(m_installOverrideListHasBeenSet)
-  {
-   payload.WithString("InstallOverrideList", m_installOverrideList);
-
+  if (m_installOverrideListHasBeenSet) {
+    payload.WithString("InstallOverrideList", m_installOverrideList);
   }
 
-  if(m_ownerInformationHasBeenSet)
-  {
-   payload.WithString("OwnerInformation", m_ownerInformation);
-
+  if (m_ownerInformationHasBeenSet) {
+    payload.WithString("OwnerInformation", m_ownerInformation);
   }
 
-  if(m_installedCountHasBeenSet)
-  {
-   payload.WithInteger("InstalledCount", m_installedCount);
-
+  if (m_installedCountHasBeenSet) {
+    payload.WithInteger("InstalledCount", m_installedCount);
   }
 
-  if(m_installedOtherCountHasBeenSet)
-  {
-   payload.WithInteger("InstalledOtherCount", m_installedOtherCount);
-
+  if (m_installedOtherCountHasBeenSet) {
+    payload.WithInteger("InstalledOtherCount", m_installedOtherCount);
   }
 
-  if(m_installedPendingRebootCountHasBeenSet)
-  {
-   payload.WithInteger("InstalledPendingRebootCount", m_installedPendingRebootCount);
-
+  if (m_installedPendingRebootCountHasBeenSet) {
+    payload.WithInteger("InstalledPendingRebootCount", m_installedPendingRebootCount);
   }
 
-  if(m_installedRejectedCountHasBeenSet)
-  {
-   payload.WithInteger("InstalledRejectedCount", m_installedRejectedCount);
-
+  if (m_installedRejectedCountHasBeenSet) {
+    payload.WithInteger("InstalledRejectedCount", m_installedRejectedCount);
   }
 
-  if(m_missingCountHasBeenSet)
-  {
-   payload.WithInteger("MissingCount", m_missingCount);
-
+  if (m_missingCountHasBeenSet) {
+    payload.WithInteger("MissingCount", m_missingCount);
   }
 
-  if(m_failedCountHasBeenSet)
-  {
-   payload.WithInteger("FailedCount", m_failedCount);
-
+  if (m_failedCountHasBeenSet) {
+    payload.WithInteger("FailedCount", m_failedCount);
   }
 
-  if(m_unreportedNotApplicableCountHasBeenSet)
-  {
-   payload.WithInteger("UnreportedNotApplicableCount", m_unreportedNotApplicableCount);
-
+  if (m_unreportedNotApplicableCountHasBeenSet) {
+    payload.WithInteger("UnreportedNotApplicableCount", m_unreportedNotApplicableCount);
   }
 
-  if(m_notApplicableCountHasBeenSet)
-  {
-   payload.WithInteger("NotApplicableCount", m_notApplicableCount);
-
+  if (m_notApplicableCountHasBeenSet) {
+    payload.WithInteger("NotApplicableCount", m_notApplicableCount);
   }
 
-  if(m_availableSecurityUpdateCountHasBeenSet)
-  {
-   payload.WithInteger("AvailableSecurityUpdateCount", m_availableSecurityUpdateCount);
-
+  if (m_availableSecurityUpdateCountHasBeenSet) {
+    payload.WithInteger("AvailableSecurityUpdateCount", m_availableSecurityUpdateCount);
   }
 
-  if(m_operationStartTimeHasBeenSet)
-  {
-   payload.WithDouble("OperationStartTime", m_operationStartTime.SecondsWithMSPrecision());
+  if (m_operationStartTimeHasBeenSet) {
+    payload.WithDouble("OperationStartTime", m_operationStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_operationEndTimeHasBeenSet)
-  {
-   payload.WithDouble("OperationEndTime", m_operationEndTime.SecondsWithMSPrecision());
+  if (m_operationEndTimeHasBeenSet) {
+    payload.WithDouble("OperationEndTime", m_operationEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", PatchOperationTypeMapper::GetNameForPatchOperationType(m_operation));
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", PatchOperationTypeMapper::GetNameForPatchOperationType(m_operation));
   }
 
-  if(m_lastNoRebootInstallOperationTimeHasBeenSet)
-  {
-   payload.WithDouble("LastNoRebootInstallOperationTime", m_lastNoRebootInstallOperationTime.SecondsWithMSPrecision());
+  if (m_lastNoRebootInstallOperationTimeHasBeenSet) {
+    payload.WithDouble("LastNoRebootInstallOperationTime", m_lastNoRebootInstallOperationTime.SecondsWithMSPrecision());
   }
 
-  if(m_rebootOptionHasBeenSet)
-  {
-   payload.WithString("RebootOption", RebootOptionMapper::GetNameForRebootOption(m_rebootOption));
+  if (m_rebootOptionHasBeenSet) {
+    payload.WithString("RebootOption", RebootOptionMapper::GetNameForRebootOption(m_rebootOption));
   }
 
-  if(m_criticalNonCompliantCountHasBeenSet)
-  {
-   payload.WithInteger("CriticalNonCompliantCount", m_criticalNonCompliantCount);
-
+  if (m_criticalNonCompliantCountHasBeenSet) {
+    payload.WithInteger("CriticalNonCompliantCount", m_criticalNonCompliantCount);
   }
 
-  if(m_securityNonCompliantCountHasBeenSet)
-  {
-   payload.WithInteger("SecurityNonCompliantCount", m_securityNonCompliantCount);
-
+  if (m_securityNonCompliantCountHasBeenSet) {
+    payload.WithInteger("SecurityNonCompliantCount", m_securityNonCompliantCount);
   }
 
-  if(m_otherNonCompliantCountHasBeenSet)
-  {
-   payload.WithInteger("OtherNonCompliantCount", m_otherNonCompliantCount);
-
+  if (m_otherNonCompliantCountHasBeenSet) {
+    payload.WithInteger("OtherNonCompliantCount", m_otherNonCompliantCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

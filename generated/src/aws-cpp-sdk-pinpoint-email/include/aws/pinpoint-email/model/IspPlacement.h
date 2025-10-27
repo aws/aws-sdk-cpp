@@ -4,74 +4,79 @@
  */
 
 #pragma once
-#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/model/PlacementStatistics.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace PinpointEmail {
+namespace Model {
 
+/**
+ * <p>An object that describes how email sent during the predictive inbox placement
+ * test was handled by a certain email provider.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/IspPlacement">AWS
+ * API Reference</a></p>
+ */
+class IspPlacement {
+ public:
+  AWS_PINPOINTEMAIL_API IspPlacement() = default;
+  AWS_PINPOINTEMAIL_API IspPlacement(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINTEMAIL_API IspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object that describes how email sent during the predictive inbox placement
-   * test was handled by a certain email provider.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/IspPlacement">AWS
-   * API Reference</a></p>
+   * <p>The name of the email provider that the inbox placement data applies to.</p>
    */
-  class IspPlacement
-  {
-  public:
-    AWS_PINPOINTEMAIL_API IspPlacement() = default;
-    AWS_PINPOINTEMAIL_API IspPlacement(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINTEMAIL_API IspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetIspName() const { return m_ispName; }
+  inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
+  template <typename IspNameT = Aws::String>
+  void SetIspName(IspNameT&& value) {
+    m_ispNameHasBeenSet = true;
+    m_ispName = std::forward<IspNameT>(value);
+  }
+  template <typename IspNameT = Aws::String>
+  IspPlacement& WithIspName(IspNameT&& value) {
+    SetIspName(std::forward<IspNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>An object that contains inbox placement metrics for a specific email
+   * provider.</p>
+   */
+  inline const PlacementStatistics& GetPlacementStatistics() const { return m_placementStatistics; }
+  inline bool PlacementStatisticsHasBeenSet() const { return m_placementStatisticsHasBeenSet; }
+  template <typename PlacementStatisticsT = PlacementStatistics>
+  void SetPlacementStatistics(PlacementStatisticsT&& value) {
+    m_placementStatisticsHasBeenSet = true;
+    m_placementStatistics = std::forward<PlacementStatisticsT>(value);
+  }
+  template <typename PlacementStatisticsT = PlacementStatistics>
+  IspPlacement& WithPlacementStatistics(PlacementStatisticsT&& value) {
+    SetPlacementStatistics(std::forward<PlacementStatisticsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_ispName;
+  bool m_ispNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
-    inline const Aws::String& GetIspName() const { return m_ispName; }
-    inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
-    template<typename IspNameT = Aws::String>
-    void SetIspName(IspNameT&& value) { m_ispNameHasBeenSet = true; m_ispName = std::forward<IspNameT>(value); }
-    template<typename IspNameT = Aws::String>
-    IspPlacement& WithIspName(IspNameT&& value) { SetIspName(std::forward<IspNameT>(value)); return *this;}
-    ///@}
+  PlacementStatistics m_placementStatistics;
+  bool m_placementStatisticsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
-    inline const PlacementStatistics& GetPlacementStatistics() const { return m_placementStatistics; }
-    inline bool PlacementStatisticsHasBeenSet() const { return m_placementStatisticsHasBeenSet; }
-    template<typename PlacementStatisticsT = PlacementStatistics>
-    void SetPlacementStatistics(PlacementStatisticsT&& value) { m_placementStatisticsHasBeenSet = true; m_placementStatistics = std::forward<PlacementStatisticsT>(value); }
-    template<typename PlacementStatisticsT = PlacementStatistics>
-    IspPlacement& WithPlacementStatistics(PlacementStatisticsT&& value) { SetPlacementStatistics(std::forward<PlacementStatisticsT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_ispName;
-    bool m_ispNameHasBeenSet = false;
-
-    PlacementStatistics m_placementStatistics;
-    bool m_placementStatisticsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

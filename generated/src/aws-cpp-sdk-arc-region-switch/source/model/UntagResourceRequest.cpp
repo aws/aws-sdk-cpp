@@ -12,46 +12,33 @@ using namespace Aws::ARCRegionswitch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UntagResourceRequest::SerializePayload() const
-{
+Aws::String UntagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_resourceTagKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
-   for(unsigned resourceTagKeysIndex = 0; resourceTagKeysIndex < resourceTagKeysJsonList.GetLength(); ++resourceTagKeysIndex)
-   {
-     resourceTagKeysJsonList[resourceTagKeysIndex].AsString(m_resourceTagKeys[resourceTagKeysIndex]);
-   }
-   payload.WithArray("resourceTagKeys", std::move(resourceTagKeysJsonList));
-
+  if (m_resourceTagKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
+    for (unsigned resourceTagKeysIndex = 0; resourceTagKeysIndex < resourceTagKeysJsonList.GetLength(); ++resourceTagKeysIndex) {
+      resourceTagKeysJsonList[resourceTagKeysIndex].AsString(m_resourceTagKeys[resourceTagKeysIndex]);
+    }
+    payload.WithArray("resourceTagKeys", std::move(resourceTagKeysJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ArcRegionSwitch.UntagResource"));
   return headers;
-
 }
 
-
-
-UntagResourceRequest::EndpointParameters UntagResourceRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Static context parameters
-    parameters.emplace_back(Aws::String("UseControlPlaneEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
-    return parameters;
+UntagResourceRequest::EndpointParameters UntagResourceRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Static context parameters
+  parameters.emplace_back(Aws::String("UseControlPlaneEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+  return parameters;
 }
-
-

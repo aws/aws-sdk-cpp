@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
-  enum class Intent
-  {
-    NOT_SET,
-    VALIDATE,
-    APPLY
-  };
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
+enum class Intent { NOT_SET, VALIDATE, APPLY };
 
-namespace IntentMapper
-{
+namespace IntentMapper {
 AWS_MARKETPLACECATALOG_API Intent GetIntentForName(const Aws::String& name);
 
 AWS_MARKETPLACECATALOG_API Aws::String GetNameForIntent(Intent value);
-} // namespace IntentMapper
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace IntentMapper
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

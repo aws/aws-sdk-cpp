@@ -4,81 +4,97 @@
  */
 
 #pragma once
-#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/globalaccelerator/model/CrossAccountResource.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace GlobalAccelerator
-{
-namespace Model
-{
-  class ListCrossAccountResourcesResult
-  {
-  public:
-    AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult() = default;
-    AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace GlobalAccelerator {
+namespace Model {
+class ListCrossAccountResourcesResult {
+ public:
+  AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult() = default;
+  AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLOBALACCELERATOR_API ListCrossAccountResourcesResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The cross-account resources used with an accelerator.</p>
+   */
+  inline const Aws::Vector<CrossAccountResource>& GetCrossAccountResources() const { return m_crossAccountResources; }
+  template <typename CrossAccountResourcesT = Aws::Vector<CrossAccountResource>>
+  void SetCrossAccountResources(CrossAccountResourcesT&& value) {
+    m_crossAccountResourcesHasBeenSet = true;
+    m_crossAccountResources = std::forward<CrossAccountResourcesT>(value);
+  }
+  template <typename CrossAccountResourcesT = Aws::Vector<CrossAccountResource>>
+  ListCrossAccountResourcesResult& WithCrossAccountResources(CrossAccountResourcesT&& value) {
+    SetCrossAccountResources(std::forward<CrossAccountResourcesT>(value));
+    return *this;
+  }
+  template <typename CrossAccountResourcesT = CrossAccountResource>
+  ListCrossAccountResourcesResult& AddCrossAccountResources(CrossAccountResourcesT&& value) {
+    m_crossAccountResourcesHasBeenSet = true;
+    m_crossAccountResources.emplace_back(std::forward<CrossAccountResourcesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The cross-account resources used with an accelerator.</p>
-     */
-    inline const Aws::Vector<CrossAccountResource>& GetCrossAccountResources() const { return m_crossAccountResources; }
-    template<typename CrossAccountResourcesT = Aws::Vector<CrossAccountResource>>
-    void SetCrossAccountResources(CrossAccountResourcesT&& value) { m_crossAccountResourcesHasBeenSet = true; m_crossAccountResources = std::forward<CrossAccountResourcesT>(value); }
-    template<typename CrossAccountResourcesT = Aws::Vector<CrossAccountResource>>
-    ListCrossAccountResourcesResult& WithCrossAccountResources(CrossAccountResourcesT&& value) { SetCrossAccountResources(std::forward<CrossAccountResourcesT>(value)); return *this;}
-    template<typename CrossAccountResourcesT = CrossAccountResource>
-    ListCrossAccountResourcesResult& AddCrossAccountResources(CrossAccountResourcesT&& value) { m_crossAccountResourcesHasBeenSet = true; m_crossAccountResources.emplace_back(std::forward<CrossAccountResourcesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The token for the next set of results. You receive this token from a previous
+   * call.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListCrossAccountResourcesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListCrossAccountResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListCrossAccountResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListCrossAccountResourcesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<CrossAccountResource> m_crossAccountResources;
+  bool m_crossAccountResourcesHasBeenSet = false;
 
-    Aws::Vector<CrossAccountResource> m_crossAccountResources;
-    bool m_crossAccountResourcesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

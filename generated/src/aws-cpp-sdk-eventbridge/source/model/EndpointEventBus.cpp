@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/EndpointEventBus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/EndpointEventBus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-EndpointEventBus::EndpointEventBus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointEventBus::EndpointEventBus(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointEventBus& EndpointEventBus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventBusArn"))
-  {
+EndpointEventBus& EndpointEventBus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventBusArn")) {
     m_eventBusArn = jsonValue.GetString("EventBusArn");
     m_eventBusArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointEventBus::Jsonize() const
-{
+JsonValue EndpointEventBus::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventBusArnHasBeenSet)
-  {
-   payload.WithString("EventBusArn", m_eventBusArn);
-
+  if (m_eventBusArnHasBeenSet) {
+    payload.WithString("EventBusArn", m_eventBusArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

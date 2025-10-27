@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/s3tables/S3TablesEndpointRules.h>
+#include <aws/s3tables/S3Tables_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace S3Tables
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace S3Tables {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using S3TablesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using S3TablesDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_S3TABLES_API S3TablesEndpointProvider : public S3TablesDefaultEpProviderBase
-{
-public:
-    using S3TablesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_S3TABLES_API S3TablesEndpointProvider : public S3TablesDefaultEpProviderBase {
+ public:
+  using S3TablesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    S3TablesEndpointProvider()
-      : S3TablesDefaultEpProviderBase(Aws::S3Tables::S3TablesEndpointRules::GetRulesBlob(), Aws::S3Tables::S3TablesEndpointRules::RulesBlobSize)
-    {}
+  S3TablesEndpointProvider()
+      : S3TablesDefaultEpProviderBase(Aws::S3Tables::S3TablesEndpointRules::GetRulesBlob(),
+                                      Aws::S3Tables::S3TablesEndpointRules::RulesBlobSize) {}
 
-    ~S3TablesEndpointProvider()
-    {
-    }
+  ~S3TablesEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace S3Tables
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace S3Tables
+}  // namespace Aws

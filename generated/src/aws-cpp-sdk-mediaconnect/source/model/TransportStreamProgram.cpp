@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/TransportStreamProgram.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/TransportStreamProgram.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-TransportStreamProgram::TransportStreamProgram(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransportStreamProgram::TransportStreamProgram(JsonView jsonValue) { *this = jsonValue; }
 
-TransportStreamProgram& TransportStreamProgram::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pcrPid"))
-  {
+TransportStreamProgram& TransportStreamProgram::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pcrPid")) {
     m_pcrPid = jsonValue.GetInteger("pcrPid");
     m_pcrPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programName"))
-  {
+  if (jsonValue.ValueExists("programName")) {
     m_programName = jsonValue.GetString("programName");
     m_programNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programNumber"))
-  {
+  if (jsonValue.ValueExists("programNumber")) {
     m_programNumber = jsonValue.GetInteger("programNumber");
     m_programNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programPid"))
-  {
+  if (jsonValue.ValueExists("programPid")) {
     m_programPid = jsonValue.GetInteger("programPid");
     m_programPidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streams"))
-  {
+  if (jsonValue.ValueExists("streams")) {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
-    for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-    {
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
       m_streams.push_back(streamsJsonList[streamsIndex].AsObject());
     }
     m_streamsHasBeenSet = true;
@@ -57,48 +44,36 @@ TransportStreamProgram& TransportStreamProgram::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TransportStreamProgram::Jsonize() const
-{
+JsonValue TransportStreamProgram::Jsonize() const {
   JsonValue payload;
 
-  if(m_pcrPidHasBeenSet)
-  {
-   payload.WithInteger("pcrPid", m_pcrPid);
-
+  if (m_pcrPidHasBeenSet) {
+    payload.WithInteger("pcrPid", m_pcrPid);
   }
 
-  if(m_programNameHasBeenSet)
-  {
-   payload.WithString("programName", m_programName);
-
+  if (m_programNameHasBeenSet) {
+    payload.WithString("programName", m_programName);
   }
 
-  if(m_programNumberHasBeenSet)
-  {
-   payload.WithInteger("programNumber", m_programNumber);
-
+  if (m_programNumberHasBeenSet) {
+    payload.WithInteger("programNumber", m_programNumber);
   }
 
-  if(m_programPidHasBeenSet)
-  {
-   payload.WithInteger("programPid", m_programPid);
-
+  if (m_programPidHasBeenSet) {
+    payload.WithInteger("programPid", m_programPid);
   }
 
-  if(m_streamsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
-   for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-   {
-     streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
-   }
-   payload.WithArray("streams", std::move(streamsJsonList));
-
+  if (m_streamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
+      streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
+    }
+    payload.WithArray("streams", std::move(streamsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

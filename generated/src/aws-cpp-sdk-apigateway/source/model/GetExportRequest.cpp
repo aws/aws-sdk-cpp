@@ -4,8 +4,8 @@
  */
 
 #include <aws/apigateway/model/GetExportRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,40 +15,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetExportRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String GetExportRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection GetExportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetExportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_acceptsHasBeenSet)
-  {
+  if (m_acceptsHasBeenSet) {
     ss << m_accepts;
-    headers.emplace("accept",  ss.str());
+    headers.emplace("accept", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-void GetExportRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_parametersHasBeenSet)
-    {
-      for(auto& item : m_parameters)
-      {
-        ss << item.second;
-        uri.AddQueryStringParameter(item.first.c_str(), ss.str());
-        ss.str("");
-      }
+void GetExportRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_parametersHasBeenSet) {
+    for (auto& item : m_parameters) {
+      ss << item.second;
+      uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+      ss.str("");
     }
-
+  }
 }
-
-
-

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceCountFilters::ResourceCountFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceCountFilters::ResourceCountFilters(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceCountFilters& ResourceCountFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+ResourceCountFilters& ResourceCountFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Region"))
-  {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceCountFilters::Jsonize() const
-{
+JsonValue ResourceCountFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

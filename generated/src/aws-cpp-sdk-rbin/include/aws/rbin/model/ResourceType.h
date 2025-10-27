@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rbin/RecycleBin_EXPORTS.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    EBS_SNAPSHOT,
-    EC2_IMAGE
-  };
+namespace Aws {
+namespace RecycleBin {
+namespace Model {
+enum class ResourceType { NOT_SET, EBS_SNAPSHOT, EC2_IMAGE };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_RECYCLEBIN_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_RECYCLEBIN_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace RecycleBin
+}  // namespace Aws

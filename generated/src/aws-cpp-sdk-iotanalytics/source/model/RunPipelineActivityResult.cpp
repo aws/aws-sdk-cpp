@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/RunPipelineActivityResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotanalytics/model/RunPipelineActivityResult.h>
 
 #include <utility>
 
@@ -18,37 +18,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RunPipelineActivityResult::RunPipelineActivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RunPipelineActivityResult::RunPipelineActivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RunPipelineActivityResult& RunPipelineActivityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RunPipelineActivityResult& RunPipelineActivityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("payloads"))
-  {
+  if (jsonValue.ValueExists("payloads")) {
     Aws::Utils::Array<JsonView> payloadsJsonList = jsonValue.GetArray("payloads");
-    for(unsigned payloadsIndex = 0; payloadsIndex < payloadsJsonList.GetLength(); ++payloadsIndex)
-    {
+    for (unsigned payloadsIndex = 0; payloadsIndex < payloadsJsonList.GetLength(); ++payloadsIndex) {
       m_payloads.push_back(HashingUtils::Base64Decode(payloadsJsonList[payloadsIndex].AsString()));
     }
     m_payloadsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logResult"))
-  {
+  if (jsonValue.ValueExists("logResult")) {
     m_logResult = jsonValue.GetString("logResult");
     m_logResultHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

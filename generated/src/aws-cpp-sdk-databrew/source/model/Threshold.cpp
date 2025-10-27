@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/Threshold.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/Threshold.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-Threshold::Threshold(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Threshold::Threshold(JsonView jsonValue) { *this = jsonValue; }
 
-Threshold& Threshold::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+Threshold& Threshold::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ThresholdTypeMapper::GetThresholdTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = ThresholdUnitMapper::GetThresholdUnitForName(jsonValue.GetString("Unit"));
     m_unitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Threshold::Jsonize() const
-{
+JsonValue Threshold::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ThresholdTypeMapper::GetNameForThresholdType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ThresholdTypeMapper::GetNameForThresholdType(m_type));
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", ThresholdUnitMapper::GetNameForThresholdUnit(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", ThresholdUnitMapper::GetNameForThresholdUnit(m_unit));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

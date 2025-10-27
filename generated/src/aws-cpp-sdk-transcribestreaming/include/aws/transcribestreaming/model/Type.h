@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
-  enum class Type
-  {
-    NOT_SET,
-    CONVERSATION,
-    DICTATION
-  };
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
+enum class Type { NOT_SET, CONVERSATION, DICTATION };
 
-namespace TypeMapper
-{
+namespace TypeMapper {
 AWS_TRANSCRIBESTREAMINGSERVICE_API Type GetTypeForName(const Aws::String& name);
 
 AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace TypeMapper
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

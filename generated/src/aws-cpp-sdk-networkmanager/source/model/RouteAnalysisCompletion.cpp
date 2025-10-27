@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/RouteAnalysisCompletion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/RouteAnalysisCompletion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
 
-RouteAnalysisCompletion::RouteAnalysisCompletion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteAnalysisCompletion::RouteAnalysisCompletion(JsonView jsonValue) { *this = jsonValue; }
 
-RouteAnalysisCompletion& RouteAnalysisCompletion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResultCode"))
-  {
+RouteAnalysisCompletion& RouteAnalysisCompletion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResultCode")) {
     m_resultCode = RouteAnalysisCompletionResultCodeMapper::GetRouteAnalysisCompletionResultCodeForName(jsonValue.GetString("ResultCode"));
     m_resultCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReasonCode"))
-  {
+  if (jsonValue.ValueExists("ReasonCode")) {
     m_reasonCode = RouteAnalysisCompletionReasonCodeMapper::GetRouteAnalysisCompletionReasonCodeForName(jsonValue.GetString("ReasonCode"));
     m_reasonCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReasonContext"))
-  {
+  if (jsonValue.ValueExists("ReasonContext")) {
     Aws::Map<Aws::String, JsonView> reasonContextJsonMap = jsonValue.GetObject("ReasonContext").GetAllObjects();
-    for(auto& reasonContextItem : reasonContextJsonMap)
-    {
+    for (auto& reasonContextItem : reasonContextJsonMap) {
       m_reasonContext[reasonContextItem.first] = reasonContextItem.second.AsString();
     }
     m_reasonContextHasBeenSet = true;
@@ -47,34 +36,28 @@ RouteAnalysisCompletion& RouteAnalysisCompletion::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RouteAnalysisCompletion::Jsonize() const
-{
+JsonValue RouteAnalysisCompletion::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultCodeHasBeenSet)
-  {
-   payload.WithString("ResultCode", RouteAnalysisCompletionResultCodeMapper::GetNameForRouteAnalysisCompletionResultCode(m_resultCode));
+  if (m_resultCodeHasBeenSet) {
+    payload.WithString("ResultCode", RouteAnalysisCompletionResultCodeMapper::GetNameForRouteAnalysisCompletionResultCode(m_resultCode));
   }
 
-  if(m_reasonCodeHasBeenSet)
-  {
-   payload.WithString("ReasonCode", RouteAnalysisCompletionReasonCodeMapper::GetNameForRouteAnalysisCompletionReasonCode(m_reasonCode));
+  if (m_reasonCodeHasBeenSet) {
+    payload.WithString("ReasonCode", RouteAnalysisCompletionReasonCodeMapper::GetNameForRouteAnalysisCompletionReasonCode(m_reasonCode));
   }
 
-  if(m_reasonContextHasBeenSet)
-  {
-   JsonValue reasonContextJsonMap;
-   for(auto& reasonContextItem : m_reasonContext)
-   {
-     reasonContextJsonMap.WithString(reasonContextItem.first, reasonContextItem.second);
-   }
-   payload.WithObject("ReasonContext", std::move(reasonContextJsonMap));
-
+  if (m_reasonContextHasBeenSet) {
+    JsonValue reasonContextJsonMap;
+    for (auto& reasonContextItem : m_reasonContext) {
+      reasonContextJsonMap.WithString(reasonContextItem.first, reasonContextItem.second);
+    }
+    payload.WithObject("ReasonContext", std::move(reasonContextJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

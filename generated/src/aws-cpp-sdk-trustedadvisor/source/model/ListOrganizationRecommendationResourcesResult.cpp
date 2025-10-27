@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/trustedadvisor/model/ListOrganizationRecommendationResourcesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOrganizationRecommendationResourcesResult::ListOrganizationRecommendationResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListOrganizationRecommendationResourcesResult::ListOrganizationRecommendationResourcesResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListOrganizationRecommendationResourcesResult& ListOrganizationRecommendationResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListOrganizationRecommendationResourcesResult& ListOrganizationRecommendationResourcesResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("organizationRecommendationResourceSummaries"))
-  {
-    Aws::Utils::Array<JsonView> organizationRecommendationResourceSummariesJsonList = jsonValue.GetArray("organizationRecommendationResourceSummaries");
-    for(unsigned organizationRecommendationResourceSummariesIndex = 0; organizationRecommendationResourceSummariesIndex < organizationRecommendationResourceSummariesJsonList.GetLength(); ++organizationRecommendationResourceSummariesIndex)
-    {
-      m_organizationRecommendationResourceSummaries.push_back(organizationRecommendationResourceSummariesJsonList[organizationRecommendationResourceSummariesIndex].AsObject());
+  if (jsonValue.ValueExists("organizationRecommendationResourceSummaries")) {
+    Aws::Utils::Array<JsonView> organizationRecommendationResourceSummariesJsonList =
+        jsonValue.GetArray("organizationRecommendationResourceSummaries");
+    for (unsigned organizationRecommendationResourceSummariesIndex = 0;
+         organizationRecommendationResourceSummariesIndex < organizationRecommendationResourceSummariesJsonList.GetLength();
+         ++organizationRecommendationResourceSummariesIndex) {
+      m_organizationRecommendationResourceSummaries.push_back(
+          organizationRecommendationResourceSummariesJsonList[organizationRecommendationResourceSummariesIndex].AsObject());
     }
     m_organizationRecommendationResourceSummariesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

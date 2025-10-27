@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeFleetHistoryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeFleetHistoryRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeFleetHistoryRequest::SerializePayload() const
-{
+Aws::String DescribeFleetHistoryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeFleetHistory&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
+  if (m_eventTypeHasBeenSet) {
     ss << "EventType=" << StringUtils::URLEncode(FleetEventTypeMapper::GetNameForFleetEventType(m_eventType)) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_fleetIdHasBeenSet)
-  {
+  if (m_fleetIdHasBeenSet) {
     ss << "FleetId=" << StringUtils::URLEncode(m_fleetId.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String DescribeFleetHistoryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeFleetHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeFleetHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

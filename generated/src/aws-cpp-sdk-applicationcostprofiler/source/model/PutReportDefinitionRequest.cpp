@@ -12,41 +12,28 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutReportDefinitionRequest::SerializePayload() const
-{
+Aws::String PutReportDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_reportIdHasBeenSet)
-  {
-   payload.WithString("reportId", m_reportId);
-
+  if (m_reportIdHasBeenSet) {
+    payload.WithString("reportId", m_reportId);
   }
 
-  if(m_reportDescriptionHasBeenSet)
-  {
-   payload.WithString("reportDescription", m_reportDescription);
-
+  if (m_reportDescriptionHasBeenSet) {
+    payload.WithString("reportDescription", m_reportDescription);
   }
 
-  if(m_reportFrequencyHasBeenSet)
-  {
-   payload.WithString("reportFrequency", ReportFrequencyMapper::GetNameForReportFrequency(m_reportFrequency));
+  if (m_reportFrequencyHasBeenSet) {
+    payload.WithString("reportFrequency", ReportFrequencyMapper::GetNameForReportFrequency(m_reportFrequency));
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
   }
 
-  if(m_destinationS3LocationHasBeenSet)
-  {
-   payload.WithObject("destinationS3Location", m_destinationS3Location.Jsonize());
-
+  if (m_destinationS3LocationHasBeenSet) {
+    payload.WithObject("destinationS3Location", m_destinationS3Location.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

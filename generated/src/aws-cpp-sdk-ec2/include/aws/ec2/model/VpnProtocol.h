@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VpnProtocol
-  {
-    NOT_SET,
-    openvpn
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VpnProtocol { NOT_SET, openvpn };
 
-namespace VpnProtocolMapper
-{
+namespace VpnProtocolMapper {
 AWS_EC2_API VpnProtocol GetVpnProtocolForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVpnProtocol(VpnProtocol value);
-} // namespace VpnProtocolMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VpnProtocolMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

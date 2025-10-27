@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/NotificationConfigurationDeprecated.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/NotificationConfigurationDeprecated.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-NotificationConfigurationDeprecated::NotificationConfigurationDeprecated(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+NotificationConfigurationDeprecated::NotificationConfigurationDeprecated(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operator =(const XmlNode& xmlNode)
-{
+NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode topicConfigurationNode = resultNode.FirstChild("TopicConfiguration");
-    if(!topicConfigurationNode.IsNull())
-    {
+    if (!topicConfigurationNode.IsNull()) {
       m_topicConfiguration = topicConfigurationNode;
       m_topicConfigurationHasBeenSet = true;
     }
     XmlNode queueConfigurationNode = resultNode.FirstChild("QueueConfiguration");
-    if(!queueConfigurationNode.IsNull())
-    {
+    if (!queueConfigurationNode.IsNull()) {
       m_queueConfiguration = queueConfigurationNode;
       m_queueConfigurationHasBeenSet = true;
     }
     XmlNode cloudFunctionConfigurationNode = resultNode.FirstChild("CloudFunctionConfiguration");
-    if(!cloudFunctionConfigurationNode.IsNull())
-    {
+    if (!cloudFunctionConfigurationNode.IsNull()) {
       m_cloudFunctionConfiguration = cloudFunctionConfigurationNode;
       m_cloudFunctionConfigurationHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operat
   return *this;
 }
 
-void NotificationConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
-{
+void NotificationConfigurationDeprecated::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_topicConfigurationHasBeenSet)
-  {
-   XmlNode topicConfigurationNode = parentNode.CreateChildElement("TopicConfiguration");
-   m_topicConfiguration.AddToNode(topicConfigurationNode);
+  if (m_topicConfigurationHasBeenSet) {
+    XmlNode topicConfigurationNode = parentNode.CreateChildElement("TopicConfiguration");
+    m_topicConfiguration.AddToNode(topicConfigurationNode);
   }
 
-  if(m_queueConfigurationHasBeenSet)
-  {
-   XmlNode queueConfigurationNode = parentNode.CreateChildElement("QueueConfiguration");
-   m_queueConfiguration.AddToNode(queueConfigurationNode);
+  if (m_queueConfigurationHasBeenSet) {
+    XmlNode queueConfigurationNode = parentNode.CreateChildElement("QueueConfiguration");
+    m_queueConfiguration.AddToNode(queueConfigurationNode);
   }
 
-  if(m_cloudFunctionConfigurationHasBeenSet)
-  {
-   XmlNode cloudFunctionConfigurationNode = parentNode.CreateChildElement("CloudFunctionConfiguration");
-   m_cloudFunctionConfiguration.AddToNode(cloudFunctionConfigurationNode);
+  if (m_cloudFunctionConfigurationHasBeenSet) {
+    XmlNode cloudFunctionConfigurationNode = parentNode.CreateChildElement("CloudFunctionConfiguration");
+    m_cloudFunctionConfiguration.AddToNode(cloudFunctionConfigurationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

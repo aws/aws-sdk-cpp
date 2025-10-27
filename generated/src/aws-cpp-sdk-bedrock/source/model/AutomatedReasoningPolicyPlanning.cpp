@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyPlanning::AutomatedReasoningPolicyPlanning(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyPlanning::AutomatedReasoningPolicyPlanning(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyPlanning& AutomatedReasoningPolicyPlanning::operator =(JsonView jsonValue)
-{
+AutomatedReasoningPolicyPlanning& AutomatedReasoningPolicyPlanning::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyPlanning::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyPlanning::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

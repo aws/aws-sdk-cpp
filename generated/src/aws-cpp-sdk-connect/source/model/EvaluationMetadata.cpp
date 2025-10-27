@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationMetadata::EvaluationMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationMetadata::EvaluationMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationMetadata& EvaluationMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContactId"))
-  {
+EvaluationMetadata& EvaluationMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactId")) {
     m_contactId = jsonValue.GetString("ContactId");
     m_contactIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluatorArn"))
-  {
+  if (jsonValue.ValueExists("EvaluatorArn")) {
     m_evaluatorArn = jsonValue.GetString("EvaluatorArn");
     m_evaluatorArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactAgentId"))
-  {
+  if (jsonValue.ValueExists("ContactAgentId")) {
     m_contactAgentId = jsonValue.GetString("ContactAgentId");
     m_contactAgentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetObject("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationMetadata::Jsonize() const
-{
+JsonValue EvaluationMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_evaluatorArnHasBeenSet)
-  {
-   payload.WithString("EvaluatorArn", m_evaluatorArn);
-
+  if (m_evaluatorArnHasBeenSet) {
+    payload.WithString("EvaluatorArn", m_evaluatorArn);
   }
 
-  if(m_contactAgentIdHasBeenSet)
-  {
-   payload.WithString("ContactAgentId", m_contactAgentId);
-
+  if (m_contactAgentIdHasBeenSet) {
+    payload.WithString("ContactAgentId", m_contactAgentId);
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithObject("Score", m_score.Jsonize());
-
+  if (m_scoreHasBeenSet) {
+    payload.WithObject("Score", m_score.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

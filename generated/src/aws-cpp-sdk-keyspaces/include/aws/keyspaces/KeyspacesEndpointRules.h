@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace Keyspaces
-{
-class KeyspacesEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Keyspaces {
+class KeyspacesEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Keyspaces
+}  // namespace Aws

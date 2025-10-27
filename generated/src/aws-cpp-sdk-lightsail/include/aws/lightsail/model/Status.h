@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class Status
-  {
-    NOT_SET,
-    startExpired,
-    notStarted,
-    started,
-    starting,
-    stopped,
-    stopping,
-    settingUpInstance,
-    failedInstanceCreation,
-    failedStartingGUISession,
-    failedStoppingGUISession
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class Status {
+  NOT_SET,
+  startExpired,
+  notStarted,
+  started,
+  starting,
+  stopped,
+  stopping,
+  settingUpInstance,
+  failedInstanceCreation,
+  failedStartingGUISession,
+  failedStoppingGUISession
+};
 
-namespace StatusMapper
-{
+namespace StatusMapper {
 AWS_LIGHTSAIL_API Status GetStatusForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForStatus(Status value);
-} // namespace StatusMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

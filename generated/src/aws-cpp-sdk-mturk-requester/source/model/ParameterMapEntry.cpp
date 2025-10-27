@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/ParameterMapEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/ParameterMapEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Model
-{
+namespace Aws {
+namespace MTurk {
+namespace Model {
 
-ParameterMapEntry::ParameterMapEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterMapEntry::ParameterMapEntry(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterMapEntry& ParameterMapEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+ParameterMapEntry& ParameterMapEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,30 +32,24 @@ ParameterMapEntry& ParameterMapEntry::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ParameterMapEntry::Jsonize() const
-{
+JsonValue ParameterMapEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

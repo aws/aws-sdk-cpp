@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const
-{
+Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetIdentityNotificationTopic&";
-  if(m_identityHasBeenSet)
-  {
+  if (m_identityHasBeenSet) {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
 
-  if(m_notificationTypeHasBeenSet)
-  {
+  if (m_notificationTypeHasBeenSet) {
     ss << "NotificationType=" << StringUtils::URLEncode(NotificationTypeMapper::GetNameForNotificationType(m_notificationType)) << "&";
   }
 
-  if(m_snsTopicHasBeenSet)
-  {
+  if (m_snsTopicHasBeenSet) {
     ss << "SnsTopic=" << StringUtils::URLEncode(m_snsTopic.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetIdentityNotificationTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetIdentityNotificationTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

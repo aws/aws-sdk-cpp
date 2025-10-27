@@ -12,27 +12,18 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCommentRequest::SerializePayload() const
-{
+Aws::String GetCommentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_commentIdHasBeenSet)
-  {
-   payload.WithString("commentId", m_commentId);
-
+  if (m_commentIdHasBeenSet) {
+    payload.WithString("commentId", m_commentId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCommentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCommentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetComment"));
   return headers;
-
 }
-
-
-
-

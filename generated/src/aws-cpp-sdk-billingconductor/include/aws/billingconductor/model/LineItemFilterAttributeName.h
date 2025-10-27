@@ -7,24 +7,16 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
-  enum class LineItemFilterAttributeName
-  {
-    NOT_SET,
-    LINE_ITEM_TYPE
-  };
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
+enum class LineItemFilterAttributeName { NOT_SET, LINE_ITEM_TYPE };
 
-namespace LineItemFilterAttributeNameMapper
-{
+namespace LineItemFilterAttributeNameMapper {
 AWS_BILLINGCONDUCTOR_API LineItemFilterAttributeName GetLineItemFilterAttributeNameForName(const Aws::String& name);
 
 AWS_BILLINGCONDUCTOR_API Aws::String GetNameForLineItemFilterAttributeName(LineItemFilterAttributeName value);
-} // namespace LineItemFilterAttributeNameMapper
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace LineItemFilterAttributeNameMapper
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

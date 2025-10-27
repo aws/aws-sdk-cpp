@@ -12,60 +12,43 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeScheduledActionsRequest::SerializePayload() const
-{
+Aws::String DescribeScheduledActionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scheduledActionNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> scheduledActionNamesJsonList(m_scheduledActionNames.size());
-   for(unsigned scheduledActionNamesIndex = 0; scheduledActionNamesIndex < scheduledActionNamesJsonList.GetLength(); ++scheduledActionNamesIndex)
-   {
-     scheduledActionNamesJsonList[scheduledActionNamesIndex].AsString(m_scheduledActionNames[scheduledActionNamesIndex]);
-   }
-   payload.WithArray("ScheduledActionNames", std::move(scheduledActionNamesJsonList));
-
+  if (m_scheduledActionNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scheduledActionNamesJsonList(m_scheduledActionNames.size());
+    for (unsigned scheduledActionNamesIndex = 0; scheduledActionNamesIndex < scheduledActionNamesJsonList.GetLength();
+         ++scheduledActionNamesIndex) {
+      scheduledActionNamesJsonList[scheduledActionNamesIndex].AsString(m_scheduledActionNames[scheduledActionNamesIndex]);
+    }
+    payload.WithArray("ScheduledActionNames", std::move(scheduledActionNamesJsonList));
   }
 
-  if(m_serviceNamespaceHasBeenSet)
-  {
-   payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
+  if (m_serviceNamespaceHasBeenSet) {
+    payload.WithString("ServiceNamespace", ServiceNamespaceMapper::GetNameForServiceNamespace(m_serviceNamespace));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_scalableDimensionHasBeenSet)
-  {
-   payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
+  if (m_scalableDimensionHasBeenSet) {
+    payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeScheduledActionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeScheduledActionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AnyScaleFrontendService.DescribeScheduledActions"));
   return headers;
-
 }
-
-
-
-

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeEventSubscriptionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/DescribeEventSubscriptionsResult.h>
 
 #include <utility>
 
@@ -17,36 +17,29 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEventSubscriptionsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEventSubscriptionsResult")) {
     resultNode = rootNode.FirstChild("DescribeEventSubscriptionsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode eventSubscriptionsListNode = resultNode.FirstChild("EventSubscriptionsList");
-    if(!eventSubscriptionsListNode.IsNull())
-    {
+    if (!eventSubscriptionsListNode.IsNull()) {
       XmlNode eventSubscriptionsListMember = eventSubscriptionsListNode.FirstChild("EventSubscription");
       m_eventSubscriptionsListHasBeenSet = !eventSubscriptionsListMember.IsNull();
-      while(!eventSubscriptionsListMember.IsNull())
-      {
+      while (!eventSubscriptionsListMember.IsNull()) {
         m_eventSubscriptionsList.push_back(eventSubscriptionsListMember);
         eventSubscriptionsListMember = eventSubscriptionsListMember.NextNode("EventSubscription");
       }
@@ -59,7 +52,8 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEventSubscriptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEventSubscriptionsResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,80 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/CognitoUserPoolConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/CognitoUserPoolConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-CognitoUserPoolConfiguration::CognitoUserPoolConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CognitoUserPoolConfiguration::CognitoUserPoolConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CognitoUserPoolConfiguration& CognitoUserPoolConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userPoolArn"))
-  {
+CognitoUserPoolConfiguration& CognitoUserPoolConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userPoolArn")) {
     m_userPoolArn = jsonValue.GetString("userPoolArn");
     m_userPoolArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientIds"))
-  {
+  if (jsonValue.ValueExists("clientIds")) {
     Aws::Utils::Array<JsonView> clientIdsJsonList = jsonValue.GetArray("clientIds");
-    for(unsigned clientIdsIndex = 0; clientIdsIndex < clientIdsJsonList.GetLength(); ++clientIdsIndex)
-    {
+    for (unsigned clientIdsIndex = 0; clientIdsIndex < clientIdsJsonList.GetLength(); ++clientIdsIndex) {
       m_clientIds.push_back(clientIdsJsonList[clientIdsIndex].AsString());
     }
     m_clientIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupConfiguration"))
-  {
+  if (jsonValue.ValueExists("groupConfiguration")) {
     m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
     m_groupConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CognitoUserPoolConfiguration::Jsonize() const
-{
+JsonValue CognitoUserPoolConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_userPoolArnHasBeenSet)
-  {
-   payload.WithString("userPoolArn", m_userPoolArn);
-
+  if (m_userPoolArnHasBeenSet) {
+    payload.WithString("userPoolArn", m_userPoolArn);
   }
 
-  if(m_clientIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> clientIdsJsonList(m_clientIds.size());
-   for(unsigned clientIdsIndex = 0; clientIdsIndex < clientIdsJsonList.GetLength(); ++clientIdsIndex)
-   {
-     clientIdsJsonList[clientIdsIndex].AsString(m_clientIds[clientIdsIndex]);
-   }
-   payload.WithArray("clientIds", std::move(clientIdsJsonList));
-
+  if (m_clientIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> clientIdsJsonList(m_clientIds.size());
+    for (unsigned clientIdsIndex = 0; clientIdsIndex < clientIdsJsonList.GetLength(); ++clientIdsIndex) {
+      clientIdsJsonList[clientIdsIndex].AsString(m_clientIds[clientIdsIndex]);
+    }
+    payload.WithArray("clientIds", std::move(clientIdsJsonList));
   }
 
-  if(m_groupConfigurationHasBeenSet)
-  {
-   payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
-
+  if (m_groupConfigurationHasBeenSet) {
+    payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

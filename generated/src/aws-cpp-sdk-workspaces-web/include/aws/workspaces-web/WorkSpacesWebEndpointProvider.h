@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/workspaces-web/WorkSpacesWebEndpointRules.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using WorkSpacesWebClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using WorkSpacesWebDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_WORKSPACESWEB_API WorkSpacesWebEndpointProvider : public WorkSpacesWebDefaultEpProviderBase
-{
-public:
-    using WorkSpacesWebResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_WORKSPACESWEB_API WorkSpacesWebEndpointProvider : public WorkSpacesWebDefaultEpProviderBase {
+ public:
+  using WorkSpacesWebResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    WorkSpacesWebEndpointProvider()
-      : WorkSpacesWebDefaultEpProviderBase(Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::GetRulesBlob(), Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::RulesBlobSize)
-    {}
+  WorkSpacesWebEndpointProvider()
+      : WorkSpacesWebDefaultEpProviderBase(Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::GetRulesBlob(),
+                                           Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::RulesBlobSize) {}
 
-    ~WorkSpacesWebEndpointProvider()
-    {
-    }
+  ~WorkSpacesWebEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

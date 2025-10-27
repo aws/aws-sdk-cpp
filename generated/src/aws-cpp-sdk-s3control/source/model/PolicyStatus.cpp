@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/PolicyStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/PolicyStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-PolicyStatus::PolicyStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PolicyStatus::PolicyStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PolicyStatus& PolicyStatus::operator =(const XmlNode& xmlNode)
-{
+PolicyStatus& PolicyStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode isPublicNode = resultNode.FirstChild("IsPublic");
-    if(!isPublicNode.IsNull())
-    {
-      m_isPublic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPublicNode.GetText()).c_str()).c_str());
+    if (!isPublicNode.IsNull()) {
+      m_isPublic =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPublicNode.GetText()).c_str()).c_str());
       m_isPublicHasBeenSet = true;
     }
   }
@@ -42,19 +34,16 @@ PolicyStatus& PolicyStatus::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void PolicyStatus::AddToNode(XmlNode& parentNode) const
-{
+void PolicyStatus::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_isPublicHasBeenSet)
-  {
-   XmlNode isPublicNode = parentNode.CreateChildElement("IsPublic");
-   ss << std::boolalpha << m_isPublic;
-   isPublicNode.SetText(ss.str());
-   ss.str("");
+  if (m_isPublicHasBeenSet) {
+    XmlNode isPublicNode = parentNode.CreateChildElement("IsPublic");
+    ss << std::boolalpha << m_isPublic;
+    isPublicNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

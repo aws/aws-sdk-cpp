@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/QueryArgProfile.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode) { *this = xmlNode; }
 
-QueryArgProfile& QueryArgProfile::operator =(const XmlNode& xmlNode)
-{
+QueryArgProfile& QueryArgProfile::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode queryArgNode = resultNode.FirstChild("QueryArg");
-    if(!queryArgNode.IsNull())
-    {
+    if (!queryArgNode.IsNull()) {
       m_queryArg = Aws::Utils::Xml::DecodeEscapedXmlText(queryArgNode.GetText());
       m_queryArgHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
-    if(!profileIdNode.IsNull())
-    {
+    if (!profileIdNode.IsNull()) {
       m_profileId = Aws::Utils::Xml::DecodeEscapedXmlText(profileIdNode.GetText());
       m_profileIdHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ QueryArgProfile& QueryArgProfile::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void QueryArgProfile::AddToNode(XmlNode& parentNode) const
-{
+void QueryArgProfile::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_queryArgHasBeenSet)
-  {
-   XmlNode queryArgNode = parentNode.CreateChildElement("QueryArg");
-   queryArgNode.SetText(m_queryArg);
+  if (m_queryArgHasBeenSet) {
+    XmlNode queryArgNode = parentNode.CreateChildElement("QueryArg");
+    queryArgNode.SetText(m_queryArg);
   }
 
-  if(m_profileIdHasBeenSet)
-  {
-   XmlNode profileIdNode = parentNode.CreateChildElement("ProfileId");
-   profileIdNode.SetText(m_profileId);
+  if (m_profileIdHasBeenSet) {
+    XmlNode profileIdNode = parentNode.CreateChildElement("ProfileId");
+    profileIdNode.SetText(m_profileId);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

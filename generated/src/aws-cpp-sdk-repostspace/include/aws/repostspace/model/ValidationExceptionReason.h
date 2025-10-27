@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/repostspace/Repostspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace repostspace
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    unknownOperation,
-    cannotParse,
-    fieldValidationFailed,
-    other
-  };
+namespace Aws {
+namespace repostspace {
+namespace Model {
+enum class ValidationExceptionReason { NOT_SET, unknownOperation, cannotParse, fieldValidationFailed, other };
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_REPOSTSPACE_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_REPOSTSPACE_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace repostspace
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace repostspace
+}  // namespace Aws

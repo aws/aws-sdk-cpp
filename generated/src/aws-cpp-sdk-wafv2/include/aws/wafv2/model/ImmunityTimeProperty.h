@@ -6,55 +6,53 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WAFV2 {
+namespace Model {
 
+/**
+ * <p>Used for CAPTCHA and challenge token settings. Determines how long a
+ * <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it
+ * for a successful <code>CAPTCHA</code> or challenge response. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ImmunityTimeProperty">AWS
+ * API Reference</a></p>
+ */
+class ImmunityTimeProperty {
+ public:
+  AWS_WAFV2_API ImmunityTimeProperty() = default;
+  AWS_WAFV2_API ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WAFV2_API ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Used for CAPTCHA and challenge token settings. Determines how long a
-   * <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it
-   * for a successful <code>CAPTCHA</code> or challenge response. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ImmunityTimeProperty">AWS
-   * API Reference</a></p>
+   * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
+   * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
+   * the Challenge action, the minimum setting is 300. </p>
    */
-  class ImmunityTimeProperty
-  {
-  public:
-    AWS_WAFV2_API ImmunityTimeProperty() = default;
-    AWS_WAFV2_API ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WAFV2_API ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetImmunityTime() const { return m_immunityTime; }
+  inline bool ImmunityTimeHasBeenSet() const { return m_immunityTimeHasBeenSet; }
+  inline void SetImmunityTime(long long value) {
+    m_immunityTimeHasBeenSet = true;
+    m_immunityTime = value;
+  }
+  inline ImmunityTimeProperty& WithImmunityTime(long long value) {
+    SetImmunityTime(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_immunityTime{0};
+  bool m_immunityTimeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
-     * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
-     * the Challenge action, the minimum setting is 300. </p>
-     */
-    inline long long GetImmunityTime() const { return m_immunityTime; }
-    inline bool ImmunityTimeHasBeenSet() const { return m_immunityTimeHasBeenSet; }
-    inline void SetImmunityTime(long long value) { m_immunityTimeHasBeenSet = true; m_immunityTime = value; }
-    inline ImmunityTimeProperty& WithImmunityTime(long long value) { SetImmunityTime(value); return *this;}
-    ///@}
-  private:
-
-    long long m_immunityTime{0};
-    bool m_immunityTimeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

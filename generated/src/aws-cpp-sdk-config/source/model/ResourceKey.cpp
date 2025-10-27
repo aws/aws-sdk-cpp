@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceKey::ResourceKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceKey::ResourceKey(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceKey& ResourceKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceType"))
-  {
+ResourceKey& ResourceKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
-  {
+  if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceKey::Jsonize() const
-{
+JsonValue ResourceKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/AppliedOrchestrationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/AppliedOrchestrationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-AppliedOrchestrationConfiguration::AppliedOrchestrationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppliedOrchestrationConfiguration::AppliedOrchestrationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AppliedOrchestrationConfiguration& AppliedOrchestrationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("control"))
-  {
+AppliedOrchestrationConfiguration& AppliedOrchestrationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("control")) {
     m_control = OrchestrationControlMapper::GetOrchestrationControlForName(jsonValue.GetString("control"));
     m_controlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppliedOrchestrationConfiguration::Jsonize() const
-{
+JsonValue AppliedOrchestrationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", OrchestrationControlMapper::GetNameForOrchestrationControl(m_control));
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", OrchestrationControlMapper::GetNameForOrchestrationControl(m_control));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/WcdmaNmrObj.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/WcdmaNmrObj.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-WcdmaNmrObj::WcdmaNmrObj(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WcdmaNmrObj::WcdmaNmrObj(JsonView jsonValue) { *this = jsonValue; }
 
-WcdmaNmrObj& WcdmaNmrObj::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Uarfcndl"))
-  {
+WcdmaNmrObj& WcdmaNmrObj::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Uarfcndl")) {
     m_uarfcndl = jsonValue.GetInteger("Uarfcndl");
     m_uarfcndlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Psc"))
-  {
+  if (jsonValue.ValueExists("Psc")) {
     m_psc = jsonValue.GetInteger("Psc");
     m_pscHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UtranCid"))
-  {
+  if (jsonValue.ValueExists("UtranCid")) {
     m_utranCid = jsonValue.GetInteger("UtranCid");
     m_utranCidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Rscp"))
-  {
+  if (jsonValue.ValueExists("Rscp")) {
     m_rscp = jsonValue.GetInteger("Rscp");
     m_rscpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PathLoss"))
-  {
+  if (jsonValue.ValueExists("PathLoss")) {
     m_pathLoss = jsonValue.GetInteger("PathLoss");
     m_pathLossHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WcdmaNmrObj::Jsonize() const
-{
+JsonValue WcdmaNmrObj::Jsonize() const {
   JsonValue payload;
 
-  if(m_uarfcndlHasBeenSet)
-  {
-   payload.WithInteger("Uarfcndl", m_uarfcndl);
-
+  if (m_uarfcndlHasBeenSet) {
+    payload.WithInteger("Uarfcndl", m_uarfcndl);
   }
 
-  if(m_pscHasBeenSet)
-  {
-   payload.WithInteger("Psc", m_psc);
-
+  if (m_pscHasBeenSet) {
+    payload.WithInteger("Psc", m_psc);
   }
 
-  if(m_utranCidHasBeenSet)
-  {
-   payload.WithInteger("UtranCid", m_utranCid);
-
+  if (m_utranCidHasBeenSet) {
+    payload.WithInteger("UtranCid", m_utranCid);
   }
 
-  if(m_rscpHasBeenSet)
-  {
-   payload.WithInteger("Rscp", m_rscp);
-
+  if (m_rscpHasBeenSet) {
+    payload.WithInteger("Rscp", m_rscp);
   }
 
-  if(m_pathLossHasBeenSet)
-  {
-   payload.WithInteger("PathLoss", m_pathLoss);
-
+  if (m_pathLossHasBeenSet) {
+    payload.WithInteger("PathLoss", m_pathLoss);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class MonitoringJobDefinitionSortKey
-  {
-    NOT_SET,
-    Name,
-    CreationTime
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class MonitoringJobDefinitionSortKey { NOT_SET, Name, CreationTime };
 
-namespace MonitoringJobDefinitionSortKeyMapper
-{
+namespace MonitoringJobDefinitionSortKeyMapper {
 AWS_SAGEMAKER_API MonitoringJobDefinitionSortKey GetMonitoringJobDefinitionSortKeyForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForMonitoringJobDefinitionSortKey(MonitoringJobDefinitionSortKey value);
-} // namespace MonitoringJobDefinitionSortKeyMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace MonitoringJobDefinitionSortKeyMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/DisassociateManagedNotificationAdditionalChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/notifications/model/DisassociateManagedNotificationAdditionalChannelRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateManagedNotificationAdditionalChannelRequest::SerializePayload() const
-{
+Aws::String DisassociateManagedNotificationAdditionalChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_managedNotificationConfigurationArnHasBeenSet)
-  {
-   payload.WithString("managedNotificationConfigurationArn", m_managedNotificationConfigurationArn);
-
+  if (m_managedNotificationConfigurationArnHasBeenSet) {
+    payload.WithString("managedNotificationConfigurationArn", m_managedNotificationConfigurationArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

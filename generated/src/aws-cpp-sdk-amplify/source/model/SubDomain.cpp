@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-SubDomain::SubDomain(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubDomain::SubDomain(JsonView jsonValue) { *this = jsonValue; }
 
-SubDomain& SubDomain::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("subDomainSetting"))
-  {
+SubDomain& SubDomain::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("subDomainSetting")) {
     m_subDomainSetting = jsonValue.GetObject("subDomainSetting");
     m_subDomainSettingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verified"))
-  {
+  if (jsonValue.ValueExists("verified")) {
     m_verified = jsonValue.GetBool("verified");
     m_verifiedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dnsRecord"))
-  {
+  if (jsonValue.ValueExists("dnsRecord")) {
     m_dnsRecord = jsonValue.GetString("dnsRecord");
     m_dnsRecordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubDomain::Jsonize() const
-{
+JsonValue SubDomain::Jsonize() const {
   JsonValue payload;
 
-  if(m_subDomainSettingHasBeenSet)
-  {
-   payload.WithObject("subDomainSetting", m_subDomainSetting.Jsonize());
-
+  if (m_subDomainSettingHasBeenSet) {
+    payload.WithObject("subDomainSetting", m_subDomainSetting.Jsonize());
   }
 
-  if(m_verifiedHasBeenSet)
-  {
-   payload.WithBool("verified", m_verified);
-
+  if (m_verifiedHasBeenSet) {
+    payload.WithBool("verified", m_verified);
   }
 
-  if(m_dnsRecordHasBeenSet)
-  {
-   payload.WithString("dnsRecord", m_dnsRecord);
-
+  if (m_dnsRecordHasBeenSet) {
+    payload.WithString("dnsRecord", m_dnsRecord);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

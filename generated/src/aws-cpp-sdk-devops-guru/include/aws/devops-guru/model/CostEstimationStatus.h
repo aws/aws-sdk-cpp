@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class CostEstimationStatus
-  {
-    NOT_SET,
-    ONGOING,
-    COMPLETED
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class CostEstimationStatus { NOT_SET, ONGOING, COMPLETED };
 
-namespace CostEstimationStatusMapper
-{
+namespace CostEstimationStatusMapper {
 AWS_DEVOPSGURU_API CostEstimationStatus GetCostEstimationStatusForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForCostEstimationStatus(CostEstimationStatus value);
-} // namespace CostEstimationStatusMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace CostEstimationStatusMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

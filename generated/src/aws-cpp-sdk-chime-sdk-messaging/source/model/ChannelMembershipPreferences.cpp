@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-ChannelMembershipPreferences::ChannelMembershipPreferences(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelMembershipPreferences::ChannelMembershipPreferences(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelMembershipPreferences& ChannelMembershipPreferences::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PushNotifications"))
-  {
+ChannelMembershipPreferences& ChannelMembershipPreferences::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PushNotifications")) {
     m_pushNotifications = jsonValue.GetObject("PushNotifications");
     m_pushNotificationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelMembershipPreferences::Jsonize() const
-{
+JsonValue ChannelMembershipPreferences::Jsonize() const {
   JsonValue payload;
 
-  if(m_pushNotificationsHasBeenSet)
-  {
-   payload.WithObject("PushNotifications", m_pushNotifications.Jsonize());
-
+  if (m_pushNotificationsHasBeenSet) {
+    payload.WithObject("PushNotifications", m_pushNotifications.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

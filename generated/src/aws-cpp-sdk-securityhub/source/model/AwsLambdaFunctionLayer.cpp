@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsLambdaFunctionLayer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsLambdaFunctionLayer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsLambdaFunctionLayer::AwsLambdaFunctionLayer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsLambdaFunctionLayer::AwsLambdaFunctionLayer(JsonView jsonValue) { *this = jsonValue; }
 
-AwsLambdaFunctionLayer& AwsLambdaFunctionLayer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+AwsLambdaFunctionLayer& AwsLambdaFunctionLayer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeSize"))
-  {
+  if (jsonValue.ValueExists("CodeSize")) {
     m_codeSize = jsonValue.GetInteger("CodeSize");
     m_codeSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsLambdaFunctionLayer::Jsonize() const
-{
+JsonValue AwsLambdaFunctionLayer::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_codeSizeHasBeenSet)
-  {
-   payload.WithInteger("CodeSize", m_codeSize);
-
+  if (m_codeSizeHasBeenSet) {
+    payload.WithInteger("CodeSize", m_codeSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

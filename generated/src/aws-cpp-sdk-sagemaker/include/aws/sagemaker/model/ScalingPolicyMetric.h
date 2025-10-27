@@ -6,70 +6,74 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>The metric for a scaling policy.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ScalingPolicyMetric">AWS
+ * API Reference</a></p>
+ */
+class ScalingPolicyMetric {
+ public:
+  AWS_SAGEMAKER_API ScalingPolicyMetric() = default;
+  AWS_SAGEMAKER_API ScalingPolicyMetric(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API ScalingPolicyMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The metric for a scaling policy.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ScalingPolicyMetric">AWS
-   * API Reference</a></p>
+   * <p>The number of invocations sent to a model, normalized by
+   * <code>InstanceCount</code> in each ProductionVariant.
+   * <code>1/numberOfInstances</code> is sent as the value on each request, where
+   * <code>numberOfInstances</code> is the number of active instances for the
+   * ProductionVariant behind the endpoint at the time of the request.</p>
    */
-  class ScalingPolicyMetric
-  {
-  public:
-    AWS_SAGEMAKER_API ScalingPolicyMetric() = default;
-    AWS_SAGEMAKER_API ScalingPolicyMetric(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API ScalingPolicyMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetInvocationsPerInstance() const { return m_invocationsPerInstance; }
+  inline bool InvocationsPerInstanceHasBeenSet() const { return m_invocationsPerInstanceHasBeenSet; }
+  inline void SetInvocationsPerInstance(int value) {
+    m_invocationsPerInstanceHasBeenSet = true;
+    m_invocationsPerInstance = value;
+  }
+  inline ScalingPolicyMetric& WithInvocationsPerInstance(int value) {
+    SetInvocationsPerInstance(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The interval of time taken by a model to respond as viewed from SageMaker.
+   * This interval includes the local communication times taken to send the request
+   * and to fetch the response from the container of a model and the time taken to
+   * complete the inference in the container.</p>
+   */
+  inline int GetModelLatency() const { return m_modelLatency; }
+  inline bool ModelLatencyHasBeenSet() const { return m_modelLatencyHasBeenSet; }
+  inline void SetModelLatency(int value) {
+    m_modelLatencyHasBeenSet = true;
+    m_modelLatency = value;
+  }
+  inline ScalingPolicyMetric& WithModelLatency(int value) {
+    SetModelLatency(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_invocationsPerInstance{0};
+  bool m_invocationsPerInstanceHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of invocations sent to a model, normalized by
-     * <code>InstanceCount</code> in each ProductionVariant.
-     * <code>1/numberOfInstances</code> is sent as the value on each request, where
-     * <code>numberOfInstances</code> is the number of active instances for the
-     * ProductionVariant behind the endpoint at the time of the request.</p>
-     */
-    inline int GetInvocationsPerInstance() const { return m_invocationsPerInstance; }
-    inline bool InvocationsPerInstanceHasBeenSet() const { return m_invocationsPerInstanceHasBeenSet; }
-    inline void SetInvocationsPerInstance(int value) { m_invocationsPerInstanceHasBeenSet = true; m_invocationsPerInstance = value; }
-    inline ScalingPolicyMetric& WithInvocationsPerInstance(int value) { SetInvocationsPerInstance(value); return *this;}
-    ///@}
+  int m_modelLatency{0};
+  bool m_modelLatencyHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * This interval includes the local communication times taken to send the request
-     * and to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
-    inline int GetModelLatency() const { return m_modelLatency; }
-    inline bool ModelLatencyHasBeenSet() const { return m_modelLatencyHasBeenSet; }
-    inline void SetModelLatency(int value) { m_modelLatencyHasBeenSet = true; m_modelLatency = value; }
-    inline ScalingPolicyMetric& WithModelLatency(int value) { SetModelLatency(value); return *this;}
-    ///@}
-  private:
-
-    int m_invocationsPerInstance{0};
-    bool m_invocationsPerInstanceHasBeenSet = false;
-
-    int m_modelLatency{0};
-    bool m_modelLatencyHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

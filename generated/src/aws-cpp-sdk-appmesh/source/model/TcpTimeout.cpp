@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-TcpTimeout::TcpTimeout(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TcpTimeout::TcpTimeout(JsonView jsonValue) { *this = jsonValue; }
 
-TcpTimeout& TcpTimeout::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("idle"))
-  {
+TcpTimeout& TcpTimeout::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("idle")) {
     m_idle = jsonValue.GetObject("idle");
     m_idleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TcpTimeout::Jsonize() const
-{
+JsonValue TcpTimeout::Jsonize() const {
   JsonValue payload;
 
-  if(m_idleHasBeenSet)
-  {
-   payload.WithObject("idle", m_idle.Jsonize());
-
+  if (m_idleHasBeenSet) {
+    payload.WithObject("idle", m_idle.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

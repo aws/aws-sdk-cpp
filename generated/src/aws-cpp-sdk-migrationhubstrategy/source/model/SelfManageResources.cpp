@@ -3,58 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/SelfManageResources.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/SelfManageResources.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-SelfManageResources::SelfManageResources(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SelfManageResources::SelfManageResources(JsonView jsonValue) { *this = jsonValue; }
 
-SelfManageResources& SelfManageResources::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("targetDestination"))
-  {
+SelfManageResources& SelfManageResources::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetDestination")) {
     Aws::Utils::Array<JsonView> targetDestinationJsonList = jsonValue.GetArray("targetDestination");
-    for(unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex)
-    {
-      m_targetDestination.push_back(SelfManageTargetDestinationMapper::GetSelfManageTargetDestinationForName(targetDestinationJsonList[targetDestinationIndex].AsString()));
+    for (unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex) {
+      m_targetDestination.push_back(SelfManageTargetDestinationMapper::GetSelfManageTargetDestinationForName(
+          targetDestinationJsonList[targetDestinationIndex].AsString()));
     }
     m_targetDestinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SelfManageResources::Jsonize() const
-{
+JsonValue SelfManageResources::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetDestinationHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetDestinationJsonList(m_targetDestination.size());
-   for(unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex)
-   {
-     targetDestinationJsonList[targetDestinationIndex].AsString(SelfManageTargetDestinationMapper::GetNameForSelfManageTargetDestination(m_targetDestination[targetDestinationIndex]));
-   }
-   payload.WithArray("targetDestination", std::move(targetDestinationJsonList));
-
+  if (m_targetDestinationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetDestinationJsonList(m_targetDestination.size());
+    for (unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex) {
+      targetDestinationJsonList[targetDestinationIndex].AsString(
+          SelfManageTargetDestinationMapper::GetNameForSelfManageTargetDestination(m_targetDestination[targetDestinationIndex]));
+    }
+    payload.WithArray("targetDestination", std::move(targetDestinationJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

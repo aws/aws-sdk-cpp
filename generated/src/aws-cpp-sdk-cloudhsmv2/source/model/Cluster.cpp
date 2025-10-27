@@ -11,249 +11,187 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudHSMV2
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudHSMV2 {
+namespace Model {
 
-Cluster::Cluster(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Cluster::Cluster(JsonView jsonValue) { *this = jsonValue; }
 
-Cluster& Cluster::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BackupPolicy"))
-  {
+Cluster& Cluster::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BackupPolicy")) {
     m_backupPolicy = BackupPolicyMapper::GetBackupPolicyForName(jsonValue.GetString("BackupPolicy"));
     m_backupPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackupRetentionPolicy"))
-  {
+  if (jsonValue.ValueExists("BackupRetentionPolicy")) {
     m_backupRetentionPolicy = jsonValue.GetObject("BackupRetentionPolicy");
     m_backupRetentionPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClusterId"))
-  {
+  if (jsonValue.ValueExists("ClusterId")) {
     m_clusterId = jsonValue.GetString("ClusterId");
     m_clusterIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreateTimestamp")) {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
     m_createTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Hsms"))
-  {
+  if (jsonValue.ValueExists("Hsms")) {
     Aws::Utils::Array<JsonView> hsmsJsonList = jsonValue.GetArray("Hsms");
-    for(unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex)
-    {
+    for (unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex) {
       m_hsms.push_back(hsmsJsonList[hsmsIndex].AsObject());
     }
     m_hsmsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HsmType"))
-  {
+  if (jsonValue.ValueExists("HsmType")) {
     m_hsmType = jsonValue.GetString("HsmType");
     m_hsmTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HsmTypeRollbackExpiration"))
-  {
+  if (jsonValue.ValueExists("HsmTypeRollbackExpiration")) {
     m_hsmTypeRollbackExpiration = jsonValue.GetDouble("HsmTypeRollbackExpiration");
     m_hsmTypeRollbackExpirationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PreCoPassword"))
-  {
+  if (jsonValue.ValueExists("PreCoPassword")) {
     m_preCoPassword = jsonValue.GetString("PreCoPassword");
     m_preCoPasswordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityGroup"))
-  {
+  if (jsonValue.ValueExists("SecurityGroup")) {
     m_securityGroup = jsonValue.GetString("SecurityGroup");
     m_securityGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceBackupId"))
-  {
+  if (jsonValue.ValueExists("SourceBackupId")) {
     m_sourceBackupId = jsonValue.GetString("SourceBackupId");
     m_sourceBackupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateMessage"))
-  {
+  if (jsonValue.ValueExists("StateMessage")) {
     m_stateMessage = jsonValue.GetString("StateMessage");
     m_stateMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetMapping"))
-  {
+  if (jsonValue.ValueExists("SubnetMapping")) {
     Aws::Map<Aws::String, JsonView> subnetMappingJsonMap = jsonValue.GetObject("SubnetMapping").GetAllObjects();
-    for(auto& subnetMappingItem : subnetMappingJsonMap)
-    {
+    for (auto& subnetMappingItem : subnetMappingJsonMap) {
       m_subnetMapping[subnetMappingItem.first] = subnetMappingItem.second.AsString();
     }
     m_subnetMappingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkType"))
-  {
+  if (jsonValue.ValueExists("NetworkType")) {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
     m_networkTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Certificates"))
-  {
+  if (jsonValue.ValueExists("Certificates")) {
     m_certificates = jsonValue.GetObject("Certificates");
     m_certificatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagList"))
-  {
+  if (jsonValue.ValueExists("TagList")) {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
-    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-    {
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
     }
     m_tagListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mode"))
-  {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Cluster::Jsonize() const
-{
+JsonValue Cluster::Jsonize() const {
   JsonValue payload;
 
-  if(m_backupPolicyHasBeenSet)
-  {
-   payload.WithString("BackupPolicy", BackupPolicyMapper::GetNameForBackupPolicy(m_backupPolicy));
+  if (m_backupPolicyHasBeenSet) {
+    payload.WithString("BackupPolicy", BackupPolicyMapper::GetNameForBackupPolicy(m_backupPolicy));
   }
 
-  if(m_backupRetentionPolicyHasBeenSet)
-  {
-   payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
-
+  if (m_backupRetentionPolicyHasBeenSet) {
+    payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
   }
 
-  if(m_clusterIdHasBeenSet)
-  {
-   payload.WithString("ClusterId", m_clusterId);
-
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
   }
 
-  if(m_createTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
+  if (m_createTimestampHasBeenSet) {
+    payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_hsmsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> hsmsJsonList(m_hsms.size());
-   for(unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex)
-   {
-     hsmsJsonList[hsmsIndex].AsObject(m_hsms[hsmsIndex].Jsonize());
-   }
-   payload.WithArray("Hsms", std::move(hsmsJsonList));
-
+  if (m_hsmsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> hsmsJsonList(m_hsms.size());
+    for (unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex) {
+      hsmsJsonList[hsmsIndex].AsObject(m_hsms[hsmsIndex].Jsonize());
+    }
+    payload.WithArray("Hsms", std::move(hsmsJsonList));
   }
 
-  if(m_hsmTypeHasBeenSet)
-  {
-   payload.WithString("HsmType", m_hsmType);
-
+  if (m_hsmTypeHasBeenSet) {
+    payload.WithString("HsmType", m_hsmType);
   }
 
-  if(m_hsmTypeRollbackExpirationHasBeenSet)
-  {
-   payload.WithDouble("HsmTypeRollbackExpiration", m_hsmTypeRollbackExpiration.SecondsWithMSPrecision());
+  if (m_hsmTypeRollbackExpirationHasBeenSet) {
+    payload.WithDouble("HsmTypeRollbackExpiration", m_hsmTypeRollbackExpiration.SecondsWithMSPrecision());
   }
 
-  if(m_preCoPasswordHasBeenSet)
-  {
-   payload.WithString("PreCoPassword", m_preCoPassword);
-
+  if (m_preCoPasswordHasBeenSet) {
+    payload.WithString("PreCoPassword", m_preCoPassword);
   }
 
-  if(m_securityGroupHasBeenSet)
-  {
-   payload.WithString("SecurityGroup", m_securityGroup);
-
+  if (m_securityGroupHasBeenSet) {
+    payload.WithString("SecurityGroup", m_securityGroup);
   }
 
-  if(m_sourceBackupIdHasBeenSet)
-  {
-   payload.WithString("SourceBackupId", m_sourceBackupId);
-
+  if (m_sourceBackupIdHasBeenSet) {
+    payload.WithString("SourceBackupId", m_sourceBackupId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ClusterStateMapper::GetNameForClusterState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ClusterStateMapper::GetNameForClusterState(m_state));
   }
 
-  if(m_stateMessageHasBeenSet)
-  {
-   payload.WithString("StateMessage", m_stateMessage);
-
+  if (m_stateMessageHasBeenSet) {
+    payload.WithString("StateMessage", m_stateMessage);
   }
 
-  if(m_subnetMappingHasBeenSet)
-  {
-   JsonValue subnetMappingJsonMap;
-   for(auto& subnetMappingItem : m_subnetMapping)
-   {
-     subnetMappingJsonMap.WithString(subnetMappingItem.first, subnetMappingItem.second);
-   }
-   payload.WithObject("SubnetMapping", std::move(subnetMappingJsonMap));
-
+  if (m_subnetMappingHasBeenSet) {
+    JsonValue subnetMappingJsonMap;
+    for (auto& subnetMappingItem : m_subnetMapping) {
+      subnetMappingJsonMap.WithString(subnetMappingItem.first, subnetMappingItem.second);
+    }
+    payload.WithObject("SubnetMapping", std::move(subnetMappingJsonMap));
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
-   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
-  if(m_certificatesHasBeenSet)
-  {
-   payload.WithObject("Certificates", m_certificates.Jsonize());
-
+  if (m_certificatesHasBeenSet) {
+    payload.WithObject("Certificates", m_certificates.Jsonize());
   }
 
-  if(m_tagListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
-   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-   {
-     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
-   }
-   payload.WithArray("TagList", std::move(tagListJsonList));
-
+  if (m_tagListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
+      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+    }
+    payload.WithArray("TagList", std::move(tagListJsonList));
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudHSMV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudHSMV2
+}  // namespace Aws

@@ -12,45 +12,30 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TestHypervisorConfigurationRequest::SerializePayload() const
-{
+Aws::String TestHypervisorConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gatewayArnHasBeenSet)
-  {
-   payload.WithString("GatewayArn", m_gatewayArn);
-
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
-  if(m_hostHasBeenSet)
-  {
-   payload.WithString("Host", m_host);
-
+  if (m_hostHasBeenSet) {
+    payload.WithString("Host", m_host);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("Password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection TestHypervisorConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection TestHypervisorConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.TestHypervisorConfiguration"));
   return headers;
-
 }
-
-
-
-

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DescribeCapacityReservationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DescribeCapacityReservationRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeCapacityReservationRequest::SerializePayload() const
-{
+Aws::String DescribeCapacityReservationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeCapacityReservation&";
-  if(m_loadBalancerArnHasBeenSet)
-  {
+  if (m_loadBalancerArnHasBeenSet) {
     ss << "LoadBalancerArn=" << StringUtils::URLEncode(m_loadBalancerArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeCapacityReservationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeCapacityReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeCapacityReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

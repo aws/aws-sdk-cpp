@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/ReplicationConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/ReplicationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xmlNode)
-{
+ReplicationConfiguration& ReplicationConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode roleNode = resultNode.FirstChild("Role");
-    if(!roleNode.IsNull())
-    {
+    if (!roleNode.IsNull()) {
       m_role = Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText());
       m_roleHasBeenSet = true;
     }
     XmlNode rulesNode = resultNode.FirstChild("Rules");
-    if(!rulesNode.IsNull())
-    {
+    if (!rulesNode.IsNull()) {
       XmlNode rulesMember = rulesNode.FirstChild("Rule");
       m_rulesHasBeenSet = !rulesMember.IsNull();
-      while(!rulesMember.IsNull())
-      {
+      while (!rulesMember.IsNull()) {
         m_rules.push_back(rulesMember);
         rulesMember = rulesMember.NextNode("Rule");
       }
@@ -55,27 +44,22 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
   return *this;
 }
 
-void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_roleHasBeenSet)
-  {
-   XmlNode roleNode = parentNode.CreateChildElement("Role");
-   roleNode.SetText(m_role);
+  if (m_roleHasBeenSet) {
+    XmlNode roleNode = parentNode.CreateChildElement("Role");
+    roleNode.SetText(m_role);
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   XmlNode rulesParentNode = parentNode.CreateChildElement("Rules");
-   for(const auto& item : m_rules)
-   {
-     XmlNode rulesNode = rulesParentNode.CreateChildElement("Rule");
-     item.AddToNode(rulesNode);
-   }
+  if (m_rulesHasBeenSet) {
+    XmlNode rulesParentNode = parentNode.CreateChildElement("Rules");
+    for (const auto& item : m_rules) {
+      XmlNode rulesNode = rulesParentNode.CreateChildElement("Rule");
+      item.AddToNode(rulesNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

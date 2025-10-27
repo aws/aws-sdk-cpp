@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ConverseTokensRequest::ConverseTokensRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConverseTokensRequest::ConverseTokensRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ConverseTokensRequest& ConverseTokensRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messages"))
-  {
+ConverseTokensRequest& ConverseTokensRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messages")) {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
-    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
-    {
+    for (unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex) {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
     m_messagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("system"))
-  {
+  if (jsonValue.ValueExists("system")) {
     Aws::Utils::Array<JsonView> systemJsonList = jsonValue.GetArray("system");
-    for(unsigned systemIndex = 0; systemIndex < systemJsonList.GetLength(); ++systemIndex)
-    {
+    for (unsigned systemIndex = 0; systemIndex < systemJsonList.GetLength(); ++systemIndex) {
       m_system.push_back(systemJsonList[systemIndex].AsObject());
     }
     m_systemHasBeenSet = true;
@@ -46,35 +35,28 @@ ConverseTokensRequest& ConverseTokensRequest::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ConverseTokensRequest::Jsonize() const
-{
+JsonValue ConverseTokensRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_messagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
-   for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
-   {
-     messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
-   }
-   payload.WithArray("messages", std::move(messagesJsonList));
-
+  if (m_messagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
+    for (unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex) {
+      messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
+    }
+    payload.WithArray("messages", std::move(messagesJsonList));
   }
 
-  if(m_systemHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> systemJsonList(m_system.size());
-   for(unsigned systemIndex = 0; systemIndex < systemJsonList.GetLength(); ++systemIndex)
-   {
-     systemJsonList[systemIndex].AsObject(m_system[systemIndex].Jsonize());
-   }
-   payload.WithArray("system", std::move(systemJsonList));
-
+  if (m_systemHasBeenSet) {
+    Aws::Utils::Array<JsonValue> systemJsonList(m_system.size());
+    for (unsigned systemIndex = 0; systemIndex < systemJsonList.GetLength(); ++systemIndex) {
+      systemJsonList[systemIndex].AsObject(m_system[systemIndex].Jsonize());
+    }
+    payload.WithArray("system", std::move(systemJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

@@ -12,24 +12,16 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSessionRequest::SerializePayload() const
-{
+Aws::String UpdateSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sessionMetadataHasBeenSet)
-  {
-   JsonValue sessionMetadataJsonMap;
-   for(auto& sessionMetadataItem : m_sessionMetadata)
-   {
-     sessionMetadataJsonMap.WithString(sessionMetadataItem.first, sessionMetadataItem.second);
-   }
-   payload.WithObject("sessionMetadata", std::move(sessionMetadataJsonMap));
-
+  if (m_sessionMetadataHasBeenSet) {
+    JsonValue sessionMetadataJsonMap;
+    for (auto& sessionMetadataItem : m_sessionMetadata) {
+      sessionMetadataJsonMap.WithString(sessionMetadataItem.first, sessionMetadataItem.second);
+    }
+    payload.WithObject("sessionMetadata", std::move(sessionMetadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/mediapackage/MediaPackageEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaPackage
-} // namespace Aws
+namespace Aws {
+namespace MediaPackage {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaPackage
+}  // namespace Aws

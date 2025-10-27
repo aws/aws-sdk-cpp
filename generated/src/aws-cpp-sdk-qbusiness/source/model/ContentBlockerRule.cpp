@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/ContentBlockerRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/ContentBlockerRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-ContentBlockerRule::ContentBlockerRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContentBlockerRule::ContentBlockerRule(JsonView jsonValue) { *this = jsonValue; }
 
-ContentBlockerRule& ContentBlockerRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("systemMessageOverride"))
-  {
+ContentBlockerRule& ContentBlockerRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("systemMessageOverride")) {
     m_systemMessageOverride = jsonValue.GetString("systemMessageOverride");
     m_systemMessageOverrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContentBlockerRule::Jsonize() const
-{
+JsonValue ContentBlockerRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_systemMessageOverrideHasBeenSet)
-  {
-   payload.WithString("systemMessageOverride", m_systemMessageOverride);
-
+  if (m_systemMessageOverrideHasBeenSet) {
+    payload.WithString("systemMessageOverride", m_systemMessageOverride);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/FunctionDefinitionVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/FunctionDefinitionVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue) { *this = jsonValue; }
 
-FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultConfig"))
-  {
+FunctionDefinitionVersion& FunctionDefinitionVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultConfig")) {
     m_defaultConfig = jsonValue.GetObject("DefaultConfig");
     m_defaultConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Functions"))
-  {
+  if (jsonValue.ValueExists("Functions")) {
     Aws::Utils::Array<JsonView> functionsJsonList = jsonValue.GetArray("Functions");
-    for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
-    {
+    for (unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex) {
       m_functions.push_back(functionsJsonList[functionsIndex].AsObject());
     }
     m_functionsHasBeenSet = true;
@@ -42,30 +32,24 @@ FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue FunctionDefinitionVersion::Jsonize() const
-{
+JsonValue FunctionDefinitionVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultConfigHasBeenSet)
-  {
-   payload.WithObject("DefaultConfig", m_defaultConfig.Jsonize());
-
+  if (m_defaultConfigHasBeenSet) {
+    payload.WithObject("DefaultConfig", m_defaultConfig.Jsonize());
   }
 
-  if(m_functionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
-   for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
-   {
-     functionsJsonList[functionsIndex].AsObject(m_functions[functionsIndex].Jsonize());
-   }
-   payload.WithArray("Functions", std::move(functionsJsonList));
-
+  if (m_functionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
+    for (unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex) {
+      functionsJsonList[functionsIndex].AsObject(m_functions[functionsIndex].Jsonize());
+    }
+    payload.WithArray("Functions", std::move(functionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

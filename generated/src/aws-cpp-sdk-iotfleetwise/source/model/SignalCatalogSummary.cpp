@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/SignalCatalogSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/SignalCatalogSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-SignalCatalogSummary::SignalCatalogSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SignalCatalogSummary::SignalCatalogSummary(JsonView jsonValue) { *this = jsonValue; }
 
-SignalCatalogSummary& SignalCatalogSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SignalCatalogSummary& SignalCatalogSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModificationTime"))
-  {
+  if (jsonValue.ValueExists("lastModificationTime")) {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
     m_lastModificationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SignalCatalogSummary::Jsonize() const
-{
+JsonValue SignalCatalogSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModificationTimeHasBeenSet)
-  {
-   payload.WithDouble("lastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
+  if (m_lastModificationTimeHasBeenSet) {
+    payload.WithDouble("lastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

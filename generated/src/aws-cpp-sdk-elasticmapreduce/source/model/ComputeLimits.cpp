@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/ComputeLimits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/ComputeLimits.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-ComputeLimits::ComputeLimits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComputeLimits::ComputeLimits(JsonView jsonValue) { *this = jsonValue; }
 
-ComputeLimits& ComputeLimits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UnitType"))
-  {
+ComputeLimits& ComputeLimits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UnitType")) {
     m_unitType = ComputeLimitsUnitTypeMapper::GetComputeLimitsUnitTypeForName(jsonValue.GetString("UnitType"));
     m_unitTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinimumCapacityUnits"))
-  {
+  if (jsonValue.ValueExists("MinimumCapacityUnits")) {
     m_minimumCapacityUnits = jsonValue.GetInteger("MinimumCapacityUnits");
     m_minimumCapacityUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumCapacityUnits"))
-  {
+  if (jsonValue.ValueExists("MaximumCapacityUnits")) {
     m_maximumCapacityUnits = jsonValue.GetInteger("MaximumCapacityUnits");
     m_maximumCapacityUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumOnDemandCapacityUnits"))
-  {
+  if (jsonValue.ValueExists("MaximumOnDemandCapacityUnits")) {
     m_maximumOnDemandCapacityUnits = jsonValue.GetInteger("MaximumOnDemandCapacityUnits");
     m_maximumOnDemandCapacityUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumCoreCapacityUnits"))
-  {
+  if (jsonValue.ValueExists("MaximumCoreCapacityUnits")) {
     m_maximumCoreCapacityUnits = jsonValue.GetInteger("MaximumCoreCapacityUnits");
     m_maximumCoreCapacityUnitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComputeLimits::Jsonize() const
-{
+JsonValue ComputeLimits::Jsonize() const {
   JsonValue payload;
 
-  if(m_unitTypeHasBeenSet)
-  {
-   payload.WithString("UnitType", ComputeLimitsUnitTypeMapper::GetNameForComputeLimitsUnitType(m_unitType));
+  if (m_unitTypeHasBeenSet) {
+    payload.WithString("UnitType", ComputeLimitsUnitTypeMapper::GetNameForComputeLimitsUnitType(m_unitType));
   }
 
-  if(m_minimumCapacityUnitsHasBeenSet)
-  {
-   payload.WithInteger("MinimumCapacityUnits", m_minimumCapacityUnits);
-
+  if (m_minimumCapacityUnitsHasBeenSet) {
+    payload.WithInteger("MinimumCapacityUnits", m_minimumCapacityUnits);
   }
 
-  if(m_maximumCapacityUnitsHasBeenSet)
-  {
-   payload.WithInteger("MaximumCapacityUnits", m_maximumCapacityUnits);
-
+  if (m_maximumCapacityUnitsHasBeenSet) {
+    payload.WithInteger("MaximumCapacityUnits", m_maximumCapacityUnits);
   }
 
-  if(m_maximumOnDemandCapacityUnitsHasBeenSet)
-  {
-   payload.WithInteger("MaximumOnDemandCapacityUnits", m_maximumOnDemandCapacityUnits);
-
+  if (m_maximumOnDemandCapacityUnitsHasBeenSet) {
+    payload.WithInteger("MaximumOnDemandCapacityUnits", m_maximumOnDemandCapacityUnits);
   }
 
-  if(m_maximumCoreCapacityUnitsHasBeenSet)
-  {
-   payload.WithInteger("MaximumCoreCapacityUnits", m_maximumCoreCapacityUnits);
-
+  if (m_maximumCoreCapacityUnitsHasBeenSet) {
+    payload.WithInteger("MaximumCoreCapacityUnits", m_maximumCoreCapacityUnits);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

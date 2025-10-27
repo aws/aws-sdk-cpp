@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/PlaceGeometry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/PlaceGeometry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-PlaceGeometry::PlaceGeometry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PlaceGeometry::PlaceGeometry(JsonView jsonValue) { *this = jsonValue; }
 
-PlaceGeometry& PlaceGeometry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Point"))
-  {
+PlaceGeometry& PlaceGeometry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Point")) {
     Aws::Utils::Array<JsonView> pointJsonList = jsonValue.GetArray("Point");
-    for(unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex)
-    {
+    for (unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex) {
       m_point.push_back(pointJsonList[pointIndex].AsDouble());
     }
     m_pointHasBeenSet = true;
@@ -37,24 +28,20 @@ PlaceGeometry& PlaceGeometry::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PlaceGeometry::Jsonize() const
-{
+JsonValue PlaceGeometry::Jsonize() const {
   JsonValue payload;
 
-  if(m_pointHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pointJsonList(m_point.size());
-   for(unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex)
-   {
-     pointJsonList[pointIndex].AsDouble(m_point[pointIndex]);
-   }
-   payload.WithArray("Point", std::move(pointJsonList));
-
+  if (m_pointHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pointJsonList(m_point.size());
+    for (unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex) {
+      pointJsonList[pointIndex].AsDouble(m_point[pointIndex]);
+    }
+    payload.WithArray("Point", std::move(pointJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/AutoMerging.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/AutoMerging.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-AutoMerging::AutoMerging(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoMerging::AutoMerging(JsonView jsonValue) { *this = jsonValue; }
 
-AutoMerging& AutoMerging::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+AutoMerging& AutoMerging::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Consolidation"))
-  {
+  if (jsonValue.ValueExists("Consolidation")) {
     m_consolidation = jsonValue.GetObject("Consolidation");
     m_consolidationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConflictResolution"))
-  {
+  if (jsonValue.ValueExists("ConflictResolution")) {
     m_conflictResolution = jsonValue.GetObject("ConflictResolution");
     m_conflictResolutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinAllowedConfidenceScoreForMerging"))
-  {
+  if (jsonValue.ValueExists("MinAllowedConfidenceScoreForMerging")) {
     m_minAllowedConfidenceScoreForMerging = jsonValue.GetDouble("MinAllowedConfidenceScoreForMerging");
     m_minAllowedConfidenceScoreForMergingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoMerging::Jsonize() const
-{
+JsonValue AutoMerging::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_consolidationHasBeenSet)
-  {
-   payload.WithObject("Consolidation", m_consolidation.Jsonize());
-
+  if (m_consolidationHasBeenSet) {
+    payload.WithObject("Consolidation", m_consolidation.Jsonize());
   }
 
-  if(m_conflictResolutionHasBeenSet)
-  {
-   payload.WithObject("ConflictResolution", m_conflictResolution.Jsonize());
-
+  if (m_conflictResolutionHasBeenSet) {
+    payload.WithObject("ConflictResolution", m_conflictResolution.Jsonize());
   }
 
-  if(m_minAllowedConfidenceScoreForMergingHasBeenSet)
-  {
-   payload.WithDouble("MinAllowedConfidenceScoreForMerging", m_minAllowedConfidenceScoreForMerging);
-
+  if (m_minAllowedConfidenceScoreForMergingHasBeenSet) {
+    payload.WithDouble("MinAllowedConfidenceScoreForMerging", m_minAllowedConfidenceScoreForMerging);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

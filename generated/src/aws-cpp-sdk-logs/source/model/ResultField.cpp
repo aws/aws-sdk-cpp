@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/ResultField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/ResultField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-ResultField::ResultField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultField::ResultField(JsonView jsonValue) { *this = jsonValue; }
 
-ResultField& ResultField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("field"))
-  {
+ResultField& ResultField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("field")) {
     m_field = jsonValue.GetString("field");
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultField::Jsonize() const
-{
+JsonValue ResultField::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithString("field", m_field);
-
+  if (m_fieldHasBeenSet) {
+    payload.WithString("field", m_field);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

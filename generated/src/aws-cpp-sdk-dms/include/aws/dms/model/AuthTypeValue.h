@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class AuthTypeValue
-  {
-    NOT_SET,
-    no,
-    password
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class AuthTypeValue { NOT_SET, no, password };
 
-namespace AuthTypeValueMapper
-{
+namespace AuthTypeValueMapper {
 AWS_DATABASEMIGRATIONSERVICE_API AuthTypeValue GetAuthTypeValueForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForAuthTypeValue(AuthTypeValue value);
-} // namespace AuthTypeValueMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace AuthTypeValueMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

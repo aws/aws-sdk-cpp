@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/AlarmModelSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/AlarmModelSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-AlarmModelSummary::AlarmModelSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlarmModelSummary::AlarmModelSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AlarmModelSummary& AlarmModelSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("creationTime"))
-  {
+AlarmModelSummary& AlarmModelSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("alarmModelDescription"))
-  {
+  if (jsonValue.ValueExists("alarmModelDescription")) {
     m_alarmModelDescription = jsonValue.GetString("alarmModelDescription");
     m_alarmModelDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("alarmModelName"))
-  {
+  if (jsonValue.ValueExists("alarmModelName")) {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
     m_alarmModelNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlarmModelSummary::Jsonize() const
-{
+JsonValue AlarmModelSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_alarmModelDescriptionHasBeenSet)
-  {
-   payload.WithString("alarmModelDescription", m_alarmModelDescription);
-
+  if (m_alarmModelDescriptionHasBeenSet) {
+    payload.WithString("alarmModelDescription", m_alarmModelDescription);
   }
 
-  if(m_alarmModelNameHasBeenSet)
-  {
-   payload.WithString("alarmModelName", m_alarmModelName);
-
+  if (m_alarmModelNameHasBeenSet) {
+    payload.WithString("alarmModelName", m_alarmModelName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

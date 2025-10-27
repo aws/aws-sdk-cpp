@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/support/model/DescribeCreateCaseOptionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/support/model/DescribeCreateCaseOptionsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCreateCaseOptionsResult::DescribeCreateCaseOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeCreateCaseOptionsResult::DescribeCreateCaseOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("languageAvailability"))
-  {
+  if (jsonValue.ValueExists("languageAvailability")) {
     m_languageAvailability = jsonValue.GetString("languageAvailability");
     m_languageAvailabilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("communicationTypes"))
-  {
+  if (jsonValue.ValueExists("communicationTypes")) {
     Aws::Utils::Array<JsonView> communicationTypesJsonList = jsonValue.GetArray("communicationTypes");
-    for(unsigned communicationTypesIndex = 0; communicationTypesIndex < communicationTypesJsonList.GetLength(); ++communicationTypesIndex)
-    {
+    for (unsigned communicationTypesIndex = 0; communicationTypesIndex < communicationTypesJsonList.GetLength();
+         ++communicationTypesIndex) {
       m_communicationTypes.push_back(communicationTypesJsonList[communicationTypesIndex].AsObject());
     }
     m_communicationTypesHasBeenSet = true;
@@ -42,12 +36,10 @@ DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

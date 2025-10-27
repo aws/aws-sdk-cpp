@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/ListResourceDataSyncRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/ListResourceDataSyncRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListResourceDataSyncRequest::SerializePayload() const
-{
+Aws::String ListResourceDataSyncRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_syncTypeHasBeenSet)
-  {
-   payload.WithString("SyncType", m_syncType);
-
+  if (m_syncTypeHasBeenSet) {
+    payload.WithString("SyncType", m_syncType);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListResourceDataSyncRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListResourceDataSyncRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.ListResourceDataSync"));
   return headers;
-
 }
-
-
-
-

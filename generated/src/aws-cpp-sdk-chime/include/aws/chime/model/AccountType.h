@@ -7,27 +7,16 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
-  enum class AccountType
-  {
-    NOT_SET,
-    Team,
-    EnterpriseDirectory,
-    EnterpriseLWA,
-    EnterpriseOIDC
-  };
+namespace Aws {
+namespace Chime {
+namespace Model {
+enum class AccountType { NOT_SET, Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC };
 
-namespace AccountTypeMapper
-{
+namespace AccountTypeMapper {
 AWS_CHIME_API AccountType GetAccountTypeForName(const Aws::String& name);
 
 AWS_CHIME_API Aws::String GetNameForAccountType(AccountType value);
-} // namespace AccountTypeMapper
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace AccountTypeMapper
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

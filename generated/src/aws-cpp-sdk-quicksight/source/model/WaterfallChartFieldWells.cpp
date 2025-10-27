@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/WaterfallChartFieldWells.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/WaterfallChartFieldWells.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-WaterfallChartFieldWells::WaterfallChartFieldWells(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WaterfallChartFieldWells::WaterfallChartFieldWells(JsonView jsonValue) { *this = jsonValue; }
 
-WaterfallChartFieldWells& WaterfallChartFieldWells::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WaterfallChartAggregatedFieldWells"))
-  {
+WaterfallChartFieldWells& WaterfallChartFieldWells::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WaterfallChartAggregatedFieldWells")) {
     m_waterfallChartAggregatedFieldWells = jsonValue.GetObject("WaterfallChartAggregatedFieldWells");
     m_waterfallChartAggregatedFieldWellsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WaterfallChartFieldWells::Jsonize() const
-{
+JsonValue WaterfallChartFieldWells::Jsonize() const {
   JsonValue payload;
 
-  if(m_waterfallChartAggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("WaterfallChartAggregatedFieldWells", m_waterfallChartAggregatedFieldWells.Jsonize());
-
+  if (m_waterfallChartAggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("WaterfallChartAggregatedFieldWells", m_waterfallChartAggregatedFieldWells.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

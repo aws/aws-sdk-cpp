@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-ImplementationSummary::ImplementationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImplementationSummary::ImplementationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ImplementationSummary& ImplementationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ImplementationSummary& ImplementationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Identifier"))
-  {
+  if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");
     m_identifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImplementationSummary::Jsonize() const
-{
+JsonValue ImplementationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

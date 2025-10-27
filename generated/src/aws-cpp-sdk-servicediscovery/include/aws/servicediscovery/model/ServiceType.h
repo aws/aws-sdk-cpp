@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
-  enum class ServiceType
-  {
-    NOT_SET,
-    HTTP,
-    DNS_HTTP,
-    DNS
-  };
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
+enum class ServiceType { NOT_SET, HTTP, DNS_HTTP, DNS };
 
-namespace ServiceTypeMapper
-{
+namespace ServiceTypeMapper {
 AWS_SERVICEDISCOVERY_API ServiceType GetServiceTypeForName(const Aws::String& name);
 
 AWS_SERVICEDISCOVERY_API Aws::String GetNameForServiceType(ServiceType value);
-} // namespace ServiceTypeMapper
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace ServiceTypeMapper
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

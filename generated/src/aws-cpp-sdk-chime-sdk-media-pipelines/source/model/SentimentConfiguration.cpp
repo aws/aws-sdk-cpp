@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-SentimentConfiguration::SentimentConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SentimentConfiguration::SentimentConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SentimentConfiguration& SentimentConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleName"))
-  {
+SentimentConfiguration& SentimentConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleName")) {
     m_ruleName = jsonValue.GetString("RuleName");
     m_ruleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SentimentType"))
-  {
+  if (jsonValue.ValueExists("SentimentType")) {
     m_sentimentType = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("SentimentType"));
     m_sentimentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimePeriod"))
-  {
+  if (jsonValue.ValueExists("TimePeriod")) {
     m_timePeriod = jsonValue.GetInteger("TimePeriod");
     m_timePeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SentimentConfiguration::Jsonize() const
-{
+JsonValue SentimentConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleNameHasBeenSet)
-  {
-   payload.WithString("RuleName", m_ruleName);
-
+  if (m_ruleNameHasBeenSet) {
+    payload.WithString("RuleName", m_ruleName);
   }
 
-  if(m_sentimentTypeHasBeenSet)
-  {
-   payload.WithString("SentimentType", SentimentTypeMapper::GetNameForSentimentType(m_sentimentType));
+  if (m_sentimentTypeHasBeenSet) {
+    payload.WithString("SentimentType", SentimentTypeMapper::GetNameForSentimentType(m_sentimentType));
   }
 
-  if(m_timePeriodHasBeenSet)
-  {
-   payload.WithInteger("TimePeriod", m_timePeriod);
-
+  if (m_timePeriodHasBeenSet) {
+    payload.WithInteger("TimePeriod", m_timePeriod);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

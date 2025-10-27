@@ -3,90 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/simspaceweaver/model/SimulationMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/simspaceweaver/model/SimulationMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SimSpaceWeaver
-{
-namespace Model
-{
+namespace Aws {
+namespace SimSpaceWeaver {
+namespace Model {
 
-SimulationMetadata::SimulationMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SimulationMetadata::SimulationMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-SimulationMetadata& SimulationMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+SimulationMetadata& SimulationMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = SimulationStatusMapper::GetSimulationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetStatus"))
-  {
+  if (jsonValue.ValueExists("TargetStatus")) {
     m_targetStatus = SimulationTargetStatusMapper::GetSimulationTargetStatusForName(jsonValue.GetString("TargetStatus"));
     m_targetStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SimulationMetadata::Jsonize() const
-{
+JsonValue SimulationMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", SimulationStatusMapper::GetNameForSimulationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", SimulationStatusMapper::GetNameForSimulationStatus(m_status));
   }
 
-  if(m_targetStatusHasBeenSet)
-  {
-   payload.WithString("TargetStatus", SimulationTargetStatusMapper::GetNameForSimulationTargetStatus(m_targetStatus));
+  if (m_targetStatusHasBeenSet) {
+    payload.WithString("TargetStatus", SimulationTargetStatusMapper::GetNameForSimulationTargetStatus(m_targetStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SimSpaceWeaver
-} // namespace Aws
+}  // namespace Model
+}  // namespace SimSpaceWeaver
+}  // namespace Aws

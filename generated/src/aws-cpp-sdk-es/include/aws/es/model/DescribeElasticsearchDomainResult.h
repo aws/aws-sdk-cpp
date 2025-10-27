@@ -4,69 +4,75 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ElasticsearchDomainStatus.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ElasticsearchService {
+namespace Model {
+/**
+ * <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains
+ * the status of the domain specified in the request.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainResponse">AWS
+ * API Reference</a></p>
+ */
+class DescribeElasticsearchDomainResult {
+ public:
+  AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult() = default;
+  AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains
-   * the status of the domain specified in the request.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainResponse">AWS
-   * API Reference</a></p>
+   * <p>The current status of the Elasticsearch domain.</p>
    */
-  class DescribeElasticsearchDomainResult
-  {
-  public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult() = default;
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const ElasticsearchDomainStatus& GetDomainStatus() const { return m_domainStatus; }
+  template <typename DomainStatusT = ElasticsearchDomainStatus>
+  void SetDomainStatus(DomainStatusT&& value) {
+    m_domainStatusHasBeenSet = true;
+    m_domainStatus = std::forward<DomainStatusT>(value);
+  }
+  template <typename DomainStatusT = ElasticsearchDomainStatus>
+  DescribeElasticsearchDomainResult& WithDomainStatus(DomainStatusT&& value) {
+    SetDomainStatus(std::forward<DomainStatusT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>The current status of the Elasticsearch domain.</p>
-     */
-    inline const ElasticsearchDomainStatus& GetDomainStatus() const { return m_domainStatus; }
-    template<typename DomainStatusT = ElasticsearchDomainStatus>
-    void SetDomainStatus(DomainStatusT&& value) { m_domainStatusHasBeenSet = true; m_domainStatus = std::forward<DomainStatusT>(value); }
-    template<typename DomainStatusT = ElasticsearchDomainStatus>
-    DescribeElasticsearchDomainResult& WithDomainStatus(DomainStatusT&& value) { SetDomainStatus(std::forward<DomainStatusT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeElasticsearchDomainResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ElasticsearchDomainStatus m_domainStatus;
+  bool m_domainStatusHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeElasticsearchDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    ElasticsearchDomainStatus m_domainStatus;
-    bool m_domainStatusHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

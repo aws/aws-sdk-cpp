@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/HeaderFooterSectionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/HeaderFooterSectionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HeaderFooterSectionConfiguration& HeaderFooterSectionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SectionId"))
-  {
+HeaderFooterSectionConfiguration& HeaderFooterSectionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SectionId")) {
     m_sectionId = jsonValue.GetString("SectionId");
     m_sectionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Layout"))
-  {
+  if (jsonValue.ValueExists("Layout")) {
     m_layout = jsonValue.GetObject("Layout");
     m_layoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Style"))
-  {
+  if (jsonValue.ValueExists("Style")) {
     m_style = jsonValue.GetObject("Style");
     m_styleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HeaderFooterSectionConfiguration::Jsonize() const
-{
+JsonValue HeaderFooterSectionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sectionIdHasBeenSet)
-  {
-   payload.WithString("SectionId", m_sectionId);
-
+  if (m_sectionIdHasBeenSet) {
+    payload.WithString("SectionId", m_sectionId);
   }
 
-  if(m_layoutHasBeenSet)
-  {
-   payload.WithObject("Layout", m_layout.Jsonize());
-
+  if (m_layoutHasBeenSet) {
+    payload.WithObject("Layout", m_layout.Jsonize());
   }
 
-  if(m_styleHasBeenSet)
-  {
-   payload.WithObject("Style", m_style.Jsonize());
-
+  if (m_styleHasBeenSet) {
+    payload.WithObject("Style", m_style.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

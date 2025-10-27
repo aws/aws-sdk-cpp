@@ -3,38 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/LineSeriesAxisDisplayOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/LineSeriesAxisDisplayOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions(JsonView jsonValue) { *this = jsonValue; }
 
-LineSeriesAxisDisplayOptions& LineSeriesAxisDisplayOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AxisOptions"))
-  {
+LineSeriesAxisDisplayOptions& LineSeriesAxisDisplayOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AxisOptions")) {
     m_axisOptions = jsonValue.GetObject("AxisOptions");
     m_axisOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MissingDataConfigurations"))
-  {
+  if (jsonValue.ValueExists("MissingDataConfigurations")) {
     Aws::Utils::Array<JsonView> missingDataConfigurationsJsonList = jsonValue.GetArray("MissingDataConfigurations");
-    for(unsigned missingDataConfigurationsIndex = 0; missingDataConfigurationsIndex < missingDataConfigurationsJsonList.GetLength(); ++missingDataConfigurationsIndex)
-    {
+    for (unsigned missingDataConfigurationsIndex = 0; missingDataConfigurationsIndex < missingDataConfigurationsJsonList.GetLength();
+         ++missingDataConfigurationsIndex) {
       m_missingDataConfigurations.push_back(missingDataConfigurationsJsonList[missingDataConfigurationsIndex].AsObject());
     }
     m_missingDataConfigurationsHasBeenSet = true;
@@ -42,30 +33,26 @@ LineSeriesAxisDisplayOptions& LineSeriesAxisDisplayOptions::operator =(JsonView 
   return *this;
 }
 
-JsonValue LineSeriesAxisDisplayOptions::Jsonize() const
-{
+JsonValue LineSeriesAxisDisplayOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_axisOptionsHasBeenSet)
-  {
-   payload.WithObject("AxisOptions", m_axisOptions.Jsonize());
-
+  if (m_axisOptionsHasBeenSet) {
+    payload.WithObject("AxisOptions", m_axisOptions.Jsonize());
   }
 
-  if(m_missingDataConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> missingDataConfigurationsJsonList(m_missingDataConfigurations.size());
-   for(unsigned missingDataConfigurationsIndex = 0; missingDataConfigurationsIndex < missingDataConfigurationsJsonList.GetLength(); ++missingDataConfigurationsIndex)
-   {
-     missingDataConfigurationsJsonList[missingDataConfigurationsIndex].AsObject(m_missingDataConfigurations[missingDataConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("MissingDataConfigurations", std::move(missingDataConfigurationsJsonList));
-
+  if (m_missingDataConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> missingDataConfigurationsJsonList(m_missingDataConfigurations.size());
+    for (unsigned missingDataConfigurationsIndex = 0; missingDataConfigurationsIndex < missingDataConfigurationsJsonList.GetLength();
+         ++missingDataConfigurationsIndex) {
+      missingDataConfigurationsJsonList[missingDataConfigurationsIndex].AsObject(
+          m_missingDataConfigurations[missingDataConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("MissingDataConfigurations", std::move(missingDataConfigurationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

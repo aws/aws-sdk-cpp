@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DatasetContentDeliveryDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/DatasetContentDeliveryDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-DatasetContentDeliveryDestination::DatasetContentDeliveryDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetContentDeliveryDestination::DatasetContentDeliveryDestination(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetContentDeliveryDestination& DatasetContentDeliveryDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("iotEventsDestinationConfiguration"))
-  {
+DatasetContentDeliveryDestination& DatasetContentDeliveryDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("iotEventsDestinationConfiguration")) {
     m_iotEventsDestinationConfiguration = jsonValue.GetObject("iotEventsDestinationConfiguration");
     m_iotEventsDestinationConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3DestinationConfiguration"))
-  {
+  if (jsonValue.ValueExists("s3DestinationConfiguration")) {
     m_s3DestinationConfiguration = jsonValue.GetObject("s3DestinationConfiguration");
     m_s3DestinationConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetContentDeliveryDestination::Jsonize() const
-{
+JsonValue DatasetContentDeliveryDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_iotEventsDestinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("iotEventsDestinationConfiguration", m_iotEventsDestinationConfiguration.Jsonize());
-
+  if (m_iotEventsDestinationConfigurationHasBeenSet) {
+    payload.WithObject("iotEventsDestinationConfiguration", m_iotEventsDestinationConfiguration.Jsonize());
   }
 
-  if(m_s3DestinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("s3DestinationConfiguration", m_s3DestinationConfiguration.Jsonize());
-
+  if (m_s3DestinationConfigurationHasBeenSet) {
+    payload.WithObject("s3DestinationConfiguration", m_s3DestinationConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

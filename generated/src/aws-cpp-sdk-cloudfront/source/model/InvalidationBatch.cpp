@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/InvalidationBatch.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-InvalidationBatch::InvalidationBatch(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InvalidationBatch::InvalidationBatch(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
-{
+InvalidationBatch& InvalidationBatch::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode pathsNode = resultNode.FirstChild("Paths");
-    if(!pathsNode.IsNull())
-    {
+    if (!pathsNode.IsNull()) {
       m_paths = pathsNode;
       m_pathsHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
-    if(!callerReferenceNode.IsNull())
-    {
+    if (!callerReferenceNode.IsNull()) {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void InvalidationBatch::AddToNode(XmlNode& parentNode) const
-{
+void InvalidationBatch::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_pathsHasBeenSet)
-  {
-   XmlNode pathsNode = parentNode.CreateChildElement("Paths");
-   m_paths.AddToNode(pathsNode);
+  if (m_pathsHasBeenSet) {
+    XmlNode pathsNode = parentNode.CreateChildElement("Paths");
+    m_paths.AddToNode(pathsNode);
   }
 
-  if(m_callerReferenceHasBeenSet)
-  {
-   XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
-   callerReferenceNode.SetText(m_callerReference);
+  if (m_callerReferenceHasBeenSet) {
+    XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
+    callerReferenceNode.SetText(m_callerReference);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

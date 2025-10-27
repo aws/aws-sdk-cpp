@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-class TimestreamWriteEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace TimestreamWrite {
+class TimestreamWriteEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace TimestreamWrite
+}  // namespace Aws

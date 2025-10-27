@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage-vod/model/ListAssetsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mediapackage-vod/model/ListAssetsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAssetsResult::ListAssetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAssetsResult::ListAssetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAssetsResult& ListAssetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAssetsResult& ListAssetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("assets"))
-  {
+  if (jsonValue.ValueExists("assets")) {
     Aws::Utils::Array<JsonView> assetsJsonList = jsonValue.GetArray("assets");
-    for(unsigned assetsIndex = 0; assetsIndex < assetsJsonList.GetLength(); ++assetsIndex)
-    {
+    for (unsigned assetsIndex = 0; assetsIndex < assetsJsonList.GetLength(); ++assetsIndex) {
       m_assets.push_back(assetsJsonList[assetsIndex].AsObject());
     }
     m_assetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

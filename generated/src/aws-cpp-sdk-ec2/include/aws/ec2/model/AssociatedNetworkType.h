@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AssociatedNetworkType
-  {
-    NOT_SET,
-    vpc
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AssociatedNetworkType { NOT_SET, vpc };
 
-namespace AssociatedNetworkTypeMapper
-{
+namespace AssociatedNetworkTypeMapper {
 AWS_EC2_API AssociatedNetworkType GetAssociatedNetworkTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAssociatedNetworkType(AssociatedNetworkType value);
-} // namespace AssociatedNetworkTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AssociatedNetworkTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

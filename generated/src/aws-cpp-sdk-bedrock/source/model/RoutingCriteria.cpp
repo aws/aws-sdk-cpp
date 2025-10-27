@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-RoutingCriteria::RoutingCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingCriteria::RoutingCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingCriteria& RoutingCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("responseQualityDifference"))
-  {
+RoutingCriteria& RoutingCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("responseQualityDifference")) {
     m_responseQualityDifference = jsonValue.GetDouble("responseQualityDifference");
     m_responseQualityDifferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingCriteria::Jsonize() const
-{
+JsonValue RoutingCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_responseQualityDifferenceHasBeenSet)
-  {
-   payload.WithDouble("responseQualityDifference", m_responseQualityDifference);
-
+  if (m_responseQualityDifferenceHasBeenSet) {
+    payload.WithDouble("responseQualityDifference", m_responseQualityDifference);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

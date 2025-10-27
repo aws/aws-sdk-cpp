@@ -5,12 +5,8 @@
 
 #include <aws/oam/OAMEndpointProvider.h>
 
-namespace Aws
-{
-namespace OAM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace OAM
-} // namespace Aws
+namespace Aws {
+namespace OAM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace OAM
+}  // namespace Aws

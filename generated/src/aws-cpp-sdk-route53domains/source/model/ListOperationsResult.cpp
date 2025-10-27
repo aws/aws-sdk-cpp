@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/ListOperationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/route53domains/model/ListOperationsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOperationsResult::ListOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListOperationsResult::ListOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListOperationsResult& ListOperationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListOperationsResult& ListOperationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Operations"))
-  {
+  if (jsonValue.ValueExists("Operations")) {
     Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");
-    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
-    {
+    for (unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex) {
       m_operations.push_back(operationsJsonList[operationsIndex].AsObject());
     }
     m_operationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageMarker"))
-  {
+  if (jsonValue.ValueExists("NextPageMarker")) {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");
     m_nextPageMarkerHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

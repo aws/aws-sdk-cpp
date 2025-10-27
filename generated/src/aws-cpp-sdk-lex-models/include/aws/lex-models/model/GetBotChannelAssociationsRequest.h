@@ -4,123 +4,147 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
-#include <aws/lex-models/LexModelBuildingServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingServiceRequest.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace LexModelBuildingService {
+namespace Model {
 
+/**
+ */
+class GetBotChannelAssociationsRequest : public LexModelBuildingServiceRequest {
+ public:
+  AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetBotChannelAssociations"; }
+
+  AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_LEXMODELBUILDINGSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The name of the Amazon Lex bot in the association.</p>
    */
-  class GetBotChannelAssociationsRequest : public LexModelBuildingServiceRequest
-  {
-  public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationsRequest() = default;
+  inline const Aws::String& GetBotName() const { return m_botName; }
+  inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+  template <typename BotNameT = Aws::String>
+  void SetBotName(BotNameT&& value) {
+    m_botNameHasBeenSet = true;
+    m_botName = std::forward<BotNameT>(value);
+  }
+  template <typename BotNameT = Aws::String>
+  GetBotChannelAssociationsRequest& WithBotName(BotNameT&& value) {
+    SetBotName(std::forward<BotNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetBotChannelAssociations"; }
+  ///@{
+  /**
+   * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
+   * association is being made.</p>
+   */
+  inline const Aws::String& GetBotAlias() const { return m_botAlias; }
+  inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
+  template <typename BotAliasT = Aws::String>
+  void SetBotAlias(BotAliasT&& value) {
+    m_botAliasHasBeenSet = true;
+    m_botAlias = std::forward<BotAliasT>(value);
+  }
+  template <typename BotAliasT = Aws::String>
+  GetBotChannelAssociationsRequest& WithBotAlias(BotAliasT&& value) {
+    SetBotAlias(std::forward<BotAliasT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A pagination token for fetching the next page of associations. If the
+   * response to this call is truncated, Amazon Lex returns a pagination token in the
+   * response. To fetch the next page of associations, specify the pagination token
+   * in the next request. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetBotChannelAssociationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_LEXMODELBUILDINGSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p>The maximum number of associations to return in the response. The default is
+   * 50. </p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline GetBotChannelAssociationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Substring to match in channel association names. An association will be
+   * returned if any part of its name matches the substring. For example, "xyz"
+   * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+   * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+   */
+  inline const Aws::String& GetNameContains() const { return m_nameContains; }
+  inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
+  template <typename NameContainsT = Aws::String>
+  void SetNameContains(NameContainsT&& value) {
+    m_nameContainsHasBeenSet = true;
+    m_nameContains = std::forward<NameContainsT>(value);
+  }
+  template <typename NameContainsT = Aws::String>
+  GetBotChannelAssociationsRequest& WithNameContains(NameContainsT&& value) {
+    SetNameContains(std::forward<NameContainsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_botName;
+  bool m_botNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the Amazon Lex bot in the association.</p>
-     */
-    inline const Aws::String& GetBotName() const { return m_botName; }
-    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    template<typename BotNameT = Aws::String>
-    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
-    template<typename BotNameT = Aws::String>
-    GetBotChannelAssociationsRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_botAlias;
+  bool m_botAliasHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
-     * association is being made.</p>
-     */
-    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
-    inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-    template<typename BotAliasT = Aws::String>
-    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
-    template<typename BotAliasT = Aws::String>
-    GetBotChannelAssociationsRequest& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A pagination token for fetching the next page of associations. If the
-     * response to this call is truncated, Amazon Lex returns a pagination token in the
-     * response. To fetch the next page of associations, specify the pagination token
-     * in the next request. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetBotChannelAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of associations to return in the response. The default is
-     * 50. </p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline GetBotChannelAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  Aws::String m_nameContains;
+  bool m_nameContainsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Substring to match in channel association names. An association will be
-     * returned if any part of its name matches the substring. For example, "xyz"
-     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
-     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-     */
-    inline const Aws::String& GetNameContains() const { return m_nameContains; }
-    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    template<typename NameContainsT = Aws::String>
-    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
-    template<typename NameContainsT = Aws::String>
-    GetBotChannelAssociationsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_botName;
-    bool m_botNameHasBeenSet = false;
-
-    Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

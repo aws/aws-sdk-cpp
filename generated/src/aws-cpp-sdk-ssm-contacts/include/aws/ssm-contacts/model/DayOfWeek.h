@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Model
-{
-  enum class DayOfWeek
-  {
-    NOT_SET,
-    MON,
-    TUE,
-    WED,
-    THU,
-    FRI,
-    SAT,
-    SUN
-  };
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
+enum class DayOfWeek { NOT_SET, MON, TUE, WED, THU, FRI, SAT, SUN };
 
-namespace DayOfWeekMapper
-{
+namespace DayOfWeekMapper {
 AWS_SSMCONTACTS_API DayOfWeek GetDayOfWeekForName(const Aws::String& name);
 
 AWS_SSMCONTACTS_API Aws::String GetNameForDayOfWeek(DayOfWeek value);
-} // namespace DayOfWeekMapper
-} // namespace Model
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace DayOfWeekMapper
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

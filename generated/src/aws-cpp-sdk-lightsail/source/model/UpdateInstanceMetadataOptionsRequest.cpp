@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/UpdateInstanceMetadataOptionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/UpdateInstanceMetadataOptionsRequest.h>
 
 #include <utility>
 
@@ -12,48 +12,34 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateInstanceMetadataOptionsRequest::SerializePayload() const
-{
+Aws::String UpdateInstanceMetadataOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceNameHasBeenSet)
-  {
-   payload.WithString("instanceName", m_instanceName);
-
+  if (m_instanceNameHasBeenSet) {
+    payload.WithString("instanceName", m_instanceName);
   }
 
-  if(m_httpTokensHasBeenSet)
-  {
-   payload.WithString("httpTokens", HttpTokensMapper::GetNameForHttpTokens(m_httpTokens));
+  if (m_httpTokensHasBeenSet) {
+    payload.WithString("httpTokens", HttpTokensMapper::GetNameForHttpTokens(m_httpTokens));
   }
 
-  if(m_httpEndpointHasBeenSet)
-  {
-   payload.WithString("httpEndpoint", HttpEndpointMapper::GetNameForHttpEndpoint(m_httpEndpoint));
+  if (m_httpEndpointHasBeenSet) {
+    payload.WithString("httpEndpoint", HttpEndpointMapper::GetNameForHttpEndpoint(m_httpEndpoint));
   }
 
-  if(m_httpPutResponseHopLimitHasBeenSet)
-  {
-   payload.WithInteger("httpPutResponseHopLimit", m_httpPutResponseHopLimit);
-
+  if (m_httpPutResponseHopLimitHasBeenSet) {
+    payload.WithInteger("httpPutResponseHopLimit", m_httpPutResponseHopLimit);
   }
 
-  if(m_httpProtocolIpv6HasBeenSet)
-  {
-   payload.WithString("httpProtocolIpv6", HttpProtocolIpv6Mapper::GetNameForHttpProtocolIpv6(m_httpProtocolIpv6));
+  if (m_httpProtocolIpv6HasBeenSet) {
+    payload.WithString("httpProtocolIpv6", HttpProtocolIpv6Mapper::GetNameForHttpProtocolIpv6(m_httpProtocolIpv6));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateInstanceMetadataOptionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateInstanceMetadataOptionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.UpdateInstanceMetadataOptions"));
   return headers;
-
 }
-
-
-
-

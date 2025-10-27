@@ -12,48 +12,32 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeJobDefinitionsRequest::SerializePayload() const
-{
+Aws::String DescribeJobDefinitionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobDefinitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> jobDefinitionsJsonList(m_jobDefinitions.size());
-   for(unsigned jobDefinitionsIndex = 0; jobDefinitionsIndex < jobDefinitionsJsonList.GetLength(); ++jobDefinitionsIndex)
-   {
-     jobDefinitionsJsonList[jobDefinitionsIndex].AsString(m_jobDefinitions[jobDefinitionsIndex]);
-   }
-   payload.WithArray("jobDefinitions", std::move(jobDefinitionsJsonList));
-
+  if (m_jobDefinitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> jobDefinitionsJsonList(m_jobDefinitions.size());
+    for (unsigned jobDefinitionsIndex = 0; jobDefinitionsIndex < jobDefinitionsJsonList.GetLength(); ++jobDefinitionsIndex) {
+      jobDefinitionsJsonList[jobDefinitionsIndex].AsString(m_jobDefinitions[jobDefinitionsIndex]);
+    }
+    payload.WithArray("jobDefinitions", std::move(jobDefinitionsJsonList));
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_jobDefinitionNameHasBeenSet)
-  {
-   payload.WithString("jobDefinitionName", m_jobDefinitionName);
-
+  if (m_jobDefinitionNameHasBeenSet) {
+    payload.WithString("jobDefinitionName", m_jobDefinitionName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

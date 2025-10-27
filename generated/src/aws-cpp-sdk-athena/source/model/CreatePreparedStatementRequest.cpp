@@ -12,45 +12,30 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePreparedStatementRequest::SerializePayload() const
-{
+Aws::String CreatePreparedStatementRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statementNameHasBeenSet)
-  {
-   payload.WithString("StatementName", m_statementName);
-
+  if (m_statementNameHasBeenSet) {
+    payload.WithString("StatementName", m_statementName);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
-  if(m_queryStatementHasBeenSet)
-  {
-   payload.WithString("QueryStatement", m_queryStatement);
-
+  if (m_queryStatementHasBeenSet) {
+    payload.WithString("QueryStatement", m_queryStatement);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreatePreparedStatementRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreatePreparedStatementRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.CreatePreparedStatement"));
   return headers;
-
 }
-
-
-
-

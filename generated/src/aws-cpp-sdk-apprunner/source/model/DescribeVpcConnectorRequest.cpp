@@ -12,27 +12,18 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeVpcConnectorRequest::SerializePayload() const
-{
+Aws::String DescribeVpcConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vpcConnectorArnHasBeenSet)
-  {
-   payload.WithString("VpcConnectorArn", m_vpcConnectorArn);
-
+  if (m_vpcConnectorArnHasBeenSet) {
+    payload.WithString("VpcConnectorArn", m_vpcConnectorArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeVpcConnectorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeVpcConnectorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.DescribeVpcConnector"));
   return headers;
-
 }
-
-
-
-

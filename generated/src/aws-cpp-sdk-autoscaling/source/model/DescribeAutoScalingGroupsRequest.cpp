@@ -10,54 +10,39 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
-{
+Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAutoScalingGroups&";
-  if(m_autoScalingGroupNamesHasBeenSet)
-  {
-    if (m_autoScalingGroupNames.empty())
-    {
+  if (m_autoScalingGroupNamesHasBeenSet) {
+    if (m_autoScalingGroupNames.empty()) {
       ss << "AutoScalingGroupNames=&";
-    }
-    else
-    {
+    } else {
       unsigned autoScalingGroupNamesCount = 1;
-      for(auto& item : m_autoScalingGroupNames)
-      {
-        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_autoScalingGroupNames) {
+        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         autoScalingGroupNamesCount++;
       }
     }
   }
 
-  if(m_includeInstancesHasBeenSet)
-  {
+  if (m_includeInstancesHasBeenSet) {
     ss << "IncludeInstances=" << std::boolalpha << m_includeInstances << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.member.", filtersCount, "");
         filtersCount++;
       }
@@ -68,8 +53,4 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAutoScalingGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAutoScalingGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

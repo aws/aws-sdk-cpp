@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Model
-{
-  enum class QueryStatus
-  {
-    NOT_SET,
-    QUEUED,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    CANCELED
-  };
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Model {
+enum class QueryStatus { NOT_SET, QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELED };
 
-namespace QueryStatusMapper
-{
+namespace QueryStatusMapper {
 AWS_NETWORKFLOWMONITOR_API QueryStatus GetQueryStatusForName(const Aws::String& name);
 
 AWS_NETWORKFLOWMONITOR_API Aws::String GetNameForQueryStatus(QueryStatus value);
-} // namespace QueryStatusMapper
-} // namespace Model
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace QueryStatusMapper
+}  // namespace Model
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

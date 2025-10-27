@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const
-{
+Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteVerifiedEmailAddress&";
-  if(m_emailAddressHasBeenSet)
-  {
+  if (m_emailAddressHasBeenSet) {
     ss << "EmailAddress=" << StringUtils::URLEncode(m_emailAddress.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteVerifiedEmailAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteVerifiedEmailAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

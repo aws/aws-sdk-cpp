@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MigrationHubRefactorSpaces;
 
-AWSError<CoreErrors> MigrationHubRefactorSpacesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MigrationHubRefactorSpacesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MigrationHubRefactorSpacesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class FontDecoration
-  {
-    NOT_SET,
-    UNDERLINE,
-    NONE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class FontDecoration { NOT_SET, UNDERLINE, NONE };
 
-namespace FontDecorationMapper
-{
+namespace FontDecorationMapper {
 AWS_QUICKSIGHT_API FontDecoration GetFontDecorationForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForFontDecoration(FontDecoration value);
-} // namespace FontDecorationMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace FontDecorationMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

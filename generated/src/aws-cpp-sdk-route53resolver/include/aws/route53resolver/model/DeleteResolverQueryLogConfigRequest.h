@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
-#include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53ResolverRequest.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
 
+/**
+ */
+class DeleteResolverQueryLogConfigRequest : public Route53ResolverRequest {
+ public:
+  AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteResolverQueryLogConfig"; }
+
+  AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
+
+  AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the query logging configuration that you want to delete.</p>
    */
-  class DeleteResolverQueryLogConfigRequest : public Route53ResolverRequest
-  {
-  public:
-    AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigRequest() = default;
+  inline const Aws::String& GetResolverQueryLogConfigId() const { return m_resolverQueryLogConfigId; }
+  inline bool ResolverQueryLogConfigIdHasBeenSet() const { return m_resolverQueryLogConfigIdHasBeenSet; }
+  template <typename ResolverQueryLogConfigIdT = Aws::String>
+  void SetResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) {
+    m_resolverQueryLogConfigIdHasBeenSet = true;
+    m_resolverQueryLogConfigId = std::forward<ResolverQueryLogConfigIdT>(value);
+  }
+  template <typename ResolverQueryLogConfigIdT = Aws::String>
+  DeleteResolverQueryLogConfigRequest& WithResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) {
+    SetResolverQueryLogConfigId(std::forward<ResolverQueryLogConfigIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resolverQueryLogConfigId;
+  bool m_resolverQueryLogConfigIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteResolverQueryLogConfig"; }
-
-    AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
-
-    AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the query logging configuration that you want to delete.</p>
-     */
-    inline const Aws::String& GetResolverQueryLogConfigId() const { return m_resolverQueryLogConfigId; }
-    inline bool ResolverQueryLogConfigIdHasBeenSet() const { return m_resolverQueryLogConfigIdHasBeenSet; }
-    template<typename ResolverQueryLogConfigIdT = Aws::String>
-    void SetResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) { m_resolverQueryLogConfigIdHasBeenSet = true; m_resolverQueryLogConfigId = std::forward<ResolverQueryLogConfigIdT>(value); }
-    template<typename ResolverQueryLogConfigIdT = Aws::String>
-    DeleteResolverQueryLogConfigRequest& WithResolverQueryLogConfigId(ResolverQueryLogConfigIdT&& value) { SetResolverQueryLogConfigId(std::forward<ResolverQueryLogConfigIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resolverQueryLogConfigId;
-    bool m_resolverQueryLogConfigIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

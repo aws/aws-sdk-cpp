@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
-  enum class DistanceUnit
-  {
-    NOT_SET,
-    Kilometers,
-    Miles
-  };
+namespace Aws {
+namespace LocationService {
+namespace Model {
+enum class DistanceUnit { NOT_SET, Kilometers, Miles };
 
-namespace DistanceUnitMapper
-{
+namespace DistanceUnitMapper {
 AWS_LOCATIONSERVICE_API DistanceUnit GetDistanceUnitForName(const Aws::String& name);
 
 AWS_LOCATIONSERVICE_API Aws::String GetNameForDistanceUnit(DistanceUnit value);
-} // namespace DistanceUnitMapper
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace DistanceUnitMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

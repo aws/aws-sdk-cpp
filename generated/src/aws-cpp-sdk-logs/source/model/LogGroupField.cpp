@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/LogGroupField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/LogGroupField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-LogGroupField::LogGroupField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogGroupField::LogGroupField(JsonView jsonValue) { *this = jsonValue; }
 
-LogGroupField& LogGroupField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+LogGroupField& LogGroupField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("percent"))
-  {
+  if (jsonValue.ValueExists("percent")) {
     m_percent = jsonValue.GetInteger("percent");
     m_percentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LogGroupField::Jsonize() const
-{
+JsonValue LogGroupField::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_percentHasBeenSet)
-  {
-   payload.WithInteger("percent", m_percent);
-
+  if (m_percentHasBeenSet) {
+    payload.WithInteger("percent", m_percent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

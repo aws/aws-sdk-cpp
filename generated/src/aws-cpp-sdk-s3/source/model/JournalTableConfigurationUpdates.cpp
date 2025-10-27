@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/JournalTableConfigurationUpdates.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/JournalTableConfigurationUpdates.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-JournalTableConfigurationUpdates::JournalTableConfigurationUpdates(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+JournalTableConfigurationUpdates::JournalTableConfigurationUpdates(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JournalTableConfigurationUpdates& JournalTableConfigurationUpdates::operator =(const XmlNode& xmlNode)
-{
+JournalTableConfigurationUpdates& JournalTableConfigurationUpdates::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode recordExpirationNode = resultNode.FirstChild("RecordExpiration");
-    if(!recordExpirationNode.IsNull())
-    {
+    if (!recordExpirationNode.IsNull()) {
       m_recordExpiration = recordExpirationNode;
       m_recordExpirationHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ JournalTableConfigurationUpdates& JournalTableConfigurationUpdates::operator =(c
   return *this;
 }
 
-void JournalTableConfigurationUpdates::AddToNode(XmlNode& parentNode) const
-{
+void JournalTableConfigurationUpdates::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_recordExpirationHasBeenSet)
-  {
-   XmlNode recordExpirationNode = parentNode.CreateChildElement("RecordExpiration");
-   m_recordExpiration.AddToNode(recordExpirationNode);
+  if (m_recordExpirationHasBeenSet) {
+    XmlNode recordExpirationNode = parentNode.CreateChildElement("RecordExpiration");
+    m_recordExpiration.AddToNode(recordExpirationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/AttachRolePolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/AttachRolePolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String AttachRolePolicyRequest::SerializePayload() const
-{
+Aws::String AttachRolePolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AttachRolePolicy&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AttachRolePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AttachRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AttachRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

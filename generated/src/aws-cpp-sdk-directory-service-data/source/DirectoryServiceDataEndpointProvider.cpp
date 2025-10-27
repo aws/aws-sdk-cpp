@@ -5,12 +5,8 @@
 
 #include <aws/directory-service-data/DirectoryServiceDataEndpointProvider.h>
 
-namespace Aws
-{
-namespace DirectoryServiceData
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DirectoryServiceData
-} // namespace Aws
+namespace Aws {
+namespace DirectoryServiceData {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DirectoryServiceData
+}  // namespace Aws

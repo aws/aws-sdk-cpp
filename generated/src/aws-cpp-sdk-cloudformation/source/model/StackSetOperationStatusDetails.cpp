@@ -4,37 +4,29 @@
  */
 
 #include <aws/cloudformation/model/StackSetOperationStatusDetails.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-StackSetOperationStatusDetails::StackSetOperationStatusDetails(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StackSetOperationStatusDetails::StackSetOperationStatusDetails(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StackSetOperationStatusDetails& StackSetOperationStatusDetails::operator =(const XmlNode& xmlNode)
-{
+StackSetOperationStatusDetails& StackSetOperationStatusDetails::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode failedStackInstancesCountNode = resultNode.FirstChild("FailedStackInstancesCount");
-    if(!failedStackInstancesCountNode.IsNull())
-    {
-      m_failedStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failedStackInstancesCountNode.GetText()).c_str()).c_str());
+    if (!failedStackInstancesCountNode.IsNull()) {
+      m_failedStackInstancesCount = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failedStackInstancesCountNode.GetText()).c_str()).c_str());
       m_failedStackInstancesCountHasBeenSet = true;
     }
   }
@@ -42,23 +34,19 @@ StackSetOperationStatusDetails& StackSetOperationStatusDetails::operator =(const
   return *this;
 }
 
-void StackSetOperationStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_failedStackInstancesCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FailedStackInstancesCount=" << m_failedStackInstancesCount << "&";
-  }
-
-}
-
-void StackSetOperationStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_failedStackInstancesCountHasBeenSet)
-  {
-      oStream << location << ".FailedStackInstancesCount=" << m_failedStackInstancesCount << "&";
+void StackSetOperationStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                    const char* locationValue) const {
+  if (m_failedStackInstancesCountHasBeenSet) {
+    oStream << location << index << locationValue << ".FailedStackInstancesCount=" << m_failedStackInstancesCount << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void StackSetOperationStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_failedStackInstancesCountHasBeenSet) {
+    oStream << location << ".FailedStackInstancesCount=" << m_failedStackInstancesCount << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

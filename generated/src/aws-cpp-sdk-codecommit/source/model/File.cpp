@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-File::File(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+File::File(JsonView jsonValue) { *this = jsonValue; }
 
-File& File::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("blobId"))
-  {
+File& File::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("blobId")) {
     m_blobId = jsonValue.GetString("blobId");
     m_blobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("absolutePath"))
-  {
+  if (jsonValue.ValueExists("absolutePath")) {
     m_absolutePath = jsonValue.GetString("absolutePath");
     m_absolutePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relativePath"))
-  {
+  if (jsonValue.ValueExists("relativePath")) {
     m_relativePath = jsonValue.GetString("relativePath");
     m_relativePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileMode"))
-  {
+  if (jsonValue.ValueExists("fileMode")) {
     m_fileMode = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("fileMode"));
     m_fileModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue File::Jsonize() const
-{
+JsonValue File::Jsonize() const {
   JsonValue payload;
 
-  if(m_blobIdHasBeenSet)
-  {
-   payload.WithString("blobId", m_blobId);
-
+  if (m_blobIdHasBeenSet) {
+    payload.WithString("blobId", m_blobId);
   }
 
-  if(m_absolutePathHasBeenSet)
-  {
-   payload.WithString("absolutePath", m_absolutePath);
-
+  if (m_absolutePathHasBeenSet) {
+    payload.WithString("absolutePath", m_absolutePath);
   }
 
-  if(m_relativePathHasBeenSet)
-  {
-   payload.WithString("relativePath", m_relativePath);
-
+  if (m_relativePathHasBeenSet) {
+    payload.WithString("relativePath", m_relativePath);
   }
 
-  if(m_fileModeHasBeenSet)
-  {
-   payload.WithString("fileMode", FileModeTypeEnumMapper::GetNameForFileModeTypeEnum(m_fileMode));
+  if (m_fileModeHasBeenSet) {
+    payload.WithString("fileMode", FileModeTypeEnumMapper::GetNameForFileModeTypeEnum(m_fileMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

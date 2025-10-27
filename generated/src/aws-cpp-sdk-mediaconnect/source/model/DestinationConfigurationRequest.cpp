@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/DestinationConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/DestinationConfigurationRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-DestinationConfigurationRequest::DestinationConfigurationRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationConfigurationRequest::DestinationConfigurationRequest(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationConfigurationRequest& DestinationConfigurationRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destinationIp"))
-  {
+DestinationConfigurationRequest& DestinationConfigurationRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationIp")) {
     m_destinationIp = jsonValue.GetString("destinationIp");
     m_destinationIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationPort"))
-  {
+  if (jsonValue.ValueExists("destinationPort")) {
     m_destinationPort = jsonValue.GetInteger("destinationPort");
     m_destinationPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("interface"))
-  {
+  if (jsonValue.ValueExists("interface")) {
     m_interface = jsonValue.GetObject("interface");
     m_interfaceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationConfigurationRequest::Jsonize() const
-{
+JsonValue DestinationConfigurationRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationIpHasBeenSet)
-  {
-   payload.WithString("destinationIp", m_destinationIp);
-
+  if (m_destinationIpHasBeenSet) {
+    payload.WithString("destinationIp", m_destinationIp);
   }
 
-  if(m_destinationPortHasBeenSet)
-  {
-   payload.WithInteger("destinationPort", m_destinationPort);
-
+  if (m_destinationPortHasBeenSet) {
+    payload.WithInteger("destinationPort", m_destinationPort);
   }
 
-  if(m_interfaceHasBeenSet)
-  {
-   payload.WithObject("interface", m_interface.Jsonize());
-
+  if (m_interfaceHasBeenSet) {
+    payload.WithObject("interface", m_interface.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

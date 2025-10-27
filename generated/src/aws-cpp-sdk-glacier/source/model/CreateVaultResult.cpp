@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/CreateVaultResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glacier/model/CreateVaultResult.h>
 
 #include <utility>
 
@@ -17,30 +17,23 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVaultResult::CreateVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateVaultResult::CreateVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateVaultResult& CreateVaultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateVaultResult& CreateVaultResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& locationIter = headers.find("location");
-  if(locationIter != headers.end())
-  {
+  if (locationIter != headers.end()) {
     m_location = locationIter->second;
     m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

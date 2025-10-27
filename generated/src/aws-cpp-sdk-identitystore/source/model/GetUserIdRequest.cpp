@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/identitystore/model/GetUserIdRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/identitystore/model/GetUserIdRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetUserIdRequest::SerializePayload() const
-{
+Aws::String GetUserIdRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityStoreIdHasBeenSet)
-  {
-   payload.WithString("IdentityStoreId", m_identityStoreId);
-
+  if (m_identityStoreIdHasBeenSet) {
+    payload.WithString("IdentityStoreId", m_identityStoreId);
   }
 
-  if(m_alternateIdentifierHasBeenSet)
-  {
-   payload.WithObject("AlternateIdentifier", m_alternateIdentifier.Jsonize());
-
+  if (m_alternateIdentifierHasBeenSet) {
+    payload.WithObject("AlternateIdentifier", m_alternateIdentifier.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetUserIdRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetUserIdRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSIdentityStore.GetUserId"));
   return headers;
-
 }
-
-
-
-

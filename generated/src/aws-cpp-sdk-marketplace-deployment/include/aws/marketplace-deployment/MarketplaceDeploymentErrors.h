@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceDeployment
-{
-enum class MarketplaceDeploymentErrors
-{
-  //From Core//
+namespace Aws {
+namespace MarketplaceDeployment {
+enum class MarketplaceDeploymentErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MarketplaceDeploymentErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,28 +44,30 @@ enum class MarketplaceDeploymentErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentError : public Aws::Client::AWSError<MarketplaceDeploymentErrors>
-{
-public:
+class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentError : public Aws::Client::AWSError<MarketplaceDeploymentErrors> {
+ public:
   MarketplaceDeploymentError() {}
-  MarketplaceDeploymentError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
-  MarketplaceDeploymentError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
-  MarketplaceDeploymentError(const Aws::Client::AWSError<MarketplaceDeploymentErrors>& rhs) : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
-  MarketplaceDeploymentError(Aws::Client::AWSError<MarketplaceDeploymentErrors>&& rhs) : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
+  MarketplaceDeploymentError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
+  MarketplaceDeploymentError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
+  MarketplaceDeploymentError(const Aws::Client::AWSError<MarketplaceDeploymentErrors>& rhs)
+      : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
+  MarketplaceDeploymentError(Aws::Client::AWSError<MarketplaceDeploymentErrors>&& rhs)
+      : Aws::Client::AWSError<MarketplaceDeploymentErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MarketplaceDeploymentErrorMapper
-{
-  AWS_MARKETPLACEDEPLOYMENT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MarketplaceDeploymentErrorMapper {
+AWS_MARKETPLACEDEPLOYMENT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MarketplaceDeployment
-} // namespace Aws
+}  // namespace MarketplaceDeployment
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/NetworkAclIcmpTypeCode.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/NetworkAclIcmpTypeCode.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkAclIcmpTypeCode& NetworkAclIcmpTypeCode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+NetworkAclIcmpTypeCode& NetworkAclIcmpTypeCode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetInteger("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetInteger("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkAclIcmpTypeCode::Jsonize() const
-{
+JsonValue NetworkAclIcmpTypeCode::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithInteger("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithInteger("Code", m_code);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithInteger("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithInteger("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

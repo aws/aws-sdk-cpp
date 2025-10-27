@@ -12,59 +12,40 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SearchCasesRequest::SerializePayload() const
-{
+Aws::String SearchCasesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_searchTermHasBeenSet)
-  {
-   payload.WithString("searchTerm", m_searchTerm);
-
+  if (m_searchTermHasBeenSet) {
+    payload.WithString("searchTerm", m_searchTerm);
   }
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("filter", m_filter.Jsonize());
   }
 
-  if(m_sortsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sortsJsonList(m_sorts.size());
-   for(unsigned sortsIndex = 0; sortsIndex < sortsJsonList.GetLength(); ++sortsIndex)
-   {
-     sortsJsonList[sortsIndex].AsObject(m_sorts[sortsIndex].Jsonize());
-   }
-   payload.WithArray("sorts", std::move(sortsJsonList));
-
+  if (m_sortsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sortsJsonList(m_sorts.size());
+    for (unsigned sortsIndex = 0; sortsIndex < sortsJsonList.GetLength(); ++sortsIndex) {
+      sortsJsonList[sortsIndex].AsObject(m_sorts[sortsIndex].Jsonize());
+    }
+    payload.WithArray("sorts", std::move(sortsJsonList));
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-   }
-   payload.WithArray("fields", std::move(fieldsJsonList));
-
+  if (m_fieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+    }
+    payload.WithArray("fields", std::move(fieldsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

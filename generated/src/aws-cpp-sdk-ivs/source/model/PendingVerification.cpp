@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs/model/PendingVerification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs/model/PendingVerification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
+namespace Aws {
+namespace IVS {
+namespace Model {
 
-PendingVerification::PendingVerification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PendingVerification::PendingVerification(JsonView jsonValue) { *this = jsonValue; }
 
-PendingVerification& PendingVerification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exceptionMessage"))
-  {
+PendingVerification& PendingVerification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exceptionMessage")) {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
     m_exceptionMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PendingVerification::Jsonize() const
-{
+JsonValue PendingVerification::Jsonize() const {
   JsonValue payload;
 
-  if(m_exceptionMessageHasBeenSet)
-  {
-   payload.WithString("exceptionMessage", m_exceptionMessage);
-
+  if (m_exceptionMessageHasBeenSet) {
+    payload.WithString("exceptionMessage", m_exceptionMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

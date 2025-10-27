@@ -12,27 +12,18 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePolicyRequest::SerializePayload() const
-{
+Aws::String DeletePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeletePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeletePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.DeletePolicy"));
   return headers;
-
 }
-
-
-
-

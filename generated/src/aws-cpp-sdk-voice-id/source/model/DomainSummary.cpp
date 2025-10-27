@@ -3,145 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/DomainSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/DomainSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
+namespace Aws {
+namespace VoiceID {
+namespace Model {
 
-DomainSummary::DomainSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainSummary::DomainSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DomainSummary& DomainSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DomainSummary& DomainSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainId"))
-  {
+  if (jsonValue.ValueExists("DomainId")) {
     m_domainId = jsonValue.GetString("DomainId");
     m_domainIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainStatus"))
-  {
+  if (jsonValue.ValueExists("DomainStatus")) {
     m_domainStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("DomainStatus"));
     m_domainStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerSideEncryptionConfiguration"))
-  {
+  if (jsonValue.ValueExists("ServerSideEncryptionConfiguration")) {
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("ServerSideEncryptionConfiguration");
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerSideEncryptionUpdateDetails"))
-  {
+  if (jsonValue.ValueExists("ServerSideEncryptionUpdateDetails")) {
     m_serverSideEncryptionUpdateDetails = jsonValue.GetObject("ServerSideEncryptionUpdateDetails");
     m_serverSideEncryptionUpdateDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WatchlistDetails"))
-  {
+  if (jsonValue.ValueExists("WatchlistDetails")) {
     m_watchlistDetails = jsonValue.GetObject("WatchlistDetails");
     m_watchlistDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainSummary::Jsonize() const
-{
+JsonValue DomainSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_domainIdHasBeenSet)
-  {
-   payload.WithString("DomainId", m_domainId);
-
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("DomainId", m_domainId);
   }
 
-  if(m_domainStatusHasBeenSet)
-  {
-   payload.WithString("DomainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
+  if (m_domainStatusHasBeenSet) {
+    payload.WithString("DomainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_serverSideEncryptionConfigurationHasBeenSet)
-  {
-   payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
-
+  if (m_serverSideEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
   }
 
-  if(m_serverSideEncryptionUpdateDetailsHasBeenSet)
-  {
-   payload.WithObject("ServerSideEncryptionUpdateDetails", m_serverSideEncryptionUpdateDetails.Jsonize());
-
+  if (m_serverSideEncryptionUpdateDetailsHasBeenSet) {
+    payload.WithObject("ServerSideEncryptionUpdateDetails", m_serverSideEncryptionUpdateDetails.Jsonize());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_watchlistDetailsHasBeenSet)
-  {
-   payload.WithObject("WatchlistDetails", m_watchlistDetails.Jsonize());
-
+  if (m_watchlistDetailsHasBeenSet) {
+    payload.WithObject("WatchlistDetails", m_watchlistDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

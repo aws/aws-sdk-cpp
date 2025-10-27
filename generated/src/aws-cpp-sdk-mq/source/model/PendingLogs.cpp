@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/PendingLogs.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/model/PendingLogs.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
+namespace Aws {
+namespace MQ {
+namespace Model {
 
-PendingLogs::PendingLogs(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PendingLogs::PendingLogs(JsonView jsonValue) { *this = jsonValue; }
 
-PendingLogs& PendingLogs::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audit"))
-  {
+PendingLogs& PendingLogs::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audit")) {
     m_audit = jsonValue.GetBool("audit");
     m_auditHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("general"))
-  {
+  if (jsonValue.ValueExists("general")) {
     m_general = jsonValue.GetBool("general");
     m_generalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PendingLogs::Jsonize() const
-{
+JsonValue PendingLogs::Jsonize() const {
   JsonValue payload;
 
-  if(m_auditHasBeenSet)
-  {
-   payload.WithBool("audit", m_audit);
-
+  if (m_auditHasBeenSet) {
+    payload.WithBool("audit", m_audit);
   }
 
-  if(m_generalHasBeenSet)
-  {
-   payload.WithBool("general", m_general);
-
+  if (m_generalHasBeenSet) {
+    payload.WithBool("general", m_general);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

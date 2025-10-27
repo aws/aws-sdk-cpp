@@ -3,87 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsS3BucketBucketLifecycleConfigurationRulesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsS3BucketBucketLifecycleConfigurationRulesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails(JsonView jsonValue)
-{
+AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleConfigurationRulesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AbortIncompleteMultipartUpload"))
-  {
+AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleConfigurationRulesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AbortIncompleteMultipartUpload")) {
     m_abortIncompleteMultipartUpload = jsonValue.GetObject("AbortIncompleteMultipartUpload");
     m_abortIncompleteMultipartUploadHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationDate"))
-  {
+  if (jsonValue.ValueExists("ExpirationDate")) {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
     m_expirationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationInDays"))
-  {
+  if (jsonValue.ValueExists("ExpirationInDays")) {
     m_expirationInDays = jsonValue.GetInteger("ExpirationInDays");
     m_expirationInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpiredObjectDeleteMarker"))
-  {
+  if (jsonValue.ValueExists("ExpiredObjectDeleteMarker")) {
     m_expiredObjectDeleteMarker = jsonValue.GetBool("ExpiredObjectDeleteMarker");
     m_expiredObjectDeleteMarkerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Filter"))
-  {
+  if (jsonValue.ValueExists("Filter")) {
     m_filter = jsonValue.GetObject("Filter");
     m_filterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ID"))
-  {
+  if (jsonValue.ValueExists("ID")) {
     m_iD = jsonValue.GetString("ID");
     m_iDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NoncurrentVersionExpirationInDays"))
-  {
+  if (jsonValue.ValueExists("NoncurrentVersionExpirationInDays")) {
     m_noncurrentVersionExpirationInDays = jsonValue.GetInteger("NoncurrentVersionExpirationInDays");
     m_noncurrentVersionExpirationInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NoncurrentVersionTransitions"))
-  {
+  if (jsonValue.ValueExists("NoncurrentVersionTransitions")) {
     Aws::Utils::Array<JsonView> noncurrentVersionTransitionsJsonList = jsonValue.GetArray("NoncurrentVersionTransitions");
-    for(unsigned noncurrentVersionTransitionsIndex = 0; noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex)
-    {
+    for (unsigned noncurrentVersionTransitionsIndex = 0;
+         noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex) {
       m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionsJsonList[noncurrentVersionTransitionsIndex].AsObject());
     }
     m_noncurrentVersionTransitionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Prefix"))
-  {
+  if (jsonValue.ValueExists("Prefix")) {
     m_prefix = jsonValue.GetString("Prefix");
     m_prefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Transitions"))
-  {
+  if (jsonValue.ValueExists("Transitions")) {
     Aws::Utils::Array<JsonView> transitionsJsonList = jsonValue.GetArray("Transitions");
-    for(unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex)
-    {
+    for (unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex) {
       m_transitions.push_back(transitionsJsonList[transitionsIndex].AsObject());
     }
     m_transitionsHasBeenSet = true;
@@ -91,89 +74,66 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
   return *this;
 }
 
-JsonValue AwsS3BucketBucketLifecycleConfigurationRulesDetails::Jsonize() const
-{
+JsonValue AwsS3BucketBucketLifecycleConfigurationRulesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_abortIncompleteMultipartUploadHasBeenSet)
-  {
-   payload.WithObject("AbortIncompleteMultipartUpload", m_abortIncompleteMultipartUpload.Jsonize());
-
+  if (m_abortIncompleteMultipartUploadHasBeenSet) {
+    payload.WithObject("AbortIncompleteMultipartUpload", m_abortIncompleteMultipartUpload.Jsonize());
   }
 
-  if(m_expirationDateHasBeenSet)
-  {
-   payload.WithString("ExpirationDate", m_expirationDate);
-
+  if (m_expirationDateHasBeenSet) {
+    payload.WithString("ExpirationDate", m_expirationDate);
   }
 
-  if(m_expirationInDaysHasBeenSet)
-  {
-   payload.WithInteger("ExpirationInDays", m_expirationInDays);
-
+  if (m_expirationInDaysHasBeenSet) {
+    payload.WithInteger("ExpirationInDays", m_expirationInDays);
   }
 
-  if(m_expiredObjectDeleteMarkerHasBeenSet)
-  {
-   payload.WithBool("ExpiredObjectDeleteMarker", m_expiredObjectDeleteMarker);
-
+  if (m_expiredObjectDeleteMarkerHasBeenSet) {
+    payload.WithBool("ExpiredObjectDeleteMarker", m_expiredObjectDeleteMarker);
   }
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("Filter", m_filter.Jsonize());
   }
 
-  if(m_iDHasBeenSet)
-  {
-   payload.WithString("ID", m_iD);
-
+  if (m_iDHasBeenSet) {
+    payload.WithString("ID", m_iD);
   }
 
-  if(m_noncurrentVersionExpirationInDaysHasBeenSet)
-  {
-   payload.WithInteger("NoncurrentVersionExpirationInDays", m_noncurrentVersionExpirationInDays);
-
+  if (m_noncurrentVersionExpirationInDaysHasBeenSet) {
+    payload.WithInteger("NoncurrentVersionExpirationInDays", m_noncurrentVersionExpirationInDays);
   }
 
-  if(m_noncurrentVersionTransitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> noncurrentVersionTransitionsJsonList(m_noncurrentVersionTransitions.size());
-   for(unsigned noncurrentVersionTransitionsIndex = 0; noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex)
-   {
-     noncurrentVersionTransitionsJsonList[noncurrentVersionTransitionsIndex].AsObject(m_noncurrentVersionTransitions[noncurrentVersionTransitionsIndex].Jsonize());
-   }
-   payload.WithArray("NoncurrentVersionTransitions", std::move(noncurrentVersionTransitionsJsonList));
-
+  if (m_noncurrentVersionTransitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> noncurrentVersionTransitionsJsonList(m_noncurrentVersionTransitions.size());
+    for (unsigned noncurrentVersionTransitionsIndex = 0;
+         noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex) {
+      noncurrentVersionTransitionsJsonList[noncurrentVersionTransitionsIndex].AsObject(
+          m_noncurrentVersionTransitions[noncurrentVersionTransitionsIndex].Jsonize());
+    }
+    payload.WithArray("NoncurrentVersionTransitions", std::move(noncurrentVersionTransitionsJsonList));
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("Prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("Prefix", m_prefix);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_transitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> transitionsJsonList(m_transitions.size());
-   for(unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex)
-   {
-     transitionsJsonList[transitionsIndex].AsObject(m_transitions[transitionsIndex].Jsonize());
-   }
-   payload.WithArray("Transitions", std::move(transitionsJsonList));
-
+  if (m_transitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> transitionsJsonList(m_transitions.size());
+    for (unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex) {
+      transitionsJsonList[transitionsIndex].AsObject(m_transitions[transitionsIndex].Jsonize());
+    }
+    payload.WithArray("Transitions", std::move(transitionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

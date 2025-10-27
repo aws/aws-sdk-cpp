@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
 
 #include <utility>
 
@@ -16,34 +16,26 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListComponentBuildVersionsResult::ListComponentBuildVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListComponentBuildVersionsResult::ListComponentBuildVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListComponentBuildVersionsResult& ListComponentBuildVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListComponentBuildVersionsResult& ListComponentBuildVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("requestId"))
-  {
+  if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("componentSummaryList"))
-  {
+  if (jsonValue.ValueExists("componentSummaryList")) {
     Aws::Utils::Array<JsonView> componentSummaryListJsonList = jsonValue.GetArray("componentSummaryList");
-    for(unsigned componentSummaryListIndex = 0; componentSummaryListIndex < componentSummaryListJsonList.GetLength(); ++componentSummaryListIndex)
-    {
+    for (unsigned componentSummaryListIndex = 0; componentSummaryListIndex < componentSummaryListJsonList.GetLength();
+         ++componentSummaryListIndex) {
       m_componentSummaryList.push_back(componentSummaryListJsonList[componentSummaryListIndex].AsObject());
     }
     m_componentSummaryListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-
 
   return *this;
 }

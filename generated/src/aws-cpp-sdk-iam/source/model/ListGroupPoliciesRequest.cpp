@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListGroupPoliciesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListGroupPoliciesRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListGroupPoliciesRequest::SerializePayload() const
-{
+Aws::String ListGroupPoliciesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListGroupPolicies&";
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListGroupPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListGroupPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListGroupPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

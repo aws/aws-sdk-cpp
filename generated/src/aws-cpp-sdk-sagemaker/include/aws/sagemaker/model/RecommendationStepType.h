@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class RecommendationStepType
-  {
-    NOT_SET,
-    BENCHMARK
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class RecommendationStepType { NOT_SET, BENCHMARK };
 
-namespace RecommendationStepTypeMapper
-{
+namespace RecommendationStepTypeMapper {
 AWS_SAGEMAKER_API RecommendationStepType GetRecommendationStepTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForRecommendationStepType(RecommendationStepType value);
-} // namespace RecommendationStepTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace RecommendationStepTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

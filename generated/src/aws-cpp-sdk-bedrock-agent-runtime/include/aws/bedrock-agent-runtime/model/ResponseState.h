@@ -7,25 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class ResponseState
-  {
-    NOT_SET,
-    FAILURE,
-    REPROMPT
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class ResponseState { NOT_SET, FAILURE, REPROMPT };
 
-namespace ResponseStateMapper
-{
+namespace ResponseStateMapper {
 AWS_BEDROCKAGENTRUNTIME_API ResponseState GetResponseStateForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForResponseState(ResponseState value);
-} // namespace ResponseStateMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace ResponseStateMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

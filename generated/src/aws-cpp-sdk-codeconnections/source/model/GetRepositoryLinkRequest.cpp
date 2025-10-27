@@ -12,27 +12,18 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRepositoryLinkRequest::SerializePayload() const
-{
+Aws::String GetRepositoryLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryLinkIdHasBeenSet)
-  {
-   payload.WithString("RepositoryLinkId", m_repositoryLinkId);
-
+  if (m_repositoryLinkIdHasBeenSet) {
+    payload.WithString("RepositoryLinkId", m_repositoryLinkId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetRepositoryLinkRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetRepositoryLinkRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.GetRepositoryLink"));
   return headers;
-
 }
-
-
-
-

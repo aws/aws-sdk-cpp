@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::tnb;
 
-AWSError<CoreErrors> TnbErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TnbErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TnbErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

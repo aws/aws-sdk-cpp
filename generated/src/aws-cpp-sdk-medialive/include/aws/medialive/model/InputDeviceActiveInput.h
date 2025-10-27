@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class InputDeviceActiveInput
-  {
-    NOT_SET,
-    HDMI,
-    SDI
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class InputDeviceActiveInput { NOT_SET, HDMI, SDI };
 
-namespace InputDeviceActiveInputMapper
-{
+namespace InputDeviceActiveInputMapper {
 AWS_MEDIALIVE_API InputDeviceActiveInput GetInputDeviceActiveInputForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForInputDeviceActiveInput(InputDeviceActiveInput value);
-} // namespace InputDeviceActiveInputMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace InputDeviceActiveInputMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

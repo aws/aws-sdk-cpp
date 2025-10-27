@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-} // namespace ServiceDiscovery
-} // namespace Aws
+namespace Aws {
+namespace ServiceDiscovery {}  // namespace ServiceDiscovery
+}  // namespace Aws

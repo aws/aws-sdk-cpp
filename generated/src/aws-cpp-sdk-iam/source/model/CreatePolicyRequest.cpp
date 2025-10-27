@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/CreatePolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/CreatePolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String CreatePolicyRequest::SerializePayload() const
-{
+Aws::String CreatePolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreatePolicy&";
-  if(m_policyNameHasBeenSet)
-  {
+  if (m_policyNameHasBeenSet) {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
 
-  if(m_pathHasBeenSet)
-  {
+  if (m_pathHasBeenSet) {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
 
-  if(m_policyDocumentHasBeenSet)
-  {
+  if (m_policyDocumentHasBeenSet) {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
@@ -55,8 +45,4 @@ Aws::String CreatePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreatePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreatePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

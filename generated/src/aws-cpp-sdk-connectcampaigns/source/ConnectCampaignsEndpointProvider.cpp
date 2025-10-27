@@ -5,12 +5,8 @@
 
 #include <aws/connectcampaigns/ConnectCampaignsEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConnectCampaigns
-} // namespace Aws
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConnectCampaigns
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-PackageOriginConfiguration::PackageOriginConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageOriginConfiguration::PackageOriginConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PackageOriginConfiguration& PackageOriginConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("restrictions"))
-  {
+PackageOriginConfiguration& PackageOriginConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("restrictions")) {
     m_restrictions = jsonValue.GetObject("restrictions");
     m_restrictionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageOriginConfiguration::Jsonize() const
-{
+JsonValue PackageOriginConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_restrictionsHasBeenSet)
-  {
-   payload.WithObject("restrictions", m_restrictions.Jsonize());
-
+  if (m_restrictionsHasBeenSet) {
+    payload.WithObject("restrictions", m_restrictions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

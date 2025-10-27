@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteTrafficMirrorSessionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteTrafficMirrorSessionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTrafficMirrorSessionRequest::SerializePayload() const
-{
+Aws::String DeleteTrafficMirrorSessionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTrafficMirrorSession&";
-  if(m_trafficMirrorSessionIdHasBeenSet)
-  {
+  if (m_trafficMirrorSessionIdHasBeenSet) {
     ss << "TrafficMirrorSessionId=" << StringUtils::URLEncode(m_trafficMirrorSessionId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteTrafficMirrorSessionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteTrafficMirrorSessionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTrafficMirrorSessionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

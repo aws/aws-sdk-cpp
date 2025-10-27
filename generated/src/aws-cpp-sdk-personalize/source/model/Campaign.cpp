@@ -3,146 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/Campaign.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/Campaign.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-Campaign::Campaign(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Campaign::Campaign(JsonView jsonValue) { *this = jsonValue; }
 
-Campaign& Campaign::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Campaign& Campaign::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("campaignArn"))
-  {
+  if (jsonValue.ValueExists("campaignArn")) {
     m_campaignArn = jsonValue.GetString("campaignArn");
     m_campaignArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("solutionVersionArn"))
-  {
+  if (jsonValue.ValueExists("solutionVersionArn")) {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
     m_solutionVersionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minProvisionedTPS"))
-  {
+  if (jsonValue.ValueExists("minProvisionedTPS")) {
     m_minProvisionedTPS = jsonValue.GetInteger("minProvisionedTPS");
     m_minProvisionedTPSHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("campaignConfig"))
-  {
+  if (jsonValue.ValueExists("campaignConfig")) {
     m_campaignConfig = jsonValue.GetObject("campaignConfig");
     m_campaignConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestCampaignUpdate"))
-  {
+  if (jsonValue.ValueExists("latestCampaignUpdate")) {
     m_latestCampaignUpdate = jsonValue.GetObject("latestCampaignUpdate");
     m_latestCampaignUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Campaign::Jsonize() const
-{
+JsonValue Campaign::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_campaignArnHasBeenSet)
-  {
-   payload.WithString("campaignArn", m_campaignArn);
-
+  if (m_campaignArnHasBeenSet) {
+    payload.WithString("campaignArn", m_campaignArn);
   }
 
-  if(m_solutionVersionArnHasBeenSet)
-  {
-   payload.WithString("solutionVersionArn", m_solutionVersionArn);
-
+  if (m_solutionVersionArnHasBeenSet) {
+    payload.WithString("solutionVersionArn", m_solutionVersionArn);
   }
 
-  if(m_minProvisionedTPSHasBeenSet)
-  {
-   payload.WithInteger("minProvisionedTPS", m_minProvisionedTPS);
-
+  if (m_minProvisionedTPSHasBeenSet) {
+    payload.WithInteger("minProvisionedTPS", m_minProvisionedTPS);
   }
 
-  if(m_campaignConfigHasBeenSet)
-  {
-   payload.WithObject("campaignConfig", m_campaignConfig.Jsonize());
-
+  if (m_campaignConfigHasBeenSet) {
+    payload.WithObject("campaignConfig", m_campaignConfig.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_latestCampaignUpdateHasBeenSet)
-  {
-   payload.WithObject("latestCampaignUpdate", m_latestCampaignUpdate.Jsonize());
-
+  if (m_latestCampaignUpdateHasBeenSet) {
+    payload.WithObject("latestCampaignUpdate", m_latestCampaignUpdate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

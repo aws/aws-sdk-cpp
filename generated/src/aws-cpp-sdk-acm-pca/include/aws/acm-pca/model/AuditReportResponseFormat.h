@@ -7,25 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class AuditReportResponseFormat
-  {
-    NOT_SET,
-    JSON,
-    CSV
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class AuditReportResponseFormat { NOT_SET, JSON, CSV };
 
-namespace AuditReportResponseFormatMapper
-{
+namespace AuditReportResponseFormatMapper {
 AWS_ACMPCA_API AuditReportResponseFormat GetAuditReportResponseFormatForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForAuditReportResponseFormat(AuditReportResponseFormat value);
-} // namespace AuditReportResponseFormatMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace AuditReportResponseFormatMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

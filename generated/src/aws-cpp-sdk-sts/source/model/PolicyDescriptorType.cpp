@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/PolicyDescriptorType.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sts/model/PolicyDescriptorType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace STS
-{
-namespace Model
-{
+namespace Aws {
+namespace STS {
+namespace Model {
 
-PolicyDescriptorType::PolicyDescriptorType(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PolicyDescriptorType::PolicyDescriptorType(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PolicyDescriptorType& PolicyDescriptorType::operator =(const XmlNode& xmlNode)
-{
+PolicyDescriptorType& PolicyDescriptorType::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode arnNode = resultNode.FirstChild("arn");
-    if(!arnNode.IsNull())
-    {
+    if (!arnNode.IsNull()) {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ PolicyDescriptorType& PolicyDescriptorType::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void PolicyDescriptorType::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_arnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  }
-
-}
-
-void PolicyDescriptorType::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_arnHasBeenSet)
-  {
-      oStream << location << ".arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+void PolicyDescriptorType::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_arnHasBeenSet) {
+    oStream << location << index << locationValue << ".arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace STS
-} // namespace Aws
+void PolicyDescriptorType::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_arnHasBeenSet) {
+    oStream << location << ".arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace STS
+}  // namespace Aws

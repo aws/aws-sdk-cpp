@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class ResponseStreamingInvocationType
-  {
-    NOT_SET,
-    RequestResponse,
-    DryRun
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class ResponseStreamingInvocationType { NOT_SET, RequestResponse, DryRun };
 
-namespace ResponseStreamingInvocationTypeMapper
-{
+namespace ResponseStreamingInvocationTypeMapper {
 AWS_LAMBDA_API ResponseStreamingInvocationType GetResponseStreamingInvocationTypeForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForResponseStreamingInvocationType(ResponseStreamingInvocationType value);
-} // namespace ResponseStreamingInvocationTypeMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace ResponseStreamingInvocationTypeMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

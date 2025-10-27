@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/LoggingEnabled.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/LoggingEnabled.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
-{
+LoggingEnabled& LoggingEnabled::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode targetBucketNode = resultNode.FirstChild("TargetBucket");
-    if(!targetBucketNode.IsNull())
-    {
+    if (!targetBucketNode.IsNull()) {
       m_targetBucket = Aws::Utils::Xml::DecodeEscapedXmlText(targetBucketNode.GetText());
       m_targetBucketHasBeenSet = true;
     }
     XmlNode targetGrantsNode = resultNode.FirstChild("TargetGrants");
-    if(!targetGrantsNode.IsNull())
-    {
+    if (!targetGrantsNode.IsNull()) {
       XmlNode targetGrantsMember = targetGrantsNode.FirstChild("Grant");
       m_targetGrantsHasBeenSet = !targetGrantsMember.IsNull();
-      while(!targetGrantsMember.IsNull())
-      {
+      while (!targetGrantsMember.IsNull()) {
         m_targetGrants.push_back(targetGrantsMember);
         targetGrantsMember = targetGrantsMember.NextNode("Grant");
       }
@@ -51,14 +40,12 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
       m_targetGrantsHasBeenSet = true;
     }
     XmlNode targetPrefixNode = resultNode.FirstChild("TargetPrefix");
-    if(!targetPrefixNode.IsNull())
-    {
+    if (!targetPrefixNode.IsNull()) {
       m_targetPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(targetPrefixNode.GetText());
       m_targetPrefixHasBeenSet = true;
     }
     XmlNode targetObjectKeyFormatNode = resultNode.FirstChild("TargetObjectKeyFormat");
-    if(!targetObjectKeyFormatNode.IsNull())
-    {
+    if (!targetObjectKeyFormatNode.IsNull()) {
       m_targetObjectKeyFormat = targetObjectKeyFormatNode;
       m_targetObjectKeyFormatHasBeenSet = true;
     }
@@ -67,39 +54,32 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LoggingEnabled::AddToNode(XmlNode& parentNode) const
-{
+void LoggingEnabled::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_targetBucketHasBeenSet)
-  {
-   XmlNode targetBucketNode = parentNode.CreateChildElement("TargetBucket");
-   targetBucketNode.SetText(m_targetBucket);
+  if (m_targetBucketHasBeenSet) {
+    XmlNode targetBucketNode = parentNode.CreateChildElement("TargetBucket");
+    targetBucketNode.SetText(m_targetBucket);
   }
 
-  if(m_targetGrantsHasBeenSet)
-  {
-   XmlNode targetGrantsParentNode = parentNode.CreateChildElement("TargetGrants");
-   for(const auto& item : m_targetGrants)
-   {
-     XmlNode targetGrantsNode = targetGrantsParentNode.CreateChildElement("Grant");
-     item.AddToNode(targetGrantsNode);
-   }
+  if (m_targetGrantsHasBeenSet) {
+    XmlNode targetGrantsParentNode = parentNode.CreateChildElement("TargetGrants");
+    for (const auto& item : m_targetGrants) {
+      XmlNode targetGrantsNode = targetGrantsParentNode.CreateChildElement("Grant");
+      item.AddToNode(targetGrantsNode);
+    }
   }
 
-  if(m_targetPrefixHasBeenSet)
-  {
-   XmlNode targetPrefixNode = parentNode.CreateChildElement("TargetPrefix");
-   targetPrefixNode.SetText(m_targetPrefix);
+  if (m_targetPrefixHasBeenSet) {
+    XmlNode targetPrefixNode = parentNode.CreateChildElement("TargetPrefix");
+    targetPrefixNode.SetText(m_targetPrefix);
   }
 
-  if(m_targetObjectKeyFormatHasBeenSet)
-  {
-   XmlNode targetObjectKeyFormatNode = parentNode.CreateChildElement("TargetObjectKeyFormat");
-   m_targetObjectKeyFormat.AddToNode(targetObjectKeyFormatNode);
+  if (m_targetObjectKeyFormatHasBeenSet) {
+    XmlNode targetObjectKeyFormatNode = parentNode.CreateChildElement("TargetObjectKeyFormat");
+    m_targetObjectKeyFormat.AddToNode(targetObjectKeyFormatNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

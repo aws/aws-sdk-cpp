@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableRouteServerPropagationRequest::SerializePayload() const
-{
+Aws::String DisableRouteServerPropagationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableRouteServerPropagation&";
-  if(m_routeServerIdHasBeenSet)
-  {
+  if (m_routeServerIdHasBeenSet) {
     ss << "RouteServerId=" << StringUtils::URLEncode(m_routeServerId.c_str()) << "&";
   }
 
-  if(m_routeTableIdHasBeenSet)
-  {
+  if (m_routeTableIdHasBeenSet) {
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DisableRouteServerPropagationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableRouteServerPropagationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableRouteServerPropagationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

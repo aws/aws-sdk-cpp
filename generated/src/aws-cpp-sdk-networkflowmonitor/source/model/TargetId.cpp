@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkflowmonitor/model/TargetId.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkflowmonitor/model/TargetId.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Model {
 
-TargetId::TargetId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetId::TargetId(JsonView jsonValue) { *this = jsonValue; }
 
-TargetId& TargetId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+TargetId& TargetId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetId::Jsonize() const
-{
+JsonValue TargetId::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

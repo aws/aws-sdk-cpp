@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class ContentStatus
-  {
-    NOT_SET,
-    CREATE_IN_PROGRESS,
-    CREATE_FAILED,
-    ACTIVE,
-    DELETE_IN_PROGRESS,
-    DELETE_FAILED,
-    DELETED,
-    UPDATE_FAILED
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class ContentStatus { NOT_SET, CREATE_IN_PROGRESS, CREATE_FAILED, ACTIVE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETED, UPDATE_FAILED };
 
-namespace ContentStatusMapper
-{
+namespace ContentStatusMapper {
 AWS_QCONNECT_API ContentStatus GetContentStatusForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForContentStatus(ContentStatus value);
-} // namespace ContentStatusMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace ContentStatusMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailTextCharactersCoverage::GuardrailTextCharactersCoverage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailTextCharactersCoverage::GuardrailTextCharactersCoverage(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailTextCharactersCoverage& GuardrailTextCharactersCoverage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("guarded"))
-  {
+GuardrailTextCharactersCoverage& GuardrailTextCharactersCoverage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("guarded")) {
     m_guarded = jsonValue.GetInteger("guarded");
     m_guardedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("total"))
-  {
+  if (jsonValue.ValueExists("total")) {
     m_total = jsonValue.GetInteger("total");
     m_totalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailTextCharactersCoverage::Jsonize() const
-{
+JsonValue GuardrailTextCharactersCoverage::Jsonize() const {
   JsonValue payload;
 
-  if(m_guardedHasBeenSet)
-  {
-   payload.WithInteger("guarded", m_guarded);
-
+  if (m_guardedHasBeenSet) {
+    payload.WithInteger("guarded", m_guarded);
   }
 
-  if(m_totalHasBeenSet)
-  {
-   payload.WithInteger("total", m_total);
-
+  if (m_totalHasBeenSet) {
+    payload.WithInteger("total", m_total);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

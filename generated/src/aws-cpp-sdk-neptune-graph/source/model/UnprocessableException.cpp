@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune-graph/model/UnprocessableException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptune-graph/model/UnprocessableException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
 
-UnprocessableException::UnprocessableException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessableException::UnprocessableException(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessableException& UnprocessableException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+UnprocessableException& UnprocessableException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = UnprocessableExceptionReasonMapper::GetUnprocessableExceptionReasonForName(jsonValue.GetString("reason"));
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessableException::Jsonize() const
-{
+JsonValue UnprocessableException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", UnprocessableExceptionReasonMapper::GetNameForUnprocessableExceptionReason(m_reason));
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", UnprocessableExceptionReasonMapper::GetNameForUnprocessableExceptionReason(m_reason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

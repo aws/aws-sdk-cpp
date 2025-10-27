@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class WebvttStylePassthrough
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED,
-    STRICT,
-    MERGE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class WebvttStylePassthrough { NOT_SET, ENABLED, DISABLED, STRICT, MERGE };
 
-namespace WebvttStylePassthroughMapper
-{
+namespace WebvttStylePassthroughMapper {
 AWS_MEDIACONVERT_API WebvttStylePassthrough GetWebvttStylePassthroughForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForWebvttStylePassthrough(WebvttStylePassthrough value);
-} // namespace WebvttStylePassthroughMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace WebvttStylePassthroughMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

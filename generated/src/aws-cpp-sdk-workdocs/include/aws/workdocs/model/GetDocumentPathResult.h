@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/workdocs/model/ResourcePath.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace WorkDocs
-{
-namespace Model
-{
-  class GetDocumentPathResult
-  {
-  public:
-    AWS_WORKDOCS_API GetDocumentPathResult() = default;
-    AWS_WORKDOCS_API GetDocumentPathResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_WORKDOCS_API GetDocumentPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace WorkDocs {
+namespace Model {
+class GetDocumentPathResult {
+ public:
+  AWS_WORKDOCS_API GetDocumentPathResult() = default;
+  AWS_WORKDOCS_API GetDocumentPathResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WORKDOCS_API GetDocumentPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The path information.</p>
+   */
+  inline const ResourcePath& GetPath() const { return m_path; }
+  template <typename PathT = ResourcePath>
+  void SetPath(PathT&& value) {
+    m_pathHasBeenSet = true;
+    m_path = std::forward<PathT>(value);
+  }
+  template <typename PathT = ResourcePath>
+  GetDocumentPathResult& WithPath(PathT&& value) {
+    SetPath(std::forward<PathT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The path information.</p>
-     */
-    inline const ResourcePath& GetPath() const { return m_path; }
-    template<typename PathT = ResourcePath>
-    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
-    template<typename PathT = ResourcePath>
-    GetDocumentPathResult& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetDocumentPathResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetDocumentPathResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ResourcePath m_path;
+  bool m_pathHasBeenSet = false;
 
-    ResourcePath m_path;
-    bool m_pathHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

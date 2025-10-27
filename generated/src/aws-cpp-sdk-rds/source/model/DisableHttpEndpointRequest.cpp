@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DisableHttpEndpointRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DisableHttpEndpointRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableHttpEndpointRequest::SerializePayload() const
-{
+Aws::String DisableHttpEndpointRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableHttpEndpoint&";
-  if(m_resourceArnHasBeenSet)
-  {
+  if (m_resourceArnHasBeenSet) {
     ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DisableHttpEndpointRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableHttpEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableHttpEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

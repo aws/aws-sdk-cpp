@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-InvocationResultMember::InvocationResultMember(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvocationResultMember::InvocationResultMember(JsonView jsonValue) { *this = jsonValue; }
 
-InvocationResultMember& InvocationResultMember::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiResult"))
-  {
+InvocationResultMember& InvocationResultMember::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiResult")) {
     m_apiResult = jsonValue.GetObject("apiResult");
     m_apiResultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("functionResult"))
-  {
+  if (jsonValue.ValueExists("functionResult")) {
     m_functionResult = jsonValue.GetObject("functionResult");
     m_functionResultHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvocationResultMember::Jsonize() const
-{
+JsonValue InvocationResultMember::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiResultHasBeenSet)
-  {
-   payload.WithObject("apiResult", m_apiResult.Jsonize());
-
+  if (m_apiResultHasBeenSet) {
+    payload.WithObject("apiResult", m_apiResult.Jsonize());
   }
 
-  if(m_functionResultHasBeenSet)
-  {
-   payload.WithObject("functionResult", m_functionResult.Jsonize());
-
+  if (m_functionResultHasBeenSet) {
+    payload.WithObject("functionResult", m_functionResult.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/CreateDeviceDefinitionVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/greengrass/model/CreateDeviceDefinitionVersionRequest.h>
 
 #include <utility>
 
@@ -13,39 +13,28 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDeviceDefinitionVersionRequest::SerializePayload() const
-{
+Aws::String CreateDeviceDefinitionVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_devicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
-   for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
-   {
-     devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
-   }
-   payload.WithArray("Devices", std::move(devicesJsonList));
-
+  if (m_devicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
+    for (unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex) {
+      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
+    }
+    payload.WithArray("Devices", std::move(devicesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateDeviceDefinitionVersionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateDeviceDefinitionVersionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_amznClientTokenHasBeenSet)
-  {
+  if (m_amznClientTokenHasBeenSet) {
     ss << m_amznClientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

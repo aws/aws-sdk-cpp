@@ -12,24 +12,16 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateGlobalSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_globalSettingsHasBeenSet)
-  {
-   JsonValue globalSettingsJsonMap;
-   for(auto& globalSettingsItem : m_globalSettings)
-   {
-     globalSettingsJsonMap.WithString(globalSettingsItem.first, globalSettingsItem.second);
-   }
-   payload.WithObject("GlobalSettings", std::move(globalSettingsJsonMap));
-
+  if (m_globalSettingsHasBeenSet) {
+    JsonValue globalSettingsJsonMap;
+    for (auto& globalSettingsItem : m_globalSettings) {
+      globalSettingsJsonMap.WithString(globalSettingsItem.first, globalSettingsItem.second);
+    }
+    payload.WithObject("GlobalSettings", std::move(globalSettingsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

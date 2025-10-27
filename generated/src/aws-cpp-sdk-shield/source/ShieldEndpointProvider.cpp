@@ -5,12 +5,8 @@
 
 #include <aws/shield/ShieldEndpointProvider.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Shield
-} // namespace Aws
+namespace Aws {
+namespace Shield {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Shield
+}  // namespace Aws

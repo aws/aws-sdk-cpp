@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ExcludePeriodConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ExcludePeriodConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ExcludePeriodConfiguration::ExcludePeriodConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExcludePeriodConfiguration::ExcludePeriodConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExcludePeriodConfiguration& ExcludePeriodConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Amount"))
-  {
+ExcludePeriodConfiguration& ExcludePeriodConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Amount")) {
     m_amount = jsonValue.GetInteger("Amount");
     m_amountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Granularity"))
-  {
+  if (jsonValue.ValueExists("Granularity")) {
     m_granularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("Granularity"));
     m_granularityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExcludePeriodConfiguration::Jsonize() const
-{
+JsonValue ExcludePeriodConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_amountHasBeenSet)
-  {
-   payload.WithInteger("Amount", m_amount);
-
+  if (m_amountHasBeenSet) {
+    payload.WithInteger("Amount", m_amount);
   }
 
-  if(m_granularityHasBeenSet)
-  {
-   payload.WithString("Granularity", TimeGranularityMapper::GetNameForTimeGranularity(m_granularity));
+  if (m_granularityHasBeenSet) {
+    payload.WithString("Granularity", TimeGranularityMapper::GetNameForTimeGranularity(m_granularity));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", WidgetStatusMapper::GetNameForWidgetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", WidgetStatusMapper::GetNameForWidgetStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

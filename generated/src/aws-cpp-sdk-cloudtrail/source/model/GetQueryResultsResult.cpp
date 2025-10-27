@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudtrail/model/GetQueryResultsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,38 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("QueryStatus"))
-  {
+  if (jsonValue.ValueExists("QueryStatus")) {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
     m_queryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryStatistics"))
-  {
+  if (jsonValue.ValueExists("QueryStatistics")) {
     m_queryStatistics = jsonValue.GetObject("QueryStatistics");
     m_queryStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryResultRows"))
-  {
+  if (jsonValue.ValueExists("QueryResultRows")) {
     Aws::Utils::Array<JsonView> queryResultRowsJsonList = jsonValue.GetArray("QueryResultRows");
-    for(unsigned queryResultRowsIndex = 0; queryResultRowsIndex < queryResultRowsJsonList.GetLength(); ++queryResultRowsIndex)
-    {
+    for (unsigned queryResultRowsIndex = 0; queryResultRowsIndex < queryResultRowsJsonList.GetLength(); ++queryResultRowsIndex) {
       Aws::Utils::Array<JsonView> queryResultRowJsonList = queryResultRowsJsonList[queryResultRowsIndex].AsArray();
       Aws::Vector<Aws::Map<Aws::String, Aws::String>> queryResultRowList;
       queryResultRowList.reserve((size_t)queryResultRowJsonList.GetLength());
-      for(unsigned queryResultRowIndex = 0; queryResultRowIndex < queryResultRowJsonList.GetLength(); ++queryResultRowIndex)
-      {
+      for (unsigned queryResultRowIndex = 0; queryResultRowIndex < queryResultRowJsonList.GetLength(); ++queryResultRowIndex) {
         Aws::Map<Aws::String, JsonView> queryResultColumnJsonMap = queryResultRowJsonList[queryResultRowIndex].GetAllObjects();
         Aws::Map<Aws::String, Aws::String> queryResultColumnMap;
-        for(auto& queryResultColumnItem : queryResultColumnJsonMap)
-        {
+        for (auto& queryResultColumnItem : queryResultColumnJsonMap) {
           queryResultColumnMap[queryResultColumnItem.first] = queryResultColumnItem.second.AsString();
         }
         queryResultRowList.push_back(std::move(queryResultColumnMap));
@@ -57,25 +47,21 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
     }
     m_queryResultRowsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

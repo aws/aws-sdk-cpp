@@ -4,58 +4,45 @@
  */
 
 #include <aws/cloudformation/model/StackInstanceResourceDriftsSummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator =(const XmlNode& xmlNode)
-{
+StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
-    if(!stackIdNode.IsNull())
-    {
+    if (!stackIdNode.IsNull()) {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
-    if(!logicalResourceIdNode.IsNull())
-    {
+    if (!logicalResourceIdNode.IsNull()) {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
-    if(!physicalResourceIdNode.IsNull())
-    {
+    if (!physicalResourceIdNode.IsNull()) {
       m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdContextNode = resultNode.FirstChild("PhysicalResourceIdContext");
-    if(!physicalResourceIdContextNode.IsNull())
-    {
+    if (!physicalResourceIdContextNode.IsNull()) {
       XmlNode physicalResourceIdContextMember = physicalResourceIdContextNode.FirstChild("member");
       m_physicalResourceIdContextHasBeenSet = !physicalResourceIdContextMember.IsNull();
-      while(!physicalResourceIdContextMember.IsNull())
-      {
+      while (!physicalResourceIdContextMember.IsNull()) {
         m_physicalResourceIdContext.push_back(physicalResourceIdContextMember);
         physicalResourceIdContextMember = physicalResourceIdContextMember.NextNode("member");
       }
@@ -63,18 +50,15 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
       m_physicalResourceIdContextHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
-    if(!resourceTypeNode.IsNull())
-    {
+    if (!resourceTypeNode.IsNull()) {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode propertyDifferencesNode = resultNode.FirstChild("PropertyDifferences");
-    if(!propertyDifferencesNode.IsNull())
-    {
+    if (!propertyDifferencesNode.IsNull()) {
       XmlNode propertyDifferencesMember = propertyDifferencesNode.FirstChild("member");
       m_propertyDifferencesHasBeenSet = !propertyDifferencesMember.IsNull();
-      while(!propertyDifferencesMember.IsNull())
-      {
+      while (!propertyDifferencesMember.IsNull()) {
         m_propertyDifferences.push_back(propertyDifferencesMember);
         propertyDifferencesMember = propertyDifferencesMember.NextNode("member");
       }
@@ -82,15 +66,15 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
       m_propertyDifferencesHasBeenSet = true;
     }
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
-    if(!stackResourceDriftStatusNode.IsNull())
-    {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()));
+    if (!stackResourceDriftStatusNode.IsNull()) {
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()));
       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!timestampNode.IsNull()) {
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
   }
@@ -98,110 +82,95 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
   return *this;
 }
 
-void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_stackIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                        const char* locationValue) const {
+  if (m_stackIdHasBeenSet) {
+    oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
 
-  if(m_logicalResourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+  if (m_logicalResourceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
 
-  if(m_physicalResourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
+  if (m_physicalResourceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
   }
 
-  if(m_physicalResourceIdContextHasBeenSet)
-  {
-      unsigned physicalResourceIdContextIdx = 1;
-      for(auto& item : m_physicalResourceIdContext)
-      {
-        Aws::StringStream physicalResourceIdContextSs;
-        physicalResourceIdContextSs << location << index << locationValue << ".PhysicalResourceIdContext.member." << physicalResourceIdContextIdx++;
-        item.OutputToStream(oStream, physicalResourceIdContextSs.str().c_str());
-      }
+  if (m_physicalResourceIdContextHasBeenSet) {
+    unsigned physicalResourceIdContextIdx = 1;
+    for (auto& item : m_physicalResourceIdContext) {
+      Aws::StringStream physicalResourceIdContextSs;
+      physicalResourceIdContextSs << location << index << locationValue << ".PhysicalResourceIdContext.member."
+                                  << physicalResourceIdContextIdx++;
+      item.OutputToStream(oStream, physicalResourceIdContextSs.str().c_str());
+    }
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
 
-  if(m_propertyDifferencesHasBeenSet)
-  {
-      unsigned propertyDifferencesIdx = 1;
-      for(auto& item : m_propertyDifferences)
-      {
-        Aws::StringStream propertyDifferencesSs;
-        propertyDifferencesSs << location << index << locationValue << ".PropertyDifferences.member." << propertyDifferencesIdx++;
-        item.OutputToStream(oStream, propertyDifferencesSs.str().c_str());
-      }
+  if (m_propertyDifferencesHasBeenSet) {
+    unsigned propertyDifferencesIdx = 1;
+    for (auto& item : m_propertyDifferences) {
+      Aws::StringStream propertyDifferencesSs;
+      propertyDifferencesSs << location << index << locationValue << ".PropertyDifferences.member." << propertyDifferencesIdx++;
+      item.OutputToStream(oStream, propertyDifferencesSs.str().c_str());
+    }
   }
 
-  if(m_stackResourceDriftStatusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
+  if (m_stackResourceDriftStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".StackResourceDriftStatus="
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus))
+            << "&";
   }
 
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-}
-
-void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_stackIdHasBeenSet)
-  {
-      oStream << location << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
-  }
-  if(m_logicalResourceIdHasBeenSet)
-  {
-      oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
-  }
-  if(m_physicalResourceIdHasBeenSet)
-  {
-      oStream << location << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
-  }
-  if(m_physicalResourceIdContextHasBeenSet)
-  {
-      unsigned physicalResourceIdContextIdx = 1;
-      for(auto& item : m_physicalResourceIdContext)
-      {
-        Aws::StringStream physicalResourceIdContextSs;
-        physicalResourceIdContextSs << location << ".PhysicalResourceIdContext.member." << physicalResourceIdContextIdx++;
-        item.OutputToStream(oStream, physicalResourceIdContextSs.str().c_str());
-      }
-  }
-  if(m_resourceTypeHasBeenSet)
-  {
-      oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
-  }
-  if(m_propertyDifferencesHasBeenSet)
-  {
-      unsigned propertyDifferencesIdx = 1;
-      for(auto& item : m_propertyDifferences)
-      {
-        Aws::StringStream propertyDifferencesSs;
-        propertyDifferencesSs << location << ".PropertyDifferences.member." << propertyDifferencesIdx++;
-        item.OutputToStream(oStream, propertyDifferencesSs.str().c_str());
-      }
-  }
-  if(m_stackResourceDriftStatusHasBeenSet)
-  {
-      oStream << location << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
-  }
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_timestampHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_stackIdHasBeenSet) {
+    oStream << location << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+  if (m_logicalResourceIdHasBeenSet) {
+    oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
+  }
+  if (m_physicalResourceIdHasBeenSet) {
+    oStream << location << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
+  }
+  if (m_physicalResourceIdContextHasBeenSet) {
+    unsigned physicalResourceIdContextIdx = 1;
+    for (auto& item : m_physicalResourceIdContext) {
+      Aws::StringStream physicalResourceIdContextSs;
+      physicalResourceIdContextSs << location << ".PhysicalResourceIdContext.member." << physicalResourceIdContextIdx++;
+      item.OutputToStream(oStream, physicalResourceIdContextSs.str().c_str());
+    }
+  }
+  if (m_resourceTypeHasBeenSet) {
+    oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
+  }
+  if (m_propertyDifferencesHasBeenSet) {
+    unsigned propertyDifferencesIdx = 1;
+    for (auto& item : m_propertyDifferences) {
+      Aws::StringStream propertyDifferencesSs;
+      propertyDifferencesSs << location << ".PropertyDifferences.member." << propertyDifferencesIdx++;
+      item.OutputToStream(oStream, propertyDifferencesSs.str().c_str());
+    }
+  }
+  if (m_stackResourceDriftStatusHasBeenSet) {
+    oStream << location << ".StackResourceDriftStatus="
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus))
+            << "&";
+  }
+  if (m_timestampHasBeenSet) {
+    oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

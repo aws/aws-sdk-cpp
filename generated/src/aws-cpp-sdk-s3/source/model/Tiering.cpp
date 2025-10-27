@@ -3,44 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/Tiering.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/Tiering.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-Tiering::Tiering(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Tiering::Tiering(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Tiering& Tiering::operator =(const XmlNode& xmlNode)
-{
+Tiering& Tiering::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode daysNode = resultNode.FirstChild("Days");
-    if(!daysNode.IsNull())
-    {
+    if (!daysNode.IsNull()) {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode accessTierNode = resultNode.FirstChild("AccessTier");
-    if(!accessTierNode.IsNull())
-    {
-      m_accessTier = IntelligentTieringAccessTierMapper::GetIntelligentTieringAccessTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessTierNode.GetText()).c_str()));
+    if (!accessTierNode.IsNull()) {
+      m_accessTier = IntelligentTieringAccessTierMapper::GetIntelligentTieringAccessTierForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessTierNode.GetText()).c_str()));
       m_accessTierHasBeenSet = true;
     }
   }
@@ -48,25 +39,21 @@ Tiering& Tiering::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Tiering::AddToNode(XmlNode& parentNode) const
-{
+void Tiering::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_daysHasBeenSet)
-  {
-   XmlNode daysNode = parentNode.CreateChildElement("Days");
-   ss << m_days;
-   daysNode.SetText(ss.str());
-   ss.str("");
+  if (m_daysHasBeenSet) {
+    XmlNode daysNode = parentNode.CreateChildElement("Days");
+    ss << m_days;
+    daysNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_accessTierHasBeenSet)
-  {
-   XmlNode accessTierNode = parentNode.CreateChildElement("AccessTier");
-   accessTierNode.SetText(IntelligentTieringAccessTierMapper::GetNameForIntelligentTieringAccessTier(m_accessTier));
+  if (m_accessTierHasBeenSet) {
+    XmlNode accessTierNode = parentNode.CreateChildElement("AccessTier");
+    accessTierNode.SetText(IntelligentTieringAccessTierMapper::GetNameForIntelligentTieringAccessTier(m_accessTier));
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class UserPoolMfaType
-  {
-    NOT_SET,
-    OFF,
-    ON,
-    OPTIONAL
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class UserPoolMfaType { NOT_SET, OFF, ON, OPTIONAL };
 
-namespace UserPoolMfaTypeMapper
-{
+namespace UserPoolMfaTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API UserPoolMfaType GetUserPoolMfaTypeForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForUserPoolMfaType(UserPoolMfaType value);
-} // namespace UserPoolMfaTypeMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace UserPoolMfaTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

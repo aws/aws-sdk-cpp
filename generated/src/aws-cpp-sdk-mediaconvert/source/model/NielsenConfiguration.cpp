@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/NielsenConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/NielsenConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-NielsenConfiguration::NielsenConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NielsenConfiguration::NielsenConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NielsenConfiguration& NielsenConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("breakoutCode"))
-  {
+NielsenConfiguration& NielsenConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("breakoutCode")) {
     m_breakoutCode = jsonValue.GetInteger("breakoutCode");
     m_breakoutCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("distributorId"))
-  {
+  if (jsonValue.ValueExists("distributorId")) {
     m_distributorId = jsonValue.GetString("distributorId");
     m_distributorIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NielsenConfiguration::Jsonize() const
-{
+JsonValue NielsenConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_breakoutCodeHasBeenSet)
-  {
-   payload.WithInteger("breakoutCode", m_breakoutCode);
-
+  if (m_breakoutCodeHasBeenSet) {
+    payload.WithInteger("breakoutCode", m_breakoutCode);
   }
 
-  if(m_distributorIdHasBeenSet)
-  {
-   payload.WithString("distributorId", m_distributorId);
-
+  if (m_distributorIdHasBeenSet) {
+    payload.WithString("distributorId", m_distributorId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

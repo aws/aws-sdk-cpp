@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class EvaluationStatus
-  {
-    NOT_SET,
-    DRAFT,
-    SUBMITTED
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class EvaluationStatus { NOT_SET, DRAFT, SUBMITTED };
 
-namespace EvaluationStatusMapper
-{
+namespace EvaluationStatusMapper {
 AWS_CONNECT_API EvaluationStatus GetEvaluationStatusForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForEvaluationStatus(EvaluationStatus value);
-} // namespace EvaluationStatusMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace EvaluationStatusMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

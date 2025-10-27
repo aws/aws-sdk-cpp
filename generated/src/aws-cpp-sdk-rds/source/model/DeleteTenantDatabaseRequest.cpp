@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteTenantDatabaseRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DeleteTenantDatabaseRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTenantDatabaseRequest::SerializePayload() const
-{
+Aws::String DeleteTenantDatabaseRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTenantDatabase&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_tenantDBNameHasBeenSet)
-  {
+  if (m_tenantDBNameHasBeenSet) {
     ss << "TenantDBName=" << StringUtils::URLEncode(m_tenantDBName.c_str()) << "&";
   }
 
-  if(m_skipFinalSnapshotHasBeenSet)
-  {
+  if (m_skipFinalSnapshotHasBeenSet) {
     ss << "SkipFinalSnapshot=" << std::boolalpha << m_skipFinalSnapshot << "&";
   }
 
-  if(m_finalDBSnapshotIdentifierHasBeenSet)
-  {
+  if (m_finalDBSnapshotIdentifierHasBeenSet) {
     ss << "FinalDBSnapshotIdentifier=" << StringUtils::URLEncode(m_finalDBSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DeleteTenantDatabaseRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteTenantDatabaseRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTenantDatabaseRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

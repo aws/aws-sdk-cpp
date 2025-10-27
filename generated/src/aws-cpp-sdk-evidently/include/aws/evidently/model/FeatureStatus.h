@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class FeatureStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    UPDATING
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class FeatureStatus { NOT_SET, AVAILABLE, UPDATING };
 
-namespace FeatureStatusMapper
-{
+namespace FeatureStatusMapper {
 AWS_CLOUDWATCHEVIDENTLY_API FeatureStatus GetFeatureStatusForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForFeatureStatus(FeatureStatus value);
-} // namespace FeatureStatusMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace FeatureStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

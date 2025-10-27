@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class MediaElementType
-  {
-    NOT_SET,
-    IMAGE
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class MediaElementType { NOT_SET, IMAGE };
 
-namespace MediaElementTypeMapper
-{
+namespace MediaElementTypeMapper {
 AWS_NOTIFICATIONS_API MediaElementType GetMediaElementTypeForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForMediaElementType(MediaElementType value);
-} // namespace MediaElementTypeMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace MediaElementTypeMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

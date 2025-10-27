@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/UpdateCustomMetricResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/UpdateCustomMetricResult.h>
 
 #include <utility>
 
@@ -17,53 +17,41 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCustomMetricResult::UpdateCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateCustomMetricResult::UpdateCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateCustomMetricResult& UpdateCustomMetricResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateCustomMetricResult& UpdateCustomMetricResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("metricName"))
-  {
+  if (jsonValue.ValueExists("metricName")) {
     m_metricName = jsonValue.GetString("metricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricArn"))
-  {
+  if (jsonValue.ValueExists("metricArn")) {
     m_metricArn = jsonValue.GetString("metricArn");
     m_metricArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricType"))
-  {
+  if (jsonValue.ValueExists("metricType")) {
     m_metricType = CustomMetricTypeMapper::GetCustomMetricTypeForName(jsonValue.GetString("metricType"));
     m_metricTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
-  {
+  if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDate"))
-  {
+  if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetDouble("creationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("lastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

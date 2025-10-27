@@ -3,81 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexAutoScalingDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexAutoScalingDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-ReplicaGlobalSecondaryIndexAutoScalingDescription::ReplicaGlobalSecondaryIndexAutoScalingDescription(JsonView jsonValue)
-{
+ReplicaGlobalSecondaryIndexAutoScalingDescription::ReplicaGlobalSecondaryIndexAutoScalingDescription(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-ReplicaGlobalSecondaryIndexAutoScalingDescription& ReplicaGlobalSecondaryIndexAutoScalingDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IndexName"))
-  {
+ReplicaGlobalSecondaryIndexAutoScalingDescription& ReplicaGlobalSecondaryIndexAutoScalingDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IndexName")) {
     m_indexName = jsonValue.GetString("IndexName");
     m_indexNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IndexStatus"))
-  {
+  if (jsonValue.ValueExists("IndexStatus")) {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
     m_indexStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettings"))
-  {
+  if (jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettings")) {
     m_provisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedReadCapacityAutoScalingSettings");
     m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingSettings"))
-  {
+  if (jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingSettings")) {
     m_provisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingSettings");
     m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicaGlobalSecondaryIndexAutoScalingDescription::Jsonize() const
-{
+JsonValue ReplicaGlobalSecondaryIndexAutoScalingDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexNameHasBeenSet)
-  {
-   payload.WithString("IndexName", m_indexName);
-
+  if (m_indexNameHasBeenSet) {
+    payload.WithString("IndexName", m_indexName);
   }
 
-  if(m_indexStatusHasBeenSet)
-  {
-   payload.WithString("IndexStatus", IndexStatusMapper::GetNameForIndexStatus(m_indexStatus));
+  if (m_indexStatusHasBeenSet) {
+    payload.WithString("IndexStatus", IndexStatusMapper::GetNameForIndexStatus(m_indexStatus));
   }
 
-  if(m_provisionedReadCapacityAutoScalingSettingsHasBeenSet)
-  {
-   payload.WithObject("ProvisionedReadCapacityAutoScalingSettings", m_provisionedReadCapacityAutoScalingSettings.Jsonize());
-
+  if (m_provisionedReadCapacityAutoScalingSettingsHasBeenSet) {
+    payload.WithObject("ProvisionedReadCapacityAutoScalingSettings", m_provisionedReadCapacityAutoScalingSettings.Jsonize());
   }
 
-  if(m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet)
-  {
-   payload.WithObject("ProvisionedWriteCapacityAutoScalingSettings", m_provisionedWriteCapacityAutoScalingSettings.Jsonize());
-
+  if (m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet) {
+    payload.WithObject("ProvisionedWriteCapacityAutoScalingSettings", m_provisionedWriteCapacityAutoScalingSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

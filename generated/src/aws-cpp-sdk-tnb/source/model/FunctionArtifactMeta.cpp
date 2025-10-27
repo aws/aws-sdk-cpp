@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/FunctionArtifactMeta.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/FunctionArtifactMeta.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
+namespace Aws {
+namespace tnb {
+namespace Model {
 
-FunctionArtifactMeta::FunctionArtifactMeta(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FunctionArtifactMeta::FunctionArtifactMeta(JsonView jsonValue) { *this = jsonValue; }
 
-FunctionArtifactMeta& FunctionArtifactMeta::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("overrides"))
-  {
+FunctionArtifactMeta& FunctionArtifactMeta::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("overrides")) {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
-    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-    {
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
     }
     m_overridesHasBeenSet = true;
@@ -37,24 +28,20 @@ FunctionArtifactMeta& FunctionArtifactMeta::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FunctionArtifactMeta::Jsonize() const
-{
+JsonValue FunctionArtifactMeta::Jsonize() const {
   JsonValue payload;
 
-  if(m_overridesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
-   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-   {
-     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
-   }
-   payload.WithArray("overrides", std::move(overridesJsonList));
-
+  if (m_overridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
+      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
+    }
+    payload.WithArray("overrides", std::move(overridesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

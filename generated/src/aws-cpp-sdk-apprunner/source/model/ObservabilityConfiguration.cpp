@@ -11,115 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-ObservabilityConfiguration::ObservabilityConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ObservabilityConfiguration::ObservabilityConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ObservabilityConfiguration& ObservabilityConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObservabilityConfigurationArn"))
-  {
+ObservabilityConfiguration& ObservabilityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObservabilityConfigurationArn")) {
     m_observabilityConfigurationArn = jsonValue.GetString("ObservabilityConfigurationArn");
     m_observabilityConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObservabilityConfigurationName"))
-  {
+  if (jsonValue.ValueExists("ObservabilityConfigurationName")) {
     m_observabilityConfigurationName = jsonValue.GetString("ObservabilityConfigurationName");
     m_observabilityConfigurationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TraceConfiguration"))
-  {
+  if (jsonValue.ValueExists("TraceConfiguration")) {
     m_traceConfiguration = jsonValue.GetObject("TraceConfiguration");
     m_traceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObservabilityConfigurationRevision"))
-  {
+  if (jsonValue.ValueExists("ObservabilityConfigurationRevision")) {
     m_observabilityConfigurationRevision = jsonValue.GetInteger("ObservabilityConfigurationRevision");
     m_observabilityConfigurationRevisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Latest"))
-  {
+  if (jsonValue.ValueExists("Latest")) {
     m_latest = jsonValue.GetBool("Latest");
     m_latestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ObservabilityConfigurationStatusMapper::GetObservabilityConfigurationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletedAt"))
-  {
+  if (jsonValue.ValueExists("DeletedAt")) {
     m_deletedAt = jsonValue.GetDouble("DeletedAt");
     m_deletedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ObservabilityConfiguration::Jsonize() const
-{
+JsonValue ObservabilityConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_observabilityConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ObservabilityConfigurationArn", m_observabilityConfigurationArn);
-
+  if (m_observabilityConfigurationArnHasBeenSet) {
+    payload.WithString("ObservabilityConfigurationArn", m_observabilityConfigurationArn);
   }
 
-  if(m_observabilityConfigurationNameHasBeenSet)
-  {
-   payload.WithString("ObservabilityConfigurationName", m_observabilityConfigurationName);
-
+  if (m_observabilityConfigurationNameHasBeenSet) {
+    payload.WithString("ObservabilityConfigurationName", m_observabilityConfigurationName);
   }
 
-  if(m_traceConfigurationHasBeenSet)
-  {
-   payload.WithObject("TraceConfiguration", m_traceConfiguration.Jsonize());
-
+  if (m_traceConfigurationHasBeenSet) {
+    payload.WithObject("TraceConfiguration", m_traceConfiguration.Jsonize());
   }
 
-  if(m_observabilityConfigurationRevisionHasBeenSet)
-  {
-   payload.WithInteger("ObservabilityConfigurationRevision", m_observabilityConfigurationRevision);
-
+  if (m_observabilityConfigurationRevisionHasBeenSet) {
+    payload.WithInteger("ObservabilityConfigurationRevision", m_observabilityConfigurationRevision);
   }
 
-  if(m_latestHasBeenSet)
-  {
-   payload.WithBool("Latest", m_latest);
-
+  if (m_latestHasBeenSet) {
+    payload.WithBool("Latest", m_latest);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ObservabilityConfigurationStatusMapper::GetNameForObservabilityConfigurationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ObservabilityConfigurationStatusMapper::GetNameForObservabilityConfigurationStatus(m_status));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_deletedAtHasBeenSet)
-  {
-   payload.WithDouble("DeletedAt", m_deletedAt.SecondsWithMSPrecision());
+  if (m_deletedAtHasBeenSet) {
+    payload.WithDouble("DeletedAt", m_deletedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

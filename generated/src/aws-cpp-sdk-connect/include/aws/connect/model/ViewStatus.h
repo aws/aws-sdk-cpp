@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class ViewStatus
-  {
-    NOT_SET,
-    PUBLISHED,
-    SAVED
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class ViewStatus { NOT_SET, PUBLISHED, SAVED };
 
-namespace ViewStatusMapper
-{
+namespace ViewStatusMapper {
 AWS_CONNECT_API ViewStatus GetViewStatusForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForViewStatus(ViewStatus value);
-} // namespace ViewStatusMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ViewStatusMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class DiskType
-  {
-    NOT_SET,
-    hdd,
-    ssd
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class DiskType { NOT_SET, hdd, ssd };
 
-namespace DiskTypeMapper
-{
+namespace DiskTypeMapper {
 AWS_EC2_API DiskType GetDiskTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForDiskType(DiskType value);
-} // namespace DiskTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace DiskTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

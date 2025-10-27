@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/DeleteTableRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspaces/model/DeleteTableRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteTableRequest::SerializePayload() const
-{
+Aws::String DeleteTableRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_keyspaceNameHasBeenSet)
-  {
-   payload.WithString("keyspaceName", m_keyspaceName);
-
+  if (m_keyspaceNameHasBeenSet) {
+    payload.WithString("keyspaceName", m_keyspaceName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("tableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("tableName", m_tableName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteTableRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteTableRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "KeyspacesService.DeleteTable"));
   return headers;
-
 }
-
-
-
-

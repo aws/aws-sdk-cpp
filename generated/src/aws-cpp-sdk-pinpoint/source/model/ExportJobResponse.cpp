@@ -3,189 +3,141 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/ExportJobResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/ExportJobResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-ExportJobResponse::ExportJobResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportJobResponse::ExportJobResponse(JsonView jsonValue) { *this = jsonValue; }
 
-ExportJobResponse& ExportJobResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationId"))
-  {
+ExportJobResponse& ExportJobResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedPieces"))
-  {
+  if (jsonValue.ValueExists("CompletedPieces")) {
     m_completedPieces = jsonValue.GetInteger("CompletedPieces");
     m_completedPiecesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletionDate"))
-  {
+  if (jsonValue.ValueExists("CompletionDate")) {
     m_completionDate = jsonValue.GetString("CompletionDate");
     m_completionDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetString("CreationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Definition"))
-  {
+  if (jsonValue.ValueExists("Definition")) {
     m_definition = jsonValue.GetObject("Definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailedPieces"))
-  {
+  if (jsonValue.ValueExists("FailedPieces")) {
     m_failedPieces = jsonValue.GetInteger("FailedPieces");
     m_failedPiecesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Failures"))
-  {
+  if (jsonValue.ValueExists("Failures")) {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
-    for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
-    {
+    for (unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex) {
       m_failures.push_back(failuresJsonList[failuresIndex].AsString());
     }
     m_failuresHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalFailures"))
-  {
+  if (jsonValue.ValueExists("TotalFailures")) {
     m_totalFailures = jsonValue.GetInteger("TotalFailures");
     m_totalFailuresHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalPieces"))
-  {
+  if (jsonValue.ValueExists("TotalPieces")) {
     m_totalPieces = jsonValue.GetInteger("TotalPieces");
     m_totalPiecesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalProcessed"))
-  {
+  if (jsonValue.ValueExists("TotalProcessed")) {
     m_totalProcessed = jsonValue.GetInteger("TotalProcessed");
     m_totalProcessedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportJobResponse::Jsonize() const
-{
+JsonValue ExportJobResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
-  if(m_completedPiecesHasBeenSet)
-  {
-   payload.WithInteger("CompletedPieces", m_completedPieces);
-
+  if (m_completedPiecesHasBeenSet) {
+    payload.WithInteger("CompletedPieces", m_completedPieces);
   }
 
-  if(m_completionDateHasBeenSet)
-  {
-   payload.WithString("CompletionDate", m_completionDate);
-
+  if (m_completionDateHasBeenSet) {
+    payload.WithString("CompletionDate", m_completionDate);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithString("CreationDate", m_creationDate);
-
+  if (m_creationDateHasBeenSet) {
+    payload.WithString("CreationDate", m_creationDate);
   }
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithObject("Definition", m_definition.Jsonize());
-
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("Definition", m_definition.Jsonize());
   }
 
-  if(m_failedPiecesHasBeenSet)
-  {
-   payload.WithInteger("FailedPieces", m_failedPieces);
-
+  if (m_failedPiecesHasBeenSet) {
+    payload.WithInteger("FailedPieces", m_failedPieces);
   }
 
-  if(m_failuresHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> failuresJsonList(m_failures.size());
-   for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
-   {
-     failuresJsonList[failuresIndex].AsString(m_failures[failuresIndex]);
-   }
-   payload.WithArray("Failures", std::move(failuresJsonList));
-
+  if (m_failuresHasBeenSet) {
+    Aws::Utils::Array<JsonValue> failuresJsonList(m_failures.size());
+    for (unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex) {
+      failuresJsonList[failuresIndex].AsString(m_failures[failuresIndex]);
+    }
+    payload.WithArray("Failures", std::move(failuresJsonList));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_totalFailuresHasBeenSet)
-  {
-   payload.WithInteger("TotalFailures", m_totalFailures);
-
+  if (m_totalFailuresHasBeenSet) {
+    payload.WithInteger("TotalFailures", m_totalFailures);
   }
 
-  if(m_totalPiecesHasBeenSet)
-  {
-   payload.WithInteger("TotalPieces", m_totalPieces);
-
+  if (m_totalPiecesHasBeenSet) {
+    payload.WithInteger("TotalPieces", m_totalPieces);
   }
 
-  if(m_totalProcessedHasBeenSet)
-  {
-   payload.WithInteger("TotalProcessed", m_totalProcessed);
-
+  if (m_totalProcessedHasBeenSet) {
+    payload.WithInteger("TotalProcessed", m_totalProcessed);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite(JsonView jsonValue) { *this = jsonValue; }
 
-GrpcGatewayRouteRewrite& GrpcGatewayRouteRewrite::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hostname"))
-  {
+GrpcGatewayRouteRewrite& GrpcGatewayRouteRewrite::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hostname")) {
     m_hostname = jsonValue.GetObject("hostname");
     m_hostnameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GrpcGatewayRouteRewrite::Jsonize() const
-{
+JsonValue GrpcGatewayRouteRewrite::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostnameHasBeenSet)
-  {
-   payload.WithObject("hostname", m_hostname.Jsonize());
-
+  if (m_hostnameHasBeenSet) {
+    payload.WithObject("hostname", m_hostname.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

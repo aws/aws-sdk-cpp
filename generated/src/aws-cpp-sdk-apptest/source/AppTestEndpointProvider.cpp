@@ -5,12 +5,8 @@
 
 #include <aws/apptest/AppTestEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppTest
-} // namespace Aws
+namespace Aws {
+namespace AppTest {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppTest
+}  // namespace Aws

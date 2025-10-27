@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class RollbackOnDisable
-  {
-    NOT_SET,
-    NO_ROLLBACK,
-    DEFAULT_ROLLBACK
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class RollbackOnDisable { NOT_SET, NO_ROLLBACK, DEFAULT_ROLLBACK };
 
-namespace RollbackOnDisableMapper
-{
+namespace RollbackOnDisableMapper {
 AWS_ELASTICSEARCHSERVICE_API RollbackOnDisable GetRollbackOnDisableForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForRollbackOnDisable(RollbackOnDisable value);
-} // namespace RollbackOnDisableMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace RollbackOnDisableMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

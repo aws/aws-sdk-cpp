@@ -12,44 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminSetUserSettingsRequest::SerializePayload() const
-{
+Aws::String AdminSetUserSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_mFAOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
-   for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
-   {
-     mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());
-   }
-   payload.WithArray("MFAOptions", std::move(mFAOptionsJsonList));
-
+  if (m_mFAOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
+    for (unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex) {
+      mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());
+    }
+    payload.WithArray("MFAOptions", std::move(mFAOptionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminSetUserSettingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminSetUserSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminSetUserSettings"));
   return headers;
-
 }
-
-
-
-

@@ -12,39 +12,26 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutResourcePolicyRequest::SerializePayload() const
-{
+Aws::String PutResourcePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_resourcePolicyHasBeenSet)
-  {
-   payload.WithString("ResourcePolicy", m_resourcePolicy);
-
+  if (m_resourcePolicyHasBeenSet) {
+    payload.WithString("ResourcePolicy", m_resourcePolicy);
   }
 
-  if(m_policyRevisionIdHasBeenSet)
-  {
-   payload.WithString("PolicyRevisionId", m_policyRevisionId);
-
+  if (m_policyRevisionIdHasBeenSet) {
+    payload.WithString("PolicyRevisionId", m_policyRevisionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutResourcePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutResourcePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.PutResourcePolicy"));
   return headers;
-
 }
-
-
-
-

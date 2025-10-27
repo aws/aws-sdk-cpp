@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AudioLanguageCodeControl
-  {
-    NOT_SET,
-    FOLLOW_INPUT,
-    USE_CONFIGURED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AudioLanguageCodeControl { NOT_SET, FOLLOW_INPUT, USE_CONFIGURED };
 
-namespace AudioLanguageCodeControlMapper
-{
+namespace AudioLanguageCodeControlMapper {
 AWS_MEDIACONVERT_API AudioLanguageCodeControl GetAudioLanguageCodeControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAudioLanguageCodeControl(AudioLanguageCodeControl value);
-} // namespace AudioLanguageCodeControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AudioLanguageCodeControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

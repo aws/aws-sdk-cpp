@@ -12,24 +12,17 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserSecurityProfilesRequest::SerializePayload() const
-{
+Aws::String UpdateUserSecurityProfilesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_securityProfileIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
-   for(unsigned securityProfileIdsIndex = 0; securityProfileIdsIndex < securityProfileIdsJsonList.GetLength(); ++securityProfileIdsIndex)
-   {
-     securityProfileIdsJsonList[securityProfileIdsIndex].AsString(m_securityProfileIds[securityProfileIdsIndex]);
-   }
-   payload.WithArray("SecurityProfileIds", std::move(securityProfileIdsJsonList));
-
+  if (m_securityProfileIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
+    for (unsigned securityProfileIdsIndex = 0; securityProfileIdsIndex < securityProfileIdsJsonList.GetLength();
+         ++securityProfileIdsIndex) {
+      securityProfileIdsJsonList[securityProfileIdsIndex].AsString(m_securityProfileIds[securityProfileIdsIndex]);
+    }
+    payload.WithArray("SecurityProfileIds", std::move(securityProfileIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

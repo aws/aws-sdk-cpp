@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/UsageTotal.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/UsageTotal.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-UsageTotal::UsageTotal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsageTotal::UsageTotal(JsonView jsonValue) { *this = jsonValue; }
 
-UsageTotal& UsageTotal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("currency"))
-  {
+UsageTotal& UsageTotal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("currency")) {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
     m_currencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("estimatedCost"))
-  {
+  if (jsonValue.ValueExists("estimatedCost")) {
     m_estimatedCost = jsonValue.GetString("estimatedCost");
     m_estimatedCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UsageTotal::Jsonize() const
-{
+JsonValue UsageTotal::Jsonize() const {
   JsonValue payload;
 
-  if(m_currencyHasBeenSet)
-  {
-   payload.WithString("currency", CurrencyMapper::GetNameForCurrency(m_currency));
+  if (m_currencyHasBeenSet) {
+    payload.WithString("currency", CurrencyMapper::GetNameForCurrency(m_currency));
   }
 
-  if(m_estimatedCostHasBeenSet)
-  {
-   payload.WithString("estimatedCost", m_estimatedCost);
-
+  if (m_estimatedCostHasBeenSet) {
+    payload.WithString("estimatedCost", m_estimatedCost);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", UsageTypeMapper::GetNameForUsageType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", UsageTypeMapper::GetNameForUsageType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
-  enum class ExecutionResultCode
-  {
-    NOT_SET,
-    PARSING_FAILED,
-    VPC_ENDPOINT_SETUP_FAILED
-  };
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+enum class ExecutionResultCode { NOT_SET, PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED };
 
-namespace ExecutionResultCodeMapper
-{
+namespace ExecutionResultCodeMapper {
 AWS_DEVICEFARM_API ExecutionResultCode GetExecutionResultCodeForName(const Aws::String& name);
 
 AWS_DEVICEFARM_API Aws::String GetNameForExecutionResultCode(ExecutionResultCode value);
-} // namespace ExecutionResultCodeMapper
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace ExecutionResultCodeMapper
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

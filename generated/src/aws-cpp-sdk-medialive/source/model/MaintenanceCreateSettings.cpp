@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MaintenanceCreateSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MaintenanceCreateSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MaintenanceCreateSettings::MaintenanceCreateSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MaintenanceCreateSettings::MaintenanceCreateSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MaintenanceCreateSettings& MaintenanceCreateSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maintenanceDay"))
-  {
+MaintenanceCreateSettings& MaintenanceCreateSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maintenanceDay")) {
     m_maintenanceDay = MaintenanceDayMapper::GetMaintenanceDayForName(jsonValue.GetString("maintenanceDay"));
     m_maintenanceDayHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maintenanceStartTime"))
-  {
+  if (jsonValue.ValueExists("maintenanceStartTime")) {
     m_maintenanceStartTime = jsonValue.GetString("maintenanceStartTime");
     m_maintenanceStartTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MaintenanceCreateSettings::Jsonize() const
-{
+JsonValue MaintenanceCreateSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_maintenanceDayHasBeenSet)
-  {
-   payload.WithString("maintenanceDay", MaintenanceDayMapper::GetNameForMaintenanceDay(m_maintenanceDay));
+  if (m_maintenanceDayHasBeenSet) {
+    payload.WithString("maintenanceDay", MaintenanceDayMapper::GetNameForMaintenanceDay(m_maintenanceDay));
   }
 
-  if(m_maintenanceStartTimeHasBeenSet)
-  {
-   payload.WithString("maintenanceStartTime", m_maintenanceStartTime);
-
+  if (m_maintenanceStartTimeHasBeenSet) {
+    payload.WithString("maintenanceStartTime", m_maintenanceStartTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

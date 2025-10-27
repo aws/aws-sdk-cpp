@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-enum class IAMErrors
-{
-  //From Core//
+namespace Aws {
+namespace IAM {
+enum class IAMErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IAMErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class IAMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CALLER_IS_NOT_MANAGEMENT_ACCOUNT,
   CONCURRENT_MODIFICATION,
   CREDENTIAL_REPORT_EXPIRED,
@@ -82,9 +79,8 @@ enum class IAMErrors
   UNRECOGNIZED_PUBLIC_KEY_ENCODING
 };
 
-class AWS_IAM_API IAMError : public Aws::Client::AWSError<IAMErrors>
-{
-public:
+class AWS_IAM_API IAMError : public Aws::Client::AWSError<IAMErrors> {
+ public:
   IAMError() {}
   IAMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
   IAMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
@@ -95,10 +91,9 @@ public:
   T GetModeledError();
 };
 
-namespace IAMErrorMapper
-{
-  AWS_IAM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IAMErrorMapper {
+AWS_IAM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IAM
-} // namespace Aws
+}  // namespace IAM
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-TraceConfiguration::TraceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TraceConfiguration::TraceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TraceConfiguration& TraceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Vendor"))
-  {
+TraceConfiguration& TraceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Vendor")) {
     m_vendor = TracingVendorMapper::GetTracingVendorForName(jsonValue.GetString("Vendor"));
     m_vendorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TraceConfiguration::Jsonize() const
-{
+JsonValue TraceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_vendorHasBeenSet)
-  {
-   payload.WithString("Vendor", TracingVendorMapper::GetNameForTracingVendor(m_vendor));
+  if (m_vendorHasBeenSet) {
+    payload.WithString("Vendor", TracingVendorMapper::GetNameForTracingVendor(m_vendor));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

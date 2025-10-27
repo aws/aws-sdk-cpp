@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class IAMAuthMode
-  {
-    NOT_SET,
-    DISABLED,
-    REQUIRED,
-    ENABLED
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class IAMAuthMode { NOT_SET, DISABLED, REQUIRED, ENABLED };
 
-namespace IAMAuthModeMapper
-{
+namespace IAMAuthModeMapper {
 AWS_RDS_API IAMAuthMode GetIAMAuthModeForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForIAMAuthMode(IAMAuthMode value);
-} // namespace IAMAuthModeMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace IAMAuthModeMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

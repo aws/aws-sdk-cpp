@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class InputDenoiseFilter
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class InputDenoiseFilter { NOT_SET, DISABLED, ENABLED };
 
-namespace InputDenoiseFilterMapper
-{
+namespace InputDenoiseFilterMapper {
 AWS_MEDIALIVE_API InputDenoiseFilter GetInputDenoiseFilterForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForInputDenoiseFilter(InputDenoiseFilter value);
-} // namespace InputDenoiseFilterMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace InputDenoiseFilterMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

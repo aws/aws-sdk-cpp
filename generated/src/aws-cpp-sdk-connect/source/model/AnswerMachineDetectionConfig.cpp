@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AnswerMachineDetectionConfig& AnswerMachineDetectionConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableAnswerMachineDetection"))
-  {
+AnswerMachineDetectionConfig& AnswerMachineDetectionConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableAnswerMachineDetection")) {
     m_enableAnswerMachineDetection = jsonValue.GetBool("EnableAnswerMachineDetection");
     m_enableAnswerMachineDetectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwaitAnswerMachinePrompt"))
-  {
+  if (jsonValue.ValueExists("AwaitAnswerMachinePrompt")) {
     m_awaitAnswerMachinePrompt = jsonValue.GetBool("AwaitAnswerMachinePrompt");
     m_awaitAnswerMachinePromptHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnswerMachineDetectionConfig::Jsonize() const
-{
+JsonValue AnswerMachineDetectionConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableAnswerMachineDetectionHasBeenSet)
-  {
-   payload.WithBool("EnableAnswerMachineDetection", m_enableAnswerMachineDetection);
-
+  if (m_enableAnswerMachineDetectionHasBeenSet) {
+    payload.WithBool("EnableAnswerMachineDetection", m_enableAnswerMachineDetection);
   }
 
-  if(m_awaitAnswerMachinePromptHasBeenSet)
-  {
-   payload.WithBool("AwaitAnswerMachinePrompt", m_awaitAnswerMachinePrompt);
-
+  if (m_awaitAnswerMachinePromptHasBeenSet) {
+    payload.WithBool("AwaitAnswerMachinePrompt", m_awaitAnswerMachinePrompt);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

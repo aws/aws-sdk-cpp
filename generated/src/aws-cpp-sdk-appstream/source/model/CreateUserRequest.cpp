@@ -12,49 +12,34 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUserRequest::SerializePayload() const
-{
+Aws::String CreateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
-  if(m_messageActionHasBeenSet)
-  {
-   payload.WithString("MessageAction", MessageActionMapper::GetNameForMessageAction(m_messageAction));
+  if (m_messageActionHasBeenSet) {
+    payload.WithString("MessageAction", MessageActionMapper::GetNameForMessageAction(m_messageAction));
   }
 
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("FirstName", m_firstName);
-
+  if (m_firstNameHasBeenSet) {
+    payload.WithString("FirstName", m_firstName);
   }
 
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("LastName", m_lastName);
-
+  if (m_lastNameHasBeenSet) {
+    payload.WithString("LastName", m_lastName);
   }
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateUserRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateUser"));
   return headers;
-
 }
-
-
-
-

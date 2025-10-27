@@ -4,104 +4,127 @@
  */
 
 #pragma once
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/eventbridge/model/ArchiveState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
+#include <aws/eventbridge/model/ArchiveState.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace EventBridge
-{
-namespace Model
-{
-  class CreateArchiveResult
-  {
-  public:
-    AWS_EVENTBRIDGE_API CreateArchiveResult() = default;
-    AWS_EVENTBRIDGE_API CreateArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_EVENTBRIDGE_API CreateArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace EventBridge {
+namespace Model {
+class CreateArchiveResult {
+ public:
+  AWS_EVENTBRIDGE_API CreateArchiveResult() = default;
+  AWS_EVENTBRIDGE_API CreateArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_EVENTBRIDGE_API CreateArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The ARN of the archive that was created.</p>
+   */
+  inline const Aws::String& GetArchiveArn() const { return m_archiveArn; }
+  template <typename ArchiveArnT = Aws::String>
+  void SetArchiveArn(ArchiveArnT&& value) {
+    m_archiveArnHasBeenSet = true;
+    m_archiveArn = std::forward<ArchiveArnT>(value);
+  }
+  template <typename ArchiveArnT = Aws::String>
+  CreateArchiveResult& WithArchiveArn(ArchiveArnT&& value) {
+    SetArchiveArn(std::forward<ArchiveArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the archive that was created.</p>
-     */
-    inline const Aws::String& GetArchiveArn() const { return m_archiveArn; }
-    template<typename ArchiveArnT = Aws::String>
-    void SetArchiveArn(ArchiveArnT&& value) { m_archiveArnHasBeenSet = true; m_archiveArn = std::forward<ArchiveArnT>(value); }
-    template<typename ArchiveArnT = Aws::String>
-    CreateArchiveResult& WithArchiveArn(ArchiveArnT&& value) { SetArchiveArn(std::forward<ArchiveArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The state of the archive that was created.</p>
+   */
+  inline ArchiveState GetState() const { return m_state; }
+  inline void SetState(ArchiveState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline CreateArchiveResult& WithState(ArchiveState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The state of the archive that was created.</p>
-     */
-    inline ArchiveState GetState() const { return m_state; }
-    inline void SetState(ArchiveState value) { m_stateHasBeenSet = true; m_state = value; }
-    inline CreateArchiveResult& WithState(ArchiveState value) { SetState(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The reason that the archive is in the state.</p>
+   */
+  inline const Aws::String& GetStateReason() const { return m_stateReason; }
+  template <typename StateReasonT = Aws::String>
+  void SetStateReason(StateReasonT&& value) {
+    m_stateReasonHasBeenSet = true;
+    m_stateReason = std::forward<StateReasonT>(value);
+  }
+  template <typename StateReasonT = Aws::String>
+  CreateArchiveResult& WithStateReason(StateReasonT&& value) {
+    SetStateReason(std::forward<StateReasonT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The reason that the archive is in the state.</p>
-     */
-    inline const Aws::String& GetStateReason() const { return m_stateReason; }
-    template<typename StateReasonT = Aws::String>
-    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
-    template<typename StateReasonT = Aws::String>
-    CreateArchiveResult& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time at which the archive was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  CreateArchiveResult& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time at which the archive was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    CreateArchiveResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateArchiveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateArchiveResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_archiveArn;
+  bool m_archiveArnHasBeenSet = false;
 
-    Aws::String m_archiveArn;
-    bool m_archiveArnHasBeenSet = false;
+  ArchiveState m_state{ArchiveState::NOT_SET};
+  bool m_stateHasBeenSet = false;
 
-    ArchiveState m_state{ArchiveState::NOT_SET};
-    bool m_stateHasBeenSet = false;
+  Aws::String m_stateReason;
+  bool m_stateReasonHasBeenSet = false;
 
-    Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet = false;
+  Aws::Utils::DateTime m_creationTime{};
+  bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime{};
-    bool m_creationTimeHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

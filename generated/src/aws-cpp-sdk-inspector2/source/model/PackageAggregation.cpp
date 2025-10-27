@@ -3,78 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/PackageAggregation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/PackageAggregation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-PackageAggregation::PackageAggregation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageAggregation::PackageAggregation(JsonView jsonValue) { *this = jsonValue; }
 
-PackageAggregation& PackageAggregation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("packageNames"))
-  {
+PackageAggregation& PackageAggregation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("packageNames")) {
     Aws::Utils::Array<JsonView> packageNamesJsonList = jsonValue.GetArray("packageNames");
-    for(unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex)
-    {
+    for (unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex) {
       m_packageNames.push_back(packageNamesJsonList[packageNamesIndex].AsObject());
     }
     m_packageNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
-  {
+  if (jsonValue.ValueExists("sortBy")) {
     m_sortBy = PackageSortByMapper::GetPackageSortByForName(jsonValue.GetString("sortBy"));
     m_sortByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageAggregation::Jsonize() const
-{
+JsonValue PackageAggregation::Jsonize() const {
   JsonValue payload;
 
-  if(m_packageNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> packageNamesJsonList(m_packageNames.size());
-   for(unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex)
-   {
-     packageNamesJsonList[packageNamesIndex].AsObject(m_packageNames[packageNamesIndex].Jsonize());
-   }
-   payload.WithArray("packageNames", std::move(packageNamesJsonList));
-
+  if (m_packageNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> packageNamesJsonList(m_packageNames.size());
+    for (unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex) {
+      packageNamesJsonList[packageNamesIndex].AsObject(m_packageNames[packageNamesIndex].Jsonize());
+    }
+    payload.WithArray("packageNames", std::move(packageNamesJsonList));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", PackageSortByMapper::GetNameForPackageSortBy(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", PackageSortByMapper::GetNameForPackageSortBy(m_sortBy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

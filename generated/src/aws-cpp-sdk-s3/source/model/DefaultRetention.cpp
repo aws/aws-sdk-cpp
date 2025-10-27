@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/DefaultRetention.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/DefaultRetention.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-DefaultRetention::DefaultRetention(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DefaultRetention::DefaultRetention(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DefaultRetention& DefaultRetention::operator =(const XmlNode& xmlNode)
-{
+DefaultRetention& DefaultRetention::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode modeNode = resultNode.FirstChild("Mode");
-    if(!modeNode.IsNull())
-    {
-      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
+    if (!modeNode.IsNull()) {
+      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
-    if(!daysNode.IsNull())
-    {
+    if (!daysNode.IsNull()) {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode yearsNode = resultNode.FirstChild("Years");
-    if(!yearsNode.IsNull())
-    {
+    if (!yearsNode.IsNull()) {
       m_years = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(yearsNode.GetText()).c_str()).c_str());
       m_yearsHasBeenSet = true;
     }
@@ -54,33 +44,28 @@ DefaultRetention& DefaultRetention::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DefaultRetention::AddToNode(XmlNode& parentNode) const
-{
+void DefaultRetention::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_modeHasBeenSet)
-  {
-   XmlNode modeNode = parentNode.CreateChildElement("Mode");
-   modeNode.SetText(ObjectLockRetentionModeMapper::GetNameForObjectLockRetentionMode(m_mode));
+  if (m_modeHasBeenSet) {
+    XmlNode modeNode = parentNode.CreateChildElement("Mode");
+    modeNode.SetText(ObjectLockRetentionModeMapper::GetNameForObjectLockRetentionMode(m_mode));
   }
 
-  if(m_daysHasBeenSet)
-  {
-   XmlNode daysNode = parentNode.CreateChildElement("Days");
-   ss << m_days;
-   daysNode.SetText(ss.str());
-   ss.str("");
+  if (m_daysHasBeenSet) {
+    XmlNode daysNode = parentNode.CreateChildElement("Days");
+    ss << m_days;
+    daysNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_yearsHasBeenSet)
-  {
-   XmlNode yearsNode = parentNode.CreateChildElement("Years");
-   ss << m_years;
-   yearsNode.SetText(ss.str());
-   ss.str("");
+  if (m_yearsHasBeenSet) {
+    XmlNode yearsNode = parentNode.CreateChildElement("Years");
+    ss << m_years;
+    yearsNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

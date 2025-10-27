@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
-#include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutequipment/LookoutEquipmentRequest.h>
+#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
+/**
+ */
+class StopRetrainingSchedulerRequest : public LookoutEquipmentRequest {
+ public:
+  AWS_LOOKOUTEQUIPMENT_API StopRetrainingSchedulerRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StopRetrainingScheduler"; }
+
+  AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
+
+  AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the model whose retraining scheduler you want to stop.</p>
    */
-  class StopRetrainingSchedulerRequest : public LookoutEquipmentRequest
-  {
-  public:
-    AWS_LOOKOUTEQUIPMENT_API StopRetrainingSchedulerRequest() = default;
+  inline const Aws::String& GetModelName() const { return m_modelName; }
+  inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+  template <typename ModelNameT = Aws::String>
+  void SetModelName(ModelNameT&& value) {
+    m_modelNameHasBeenSet = true;
+    m_modelName = std::forward<ModelNameT>(value);
+  }
+  template <typename ModelNameT = Aws::String>
+  StopRetrainingSchedulerRequest& WithModelName(ModelNameT&& value) {
+    SetModelName(std::forward<ModelNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_modelName;
+  bool m_modelNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "StopRetrainingScheduler"; }
-
-    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
-
-    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
-    inline const Aws::String& GetModelName() const { return m_modelName; }
-    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    template<typename ModelNameT = Aws::String>
-    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
-    template<typename ModelNameT = Aws::String>
-    StopRetrainingSchedulerRequest& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_modelName;
-    bool m_modelNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

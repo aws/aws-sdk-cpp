@@ -5,131 +5,160 @@
 
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-messaging/model/ChannelMode.h>
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKMessaging {
+namespace Model {
 
+/**
+ * <p>Summary of the details of a <code>Channel</code>.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelSummary">AWS
+ * API Reference</a></p>
+ */
+class ChannelSummary {
+ public:
+  AWS_CHIMESDKMESSAGING_API ChannelSummary() = default;
+  AWS_CHIMESDKMESSAGING_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CHIMESDKMESSAGING_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Summary of the details of a <code>Channel</code>.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelSummary">AWS
-   * API Reference</a></p>
+   * <p>The name of the channel.</p>
    */
-  class ChannelSummary
-  {
-  public:
-    AWS_CHIMESDKMESSAGING_API ChannelSummary() = default;
-    AWS_CHIMESDKMESSAGING_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CHIMESDKMESSAGING_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ChannelSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The ARN of the channel.</p>
+   */
+  inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+  inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
+  template <typename ChannelArnT = Aws::String>
+  void SetChannelArn(ChannelArnT&& value) {
+    m_channelArnHasBeenSet = true;
+    m_channelArn = std::forward<ChannelArnT>(value);
+  }
+  template <typename ChannelArnT = Aws::String>
+  ChannelSummary& WithChannelArn(ChannelArnT&& value) {
+    SetChannelArn(std::forward<ChannelArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the channel.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ChannelSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The mode of the channel.</p>
+   */
+  inline ChannelMode GetMode() const { return m_mode; }
+  inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+  inline void SetMode(ChannelMode value) {
+    m_modeHasBeenSet = true;
+    m_mode = value;
+  }
+  inline ChannelSummary& WithMode(ChannelMode value) {
+    SetMode(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the channel.</p>
-     */
-    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
-    inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    template<typename ChannelArnT = Aws::String>
-    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
-    template<typename ChannelArnT = Aws::String>
-    ChannelSummary& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The privacy setting of the channel.</p>
+   */
+  inline ChannelPrivacy GetPrivacy() const { return m_privacy; }
+  inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
+  inline void SetPrivacy(ChannelPrivacy value) {
+    m_privacyHasBeenSet = true;
+    m_privacy = value;
+  }
+  inline ChannelSummary& WithPrivacy(ChannelPrivacy value) {
+    SetPrivacy(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The mode of the channel.</p>
-     */
-    inline ChannelMode GetMode() const { return m_mode; }
-    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(ChannelMode value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline ChannelSummary& WithMode(ChannelMode value) { SetMode(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The metadata of the channel.</p>
+   */
+  inline const Aws::String& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::String>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::String>
+  ChannelSummary& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The privacy setting of the channel.</p>
-     */
-    inline ChannelPrivacy GetPrivacy() const { return m_privacy; }
-    inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
-    inline void SetPrivacy(ChannelPrivacy value) { m_privacyHasBeenSet = true; m_privacy = value; }
-    inline ChannelSummary& WithPrivacy(ChannelPrivacy value) { SetPrivacy(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time at which the last persistent message visible to the caller in a
+   * channel was sent.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const { return m_lastMessageTimestamp; }
+  inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
+  template <typename LastMessageTimestampT = Aws::Utils::DateTime>
+  void SetLastMessageTimestamp(LastMessageTimestampT&& value) {
+    m_lastMessageTimestampHasBeenSet = true;
+    m_lastMessageTimestamp = std::forward<LastMessageTimestampT>(value);
+  }
+  template <typename LastMessageTimestampT = Aws::Utils::DateTime>
+  ChannelSummary& WithLastMessageTimestamp(LastMessageTimestampT&& value) {
+    SetLastMessageTimestamp(std::forward<LastMessageTimestampT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The metadata of the channel.</p>
-     */
-    inline const Aws::String& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Aws::String>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Aws::String>
-    ChannelSummary& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
-    ///@}
+  Aws::String m_channelArn;
+  bool m_channelArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time at which the last persistent message visible to the caller in a
-     * channel was sent.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const { return m_lastMessageTimestamp; }
-    inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
-    template<typename LastMessageTimestampT = Aws::Utils::DateTime>
-    void SetLastMessageTimestamp(LastMessageTimestampT&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::forward<LastMessageTimestampT>(value); }
-    template<typename LastMessageTimestampT = Aws::Utils::DateTime>
-    ChannelSummary& WithLastMessageTimestamp(LastMessageTimestampT&& value) { SetLastMessageTimestamp(std::forward<LastMessageTimestampT>(value)); return *this;}
-    ///@}
-  private:
+  ChannelMode m_mode{ChannelMode::NOT_SET};
+  bool m_modeHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
+  bool m_privacyHasBeenSet = false;
 
-    Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet = false;
+  Aws::String m_metadata;
+  bool m_metadataHasBeenSet = false;
 
-    ChannelMode m_mode{ChannelMode::NOT_SET};
-    bool m_modeHasBeenSet = false;
+  Aws::Utils::DateTime m_lastMessageTimestamp{};
+  bool m_lastMessageTimestampHasBeenSet = false;
+};
 
-    ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
-    bool m_privacyHasBeenSet = false;
-
-    Aws::String m_metadata;
-    bool m_metadataHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastMessageTimestamp{};
-    bool m_lastMessageTimestampHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

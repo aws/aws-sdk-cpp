@@ -5,12 +5,8 @@
 
 #include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSMContacts
-} // namespace Aws
+namespace Aws {
+namespace SSMContacts {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSMContacts
+}  // namespace Aws

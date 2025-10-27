@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlCatalog {
+namespace Model {
 
-DomainResourceFilter::DomainResourceFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainResourceFilter::DomainResourceFilter(JsonView jsonValue) { *this = jsonValue; }
 
-DomainResourceFilter& DomainResourceFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DomainResourceFilter& DomainResourceFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainResourceFilter::Jsonize() const
-{
+JsonValue DomainResourceFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlCatalog
+}  // namespace Aws

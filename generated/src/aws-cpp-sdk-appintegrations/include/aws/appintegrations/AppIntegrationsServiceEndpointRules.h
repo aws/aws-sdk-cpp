@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-class AppIntegrationsServiceEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace AppIntegrationsService {
+class AppIntegrationsServiceEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace AppIntegrationsService
+}  // namespace Aws

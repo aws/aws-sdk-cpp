@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/EC2ReplaceRouteTableAssociationAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/EC2ReplaceRouteTableAssociationAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-EC2ReplaceRouteTableAssociationAction::EC2ReplaceRouteTableAssociationAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EC2ReplaceRouteTableAssociationAction::EC2ReplaceRouteTableAssociationAction(JsonView jsonValue) { *this = jsonValue; }
 
-EC2ReplaceRouteTableAssociationAction& EC2ReplaceRouteTableAssociationAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+EC2ReplaceRouteTableAssociationAction& EC2ReplaceRouteTableAssociationAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationId"))
-  {
+  if (jsonValue.ValueExists("AssociationId")) {
     m_associationId = jsonValue.GetObject("AssociationId");
     m_associationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RouteTableId"))
-  {
+  if (jsonValue.ValueExists("RouteTableId")) {
     m_routeTableId = jsonValue.GetObject("RouteTableId");
     m_routeTableIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EC2ReplaceRouteTableAssociationAction::Jsonize() const
-{
+JsonValue EC2ReplaceRouteTableAssociationAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_associationIdHasBeenSet)
-  {
-   payload.WithObject("AssociationId", m_associationId.Jsonize());
-
+  if (m_associationIdHasBeenSet) {
+    payload.WithObject("AssociationId", m_associationId.Jsonize());
   }
 
-  if(m_routeTableIdHasBeenSet)
-  {
-   payload.WithObject("RouteTableId", m_routeTableId.Jsonize());
-
+  if (m_routeTableIdHasBeenSet) {
+    payload.WithObject("RouteTableId", m_routeTableId.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws
